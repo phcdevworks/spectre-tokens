@@ -10,12 +10,19 @@ interface TypographyTokens {
     families: Record<string, string>;
     scale: Record<string, TypographyScaleEntry>;
 }
+interface TransitionTokens {
+    duration: TokenScale;
+    easing: TokenScale;
+}
 interface Tokens {
     colors: Record<string, ColorScale>;
     spacing: TokenScale;
     radii: TokenScale;
     typography: TypographyTokens;
     shadows: TokenScale;
+    breakpoints: TokenScale;
+    zIndex: TokenScale;
+    transitions: TransitionTokens;
 }
 type CssVariableMap = Record<string, string>;
 interface CssVariableOptions {
@@ -33,6 +40,10 @@ interface TailwindTheme {
         letterSpacing?: string;
     }]>;
     boxShadow: TokenScale;
+    screens: TokenScale;
+    zIndex: TokenScale;
+    transitionDuration: TokenScale;
+    transitionTimingFunction: TokenScale;
 }
 
 declare const createCssVariableMap: (tokens: Tokens, options?: CssVariableOptions) => CssVariableMap;
@@ -45,4 +56,4 @@ declare const tailwindPreset: {
     theme: TailwindTheme;
 };
 
-export { type ColorScale, type TailwindTheme, type TokenScale, type Tokens, type TypographyTokens, createCssVariableMap, createTailwindTheme, tokens as default, generateCssVariables, tailwindPreset, tailwindTheme, tokens };
+export { type ColorScale, type TailwindTheme, type TokenScale, type Tokens, type TransitionTokens, type TypographyTokens, createCssVariableMap, createTailwindTheme, tokens as default, generateCssVariables, tailwindPreset, tailwindTheme, tokens };

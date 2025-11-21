@@ -2,7 +2,7 @@
 
 **Spectre Tokens** is the foundational design layer of the **Spectre Suite** — a token-driven design system that powers consistent styling across all Spectre projects.
 
-It defines Spectre's visual identity through design tokens (colors, typography, spacing, radii, shadows) consumed by **Spectre UI**, **Spectre Blocks** (WordPress), **Spectre Astro**, **Spectre 11ty**, and future Spectre tools.
+It defines Spectre's visual identity through design tokens (colors, typography, spacing, radii, shadows, breakpoints, z-index, transitions) consumed by **Spectre UI**, **Spectre Blocks** (WordPress), **Spectre Astro**, **Spectre 11ty**, and future Spectre tools.
 
 > One token system. Many frameworks. Full consistency.
 
@@ -19,6 +19,10 @@ Spectre Tokens provides a centralized source of truth for design decisions acros
 - **Multiple Formats**: Export tokens as CSS variables, JSON, JavaScript, and more
 - **Type-Safe**: TypeScript definitions for all design tokens
 - **Themeable**: Easy customization and theming support
+- **Semantic Colors**: Built-in success, warning, error, and info color scales
+- **Responsive Design**: Consistent breakpoint tokens for all screen sizes
+- **Motion Design**: Transition duration and easing tokens for animations
+- **Z-Index Scale**: Organized layering system for consistent stacking
 
 ## Installation
 
@@ -31,13 +35,13 @@ npm install @phcdevworks/spectre-tokens
 Import Spectre Tokens into your project:
 
 ```javascript
-import tokens from '@phcdevworks/spectre-tokens';
+import tokens from "@phcdevworks/spectre-tokens";
 ```
 
 Or use CSS variables directly:
 
 ```css
-@import '@phcdevworks/spectre-tokens/css/tokens.css';
+@import "@phcdevworks/spectre-tokens/css/tokens.css";
 
 .my-component {
   color: var(--spectre-color-primary);
@@ -66,12 +70,12 @@ Contributions are welcome! Please open an issue or submit a pull request.
 
 ## Repository layout
 
-| Folder | Responsibility |
-| ------ | -------------- |
-| `tokens/` | Raw JSON tokens owned by design. `core.json` holds colors, spacing, radii, typography scale, and shadows. |
-| `src/` | TypeScript source that turns JSON into reusable formats (JS/TS objects, Tailwind theme, CSS helpers). |
-| `scripts/` | Build utilities. `build-css.js` consumes the compiled library and writes `dist/index.css`. |
-| `dist/` | Generated artifacts: `index.js`, `index.cjs`, `index.d.ts`, and `index.css`. Regenerated via `npm run build`. |
+| Folder     | Responsibility                                                                                                |
+| ---------- | ------------------------------------------------------------------------------------------------------------- |
+| `tokens/`  | Raw JSON tokens owned by design. `core.json` holds colors, spacing, radii, typography scale, and shadows.     |
+| `src/`     | TypeScript source that turns JSON into reusable formats (JS/TS objects, Tailwind theme, CSS helpers).         |
+| `scripts/` | Build utilities. `build-css.js` consumes the compiled library and writes `dist/index.css`.                    |
+| `dist/`    | Generated artifacts: `index.js`, `index.cjs`, `index.d.ts`, and `index.css`. Regenerated via `npm run build`. |
 
 Designers only edit `tokens/`. Engineering evolves `src/` + `scripts/` when structure changes.
 
@@ -82,19 +86,26 @@ Designers only edit `tokens/`. Engineering evolves `src/` + `scripts/` when stru
 ### Programmatic access (JS/TS)
 
 ```ts
-import tokens, { tailwindTheme, tailwindPreset, generateCssVariables } from '@phcdevworks/spectre-tokens';
+import tokens, {
+  tailwindTheme,
+  tailwindPreset,
+  generateCssVariables,
+} from "@phcdevworks/spectre-tokens";
 
 // Raw structured tokens (colors, spacing, radii, typography, shadows)
-console.log(tokens.colors.brand['500']);
+console.log(tokens.colors.brand["500"]);
 
 // Tailwind-ready theme or preset drop-in
 export default {
   theme: tailwindTheme,
-  presets: [tailwindPreset]
+  presets: [tailwindPreset],
 };
 
 // Generic CSS variable string if you want custom selectors or prefixes
-const css = generateCssVariables(tokens, { selector: '.spectre-scope', prefix: 'sp' });
+const css = generateCssVariables(tokens, {
+  selector: ".spectre-scope",
+  prefix: "sp",
+});
 ```
 
 ### CSS variables
@@ -102,7 +113,7 @@ const css = generateCssVariables(tokens, { selector: '.spectre-scope', prefix: '
 Include the generated CSS file to get `--sp-*` variables anywhere:
 
 ```css
-@import '@phcdevworks/spectre-tokens/index.css';
+@import "@phcdevworks/spectre-tokens/index.css";
 
 .button {
   color: var(--sp-color-brand-500);
