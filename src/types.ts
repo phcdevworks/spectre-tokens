@@ -19,8 +19,47 @@ export interface TransitionTokens {
   easing: TokenScale;
 }
 
+export interface AnimationEntry {
+  duration: string;
+  easing: string;
+  keyframes: string;
+}
+
+export interface AccessibilityTokens {
+  focusRing: {
+    width: string;
+    offset: string;
+    style: string;
+  };
+  minTouchTarget: string;
+  minTextSize: string;
+}
+
+export interface ButtonStateTokens {
+  bg: string;
+  bgHover: string;
+  bgActive: string;
+  bgDisabled: string;
+  text: string;
+  textDisabled: string;
+  border?: string;
+  borderDisabled?: string;
+}
+
+export interface FormStateTokens {
+  bg?: string;
+  border: string;
+  text?: string;
+  placeholder?: string;
+  ring?: string;
+}
+
 export interface Tokens {
   colors: Record<string, ColorScale>;
+  opacity: TokenScale;
+  accessibility: AccessibilityTokens;
+  buttons: Record<string, ButtonStateTokens>;
+  forms: Record<string, FormStateTokens>;
   spacing: TokenScale;
   radii: TokenScale;
   typography: TypographyTokens;
@@ -28,6 +67,7 @@ export interface Tokens {
   breakpoints: TokenScale;
   zIndex: TokenScale;
   transitions: TransitionTokens;
+  animations: Record<string, AnimationEntry>;
 }
 
 export type CssVariableMap = Record<string, string>;
@@ -48,4 +88,5 @@ export interface TailwindTheme {
   zIndex: TokenScale;
   transitionDuration: TokenScale;
   transitionTimingFunction: TokenScale;
+  opacity: TokenScale;
 }

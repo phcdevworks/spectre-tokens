@@ -3,7 +3,7 @@ import coreTokens from '../tokens/core.json';
 import { createCssVariableMap, generateCssVariables } from './css';
 import type { TailwindTheme, Tokens } from './types';
 
-export type { TailwindTheme, Tokens, ColorScale, TokenScale, TypographyTokens, TransitionTokens } from './types';
+export type { TailwindTheme, Tokens, ColorScale, TokenScale, TypographyTokens, TransitionTokens, AccessibilityTokens, ButtonStateTokens, FormStateTokens, AnimationEntry } from './types';
 
 const tokens: Tokens = coreTokens as Tokens;
 
@@ -46,7 +46,8 @@ export const createTailwindTheme = (source: Tokens = tokens): TailwindTheme => {
     screens: { ...source.breakpoints },
     zIndex: { ...source.zIndex },
     transitionDuration: { ...source.transitions.duration },
-    transitionTimingFunction: { ...source.transitions.easing }
+    transitionTimingFunction: { ...source.transitions.easing },
+    opacity: { ...source.opacity }
   };
 };
 

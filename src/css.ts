@@ -68,6 +68,38 @@ export const createCssVariableMap = (tokens: Tokens, options: CssVariableOptions
     assign(toVariableName(prefix, 'easing', key), value);
   });
 
+  Object.entries(tokens.opacity).forEach(([key, value]) => {
+    assign(toVariableName(prefix, 'opacity', key), value);
+  });
+
+  // Accessibility tokens
+  assign(toVariableName(prefix, 'focus-ring-width'), tokens.accessibility.focusRing.width);
+  assign(toVariableName(prefix, 'focus-ring-offset'), tokens.accessibility.focusRing.offset);
+  assign(toVariableName(prefix, 'focus-ring-style'), tokens.accessibility.focusRing.style);
+  assign(toVariableName(prefix, 'min-touch-target'), tokens.accessibility.minTouchTarget);
+  assign(toVariableName(prefix, 'min-text-size'), tokens.accessibility.minTextSize);
+
+  // Button tokens
+  Object.entries(tokens.buttons).forEach(([variant, states]) => {
+    Object.entries(states).forEach(([state, value]) => {
+      assign(toVariableName(prefix, 'button', variant, state), value);
+    });
+  });
+
+  // Form tokens
+  Object.entries(tokens.forms).forEach(([state, properties]) => {
+    Object.entries(properties).forEach(([prop, value]) => {
+      if (value) assign(toVariableName(prefix, 'form', state, prop), value);
+    });
+  });
+
+  // Animation tokens
+  Object.entries(tokens.animations).forEach(([name, animation]) => {
+    assign(toVariableName(prefix, 'animation', name, 'duration'), animation.duration);
+    assign(toVariableName(prefix, 'animation', name, 'easing'), animation.easing);
+    assign(toVariableName(prefix, 'animation', name, 'keyframes'), animation.keyframes);
+  });
+
   return map;
 };
 
