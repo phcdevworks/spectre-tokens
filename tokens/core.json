@@ -1,0 +1,110 @@
+{
+  "colors": {
+    "brand": {
+      "50": "#f5f0ff",
+      "100": "#ebe2ff",
+      "200": "#d7c6ff",
+      "300": "#bfa1ff",
+      "400": "#a37aff",
+      "500": "#8652ff",
+      "600": "#6c32e6",
+      "700": "#5626b4",
+      "800": "#3d1b7f",
+      "900": "#241147"
+    },
+    "neutral": {
+      "50": "#f8fafc",
+      "100": "#f1f5f9",
+      "200": "#e2e8f0",
+      "300": "#cbd5f5",
+      "400": "#94a3b8",
+      "500": "#64748b",
+      "600": "#475569",
+      "700": "#334155",
+      "800": "#1e293b",
+      "900": "#0f172a"
+    },
+    "accent": {
+      "50": "#e5fff8",
+      "100": "#b8ffed",
+      "200": "#89ffe1",
+      "300": "#59ffd6",
+      "400": "#29ffca",
+      "500": "#03e6b3",
+      "600": "#00b389",
+      "700": "#008060",
+      "800": "#004d38",
+      "900": "#002a20"
+    }
+  },
+  "spacing": {
+    "none": "0rem",
+    "3xs": "0.125rem",
+    "2xs": "0.25rem",
+    "xs": "0.5rem",
+    "sm": "0.75rem",
+    "md": "1rem",
+    "lg": "1.5rem",
+    "xl": "2rem",
+    "2xl": "3rem",
+    "3xl": "4rem"
+  },
+  "radii": {
+    "none": "0",
+    "sm": "2px",
+    "md": "4px",
+    "lg": "8px",
+    "pill": "999px"
+  },
+  "typography": {
+    "families": {
+      "sans": "'Inter', 'Helvetica Neue', Arial, sans-serif",
+      "serif": "'Spectre Serif', 'Georgia', serif",
+      "mono": "'JetBrains Mono', 'SFMono-Regular', Consolas, monospace"
+    },
+    "scale": {
+      "xs": {
+        "fontSize": "0.75rem",
+        "lineHeight": "1.25rem",
+        "fontWeight": 400,
+        "letterSpacing": "0.02em"
+      },
+      "sm": {
+        "fontSize": "0.875rem",
+        "lineHeight": "1.5rem",
+        "fontWeight": 400
+      },
+      "md": {
+        "fontSize": "1rem",
+        "lineHeight": "1.75rem",
+        "fontWeight": 500
+      },
+      "lg": {
+        "fontSize": "1.25rem",
+        "lineHeight": "2rem",
+        "fontWeight": 600
+      },
+      "xl": {
+        "fontSize": "1.5rem",
+        "lineHeight": "2.125rem",
+        "fontWeight": 600
+      },
+      "2xl": {
+        "fontSize": "1.875rem",
+        "lineHeight": "2.5rem",
+        "fontWeight": 700
+      },
+      "3xl": {
+        "fontSize": "2.25rem",
+        "lineHeight": "2.75rem",
+        "fontWeight": 700
+      }
+    }
+  },
+  "shadows": {
+    "none": "none",
+    "sm": "0 1px 2px 0 rgba(15, 23, 42, 0.08)",
+    "md": "0 3px 8px -1px rgba(15, 23, 42, 0.1)",
+    "lg": "0 8px 20px -4px rgba(15, 23, 42, 0.18)"
+  }
+}
