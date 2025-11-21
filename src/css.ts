@@ -52,6 +52,22 @@ export const createCssVariableMap = (tokens: Tokens, options: CssVariableOptions
     assign(toVariableName(prefix, 'shadow', key), value);
   });
 
+  Object.entries(tokens.breakpoints).forEach(([key, value]) => {
+    assign(toVariableName(prefix, 'breakpoint', key), value);
+  });
+
+  Object.entries(tokens.zIndex).forEach(([key, value]) => {
+    assign(toVariableName(prefix, 'z-index', key), value);
+  });
+
+  Object.entries(tokens.transitions.duration).forEach(([key, value]) => {
+    assign(toVariableName(prefix, 'duration', key), value);
+  });
+
+  Object.entries(tokens.transitions.easing).forEach(([key, value]) => {
+    assign(toVariableName(prefix, 'easing', key), value);
+  });
+
   return map;
 };
 

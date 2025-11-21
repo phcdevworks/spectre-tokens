@@ -68,6 +68,54 @@ var core_default = {
       "700": "#008060",
       "800": "#004d38",
       "900": "#002a20"
+    },
+    success: {
+      "50": "#f0fdf4",
+      "100": "#dcfce7",
+      "200": "#bbf7d0",
+      "300": "#86efac",
+      "400": "#4ade80",
+      "500": "#22c55e",
+      "600": "#16a34a",
+      "700": "#15803d",
+      "800": "#166534",
+      "900": "#14532d"
+    },
+    warning: {
+      "50": "#fffbeb",
+      "100": "#fef3c7",
+      "200": "#fde68a",
+      "300": "#fcd34d",
+      "400": "#fbbf24",
+      "500": "#f59e0b",
+      "600": "#d97706",
+      "700": "#b45309",
+      "800": "#92400e",
+      "900": "#78350f"
+    },
+    error: {
+      "50": "#fef2f2",
+      "100": "#fee2e2",
+      "200": "#fecaca",
+      "300": "#fca5a5",
+      "400": "#f87171",
+      "500": "#ef4444",
+      "600": "#dc2626",
+      "700": "#b91c1c",
+      "800": "#991b1b",
+      "900": "#7f1d1d"
+    },
+    info: {
+      "50": "#eff6ff",
+      "100": "#dbeafe",
+      "200": "#bfdbfe",
+      "300": "#93c5fd",
+      "400": "#60a5fa",
+      "500": "#3b82f6",
+      "600": "#2563eb",
+      "700": "#1d4ed8",
+      "800": "#1e40af",
+      "900": "#1e3a8a"
     }
   },
   spacing: {
@@ -139,6 +187,40 @@ var core_default = {
     sm: "0 1px 2px 0 rgba(15, 23, 42, 0.08)",
     md: "0 3px 8px -1px rgba(15, 23, 42, 0.1)",
     lg: "0 8px 20px -4px rgba(15, 23, 42, 0.18)"
+  },
+  breakpoints: {
+    sm: "640px",
+    md: "768px",
+    lg: "1024px",
+    xl: "1280px",
+    "2xl": "1536px"
+  },
+  zIndex: {
+    base: "0",
+    dropdown: "1000",
+    sticky: "1100",
+    fixed: "1200",
+    overlay: "1300",
+    modal: "1400",
+    popover: "1500",
+    tooltip: "1600"
+  },
+  transitions: {
+    duration: {
+      instant: "75ms",
+      fast: "150ms",
+      base: "200ms",
+      moderate: "300ms",
+      slow: "500ms",
+      slower: "700ms"
+    },
+    easing: {
+      linear: "linear",
+      in: "cubic-bezier(0.4, 0, 1, 1)",
+      out: "cubic-bezier(0, 0, 0.2, 1)",
+      inOut: "cubic-bezier(0.4, 0, 0.2, 1)",
+      spring: "cubic-bezier(0.34, 1.56, 0.64, 1)"
+    }
   }
 };
 
@@ -179,6 +261,18 @@ var createCssVariableMap = (tokens2, options = {}) => {
   });
   Object.entries(tokens2.shadows).forEach(([key, value]) => {
     assign(toVariableName(prefix, "shadow", key), value);
+  });
+  Object.entries(tokens2.breakpoints).forEach(([key, value]) => {
+    assign(toVariableName(prefix, "breakpoint", key), value);
+  });
+  Object.entries(tokens2.zIndex).forEach(([key, value]) => {
+    assign(toVariableName(prefix, "z-index", key), value);
+  });
+  Object.entries(tokens2.transitions.duration).forEach(([key, value]) => {
+    assign(toVariableName(prefix, "duration", key), value);
+  });
+  Object.entries(tokens2.transitions.easing).forEach(([key, value]) => {
+    assign(toVariableName(prefix, "easing", key), value);
   });
   return map;
 };
@@ -221,7 +315,11 @@ var createTailwindTheme = (source = tokens) => {
     borderRadius: { ...source.radii },
     fontFamily,
     fontSize,
-    boxShadow: { ...source.shadows }
+    boxShadow: { ...source.shadows },
+    screens: { ...source.breakpoints },
+    zIndex: { ...source.zIndex },
+    transitionDuration: { ...source.transitions.duration },
+    transitionTimingFunction: { ...source.transitions.easing }
   };
 };
 var tailwindTheme = createTailwindTheme(tokens);

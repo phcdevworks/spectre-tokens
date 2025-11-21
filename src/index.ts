@@ -3,7 +3,7 @@ import coreTokens from '../tokens/core.json';
 import { createCssVariableMap, generateCssVariables } from './css';
 import type { TailwindTheme, Tokens } from './types';
 
-export type { TailwindTheme, Tokens, ColorScale, TokenScale, TypographyTokens } from './types';
+export type { TailwindTheme, Tokens, ColorScale, TokenScale, TypographyTokens, TransitionTokens } from './types';
 
 const tokens: Tokens = coreTokens as Tokens;
 
@@ -42,7 +42,11 @@ export const createTailwindTheme = (source: Tokens = tokens): TailwindTheme => {
     borderRadius: { ...source.radii },
     fontFamily,
     fontSize,
-    boxShadow: { ...source.shadows }
+    boxShadow: { ...source.shadows },
+    screens: { ...source.breakpoints },
+    zIndex: { ...source.zIndex },
+    transitionDuration: { ...source.transitions.duration },
+    transitionTimingFunction: { ...source.transitions.easing }
   };
 };
 

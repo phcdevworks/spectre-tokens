@@ -14,12 +14,20 @@ export interface TypographyTokens {
   scale: Record<string, TypographyScaleEntry>;
 }
 
+export interface TransitionTokens {
+  duration: TokenScale;
+  easing: TokenScale;
+}
+
 export interface Tokens {
   colors: Record<string, ColorScale>;
   spacing: TokenScale;
   radii: TokenScale;
   typography: TypographyTokens;
   shadows: TokenScale;
+  breakpoints: TokenScale;
+  zIndex: TokenScale;
+  transitions: TransitionTokens;
 }
 
 export type CssVariableMap = Record<string, string>;
@@ -36,4 +44,8 @@ export interface TailwindTheme {
   fontFamily: Record<string, string[]>;
   fontSize: Record<string, [string, { lineHeight: string; fontWeight?: number; letterSpacing?: string }]>;
   boxShadow: TokenScale;
+  screens: TokenScale;
+  zIndex: TokenScale;
+  transitionDuration: TokenScale;
+  transitionTimingFunction: TokenScale;
 }
