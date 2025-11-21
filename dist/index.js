@@ -84,6 +84,102 @@ var core_default = {
       "700": "#1d4ed8",
       "800": "#1e40af",
       "900": "#1e3a8a"
+    },
+    focus: {
+      primary: "#8652ff",
+      error: "#ef4444",
+      info: "#3b82f6"
+    }
+  },
+  opacity: {
+    disabled: "0.38",
+    hover: "0.92",
+    active: "0.84",
+    focus: "1",
+    overlay: "0.5",
+    tooltip: "0.95"
+  },
+  accessibility: {
+    focusRing: {
+      width: "2px",
+      offset: "2px",
+      style: "solid"
+    },
+    minTouchTarget: "44px",
+    minTextSize: "16px"
+  },
+  buttons: {
+    primary: {
+      bg: "#8652ff",
+      bgHover: "#6c32e6",
+      bgActive: "#5626b4",
+      bgDisabled: "#cbd5f5",
+      text: "#ffffff",
+      textDisabled: "#94a3b8"
+    },
+    secondary: {
+      bg: "#ffffff",
+      bgHover: "#f1f5f9",
+      bgActive: "#e2e8f0",
+      bgDisabled: "#f8fafc",
+      text: "#8652ff",
+      textDisabled: "#94a3b8",
+      border: "#8652ff",
+      borderDisabled: "#cbd5f5"
+    },
+    ghost: {
+      bg: "transparent",
+      bgHover: "#f5f0ff",
+      bgActive: "#ebe2ff",
+      bgDisabled: "transparent",
+      text: "#8652ff",
+      textDisabled: "#94a3b8"
+    },
+    danger: {
+      bg: "#ef4444",
+      bgHover: "#dc2626",
+      bgActive: "#b91c1c",
+      bgDisabled: "#fecaca",
+      text: "#ffffff",
+      textDisabled: "#94a3b8"
+    },
+    success: {
+      bg: "#22c55e",
+      bgHover: "#16a34a",
+      bgActive: "#15803d",
+      bgDisabled: "#bbf7d0",
+      text: "#ffffff",
+      textDisabled: "#94a3b8"
+    }
+  },
+  forms: {
+    default: {
+      bg: "#ffffff",
+      border: "#cbd5f5",
+      text: "#0f172a",
+      placeholder: "#94a3b8"
+    },
+    hover: {
+      border: "#8652ff"
+    },
+    focus: {
+      border: "#8652ff",
+      ring: "#8652ff"
+    },
+    valid: {
+      border: "#22c55e",
+      bg: "#f0fdf4",
+      text: "#15803d"
+    },
+    invalid: {
+      border: "#ef4444",
+      bg: "#fef2f2",
+      text: "#b91c1c"
+    },
+    disabled: {
+      bg: "#f8fafc",
+      border: "#e2e8f0",
+      text: "#94a3b8"
     }
   },
   spacing: {
@@ -189,6 +285,48 @@ var core_default = {
       inOut: "cubic-bezier(0.4, 0, 0.2, 1)",
       spring: "cubic-bezier(0.34, 1.56, 0.64, 1)"
     }
+  },
+  animations: {
+    fadeIn: {
+      duration: "200ms",
+      easing: "cubic-bezier(0, 0, 0.2, 1)",
+      keyframes: "fade-in"
+    },
+    fadeOut: {
+      duration: "150ms",
+      easing: "cubic-bezier(0.4, 0, 1, 1)",
+      keyframes: "fade-out"
+    },
+    slideUp: {
+      duration: "300ms",
+      easing: "cubic-bezier(0, 0, 0.2, 1)",
+      keyframes: "slide-up"
+    },
+    slideDown: {
+      duration: "300ms",
+      easing: "cubic-bezier(0, 0, 0.2, 1)",
+      keyframes: "slide-down"
+    },
+    scaleIn: {
+      duration: "200ms",
+      easing: "cubic-bezier(0.34, 1.56, 0.64, 1)",
+      keyframes: "scale-in"
+    },
+    bounce: {
+      duration: "500ms",
+      easing: "cubic-bezier(0.34, 1.56, 0.64, 1)",
+      keyframes: "bounce"
+    },
+    shake: {
+      duration: "400ms",
+      easing: "cubic-bezier(0.4, 0, 0.2, 1)",
+      keyframes: "shake"
+    },
+    pulse: {
+      duration: "1500ms",
+      easing: "cubic-bezier(0.4, 0, 0.2, 1)",
+      keyframes: "pulse"
+    }
   }
 };
 
@@ -242,6 +380,29 @@ var createCssVariableMap = (tokens2, options = {}) => {
   Object.entries(tokens2.transitions.easing).forEach(([key, value]) => {
     assign(toVariableName(prefix, "easing", key), value);
   });
+  Object.entries(tokens2.opacity).forEach(([key, value]) => {
+    assign(toVariableName(prefix, "opacity", key), value);
+  });
+  assign(toVariableName(prefix, "focus-ring-width"), tokens2.accessibility.focusRing.width);
+  assign(toVariableName(prefix, "focus-ring-offset"), tokens2.accessibility.focusRing.offset);
+  assign(toVariableName(prefix, "focus-ring-style"), tokens2.accessibility.focusRing.style);
+  assign(toVariableName(prefix, "min-touch-target"), tokens2.accessibility.minTouchTarget);
+  assign(toVariableName(prefix, "min-text-size"), tokens2.accessibility.minTextSize);
+  Object.entries(tokens2.buttons).forEach(([variant, states]) => {
+    Object.entries(states).forEach(([state, value]) => {
+      assign(toVariableName(prefix, "button", variant, state), value);
+    });
+  });
+  Object.entries(tokens2.forms).forEach(([state, properties]) => {
+    Object.entries(properties).forEach(([prop, value]) => {
+      if (value) assign(toVariableName(prefix, "form", state, prop), value);
+    });
+  });
+  Object.entries(tokens2.animations).forEach(([name, animation]) => {
+    assign(toVariableName(prefix, "animation", name, "duration"), animation.duration);
+    assign(toVariableName(prefix, "animation", name, "easing"), animation.easing);
+    assign(toVariableName(prefix, "animation", name, "keyframes"), animation.keyframes);
+  });
   return map;
 };
 var generateCssVariables = (tokens2, options = {}) => {
@@ -287,7 +448,8 @@ var createTailwindTheme = (source = tokens) => {
     screens: { ...source.breakpoints },
     zIndex: { ...source.zIndex },
     transitionDuration: { ...source.transitions.duration },
-    transitionTimingFunction: { ...source.transitions.easing }
+    transitionTimingFunction: { ...source.transitions.easing },
+    opacity: { ...source.opacity }
   };
 };
 var tailwindTheme = createTailwindTheme(tokens);
