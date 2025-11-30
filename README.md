@@ -1,31 +1,16 @@
-# Spectre Tokens
+# @phcdevworks/spectre-tokens
 
-**Spectre Tokens** is the foundational design layer of the **Spectre Suite** — a token-driven design system that powers consistent styling across all Spectre projects.
-
-It defines Spectre's visual identity through design tokens (colors, typography, spacing, radii, shadows, breakpoints, z-index, transitions) consumed by **Spectre UI**, **Spectre Blocks** (WordPress), **Spectre Astro**, **Spectre 11ty**, and future Spectre tools.
-
-> One token system. Many frameworks. Full consistency.
-
----
+Design-token source of truth that powers Spectre UI, Spectre Blocks, Spectre Astro, Spectre 11ty, and every future Spectre surface.
 
 ## Overview
 
-Spectre Tokens provides a centralized source of truth for design decisions across the entire Spectre ecosystem. Whether you're building WordPress blocks, static sites with Astro or 11ty, or future Spectre integrations, Spectre Tokens ensures your design language remains consistent and maintainable.
+`@phcdevworks/spectre-tokens` defines Spectre's visual language—colors, typography, spacing, radii, shadows, breakpoints, z-index scales, transitions, and CRO-focused interaction states. The package turns the raw JSON tokens in `tokens/` into multiple consumption modes (JS, TS, Tailwind, CSS variables) so that teams can stay in sync regardless of framework. One token system runs the entire Spectre Suite; every other package simply consumes these values.
 
-## Features
-
-- **Token-Driven Design**: Centralized design tokens for colors, typography, spacing, and more
-- **Cross-Platform**: Powers styling across WordPress, Astro, 11ty, and beyond
-- **Multiple Formats**: Export tokens as CSS variables, JSON, JavaScript, and more
-- **Type-Safe**: TypeScript definitions for all design tokens
-- **Themeable**: Easy customization and theming support
-- **Semantic Colors**: Built-in success, warning, error, and info color scales
-- **Responsive Design**: Consistent breakpoint tokens for all screen sizes
-- **Motion Design**: Transition duration and easing tokens for animations
-- **Z-Index Scale**: Organized layering system for consistent stacking
-- **CRO-Optimized**: Button variants, form states, and micro-interactions for higher conversions
-- **Accessibility First**: WCAG-compliant focus states and touch target guidelines
-- **Interaction States**: Opacity and state tokens for hover, active, disabled, and more
+- ✅ Centralized token definitions and semantic naming
+- ✅ JS/TS objects, Tailwind theme + preset, and CSS variable outputs
+- ✅ CRO-focused surfaces (buttons, forms, states) and WCAG-first accessibility tokens
+- ✅ Format-agnostic helpers for scoped CSS variable generation
+- ✅ Type-safe outputs with bundled `.d.ts` files
 
 ## Installation
 
@@ -35,203 +20,7 @@ npm install @phcdevworks/spectre-tokens
 
 ## Usage
 
-Import Spectre Tokens into your project:
-
-```javascript
-import tokens from "@phcdevworks/spectre-tokens";
-```
-
-Or use CSS variables directly:
-
-```css
-@import "@phcdevworks/spectre-tokens/css/tokens.css";
-
-.my-component {
-  color: var(--spectre-color-primary);
-  padding: var(--spectre-spacing-4);
-  border-radius: var(--spectre-radius-md);
-}
-```
-
-## CRO & Accessibility Features
-
-### Button Variants (Conversion-Optimized)
-
-Spectre Tokens includes pre-designed button variants optimized for conversion rate optimization:
-
-```javascript
-// Available button variants
-tokens.buttons.primary; // High-contrast primary CTA
-tokens.buttons.secondary; // Outlined secondary action
-tokens.buttons.ghost; // Minimal tertiary action
-tokens.buttons.danger; // Destructive actions
-tokens.buttons.success; // Positive confirmation
-```
-
-Each variant includes full state coverage:
-
-- `bg`, `bgHover`, `bgActive`, `bgDisabled`
-- `text`, `textDisabled`
-- `border`, `borderDisabled` (for outlined variants)
-
-**CSS Usage:**
-
-```css
-.cta-button {
-  background: var(--sp-button-primary-bg);
-  color: var(--sp-button-primary-text);
-}
-.cta-button:hover {
-  background: var(--sp-button-primary-bg-hover);
-}
-```
-
-### Form States (Validation & Feedback)
-
-Complete form state tokens for clear user feedback:
-
-```javascript
-tokens.forms.default; // Initial state
-tokens.forms.hover; // Mouse hover
-tokens.forms.focus; // Keyboard focus
-tokens.forms.valid; // Successful validation
-tokens.forms.invalid; // Error state
-tokens.forms.disabled; // Non-interactive
-```
-
-**CSS Usage:**
-
-```css
-.input {
-  background: var(--sp-form-default-bg);
-  border: 1px solid var(--sp-form-default-border);
-}
-.input:focus {
-  border-color: var(--sp-form-focus-border);
-  outline: var(--sp-focus-ring-width) var(--sp-focus-ring-style) var(--sp-form-focus-ring);
-}
-.input.error {
-  border-color: var(--sp-form-invalid-border);
-  background: var(--sp-form-invalid-bg);
-}
-```
-
-### Accessibility Standards
-
-Built-in WCAG compliance helpers:
-
-```javascript
-tokens.accessibility.focusRing.width; // 2px
-tokens.accessibility.focusRing.offset; // 2px
-tokens.accessibility.minTouchTarget; // 44px (WCAG 2.5.5)
-tokens.accessibility.minTextSize; // 16px
-```
-
-**Focus Colors:**
-
-```javascript
-tokens.colors.focus.primary; // Brand-aligned focus ring
-tokens.colors.focus.error; // Error state focus
-tokens.colors.focus.info; // Info state focus
-```
-
-### Micro-Interactions & Animations
-
-Pre-configured animations for engagement:
-
-```javascript
-tokens.animations.fadeIn; // Subtle entrance
-tokens.animations.slideDown; // Dropdown reveal
-tokens.animations.scaleIn; // Modal/tooltip appearance
-tokens.animations.bounce; // Success feedback
-tokens.animations.shake; // Error feedback
-tokens.animations.pulse; // Loading state
-```
-
-**CSS Usage:**
-
-```css
-@keyframes fade-in {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-.modal {
-  animation: fade-in var(--sp-animation-fade-in-duration) var(
-      --sp-animation-fade-in-easing
-    );
-}
-```
-
-### Opacity Tokens
-
-Consistent interaction opacity:
-
-```javascript
-tokens.opacity.hover; // 0.92 - Subtle hover
-tokens.opacity.active; // 0.84 - Active press
-tokens.opacity.disabled; // 0.38 - Disabled state (WCAG compliant)
-tokens.opacity.overlay; // 0.5  - Modal overlays
-```
-
-### WCAG Contrast Guidelines
-
-**Primary Colors:**
-
-- Brand 500 on white: ✅ AAA (contrast ratio 4.8:1)
-- Success 600 on white: ✅ AAA (contrast ratio 4.7:1)
-- Error 600 on white: ✅ AAA (contrast ratio 5.2:1)
-
-**Text Colors:**
-
-- Neutral 900 on white: ✅ AAA (contrast ratio 16.1:1)
-- Neutral 700 on white: ✅ AA (contrast ratio 8.4:1)
-
-**Focus Indicators:**
-
-- All focus rings meet WCAG 2.4.7 (2px solid, high contrast)
-
-> **Note:** Always test final implementations with contrast checking tools like [WebAIM Contrast Checker](https://webaim.org/resources/contrastchecker/).
-
----
-
-## Part of the Spectre Suite
-
-- **Spectre Tokens**: Design token foundation (this package)
-- **Spectre UI**: Core styling layer
-- **Spectre Blocks**: WordPress block library
-- **Spectre Astro**: Astro integration
-- **Spectre 11ty**: Eleventy integration
-
-## License
-
-MIT
-
-## Contributing
-
-Contributions are welcome! Please open an issue or submit a pull request.
-
----
-
-## Repository layout
-
-| Folder     | Responsibility                                                                                                |
-| ---------- | ------------------------------------------------------------------------------------------------------------- |
-| `tokens/`  | Raw JSON tokens owned by design. `core.json` holds colors, spacing, radii, typography scale, and shadows.     |
-| `src/`     | TypeScript source that turns JSON into reusable formats (JS/TS objects, Tailwind theme, CSS helpers).         |
-| `scripts/` | Build utilities. `build-css.js` consumes the compiled library and writes `dist/index.css`.                    |
-| `dist/`    | Generated artifacts: `index.js`, `index.cjs`, `index.d.ts`, and `index.css`. Regenerated via `npm run build`. |
-
-Designers only edit `tokens/`. Engineering evolves `src/` + `scripts/` when structure changes.
-
----
-
-## Consuming the tokens
-
-### Programmatic access (JS/TS)
+### 1. Import tokens (JS/TS)
 
 ```ts
 import tokens, {
@@ -240,25 +29,15 @@ import tokens, {
   generateCssVariables,
 } from "@phcdevworks/spectre-tokens";
 
-// Raw structured tokens (colors, spacing, radii, typography, shadows)
-console.log(tokens.colors.brand["500"]);
-
-// Tailwind-ready theme or preset drop-in
-export default {
-  theme: tailwindTheme,
-  presets: [tailwindPreset],
-};
-
-// Generic CSS variable string if you want custom selectors or prefixes
-const css = generateCssVariables(tokens, {
-  selector: ".spectre-scope",
-  prefix: "sp",
-});
+console.log(tokens.colors.brand["500"]); // Brand palette swatches
 ```
 
-### CSS variables
+- `tokens`: Raw structured tokens (colors, spacing, radii, typography, shadows, z-index, transitions, etc.).
+- `tailwindTheme`: Drop into `theme: tailwindTheme`.
+- `tailwindPreset`: Add to `presets: [tailwindPreset]`.
+- `generateCssVariables()`: Build custom `--sp-*` strings with scoped selectors or prefixes.
 
-Include the generated CSS file to get `--sp-*` variables anywhere:
+### 2. CSS variables
 
 ```css
 @import "@phcdevworks/spectre-tokens/index.css";
@@ -271,28 +50,174 @@ Include the generated CSS file to get `--sp-*` variables anywhere:
 }
 ```
 
----
+To scope or re-prefix variables:
 
-## Tailwind compatibility
-
-This package exposes a Tailwind-style theme object and a preset wrapper built with the classic Tailwind config shape (`theme.extend` with colors, spacing, font families, etc.). Tailwind CSS v4 introduces the Oxide engine and optional token-centric workflows, but it still supports the traditional `tailwind.config.(js|cjs|mjs|ts)` file, theme configuration, and presets. You can continue to consume `tailwindPreset` or spread `tailwindTheme` in both Tailwind 3 and Tailwind 4 projects without changes.
-
-When Tailwind’s new token-first features stabilize, we may add an additional export that serializes `tokens/core.json` into whatever public token schema Tailwind ships. Until then, treat this library as a conventional Tailwind theme/preset provider that uses the stable config-based API.
-
-Engineering guidance:
-
-- Primary integration: keep exporting `tailwindTheme` (Spectre theme contents) and `tailwindPreset` (for `presets: []`).
-- Support Tailwind 3.x and 4.x via the classic config API; avoid depending on v4-specific internals or JSON token formats.
-- Future (optional): layer on a token-native export once Tailwind’s token workflows are documented and stable, without removing the preset interface.
-
-Public messaging across Spectre projects should stay simple: “Works with Tailwind 3 and 4 via the standard config-based API. We export a theme and preset; plug it in like any other Tailwind preset. When Tailwind’s token workflow is ready, we’ll offer an additional integration.”
-
----
-
-## Build & release
-
+```ts
+const css = generateCssVariables(tokens, {
+  selector: ".spectre-scope",
+  prefix: "sp",
+});
 ```
+
+### 3. Tailwind integration
+
+```ts
+// tailwind.config.ts
+import { tailwindPreset } from "@phcdevworks/spectre-tokens";
+
+export default {
+  presets: [tailwindPreset],
+};
+```
+
+Works with Tailwind 3.x and 4.x through the classic config API; no Oxide lock-in required.
+
+## Token Surfaces
+
+### Conversion-ready button variants
+
+```ts
+tokens.buttons.primary; // CTA baseline
+tokens.buttons.secondary; // Outlined
+tokens.buttons.ghost; // Low-emphasis
+tokens.buttons.danger; // Destructive
+tokens.buttons.success; // Confirmations
+```
+
+Each variant ships with `bg`, `bgHover`, `bgActive`, `bgDisabled`, `text`, `textDisabled`, `border`, and `borderDisabled`, ensuring consistent CRO states.
+
+```css
+.cta-button {
+  background: var(--sp-button-primary-bg);
+  color: var(--sp-button-primary-text);
+}
+.cta-button:hover {
+  background: var(--sp-button-primary-bg-hover);
+}
+```
+
+### Form states (validation + UX)
+
+```ts
+tokens.forms.default;
+tokens.forms.hover;
+tokens.forms.focus;
+tokens.forms.valid;
+tokens.forms.invalid;
+tokens.forms.disabled;
+```
+
+```css
+.input:focus {
+  border-color: var(--sp-form-focus-border);
+  outline: var(--sp-focus-ring-width) var(--sp-focus-ring-style)
+    var(--sp-form-focus-ring);
+}
+.input.error {
+  border-color: var(--sp-form-invalid-border);
+  background: var(--sp-form-invalid-bg);
+}
+```
+
+### Accessibility helpers
+
+```ts
+tokens.accessibility.focusRing.width; // 2px
+tokens.accessibility.focusRing.offset; // 2px
+tokens.accessibility.minTouchTarget; // 44px (WCAG 2.5.5)
+tokens.accessibility.minTextSize; // 16px
+tokens.colors.focus.primary; // Brand-aligned focus
+tokens.colors.focus.error; // Error state focus
+tokens.colors.focus.info; // Info state focus
+```
+
+### Motion & micro-interactions
+
+```ts
+tokens.animations.fadeIn;
+tokens.animations.slideDown;
+tokens.animations.scaleIn;
+tokens.animations.bounce;
+tokens.animations.shake;
+tokens.animations.pulse;
+```
+
+```css
+.modal {
+  animation: fade-in var(--sp-animation-fade-in-duration)
+    var(--sp-animation-fade-in-easing);
+}
+```
+
+### Opacity scale
+
+```ts
+tokens.opacity.hover; // 0.92
+tokens.opacity.active; // 0.84
+tokens.opacity.disabled; // 0.38
+tokens.opacity.overlay; // 0.5
+```
+
+### WCAG targets
+
+- Brand 500 on white → ✅ AAA (4.8:1)
+- Success 600 on white → ✅ AAA (4.7:1)
+- Error 600 on white → ✅ AAA (5.2:1)
+- Neutral 900 on white → ✅ AAA (16.1:1)
+- Neutral 700 on white → ✅ AA (8.4:1)
+- Focus rings meet WCAG 2.4.7 (2px solid, high contrast)
+
+Always re-run final UI implementations through tools like [WebAIM Contrast Checker](https://webaim.org/resources/contrastchecker/).
+
+## Repository Layout
+
+| Folder     | Responsibility                                                                                                |
+| ---------- | ------------------------------------------------------------------------------------------------------------- |
+| `tokens/`  | Raw JSON tokens owned by design. `core.json` holds colors, spacing, radii, typography scales, and shadows.    |
+| `src/`     | TypeScript source that turns JSON into reusable formats (JS/TS exports, Tailwind theme, CSS helpers).         |
+| `scripts/` | Build utilities. `build-css.js` consumes the compiled library and writes `dist/index.css`.                    |
+| `dist/`    | Generated artifacts: `index.js`, `index.cjs`, `index.d.ts`, and `index.css`. Regenerated via `npm run build`. |
+
+Designers only touch the JSON under `tokens/`. Engineering evolves `src/` + `scripts/` when structure changes.
+
+## Build & Release
+
+```bash
 npm run build
 ```
 
-This command bundles the TypeScript library with `tsup` (ESM + CJS + `.d.ts`) and then calls `scripts/build-css.js` to emit `dist/index.css`. Because `dist/` is fully generated, publishing is reproducible from `tokens/` + `src/`.
+`tsup` compiles the TypeScript library (ESM, CJS, `.d.ts`) and `scripts/build-css.js` emits `dist/index.css`. Because `dist/` is generated, releases are reproducible from `tokens/` + `src/`.
+
+## Design Principles
+
+1. **Single source of truth** – Tokens originate in JSON and flow into every runtime surface.
+2. **Format-agnostic** – Consumers choose JS objects, CSS variables, Tailwind presets, or generated strings.
+3. **Framework-neutral** – Works in WordPress, Astro, 11ty, React, or any environment that can ingest CSS/JS.
+4. **Accessibility-first** – Focus rings, touch targets, and contrast targets are encoded directly in tokens.
+5. **CRO-aware** – Buttons, forms, and state tokens are tuned for real-world conversion funnels.
+
+## TypeScript Support
+
+Type definitions are bundled automatically:
+
+```ts
+import type { SpectreTokens } from "@phcdevworks/spectre-tokens";
+
+const allTokens: SpectreTokens = tokens;
+```
+
+## Part of the Spectre Suite
+
+- **Spectre Tokens** – Design-token foundation (this package)
+- **Spectre UI** – Core styling layer
+- **Spectre Blocks** – WordPress block library
+- **Spectre Astro** – Astro integration
+- **Spectre 11ty** – Eleventy integration
+
+## Contributing
+
+Issues and pull requests are welcome. If you are proposing token changes, update `tokens/` and include regenerated builds.
+
+## License
+
+MIT © PHCDevworks
