@@ -1,6 +1,6 @@
 import coreTokens from '../tokens/core.json';
 
-import { createCssVariableMap, generateCssVariables } from './css';
+import { generateCssVariables } from './css';
 import type { TailwindTheme, Tokens } from './types';
 
 export type { TailwindTheme, Tokens, ColorScale, TokenScale, TypographyTokens, TransitionTokens, AccessibilityTokens, ButtonStateTokens, FormStateTokens, AnimationEntry } from './types';
@@ -13,7 +13,7 @@ const sanitizeFontFamily = (value: string): string[] =>
     .map((segment) => segment.trim().replace(/^['"]|['"]$/g, ''))
     .filter(Boolean);
 
-export const createTailwindTheme = (source: Tokens = tokens): TailwindTheme => {
+const createTailwindTheme = (source: Tokens = tokens): TailwindTheme => {
   const colors: TailwindTheme['colors'] = {};
   Object.entries(source.colors).forEach(([group, scale]) => {
     colors[group] = { ...scale };
@@ -56,5 +56,5 @@ export const tailwindPreset = {
   theme: tailwindTheme
 };
 
-export { tokens, createCssVariableMap, generateCssVariables };
+export { tokens, generateCssVariables };
 export default tokens;
