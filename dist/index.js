@@ -458,8 +458,6 @@ var tailwindPreset = {
 };
 var index_default = tokens;
 export {
-  createCssVariableMap,
-  createTailwindTheme,
   index_default as default,
   generateCssVariables,
   tailwindPreset,

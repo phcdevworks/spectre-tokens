@@ -32,15 +32,15 @@ import tokens, {
 console.log(tokens.colors.brand["500"]); // Brand palette swatches
 ```
 
-- `tokens`: Raw structured tokens (colors, spacing, radii, typography, shadows, z-index, transitions, etc.).
-- `tailwindTheme`: Drop into `theme: tailwindTheme`.
-- `tailwindPreset`: Add to `presets: [tailwindPreset]`.
-- `generateCssVariables()`: Build custom `--sp-*` strings with scoped selectors or prefixes.
+- `tokens`: Raw structured tokens (colors, spacing, radii, typography, shadows, z-index, transitions, buttons, forms, accessibility, animations, opacity).
+- `tailwindTheme`: Ready-to-use Tailwind theme object.
+- `tailwindPreset`: Preset for Tailwind config (includes theme).
+- `generateCssVariables()`: Generate custom `--sp-*` CSS variable strings with scoped selectors or prefixes.
 
 ### 2. CSS variables
 
 ```css
-@import "@phcdevworks/spectre-tokens/index.css";
+@import "@phcdevworks/spectre-tokens/dist/index.css";
 
 .button {
   color: var(--sp-color-brand-500);
@@ -110,8 +110,7 @@ tokens.forms.disabled;
 ```css
 .input:focus {
   border-color: var(--sp-form-focus-border);
-  outline: var(--sp-focus-ring-width) var(--sp-focus-ring-style)
-    var(--sp-form-focus-ring);
+  outline: var(--sp-focus-ring-width) var(--sp-focus-ring-style) var(--sp-form-focus-ring);
 }
 .input.error {
   border-color: var(--sp-form-invalid-border);
@@ -144,8 +143,9 @@ tokens.animations.pulse;
 
 ```css
 .modal {
-  animation: fade-in var(--sp-animation-fade-in-duration)
-    var(--sp-animation-fade-in-easing);
+  animation: fade-in var(--sp-animation-fade-in-duration) var(
+      --sp-animation-fade-in-easing
+    );
 }
 ```
 
@@ -201,7 +201,14 @@ npm run build
 Type definitions are bundled automatically:
 
 ```ts
-import type { SpectreTokens } from "@phcdevworks/spectre-tokens";
+import type {
+  Tokens,
+  SpectreTokens,
+  TailwindTheme,
+  ColorScale,
+  ButtonStateTokens,
+  FormStateTokens,
+} from "@phcdevworks/spectre-tokens";
 
 const allTokens: SpectreTokens = tokens;
 ```

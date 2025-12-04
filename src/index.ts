@@ -1,11 +1,11 @@
 import coreTokens from '../tokens/core.json';
 
 import { generateCssVariables } from './css';
-import type { TailwindTheme, Tokens } from './types';
+import type { SpectreTokens, TailwindTheme, Tokens } from './types';
 
-export type { TailwindTheme, Tokens, ColorScale, TokenScale, TypographyTokens, TransitionTokens, AccessibilityTokens, ButtonStateTokens, FormStateTokens, AnimationEntry } from './types';
+export type { TailwindTheme, Tokens, SpectreTokens, ColorScale, TokenScale, TypographyTokens, TransitionTokens, AccessibilityTokens, ButtonStateTokens, FormStateTokens, AnimationEntry } from './types';
 
-const tokens: Tokens = coreTokens as Tokens;
+const tokens: SpectreTokens = coreTokens as SpectreTokens;
 
 const sanitizeFontFamily = (value: string): string[] =>
   value
@@ -13,7 +13,7 @@ const sanitizeFontFamily = (value: string): string[] =>
     .map((segment) => segment.trim().replace(/^['"]|['"]$/g, ''))
     .filter(Boolean);
 
-const createTailwindTheme = (source: Tokens = tokens): TailwindTheme => {
+const createTailwindTheme = (source: Tokens = tokens as Tokens): TailwindTheme => {
   const colors: TailwindTheme['colors'] = {};
   Object.entries(source.colors).forEach(([group, scale]) => {
     colors[group] = { ...scale };
@@ -51,7 +51,7 @@ const createTailwindTheme = (source: Tokens = tokens): TailwindTheme => {
   };
 };
 
-export const tailwindTheme = createTailwindTheme(tokens);
+export const tailwindTheme = createTailwindTheme(tokens as Tokens);
 export const tailwindPreset = {
   theme: tailwindTheme
 };
