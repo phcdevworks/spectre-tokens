@@ -20,8 +20,6 @@ var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: tru
 // src/index.ts
 var index_exports = {};
 __export(index_exports, {
-  createCssVariableMap: () => createCssVariableMap,
-  createTailwindTheme: () => createTailwindTheme,
   default: () => index_default,
   generateCssVariables: () => generateCssVariables,
   tailwindPreset: () => tailwindPreset,
@@ -491,8 +489,6 @@ var tailwindPreset = {
 var index_default = tokens;
 // Annotate the CommonJS export names for ESM import in node:
 0 && (module.exports = {
-  createCssVariableMap,
-  createTailwindTheme,
   generateCssVariables,
   tailwindPreset,
   tailwindTheme,

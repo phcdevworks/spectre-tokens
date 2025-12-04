@@ -54,6 +54,22 @@ export interface FormStateTokens {
   ring?: string;
 }
 
+export interface SpectreTokens {
+  colors: any;
+  spacing: any;
+  radii: any;
+  typography: any;
+  shadows: any;
+  breakpoints: any;
+  zIndex: any;
+  transitions: any;
+  buttons?: any;
+  forms?: any;
+  accessibility?: any;
+  opacity?: any;
+  animations?: any;
+}
+
 export interface Tokens {
   colors: Record<string, ColorScale>;
   opacity: TokenScale;

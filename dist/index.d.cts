@@ -45,6 +45,21 @@ interface FormStateTokens {
     placeholder?: string;
     ring?: string;
 }
+interface SpectreTokens {
+    colors: any;
+    spacing: any;
+    radii: any;
+    typography: any;
+    shadows: any;
+    breakpoints: any;
+    zIndex: any;
+    transitions: any;
+    buttons?: any;
+    forms?: any;
+    accessibility?: any;
+    opacity?: any;
+    animations?: any;
+}
 interface Tokens {
     colors: Record<string, ColorScale>;
     opacity: TokenScale;
@@ -60,7 +75,6 @@ interface Tokens {
     transitions: TransitionTokens;
     animations: Record<string, AnimationEntry>;
 }
-type CssVariableMap = Record<string, string>;
 interface CssVariableOptions {
     selector?: string;
     prefix?: string;
@@ -83,14 +97,12 @@ interface TailwindTheme {
     opacity: TokenScale;
 }
 
-declare const createCssVariableMap: (tokens: Tokens, options?: CssVariableOptions) => CssVariableMap;
 declare const generateCssVariables: (tokens: Tokens, options?: CssVariableOptions) => string;
 
-declare const tokens: Tokens;
-declare const createTailwindTheme: (source?: Tokens) => TailwindTheme;
+declare const tokens: SpectreTokens;
 declare const tailwindTheme: TailwindTheme;
 declare const tailwindPreset: {
     theme: TailwindTheme;
 };
 
-export { type AccessibilityTokens, type AnimationEntry, type ButtonStateTokens, type ColorScale, type FormStateTokens, type TailwindTheme, type TokenScale, type Tokens, type TransitionTokens, type TypographyTokens, createCssVariableMap, createTailwindTheme, tokens as default, generateCssVariables, tailwindPreset, tailwindTheme, tokens };
+export { type AccessibilityTokens, type AnimationEntry, type ButtonStateTokens, type ColorScale, type FormStateTokens, type SpectreTokens, type TailwindTheme, type TokenScale, type Tokens, type TransitionTokens, type TypographyTokens, tokens as default, generateCssVariables, tailwindPreset, tailwindTheme, tokens };
