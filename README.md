@@ -2,6 +2,8 @@
 
 Design-token source of truth that powers Spectre UI, Spectre Blocks, Spectre Astro, Spectre 11ty, and every future Spectre surface.
 
+> 📋 **[View Roadmap](ROADMAP.md)** | 🤝 **[Contributing Guide](CONTRIBUTING.md)** | 📝 **[Changelog](CHANGELOG.md)**
+
 ## Overview
 
 `@phcdevworks/spectre-tokens` defines Spectre's visual language—colors, typography, spacing, radii, shadows, breakpoints, z-index scales, transitions, and CRO-focused interaction states. The package turns the raw JSON tokens in `tokens/` into multiple consumption modes (JS, TS, Tailwind, CSS variables) so that teams can stay in sync regardless of framework. One token system runs the entire Spectre Suite; every other package simply consumes these values.
@@ -188,6 +190,8 @@ npm run build
 
 `tsup` compiles the TypeScript library (ESM, CJS, `.d.ts`) and `scripts/build-css.js` emits `dist/index.css`. Because `dist/` is generated, releases are reproducible from `tokens/` + `src/`.
 
+For release history and version notes, see the **[Changelog](CHANGELOG.md)**.
+
 ## Design Principles
 
 1. **Single source of truth** – Tokens originate in JSON and flow into every runtime surface.
@@ -221,10 +225,14 @@ const allTokens: SpectreTokens = tokens;
 - **Spectre Astro** – Astro integration
 - **Spectre 11ty** – Eleventy integration
 
+For the project's future direction, see the **[Roadmap](ROADMAP.md)**.
+
 ## Contributing
 
 Issues and pull requests are welcome. If you are proposing token changes, update `tokens/` and include regenerated builds.
 
+For detailed contribution guidelines, see **[CONTRIBUTING.md](CONTRIBUTING.md)**.
+
 ## License
 
-MIT © PHCDevworks
+MIT © PHCDevworks — See **[LICENSE](LICENSE)** for details.
