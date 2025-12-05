@@ -2,14 +2,49 @@
   "name": "@phcdevworks/spectre-tokens",
   "version": "0.0.2",
   "description": "Spectre design tokens with JS, TS, Tailwind, and CSS variable outputs.",
+  "keywords": [
+    "phcdevworks",
+    "spectre",
+    "spectre-tokens",
+    "design-tokens",
+    "tokens",
+    "css-variables",
+    "css-custom-properties",
+    "tailwindcss",
+    "tailwind-theme",
+    "theming",
+    "ui-design",
+    "typescript",
+    "javascript"
+  ],
+
+  "author": "PHCDevworks",
+  "license": "MIT",
+
+  "funding": [
+    {
+      "type": "github",
+      "url": "https://github.com/sponsors/phcdevworks"
+    },
+    {
+      "type": "buymeacoffee",
+      "url": "https://buymeacoffee.com/phcdevworks"
+    }
+  ],
+
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/phcdevworks/spectre-tokens.git"
+  },
+  "bugs": {
+    "url": "https://github.com/phcdevworks/spectre-tokens/issues"
+  },
+  "homepage": "https://github.com/phcdevworks/spectre-tokens#readme",
+
+  "type": "module",
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
-  "scripts": {
-    "build": "npm run build:ts && npm run build:css",
-    "build:ts": "tsup",
-    "build:css": "node scripts/build-css.js"
-  },
   "exports": {
     ".": {
       "import": "./dist/index.js",
@@ -18,23 +53,23 @@
     },
     "./index.css": "./dist/index.css"
   },
+
   "files": [
     "dist",
     "tokens"
   ],
   "sideEffects": false,
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/phcdevworks/spectre-tokens.git"
+
+  "scripts": {
+    "build": "npm run build:ts && npm run build:css",
+    "build:ts": "tsup",
+    "build:css": "node scripts/build-css.js"
   },
-  "keywords": [],
-  "author": "",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/phcdevworks/spectre-tokens/issues"
+
+  "publishConfig": {
+    "access": "public"
   },
-  "homepage": "https://github.com/phcdevworks/spectre-tokens#readme",
-  "type": "module",
+
   "devDependencies": {
     "tsup": "^8.5.1",
     "typescript": "^5.9.3"
