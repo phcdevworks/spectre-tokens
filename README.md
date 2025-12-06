@@ -171,6 +171,12 @@ tokens.opacity.overlay; // 0.5
 
 Always re-run final UI implementations through tools like [WebAIM Contrast Checker](https://webaim.org/resources/contrastchecker/).
 
+## Surface & Typography Roles
+
+- `surface.page`, `surface.card`, `surface.input`, `surface.overlay`: semantic backgrounds for the app canvas, containers/tiles, form fields, and modal/dropdown layers.
+- `text.onPage.*` vs `text.onSurface.*`: use `onPage` for copy sitting directly on the page canvas; use `onSurface` for text inside cards, tiles, inputs, overlays, and other elevated surfaces.
+- `component.card.text`/`textMuted`, `component.input.text`/`placeholder`, and `component.button.textDefault`/`textOnPrimary` alias the underlying `text.onSurface` roles (with `textOnPrimary` pairing white against the primary button background) to keep component defaults aligned.
+
 ## Repository Layout
 
 | Folder     | Responsibility                                                                                                |
