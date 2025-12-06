@@ -245,6 +245,10 @@ var core_default = {
     lg: "8px",
     pill: "999px"
   },
+  borders: {
+    card: "#334155",
+    input: "#cbd5f5"
+  },
   typography: {
     families: {
       sans: "'Inter', 'Helvetica Neue', Arial, sans-serif",
