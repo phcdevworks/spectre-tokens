@@ -4,6 +4,15 @@ All notable changes to this project will be documented here. The format follows 
 
 ## [Unreleased]
 
+## [0.0.3] - Unreleased
+
+### Added
+
+- Introduced `surface.*` roles for page, card, input, and overlay backgrounds.
+- Added `text.onPage.*` and `text.onSurface.*` roles to separate typography by background context.
+- Added `component.*` semantic aliases (card/input/button) that map to the underlying text roles.
+- Reserved `modes.default` and `modes.dark` structures for future theming.
+
 ## [0.0.2] - 2025-12-04
 
 ### Changed
