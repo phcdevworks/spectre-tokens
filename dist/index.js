@@ -91,6 +91,24 @@ var core_default = {
       info: "#3b82f6"
     }
   },
+  surface: {
+    page: {
+      value: "#0f172a",
+      description: "primary app background"
+    },
+    card: {
+      value: "#1e293b",
+      description: "containers and tiles"
+    },
+    input: {
+      value: "#334155",
+      description: "form inputs, textareas"
+    },
+    overlay: {
+      value: "#1e293b",
+      description: "modals, dropdowns, flyouts"
+    }
+  },
   opacity: {
     disabled: "0.38",
     hover: "0.92",
