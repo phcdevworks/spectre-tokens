@@ -4,14 +4,24 @@ All notable changes to this project will be documented here. The format follows 
 
 ## [Unreleased]
 
-## [0.0.3] - Unreleased
+## [0.0.3] - 2025-12-06
 
 ### Added
 
-- Introduced `surface.*` roles for page, card, input, and overlay backgrounds.
-- Added `text.onPage.*` and `text.onSurface.*` roles to separate typography by background context.
-- Added `component.*` semantic aliases (card/input/button) that map to the underlying text roles.
-- Reserved `modes.default` and `modes.dark` structures for future theming.
+- Introduced `surface.*` roles for page, card, input, and overlay backgrounds ([3d60721]).
+- Added `text.onPage.*` and `text.onSurface.*` roles to separate typography by background context ([0fab0b3]).
+- Added `component.*` semantic aliases (card/input/button) that map to the underlying text roles ([75fc18a]).
+- Added `borders.*` token group for card and input border definitions ([1729c66]).
+- Reserved `modes.default` and `modes.dark` structures for future theming support ([b6cfc12]).
+- Added surface and typography role documentation to guide semantic token usage ([babd58e]).
+- Added token regression check script to protect against breaking changes ([8b2407a]).
+
+### Changed
+
+- Extended `SpectreTokens` interface to include `surface`, `text`, `component`, `borders`, and `modes` properties ([7acc13b]).
+- Updated documentation with prominent links to Roadmap, Contributing Guide, and Changelog ([8ae7e42]).
+- Added sponsorship and funding information to README ([6398458]).
+- Updated package metadata with funding links and project roadmap ([d8908aa], [f323213]).
 
 ## [0.0.2] - 2025-12-04
 
@@ -44,9 +54,22 @@ All notable changes to this project will be documented here. The format follows 
 - Revised FUNDING.yml for Spectre support ([9234a48]).
 - Removed Intelephense from VSCode extension recommendations ([e501f94]).
 
-[unreleased]: https://github.com/phcdevworks/spectre-tokens/compare/v0.0.2...HEAD
+[unreleased]: https://github.com/phcdevworks/spectre-tokens/compare/v0.0.3...HEAD
+[0.0.3]: https://github.com/phcdevworks/spectre-tokens/compare/v0.0.2...v0.0.3
 [0.0.2]: https://github.com/phcdevworks/spectre-tokens/compare/v0.0.1...v0.0.2
 [0.0.1]: https://github.com/phcdevworks/spectre-tokens/tree/v0.0.1
+[8b2407a]: https://github.com/phcdevworks/spectre-tokens/commit/8b2407a40cbd0687b049cbabe0020fd9ddbcc34c
+[babd58e]: https://github.com/phcdevworks/spectre-tokens/commit/babd58ed46d642d8dd62e289bbd14e3ede170750
+[b6cfc12]: https://github.com/phcdevworks/spectre-tokens/commit/b6cfc12e4966f73316599176d21f7f97a974ccb3
+[7acc13b]: https://github.com/phcdevworks/spectre-tokens/commit/7acc13b74c1cb1a06e48438f01542d6b3c049869
+[1729c66]: https://github.com/phcdevworks/spectre-tokens/commit/1729c66fc015933d40c40f6cd78002035ca59ebb
+[75fc18a]: https://github.com/phcdevworks/spectre-tokens/commit/75fc18ae4a8751b5c5b29e76a9e53c712bf4da01
+[0fab0b3]: https://github.com/phcdevworks/spectre-tokens/commit/0fab0b315d68487a7f13736250c96ce3a2b7e348
+[3d60721]: https://github.com/phcdevworks/spectre-tokens/commit/3d60721108cf3827b0e551c7bf7f4604ac97518f
+[6398458]: https://github.com/phcdevworks/spectre-tokens/commit/6398458e3815ce6b977ca330b326d6bc9c71fcb7
+[8ae7e42]: https://github.com/phcdevworks/spectre-tokens/commit/8ae7e42cc4f6bebb62607b72a263f821f1ac140b
+[f323213]: https://github.com/phcdevworks/spectre-tokens/commit/f323213bed1d2186dc0e289831cf97b5bcaf9e91
+[d8908aa]: https://github.com/phcdevworks/spectre-tokens/commit/d8908aa0207ba98515eb4ee39125828a82496e1d
 [6d5364f]: https://github.com/phcdevworks/spectre-tokens/commit/6d5364f33d679c2ff968ff2c297af5ff92f33df2
 [87d7eaf]: https://github.com/phcdevworks/spectre-tokens/commit/87d7eaf8b96680e1387813527b73182a18d5bddb
 [3c0e729]: https://github.com/phcdevworks/spectre-tokens/commit/3c0e729bf813e357d65017698294b3cfb10ddc3b
