@@ -68,6 +68,9 @@ export interface SpectreTokens {
   accessibility?: any;
   opacity?: any;
   animations?: any;
+  surface?: any;
+  text?: any;
+  component?: any;
 }
 
 export interface Tokens {

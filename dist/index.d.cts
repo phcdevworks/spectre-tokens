@@ -59,6 +59,9 @@ interface SpectreTokens {
     accessibility?: any;
     opacity?: any;
     animations?: any;
+    surface?: any;
+    text?: any;
+    component?: any;
 }
 interface Tokens {
     colors: Record<string, ColorScale>;
