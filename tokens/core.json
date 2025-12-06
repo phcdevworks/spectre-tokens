@@ -108,6 +108,18 @@
       "description": "modals, dropdowns, flyouts"
     }
   },
+  "text": {
+    "onPage": {
+      "default": "#f8fafc",
+      "muted": "#cbd5f5",
+      "subtle": "#94a3b8"
+    },
+    "onSurface": {
+      "default": "#f1f5f9",
+      "muted": "#cbd5f5",
+      "subtle": "#94a3b8"
+    }
+  },
   "opacity": {
     "disabled": "0.38",
     "hover": "0.92",
