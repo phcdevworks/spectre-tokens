@@ -151,6 +151,20 @@ var core_default = {
       subtle: "#94a3b8"
     }
   },
+  component: {
+    card: {
+      text: "#f1f5f9",
+      textMuted: "#cbd5f5"
+    },
+    input: {
+      text: "#f1f5f9",
+      placeholder: "#94a3b8"
+    },
+    button: {
+      textDefault: "#f1f5f9",
+      textOnPrimary: "#ffffff"
+    }
+  },
   opacity: {
     disabled: "0.38",
     hover: "0.92",
