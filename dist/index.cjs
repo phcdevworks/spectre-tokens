@@ -165,6 +165,16 @@ var core_default = {
       textOnPrimary: "#ffffff"
     }
   },
+  modes: {
+    default: {
+      surface: {},
+      text: {}
+    },
+    dark: {
+      surface: {},
+      text: {}
+    }
+  },
   opacity: {
     disabled: "0.38",
     hover: "0.92",
