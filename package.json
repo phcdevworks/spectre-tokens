@@ -63,7 +63,8 @@
   "scripts": {
     "build": "npm run build:ts && npm run build:css",
     "build:ts": "tsup",
-    "build:css": "node scripts/build-css.js"
+    "build:css": "node scripts/build-css.js",
+    "check:tokens": "tsx scripts/check-tokens-regression.ts"
   },
 
   "publishConfig": {
@@ -71,6 +72,8 @@
   },
 
   "devDependencies": {
+    "ts-node": "^10.9.2",
+    "tsx": "^4.16.2",
     "tsup": "^8.5.1",
     "typescript": "^5.9.3"
   }
