@@ -1,6 +1,6 @@
 {
   "name": "@phcdevworks/spectre-tokens",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Spectre design tokens with JS, TS, Tailwind, and CSS variable outputs.",
   "keywords": [
     "phcdevworks",
@@ -17,10 +17,8 @@
     "typescript",
     "javascript"
   ],
-
   "author": "PHCDevworks",
   "license": "MIT",
-
   "funding": [
     {
       "type": "github",
@@ -31,7 +29,6 @@
       "url": "https://buymeacoffee.com/phcdevworks"
     }
   ],
-
   "repository": {
     "type": "git",
     "url": "https://github.com/phcdevworks/spectre-tokens.git"
@@ -40,7 +37,6 @@
     "url": "https://github.com/phcdevworks/spectre-tokens/issues"
   },
   "homepage": "https://github.com/phcdevworks/spectre-tokens#readme",
-
   "type": "module",
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
@@ -53,24 +49,20 @@
     },
     "./index.css": "./dist/index.css"
   },
-
   "files": [
     "dist",
     "tokens"
   ],
   "sideEffects": false,
-
   "scripts": {
     "build": "npm run build:ts && npm run build:css",
     "build:ts": "tsup",
     "build:css": "node scripts/build-css.js",
     "check:tokens": "tsx scripts/check-tokens-regression.ts"
   },
-
   "publishConfig": {
     "access": "public"
   },
-
   "devDependencies": {
     "ts-node": "^10.9.2",
     "tsx": "^4.16.2",
