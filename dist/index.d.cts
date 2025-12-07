@@ -177,7 +177,7 @@ interface TailwindTheme {
     opacity: TokenScale;
 }
 
-declare const generateCssVariables: (tokens: Tokens, options?: CssVariableOptions) => string;
+declare const generateCssVariables: (tokens: SpectreTokens, options?: CssVariableOptions) => string;
 
 declare const tokens: SpectreTokens;
 declare const tailwindTheme: TailwindTheme;
