@@ -55,10 +55,10 @@
   ],
   "sideEffects": false,
   "scripts": {
-    "build": "npm run build:ts && npm run build:css",
-    "build:ts": "tsup",
+    "build": "npm run build:ts && npm run build:css && npm run check:tokens",
+    "build:ts": "tsup --config tsup.config.ts",
     "build:css": "node scripts/build-css.js",
-    "check:tokens": "tsx scripts/check-tokens-regression.ts"
+    "check:tokens": "tsx scripts/assert-core-tokens.ts"
   },
   "publishConfig": {
     "access": "public"
