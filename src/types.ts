@@ -54,6 +54,45 @@ export interface FormStateTokens {
   ring?: string;
 }
 
+export type SpectreModeName = 'default' | 'dark';
+
+export type SemanticTokenValue = string | { value: string; [key: string]: any };
+
+export interface SpectreModeTokens {
+  surface: {
+    page: SemanticTokenValue;
+    card: SemanticTokenValue;
+    input: SemanticTokenValue;
+    overlay: SemanticTokenValue;
+  };
+  text: {
+    onPage: {
+      default: SemanticTokenValue;
+      muted: SemanticTokenValue;
+      subtle: SemanticTokenValue;
+    };
+    onSurface: {
+      default: SemanticTokenValue;
+      muted: SemanticTokenValue;
+      subtle: SemanticTokenValue;
+    };
+  };
+  component: {
+    card: {
+      text: SemanticTokenValue;
+      textMuted: SemanticTokenValue;
+    };
+    input: {
+      text: SemanticTokenValue;
+      placeholder: SemanticTokenValue;
+    };
+    button: {
+      textDefault: SemanticTokenValue;
+      textOnPrimary: SemanticTokenValue;
+    };
+  };
+}
+
 export interface SpectreTokens {
   colors: any;
   spacing: any;
@@ -68,9 +107,47 @@ export interface SpectreTokens {
   accessibility?: any;
   opacity?: any;
   animations?: any;
-  surface?: any;
-  text?: any;
-  component?: any;
+  borders?: any;
+  surface: {
+    page: SemanticTokenValue;
+    card: SemanticTokenValue;
+    input: SemanticTokenValue;
+    overlay: SemanticTokenValue;
+    [key: string]: SemanticTokenValue;
+  };
+  text: {
+    onPage: {
+      default: SemanticTokenValue;
+      muted: SemanticTokenValue;
+      subtle?: SemanticTokenValue;
+    };
+    onSurface: {
+      default: SemanticTokenValue;
+      muted: SemanticTokenValue;
+      subtle?: SemanticTokenValue;
+    };
+    [key: string]: any;
+  };
+  component: {
+    card: {
+      text: SemanticTokenValue;
+      textMuted: SemanticTokenValue;
+    };
+    input: {
+      text: SemanticTokenValue;
+      placeholder: SemanticTokenValue;
+    };
+    button: {
+      textDefault: SemanticTokenValue;
+      textOnPrimary: SemanticTokenValue;
+    };
+    [key: string]: any;
+  };
+  modes: {
+    default: Partial<SpectreModeTokens>;
+    dark: Partial<SpectreModeTokens>;
+    [mode: string]: Partial<SpectreModeTokens>;
+  };
 }
 
 export interface Tokens {

@@ -45,6 +45,45 @@ interface FormStateTokens {
     placeholder?: string;
     ring?: string;
 }
+type SpectreModeName = 'default' | 'dark';
+type SemanticTokenValue = string | {
+    value: string;
+    [key: string]: any;
+};
+interface SpectreModeTokens {
+    surface: {
+        page: SemanticTokenValue;
+        card: SemanticTokenValue;
+        input: SemanticTokenValue;
+        overlay: SemanticTokenValue;
+    };
+    text: {
+        onPage: {
+            default: SemanticTokenValue;
+            muted: SemanticTokenValue;
+            subtle: SemanticTokenValue;
+        };
+        onSurface: {
+            default: SemanticTokenValue;
+            muted: SemanticTokenValue;
+            subtle: SemanticTokenValue;
+        };
+    };
+    component: {
+        card: {
+            text: SemanticTokenValue;
+            textMuted: SemanticTokenValue;
+        };
+        input: {
+            text: SemanticTokenValue;
+            placeholder: SemanticTokenValue;
+        };
+        button: {
+            textDefault: SemanticTokenValue;
+            textOnPrimary: SemanticTokenValue;
+        };
+    };
+}
 interface SpectreTokens {
     colors: any;
     spacing: any;
@@ -59,9 +98,47 @@ interface SpectreTokens {
     accessibility?: any;
     opacity?: any;
     animations?: any;
-    surface?: any;
-    text?: any;
-    component?: any;
+    borders?: any;
+    surface: {
+        page: SemanticTokenValue;
+        card: SemanticTokenValue;
+        input: SemanticTokenValue;
+        overlay: SemanticTokenValue;
+        [key: string]: SemanticTokenValue;
+    };
+    text: {
+        onPage: {
+            default: SemanticTokenValue;
+            muted: SemanticTokenValue;
+            subtle?: SemanticTokenValue;
+        };
+        onSurface: {
+            default: SemanticTokenValue;
+            muted: SemanticTokenValue;
+            subtle?: SemanticTokenValue;
+        };
+        [key: string]: any;
+    };
+    component: {
+        card: {
+            text: SemanticTokenValue;
+            textMuted: SemanticTokenValue;
+        };
+        input: {
+            text: SemanticTokenValue;
+            placeholder: SemanticTokenValue;
+        };
+        button: {
+            textDefault: SemanticTokenValue;
+            textOnPrimary: SemanticTokenValue;
+        };
+        [key: string]: any;
+    };
+    modes: {
+        default: Partial<SpectreModeTokens>;
+        dark: Partial<SpectreModeTokens>;
+        [mode: string]: Partial<SpectreModeTokens>;
+    };
 }
 interface Tokens {
     colors: Record<string, ColorScale>;
@@ -108,4 +185,4 @@ declare const tailwindPreset: {
     theme: TailwindTheme;
 };
 
-export { type AccessibilityTokens, type AnimationEntry, type ButtonStateTokens, type ColorScale, type FormStateTokens, type SpectreTokens, type TailwindTheme, type TokenScale, type Tokens, type TransitionTokens, type TypographyTokens, tokens as default, generateCssVariables, tailwindPreset, tailwindTheme, tokens };
+export { type AccessibilityTokens, type AnimationEntry, type ButtonStateTokens, type ColorScale, type FormStateTokens, type SpectreModeName, type SpectreModeTokens, type SpectreTokens, type TailwindTheme, type TokenScale, type Tokens, type TransitionTokens, type TypographyTokens, tokens as default, generateCssVariables, tailwindPreset, tailwindTheme, tokens };
