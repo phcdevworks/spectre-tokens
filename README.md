@@ -177,6 +177,28 @@ Always re-run final UI implementations through tools like [WebAIM Contrast Check
 - `text.onPage.*` vs `text.onSurface.*`: use `onPage` for copy sitting directly on the page canvas; use `onSurface` for text inside cards, tiles, inputs, overlays, and other elevated surfaces.
 - `component.card.text`/`textMuted`, `component.input.text`/`placeholder`, and `component.button.textDefault`/`textOnPrimary` alias the underlying `text.onSurface` roles (with `textOnPrimary` pairing white against the primary button background) to keep component defaults aligned.
 
+## Modes
+
+Tokens ship with a `modes` object:
+
+- `modes.default` is the light theme.
+- `modes.dark` is the dark theme.
+
+The CSS generator outputs:
+
+- `:root { ... }` for `modes.default`
+- `:root[data-spectre-theme="dark"] { ... }` for `modes.dark`
+
+Consumers can toggle themes by setting `data-spectre-theme="dark"` on `:root` or `<html>`.
+
+### Key CSS variables
+
+These variables are the contract consumed by `@phcdevworks/spectre-ui`; removing or renaming them will break downstream UI packages.
+
+- Surface: `--sp-surface-page`, `--sp-surface-card`, `--sp-surface-input`, `--sp-surface-overlay`
+- Text: `--sp-text-on-page-default`, `--sp-text-on-page-muted`, `--sp-text-on-surface-default`, `--sp-text-on-surface-muted`
+- Components/buttons: `--sp-component-card-text`, `--sp-component-card-text-muted`, `--sp-component-input-text`, `--sp-component-input-placeholder`, `--sp-button-primary-bg`, `--sp-button-primary-text`, `--sp-button-secondary-bg`, `--sp-button-secondary-text`, `--sp-button-ghost-bg`, `--sp-button-ghost-text`
+
 ## Repository Layout
 
 | Folder     | Responsibility                                                                                                |
