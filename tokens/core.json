@@ -92,56 +92,180 @@
   },
   "surface": {
     "page": {
-      "value": "#0f172a",
+      "value": "#f8fafc",
       "description": "primary app background"
     },
     "card": {
-      "value": "#1e293b",
+      "value": "#ffffff",
       "description": "containers and tiles"
     },
     "input": {
-      "value": "#334155",
+      "value": "#ffffff",
       "description": "form inputs, textareas"
     },
     "overlay": {
-      "value": "#1e293b",
+      "value": "rgba(15,23,42,0.6)",
       "description": "modals, dropdowns, flyouts"
     }
   },
   "text": {
     "onPage": {
-      "default": "#f8fafc",
-      "muted": "#cbd5f5",
+      "default": "#0f172a",
+      "muted": "#475569",
       "subtle": "#94a3b8"
     },
     "onSurface": {
-      "default": "#f1f5f9",
-      "muted": "#cbd5f5",
+      "default": "#0f172a",
+      "muted": "#6b7280",
       "subtle": "#94a3b8"
     }
   },
   "component": {
     "card": {
-      "text": "#f1f5f9",
-      "textMuted": "#cbd5f5"
+      "text": "#0f172a",
+      "textMuted": "#6b7280"
     },
     "input": {
-      "text": "#f1f5f9",
+      "text": "#0f172a",
       "placeholder": "#94a3b8"
     },
     "button": {
-      "textDefault": "#f1f5f9",
+      "textDefault": "#0f172a",
       "textOnPrimary": "#ffffff"
     }
   },
   "modes": {
     "default": {
-      "surface": {},
-      "text": {}
+      "surface": {
+        "page": {
+          "value": "#f8fafc"
+        },
+        "card": {
+          "value": "#ffffff"
+        },
+        "input": {
+          "value": "#ffffff"
+        },
+        "overlay": {
+          "value": "rgba(15,23,42,0.6)"
+        }
+      },
+      "text": {
+        "onPage": {
+          "default": {
+            "value": "#0f172a"
+          },
+          "muted": {
+            "value": "#475569"
+          },
+          "subtle": {
+            "value": "#94a3b8"
+          }
+        },
+        "onSurface": {
+          "default": {
+            "value": "#0f172a"
+          },
+          "muted": {
+            "value": "#6b7280"
+          },
+          "subtle": {
+            "value": "#94a3b8"
+          }
+        }
+      },
+      "component": {
+        "card": {
+          "text": {
+            "value": "#0f172a"
+          },
+          "textMuted": {
+            "value": "#6b7280"
+          }
+        },
+        "input": {
+          "text": {
+            "value": "#0f172a"
+          },
+          "placeholder": {
+            "value": "#94a3b8"
+          }
+        },
+        "button": {
+          "textDefault": {
+            "value": "#0f172a"
+          },
+          "textOnPrimary": {
+            "value": "#ffffff"
+          }
+        }
+      }
     },
     "dark": {
-      "surface": {},
-      "text": {}
+      "surface": {
+        "page": {
+          "value": "#0f172a"
+        },
+        "card": {
+          "value": "#1e293b"
+        },
+        "input": {
+          "value": "#334155"
+        },
+        "overlay": {
+          "value": "#1e293b"
+        }
+      },
+      "text": {
+        "onPage": {
+          "default": {
+            "value": "#f8fafc"
+          },
+          "muted": {
+            "value": "#cbd5f5"
+          },
+          "subtle": {
+            "value": "#94a3b8"
+          }
+        },
+        "onSurface": {
+          "default": {
+            "value": "#f1f5f9"
+          },
+          "muted": {
+            "value": "#cbd5f5"
+          },
+          "subtle": {
+            "value": "#94a3b8"
+          }
+        }
+      },
+      "component": {
+        "card": {
+          "text": {
+            "value": "#f1f5f9"
+          },
+          "textMuted": {
+            "value": "#cbd5f5"
+          }
+        },
+        "input": {
+          "text": {
+            "value": "#f1f5f9"
+          },
+          "placeholder": {
+            "value": "#94a3b8"
+          }
+        },
+        "button": {
+          "textDefault": {
+            "value": "#f1f5f9"
+          },
+          "textOnPrimary": {
+            "value": "#ffffff"
+          }
+        }
+      }
     }
   },
   "opacity": {
