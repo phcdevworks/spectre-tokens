@@ -1,4 +1,18 @@
 :root {
+  --sp-surface-page: #f8fafc;
+  --sp-surface-card: #ffffff;
+  --sp-surface-input: #ffffff;
+  --sp-surface-overlay: rgba(15,23,42,0.6);
+  --sp-text-on-page-default: #0f172a;
+  --sp-text-on-page-muted: #475569;
+  --sp-text-on-surface-default: #0f172a;
+  --sp-text-on-surface-muted: #6b7280;
+  --sp-component-card-text: #0f172a;
+  --sp-component-card-text-muted: #6b7280;
+  --sp-component-input-text: #0f172a;
+  --sp-component-input-placeholder: #94a3b8;
+  --sp-button-text-default: #0f172a;
+  --sp-button-text-on-primary: #ffffff;
   --sp-color-brand-50: #f5f0ff;
   --sp-color-brand-100: #ebe2ff;
   --sp-color-brand-200: #d7c6ff;
@@ -223,4 +237,20 @@
   --sp-animation-pulse-duration: 1500ms;
   --sp-animation-pulse-easing: cubic-bezier(0.4, 0, 0.2, 1);
   --sp-animation-pulse-keyframes: pulse;
+}
+:root[data-spectre-theme="dark"] {
+  --sp-surface-page: #0f172a;
+  --sp-surface-card: #1e293b;
+  --sp-surface-input: #334155;
+  --sp-surface-overlay: #1e293b;
+  --sp-text-on-page-default: #f8fafc;
+  --sp-text-on-page-muted: #cbd5f5;
+  --sp-text-on-surface-default: #f1f5f9;
+  --sp-text-on-surface-muted: #cbd5f5;
+  --sp-component-card-text: #f1f5f9;
+  --sp-component-card-text-muted: #cbd5f5;
+  --sp-component-input-text: #f1f5f9;
+  --sp-component-input-placeholder: #94a3b8;
+  --sp-button-text-default: #f1f5f9;
+  --sp-button-text-on-primary: #ffffff;
 }

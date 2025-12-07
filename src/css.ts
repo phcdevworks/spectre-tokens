@@ -1,4 +1,4 @@
-import type { CssVariableMap, CssVariableOptions, Tokens } from './types';
+import type { CssVariableMap, CssVariableOptions, SpectreTokens, Tokens } from './types';
 
 const DEFAULT_PREFIX = 'sp';
 export const DEFAULT_SELECTOR = ':root';
@@ -103,12 +103,167 @@ export const createCssVariableMap = (tokens: Tokens, options: CssVariableOptions
   return map;
 };
 
-export const generateCssVariables = (tokens: Tokens, options: CssVariableOptions = {}): string => {
-  const selector = options.selector ?? DEFAULT_SELECTOR;
-  const declarations = createCssVariableMap(tokens, options);
-  const lines = Object.entries(declarations)
-    .map(([name, value]) => `  ${name}: ${value};`)
-    .join('\n');
+const resolveSemanticValue = (value: unknown): string | undefined => {
+  if (typeof value === 'string' || typeof value === 'number') return String(value);
+  if (value && typeof value === 'object' && 'value' in (value as Record<string, unknown>)) {
+    return String((value as Record<string, unknown>).value);
+  }
+  return undefined;
+};
 
-  return `${selector} {\n${lines}\n}\n`;
+const getPath = (source: unknown, path: string[]): unknown =>
+  path.reduce<unknown>((acc, key) => (acc && typeof acc === 'object' ? (acc as Record<string, unknown>)[key] : undefined), source);
+
+const pickSemantic = (...candidates: unknown[]): string | undefined => {
+  for (const candidate of candidates) {
+    const resolved = resolveSemanticValue(candidate);
+    if (resolved !== undefined) return resolved;
+  }
+  return undefined;
+};
+
+export const generateCssVariables = (tokens: SpectreTokens, options: CssVariableOptions = {}): string => {
+  const selector = options.selector ?? DEFAULT_SELECTOR;
+  const prefix = options.prefix ?? DEFAULT_PREFIX;
+  const declarations = createCssVariableMap(tokens as unknown as Tokens, { ...options, prefix });
+  const mapLines = Object.entries(declarations).map(([name, value]) => `  ${name}: ${value};`);
+
+  const defaultMode = tokens.modes?.default ?? {};
+  const darkMode = tokens.modes?.dark ?? {};
+  const surfaceAliases = tokens.surface ?? {};
+  const textAliases = tokens.text ?? {};
+  const componentAliases = tokens.component ?? {};
+
+  const baseLines: string[] = [];
+  const addBase = (name: string, value?: string) => {
+    if (value !== undefined) baseLines.push(`  ${name}: ${value};`);
+  };
+
+  addBase(toVariableName(prefix, 'surface', 'page'), pickSemantic(getPath(defaultMode, ['surface', 'page']), getPath(surfaceAliases, ['page'])));
+  addBase(toVariableName(prefix, 'surface', 'card'), pickSemantic(getPath(defaultMode, ['surface', 'card']), getPath(surfaceAliases, ['card'])));
+  addBase(toVariableName(prefix, 'surface', 'input'), pickSemantic(getPath(defaultMode, ['surface', 'input']), getPath(surfaceAliases, ['input'])));
+  addBase(toVariableName(prefix, 'surface', 'overlay'), pickSemantic(getPath(defaultMode, ['surface', 'overlay']), getPath(surfaceAliases, ['overlay'])));
+
+  addBase(toVariableName(prefix, 'text', 'on', 'page', 'default'), pickSemantic(getPath(defaultMode, ['text', 'onPage', 'default']), getPath(textAliases, ['onPage', 'default'])));
+  addBase(toVariableName(prefix, 'text', 'on', 'page', 'muted'), pickSemantic(getPath(defaultMode, ['text', 'onPage', 'muted']), getPath(textAliases, ['onPage', 'muted'])));
+  addBase(toVariableName(prefix, 'text', 'on', 'surface', 'default'), pickSemantic(getPath(defaultMode, ['text', 'onSurface', 'default']), getPath(textAliases, ['onSurface', 'default'])));
+  addBase(toVariableName(prefix, 'text', 'on', 'surface', 'muted'), pickSemantic(getPath(defaultMode, ['text', 'onSurface', 'muted']), getPath(textAliases, ['onSurface', 'muted'])));
+
+  addBase(toVariableName(prefix, 'component', 'card', 'text'), pickSemantic(getPath(defaultMode, ['component', 'card', 'text']), getPath(componentAliases, ['card', 'text'])));
+  addBase(toVariableName(prefix, 'component', 'card', 'text-muted'), pickSemantic(getPath(defaultMode, ['component', 'card', 'textMuted']), getPath(componentAliases, ['card', 'textMuted'])));
+  addBase(toVariableName(prefix, 'component', 'input', 'text'), pickSemantic(getPath(defaultMode, ['component', 'input', 'text']), getPath(componentAliases, ['input', 'text'])));
+  addBase(toVariableName(prefix, 'component', 'input', 'placeholder'), pickSemantic(getPath(defaultMode, ['component', 'input', 'placeholder']), getPath(componentAliases, ['input', 'placeholder'])));
+  addBase(toVariableName(prefix, 'button', 'text', 'default'), pickSemantic(getPath(defaultMode, ['component', 'button', 'textDefault']), getPath(componentAliases, ['button', 'textDefault'])));
+  addBase(toVariableName(prefix, 'button', 'text', 'on', 'primary'), pickSemantic(getPath(defaultMode, ['component', 'button', 'textOnPrimary']), getPath(componentAliases, ['button', 'textOnPrimary'])));
+
+  const rootLines = [...baseLines, ...mapLines];
+
+  const darkLines: string[] = [];
+  const addDark = (name: string, value?: string) => {
+    if (value !== undefined) darkLines.push(`  ${name}: ${value};`);
+  };
+
+  addDark(
+    toVariableName(prefix, 'surface', 'page'),
+    pickSemantic(getPath(darkMode, ['surface', 'page']), getPath(defaultMode, ['surface', 'page']), getPath(surfaceAliases, ['page']))
+  );
+  addDark(
+    toVariableName(prefix, 'surface', 'card'),
+    pickSemantic(getPath(darkMode, ['surface', 'card']), getPath(defaultMode, ['surface', 'card']), getPath(surfaceAliases, ['card']))
+  );
+  addDark(
+    toVariableName(prefix, 'surface', 'input'),
+    pickSemantic(getPath(darkMode, ['surface', 'input']), getPath(defaultMode, ['surface', 'input']), getPath(surfaceAliases, ['input']))
+  );
+  addDark(
+    toVariableName(prefix, 'surface', 'overlay'),
+    pickSemantic(getPath(darkMode, ['surface', 'overlay']), getPath(defaultMode, ['surface', 'overlay']), getPath(surfaceAliases, ['overlay']))
+  );
+
+  addDark(
+    toVariableName(prefix, 'text', 'on', 'page', 'default'),
+    pickSemantic(
+      getPath(darkMode, ['text', 'onPage', 'default']),
+      getPath(defaultMode, ['text', 'onPage', 'default']),
+      getPath(textAliases, ['onPage', 'default'])
+    )
+  );
+  addDark(
+    toVariableName(prefix, 'text', 'on', 'page', 'muted'),
+    pickSemantic(
+      getPath(darkMode, ['text', 'onPage', 'muted']),
+      getPath(defaultMode, ['text', 'onPage', 'muted']),
+      getPath(textAliases, ['onPage', 'muted'])
+    )
+  );
+  addDark(
+    toVariableName(prefix, 'text', 'on', 'surface', 'default'),
+    pickSemantic(
+      getPath(darkMode, ['text', 'onSurface', 'default']),
+      getPath(defaultMode, ['text', 'onSurface', 'default']),
+      getPath(textAliases, ['onSurface', 'default'])
+    )
+  );
+  addDark(
+    toVariableName(prefix, 'text', 'on', 'surface', 'muted'),
+    pickSemantic(
+      getPath(darkMode, ['text', 'onSurface', 'muted']),
+      getPath(defaultMode, ['text', 'onSurface', 'muted']),
+      getPath(textAliases, ['onSurface', 'muted'])
+    )
+  );
+
+  addDark(
+    toVariableName(prefix, 'component', 'card', 'text'),
+    pickSemantic(
+      getPath(darkMode, ['component', 'card', 'text']),
+      getPath(defaultMode, ['component', 'card', 'text']),
+      getPath(componentAliases, ['card', 'text'])
+    )
+  );
+  addDark(
+    toVariableName(prefix, 'component', 'card', 'text-muted'),
+    pickSemantic(
+      getPath(darkMode, ['component', 'card', 'textMuted']),
+      getPath(defaultMode, ['component', 'card', 'textMuted']),
+      getPath(componentAliases, ['card', 'textMuted'])
+    )
+  );
+  addDark(
+    toVariableName(prefix, 'component', 'input', 'text'),
+    pickSemantic(
+      getPath(darkMode, ['component', 'input', 'text']),
+      getPath(defaultMode, ['component', 'input', 'text']),
+      getPath(componentAliases, ['input', 'text'])
+    )
+  );
+  addDark(
+    toVariableName(prefix, 'component', 'input', 'placeholder'),
+    pickSemantic(
+      getPath(darkMode, ['component', 'input', 'placeholder']),
+      getPath(defaultMode, ['component', 'input', 'placeholder']),
+      getPath(componentAliases, ['input', 'placeholder'])
+    )
+  );
+  addDark(
+    toVariableName(prefix, 'button', 'text', 'default'),
+    pickSemantic(
+      getPath(darkMode, ['component', 'button', 'textDefault']),
+      getPath(defaultMode, ['component', 'button', 'textDefault']),
+      getPath(componentAliases, ['button', 'textDefault'])
+    )
+  );
+  addDark(
+    toVariableName(prefix, 'button', 'text', 'on', 'primary'),
+    pickSemantic(
+      getPath(darkMode, ['component', 'button', 'textOnPrimary']),
+      getPath(defaultMode, ['component', 'button', 'textOnPrimary']),
+      getPath(componentAliases, ['button', 'textOnPrimary'])
+    )
+  );
+
+  const rootBlock = `${selector} {\n${rootLines.join('\n')}\n}`;
+  const darkBlock = `${selector}[data-spectre-theme="dark"] {\n${darkLines.join('\n')}\n}`;
+
+  return `${rootBlock}\n${darkBlock}\n`;
 };
