@@ -4,6 +4,20 @@ All notable changes to this project will be documented here. The format follows 
 
 ## [Unreleased]
 
+## [0.0.4] - 2025-12-07
+
+### Added
+
+- Implemented dark mode CSS variable generation with `.dark` class selector support ([22e2a02]).
+- Added core token assertion script to validate token structure integrity ([a406226]).
+- Added comprehensive documentation for theme modes and CSS variable usage patterns ([4e58b0b]).
+
+### Changed
+
+- Updated color tokens in `modes.default` for improved light mode contrast and consistency ([e7be97d]).
+- Populated `modes.dark` with complete dark mode color definitions for surface, text, and component tokens ([15cc9b7]).
+- Removed redundant `types` export from package.json to streamline TypeScript definitions ([2b1ea11]).
+
 ## [0.0.3] - 2025-12-06
 
 ### Added
@@ -54,10 +68,17 @@ All notable changes to this project will be documented here. The format follows 
 - Revised FUNDING.yml for Spectre support ([9234a48]).
 - Removed Intelephense from VSCode extension recommendations ([e501f94]).
 
-[unreleased]: https://github.com/phcdevworks/spectre-tokens/compare/v0.0.3...HEAD
+[unreleased]: https://github.com/phcdevworks/spectre-tokens/compare/v0.0.4...HEAD
+[0.0.4]: https://github.com/phcdevworks/spectre-tokens/compare/v0.0.3...v0.0.4
 [0.0.3]: https://github.com/phcdevworks/spectre-tokens/compare/v0.0.2...v0.0.3
 [0.0.2]: https://github.com/phcdevworks/spectre-tokens/compare/v0.0.1...v0.0.2
 [0.0.1]: https://github.com/phcdevworks/spectre-tokens/tree/v0.0.1
+[2b1ea11]: https://github.com/phcdevworks/spectre-tokens/commit/2b1ea11380293a3bb800a446da7584f81b464607
+[4e58b0b]: https://github.com/phcdevworks/spectre-tokens/commit/4e58b0b3937db8b0e1007cdd1a604674c3aeb4ec
+[a406226]: https://github.com/phcdevworks/spectre-tokens/commit/a406226cf5f9f1b5f3fb1ebd586f2d04f7d34ed2
+[22e2a02]: https://github.com/phcdevworks/spectre-tokens/commit/22e2a026a45ef724df14eaab4acb957b63c0dc09
+[e7be97d]: https://github.com/phcdevworks/spectre-tokens/commit/e7be97d9ef4ee52d28c12b53f5a8467184263e09
+[15cc9b7]: https://github.com/phcdevworks/spectre-tokens/commit/15cc9b74d92ee655f349e870dc0b9f11fa9fb007
 [8b2407a]: https://github.com/phcdevworks/spectre-tokens/commit/8b2407a40cbd0687b049cbabe0020fd9ddbcc34c
 [babd58e]: https://github.com/phcdevworks/spectre-tokens/commit/babd58ed46d642d8dd62e289bbd14e3ede170750
 [b6cfc12]: https://github.com/phcdevworks/spectre-tokens/commit/b6cfc12e4966f73316599176d21f7f97a974ccb3
