@@ -134,6 +134,24 @@
     "button": {
       "textDefault": "#0f172a",
       "textOnPrimary": "#ffffff"
+    },
+    "badge": {
+      "primary": {
+        "bg": "#8652ff",
+        "text": "#0f172a"
+      },
+      "success": {
+        "bg": "#22c55e",
+        "text": "#0f172a"
+      },
+      "warning": {
+        "bg": "#f59e0b",
+        "text": "#0f172a"
+      },
+      "danger": {
+        "bg": "#ef4444",
+        "text": "#0f172a"
+      }
     }
   },
   "modes": {
@@ -206,6 +224,40 @@
           "textOnPrimary": {
             "value": "#ffffff"
           }
+        },
+        "badge": {
+          "primary": {
+            "bg": {
+              "value": "#8652ff"
+            },
+            "text": {
+              "value": "#0f172a"
+            }
+          },
+          "success": {
+            "bg": {
+              "value": "#22c55e"
+            },
+            "text": {
+              "value": "#0f172a"
+            }
+          },
+          "warning": {
+            "bg": {
+              "value": "#f59e0b"
+            },
+            "text": {
+              "value": "#0f172a"
+            }
+          },
+          "danger": {
+            "bg": {
+              "value": "#ef4444"
+            },
+            "text": {
+              "value": "#0f172a"
+            }
+          }
         }
       }
     },
@@ -277,6 +329,40 @@
           },
           "textOnPrimary": {
             "value": "#ffffff"
+          }
+        },
+        "badge": {
+          "primary": {
+            "bg": {
+              "value": "#8652ff"
+            },
+            "text": {
+              "value": "#f1f5f9"
+            }
+          },
+          "success": {
+            "bg": {
+              "value": "#22c55e"
+            },
+            "text": {
+              "value": "#f1f5f9"
+            }
+          },
+          "warning": {
+            "bg": {
+              "value": "#f59e0b"
+            },
+            "text": {
+              "value": "#f1f5f9"
+            }
+          },
+          "danger": {
+            "bg": {
+              "value": "#ef4444"
+            },
+            "text": {
+              "value": "#f1f5f9"
+            }
           }
         }
       }
