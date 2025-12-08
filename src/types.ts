@@ -98,6 +98,14 @@ export interface SpectreTokens {
   spacing: any;
   radii: any;
   typography: any;
+  font: {
+    xs: { size: string; lineHeight: string; weight: number };
+    sm: { size: string; lineHeight: string; weight: number };
+    md: { size: string; lineHeight: string; weight: number };
+    lg: { size: string; lineHeight: string; weight: number };
+    xl: { size: string; lineHeight: string; weight: number };
+    ['2xl']: { size: string; lineHeight: string; weight: number };
+  };
   shadows: any;
   breakpoints: any;
   zIndex: any;

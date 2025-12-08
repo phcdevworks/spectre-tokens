@@ -382,6 +382,38 @@
     "card": "#334155",
     "input": "#cbd5f5"
   },
+  "font": {
+    "xs": {
+      "size": "0.75rem",
+      "lineHeight": "1.25rem",
+      "weight": 400
+    },
+    "sm": {
+      "size": "0.875rem",
+      "lineHeight": "1.5rem",
+      "weight": 400
+    },
+    "md": {
+      "size": "1rem",
+      "lineHeight": "1.75rem",
+      "weight": 500
+    },
+    "lg": {
+      "size": "1.25rem",
+      "lineHeight": "2rem",
+      "weight": 500
+    },
+    "xl": {
+      "size": "1.5rem",
+      "lineHeight": "2.125rem",
+      "weight": 600
+    },
+    "2xl": {
+      "size": "1.875rem",
+      "lineHeight": "2.5rem",
+      "weight": 600
+    }
+  },
   "typography": {
     "families": {
       "sans": "'Inter', 'Helvetica Neue', Arial, sans-serif",
