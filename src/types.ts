@@ -92,6 +92,12 @@ export interface SpectreModeTokens {
       textDefault: SemanticTokenValue;
       textOnPrimary: SemanticTokenValue;
     };
+    badge: {
+      primary: { bg: SemanticTokenValue; text: SemanticTokenValue };
+      success: { bg: SemanticTokenValue; text: SemanticTokenValue };
+      warning: { bg: SemanticTokenValue; text: SemanticTokenValue };
+      danger: { bg: SemanticTokenValue; text: SemanticTokenValue };
+    };
   };
 }
 
@@ -152,6 +158,12 @@ export interface SpectreTokens {
     button: {
       textDefault: SemanticTokenValue;
       textOnPrimary: SemanticTokenValue;
+    };
+    badge: {
+      primary: { bg: string; text: string };
+      success: { bg: string; text: string };
+      warning: { bg: string; text: string };
+      danger: { bg: string; text: string };
     };
     [key: string]: any;
   };
