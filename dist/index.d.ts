@@ -6,6 +6,11 @@ interface TypographyScaleEntry {
     fontWeight?: number;
     letterSpacing?: string;
 }
+interface FontScaleEntry {
+    size: string;
+    lineHeight: string;
+    weight: number;
+}
 interface TypographyTokens {
     families: Record<string, string>;
     scale: Record<string, TypographyScaleEntry>;
@@ -62,11 +67,13 @@ interface SpectreModeTokens {
             default: SemanticTokenValue;
             muted: SemanticTokenValue;
             subtle: SemanticTokenValue;
+            meta: SemanticTokenValue;
         };
         onSurface: {
             default: SemanticTokenValue;
             muted: SemanticTokenValue;
             subtle: SemanticTokenValue;
+            meta: SemanticTokenValue;
         };
     };
     component: {
@@ -82,6 +89,24 @@ interface SpectreModeTokens {
             textDefault: SemanticTokenValue;
             textOnPrimary: SemanticTokenValue;
         };
+        badge: {
+            primary: {
+                bg: SemanticTokenValue;
+                text: SemanticTokenValue;
+            };
+            success: {
+                bg: SemanticTokenValue;
+                text: SemanticTokenValue;
+            };
+            warning: {
+                bg: SemanticTokenValue;
+                text: SemanticTokenValue;
+            };
+            danger: {
+                bg: SemanticTokenValue;
+                text: SemanticTokenValue;
+            };
+        };
     };
 }
 interface SpectreTokens {
@@ -89,6 +114,14 @@ interface SpectreTokens {
     spacing: any;
     radii: any;
     typography: any;
+    font: {
+        xs: FontScaleEntry;
+        sm: FontScaleEntry;
+        md: FontScaleEntry;
+        lg: FontScaleEntry;
+        xl: FontScaleEntry;
+        ['2xl']: FontScaleEntry;
+    };
     shadows: any;
     breakpoints: any;
     zIndex: any;
@@ -108,14 +141,16 @@ interface SpectreTokens {
     };
     text: {
         onPage: {
-            default: SemanticTokenValue;
-            muted: SemanticTokenValue;
-            subtle?: SemanticTokenValue;
+            default: string;
+            muted: string;
+            subtle: string;
+            meta: string;
         };
         onSurface: {
-            default: SemanticTokenValue;
-            muted: SemanticTokenValue;
-            subtle?: SemanticTokenValue;
+            default: string;
+            muted: string;
+            subtle: string;
+            meta: string;
         };
         [key: string]: any;
     };
@@ -131,6 +166,24 @@ interface SpectreTokens {
         button: {
             textDefault: SemanticTokenValue;
             textOnPrimary: SemanticTokenValue;
+        };
+        badge: {
+            primary: {
+                bg: string;
+                text: string;
+            };
+            success: {
+                bg: string;
+                text: string;
+            };
+            warning: {
+                bg: string;
+                text: string;
+            };
+            danger: {
+                bg: string;
+                text: string;
+            };
         };
         [key: string]: any;
     };
@@ -149,6 +202,7 @@ interface Tokens {
     spacing: TokenScale;
     radii: TokenScale;
     typography: TypographyTokens;
+    font: Record<string, FontScaleEntry>;
     shadows: TokenScale;
     breakpoints: TokenScale;
     zIndex: TokenScale;
