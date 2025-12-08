@@ -34,7 +34,7 @@ import tokens, {
 console.log(tokens.colors.brand["500"]); // Brand palette swatches
 ```
 
-- `tokens`: Raw structured tokens (colors, spacing, radii, typography, shadows, z-index, transitions, buttons, forms, accessibility, animations, opacity).
+- `tokens`: Raw structured tokens (colors, spacing, radii, typography, shadows, z-index, transitions, buttons, forms, badges, accessibility, animations, opacity, fonts).
 - `tailwindTheme`: Ready-to-use Tailwind theme object.
 - `tailwindPreset`: Preset for Tailwind config (includes theme).
 - `generateCssVariables()`: Generate custom `--sp-*` CSS variable strings with scoped selectors or prefixes.
@@ -160,6 +160,78 @@ tokens.opacity.disabled; // 0.38
 tokens.opacity.overlay; // 0.5
 ```
 
+### Typography scale
+
+```ts
+tokens.font.fontSize.xs; // 0.75rem
+tokens.font.fontSize.sm; // 0.875rem
+tokens.font.fontSize.base; // 1rem
+tokens.font.fontSize.lg; // 1.25rem
+tokens.font.fontSize.xl; // 1.5rem
+
+tokens.font.lineHeight.xs; // 1rem
+tokens.font.lineHeight.sm; // 1.25rem
+tokens.font.lineHeight.base; // 1.5rem
+tokens.font.lineHeight.lg; // 1.75rem
+tokens.font.lineHeight.xl; // 2rem
+
+tokens.font.weight.normal; // 400
+tokens.font.weight.medium; // 500
+tokens.font.weight.semibold; // 600
+tokens.font.weight.bold; // 700
+```
+
+```css
+.heading {
+  font-size: var(--sp-font-size-xl);
+  line-height: var(--sp-font-line-height-xl);
+  font-weight: var(--sp-font-weight-semibold);
+}
+
+.body-text {
+  font-size: var(--sp-font-size-base);
+  line-height: var(--sp-font-line-height-base);
+  font-weight: var(--sp-font-weight-normal);
+}
+```
+
+### Badge tokens
+
+```ts
+tokens.component.badge.bg; // Background color
+tokens.component.badge.text; // Text color
+tokens.component.badge.border; // Border color
+```
+
+```css
+.badge {
+  background: var(--sp-component-badge-bg);
+  color: var(--sp-component-badge-text);
+  border: 1px solid var(--sp-component-badge-border);
+  padding: 0.25rem 0.5rem;
+  border-radius: var(--sp-radius-sm);
+  font-size: var(--sp-font-size-xs);
+  font-weight: var(--sp-font-weight-medium);
+}
+```
+
+### Meta text
+
+For secondary/metadata text styling:
+
+```ts
+tokens.text.onPage.meta; // Metadata text on page backgrounds
+tokens.text.onSurface.meta; // Metadata text on card/surface backgrounds
+```
+
+```css
+.timestamp,
+.byline {
+  color: var(--sp-text-on-page-meta);
+  font-size: var(--sp-font-size-sm);
+}
+```
+
 ### WCAG targets
 
 - Brand 500 on white → ✅ AAA (4.8:1)
@@ -175,7 +247,9 @@ Always re-run final UI implementations through tools like [WebAIM Contrast Check
 
 - `surface.page`, `surface.card`, `surface.input`, `surface.overlay`: semantic backgrounds for the app canvas, containers/tiles, form fields, and modal/dropdown layers.
 - `text.onPage.*` vs `text.onSurface.*`: use `onPage` for copy sitting directly on the page canvas; use `onSurface` for text inside cards, tiles, inputs, overlays, and other elevated surfaces.
-- `component.card.text`/`textMuted`, `component.input.text`/`placeholder`, and `component.button.textDefault`/`textOnPrimary` alias the underlying `text.onSurface` roles (with `textOnPrimary` pairing white against the primary button background) to keep component defaults aligned.
+  - `text.onPage.default`, `text.onPage.muted`, `text.onPage.subtle`, `text.onPage.meta`
+  - `text.onSurface.default`, `text.onSurface.muted`, `text.onSurface.subtle`, `text.onSurface.meta`
+- `component.card.text`/`textMuted`, `component.input.text`/`placeholder`, `component.button.textDefault`/`textOnPrimary`, and `component.badge.*` alias the underlying semantic roles to keep component defaults aligned.
 
 ## Modes
 
@@ -195,9 +269,11 @@ Consumers can toggle themes by setting `data-spectre-theme="dark"` on `:root` or
 
 These variables are the contract consumed by `@phcdevworks/spectre-ui`; removing or renaming them will break downstream UI packages.
 
-- Surface: `--sp-surface-page`, `--sp-surface-card`, `--sp-surface-input`, `--sp-surface-overlay`
-- Text: `--sp-text-on-page-default`, `--sp-text-on-page-muted`, `--sp-text-on-surface-default`, `--sp-text-on-surface-muted`
-- Components/buttons: `--sp-component-card-text`, `--sp-component-card-text-muted`, `--sp-component-input-text`, `--sp-component-input-placeholder`, `--sp-button-primary-bg`, `--sp-button-primary-text`, `--sp-button-secondary-bg`, `--sp-button-secondary-text`, `--sp-button-ghost-bg`, `--sp-button-ghost-text`
+- **Surface**: `--sp-surface-page`, `--sp-surface-card`, `--sp-surface-input`, `--sp-surface-overlay`
+- **Text**: `--sp-text-on-page-default`, `--sp-text-on-page-muted`, `--sp-text-on-page-meta`, `--sp-text-on-surface-default`, `--sp-text-on-surface-muted`, `--sp-text-on-surface-meta`
+- **Components**: `--sp-component-card-text`, `--sp-component-card-text-muted`, `--sp-component-input-text`, `--sp-component-input-placeholder`, `--sp-component-badge-bg`, `--sp-component-badge-text`, `--sp-component-badge-border`
+- **Buttons**: `--sp-button-primary-bg`, `--sp-button-primary-text`, `--sp-button-secondary-bg`, `--sp-button-secondary-text`, `--sp-button-ghost-bg`, `--sp-button-ghost-text`
+- **Typography**: `--sp-font-size-{xs,sm,base,lg,xl}`, `--sp-font-line-height-{xs,sm,base,lg,xl}`, `--sp-font-weight-{normal,medium,semibold,bold}`
 
 ## Repository Layout
 
