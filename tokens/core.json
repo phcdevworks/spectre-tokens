@@ -112,12 +112,14 @@
     "onPage": {
       "default": "#0f172a",
       "muted": "#475569",
-      "subtle": "#94a3b8"
+      "subtle": "#94a3b8",
+      "meta": "#94a3b8"
     },
     "onSurface": {
       "default": "#0f172a",
       "muted": "#6b7280",
-      "subtle": "#94a3b8"
+      "subtle": "#94a3b8",
+      "meta": "#94a3b8"
     }
   },
   "component": {
@@ -160,6 +162,9 @@
           },
           "subtle": {
             "value": "#94a3b8"
+          },
+          "meta": {
+            "value": "#94a3b8"
           }
         },
         "onSurface": {
@@ -170,6 +175,9 @@
             "value": "#6b7280"
           },
           "subtle": {
+            "value": "#94a3b8"
+          },
+          "meta": {
             "value": "#94a3b8"
           }
         }
@@ -226,6 +234,9 @@
           },
           "subtle": {
             "value": "#94a3b8"
+          },
+          "meta": {
+            "value": "#94a3b8"
           }
         },
         "onSurface": {
@@ -236,6 +247,9 @@
             "value": "#cbd5f5"
           },
           "subtle": {
+            "value": "#94a3b8"
+          },
+          "meta": {
             "value": "#94a3b8"
           }
         }
