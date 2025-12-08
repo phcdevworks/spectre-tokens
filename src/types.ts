@@ -9,6 +9,12 @@ export interface TypographyScaleEntry {
   letterSpacing?: string;
 }
 
+export interface FontScaleEntry {
+  size: string;
+  lineHeight: string;
+  weight: number;
+}
+
 export interface TypographyTokens {
   families: Record<string, string>;
   scale: Record<string, TypographyScaleEntry>;
@@ -107,12 +113,12 @@ export interface SpectreTokens {
   radii: any;
   typography: any;
   font: {
-    xs: { size: string; lineHeight: string; weight: number };
-    sm: { size: string; lineHeight: string; weight: number };
-    md: { size: string; lineHeight: string; weight: number };
-    lg: { size: string; lineHeight: string; weight: number };
-    xl: { size: string; lineHeight: string; weight: number };
-    ['2xl']: { size: string; lineHeight: string; weight: number };
+    xs: FontScaleEntry;
+    sm: FontScaleEntry;
+    md: FontScaleEntry;
+    lg: FontScaleEntry;
+    xl: FontScaleEntry;
+    ['2xl']: FontScaleEntry;
   };
   shadows: any;
   breakpoints: any;
@@ -183,6 +189,7 @@ export interface Tokens {
   spacing: TokenScale;
   radii: TokenScale;
   typography: TypographyTokens;
+  font: Record<string, FontScaleEntry>;
   shadows: TokenScale;
   breakpoints: TokenScale;
   zIndex: TokenScale;
