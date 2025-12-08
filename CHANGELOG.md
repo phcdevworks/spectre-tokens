@@ -4,6 +4,21 @@ All notable changes to this project will be documented here. The format follows 
 
 ## [Unreleased]
 
+## [0.1.0] - 2025-12-08
+
+### Added
+
+- Added `font` tokens with `fontSize`, `lineHeight`, and `weight` properties for typography scale ([48bde9f]).
+- Introduced `meta` text token for secondary/metadata text styling in both light and dark modes ([b5078ad]).
+- Added `badge` component tokens with background, text, and border properties for status indicators ([29fad9b]).
+- Extended CSS variable generation to support `badge` and `meta` text tokens ([11d50fa]).
+- Added badge and meta text token validation to regression check script ([b72ae1a]).
+- Integrated badge and font tokens into Tailwind theme system ([50e19ae]).
+
+### Changed
+
+- **Minor version bump** reflecting new semantic token groups (fonts and badges) that extend the design system API.
+
 ## [0.0.4] - 2025-12-07
 
 ### Added
@@ -68,11 +83,18 @@ All notable changes to this project will be documented here. The format follows 
 - Revised FUNDING.yml for Spectre support ([9234a48]).
 - Removed Intelephense from VSCode extension recommendations ([e501f94]).
 
-[unreleased]: https://github.com/phcdevworks/spectre-tokens/compare/v0.0.4...HEAD
+[unreleased]: https://github.com/phcdevworks/spectre-tokens/compare/v0.1.0...HEAD
+[0.1.0]: https://github.com/phcdevworks/spectre-tokens/compare/v0.0.4...v0.1.0
 [0.0.4]: https://github.com/phcdevworks/spectre-tokens/compare/v0.0.3...v0.0.4
 [0.0.3]: https://github.com/phcdevworks/spectre-tokens/compare/v0.0.2...v0.0.3
 [0.0.2]: https://github.com/phcdevworks/spectre-tokens/compare/v0.0.1...v0.0.2
 [0.0.1]: https://github.com/phcdevworks/spectre-tokens/tree/v0.0.1
+[50e19ae]: https://github.com/phcdevworks/spectre-tokens/commit/50e19ae49276fb8b45917ad486f2ddbe9ee61162
+[b72ae1a]: https://github.com/phcdevworks/spectre-tokens/commit/b72ae1a661bba2c352a86761c5bf7409932a5d4a
+[11d50fa]: https://github.com/phcdevworks/spectre-tokens/commit/11d50fa6204b91cccd745aac8aac7f8de45068a7
+[29fad9b]: https://github.com/phcdevworks/spectre-tokens/commit/29fad9ba0e087efc778b4292060c1659de11fdf5
+[b5078ad]: https://github.com/phcdevworks/spectre-tokens/commit/b5078adabd2ac59df35c8877ec58bc2c1a621df0
+[48bde9f]: https://github.com/phcdevworks/spectre-tokens/commit/48bde9f229b8c8b92e2ed3f7786849c435679572
 [2b1ea11]: https://github.com/phcdevworks/spectre-tokens/commit/2b1ea11380293a3bb800a446da7584f81b464607
 [4e58b0b]: https://github.com/phcdevworks/spectre-tokens/commit/4e58b0b3937db8b0e1007cdd1a604674c3aeb4ec
 [a406226]: https://github.com/phcdevworks/spectre-tokens/commit/a406226cf5f9f1b5f3fb1ebd586f2d04f7d34ed2
