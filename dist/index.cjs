@@ -143,12 +143,14 @@ var core_default = {
     onPage: {
       default: "#0f172a",
       muted: "#475569",
-      subtle: "#94a3b8"
+      subtle: "#94a3b8",
+      meta: "#94a3b8"
     },
     onSurface: {
       default: "#0f172a",
       muted: "#6b7280",
-      subtle: "#94a3b8"
+      subtle: "#94a3b8",
+      meta: "#94a3b8"
     }
   },
   component: {
@@ -163,6 +165,24 @@ var core_default = {
     button: {
       textDefault: "#0f172a",
       textOnPrimary: "#ffffff"
+    },
+    badge: {
+      primary: {
+        bg: "#8652ff",
+        text: "#0f172a"
+      },
+      success: {
+        bg: "#22c55e",
+        text: "#0f172a"
+      },
+      warning: {
+        bg: "#f59e0b",
+        text: "#0f172a"
+      },
+      danger: {
+        bg: "#ef4444",
+        text: "#0f172a"
+      }
     }
   },
   modes: {
@@ -191,6 +211,9 @@ var core_default = {
           },
           subtle: {
             value: "#94a3b8"
+          },
+          meta: {
+            value: "#94a3b8"
           }
         },
         onSurface: {
@@ -201,6 +224,9 @@ var core_default = {
             value: "#6b7280"
           },
           subtle: {
+            value: "#94a3b8"
+          },
+          meta: {
             value: "#94a3b8"
           }
         }
@@ -228,6 +254,40 @@ var core_default = {
           },
           textOnPrimary: {
             value: "#ffffff"
+          }
+        },
+        badge: {
+          primary: {
+            bg: {
+              value: "#8652ff"
+            },
+            text: {
+              value: "#0f172a"
+            }
+          },
+          success: {
+            bg: {
+              value: "#22c55e"
+            },
+            text: {
+              value: "#0f172a"
+            }
+          },
+          warning: {
+            bg: {
+              value: "#f59e0b"
+            },
+            text: {
+              value: "#0f172a"
+            }
+          },
+          danger: {
+            bg: {
+              value: "#ef4444"
+            },
+            text: {
+              value: "#0f172a"
+            }
           }
         }
       }
@@ -257,6 +317,9 @@ var core_default = {
           },
           subtle: {
             value: "#94a3b8"
+          },
+          meta: {
+            value: "#94a3b8"
           }
         },
         onSurface: {
@@ -267,6 +330,9 @@ var core_default = {
             value: "#cbd5f5"
           },
           subtle: {
+            value: "#94a3b8"
+          },
+          meta: {
             value: "#94a3b8"
           }
         }
@@ -294,6 +360,40 @@ var core_default = {
           },
           textOnPrimary: {
             value: "#ffffff"
+          }
+        },
+        badge: {
+          primary: {
+            bg: {
+              value: "#8652ff"
+            },
+            text: {
+              value: "#f1f5f9"
+            }
+          },
+          success: {
+            bg: {
+              value: "#22c55e"
+            },
+            text: {
+              value: "#f1f5f9"
+            }
+          },
+          warning: {
+            bg: {
+              value: "#f59e0b"
+            },
+            text: {
+              value: "#f1f5f9"
+            }
+          },
+          danger: {
+            bg: {
+              value: "#ef4444"
+            },
+            text: {
+              value: "#f1f5f9"
+            }
           }
         }
       }
@@ -412,6 +512,38 @@ var core_default = {
   borders: {
     card: "#334155",
     input: "#cbd5f5"
+  },
+  font: {
+    xs: {
+      size: "0.75rem",
+      lineHeight: "1.25rem",
+      weight: 400
+    },
+    sm: {
+      size: "0.875rem",
+      lineHeight: "1.5rem",
+      weight: 400
+    },
+    md: {
+      size: "1rem",
+      lineHeight: "1.75rem",
+      weight: 500
+    },
+    lg: {
+      size: "1.25rem",
+      lineHeight: "2rem",
+      weight: 500
+    },
+    xl: {
+      size: "1.5rem",
+      lineHeight: "2.125rem",
+      weight: 600
+    },
+    "2xl": {
+      size: "1.875rem",
+      lineHeight: "2.5rem",
+      weight: 600
+    }
   },
   typography: {
     families: {
@@ -553,64 +685,93 @@ var toVariableName = (prefix, ...parts) => {
 var createCssVariableMap = (tokens2, options = {}) => {
   const prefix = options.prefix ?? DEFAULT_PREFIX;
   const map = {};
+  const baseTokens = tokens2;
   const assign = (name, value) => {
     if (value === void 0) return;
     map[name] = String(value);
   };
-  Object.entries(tokens2.colors).forEach(([group, scale]) => {
+  Object.entries(baseTokens.colors).forEach(([group, scale]) => {
     Object.entries(scale).forEach(([step, value]) => {
       assign(toVariableName(prefix, "color", group, step), value);
     });
   });
-  Object.entries(tokens2.spacing).forEach(([key, value]) => {
+  Object.entries(baseTokens.spacing).forEach(([key, value]) => {
     assign(toVariableName(prefix, "space", key), value);
   });
-  Object.entries(tokens2.radii).forEach(([key, value]) => {
+  Object.entries(baseTokens.radii).forEach(([key, value]) => {
     assign(toVariableName(prefix, "radius", key), value);
   });
-  Object.entries(tokens2.typography.families).forEach(([key, value]) => {
+  Object.entries(baseTokens.typography.families).forEach(([key, value]) => {
     assign(toVariableName(prefix, "font-family", key), value);
   });
-  Object.entries(tokens2.typography.scale).forEach(([key, entry]) => {
-    assign(toVariableName(prefix, "font", key, "size"), entry.fontSize);
-    assign(toVariableName(prefix, "font", key, "line-height"), entry.lineHeight);
-    assign(toVariableName(prefix, "font", key, "weight"), entry.fontWeight);
+  const typographyScale = baseTokens.typography?.scale ?? {};
+  const fontScale = baseTokens.font;
+  if (fontScale && Object.keys(fontScale).length > 0) {
+    Object.entries(fontScale).forEach(([key, entry]) => {
+      assign(toVariableName(prefix, "font", key, "size"), entry.size);
+      assign(toVariableName(prefix, "font", key, "line-height"), entry.lineHeight);
+      assign(toVariableName(prefix, "font", key, "weight"), entry.weight);
+    });
+  } else {
+    Object.entries(typographyScale).forEach(([key, entry]) => {
+      assign(toVariableName(prefix, "font", key, "size"), entry.fontSize);
+      assign(toVariableName(prefix, "font", key, "line-height"), entry.lineHeight);
+      assign(toVariableName(prefix, "font", key, "weight"), entry.fontWeight);
+    });
+  }
+  Object.entries(typographyScale).forEach(([key, entry]) => {
     assign(toVariableName(prefix, "font", key, "letter-spacing"), entry.letterSpacing);
   });
-  Object.entries(tokens2.shadows).forEach(([key, value]) => {
+  assign(toVariableName(prefix, "text", "on", "page", "default"), tokens2.text.onPage.default);
+  assign(toVariableName(prefix, "text", "on", "page", "muted"), tokens2.text.onPage.muted);
+  assign(toVariableName(prefix, "text", "on", "surface", "default"), tokens2.text.onSurface.default);
+  assign(toVariableName(prefix, "text", "on", "surface", "muted"), tokens2.text.onSurface.muted);
+  assign(toVariableName(prefix, "text", "on", "surface", "meta"), tokens2.text.onSurface.meta);
+  const badge = tokens2.component?.badge;
+  if (badge) {
+    assign(toVariableName(prefix, "badge", "primary", "bg"), badge.primary.bg);
+    assign(toVariableName(prefix, "badge", "primary", "text"), badge.primary.text);
+    assign(toVariableName(prefix, "badge", "success", "bg"), badge.success.bg);
+    assign(toVariableName(prefix, "badge", "success", "text"), badge.success.text);
+    assign(toVariableName(prefix, "badge", "warning", "bg"), badge.warning.bg);
+    assign(toVariableName(prefix, "badge", "warning", "text"), badge.warning.text);
+    assign(toVariableName(prefix, "badge", "danger", "bg"), badge.danger.bg);
+    assign(toVariableName(prefix, "badge", "danger", "text"), badge.danger.text);
+  }
+  Object.entries(baseTokens.shadows).forEach(([key, value]) => {
     assign(toVariableName(prefix, "shadow", key), value);
   });
-  Object.entries(tokens2.breakpoints).forEach(([key, value]) => {
+  Object.entries(baseTokens.breakpoints).forEach(([key, value]) => {
     assign(toVariableName(prefix, "breakpoint", key), value);
   });
-  Object.entries(tokens2.zIndex).forEach(([key, value]) => {
+  Object.entries(baseTokens.zIndex).forEach(([key, value]) => {
     assign(toVariableName(prefix, "z-index", key), value);
   });
-  Object.entries(tokens2.transitions.duration).forEach(([key, value]) => {
+  Object.entries(baseTokens.transitions.duration).forEach(([key, value]) => {
     assign(toVariableName(prefix, "duration", key), value);
   });
-  Object.entries(tokens2.transitions.easing).forEach(([key, value]) => {
+  Object.entries(baseTokens.transitions.easing).forEach(([key, value]) => {
     assign(toVariableName(prefix, "easing", key), value);
   });
-  Object.entries(tokens2.opacity).forEach(([key, value]) => {
+  Object.entries(baseTokens.opacity).forEach(([key, value]) => {
     assign(toVariableName(prefix, "opacity", key), value);
   });
-  assign(toVariableName(prefix, "focus-ring-width"), tokens2.accessibility.focusRing.width);
-  assign(toVariableName(prefix, "focus-ring-offset"), tokens2.accessibility.focusRing.offset);
-  assign(toVariableName(prefix, "focus-ring-style"), tokens2.accessibility.focusRing.style);
-  assign(toVariableName(prefix, "min-touch-target"), tokens2.accessibility.minTouchTarget);
-  assign(toVariableName(prefix, "min-text-size"), tokens2.accessibility.minTextSize);
-  Object.entries(tokens2.buttons).forEach(([variant, states]) => {
+  assign(toVariableName(prefix, "focus-ring-width"), baseTokens.accessibility.focusRing.width);
+  assign(toVariableName(prefix, "focus-ring-offset"), baseTokens.accessibility.focusRing.offset);
+  assign(toVariableName(prefix, "focus-ring-style"), baseTokens.accessibility.focusRing.style);
+  assign(toVariableName(prefix, "min-touch-target"), baseTokens.accessibility.minTouchTarget);
+  assign(toVariableName(prefix, "min-text-size"), baseTokens.accessibility.minTextSize);
+  Object.entries(baseTokens.buttons).forEach(([variant, states]) => {
     Object.entries(states).forEach(([state, value]) => {
       assign(toVariableName(prefix, "button", variant, state), value);
     });
   });
-  Object.entries(tokens2.forms).forEach(([state, properties]) => {
+  Object.entries(baseTokens.forms).forEach(([state, properties]) => {
     Object.entries(properties).forEach(([prop, value]) => {
       if (value) assign(toVariableName(prefix, "form", state, prop), value);
     });
   });
-  Object.entries(tokens2.animations).forEach(([name, animation]) => {
+  Object.entries(baseTokens.animations).forEach(([name, animation]) => {
     assign(toVariableName(prefix, "animation", name, "duration"), animation.duration);
     assign(toVariableName(prefix, "animation", name, "easing"), animation.easing);
     assign(toVariableName(prefix, "animation", name, "keyframes"), animation.keyframes);
@@ -652,14 +813,48 @@ var generateCssVariables = (tokens2, options = {}) => {
   addBase(toVariableName(prefix, "surface", "overlay"), pickSemantic(getPath(defaultMode, ["surface", "overlay"]), getPath(surfaceAliases, ["overlay"])));
   addBase(toVariableName(prefix, "text", "on", "page", "default"), pickSemantic(getPath(defaultMode, ["text", "onPage", "default"]), getPath(textAliases, ["onPage", "default"])));
   addBase(toVariableName(prefix, "text", "on", "page", "muted"), pickSemantic(getPath(defaultMode, ["text", "onPage", "muted"]), getPath(textAliases, ["onPage", "muted"])));
+  addBase(toVariableName(prefix, "text", "on", "page", "meta"), pickSemantic(getPath(defaultMode, ["text", "onPage", "meta"]), getPath(textAliases, ["onPage", "meta"])));
   addBase(toVariableName(prefix, "text", "on", "surface", "default"), pickSemantic(getPath(defaultMode, ["text", "onSurface", "default"]), getPath(textAliases, ["onSurface", "default"])));
   addBase(toVariableName(prefix, "text", "on", "surface", "muted"), pickSemantic(getPath(defaultMode, ["text", "onSurface", "muted"]), getPath(textAliases, ["onSurface", "muted"])));
+  addBase(toVariableName(prefix, "text", "on", "surface", "meta"), pickSemantic(getPath(defaultMode, ["text", "onSurface", "meta"]), getPath(textAliases, ["onSurface", "meta"])));
   addBase(toVariableName(prefix, "component", "card", "text"), pickSemantic(getPath(defaultMode, ["component", "card", "text"]), getPath(componentAliases, ["card", "text"])));
   addBase(toVariableName(prefix, "component", "card", "text-muted"), pickSemantic(getPath(defaultMode, ["component", "card", "textMuted"]), getPath(componentAliases, ["card", "textMuted"])));
   addBase(toVariableName(prefix, "component", "input", "text"), pickSemantic(getPath(defaultMode, ["component", "input", "text"]), getPath(componentAliases, ["input", "text"])));
   addBase(toVariableName(prefix, "component", "input", "placeholder"), pickSemantic(getPath(defaultMode, ["component", "input", "placeholder"]), getPath(componentAliases, ["input", "placeholder"])));
   addBase(toVariableName(prefix, "button", "text", "default"), pickSemantic(getPath(defaultMode, ["component", "button", "textDefault"]), getPath(componentAliases, ["button", "textDefault"])));
   addBase(toVariableName(prefix, "button", "text", "on", "primary"), pickSemantic(getPath(defaultMode, ["component", "button", "textOnPrimary"]), getPath(componentAliases, ["button", "textOnPrimary"])));
+  addBase(
+    toVariableName(prefix, "badge", "primary", "bg"),
+    pickSemantic(getPath(defaultMode, ["component", "badge", "primary", "bg"]), getPath(componentAliases, ["badge", "primary", "bg"]))
+  );
+  addBase(
+    toVariableName(prefix, "badge", "primary", "text"),
+    pickSemantic(getPath(defaultMode, ["component", "badge", "primary", "text"]), getPath(componentAliases, ["badge", "primary", "text"]))
+  );
+  addBase(
+    toVariableName(prefix, "badge", "success", "bg"),
+    pickSemantic(getPath(defaultMode, ["component", "badge", "success", "bg"]), getPath(componentAliases, ["badge", "success", "bg"]))
+  );
+  addBase(
+    toVariableName(prefix, "badge", "success", "text"),
+    pickSemantic(getPath(defaultMode, ["component", "badge", "success", "text"]), getPath(componentAliases, ["badge", "success", "text"]))
+  );
+  addBase(
+    toVariableName(prefix, "badge", "warning", "bg"),
+    pickSemantic(getPath(defaultMode, ["component", "badge", "warning", "bg"]), getPath(componentAliases, ["badge", "warning", "bg"]))
+  );
+  addBase(
+    toVariableName(prefix, "badge", "warning", "text"),
+    pickSemantic(getPath(defaultMode, ["component", "badge", "warning", "text"]), getPath(componentAliases, ["badge", "warning", "text"]))
+  );
+  addBase(
+    toVariableName(prefix, "badge", "danger", "bg"),
+    pickSemantic(getPath(defaultMode, ["component", "badge", "danger", "bg"]), getPath(componentAliases, ["badge", "danger", "bg"]))
+  );
+  addBase(
+    toVariableName(prefix, "badge", "danger", "text"),
+    pickSemantic(getPath(defaultMode, ["component", "badge", "danger", "text"]), getPath(componentAliases, ["badge", "danger", "text"]))
+  );
   const rootLines = [...baseLines, ...mapLines];
   const darkLines = [];
   const addDark = (name, value) => {
@@ -698,6 +893,14 @@ var generateCssVariables = (tokens2, options = {}) => {
     )
   );
   addDark(
+    toVariableName(prefix, "text", "on", "page", "meta"),
+    pickSemantic(
+      getPath(darkMode, ["text", "onPage", "meta"]),
+      getPath(defaultMode, ["text", "onPage", "meta"]),
+      getPath(textAliases, ["onPage", "meta"])
+    )
+  );
+  addDark(
     toVariableName(prefix, "text", "on", "surface", "default"),
     pickSemantic(
       getPath(darkMode, ["text", "onSurface", "default"]),
@@ -711,6 +914,14 @@ var generateCssVariables = (tokens2, options = {}) => {
       getPath(darkMode, ["text", "onSurface", "muted"]),
       getPath(defaultMode, ["text", "onSurface", "muted"]),
       getPath(textAliases, ["onSurface", "muted"])
+    )
+  );
+  addDark(
+    toVariableName(prefix, "text", "on", "surface", "meta"),
+    pickSemantic(
+      getPath(darkMode, ["text", "onSurface", "meta"]),
+      getPath(defaultMode, ["text", "onSurface", "meta"]),
+      getPath(textAliases, ["onSurface", "meta"])
     )
   );
   addDark(
@@ -759,6 +970,70 @@ var generateCssVariables = (tokens2, options = {}) => {
       getPath(darkMode, ["component", "button", "textOnPrimary"]),
       getPath(defaultMode, ["component", "button", "textOnPrimary"]),
       getPath(componentAliases, ["button", "textOnPrimary"])
+    )
+  );
+  addDark(
+    toVariableName(prefix, "badge", "primary", "bg"),
+    pickSemantic(
+      getPath(darkMode, ["component", "badge", "primary", "bg"]),
+      getPath(defaultMode, ["component", "badge", "primary", "bg"]),
+      getPath(componentAliases, ["badge", "primary", "bg"])
+    )
+  );
+  addDark(
+    toVariableName(prefix, "badge", "primary", "text"),
+    pickSemantic(
+      getPath(darkMode, ["component", "badge", "primary", "text"]),
+      getPath(defaultMode, ["component", "badge", "primary", "text"]),
+      getPath(componentAliases, ["badge", "primary", "text"])
+    )
+  );
+  addDark(
+    toVariableName(prefix, "badge", "success", "bg"),
+    pickSemantic(
+      getPath(darkMode, ["component", "badge", "success", "bg"]),
+      getPath(defaultMode, ["component", "badge", "success", "bg"]),
+      getPath(componentAliases, ["badge", "success", "bg"])
+    )
+  );
+  addDark(
+    toVariableName(prefix, "badge", "success", "text"),
+    pickSemantic(
+      getPath(darkMode, ["component", "badge", "success", "text"]),
+      getPath(defaultMode, ["component", "badge", "success", "text"]),
+      getPath(componentAliases, ["badge", "success", "text"])
+    )
+  );
+  addDark(
+    toVariableName(prefix, "badge", "warning", "bg"),
+    pickSemantic(
+      getPath(darkMode, ["component", "badge", "warning", "bg"]),
+      getPath(defaultMode, ["component", "badge", "warning", "bg"]),
+      getPath(componentAliases, ["badge", "warning", "bg"])
+    )
+  );
+  addDark(
+    toVariableName(prefix, "badge", "warning", "text"),
+    pickSemantic(
+      getPath(darkMode, ["component", "badge", "warning", "text"]),
+      getPath(defaultMode, ["component", "badge", "warning", "text"]),
+      getPath(componentAliases, ["badge", "warning", "text"])
+    )
+  );
+  addDark(
+    toVariableName(prefix, "badge", "danger", "bg"),
+    pickSemantic(
+      getPath(darkMode, ["component", "badge", "danger", "bg"]),
+      getPath(defaultMode, ["component", "badge", "danger", "bg"]),
+      getPath(componentAliases, ["badge", "danger", "bg"])
+    )
+  );
+  addDark(
+    toVariableName(prefix, "badge", "danger", "text"),
+    pickSemantic(
+      getPath(darkMode, ["component", "badge", "danger", "text"]),
+      getPath(defaultMode, ["component", "badge", "danger", "text"]),
+      getPath(componentAliases, ["badge", "danger", "text"])
     )
   );
   const rootBlock = `${selector} {
