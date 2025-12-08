@@ -70,11 +70,13 @@ export interface SpectreModeTokens {
       default: SemanticTokenValue;
       muted: SemanticTokenValue;
       subtle: SemanticTokenValue;
+      meta: SemanticTokenValue;
     };
     onSurface: {
       default: SemanticTokenValue;
       muted: SemanticTokenValue;
       subtle: SemanticTokenValue;
+      meta: SemanticTokenValue;
     };
   };
   component: {
@@ -125,14 +127,16 @@ export interface SpectreTokens {
   };
   text: {
     onPage: {
-      default: SemanticTokenValue;
-      muted: SemanticTokenValue;
-      subtle?: SemanticTokenValue;
+      default: string;
+      muted: string;
+      subtle: string;
+      meta: string;
     };
     onSurface: {
-      default: SemanticTokenValue;
-      muted: SemanticTokenValue;
-      subtle?: SemanticTokenValue;
+      default: string;
+      muted: string;
+      subtle: string;
+      meta: string;
     };
     [key: string]: any;
   };
