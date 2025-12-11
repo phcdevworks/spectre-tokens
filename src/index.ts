@@ -16,7 +16,10 @@ export type {
   AccessibilityTokens,
   ButtonStateTokens,
   FormStateTokens,
-  AnimationEntry
+  AnimationEntry,
+  ComponentTokens,
+  ComponentBadgeTokens,
+  ComponentIconBoxTokens
 } from './types';
 
 const tokens: SpectreTokens = coreTokens as SpectreTokens;
