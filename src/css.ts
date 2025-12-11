@@ -1,4 +1,11 @@
-import type { CssVariableMap, CssVariableOptions, SpectreTokens, Tokens } from './types';
+import type {
+  ComponentBadgeTokens,
+  ComponentIconBoxTokens,
+  CssVariableMap,
+  CssVariableOptions,
+  SpectreTokens,
+  Tokens
+} from './types';
 
 const DEFAULT_PREFIX = 'sp';
 export const DEFAULT_SELECTOR = ':root';
@@ -14,12 +21,34 @@ const toVariableName = (prefix: string, ...parts: string[]): string => {
   return `--${prefix}-${filtered.join('-')}`;
 };
 
+const BADGE_VARIANTS: Array<{ variant: string; bgKey: keyof ComponentBadgeTokens; textKey: keyof ComponentBadgeTokens }> = [
+  { variant: 'neutral', bgKey: 'neutralBg', textKey: 'neutralText' },
+  { variant: 'info', bgKey: 'infoBg', textKey: 'infoText' },
+  { variant: 'success', bgKey: 'successBg', textKey: 'successText' },
+  { variant: 'warning', bgKey: 'warningBg', textKey: 'warningText' },
+  { variant: 'danger', bgKey: 'dangerBg', textKey: 'dangerText' }
+];
+
+const ICON_BOX_FIELDS: Array<{ name: string; tokenKey: keyof ComponentIconBoxTokens }> = [
+  { name: 'bg', tokenKey: 'bg' },
+  { name: 'border', tokenKey: 'border' },
+  { name: 'icon-default', tokenKey: 'iconDefault' },
+  { name: 'icon-success', tokenKey: 'iconSuccess' },
+  { name: 'icon-warning', tokenKey: 'iconWarning' },
+  { name: 'icon-danger', tokenKey: 'iconDanger' }
+];
+
 export const createCssVariableMap = (tokens: SpectreTokens, options: CssVariableOptions = {}): CssVariableMap => {
   const prefix = options.prefix ?? DEFAULT_PREFIX;
   const map: CssVariableMap = {};
   const baseTokens = tokens as unknown as Tokens;
 
-  const assign = (name: string, value: string | number | undefined) => {
+  const assign = (name: string, value: unknown) => {
+    const resolved = resolveSemanticValue(value);
+    if (resolved !== undefined) {
+      map[name] = resolved;
+      return;
+    }
     if (value === undefined) return;
     map[name] = String(value);
   };
@@ -71,14 +100,17 @@ export const createCssVariableMap = (tokens: SpectreTokens, options: CssVariable
 
   const badge = tokens.component?.badge;
   if (badge) {
-    assign(toVariableName(prefix, 'badge', 'primary', 'bg'), badge.primary.bg);
-    assign(toVariableName(prefix, 'badge', 'primary', 'text'), badge.primary.text);
-    assign(toVariableName(prefix, 'badge', 'success', 'bg'), badge.success.bg);
-    assign(toVariableName(prefix, 'badge', 'success', 'text'), badge.success.text);
-    assign(toVariableName(prefix, 'badge', 'warning', 'bg'), badge.warning.bg);
-    assign(toVariableName(prefix, 'badge', 'warning', 'text'), badge.warning.text);
-    assign(toVariableName(prefix, 'badge', 'danger', 'bg'), badge.danger.bg);
-    assign(toVariableName(prefix, 'badge', 'danger', 'text'), badge.danger.text);
+    BADGE_VARIANTS.forEach(({ variant, bgKey, textKey }) => {
+      assign(toVariableName(prefix, 'badge', variant, 'bg'), badge[bgKey]);
+      assign(toVariableName(prefix, 'badge', variant, 'text'), badge[textKey]);
+    });
+  }
+
+  const iconBox = tokens.component?.iconBox;
+  if (iconBox) {
+    ICON_BOX_FIELDS.forEach(({ name, tokenKey }) => {
+      assign(toVariableName(prefix, 'icon-box', name), iconBox[tokenKey]);
+    });
   }
 
   Object.entries(baseTokens.shadows).forEach(([key, value]) => {
@@ -190,38 +222,22 @@ export const generateCssVariables = (tokens: SpectreTokens, options: CssVariable
   addBase(toVariableName(prefix, 'component', 'input', 'placeholder'), pickSemantic(getPath(defaultMode, ['component', 'input', 'placeholder']), getPath(componentAliases, ['input', 'placeholder'])));
   addBase(toVariableName(prefix, 'button', 'text', 'default'), pickSemantic(getPath(defaultMode, ['component', 'button', 'textDefault']), getPath(componentAliases, ['button', 'textDefault'])));
   addBase(toVariableName(prefix, 'button', 'text', 'on', 'primary'), pickSemantic(getPath(defaultMode, ['component', 'button', 'textOnPrimary']), getPath(componentAliases, ['button', 'textOnPrimary'])));
-  addBase(
-    toVariableName(prefix, 'badge', 'primary', 'bg'),
-    pickSemantic(getPath(defaultMode, ['component', 'badge', 'primary', 'bg']), getPath(componentAliases, ['badge', 'primary', 'bg']))
-  );
-  addBase(
-    toVariableName(prefix, 'badge', 'primary', 'text'),
-    pickSemantic(getPath(defaultMode, ['component', 'badge', 'primary', 'text']), getPath(componentAliases, ['badge', 'primary', 'text']))
-  );
-  addBase(
-    toVariableName(prefix, 'badge', 'success', 'bg'),
-    pickSemantic(getPath(defaultMode, ['component', 'badge', 'success', 'bg']), getPath(componentAliases, ['badge', 'success', 'bg']))
-  );
-  addBase(
-    toVariableName(prefix, 'badge', 'success', 'text'),
-    pickSemantic(getPath(defaultMode, ['component', 'badge', 'success', 'text']), getPath(componentAliases, ['badge', 'success', 'text']))
-  );
-  addBase(
-    toVariableName(prefix, 'badge', 'warning', 'bg'),
-    pickSemantic(getPath(defaultMode, ['component', 'badge', 'warning', 'bg']), getPath(componentAliases, ['badge', 'warning', 'bg']))
-  );
-  addBase(
-    toVariableName(prefix, 'badge', 'warning', 'text'),
-    pickSemantic(getPath(defaultMode, ['component', 'badge', 'warning', 'text']), getPath(componentAliases, ['badge', 'warning', 'text']))
-  );
-  addBase(
-    toVariableName(prefix, 'badge', 'danger', 'bg'),
-    pickSemantic(getPath(defaultMode, ['component', 'badge', 'danger', 'bg']), getPath(componentAliases, ['badge', 'danger', 'bg']))
-  );
-  addBase(
-    toVariableName(prefix, 'badge', 'danger', 'text'),
-    pickSemantic(getPath(defaultMode, ['component', 'badge', 'danger', 'text']), getPath(componentAliases, ['badge', 'danger', 'text']))
-  );
+  BADGE_VARIANTS.forEach(({ variant, bgKey, textKey }) => {
+    addBase(
+      toVariableName(prefix, 'badge', variant, 'bg'),
+      pickSemantic(getPath(defaultMode, ['component', 'badge', bgKey]), getPath(componentAliases, ['badge', bgKey]))
+    );
+    addBase(
+      toVariableName(prefix, 'badge', variant, 'text'),
+      pickSemantic(getPath(defaultMode, ['component', 'badge', textKey]), getPath(componentAliases, ['badge', textKey]))
+    );
+  });
+  ICON_BOX_FIELDS.forEach(({ name, tokenKey }) => {
+    addBase(
+      toVariableName(prefix, 'icon-box', name),
+      pickSemantic(getPath(defaultMode, ['component', 'iconBox', tokenKey]), getPath(componentAliases, ['iconBox', tokenKey]))
+    );
+  });
 
   const rootLines = [...baseLines, ...mapLines];
 
@@ -344,70 +360,34 @@ export const generateCssVariables = (tokens: SpectreTokens, options: CssVariable
       getPath(componentAliases, ['button', 'textOnPrimary'])
     )
   );
-  addDark(
-    toVariableName(prefix, 'badge', 'primary', 'bg'),
-    pickSemantic(
-      getPath(darkMode, ['component', 'badge', 'primary', 'bg']),
-      getPath(defaultMode, ['component', 'badge', 'primary', 'bg']),
-      getPath(componentAliases, ['badge', 'primary', 'bg'])
-    )
-  );
-  addDark(
-    toVariableName(prefix, 'badge', 'primary', 'text'),
-    pickSemantic(
-      getPath(darkMode, ['component', 'badge', 'primary', 'text']),
-      getPath(defaultMode, ['component', 'badge', 'primary', 'text']),
-      getPath(componentAliases, ['badge', 'primary', 'text'])
-    )
-  );
-  addDark(
-    toVariableName(prefix, 'badge', 'success', 'bg'),
-    pickSemantic(
-      getPath(darkMode, ['component', 'badge', 'success', 'bg']),
-      getPath(defaultMode, ['component', 'badge', 'success', 'bg']),
-      getPath(componentAliases, ['badge', 'success', 'bg'])
-    )
-  );
-  addDark(
-    toVariableName(prefix, 'badge', 'success', 'text'),
-    pickSemantic(
-      getPath(darkMode, ['component', 'badge', 'success', 'text']),
-      getPath(defaultMode, ['component', 'badge', 'success', 'text']),
-      getPath(componentAliases, ['badge', 'success', 'text'])
-    )
-  );
-  addDark(
-    toVariableName(prefix, 'badge', 'warning', 'bg'),
-    pickSemantic(
-      getPath(darkMode, ['component', 'badge', 'warning', 'bg']),
-      getPath(defaultMode, ['component', 'badge', 'warning', 'bg']),
-      getPath(componentAliases, ['badge', 'warning', 'bg'])
-    )
-  );
-  addDark(
-    toVariableName(prefix, 'badge', 'warning', 'text'),
-    pickSemantic(
-      getPath(darkMode, ['component', 'badge', 'warning', 'text']),
-      getPath(defaultMode, ['component', 'badge', 'warning', 'text']),
-      getPath(componentAliases, ['badge', 'warning', 'text'])
-    )
-  );
-  addDark(
-    toVariableName(prefix, 'badge', 'danger', 'bg'),
-    pickSemantic(
-      getPath(darkMode, ['component', 'badge', 'danger', 'bg']),
-      getPath(defaultMode, ['component', 'badge', 'danger', 'bg']),
-      getPath(componentAliases, ['badge', 'danger', 'bg'])
-    )
-  );
-  addDark(
-    toVariableName(prefix, 'badge', 'danger', 'text'),
-    pickSemantic(
-      getPath(darkMode, ['component', 'badge', 'danger', 'text']),
-      getPath(defaultMode, ['component', 'badge', 'danger', 'text']),
-      getPath(componentAliases, ['badge', 'danger', 'text'])
-    )
-  );
+  BADGE_VARIANTS.forEach(({ variant, bgKey, textKey }) => {
+    addDark(
+      toVariableName(prefix, 'badge', variant, 'bg'),
+      pickSemantic(
+        getPath(darkMode, ['component', 'badge', bgKey]),
+        getPath(defaultMode, ['component', 'badge', bgKey]),
+        getPath(componentAliases, ['badge', bgKey])
+      )
+    );
+    addDark(
+      toVariableName(prefix, 'badge', variant, 'text'),
+      pickSemantic(
+        getPath(darkMode, ['component', 'badge', textKey]),
+        getPath(defaultMode, ['component', 'badge', textKey]),
+        getPath(componentAliases, ['badge', textKey])
+      )
+    );
+  });
+  ICON_BOX_FIELDS.forEach(({ name, tokenKey }) => {
+    addDark(
+      toVariableName(prefix, 'icon-box', name),
+      pickSemantic(
+        getPath(darkMode, ['component', 'iconBox', tokenKey]),
+        getPath(defaultMode, ['component', 'iconBox', tokenKey]),
+        getPath(componentAliases, ['iconBox', tokenKey])
+      )
+    );
+  });
 
   const rootBlock = `${selector} {\n${rootLines.join('\n')}\n}`;
   const darkBlock = `${selector}[data-spectre-theme="dark"] {\n${darkLines.join('\n')}\n}`;
