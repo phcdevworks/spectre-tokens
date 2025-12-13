@@ -137,22 +137,24 @@ var core_default = {
       textOnPrimary: "#ffffff"
     },
     badge: {
-      primary: {
-        bg: "#8652ff",
-        text: "#0f172a"
-      },
-      success: {
-        bg: "#22c55e",
-        text: "#0f172a"
-      },
-      warning: {
-        bg: "#f59e0b",
-        text: "#0f172a"
-      },
-      danger: {
-        bg: "#ef4444",
-        text: "#0f172a"
-      }
+      neutralBg: "#f1f5f9",
+      neutralText: "#334155",
+      infoBg: "#dbeafe",
+      infoText: "#1d4ed8",
+      successBg: "#dcfce7",
+      successText: "#15803d",
+      warningBg: "#fef3c7",
+      warningText: "#b45309",
+      dangerBg: "#fee2e2",
+      dangerText: "#b91c1c"
+    },
+    iconBox: {
+      bg: "#ffffff",
+      border: "#e2e8f0",
+      iconDefault: "#6c32e6",
+      iconSuccess: "#16a34a",
+      iconWarning: "#d97706",
+      iconDanger: "#dc2626"
     }
   },
   modes: {
@@ -227,37 +229,55 @@ var core_default = {
           }
         },
         badge: {
-          primary: {
-            bg: {
-              value: "#8652ff"
-            },
-            text: {
-              value: "#0f172a"
-            }
+          neutralBg: {
+            value: "#f1f5f9"
           },
-          success: {
-            bg: {
-              value: "#22c55e"
-            },
-            text: {
-              value: "#0f172a"
-            }
+          neutralText: {
+            value: "#334155"
           },
-          warning: {
-            bg: {
-              value: "#f59e0b"
-            },
-            text: {
-              value: "#0f172a"
-            }
+          infoBg: {
+            value: "#dbeafe"
           },
-          danger: {
-            bg: {
-              value: "#ef4444"
-            },
-            text: {
-              value: "#0f172a"
-            }
+          infoText: {
+            value: "#1d4ed8"
+          },
+          successBg: {
+            value: "#dcfce7"
+          },
+          successText: {
+            value: "#15803d"
+          },
+          warningBg: {
+            value: "#fef3c7"
+          },
+          warningText: {
+            value: "#b45309"
+          },
+          dangerBg: {
+            value: "#fee2e2"
+          },
+          dangerText: {
+            value: "#b91c1c"
+          }
+        },
+        iconBox: {
+          bg: {
+            value: "#ffffff"
+          },
+          border: {
+            value: "#e2e8f0"
+          },
+          iconDefault: {
+            value: "#6c32e6"
+          },
+          iconSuccess: {
+            value: "#16a34a"
+          },
+          iconWarning: {
+            value: "#d97706"
+          },
+          iconDanger: {
+            value: "#dc2626"
           }
         }
       }
@@ -333,37 +353,55 @@ var core_default = {
           }
         },
         badge: {
-          primary: {
-            bg: {
-              value: "#8652ff"
-            },
-            text: {
-              value: "#f1f5f9"
-            }
+          neutralBg: {
+            value: "#334155"
           },
-          success: {
-            bg: {
-              value: "#22c55e"
-            },
-            text: {
-              value: "#f1f5f9"
-            }
+          neutralText: {
+            value: "#f1f5f9"
           },
-          warning: {
-            bg: {
-              value: "#f59e0b"
-            },
-            text: {
-              value: "#f1f5f9"
-            }
+          infoBg: {
+            value: "#1e40af"
           },
-          danger: {
-            bg: {
-              value: "#ef4444"
-            },
-            text: {
-              value: "#f1f5f9"
-            }
+          infoText: {
+            value: "#dbeafe"
+          },
+          successBg: {
+            value: "#166534"
+          },
+          successText: {
+            value: "#dcfce7"
+          },
+          warningBg: {
+            value: "#92400e"
+          },
+          warningText: {
+            value: "#fef3c7"
+          },
+          dangerBg: {
+            value: "#991b1b"
+          },
+          dangerText: {
+            value: "#fee2e2"
+          }
+        },
+        iconBox: {
+          bg: {
+            value: "#1e293b"
+          },
+          border: {
+            value: "#334155"
+          },
+          iconDefault: {
+            value: "#a37aff"
+          },
+          iconSuccess: {
+            value: "#4ade80"
+          },
+          iconWarning: {
+            value: "#fbbf24"
+          },
+          iconDanger: {
+            value: "#f87171"
           }
         }
       }
@@ -652,11 +690,31 @@ var toVariableName = (prefix, ...parts) => {
   const filtered = parts.filter(Boolean).map(formatKey);
   return `--${prefix}-${filtered.join("-")}`;
 };
+var BADGE_VARIANTS = [
+  { variant: "neutral", bgKey: "neutralBg", textKey: "neutralText" },
+  { variant: "info", bgKey: "infoBg", textKey: "infoText" },
+  { variant: "success", bgKey: "successBg", textKey: "successText" },
+  { variant: "warning", bgKey: "warningBg", textKey: "warningText" },
+  { variant: "danger", bgKey: "dangerBg", textKey: "dangerText" }
+];
+var ICON_BOX_FIELDS = [
+  { name: "bg", tokenKey: "bg" },
+  { name: "border", tokenKey: "border" },
+  { name: "icon-default", tokenKey: "iconDefault" },
+  { name: "icon-success", tokenKey: "iconSuccess" },
+  { name: "icon-warning", tokenKey: "iconWarning" },
+  { name: "icon-danger", tokenKey: "iconDanger" }
+];
 var createCssVariableMap = (tokens2, options = {}) => {
   const prefix = options.prefix ?? DEFAULT_PREFIX;
   const map = {};
   const baseTokens = tokens2;
   const assign = (name, value) => {
+    const resolved = resolveSemanticValue(value);
+    if (resolved !== void 0) {
+      map[name] = resolved;
+      return;
+    }
     if (value === void 0) return;
     map[name] = String(value);
   };
@@ -699,14 +757,16 @@ var createCssVariableMap = (tokens2, options = {}) => {
   assign(toVariableName(prefix, "text", "on", "surface", "meta"), tokens2.text.onSurface.meta);
   const badge = tokens2.component?.badge;
   if (badge) {
-    assign(toVariableName(prefix, "badge", "primary", "bg"), badge.primary.bg);
-    assign(toVariableName(prefix, "badge", "primary", "text"), badge.primary.text);
-    assign(toVariableName(prefix, "badge", "success", "bg"), badge.success.bg);
-    assign(toVariableName(prefix, "badge", "success", "text"), badge.success.text);
-    assign(toVariableName(prefix, "badge", "warning", "bg"), badge.warning.bg);
-    assign(toVariableName(prefix, "badge", "warning", "text"), badge.warning.text);
-    assign(toVariableName(prefix, "badge", "danger", "bg"), badge.danger.bg);
-    assign(toVariableName(prefix, "badge", "danger", "text"), badge.danger.text);
+    BADGE_VARIANTS.forEach(({ variant, bgKey, textKey }) => {
+      assign(toVariableName(prefix, "badge", variant, "bg"), badge[bgKey]);
+      assign(toVariableName(prefix, "badge", variant, "text"), badge[textKey]);
+    });
+  }
+  const iconBox = tokens2.component?.iconBox;
+  if (iconBox) {
+    ICON_BOX_FIELDS.forEach(({ name, tokenKey }) => {
+      assign(toVariableName(prefix, "icon-box", name), iconBox[tokenKey]);
+    });
   }
   Object.entries(baseTokens.shadows).forEach(([key, value]) => {
     assign(toVariableName(prefix, "shadow", key), value);
@@ -793,38 +853,22 @@ var generateCssVariables = (tokens2, options = {}) => {
   addBase(toVariableName(prefix, "component", "input", "placeholder"), pickSemantic(getPath(defaultMode, ["component", "input", "placeholder"]), getPath(componentAliases, ["input", "placeholder"])));
   addBase(toVariableName(prefix, "button", "text", "default"), pickSemantic(getPath(defaultMode, ["component", "button", "textDefault"]), getPath(componentAliases, ["button", "textDefault"])));
   addBase(toVariableName(prefix, "button", "text", "on", "primary"), pickSemantic(getPath(defaultMode, ["component", "button", "textOnPrimary"]), getPath(componentAliases, ["button", "textOnPrimary"])));
-  addBase(
-    toVariableName(prefix, "badge", "primary", "bg"),
-    pickSemantic(getPath(defaultMode, ["component", "badge", "primary", "bg"]), getPath(componentAliases, ["badge", "primary", "bg"]))
-  );
-  addBase(
-    toVariableName(prefix, "badge", "primary", "text"),
-    pickSemantic(getPath(defaultMode, ["component", "badge", "primary", "text"]), getPath(componentAliases, ["badge", "primary", "text"]))
-  );
-  addBase(
-    toVariableName(prefix, "badge", "success", "bg"),
-    pickSemantic(getPath(defaultMode, ["component", "badge", "success", "bg"]), getPath(componentAliases, ["badge", "success", "bg"]))
-  );
-  addBase(
-    toVariableName(prefix, "badge", "success", "text"),
-    pickSemantic(getPath(defaultMode, ["component", "badge", "success", "text"]), getPath(componentAliases, ["badge", "success", "text"]))
-  );
-  addBase(
-    toVariableName(prefix, "badge", "warning", "bg"),
-    pickSemantic(getPath(defaultMode, ["component", "badge", "warning", "bg"]), getPath(componentAliases, ["badge", "warning", "bg"]))
-  );
-  addBase(
-    toVariableName(prefix, "badge", "warning", "text"),
-    pickSemantic(getPath(defaultMode, ["component", "badge", "warning", "text"]), getPath(componentAliases, ["badge", "warning", "text"]))
-  );
-  addBase(
-    toVariableName(prefix, "badge", "danger", "bg"),
-    pickSemantic(getPath(defaultMode, ["component", "badge", "danger", "bg"]), getPath(componentAliases, ["badge", "danger", "bg"]))
-  );
-  addBase(
-    toVariableName(prefix, "badge", "danger", "text"),
-    pickSemantic(getPath(defaultMode, ["component", "badge", "danger", "text"]), getPath(componentAliases, ["badge", "danger", "text"]))
-  );
+  BADGE_VARIANTS.forEach(({ variant, bgKey, textKey }) => {
+    addBase(
+      toVariableName(prefix, "badge", variant, "bg"),
+      pickSemantic(getPath(defaultMode, ["component", "badge", bgKey]), getPath(componentAliases, ["badge", bgKey]))
+    );
+    addBase(
+      toVariableName(prefix, "badge", variant, "text"),
+      pickSemantic(getPath(defaultMode, ["component", "badge", textKey]), getPath(componentAliases, ["badge", textKey]))
+    );
+  });
+  ICON_BOX_FIELDS.forEach(({ name, tokenKey }) => {
+    addBase(
+      toVariableName(prefix, "icon-box", name),
+      pickSemantic(getPath(defaultMode, ["component", "iconBox", tokenKey]), getPath(componentAliases, ["iconBox", tokenKey]))
+    );
+  });
   const rootLines = [...baseLines, ...mapLines];
   const darkLines = [];
   const addDark = (name, value) => {
@@ -942,70 +986,34 @@ var generateCssVariables = (tokens2, options = {}) => {
       getPath(componentAliases, ["button", "textOnPrimary"])
     )
   );
-  addDark(
-    toVariableName(prefix, "badge", "primary", "bg"),
-    pickSemantic(
-      getPath(darkMode, ["component", "badge", "primary", "bg"]),
-      getPath(defaultMode, ["component", "badge", "primary", "bg"]),
-      getPath(componentAliases, ["badge", "primary", "bg"])
-    )
-  );
-  addDark(
-    toVariableName(prefix, "badge", "primary", "text"),
-    pickSemantic(
-      getPath(darkMode, ["component", "badge", "primary", "text"]),
-      getPath(defaultMode, ["component", "badge", "primary", "text"]),
-      getPath(componentAliases, ["badge", "primary", "text"])
-    )
-  );
-  addDark(
-    toVariableName(prefix, "badge", "success", "bg"),
-    pickSemantic(
-      getPath(darkMode, ["component", "badge", "success", "bg"]),
-      getPath(defaultMode, ["component", "badge", "success", "bg"]),
-      getPath(componentAliases, ["badge", "success", "bg"])
-    )
-  );
-  addDark(
-    toVariableName(prefix, "badge", "success", "text"),
-    pickSemantic(
-      getPath(darkMode, ["component", "badge", "success", "text"]),
-      getPath(defaultMode, ["component", "badge", "success", "text"]),
-      getPath(componentAliases, ["badge", "success", "text"])
-    )
-  );
-  addDark(
-    toVariableName(prefix, "badge", "warning", "bg"),
-    pickSemantic(
-      getPath(darkMode, ["component", "badge", "warning", "bg"]),
-      getPath(defaultMode, ["component", "badge", "warning", "bg"]),
-      getPath(componentAliases, ["badge", "warning", "bg"])
-    )
-  );
-  addDark(
-    toVariableName(prefix, "badge", "warning", "text"),
-    pickSemantic(
-      getPath(darkMode, ["component", "badge", "warning", "text"]),
-      getPath(defaultMode, ["component", "badge", "warning", "text"]),
-      getPath(componentAliases, ["badge", "warning", "text"])
-    )
-  );
-  addDark(
-    toVariableName(prefix, "badge", "danger", "bg"),
-    pickSemantic(
-      getPath(darkMode, ["component", "badge", "danger", "bg"]),
-      getPath(defaultMode, ["component", "badge", "danger", "bg"]),
-      getPath(componentAliases, ["badge", "danger", "bg"])
-    )
-  );
-  addDark(
-    toVariableName(prefix, "badge", "danger", "text"),
-    pickSemantic(
-      getPath(darkMode, ["component", "badge", "danger", "text"]),
-      getPath(defaultMode, ["component", "badge", "danger", "text"]),
-      getPath(componentAliases, ["badge", "danger", "text"])
-    )
-  );
+  BADGE_VARIANTS.forEach(({ variant, bgKey, textKey }) => {
+    addDark(
+      toVariableName(prefix, "badge", variant, "bg"),
+      pickSemantic(
+        getPath(darkMode, ["component", "badge", bgKey]),
+        getPath(defaultMode, ["component", "badge", bgKey]),
+        getPath(componentAliases, ["badge", bgKey])
+      )
+    );
+    addDark(
+      toVariableName(prefix, "badge", variant, "text"),
+      pickSemantic(
+        getPath(darkMode, ["component", "badge", textKey]),
+        getPath(defaultMode, ["component", "badge", textKey]),
+        getPath(componentAliases, ["badge", textKey])
+      )
+    );
+  });
+  ICON_BOX_FIELDS.forEach(({ name, tokenKey }) => {
+    addDark(
+      toVariableName(prefix, "icon-box", name),
+      pickSemantic(
+        getPath(darkMode, ["component", "iconBox", tokenKey]),
+        getPath(defaultMode, ["component", "iconBox", tokenKey]),
+        getPath(componentAliases, ["iconBox", tokenKey])
+      )
+    );
+  });
   const rootBlock = `${selector} {
 ${rootLines.join("\n")}
 }`;

@@ -27,9 +27,51 @@ const REQUIRED_PATHS = [
   'component.badge.warning.text',
   'component.badge.danger.bg',
   'component.badge.danger.text',
+  'component.badge.neutralBg',
+  'component.badge.neutralText',
+  'component.badge.infoBg',
+  'component.badge.infoText',
+  'component.badge.successBg',
+  'component.badge.successText',
+  'component.badge.warningBg',
+  'component.badge.warningText',
+  'component.badge.dangerBg',
+  'component.badge.dangerText',
+  'component.iconBox.bg',
+  'component.iconBox.border',
+  'component.iconBox.iconDefault',
+  'component.iconBox.iconSuccess',
+  'component.iconBox.iconWarning',
+  'component.iconBox.iconDanger',
   'modes.default.surface.page',
   'modes.dark.surface.page'
 ];
+
+const badge = tokens.component?.badge as Record<string, unknown> | undefined;
+if (badge && typeof badge === 'object') {
+  const ensureVariantObject = (variant: string, bgKey: string, textKey: string) => {
+    const variantValue = badge[variant];
+    const hasVariant =
+      variantValue &&
+      typeof variantValue === 'object' &&
+      'bg' in (variantValue as Record<string, unknown>) &&
+      'text' in (variantValue as Record<string, unknown>);
+
+    if (hasVariant) return;
+
+    const bg = badge[bgKey];
+    const text = badge[textKey];
+
+    if (bg !== undefined && text !== undefined) {
+      badge[variant] = { bg, text };
+    }
+  };
+
+  ensureVariantObject('primary', 'neutralBg', 'neutralText');
+  ensureVariantObject('success', 'successBg', 'successText');
+  ensureVariantObject('warning', 'warningBg', 'warningText');
+  ensureVariantObject('danger', 'dangerBg', 'dangerText');
+}
 
 function assertPath(obj: unknown, path: string): void {
   const parts = path.split('.');

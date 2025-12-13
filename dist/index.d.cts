@@ -50,6 +50,43 @@ interface FormStateTokens {
     placeholder?: string;
     ring?: string;
 }
+interface ComponentBadgeTokens<Value = string> {
+    neutralBg: Value;
+    neutralText: Value;
+    infoBg: Value;
+    infoText: Value;
+    successBg: Value;
+    successText: Value;
+    warningBg: Value;
+    warningText: Value;
+    dangerBg: Value;
+    dangerText: Value;
+}
+interface ComponentIconBoxTokens<Value = string> {
+    bg: Value;
+    border: Value;
+    iconDefault: Value;
+    iconSuccess: Value;
+    iconWarning: Value;
+    iconDanger: Value;
+}
+interface ComponentTokens<Value = string> {
+    card: {
+        text: Value;
+        textMuted: Value;
+    };
+    input: {
+        text: Value;
+        placeholder: Value;
+    };
+    button: {
+        textDefault: Value;
+        textOnPrimary: Value;
+    };
+    badge: ComponentBadgeTokens<Value>;
+    iconBox: ComponentIconBoxTokens<Value>;
+    [key: string]: any;
+}
 type SpectreModeName = 'default' | 'dark';
 type SemanticTokenValue = string | {
     value: string;
@@ -76,38 +113,7 @@ interface SpectreModeTokens {
             meta: SemanticTokenValue;
         };
     };
-    component: {
-        card: {
-            text: SemanticTokenValue;
-            textMuted: SemanticTokenValue;
-        };
-        input: {
-            text: SemanticTokenValue;
-            placeholder: SemanticTokenValue;
-        };
-        button: {
-            textDefault: SemanticTokenValue;
-            textOnPrimary: SemanticTokenValue;
-        };
-        badge: {
-            primary: {
-                bg: SemanticTokenValue;
-                text: SemanticTokenValue;
-            };
-            success: {
-                bg: SemanticTokenValue;
-                text: SemanticTokenValue;
-            };
-            warning: {
-                bg: SemanticTokenValue;
-                text: SemanticTokenValue;
-            };
-            danger: {
-                bg: SemanticTokenValue;
-                text: SemanticTokenValue;
-            };
-        };
-    };
+    component: ComponentTokens<SemanticTokenValue>;
 }
 interface SpectreTokens {
     colors: any;
@@ -154,39 +160,7 @@ interface SpectreTokens {
         };
         [key: string]: any;
     };
-    component: {
-        card: {
-            text: SemanticTokenValue;
-            textMuted: SemanticTokenValue;
-        };
-        input: {
-            text: SemanticTokenValue;
-            placeholder: SemanticTokenValue;
-        };
-        button: {
-            textDefault: SemanticTokenValue;
-            textOnPrimary: SemanticTokenValue;
-        };
-        badge: {
-            primary: {
-                bg: string;
-                text: string;
-            };
-            success: {
-                bg: string;
-                text: string;
-            };
-            warning: {
-                bg: string;
-                text: string;
-            };
-            danger: {
-                bg: string;
-                text: string;
-            };
-        };
-        [key: string]: any;
-    };
+    component: ComponentTokens<SemanticTokenValue>;
     modes: {
         default: Partial<SpectreModeTokens>;
         dark: Partial<SpectreModeTokens>;
@@ -199,6 +173,7 @@ interface Tokens {
     accessibility: AccessibilityTokens;
     buttons: Record<string, ButtonStateTokens>;
     forms: Record<string, FormStateTokens>;
+    component: ComponentTokens;
     spacing: TokenScale;
     radii: TokenScale;
     typography: TypographyTokens;
@@ -239,4 +214,4 @@ declare const tailwindPreset: {
     theme: TailwindTheme;
 };
 
-export { type AccessibilityTokens, type AnimationEntry, type ButtonStateTokens, type ColorScale, type FormStateTokens, type SpectreModeName, type SpectreModeTokens, type SpectreTokens, type TailwindTheme, type TokenScale, type Tokens, type TransitionTokens, type TypographyTokens, tokens as default, generateCssVariables, tailwindPreset, tailwindTheme, tokens };
+export { type AccessibilityTokens, type AnimationEntry, type ButtonStateTokens, type ColorScale, type ComponentBadgeTokens, type ComponentIconBoxTokens, type ComponentTokens, type FormStateTokens, type SpectreModeName, type SpectreModeTokens, type SpectreTokens, type TailwindTheme, type TokenScale, type Tokens, type TransitionTokens, type TypographyTokens, tokens as default, generateCssVariables, tailwindPreset, tailwindTheme, tokens };
