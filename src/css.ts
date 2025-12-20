@@ -59,9 +59,43 @@ export const createCssVariableMap = (tokens: SpectreTokens, options: CssVariable
     });
   });
 
+  if (baseTokens.space) {
+    Object.entries(baseTokens.space).forEach(([key, value]) => {
+      assign(toVariableName(prefix, 'space', key), value);
+    });
+  }
+
   Object.entries(baseTokens.spacing).forEach(([key, value]) => {
     assign(toVariableName(prefix, 'space', key), value);
   });
+
+  if (baseTokens.layout) {
+    const { section, stack, container } = baseTokens.layout;
+
+    if (section?.padding) {
+      Object.entries(section.padding).forEach(([key, value]) => {
+        assign(toVariableName(prefix, 'layout', 'section', 'padding', key), value);
+      });
+    }
+
+    if (section?.gap) {
+      Object.entries(section.gap).forEach(([key, value]) => {
+        assign(toVariableName(prefix, 'layout', 'section', 'gap', key), value);
+      });
+    }
+
+    if (stack?.gap) {
+      Object.entries(stack.gap).forEach(([key, value]) => {
+        assign(toVariableName(prefix, 'layout', 'stack', 'gap', key), value);
+      });
+    }
+
+    if (container?.paddingInline) {
+      Object.entries(container.paddingInline).forEach(([key, value]) => {
+        assign(toVariableName(prefix, 'layout', 'container', 'padding-inline', key), value);
+      });
+    }
+  }
 
   Object.entries(baseTokens.radii).forEach(([key, value]) => {
     assign(toVariableName(prefix, 'radius', key), value);

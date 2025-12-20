@@ -117,7 +117,9 @@ interface SpectreModeTokens {
 }
 interface SpectreTokens {
     colors: any;
-    spacing: any;
+    spacing: TokenScale;
+    space: TokenScale;
+    layout: LayoutTokens;
     radii: any;
     typography: any;
     font: {
@@ -167,6 +169,18 @@ interface SpectreTokens {
         [mode: string]: Partial<SpectreModeTokens>;
     };
 }
+interface LayoutTokens {
+    section: {
+        padding: TokenScale;
+        gap: TokenScale;
+    };
+    stack: {
+        gap: TokenScale;
+    };
+    container: {
+        paddingInline: TokenScale;
+    };
+}
 interface Tokens {
     colors: Record<string, ColorScale>;
     opacity: TokenScale;
@@ -175,6 +189,8 @@ interface Tokens {
     forms: Record<string, FormStateTokens>;
     component: ComponentTokens;
     spacing: TokenScale;
+    space: TokenScale;
+    layout: LayoutTokens;
     radii: TokenScale;
     typography: TypographyTokens;
     font: Record<string, FontScaleEntry>;
@@ -214,4 +230,4 @@ declare const tailwindPreset: {
     theme: TailwindTheme;
 };
 
-export { type AccessibilityTokens, type AnimationEntry, type ButtonStateTokens, type ColorScale, type ComponentBadgeTokens, type ComponentIconBoxTokens, type ComponentTokens, type FormStateTokens, type SpectreModeName, type SpectreModeTokens, type SpectreTokens, type TailwindTheme, type TokenScale, type Tokens, type TransitionTokens, type TypographyTokens, tokens as default, generateCssVariables, tailwindPreset, tailwindTheme, tokens };
+export { type AccessibilityTokens, type AnimationEntry, type ButtonStateTokens, type ColorScale, type ComponentBadgeTokens, type ComponentIconBoxTokens, type ComponentTokens, type FormStateTokens, type LayoutTokens, type SpectreModeName, type SpectreModeTokens, type SpectreTokens, type TailwindTheme, type TokenScale, type Tokens, type TransitionTokens, type TypographyTokens, tokens as default, generateCssVariables, tailwindPreset, tailwindTheme, tokens };

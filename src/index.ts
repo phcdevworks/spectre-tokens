@@ -19,7 +19,8 @@ export type {
   AnimationEntry,
   ComponentTokens,
   ComponentBadgeTokens,
-  ComponentIconBoxTokens
+  ComponentIconBoxTokens,
+  LayoutTokens
 } from './types';
 
 const tokens: SpectreTokens = coreTokens as SpectreTokens;
@@ -53,9 +54,14 @@ const createTailwindTheme = (source: Tokens = tokens as Tokens): TailwindTheme =
     return acc;
   }, {});
 
+  const spacing = {
+    ...(source.spacing ?? {}),
+    ...(source.space ?? {})
+  };
+
   return {
     colors,
-    spacing: { ...source.spacing },
+    spacing,
     borderRadius: { ...source.radii },
     fontFamily,
     fontSize,

@@ -243,6 +243,14 @@ tokens.text.onSurface.meta; // Metadata text on card/surface backgrounds
 
 Always re-run final UI implementations through tools like [WebAIM Contrast Checker](https://webaim.org/resources/contrastchecker/).
 
+## Spacing & Layout Tokens
+
+- **8px grid**: `space.*` follows an 8px rhythm with a single 4px micro step for fine-grain alignment. Scale: 0, 4, 8, 12, 16, 20, 24, 32, 40, 48, 56, 64, 80, 96 (all in px, emitted as rem). Legacy `spacing.*` stays for compatibility; new work should prefer `space.*`.
+- **Semantic layout**: `layout.section.padding.{sm,md,lg}` → `space.24/32/48`; `layout.section.gap.{sm,md,lg}` → `space.16/24/32`; `layout.stack.gap.{sm,md,lg}` → `space.8/12/16`; `layout.container.paddingInline.{sm,md,lg}` → `space.16/24/32`.
+- **Outputs**: CSS vars like `--sp-space-24` and `--sp-layout-section-padding-md`, plus Tailwind `theme.spacing` merges `spacing.*` and `space.*`.
+- **Usage**: Use `layout.*` for consistent gutters/padding rather than ad-hoc numbers. Example: `gap: var(--sp-layout-stack-gap-md);` or `padding-inline: var(--sp-layout-container-padding-inline-lg);`.
+- **Responsiveness lives in Spectre UI**: apply breakpoint logic and component behavior in `@phcdevworks/spectre-ui` or consumers; keep tokens meaning-only.
+
 ## Surface & Typography Roles
 
 - `surface.page`, `surface.card`, `surface.input`, `surface.overlay`: semantic backgrounds for the app canvas, containers/tiles, form fields, and modal/dropdown layers.
@@ -279,7 +287,7 @@ These variables are the contract consumed by `@phcdevworks/spectre-ui`; removing
 
 | Folder     | Responsibility                                                                                                |
 | ---------- | ------------------------------------------------------------------------------------------------------------- |
-| `tokens/`  | Raw JSON tokens owned by design. `core.json` holds colors, spacing, radii, typography scales, and shadows.    |
+| `tokens/`  | Raw JSON tokens owned by design. `core.json` holds colors, spacing, radii, typography scales, shadows, and layout/space scales. |
 | `src/`     | TypeScript source that turns JSON into reusable formats (JS/TS exports, Tailwind theme, CSS helpers).         |
 | `scripts/` | Build utilities. `build-css.js` consumes the compiled library and writes `dist/index.css`.                    |
 | `dist/`    | Generated artifacts: `index.js`, `index.cjs`, `index.d.ts`, and `index.css`. Regenerated via `npm run build`. |
