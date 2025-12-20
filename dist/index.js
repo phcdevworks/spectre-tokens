@@ -498,6 +498,50 @@ var core_default = {
       text: "#94a3b8"
     }
   },
+  layout: {
+    section: {
+      padding: {
+        sm: "1.5rem",
+        md: "2rem",
+        lg: "3rem"
+      },
+      gap: {
+        sm: "1rem",
+        md: "1.5rem",
+        lg: "2rem"
+      }
+    },
+    stack: {
+      gap: {
+        sm: "0.5rem",
+        md: "0.75rem",
+        lg: "1rem"
+      }
+    },
+    container: {
+      paddingInline: {
+        sm: "1rem",
+        md: "1.5rem",
+        lg: "2rem"
+      }
+    }
+  },
+  space: {
+    "0": "0rem",
+    "4": "0.25rem",
+    "8": "0.5rem",
+    "12": "0.75rem",
+    "16": "1rem",
+    "20": "1.25rem",
+    "24": "1.5rem",
+    "32": "2rem",
+    "40": "2.5rem",
+    "48": "3rem",
+    "56": "3.5rem",
+    "64": "4rem",
+    "80": "5rem",
+    "96": "6rem"
+  },
   spacing: {
     none: "0rem",
     "3xs": "0.125rem",
@@ -723,9 +767,37 @@ var createCssVariableMap = (tokens2, options = {}) => {
       assign(toVariableName(prefix, "color", group, step), value);
     });
   });
+  if (baseTokens.space) {
+    Object.entries(baseTokens.space).forEach(([key, value]) => {
+      assign(toVariableName(prefix, "space", key), value);
+    });
+  }
   Object.entries(baseTokens.spacing).forEach(([key, value]) => {
     assign(toVariableName(prefix, "space", key), value);
   });
+  if (baseTokens.layout) {
+    const { section, stack, container } = baseTokens.layout;
+    if (section?.padding) {
+      Object.entries(section.padding).forEach(([key, value]) => {
+        assign(toVariableName(prefix, "layout", "section", "padding", key), value);
+      });
+    }
+    if (section?.gap) {
+      Object.entries(section.gap).forEach(([key, value]) => {
+        assign(toVariableName(prefix, "layout", "section", "gap", key), value);
+      });
+    }
+    if (stack?.gap) {
+      Object.entries(stack.gap).forEach(([key, value]) => {
+        assign(toVariableName(prefix, "layout", "stack", "gap", key), value);
+      });
+    }
+    if (container?.paddingInline) {
+      Object.entries(container.paddingInline).forEach(([key, value]) => {
+        assign(toVariableName(prefix, "layout", "container", "padding-inline", key), value);
+      });
+    }
+  }
   Object.entries(baseTokens.radii).forEach(([key, value]) => {
     assign(toVariableName(prefix, "radius", key), value);
   });
@@ -1048,9 +1120,13 @@ var createTailwindTheme = (source = tokens) => {
     ];
     return acc;
   }, {});
+  const spacing = {
+    ...source.spacing ?? {},
+    ...source.space ?? {}
+  };
   return {
     colors,
-    spacing: { ...source.spacing },
+    spacing,
     borderRadius: { ...source.radii },
     fontFamily,
     fontSize,
