@@ -6,7 +6,7 @@ Design-token source of truth that powers Spectre UI, Spectre Blocks, Spectre Ast
 
 ## Overview
 
-`@phcdevworks/spectre-tokens` defines Spectre's visual language—colors, typography, spacing, radii, shadows, breakpoints, z-index scales, transitions, and CRO-focused interaction states. The package turns the raw JSON tokens in `tokens/` into multiple consumption modes (JS, TS, Tailwind, CSS variables) so that teams can stay in sync regardless of framework. One token system runs the entire Spectre Suite; every other package simply consumes these values.
+`@phcdevworks/spectre-tokens` defines Spectre's visual language—colors, typography, space, radii, shadows, breakpoints, z-index scales, transitions, and CRO-focused interaction states. The package turns the raw JSON tokens in `tokens/` into multiple consumption modes (JS, TS, Tailwind, CSS variables) so that teams can stay in sync regardless of framework. One token system runs the entire Spectre Suite; every other package simply consumes these values.
 
 - ✅ Centralized token definitions and semantic naming
 - ✅ JS/TS objects, Tailwind theme + preset, and CSS variable outputs
@@ -34,7 +34,7 @@ import tokens, {
 console.log(tokens.colors.brand["500"]); // Brand palette swatches
 ```
 
-- `tokens`: Raw structured tokens (colors, spacing, radii, typography, shadows, z-index, transitions, buttons, forms, badges, accessibility, animations, opacity, fonts).
+- `tokens`: Raw structured tokens (colors, space, layout, radii, typography, shadows, z-index, transitions, buttons, forms, badges, accessibility, animations, opacity, fonts).
 - `tailwindTheme`: Ready-to-use Tailwind theme object.
 - `tailwindPreset`: Preset for Tailwind config (includes theme).
 - `generateCssVariables()`: Generate custom `--sp-*` CSS variable strings with scoped selectors or prefixes.
@@ -245,9 +245,9 @@ Always re-run final UI implementations through tools like [WebAIM Contrast Check
 
 ## Spacing & Layout Tokens
 
-- **8px grid**: `space.*` follows an 8px rhythm with a single 4px micro step for fine-grain alignment. Scale: 0, 4, 8, 12, 16, 20, 24, 32, 40, 48, 56, 64, 80, 96 (all in px, emitted as rem). Legacy `spacing.*` is a deprecated alias that mirrors `space.*` values exactly; new work should prefer `space.*`.
+- **8px grid**: `space.*` follows an 8px rhythm with a single 4px micro step for fine-grain alignment. Scale: 0, 4, 8, 12, 16, 20, 24, 32, 40, 48, 56, 64, 80, 96 (all in px, emitted as rem).
 - **Semantic layout**: `layout.section.padding.{sm,md,lg}` → `space.24/32/48`; `layout.section.gap.{sm,md,lg}` → `space.16/24/32`; `layout.stack.gap.{sm,md,lg}` → `space.8/12/16`; `layout.container.paddingInline.{sm,md,lg}` → `space.16/24/32`.
-- **Outputs**: CSS vars like `--sp-space-24` and `--sp-layout-section-padding-md`, plus Tailwind `theme.spacing` merges `spacing.*` and `space.*`.
+- **Outputs**: CSS vars like `--sp-space-24` and `--sp-layout-section-padding-md`; Tailwind `theme.spacing` is sourced from `space.*`.
 - **Usage**: Use `layout.*` for consistent gutters/padding rather than ad-hoc numbers. Example: `gap: var(--sp-layout-stack-gap-md);` or `padding-inline: var(--sp-layout-container-padding-inline-lg);`.
 - **Responsiveness lives in Spectre UI**: apply breakpoint logic and component behavior in `@phcdevworks/spectre-ui` or consumers; keep tokens meaning-only.
 
@@ -287,7 +287,7 @@ These variables are the contract consumed by `@phcdevworks/spectre-ui`; removing
 
 | Folder     | Responsibility                                                                                                |
 | ---------- | ------------------------------------------------------------------------------------------------------------- |
-| `tokens/`  | Raw JSON tokens owned by design. `core.json` holds colors, spacing, radii, typography scales, shadows, and layout/space scales. |
+| `tokens/`  | Raw JSON tokens owned by design. `core.json` holds colors, space, radii, typography scales, shadows, and layout scales. |
 | `src/`     | TypeScript source that turns JSON into reusable formats (JS/TS exports, Tailwind theme, CSS helpers).         |
 | `scripts/` | Build utilities. `build-css.js` consumes the compiled library and writes `dist/index.css`.                    |
 | `dist/`    | Generated artifacts: `index.js`, `index.cjs`, `index.d.ts`, and `index.css`. Regenerated via `npm run build`. |

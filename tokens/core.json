@@ -541,22 +541,6 @@
     "80": "5rem",
     "96": "6rem"
   },
-  "spacing": {
-    "none": "0rem",
-    "2xs": "0.25rem",
-    "xs": "0.5rem",
-    "sm": "0.75rem",
-    "md": "1rem",
-    "lg": "1.25rem",
-    "xl": "1.5rem",
-    "2xl": "2rem",
-    "3xl": "2.5rem",
-    "4xl": "3rem",
-    "5xl": "3.5rem",
-    "6xl": "4rem",
-    "7xl": "5rem",
-    "8xl": "6rem"
-  },
   "radii": {
     "none": "0",
     "sm": "2px",

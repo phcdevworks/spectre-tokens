@@ -143,9 +143,8 @@ Object.entries(layoutContainer.paddingInline as Record<string, unknown>).forEach
   ensureInSpace(value, `layout.container.paddingInline.${key}`)
 );
 
-const spacing = tokens.spacing as Record<string, unknown> | undefined;
-if (spacing) {
-  Object.entries(spacing).forEach(([key, value]) => ensureInSpace(value, `spacing.${key}`));
+if ('spacing' in tokens) {
+  throw new Error('Deprecated token group detected: spacing');
 }
 
 console.log('Core token regression check passed.');

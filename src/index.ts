@@ -54,14 +54,9 @@ const createTailwindTheme = (source: Tokens = tokens as Tokens): TailwindTheme =
     return acc;
   }, {});
 
-  const spacing = {
-    ...(source.spacing ?? {}),
-    ...(source.space ?? {})
-  };
-
   return {
     colors,
-    spacing,
+    spacing: { ...(source.space ?? {}) },
     borderRadius: { ...source.radii },
     fontFamily,
     fontSize,

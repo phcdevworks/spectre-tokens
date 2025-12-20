@@ -130,7 +130,6 @@ export interface SpectreModeTokens {
 
 export interface SpectreTokens {
   colors: any;
-  spacing: TokenScale;
   space: TokenScale;
   layout: LayoutTokens;
   radii: any;
@@ -203,7 +202,6 @@ export interface Tokens {
   buttons: Record<string, ButtonStateTokens>;
   forms: Record<string, FormStateTokens>;
   component: ComponentTokens;
-  spacing: TokenScale;
   space: TokenScale;
   layout: LayoutTokens;
   radii: TokenScale;
