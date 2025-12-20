@@ -4,6 +4,25 @@ All notable changes to this project will be documented here. The format follows 
 
 ## [Unreleased]
 
+## [0.2.0] - 2025-12-20
+
+### Added
+
+- Added `layout.*` token group for semantic spacing patterns including section padding/gap, stack gap, and container padding-inline at sm/md/lg scales ([dcab10b]).
+- Added `space.*` token group following an 8px grid system with values from 0 to 96px for consistent spacing across all Spectre surfaces ([dcab10b]).
+- Added comprehensive documentation for Spectre design system non-negotiables including 8px grid, semantic layout tokens, and spacing guidelines ([7fa1a9a]).
+- Added layout and space token documentation to README with usage examples and CSS variable outputs ([4da7f53]).
+
+### Changed
+
+- Revised spacing token structure and documentation for improved clarity and consistency ([4da7f53]).
+- Enforced stricter validation checks for token spacing and layout properties to ensure design system integrity ([3c1fdf3]).
+- **Minor version bump** reflecting new layout and space token groups that extend the design system's spacing API.
+
+### Deprecated
+
+- Deprecated `spacing.*` tokens in favor of `space.*` tokens for clearer semantic naming ([9ce1034]).
+
 ## [0.1.0] - 2025-12-08
 
 ### Added
@@ -83,12 +102,18 @@ All notable changes to this project will be documented here. The format follows 
 - Revised FUNDING.yml for Spectre support ([9234a48]).
 - Removed Intelephense from VSCode extension recommendations ([e501f94]).
 
-[unreleased]: https://github.com/phcdevworks/spectre-tokens/compare/v0.1.0...HEAD
+[unreleased]: https://github.com/phcdevworks/spectre-tokens/compare/v0.2.0...HEAD
+[0.2.0]: https://github.com/phcdevworks/spectre-tokens/compare/v0.1.0...v0.2.0
 [0.1.0]: https://github.com/phcdevworks/spectre-tokens/compare/v0.0.4...v0.1.0
 [0.0.4]: https://github.com/phcdevworks/spectre-tokens/compare/v0.0.3...v0.0.4
 [0.0.3]: https://github.com/phcdevworks/spectre-tokens/compare/v0.0.2...v0.0.3
 [0.0.2]: https://github.com/phcdevworks/spectre-tokens/compare/v0.0.1...v0.0.2
 [0.0.1]: https://github.com/phcdevworks/spectre-tokens/tree/v0.0.1
+[3c1fdf3]: https://github.com/phcdevworks/spectre-tokens/commit/3c1fdf34e3f517cebafee9be3720c7fdb9372891
+[9ce1034]: https://github.com/phcdevworks/spectre-tokens/commit/9ce1034de3d34198cacb2e8371993cdc6803046c
+[4da7f53]: https://github.com/phcdevworks/spectre-tokens/commit/4da7f538496ab7f456b8b670909aea264eb63de3
+[dcab10b]: https://github.com/phcdevworks/spectre-tokens/commit/dcab10bf65b3ad6cc614316b8782b23a7b2c3914
+[7fa1a9a]: https://github.com/phcdevworks/spectre-tokens/commit/7fa1a9a9e3832704c3aab5c7fb992cc04f027cea
 [50e19ae]: https://github.com/phcdevworks/spectre-tokens/commit/50e19ae49276fb8b45917ad486f2ddbe9ee61162
 [b72ae1a]: https://github.com/phcdevworks/spectre-tokens/commit/b72ae1a661bba2c352a86761c5bf7409932a5d4a
 [11d50fa]: https://github.com/phcdevworks/spectre-tokens/commit/11d50fa6204b91cccd745aac8aac7f8de45068a7
