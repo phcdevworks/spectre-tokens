@@ -89,6 +89,10 @@ for (const path of REQUIRED_PATHS) {
   assertPath(tokens, path);
 }
 
+if ('spacing' in tokens) {
+  throw new Error('Do not reintroduce tokens.spacing; use tokens.space and tokens.layout only');
+}
+
 const space = tokens.space as Record<string, unknown> | undefined;
 if (!space || Object.keys(space).length === 0) {
   throw new Error('Missing token scale: space');
@@ -142,9 +146,5 @@ Object.entries(layoutStack.gap as Record<string, unknown>).forEach(([key, value]
 Object.entries(layoutContainer.paddingInline as Record<string, unknown>).forEach(([key, value]) =>
   ensureInSpace(value, `layout.container.paddingInline.${key}`)
 );
-
-if ('spacing' in tokens) {
-  throw new Error('Deprecated token group detected: spacing');
-}
 
 console.log('Core token regression check passed.');
