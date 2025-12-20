@@ -574,15 +574,19 @@ var core_default = {
   },
   spacing: {
     none: "0rem",
-    "3xs": "0.125rem",
     "2xs": "0.25rem",
     xs: "0.5rem",
     sm: "0.75rem",
     md: "1rem",
-    lg: "1.5rem",
-    xl: "2rem",
-    "2xl": "3rem",
-    "3xl": "4rem"
+    lg: "1.25rem",
+    xl: "1.5rem",
+    "2xl": "2rem",
+    "3xl": "2.5rem",
+    "4xl": "3rem",
+    "5xl": "3.5rem",
+    "6xl": "4rem",
+    "7xl": "5rem",
+    "8xl": "6rem"
   },
   radii: {
     none: "0",
@@ -802,9 +806,11 @@ var createCssVariableMap = (tokens2, options = {}) => {
       assign(toVariableName(prefix, "space", key), value);
     });
   }
-  Object.entries(baseTokens.spacing).forEach(([key, value]) => {
-    assign(toVariableName(prefix, "space", key), value);
-  });
+  if (baseTokens.spacing) {
+    Object.entries(baseTokens.spacing).forEach(([key, value]) => {
+      assign(toVariableName(prefix, "space", key), value);
+    });
+  }
   if (baseTokens.layout) {
     const { section, stack, container } = baseTokens.layout;
     if (section?.padding) {

@@ -89,4 +89,63 @@ for (const path of REQUIRED_PATHS) {
   assertPath(tokens, path);
 }
 
+const space = tokens.space as Record<string, unknown> | undefined;
+if (!space || Object.keys(space).length === 0) {
+  throw new Error('Missing token scale: space');
+}
+
+const spaceValues = new Set<string>();
+Object.entries(space).forEach(([key, value]) => {
+  if (typeof value !== 'string') {
+    throw new Error(`space.${key} must be a string value`);
+  }
+  spaceValues.add(value);
+});
+
+const ensureInSpace = (value: unknown, path: string): void => {
+  if (typeof value !== 'string') {
+    throw new Error(`Expected string value at ${path}`);
+  }
+  if (!spaceValues.has(value)) {
+    throw new Error(`Spacing/layout value not in space scale: ${path} -> ${value}`);
+  }
+};
+
+const layout = tokens.layout as Record<string, unknown> | undefined;
+if (!layout) {
+  throw new Error('Missing token group: layout');
+}
+
+const layoutSection = layout.section as Record<string, unknown> | undefined;
+const layoutStack = layout.stack as Record<string, unknown> | undefined;
+const layoutContainer = layout.container as Record<string, unknown> | undefined;
+
+if (!layoutSection?.padding || !layoutSection?.gap) {
+  throw new Error('layout.section padding/gap required');
+}
+if (!layoutStack?.gap) {
+  throw new Error('layout.stack.gap required');
+}
+if (!layoutContainer?.paddingInline) {
+  throw new Error('layout.container.paddingInline required');
+}
+
+Object.entries(layoutSection.padding as Record<string, unknown>).forEach(([key, value]) =>
+  ensureInSpace(value, `layout.section.padding.${key}`)
+);
+Object.entries(layoutSection.gap as Record<string, unknown>).forEach(([key, value]) =>
+  ensureInSpace(value, `layout.section.gap.${key}`)
+);
+Object.entries(layoutStack.gap as Record<string, unknown>).forEach(([key, value]) =>
+  ensureInSpace(value, `layout.stack.gap.${key}`)
+);
+Object.entries(layoutContainer.paddingInline as Record<string, unknown>).forEach(([key, value]) =>
+  ensureInSpace(value, `layout.container.paddingInline.${key}`)
+);
+
+const spacing = tokens.spacing as Record<string, unknown> | undefined;
+if (spacing) {
+  Object.entries(spacing).forEach(([key, value]) => ensureInSpace(value, `spacing.${key}`));
+}
+
 console.log('Core token regression check passed.');
