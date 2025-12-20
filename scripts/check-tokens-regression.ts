@@ -29,4 +29,9 @@ if (missing.length > 0) {
   process.exit(1);
 }
 
+if ('spacing' in (tokens as Record<string, unknown>)) {
+  console.error('Token regression detected. Deprecated top-level "spacing" key present.');
+  process.exit(1);
+}
+
 console.log('Token regression check passed for paths:', REQUIRED_PATHS.join(', '));

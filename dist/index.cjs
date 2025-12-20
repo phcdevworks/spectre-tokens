@@ -572,22 +572,6 @@ var core_default = {
     "80": "5rem",
     "96": "6rem"
   },
-  spacing: {
-    none: "0rem",
-    "2xs": "0.25rem",
-    xs: "0.5rem",
-    sm: "0.75rem",
-    md: "1rem",
-    lg: "1.25rem",
-    xl: "1.5rem",
-    "2xl": "2rem",
-    "3xl": "2.5rem",
-    "4xl": "3rem",
-    "5xl": "3.5rem",
-    "6xl": "4rem",
-    "7xl": "5rem",
-    "8xl": "6rem"
-  },
   radii: {
     none: "0",
     sm: "2px",
@@ -803,11 +787,6 @@ var createCssVariableMap = (tokens2, options = {}) => {
   });
   if (baseTokens.space) {
     Object.entries(baseTokens.space).forEach(([key, value]) => {
-      assign(toVariableName(prefix, "space", key), value);
-    });
-  }
-  if (baseTokens.spacing) {
-    Object.entries(baseTokens.spacing).forEach(([key, value]) => {
       assign(toVariableName(prefix, "space", key), value);
     });
   }
@@ -1156,13 +1135,9 @@ var createTailwindTheme = (source = tokens) => {
     ];
     return acc;
   }, {});
-  const spacing = {
-    ...source.spacing ?? {},
-    ...source.space ?? {}
-  };
   return {
     colors,
-    spacing,
+    spacing: { ...source.space ?? {} },
     borderRadius: { ...source.radii },
     fontFamily,
     fontSize,

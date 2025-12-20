@@ -8,7 +8,7 @@ Spectre is a specification-driven design system with three strict layers. Keep t
 
 ### 1. @phcdevworks/spectre-tokens (Foundation, Source of Truth)
 
-- Purpose: single source of truth for design values (colors, surfaces, text roles, spacing, radii, shadows, etc.).
+- Purpose: single source of truth for design values (colors, surfaces, text roles, space, radii, shadows, etc.).
 - Exports: CSS variables (`--sp-*`), TypeScript token object, Tailwind-compatible theme mappings.
 - Rules: tokens define meaning, not UI behavior; UI must never invent new colors; tokens may provide fallbacks but semantics live here.
 - Status: v0.1.0 released with stable semantic roles (surface.*, text.*, component.*) and considered correct/locked.
@@ -79,7 +79,7 @@ Design can safely edit only the JSON in `tokens/`. Engineering owns `src/` + `sc
 
 1. **Tokens first** – Add or adjust tokens in `tokens/`. Scripts and TypeScript helpers should derive all values from those JSON files.
 2. **No manual `dist/` edits** – Always run `npm run build` after token or source changes so generated files stay in sync.
-3. **Stable naming** – Use semantic names (`color.brand.500`, `spacing.lg`, etc.) and avoid framework-specific wording in the raw tokens.
+3. **Stable naming** – Use semantic names (`color.brand.500`, `space.16`, etc.) and avoid framework-specific wording in the raw tokens.
 4. **Consistent outputs** – When adding new token categories, ensure corresponding JS exports, Tailwind entries, and CSS variables exist so consumers receive the same surface area everywhere.
 
 ### TypeScript & Code Style

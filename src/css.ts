@@ -65,12 +65,6 @@ export const createCssVariableMap = (tokens: SpectreTokens, options: CssVariable
     });
   }
 
-  if (baseTokens.spacing) {
-    Object.entries(baseTokens.spacing).forEach(([key, value]) => {
-      assign(toVariableName(prefix, 'space', key), value);
-    });
-  }
-
   if (baseTokens.layout) {
     const { section, stack, container } = baseTokens.layout;
 
