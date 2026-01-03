@@ -285,12 +285,12 @@ These variables are the contract consumed by `@phcdevworks/spectre-ui`; removing
 
 ## Repository Layout
 
-| Folder     | Responsibility                                                                                                |
-| ---------- | ------------------------------------------------------------------------------------------------------------- |
+| Folder     | Responsibility                                                                                                          |
+| ---------- | ----------------------------------------------------------------------------------------------------------------------- |
 | `tokens/`  | Raw JSON tokens owned by design. `core.json` holds colors, space, radii, typography scales, shadows, and layout scales. |
-| `src/`     | TypeScript source that turns JSON into reusable formats (JS/TS exports, Tailwind theme, CSS helpers).         |
-| `scripts/` | Build utilities. `build-css.js` consumes the compiled library and writes `dist/index.css`.                    |
-| `dist/`    | Generated artifacts: `index.js`, `index.cjs`, `index.d.ts`, and `index.css`. Regenerated via `npm run build`. |
+| `src/`     | TypeScript source that turns JSON into reusable formats (JS/TS exports, Tailwind theme, CSS helpers).                   |
+| `scripts/` | Build utilities. `build-css.js` consumes the compiled library and writes `dist/index.css`.                              |
+| `dist/`    | Generated artifacts: `index.js`, `index.cjs`, `index.d.ts`, and `index.css`. Regenerated via `npm run build`.           |
 
 Designers only touch the JSON under `tokens/`. Engineering evolves `src/` + `scripts/` when structure changes.
 
@@ -303,6 +303,64 @@ npm run build
 `tsup` compiles the TypeScript library (ESM, CJS, `.d.ts`) and `scripts/build-css.js` emits `dist/index.css`. Because `dist/` is generated, releases are reproducible from `tokens/` + `src/`.
 
 For release history and version notes, see the **[Changelog](CHANGELOG.md)**.
+
+## Spectre Design Philosophy
+
+Spectre is a **specification-driven design system** built on three strict layers:
+
+### 1. @phcdevworks/spectre-tokens (Foundation)
+
+**Purpose**: Single source of truth for design values (colors, surfaces, text roles, space, radii, shadows, etc.)
+
+**Exports**: CSS variables (`--sp-*`), TypeScript token object, Tailwind-compatible theme mappings
+
+**Rules**:
+
+- Tokens define semantic meaning, not UI behavior
+- UI must never invent new colors or values
+- Designers own `tokens/*.json`; engineers maintain `src/` transforms
+- Contrast targets and accessibility constraints are encoded at the token level
+
+**Status**: v0.1.0 released with stable semantic roles (`surface.*`, `text.*`, `component.*`) and considered correct/locked
+
+### 2. @phcdevworks/spectre-ui (Framework-Agnostic UI Layer)
+
+**Purpose**: Converts tokens into real CSS and class recipes
+
+**Ships**:
+
+- `index.css` (canonical CSS bundle: tokens + base + components + utilities)
+- `base.css` (resets + globals)
+- `components.css` (`.sp-btn`, `.sp-card`, `.sp-input`, etc.)
+- `utilities.css` (`.sp-stack`, `.sp-container`, etc.)
+- Type-safe recipes: `getButtonClasses`, `getCardClasses`, `getInputClasses`
+
+**Rules**:
+
+- UI must consume tokens, not redefine design values
+- Literal values in CSS are fallbacks only
+- Every CSS selector has a matching recipe where applicable
+- Tailwind preset is optional and non-authoritative
+
+**Status**: v0.1.0 released, hardened and aligned to tokens
+
+### 3. Adapters (WordPress, Astro, etc.)
+
+**Purpose**: Thin framework wrappers around spectre-ui; automatically sync and load the Spectre UI CSS bundle
+
+**Rules**:
+
+- Adapters never define styles, never duplicate CSS, never load tokens directly
+- All design values come from tokens, all CSS comes from spectre-ui
+- Adapters only translate and integrate
+
+### Golden Rule (Non-Negotiable)
+
+**Tokens define meaning. UI defines structure. Adapters only translate.**
+
+- If it's a design token → belongs in `@phcdevworks/spectre-tokens`
+- If it's a CSS class or style → belongs in `@phcdevworks/spectre-ui`
+- If it's framework integration → belongs in an adapter
 
 ## Design Principles
 
