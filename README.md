@@ -2,7 +2,7 @@
 
 Design-token source of truth that powers Spectre UI, Spectre Blocks, Spectre Astro, Spectre 11ty, and every future Spectre surface.
 
-> 📋 **[View Roadmap](ROADMAP.md)** | 🤝 **[Contributing Guide](CONTRIBUTING.md)** | 📝 **[Changelog](CHANGELOG.md)**
+🤝 **[Contributing Guide](CONTRIBUTING.md)** | 📝 **[Changelog](CHANGELOG.md)**
 
 ## Overview
 
@@ -394,8 +394,6 @@ const allTokens: SpectreTokens = tokens;
 - **Spectre Blocks** – WordPress block library
 - **Spectre Astro** – Astro integration
 - **Spectre 11ty** – Eleventy integration
-
-For the project's future direction, see the **[Roadmap](ROADMAP.md)**.
 
 ## Contributing
 
