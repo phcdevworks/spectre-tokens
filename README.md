@@ -28,6 +28,8 @@ npm install @phcdevworks/spectre-tokens
 
 **Recommended (bundlers):**
 
+If you’re not using a bundler, copy `dist/index.css` into your app and link it.
+
 ```css
 @import "@phcdevworks/spectre-tokens/dist/index.css";
 ```
@@ -82,6 +84,8 @@ export default {
 </button>
 ```
 
+> Tip: Tailwind palette utilities like `bg-brand-500` are stable, but they won’t automatically adapt across modes. For theme-aware UI, prefer semantic CSS variables (`surface.*`, `text.*`, `component.*`) or Spectre UI recipes.
+
 ## Usage
 
 ### 1. Import tokens (JS/TS)
@@ -104,6 +108,8 @@ console.log(tokens.buttons.primary.bg); // "#8652ff"
 - `tailwindTheme`: Ready-to-use Tailwind theme object
 - `tailwindPreset`: Preset for Tailwind config (includes theme)
 - `generateCssVariables()`: Generate custom `--sp-*` CSS variable strings with scoped selectors or prefixes
+
+`generateCssVariables()` returns a CSS **string** (e.g. `:root { --sp-... }`) you can write to a file or inject into a page.
 
 **Token Structure (high-level namespaces):**
 
@@ -502,6 +508,8 @@ Each mode contains semantic tokens that adapt to the theme:
 
 The TypeScript library flattens mode tokens to the root level for convenient access:
 
+> Note: The JS `tokens.*` values resolve to the default mode. Theme switching happens in CSS via `:root[data-spectre-theme="dark"]` and semantic CSS variables.
+
 ```ts
 // These are automatically resolved from modes.default
 tokens.surface.page; // "#f8fafc" in light mode
@@ -734,12 +742,12 @@ tokens.borders.input; // "#cbd5f5"
 
 ## Repository Layout
 
-| Folder     | Responsibility                                                                                                          |
-| ---------- | ----------------------------------------------------------------------------------------------------------------------- |
-| `tokens/`  | Raw JSON tokens owned by design. `core.json` holds colors, space, radii, typography scales, shadows, and layout scales. |
-| `src/`     | TypeScript source that turns JSON into reusable formats (JS/TS exports, Tailwind theme, CSS helpers).                   |
-| `scripts/` | Build utilities. `build-css.js` consumes the compiled library and writes `dist/index.css`.                              |
-| `dist/`    | Generated artifacts: `index.js`, `index.cjs`, `index.d.ts`, and `index.css`. Regenerated via `npm run build`.           |
+| Folder     | Responsibility                                                                                                |
+| ---------- | ------------------------------------------------------------------------------------------------------------- |
+| `tokens/`  | Raw JSON token files owned by design (e.g. `core.json`, modes, component semantics).                          |
+| `src/`     | TypeScript source that turns JSON into reusable formats (JS/TS exports, Tailwind theme, CSS helpers).         |
+| `scripts/` | Build utilities. `build-css.js` consumes the compiled library and writes `dist/index.css`.                    |
+| `dist/`    | Generated artifacts: `index.js`, `index.cjs`, `index.d.ts`, and `index.css`. Regenerated via `npm run build`. |
 
 Designers only touch the JSON under `tokens/`. Engineering evolves `src/` + `scripts/` when structure changes.
 
