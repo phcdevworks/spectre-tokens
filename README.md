@@ -1,17 +1,19 @@
 # @phcdevworks/spectre-tokens
 
-Design-token source of truth that powers Spectre UI, Spectre Blocks, Spectre Astro, Spectre 11ty, and every future Spectre surface.
+JSON-first design tokens that power Spectre UI, Spectre Blocks, Spectre Astro, Spectre 11ty, and every future Spectre surface.
 
 🤝 **[Contributing Guide](CONTRIBUTING.md)** | 📝 **[Changelog](CHANGELOG.md)**
 
 ## Overview
 
-`@phcdevworks/spectre-tokens` defines Spectre's visual language—colors, typography, space, radii, shadows, breakpoints, z-index scales, transitions, and CRO-focused interaction states. The package turns the raw JSON tokens in `tokens/` into multiple consumption modes (JS, TS, Tailwind, CSS variables) so that teams can stay in sync regardless of framework. One token system runs the entire Spectre Suite; every other package simply consumes these values.
+`@phcdevworks/spectre-tokens` defines Spectre's visual language—colors, typography, space, radii, shadows, breakpoints, z-index scales, transitions, and CRO-focused interaction states. The package turns the raw JSON tokens in `tokens/` into multiple consumption modes (JS, TS, Tailwind, CSS variables) so teams can stay in sync regardless of framework.
+
+**Single source of truth:** JSON is the source. Everything else is generated.
 
 - ✅ Centralized token definitions and semantic naming
 - ✅ JS/TS objects, Tailwind theme + preset, and CSS variable outputs
-- ✅ CRO-focused surfaces (buttons, forms, states) and WCAG-first accessibility tokens
-- ✅ Format-agnostic helpers for scoped CSS variable generation
+- ✅ CRO-focused surfaces (buttons, forms, states) and accessibility-first tokens
+- ✅ Helpers for scoped CSS variable generation
 - ✅ Type-safe outputs with bundled `.d.ts` files
 
 ## Installation
@@ -22,25 +24,32 @@ npm install @phcdevworks/spectre-tokens
 
 ## Quick Start
 
-### Option 1: CSS Variables (Fastest)
+### Option 1: CSS Variables (fastest)
 
-```html
-<!-- In your HTML -->
-<link
-  rel="stylesheet"
-  href="node_modules/@phcdevworks/spectre-tokens/dist/index.css"
-/>
-```
+**Recommended (bundlers):**
 
 ```css
-/* Use tokens in your CSS */
+@import "@phcdevworks/spectre-tokens/dist/index.css";
+```
+
+or:
+
+```ts
+import "@phcdevworks/spectre-tokens/dist/index.css";
+```
+
+**Use semantic tokens (recommended):**
+
+```css
 .my-button {
-  background: var(--sp-color-brand-500);
+  background: var(--sp-button-primary-bg);
   color: var(--sp-button-primary-text);
   padding: var(--sp-space-12) var(--sp-space-24);
   border-radius: var(--sp-radius-md);
 }
 ```
+
+> Note: Raw palette tokens like `--sp-color-brand-500` are stable utilities, but they do not adapt across modes by themselves. Prefer semantic tokens (`surface.*`, `text.*`, `component.*`, `buttons.*`, `forms.*`) for theme-aware UI.
 
 ### Option 2: JavaScript/TypeScript
 
@@ -96,7 +105,7 @@ console.log(tokens.buttons.primary.bg); // "#8652ff"
 - `tailwindPreset`: Preset for Tailwind config (includes theme)
 - `generateCssVariables()`: Generate custom `--sp-*` CSS variable strings with scoped selectors or prefixes
 
-**Token Structure:**
+**Token Structure (high-level namespaces):**
 
 The `tokens` object includes:
 
@@ -121,14 +130,16 @@ The `tokens` object includes:
 - `component`: Component-specific tokens (card, input, button, badge, iconBox)
 - `modes`: Theme mode definitions (default/light and dark)
 
+> Tokens may exist before UI primitives land in `@phcdevworks/spectre-ui`. Tokens define meaning; UI defines structure.
+
 ### 2. CSS variables
 
 ```css
 @import "@phcdevworks/spectre-tokens/dist/index.css";
 
 .button {
-  color: var(--sp-color-brand-500);
-  padding-inline: var(--sp-space-md);
+  color: var(--sp-text-on-page-default);
+  padding-inline: var(--sp-space-16);
   border-radius: var(--sp-radius-pill);
   box-shadow: var(--sp-shadow-md);
 }
@@ -424,12 +435,7 @@ tokens.text.onSurface.meta; // Metadata text on card/surface backgrounds
 
 ### WCAG targets
 
-- Brand 500 on white → ✅ AAA (4.8:1)
-- Success 600 on white → ✅ AAA (4.7:1)
-- Error 600 on white → ✅ AAA (5.2:1)
-- Neutral 900 on white → ✅ AAA (16.1:1)
-- Neutral 700 on white → ✅ AA (8.4:1)
-- Focus rings meet WCAG 2.4.7 (2px solid, high contrast)
+Spectre encodes accessibility constraints (focus rings, touch targets, and contrast-minded semantic roles) at the token level. Always validate final UI implementations with tools like the WebAIM Contrast Checker.
 
 Always re-run final UI implementations through tools like [WebAIM Contrast Checker](https://webaim.org/resources/contrastchecker/).
 
@@ -542,19 +548,21 @@ Toggle themes by setting the `data-spectre-theme` attribute:
 ```
 
 ```js
-// JavaScript toggle
+function setTheme(theme) {
+  const html = document.documentElement;
+  if (!theme || theme === "default") html.removeAttribute("data-spectre-theme");
+  else html.setAttribute("data-spectre-theme", theme);
+}
+
 function toggleTheme() {
   const html = document.documentElement;
   const currentTheme = html.getAttribute("data-spectre-theme");
-  html.setAttribute(
-    "data-spectre-theme",
-    currentTheme === "dark" ? "" : "dark"
-  );
+  setTheme(currentTheme === "dark" ? "default" : "dark");
 }
 
 // Set based on user preference
 if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-  document.documentElement.setAttribute("data-spectre-theme", "dark");
+  setTheme("dark");
 }
 ```
 
@@ -742,6 +750,8 @@ npm run build
 ```
 
 `tsup` compiles the TypeScript library (ESM, CJS, `.d.ts`) and `scripts/build-css.js` emits `dist/index.css`. Because `dist/` is generated, releases are reproducible from `tokens/` + `src/`.
+
+> Do not hand-edit `dist/`. Always regenerate it via the build.
 
 For release history and version notes, see the **[Changelog](CHANGELOG.md)**.
 
@@ -1027,7 +1037,7 @@ interface CssVariableOptions {
 type CssVariableMap = Record<string, string>;
 
 // Usage
-const cssVars: CssVariableMap = createCssVariableMap(tokens, {
+const css: string = generateCssVariables(tokens, {
   prefix: "spectre",
   selector: ".my-theme",
 });
@@ -1494,7 +1504,7 @@ For detailed contribution guidelines, see **[CONTRIBUTING.md](CONTRIBUTING.md)**
 
 ## License
 
-MIT © PHCDevworks — See **[LICENSE](LICENSE)** for details.
+See **[LICENSE](LICENSE)** for details.
 
 ---
 
