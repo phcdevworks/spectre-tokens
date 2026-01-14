@@ -839,8 +839,11 @@ var createCssVariableMap = (tokens2, options = {}) => {
   });
   assign(toVariableName(prefix, "text", "on", "page", "default"), tokens2.text.onPage.default);
   assign(toVariableName(prefix, "text", "on", "page", "muted"), tokens2.text.onPage.muted);
+  assign(toVariableName(prefix, "text", "on", "page", "subtle"), tokens2.text.onPage.subtle);
+  assign(toVariableName(prefix, "text", "on", "page", "meta"), tokens2.text.onPage.meta);
   assign(toVariableName(prefix, "text", "on", "surface", "default"), tokens2.text.onSurface.default);
   assign(toVariableName(prefix, "text", "on", "surface", "muted"), tokens2.text.onSurface.muted);
+  assign(toVariableName(prefix, "text", "on", "surface", "subtle"), tokens2.text.onSurface.subtle);
   assign(toVariableName(prefix, "text", "on", "surface", "meta"), tokens2.text.onSurface.meta);
   const badge = tokens2.component?.badge;
   if (badge) {
@@ -930,9 +933,11 @@ var generateCssVariables = (tokens2, options = {}) => {
   addBase(toVariableName(prefix, "surface", "overlay"), pickSemantic(getPath(defaultMode, ["surface", "overlay"]), getPath(surfaceAliases, ["overlay"])));
   addBase(toVariableName(prefix, "text", "on", "page", "default"), pickSemantic(getPath(defaultMode, ["text", "onPage", "default"]), getPath(textAliases, ["onPage", "default"])));
   addBase(toVariableName(prefix, "text", "on", "page", "muted"), pickSemantic(getPath(defaultMode, ["text", "onPage", "muted"]), getPath(textAliases, ["onPage", "muted"])));
+  addBase(toVariableName(prefix, "text", "on", "page", "subtle"), pickSemantic(getPath(defaultMode, ["text", "onPage", "subtle"]), getPath(textAliases, ["onPage", "subtle"])));
   addBase(toVariableName(prefix, "text", "on", "page", "meta"), pickSemantic(getPath(defaultMode, ["text", "onPage", "meta"]), getPath(textAliases, ["onPage", "meta"])));
   addBase(toVariableName(prefix, "text", "on", "surface", "default"), pickSemantic(getPath(defaultMode, ["text", "onSurface", "default"]), getPath(textAliases, ["onSurface", "default"])));
   addBase(toVariableName(prefix, "text", "on", "surface", "muted"), pickSemantic(getPath(defaultMode, ["text", "onSurface", "muted"]), getPath(textAliases, ["onSurface", "muted"])));
+  addBase(toVariableName(prefix, "text", "on", "surface", "subtle"), pickSemantic(getPath(defaultMode, ["text", "onSurface", "subtle"]), getPath(textAliases, ["onSurface", "subtle"])));
   addBase(toVariableName(prefix, "text", "on", "surface", "meta"), pickSemantic(getPath(defaultMode, ["text", "onSurface", "meta"]), getPath(textAliases, ["onSurface", "meta"])));
   addBase(toVariableName(prefix, "component", "card", "text"), pickSemantic(getPath(defaultMode, ["component", "card", "text"]), getPath(componentAliases, ["card", "text"])));
   addBase(toVariableName(prefix, "component", "card", "text-muted"), pickSemantic(getPath(defaultMode, ["component", "card", "textMuted"]), getPath(componentAliases, ["card", "textMuted"])));
@@ -994,6 +999,14 @@ var generateCssVariables = (tokens2, options = {}) => {
     )
   );
   addDark(
+    toVariableName(prefix, "text", "on", "page", "subtle"),
+    pickSemantic(
+      getPath(darkMode, ["text", "onPage", "subtle"]),
+      getPath(defaultMode, ["text", "onPage", "subtle"]),
+      getPath(textAliases, ["onPage", "subtle"])
+    )
+  );
+  addDark(
     toVariableName(prefix, "text", "on", "page", "meta"),
     pickSemantic(
       getPath(darkMode, ["text", "onPage", "meta"]),
@@ -1015,6 +1028,14 @@ var generateCssVariables = (tokens2, options = {}) => {
       getPath(darkMode, ["text", "onSurface", "muted"]),
       getPath(defaultMode, ["text", "onSurface", "muted"]),
       getPath(textAliases, ["onSurface", "muted"])
+    )
+  );
+  addDark(
+    toVariableName(prefix, "text", "on", "surface", "subtle"),
+    pickSemantic(
+      getPath(darkMode, ["text", "onSurface", "subtle"]),
+      getPath(defaultMode, ["text", "onSurface", "subtle"]),
+      getPath(textAliases, ["onSurface", "subtle"])
     )
   );
   addDark(
