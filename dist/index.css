@@ -5,9 +5,11 @@
   --sp-surface-overlay: rgba(15,23,42,0.6);
   --sp-text-on-page-default: #0f172a;
   --sp-text-on-page-muted: #475569;
+  --sp-text-on-page-subtle: #94a3b8;
   --sp-text-on-page-meta: #94a3b8;
   --sp-text-on-surface-default: #0f172a;
   --sp-text-on-surface-muted: #6b7280;
+  --sp-text-on-surface-subtle: #94a3b8;
   --sp-text-on-surface-meta: #94a3b8;
   --sp-component-card-text: #0f172a;
   --sp-component-card-text-muted: #6b7280;
@@ -159,8 +161,11 @@
   --sp-font-xs-letter-spacing: 0.02em;
   --sp-text-on-page-default: #0f172a;
   --sp-text-on-page-muted: #475569;
+  --sp-text-on-page-subtle: #94a3b8;
+  --sp-text-on-page-meta: #94a3b8;
   --sp-text-on-surface-default: #0f172a;
   --sp-text-on-surface-muted: #6b7280;
+  --sp-text-on-surface-subtle: #94a3b8;
   --sp-text-on-surface-meta: #94a3b8;
   --sp-badge-neutral-bg: #f1f5f9;
   --sp-badge-neutral-text: #334155;
@@ -297,9 +302,11 @@
   --sp-surface-overlay: #1e293b;
   --sp-text-on-page-default: #f8fafc;
   --sp-text-on-page-muted: #cbd5f5;
+  --sp-text-on-page-subtle: #94a3b8;
   --sp-text-on-page-meta: #94a3b8;
   --sp-text-on-surface-default: #f1f5f9;
   --sp-text-on-surface-muted: #cbd5f5;
+  --sp-text-on-surface-subtle: #94a3b8;
   --sp-text-on-surface-meta: #94a3b8;
   --sp-component-card-text: #f1f5f9;
   --sp-component-card-text-muted: #cbd5f5;
