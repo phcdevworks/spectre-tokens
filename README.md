@@ -163,55 +163,62 @@ tokens.opacity.overlay; // 0.5
 ### Typography scale
 
 ```ts
-tokens.font.fontSize.xs; // 0.75rem
-tokens.font.fontSize.sm; // 0.875rem
-tokens.font.fontSize.base; // 1rem
-tokens.font.fontSize.lg; // 1.25rem
-tokens.font.fontSize.xl; // 1.5rem
+tokens.font.xs.size; // 0.75rem
+tokens.font.sm.size; // 0.875rem
+tokens.font.md.size; // 1rem
+tokens.font.lg.size; // 1.25rem
+tokens.font.xl.size; // 1.5rem
 
-tokens.font.lineHeight.xs; // 1rem
-tokens.font.lineHeight.sm; // 1.25rem
-tokens.font.lineHeight.base; // 1.5rem
-tokens.font.lineHeight.lg; // 1.75rem
-tokens.font.lineHeight.xl; // 2rem
+tokens.font.xs.lineHeight; // 1.25rem
+tokens.font.sm.lineHeight; // 1.5rem
+tokens.font.md.lineHeight; // 1.75rem
+tokens.font.lg.lineHeight; // 2rem
+tokens.font.xl.lineHeight; // 2.125rem
 
-tokens.font.weight.normal; // 400
-tokens.font.weight.medium; // 500
-tokens.font.weight.semibold; // 600
-tokens.font.weight.bold; // 700
+tokens.font.xs.weight; // 400
+tokens.font.sm.weight; // 400
+tokens.font.md.weight; // 500
+tokens.font.lg.weight; // 500
+tokens.font.xl.weight; // 600
 ```
 
 ```css
 .heading {
-  font-size: var(--sp-font-size-xl);
-  line-height: var(--sp-font-line-height-xl);
-  font-weight: var(--sp-font-weight-semibold);
+  font-size: var(--sp-font-xl-size);
+  line-height: var(--sp-font-xl-line-height);
+  font-weight: var(--sp-font-xl-weight);
 }
 
 .body-text {
-  font-size: var(--sp-font-size-base);
-  line-height: var(--sp-font-line-height-base);
-  font-weight: var(--sp-font-weight-normal);
+  font-size: var(--sp-font-md-size);
+  line-height: var(--sp-font-md-line-height);
+  font-weight: var(--sp-font-md-weight);
 }
 ```
 
 ### Badge tokens
 
 ```ts
-tokens.component.badge.bg; // Background color
-tokens.component.badge.text; // Text color
-tokens.component.badge.border; // Border color
+tokens.component.badge.neutralBg; // Neutral background
+tokens.component.badge.neutralText; // Neutral text
+tokens.component.badge.infoBg; // Info background
+tokens.component.badge.infoText; // Info text
+tokens.component.badge.successBg; // Success background
+tokens.component.badge.successText; // Success text
+tokens.component.badge.warningBg; // Warning background
+tokens.component.badge.warningText; // Warning text
+tokens.component.badge.dangerBg; // Danger background
+tokens.component.badge.dangerText; // Danger text
 ```
 
 ```css
 .badge {
-  background: var(--sp-component-badge-bg);
-  color: var(--sp-component-badge-text);
-  border: 1px solid var(--sp-component-badge-border);
+  background: var(--sp-badge-neutral-bg);
+  color: var(--sp-badge-neutral-text);
   padding: 0.25rem 0.5rem;
   border-radius: var(--sp-radius-sm);
-  font-size: var(--sp-font-size-xs);
-  font-weight: var(--sp-font-weight-medium);
+  font-size: var(--sp-font-xs-size);
+  font-weight: var(--sp-font-xs-weight);
 }
 ```
 
@@ -228,7 +235,7 @@ tokens.text.onSurface.meta; // Metadata text on card/surface backgrounds
 .timestamp,
 .byline {
   color: var(--sp-text-on-page-meta);
-  font-size: var(--sp-font-size-sm);
+  font-size: var(--sp-font-sm-size);
 }
 ```
 
@@ -278,10 +285,10 @@ Consumers can toggle themes by setting `data-spectre-theme="dark"` on `:root` or
 These variables are the contract consumed by `@phcdevworks/spectre-ui`; removing or renaming them will break downstream UI packages.
 
 - **Surface**: `--sp-surface-page`, `--sp-surface-card`, `--sp-surface-input`, `--sp-surface-overlay`
-- **Text**: `--sp-text-on-page-default`, `--sp-text-on-page-muted`, `--sp-text-on-page-meta`, `--sp-text-on-surface-default`, `--sp-text-on-surface-muted`, `--sp-text-on-surface-meta`
-- **Components**: `--sp-component-card-text`, `--sp-component-card-text-muted`, `--sp-component-input-text`, `--sp-component-input-placeholder`, `--sp-component-badge-bg`, `--sp-component-badge-text`, `--sp-component-badge-border`
+- **Text**: `--sp-text-on-page-default`, `--sp-text-on-page-muted`, `--sp-text-on-page-subtle`, `--sp-text-on-page-meta`, `--sp-text-on-surface-default`, `--sp-text-on-surface-muted`, `--sp-text-on-surface-subtle`, `--sp-text-on-surface-meta`
+- **Components**: `--sp-component-card-text`, `--sp-component-card-text-muted`, `--sp-component-input-text`, `--sp-component-input-placeholder`, `--sp-badge-neutral-bg`, `--sp-badge-neutral-text`
 - **Buttons**: `--sp-button-primary-bg`, `--sp-button-primary-text`, `--sp-button-secondary-bg`, `--sp-button-secondary-text`, `--sp-button-ghost-bg`, `--sp-button-ghost-text`
-- **Typography**: `--sp-font-size-{xs,sm,base,lg,xl}`, `--sp-font-line-height-{xs,sm,base,lg,xl}`, `--sp-font-weight-{normal,medium,semibold,bold}`
+- **Typography**: `--sp-font-{xs,sm,md,lg,xl}-size`, `--sp-font-{xs,sm,md,lg,xl}-line-height`, `--sp-font-{xs,sm,md,lg,xl}-weight`
 
 ## Repository Layout
 
