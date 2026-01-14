@@ -4,6 +4,43 @@ All notable changes to this project will be documented here. The format follows 
 
 ## [Unreleased]
 
+## [0.2.1] - 2026-01-14
+
+### Added
+
+- Added comprehensive Quick Start section with three integration approaches (CSS variables, JavaScript/TypeScript, Tailwind CSS) ([5878612]).
+- Added complete Token Reference section documenting all available tokens with examples (colors, spacing, layout, typography, shadows, breakpoints, z-index, transitions, animations, borders) ([5878612]).
+- Added detailed Typography section explaining the difference between `tokens.font.*` and `tokens.typography.*` with usage guidelines ([5878612]).
+- Added Icon Box component tokens documentation with examples and CSS variable usage patterns ([5878612]).
+- Added comprehensive Modes & Theme Switching section explaining the semantic token system and dark mode implementation ([5878612]).
+- Added Practical Examples section with real-world implementations (buttons, cards, forms, modals, badges, custom theme scoping) ([5878612]).
+- Added Troubleshooting & FAQ section covering common issues and solutions ([5878612]).
+- Added Migration & Comparison Guide with comparisons to Tailwind, Material UI, and Chakra UI ([5878612]).
+- Added complete TypeScript Support section documenting all type interfaces and type-safe usage patterns ([5878612]).
+- Added `subtle` text color tokens for improved typographic hierarchy ([2c75b45]).
+
+### Changed
+
+- Expanded README documentation from ~400 lines to ~1,460 lines with comprehensive token reference, usage examples, and troubleshooting guides ([31dd75f], [dfc4bb4], [5878612]).
+- Improved documentation structure with detailed explanations of token access patterns and semantic token resolution ([31dd75f]).
+- Clarified folder structure and usage tips in README for better developer onboarding ([dfc4bb4]).
+
+### Fixed
+
+- Enhanced documentation accuracy by aligning token access examples with actual implementation ([31dd75f]).
+- Corrected badge token access paths and added missing iconBox documentation ([5878612]).
+
+### Dependencies
+
+- Updated @types/node to version 25.0.8 ([ec2416b]).
+- Updated dependencies in package-lock.json ([b98e11b], [9cf9556]).
+
+### Maintenance
+
+- Removed ROADMAP.md file and updated references in README ([9cf9556]).
+- Updated documentation and policies for clarity and completeness ([f8b97b1]).
+- Updated rollup and binaries to version 4.54.0 ([7d8e408]).
+
 ## [0.2.0] - 2025-12-20
 
 ### Added
@@ -102,13 +139,23 @@ All notable changes to this project will be documented here. The format follows 
 - Revised FUNDING.yml for Spectre support ([9234a48]).
 - Removed Intelephense from VSCode extension recommendations ([e501f94]).
 
-[unreleased]: https://github.com/phcdevworks/spectre-tokens/compare/v0.2.0...HEAD
+[unreleased]: https://github.com/phcdevworks/spectre-tokens/compare/v0.2.1...HEAD
+[0.2.1]: https://github.com/phcdevworks/spectre-tokens/compare/v0.2.0...v0.2.1
 [0.2.0]: https://github.com/phcdevworks/spectre-tokens/compare/v0.1.0...v0.2.0
 [0.1.0]: https://github.com/phcdevworks/spectre-tokens/compare/v0.0.4...v0.1.0
 [0.0.4]: https://github.com/phcdevworks/spectre-tokens/compare/v0.0.3...v0.0.4
 [0.0.3]: https://github.com/phcdevworks/spectre-tokens/compare/v0.0.2...v0.0.3
 [0.0.2]: https://github.com/phcdevworks/spectre-tokens/compare/v0.0.1...v0.0.2
 [0.0.1]: https://github.com/phcdevworks/spectre-tokens/tree/v0.0.1
+[ec2416b]: https://github.com/phcdevworks/spectre-tokens/commit/ec2416bb14c0e8abbce365d02cbf79a642193c1b
+[dfc4bb4]: https://github.com/phcdevworks/spectre-tokens/commit/dfc4bb46aa8d7aac4971011504a1bc283e5dde23
+[31dd75f]: https://github.com/phcdevworks/spectre-tokens/commit/31dd75f2ea2d85ac03226fae02f88750bfab9033
+[5878612]: https://github.com/phcdevworks/spectre-tokens/commit/5878612e9e24c35f97cc4ce9f39e2ff3f2e7805b
+[2c75b45]: https://github.com/phcdevworks/spectre-tokens/commit/2c75b45ef230cda97eecb853a0d5df082f219663
+[9cf9556]: https://github.com/phcdevworks/spectre-tokens/commit/9cf95561c394bb313622f8187e476fe255c9fb2c
+[b98e11b]: https://github.com/phcdevworks/spectre-tokens/commit/b98e11b7d70f75564ec4121332efcfb145c43efb
+[f8b97b1]: https://github.com/phcdevworks/spectre-tokens/commit/f8b97b1a37147e9c11101707b2970e4fe44c60ea
+[7d8e408]: https://github.com/phcdevworks/spectre-tokens/commit/7d8e40824e84acba01a3e09412f8f282f7eabcb3
 [3c1fdf3]: https://github.com/phcdevworks/spectre-tokens/commit/3c1fdf34e3f517cebafee9be3720c7fdb9372891
 [9ce1034]: https://github.com/phcdevworks/spectre-tokens/commit/9ce1034de3d34198cacb2e8371993cdc6803046c
 [4da7f53]: https://github.com/phcdevworks/spectre-tokens/commit/4da7f538496ab7f456b8b670909aea264eb63de3
