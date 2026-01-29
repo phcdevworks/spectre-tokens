@@ -211,7 +211,8 @@ tokens.forms.disabled;
 ```css
 .input:focus {
   border-color: var(--sp-form-focus-border);
-  outline: var(--sp-focus-ring-width) var(--sp-focus-ring-style) var(--sp-form-focus-ring);
+  outline: var(--sp-focus-ring-width) var(--sp-focus-ring-style)
+    var(--sp-form-focus-ring);
 }
 .input.error {
   border-color: var(--sp-form-invalid-border);
@@ -244,9 +245,8 @@ tokens.animations.pulse;
 
 ```css
 .modal {
-  animation: fade-in var(--sp-animation-fade-in-duration) var(
-      --sp-animation-fade-in-easing
-    );
+  animation: fade-in var(--sp-animation-fade-in-duration)
+    var(--sp-animation-fade-in-easing);
 }
 ```
 
@@ -1186,9 +1186,8 @@ const buttonStyles = {
   padding: var(--sp-space-12) var(--sp-space-16);
   font-size: var(--sp-font-md-size);
   color: var(--sp-form-default-text);
-  transition: border-color var(--sp-transition-duration-fast) var(
-      --sp-transition-easing-out
-    );
+  transition: border-color var(--sp-transition-duration-fast)
+    var(--sp-transition-easing-out);
   min-height: var(--sp-accessibility-min-touch-target);
 }
 
@@ -1203,9 +1202,8 @@ const buttonStyles = {
 .form-input:focus {
   outline: none;
   border-color: var(--sp-form-focus-border);
-  box-shadow: 0 0 0 var(--sp-accessibility-focus-ring-width) var(
-      --sp-form-focus-ring
-    );
+  box-shadow: 0 0 0 var(--sp-accessibility-focus-ring-width)
+    var(--sp-form-focus-ring);
 }
 
 .form-field--error .form-input {
@@ -1254,9 +1252,8 @@ const Container = styled.div`
   align-items: center;
   justify-content: center;
   background: var(--sp-surface-overlay);
-  animation: fade-in var(--sp-animation-fade-in-duration) var(
-      --sp-animation-fade-in-easing
-    );
+  animation: fade-in var(--sp-animation-fade-in-duration)
+    var(--sp-animation-fade-in-easing);
 }
 
 .modal__content {
@@ -1265,9 +1262,8 @@ const Container = styled.div`
   padding: var(--sp-space-32);
   box-shadow: var(--sp-shadow-lg);
   max-width: 32rem;
-  animation: scale-in var(--sp-animation-scale-in-duration) var(
-      --sp-animation-scale-in-easing
-    );
+  animation: scale-in var(--sp-animation-scale-in-duration)
+    var(--sp-animation-scale-in-easing);
 }
 
 @keyframes fade-in {

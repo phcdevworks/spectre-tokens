@@ -10,6 +10,7 @@ We aim to support the latest published version of @phcdevworks/spectre-tokens. S
 | < 0.1   | :x:                |
 
 **Please ensure you are using the most recent version** of both:
+
 - The @phcdevworks/spectre-tokens package
 - All dependent Spectre packages (@phcdevworks/spectre-ui, etc.)
 
@@ -24,6 +25,7 @@ If you discover a security vulnerability, please **DO NOT** open a public issue.
 **Preferred method**: Use [GitHub Security Advisories](https://github.com/phcdevworks/spectre-tokens/security/advisories/new) to privately report vulnerabilities
 
 **Alternative methods**:
+
 - Email the maintainers at [security contact - see repository]
 - Direct message maintainers through GitHub
 
@@ -48,6 +50,7 @@ Please provide as much detail as possible to help us reproduce and assess impact
 ## Responsible Disclosure
 
 We appreciate responsible disclosure and will work with you to:
+
 - Understand the scope and severity of the issue
 - Develop and test a fix
 - Coordinate public disclosure timing
@@ -68,12 +71,14 @@ When using @phcdevworks/spectre-tokens:
 ## Scope
 
 This security policy covers:
+
 - The @phcdevworks/spectre-tokens package code
 - Token definitions in `tokens/`
 - TypeScript source and build scripts
 - Generated CSS and JavaScript outputs
 
 This policy does **NOT** cover:
+
 - Vulnerabilities in consuming applications
 - Issues in downstream packages (report to those repositories):
   - @phcdevworks/spectre-ui
@@ -85,6 +90,7 @@ This policy does **NOT** cover:
 ## Contact
 
 For security-related questions that aren't vulnerabilities:
+
 - Open a [GitHub Discussion](https://github.com/phcdevworks/spectre-tokens/discussions)
 - Tag maintainers in relevant issues
 
