@@ -1,26 +1,12 @@
 import coreTokens from '../tokens/core.json';
 
 import { generateCssVariables } from './css';
-import type { SpectreTokens, SpectreModeName, SpectreModeTokens, TailwindTheme, Tokens } from './types';
+import type { SpectreTokens, TailwindTheme, Tokens } from './types';
 
 export type {
-  TailwindTheme,
-  Tokens,
-  SpectreTokens,
-  SpectreModeTokens,
-  SpectreModeName,
-  ColorScale,
-  TokenScale,
-  TypographyTokens,
-  TransitionTokens,
-  AccessibilityTokens,
-  ButtonStateTokens,
-  FormStateTokens,
-  AnimationEntry,
-  ComponentTokens,
-  ComponentBadgeTokens,
-  ComponentIconBoxTokens,
-  LayoutTokens
+  AccessibilityTokens, AnimationEntry, ButtonStateTokens, ColorScale, ComponentBadgeTokens,
+  ComponentIconBoxTokens, ComponentTokens, FormStateTokens, LayoutTokens, SpectreModeName, SpectreModeTokens, SpectreTokens, TailwindTheme,
+  Tokens, TokenScale, TransitionTokens, TypographyTokens
 } from './types';
 
 const tokens: SpectreTokens = coreTokens as SpectreTokens;
@@ -74,5 +60,5 @@ export const tailwindPreset = {
   theme: tailwindTheme
 };
 
-export { tokens, generateCssVariables };
+export { generateCssVariables, tokens };
 export default tokens;
