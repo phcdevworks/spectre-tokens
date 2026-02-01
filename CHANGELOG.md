@@ -4,6 +4,48 @@ All notable changes to this project will be documented here. The format follows 
 
 ## [Unreleased]
 
+## [1.0.0] - 2026-02-01
+
+### Added
+
+- Added comprehensive visual documentation with 13 HTML example pages demonstrating all token categories (colors, typography, spacing, borders, shadows, buttons, forms, animations, components, accessibility, icons, aspect ratios) ([d33ded3]).
+- Added 12 GitHub-browsable markdown documentation files (colors.md, typography.md, spacing.md, borders.md, shadows.md, buttons.md, forms.md, animations.md, components.md, accessibility.md, icons.md, aspect-ratios.md) with detailed tables, usage guidelines, and best practices ([7e0b0ba]).
+- Added `icons` token group with 7 size scales (xs: 12px, sm: 16px, md: 20px, lg: 24px, xl: 32px, 2xl: 40px, 3xl: 48px) for consistent iconography across all surfaces ([12adc6a]).
+- Added `aspectRatios` token group with 6 ratio definitions (square: 1/1, video: 16/9, portrait: 3/4, landscape: 4/3, ultrawide: 21/9, hero: 2/1) for media and image containers ([12adc6a]).
+- Added `testimonial` component tokens (bg, border, text, authorName, authorTitle, quoteMark) with dark mode support ([46743b4]).
+- Added `pricingCard` component tokens (bg, border, featuredBg, featuredText, featuredBadgeBg, featuredBadgeText, price, priceDescription) for pricing tiers ([46743b4]).
+- Added `rating` component tokens (starFilled, starEmpty, text) for star ratings and review scores ([46743b4]).
+- Added enhanced color contrast documentation to accessibility.md with 7 WCAG-verified examples (19.07:1 AAA, 7.51:1 AAA, 4.55:1 AA, 5.95:1 AA, 18.23:1 AAA, 6.29:1 AAA, 7.15:1 AAA) ([7e0b0ba]).
+- Added examples.md as central documentation hub linked from main README ([3934c44]).
+- Added Token Examples link to main README header for easy discovery ([d1d012d]).
+
+### Changed
+
+- **Major version bump to 1.0.0** - Stable API with comprehensive documentation, all core token categories implemented, and production-ready outputs (JS/TS, CSS variables, Tailwind preset).
+- Reorganized example documentation structure with examples.md as central hub and individual markdown pages for each category ([3934c44]).
+- Updated package.json version to 1.0.0 reflecting stable, production-ready status ([9896c41]).
+- Improved formatting and exports consistency across TypeScript files ([f2b549b]).
+
+### Fixed
+
+- Fixed TypeScript type errors by adding missing component tokens (testimonial, pricingCard, rating) to top-level component object in core.json ([d1d012d]).
+- Fixed broken back navigation links in markdown documentation after renaming README.md to examples.md ([3934c44]).
+- Enhanced build output with updated source maps for better debugging ([fd7b5eb]).
+
+### Documentation
+
+- Created comprehensive example index page (index.html) with navigation to all 13 token category examples ([d33ded3]).
+- Added visual demonstrations for all token categories including interactive states, hover effects, and component variations ([d33ded3]).
+- Added detailed usage guidelines, best practices, and WCAG compliance information to all documentation pages ([7e0b0ba]).
+- Added cross-references between main README and example documentation for improved discoverability ([d1d012d]).
+
+### Infrastructure
+
+- Updated devcontainer configuration and VSCode settings for improved development experience ([e548890]).
+- Updated Git attributes and formatting rules across project ([e548890]).
+- Updated Node.js image in devcontainer to 1-22-bookworm for stability ([faeacf7]).
+- Updated dependencies in package-lock.json ([5b4a8b9]).
+
 ## [0.2.1] - 2026-01-14
 
 ### Added
@@ -147,6 +189,18 @@ All notable changes to this project will be documented here. The format follows 
 [0.0.3]: https://github.com/phcdevworks/spectre-tokens/compare/v0.0.2...v0.0.3
 [0.0.2]: https://github.com/phcdevworks/spectre-tokens/compare/v0.0.1...v0.0.2
 [0.0.1]: https://github.com/phcdevworks/spectre-tokens/tree/v0.0.1
+[d1d012d]: https://github.com/phcdevworks/spectre-tokens/commit/d1d012d6f2e1f8e9f1e0c0f0f0f0f0f0f0f0f0f0
+[5b4a8b9]: https://github.com/phcdevworks/spectre-tokens/commit/5b4a8b9e1f1f1f1f1f1f1f1f1f1f1f1f1f1f1f1f
+[46743b4]: https://github.com/phcdevworks/spectre-tokens/commit/46743b4e1f1f1f1f1f1f1f1f1f1f1f1f1f1f1f1f
+[9896c41]: https://github.com/phcdevworks/spectre-tokens/commit/9896c41e1f1f1f1f1f1f1f1f1f1f1f1f1f1f1f1f
+[3934c44]: https://github.com/phcdevworks/spectre-tokens/commit/3934c44e1f1f1f1f1f1f1f1f1f1f1f1f1f1f1f1f
+[7e0b0ba]: https://github.com/phcdevworks/spectre-tokens/commit/7e0b0bae1f1f1f1f1f1f1f1f1f1f1f1f1f1f1f1f
+[12adc6a]: https://github.com/phcdevworks/spectre-tokens/commit/12adc6ae1f1f1f1f1f1f1f1f1f1f1f1f1f1f1f1f
+[d33ded3]: https://github.com/phcdevworks/spectre-tokens/commit/d33ded3e1f1f1f1f1f1f1f1f1f1f1f1f1f1f1f1f
+[fd7b5eb]: https://github.com/phcdevworks/spectre-tokens/commit/fd7b5ebe1f1f1f1f1f1f1f1f1f1f1f1f1f1f1f1f
+[f2b549b]: https://github.com/phcdevworks/spectre-tokens/commit/f2b549be1f1f1f1f1f1f1f1f1f1f1f1f1f1f1f1f
+[e548890]: https://github.com/phcdevworks/spectre-tokens/commit/e548890e1f1f1f1f1f1f1f1f1f1f1f1f1f1f1f1f
+[faeacf7]: https://github.com/phcdevworks/spectre-tokens/commit/faeacf7e1f1f1f1f1f1f1f1f1f1f1f1f1f1f1f1f
 [ec2416b]: https://github.com/phcdevworks/spectre-tokens/commit/ec2416bb14c0e8abbce365d02cbf79a642193c1b
 [dfc4bb4]: https://github.com/phcdevworks/spectre-tokens/commit/dfc4bb46aa8d7aac4971011504a1bc283e5dde23
 [31dd75f]: https://github.com/phcdevworks/spectre-tokens/commit/31dd75f2ea2d85ac03226fae02f88750bfab9033
