@@ -154,6 +154,29 @@
       "iconSuccess": "#16a34a",
       "iconWarning": "#d97706",
       "iconDanger": "#dc2626"
+    },
+    "testimonial": {
+      "bg": "#ffffff",
+      "border": "#e2e8f0",
+      "text": "#334155",
+      "authorName": "#0f172a",
+      "authorTitle": "#64748b",
+      "quoteMark": "#cbd5e1"
+    },
+    "pricingCard": {
+      "bg": "#ffffff",
+      "border": "#e2e8f0",
+      "featuredBg": "#2563eb",
+      "featuredText": "#ffffff",
+      "featuredBadgeBg": "#f59e0b",
+      "featuredBadgeText": "#ffffff",
+      "price": "#0f172a",
+      "priceDescription": "#64748b"
+    },
+    "rating": {
+      "starFilled": "#f59e0b",
+      "starEmpty": "#e2e8f0",
+      "text": "#64748b"
     }
   },
   "modes": {

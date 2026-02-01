@@ -32,22 +32,22 @@ module.exports = __toCommonJS(index_exports);
 var core_default = {
   colors: {
     brand: {
-      "50": "#f5f0ff",
-      "100": "#ebe2ff",
-      "200": "#d7c6ff",
-      "300": "#bfa1ff",
-      "400": "#a37aff",
-      "500": "#8652ff",
-      "600": "#6c32e6",
-      "700": "#5626b4",
-      "800": "#3d1b7f",
-      "900": "#241147"
+      "50": "#eff6ff",
+      "100": "#dbeafe",
+      "200": "#bfdbfe",
+      "300": "#93c5fd",
+      "400": "#60a5fa",
+      "500": "#3b82f6",
+      "600": "#2563eb",
+      "700": "#1d4ed8",
+      "800": "#1e40af",
+      "900": "#1e3a8a"
     },
     neutral: {
       "50": "#f8fafc",
       "100": "#f1f5f9",
       "200": "#e2e8f0",
-      "300": "#cbd5f5",
+      "300": "#cbd5e1",
       "400": "#94a3b8",
       "500": "#64748b",
       "600": "#475569",
@@ -56,16 +56,16 @@ var core_default = {
       "900": "#0f172a"
     },
     accent: {
-      "50": "#e5fff8",
-      "100": "#b8ffed",
-      "200": "#89ffe1",
-      "300": "#59ffd6",
-      "400": "#29ffca",
-      "500": "#03e6b3",
-      "600": "#00b389",
-      "700": "#008060",
-      "800": "#004d38",
-      "900": "#002a20"
+      "50": "#eff6ff",
+      "100": "#dbeafe",
+      "200": "#bfdbfe",
+      "300": "#93c5fd",
+      "400": "#60a5fa",
+      "500": "#3b82f6",
+      "600": "#2563eb",
+      "700": "#1d4ed8",
+      "800": "#1e40af",
+      "900": "#1e3a8a"
     },
     success: {
       "50": "#f0fdf4",
@@ -116,7 +116,7 @@ var core_default = {
       "900": "#1e3a8a"
     },
     focus: {
-      primary: "#8652ff",
+      primary: "#3b82f6",
       error: "#ef4444",
       info: "#3b82f6"
     }
@@ -148,7 +148,7 @@ var core_default = {
     },
     onSurface: {
       default: "#0f172a",
-      muted: "#6b7280",
+      muted: "#64748b",
       subtle: "#94a3b8",
       meta: "#94a3b8"
     }
@@ -156,7 +156,7 @@ var core_default = {
   component: {
     card: {
       text: "#0f172a",
-      textMuted: "#6b7280"
+      textMuted: "#64748b"
     },
     input: {
       text: "#0f172a",
@@ -181,10 +181,33 @@ var core_default = {
     iconBox: {
       bg: "#ffffff",
       border: "#e2e8f0",
-      iconDefault: "#6c32e6",
+      iconDefault: "#2563eb",
       iconSuccess: "#16a34a",
       iconWarning: "#d97706",
       iconDanger: "#dc2626"
+    },
+    testimonial: {
+      bg: "#ffffff",
+      border: "#e2e8f0",
+      text: "#334155",
+      authorName: "#0f172a",
+      authorTitle: "#64748b",
+      quoteMark: "#cbd5e1"
+    },
+    pricingCard: {
+      bg: "#ffffff",
+      border: "#e2e8f0",
+      featuredBg: "#2563eb",
+      featuredText: "#ffffff",
+      featuredBadgeBg: "#f59e0b",
+      featuredBadgeText: "#ffffff",
+      price: "#0f172a",
+      priceDescription: "#64748b"
+    },
+    rating: {
+      starFilled: "#f59e0b",
+      starEmpty: "#e2e8f0",
+      text: "#64748b"
     }
   },
   modes: {
@@ -201,6 +224,12 @@ var core_default = {
         },
         overlay: {
           value: "rgba(15,23,42,0.6)"
+        },
+        alternate: {
+          value: "#f1f5f9"
+        },
+        hero: {
+          value: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)"
         }
       },
       text: {
@@ -223,7 +252,7 @@ var core_default = {
             value: "#0f172a"
           },
           muted: {
-            value: "#6b7280"
+            value: "#64748b"
           },
           subtle: {
             value: "#94a3b8"
@@ -239,7 +268,7 @@ var core_default = {
             value: "#0f172a"
           },
           textMuted: {
-            value: "#6b7280"
+            value: "#64748b"
           }
         },
         input: {
@@ -298,7 +327,7 @@ var core_default = {
             value: "#e2e8f0"
           },
           iconDefault: {
-            value: "#6c32e6"
+            value: "#2563eb"
           },
           iconSuccess: {
             value: "#16a34a"
@@ -308,6 +337,63 @@ var core_default = {
           },
           iconDanger: {
             value: "#dc2626"
+          }
+        },
+        testimonial: {
+          bg: {
+            value: "#ffffff"
+          },
+          border: {
+            value: "#e2e8f0"
+          },
+          text: {
+            value: "#334155"
+          },
+          authorName: {
+            value: "#0f172a"
+          },
+          authorTitle: {
+            value: "#64748b"
+          },
+          quoteMark: {
+            value: "#cbd5e1"
+          }
+        },
+        pricingCard: {
+          bg: {
+            value: "#ffffff"
+          },
+          border: {
+            value: "#e2e8f0"
+          },
+          featuredBg: {
+            value: "#2563eb"
+          },
+          featuredText: {
+            value: "#ffffff"
+          },
+          featuredBadgeBg: {
+            value: "#f59e0b"
+          },
+          featuredBadgeText: {
+            value: "#ffffff"
+          },
+          price: {
+            value: "#0f172a"
+          },
+          priceDescription: {
+            value: "#64748b"
+          }
+        },
+        rating: {
+          starFilled: {
+            value: "#f59e0b"
+          },
+          starEmpty: {
+            value: "#e2e8f0"
+          },
+          text: {
+            value: "#64748b"
           }
         }
       }
@@ -325,6 +411,12 @@ var core_default = {
         },
         overlay: {
           value: "#1e293b"
+        },
+        alternate: {
+          value: "#1e293b"
+        },
+        hero: {
+          value: "linear-gradient(135deg, #4c1d95 0%, #5b21b6 100%)"
         }
       },
       text: {
@@ -333,7 +425,7 @@ var core_default = {
             value: "#f8fafc"
           },
           muted: {
-            value: "#cbd5f5"
+            value: "#cbd5e1"
           },
           subtle: {
             value: "#94a3b8"
@@ -347,7 +439,7 @@ var core_default = {
             value: "#f1f5f9"
           },
           muted: {
-            value: "#cbd5f5"
+            value: "#cbd5e1"
           },
           subtle: {
             value: "#94a3b8"
@@ -363,7 +455,7 @@ var core_default = {
             value: "#f1f5f9"
           },
           textMuted: {
-            value: "#cbd5f5"
+            value: "#cbd5e1"
           }
         },
         input: {
@@ -422,7 +514,7 @@ var core_default = {
             value: "#334155"
           },
           iconDefault: {
-            value: "#a37aff"
+            value: "#93c5fd"
           },
           iconSuccess: {
             value: "#4ade80"
@@ -432,6 +524,63 @@ var core_default = {
           },
           iconDanger: {
             value: "#f87171"
+          }
+        },
+        testimonial: {
+          bg: {
+            value: "#1e293b"
+          },
+          border: {
+            value: "#334155"
+          },
+          text: {
+            value: "#cbd5e1"
+          },
+          authorName: {
+            value: "#f1f5f9"
+          },
+          authorTitle: {
+            value: "#94a3b8"
+          },
+          quoteMark: {
+            value: "#475569"
+          }
+        },
+        pricingCard: {
+          bg: {
+            value: "#1e293b"
+          },
+          border: {
+            value: "#334155"
+          },
+          featuredBg: {
+            value: "#3b82f6"
+          },
+          featuredText: {
+            value: "#ffffff"
+          },
+          featuredBadgeBg: {
+            value: "#f59e0b"
+          },
+          featuredBadgeText: {
+            value: "#ffffff"
+          },
+          price: {
+            value: "#f1f5f9"
+          },
+          priceDescription: {
+            value: "#94a3b8"
+          }
+        },
+        rating: {
+          starFilled: {
+            value: "#fbbf24"
+          },
+          starEmpty: {
+            value: "#334155"
+          },
+          text: {
+            value: "#94a3b8"
           }
         }
       }
@@ -456,29 +605,29 @@ var core_default = {
   },
   buttons: {
     primary: {
-      bg: "#8652ff",
-      bgHover: "#6c32e6",
-      bgActive: "#5626b4",
-      bgDisabled: "#cbd5f5",
+      bg: "#2563eb",
+      bgHover: "#1d4ed8",
+      bgActive: "#1e40af",
+      bgDisabled: "#e2e8f0",
       text: "#ffffff",
       textDisabled: "#94a3b8"
     },
     secondary: {
       bg: "#ffffff",
-      bgHover: "#f1f5f9",
-      bgActive: "#e2e8f0",
+      bgHover: "#f8fafc",
+      bgActive: "#f1f5f9",
       bgDisabled: "#f8fafc",
-      text: "#8652ff",
+      text: "#2563eb",
       textDisabled: "#94a3b8",
-      border: "#8652ff",
-      borderDisabled: "#cbd5f5"
+      border: "#2563eb",
+      borderDisabled: "#e2e8f0"
     },
     ghost: {
       bg: "transparent",
-      bgHover: "#f5f0ff",
-      bgActive: "#ebe2ff",
+      bgHover: "#eff6ff",
+      bgActive: "#dbeafe",
       bgDisabled: "transparent",
-      text: "#8652ff",
+      text: "#2563eb",
       textDisabled: "#94a3b8"
     },
     danger: {
@@ -496,21 +645,38 @@ var core_default = {
       bgDisabled: "#bbf7d0",
       text: "#ffffff",
       textDisabled: "#94a3b8"
+    },
+    cta: {
+      bg: "#f59e0b",
+      bgHover: "#d97706",
+      bgActive: "#b45309",
+      bgDisabled: "#fde68a",
+      text: "#ffffff",
+      textDisabled: "#94a3b8",
+      shadow: "0 4px 14px 0 rgba(245, 158, 11, 0.39)"
+    },
+    accent: {
+      bg: "#8b5cf6",
+      bgHover: "#7c3aed",
+      bgActive: "#6d28d9",
+      bgDisabled: "#ddd6fe",
+      text: "#ffffff",
+      textDisabled: "#94a3b8"
     }
   },
   forms: {
     default: {
       bg: "#ffffff",
-      border: "#cbd5f5",
+      border: "#cbd5e1",
       text: "#0f172a",
       placeholder: "#94a3b8"
     },
     hover: {
-      border: "#8652ff"
+      border: "#3b82f6"
     },
     focus: {
-      border: "#8652ff",
-      ring: "#8652ff"
+      border: "#3b82f6",
+      ring: "#3b82f6"
     },
     valid: {
       border: "#22c55e",
@@ -580,8 +746,8 @@ var core_default = {
     pill: "999px"
   },
   borders: {
-    card: "#334155",
-    input: "#cbd5f5"
+    card: "#e2e8f0",
+    input: "#cbd5e1"
   },
   font: {
     xs: {
@@ -617,9 +783,9 @@ var core_default = {
   },
   typography: {
     families: {
-      sans: "'Inter', 'Helvetica Neue', Arial, sans-serif",
-      serif: "'Spectre Serif', 'Georgia', serif",
-      mono: "'JetBrains Mono', 'SFMono-Regular', Consolas, monospace"
+      sans: "system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif",
+      serif: "'Times New Roman', Times, serif",
+      mono: "'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace"
     },
     scale: {
       xs: {
@@ -657,14 +823,29 @@ var core_default = {
         fontSize: "2.25rem",
         lineHeight: "2.75rem",
         fontWeight: 700
+      },
+      "4xl": {
+        fontSize: "3rem",
+        lineHeight: "3.5rem",
+        fontWeight: 800
+      },
+      "5xl": {
+        fontSize: "3.75rem",
+        lineHeight: "4.25rem",
+        fontWeight: 800
+      },
+      "6xl": {
+        fontSize: "4.5rem",
+        lineHeight: "5rem",
+        fontWeight: 900
       }
     }
   },
   shadows: {
     none: "none",
-    sm: "0 1px 2px 0 rgba(15, 23, 42, 0.08)",
-    md: "0 3px 8px -1px rgba(15, 23, 42, 0.1)",
-    lg: "0 8px 20px -4px rgba(15, 23, 42, 0.18)"
+    sm: "0 1px 2px 0 rgba(15, 23, 42, 0.06)",
+    md: "0 2px 6px -1px rgba(15, 23, 42, 0.08)",
+    lg: "0 6px 16px -4px rgba(15, 23, 42, 0.12)"
   },
   breakpoints: {
     sm: "640px",
@@ -697,7 +878,7 @@ var core_default = {
       in: "cubic-bezier(0.4, 0, 1, 1)",
       out: "cubic-bezier(0, 0, 0.2, 1)",
       inOut: "cubic-bezier(0.4, 0, 0.2, 1)",
-      spring: "cubic-bezier(0.34, 1.56, 0.64, 1)"
+      spring: "cubic-bezier(0.4, 0, 0.2, 1)"
     }
   },
   animations: {
@@ -727,20 +908,37 @@ var core_default = {
       keyframes: "scale-in"
     },
     bounce: {
-      duration: "500ms",
-      easing: "cubic-bezier(0.34, 1.56, 0.64, 1)",
+      duration: "300ms",
+      easing: "cubic-bezier(0.4, 0, 0.2, 1)",
       keyframes: "bounce"
     },
     shake: {
-      duration: "400ms",
+      duration: "250ms",
       easing: "cubic-bezier(0.4, 0, 0.2, 1)",
       keyframes: "shake"
     },
     pulse: {
-      duration: "1500ms",
+      duration: "1200ms",
       easing: "cubic-bezier(0.4, 0, 0.2, 1)",
       keyframes: "pulse"
     }
+  },
+  icons: {
+    xs: "12px",
+    sm: "16px",
+    md: "20px",
+    lg: "24px",
+    xl: "32px",
+    "2xl": "40px",
+    "3xl": "48px"
+  },
+  aspectRatios: {
+    square: "1/1",
+    video: "16/9",
+    portrait: "3/4",
+    landscape: "4/3",
+    ultrawide: "21/9",
+    hero: "2/1"
   }
 };
 
