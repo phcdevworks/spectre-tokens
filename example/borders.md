@@ -50,9 +50,9 @@ pill (999px):  ╭──────────────────╮
 ### Focus State
 
 ```
-Border: 2px solid #2563eb
+Border: 2px solid #3b82f6
 Border Radius: md (4px)
-Outline: 2px solid #2563eb
+Outline: 2px solid #3b82f6
 Outline Offset: 2px
 ```
 
@@ -89,7 +89,7 @@ Border Radius: radii.md (4px)
 ### Secondary Buttons
 
 ```
-Border: 1px solid #cbd5e1
+Border: 1px solid borders.input (#cbd5e1)
 Border Radius: radii.md (4px)
 ```
 
@@ -98,7 +98,7 @@ Border Radius: radii.md (4px)
 ```
 Border: 1px solid borders.input (#cbd5e1)
 Border Radius: radii.md (4px)
-Focus Border: 2px solid #2563eb
+Focus Border: 2px solid #3b82f6
 ```
 
 ### Badges

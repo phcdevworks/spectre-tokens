@@ -49,7 +49,6 @@ Border colors and radii:
 Elevation and shadow tokens:
 
 - Shadow scale: none, sm, md, lg
-- CTA button shadow: 0 4px 14px 0 rgba(245, 158, 11, 0.39)
 - Elevation demo with interactive cards
 - All shadows use consistent rgba(15, 23, 42, opacity) for neutral depth
 
