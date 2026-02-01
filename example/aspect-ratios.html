@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aspect Ratios - Spectre Tokens</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      padding: 2rem;
+      background: #f8fafc;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .header {
+      margin-bottom: 2rem;
+    }
+
+    .back-link {
+      color: #2563eb;
+      text-decoration: none;
+      margin-bottom: 1rem;
+      display: inline-block;
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 0.5rem;
+      color: #0f172a;
+    }
+
+    .subtitle {
+      font-size: 1.125rem;
+      color: #475569;
+    }
+
+    .section {
+      background: white;
+      border-radius: 8px;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+      font-size: 1.5rem;
+      color: #0f172a;
+      margin-bottom: 1.5rem;
+    }
+
+    .ratio-grid {
+      display: grid;
+      gap: 2rem;
+    }
+
+    .ratio-example {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .ratio-display {
+      width: 100%;
+      background: linear-gradient(135deg, #3b82f6, #2563eb);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: 600;
+      font-size: 1.25rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .ratio-display::before {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background:
+        linear-gradient(to right, rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+      background-size: 40px 40px;
+    }
+
+    .ratio-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Aspect Ratios */
+    .ratio-square {
+      aspect-ratio: 1/1;
+    }
+
+    .ratio-video {
+      aspect-ratio: 16/9;
+    }
+
+    .ratio-portrait {
+      aspect-ratio: 3/4;
+    }
+
+    .ratio-landscape {
+      aspect-ratio: 4/3;
+    }
+
+    .ratio-ultrawide {
+      aspect-ratio: 21/9;
+    }
+
+    .ratio-hero {
+      aspect-ratio: 2/1;
+    }
+
+    .ratio-info {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .ratio-label {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #0f172a;
+    }
+
+    .ratio-value {
+      font-size: 0.875rem;
+      font-family: monospace;
+      color: #64748b;
+    }
+
+    .usage-note {
+      font-size: 0.875rem;
+      color: #64748b;
+      margin-top: 0.5rem;
+      line-height: 1.5;
+    }
+
+    .usage-grid {
+      display: grid;
+      gap: 1.5rem;
+    }
+
+    .usage-card {
+      padding: 1.5rem;
+      background: #f8fafc;
+      border-radius: 8px;
+      border: 1px solid #e2e8f0;
+    }
+
+    .usage-title {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #0f172a;
+      margin-bottom: 0.5rem;
+    }
+
+    .usage-description {
+      font-size: 0.875rem;
+      color: #64748b;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="header">
+      <a href="index.html" class="back-link">← Back to Examples</a>
+      <h1>🖼️ Aspect Ratios</h1>
+      <p class="subtitle">Consistent aspect ratio tokens for images, videos, and content containers</p>
+    </div>
+
+    <div class="section">
+      <h2>Aspect Ratio Tokens</h2>
+      <div class="ratio-grid">
+        <div class="ratio-example">
+          <div class="ratio-display ratio-square">
+            <div class="ratio-content">1:1 Square</div>
+          </div>
+          <div class="ratio-info">
+            <div class="ratio-label">Square</div>
+            <div class="ratio-value">1/1</div>
+          </div>
+          <div class="usage-note">
+            Perfect for: Profile images, product thumbnails, social media posts, icons
+          </div>
+        </div>
+
+        <div class="ratio-example">
+          <div class="ratio-display ratio-video">
+            <div class="ratio-content">16:9 Video</div>
+          </div>
+          <div class="ratio-info">
+            <div class="ratio-label">Video (Standard)</div>
+            <div class="ratio-value">16/9</div>
+          </div>
+          <div class="usage-note">
+            Perfect for: Video embeds (YouTube, Vimeo), widescreen images, hero banners
+          </div>
+        </div>
+
+        <div class="ratio-example">
+          <div class="ratio-display ratio-portrait">
+            <div class="ratio-content">3:4 Portrait</div>
+          </div>
+          <div class="ratio-info">
+            <div class="ratio-label">Portrait</div>
+            <div class="ratio-value">3/4</div>
+          </div>
+          <div class="usage-note">
+            Perfect for: Vertical photos, mobile screenshots, story content, team member cards
+          </div>
+        </div>
+
+        <div class="ratio-example">
+          <div class="ratio-display ratio-landscape">
+            <div class="ratio-content">4:3 Landscape</div>
+          </div>
+          <div class="ratio-info">
+            <div class="ratio-label">Landscape (Classic)</div>
+            <div class="ratio-value">4/3</div>
+          </div>
+          <div class="usage-note">
+            Perfect for: Blog post images, photo galleries, traditional photography
+          </div>
+        </div>
+
+        <div class="ratio-example">
+          <div class="ratio-display ratio-ultrawide">
+            <div class="ratio-content">21:9 Ultrawide</div>
+          </div>
+          <div class="ratio-info">
+            <div class="ratio-label">Ultrawide</div>
+            <div class="ratio-value">21/9</div>
+          </div>
+          <div class="usage-note">
+            Perfect for: Cinematic headers, panoramic images, dramatic hero sections
+          </div>
+        </div>
+
+        <div class="ratio-example">
+          <div class="ratio-display ratio-hero">
+            <div class="ratio-content">2:1 Hero</div>
+          </div>
+          <div class="ratio-info">
+            <div class="ratio-label">Hero Section</div>
+            <div class="ratio-value">2/1</div>
+          </div>
+          <div class="usage-note">
+            Perfect for: Website hero sections, banner images, wide feature cards
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Common Use Cases</h2>
+      <div class="usage-grid">
+        <div class="usage-card">
+          <div class="usage-title">📱 Social Media Content</div>
+          <div class="usage-description">
+            <strong>Square (1:1)</strong> for Instagram posts, profile pictures<br>
+            <strong>Portrait (3:4)</strong> for Instagram Stories, TikTok<br>
+            <strong>Landscape (4:3)</strong> for Facebook posts
+          </div>
+        </div>
+
+        <div class="usage-card">
+          <div class="usage-title">🎬 Video Content</div>
+          <div class="usage-description">
+            <strong>Video (16:9)</strong> for YouTube, Vimeo, standard video embeds<br>
+            <strong>Ultrawide (21:9)</strong> for cinematic video content<br>
+            <strong>Portrait (3:4)</strong> for mobile-first video content
+          </div>
+        </div>
+
+        <div class="usage-card">
+          <div class="usage-title">🌟 Hero Sections</div>
+          <div class="usage-description">
+            <strong>Hero (2:1)</strong> for main landing page heroes<br>
+            <strong>Video (16:9)</strong> for video backgrounds<br>
+            <strong>Ultrawide (21:9)</strong> for dramatic, cinematic headers
+          </div>
+        </div>
+
+        <div class="usage-card">
+          <div class="usage-title">🖼️ Product & Gallery Images</div>
+          <div class="usage-description">
+            <strong>Square (1:1)</strong> for product grids, thumbnails<br>
+            <strong>Landscape (4:3)</strong> for featured products, blog images<br>
+            <strong>Portrait (3:4)</strong> for product detail views
+          </div>
+        </div>
+
+        <div class="usage-card">
+          <div class="usage-title">👥 Team & Profile Cards</div>
+          <div class="usage-description">
+            <strong>Square (1:1)</strong> for team member avatars<br>
+            <strong>Portrait (3:4)</strong> for team member profile cards<br>
+            <strong>Landscape (4:3)</strong> for team section backgrounds
+          </div>
+        </div>
+
+        <div class="usage-card">
+          <div class="usage-title">📰 Blog & Articles</div>
+          <div class="usage-description">
+            <strong>Video (16:9)</strong> for featured article images<br>
+            <strong>Hero (2:1)</strong> for article headers<br>
+            <strong>Landscape (4:3)</strong> for in-content images
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

@@ -94,6 +94,25 @@ Focus rings, touch targets, and a11y:
 - Opacity tokens
 - Color contrast information
 
+### 🎯 [Icons](icons.html)
+
+Icon size tokens for consistent iconography:
+
+- Icon sizes (xs to 3xl: 12px to 48px)
+- Usage recommendations for each size
+- Common use cases (buttons, features, heroes)
+
+### 🖼️ [Aspect Ratios](aspect-ratios.html)
+
+Consistent aspect ratio tokens for media:
+
+- Square (1:1) - Profile images, products
+- Video (16:9) - Standard video embeds
+- Portrait (3:4) - Vertical content
+- Landscape (4:3) - Traditional photos
+- Ultrawide (21:9) - Cinematic content
+- Hero (2:1) - Banner sections
+
 ## How to View
 
 Open `index.html` in a web browser to navigate through all examples. Each example page includes:
