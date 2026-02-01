@@ -50,6 +50,7 @@ export interface ButtonStateTokens {
   textDisabled: string;
   border?: string;
   borderDisabled?: string;
+  shadow?: string;
 }
 
 export interface FormStateTokens {
@@ -82,6 +83,32 @@ export interface ComponentIconBoxTokens<Value = string> {
   iconDanger: Value;
 }
 
+export interface ComponentTestimonialTokens<Value = string> {
+  bg: Value;
+  border: Value;
+  text: Value;
+  authorName: Value;
+  authorTitle: Value;
+  quoteMark: Value;
+}
+
+export interface ComponentPricingCardTokens<Value = string> {
+  bg: Value;
+  border: Value;
+  featuredBg: Value;
+  featuredText: Value;
+  featuredBadgeBg: Value;
+  featuredBadgeText: Value;
+  price: Value;
+  priceDescription: Value;
+}
+
+export interface ComponentRatingTokens<Value = string> {
+  starFilled: Value;
+  starEmpty: Value;
+  text: Value;
+}
+
 export interface ComponentTokens<Value = string> {
   card: {
     text: Value;
@@ -97,6 +124,9 @@ export interface ComponentTokens<Value = string> {
   };
   badge: ComponentBadgeTokens<Value>;
   iconBox: ComponentIconBoxTokens<Value>;
+  testimonial: ComponentTestimonialTokens<Value>;
+  pricingCard: ComponentPricingCardTokens<Value>;
+  rating: ComponentRatingTokens<Value>;
   [key: string]: any;
 }
 
@@ -110,6 +140,8 @@ export interface SpectreModeTokens {
     card: SemanticTokenValue;
     input: SemanticTokenValue;
     overlay: SemanticTokenValue;
+    alternate: SemanticTokenValue;
+    hero: SemanticTokenValue;
   };
   text: {
     onPage: {

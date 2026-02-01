@@ -5,7 +5,7 @@ import type { SpectreTokens, TailwindTheme, Tokens } from './types';
 
 export type {
   AccessibilityTokens, AnimationEntry, ButtonStateTokens, ColorScale, ComponentBadgeTokens,
-  ComponentIconBoxTokens, ComponentTokens, FormStateTokens, LayoutTokens, SpectreModeName, SpectreModeTokens, SpectreTokens, TailwindTheme,
+  ComponentIconBoxTokens, ComponentPricingCardTokens, ComponentRatingTokens, ComponentTestimonialTokens, ComponentTokens, FormStateTokens, LayoutTokens, SpectreModeName, SpectreModeTokens, SpectreTokens, TailwindTheme,
   Tokens, TokenScale, TransitionTokens, TypographyTokens
 } from './types';
 
