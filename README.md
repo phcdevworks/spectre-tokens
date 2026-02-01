@@ -2,7 +2,7 @@
 
 JSON-first design tokens that power Spectre UI, Spectre Blocks, Spectre Astro, Spectre 11ty, and every future Spectre surface.
 
-🤝 **[Contributing Guide](CONTRIBUTING.md)** | 📝 **[Changelog](CHANGELOG.md)**
+🤝 **[Contributing Guide](CONTRIBUTING.md)** | 📝 **[Changelog](CHANGELOG.md)** | 🎨 **[Token Examples](example/examples.md)**
 
 ## Overview
 
