@@ -2,7 +2,7 @@
 
 Consistent aspect ratio tokens for media in the Spectre design system.
 
-[← Back to Examples](README.md)
+[← Back to Examples](examples.md)
 
 ## Aspect Ratio Tokens
 

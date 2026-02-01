@@ -2,7 +2,7 @@
 
 Focus rings, touch targets, and WCAG compliance for the Spectre design system.
 
-[← Back to Examples](README.md)
+[← Back to Examples](examples.md)
 
 ## Focus Ring
 

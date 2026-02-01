@@ -2,7 +2,7 @@
 
 Button variants with all states for the Spectre design system.
 
-[← Back to Examples](README.md)
+[← Back to Examples](examples.md)
 
 ## Button Variants
 

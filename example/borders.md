@@ -2,7 +2,7 @@
 
 Border colors and radii tokens for the Spectre design system.
 
-[← Back to Examples](README.md)
+[← Back to Examples](examples.md)
 
 ## Border Radii
 

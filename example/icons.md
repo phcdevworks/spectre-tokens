@@ -2,7 +2,7 @@
 
 Icon size tokens for consistent iconography in the Spectre design system.
 
-[← Back to Examples](README.md)
+[← Back to Examples](examples.md)
 
 ## Icon Sizes
 

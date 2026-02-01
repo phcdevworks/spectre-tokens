@@ -2,7 +2,7 @@
 
 Font scales, families, and text styles for the Spectre design system.
 
-[← Back to Examples](README.md)
+[← Back to Examples](examples.md)
 
 ## Type Scale
 
