@@ -2,7 +2,7 @@
 
 Complete color palette for the Spectre design system.
 
-[← Back to Examples](README.md)
+[← Back to Examples](examples.md)
 
 ## Brand Colors
 

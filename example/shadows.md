@@ -2,7 +2,7 @@
 
 Elevation and shadow tokens for the Spectre design system.
 
-[← Back to Examples](README.md)
+[← Back to Examples](examples.md)
 
 ## Shadow Scale
 

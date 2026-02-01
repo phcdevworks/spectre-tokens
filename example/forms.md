@@ -2,7 +2,7 @@
 
 Form input styles and states for the Spectre design system.
 
-[← Back to Examples](README.md)
+[← Back to Examples](examples.md)
 
 ## Form Input States
 
