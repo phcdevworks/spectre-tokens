@@ -9,10 +9,9 @@ Elevation and shadow tokens for the Spectre design system.
 | Token          | Value                                                                           | Usage            |
 | -------------- | ------------------------------------------------------------------------------- | ---------------- |
 | `shadows.none` | `none`                                                                          | Flat elements    |
-| `shadows.sm`   | `0 1px 3px 0 rgba(15, 23, 42, 0.1), 0 1px 2px 0 rgba(15, 23, 42, 0.06)`         | Subtle elevation |
-| `shadows.md`   | `0 4px 6px -1px rgba(15, 23, 42, 0.1), 0 2px 4px -1px rgba(15, 23, 42, 0.06)`   | Medium elevation |
-| `shadows.lg`   | `0 10px 15px -3px rgba(15, 23, 42, 0.1), 0 4px 6px -2px rgba(15, 23, 42, 0.05)` | High elevation   |
-| `shadows.cta`  | `0 4px 14px 0 rgba(245, 158, 11, 0.39)`                                         | CTA button glow  |
+| `shadows.sm`   | `0 1px 2px 0 rgba(15, 23, 42, 0.06)`                                            | Subtle elevation |
+| `shadows.md`   | `0 2px 6px -1px rgba(15, 23, 42, 0.08)`                                         | Medium elevation |
+| `shadows.lg`   | `0 6px 16px -4px rgba(15, 23, 42, 0.12)`                                        | High elevation   |
 
 ## Visual Elevation
 
@@ -45,41 +44,27 @@ Level 3 (lg):    ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
 ### Small Shadow
 
 ```
-Layer 1: 0 1px 3px 0 rgba(15, 23, 42, 0.1)
-Layer 2: 0 1px 2px 0 rgba(15, 23, 42, 0.06)
-Blur: 3px (primary), 2px (secondary)
-Opacity: 10% (primary), 6% (secondary)
+Shadow: 0 1px 2px 0 rgba(15, 23, 42, 0.06)
+Blur: 2px
+Opacity: 6%
 ```
 
 ### Medium Shadow
 
 ```
-Layer 1: 0 4px 6px -1px rgba(15, 23, 42, 0.1)
-Layer 2: 0 2px 4px -1px rgba(15, 23, 42, 0.06)
-Blur: 6px (primary), 4px (secondary)
-Offset: 4px (primary), 2px (secondary)
-Opacity: 10% (primary), 6% (secondary)
+Shadow: 0 2px 6px -1px rgba(15, 23, 42, 0.08)
+Blur: 6px
+Offset: 2px
+Opacity: 8%
 ```
 
 ### Large Shadow
 
 ```
-Layer 1: 0 10px 15px -3px rgba(15, 23, 42, 0.1)
-Layer 2: 0 4px 6px -2px rgba(15, 23, 42, 0.05)
-Blur: 15px (primary), 6px (secondary)
-Offset: 10px (primary), 4px (secondary)
-Opacity: 10% (primary), 5% (secondary)
-```
-
-### CTA Shadow
-
-```
-Shadow: 0 4px 14px 0 rgba(245, 158, 11, 0.39)
-Color: Accent (#f59e0b)
-Blur: 14px
-Offset: 4px
-Opacity: 39%
-Effect: Glowing amber halo
+Shadow: 0 6px 16px -4px rgba(15, 23, 42, 0.12)
+Blur: 16px
+Offset: 6px
+Opacity: 12%
 ```
 
 ## Usage Guidelines
@@ -114,13 +99,6 @@ Effect: Glowing amber halo
 - Drawers and side panels
 - Feature cards
 - Prominent interactive elements
-
-### CTA Shadow
-
-- Call-to-action buttons only
-- High-priority actions
-- Special promotional elements
-- Primary conversion buttons
 
 ## Interactive States
 

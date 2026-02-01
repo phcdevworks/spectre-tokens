@@ -8,7 +8,7 @@ Spacing scale and layout tokens for the Spectre design system.
 
 | Token      | Rem     | Pixels | Usage                |
 | ---------- | ------- | ------ | -------------------- |
-| `space.0`  | 0       | 0px    | No spacing           |
+| `space.0`  | 0rem    | 0px    | No spacing           |
 | `space.4`  | 0.25rem | 4px    | Tiny gaps            |
 | `space.8`  | 0.5rem  | 8px    | Compact spacing      |
 | `space.12` | 0.75rem | 12px   | Small spacing        |
@@ -72,9 +72,9 @@ Spacing scale and layout tokens for the Spectre design system.
 
 | Token                         | Value         | Usage              |
 | ----------------------------- | ------------- | ------------------ |
-| `layout.container.padding.sm` | 1rem (16px)   | Mobile containers  |
-| `layout.container.padding.md` | 1.5rem (24px) | Tablet containers  |
-| `layout.container.padding.lg` | 2rem (32px)   | Desktop containers |
+| `layout.container.paddingInline.sm` | 1rem (16px)   | Mobile containers  |
+| `layout.container.paddingInline.md` | 1.5rem (24px) | Tablet containers  |
+| `layout.container.paddingInline.lg` | 2rem (32px)   | Desktop containers |
 
 ## Common Patterns
 
