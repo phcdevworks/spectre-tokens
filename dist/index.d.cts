@@ -42,6 +42,7 @@ interface ButtonStateTokens {
     textDisabled: string;
     border?: string;
     borderDisabled?: string;
+    shadow?: string;
 }
 interface FormStateTokens {
     bg?: string;
@@ -70,6 +71,29 @@ interface ComponentIconBoxTokens<Value = string> {
     iconWarning: Value;
     iconDanger: Value;
 }
+interface ComponentTestimonialTokens<Value = string> {
+    bg: Value;
+    border: Value;
+    text: Value;
+    authorName: Value;
+    authorTitle: Value;
+    quoteMark: Value;
+}
+interface ComponentPricingCardTokens<Value = string> {
+    bg: Value;
+    border: Value;
+    featuredBg: Value;
+    featuredText: Value;
+    featuredBadgeBg: Value;
+    featuredBadgeText: Value;
+    price: Value;
+    priceDescription: Value;
+}
+interface ComponentRatingTokens<Value = string> {
+    starFilled: Value;
+    starEmpty: Value;
+    text: Value;
+}
 interface ComponentTokens<Value = string> {
     card: {
         text: Value;
@@ -85,6 +109,9 @@ interface ComponentTokens<Value = string> {
     };
     badge: ComponentBadgeTokens<Value>;
     iconBox: ComponentIconBoxTokens<Value>;
+    testimonial: ComponentTestimonialTokens<Value>;
+    pricingCard: ComponentPricingCardTokens<Value>;
+    rating: ComponentRatingTokens<Value>;
     [key: string]: any;
 }
 type SpectreModeName = 'default' | 'dark';
@@ -98,6 +125,8 @@ interface SpectreModeTokens {
         card: SemanticTokenValue;
         input: SemanticTokenValue;
         overlay: SemanticTokenValue;
+        alternate: SemanticTokenValue;
+        hero: SemanticTokenValue;
     };
     text: {
         onPage: {
@@ -228,4 +257,4 @@ declare const tailwindPreset: {
     theme: TailwindTheme;
 };
 
-export { type AccessibilityTokens, type AnimationEntry, type ButtonStateTokens, type ColorScale, type ComponentBadgeTokens, type ComponentIconBoxTokens, type ComponentTokens, type FormStateTokens, type LayoutTokens, type SpectreModeName, type SpectreModeTokens, type SpectreTokens, type TailwindTheme, type TokenScale, type Tokens, type TransitionTokens, type TypographyTokens, tokens as default, generateCssVariables, tailwindPreset, tailwindTheme, tokens };
+export { type AccessibilityTokens, type AnimationEntry, type ButtonStateTokens, type ColorScale, type ComponentBadgeTokens, type ComponentIconBoxTokens, type ComponentPricingCardTokens, type ComponentRatingTokens, type ComponentTestimonialTokens, type ComponentTokens, type FormStateTokens, type LayoutTokens, type SpectreModeName, type SpectreModeTokens, type SpectreTokens, type TailwindTheme, type TokenScale, type Tokens, type TransitionTokens, type TypographyTokens, tokens as default, generateCssVariables, tailwindPreset, tailwindTheme, tokens };
