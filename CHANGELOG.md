@@ -4,6 +4,22 @@ All notable changes to this project will be documented here. The format follows 
 
 ## [Unreleased]
 
+## [1.1.0] - 2026-03-11
+
+### Added
+- Added automated Typescript definition generation script (`generate-types.ts`) derived verbatim from `core.json`.
+- Enforced 100% strict adherence against "any" typings within core token consumption.
+
+### Changed
+- Refactored `src/types.ts` to strictly derive `Tokens` and `TailwindTheme` interfaces from auto-generated typings.
+- Updated `package.json` with `generate` and `prebuild` scripts to execute TS generation automatically on build.
+- Revised formatting, exports, and rewritten directives for `AGENTS.md` to optimize for downstream LLM framework parsing boundaries.
+- Bumped `esbuild` and `rollup` to match lockfile definitions.
+
+### Fixed
+- Fixed unhandled typecast and variable declaration conflicts in `check-tokens-regression.ts`.
+- Resolved TypeScript errors regarding optional `letterSpacing` access within index styling logic.
+
 ## [1.0.0] - 2026-02-01
 
 ### Added
