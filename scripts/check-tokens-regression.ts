@@ -29,12 +29,12 @@ if (missing.length > 0) {
   process.exit(1);
 }
 
-if ('spacing' in (tokens as Record<string, unknown>)) {
+if ('spacing' in (tokens as unknown as Record<string, unknown>)) {
   console.error('Token regression detected. Do not reintroduce tokens.spacing; use tokens.space and tokens.layout only.');
   process.exit(1);
 }
 
-const spaceEntries = tokens.space as Record<string, unknown> | undefined;
+const spaceEntries = tokens.space as unknown as Record<string, unknown> | undefined;
 if (!spaceEntries || Object.keys(spaceEntries).length === 0) {
   console.error('Token regression detected. Missing tokens.space scale.');
   process.exit(1);
@@ -64,7 +64,7 @@ const nearestSpaceValue = (value: string): string | undefined => {
   return best?.val;
 };
 
-const getPathValue = (obj: unknown, path: string[]): unknown =>
+const getPathValueArray = (obj: unknown, path: string[]): unknown =>
   path.reduce<unknown>((acc, segment) => {
     if (acc && typeof acc === 'object') {
       return (acc as Record<string, unknown>)[segment];
@@ -73,7 +73,7 @@ const getPathValue = (obj: unknown, path: string[]): unknown =>
   }, obj);
 
 const ensureLayoutValue = (path: string[]) => {
-  const value = getPathValue(tokens, path);
+  const value = getPathValueArray(tokens, path);
   const name = path.join('.');
   if (typeof value !== 'string') {
     console.error(`Token regression detected. ${name} must be a string that maps to tokens.space values.`);

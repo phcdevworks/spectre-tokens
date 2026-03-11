@@ -54,6 +54,8 @@
   ],
   "sideEffects": false,
   "scripts": {
+    "generate": "tsx scripts/generate-types.ts",
+    "prebuild": "npm run generate",
     "build": "npm run build:ts && npm run build:css && npm run check:tokens",
     "build:ts": "tsup --config tsup.config.ts",
     "build:css": "node scripts/build-css.js",
