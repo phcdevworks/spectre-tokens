@@ -1033,7 +1033,7 @@ var createCssVariableMap = (tokens2, options = {}) => {
     });
   }
   Object.entries(typographyScale).forEach(([key, entry]) => {
-    assign(toVariableName(prefix, "font", key, "letter-spacing"), entry.letterSpacing);
+    assign(toVariableName(prefix, "font", key, "letter-spacing"), "letterSpacing" in entry ? entry.letterSpacing : void 0);
   });
   assign(toVariableName(prefix, "text", "on", "page", "default"), tokens2.text.onPage.default);
   assign(toVariableName(prefix, "text", "on", "page", "muted"), tokens2.text.onPage.muted);
@@ -1349,7 +1349,7 @@ var createTailwindTheme = (source = tokens) => {
       {
         lineHeight: entry.lineHeight,
         ...entry.fontWeight ? { fontWeight: entry.fontWeight } : {},
-        ...entry.letterSpacing ? { letterSpacing: entry.letterSpacing } : {}
+        ..."letterSpacing" in entry ? { letterSpacing: entry.letterSpacing } : {}
       }
     ];
     return acc;

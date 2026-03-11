@@ -919,11 +919,6 @@ interface TypographyScaleEntry {
     fontWeight?: number;
     letterSpacing?: string;
 }
-interface FontScaleEntry {
-    size: string;
-    lineHeight: string;
-    weight: number;
-}
 interface TypographyTokens {
     families: Record<string, string>;
     scale: Record<string, TypographyScaleEntry>;
@@ -1071,44 +1066,28 @@ interface LayoutTokens {
         paddingInline: TokenScale;
     };
 }
-interface Tokens {
-    colors: Record<string, ColorScale>;
-    opacity: TokenScale;
-    accessibility: AccessibilityTokens;
-    buttons: Record<string, ButtonStateTokens>;
-    forms: Record<string, FormStateTokens>;
-    component: ComponentTokens;
-    space: TokenScale;
-    layout: LayoutTokens;
-    radii: TokenScale;
-    typography: TypographyTokens;
-    font: Record<string, FontScaleEntry>;
-    shadows: TokenScale;
-    breakpoints: TokenScale;
-    zIndex: TokenScale;
-    transitions: TransitionTokens;
-    animations: Record<string, AnimationEntry>;
+interface Tokens extends Omit<SpectreGeneratedTokens, 'modes' | 'surface' | 'text'> {
 }
 interface CssVariableOptions {
     selector?: string;
     prefix?: string;
 }
 interface TailwindTheme {
-    colors: Record<string, string | Record<string, string>>;
-    spacing: TokenScale;
-    borderRadius: TokenScale;
+    colors: SpectreGeneratedTokens['colors'] | Record<string, string | Record<string, string>>;
+    spacing: SpectreGeneratedTokens['space'];
+    borderRadius: SpectreGeneratedTokens['radii'];
     fontFamily: Record<string, string[]>;
     fontSize: Record<string, [string, {
         lineHeight: string;
         fontWeight?: number;
         letterSpacing?: string;
     }]>;
-    boxShadow: TokenScale;
-    screens: TokenScale;
-    zIndex: TokenScale;
-    transitionDuration: TokenScale;
-    transitionTimingFunction: TokenScale;
-    opacity: TokenScale;
+    boxShadow: SpectreGeneratedTokens['shadows'];
+    screens: SpectreGeneratedTokens['breakpoints'];
+    zIndex: SpectreGeneratedTokens['zIndex'];
+    transitionDuration: SpectreGeneratedTokens['transitions']['duration'];
+    transitionTimingFunction: SpectreGeneratedTokens['transitions']['easing'];
+    opacity: SpectreGeneratedTokens['opacity'];
 }
 
 declare const generateCssVariables: (tokens: SpectreTokens, options?: CssVariableOptions) => string;
