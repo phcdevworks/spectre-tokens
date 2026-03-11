@@ -160,59 +160,10 @@ export interface SpectreModeTokens {
   component: ComponentTokens<SemanticTokenValue>;
 }
 
-export interface SpectreTokens {
-  colors: any;
-  space: TokenScale;
-  layout: LayoutTokens;
-  radii: any;
-  typography: any;
-  font: {
-    xs: FontScaleEntry;
-    sm: FontScaleEntry;
-    md: FontScaleEntry;
-    lg: FontScaleEntry;
-    xl: FontScaleEntry;
-    ['2xl']: FontScaleEntry;
-  };
-  shadows: any;
-  breakpoints: any;
-  zIndex: any;
-  transitions: any;
-  buttons?: any;
-  forms?: any;
-  accessibility?: any;
-  opacity?: any;
-  animations?: any;
-  borders?: any;
-  surface: {
-    page: SemanticTokenValue;
-    card: SemanticTokenValue;
-    input: SemanticTokenValue;
-    overlay: SemanticTokenValue;
-    [key: string]: SemanticTokenValue;
-  };
-  text: {
-    onPage: {
-      default: string;
-      muted: string;
-      subtle: string;
-      meta: string;
-    };
-    onSurface: {
-      default: string;
-      muted: string;
-      subtle: string;
-      meta: string;
-    };
-    [key: string]: any;
-  };
-  component: ComponentTokens<SemanticTokenValue>;
-  modes: {
-    default: Partial<SpectreModeTokens>;
-    dark: Partial<SpectreModeTokens>;
-    [mode: string]: Partial<SpectreModeTokens>;
-  };
-}
+import type { SpectreGeneratedTokens } from './generated/tokens';
+
+
+export type SpectreTokens = SpectreGeneratedTokens;
 
 export interface LayoutTokens {
   section: {
