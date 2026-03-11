@@ -119,7 +119,7 @@ export const createCssVariableMap = (tokens: SpectreTokens, options: CssVariable
   }
 
   Object.entries(typographyScale).forEach(([key, entry]) => {
-    assign(toVariableName(prefix, 'font', key, 'letter-spacing'), entry.letterSpacing);
+    assign(toVariableName(prefix, 'font', key, 'letter-spacing'), 'letterSpacing' in entry ? (entry as any).letterSpacing : undefined);
   });
 
   assign(toVariableName(prefix, 'text', 'on', 'page', 'default'), tokens.text.onPage.default);
