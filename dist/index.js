@@ -118,7 +118,7 @@ var core_default = {
     },
     onSurface: {
       default: "#0f172a",
-      muted: "#64748b",
+      muted: "#475569",
       subtle: "#94a3b8",
       meta: "#94a3b8"
     }
@@ -222,7 +222,7 @@ var core_default = {
             value: "#0f172a"
           },
           muted: {
-            value: "#64748b"
+            value: "#475569"
           },
           subtle: {
             value: "#94a3b8"
