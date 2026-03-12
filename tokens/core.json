@@ -629,7 +629,7 @@
       "bgHover": "{colors.warning.600}",
       "bgActive": "{colors.warning.700}",
       "bgDisabled": "{colors.warning.200}",
-      "text": "{colors.white}",
+      "text": "{colors.neutral.900}",
       "textDisabled": "{colors.neutral.400}",
       "shadow": "0 4px 14px 0 {colors.warning.500} / 0.39"
     },
