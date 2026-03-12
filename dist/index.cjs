@@ -58,12 +58,12 @@ var core_default = {
     accent: {
       "50": "#eff6ff",
       "100": "#dbeafe",
-      "200": "#bfdbfe",
+      "200": "#ddd6fe",
       "300": "#93c5fd",
       "400": "#60a5fa",
-      "500": "#3b82f6",
-      "600": "#2563eb",
-      "700": "#1d4ed8",
+      "500": "#8b5cf6",
+      "600": "#7c3aed",
+      "700": "#6d28d9",
       "800": "#1e40af",
       "900": "#1e3a8a"
     },
@@ -115,285 +115,294 @@ var core_default = {
       "800": "#1e40af",
       "900": "#1e3a8a"
     },
+    indigo: {
+      "500": "#667eea",
+      "600": "#5c67f2"
+    },
+    violet: {
+      "600": "#764ba2"
+    },
     focus: {
       primary: "#3b82f6",
       error: "#ef4444",
       info: "#3b82f6"
-    }
+    },
+    white: "#ffffff",
+    black: "#000000"
   },
   surface: {
     page: {
-      value: "#f8fafc",
+      value: "{colors.neutral.50}",
       description: "primary app background"
     },
     card: {
-      value: "#ffffff",
+      value: "{colors.white}",
       description: "containers and tiles"
     },
     input: {
-      value: "#ffffff",
+      value: "{colors.white}",
       description: "form inputs, textareas"
     },
     overlay: {
-      value: "rgba(15,23,42,0.6)",
+      value: "{colors.neutral.900} / 0.6",
       description: "modals, dropdowns, flyouts"
     }
   },
   text: {
     onPage: {
-      default: "#0f172a",
-      muted: "#475569",
-      subtle: "#94a3b8",
-      meta: "#94a3b8"
+      default: "{colors.neutral.900}",
+      muted: "{colors.neutral.600}",
+      subtle: "{colors.neutral.400}",
+      meta: "{colors.neutral.400}"
     },
     onSurface: {
-      default: "#0f172a",
-      muted: "#475569",
-      subtle: "#94a3b8",
-      meta: "#94a3b8"
+      default: "{colors.neutral.900}",
+      muted: "{colors.neutral.600}",
+      subtle: "{colors.neutral.400}",
+      meta: "{colors.neutral.400}"
     }
   },
   component: {
     card: {
-      text: "#0f172a",
-      textMuted: "#64748b"
+      text: "{colors.neutral.900}",
+      textMuted: "{colors.neutral.500}"
     },
     input: {
-      text: "#0f172a",
-      placeholder: "#94a3b8"
+      text: "{colors.neutral.900}",
+      placeholder: "{colors.neutral.400}"
     },
     button: {
-      textDefault: "#0f172a",
-      textOnPrimary: "#ffffff"
+      textDefault: "{colors.neutral.900}",
+      textOnPrimary: "{colors.white}"
     },
     badge: {
-      neutralBg: "#f1f5f9",
-      neutralText: "#334155",
-      infoBg: "#dbeafe",
-      infoText: "#1d4ed8",
-      successBg: "#dcfce7",
-      successText: "#15803d",
-      warningBg: "#fef3c7",
-      warningText: "#b45309",
-      dangerBg: "#fee2e2",
-      dangerText: "#b91c1c"
+      neutralBg: "{colors.neutral.100}",
+      neutralText: "{colors.neutral.700}",
+      infoBg: "{colors.info.100}",
+      infoText: "{colors.info.700}",
+      successBg: "{colors.success.100}",
+      successText: "{colors.success.700}",
+      warningBg: "{colors.warning.100}",
+      warningText: "{colors.warning.700}",
+      dangerBg: "{colors.error.100}",
+      dangerText: "{colors.error.700}"
     },
     iconBox: {
-      bg: "#ffffff",
-      border: "#e2e8f0",
-      iconDefault: "#2563eb",
-      iconSuccess: "#16a34a",
-      iconWarning: "#d97706",
-      iconDanger: "#dc2626"
+      bg: "{colors.white}",
+      border: "{colors.neutral.200}",
+      iconDefault: "{colors.info.600}",
+      iconSuccess: "{colors.success.600}",
+      iconWarning: "{colors.warning.600}",
+      iconDanger: "{colors.error.600}"
     },
     testimonial: {
-      bg: "#ffffff",
-      border: "#e2e8f0",
-      text: "#334155",
-      authorName: "#0f172a",
-      authorTitle: "#64748b",
-      quoteMark: "#cbd5e1"
+      bg: "{colors.white}",
+      border: "{colors.neutral.200}",
+      text: "{colors.neutral.700}",
+      authorName: "{colors.neutral.900}",
+      authorTitle: "{colors.neutral.500}",
+      quoteMark: "{colors.neutral.300}"
     },
     pricingCard: {
-      bg: "#ffffff",
-      border: "#e2e8f0",
-      featuredBg: "#2563eb",
-      featuredText: "#ffffff",
-      featuredBadgeBg: "#f59e0b",
-      featuredBadgeText: "#ffffff",
-      price: "#0f172a",
-      priceDescription: "#64748b"
+      bg: "{colors.white}",
+      border: "{colors.neutral.200}",
+      featuredBg: "{colors.info.600}",
+      featuredText: "{colors.white}",
+      featuredBadgeBg: "{colors.warning.500}",
+      featuredBadgeText: "{colors.white}",
+      price: "{colors.neutral.900}",
+      priceDescription: "{colors.neutral.500}"
     },
     rating: {
-      starFilled: "#f59e0b",
-      starEmpty: "#e2e8f0",
-      text: "#64748b"
+      starFilled: "{colors.warning.500}",
+      starEmpty: "{colors.neutral.200}",
+      text: "{colors.neutral.500}"
     }
   },
   modes: {
     default: {
       surface: {
         page: {
-          value: "#f8fafc"
+          value: "{colors.neutral.50}"
         },
         card: {
-          value: "#ffffff"
+          value: "{colors.white}"
         },
         input: {
-          value: "#ffffff"
+          value: "{colors.white}"
         },
         overlay: {
-          value: "rgba(15,23,42,0.6)"
+          value: "{colors.neutral.900} / 0.6"
         },
         alternate: {
-          value: "#f1f5f9"
+          value: "{colors.neutral.100}"
         },
         hero: {
-          value: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)"
+          value: "linear-gradient(135deg, {colors.indigo.500} 0%, {colors.violet.600} 100%)"
         }
       },
       text: {
         onPage: {
           default: {
-            value: "#0f172a"
+            value: "{colors.neutral.900}"
           },
           muted: {
-            value: "#475569"
+            value: "{colors.neutral.600}"
           },
           subtle: {
-            value: "#94a3b8"
+            value: "{colors.neutral.400}"
           },
           meta: {
-            value: "#94a3b8"
+            value: "{colors.neutral.400}"
           }
         },
         onSurface: {
           default: {
-            value: "#0f172a"
+            value: "{colors.neutral.900}"
           },
           muted: {
-            value: "#475569"
+            value: "{colors.neutral.600}"
           },
           subtle: {
-            value: "#94a3b8"
+            value: "{colors.neutral.400}"
           },
           meta: {
-            value: "#94a3b8"
+            value: "{colors.neutral.400}"
           }
         }
       },
       component: {
         card: {
           text: {
-            value: "#0f172a"
+            value: "{colors.neutral.900}"
           },
           textMuted: {
-            value: "#64748b"
+            value: "{colors.neutral.500}"
           }
         },
         input: {
           text: {
-            value: "#0f172a"
+            value: "{colors.neutral.900}"
           },
           placeholder: {
-            value: "#94a3b8"
+            value: "{colors.neutral.400}"
           }
         },
         button: {
           textDefault: {
-            value: "#0f172a"
+            value: "{colors.neutral.900}"
           },
           textOnPrimary: {
-            value: "#ffffff"
+            value: "{colors.white}"
           }
         },
         badge: {
           neutralBg: {
-            value: "#f1f5f9"
+            value: "{colors.neutral.100}"
           },
           neutralText: {
-            value: "#334155"
+            value: "{colors.neutral.700}"
           },
           infoBg: {
-            value: "#dbeafe"
+            value: "{colors.info.100}"
           },
           infoText: {
-            value: "#1d4ed8"
+            value: "{colors.info.700}"
           },
           successBg: {
-            value: "#dcfce7"
+            value: "{colors.success.100}"
           },
           successText: {
-            value: "#15803d"
+            value: "{colors.success.700}"
           },
           warningBg: {
-            value: "#fef3c7"
+            value: "{colors.warning.100}"
           },
           warningText: {
-            value: "#b45309"
+            value: "{colors.warning.700}"
           },
           dangerBg: {
-            value: "#fee2e2"
+            value: "{colors.error.100}"
           },
           dangerText: {
-            value: "#b91c1c"
+            value: "{colors.error.700}"
           }
         },
         iconBox: {
           bg: {
-            value: "#ffffff"
+            value: "{colors.white}"
           },
           border: {
-            value: "#e2e8f0"
+            value: "{colors.neutral.200}"
           },
           iconDefault: {
-            value: "#2563eb"
+            value: "{colors.info.600}"
           },
           iconSuccess: {
-            value: "#16a34a"
+            value: "{colors.success.600}"
           },
           iconWarning: {
-            value: "#d97706"
+            value: "{colors.warning.600}"
           },
           iconDanger: {
-            value: "#dc2626"
+            value: "{colors.error.600}"
           }
         },
         testimonial: {
           bg: {
-            value: "#ffffff"
+            value: "{colors.white}"
           },
           border: {
-            value: "#e2e8f0"
+            value: "{colors.neutral.200}"
           },
           text: {
-            value: "#334155"
+            value: "{colors.neutral.700}"
           },
           authorName: {
-            value: "#0f172a"
+            value: "{colors.neutral.900}"
           },
           authorTitle: {
-            value: "#64748b"
+            value: "{colors.neutral.500}"
           },
           quoteMark: {
-            value: "#cbd5e1"
+            value: "{colors.neutral.300}"
           }
         },
         pricingCard: {
           bg: {
-            value: "#ffffff"
+            value: "{colors.white}"
           },
           border: {
-            value: "#e2e8f0"
+            value: "{colors.neutral.200}"
           },
           featuredBg: {
-            value: "#2563eb"
+            value: "{colors.info.600}"
           },
           featuredText: {
-            value: "#ffffff"
+            value: "{colors.white}"
           },
           featuredBadgeBg: {
-            value: "#f59e0b"
+            value: "{colors.warning.500}"
           },
           featuredBadgeText: {
-            value: "#ffffff"
+            value: "{colors.white}"
           },
           price: {
-            value: "#0f172a"
+            value: "{colors.neutral.900}"
           },
           priceDescription: {
-            value: "#64748b"
+            value: "{colors.neutral.500}"
           }
         },
         rating: {
           starFilled: {
-            value: "#f59e0b"
+            value: "{colors.warning.500}"
           },
           starEmpty: {
-            value: "#e2e8f0"
+            value: "{colors.neutral.200}"
           },
           text: {
-            value: "#64748b"
+            value: "{colors.neutral.500}"
           }
         }
       }
@@ -401,186 +410,186 @@ var core_default = {
     dark: {
       surface: {
         page: {
-          value: "#0f172a"
+          value: "{colors.neutral.900}"
         },
         card: {
-          value: "#1e293b"
+          value: "{colors.neutral.800}"
         },
         input: {
-          value: "#334155"
+          value: "{colors.neutral.700}"
         },
         overlay: {
-          value: "#1e293b"
+          value: "{colors.neutral.800}"
         },
         alternate: {
-          value: "#1e293b"
+          value: "{colors.neutral.800}"
         },
         hero: {
-          value: "linear-gradient(135deg, #4c1d95 0%, #5b21b6 100%)"
+          value: "linear-gradient(135deg, {colors.accent.900} 0%, {colors.accent.700} 100%)"
         }
       },
       text: {
         onPage: {
           default: {
-            value: "#f8fafc"
+            value: "{colors.neutral.50}"
           },
           muted: {
-            value: "#cbd5e1"
+            value: "{colors.neutral.300}"
           },
           subtle: {
-            value: "#94a3b8"
+            value: "{colors.neutral.400}"
           },
           meta: {
-            value: "#94a3b8"
+            value: "{colors.neutral.400}"
           }
         },
         onSurface: {
           default: {
-            value: "#f1f5f9"
+            value: "{colors.neutral.100}"
           },
           muted: {
-            value: "#cbd5e1"
+            value: "{colors.neutral.300}"
           },
           subtle: {
-            value: "#94a3b8"
+            value: "{colors.neutral.400}"
           },
           meta: {
-            value: "#94a3b8"
+            value: "{colors.neutral.400}"
           }
         }
       },
       component: {
         card: {
           text: {
-            value: "#f1f5f9"
+            value: "{colors.neutral.100}"
           },
           textMuted: {
-            value: "#cbd5e1"
+            value: "{colors.neutral.300}"
           }
         },
         input: {
           text: {
-            value: "#f1f5f9"
+            value: "{colors.neutral.100}"
           },
           placeholder: {
-            value: "#94a3b8"
+            value: "{colors.neutral.400}"
           }
         },
         button: {
           textDefault: {
-            value: "#f1f5f9"
+            value: "{colors.neutral.100}"
           },
           textOnPrimary: {
-            value: "#ffffff"
+            value: "{colors.white}"
           }
         },
         badge: {
           neutralBg: {
-            value: "#334155"
+            value: "{colors.neutral.700}"
           },
           neutralText: {
-            value: "#f1f5f9"
+            value: "{colors.neutral.100}"
           },
           infoBg: {
-            value: "#1e40af"
+            value: "{colors.info.800}"
           },
           infoText: {
-            value: "#dbeafe"
+            value: "{colors.info.100}"
           },
           successBg: {
-            value: "#166534"
+            value: "{colors.success.800}"
           },
           successText: {
-            value: "#dcfce7"
+            value: "{colors.success.100}"
           },
           warningBg: {
-            value: "#92400e"
+            value: "{colors.warning.800}"
           },
           warningText: {
-            value: "#fef3c7"
+            value: "{colors.warning.100}"
           },
           dangerBg: {
-            value: "#991b1b"
+            value: "{colors.error.800}"
           },
           dangerText: {
-            value: "#fee2e2"
+            value: "{colors.error.100}"
           }
         },
         iconBox: {
           bg: {
-            value: "#1e293b"
+            value: "{colors.neutral.800}"
           },
           border: {
-            value: "#334155"
+            value: "{colors.neutral.700}"
           },
           iconDefault: {
-            value: "#93c5fd"
+            value: "{colors.info.300}"
           },
           iconSuccess: {
-            value: "#4ade80"
+            value: "{colors.success.400}"
           },
           iconWarning: {
-            value: "#fbbf24"
+            value: "{colors.warning.400}"
           },
           iconDanger: {
-            value: "#f87171"
+            value: "{colors.error.400}"
           }
         },
         testimonial: {
           bg: {
-            value: "#1e293b"
+            value: "{colors.neutral.800}"
           },
           border: {
-            value: "#334155"
+            value: "{colors.neutral.700}"
           },
           text: {
-            value: "#cbd5e1"
+            value: "{colors.neutral.300}"
           },
           authorName: {
-            value: "#f1f5f9"
+            value: "{colors.neutral.100}"
           },
           authorTitle: {
-            value: "#94a3b8"
+            value: "{colors.neutral.400}"
           },
           quoteMark: {
-            value: "#475569"
+            value: "{colors.neutral.600}"
           }
         },
         pricingCard: {
           bg: {
-            value: "#1e293b"
+            value: "{colors.neutral.800}"
           },
           border: {
-            value: "#334155"
+            value: "{colors.neutral.700}"
           },
           featuredBg: {
-            value: "#3b82f6"
+            value: "{colors.info.500}"
           },
           featuredText: {
-            value: "#ffffff"
+            value: "{colors.white}"
           },
           featuredBadgeBg: {
-            value: "#f59e0b"
+            value: "{colors.warning.500}"
           },
           featuredBadgeText: {
-            value: "#ffffff"
+            value: "{colors.white}"
           },
           price: {
-            value: "#f1f5f9"
+            value: "{colors.neutral.100}"
           },
           priceDescription: {
-            value: "#94a3b8"
+            value: "{colors.neutral.400}"
           }
         },
         rating: {
           starFilled: {
-            value: "#fbbf24"
+            value: "{colors.warning.400}"
           },
           starEmpty: {
-            value: "#334155"
+            value: "{colors.neutral.700}"
           },
           text: {
-            value: "#94a3b8"
+            value: "{colors.neutral.400}"
           }
         }
       }
@@ -605,93 +614,93 @@ var core_default = {
   },
   buttons: {
     primary: {
-      bg: "#2563eb",
-      bgHover: "#1d4ed8",
-      bgActive: "#1e40af",
-      bgDisabled: "#e2e8f0",
-      text: "#ffffff",
-      textDisabled: "#94a3b8"
+      bg: "{colors.info.600}",
+      bgHover: "{colors.info.700}",
+      bgActive: "{colors.info.800}",
+      bgDisabled: "{colors.neutral.200}",
+      text: "{colors.white}",
+      textDisabled: "{colors.neutral.400}"
     },
     secondary: {
-      bg: "#ffffff",
-      bgHover: "#f8fafc",
-      bgActive: "#f1f5f9",
-      bgDisabled: "#f8fafc",
-      text: "#2563eb",
-      textDisabled: "#94a3b8",
-      border: "#2563eb",
-      borderDisabled: "#e2e8f0"
+      bg: "{colors.white}",
+      bgHover: "{colors.neutral.50}",
+      bgActive: "{colors.neutral.100}",
+      bgDisabled: "{colors.neutral.50}",
+      text: "{colors.info.600}",
+      textDisabled: "{colors.neutral.400}",
+      border: "{colors.info.600}",
+      borderDisabled: "{colors.neutral.200}"
     },
     ghost: {
       bg: "transparent",
-      bgHover: "#eff6ff",
-      bgActive: "#dbeafe",
+      bgHover: "{colors.info.50}",
+      bgActive: "{colors.info.100}",
       bgDisabled: "transparent",
-      text: "#2563eb",
-      textDisabled: "#94a3b8"
+      text: "{colors.info.600}",
+      textDisabled: "{colors.neutral.400}"
     },
     danger: {
-      bg: "#ef4444",
-      bgHover: "#dc2626",
-      bgActive: "#b91c1c",
-      bgDisabled: "#fecaca",
-      text: "#ffffff",
-      textDisabled: "#94a3b8"
+      bg: "{colors.error.500}",
+      bgHover: "{colors.error.600}",
+      bgActive: "{colors.error.700}",
+      bgDisabled: "{colors.error.200}",
+      text: "{colors.white}",
+      textDisabled: "{colors.neutral.400}"
     },
     success: {
-      bg: "#22c55e",
-      bgHover: "#16a34a",
-      bgActive: "#15803d",
-      bgDisabled: "#bbf7d0",
-      text: "#ffffff",
-      textDisabled: "#94a3b8"
+      bg: "{colors.success.500}",
+      bgHover: "{colors.success.600}",
+      bgActive: "{colors.success.700}",
+      bgDisabled: "{colors.success.200}",
+      text: "{colors.white}",
+      textDisabled: "{colors.neutral.400}"
     },
     cta: {
-      bg: "#f59e0b",
-      bgHover: "#d97706",
-      bgActive: "#b45309",
-      bgDisabled: "#fde68a",
-      text: "#ffffff",
-      textDisabled: "#94a3b8",
-      shadow: "0 4px 14px 0 rgba(245, 158, 11, 0.39)"
+      bg: "{colors.warning.500}",
+      bgHover: "{colors.warning.600}",
+      bgActive: "{colors.warning.700}",
+      bgDisabled: "{colors.warning.200}",
+      text: "{colors.white}",
+      textDisabled: "{colors.neutral.400}",
+      shadow: "0 4px 14px 0 {colors.warning.500} / 0.39"
     },
     accent: {
-      bg: "#8b5cf6",
-      bgHover: "#7c3aed",
-      bgActive: "#6d28d9",
-      bgDisabled: "#ddd6fe",
-      text: "#ffffff",
-      textDisabled: "#94a3b8"
+      bg: "{colors.accent.500}",
+      bgHover: "{colors.accent.600}",
+      bgActive: "{colors.accent.700}",
+      bgDisabled: "{colors.accent.200}",
+      text: "{colors.white}",
+      textDisabled: "{colors.neutral.400}"
     }
   },
   forms: {
     default: {
-      bg: "#ffffff",
-      border: "#cbd5e1",
-      text: "#0f172a",
-      placeholder: "#94a3b8"
+      bg: "{colors.white}",
+      border: "{colors.neutral.300}",
+      text: "{colors.neutral.900}",
+      placeholder: "{colors.neutral.400}"
     },
     hover: {
-      border: "#3b82f6"
+      border: "{colors.info.500}"
     },
     focus: {
-      border: "#3b82f6",
-      ring: "#3b82f6"
+      border: "{colors.info.500}",
+      ring: "{colors.info.500}"
     },
     valid: {
-      border: "#22c55e",
-      bg: "#f0fdf4",
-      text: "#15803d"
+      border: "{colors.success.500}",
+      bg: "{colors.success.50}",
+      text: "{colors.success.700}"
     },
     invalid: {
-      border: "#ef4444",
-      bg: "#fef2f2",
-      text: "#b91c1c"
+      border: "{colors.error.500}",
+      bg: "{colors.error.50}",
+      text: "{colors.error.700}"
     },
     disabled: {
-      bg: "#f8fafc",
-      border: "#e2e8f0",
-      text: "#94a3b8"
+      bg: "{colors.neutral.50}",
+      border: "{colors.neutral.200}",
+      text: "{colors.neutral.400}"
     }
   },
   layout: {
@@ -746,8 +755,8 @@ var core_default = {
     pill: "999px"
   },
   borders: {
-    card: "#e2e8f0",
-    input: "#cbd5e1"
+    card: "{colors.neutral.200}",
+    input: "{colors.neutral.300}"
   },
   font: {
     xs: {
@@ -843,9 +852,9 @@ var core_default = {
   },
   shadows: {
     none: "none",
-    sm: "0 1px 2px 0 rgba(15, 23, 42, 0.06)",
-    md: "0 2px 6px -1px rgba(15, 23, 42, 0.08)",
-    lg: "0 6px 16px -4px rgba(15, 23, 42, 0.12)"
+    sm: "0 1px 2px 0 {colors.neutral.800} / 0.06",
+    md: "0 2px 6px -1px {colors.neutral.800} / 0.08",
+    lg: "0 6px 16px -4px {colors.neutral.800} / 0.12"
   },
   breakpoints: {
     sm: "640px",
@@ -965,18 +974,55 @@ var ICON_BOX_FIELDS = [
   { name: "icon-warning", tokenKey: "iconWarning" },
   { name: "icon-danger", tokenKey: "iconDanger" }
 ];
+var resolveTokenReference = (tokens2, reference) => {
+  const path = reference.slice(1, -1).split(".");
+  let current = tokens2;
+  for (const part of path) {
+    if (current && typeof current === "object" && part in current) {
+      current = current[part];
+    } else {
+      return reference;
+    }
+  }
+  return typeof current === "string" || typeof current === "number" ? String(current) : reference;
+};
+var hexToRgba = (hex, opacity) => {
+  const cleanHex = hex.replace("#", "");
+  let r = 0, g = 0, b = 0;
+  if (cleanHex.length === 3) {
+    const rh = cleanHex.charAt(0);
+    const gh = cleanHex.charAt(1);
+    const bh = cleanHex.charAt(2);
+    r = parseInt(rh + rh, 16);
+    g = parseInt(gh + gh, 16);
+    b = parseInt(bh + bh, 16);
+  } else if (cleanHex.length === 6) {
+    r = parseInt(cleanHex.substring(0, 2), 16);
+    g = parseInt(cleanHex.substring(2, 4), 16);
+    b = parseInt(cleanHex.substring(4, 6), 16);
+  }
+  return `rgba(${r}, ${g}, ${b}, ${opacity})`;
+};
+var resolveValue = (tokens2, value) => {
+  let str = String(value);
+  const regex = /\{([^}]+)\}/g;
+  str = str.replace(regex, (match) => resolveTokenReference(tokens2, match));
+  const opacityRegex = /(#[0-9a-fA-F]{3,6})\s*\/\s*([0-9.]+)/g;
+  str = str.replace(opacityRegex, (match, hex, opacity) => hexToRgba(hex, opacity));
+  return str;
+};
 var createCssVariableMap = (tokens2, options = {}) => {
   const prefix = options.prefix ?? DEFAULT_PREFIX;
   const map = {};
   const baseTokens = tokens2;
   const assign = (name, value) => {
-    const resolved = resolveSemanticValue(value);
+    const resolved = resolveSemanticValue(value, tokens2);
     if (resolved !== void 0) {
       map[name] = resolved;
       return;
     }
     if (value === void 0) return;
-    map[name] = String(value);
+    map[name] = resolveValue(tokens2, value);
   };
   Object.entries(baseTokens.colors).forEach(([group, scale]) => {
     Object.entries(scale).forEach(([step, value]) => {
@@ -1096,17 +1142,19 @@ var createCssVariableMap = (tokens2, options = {}) => {
   });
   return map;
 };
-var resolveSemanticValue = (value) => {
-  if (typeof value === "string" || typeof value === "number") return String(value);
+var resolveSemanticValue = (value, tokens2) => {
+  if (typeof value === "string" || typeof value === "number") {
+    return resolveValue(tokens2, value);
+  }
   if (value && typeof value === "object" && "value" in value) {
-    return String(value.value);
+    return resolveValue(tokens2, value.value);
   }
   return void 0;
 };
 var getPath = (source, path) => path.reduce((acc, key) => acc && typeof acc === "object" ? acc[key] : void 0, source);
-var pickSemantic = (...candidates) => {
+var pickSemantic = (tokens2, ...candidates) => {
   for (const candidate of candidates) {
-    const resolved = resolveSemanticValue(candidate);
+    const resolved = resolveSemanticValue(candidate, tokens2);
     if (resolved !== void 0) return resolved;
   }
   return void 0;
@@ -1125,38 +1173,39 @@ var generateCssVariables = (tokens2, options = {}) => {
   const addBase = (name, value) => {
     if (value !== void 0) baseLines.push(`  ${name}: ${value};`);
   };
-  addBase(toVariableName(prefix, "surface", "page"), pickSemantic(getPath(defaultMode, ["surface", "page"]), getPath(surfaceAliases, ["page"])));
-  addBase(toVariableName(prefix, "surface", "card"), pickSemantic(getPath(defaultMode, ["surface", "card"]), getPath(surfaceAliases, ["card"])));
-  addBase(toVariableName(prefix, "surface", "input"), pickSemantic(getPath(defaultMode, ["surface", "input"]), getPath(surfaceAliases, ["input"])));
-  addBase(toVariableName(prefix, "surface", "overlay"), pickSemantic(getPath(defaultMode, ["surface", "overlay"]), getPath(surfaceAliases, ["overlay"])));
-  addBase(toVariableName(prefix, "text", "on", "page", "default"), pickSemantic(getPath(defaultMode, ["text", "onPage", "default"]), getPath(textAliases, ["onPage", "default"])));
-  addBase(toVariableName(prefix, "text", "on", "page", "muted"), pickSemantic(getPath(defaultMode, ["text", "onPage", "muted"]), getPath(textAliases, ["onPage", "muted"])));
-  addBase(toVariableName(prefix, "text", "on", "page", "subtle"), pickSemantic(getPath(defaultMode, ["text", "onPage", "subtle"]), getPath(textAliases, ["onPage", "subtle"])));
-  addBase(toVariableName(prefix, "text", "on", "page", "meta"), pickSemantic(getPath(defaultMode, ["text", "onPage", "meta"]), getPath(textAliases, ["onPage", "meta"])));
-  addBase(toVariableName(prefix, "text", "on", "surface", "default"), pickSemantic(getPath(defaultMode, ["text", "onSurface", "default"]), getPath(textAliases, ["onSurface", "default"])));
-  addBase(toVariableName(prefix, "text", "on", "surface", "muted"), pickSemantic(getPath(defaultMode, ["text", "onSurface", "muted"]), getPath(textAliases, ["onSurface", "muted"])));
-  addBase(toVariableName(prefix, "text", "on", "surface", "subtle"), pickSemantic(getPath(defaultMode, ["text", "onSurface", "subtle"]), getPath(textAliases, ["onSurface", "subtle"])));
-  addBase(toVariableName(prefix, "text", "on", "surface", "meta"), pickSemantic(getPath(defaultMode, ["text", "onSurface", "meta"]), getPath(textAliases, ["onSurface", "meta"])));
-  addBase(toVariableName(prefix, "component", "card", "text"), pickSemantic(getPath(defaultMode, ["component", "card", "text"]), getPath(componentAliases, ["card", "text"])));
-  addBase(toVariableName(prefix, "component", "card", "text-muted"), pickSemantic(getPath(defaultMode, ["component", "card", "textMuted"]), getPath(componentAliases, ["card", "textMuted"])));
-  addBase(toVariableName(prefix, "component", "input", "text"), pickSemantic(getPath(defaultMode, ["component", "input", "text"]), getPath(componentAliases, ["input", "text"])));
-  addBase(toVariableName(prefix, "component", "input", "placeholder"), pickSemantic(getPath(defaultMode, ["component", "input", "placeholder"]), getPath(componentAliases, ["input", "placeholder"])));
-  addBase(toVariableName(prefix, "button", "text", "default"), pickSemantic(getPath(defaultMode, ["component", "button", "textDefault"]), getPath(componentAliases, ["button", "textDefault"])));
-  addBase(toVariableName(prefix, "button", "text", "on", "primary"), pickSemantic(getPath(defaultMode, ["component", "button", "textOnPrimary"]), getPath(componentAliases, ["button", "textOnPrimary"])));
+  addBase(toVariableName(prefix, "surface", "page"), pickSemantic(tokens2, getPath(defaultMode, ["surface", "page"]), getPath(surfaceAliases, ["page"])));
+  addBase(toVariableName(prefix, "surface", "card"), pickSemantic(tokens2, getPath(defaultMode, ["surface", "card"]), getPath(surfaceAliases, ["card"])));
+  addBase(toVariableName(prefix, "surface", "input"), pickSemantic(tokens2, getPath(defaultMode, ["surface", "input"]), getPath(surfaceAliases, ["input"])));
+  addBase(toVariableName(prefix, "surface", "overlay"), pickSemantic(tokens2, getPath(defaultMode, ["surface", "overlay"]), getPath(surfaceAliases, ["overlay"])));
+  addBase(toVariableName(prefix, "surface", "hero"), pickSemantic(tokens2, getPath(defaultMode, ["surface", "hero"]), getPath(surfaceAliases, ["hero"])));
+  addBase(toVariableName(prefix, "text", "on", "page", "default"), pickSemantic(tokens2, getPath(defaultMode, ["text", "onPage", "default"]), getPath(textAliases, ["onPage", "default"])));
+  addBase(toVariableName(prefix, "text", "on", "page", "muted"), pickSemantic(tokens2, getPath(defaultMode, ["text", "onPage", "muted"]), getPath(textAliases, ["onPage", "muted"])));
+  addBase(toVariableName(prefix, "text", "on", "page", "subtle"), pickSemantic(tokens2, getPath(defaultMode, ["text", "onPage", "subtle"]), getPath(textAliases, ["onPage", "subtle"])));
+  addBase(toVariableName(prefix, "text", "on", "page", "meta"), pickSemantic(tokens2, getPath(defaultMode, ["text", "onPage", "meta"]), getPath(textAliases, ["onPage", "meta"])));
+  addBase(toVariableName(prefix, "text", "on", "surface", "default"), pickSemantic(tokens2, getPath(defaultMode, ["text", "onSurface", "default"]), getPath(textAliases, ["onSurface", "default"])));
+  addBase(toVariableName(prefix, "text", "on", "surface", "muted"), pickSemantic(tokens2, getPath(defaultMode, ["text", "onSurface", "muted"]), getPath(textAliases, ["onSurface", "muted"])));
+  addBase(toVariableName(prefix, "text", "on", "surface", "subtle"), pickSemantic(tokens2, getPath(defaultMode, ["text", "onSurface", "subtle"]), getPath(textAliases, ["onSurface", "subtle"])));
+  addBase(toVariableName(prefix, "text", "on", "surface", "meta"), pickSemantic(tokens2, getPath(defaultMode, ["text", "onSurface", "meta"]), getPath(textAliases, ["onSurface", "meta"])));
+  addBase(toVariableName(prefix, "component", "card", "text"), pickSemantic(tokens2, getPath(defaultMode, ["component", "card", "text"]), getPath(componentAliases, ["card", "text"])));
+  addBase(toVariableName(prefix, "component", "card", "text-muted"), pickSemantic(tokens2, getPath(defaultMode, ["component", "card", "textMuted"]), getPath(componentAliases, ["card", "textMuted"])));
+  addBase(toVariableName(prefix, "component", "input", "text"), pickSemantic(tokens2, getPath(defaultMode, ["component", "input", "text"]), getPath(componentAliases, ["input", "text"])));
+  addBase(toVariableName(prefix, "component", "input", "placeholder"), pickSemantic(tokens2, getPath(defaultMode, ["component", "input", "placeholder"]), getPath(componentAliases, ["input", "placeholder"])));
+  addBase(toVariableName(prefix, "button", "text", "default"), pickSemantic(tokens2, getPath(defaultMode, ["component", "button", "textDefault"]), getPath(componentAliases, ["button", "textDefault"])));
+  addBase(toVariableName(prefix, "button", "text", "on", "primary"), pickSemantic(tokens2, getPath(defaultMode, ["component", "button", "textOnPrimary"]), getPath(componentAliases, ["button", "textOnPrimary"])));
   BADGE_VARIANTS.forEach(({ variant, bgKey, textKey }) => {
     addBase(
       toVariableName(prefix, "badge", variant, "bg"),
-      pickSemantic(getPath(defaultMode, ["component", "badge", bgKey]), getPath(componentAliases, ["badge", bgKey]))
+      pickSemantic(tokens2, getPath(defaultMode, ["component", "badge", bgKey]), getPath(componentAliases, ["badge", bgKey]))
     );
     addBase(
       toVariableName(prefix, "badge", variant, "text"),
-      pickSemantic(getPath(defaultMode, ["component", "badge", textKey]), getPath(componentAliases, ["badge", textKey]))
+      pickSemantic(tokens2, getPath(defaultMode, ["component", "badge", textKey]), getPath(componentAliases, ["badge", textKey]))
     );
   });
   ICON_BOX_FIELDS.forEach(({ name, tokenKey }) => {
     addBase(
       toVariableName(prefix, "icon-box", name),
-      pickSemantic(getPath(defaultMode, ["component", "iconBox", tokenKey]), getPath(componentAliases, ["iconBox", tokenKey]))
+      pickSemantic(tokens2, getPath(defaultMode, ["component", "iconBox", tokenKey]), getPath(componentAliases, ["iconBox", tokenKey]))
     );
   });
   const rootLines = [...baseLines, ...mapLines];
@@ -1166,23 +1215,28 @@ var generateCssVariables = (tokens2, options = {}) => {
   };
   addDark(
     toVariableName(prefix, "surface", "page"),
-    pickSemantic(getPath(darkMode, ["surface", "page"]), getPath(defaultMode, ["surface", "page"]), getPath(surfaceAliases, ["page"]))
+    pickSemantic(tokens2, getPath(darkMode, ["surface", "page"]), getPath(defaultMode, ["surface", "page"]), getPath(surfaceAliases, ["page"]))
   );
   addDark(
     toVariableName(prefix, "surface", "card"),
-    pickSemantic(getPath(darkMode, ["surface", "card"]), getPath(defaultMode, ["surface", "card"]), getPath(surfaceAliases, ["card"]))
+    pickSemantic(tokens2, getPath(darkMode, ["surface", "card"]), getPath(defaultMode, ["surface", "card"]), getPath(surfaceAliases, ["card"]))
   );
   addDark(
     toVariableName(prefix, "surface", "input"),
-    pickSemantic(getPath(darkMode, ["surface", "input"]), getPath(defaultMode, ["surface", "input"]), getPath(surfaceAliases, ["input"]))
+    pickSemantic(tokens2, getPath(darkMode, ["surface", "input"]), getPath(defaultMode, ["surface", "input"]), getPath(surfaceAliases, ["input"]))
   );
   addDark(
     toVariableName(prefix, "surface", "overlay"),
-    pickSemantic(getPath(darkMode, ["surface", "overlay"]), getPath(defaultMode, ["surface", "overlay"]), getPath(surfaceAliases, ["overlay"]))
+    pickSemantic(tokens2, getPath(darkMode, ["surface", "overlay"]), getPath(defaultMode, ["surface", "overlay"]), getPath(surfaceAliases, ["overlay"]))
+  );
+  addDark(
+    toVariableName(prefix, "surface", "hero"),
+    pickSemantic(tokens2, getPath(darkMode, ["surface", "hero"]), getPath(defaultMode, ["surface", "hero"]), getPath(surfaceAliases, ["hero"]))
   );
   addDark(
     toVariableName(prefix, "text", "on", "page", "default"),
     pickSemantic(
+      tokens2,
       getPath(darkMode, ["text", "onPage", "default"]),
       getPath(defaultMode, ["text", "onPage", "default"]),
       getPath(textAliases, ["onPage", "default"])
@@ -1191,6 +1245,7 @@ var generateCssVariables = (tokens2, options = {}) => {
   addDark(
     toVariableName(prefix, "text", "on", "page", "muted"),
     pickSemantic(
+      tokens2,
       getPath(darkMode, ["text", "onPage", "muted"]),
       getPath(defaultMode, ["text", "onPage", "muted"]),
       getPath(textAliases, ["onPage", "muted"])
@@ -1199,6 +1254,7 @@ var generateCssVariables = (tokens2, options = {}) => {
   addDark(
     toVariableName(prefix, "text", "on", "page", "subtle"),
     pickSemantic(
+      tokens2,
       getPath(darkMode, ["text", "onPage", "subtle"]),
       getPath(defaultMode, ["text", "onPage", "subtle"]),
       getPath(textAliases, ["onPage", "subtle"])
@@ -1207,6 +1263,7 @@ var generateCssVariables = (tokens2, options = {}) => {
   addDark(
     toVariableName(prefix, "text", "on", "page", "meta"),
     pickSemantic(
+      tokens2,
       getPath(darkMode, ["text", "onPage", "meta"]),
       getPath(defaultMode, ["text", "onPage", "meta"]),
       getPath(textAliases, ["onPage", "meta"])
@@ -1215,6 +1272,7 @@ var generateCssVariables = (tokens2, options = {}) => {
   addDark(
     toVariableName(prefix, "text", "on", "surface", "default"),
     pickSemantic(
+      tokens2,
       getPath(darkMode, ["text", "onSurface", "default"]),
       getPath(defaultMode, ["text", "onSurface", "default"]),
       getPath(textAliases, ["onSurface", "default"])
@@ -1223,6 +1281,7 @@ var generateCssVariables = (tokens2, options = {}) => {
   addDark(
     toVariableName(prefix, "text", "on", "surface", "muted"),
     pickSemantic(
+      tokens2,
       getPath(darkMode, ["text", "onSurface", "muted"]),
       getPath(defaultMode, ["text", "onSurface", "muted"]),
       getPath(textAliases, ["onSurface", "muted"])
@@ -1231,6 +1290,7 @@ var generateCssVariables = (tokens2, options = {}) => {
   addDark(
     toVariableName(prefix, "text", "on", "surface", "subtle"),
     pickSemantic(
+      tokens2,
       getPath(darkMode, ["text", "onSurface", "subtle"]),
       getPath(defaultMode, ["text", "onSurface", "subtle"]),
       getPath(textAliases, ["onSurface", "subtle"])
@@ -1239,6 +1299,7 @@ var generateCssVariables = (tokens2, options = {}) => {
   addDark(
     toVariableName(prefix, "text", "on", "surface", "meta"),
     pickSemantic(
+      tokens2,
       getPath(darkMode, ["text", "onSurface", "meta"]),
       getPath(defaultMode, ["text", "onSurface", "meta"]),
       getPath(textAliases, ["onSurface", "meta"])
@@ -1247,6 +1308,7 @@ var generateCssVariables = (tokens2, options = {}) => {
   addDark(
     toVariableName(prefix, "component", "card", "text"),
     pickSemantic(
+      tokens2,
       getPath(darkMode, ["component", "card", "text"]),
       getPath(defaultMode, ["component", "card", "text"]),
       getPath(componentAliases, ["card", "text"])
@@ -1255,6 +1317,7 @@ var generateCssVariables = (tokens2, options = {}) => {
   addDark(
     toVariableName(prefix, "component", "card", "text-muted"),
     pickSemantic(
+      tokens2,
       getPath(darkMode, ["component", "card", "textMuted"]),
       getPath(defaultMode, ["component", "card", "textMuted"]),
       getPath(componentAliases, ["card", "textMuted"])
@@ -1263,6 +1326,7 @@ var generateCssVariables = (tokens2, options = {}) => {
   addDark(
     toVariableName(prefix, "component", "input", "text"),
     pickSemantic(
+      tokens2,
       getPath(darkMode, ["component", "input", "text"]),
       getPath(defaultMode, ["component", "input", "text"]),
       getPath(componentAliases, ["input", "text"])
@@ -1271,6 +1335,7 @@ var generateCssVariables = (tokens2, options = {}) => {
   addDark(
     toVariableName(prefix, "component", "input", "placeholder"),
     pickSemantic(
+      tokens2,
       getPath(darkMode, ["component", "input", "placeholder"]),
       getPath(defaultMode, ["component", "input", "placeholder"]),
       getPath(componentAliases, ["input", "placeholder"])
@@ -1279,6 +1344,7 @@ var generateCssVariables = (tokens2, options = {}) => {
   addDark(
     toVariableName(prefix, "button", "text", "default"),
     pickSemantic(
+      tokens2,
       getPath(darkMode, ["component", "button", "textDefault"]),
       getPath(defaultMode, ["component", "button", "textDefault"]),
       getPath(componentAliases, ["button", "textDefault"])
@@ -1287,6 +1353,7 @@ var generateCssVariables = (tokens2, options = {}) => {
   addDark(
     toVariableName(prefix, "button", "text", "on", "primary"),
     pickSemantic(
+      tokens2,
       getPath(darkMode, ["component", "button", "textOnPrimary"]),
       getPath(defaultMode, ["component", "button", "textOnPrimary"]),
       getPath(componentAliases, ["button", "textOnPrimary"])
@@ -1296,6 +1363,7 @@ var generateCssVariables = (tokens2, options = {}) => {
     addDark(
       toVariableName(prefix, "badge", variant, "bg"),
       pickSemantic(
+        tokens2,
         getPath(darkMode, ["component", "badge", bgKey]),
         getPath(defaultMode, ["component", "badge", bgKey]),
         getPath(componentAliases, ["badge", bgKey])
@@ -1304,6 +1372,7 @@ var generateCssVariables = (tokens2, options = {}) => {
     addDark(
       toVariableName(prefix, "badge", variant, "text"),
       pickSemantic(
+        tokens2,
         getPath(darkMode, ["component", "badge", textKey]),
         getPath(defaultMode, ["component", "badge", textKey]),
         getPath(componentAliases, ["badge", textKey])
@@ -1314,6 +1383,7 @@ var generateCssVariables = (tokens2, options = {}) => {
     addDark(
       toVariableName(prefix, "icon-box", name),
       pickSemantic(
+        tokens2,
         getPath(darkMode, ["component", "iconBox", tokenKey]),
         getPath(defaultMode, ["component", "iconBox", tokenKey]),
         getPath(componentAliases, ["iconBox", tokenKey])
@@ -1336,8 +1406,12 @@ var tokens = core_default;
 var sanitizeFontFamily = (value) => value.split(",").map((segment) => segment.trim().replace(/^['"]|['"]$/g, "")).filter(Boolean);
 var createTailwindTheme = (source = tokens) => {
   const colors = {};
-  Object.entries(source.colors).forEach(([group, scale]) => {
-    colors[group] = { ...scale };
+  Object.entries(source.colors).forEach(([group, value]) => {
+    if (typeof value === "object" && value !== null) {
+      colors[group] = { ...value };
+    } else {
+      colors[group] = value;
+    }
   });
   const fontFamily = Object.entries(source.typography.families).reduce((acc, [key, value]) => {
     acc[key] = sanitizeFontFamily(value);

@@ -84,11 +84,20 @@ interface SpectreGeneratedTokens {
             '800': string;
             '900': string;
         };
+        indigo: {
+            '500': string;
+            '600': string;
+        };
+        violet: {
+            '600': string;
+        };
         focus: {
             primary: string;
             error: string;
             info: string;
         };
+        white: string;
+        black: string;
     };
     surface: {
         page: {
