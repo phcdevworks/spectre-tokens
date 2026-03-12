@@ -19,8 +19,12 @@ const sanitizeFontFamily = (value: string): string[] =>
 
 const createTailwindTheme = (source: Tokens = tokens as Tokens): TailwindTheme => {
   const colors: TailwindTheme['colors'] = {};
-  Object.entries(source.colors).forEach(([group, scale]) => {
-    colors[group] = { ...scale };
+  Object.entries(source.colors).forEach(([group, value]) => {
+    if (typeof value === 'object' && value !== null) {
+      colors[group] = { ...value } as Record<string, string>;
+    } else {
+      colors[group] = value as string;
+    }
   });
 
   const fontFamily = Object.entries(source.typography.families).reduce<Record<string, string[]>>((acc, [key, value]) => {
