@@ -609,17 +609,17 @@
       "textDisabled": "{colors.neutral.400}"
     },
     "danger": {
-      "bg": "{colors.error.500}",
-      "bgHover": "{colors.error.600}",
-      "bgActive": "{colors.error.700}",
+      "bg": "{colors.error.600}",
+      "bgHover": "{colors.error.700}",
+      "bgActive": "{colors.error.800}",
       "bgDisabled": "{colors.error.200}",
       "text": "{colors.white}",
       "textDisabled": "{colors.neutral.400}"
     },
     "success": {
-      "bg": "{colors.success.500}",
-      "bgHover": "{colors.success.600}",
-      "bgActive": "{colors.success.700}",
+      "bg": "{colors.success.700}",
+      "bgHover": "{colors.success.800}",
+      "bgActive": "{colors.success.900}",
       "bgDisabled": "{colors.success.200}",
       "text": "{colors.white}",
       "textDisabled": "{colors.neutral.400}"
@@ -634,9 +634,9 @@
       "shadow": "0 4px 14px 0 {colors.warning.500} / 0.39"
     },
     "accent": {
-      "bg": "{colors.accent.500}",
-      "bgHover": "{colors.accent.600}",
-      "bgActive": "{colors.accent.700}",
+      "bg": "{colors.accent.600}",
+      "bgHover": "{colors.accent.700}",
+      "bgActive": "{colors.accent.800}",
       "bgDisabled": "{colors.accent.200}",
       "text": "{colors.white}",
       "textDisabled": "{colors.neutral.400}"
