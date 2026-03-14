@@ -249,9 +249,13 @@ export interface SpectreGeneratedTokens {
     pricingCard: {
       bg: {
         value: string;
+        metadata: {
+        };
       };
       border: {
         value: string;
+        metadata: {
+        };
       };
       featuredBg: {
         value: string;
@@ -261,6 +265,8 @@ export interface SpectreGeneratedTokens {
       };
       featuredText: {
         value: string;
+        metadata: {
+        };
       };
       featuredBadgeBg: {
         value: string;
@@ -270,12 +276,18 @@ export interface SpectreGeneratedTokens {
       };
       featuredBadgeText: {
         value: string;
+        metadata: {
+        };
       };
       price: {
         value: string;
+        metadata: {
+        };
       };
       priceDescription: {
         value: string;
+        metadata: {
+        };
       };
     };
     rating: {
@@ -442,27 +454,45 @@ export interface SpectreGeneratedTokens {
         pricingCard: {
           bg: {
             value: string;
+            metadata: {
+            };
           };
           border: {
             value: string;
+            metadata: {
+            };
           };
           featuredBg: {
             value: string;
+            metadata: {
+              pair: string;
+            };
           };
           featuredText: {
             value: string;
+            metadata: {
+            };
           };
           featuredBadgeBg: {
             value: string;
+            metadata: {
+              pair: string;
+            };
           };
           featuredBadgeText: {
             value: string;
+            metadata: {
+            };
           };
           price: {
             value: string;
+            metadata: {
+            };
           };
           priceDescription: {
             value: string;
+            metadata: {
+            };
           };
         };
         rating: {
@@ -629,27 +659,45 @@ export interface SpectreGeneratedTokens {
         pricingCard: {
           bg: {
             value: string;
+            metadata: {
+            };
           };
           border: {
             value: string;
+            metadata: {
+            };
           };
           featuredBg: {
             value: string;
+            metadata: {
+              pair: string;
+            };
           };
           featuredText: {
             value: string;
+            metadata: {
+            };
           };
           featuredBadgeBg: {
             value: string;
+            metadata: {
+              pair: string;
+            };
           };
           featuredBadgeText: {
             value: string;
+            metadata: {
+            };
           };
           price: {
             value: string;
+            metadata: {
+            };
           };
           priceDescription: {
             value: string;
+            metadata: {
+            };
           };
         };
         rating: {
