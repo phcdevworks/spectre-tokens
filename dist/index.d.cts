@@ -133,59 +133,158 @@ interface SpectreGeneratedTokens {
     };
     component: {
         card: {
-            text: string;
-            textMuted: string;
+            text: {
+                value: string;
+            };
+            textMuted: {
+                value: string;
+            };
         };
         input: {
-            text: string;
-            placeholder: string;
+            text: {
+                value: string;
+            };
+            placeholder: {
+                value: string;
+            };
         };
         button: {
-            textDefault: string;
-            textOnPrimary: string;
+            textDefault: {
+                value: string;
+            };
+            textOnPrimary: {
+                value: string;
+            };
         };
         badge: {
-            neutralBg: string;
-            neutralText: string;
-            infoBg: string;
-            infoText: string;
-            successBg: string;
-            successText: string;
-            warningBg: string;
-            warningText: string;
-            dangerBg: string;
-            dangerText: string;
+            neutralBg: {
+                value: string;
+                metadata: {
+                    pair: string;
+                };
+            };
+            neutralText: {
+                value: string;
+            };
+            infoBg: {
+                value: string;
+                metadata: {
+                    pair: string;
+                };
+            };
+            infoText: {
+                value: string;
+            };
+            successBg: {
+                value: string;
+                metadata: {
+                    pair: string;
+                };
+            };
+            successText: {
+                value: string;
+            };
+            warningBg: {
+                value: string;
+                metadata: {
+                    pair: string;
+                };
+            };
+            warningText: {
+                value: string;
+            };
+            dangerBg: {
+                value: string;
+                metadata: {
+                    pair: string;
+                };
+            };
+            dangerText: {
+                value: string;
+            };
         };
         iconBox: {
-            bg: string;
-            border: string;
-            iconDefault: string;
-            iconSuccess: string;
-            iconWarning: string;
-            iconDanger: string;
+            bg: {
+                value: string;
+            };
+            border: {
+                value: string;
+            };
+            iconDefault: {
+                value: string;
+            };
+            iconSuccess: {
+                value: string;
+            };
+            iconWarning: {
+                value: string;
+            };
+            iconDanger: {
+                value: string;
+            };
         };
         testimonial: {
-            bg: string;
-            border: string;
-            text: string;
-            authorName: string;
-            authorTitle: string;
-            quoteMark: string;
+            bg: {
+                value: string;
+            };
+            border: {
+                value: string;
+            };
+            text: {
+                value: string;
+            };
+            authorName: {
+                value: string;
+            };
+            authorTitle: {
+                value: string;
+            };
+            quoteMark: {
+                value: string;
+            };
         };
         pricingCard: {
-            bg: string;
-            border: string;
-            featuredBg: string;
-            featuredText: string;
-            featuredBadgeBg: string;
-            featuredBadgeText: string;
-            price: string;
-            priceDescription: string;
+            bg: {
+                value: string;
+            };
+            border: {
+                value: string;
+            };
+            featuredBg: {
+                value: string;
+                metadata: {
+                    pair: string;
+                };
+            };
+            featuredText: {
+                value: string;
+            };
+            featuredBadgeBg: {
+                value: string;
+                metadata: {
+                    pair: string;
+                };
+            };
+            featuredBadgeText: {
+                value: string;
+            };
+            price: {
+                value: string;
+            };
+            priceDescription: {
+                value: string;
+            };
         };
         rating: {
-            starFilled: string;
-            starEmpty: string;
-            text: string;
+            starFilled: {
+                value: string;
+            };
+            starEmpty: {
+                value: string;
+            };
+            text: {
+                value: string;
+            };
         };
     };
     modes: {
@@ -583,93 +682,239 @@ interface SpectreGeneratedTokens {
     };
     buttons: {
         primary: {
-            bg: string;
-            bgHover: string;
-            bgActive: string;
-            bgDisabled: string;
-            text: string;
-            textDisabled: string;
+            bg: {
+                value: string;
+                metadata: {
+                    pair: string;
+                };
+            };
+            bgHover: {
+                value: string;
+            };
+            bgActive: {
+                value: string;
+            };
+            bgDisabled: {
+                value: string;
+            };
+            text: {
+                value: string;
+            };
+            textDisabled: {
+                value: string;
+            };
         };
         secondary: {
-            bg: string;
-            bgHover: string;
-            bgActive: string;
-            bgDisabled: string;
-            text: string;
-            textDisabled: string;
-            border: string;
-            borderDisabled: string;
+            bg: {
+                value: string;
+                metadata: {
+                    pair: string;
+                };
+            };
+            bgHover: {
+                value: string;
+            };
+            bgActive: {
+                value: string;
+            };
+            bgDisabled: {
+                value: string;
+            };
+            text: {
+                value: string;
+            };
+            textDisabled: {
+                value: string;
+            };
+            border: {
+                value: string;
+            };
+            borderDisabled: {
+                value: string;
+            };
         };
         ghost: {
-            bg: string;
-            bgHover: string;
-            bgActive: string;
-            bgDisabled: string;
-            text: string;
-            textDisabled: string;
+            bg: {
+                value: string;
+            };
+            bgHover: {
+                value: string;
+            };
+            bgActive: {
+                value: string;
+            };
+            bgDisabled: {
+                value: string;
+            };
+            text: {
+                value: string;
+            };
+            textDisabled: {
+                value: string;
+            };
         };
         danger: {
-            bg: string;
-            bgHover: string;
-            bgActive: string;
-            bgDisabled: string;
-            text: string;
-            textDisabled: string;
+            bg: {
+                value: string;
+                metadata: {
+                    pair: string;
+                };
+            };
+            bgHover: {
+                value: string;
+            };
+            bgActive: {
+                value: string;
+            };
+            bgDisabled: {
+                value: string;
+            };
+            text: {
+                value: string;
+            };
+            textDisabled: {
+                value: string;
+            };
         };
         success: {
-            bg: string;
-            bgHover: string;
-            bgActive: string;
-            bgDisabled: string;
-            text: string;
-            textDisabled: string;
+            bg: {
+                value: string;
+                metadata: {
+                    pair: string;
+                };
+            };
+            bgHover: {
+                value: string;
+            };
+            bgActive: {
+                value: string;
+            };
+            bgDisabled: {
+                value: string;
+            };
+            text: {
+                value: string;
+            };
+            textDisabled: {
+                value: string;
+            };
         };
         cta: {
-            bg: string;
-            bgHover: string;
-            bgActive: string;
-            bgDisabled: string;
-            text: string;
-            textDisabled: string;
-            shadow: string;
+            bg: {
+                value: string;
+                metadata: {
+                    pair: string;
+                };
+            };
+            bgHover: {
+                value: string;
+            };
+            bgActive: {
+                value: string;
+            };
+            bgDisabled: {
+                value: string;
+            };
+            text: {
+                value: string;
+            };
+            textDisabled: {
+                value: string;
+            };
+            shadow: {
+                value: string;
+            };
         };
         accent: {
-            bg: string;
-            bgHover: string;
-            bgActive: string;
-            bgDisabled: string;
-            text: string;
-            textDisabled: string;
+            bg: {
+                value: string;
+                metadata: {
+                    pair: string;
+                };
+            };
+            bgHover: {
+                value: string;
+            };
+            bgActive: {
+                value: string;
+            };
+            bgDisabled: {
+                value: string;
+            };
+            text: {
+                value: string;
+            };
+            textDisabled: {
+                value: string;
+            };
         };
     };
     forms: {
         default: {
-            bg: string;
-            border: string;
-            text: string;
-            placeholder: string;
+            bg: {
+                value: string;
+            };
+            border: {
+                value: string;
+            };
+            text: {
+                value: string;
+            };
+            placeholder: {
+                value: string;
+            };
         };
         hover: {
-            border: string;
+            border: {
+                value: string;
+            };
         };
         focus: {
-            border: string;
-            ring: string;
+            border: {
+                value: string;
+            };
+            ring: {
+                value: string;
+            };
         };
         valid: {
-            border: string;
-            bg: string;
-            text: string;
+            border: {
+                value: string;
+            };
+            bg: {
+                value: string;
+                metadata: {
+                    pair: string;
+                };
+            };
+            text: {
+                value: string;
+            };
         };
         invalid: {
-            border: string;
-            bg: string;
-            text: string;
+            border: {
+                value: string;
+            };
+            bg: {
+                value: string;
+                metadata: {
+                    pair: string;
+                };
+            };
+            text: {
+                value: string;
+            };
         };
         disabled: {
-            bg: string;
-            border: string;
-            text: string;
+            bg: {
+                value: string;
+            };
+            border: {
+                value: string;
+            };
+            text: {
+                value: string;
+            };
         };
     };
     layout: {

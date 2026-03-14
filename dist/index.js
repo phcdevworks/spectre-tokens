@@ -134,59 +134,59 @@ var core_default = {
   },
   component: {
     card: {
-      text: "{colors.neutral.900}",
-      textMuted: "{colors.neutral.500}"
+      text: { value: "{colors.neutral.900}" },
+      textMuted: { value: "{colors.neutral.500}" }
     },
     input: {
-      text: "{colors.neutral.900}",
-      placeholder: "{colors.neutral.400}"
+      text: { value: "{colors.neutral.900}" },
+      placeholder: { value: "{colors.neutral.400}" }
     },
     button: {
-      textDefault: "{colors.neutral.900}",
-      textOnPrimary: "{colors.white}"
+      textDefault: { value: "{colors.neutral.900}" },
+      textOnPrimary: { value: "{colors.white}" }
     },
     badge: {
-      neutralBg: "{colors.neutral.100}",
-      neutralText: "{colors.neutral.700}",
-      infoBg: "{colors.info.100}",
-      infoText: "{colors.info.700}",
-      successBg: "{colors.success.100}",
-      successText: "{colors.success.700}",
-      warningBg: "{colors.warning.100}",
-      warningText: "{colors.warning.700}",
-      dangerBg: "{colors.error.100}",
-      dangerText: "{colors.error.700}"
+      neutralBg: { value: "{colors.neutral.100}", metadata: { pair: "component.badge.neutralText" } },
+      neutralText: { value: "{colors.neutral.700}" },
+      infoBg: { value: "{colors.info.100}", metadata: { pair: "component.badge.infoText" } },
+      infoText: { value: "{colors.info.700}" },
+      successBg: { value: "{colors.success.100}", metadata: { pair: "component.badge.successText" } },
+      successText: { value: "{colors.success.700}" },
+      warningBg: { value: "{colors.warning.100}", metadata: { pair: "component.badge.warningText" } },
+      warningText: { value: "{colors.warning.700}" },
+      dangerBg: { value: "{colors.error.100}", metadata: { pair: "component.badge.dangerText" } },
+      dangerText: { value: "{colors.error.700}" }
     },
     iconBox: {
-      bg: "{colors.white}",
-      border: "{colors.neutral.200}",
-      iconDefault: "{colors.info.600}",
-      iconSuccess: "{colors.success.600}",
-      iconWarning: "{colors.warning.600}",
-      iconDanger: "{colors.error.600}"
+      bg: { value: "{colors.white}" },
+      border: { value: "{colors.neutral.200}" },
+      iconDefault: { value: "{colors.info.600}" },
+      iconSuccess: { value: "{colors.success.600}" },
+      iconWarning: { value: "{colors.warning.600}" },
+      iconDanger: { value: "{colors.error.600}" }
     },
     testimonial: {
-      bg: "{colors.white}",
-      border: "{colors.neutral.200}",
-      text: "{colors.neutral.700}",
-      authorName: "{colors.neutral.900}",
-      authorTitle: "{colors.neutral.500}",
-      quoteMark: "{colors.neutral.300}"
+      bg: { value: "{colors.white}" },
+      border: { value: "{colors.neutral.200}" },
+      text: { value: "{colors.neutral.700}" },
+      authorName: { value: "{colors.neutral.900}" },
+      authorTitle: { value: "{colors.neutral.500}" },
+      quoteMark: { value: "{colors.neutral.300}" }
     },
     pricingCard: {
-      bg: "{colors.white}",
-      border: "{colors.neutral.200}",
-      featuredBg: "{colors.info.600}",
-      featuredText: "{colors.white}",
-      featuredBadgeBg: "{colors.warning.500}",
-      featuredBadgeText: "{colors.white}",
-      price: "{colors.neutral.900}",
-      priceDescription: "{colors.neutral.500}"
+      bg: { value: "{colors.white}" },
+      border: { value: "{colors.neutral.200}" },
+      featuredBg: { value: "{colors.info.600}", metadata: { pair: "component.pricingCard.featuredText" } },
+      featuredText: { value: "{colors.white}" },
+      featuredBadgeBg: { value: "{colors.warning.500}", metadata: { pair: "component.pricingCard.featuredBadgeText" } },
+      featuredBadgeText: { value: "{colors.white}" },
+      price: { value: "{colors.neutral.900}" },
+      priceDescription: { value: "{colors.neutral.500}" }
     },
     rating: {
-      starFilled: "{colors.warning.500}",
-      starEmpty: "{colors.neutral.200}",
-      text: "{colors.neutral.500}"
+      starFilled: { value: "{colors.warning.500}" },
+      starEmpty: { value: "{colors.neutral.200}" },
+      text: { value: "{colors.neutral.500}" }
     }
   },
   modes: {
@@ -584,93 +584,93 @@ var core_default = {
   },
   buttons: {
     primary: {
-      bg: "{colors.info.600}",
-      bgHover: "{colors.info.700}",
-      bgActive: "{colors.info.800}",
-      bgDisabled: "{colors.neutral.200}",
-      text: "{colors.white}",
-      textDisabled: "{colors.neutral.400}"
+      bg: { value: "{colors.info.600}", metadata: { pair: "buttons.primary.text" } },
+      bgHover: { value: "{colors.info.700}" },
+      bgActive: { value: "{colors.info.800}" },
+      bgDisabled: { value: "{colors.neutral.200}" },
+      text: { value: "{colors.white}" },
+      textDisabled: { value: "{colors.neutral.400}" }
     },
     secondary: {
-      bg: "{colors.white}",
-      bgHover: "{colors.neutral.50}",
-      bgActive: "{colors.neutral.100}",
-      bgDisabled: "{colors.neutral.50}",
-      text: "{colors.info.600}",
-      textDisabled: "{colors.neutral.400}",
-      border: "{colors.info.600}",
-      borderDisabled: "{colors.neutral.200}"
+      bg: { value: "{colors.white}", metadata: { pair: "buttons.secondary.text" } },
+      bgHover: { value: "{colors.neutral.50}" },
+      bgActive: { value: "{colors.neutral.100}" },
+      bgDisabled: { value: "{colors.neutral.50}" },
+      text: { value: "{colors.info.600}" },
+      textDisabled: { value: "{colors.neutral.400}" },
+      border: { value: "{colors.info.600}" },
+      borderDisabled: { value: "{colors.neutral.200}" }
     },
     ghost: {
-      bg: "transparent",
-      bgHover: "{colors.info.50}",
-      bgActive: "{colors.info.100}",
-      bgDisabled: "transparent",
-      text: "{colors.info.600}",
-      textDisabled: "{colors.neutral.400}"
+      bg: { value: "transparent" },
+      bgHover: { value: "{colors.info.50}" },
+      bgActive: { value: "{colors.info.100}" },
+      bgDisabled: { value: "transparent" },
+      text: { value: "{colors.info.600}" },
+      textDisabled: { value: "{colors.neutral.400}" }
     },
     danger: {
-      bg: "{colors.error.500}",
-      bgHover: "{colors.error.600}",
-      bgActive: "{colors.error.700}",
-      bgDisabled: "{colors.error.200}",
-      text: "{colors.white}",
-      textDisabled: "{colors.neutral.400}"
+      bg: { value: "{colors.error.600}", metadata: { pair: "buttons.danger.text" } },
+      bgHover: { value: "{colors.error.700}" },
+      bgActive: { value: "{colors.error.800}" },
+      bgDisabled: { value: "{colors.error.200}" },
+      text: { value: "{colors.white}" },
+      textDisabled: { value: "{colors.neutral.400}" }
     },
     success: {
-      bg: "{colors.success.500}",
-      bgHover: "{colors.success.600}",
-      bgActive: "{colors.success.700}",
-      bgDisabled: "{colors.success.200}",
-      text: "{colors.white}",
-      textDisabled: "{colors.neutral.400}"
+      bg: { value: "{colors.success.700}", metadata: { pair: "buttons.success.text" } },
+      bgHover: { value: "{colors.success.800}" },
+      bgActive: { value: "{colors.success.900}" },
+      bgDisabled: { value: "{colors.success.200}" },
+      text: { value: "{colors.white}" },
+      textDisabled: { value: "{colors.neutral.400}" }
     },
     cta: {
-      bg: "{colors.warning.500}",
-      bgHover: "{colors.warning.600}",
-      bgActive: "{colors.warning.700}",
-      bgDisabled: "{colors.warning.200}",
-      text: "{colors.white}",
-      textDisabled: "{colors.neutral.400}",
-      shadow: "0 4px 14px 0 {colors.warning.500} / 0.39"
+      bg: { value: "{colors.warning.500}", metadata: { pair: "buttons.cta.text" } },
+      bgHover: { value: "{colors.warning.600}" },
+      bgActive: { value: "{colors.warning.700}" },
+      bgDisabled: { value: "{colors.warning.200}" },
+      text: { value: "{colors.neutral.900}" },
+      textDisabled: { value: "{colors.neutral.400}" },
+      shadow: { value: "0 4px 14px 0 {colors.warning.500} / 0.39" }
     },
     accent: {
-      bg: "{colors.accent.500}",
-      bgHover: "{colors.accent.600}",
-      bgActive: "{colors.accent.700}",
-      bgDisabled: "{colors.accent.200}",
-      text: "{colors.white}",
-      textDisabled: "{colors.neutral.400}"
+      bg: { value: "{colors.accent.600}", metadata: { pair: "buttons.accent.text" } },
+      bgHover: { value: "{colors.accent.700}" },
+      bgActive: { value: "{colors.accent.800}" },
+      bgDisabled: { value: "{colors.accent.200}" },
+      text: { value: "{colors.white}" },
+      textDisabled: { value: "{colors.neutral.400}" }
     }
   },
   forms: {
     default: {
-      bg: "{colors.white}",
-      border: "{colors.neutral.300}",
-      text: "{colors.neutral.900}",
-      placeholder: "{colors.neutral.400}"
+      bg: { value: "{colors.white}" },
+      border: { value: "{colors.neutral.300}" },
+      text: { value: "{colors.neutral.900}" },
+      placeholder: { value: "{colors.neutral.400}" }
     },
     hover: {
-      border: "{colors.info.500}"
+      border: { value: "{colors.info.500}" }
     },
     focus: {
-      border: "{colors.info.500}",
-      ring: "{colors.info.500}"
+      border: { value: "{colors.info.500}" },
+      ring: { value: "{colors.info.500}" }
     },
     valid: {
-      border: "{colors.success.500}",
-      bg: "{colors.success.50}",
-      text: "{colors.success.700}"
+      border: { value: "{colors.success.500}" },
+      bg: { value: "{colors.success.50}", metadata: { pair: "forms.valid.text" } },
+      text: { value: "{colors.success.700}" }
     },
     invalid: {
-      border: "{colors.error.500}",
-      bg: "{colors.error.50}",
-      text: "{colors.error.700}"
+      border: { value: "{colors.error.500}" },
+      bg: { value: "{colors.error.50}", metadata: { pair: "forms.invalid.text" } },
+      text: { value: "{colors.error.700}" }
     },
     disabled: {
-      bg: "{colors.neutral.50}",
-      border: "{colors.neutral.200}",
-      text: "{colors.neutral.400}"
+      bg: { value: "{colors.neutral.50}" },
+      border: { value: "{colors.neutral.200}" },
+      text: { value: "{colors.neutral.400}" }
     }
   },
   layout: {
