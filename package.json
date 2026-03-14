@@ -65,9 +65,10 @@
     "access": "public"
   },
   "devDependencies": {
+    "colord": "^2.9.3",
     "ts-node": "^10.9.2",
-    "tsx": "^4.16.2",
     "tsup": "^8.5.1",
+    "tsx": "^4.16.2",
     "typescript": "^5.9.3"
   }
 }
