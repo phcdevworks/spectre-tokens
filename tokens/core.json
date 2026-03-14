@@ -121,14 +121,14 @@
     "onPage": {
       "default": "{colors.neutral.900}",
       "muted": "{colors.neutral.600}",
-      "subtle": "{colors.neutral.400}",
-      "meta": "{colors.neutral.400}"
+      "subtle": "{colors.neutral.500}",
+      "meta": "{colors.neutral.500}"
     },
     "onSurface": {
       "default": "{colors.neutral.900}",
       "muted": "{colors.neutral.600}",
-      "subtle": "{colors.neutral.400}",
-      "meta": "{colors.neutral.400}"
+      "subtle": "{colors.neutral.500}",
+      "meta": "{colors.neutral.500}"
     }
   },
   "component": {
@@ -219,10 +219,10 @@
             "value": "{colors.neutral.600}"
           },
           "subtle": {
-            "value": "{colors.neutral.400}"
+            "value": "{colors.neutral.500}"
           },
           "meta": {
-            "value": "{colors.neutral.400}"
+            "value": "{colors.neutral.500}"
           }
         },
         "onSurface": {
@@ -233,10 +233,10 @@
             "value": "{colors.neutral.600}"
           },
           "subtle": {
-            "value": "{colors.neutral.400}"
+            "value": "{colors.neutral.500}"
           },
           "meta": {
-            "value": "{colors.neutral.400}"
+            "value": "{colors.neutral.500}"
           }
         }
       },
