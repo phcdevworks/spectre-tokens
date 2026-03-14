@@ -59,12 +59,19 @@
     "build": "npm run build:ts && npm run build:css && npm run check:tokens",
     "build:ts": "tsup --config tsup.config.ts",
     "build:css": "node scripts/build-css.js",
-    "check:tokens": "tsx scripts/assert-core-tokens.ts"
+    "check:tokens": "tsx scripts/assert-core-tokens.ts",
+    "check:contrast": "tsx scripts/check-contrast.ts",
+    "check:regression": "tsx scripts/check-tokens-regression.ts",
+    "check": "npm run check:tokens && npm run check:contrast && npm run check:regression",
+    "check:all": "npm run check",
+    "test": "npm run check"
   },
   "publishConfig": {
     "access": "public"
   },
   "devDependencies": {
+    "@types/chroma-js": "^3.1.2",
+    "chroma-js": "^3.2.0",
     "colord": "^2.9.3",
     "ts-node": "^10.9.2",
     "tsup": "^8.5.1",

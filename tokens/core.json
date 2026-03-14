@@ -267,74 +267,96 @@
         },
         "badge": {
           "neutralBg": {
-            "value": "{colors.neutral.100}"
+            "value": "{colors.neutral.100}",
+            "metadata": { "pair": "modes.default.component.badge.neutralText" }
           },
           "neutralText": {
-            "value": "{colors.neutral.700}"
+            "value": "{colors.neutral.700}",
+            "metadata": {}
           },
           "infoBg": {
-            "value": "{colors.info.100}"
+            "value": "{colors.info.100}",
+            "metadata": { "pair": "modes.default.component.badge.infoText" }
           },
           "infoText": {
-            "value": "{colors.info.700}"
+            "value": "{colors.info.700}",
+            "metadata": {}
           },
           "successBg": {
-            "value": "{colors.success.100}"
+            "value": "{colors.success.100}",
+            "metadata": { "pair": "modes.default.component.badge.successText" }
           },
           "successText": {
-            "value": "{colors.success.700}"
+            "value": "{colors.success.700}",
+            "metadata": {}
           },
           "warningBg": {
-            "value": "{colors.warning.100}"
+            "value": "{colors.warning.100}",
+            "metadata": { "pair": "modes.default.component.badge.warningText" }
           },
           "warningText": {
-            "value": "{colors.warning.700}"
+            "value": "{colors.warning.700}",
+            "metadata": {}
           },
           "dangerBg": {
-            "value": "{colors.error.100}"
+            "value": "{colors.error.100}",
+            "metadata": { "pair": "modes.default.component.badge.dangerText" }
           },
           "dangerText": {
-            "value": "{colors.error.700}"
+            "value": "{colors.error.700}",
+            "metadata": {}
           }
         },
         "iconBox": {
           "bg": {
-            "value": "{colors.white}"
+            "value": "{colors.white}",
+            "metadata": {}
           },
           "border": {
-            "value": "{colors.neutral.200}"
+            "value": "{colors.neutral.200}",
+            "metadata": {}
           },
           "iconDefault": {
-            "value": "{colors.info.600}"
+            "value": "{colors.info.600}",
+            "metadata": {}
           },
           "iconSuccess": {
-            "value": "{colors.success.600}"
+            "value": "{colors.success.600}",
+            "metadata": {}
           },
           "iconWarning": {
-            "value": "{colors.warning.600}"
+            "value": "{colors.warning.600}",
+            "metadata": {}
           },
           "iconDanger": {
-            "value": "{colors.error.600}"
+            "value": "{colors.error.600}",
+            "metadata": {}
           }
         },
         "testimonial": {
           "bg": {
-            "value": "{colors.white}"
+            "value": "{colors.white}",
+            "metadata": {}
           },
           "border": {
-            "value": "{colors.neutral.200}"
+            "value": "{colors.neutral.200}",
+            "metadata": {}
           },
           "text": {
-            "value": "{colors.neutral.700}"
+            "value": "{colors.neutral.700}",
+            "metadata": {}
           },
           "authorName": {
-            "value": "{colors.neutral.900}"
+            "value": "{colors.neutral.900}",
+            "metadata": {}
           },
           "authorTitle": {
-            "value": "{colors.neutral.500}"
+            "value": "{colors.neutral.500}",
+            "metadata": {}
           },
           "quoteMark": {
-            "value": "{colors.neutral.300}"
+            "value": "{colors.neutral.300}",
+            "metadata": {}
           }
         },
         "pricingCard": {
@@ -373,13 +395,16 @@
         },
         "rating": {
           "starFilled": {
-            "value": "{colors.warning.500}"
+            "value": "{colors.warning.500}",
+            "metadata": {}
           },
           "starEmpty": {
-            "value": "{colors.neutral.200}"
+            "value": "{colors.neutral.200}",
+            "metadata": {}
           },
           "text": {
-            "value": "{colors.neutral.500}"
+            "value": "{colors.neutral.500}",
+            "metadata": {}
           }
         }
       }
@@ -462,74 +487,96 @@
         },
         "badge": {
           "neutralBg": {
-            "value": "{colors.neutral.700}"
+            "value": "{colors.neutral.700}",
+            "metadata": { "pair": "modes.dark.component.badge.neutralText" }
           },
           "neutralText": {
-            "value": "{colors.neutral.100}"
+            "value": "{colors.neutral.100}",
+            "metadata": {}
           },
           "infoBg": {
-            "value": "{colors.info.800}"
+            "value": "{colors.info.800}",
+            "metadata": { "pair": "modes.dark.component.badge.infoText" }
           },
           "infoText": {
-            "value": "{colors.info.100}"
+            "value": "{colors.info.100}",
+            "metadata": {}
           },
           "successBg": {
-            "value": "{colors.success.800}"
+            "value": "{colors.success.800}",
+            "metadata": { "pair": "modes.dark.component.badge.successText" }
           },
           "successText": {
-            "value": "{colors.success.100}"
+            "value": "{colors.success.100}",
+            "metadata": {}
           },
           "warningBg": {
-            "value": "{colors.warning.800}"
+            "value": "{colors.warning.800}",
+            "metadata": { "pair": "modes.dark.component.badge.warningText" }
           },
           "warningText": {
-            "value": "{colors.warning.100}"
+            "value": "{colors.warning.100}",
+            "metadata": {}
           },
           "dangerBg": {
-            "value": "{colors.error.800}"
+            "value": "{colors.error.800}",
+            "metadata": { "pair": "modes.dark.component.badge.dangerText" }
           },
           "dangerText": {
-            "value": "{colors.error.100}"
+            "value": "{colors.error.100}",
+            "metadata": {}
           }
         },
         "iconBox": {
           "bg": {
-            "value": "{colors.neutral.800}"
+            "value": "{colors.neutral.800}",
+            "metadata": {}
           },
           "border": {
-            "value": "{colors.neutral.700}"
+            "value": "{colors.neutral.700}",
+            "metadata": {}
           },
           "iconDefault": {
-            "value": "{colors.info.300}"
+            "value": "{colors.info.300}",
+            "metadata": {}
           },
           "iconSuccess": {
-            "value": "{colors.success.400}"
+            "value": "{colors.success.400}",
+            "metadata": {}
           },
           "iconWarning": {
-            "value": "{colors.warning.400}"
+            "value": "{colors.warning.400}",
+            "metadata": {}
           },
           "iconDanger": {
-            "value": "{colors.error.400}"
+            "value": "{colors.error.400}",
+            "metadata": {}
           }
         },
         "testimonial": {
           "bg": {
-            "value": "{colors.neutral.800}"
+            "value": "{colors.neutral.800}",
+            "metadata": {}
           },
           "border": {
-            "value": "{colors.neutral.700}"
+            "value": "{colors.neutral.700}",
+            "metadata": {}
           },
           "text": {
-            "value": "{colors.neutral.300}"
+            "value": "{colors.neutral.300}",
+            "metadata": {}
           },
           "authorName": {
-            "value": "{colors.neutral.100}"
+            "value": "{colors.neutral.100}",
+            "metadata": {}
           },
           "authorTitle": {
-            "value": "{colors.neutral.400}"
+            "value": "{colors.neutral.400}",
+            "metadata": {}
           },
           "quoteMark": {
-            "value": "{colors.neutral.600}"
+            "value": "{colors.neutral.600}",
+            "metadata": {}
           }
         },
         "pricingCard": {
@@ -542,7 +589,7 @@
             "metadata": {}
           },
           "featuredBg": {
-            "value": "{colors.info.500}",
+            "value": "{colors.info.600}",
             "metadata": { "pair": "modes.dark.component.pricingCard.featuredText" }
           },
           "featuredText": {
@@ -568,13 +615,16 @@
         },
         "rating": {
           "starFilled": {
-            "value": "{colors.warning.400}"
+            "value": "{colors.warning.400}",
+            "metadata": {}
           },
           "starEmpty": {
-            "value": "{colors.neutral.700}"
+            "value": "{colors.neutral.700}",
+            "metadata": {}
           },
           "text": {
-            "value": "{colors.neutral.400}"
+            "value": "{colors.neutral.400}",
+            "metadata": {}
           }
         }
       }
