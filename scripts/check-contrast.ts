@@ -57,17 +57,21 @@ function resolveToken(pathStr: string, allTokens: SpectreTokens): string {
 }
 
 const failures: string[] = [];
+const visited = new Set<string>();
 
 function checkTokensRecursively(obj: Record<string, unknown> | SpectreTokens, currentPath: string) {
   const records = obj as Record<string, unknown>;
   for (const key in records) {
+    if (key === 'metadata' || key === 'value') continue;
+    
     const value = records[key];
     const fullPath = currentPath ? `${currentPath}.${key}` : key;
 
     try {
       if (value && typeof value === 'object') {
-        const valObj = value as { value: string; metadata?: { pair?: string } };
-        if ('value' in valObj && valObj.metadata?.pair) {
+        const valObj = value as { value?: unknown; metadata?: { pair?: string } };
+        
+        if (typeof valObj.value === 'string' && valObj.metadata?.pair) {
           const bgValue = resolveToken(valObj.value, tokens);
           const pairPath = valObj.metadata.pair;
           const textValue = resolveToken(`{${pairPath}}`, tokens);
