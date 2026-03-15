@@ -1,0 +1,94 @@
+{
+  "font": {
+    "xs": {
+      "size": "0.75rem",
+      "lineHeight": "1.25rem",
+      "weight": 400
+    },
+    "sm": {
+      "size": "0.875rem",
+      "lineHeight": "1.5rem",
+      "weight": 400
+    },
+    "md": {
+      "size": "1rem",
+      "lineHeight": "1.75rem",
+      "weight": 500
+    },
+    "lg": {
+      "size": "1.25rem",
+      "lineHeight": "2rem",
+      "weight": 500
+    },
+    "xl": {
+      "size": "1.5rem",
+      "lineHeight": "2.125rem",
+      "weight": 600
+    },
+    "2xl": {
+      "size": "1.875rem",
+      "lineHeight": "2.5rem",
+      "weight": 600
+    }
+  },
+  "typography": {
+    "families": {
+      "sans": "system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif",
+      "serif": "'Times New Roman', Times, serif",
+      "mono": "'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace"
+    },
+    "scale": {
+      "xs": {
+        "fontSize": "0.75rem",
+        "lineHeight": "1.25rem",
+        "fontWeight": 400,
+        "letterSpacing": "0.02em"
+      },
+      "sm": {
+        "fontSize": "0.875rem",
+        "lineHeight": "1.5rem",
+        "fontWeight": 400
+      },
+      "md": {
+        "fontSize": "1rem",
+        "lineHeight": "1.75rem",
+        "fontWeight": 500
+      },
+      "lg": {
+        "fontSize": "1.25rem",
+        "lineHeight": "2rem",
+        "fontWeight": 600
+      },
+      "xl": {
+        "fontSize": "1.5rem",
+        "lineHeight": "2.125rem",
+        "fontWeight": 600
+      },
+      "2xl": {
+        "fontSize": "1.875rem",
+        "lineHeight": "2.5rem",
+        "fontWeight": 700
+      },
+      "3xl": {
+        "fontSize": "2.25rem",
+        "lineHeight": "2.75rem",
+        "fontWeight": 700
+      },
+      "4xl": {
+        "fontSize": "3rem",
+        "lineHeight": "3.5rem",
+        "fontWeight": 800
+      },
+      "5xl": {
+        "fontSize": "3.75rem",
+        "lineHeight": "4.25rem",
+        "fontWeight": 800
+      },
+      "6xl": {
+        "fontSize": "4.5rem",
+        "lineHeight": "5rem",
+        "fontWeight": 900
+      }
+    }
+  }
+}

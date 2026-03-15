@@ -1,13 +1,14 @@
-import { readFileSync, writeFileSync, mkdirSync, existsSync } from 'node:fs';
+import { writeFileSync, mkdirSync, existsSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { loadMergedTokens } from './token-utils';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
-const coreJsonPath = join(__dirname, '../tokens/core.json');
+
 const outputDir = join(__dirname, '../src/generated');
 const outputPath = join(outputDir, 'tokens.ts');
 
-const coreJson = JSON.parse(readFileSync(coreJsonPath, 'utf8'));
+const coreJson = loadMergedTokens();
 
 function generateType(obj: unknown, indent = ''): string {
   if (typeof obj === 'string') return 'string';
@@ -33,9 +34,11 @@ function generateType(obj: unknown, indent = ''): string {
 const typeString = generateType(coreJson);
 
 const fileContent = `// This file is auto-generated. Do not edit directly.
-// Source: tokens/core.json
+// Source: tokens/*.json
 
 export interface SpectreGeneratedTokens ${typeString}
+
+export const coreTokens: SpectreGeneratedTokens = ${JSON.stringify(coreJson, null, 2)} as const;
 `;
 
 if (!existsSync(outputDir)) {
