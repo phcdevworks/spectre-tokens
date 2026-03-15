@@ -10,11 +10,13 @@ JSON-first design tokens that power Spectre UI, Spectre Blocks, Spectre Astro, S
 
 **Single source of truth:** JSON is the source. Everything else is generated.
 
-- ✅ Centralized token definitions and semantic naming
-- ✅ JS/TS objects, Tailwind theme + preset, and CSS variable outputs
-- ✅ CRO-focused surfaces (buttons, forms, states) and accessibility-first tokens
-- ✅ Helpers for scoped CSS variable generation
-- ✅ Type-safe outputs with bundled `.d.ts` files
+- ✅ **Modular Architecture**: domain-specific token storage for better maintainability
+- ✅ **AI-Ready DNA**: Zero `any` types and 100% strict TypeScript build process
+- ✅ **Auto-Generated Typings**: Strictly-typed TS interfaces derived directly from JSON
+- ✅ **Multi-File Merging**: Type-safe merging of cross-domain token references
+- ✅ **JS/TS objects**, Tailwind theme + preset, and CSS variable outputs
+- ✅ **CRO-focused surfaces** (buttons, forms, states) and accessibility-first tokens
+- ✅ **Type-safe outputs** with bundled `.d.ts` files
 
 ## Installation
 
@@ -132,7 +134,7 @@ The `tokens` object includes:
 - `opacity`: Opacity scale (hover, active, disabled, focus, overlay, tooltip)
 - `borders`: Border color tokens
 - `surface`: Semantic surface backgrounds (page, card, input, overlay)
-- `text`: Semantic text colors (onPage, onSurface with default/muted/subtle/meta)
+- `text`: Semantic text colors (onPage, onSurface with default/muted/subtle/meta/**brand**)
 - `component`: Component-specific tokens (card, input, button, badge, iconBox)
 - `modes`: Theme mode definitions (default/light and dark)
 
@@ -429,6 +431,7 @@ For secondary/metadata text styling:
 ```ts
 tokens.text.onPage.meta; // Metadata text on page backgrounds
 tokens.text.onSurface.meta; // Metadata text on card/surface backgrounds
+tokens.text.onPage.brand; // Brand accent text on page canvas
 ```
 
 ```css
@@ -744,12 +747,13 @@ tokens.borders.input; // "#cbd5f5"
 
 | Folder     | Responsibility                                                                                                |
 | ---------- | ------------------------------------------------------------------------------------------------------------- |
-| `tokens/`  | Raw JSON token files owned by design (e.g. `core.json`, modes, component semantics).                          |
+| `tokens/`  | Raw JSON token files (modularized as `palette.json`, `typography.json`, `components.json`, etc.).             |
+| `skills/`  | AI Implementation skills and verification scripts to ensure codebase integrity and AI readiness.              |
 | `src/`     | TypeScript source that turns JSON into reusable formats (JS/TS exports, Tailwind theme, CSS helpers).         |
-| `scripts/` | Build utilities. `build-css.js` consumes the compiled library and writes `dist/index.css`.                    |
+| `scripts/` | Build utilities and strictly-typed token merging engines.                                                     |
 | `dist/`    | Generated artifacts: `index.js`, `index.cjs`, `index.d.ts`, and `index.css`. Regenerated via `npm run build`. |
 
-Designers only touch the JSON under `tokens/`. Engineering evolves `src/` + `scripts/` when structure changes.
+Designers only touch the JSON under `tokens/`. Engineering evolves `src/` + `scripts/` when structure or transforms change.
 
 ## Build & Release
 
@@ -853,7 +857,7 @@ Spectre is a **specification-driven design system** built on three strict layers
 - Designers own `tokens/*.json`; engineers maintain `src/` transforms
 - Contrast targets and accessibility constraints are encoded at the token level
 
-**Status**: v0.1.0 released with stable semantic roles (`surface.*`, `text.*`, `component.*`) and considered correct/locked
+**Status**: v2.0.0 released. Transitioned to modular JSON storage and full AI-readiness.
 
 ### 2. @phcdevworks/spectre-ui (Framework-Agnostic UI Layer)
 
@@ -874,7 +878,7 @@ Spectre is a **specification-driven design system** built on three strict layers
 - Every CSS selector has a matching recipe where applicable
 - Tailwind preset is optional and non-authoritative
 
-**Status**: v0.1.0 released, hardened and aligned to tokens
+**Status**: v1.0.0 hardened and aligned to tokens. v2.0.0 compatibility ready.
 
 ### 3. Adapters (WordPress, Astro, etc.)
 
@@ -1420,7 +1424,7 @@ const customThemeCSS = generateCssVariables(tokens, {
 **Question:** Can I add my own theme modes beyond default/dark?
 
 **Answer:**
-Yes! Extend the `modes` object in your `core.json`:
+Yes! Extend the `modes` object in your `tokens/modes.json`:
 
 ```json
 {
@@ -1488,7 +1492,7 @@ Two approaches:
 Semantic tokens in `modes` use the `{ value: "..." }` format for metadata. The TypeScript library automatically resolves these:
 
 ```ts
-// In core.json: { "value": "#f8fafc" }
+// In tokens/*.json: { "value": "#f8fafc" }
 tokens.surface.page; // Returns "#f8fafc" (string)
 
 // The library handles resolution automatically
