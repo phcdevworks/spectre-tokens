@@ -58,7 +58,7 @@
     "prebuild": "npm run generate",
     "build": "npm run build:ts && npm run build:css && npm run check:tokens",
     "build:ts": "tsup --config tsup.config.ts",
-    "build:css": "node scripts/build-css.js",
+    "build:css": "tsx scripts/build-css.ts",
     "check:tokens": "tsx scripts/assert-core-tokens.ts",
     "check:contrast": "tsx scripts/check-contrast.ts",
     "check:regression": "tsx scripts/check-tokens-regression.ts",

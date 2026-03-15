@@ -152,14 +152,14 @@ var core_default = {
     onPage: {
       default: "{colors.neutral.900}",
       muted: "{colors.neutral.600}",
-      subtle: "{colors.neutral.400}",
-      meta: "{colors.neutral.400}"
+      subtle: "{colors.neutral.500}",
+      meta: "{colors.neutral.500}"
     },
     onSurface: {
       default: "{colors.neutral.900}",
       muted: "{colors.neutral.600}",
-      subtle: "{colors.neutral.400}",
-      meta: "{colors.neutral.400}"
+      subtle: "{colors.neutral.500}",
+      meta: "{colors.neutral.500}"
     }
   },
   component: {
@@ -204,14 +204,14 @@ var core_default = {
       quoteMark: { value: "{colors.neutral.300}" }
     },
     pricingCard: {
-      bg: { value: "{colors.white}" },
-      border: { value: "{colors.neutral.200}" },
+      bg: { value: "{colors.white}", metadata: {} },
+      border: { value: "{colors.neutral.200}", metadata: {} },
       featuredBg: { value: "{colors.info.600}", metadata: { pair: "component.pricingCard.featuredText" } },
-      featuredText: { value: "{colors.white}" },
+      featuredText: { value: "{colors.white}", metadata: {} },
       featuredBadgeBg: { value: "{colors.warning.500}", metadata: { pair: "component.pricingCard.featuredBadgeText" } },
-      featuredBadgeText: { value: "{colors.white}" },
-      price: { value: "{colors.neutral.900}" },
-      priceDescription: { value: "{colors.neutral.500}" }
+      featuredBadgeText: { value: "{colors.neutral.900}", metadata: {} },
+      price: { value: "{colors.neutral.900}", metadata: {} },
+      priceDescription: { value: "{colors.neutral.500}", metadata: {} }
     },
     rating: {
       starFilled: { value: "{colors.warning.500}" },
@@ -250,10 +250,10 @@ var core_default = {
             value: "{colors.neutral.600}"
           },
           subtle: {
-            value: "{colors.neutral.400}"
+            value: "{colors.neutral.500}"
           },
           meta: {
-            value: "{colors.neutral.400}"
+            value: "{colors.neutral.500}"
           }
         },
         onSurface: {
@@ -264,10 +264,10 @@ var core_default = {
             value: "{colors.neutral.600}"
           },
           subtle: {
-            value: "{colors.neutral.400}"
+            value: "{colors.neutral.500}"
           },
           meta: {
-            value: "{colors.neutral.400}"
+            value: "{colors.neutral.500}"
           }
         }
       },
@@ -298,111 +298,144 @@ var core_default = {
         },
         badge: {
           neutralBg: {
-            value: "{colors.neutral.100}"
+            value: "{colors.neutral.100}",
+            metadata: { pair: "modes.default.component.badge.neutralText" }
           },
           neutralText: {
-            value: "{colors.neutral.700}"
+            value: "{colors.neutral.700}",
+            metadata: {}
           },
           infoBg: {
-            value: "{colors.info.100}"
+            value: "{colors.info.100}",
+            metadata: { pair: "modes.default.component.badge.infoText" }
           },
           infoText: {
-            value: "{colors.info.700}"
+            value: "{colors.info.700}",
+            metadata: {}
           },
           successBg: {
-            value: "{colors.success.100}"
+            value: "{colors.success.100}",
+            metadata: { pair: "modes.default.component.badge.successText" }
           },
           successText: {
-            value: "{colors.success.700}"
+            value: "{colors.success.700}",
+            metadata: {}
           },
           warningBg: {
-            value: "{colors.warning.100}"
+            value: "{colors.warning.100}",
+            metadata: { pair: "modes.default.component.badge.warningText" }
           },
           warningText: {
-            value: "{colors.warning.700}"
+            value: "{colors.warning.700}",
+            metadata: {}
           },
           dangerBg: {
-            value: "{colors.error.100}"
+            value: "{colors.error.100}",
+            metadata: { pair: "modes.default.component.badge.dangerText" }
           },
           dangerText: {
-            value: "{colors.error.700}"
+            value: "{colors.error.700}",
+            metadata: {}
           }
         },
         iconBox: {
           bg: {
-            value: "{colors.white}"
+            value: "{colors.white}",
+            metadata: {}
           },
           border: {
-            value: "{colors.neutral.200}"
+            value: "{colors.neutral.200}",
+            metadata: {}
           },
           iconDefault: {
-            value: "{colors.info.600}"
+            value: "{colors.info.600}",
+            metadata: {}
           },
           iconSuccess: {
-            value: "{colors.success.600}"
+            value: "{colors.success.600}",
+            metadata: {}
           },
           iconWarning: {
-            value: "{colors.warning.600}"
+            value: "{colors.warning.600}",
+            metadata: {}
           },
           iconDanger: {
-            value: "{colors.error.600}"
+            value: "{colors.error.600}",
+            metadata: {}
           }
         },
         testimonial: {
           bg: {
-            value: "{colors.white}"
+            value: "{colors.white}",
+            metadata: {}
           },
           border: {
-            value: "{colors.neutral.200}"
+            value: "{colors.neutral.200}",
+            metadata: {}
           },
           text: {
-            value: "{colors.neutral.700}"
+            value: "{colors.neutral.700}",
+            metadata: {}
           },
           authorName: {
-            value: "{colors.neutral.900}"
+            value: "{colors.neutral.900}",
+            metadata: {}
           },
           authorTitle: {
-            value: "{colors.neutral.500}"
+            value: "{colors.neutral.500}",
+            metadata: {}
           },
           quoteMark: {
-            value: "{colors.neutral.300}"
+            value: "{colors.neutral.300}",
+            metadata: {}
           }
         },
         pricingCard: {
           bg: {
-            value: "{colors.white}"
+            value: "{colors.white}",
+            metadata: {}
           },
           border: {
-            value: "{colors.neutral.200}"
+            value: "{colors.neutral.200}",
+            metadata: {}
           },
           featuredBg: {
-            value: "{colors.info.600}"
+            value: "{colors.info.600}",
+            metadata: { pair: "modes.default.component.pricingCard.featuredText" }
           },
           featuredText: {
-            value: "{colors.white}"
+            value: "{colors.white}",
+            metadata: {}
           },
           featuredBadgeBg: {
-            value: "{colors.warning.500}"
+            value: "{colors.warning.500}",
+            metadata: { pair: "modes.default.component.pricingCard.featuredBadgeText" }
           },
           featuredBadgeText: {
-            value: "{colors.white}"
+            value: "{colors.neutral.900}",
+            metadata: {}
           },
           price: {
-            value: "{colors.neutral.900}"
+            value: "{colors.neutral.900}",
+            metadata: {}
           },
           priceDescription: {
-            value: "{colors.neutral.500}"
+            value: "{colors.neutral.500}",
+            metadata: {}
           }
         },
         rating: {
           starFilled: {
-            value: "{colors.warning.500}"
+            value: "{colors.warning.500}",
+            metadata: {}
           },
           starEmpty: {
-            value: "{colors.neutral.200}"
+            value: "{colors.neutral.200}",
+            metadata: {}
           },
           text: {
-            value: "{colors.neutral.500}"
+            value: "{colors.neutral.500}",
+            metadata: {}
           }
         }
       }
@@ -485,111 +518,144 @@ var core_default = {
         },
         badge: {
           neutralBg: {
-            value: "{colors.neutral.700}"
+            value: "{colors.neutral.700}",
+            metadata: { pair: "modes.dark.component.badge.neutralText" }
           },
           neutralText: {
-            value: "{colors.neutral.100}"
+            value: "{colors.neutral.100}",
+            metadata: {}
           },
           infoBg: {
-            value: "{colors.info.800}"
+            value: "{colors.info.800}",
+            metadata: { pair: "modes.dark.component.badge.infoText" }
           },
           infoText: {
-            value: "{colors.info.100}"
+            value: "{colors.info.100}",
+            metadata: {}
           },
           successBg: {
-            value: "{colors.success.800}"
+            value: "{colors.success.800}",
+            metadata: { pair: "modes.dark.component.badge.successText" }
           },
           successText: {
-            value: "{colors.success.100}"
+            value: "{colors.success.100}",
+            metadata: {}
           },
           warningBg: {
-            value: "{colors.warning.800}"
+            value: "{colors.warning.800}",
+            metadata: { pair: "modes.dark.component.badge.warningText" }
           },
           warningText: {
-            value: "{colors.warning.100}"
+            value: "{colors.warning.100}",
+            metadata: {}
           },
           dangerBg: {
-            value: "{colors.error.800}"
+            value: "{colors.error.800}",
+            metadata: { pair: "modes.dark.component.badge.dangerText" }
           },
           dangerText: {
-            value: "{colors.error.100}"
+            value: "{colors.error.100}",
+            metadata: {}
           }
         },
         iconBox: {
           bg: {
-            value: "{colors.neutral.800}"
+            value: "{colors.neutral.800}",
+            metadata: {}
           },
           border: {
-            value: "{colors.neutral.700}"
+            value: "{colors.neutral.700}",
+            metadata: {}
           },
           iconDefault: {
-            value: "{colors.info.300}"
+            value: "{colors.info.300}",
+            metadata: {}
           },
           iconSuccess: {
-            value: "{colors.success.400}"
+            value: "{colors.success.400}",
+            metadata: {}
           },
           iconWarning: {
-            value: "{colors.warning.400}"
+            value: "{colors.warning.400}",
+            metadata: {}
           },
           iconDanger: {
-            value: "{colors.error.400}"
+            value: "{colors.error.400}",
+            metadata: {}
           }
         },
         testimonial: {
           bg: {
-            value: "{colors.neutral.800}"
+            value: "{colors.neutral.800}",
+            metadata: {}
           },
           border: {
-            value: "{colors.neutral.700}"
+            value: "{colors.neutral.700}",
+            metadata: {}
           },
           text: {
-            value: "{colors.neutral.300}"
+            value: "{colors.neutral.300}",
+            metadata: {}
           },
           authorName: {
-            value: "{colors.neutral.100}"
+            value: "{colors.neutral.100}",
+            metadata: {}
           },
           authorTitle: {
-            value: "{colors.neutral.400}"
+            value: "{colors.neutral.400}",
+            metadata: {}
           },
           quoteMark: {
-            value: "{colors.neutral.600}"
+            value: "{colors.neutral.600}",
+            metadata: {}
           }
         },
         pricingCard: {
           bg: {
-            value: "{colors.neutral.800}"
+            value: "{colors.neutral.800}",
+            metadata: {}
           },
           border: {
-            value: "{colors.neutral.700}"
+            value: "{colors.neutral.700}",
+            metadata: {}
           },
           featuredBg: {
-            value: "{colors.info.500}"
+            value: "{colors.info.600}",
+            metadata: { pair: "modes.dark.component.pricingCard.featuredText" }
           },
           featuredText: {
-            value: "{colors.white}"
+            value: "{colors.white}",
+            metadata: {}
           },
           featuredBadgeBg: {
-            value: "{colors.warning.500}"
+            value: "{colors.warning.500}",
+            metadata: { pair: "modes.dark.component.pricingCard.featuredBadgeText" }
           },
           featuredBadgeText: {
-            value: "{colors.white}"
+            value: "{colors.neutral.900}",
+            metadata: {}
           },
           price: {
-            value: "{colors.neutral.100}"
+            value: "{colors.neutral.100}",
+            metadata: {}
           },
           priceDescription: {
-            value: "{colors.neutral.400}"
+            value: "{colors.neutral.400}",
+            metadata: {}
           }
         },
         rating: {
           starFilled: {
-            value: "{colors.warning.400}"
+            value: "{colors.warning.400}",
+            metadata: {}
           },
           starEmpty: {
-            value: "{colors.neutral.700}"
+            value: "{colors.neutral.700}",
+            metadata: {}
           },
           text: {
-            value: "{colors.neutral.400}"
+            value: "{colors.neutral.400}",
+            metadata: {}
           }
         }
       }
@@ -1035,24 +1101,24 @@ var createCssVariableMap = (tokens2, options = {}) => {
     });
   }
   if (baseTokens.layout) {
-    const { section, stack, container } = baseTokens.layout;
-    if (section?.padding) {
-      Object.entries(section.padding).forEach(([key, value]) => {
+    const layout = baseTokens.layout;
+    if (layout.section?.padding) {
+      Object.entries(layout.section.padding).forEach(([key, value]) => {
         assign(toVariableName(prefix, "layout", "section", "padding", key), value);
       });
     }
-    if (section?.gap) {
-      Object.entries(section.gap).forEach(([key, value]) => {
+    if (layout.section?.gap) {
+      Object.entries(layout.section.gap).forEach(([key, value]) => {
         assign(toVariableName(prefix, "layout", "section", "gap", key), value);
       });
     }
-    if (stack?.gap) {
-      Object.entries(stack.gap).forEach(([key, value]) => {
+    if (layout.stack?.gap) {
+      Object.entries(layout.stack.gap).forEach(([key, value]) => {
         assign(toVariableName(prefix, "layout", "stack", "gap", key), value);
       });
     }
-    if (container?.paddingInline) {
-      Object.entries(container.paddingInline).forEach(([key, value]) => {
+    if (layout.container?.paddingInline) {
+      Object.entries(layout.container.paddingInline).forEach(([key, value]) => {
         assign(toVariableName(prefix, "layout", "container", "padding-inline", key), value);
       });
     }
@@ -1079,7 +1145,8 @@ var createCssVariableMap = (tokens2, options = {}) => {
     });
   }
   Object.entries(typographyScale).forEach(([key, entry]) => {
-    assign(toVariableName(prefix, "font", key, "letter-spacing"), "letterSpacing" in entry ? entry.letterSpacing : void 0);
+    const scaleEntry = entry;
+    assign(toVariableName(prefix, "font", key, "letter-spacing"), scaleEntry.letterSpacing);
   });
   assign(toVariableName(prefix, "text", "on", "page", "default"), tokens2.text.onPage.default);
   assign(toVariableName(prefix, "text", "on", "page", "muted"), tokens2.text.onPage.muted);
@@ -1135,11 +1202,13 @@ var createCssVariableMap = (tokens2, options = {}) => {
       if (value) assign(toVariableName(prefix, "form", state, prop), value);
     });
   });
-  Object.entries(baseTokens.animations).forEach(([name, animation]) => {
-    assign(toVariableName(prefix, "animation", name, "duration"), animation.duration);
-    assign(toVariableName(prefix, "animation", name, "easing"), animation.easing);
-    assign(toVariableName(prefix, "animation", name, "keyframes"), animation.keyframes);
-  });
+  if (baseTokens.animations) {
+    Object.entries(baseTokens.animations).forEach(([name, animation]) => {
+      assign(toVariableName(prefix, "animation", name, "duration"), animation.duration);
+      assign(toVariableName(prefix, "animation", name, "easing"), animation.easing);
+      assign(toVariableName(prefix, "animation", name, "keyframes"), animation.keyframes);
+    });
+  }
   return map;
 };
 var resolveSemanticValue = (value, tokens2) => {

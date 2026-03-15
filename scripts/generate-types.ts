@@ -9,12 +9,12 @@ const outputPath = join(outputDir, 'tokens.ts');
 
 const coreJson = JSON.parse(readFileSync(coreJsonPath, 'utf8'));
 
-function generateType(obj: any, indent = ''): string {
+function generateType(obj: unknown, indent = ''): string {
   if (typeof obj === 'string') return 'string';
   if (typeof obj === 'number') return 'number';
   if (typeof obj === 'boolean') return 'boolean';
   if (Array.isArray(obj)) {
-    if (obj.length === 0) return 'any[]';
+    if (obj.length === 0) return 'unknown[]';
     return generateType(obj[0], indent) + '[]';
   }
   if (typeof obj === 'object' && obj !== null) {
@@ -27,7 +27,7 @@ function generateType(obj: any, indent = ''): string {
     out += `${indent}}`;
     return out;
   }
-  return 'any';
+  return 'unknown';
 }
 
 const typeString = generateType(coreJson);

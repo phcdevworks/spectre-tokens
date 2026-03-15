@@ -246,9 +246,11 @@ interface SpectreGeneratedTokens {
         pricingCard: {
             bg: {
                 value: string;
+                metadata: {};
             };
             border: {
                 value: string;
+                metadata: {};
             };
             featuredBg: {
                 value: string;
@@ -258,6 +260,7 @@ interface SpectreGeneratedTokens {
             };
             featuredText: {
                 value: string;
+                metadata: {};
             };
             featuredBadgeBg: {
                 value: string;
@@ -267,12 +270,15 @@ interface SpectreGeneratedTokens {
             };
             featuredBadgeText: {
                 value: string;
+                metadata: {};
             };
             price: {
                 value: string;
+                metadata: {};
             };
             priceDescription: {
                 value: string;
+                metadata: {};
             };
         };
         rating: {
@@ -367,110 +373,157 @@ interface SpectreGeneratedTokens {
                 badge: {
                     neutralBg: {
                         value: string;
+                        metadata: {
+                            pair: string;
+                        };
                     };
                     neutralText: {
                         value: string;
+                        metadata: {};
                     };
                     infoBg: {
                         value: string;
+                        metadata: {
+                            pair: string;
+                        };
                     };
                     infoText: {
                         value: string;
+                        metadata: {};
                     };
                     successBg: {
                         value: string;
+                        metadata: {
+                            pair: string;
+                        };
                     };
                     successText: {
                         value: string;
+                        metadata: {};
                     };
                     warningBg: {
                         value: string;
+                        metadata: {
+                            pair: string;
+                        };
                     };
                     warningText: {
                         value: string;
+                        metadata: {};
                     };
                     dangerBg: {
                         value: string;
+                        metadata: {
+                            pair: string;
+                        };
                     };
                     dangerText: {
                         value: string;
+                        metadata: {};
                     };
                 };
                 iconBox: {
                     bg: {
                         value: string;
+                        metadata: {};
                     };
                     border: {
                         value: string;
+                        metadata: {};
                     };
                     iconDefault: {
                         value: string;
+                        metadata: {};
                     };
                     iconSuccess: {
                         value: string;
+                        metadata: {};
                     };
                     iconWarning: {
                         value: string;
+                        metadata: {};
                     };
                     iconDanger: {
                         value: string;
+                        metadata: {};
                     };
                 };
                 testimonial: {
                     bg: {
                         value: string;
+                        metadata: {};
                     };
                     border: {
                         value: string;
+                        metadata: {};
                     };
                     text: {
                         value: string;
+                        metadata: {};
                     };
                     authorName: {
                         value: string;
+                        metadata: {};
                     };
                     authorTitle: {
                         value: string;
+                        metadata: {};
                     };
                     quoteMark: {
                         value: string;
+                        metadata: {};
                     };
                 };
                 pricingCard: {
                     bg: {
                         value: string;
+                        metadata: {};
                     };
                     border: {
                         value: string;
+                        metadata: {};
                     };
                     featuredBg: {
                         value: string;
+                        metadata: {
+                            pair: string;
+                        };
                     };
                     featuredText: {
                         value: string;
+                        metadata: {};
                     };
                     featuredBadgeBg: {
                         value: string;
+                        metadata: {
+                            pair: string;
+                        };
                     };
                     featuredBadgeText: {
                         value: string;
+                        metadata: {};
                     };
                     price: {
                         value: string;
+                        metadata: {};
                     };
                     priceDescription: {
                         value: string;
+                        metadata: {};
                     };
                 };
                 rating: {
                     starFilled: {
                         value: string;
+                        metadata: {};
                     };
                     starEmpty: {
                         value: string;
+                        metadata: {};
                     };
                     text: {
                         value: string;
+                        metadata: {};
                     };
                 };
             };
@@ -554,110 +607,157 @@ interface SpectreGeneratedTokens {
                 badge: {
                     neutralBg: {
                         value: string;
+                        metadata: {
+                            pair: string;
+                        };
                     };
                     neutralText: {
                         value: string;
+                        metadata: {};
                     };
                     infoBg: {
                         value: string;
+                        metadata: {
+                            pair: string;
+                        };
                     };
                     infoText: {
                         value: string;
+                        metadata: {};
                     };
                     successBg: {
                         value: string;
+                        metadata: {
+                            pair: string;
+                        };
                     };
                     successText: {
                         value: string;
+                        metadata: {};
                     };
                     warningBg: {
                         value: string;
+                        metadata: {
+                            pair: string;
+                        };
                     };
                     warningText: {
                         value: string;
+                        metadata: {};
                     };
                     dangerBg: {
                         value: string;
+                        metadata: {
+                            pair: string;
+                        };
                     };
                     dangerText: {
                         value: string;
+                        metadata: {};
                     };
                 };
                 iconBox: {
                     bg: {
                         value: string;
+                        metadata: {};
                     };
                     border: {
                         value: string;
+                        metadata: {};
                     };
                     iconDefault: {
                         value: string;
+                        metadata: {};
                     };
                     iconSuccess: {
                         value: string;
+                        metadata: {};
                     };
                     iconWarning: {
                         value: string;
+                        metadata: {};
                     };
                     iconDanger: {
                         value: string;
+                        metadata: {};
                     };
                 };
                 testimonial: {
                     bg: {
                         value: string;
+                        metadata: {};
                     };
                     border: {
                         value: string;
+                        metadata: {};
                     };
                     text: {
                         value: string;
+                        metadata: {};
                     };
                     authorName: {
                         value: string;
+                        metadata: {};
                     };
                     authorTitle: {
                         value: string;
+                        metadata: {};
                     };
                     quoteMark: {
                         value: string;
+                        metadata: {};
                     };
                 };
                 pricingCard: {
                     bg: {
                         value: string;
+                        metadata: {};
                     };
                     border: {
                         value: string;
+                        metadata: {};
                     };
                     featuredBg: {
                         value: string;
+                        metadata: {
+                            pair: string;
+                        };
                     };
                     featuredText: {
                         value: string;
+                        metadata: {};
                     };
                     featuredBadgeBg: {
                         value: string;
+                        metadata: {
+                            pair: string;
+                        };
                     };
                     featuredBadgeText: {
                         value: string;
+                        metadata: {};
                     };
                     price: {
                         value: string;
+                        metadata: {};
                     };
                     priceDescription: {
                         value: string;
+                        metadata: {};
                     };
                 };
                 rating: {
                     starFilled: {
                         value: string;
+                        metadata: {};
                     };
                     starEmpty: {
                         value: string;
+                        metadata: {};
                     };
                     text: {
                         value: string;
+                        metadata: {};
                     };
                 };
             };
@@ -1274,12 +1374,12 @@ interface ComponentTokens<Value = string> {
     testimonial: ComponentTestimonialTokens<Value>;
     pricingCard: ComponentPricingCardTokens<Value>;
     rating: ComponentRatingTokens<Value>;
-    [key: string]: any;
+    [key: string]: unknown;
 }
 type SpectreModeName = 'default' | 'dark';
 type SemanticTokenValue = string | {
     value: string;
-    [key: string]: any;
+    [key: string]: unknown;
 };
 interface SpectreModeTokens {
     surface: {
