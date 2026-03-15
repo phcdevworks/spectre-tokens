@@ -143,6 +143,12 @@ export const createCssVariableMap = (tokens: SpectreTokens, options: CssVariable
     }
   }
 
+  if ((baseTokens as any).border?.width) {
+    Object.entries((baseTokens as any).border.width).forEach(([key, value]) => {
+      assign(toVariableName(prefix, 'border', 'width', key), value as string);
+    });
+  }
+
   Object.entries(baseTokens.radii).forEach(([key, value]) => {
     assign(toVariableName(prefix, 'radius', key), value);
   });

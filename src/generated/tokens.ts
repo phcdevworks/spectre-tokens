@@ -1199,6 +1199,12 @@ export interface SpectreGeneratedTokens {
     card: string;
     input: string;
   };
+  border: {
+    width: {
+      base: string;
+      thick: string;
+    };
+  };
   surface: {
     page: {
       value: string;
@@ -2495,6 +2501,12 @@ export const coreTokens: SpectreGeneratedTokens = {
   "borders": {
     "card": "{colors.neutral.200}",
     "input": "{colors.neutral.300}"
+  },
+  "border": {
+    "width": {
+      "base": "1px",
+      "thick": "2px"
+    }
   },
   "surface": {
     "page": {

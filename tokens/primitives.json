@@ -141,5 +141,11 @@
   "borders": {
     "card": "{colors.neutral.200}",
     "input": "{colors.neutral.300}"
+  },
+  "border": {
+    "width": {
+      "base": "1px",
+      "thick": "2px"
+    }
   }
 }

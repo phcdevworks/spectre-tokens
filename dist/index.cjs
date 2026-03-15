@@ -1169,6 +1169,12 @@ var coreTokens = {
     "card": "{colors.neutral.200}",
     "input": "{colors.neutral.300}"
   },
+  "border": {
+    "width": {
+      "base": "1px",
+      "thick": "2px"
+    }
+  },
   "surface": {
     "page": {
       "value": "{colors.neutral.50}",
@@ -1434,6 +1440,11 @@ var createCssVariableMap = (tokens2, options = {}) => {
     if (layout.container?.maxWidth) {
       assign(toVariableName(prefix, "layout", "container", "max-width"), layout.container.maxWidth);
     }
+  }
+  if (baseTokens.border?.width) {
+    Object.entries(baseTokens.border.width).forEach(([key, value]) => {
+      assign(toVariableName(prefix, "border", "width", key), value);
+    });
   }
   Object.entries(baseTokens.radii).forEach(([key, value]) => {
     assign(toVariableName(prefix, "radius", key), value);
@@ -1812,7 +1823,7 @@ var createTailwindTheme = (source = tokens) => {
   return {
     colors,
     spacing: { ...source.space ?? {} },
-    borderRadius: { ...source.radii },
+    borderRadius: { ...source.radii ?? {} },
     fontFamily,
     fontSize,
     boxShadow: { ...source.shadows },
@@ -1823,6 +1834,10 @@ var createTailwindTheme = (source = tokens) => {
     opacity: { ...source.opacity },
     maxWidth: {
       container: source.layout?.container?.maxWidth
+    },
+    borderWidth: {
+      DEFAULT: source.border?.width.base,
+      ...source.border?.width ?? {}
     }
   };
 };
