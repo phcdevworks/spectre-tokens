@@ -136,6 +136,7 @@ Complete color palette for the Spectre design system.
 | `text.onPage.muted`   | `#334155` | Secondary text   |
 | `text.onPage.subtle`  | `#475569` | Tertiary text    |
 | `text.onPage.meta`    | `#64748b` | Meta information |
+| `text.onPage.brand`   | `#2563eb` | Brand accent text |
 
 ### On Surface
 
@@ -145,6 +146,7 @@ Complete color palette for the Spectre design system.
 | `text.onSurface.muted`   | `#334155` | Secondary on cards |
 | `text.onSurface.subtle`  | `#475569` | Tertiary on cards  |
 | `text.onSurface.meta`    | `#64748b` | Meta on cards      |
+| `text.onSurface.brand`   | `#2563eb` | Brand on cards     |
 
 ## Component Colors
 

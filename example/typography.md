@@ -87,6 +87,14 @@ Size: typography.scale.xs (0.75rem / 1.25rem / 400)
 Color: text.onPage.meta (#64748b)
 ```
 
+### Brand Accent Text
+
+```
+Font: typography.families.sans
+Size: typography.scale.md (1rem / 1.75rem / 600)
+Color: text.onPage.brand (#2563eb)
+```
+
 ---
 
 All typography values are from `tokens/core.json`.
