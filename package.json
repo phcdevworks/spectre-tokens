@@ -62,7 +62,8 @@
     "check:tokens": "tsx scripts/assert-core-tokens.ts",
     "check:contrast": "tsx scripts/check-contrast.ts",
     "check:regression": "tsx scripts/check-tokens-regression.ts",
-    "check": "npm run check:tokens && npm run check:contrast && npm run check:regression",
+    "check:ai": "tsx skills/ai-implementation/scripts/verify-ai-readiness.ts",
+    "check": "npm run check:tokens && npm run check:contrast && npm run check:regression && npm run check:ai",
     "check:all": "npm run check",
     "test": "npm run check"
   },
