@@ -1198,7 +1198,8 @@ var coreTokens = {
         "sm": "1rem",
         "md": "1.5rem",
         "lg": "2rem"
-      }
+      },
+      "maxWidth": "72rem"
     }
   },
   "font": {
@@ -1399,6 +1400,9 @@ var createCssVariableMap = (tokens2, options = {}) => {
       Object.entries(layout.container.paddingInline).forEach(([key, value]) => {
         assign(toVariableName(prefix, "layout", "container", "padding-inline", key), value);
       });
+    }
+    if (layout.container?.maxWidth) {
+      assign(toVariableName(prefix, "layout", "container", "max-width"), layout.container.maxWidth);
     }
   }
   Object.entries(baseTokens.radii).forEach(([key, value]) => {
@@ -1786,7 +1790,10 @@ var createTailwindTheme = (source = tokens) => {
     zIndex: { ...source.zIndex },
     transitionDuration: { ...source.transitions.duration },
     transitionTimingFunction: { ...source.transitions.easing },
-    opacity: { ...source.opacity }
+    opacity: { ...source.opacity },
+    maxWidth: {
+      container: source.layout?.container?.maxWidth
+    }
   };
 };
 var tailwindTheme = createTailwindTheme(tokens);

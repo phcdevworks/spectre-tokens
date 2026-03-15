@@ -137,6 +137,10 @@ export const createCssVariableMap = (tokens: SpectreTokens, options: CssVariable
         assign(toVariableName(prefix, 'layout', 'container', 'padding-inline', key), value);
       });
     }
+
+    if ((layout.container as any)?.maxWidth) {
+      assign(toVariableName(prefix, 'layout', 'container', 'max-width'), (layout.container as any).maxWidth);
+    }
   }
 
   Object.entries(baseTokens.radii).forEach(([key, value]) => {

@@ -175,6 +175,7 @@ export interface LayoutTokens {
   };
   container: {
     paddingInline: TokenScale;
+    maxWidth: string;
   };
 }
 
@@ -201,4 +202,5 @@ export interface TailwindTheme {
   transitionDuration: SpectreGeneratedTokens['transitions']['duration'];
   transitionTimingFunction: SpectreGeneratedTokens['transitions']['easing'];
   opacity: SpectreGeneratedTokens['opacity'];
+  maxWidth: Record<string, string | undefined>;
 }

@@ -55,9 +55,12 @@ const createTailwindTheme = (source: Tokens = tokens as Tokens): TailwindTheme =
     zIndex: { ...source.zIndex },
     transitionDuration: { ...source.transitions.duration },
     transitionTimingFunction: { ...source.transitions.easing },
-    opacity: { ...source.opacity }
+    opacity: { ...source.opacity },
+    maxWidth: {
+      container: source.layout?.container?.maxWidth
+    }
   };
-};
+}
 
 export const tailwindTheme = createTailwindTheme(tokens as Tokens);
 export const tailwindPreset = {

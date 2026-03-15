@@ -150,6 +150,7 @@
   --sp-layout-container-padding-inline-sm: 1rem;
   --sp-layout-container-padding-inline-md: 1.5rem;
   --sp-layout-container-padding-inline-lg: 2rem;
+  --sp-layout-container-max-width: 72rem;
   --sp-radius-none: 0;
   --sp-radius-sm: 2px;
   --sp-radius-md: 4px;
