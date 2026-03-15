@@ -1,9 +1,6 @@
-import { readFileSync } from 'node:fs';
-import path from 'node:path';
-import { fileURLToPath } from 'node:url';
+import { loadMergedTokens } from './token-utils';
 
-const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const tokens = JSON.parse(readFileSync(path.join(__dirname, '../tokens/core.json'), 'utf8'));
+const tokens = loadMergedTokens();
 
 const REQUIRED_PATHS = [
   'surface.page',

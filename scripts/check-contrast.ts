@@ -1,16 +1,11 @@
-import { readFileSync } from 'node:fs';
-import path from 'node:path';
-import { fileURLToPath } from 'node:url';
 import { colord, extend } from 'colord';
 import a11yPlugin from 'colord/plugins/a11y';
+import { loadMergedTokens } from './token-utils';
 import type { SpectreTokens } from '../src/types';
 
 extend([a11yPlugin]);
 
-const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const CORE_TOKENS_PATH = path.join(__dirname, '../tokens/core.json');
-
-const tokens = JSON.parse(readFileSync(CORE_TOKENS_PATH, 'utf8'));
+const tokens = loadMergedTokens();
 
 /**
  * Resolves a token reference like "{colors.info.600}" to its value.

@@ -1,4 +1,4 @@
-import coreTokens from '../tokens/core.json';
+import { coreTokens } from './generated/tokens';
 
 import { generateCssVariables } from './css';
 import type { SpectreTokens, TailwindTheme, Tokens } from './types';
@@ -9,7 +9,7 @@ export type {
   Tokens, TokenScale, TransitionTokens, TypographyTokens
 } from './types';
 
-const tokens: SpectreTokens = coreTokens as SpectreTokens;
+const tokens: SpectreTokens = coreTokens;
 
 const sanitizeFontFamily = (value: string): string[] =>
   value
