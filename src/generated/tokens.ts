@@ -382,73 +382,122 @@ export interface SpectreGeneratedTokens {
         badge: {
           neutralBg: {
             value: string;
+            metadata: {
+              pair: string;
+            };
           };
           neutralText: {
             value: string;
+            metadata: {
+            };
           };
           infoBg: {
             value: string;
+            metadata: {
+              pair: string;
+            };
           };
           infoText: {
             value: string;
+            metadata: {
+            };
           };
           successBg: {
             value: string;
+            metadata: {
+              pair: string;
+            };
           };
           successText: {
             value: string;
+            metadata: {
+            };
           };
           warningBg: {
             value: string;
+            metadata: {
+              pair: string;
+            };
           };
           warningText: {
             value: string;
+            metadata: {
+            };
           };
           dangerBg: {
             value: string;
+            metadata: {
+              pair: string;
+            };
           };
           dangerText: {
             value: string;
+            metadata: {
+            };
           };
         };
         iconBox: {
           bg: {
             value: string;
+            metadata: {
+            };
           };
           border: {
             value: string;
+            metadata: {
+            };
           };
           iconDefault: {
             value: string;
+            metadata: {
+            };
           };
           iconSuccess: {
             value: string;
+            metadata: {
+            };
           };
           iconWarning: {
             value: string;
+            metadata: {
+            };
           };
           iconDanger: {
             value: string;
+            metadata: {
+            };
           };
         };
         testimonial: {
           bg: {
             value: string;
+            metadata: {
+            };
           };
           border: {
             value: string;
+            metadata: {
+            };
           };
           text: {
             value: string;
+            metadata: {
+            };
           };
           authorName: {
             value: string;
+            metadata: {
+            };
           };
           authorTitle: {
             value: string;
+            metadata: {
+            };
           };
           quoteMark: {
             value: string;
+            metadata: {
+            };
           };
         };
         pricingCard: {
@@ -498,12 +547,18 @@ export interface SpectreGeneratedTokens {
         rating: {
           starFilled: {
             value: string;
+            metadata: {
+            };
           };
           starEmpty: {
             value: string;
+            metadata: {
+            };
           };
           text: {
             value: string;
+            metadata: {
+            };
           };
         };
       };
@@ -587,73 +642,122 @@ export interface SpectreGeneratedTokens {
         badge: {
           neutralBg: {
             value: string;
+            metadata: {
+              pair: string;
+            };
           };
           neutralText: {
             value: string;
+            metadata: {
+            };
           };
           infoBg: {
             value: string;
+            metadata: {
+              pair: string;
+            };
           };
           infoText: {
             value: string;
+            metadata: {
+            };
           };
           successBg: {
             value: string;
+            metadata: {
+              pair: string;
+            };
           };
           successText: {
             value: string;
+            metadata: {
+            };
           };
           warningBg: {
             value: string;
+            metadata: {
+              pair: string;
+            };
           };
           warningText: {
             value: string;
+            metadata: {
+            };
           };
           dangerBg: {
             value: string;
+            metadata: {
+              pair: string;
+            };
           };
           dangerText: {
             value: string;
+            metadata: {
+            };
           };
         };
         iconBox: {
           bg: {
             value: string;
+            metadata: {
+            };
           };
           border: {
             value: string;
+            metadata: {
+            };
           };
           iconDefault: {
             value: string;
+            metadata: {
+            };
           };
           iconSuccess: {
             value: string;
+            metadata: {
+            };
           };
           iconWarning: {
             value: string;
+            metadata: {
+            };
           };
           iconDanger: {
             value: string;
+            metadata: {
+            };
           };
         };
         testimonial: {
           bg: {
             value: string;
+            metadata: {
+            };
           };
           border: {
             value: string;
+            metadata: {
+            };
           };
           text: {
             value: string;
+            metadata: {
+            };
           };
           authorName: {
             value: string;
+            metadata: {
+            };
           };
           authorTitle: {
             value: string;
+            metadata: {
+            };
           };
           quoteMark: {
             value: string;
+            metadata: {
+            };
           };
         };
         pricingCard: {
@@ -703,12 +807,18 @@ export interface SpectreGeneratedTokens {
         rating: {
           starFilled: {
             value: string;
+            metadata: {
+            };
           };
           starEmpty: {
             value: string;
+            metadata: {
+            };
           };
           text: {
             value: string;
+            metadata: {
+            };
           };
         };
       };

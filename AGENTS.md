@@ -8,10 +8,11 @@ Never break the contract. Because this package is a dependency for seven other l
 
 ## Core Directives
 
-1. TypeScript is Non-Negotiable: We do not ship or author JavaScript. If you are writing logic for transforms or exports, it must be strictly typed. Avoid `any` at all costs; if a type is complex, use a Generic that stays readable.
-2. The JSON is the Source: The authoritative values live in `tokens/*.json`. You are forbidden from "fixing" values in `dist/` or `src/generated/`. If a hex code is wrong, you fix it in the JSON and run the build to propagate the change.
-3. Semantic Mapping over Literals: We do not talk in colors; we talk in roles. Always map a literal palette value (e.g., `gray-900`) to a semantic role (e.g., `surface-primary`). This allows the "Nervous System" of the app to switch themes without changing a single line of component code.
-4. Framework Agnosticism: This layer must never know about React, Lit, or Astro. It exports raw constants, CSS variables, and Tailwind configurations that others consume. Keep it "boring" and standards-compliant.
+1. TypeScript is Non-Negotiable: We do not ship or author JavaScript. This includes scripts and build utilities. If you are writing logic for transforms or exports, it must be strictly typed.
+2. The `any` Keyword is Forbidden: Avoid `any` at all costs. If a type is complex or dynamic, use `unknown` combined with type-guards, or cast to a local `Record<string, unknown>` for "grep-able" property access.
+3. The JSON is the Source: The authoritative values live in `tokens/*.json`. You are forbidden from "fixing" values in `dist/` or `src/generated/`. If a hex code is wrong, you fix it in the JSON and run the build to propagate the change.
+4. Semantic Mapping over Literals: We do not talk in colors; we talk in roles. Always map a literal palette value (e.g., `gray-900`) to a semantic role (e.g., `surface-primary`). This allows the "Nervous System" of the app to switch themes without changing a single line of component code.
+5. Framework Agnosticism: This layer must never know about React, Lit, or Astro. It exports raw constants, CSS variables, and Tailwind configurations that others consume. Keep it "boring" and standards-compliant.
 
 ## Implementation Guardrails
 

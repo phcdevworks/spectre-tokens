@@ -4,7 +4,8 @@ import type {
   CssVariableMap,
   CssVariableOptions,
   SpectreTokens,
-  Tokens
+  Tokens,
+  TypographyScaleEntry
 } from './types';
 
 const DEFAULT_PREFIX = 'sp';
@@ -38,12 +39,12 @@ const ICON_BOX_FIELDS: Array<{ name: string; tokenKey: keyof ComponentIconBoxTok
   { name: 'icon-danger', tokenKey: 'iconDanger' }
 ];
 
-const resolveTokenReference = (tokens: any, reference: string): string => {
+const resolveTokenReference = (tokens: SpectreTokens, reference: string): string => {
   const path = reference.slice(1, -1).split('.');
-  let current = tokens;
+  let current: unknown = tokens;
   for (const part of path) {
-    if (current && typeof current === 'object' && part in current) {
-      current = current[part];
+    if (current && typeof current === 'object' && part in (current as Record<string, unknown>)) {
+      current = (current as Record<string, unknown>)[part];
     } else {
       return reference;
     }
@@ -69,7 +70,7 @@ const hexToRgba = (hex: string, opacity: string): string => {
   return `rgba(${r}, ${g}, ${b}, ${opacity})`;
 };
 
-const resolveValue = (tokens: any, value: any): string => {
+const resolveValue = (tokens: SpectreTokens, value: unknown): string => {
   let str = String(value);
   const regex = /\{([^}]+)\}/g;
   
@@ -111,28 +112,28 @@ export const createCssVariableMap = (tokens: SpectreTokens, options: CssVariable
   }
 
   if (baseTokens.layout) {
-    const { section, stack, container } = baseTokens.layout;
+    const layout = baseTokens.layout as unknown as Record<string, Record<string, Record<string, string>>>;
 
-    if (section?.padding) {
-      Object.entries(section.padding).forEach(([key, value]) => {
+    if (layout.section?.padding) {
+      Object.entries(layout.section.padding).forEach(([key, value]) => {
         assign(toVariableName(prefix, 'layout', 'section', 'padding', key), value);
       });
     }
 
-    if (section?.gap) {
-      Object.entries(section.gap).forEach(([key, value]) => {
+    if (layout.section?.gap) {
+      Object.entries(layout.section.gap).forEach(([key, value]) => {
         assign(toVariableName(prefix, 'layout', 'section', 'gap', key), value);
       });
     }
 
-    if (stack?.gap) {
-      Object.entries(stack.gap).forEach(([key, value]) => {
+    if (layout.stack?.gap) {
+      Object.entries(layout.stack.gap).forEach(([key, value]) => {
         assign(toVariableName(prefix, 'layout', 'stack', 'gap', key), value);
       });
     }
 
-    if (container?.paddingInline) {
-      Object.entries(container.paddingInline).forEach(([key, value]) => {
+    if (layout.container?.paddingInline) {
+      Object.entries(layout.container.paddingInline).forEach(([key, value]) => {
         assign(toVariableName(prefix, 'layout', 'container', 'padding-inline', key), value);
       });
     }
@@ -164,7 +165,8 @@ export const createCssVariableMap = (tokens: SpectreTokens, options: CssVariable
   }
 
   Object.entries(typographyScale).forEach(([key, entry]) => {
-    assign(toVariableName(prefix, 'font', key, 'letter-spacing'), 'letterSpacing' in entry ? (entry as any).letterSpacing : undefined);
+    const scaleEntry = entry as unknown as TypographyScaleEntry;
+    assign(toVariableName(prefix, 'font', key, 'letter-spacing'), scaleEntry.letterSpacing);
   });
 
   assign(toVariableName(prefix, 'text', 'on', 'page', 'default'), tokens.text.onPage.default);
@@ -237,16 +239,18 @@ export const createCssVariableMap = (tokens: SpectreTokens, options: CssVariable
   });
 
   // Animation tokens
-  Object.entries(baseTokens.animations).forEach(([name, animation]) => {
-    assign(toVariableName(prefix, 'animation', name, 'duration'), animation.duration);
-    assign(toVariableName(prefix, 'animation', name, 'easing'), animation.easing);
-    assign(toVariableName(prefix, 'animation', name, 'keyframes'), animation.keyframes);
-  });
+  if (baseTokens.animations) {
+    Object.entries(baseTokens.animations as unknown as Record<string, { duration: string; easing: string; keyframes: string }>).forEach(([name, animation]) => {
+      assign(toVariableName(prefix, 'animation', name, 'duration'), animation.duration);
+      assign(toVariableName(prefix, 'animation', name, 'easing'), animation.easing);
+      assign(toVariableName(prefix, 'animation', name, 'keyframes'), animation.keyframes);
+    });
+  }
 
   return map;
 };
 
-const resolveSemanticValue = (value: unknown, tokens: any): string | undefined => {
+const resolveSemanticValue = (value: unknown, tokens: SpectreTokens): string | undefined => {
   if (typeof value === 'string' || typeof value === 'number') {
     return resolveValue(tokens, value);
   }
@@ -259,7 +263,7 @@ const resolveSemanticValue = (value: unknown, tokens: any): string | undefined =
 const getPath = (source: unknown, path: string[]): unknown =>
   path.reduce<unknown>((acc, key) => (acc && typeof acc === 'object' ? (acc as Record<string, unknown>)[key] : undefined), source);
 
-const pickSemantic = (tokens: any, ...candidates: unknown[]): string | undefined => {
+const pickSemantic = (tokens: SpectreTokens, ...candidates: unknown[]): string | undefined => {
   for (const candidate of candidates) {
     const resolved = resolveSemanticValue(candidate, tokens);
     if (resolved !== undefined) return resolved;

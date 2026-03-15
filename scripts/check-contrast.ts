@@ -3,6 +3,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { colord, extend } from 'colord';
 import a11yPlugin from 'colord/plugins/a11y';
+import type { SpectreTokens } from '../src/types';
 
 extend([a11yPlugin]);
 
@@ -15,7 +16,7 @@ const tokens = JSON.parse(readFileSync(CORE_TOKENS_PATH, 'utf8'));
  * Resolves a token reference like "{colors.info.600}" to its value.
  * Supports nested references and composite values.
  */
-function resolveToken(pathStr: string, allTokens: any): string {
+function resolveToken(pathStr: string, allTokens: SpectreTokens): string {
   if (!pathStr || typeof pathStr !== 'string' || !pathStr.includes('{')) {
     if (typeof pathStr === 'string' && pathStr.includes(' / ')) {
       return pathStr.split(' / ')[0].trim();
@@ -30,17 +31,16 @@ function resolveToken(pathStr: string, allTokens: any): string {
   const fullMatch = match[0];
   const cleanPath = match[1];
   const parts = cleanPath.split('.');
-  let current = allTokens;
-
+  let current: unknown = allTokens;
   for (const part of parts) {
-    if (!current || typeof current !== 'object' || current[part] === undefined) {
+    if (!current || typeof current !== 'object' || (current as Record<string, unknown>)[part] === undefined) {
       throw new Error(`Token reference not found: ${fullMatch} at part "${part}"`);
     }
-    current = current[part];
+    current = (current as Record<string, unknown>)[part];
   }
 
-  const value = (current !== null && typeof current === 'object' && 'value' in current)
-    ? (current as any).value
+  const value = (current !== null && typeof current === 'object' && 'value' in (current as Record<string, unknown>))
+    ? (current as unknown as { value: unknown }).value
     : current;
 
   if (typeof value !== 'string') {
@@ -58,16 +58,18 @@ function resolveToken(pathStr: string, allTokens: any): string {
 
 const failures: string[] = [];
 
-function checkTokensRecursively(obj: any, currentPath: string) {
-  for (const key in obj) {
-    const value = obj[key];
+function checkTokensRecursively(obj: Record<string, unknown> | SpectreTokens, currentPath: string) {
+  const records = obj as Record<string, unknown>;
+  for (const key in records) {
+    const value = records[key];
     const fullPath = currentPath ? `${currentPath}.${key}` : key;
 
     try {
-      if (typeof value === 'object' && value !== null) {
-        if ('value' in value && value.metadata?.pair) {
-          const bgValue = resolveToken(value.value, tokens);
-          const pairPath = value.metadata.pair;
+      if (value && typeof value === 'object') {
+        const valObj = value as { value: string; metadata?: { pair?: string } };
+        if ('value' in valObj && valObj.metadata?.pair) {
+          const bgValue = resolveToken(valObj.value, tokens);
+          const pairPath = valObj.metadata.pair;
           const textValue = resolveToken(`{${pairPath}}`, tokens);
 
           const contrast = colord(bgValue).contrast(textValue);
@@ -77,11 +79,11 @@ function checkTokensRecursively(obj: any, currentPath: string) {
             failures.push(`Contrast failure: ${fullPath} (${bgValue}) vs ${pairPath} (${textValue}) = ${contrast.toFixed(2)}:1`);
           }
         } else {
-          checkTokensRecursively(value, fullPath);
+          checkTokensRecursively(value as Record<string, unknown>, fullPath);
         }
       }
-    } catch (err: any) {
-      console.error(`[ERROR] ${fullPath}: ${err.message}`);
+    } catch (err: unknown) {
+      console.error(`[ERROR] ${fullPath}: ${(err as Error).message}`);
       process.exit(1);
     }
   }

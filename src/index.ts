@@ -38,7 +38,7 @@ const createTailwindTheme = (source: Tokens = tokens as Tokens): TailwindTheme =
       {
         lineHeight: entry.lineHeight,
         ...(entry.fontWeight ? { fontWeight: entry.fontWeight } : {}),
-        ...('letterSpacing' in entry ? { letterSpacing: (entry as any).letterSpacing } : {})
+        ...('letterSpacing' in entry ? { letterSpacing: entry.letterSpacing } : {})
       }
     ];
     return acc;

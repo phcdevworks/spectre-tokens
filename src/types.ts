@@ -127,12 +127,12 @@ export interface ComponentTokens<Value = string> {
   testimonial: ComponentTestimonialTokens<Value>;
   pricingCard: ComponentPricingCardTokens<Value>;
   rating: ComponentRatingTokens<Value>;
-  [key: string]: any;
+  [key: string]: unknown;
 }
 
 export type SpectreModeName = 'default' | 'dark';
 
-export type SemanticTokenValue = string | { value: string;[key: string]: any };
+export type SemanticTokenValue = string | { value: string; [key: string]: unknown };
 
 export interface SpectreModeTokens {
   surface: {
