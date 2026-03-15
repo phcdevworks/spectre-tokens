@@ -1138,6 +1138,12 @@ interface SpectreGeneratedTokens {
         card: string;
         input: string;
     };
+    border: {
+        width: {
+            base: string;
+            thick: string;
+        };
+    };
     surface: {
         page: {
             value: string;
@@ -1474,6 +1480,7 @@ interface TailwindTheme {
     transitionTimingFunction: SpectreGeneratedTokens['transitions']['easing'];
     opacity: SpectreGeneratedTokens['opacity'];
     maxWidth: Record<string, string | undefined>;
+    borderWidth: Record<string, string | undefined>;
 }
 
 declare const generateCssVariables: (tokens: SpectreTokens, options?: CssVariableOptions) => string;

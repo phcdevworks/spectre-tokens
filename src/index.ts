@@ -47,7 +47,7 @@ const createTailwindTheme = (source: Tokens = tokens as Tokens): TailwindTheme =
   return {
     colors,
     spacing: { ...(source.space ?? {}) },
-    borderRadius: { ...source.radii },
+    borderRadius: { ...(source.radii ?? {}) },
     fontFamily,
     fontSize,
     boxShadow: { ...source.shadows },
@@ -58,6 +58,10 @@ const createTailwindTheme = (source: Tokens = tokens as Tokens): TailwindTheme =
     opacity: { ...source.opacity },
     maxWidth: {
       container: source.layout?.container?.maxWidth
+    },
+    borderWidth: {
+      DEFAULT: source.border?.width.base,
+      ...(source.border?.width ?? {})
     }
   };
 }

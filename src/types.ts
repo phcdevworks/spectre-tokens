@@ -203,4 +203,5 @@ export interface TailwindTheme {
   transitionTimingFunction: SpectreGeneratedTokens['transitions']['easing'];
   opacity: SpectreGeneratedTokens['opacity'];
   maxWidth: Record<string, string | undefined>;
+  borderWidth: Record<string, string | undefined>;
 }
