@@ -14,8 +14,9 @@ Complete color palette including:
 - Semantic colors: Success (green), Warning (amber), Error (red), Info (blue)
 - Focus colors (primary, error, info)
 - Surface colors (page, card, input, overlay)
-- Text colors (onPage, onSurface with default, muted, subtle, meta variants)
+- Text colors (onPage, onSurface with default, muted, subtle, meta, and **brand** variants)
 - Component-specific colors (badge, card, input, button, iconBox, testimonial, pricingCard, rating)
+- **Interactive state tokens** (hover, active, disabled) for core components
 - Dark mode variants for all component colors
 
 ### 📝 [Typography](typography.md)

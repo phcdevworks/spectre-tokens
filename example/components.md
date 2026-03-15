@@ -8,40 +8,45 @@ Component-specific design tokens for the Spectre design system.
 
 ### Neutral Badge
 
-| Property      | Default        | Dark Mode      |
-| ------------- | -------------- | -------------- |
-| Background    | `#f1f5f9`      | `#1e293b`      |
-| Text          | `#475569`      | `#cbd5e1`      |
-| Border Radius | `999px` (pill) | `999px` (pill) |
-| Padding       | `4px 12px`     | `4px 12px`     |
+| Property           | Default        | Dark Mode      |
+| ------------------ | -------------- | -------------- |
+| Background         | `#f1f5f9`      | `#1e293b`      |
+| Background (Hover) | `#e2e8f0`      | `#1e293b`      |
+| Text               | `#475569`      | `#cbd5e1`      |
+| Border Radius      | `999px` (pill) | `999px` (pill) |
+| Padding            | `4px 12px`     | `4px 12px`     |
 
 ### Info Badge
 
 | Property   | Default   | Dark Mode |
 | ---------- | --------- | --------- |
-| Background | `#dbeafe` | `#1e40af` |
-| Text       | `#1e40af` | `#dbeafe` |
+| Background         | `#dbeafe` | `#1e40af` |
+| Background (Hover) | `#bfdbfe` | `#1e40af` |
+| Text               | `#1e40af` | `#dbeafe` |
 
 ### Success Badge
 
 | Property   | Default   | Dark Mode |
 | ---------- | --------- | --------- |
-| Background | `#dcfce7` | `#166534` |
-| Text       | `#166534` | `#dcfce7` |
+| Background         | `#dcfce7` | `#166534` |
+| Background (Hover) | `#bbf7d0` | `#166534` |
+| Text               | `#166534` | `#dcfce7` |
 
 ### Warning Badge
 
 | Property   | Default   | Dark Mode |
 | ---------- | --------- | --------- |
-| Background | `#fef3c7` | `#92400e` |
-| Text       | `#92400e` | `#fef3c7` |
+| Background         | `#fef3c7` | `#92400e` |
+| Background (Hover) | `#fde68a` | `#92400e` |
+| Text               | `#92400e` | `#fef3c7` |
 
 ### Danger Badge
 
 | Property   | Default   | Dark Mode |
 | ---------- | --------- | --------- |
-| Background | `#fee2e2` | `#991b1b` |
-| Text       | `#991b1b` | `#fee2e2` |
+| Background         | `#fee2e2` | `#991b1b` |
+| Background (Hover) | `#fecaca` | `#991b1b` |
+| Text               | `#991b1b` | `#fee2e2` |
 
 **Usage:** Status indicators, labels, tags, counts
 

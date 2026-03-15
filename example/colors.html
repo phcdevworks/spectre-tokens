@@ -364,6 +364,25 @@
       background: rgba(15, 23, 42, 0.6);
       color: white;
     }
+
+    .text-role-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .text-role-example {
+      padding: 1.5rem;
+      border-radius: 8px;
+      border: 1px solid #e2e8f0;
+      background: #ffffff;
+    }
+
+    .text-default { color: #0f172a; }
+    .text-muted { color: #334155; }
+    .text-subtle { color: #475569; }
+    .text-meta { color: #64748b; }
+    .text-brand { color: #2563eb; font-weight: 600; }
   </style>
 </head>
 
@@ -712,23 +731,32 @@
     </div>
 
     <div class="section">
-      <h2>Surface Colors</h2>
-      <div class="surface-grid">
-        <div class="surface-box surface-page">
-          <div class="color-label">Page</div>
-          <div class="color-value">#f8fafc</div>
+      <h2>Text Roles</h2>
+      <div class="text-role-grid">
+        <div class="text-role-example">
+          <div class="color-label">Default</div>
+          <p class="text-default">The quick brown fox jumps over the lazy dog.</p>
+          <div class="color-value">text.onPage.default (#0f172a)</div>
         </div>
-        <div class="surface-box surface-card">
-          <div class="color-label">Card</div>
-          <div class="color-value">#ffffff</div>
+        <div class="text-role-example">
+          <div class="color-label">Muted</div>
+          <p class="text-muted">The quick brown fox jumps over the lazy dog.</p>
+          <div class="color-value">text.onPage.muted (#334155)</div>
         </div>
-        <div class="surface-box surface-input">
-          <div class="color-label">Input</div>
-          <div class="color-value">#ffffff</div>
+        <div class="text-role-example">
+          <div class="color-label">Subtle</div>
+          <p class="text-subtle">The quick brown fox jumps over the lazy dog.</p>
+          <div class="color-value">text.onPage.subtle (#475569)</div>
         </div>
-        <div class="surface-box surface-overlay">
-          <div class="color-label">Overlay</div>
-          <div class="color-value">rgba(15,23,42,0.6)</div>
+        <div class="text-role-example">
+          <div class="color-label">Meta</div>
+          <p class="text-meta">Posted on March 15, 2026</p>
+          <div class="color-value">text.onPage.meta (#64748b)</div>
+        </div>
+        <div class="text-role-example">
+          <div class="color-label">Brand</div>
+          <p class="text-brand">Featured Highlighted Content</p>
+          <div class="color-value">text.onPage.brand (#2563eb)</div>
         </div>
       </div>
     </div>
