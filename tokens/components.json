@@ -68,7 +68,8 @@
       "bgActive": { "value": "{colors.info.800}" },
       "bgDisabled": { "value": "{colors.neutral.200}" },
       "text": { "value": "{colors.white}" },
-      "textDisabled": { "value": "{colors.neutral.400}" }
+      "textDisabled": { "value": "{colors.neutral.400}" },
+      "focusRing": { "value": "{colors.info.500} / 0.4" }
     },
     "secondary": {
       "bg": { "value": "{colors.white}", "metadata": { "pair": "buttons.secondary.text" } },
