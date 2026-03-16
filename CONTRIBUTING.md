@@ -2,64 +2,25 @@
 
 Thanks for helping improve Spectre Tokens! This package is the single source of truth for every Spectre design token and is consumed by Spectre UI, Spectre Blocks, Spectre Astro, Spectre 11ty, and future projects. Keeping the token definitions clean, typed, and well-documented ensures every downstream experience stays consistent.
 
-## Spectre Design Philosophy
+## 🏛️ Spectre Design Philosophy
 
-Spectre is a **specification-driven design system** built on three strict layers:
+Spectre is a **specification-driven design system** built on a strict hierarchy:
 
-### 1. @phcdevworks/spectre-tokens (Foundation)
+### 1. @phcdevworks/spectre-tokens (Layer 1 - DNA)
+- **Purpose**: Single source of truth for design values (colors, spacing, typography, semantic roles).
+- **Rules**: Defines semantic meaning, not UI behavior. Designers own JSON; engineers maintain transforms.
 
-**Purpose**: Single source of truth for design values (colors, surfaces, text roles, space, radii, shadows, etc.)
+### 2. @phcdevworks/spectre-ui (Layer 2 - The Blueprint)
+- **Purpose**: Converts tokens into real CSS and class recipes.
+- **Rules**: MUST consume tokens, MUST NOT redefine values. Every CSS selector has a matching recipe.
 
-**Exports**: CSS variables (`--sp-*`), TypeScript token object, Tailwind-compatible theme mappings
+### 3. Framework Adapters (Layer 3 - Delivery)
+- **Purpose**: Map Layer 2 to specific frameworks (WordPress, Astro, etc.).
+- **Rules**: Adapters never define styles or duplicate CSS.
 
-**Rules**:
+> **The Golden Rule**: Tokens define *meaning*. UI defines *structure*. Adapters define *delivery*.
 
-- Tokens define semantic meaning, not UI behavior
-- UI must never invent new colors or values
-- Designers own `tokens/*.json`; engineers maintain `src/` transforms
-- Contrast targets and accessibility constraints are encoded at the token level
-
-**Status**: v0.1.0 released with stable semantic roles (`surface.*`, `text.*`, `component.*`) and considered correct/locked
-
-### 2. @phcdevworks/spectre-ui (Framework-Agnostic UI Layer)
-
-**Purpose**: Converts tokens into real CSS and class recipes
-
-**Ships**:
-
-- `index.css` (canonical CSS bundle: tokens + base + components + utilities)
-- `base.css` (resets + globals)
-- `components.css` (`.sp-btn`, `.sp-card`, `.sp-input`, etc.)
-- `utilities.css` (`.sp-stack`, `.sp-container`, etc.)
-- Type-safe recipes: `getButtonClasses`, `getCardClasses`, `getInputClasses`
-
-**Rules**:
-
-- UI must consume tokens, not redefine design values
-- Literal values in CSS are fallbacks only
-- Every CSS selector has a matching recipe where applicable
-- Tailwind preset is optional and non-authoritative
-
-**Status**: v0.1.0 released, hardened and aligned to tokens
-
-### 3. Adapters (WordPress, Astro, etc.)
-
-**Purpose**: Thin framework wrappers around spectre-ui; automatically sync and load the Spectre UI CSS bundle
-
-**Rules**:
-
-- Adapters never define styles, never duplicate CSS, never load tokens directly
-- All design values come from tokens, all CSS comes from spectre-ui
-- Adapters only translate and integrate
-
-### Golden Rule (Non-Negotiable)
-
-**Tokens define meaning. UI defines structure. Adapters only translate.**
-
-- If it's a design token → belongs in `@phcdevworks/spectre-tokens`
-- If it's a CSS class or style → belongs in `@phcdevworks/spectre-ui`
-- If it's framework integration → belongs in an adapter
-
+---
 ## Development Setup
 
 1. Clone the repository:

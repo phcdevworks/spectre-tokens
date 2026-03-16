@@ -1,12 +1,23 @@
 # @phcdevworks/spectre-tokens
 
-JSON-first design tokens that power Spectre UI, Spectre Blocks, Spectre Astro, Spectre 11ty, and every future Spectre surface.
+### **The DNA (Layer 1 of the Spectre 8-Layer Arsenal)**
 
-🤝 **[Contributing Guide](CONTRIBUTING.md)** | 📝 **[Changelog](CHANGELOG.md)** | 🎨 **[Token Examples](example/examples.md)**
+`@phcdevworks/spectre-tokens` is the Single Source of Truth for the entire Spectre ecosystem. It defines the visual language—colors, typography, space, and semantic roles—that all other layers consume.
 
-## Overview
+🤝 **[Contributing Guide](CONTRIBUTING.md)** | 📝 **[Changelog](CHANGELOG.md)** | 🏛️ **[Spectre Arsenal](https://github.com/phcdevworks)**
 
-`@phcdevworks/spectre-tokens` defines Spectre's visual language—colors, typography, space, radii, shadows, breakpoints, z-index scales, transitions, and CRO-focused interaction states. The package turns the raw JSON tokens in `tokens/` into multiple consumption modes (JS, TS, Tailwind, CSS variables) so teams can stay in sync regardless of framework.
+---
+
+## 🏗️ Core Architecture
+
+This package is the foundation. It follows a strict **JSON-First** policy—authoritative values live in `tokens/` and are transformed into multiple consumption modes (CSS, JS/TS, Tailwind).
+
+- 🧬 **Authoritative JSON**: Domain-specific token storage for better maintainability.
+- 🧪 **Type-Safe DNA**: 100% strict TypeScript interfaces derived directly from JSON.
+- 🌪️ **Multi-Format Output**: Generates CSS Variables, Tailwind Presets, and ESM/CJS exports.
+- ♿ **Accessibility First**: Encodes WCAG constraints (contrast, touch targets) at the token level.
+
+---
 
 **Single source of truth:** JSON is the source. Everything else is generated.
 
@@ -1510,9 +1521,17 @@ Issues and pull requests are welcome. If you are proposing token changes, update
 
 For detailed contribution guidelines, see **[CONTRIBUTING.md](CONTRIBUTING.md)**.
 
-## License
+---
 
-See **[LICENSE](LICENSE)** for details.
+## 🏛️ The Spectre Suite Hierarchy
+
+Spectre is built on a non-negotiable hierarchy to prevent style leakage and duplication:
+
+1.  **Layer 1: DNA (This Package)** – The source of truth for all design values.
+2.  **Layer 2: Blueprint (UI)** ([@phcdevworks/spectre-ui](https://github.com/phcdevworks/spectre-ui)) – Translates tokens into CSS structure and recipes.
+3.  **Layer 3: Adapters** (WordPress, Astro, etc.) – Thin bridges that map Layer 2 to specific frameworks.
+
+> **The Golden Rule**: Tokens define *meaning*. UI defines *structure*. Adapters define *delivery*.
 
 ---
 
