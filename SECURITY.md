@@ -2,19 +2,9 @@
 
 ## Supported Versions
 
-We aim to support the latest published version of @phcdevworks/spectre-tokens. Security updates are applied to the current major version only.
+We aim to support the latest published version of the project. Security updates are applied to the current major version only.
 
-| Version | Supported          |
-| ------- | ------------------ |
-| 0.1.x   | :white_check_mark: |
-| < 0.1   | :x:                |
-
-**Please ensure you are using the most recent version** of both:
-
-- The @phcdevworks/spectre-tokens package
-- All dependent Spectre packages (@phcdevworks/spectre-ui, etc.)
-
-Older releases may not receive security fixes.
+**Please ensure you are using the most recent versions** of the Spectre Arsenal packages. Older releases may not receive security fixes.
 
 ## Reporting a Vulnerability
 
@@ -22,12 +12,12 @@ If you discover a security vulnerability, please **DO NOT** open a public issue.
 
 ### How to Report
 
-**Preferred method**: Use [GitHub Security Advisories](https://github.com/phcdevworks/spectre-tokens/security/advisories/new) to privately report vulnerabilities
+**Preferred method**: Use GitHub Security Advisories to privately report vulnerabilities on the specific repository.
 
 **Alternative methods**:
 
-- Email the maintainers at [security contact - see repository]
 - Direct message maintainers through GitHub
+- Email the maintainers if provided in the repository
 
 ### What to Include
 
@@ -60,38 +50,19 @@ We appreciate responsible disclosure and will work with you to:
 
 ## Security Best Practices
 
-When using @phcdevworks/spectre-tokens:
+When using the Spectre Arsenal:
 
-1. **Keep packages updated** to the latest version
-2. **Monitor dependencies** for known vulnerabilities (`npm audit`)
-3. **Use lock files** (package-lock.json) to ensure reproducible builds
-4. **Review token changes** in updates that might affect security-related tokens (e.g., focus ring visibility)
-5. **Follow WCAG guidelines** when implementing tokens in production
-
-## Scope
-
-This security policy covers:
-
-- The @phcdevworks/spectre-tokens package code
-- Token definitions in `tokens/`
-- TypeScript source and build scripts
-- Generated CSS and JavaScript outputs
-
-This policy does **NOT** cover:
-
-- Vulnerabilities in consuming applications
-- Issues in downstream packages (report to those repositories):
-  - @phcdevworks/spectre-ui
-  - @phcdevworks/spectre-ui-wordpress
-  - @phcdevworks/spectre-ui-astro
-- Third-party dependencies (report to their maintainers)
-- Browser-specific rendering issues
+1. **Keep dependencies updated** to the latest versions.
+2. **Monitor dependencies** for known vulnerabilities (`npm audit`).
+3. **Use HTTPS** for all production sites.
+4. **Sanitize user input** when using classes or components dynamically.
+5. **Follow framework security best practices** (WordPress, Astro, React, etc.).
 
 ## Contact
 
 For security-related questions that aren't vulnerabilities:
 
-- Open a [GitHub Discussion](https://github.com/phcdevworks/spectre-tokens/discussions)
+- Open a GitHub Discussion on the repository
 - Tag maintainers in relevant issues
 
-Thank you for helping keep @phcdevworks/spectre-tokens and our community safe!
+Thank you for helping keep the Spectre community safe!
