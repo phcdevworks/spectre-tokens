@@ -1535,9 +1535,4 @@ Spectre is built on a non-negotiable hierarchy to prevent style leakage and dupl
 
 ---
 
-## ❤️ Support Spectre
 
-If Spectre Tokens helps your workflow, consider sponsoring:
-
-- [GitHub Sponsors](https://github.com/sponsors/phcdevworks)
-- [Buy Me a Coffee](https://buymeacoffee.com/phcdevworks)
