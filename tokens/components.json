@@ -79,7 +79,8 @@
       "text": { "value": "{colors.info.600}" },
       "textDisabled": { "value": "{colors.neutral.400}" },
       "border": { "value": "{colors.info.600}" },
-      "borderDisabled": { "value": "{colors.neutral.200}" }
+      "borderDisabled": { "value": "{colors.neutral.200}" },
+      "focusRing": { "value": "{colors.info.500} / 0.4" }
     },
     "ghost": {
       "bg": { "value": "transparent" },
