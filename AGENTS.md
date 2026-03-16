@@ -1,5 +1,7 @@
 # Spectre Agent Instructions: @phcdevworks/spectre-tokens
 
+### **The DNA (Layer 1 of the Spectre 8-Layer Arsenal)**
+
 You are an autonomous agent responsible for Layer 1 of the Spectre 8-Layer Arsenal. This package is the Single Source of Truth for the entire ecosystem. Your mission is to ensure that the "DNA" of the system remains pure, typed, and backward-compatible.
 
 ## The Golden Rule of Evolution
