@@ -249,6 +249,7 @@
   --sp-button-primary-bgdisabled: #e2e8f0;
   --sp-button-primary-text: #ffffff;
   --sp-button-primary-textdisabled: #94a3b8;
+  --sp-button-primary-focusring: rgba(59, 130, 246, 0.4);
   --sp-button-secondary-bg: #ffffff;
   --sp-button-secondary-bghover: #f8fafc;
   --sp-button-secondary-bgactive: #f1f5f9;
