@@ -199,6 +199,9 @@ var coreTokens = {
       },
       "textDisabled": {
         "value": "{colors.neutral.400}"
+      },
+      "focusRing": {
+        "value": "{colors.info.500} / 0.4"
       }
     },
     "secondary": {

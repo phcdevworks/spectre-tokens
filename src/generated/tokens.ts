@@ -208,6 +208,9 @@ export interface SpectreGeneratedTokens {
       textDisabled: {
         value: string;
       };
+      focusRing: {
+        value: string;
+      };
     };
     secondary: {
       bg: {
@@ -1562,6 +1565,9 @@ export const coreTokens: SpectreGeneratedTokens = {
       },
       "textDisabled": {
         "value": "{colors.neutral.400}"
+      },
+      "focusRing": {
+        "value": "{colors.info.500} / 0.4"
       }
     },
     "secondary": {

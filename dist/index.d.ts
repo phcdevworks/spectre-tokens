@@ -199,6 +199,9 @@ interface SpectreGeneratedTokens {
             textDisabled: {
                 value: string;
             };
+            focusRing: {
+                value: string;
+            };
         };
         secondary: {
             bg: {
