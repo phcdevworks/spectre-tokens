@@ -96,7 +96,8 @@
       "bgActive": { "value": "{colors.error.800}" },
       "bgDisabled": { "value": "{colors.error.200}" },
       "text": { "value": "{colors.white}" },
-      "textDisabled": { "value": "{colors.neutral.400}" }
+      "textDisabled": { "value": "{colors.neutral.400}" },
+      "focusRing": { "value": "{colors.error.500} / 0.4" }
     },
     "success": {
       "bg": { "value": "{colors.success.700}", "metadata": { "pair": "buttons.success.text" } },
