@@ -231,6 +231,9 @@ interface SpectreGeneratedTokens {
             borderDisabled: {
                 value: string;
             };
+            focusRing: {
+                value: string;
+            };
         };
         ghost: {
             bg: {
@@ -274,6 +277,9 @@ interface SpectreGeneratedTokens {
             textDisabled: {
                 value: string;
             };
+            focusRing: {
+                value: string;
+            };
         };
         success: {
             bg: {
@@ -295,6 +301,9 @@ interface SpectreGeneratedTokens {
                 value: string;
             };
             textDisabled: {
+                value: string;
+            };
+            focusRing: {
                 value: string;
             };
         };
