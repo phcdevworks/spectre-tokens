@@ -261,6 +261,9 @@ var coreTokens = {
       },
       "borderDisabled": {
         "value": "{colors.neutral.200}"
+      },
+      "focusRing": {
+        "value": "{colors.info.500} / 0.4"
       }
     },
     "ghost": {
@@ -304,6 +307,9 @@ var coreTokens = {
       },
       "textDisabled": {
         "value": "{colors.neutral.400}"
+      },
+      "focusRing": {
+        "value": "{colors.error.500} / 0.4"
       }
     },
     "success": {
@@ -327,6 +333,9 @@ var coreTokens = {
       },
       "textDisabled": {
         "value": "{colors.neutral.400}"
+      },
+      "focusRing": {
+        "value": "{colors.success.500} / 0.4"
       }
     },
     "cta": {
