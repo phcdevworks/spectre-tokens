@@ -265,6 +265,7 @@
   --sp-button-ghost-bgdisabled: transparent;
   --sp-button-ghost-text: #2563eb;
   --sp-button-ghost-textdisabled: #94a3b8;
+  --sp-button-ghost-focusring: rgba(59, 130, 246, 0.4);
   --sp-button-danger-bg: #dc2626;
   --sp-button-danger-bghover: #b91c1c;
   --sp-button-danger-bgactive: #991b1b;
@@ -286,12 +287,14 @@
   --sp-button-cta-text: #0f172a;
   --sp-button-cta-textdisabled: #94a3b8;
   --sp-button-cta-shadow: 0 4px 14px 0 rgba(245, 158, 11, 0.39);
+  --sp-button-cta-focusring: rgba(245, 158, 11, 0.4);
   --sp-button-accent-bg: #7c3aed;
   --sp-button-accent-bghover: #6d28d9;
   --sp-button-accent-bgactive: #1e40af;
   --sp-button-accent-bgdisabled: #ddd6fe;
   --sp-button-accent-text: #ffffff;
   --sp-button-accent-textdisabled: #94a3b8;
+  --sp-button-accent-focusring: rgba(139, 92, 246, 0.4);
   --sp-form-default-bg: #ffffff;
   --sp-form-default-border: #cbd5e1;
   --sp-form-default-text: #0f172a;

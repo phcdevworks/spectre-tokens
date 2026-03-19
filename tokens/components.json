@@ -88,7 +88,8 @@
       "bgActive": { "value": "{colors.info.100}" },
       "bgDisabled": { "value": "transparent" },
       "text": { "value": "{colors.info.600}" },
-      "textDisabled": { "value": "{colors.neutral.400}" }
+      "textDisabled": { "value": "{colors.neutral.400}" },
+      "focusRing": { "value": "{colors.info.500} / 0.4" }
     },
     "danger": {
       "bg": { "value": "{colors.error.600}", "metadata": { "pair": "buttons.danger.text" } },
@@ -115,7 +116,8 @@
       "bgDisabled": { "value": "{colors.warning.200}" },
       "text": { "value": "{colors.neutral.900}" },
       "textDisabled": { "value": "{colors.neutral.400}" },
-      "shadow": { "value": "0 4px 14px 0 {colors.warning.500} / 0.39" }
+      "shadow": { "value": "0 4px 14px 0 {colors.warning.500} / 0.39" },
+      "focusRing": { "value": "{colors.warning.500} / 0.4" }
     },
     "accent": {
       "bg": { "value": "{colors.accent.600}", "metadata": { "pair": "buttons.accent.text" } },
@@ -123,7 +125,8 @@
       "bgActive": { "value": "{colors.accent.800}" },
       "bgDisabled": { "value": "{colors.accent.200}" },
       "text": { "value": "{colors.white}" },
-      "textDisabled": { "value": "{colors.neutral.400}" }
+      "textDisabled": { "value": "{colors.neutral.400}" },
+      "focusRing": { "value": "{colors.accent.500} / 0.4" }
     }
   },
   "forms": {

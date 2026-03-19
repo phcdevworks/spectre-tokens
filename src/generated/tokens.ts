@@ -263,6 +263,9 @@ export interface SpectreGeneratedTokens {
       textDisabled: {
         value: string;
       };
+      focusRing: {
+        value: string;
+      };
     };
     danger: {
       bg: {
@@ -341,6 +344,9 @@ export interface SpectreGeneratedTokens {
       shadow: {
         value: string;
       };
+      focusRing: {
+        value: string;
+      };
     };
     accent: {
       bg: {
@@ -362,6 +368,9 @@ export interface SpectreGeneratedTokens {
         value: string;
       };
       textDisabled: {
+        value: string;
+      };
+      focusRing: {
         value: string;
       };
     };
@@ -1629,6 +1638,9 @@ export const coreTokens: SpectreGeneratedTokens = {
       },
       "textDisabled": {
         "value": "{colors.neutral.400}"
+      },
+      "focusRing": {
+        "value": "{colors.info.500} / 0.4"
       }
     },
     "danger": {
@@ -1707,6 +1719,9 @@ export const coreTokens: SpectreGeneratedTokens = {
       },
       "shadow": {
         "value": "0 4px 14px 0 {colors.warning.500} / 0.39"
+      },
+      "focusRing": {
+        "value": "{colors.warning.500} / 0.4"
       }
     },
     "accent": {
@@ -1730,6 +1745,9 @@ export const coreTokens: SpectreGeneratedTokens = {
       },
       "textDisabled": {
         "value": "{colors.neutral.400}"
+      },
+      "focusRing": {
+        "value": "{colors.accent.500} / 0.4"
       }
     }
   },
