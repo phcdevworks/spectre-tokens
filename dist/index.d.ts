@@ -254,6 +254,9 @@ interface SpectreGeneratedTokens {
             textDisabled: {
                 value: string;
             };
+            focusRing: {
+                value: string;
+            };
         };
         danger: {
             bg: {
@@ -332,6 +335,9 @@ interface SpectreGeneratedTokens {
             shadow: {
                 value: string;
             };
+            focusRing: {
+                value: string;
+            };
         };
         accent: {
             bg: {
@@ -353,6 +359,9 @@ interface SpectreGeneratedTokens {
                 value: string;
             };
             textDisabled: {
+                value: string;
+            };
+            focusRing: {
                 value: string;
             };
         };

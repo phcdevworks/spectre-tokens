@@ -284,6 +284,9 @@ var coreTokens = {
       },
       "textDisabled": {
         "value": "{colors.neutral.400}"
+      },
+      "focusRing": {
+        "value": "{colors.info.500} / 0.4"
       }
     },
     "danger": {
@@ -362,6 +365,9 @@ var coreTokens = {
       },
       "shadow": {
         "value": "0 4px 14px 0 {colors.warning.500} / 0.39"
+      },
+      "focusRing": {
+        "value": "{colors.warning.500} / 0.4"
       }
     },
     "accent": {
@@ -385,6 +391,9 @@ var coreTokens = {
       },
       "textDisabled": {
         "value": "{colors.neutral.400}"
+      },
+      "focusRing": {
+        "value": "{colors.accent.500} / 0.4"
       }
     }
   },
