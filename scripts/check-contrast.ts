@@ -52,7 +52,6 @@ function resolveToken(pathStr: string, allTokens: SpectreTokens): string {
 }
 
 const failures: string[] = [];
-const visited = new Set<string>();
 
 function checkTokensRecursively(obj: Record<string, unknown> | SpectreTokens, currentPath: string) {
   const records = obj as Record<string, unknown>;
