@@ -250,9 +250,15 @@ export interface SpectreGeneratedTokens {
       };
       bgHover: {
         value: string;
+        metadata: {
+          pair: string;
+        };
       };
       bgActive: {
         value: string;
+        metadata: {
+          pair: string;
+        };
       };
       bgDisabled: {
         value: string;
@@ -1640,16 +1646,22 @@ export const coreTokens: SpectreGeneratedTokens = {
         "value": "transparent"
       },
       "bgHover": {
-        "value": "{colors.info.50}"
+        "value": "{colors.info.50}",
+        "metadata": {
+          "pair": "buttons.ghost.text"
+        }
       },
       "bgActive": {
-        "value": "{colors.info.100}"
+        "value": "{colors.info.100}",
+        "metadata": {
+          "pair": "buttons.ghost.text"
+        }
       },
       "bgDisabled": {
         "value": "transparent"
       },
       "text": {
-        "value": "{colors.info.600}"
+        "value": "{colors.info.700}"
       },
       "textDisabled": {
         "value": "{colors.neutral.400}"
