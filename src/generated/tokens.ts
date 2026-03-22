@@ -799,6 +799,9 @@ export interface SpectreGeneratedTokens {
               pair: string;
             };
           };
+          neutralBgHover: {
+            value: string;
+          };
           neutralText: {
             value: string;
             metadata: {
@@ -809,6 +812,9 @@ export interface SpectreGeneratedTokens {
             metadata: {
               pair: string;
             };
+          };
+          infoBgHover: {
+            value: string;
           };
           infoText: {
             value: string;
@@ -821,6 +827,9 @@ export interface SpectreGeneratedTokens {
               pair: string;
             };
           };
+          successBgHover: {
+            value: string;
+          };
           successText: {
             value: string;
             metadata: {
@@ -832,6 +841,9 @@ export interface SpectreGeneratedTokens {
               pair: string;
             };
           };
+          warningBgHover: {
+            value: string;
+          };
           warningText: {
             value: string;
             metadata: {
@@ -842,6 +854,9 @@ export interface SpectreGeneratedTokens {
             metadata: {
               pair: string;
             };
+          };
+          dangerBgHover: {
+            value: string;
           };
           dangerText: {
             value: string;
@@ -2149,6 +2164,9 @@ export const coreTokens: SpectreGeneratedTokens = {
               "pair": "modes.dark.component.badge.neutralText"
             }
           },
+          "neutralBgHover": {
+            "value": "{colors.neutral.600}"
+          },
           "neutralText": {
             "value": "{colors.neutral.100}",
             "metadata": {}
@@ -2158,6 +2176,9 @@ export const coreTokens: SpectreGeneratedTokens = {
             "metadata": {
               "pair": "modes.dark.component.badge.infoText"
             }
+          },
+          "infoBgHover": {
+            "value": "{colors.info.700}"
           },
           "infoText": {
             "value": "{colors.info.100}",
@@ -2169,6 +2190,9 @@ export const coreTokens: SpectreGeneratedTokens = {
               "pair": "modes.dark.component.badge.successText"
             }
           },
+          "successBgHover": {
+            "value": "{colors.success.700}"
+          },
           "successText": {
             "value": "{colors.success.100}",
             "metadata": {}
@@ -2179,6 +2203,9 @@ export const coreTokens: SpectreGeneratedTokens = {
               "pair": "modes.dark.component.badge.warningText"
             }
           },
+          "warningBgHover": {
+            "value": "{colors.warning.700}"
+          },
           "warningText": {
             "value": "{colors.warning.100}",
             "metadata": {}
@@ -2188,6 +2215,9 @@ export const coreTokens: SpectreGeneratedTokens = {
             "metadata": {
               "pair": "modes.dark.component.badge.dangerText"
             }
+          },
+          "dangerBgHover": {
+            "value": "{colors.error.700}"
           },
           "dangerText": {
             "value": "{colors.error.100}",
@@ -2327,16 +2357,16 @@ export const coreTokens: SpectreGeneratedTokens = {
       "900": "#0f172a"
     },
     "accent": {
-      "50": "#eff6ff",
-      "100": "#dbeafe",
+      "50": "#f5f3ff",
+      "100": "#ede9fe",
       "200": "#ddd6fe",
-      "300": "#93c5fd",
-      "400": "#60a5fa",
+      "300": "#c4b5fd",
+      "400": "#a78bfa",
       "500": "#8b5cf6",
       "600": "#7c3aed",
       "700": "#6d28d9",
-      "800": "#1e40af",
-      "900": "#1e3a8a"
+      "800": "#5b21b6",
+      "900": "#4c1d95"
     },
     "success": {
       "50": "#f0fdf4",

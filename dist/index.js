@@ -765,6 +765,9 @@ var coreTokens = {
               "pair": "modes.dark.component.badge.neutralText"
             }
           },
+          "neutralBgHover": {
+            "value": "{colors.neutral.600}"
+          },
           "neutralText": {
             "value": "{colors.neutral.100}",
             "metadata": {}
@@ -774,6 +777,9 @@ var coreTokens = {
             "metadata": {
               "pair": "modes.dark.component.badge.infoText"
             }
+          },
+          "infoBgHover": {
+            "value": "{colors.info.700}"
           },
           "infoText": {
             "value": "{colors.info.100}",
@@ -785,6 +791,9 @@ var coreTokens = {
               "pair": "modes.dark.component.badge.successText"
             }
           },
+          "successBgHover": {
+            "value": "{colors.success.700}"
+          },
           "successText": {
             "value": "{colors.success.100}",
             "metadata": {}
@@ -795,6 +804,9 @@ var coreTokens = {
               "pair": "modes.dark.component.badge.warningText"
             }
           },
+          "warningBgHover": {
+            "value": "{colors.warning.700}"
+          },
           "warningText": {
             "value": "{colors.warning.100}",
             "metadata": {}
@@ -804,6 +816,9 @@ var coreTokens = {
             "metadata": {
               "pair": "modes.dark.component.badge.dangerText"
             }
+          },
+          "dangerBgHover": {
+            "value": "{colors.error.700}"
           },
           "dangerText": {
             "value": "{colors.error.100}",
@@ -943,16 +958,16 @@ var coreTokens = {
       "900": "#0f172a"
     },
     "accent": {
-      "50": "#eff6ff",
-      "100": "#dbeafe",
+      "50": "#f5f3ff",
+      "100": "#ede9fe",
       "200": "#ddd6fe",
-      "300": "#93c5fd",
-      "400": "#60a5fa",
+      "300": "#c4b5fd",
+      "400": "#a78bfa",
       "500": "#8b5cf6",
       "600": "#7c3aed",
       "700": "#6d28d9",
-      "800": "#1e40af",
-      "900": "#1e3a8a"
+      "800": "#5b21b6",
+      "900": "#4c1d95"
     },
     "success": {
       "50": "#f0fdf4",
@@ -1428,12 +1443,14 @@ var createCssVariableMap = (tokens2, options = {}) => {
         assign(toVariableName(prefix, "layout", "container", "padding-inline", key), value);
       });
     }
-    if (layout.container?.maxWidth) {
-      assign(toVariableName(prefix, "layout", "container", "max-width"), layout.container.maxWidth);
+    const container = layout.container;
+    if (container?.maxWidth) {
+      assign(toVariableName(prefix, "layout", "container", "max-width"), container.maxWidth);
     }
   }
-  if (baseTokens.border?.width) {
-    Object.entries(baseTokens.border.width).forEach(([key, value]) => {
+  const border = baseTokens.border;
+  if (border?.width) {
+    Object.entries(border.width).forEach(([key, value]) => {
       assign(toVariableName(prefix, "border", "width", key), value);
     });
   }

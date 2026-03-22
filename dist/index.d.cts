@@ -764,6 +764,9 @@ interface SpectreGeneratedTokens {
                             pair: string;
                         };
                     };
+                    neutralBgHover: {
+                        value: string;
+                    };
                     neutralText: {
                         value: string;
                         metadata: {};
@@ -773,6 +776,9 @@ interface SpectreGeneratedTokens {
                         metadata: {
                             pair: string;
                         };
+                    };
+                    infoBgHover: {
+                        value: string;
                     };
                     infoText: {
                         value: string;
@@ -784,6 +790,9 @@ interface SpectreGeneratedTokens {
                             pair: string;
                         };
                     };
+                    successBgHover: {
+                        value: string;
+                    };
                     successText: {
                         value: string;
                         metadata: {};
@@ -794,6 +803,9 @@ interface SpectreGeneratedTokens {
                             pair: string;
                         };
                     };
+                    warningBgHover: {
+                        value: string;
+                    };
                     warningText: {
                         value: string;
                         metadata: {};
@@ -803,6 +815,9 @@ interface SpectreGeneratedTokens {
                         metadata: {
                             pair: string;
                         };
+                    };
+                    dangerBgHover: {
+                        value: string;
                     };
                     dangerText: {
                         value: string;
