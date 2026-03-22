@@ -5,22 +5,32 @@ All notable changes to this project will be documented here. The format follows 
 ## [2.1.0] - 2026-03-22
 
 ### Added
-- Integrated **ESLint** and **Prettier** into `devDependencies` for automated code health.
-- Added `npm run lint` and `npm run format` scripts for standardized development workflows.
+- **Interactive Accessibility**: Added `focusRing` tokens to all button variants (Primary, Secondary, Success, Danger) and established a top-level `accessibility.focusRing` accessibility token group.
+- **Badge Evolution**: Introduced `BgHover` overrides for dark mode badges to ensure CRO consistency across themes.
+- **Layout & Borders**: Added `borderWidth` tokens with Tailwind mapping and new `maxWidth` container tokens.
+- **Tooling**: Integrated **ESLint** and **Prettier** into `devDependencies` for automated code health.
+- **Auto-Sync**: Standardized `npm run lint` and `npm run format` scripts for standardized development workflows.
 
 ### Changed
-- **Workspace Cleanup**: Purged all legacy Astro configurations from the VS Code workspace.
-- **Task Synchronization**: Aligned VS Code tasks with `package.json` scripts (`build`, `generate`, `lint`, `format`, `check`).
-- **Standardized Ignored Files**: Updated `.gitignore` with common build and OS-level exclusions.
+- **Palette Harmonization**: Harmonized the `accent` color palette for better visual consistency across the ecosystem.
+- **Workspace Modernization**: Replaced legacy `.vscode` settings with a centralized `phcdevworks.workspace` configuration.
+- **Documentation Refresh**: Revised `README.md` and `CONTRIBUTING.md` to emphasize the **DNA (Layer 1)** layer hierarchy and modular token structure.
+- **Project Hygiene**: Standardized ESM import ordering and reformatted the entire codebase for better "grep-ability."
+- **Architecture Purge**: Removed all legacy Astro dependencies and associated associations to the internal `tsup` build pipeline.
 
 ### Removed
-- Removed broken `check:ai` script and references to missing `skills/` directory (incoming in future release).
+- Removed legacy `.vscode` folder and Astro-specific configurations.
+- Temporary AI skill references (preparing for future integration).
+
+### Fixed
+- **Circular Reference Protection**: Implemented robust detection in `check-contrast.ts` via visited set tracking to prevent infinite recursion.
+- **Type Safety**: Eradicated remaining `any` type-casts in `src/css.ts` in favor of strict `Record<string, unknown>` validation.
 
 ## [2.0.0] - 2026-03-15
 
 ### Added
-- Added semantic brand text roles (`text.onPage.brand`, `text.onSurface.brand`) for theme-aware brand typography.
-- Added interactive state tokens (`hoverBg`) to component badge definitions.
+- Associated semantic brand text roles (`text.onPage.brand`, `text.onSurface.brand`) for theme-aware brand typography.
+- Associated interactive state tokens (`hoverBg`) to component badge definitions.
 
 ### Changed
 - **Major Architectural Refactor**: Modularized token storage by splitting the monolithic `core.json` into domain-specific files (`palette.json`, `primitives.json`, `semantic-roles.json`, `components.json`, `typography.json`, `modes.json`).
