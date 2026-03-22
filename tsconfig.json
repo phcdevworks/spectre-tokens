@@ -5,7 +5,7 @@
     "module": "esnext",
     "target": "es2020",
     "moduleResolution": "bundler",
-    "types": [],
+    "types": ["node"],
     "sourceMap": true,
     "declaration": true,
     "declarationMap": true,
@@ -23,7 +23,10 @@
   },
   "include": [
     "src",
-    "tokens"
+    "tokens",
+    "scripts",
+    "eslint.config.ts",
+    "tsup.config.ts"
   ],
   "exclude": [
     "dist",
