@@ -73,14 +73,14 @@ const hexToRgba = (hex: string, opacity: string): string => {
 const resolveValue = (tokens: SpectreTokens, value: unknown): string => {
   let str = String(value);
   const regex = /\{([^}]+)\}/g;
-  
+
   // Resolve all token references in the string
   str = str.replace(regex, (match) => resolveTokenReference(tokens, match));
-  
+
   // Handle "hex / opacity" -> "rgba(r, g, b, opacity)"
   const opacityRegex = /(#[0-9a-fA-F]{3,6})\s*\/\s*([0-9.]+)/g;
   str = str.replace(opacityRegex, (match, hex, opacity) => hexToRgba(hex, opacity));
-  
+
   return str;
 };
 
@@ -368,7 +368,7 @@ export const generateCssVariables = (tokens: SpectreTokens, options: CssVariable
 
   addDark(
     toVariableName(prefix, 'text', 'on', 'page', 'default'),
-    pickSemantic(tokens, 
+    pickSemantic(tokens,
       getPath(darkMode, ['text', 'onPage', 'default']),
       getPath(defaultMode, ['text', 'onPage', 'default']),
       getPath(textAliases, ['onPage', 'default'])
@@ -376,7 +376,7 @@ export const generateCssVariables = (tokens: SpectreTokens, options: CssVariable
   );
   addDark(
     toVariableName(prefix, 'text', 'on', 'page', 'muted'),
-    pickSemantic(tokens, 
+    pickSemantic(tokens,
       getPath(darkMode, ['text', 'onPage', 'muted']),
       getPath(defaultMode, ['text', 'onPage', 'muted']),
       getPath(textAliases, ['onPage', 'muted'])
@@ -384,7 +384,7 @@ export const generateCssVariables = (tokens: SpectreTokens, options: CssVariable
   );
   addDark(
     toVariableName(prefix, 'text', 'on', 'page', 'subtle'),
-    pickSemantic(tokens, 
+    pickSemantic(tokens,
       getPath(darkMode, ['text', 'onPage', 'subtle']),
       getPath(defaultMode, ['text', 'onPage', 'subtle']),
       getPath(textAliases, ['onPage', 'subtle'])
@@ -392,7 +392,7 @@ export const generateCssVariables = (tokens: SpectreTokens, options: CssVariable
   );
   addDark(
     toVariableName(prefix, 'text', 'on', 'page', 'meta'),
-    pickSemantic(tokens, 
+    pickSemantic(tokens,
       getPath(darkMode, ['text', 'onPage', 'meta']),
       getPath(defaultMode, ['text', 'onPage', 'meta']),
       getPath(textAliases, ['onPage', 'meta'])
@@ -400,7 +400,7 @@ export const generateCssVariables = (tokens: SpectreTokens, options: CssVariable
   );
   addDark(
     toVariableName(prefix, 'text', 'on', 'surface', 'default'),
-    pickSemantic(tokens, 
+    pickSemantic(tokens,
       getPath(darkMode, ['text', 'onSurface', 'default']),
       getPath(defaultMode, ['text', 'onSurface', 'default']),
       getPath(textAliases, ['onSurface', 'default'])
@@ -408,7 +408,7 @@ export const generateCssVariables = (tokens: SpectreTokens, options: CssVariable
   );
   addDark(
     toVariableName(prefix, 'text', 'on', 'surface', 'muted'),
-    pickSemantic(tokens, 
+    pickSemantic(tokens,
       getPath(darkMode, ['text', 'onSurface', 'muted']),
       getPath(defaultMode, ['text', 'onSurface', 'muted']),
       getPath(textAliases, ['onSurface', 'muted'])
@@ -416,7 +416,7 @@ export const generateCssVariables = (tokens: SpectreTokens, options: CssVariable
   );
   addDark(
     toVariableName(prefix, 'text', 'on', 'surface', 'subtle'),
-    pickSemantic(tokens, 
+    pickSemantic(tokens,
       getPath(darkMode, ['text', 'onSurface', 'subtle']),
       getPath(defaultMode, ['text', 'onSurface', 'subtle']),
       getPath(textAliases, ['onSurface', 'subtle'])
@@ -424,7 +424,7 @@ export const generateCssVariables = (tokens: SpectreTokens, options: CssVariable
   );
   addDark(
     toVariableName(prefix, 'text', 'on', 'surface', 'meta'),
-    pickSemantic(tokens, 
+    pickSemantic(tokens,
       getPath(darkMode, ['text', 'onSurface', 'meta']),
       getPath(defaultMode, ['text', 'onSurface', 'meta']),
       getPath(textAliases, ['onSurface', 'meta'])
@@ -433,7 +433,7 @@ export const generateCssVariables = (tokens: SpectreTokens, options: CssVariable
 
   addDark(
     toVariableName(prefix, 'component', 'card', 'text'),
-    pickSemantic(tokens, 
+    pickSemantic(tokens,
       getPath(darkMode, ['component', 'card', 'text']),
       getPath(defaultMode, ['component', 'card', 'text']),
       getPath(componentAliases, ['card', 'text'])
@@ -441,7 +441,7 @@ export const generateCssVariables = (tokens: SpectreTokens, options: CssVariable
   );
   addDark(
     toVariableName(prefix, 'component', 'card', 'text-muted'),
-    pickSemantic(tokens, 
+    pickSemantic(tokens,
       getPath(darkMode, ['component', 'card', 'textMuted']),
       getPath(defaultMode, ['component', 'card', 'textMuted']),
       getPath(componentAliases, ['card', 'textMuted'])
@@ -449,7 +449,7 @@ export const generateCssVariables = (tokens: SpectreTokens, options: CssVariable
   );
   addDark(
     toVariableName(prefix, 'component', 'input', 'text'),
-    pickSemantic(tokens, 
+    pickSemantic(tokens,
       getPath(darkMode, ['component', 'input', 'text']),
       getPath(defaultMode, ['component', 'input', 'text']),
       getPath(componentAliases, ['input', 'text'])
@@ -457,7 +457,7 @@ export const generateCssVariables = (tokens: SpectreTokens, options: CssVariable
   );
   addDark(
     toVariableName(prefix, 'component', 'input', 'placeholder'),
-    pickSemantic(tokens, 
+    pickSemantic(tokens,
       getPath(darkMode, ['component', 'input', 'placeholder']),
       getPath(defaultMode, ['component', 'input', 'placeholder']),
       getPath(componentAliases, ['input', 'placeholder'])
@@ -465,7 +465,7 @@ export const generateCssVariables = (tokens: SpectreTokens, options: CssVariable
   );
   addDark(
     toVariableName(prefix, 'button', 'text', 'default'),
-    pickSemantic(tokens, 
+    pickSemantic(tokens,
       getPath(darkMode, ['component', 'button', 'textDefault']),
       getPath(defaultMode, ['component', 'button', 'textDefault']),
       getPath(componentAliases, ['button', 'textDefault'])
@@ -473,7 +473,7 @@ export const generateCssVariables = (tokens: SpectreTokens, options: CssVariable
   );
   addDark(
     toVariableName(prefix, 'button', 'text', 'on', 'primary'),
-    pickSemantic(tokens, 
+    pickSemantic(tokens,
       getPath(darkMode, ['component', 'button', 'textOnPrimary']),
       getPath(defaultMode, ['component', 'button', 'textOnPrimary']),
       getPath(componentAliases, ['button', 'textOnPrimary'])
@@ -482,7 +482,7 @@ export const generateCssVariables = (tokens: SpectreTokens, options: CssVariable
   BADGE_VARIANTS.forEach(({ variant, bgKey, textKey }) => {
     addDark(
       toVariableName(prefix, 'badge', variant, 'bg'),
-      pickSemantic(tokens, 
+      pickSemantic(tokens,
         getPath(darkMode, ['component', 'badge', bgKey]),
         getPath(defaultMode, ['component', 'badge', bgKey]),
         getPath(componentAliases, ['badge', bgKey])
@@ -490,7 +490,7 @@ export const generateCssVariables = (tokens: SpectreTokens, options: CssVariable
     );
     addDark(
       toVariableName(prefix, 'badge', variant, 'text'),
-      pickSemantic(tokens, 
+      pickSemantic(tokens,
         getPath(darkMode, ['component', 'badge', textKey]),
         getPath(defaultMode, ['component', 'badge', textKey]),
         getPath(componentAliases, ['badge', textKey])
@@ -500,7 +500,7 @@ export const generateCssVariables = (tokens: SpectreTokens, options: CssVariable
   ICON_BOX_FIELDS.forEach(({ name, tokenKey }) => {
     addDark(
       toVariableName(prefix, 'icon-box', name),
-      pickSemantic(tokens, 
+      pickSemantic(tokens,
         getPath(darkMode, ['component', 'iconBox', tokenKey]),
         getPath(defaultMode, ['component', 'iconBox', tokenKey]),
         getPath(componentAliases, ['iconBox', tokenKey])

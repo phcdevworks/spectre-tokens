@@ -1,7 +1,7 @@
 import { colord, extend } from 'colord';
 import a11yPlugin from 'colord/plugins/a11y';
-import { loadMergedTokens } from './token-utils';
 import type { SpectreTokens } from '../src/types';
+import { loadMergedTokens } from './token-utils';
 
 extend([a11yPlugin]);
 
@@ -58,14 +58,14 @@ function checkTokensRecursively(obj: Record<string, unknown> | SpectreTokens, cu
   const records = obj as Record<string, unknown>;
   for (const key in records) {
     if (key === 'metadata' || key === 'value') continue;
-    
+
     const value = records[key];
     const fullPath = currentPath ? `${currentPath}.${key}` : key;
 
     try {
       if (value && typeof value === 'object') {
         const valObj = value as { value?: unknown; metadata?: { pair?: string } };
-        
+
         if (typeof valObj.value === 'string' && valObj.metadata?.pair) {
           const bgValue = resolveToken(valObj.value, tokens);
           const pairPath = valObj.metadata.pair;

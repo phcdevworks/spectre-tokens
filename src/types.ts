@@ -132,7 +132,7 @@ export interface ComponentTokens<Value = string> {
 
 export type SpectreModeName = 'default' | 'dark';
 
-export type SemanticTokenValue = string | { value: string; [key: string]: unknown };
+export type SemanticTokenValue = string | { value: string;[key: string]: unknown };
 
 export interface SpectreModeTokens {
   surface: {
