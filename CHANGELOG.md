@@ -2,11 +2,23 @@
 
 All notable changes to this project will be documented here. The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) and the versioning reflects package releases published to npm.
 
+## [2.1.0] - 2026-03-22
+
+### Added
+- Integrated **ESLint** and **Prettier** into `devDependencies` for automated code health.
+- Added `npm run lint` and `npm run format` scripts for standardized development workflows.
+
+### Changed
+- **Workspace Cleanup**: Purged all legacy Astro configurations from the VS Code workspace.
+- **Task Synchronization**: Aligned VS Code tasks with `package.json` scripts (`build`, `generate`, `lint`, `format`, `check`).
+- **Standardized Ignored Files**: Updated `.gitignore` with common build and OS-level exclusions.
+
+### Removed
+- Removed broken `check:ai` script and references to missing `skills/` directory (incoming in future release).
+
 ## [2.0.0] - 2026-03-15
 
 ### Added
-- Created **AI Implementation Skill** (`skills/ai-implementation/`) providing strict directives for autonomous agent development within the Spectre ecosystem.
-- Introduced `npm run check:ai` powered by a new verification script to enforce zero-`any` and 100% TypeScript standards across the project.
 - Added semantic brand text roles (`text.onPage.brand`, `text.onSurface.brand`) for theme-aware brand typography.
 - Added interactive state tokens (`hoverBg`) to component badge definitions.
 

@@ -45,10 +45,10 @@ npm run build
 
 ## Project Structure
 
-- `tokens/` – Raw JSON token definitions owned by design (`core.json` and any future scoped files)
-- `src/` – TypeScript utilities that transform JSON tokens into JS/TS exports, Tailwind themes, and CSS helpers
-- `scripts/` – Build utilities (e.g., `build-css.js`) that turn compiled outputs into CSS bundles
-- `dist/` – Generated JS, CJS, type declarations, and CSS artifacts (never edit by hand)
+- `tokens/` – Modular JSON token definitions (palette, primitives, semantic-roles, components, typography, modes).
+- `src/` – TypeScript utilities that transform JSON tokens into JS/TS exports, Tailwind themes, and CSS helpers.
+- `scripts/` – Build utilities (e.g., `build-css.ts`) that turn compiled outputs into CSS bundles.
+- `dist/` – Generated JS, CJS, type declarations, and CSS artifacts (never edit by hand).
 
 Design can safely edit only the JSON in `tokens/`. Engineering owns `src/` + `scripts/` when structure or formats need to evolve.
 

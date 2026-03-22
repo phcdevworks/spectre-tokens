@@ -67,25 +67,18 @@
 		"files.associations": {
 			"*.css": "css",
 			"*.ts": "typescript",
-			"*.tsx": "typescriptreact",
-			"*.astro": "astro"
+			"*.tsx": "typescriptreact"
 		},
-		"tailwindCSS.includeLanguages": {
-			"astro": "html"
-		},
-		"tailwindCSS.emmetCompletions": true,
 		"files.exclude": {
 			"**/.git": true,
 			"**/.DS_Store": true,
 			"**/node_modules": true,
 			"**/vendor": true,
-			"**/dist": true,
-			"**/.astro": true
+			"**/dist": true
 		},
 		"files.watcherExclude": {
 			"**/node_modules/*/**": true,
-			"**/dist/**": true,
-			"**/.astro/**": true
+			"**/dist/**": true
 		},
 		"explorer.confirmDelete": false,
 		"explorer.confirmDragAndDrop": false,
@@ -105,10 +98,10 @@
 		"version": "0.2.0",
 		"configurations": [
 			{
-				"command": "./node_modules/.bin/astro dev",
-				"name": "Development server",
+				"name": "Build Tokens",
+				"type": "node-terminal",
 				"request": "launch",
-				"type": "node-terminal"
+				"command": "npm run build"
 			}
 		]
 	},
@@ -116,7 +109,6 @@
 		"recommendations": [
 			"github.copilot",
 			"github.copilot-chat",
-			"openai.chatgpt",
 			"dbaeumer.vscode-eslint",
 			"esbenp.prettier-vscode",
 			"editorconfig.editorconfig",
@@ -132,7 +124,6 @@
 			"pnpm.pnpm-vscode",
 			"unifiedjs.vscode-mdx",
 			"tamasfe.even-better-toml",
-			"astro-build.astro-vscode",
 			"christian-kohler.path-intellisense",
 			"zignd.html-css-class-completion",
 			"formulahendry.auto-rename-tag",
@@ -143,8 +134,8 @@
 		"version": "2.0.0",
 		"tasks": [
 			{
-				"label": "dev",
-				"command": "npm run dev",
+				"label": "build",
+				"command": "npm run build",
 				"type": "shell",
 				"group": {
 					"kind": "build",
@@ -152,13 +143,8 @@
 				}
 			},
 			{
-				"label": "build",
-				"command": "npm run build",
-				"type": "shell"
-			},
-			{
-				"label": "preview",
-				"command": "npm run preview",
+				"label": "generate",
+				"command": "npm run generate",
 				"type": "shell"
 			},
 			{
@@ -169,6 +155,11 @@
 			{
 				"label": "format",
 				"command": "npm run format",
+				"type": "shell"
+			},
+			{
+				"label": "check",
+				"command": "npm run check",
 				"type": "shell"
 			}
 		]

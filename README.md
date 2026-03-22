@@ -759,7 +759,6 @@ tokens.borders.input; // "#cbd5f5"
 | Folder     | Responsibility                                                                                                |
 | ---------- | ------------------------------------------------------------------------------------------------------------- |
 | `tokens/`  | Raw JSON token files (modularized as `palette.json`, `typography.json`, `components.json`, etc.).             |
-| `skills/`  | AI Implementation skills and verification scripts to ensure codebase integrity and AI readiness.              |
 | `src/`     | TypeScript source that turns JSON into reusable formats (JS/TS exports, Tailwind theme, CSS helpers).         |
 | `scripts/` | Build utilities and strictly-typed token merging engines.                                                     |
 | `dist/`    | Generated artifacts: `index.js`, `index.cjs`, `index.d.ts`, and `index.css`. Regenerated via `npm run build`. |
