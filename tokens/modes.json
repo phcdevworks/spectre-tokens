@@ -135,14 +135,19 @@
         },
         "badge": {
           "neutralBg": { "value": "{colors.neutral.700}", "metadata": { "pair": "modes.dark.component.badge.neutralText" } },
+          "neutralBgHover": { "value": "{colors.neutral.600}" },
           "neutralText": { "value": "{colors.neutral.100}", "metadata": {} },
           "infoBg": { "value": "{colors.info.800}", "metadata": { "pair": "modes.dark.component.badge.infoText" } },
+          "infoBgHover": { "value": "{colors.info.700}" },
           "infoText": { "value": "{colors.info.100}", "metadata": {} },
           "successBg": { "value": "{colors.success.800}", "metadata": { "pair": "modes.dark.component.badge.successText" } },
+          "successBgHover": { "value": "{colors.success.700}" },
           "successText": { "value": "{colors.success.100}", "metadata": {} },
           "warningBg": { "value": "{colors.warning.800}", "metadata": { "pair": "modes.dark.component.badge.warningText" } },
+          "warningBgHover": { "value": "{colors.warning.700}" },
           "warningText": { "value": "{colors.warning.100}", "metadata": {} },
           "dangerBg": { "value": "{colors.error.800}", "metadata": { "pair": "modes.dark.component.badge.dangerText" } },
+          "dangerBgHover": { "value": "{colors.error.700}" },
           "dangerText": { "value": "{colors.error.100}", "metadata": {} }
         },
         "iconBox": {
