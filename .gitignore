@@ -1,1 +1,13 @@
+# Dependencies
 node_modules/
+
+# Build artifacts
+dist/
+
+# OS/Editor
+.DS_Store
+.vscode/
+*.log
+
+# Lint/Format
+.eslintcache

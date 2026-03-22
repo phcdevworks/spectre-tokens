@@ -1,6 +1,6 @@
 {
   "name": "@phcdevworks/spectre-tokens",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "Spectre design tokens with JS, TS, Tailwind, and CSS variable outputs.",
   "keywords": [
     "phcdevworks",
@@ -62,8 +62,9 @@
     "check:tokens": "tsx scripts/assert-core-tokens.ts",
     "check:contrast": "tsx scripts/check-contrast.ts",
     "check:regression": "tsx scripts/check-tokens-regression.ts",
-    "check:ai": "tsx skills/ai-implementation/scripts/verify-ai-readiness.ts",
-    "check": "npm run check:tokens && npm run check:contrast && npm run check:regression && npm run check:ai",
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "check": "npm run check:tokens && npm run check:contrast && npm run check:regression && npm run lint",
     "check:all": "npm run check",
     "test": "npm run check"
   },
@@ -72,11 +73,15 @@
   },
   "devDependencies": {
     "@types/chroma-js": "^3.1.2",
+    "@typescript-eslint/eslint-plugin": "^8.57.1",
+    "@typescript-eslint/parser": "^8.57.1",
     "chroma-js": "^3.2.0",
     "colord": "^2.9.3",
+    "eslint": "^10.1.0",
+    "prettier": "^3.8.1",
     "ts-node": "^10.9.2",
     "tsup": "^8.5.1",
-    "tsx": "^4.16.2",
+    "tsx": "^4.21.0",
     "typescript": "^5.9.3"
   }
 }

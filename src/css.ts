@@ -138,14 +138,16 @@ export const createCssVariableMap = (tokens: SpectreTokens, options: CssVariable
       });
     }
 
-    if ((layout.container as any)?.maxWidth) {
-      assign(toVariableName(prefix, 'layout', 'container', 'max-width'), (layout.container as any).maxWidth);
+    const container = layout.container as Record<string, unknown> | undefined;
+    if (container?.maxWidth) {
+      assign(toVariableName(prefix, 'layout', 'container', 'max-width'), container.maxWidth);
     }
   }
 
-  if ((baseTokens as any).border?.width) {
-    Object.entries((baseTokens as any).border.width).forEach(([key, value]) => {
-      assign(toVariableName(prefix, 'border', 'width', key), value as string);
+  const border = (baseTokens as unknown as Record<string, unknown>).border as Record<string, Record<string, string>> | undefined;
+  if (border?.width) {
+    Object.entries(border.width).forEach(([key, value]) => {
+      assign(toVariableName(prefix, 'border', 'width', key), value);
     });
   }
 

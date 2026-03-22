@@ -23,8 +23,7 @@ You are an autonomous agent responsible for Layer 1 of the Spectre 8-Layer Arsen
 3. **Visual Regression of Types**: Before finishing a task, verify that `npm run build` produces an `index.d.ts` that provides full autocomplete for all newly added tokens.
 
 ## Workflow
-1. READ: `skills/ai-implementation/SKILL.md` -> LAYER 1: PENDING SYSTEM UPDATES.
-2. Modify `tokens/*.json`.
-3. Update `src/` types if the schema has changed.
-4. Run `npm run build` to emit artifacts.
-5. SUCCESS: Clear the "PENDING" block in `SKILL.md` when done.
+1. Modify `tokens/*.json`.
+2. Update `src/` types if the schema has changed.
+3. Run `npm run build` to emit artifacts.
+4. SUCCESS: Verify build integrity via `npm run check`.
