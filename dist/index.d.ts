@@ -241,9 +241,15 @@ interface SpectreGeneratedTokens {
             };
             bgHover: {
                 value: string;
+                metadata: {
+                    pair: string;
+                };
             };
             bgActive: {
                 value: string;
+                metadata: {
+                    pair: string;
+                };
             };
             bgDisabled: {
                 value: string;
