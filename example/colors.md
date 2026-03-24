@@ -130,12 +130,12 @@ Complete color palette for the Spectre design system.
 
 ### On Page
 
-| Token                 | Hex       | Usage            |
-| --------------------- | --------- | ---------------- |
-| `text.onPage.default` | `#0f172a` | Primary text     |
-| `text.onPage.muted`   | `#334155` | Secondary text   |
-| `text.onPage.subtle`  | `#475569` | Tertiary text    |
-| `text.onPage.meta`    | `#64748b` | Meta information |
+| Token                 | Hex       | Usage             |
+| --------------------- | --------- | ----------------- |
+| `text.onPage.default` | `#0f172a` | Primary text      |
+| `text.onPage.muted`   | `#334155` | Secondary text    |
+| `text.onPage.subtle`  | `#475569` | Tertiary text     |
+| `text.onPage.meta`    | `#64748b` | Meta information  |
 | `text.onPage.brand`   | `#2563eb` | Brand accent text |
 
 ### On Surface
@@ -212,4 +212,5 @@ Complete color palette for the Spectre design system.
 
 ---
 
-All color values are from `tokens/core.json` and include both default and dark mode variants where applicable.
+All color values are from `tokens/core.json` and include both default and dark
+mode variants where applicable.

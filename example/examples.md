@@ -1,6 +1,7 @@
 # Spectre Tokens Examples
 
-This directory contains comprehensive examples for all token categories in the Spectre design system.
+This directory contains comprehensive examples for all token categories in the
+Spectre design system.
 
 ## Available Examples
 
@@ -14,8 +15,10 @@ Complete color palette including:
 - Semantic colors: Success (green), Warning (amber), Error (red), Info (blue)
 - Focus colors (primary, error, info)
 - Surface colors (page, card, input, overlay)
-- Text colors (onPage, onSurface with default, muted, subtle, meta, and **brand** variants)
-- Component-specific colors (badge, card, input, button, iconBox, testimonial, pricingCard, rating)
+- Text colors (onPage, onSurface with default, muted, subtle, meta, and
+  **brand** variants)
+- Component-specific colors (badge, card, input, button, iconBox, testimonial,
+  pricingCard, rating)
 - **Interactive state tokens** (hover, active, disabled) for core components
 - Dark mode variants for all component colors
 
@@ -75,7 +78,8 @@ Form input styles and states:
 Motion and animation tokens:
 
 - Animations: fadeIn, fadeOut, slideUp, slideDown, scaleIn, bounce, shake, pulse
-- Duration tokens: instant (75ms), fast (150ms), base (200ms), moderate (300ms), slow (500ms), slower (700ms)
+- Duration tokens: instant (75ms), fast (150ms), base (200ms), moderate (300ms),
+  slow (500ms), slower (700ms)
 - Easing functions: linear, in, out, inOut, spring
 - Each animation includes duration, easing, and keyframe reference
 
@@ -85,7 +89,8 @@ Component-specific design tokens:
 
 - Badges: neutral, info, success, warning, danger (with bg and text colors)
 - Cards: text and textMuted colors
-- Icon boxes: bg, border, and icon colors for default, success, warning, danger states
+- Icon boxes: bg, border, and icon colors for default, success, warning, danger
+  states
 - Testimonials: bg, border, text, authorName, authorTitle, quoteMark colors
 - Pricing cards: bg, border, featured variants, badge colors, price text
 - Rating: starFilled, starEmpty, text colors
@@ -97,9 +102,12 @@ Focus rings, touch targets, and WCAG compliance:
 - Focus ring: width (2px), offset (2px), style (solid)
 - Minimum touch target: 44px (WCAG 2.1 Level AAA)
 - Minimum text size: 16px
-- Opacity tokens: disabled (0.38), hover (0.92), active (0.84), focus (1.0), overlay (0.5), tooltip (0.95)
-- Color contrast ratios: All text/background combinations verified for WCAG AA/AAA compliance
-- Contrast examples: Primary text (19.07:1 AAA), Muted text (7.51:1 AAA), Button text (5.95:1 AA), Dark mode (18.23:1 AAA)
+- Opacity tokens: disabled (0.38), hover (0.92), active (0.84), focus (1.0),
+  overlay (0.5), tooltip (0.95)
+- Color contrast ratios: All text/background combinations verified for WCAG
+  AA/AAA compliance
+- Contrast examples: Primary text (19.07:1 AAA), Muted text (7.51:1 AAA), Button
+  text (5.95:1 AA), Dark mode (18.23:1 AAA)
 
 ### 🎯 [Icons](icons.md)
 
@@ -122,7 +130,8 @@ Consistent aspect ratio tokens for media:
 
 ## How to View
 
-Click any link above to view the markdown documentation for each token category. For interactive HTML demos, open `index.html` in a web browser.
+Click any link above to view the markdown documentation for each token category.
+For interactive HTML demos, open `index.html` in a web browser.
 
 Each example page includes:
 
@@ -134,7 +143,8 @@ Each example page includes:
 
 ## Usage
 
-These examples demonstrate how to use the Spectre design tokens in your projects. Each token value is displayed with:
+These examples demonstrate how to use the Spectre design tokens in your
+projects. Each token value is displayed with:
 
 1. All available options and values
 2. Visual comparisons of variations

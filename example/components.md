@@ -18,32 +18,32 @@ Component-specific design tokens for the Spectre design system.
 
 ### Info Badge
 
-| Property   | Default   | Dark Mode |
-| ---------- | --------- | --------- |
+| Property           | Default   | Dark Mode |
+| ------------------ | --------- | --------- |
 | Background         | `#dbeafe` | `#1e40af` |
 | Background (Hover) | `#bfdbfe` | `#1e40af` |
 | Text               | `#1e40af` | `#dbeafe` |
 
 ### Success Badge
 
-| Property   | Default   | Dark Mode |
-| ---------- | --------- | --------- |
+| Property           | Default   | Dark Mode |
+| ------------------ | --------- | --------- |
 | Background         | `#dcfce7` | `#166534` |
 | Background (Hover) | `#bbf7d0` | `#166534` |
 | Text               | `#166534` | `#dcfce7` |
 
 ### Warning Badge
 
-| Property   | Default   | Dark Mode |
-| ---------- | --------- | --------- |
+| Property           | Default   | Dark Mode |
+| ------------------ | --------- | --------- |
 | Background         | `#fef3c7` | `#92400e` |
 | Background (Hover) | `#fde68a` | `#92400e` |
 | Text               | `#92400e` | `#fef3c7` |
 
 ### Danger Badge
 
-| Property   | Default   | Dark Mode |
-| ---------- | --------- | --------- |
+| Property           | Default   | Dark Mode |
+| ------------------ | --------- | --------- |
 | Background         | `#fee2e2` | `#991b1b` |
 | Background (Hover) | `#fecaca` | `#991b1b` |
 | Text               | `#991b1b` | `#fee2e2` |
@@ -321,4 +321,5 @@ Component-specific design tokens for the Spectre design system.
 
 ---
 
-All component tokens are from `tokens/core.json` and include dark mode variants where applicable.
+All component tokens are from `tokens/core.json` and include dark mode variants
+where applicable.

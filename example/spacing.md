@@ -70,8 +70,8 @@ Spacing scale and layout tokens for the Spectre design system.
 
 ### Container Padding
 
-| Token                         | Value         | Usage              |
-| ----------------------------- | ------------- | ------------------ |
+| Token                               | Value         | Usage              |
+| ----------------------------------- | ------------- | ------------------ |
 | `layout.container.paddingInline.sm` | 1rem (16px)   | Mobile containers  |
 | `layout.container.paddingInline.md` | 1.5rem (24px) | Tablet containers  |
 | `layout.container.paddingInline.lg` | 2rem (32px)   | Desktop containers |
