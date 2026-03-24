@@ -62,23 +62,31 @@
 		"[markdown]": {
 			"editor.wordWrap": "on",
 			"editor.formatOnSave": true,
-			"editor.defaultFormatter": "vscode.markdown-language-features"
+			"editor.defaultFormatter": "esbenp.prettier-vscode",
+			"editor.quickSuggestions": {
+				"comments": "off",
+				"strings": "off",
+				"other": "off"
+			}
 		},
 		"files.associations": {
 			"*.css": "css",
 			"*.ts": "typescript",
-			"*.tsx": "typescriptreact"
+			"*.tsx": "typescriptreact",
+			"*.astro": "astro"
 		},
 		"files.exclude": {
 			"**/.git": true,
 			"**/.DS_Store": true,
 			"**/node_modules": true,
 			"**/vendor": true,
-			"**/dist": true
+			"**/dist": true,
+			"**/.astro": true
 		},
 		"files.watcherExclude": {
 			"**/node_modules/*/**": true,
-			"**/dist/**": true
+			"**/dist/**": true,
+			"**/.astro/**": true
 		},
 		"explorer.confirmDelete": false,
 		"explorer.confirmDragAndDrop": false,
@@ -109,9 +117,12 @@
 		"recommendations": [
 			"github.copilot",
 			"github.copilot-chat",
+			"openai.chatgpt",
 			"dbaeumer.vscode-eslint",
 			"esbenp.prettier-vscode",
 			"editorconfig.editorconfig",
+			"yzhang.markdown-all-in-one",
+			"davidanson.vscode-markdownlint",
 			"streetsidesoftware.code-spell-checker",
 			"usernamehw.errorlens",
 			"yoavbls.pretty-ts-errors",
@@ -124,6 +135,7 @@
 			"pnpm.pnpm-vscode",
 			"unifiedjs.vscode-mdx",
 			"tamasfe.even-better-toml",
+			"astro-build.astro-vscode",
 			"christian-kohler.path-intellisense",
 			"zignd.html-css-class-completion",
 			"formulahendry.auto-rename-tag",

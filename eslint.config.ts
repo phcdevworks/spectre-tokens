@@ -1,4 +1,4 @@
-import tseslint from 'typescript-eslint';
+import tseslint from 'typescript-eslint'
 
 export default tseslint.config(
   ...tseslint.configs.recommended,
@@ -7,7 +7,7 @@ export default tseslint.config(
     languageOptions: {
       parserOptions: {
         project: true,
-        tsconfigRootDir: import.meta.dirname,
+        tsconfigRootDir: new URL('.', import.meta.url).pathname,
       },
     },
     rules: {
@@ -18,6 +18,6 @@ export default tseslint.config(
     },
   },
   {
-    ignores: ['dist/**', 'node_modules/**', 'example/**'],
+    ignores: ['dist/**', 'node_modules/**', 'example/**', 'examples/**'],
   }
-);
+)
