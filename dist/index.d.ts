@@ -445,12 +445,21 @@ interface SpectreGeneratedTokens {
             surface: {
                 page: {
                     value: string;
+                    metadata: {
+                        pair: string;
+                    };
                 };
                 card: {
                     value: string;
+                    metadata: {
+                        pair: string;
+                    };
                 };
                 input: {
                     value: string;
+                    metadata: {
+                        pair: string;
+                    };
                 };
                 overlay: {
                     value: string;
@@ -685,12 +694,21 @@ interface SpectreGeneratedTokens {
             surface: {
                 page: {
                     value: string;
+                    metadata: {
+                        pair: string;
+                    };
                 };
                 card: {
                     value: string;
+                    metadata: {
+                        pair: string;
+                    };
                 };
                 input: {
                     value: string;
+                    metadata: {
+                        pair: string;
+                    };
                 };
                 overlay: {
                     value: string;
