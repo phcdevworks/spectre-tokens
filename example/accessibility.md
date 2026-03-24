@@ -68,7 +68,8 @@ Focus rings, touch targets, and WCAG compliance for the Spectre design system.
 | Body Text    | `16px` | Optimal readability  |
 | Small Text   | `14px` | Use sparingly        |
 
-**Note:** Text smaller than 16px should be avoided or used only for non-critical content.
+**Note:** Text smaller than 16px should be avoided or used only for non-critical
+content.
 
 ---
 
@@ -146,7 +147,8 @@ All color combinations meet WCAG 2.1 contrast requirements.
 
 ### Visible Focus
 
-All interactive elements must show visible focus indicator when focused via keyboard.
+All interactive elements must show visible focus indicator when focused via
+keyboard.
 
 ```css
 :focus {
@@ -230,7 +232,8 @@ Respect user's motion preferences:
 
 **❌ Bad:** "Required fields are in red"
 
-**✅ Good:** "Required fields are marked with an asterisk (\*) and have red labels"
+**✅ Good:** "Required fields are marked with an asterisk (\*) and have red
+labels"
 
 ---
 
@@ -246,8 +249,10 @@ Respect user's motion preferences:
 
 ### Custom Components
 
-Ensure all custom interactive components support keyboard navigation and follow ARIA patterns.
+Ensure all custom interactive components support keyboard navigation and follow
+ARIA patterns.
 
 ---
 
-All accessibility tokens are from `tokens/core.json` and follow WCAG 2.1 Level AA standards (AAA where possible).
+All accessibility tokens are from `tokens/core.json` and follow WCAG 2.1 Level
+AA standards (AAA where possible).

@@ -6,12 +6,12 @@ Elevation and shadow tokens for the Spectre design system.
 
 ## Shadow Scale
 
-| Token          | Value                                                                           | Usage            |
-| -------------- | ------------------------------------------------------------------------------- | ---------------- |
-| `shadows.none` | `none`                                                                          | Flat elements    |
-| `shadows.sm`   | `0 1px 2px 0 rgba(15, 23, 42, 0.06)`                                            | Subtle elevation |
-| `shadows.md`   | `0 2px 6px -1px rgba(15, 23, 42, 0.08)`                                         | Medium elevation |
-| `shadows.lg`   | `0 6px 16px -4px rgba(15, 23, 42, 0.12)`                                        | High elevation   |
+| Token          | Value                                    | Usage            |
+| -------------- | ---------------------------------------- | ---------------- |
+| `shadows.none` | `none`                                   | Flat elements    |
+| `shadows.sm`   | `0 1px 2px 0 rgba(15, 23, 42, 0.06)`     | Subtle elevation |
+| `shadows.md`   | `0 2px 6px -1px rgba(15, 23, 42, 0.08)`  | Medium elevation |
+| `shadows.lg`   | `0 6px 16px -4px rgba(15, 23, 42, 0.12)` | High elevation   |
 
 ## Visual Elevation
 
