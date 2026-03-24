@@ -475,13 +475,22 @@ var coreTokens = {
     "default": {
       "surface": {
         "page": {
-          "value": "{colors.neutral.50}"
+          "value": "{colors.neutral.50}",
+          "metadata": {
+            "pair": "modes.default.text.onPage.default"
+          }
         },
         "card": {
-          "value": "{colors.white}"
+          "value": "{colors.white}",
+          "metadata": {
+            "pair": "modes.default.text.onSurface.default"
+          }
         },
         "input": {
-          "value": "{colors.white}"
+          "value": "{colors.white}",
+          "metadata": {
+            "pair": "modes.default.text.onSurface.default"
+          }
         },
         "overlay": {
           "value": "{colors.neutral.900} / 0.6"
@@ -715,13 +724,22 @@ var coreTokens = {
     "dark": {
       "surface": {
         "page": {
-          "value": "{colors.neutral.900}"
+          "value": "{colors.neutral.900}",
+          "metadata": {
+            "pair": "modes.dark.text.onPage.default"
+          }
         },
         "card": {
-          "value": "{colors.neutral.800}"
+          "value": "{colors.neutral.800}",
+          "metadata": {
+            "pair": "modes.dark.text.onSurface.default"
+          }
         },
         "input": {
-          "value": "{colors.neutral.700}"
+          "value": "{colors.neutral.700}",
+          "metadata": {
+            "pair": "modes.dark.text.onSurface.default"
+          }
         },
         "overlay": {
           "value": "{colors.neutral.800}"
@@ -809,7 +827,7 @@ var coreTokens = {
             "metadata": {}
           },
           "infoBg": {
-            "value": "{colors.info.800}",
+            "value": "{colors.info.900}",
             "metadata": {
               "pair": "modes.dark.component.badge.infoText"
             }
