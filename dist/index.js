@@ -212,22 +212,28 @@ var coreTokens = {
         }
       },
       "bgHover": {
-        "value": "{colors.neutral.50}"
+        "value": "{colors.neutral.50}",
+        "metadata": {
+          "pair": "buttons.secondary.text"
+        }
       },
       "bgActive": {
-        "value": "{colors.neutral.100}"
+        "value": "{colors.neutral.100}",
+        "metadata": {
+          "pair": "buttons.secondary.text"
+        }
       },
       "bgDisabled": {
         "value": "{colors.neutral.50}"
       },
       "text": {
-        "value": "{colors.info.600}"
+        "value": "{colors.info.700}"
       },
       "textDisabled": {
         "value": "{colors.neutral.400}"
       },
       "border": {
-        "value": "{colors.info.600}"
+        "value": "{colors.info.700}"
       },
       "borderDisabled": {
         "value": "{colors.neutral.200}"
@@ -328,7 +334,10 @@ var coreTokens = {
         "value": "{colors.warning.600}"
       },
       "bgActive": {
-        "value": "{colors.warning.700}"
+        "value": "{colors.warning.600}",
+        "metadata": {
+          "pair": "buttons.cta.text"
+        }
       },
       "bgDisabled": {
         "value": "{colors.warning.200}"
