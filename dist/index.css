@@ -254,9 +254,9 @@
   --sp-button-secondary-bghover: #f8fafc;
   --sp-button-secondary-bgactive: #f1f5f9;
   --sp-button-secondary-bgdisabled: #f8fafc;
-  --sp-button-secondary-text: #2563eb;
+  --sp-button-secondary-text: #1d4ed8;
   --sp-button-secondary-textdisabled: #94a3b8;
-  --sp-button-secondary-border: #2563eb;
+  --sp-button-secondary-border: #1d4ed8;
   --sp-button-secondary-borderdisabled: #e2e8f0;
   --sp-button-secondary-focusring: rgba(59, 130, 246, 0.4);
   --sp-button-ghost-bg: transparent;
@@ -282,7 +282,7 @@
   --sp-button-success-focusring: rgba(34, 197, 94, 0.4);
   --sp-button-cta-bg: #f59e0b;
   --sp-button-cta-bghover: #d97706;
-  --sp-button-cta-bgactive: #b45309;
+  --sp-button-cta-bgactive: #d97706;
   --sp-button-cta-bgdisabled: #fde68a;
   --sp-button-cta-text: #0f172a;
   --sp-button-cta-textdisabled: #94a3b8;
