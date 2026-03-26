@@ -333,7 +333,10 @@
         "value": "{colors.warning.600}"
       },
       "bgActive": {
-        "value": "{colors.warning.700}"
+        "value": "{colors.warning.600}",
+        "metadata": {
+          "pair": "buttons.cta.text"
+        }
       },
       "bgDisabled": {
         "value": "{colors.warning.200}"
