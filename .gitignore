@@ -4,10 +4,9 @@ node_modules/
 # Build artifacts
 dist/
 
-# OS/Editor
-.DS_Store
-.vscode/
+# Logs and caches
 *.log
-
-# Lint/Format
 .eslintcache
+
+# OS files
+.DS_Store
