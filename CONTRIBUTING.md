@@ -1,126 +1,88 @@
 # Contributing to @phcdevworks/spectre-tokens
 
-Thanks for helping improve Spectre Tokens! This package is the single source of
-truth for every Spectre design token and is consumed by Spectre UI, Spectre
-Blocks, Spectre Astro, Spectre 11ty, and future projects. Keeping the token
-definitions clean, typed, and well-documented ensures every downstream
-experience stays consistent.
+Thanks for helping improve Spectre. This package is maintained by PHCDevworks
+as Layer 1 of the Spectre suite. It is the source of truth for the design
+language consumed by the rest of the ecosystem.
 
-## 🏛️ Spectre Design Philosophy
+## Spectre Suite Model
 
-Spectre is a **specification-driven design system** built on a strict hierarchy:
+Spectre is organized as a strict layered system:
 
-### 1. @phcdevworks/spectre-tokens (Layer 1 - DNA)
+### Layer 1: `@phcdevworks/spectre-tokens`
 
-- **Purpose**: Single source of truth for design values (colors, spacing,
-  typography, semantic roles).
-- **Rules**: Defines semantic meaning, not UI behavior. Designers own JSON;
-  engineers maintain transforms.
+- Purpose: define semantic design values and token contracts
+- Scope: token JSON, transforms, typed exports, CSS variables, Tailwind outputs
 
-### 2. @phcdevworks/spectre-ui (Layer 2 - The Blueprint)
+### Layer 2: `@phcdevworks/spectre-ui`
 
-- **Purpose**: Converts tokens into real CSS and class recipes.
-- **Rules**: MUST consume tokens, MUST NOT redefine values. Every CSS selector
-  has a matching recipe.
+- Purpose: turn tokens into reusable CSS, utilities, and recipes
+- Scope: structure and implementation, never new design values
 
-### 3. Framework Adapters (Layer 3 - Delivery)
+### Layer 3: adapters such as `@phcdevworks/spectre-ui-astro`
 
-- **Purpose**: Map Layer 2 to specific frameworks (WordPress, Astro, etc.).
-- **Rules**: Adapters never define styles or duplicate CSS.
+- Purpose: expose Spectre UI through framework-native components
+- Scope: delivery for a platform, never duplicate tokens or CSS logic
 
-> **The Golden Rule**: Tokens define _meaning_. UI defines _structure_. Adapters
-> define _delivery_.
-
----
+The rule across the suite is simple: tokens define meaning, UI defines
+structure, adapters define delivery.
 
 ## Development Setup
 
-1. Clone the repository:
-
-```bash
-git clone https://github.com/phcdevworks/spectre-tokens.git
-cd spectre-tokens
-```
-
-2. Install dependencies:
-
-```bash
-npm install
-```
-
-3. Build the package (one-off or in watch mode) to verify changes:
-
-```bash
-npm run build
-# or: npm run build:ts -- --watch
-```
+1. Clone the repository.
+2. Install dependencies with `npm install`.
+3. Run `npm run build` to regenerate outputs.
+4. Run `npm run check` before opening a pull request.
 
 ## Project Structure
 
-- `tokens/` – Modular JSON token definitions (palette, primitives,
-  semantic-roles, components, typography, modes).
-- `src/` – TypeScript utilities that transform JSON tokens into JS/TS exports,
-  Tailwind themes, and CSS helpers.
-- `scripts/` – Build utilities (e.g., `build-css.ts`) that turn compiled outputs
-  into CSS bundles.
-- `dist/` – Generated JS, CJS, type declarations, and CSS artifacts (never edit
-  by hand).
+- `tokens/`: canonical JSON token sources
+- `src/`: typed transforms and public exports
+- `scripts/`: generation and validation utilities
+- `dist/`: generated release artifacts
 
-Design can safely edit only the JSON in `tokens/`. Engineering owns `src/` +
-`scripts/` when structure or formats need to evolve.
+## Contribution Guidelines
 
-## Guidelines
+### Token changes
 
-### Tokens and Generation
+1. Make token changes in `tokens/`, not `dist/`.
+2. Keep names semantic and reusable across the suite.
+3. Treat deletions and renames as breaking changes unless they are part of a
+   planned major release.
+4. Ensure new token categories are reflected in generated TypeScript, CSS, and
+   Tailwind outputs when applicable.
 
-1. **Tokens first** – Add or adjust tokens in `tokens/`. Scripts and TypeScript
-   helpers should derive all values from those JSON files.
-2. **No manual `dist/` edits** – Always run `npm run build` after token or
-   source changes so generated files stay in sync.
-3. **Stable naming** – Use semantic names (`color.brand.500`, `space.16`, etc.)
-   and avoid framework-specific wording in the raw tokens.
-4. **Consistent outputs** – When adding new token categories, ensure
-   corresponding JS exports, Tailwind entries, and CSS variables exist so
-   consumers receive the same surface area everywhere.
+### Code and tooling
 
-### TypeScript & Code Style
-
-- This project is `"type": "module"`—use ES modules and modern TypeScript
-  syntax.
-- Keep helpers composable and documented only when behavior is non-obvious.
-- Update type definitions (`src/index.ts` exports) when introducing new public
-  helpers.
-- Run `npm run build` before opening a PR to ensure tsup, TypeScript, and CSS
-  generation succeed.
+- This package uses ES modules and strict TypeScript.
+- Avoid `any` and prefer explicit, readable types.
+- Keep helpers composable and easy to trace.
+- Do not hand-edit generated files.
 
 ### Documentation
 
-- Update `README.md` (and any other docs) whenever public APIs, token
-  categories, or usage guidance changes.
-- If tokens impact CRO/accessibility messaging, revise those sections to match
-  the new behavior.
-- Add or update inline JSDoc when you introduce complex helper functions.
+- Update [README.md](README.md) when public token surfaces or usage patterns
+  change.
+- Keep wording aligned with the rest of the Spectre suite and with PHCDevworks
+  ownership.
+- Document contract changes clearly so downstream packages can stay in sync.
 
-## Pull Request Process
+## Pull Request Checklist
 
-1. Branch from `main`.
-2. Make your changes along with tests/builds passing (`npm run build`).
-3. Commit regenerated artifacts in `dist/` whenever token or source changes
-   require them.
-4. Update documentation or code comments to reflect behavior changes.
-5. Open a PR describing the motivation, changes, and follow-up considerations.
+1. Keep the change focused.
+2. Run `npm run build`.
+3. Run `npm run check`.
+4. Update docs if public behavior or guidance changed.
+5. Include regenerated artifacts when the release surface changed.
 
-## Questions?
+## Questions
 
-Please open an issue or discussion on GitHub if you're unsure about the best
-approach for a change. Coordinating early avoids diverging token definitions
-across the Spectre Suite.
+Open an issue or discussion in this repository if you need direction before
+making a larger change.
 
 ## Code of Conduct
 
-This project adheres to the [Code of Conduct](CODE_OF_CONDUCT.md). By
-participating, you are expected to uphold this code. Please report unacceptable
-behavior to the project maintainers.
+By participating in this project, you agree to follow the
+[Code of Conduct](CODE_OF_CONDUCT.md).
 
 ## License
 

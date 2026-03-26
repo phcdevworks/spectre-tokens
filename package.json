@@ -1,7 +1,7 @@
 {
   "name": "@phcdevworks/spectre-tokens",
   "version": "2.1.0",
-  "description": "Spectre design tokens with JS, TS, Tailwind, and CSS variable outputs.",
+  "description": "Layer 1 of the Spectre suite: design tokens with JavaScript, TypeScript, Tailwind, and CSS variable outputs.",
   "keywords": [
     "phcdevworks",
     "spectre",

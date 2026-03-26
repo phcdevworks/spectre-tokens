@@ -4,22 +4,19 @@
 [![GitHub pulls](https://img.shields.io/github/issues-pr/phcdevworks/spectre-tokens)](https://github.com/phcdevworks/spectre-tokens/pulls)
 [![License](https://img.shields.io/github/license/phcdevworks/spectre-tokens)](LICENSE)
 
-The Single Source of Truth (DNA) for the entire Spectre ecosystem. It defines
-the visual language—colors, typography, space, and semantic roles—that all other
-layers consume.
+Layer 1 of the Spectre suite, maintained by PHCDevworks. This package defines
+the visual language, semantic roles, and token contracts consumed by every
+downstream Spectre package.
 
 🤝 **[Contributing Guide](CONTRIBUTING.md)** | 📝 **[Changelog](CHANGELOG.md)**
 | 🛡️ **[Security Policy](SECURITY.md)**
 
 ## Overview
 
-`@phcdevworks/spectre-tokens` is the foundation of the Spectre design system. It
-follows a strict **JSON-First** policy—authoritative values live in `tokens/`
-and are transformed into multiple consumption modes (CSS, JS/TS, Tailwind).
-
-This package is the foundation. It follows a strict **JSON-First**
-policy—authoritative values live in `tokens/` and are transformed into multiple
-consumption modes (CSS, JS/TS, Tailwind).
+`@phcdevworks/spectre-tokens` is the foundation of the Spectre suite. It
+follows a strict **JSON-first** policy: authoritative values live in `tokens/`
+and are transformed into multiple consumer-friendly outputs for JavaScript,
+TypeScript, Tailwind, and CSS.
 
 - 🧬 **Authoritative JSON**: Domain-specific token storage for better
   maintainability.
@@ -29,6 +26,9 @@ consumption modes (CSS, JS/TS, Tailwind).
   ESM/CJS exports.
 - ♿ **Accessibility First**: Encodes WCAG constraints (contrast, touch targets)
   at the token level.
+
+Maintained by PHCDevworks with one rule across the suite: token meaning starts
+here, then flows outward into UI structure and framework adapters.
 
 ---
 
