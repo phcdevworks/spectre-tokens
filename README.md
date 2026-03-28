@@ -4,19 +4,28 @@
 [![GitHub pulls](https://img.shields.io/github/issues-pr/phcdevworks/spectre-tokens)](https://github.com/phcdevworks/spectre-tokens/pulls)
 [![License](https://img.shields.io/github/license/phcdevworks/spectre-tokens)](LICENSE)
 
-`@phcdevworks/spectre-tokens` is the design-token package of the Spectre system for downstream Spectre packages and compatible applications.
+`@phcdevworks/spectre-tokens` is the design-token package of the Spectre system
+for downstream Spectre packages and compatible applications.
 
-Maintained by PHCDevworks, it defines the visual language, semantic roles, and token contracts consumed downstream. It keeps visual meaning centralized in token data while downstream UI packages define structure and adapter packages translate those contracts for specific frameworks and runtimes.
+Maintained by PHCDevworks, it defines the visual language, semantic roles, and
+token contracts consumed downstream. It keeps visual meaning centralized in
+token data while downstream UI packages define structure and adapter packages
+translate those contracts for specific frameworks and runtimes.
 
-[Contributing](CONTRIBUTING.md) | [Changelog](CHANGELOG.md) | [Security Policy](SECURITY.md)
+[Contributing](CONTRIBUTING.md) | [Changelog](CHANGELOG.md) |
+[Security Policy](SECURITY.md)
 
 ## Key capabilities
 
 - Uses `tokens/` as the source of truth for design-token data
-- Generates JavaScript, TypeScript, Tailwind, and CSS outputs from shared token sources
-- Defines semantic token contracts for surfaces, text, components, buttons, forms, and modes
-- Exposes primitives and semantic roles for downstream packages and compatible applications
-- Keeps visual meaning centralized so downstream consumers do not redefine token contracts
+- Generates JavaScript, TypeScript, Tailwind, and CSS outputs from shared token
+  sources
+- Defines semantic token contracts for surfaces, text, components, buttons,
+  forms, and modes
+- Exposes primitives and semantic roles for downstream packages and compatible
+  applications
+- Keeps visual meaning centralized so downstream consumers do not redefine token
+  contracts
 
 ## Installation
 
@@ -51,7 +60,8 @@ const card = {
 
 ### Tailwind preset usage
 
-Use the generated Tailwind preset when you want the package to populate theme values from the token contract:
+Use the generated Tailwind preset when you want the package to populate theme
+values from the token contract:
 
 ```ts
 // tailwind.config.ts
@@ -62,13 +72,16 @@ export default {
 }
 ```
 
-Prefer semantic tokens such as `surface`, `text`, `component`, `buttons`, and `forms` for application UI. Raw palette values remain available when fixed color access is appropriate.
+Prefer semantic tokens such as `surface`, `text`, `component`, `buttons`, and
+`forms` for application UI. Raw palette values remain available when fixed color
+access is appropriate.
 
 ## What this package owns
 
 - Visual language expressed as token data in `tokens/`
 - Semantic roles and token contracts consumed downstream
-- Generated token outputs for JavaScript, TypeScript, Tailwind, and CSS variables
+- Generated token outputs for JavaScript, TypeScript, Tailwind, and CSS
+  variables
 - Theme and mode definitions used by downstream consumers
 
 ### Token model
@@ -98,18 +111,21 @@ The generated token object includes these namespaces:
 
 ### Themes and modes
 
-The package includes mode-aware semantic tokens under `modes`, with `default` and `dark` mode definitions in the generated output.
+The package includes mode-aware semantic tokens under `modes`, with `default`
+and `dark` mode definitions in the generated output.
 
-Raw palette tokens are stable values. Semantic tokens are the preferred interface for theme-aware usage because they can map across modes without changing consumer code.
+Raw palette tokens are stable values. Semantic tokens are the preferred
+interface for theme-aware usage because they can map across modes without
+changing consumer code.
 
 ## What this package does not own
 
-- Component structure or composition
-  That belongs in downstream UI packages such as [`@phcdevworks/spectre-ui`](https://github.com/phcdevworks/spectre-ui).
-- Framework-specific delivery
-  Adapter packages translate Spectre contracts for specific frameworks and runtimes.
-- Local redefinition of token meaning
-  Downstream consumers should consume these contracts rather than recreate them independently.
+- Component structure or composition That belongs in downstream UI packages such
+  as [`@phcdevworks/spectre-ui`](https://github.com/phcdevworks/spectre-ui).
+- Framework-specific delivery Adapter packages translate Spectre contracts for
+  specific frameworks and runtimes.
+- Local redefinition of token meaning Downstream consumers should consume these
+  contracts rather than recreate them independently.
 
 ## Package exports / API surface
 
@@ -121,7 +137,8 @@ Raw palette tokens are stable values. Semantic tokens are the preferred interfac
 - `tailwindTheme`
 - `tailwindPreset`
 - `generateCssVariables()`
-- TypeScript types including `SpectreTokens`, `TailwindTheme`, `SpectreModeTokens`, and `SpectreModeName`
+- TypeScript types including `SpectreTokens`, `TailwindTheme`,
+  `SpectreModeTokens`, and `SpectreModeName`
 
 Example:
 
@@ -146,11 +163,15 @@ const css = generateCssVariables(tokens, {
 
 Spectre keeps responsibilities separate:
 
-- [`@phcdevworks/spectre-tokens`](https://github.com/phcdevworks/spectre-tokens) defines visual language, semantic roles, and token contracts
-- [`@phcdevworks/spectre-ui`](https://github.com/phcdevworks/spectre-ui) turns those contracts into reusable CSS, Tailwind tooling, and shared styling behavior
+- [`@phcdevworks/spectre-tokens`](https://github.com/phcdevworks/spectre-tokens)
+  defines visual language, semantic roles, and token contracts
+- [`@phcdevworks/spectre-ui`](https://github.com/phcdevworks/spectre-ui) turns
+  those contracts into reusable CSS, Tailwind tooling, and shared styling
+  behavior
 - Adapter packages translate Spectre contracts for framework-specific delivery
 
-That separation keeps token meaning centralized while letting the package system expand by responsibility.
+That separation keeps token meaning centralized while letting the package system
+expand by responsibility.
 
 ## Development
 

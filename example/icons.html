@@ -1,344 +1,407 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Icons - Spectre Tokens</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Icons - Spectre Tokens</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+      body {
+        font-family:
+          system-ui,
+          -apple-system,
+          sans-serif;
+        padding: 2rem;
+        background: #f8fafc;
+      }
 
-    body {
-      font-family: system-ui, -apple-system, sans-serif;
-      padding: 2rem;
-      background: #f8fafc;
-    }
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+      }
 
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-    }
+      .header {
+        margin-bottom: 2rem;
+      }
 
-    .header {
-      margin-bottom: 2rem;
-    }
+      .back-link {
+        color: #2563eb;
+        text-decoration: none;
+        margin-bottom: 1rem;
+        display: inline-block;
+      }
 
-    .back-link {
-      color: #2563eb;
-      text-decoration: none;
-      margin-bottom: 1rem;
-      display: inline-block;
-    }
+      h1 {
+        font-size: 3rem;
+        margin-bottom: 0.5rem;
+        color: #0f172a;
+      }
 
-    h1 {
-      font-size: 3rem;
-      margin-bottom: 0.5rem;
-      color: #0f172a;
-    }
+      .subtitle {
+        font-size: 1.125rem;
+        color: #475569;
+      }
 
-    .subtitle {
-      font-size: 1.125rem;
-      color: #475569;
-    }
+      .section {
+        background: white;
+        border-radius: 8px;
+        padding: 2rem;
+        margin-bottom: 2rem;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+      }
 
-    .section {
-      background: white;
-      border-radius: 8px;
-      padding: 2rem;
-      margin-bottom: 2rem;
-      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-    }
+      h2 {
+        font-size: 1.5rem;
+        color: #0f172a;
+        margin-bottom: 1.5rem;
+      }
 
-    h2 {
-      font-size: 1.5rem;
-      color: #0f172a;
-      margin-bottom: 1.5rem;
-    }
+      .icon-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 2rem;
+        padding: 2rem;
+        background: #f8fafc;
+        border-radius: 8px;
+      }
 
-    .icon-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-      gap: 2rem;
-      padding: 2rem;
-      background: #f8fafc;
-      border-radius: 8px;
-    }
+      .icon-example {
+        text-align: center;
+      }
 
-    .icon-example {
-      text-align: center;
-    }
+      .icon-display {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 2rem;
+        background: white;
+        border-radius: 8px;
+        border: 1px solid #e2e8f0;
+        margin-bottom: 0.75rem;
+        min-height: 120px;
+      }
 
-    .icon-display {
-      width: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 2rem;
-      background: white;
-      border-radius: 8px;
-      border: 1px solid #e2e8f0;
-      margin-bottom: 0.75rem;
-      min-height: 120px;
-    }
+      .icon-svg {
+        fill: #2563eb;
+      }
 
-    .icon-svg {
-      fill: #2563eb;
-    }
+      .icon-xs {
+        width: 12px;
+        height: 12px;
+      }
 
-    .icon-xs {
-      width: 12px;
-      height: 12px;
-    }
+      .icon-sm {
+        width: 16px;
+        height: 16px;
+      }
 
-    .icon-sm {
-      width: 16px;
-      height: 16px;
-    }
+      .icon-md {
+        width: 20px;
+        height: 20px;
+      }
 
-    .icon-md {
-      width: 20px;
-      height: 20px;
-    }
+      .icon-lg {
+        width: 24px;
+        height: 24px;
+      }
 
-    .icon-lg {
-      width: 24px;
-      height: 24px;
-    }
+      .icon-xl {
+        width: 32px;
+        height: 32px;
+      }
 
-    .icon-xl {
-      width: 32px;
-      height: 32px;
-    }
+      .icon-2xl {
+        width: 40px;
+        height: 40px;
+      }
 
-    .icon-2xl {
-      width: 40px;
-      height: 40px;
-    }
+      .icon-3xl {
+        width: 48px;
+        height: 48px;
+      }
 
-    .icon-3xl {
-      width: 48px;
-      height: 48px;
-    }
+      .icon-label {
+        font-size: 1rem;
+        font-weight: 600;
+        color: #0f172a;
+        margin-bottom: 0.25rem;
+      }
 
-    .icon-label {
-      font-size: 1rem;
-      font-weight: 600;
-      color: #0f172a;
-      margin-bottom: 0.25rem;
-    }
+      .icon-value {
+        font-size: 0.875rem;
+        font-family: monospace;
+        color: #64748b;
+      }
 
-    .icon-value {
-      font-size: 0.875rem;
-      font-family: monospace;
-      color: #64748b;
-    }
+      .usage-examples {
+        display: grid;
+        gap: 1.5rem;
+      }
 
-    .usage-examples {
-      display: grid;
-      gap: 1.5rem;
-    }
+      .usage-card {
+        padding: 1.5rem;
+        background: #f8fafc;
+        border-radius: 8px;
+        border: 1px solid #e2e8f0;
+      }
 
-    .usage-card {
-      padding: 1.5rem;
-      background: #f8fafc;
-      border-radius: 8px;
-      border: 1px solid #e2e8f0;
-    }
+      .usage-title {
+        font-size: 1rem;
+        font-weight: 600;
+        color: #0f172a;
+        margin-bottom: 1rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
 
-    .usage-title {
-      font-size: 1rem;
-      font-weight: 600;
-      color: #0f172a;
-      margin-bottom: 1rem;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
+      .usage-description {
+        font-size: 0.875rem;
+        color: #64748b;
+        line-height: 1.6;
+      }
+    </style>
+  </head>
 
-    .usage-description {
-      font-size: 0.875rem;
-      color: #64748b;
-      line-height: 1.6;
-    }
-  </style>
-</head>
-
-<body>
-  <div class="container">
-    <div class="header">
-      <a href="index.html" class="back-link">← Back to Examples</a>
-      <h1>🎯 Icons</h1>
-      <p class="subtitle">Icon size tokens for consistent iconography across your design</p>
-    </div>
-
-    <div class="section">
-      <h2>Icon Sizes</h2>
-      <div class="icon-grid">
-        <div class="icon-example">
-          <div class="icon-display">
-            <svg class="icon-svg icon-xs" viewBox="0 0 24 24">
-              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
-            </svg>
-          </div>
-          <div class="icon-label">Extra Small</div>
-          <div class="icon-value">12px</div>
-        </div>
-
-        <div class="icon-example">
-          <div class="icon-display">
-            <svg class="icon-svg icon-sm" viewBox="0 0 24 24">
-              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
-            </svg>
-          </div>
-          <div class="icon-label">Small</div>
-          <div class="icon-value">16px</div>
-        </div>
-
-        <div class="icon-example">
-          <div class="icon-display">
-            <svg class="icon-svg icon-md" viewBox="0 0 24 24">
-              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
-            </svg>
-          </div>
-          <div class="icon-label">Medium</div>
-          <div class="icon-value">20px</div>
-        </div>
-
-        <div class="icon-example">
-          <div class="icon-display">
-            <svg class="icon-svg icon-lg" viewBox="0 0 24 24">
-              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
-            </svg>
-          </div>
-          <div class="icon-label">Large</div>
-          <div class="icon-value">24px</div>
-        </div>
-
-        <div class="icon-example">
-          <div class="icon-display">
-            <svg class="icon-svg icon-xl" viewBox="0 0 24 24">
-              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
-            </svg>
-          </div>
-          <div class="icon-label">Extra Large</div>
-          <div class="icon-value">32px</div>
-        </div>
-
-        <div class="icon-example">
-          <div class="icon-display">
-            <svg class="icon-svg icon-2xl" viewBox="0 0 24 24">
-              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
-            </svg>
-          </div>
-          <div class="icon-label">2X Large</div>
-          <div class="icon-value">40px</div>
-        </div>
-
-        <div class="icon-example">
-          <div class="icon-display">
-            <svg class="icon-svg icon-3xl" viewBox="0 0 24 24">
-              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
-            </svg>
-          </div>
-          <div class="icon-label">3X Large</div>
-          <div class="icon-value">48px</div>
-        </div>
+  <body>
+    <div class="container">
+      <div class="header">
+        <a href="index.html" class="back-link">← Back to Examples</a>
+        <h1>🎯 Icons</h1>
+        <p class="subtitle">
+          Icon size tokens for consistent iconography across your design
+        </p>
       </div>
-    </div>
 
-    <div class="section">
-      <h2>Recommended Usage</h2>
-      <div class="usage-examples">
-        <div class="usage-card">
-          <div class="usage-title">
-            <svg class="icon-svg icon-xs" viewBox="0 0 24 24" style="fill: #64748b;">
-              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
-            </svg>
-            Extra Small (12px)
+      <div class="section">
+        <h2>Icon Sizes</h2>
+        <div class="icon-grid">
+          <div class="icon-example">
+            <div class="icon-display">
+              <svg class="icon-svg icon-xs" viewBox="0 0 24 24">
+                <path
+                  d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"
+                />
+              </svg>
+            </div>
+            <div class="icon-label">Extra Small</div>
+            <div class="icon-value">12px</div>
           </div>
-          <div class="usage-description">
-            Use for: Inline indicators, small badges, tight UI elements
-          </div>
-        </div>
 
-        <div class="usage-card">
-          <div class="usage-title">
-            <svg class="icon-svg icon-sm" viewBox="0 0 24 24" style="fill: #64748b;">
-              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
-            </svg>
-            Small (16px)
+          <div class="icon-example">
+            <div class="icon-display">
+              <svg class="icon-svg icon-sm" viewBox="0 0 24 24">
+                <path
+                  d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"
+                />
+              </svg>
+            </div>
+            <div class="icon-label">Small</div>
+            <div class="icon-value">16px</div>
           </div>
-          <div class="usage-description">
-            Use for: Button icons, form field icons, navigation items, inline text accompaniment
-          </div>
-        </div>
 
-        <div class="usage-card">
-          <div class="usage-title">
-            <svg class="icon-svg icon-md" viewBox="0 0 24 24" style="fill: #64748b;">
-              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
-            </svg>
-            Medium (20px)
+          <div class="icon-example">
+            <div class="icon-display">
+              <svg class="icon-svg icon-md" viewBox="0 0 24 24">
+                <path
+                  d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"
+                />
+              </svg>
+            </div>
+            <div class="icon-label">Medium</div>
+            <div class="icon-value">20px</div>
           </div>
-          <div class="usage-description">
-            Use for: List items, card headers, prominent buttons, menu items
-          </div>
-        </div>
 
-        <div class="usage-card">
-          <div class="usage-title">
-            <svg class="icon-svg icon-lg" viewBox="0 0 24 24" style="fill: #64748b;">
-              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
-            </svg>
-            Large (24px)
+          <div class="icon-example">
+            <div class="icon-display">
+              <svg class="icon-svg icon-lg" viewBox="0 0 24 24">
+                <path
+                  d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"
+                />
+              </svg>
+            </div>
+            <div class="icon-label">Large</div>
+            <div class="icon-value">24px</div>
           </div>
-          <div class="usage-description">
-            Use for: Section headers, feature highlights, primary actions, toolbars
-          </div>
-        </div>
 
-        <div class="usage-card">
-          <div class="usage-title">
-            <svg class="icon-svg icon-xl" viewBox="0 0 24 24" style="fill: #64748b;">
-              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
-            </svg>
-            Extra Large (32px)
+          <div class="icon-example">
+            <div class="icon-display">
+              <svg class="icon-svg icon-xl" viewBox="0 0 24 24">
+                <path
+                  d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"
+                />
+              </svg>
+            </div>
+            <div class="icon-label">Extra Large</div>
+            <div class="icon-value">32px</div>
           </div>
-          <div class="usage-description">
-            Use for: Feature icons, empty states, large call-to-actions
-          </div>
-        </div>
 
-        <div class="usage-card">
-          <div class="usage-title">
-            <svg class="icon-svg icon-2xl" viewBox="0 0 24 24" style="fill: #64748b;">
-              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
-            </svg>
-            2X Large (40px)
+          <div class="icon-example">
+            <div class="icon-display">
+              <svg class="icon-svg icon-2xl" viewBox="0 0 24 24">
+                <path
+                  d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"
+                />
+              </svg>
+            </div>
+            <div class="icon-label">2X Large</div>
+            <div class="icon-value">40px</div>
           </div>
-          <div class="usage-description">
-            Use for: Hero sections, marketing feature highlights, prominent empty states
-          </div>
-        </div>
 
-        <div class="usage-card">
-          <div class="usage-title">
-            <svg class="icon-svg icon-3xl" viewBox="0 0 24 24" style="fill: #64748b;">
-              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
-            </svg>
-            3X Large (48px)
-          </div>
-          <div class="usage-description">
-            Use for: Hero illustrations, onboarding screens, large decorative elements
+          <div class="icon-example">
+            <div class="icon-display">
+              <svg class="icon-svg icon-3xl" viewBox="0 0 24 24">
+                <path
+                  d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"
+                />
+              </svg>
+            </div>
+            <div class="icon-label">3X Large</div>
+            <div class="icon-value">48px</div>
           </div>
         </div>
       </div>
-    </div>
-  </div>
-</body>
 
+      <div class="section">
+        <h2>Recommended Usage</h2>
+        <div class="usage-examples">
+          <div class="usage-card">
+            <div class="usage-title">
+              <svg
+                class="icon-svg icon-xs"
+                viewBox="0 0 24 24"
+                style="fill: #64748b"
+              >
+                <path
+                  d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"
+                />
+              </svg>
+              Extra Small (12px)
+            </div>
+            <div class="usage-description">
+              Use for: Inline indicators, small badges, tight UI elements
+            </div>
+          </div>
+
+          <div class="usage-card">
+            <div class="usage-title">
+              <svg
+                class="icon-svg icon-sm"
+                viewBox="0 0 24 24"
+                style="fill: #64748b"
+              >
+                <path
+                  d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"
+                />
+              </svg>
+              Small (16px)
+            </div>
+            <div class="usage-description">
+              Use for: Button icons, form field icons, navigation items, inline
+              text accompaniment
+            </div>
+          </div>
+
+          <div class="usage-card">
+            <div class="usage-title">
+              <svg
+                class="icon-svg icon-md"
+                viewBox="0 0 24 24"
+                style="fill: #64748b"
+              >
+                <path
+                  d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"
+                />
+              </svg>
+              Medium (20px)
+            </div>
+            <div class="usage-description">
+              Use for: List items, card headers, prominent buttons, menu items
+            </div>
+          </div>
+
+          <div class="usage-card">
+            <div class="usage-title">
+              <svg
+                class="icon-svg icon-lg"
+                viewBox="0 0 24 24"
+                style="fill: #64748b"
+              >
+                <path
+                  d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"
+                />
+              </svg>
+              Large (24px)
+            </div>
+            <div class="usage-description">
+              Use for: Section headers, feature highlights, primary actions,
+              toolbars
+            </div>
+          </div>
+
+          <div class="usage-card">
+            <div class="usage-title">
+              <svg
+                class="icon-svg icon-xl"
+                viewBox="0 0 24 24"
+                style="fill: #64748b"
+              >
+                <path
+                  d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"
+                />
+              </svg>
+              Extra Large (32px)
+            </div>
+            <div class="usage-description">
+              Use for: Feature icons, empty states, large call-to-actions
+            </div>
+          </div>
+
+          <div class="usage-card">
+            <div class="usage-title">
+              <svg
+                class="icon-svg icon-2xl"
+                viewBox="0 0 24 24"
+                style="fill: #64748b"
+              >
+                <path
+                  d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"
+                />
+              </svg>
+              2X Large (40px)
+            </div>
+            <div class="usage-description">
+              Use for: Hero sections, marketing feature highlights, prominent
+              empty states
+            </div>
+          </div>
+
+          <div class="usage-card">
+            <div class="usage-title">
+              <svg
+                class="icon-svg icon-3xl"
+                viewBox="0 0 24 24"
+                style="fill: #64748b"
+              >
+                <path
+                  d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"
+                />
+              </svg>
+              3X Large (48px)
+            </div>
+            <div class="usage-description">
+              Use for: Hero illustrations, onboarding screens, large decorative
+              elements
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>

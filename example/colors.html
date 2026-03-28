@@ -1,781 +1,790 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Colors - Spectre Tokens</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: system-ui, -apple-system, sans-serif;
-      padding: 2rem;
-      background: #f8fafc;
-    }
-
-    .container {
-      max-width: 1400px;
-      margin: 0 auto;
-    }
-
-    .header {
-      margin-bottom: 2rem;
-    }
-
-    .back-link {
-      color: #2563eb;
-      text-decoration: none;
-      margin-bottom: 1rem;
-      display: inline-block;
-    }
-
-    h1 {
-      font-size: 3rem;
-      margin-bottom: 0.5rem;
-      color: #0f172a;
-    }
-
-    .subtitle {
-      font-size: 1.125rem;
-      color: #475569;
-    }
-
-    .section {
-      background: white;
-      border-radius: 8px;
-      padding: 2rem;
-      margin-bottom: 2rem;
-      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-    }
-
-    h2 {
-      font-size: 1.5rem;
-      color: #0f172a;
-      margin-bottom: 1rem;
-    }
-
-    .color-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-      gap: 1rem;
-    }
-
-    .color-swatch {
-      text-align: center;
-    }
-
-    .color-box {
-      height: 80px;
-      border-radius: 8px;
-      margin-bottom: 0.5rem;
-      border: 1px solid #e2e8f0;
-    }
-
-    .color-label {
-      font-size: 0.875rem;
-      font-weight: 600;
-      color: #0f172a;
-      margin-bottom: 0.25rem;
-    }
-
-    .color-value {
-      font-size: 0.75rem;
-      font-family: monospace;
-      color: #64748b;
-    }
-
-    /* Brand Colors */
-    .brand-50 {
-      background: #eff6ff;
-    }
-
-    .brand-100 {
-      background: #dbeafe;
-    }
-
-    .brand-200 {
-      background: #bfdbfe;
-    }
-
-    .brand-300 {
-      background: #93c5fd;
-    }
-
-    .brand-400 {
-      background: #60a5fa;
-    }
-
-    .brand-500 {
-      background: #3b82f6;
-    }
-
-    .brand-600 {
-      background: #2563eb;
-    }
-
-    .brand-700 {
-      background: #1d4ed8;
-    }
-
-    .brand-800 {
-      background: #1e40af;
-    }
-
-    .brand-900 {
-      background: #1e3a8a;
-    }
-
-    /* Neutral Colors */
-    .neutral-50 {
-      background: #f8fafc;
-    }
-
-    .neutral-100 {
-      background: #f1f5f9;
-    }
-
-    .neutral-200 {
-      background: #e2e8f0;
-    }
-
-    .neutral-300 {
-      background: #cbd5e1;
-    }
-
-    .neutral-400 {
-      background: #94a3b8;
-    }
-
-    .neutral-500 {
-      background: #64748b;
-    }
-
-    .neutral-600 {
-      background: #475569;
-    }
-
-    .neutral-700 {
-      background: #334155;
-    }
-
-    .neutral-800 {
-      background: #1e293b;
-    }
-
-    .neutral-900 {
-      background: #0f172a;
-    }
-
-    /* Success Colors */
-    .success-50 {
-      background: #f0fdf4;
-    }
-
-    .success-100 {
-      background: #dcfce7;
-    }
-
-    .success-200 {
-      background: #bbf7d0;
-    }
-
-    .success-300 {
-      background: #86efac;
-    }
-
-    .success-400 {
-      background: #4ade80;
-    }
-
-    .success-500 {
-      background: #22c55e;
-    }
-
-    .success-600 {
-      background: #16a34a;
-    }
-
-    .success-700 {
-      background: #15803d;
-    }
-
-    .success-800 {
-      background: #166534;
-    }
-
-    .success-900 {
-      background: #14532d;
-    }
-
-    /* Warning Colors */
-    .warning-50 {
-      background: #fffbeb;
-    }
-
-    .warning-100 {
-      background: #fef3c7;
-    }
-
-    .warning-200 {
-      background: #fde68a;
-    }
-
-    .warning-300 {
-      background: #fcd34d;
-    }
-
-    .warning-400 {
-      background: #fbbf24;
-    }
-
-    .warning-500 {
-      background: #f59e0b;
-    }
-
-    .warning-600 {
-      background: #d97706;
-    }
-
-    .warning-700 {
-      background: #b45309;
-    }
-
-    .warning-800 {
-      background: #92400e;
-    }
-
-    .warning-900 {
-      background: #78350f;
-    }
-
-    /* Error Colors */
-    .error-50 {
-      background: #fef2f2;
-    }
-
-    .error-100 {
-      background: #fee2e2;
-    }
-
-    .error-200 {
-      background: #fecaca;
-    }
-
-    .error-300 {
-      background: #fca5a5;
-    }
-
-    .error-400 {
-      background: #f87171;
-    }
-
-    .error-500 {
-      background: #ef4444;
-    }
-
-    .error-600 {
-      background: #dc2626;
-    }
-
-    .error-700 {
-      background: #b91c1c;
-    }
-
-    .error-800 {
-      background: #991b1b;
-    }
-
-    .error-900 {
-      background: #7f1d1d;
-    }
-
-    /* Info Colors */
-    .info-50 {
-      background: #eff6ff;
-    }
-
-    .info-100 {
-      background: #dbeafe;
-    }
-
-    .info-200 {
-      background: #bfdbfe;
-    }
-
-    .info-300 {
-      background: #93c5fd;
-    }
-
-    .info-400 {
-      background: #60a5fa;
-    }
-
-    .info-500 {
-      background: #3b82f6;
-    }
-
-    .info-600 {
-      background: #2563eb;
-    }
-
-    .info-700 {
-      background: #1d4ed8;
-    }
-
-    .info-800 {
-      background: #1e40af;
-    }
-
-    .info-900 {
-      background: #1e3a8a;
-    }
-
-    .surface-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-      gap: 1rem;
-    }
-
-    .surface-box {
-      padding: 2rem;
-      border-radius: 8px;
-      border: 1px solid #e2e8f0;
-      text-align: center;
-    }
-
-    .surface-page {
-      background: #f8fafc;
-    }
-
-    .surface-card {
-      background: #ffffff;
-    }
-
-    .surface-input {
-      background: #ffffff;
-    }
-
-    .surface-overlay {
-      background: rgba(15, 23, 42, 0.6);
-      color: white;
-    }
-
-    .text-role-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      gap: 1.5rem;
-    }
-
-    .text-role-example {
-      padding: 1.5rem;
-      border-radius: 8px;
-      border: 1px solid #e2e8f0;
-      background: #ffffff;
-    }
-
-    .text-default {
-      color: #0f172a;
-    }
-
-    .text-muted {
-      color: #334155;
-    }
-
-    .text-subtle {
-      color: #475569;
-    }
-
-    .text-meta {
-      color: #64748b;
-    }
-
-    .text-brand {
-      color: #2563eb;
-      font-weight: 600;
-    }
-  </style>
-</head>
-
-<body>
-  <div class="container">
-    <div class="header">
-      <a href="index.html" class="back-link">← Back to Examples</a>
-      <h1>🎨 Colors</h1>
-      <p class="subtitle">Complete color palette with semantic and component colors</p>
-    </div>
-
-    <div class="section">
-      <h2>Brand Colors</h2>
-      <div class="color-grid">
-        <div class="color-swatch">
-          <div class="color-box brand-50"></div>
-          <div class="color-label">50</div>
-          <div class="color-value">#eff6ff</div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Colors - Spectre Tokens</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family:
+          system-ui,
+          -apple-system,
+          sans-serif;
+        padding: 2rem;
+        background: #f8fafc;
+      }
+
+      .container {
+        max-width: 1400px;
+        margin: 0 auto;
+      }
+
+      .header {
+        margin-bottom: 2rem;
+      }
+
+      .back-link {
+        color: #2563eb;
+        text-decoration: none;
+        margin-bottom: 1rem;
+        display: inline-block;
+      }
+
+      h1 {
+        font-size: 3rem;
+        margin-bottom: 0.5rem;
+        color: #0f172a;
+      }
+
+      .subtitle {
+        font-size: 1.125rem;
+        color: #475569;
+      }
+
+      .section {
+        background: white;
+        border-radius: 8px;
+        padding: 2rem;
+        margin-bottom: 2rem;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+      }
+
+      h2 {
+        font-size: 1.5rem;
+        color: #0f172a;
+        margin-bottom: 1rem;
+      }
+
+      .color-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+        gap: 1rem;
+      }
+
+      .color-swatch {
+        text-align: center;
+      }
+
+      .color-box {
+        height: 80px;
+        border-radius: 8px;
+        margin-bottom: 0.5rem;
+        border: 1px solid #e2e8f0;
+      }
+
+      .color-label {
+        font-size: 0.875rem;
+        font-weight: 600;
+        color: #0f172a;
+        margin-bottom: 0.25rem;
+      }
+
+      .color-value {
+        font-size: 0.75rem;
+        font-family: monospace;
+        color: #64748b;
+      }
+
+      /* Brand Colors */
+      .brand-50 {
+        background: #eff6ff;
+      }
+
+      .brand-100 {
+        background: #dbeafe;
+      }
+
+      .brand-200 {
+        background: #bfdbfe;
+      }
+
+      .brand-300 {
+        background: #93c5fd;
+      }
+
+      .brand-400 {
+        background: #60a5fa;
+      }
+
+      .brand-500 {
+        background: #3b82f6;
+      }
+
+      .brand-600 {
+        background: #2563eb;
+      }
+
+      .brand-700 {
+        background: #1d4ed8;
+      }
+
+      .brand-800 {
+        background: #1e40af;
+      }
+
+      .brand-900 {
+        background: #1e3a8a;
+      }
+
+      /* Neutral Colors */
+      .neutral-50 {
+        background: #f8fafc;
+      }
+
+      .neutral-100 {
+        background: #f1f5f9;
+      }
+
+      .neutral-200 {
+        background: #e2e8f0;
+      }
+
+      .neutral-300 {
+        background: #cbd5e1;
+      }
+
+      .neutral-400 {
+        background: #94a3b8;
+      }
+
+      .neutral-500 {
+        background: #64748b;
+      }
+
+      .neutral-600 {
+        background: #475569;
+      }
+
+      .neutral-700 {
+        background: #334155;
+      }
+
+      .neutral-800 {
+        background: #1e293b;
+      }
+
+      .neutral-900 {
+        background: #0f172a;
+      }
+
+      /* Success Colors */
+      .success-50 {
+        background: #f0fdf4;
+      }
+
+      .success-100 {
+        background: #dcfce7;
+      }
+
+      .success-200 {
+        background: #bbf7d0;
+      }
+
+      .success-300 {
+        background: #86efac;
+      }
+
+      .success-400 {
+        background: #4ade80;
+      }
+
+      .success-500 {
+        background: #22c55e;
+      }
+
+      .success-600 {
+        background: #16a34a;
+      }
+
+      .success-700 {
+        background: #15803d;
+      }
+
+      .success-800 {
+        background: #166534;
+      }
+
+      .success-900 {
+        background: #14532d;
+      }
+
+      /* Warning Colors */
+      .warning-50 {
+        background: #fffbeb;
+      }
+
+      .warning-100 {
+        background: #fef3c7;
+      }
+
+      .warning-200 {
+        background: #fde68a;
+      }
+
+      .warning-300 {
+        background: #fcd34d;
+      }
+
+      .warning-400 {
+        background: #fbbf24;
+      }
+
+      .warning-500 {
+        background: #f59e0b;
+      }
+
+      .warning-600 {
+        background: #d97706;
+      }
+
+      .warning-700 {
+        background: #b45309;
+      }
+
+      .warning-800 {
+        background: #92400e;
+      }
+
+      .warning-900 {
+        background: #78350f;
+      }
+
+      /* Error Colors */
+      .error-50 {
+        background: #fef2f2;
+      }
+
+      .error-100 {
+        background: #fee2e2;
+      }
+
+      .error-200 {
+        background: #fecaca;
+      }
+
+      .error-300 {
+        background: #fca5a5;
+      }
+
+      .error-400 {
+        background: #f87171;
+      }
+
+      .error-500 {
+        background: #ef4444;
+      }
+
+      .error-600 {
+        background: #dc2626;
+      }
+
+      .error-700 {
+        background: #b91c1c;
+      }
+
+      .error-800 {
+        background: #991b1b;
+      }
+
+      .error-900 {
+        background: #7f1d1d;
+      }
+
+      /* Info Colors */
+      .info-50 {
+        background: #eff6ff;
+      }
+
+      .info-100 {
+        background: #dbeafe;
+      }
+
+      .info-200 {
+        background: #bfdbfe;
+      }
+
+      .info-300 {
+        background: #93c5fd;
+      }
+
+      .info-400 {
+        background: #60a5fa;
+      }
+
+      .info-500 {
+        background: #3b82f6;
+      }
+
+      .info-600 {
+        background: #2563eb;
+      }
+
+      .info-700 {
+        background: #1d4ed8;
+      }
+
+      .info-800 {
+        background: #1e40af;
+      }
+
+      .info-900 {
+        background: #1e3a8a;
+      }
+
+      .surface-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 1rem;
+      }
+
+      .surface-box {
+        padding: 2rem;
+        border-radius: 8px;
+        border: 1px solid #e2e8f0;
+        text-align: center;
+      }
+
+      .surface-page {
+        background: #f8fafc;
+      }
+
+      .surface-card {
+        background: #ffffff;
+      }
+
+      .surface-input {
+        background: #ffffff;
+      }
+
+      .surface-overlay {
+        background: rgba(15, 23, 42, 0.6);
+        color: white;
+      }
+
+      .text-role-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 1.5rem;
+      }
+
+      .text-role-example {
+        padding: 1.5rem;
+        border-radius: 8px;
+        border: 1px solid #e2e8f0;
+        background: #ffffff;
+      }
+
+      .text-default {
+        color: #0f172a;
+      }
+
+      .text-muted {
+        color: #334155;
+      }
+
+      .text-subtle {
+        color: #475569;
+      }
+
+      .text-meta {
+        color: #64748b;
+      }
+
+      .text-brand {
+        color: #2563eb;
+        font-weight: 600;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="header">
+        <a href="index.html" class="back-link">← Back to Examples</a>
+        <h1>🎨 Colors</h1>
+        <p class="subtitle">
+          Complete color palette with semantic and component colors
+        </p>
+      </div>
+
+      <div class="section">
+        <h2>Brand Colors</h2>
+        <div class="color-grid">
+          <div class="color-swatch">
+            <div class="color-box brand-50"></div>
+            <div class="color-label">50</div>
+            <div class="color-value">#eff6ff</div>
+          </div>
+          <div class="color-swatch">
+            <div class="color-box brand-100"></div>
+            <div class="color-label">100</div>
+            <div class="color-value">#dbeafe</div>
+          </div>
+          <div class="color-swatch">
+            <div class="color-box brand-200"></div>
+            <div class="color-label">200</div>
+            <div class="color-value">#bfdbfe</div>
+          </div>
+          <div class="color-swatch">
+            <div class="color-box brand-300"></div>
+            <div class="color-label">300</div>
+            <div class="color-value">#93c5fd</div>
+          </div>
+          <div class="color-swatch">
+            <div class="color-box brand-400"></div>
+            <div class="color-label">400</div>
+            <div class="color-value">#60a5fa</div>
+          </div>
+          <div class="color-swatch">
+            <div class="color-box brand-500"></div>
+            <div class="color-label">500</div>
+            <div class="color-value">#3b82f6</div>
+          </div>
+          <div class="color-swatch">
+            <div class="color-box brand-600"></div>
+            <div class="color-label">600</div>
+            <div class="color-value">#2563eb</div>
+          </div>
+          <div class="color-swatch">
+            <div class="color-box brand-700"></div>
+            <div class="color-label">700</div>
+            <div class="color-value">#1d4ed8</div>
+          </div>
+          <div class="color-swatch">
+            <div class="color-box brand-800"></div>
+            <div class="color-label">800</div>
+            <div class="color-value">#1e40af</div>
+          </div>
+          <div class="color-swatch">
+            <div class="color-box brand-900"></div>
+            <div class="color-label">900</div>
+            <div class="color-value">#1e3a8a</div>
+          </div>
         </div>
-        <div class="color-swatch">
-          <div class="color-box brand-100"></div>
-          <div class="color-label">100</div>
-          <div class="color-value">#dbeafe</div>
+      </div>
+
+      <div class="section">
+        <h2>Neutral Colors</h2>
+        <div class="color-grid">
+          <div class="color-swatch">
+            <div class="color-box neutral-50"></div>
+            <div class="color-label">50</div>
+            <div class="color-value">#f8fafc</div>
+          </div>
+          <div class="color-swatch">
+            <div class="color-box neutral-100"></div>
+            <div class="color-label">100</div>
+            <div class="color-value">#f1f5f9</div>
+          </div>
+          <div class="color-swatch">
+            <div class="color-box neutral-200"></div>
+            <div class="color-label">200</div>
+            <div class="color-value">#e2e8f0</div>
+          </div>
+          <div class="color-swatch">
+            <div class="color-box neutral-300"></div>
+            <div class="color-label">300</div>
+            <div class="color-value">#cbd5e1</div>
+          </div>
+          <div class="color-swatch">
+            <div class="color-box neutral-400"></div>
+            <div class="color-label">400</div>
+            <div class="color-value">#94a3b8</div>
+          </div>
+          <div class="color-swatch">
+            <div class="color-box neutral-500"></div>
+            <div class="color-label">500</div>
+            <div class="color-value">#64748b</div>
+          </div>
+          <div class="color-swatch">
+            <div class="color-box neutral-600"></div>
+            <div class="color-label">600</div>
+            <div class="color-value">#475569</div>
+          </div>
+          <div class="color-swatch">
+            <div class="color-box neutral-700"></div>
+            <div class="color-label">700</div>
+            <div class="color-value">#334155</div>
+          </div>
+          <div class="color-swatch">
+            <div class="color-box neutral-800"></div>
+            <div class="color-label">800</div>
+            <div class="color-value">#1e293b</div>
+          </div>
+          <div class="color-swatch">
+            <div class="color-box neutral-900"></div>
+            <div class="color-label">900</div>
+            <div class="color-value">#0f172a</div>
+          </div>
         </div>
-        <div class="color-swatch">
-          <div class="color-box brand-200"></div>
-          <div class="color-label">200</div>
-          <div class="color-value">#bfdbfe</div>
+      </div>
+
+      <div class="section">
+        <h2>Success Colors</h2>
+        <div class="color-grid">
+          <div class="color-swatch">
+            <div class="color-box success-50"></div>
+            <div class="color-label">50</div>
+            <div class="color-value">#f0fdf4</div>
+          </div>
+          <div class="color-swatch">
+            <div class="color-box success-100"></div>
+            <div class="color-label">100</div>
+            <div class="color-value">#dcfce7</div>
+          </div>
+          <div class="color-swatch">
+            <div class="color-box success-200"></div>
+            <div class="color-label">200</div>
+            <div class="color-value">#bbf7d0</div>
+          </div>
+          <div class="color-swatch">
+            <div class="color-box success-300"></div>
+            <div class="color-label">300</div>
+            <div class="color-value">#86efac</div>
+          </div>
+          <div class="color-swatch">
+            <div class="color-box success-400"></div>
+            <div class="color-label">400</div>
+            <div class="color-value">#4ade80</div>
+          </div>
+          <div class="color-swatch">
+            <div class="color-box success-500"></div>
+            <div class="color-label">500</div>
+            <div class="color-value">#22c55e</div>
+          </div>
+          <div class="color-swatch">
+            <div class="color-box success-600"></div>
+            <div class="color-label">600</div>
+            <div class="color-value">#16a34a</div>
+          </div>
+          <div class="color-swatch">
+            <div class="color-box success-700"></div>
+            <div class="color-label">700</div>
+            <div class="color-value">#15803d</div>
+          </div>
+          <div class="color-swatch">
+            <div class="color-box success-800"></div>
+            <div class="color-label">800</div>
+            <div class="color-value">#166534</div>
+          </div>
+          <div class="color-swatch">
+            <div class="color-box success-900"></div>
+            <div class="color-label">900</div>
+            <div class="color-value">#14532d</div>
+          </div>
         </div>
-        <div class="color-swatch">
-          <div class="color-box brand-300"></div>
-          <div class="color-label">300</div>
-          <div class="color-value">#93c5fd</div>
+      </div>
+
+      <div class="section">
+        <h2>Warning Colors</h2>
+        <div class="color-grid">
+          <div class="color-swatch">
+            <div class="color-box warning-50"></div>
+            <div class="color-label">50</div>
+            <div class="color-value">#fffbeb</div>
+          </div>
+          <div class="color-swatch">
+            <div class="color-box warning-100"></div>
+            <div class="color-label">100</div>
+            <div class="color-value">#fef3c7</div>
+          </div>
+          <div class="color-swatch">
+            <div class="color-box warning-200"></div>
+            <div class="color-label">200</div>
+            <div class="color-value">#fde68a</div>
+          </div>
+          <div class="color-swatch">
+            <div class="color-box warning-300"></div>
+            <div class="color-label">300</div>
+            <div class="color-value">#fcd34d</div>
+          </div>
+          <div class="color-swatch">
+            <div class="color-box warning-400"></div>
+            <div class="color-label">400</div>
+            <div class="color-value">#fbbf24</div>
+          </div>
+          <div class="color-swatch">
+            <div class="color-box warning-500"></div>
+            <div class="color-label">500</div>
+            <div class="color-value">#f59e0b</div>
+          </div>
+          <div class="color-swatch">
+            <div class="color-box warning-600"></div>
+            <div class="color-label">600</div>
+            <div class="color-value">#d97706</div>
+          </div>
+          <div class="color-swatch">
+            <div class="color-box warning-700"></div>
+            <div class="color-label">700</div>
+            <div class="color-value">#b45309</div>
+          </div>
+          <div class="color-swatch">
+            <div class="color-box warning-800"></div>
+            <div class="color-label">800</div>
+            <div class="color-value">#92400e</div>
+          </div>
+          <div class="color-swatch">
+            <div class="color-box warning-900"></div>
+            <div class="color-label">900</div>
+            <div class="color-value">#78350f</div>
+          </div>
         </div>
-        <div class="color-swatch">
-          <div class="color-box brand-400"></div>
-          <div class="color-label">400</div>
-          <div class="color-value">#60a5fa</div>
+      </div>
+
+      <div class="section">
+        <h2>Error Colors</h2>
+        <div class="color-grid">
+          <div class="color-swatch">
+            <div class="color-box error-50"></div>
+            <div class="color-label">50</div>
+            <div class="color-value">#fef2f2</div>
+          </div>
+          <div class="color-swatch">
+            <div class="color-box error-100"></div>
+            <div class="color-label">100</div>
+            <div class="color-value">#fee2e2</div>
+          </div>
+          <div class="color-swatch">
+            <div class="color-box error-200"></div>
+            <div class="color-label">200</div>
+            <div class="color-value">#fecaca</div>
+          </div>
+          <div class="color-swatch">
+            <div class="color-box error-300"></div>
+            <div class="color-label">300</div>
+            <div class="color-value">#fca5a5</div>
+          </div>
+          <div class="color-swatch">
+            <div class="color-box error-400"></div>
+            <div class="color-label">400</div>
+            <div class="color-value">#f87171</div>
+          </div>
+          <div class="color-swatch">
+            <div class="color-box error-500"></div>
+            <div class="color-label">500</div>
+            <div class="color-value">#ef4444</div>
+          </div>
+          <div class="color-swatch">
+            <div class="color-box error-600"></div>
+            <div class="color-label">600</div>
+            <div class="color-value">#dc2626</div>
+          </div>
+          <div class="color-swatch">
+            <div class="color-box error-700"></div>
+            <div class="color-label">700</div>
+            <div class="color-value">#b91c1c</div>
+          </div>
+          <div class="color-swatch">
+            <div class="color-box error-800"></div>
+            <div class="color-label">800</div>
+            <div class="color-value">#991b1b</div>
+          </div>
+          <div class="color-swatch">
+            <div class="color-box error-900"></div>
+            <div class="color-label">900</div>
+            <div class="color-value">#7f1d1d</div>
+          </div>
         </div>
-        <div class="color-swatch">
-          <div class="color-box brand-500"></div>
-          <div class="color-label">500</div>
-          <div class="color-value">#3b82f6</div>
+      </div>
+
+      <div class="section">
+        <h2>Info Colors</h2>
+        <div class="color-grid">
+          <div class="color-swatch">
+            <div class="color-box info-50"></div>
+            <div class="color-label">50</div>
+            <div class="color-value">#eff6ff</div>
+          </div>
+          <div class="color-swatch">
+            <div class="color-box info-100"></div>
+            <div class="color-label">100</div>
+            <div class="color-value">#dbeafe</div>
+          </div>
+          <div class="color-swatch">
+            <div class="color-box info-200"></div>
+            <div class="color-label">200</div>
+            <div class="color-value">#bfdbfe</div>
+          </div>
+          <div class="color-swatch">
+            <div class="color-box info-300"></div>
+            <div class="color-label">300</div>
+            <div class="color-value">#93c5fd</div>
+          </div>
+          <div class="color-swatch">
+            <div class="color-box info-400"></div>
+            <div class="color-label">400</div>
+            <div class="color-value">#60a5fa</div>
+          </div>
+          <div class="color-swatch">
+            <div class="color-box info-500"></div>
+            <div class="color-label">500</div>
+            <div class="color-value">#3b82f6</div>
+          </div>
+          <div class="color-swatch">
+            <div class="color-box info-600"></div>
+            <div class="color-label">600</div>
+            <div class="color-value">#2563eb</div>
+          </div>
+          <div class="color-swatch">
+            <div class="color-box info-700"></div>
+            <div class="color-label">700</div>
+            <div class="color-value">#1d4ed8</div>
+          </div>
+          <div class="color-swatch">
+            <div class="color-box info-800"></div>
+            <div class="color-label">800</div>
+            <div class="color-value">#1e40af</div>
+          </div>
+          <div class="color-swatch">
+            <div class="color-box info-900"></div>
+            <div class="color-label">900</div>
+            <div class="color-value">#1e3a8a</div>
+          </div>
         </div>
-        <div class="color-swatch">
-          <div class="color-box brand-600"></div>
-          <div class="color-label">600</div>
-          <div class="color-value">#2563eb</div>
-        </div>
-        <div class="color-swatch">
-          <div class="color-box brand-700"></div>
-          <div class="color-label">700</div>
-          <div class="color-value">#1d4ed8</div>
-        </div>
-        <div class="color-swatch">
-          <div class="color-box brand-800"></div>
-          <div class="color-label">800</div>
-          <div class="color-value">#1e40af</div>
-        </div>
-        <div class="color-swatch">
-          <div class="color-box brand-900"></div>
-          <div class="color-label">900</div>
-          <div class="color-value">#1e3a8a</div>
+      </div>
+
+      <div class="section">
+        <h2>Text Roles</h2>
+        <div class="text-role-grid">
+          <div class="text-role-example">
+            <div class="color-label">Default</div>
+            <p class="text-default">
+              The quick brown fox jumps over the lazy dog.
+            </p>
+            <div class="color-value">text.onPage.default (#0f172a)</div>
+          </div>
+          <div class="text-role-example">
+            <div class="color-label">Muted</div>
+            <p class="text-muted">
+              The quick brown fox jumps over the lazy dog.
+            </p>
+            <div class="color-value">text.onPage.muted (#334155)</div>
+          </div>
+          <div class="text-role-example">
+            <div class="color-label">Subtle</div>
+            <p class="text-subtle">
+              The quick brown fox jumps over the lazy dog.
+            </p>
+            <div class="color-value">text.onPage.subtle (#475569)</div>
+          </div>
+          <div class="text-role-example">
+            <div class="color-label">Meta</div>
+            <p class="text-meta">Posted on March 15, 2026</p>
+            <div class="color-value">text.onPage.meta (#64748b)</div>
+          </div>
+          <div class="text-role-example">
+            <div class="color-label">Brand</div>
+            <p class="text-brand">Featured Highlighted Content</p>
+            <div class="color-value">text.onPage.brand (#2563eb)</div>
+          </div>
         </div>
       </div>
     </div>
-
-    <div class="section">
-      <h2>Neutral Colors</h2>
-      <div class="color-grid">
-        <div class="color-swatch">
-          <div class="color-box neutral-50"></div>
-          <div class="color-label">50</div>
-          <div class="color-value">#f8fafc</div>
-        </div>
-        <div class="color-swatch">
-          <div class="color-box neutral-100"></div>
-          <div class="color-label">100</div>
-          <div class="color-value">#f1f5f9</div>
-        </div>
-        <div class="color-swatch">
-          <div class="color-box neutral-200"></div>
-          <div class="color-label">200</div>
-          <div class="color-value">#e2e8f0</div>
-        </div>
-        <div class="color-swatch">
-          <div class="color-box neutral-300"></div>
-          <div class="color-label">300</div>
-          <div class="color-value">#cbd5e1</div>
-        </div>
-        <div class="color-swatch">
-          <div class="color-box neutral-400"></div>
-          <div class="color-label">400</div>
-          <div class="color-value">#94a3b8</div>
-        </div>
-        <div class="color-swatch">
-          <div class="color-box neutral-500"></div>
-          <div class="color-label">500</div>
-          <div class="color-value">#64748b</div>
-        </div>
-        <div class="color-swatch">
-          <div class="color-box neutral-600"></div>
-          <div class="color-label">600</div>
-          <div class="color-value">#475569</div>
-        </div>
-        <div class="color-swatch">
-          <div class="color-box neutral-700"></div>
-          <div class="color-label">700</div>
-          <div class="color-value">#334155</div>
-        </div>
-        <div class="color-swatch">
-          <div class="color-box neutral-800"></div>
-          <div class="color-label">800</div>
-          <div class="color-value">#1e293b</div>
-        </div>
-        <div class="color-swatch">
-          <div class="color-box neutral-900"></div>
-          <div class="color-label">900</div>
-          <div class="color-value">#0f172a</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="section">
-      <h2>Success Colors</h2>
-      <div class="color-grid">
-        <div class="color-swatch">
-          <div class="color-box success-50"></div>
-          <div class="color-label">50</div>
-          <div class="color-value">#f0fdf4</div>
-        </div>
-        <div class="color-swatch">
-          <div class="color-box success-100"></div>
-          <div class="color-label">100</div>
-          <div class="color-value">#dcfce7</div>
-        </div>
-        <div class="color-swatch">
-          <div class="color-box success-200"></div>
-          <div class="color-label">200</div>
-          <div class="color-value">#bbf7d0</div>
-        </div>
-        <div class="color-swatch">
-          <div class="color-box success-300"></div>
-          <div class="color-label">300</div>
-          <div class="color-value">#86efac</div>
-        </div>
-        <div class="color-swatch">
-          <div class="color-box success-400"></div>
-          <div class="color-label">400</div>
-          <div class="color-value">#4ade80</div>
-        </div>
-        <div class="color-swatch">
-          <div class="color-box success-500"></div>
-          <div class="color-label">500</div>
-          <div class="color-value">#22c55e</div>
-        </div>
-        <div class="color-swatch">
-          <div class="color-box success-600"></div>
-          <div class="color-label">600</div>
-          <div class="color-value">#16a34a</div>
-        </div>
-        <div class="color-swatch">
-          <div class="color-box success-700"></div>
-          <div class="color-label">700</div>
-          <div class="color-value">#15803d</div>
-        </div>
-        <div class="color-swatch">
-          <div class="color-box success-800"></div>
-          <div class="color-label">800</div>
-          <div class="color-value">#166534</div>
-        </div>
-        <div class="color-swatch">
-          <div class="color-box success-900"></div>
-          <div class="color-label">900</div>
-          <div class="color-value">#14532d</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="section">
-      <h2>Warning Colors</h2>
-      <div class="color-grid">
-        <div class="color-swatch">
-          <div class="color-box warning-50"></div>
-          <div class="color-label">50</div>
-          <div class="color-value">#fffbeb</div>
-        </div>
-        <div class="color-swatch">
-          <div class="color-box warning-100"></div>
-          <div class="color-label">100</div>
-          <div class="color-value">#fef3c7</div>
-        </div>
-        <div class="color-swatch">
-          <div class="color-box warning-200"></div>
-          <div class="color-label">200</div>
-          <div class="color-value">#fde68a</div>
-        </div>
-        <div class="color-swatch">
-          <div class="color-box warning-300"></div>
-          <div class="color-label">300</div>
-          <div class="color-value">#fcd34d</div>
-        </div>
-        <div class="color-swatch">
-          <div class="color-box warning-400"></div>
-          <div class="color-label">400</div>
-          <div class="color-value">#fbbf24</div>
-        </div>
-        <div class="color-swatch">
-          <div class="color-box warning-500"></div>
-          <div class="color-label">500</div>
-          <div class="color-value">#f59e0b</div>
-        </div>
-        <div class="color-swatch">
-          <div class="color-box warning-600"></div>
-          <div class="color-label">600</div>
-          <div class="color-value">#d97706</div>
-        </div>
-        <div class="color-swatch">
-          <div class="color-box warning-700"></div>
-          <div class="color-label">700</div>
-          <div class="color-value">#b45309</div>
-        </div>
-        <div class="color-swatch">
-          <div class="color-box warning-800"></div>
-          <div class="color-label">800</div>
-          <div class="color-value">#92400e</div>
-        </div>
-        <div class="color-swatch">
-          <div class="color-box warning-900"></div>
-          <div class="color-label">900</div>
-          <div class="color-value">#78350f</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="section">
-      <h2>Error Colors</h2>
-      <div class="color-grid">
-        <div class="color-swatch">
-          <div class="color-box error-50"></div>
-          <div class="color-label">50</div>
-          <div class="color-value">#fef2f2</div>
-        </div>
-        <div class="color-swatch">
-          <div class="color-box error-100"></div>
-          <div class="color-label">100</div>
-          <div class="color-value">#fee2e2</div>
-        </div>
-        <div class="color-swatch">
-          <div class="color-box error-200"></div>
-          <div class="color-label">200</div>
-          <div class="color-value">#fecaca</div>
-        </div>
-        <div class="color-swatch">
-          <div class="color-box error-300"></div>
-          <div class="color-label">300</div>
-          <div class="color-value">#fca5a5</div>
-        </div>
-        <div class="color-swatch">
-          <div class="color-box error-400"></div>
-          <div class="color-label">400</div>
-          <div class="color-value">#f87171</div>
-        </div>
-        <div class="color-swatch">
-          <div class="color-box error-500"></div>
-          <div class="color-label">500</div>
-          <div class="color-value">#ef4444</div>
-        </div>
-        <div class="color-swatch">
-          <div class="color-box error-600"></div>
-          <div class="color-label">600</div>
-          <div class="color-value">#dc2626</div>
-        </div>
-        <div class="color-swatch">
-          <div class="color-box error-700"></div>
-          <div class="color-label">700</div>
-          <div class="color-value">#b91c1c</div>
-        </div>
-        <div class="color-swatch">
-          <div class="color-box error-800"></div>
-          <div class="color-label">800</div>
-          <div class="color-value">#991b1b</div>
-        </div>
-        <div class="color-swatch">
-          <div class="color-box error-900"></div>
-          <div class="color-label">900</div>
-          <div class="color-value">#7f1d1d</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="section">
-      <h2>Info Colors</h2>
-      <div class="color-grid">
-        <div class="color-swatch">
-          <div class="color-box info-50"></div>
-          <div class="color-label">50</div>
-          <div class="color-value">#eff6ff</div>
-        </div>
-        <div class="color-swatch">
-          <div class="color-box info-100"></div>
-          <div class="color-label">100</div>
-          <div class="color-value">#dbeafe</div>
-        </div>
-        <div class="color-swatch">
-          <div class="color-box info-200"></div>
-          <div class="color-label">200</div>
-          <div class="color-value">#bfdbfe</div>
-        </div>
-        <div class="color-swatch">
-          <div class="color-box info-300"></div>
-          <div class="color-label">300</div>
-          <div class="color-value">#93c5fd</div>
-        </div>
-        <div class="color-swatch">
-          <div class="color-box info-400"></div>
-          <div class="color-label">400</div>
-          <div class="color-value">#60a5fa</div>
-        </div>
-        <div class="color-swatch">
-          <div class="color-box info-500"></div>
-          <div class="color-label">500</div>
-          <div class="color-value">#3b82f6</div>
-        </div>
-        <div class="color-swatch">
-          <div class="color-box info-600"></div>
-          <div class="color-label">600</div>
-          <div class="color-value">#2563eb</div>
-        </div>
-        <div class="color-swatch">
-          <div class="color-box info-700"></div>
-          <div class="color-label">700</div>
-          <div class="color-value">#1d4ed8</div>
-        </div>
-        <div class="color-swatch">
-          <div class="color-box info-800"></div>
-          <div class="color-label">800</div>
-          <div class="color-value">#1e40af</div>
-        </div>
-        <div class="color-swatch">
-          <div class="color-box info-900"></div>
-          <div class="color-label">900</div>
-          <div class="color-value">#1e3a8a</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="section">
-      <h2>Text Roles</h2>
-      <div class="text-role-grid">
-        <div class="text-role-example">
-          <div class="color-label">Default</div>
-          <p class="text-default">The quick brown fox jumps over the lazy dog.</p>
-          <div class="color-value">text.onPage.default (#0f172a)</div>
-        </div>
-        <div class="text-role-example">
-          <div class="color-label">Muted</div>
-          <p class="text-muted">The quick brown fox jumps over the lazy dog.</p>
-          <div class="color-value">text.onPage.muted (#334155)</div>
-        </div>
-        <div class="text-role-example">
-          <div class="color-label">Subtle</div>
-          <p class="text-subtle">The quick brown fox jumps over the lazy dog.</p>
-          <div class="color-value">text.onPage.subtle (#475569)</div>
-        </div>
-        <div class="text-role-example">
-          <div class="color-label">Meta</div>
-          <p class="text-meta">Posted on March 15, 2026</p>
-          <div class="color-value">text.onPage.meta (#64748b)</div>
-        </div>
-        <div class="text-role-example">
-          <div class="color-label">Brand</div>
-          <p class="text-brand">Featured Highlighted Content</p>
-          <div class="color-value">text.onPage.brand (#2563eb)</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</body>
-
+  </body>
 </html>

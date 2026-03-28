@@ -1,161 +1,168 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Spectre Tokens - Examples</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Spectre Tokens - Examples</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+      body {
+        font-family:
+          system-ui,
+          -apple-system,
+          sans-serif;
+        padding: 2rem;
+        background: #f8fafc;
+      }
 
-    body {
-      font-family: system-ui, -apple-system, sans-serif;
-      padding: 2rem;
-      background: #f8fafc;
-    }
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+      }
 
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-    }
+      h1 {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+        color: #0f172a;
+      }
 
-    h1 {
-      font-size: 3rem;
-      margin-bottom: 1rem;
-      color: #0f172a;
-    }
+      p {
+        font-size: 1.125rem;
+        color: #475569;
+        margin-bottom: 2rem;
+      }
 
-    p {
-      font-size: 1.125rem;
-      color: #475569;
-      margin-bottom: 2rem;
-    }
+      .examples-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 1.5rem;
+        margin-top: 2rem;
+      }
 
-    .examples-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      gap: 1.5rem;
-      margin-top: 2rem;
-    }
+      .example-card {
+        background: white;
+        border-radius: 8px;
+        padding: 1.5rem;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        text-decoration: none;
+        color: inherit;
+        transition: all 200ms;
+        border: 1px solid #e2e8f0;
+      }
 
-    .example-card {
-      background: white;
-      border-radius: 8px;
-      padding: 1.5rem;
-      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-      text-decoration: none;
-      color: inherit;
-      transition: all 200ms;
-      border: 1px solid #e2e8f0;
-    }
+      .example-card:hover {
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        transform: translateY(-2px);
+      }
 
-    .example-card:hover {
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-      transform: translateY(-2px);
-    }
+      .example-card h2 {
+        font-size: 1.5rem;
+        color: #2563eb;
+        margin-bottom: 0.5rem;
+      }
 
-    .example-card h2 {
-      font-size: 1.5rem;
-      color: #2563eb;
-      margin-bottom: 0.5rem;
-    }
+      .example-card p {
+        font-size: 0.875rem;
+        color: #64748b;
+        margin-bottom: 0;
+      }
 
-    .example-card p {
-      font-size: 0.875rem;
-      color: #64748b;
-      margin-bottom: 0;
-    }
+      .icon {
+        font-size: 2rem;
+        margin-bottom: 0.75rem;
+      }
+    </style>
+  </head>
 
-    .icon {
-      font-size: 2rem;
-      margin-bottom: 0.75rem;
-    }
-  </style>
-</head>
+  <body>
+    <div class="container">
+      <h1>🎨 Spectre Tokens Examples</h1>
+      <p>
+        Explore comprehensive examples of all token categories in the Spectre
+        design system.
+      </p>
 
-<body>
-  <div class="container">
-    <h1>🎨 Spectre Tokens Examples</h1>
-    <p>Explore comprehensive examples of all token categories in the Spectre design system.</p>
+      <div class="examples-grid">
+        <a href="colors.html" class="example-card">
+          <div class="icon">🎨</div>
+          <h2>Colors</h2>
+          <p>
+            Complete color palette including brand, semantic, and component
+            colors
+          </p>
+        </a>
 
-    <div class="examples-grid">
-      <a href="colors.html" class="example-card">
-        <div class="icon">🎨</div>
-        <h2>Colors</h2>
-        <p>Complete color palette including brand, semantic, and component colors</p>
-      </a>
+        <a href="typography.html" class="example-card">
+          <div class="icon">📝</div>
+          <h2>Typography</h2>
+          <p>Font scales, families, weights, and text styles</p>
+        </a>
 
-      <a href="typography.html" class="example-card">
-        <div class="icon">📝</div>
-        <h2>Typography</h2>
-        <p>Font scales, families, weights, and text styles</p>
-      </a>
+        <a href="spacing.html" class="example-card">
+          <div class="icon">📏</div>
+          <h2>Spacing</h2>
+          <p>Spacing scale and layout tokens for consistent spacing</p>
+        </a>
 
-      <a href="spacing.html" class="example-card">
-        <div class="icon">📏</div>
-        <h2>Spacing</h2>
-        <p>Spacing scale and layout tokens for consistent spacing</p>
-      </a>
+        <a href="borders.html" class="example-card">
+          <div class="icon">🔲</div>
+          <h2>Borders & Radii</h2>
+          <p>Border colors, widths, and border radius options</p>
+        </a>
 
-      <a href="borders.html" class="example-card">
-        <div class="icon">🔲</div>
-        <h2>Borders & Radii</h2>
-        <p>Border colors, widths, and border radius options</p>
-      </a>
+        <a href="shadows.html" class="example-card">
+          <div class="icon">☁️</div>
+          <h2>Shadows</h2>
+          <p>Elevation and shadow tokens for depth</p>
+        </a>
 
-      <a href="shadows.html" class="example-card">
-        <div class="icon">☁️</div>
-        <h2>Shadows</h2>
-        <p>Elevation and shadow tokens for depth</p>
-      </a>
+        <a href="buttons.html" class="example-card">
+          <div class="icon">🔘</div>
+          <h2>Buttons</h2>
+          <p>Button variants with all states</p>
+        </a>
 
-      <a href="buttons.html" class="example-card">
-        <div class="icon">🔘</div>
-        <h2>Buttons</h2>
-        <p>Button variants with all states</p>
-      </a>
+        <a href="forms.html" class="example-card">
+          <div class="icon">📋</div>
+          <h2>Forms</h2>
+          <p>Form input styles and states</p>
+        </a>
 
-      <a href="forms.html" class="example-card">
-        <div class="icon">📋</div>
-        <h2>Forms</h2>
-        <p>Form input styles and states</p>
-      </a>
+        <a href="animations.html" class="example-card">
+          <div class="icon">⚡</div>
+          <h2>Animations & Transitions</h2>
+          <p>Motion and animation tokens</p>
+        </a>
 
-      <a href="animations.html" class="example-card">
-        <div class="icon">⚡</div>
-        <h2>Animations & Transitions</h2>
-        <p>Motion and animation tokens</p>
-      </a>
+        <a href="components.html" class="example-card">
+          <div class="icon">🧩</div>
+          <h2>Components</h2>
+          <p>Badges, cards, testimonials, and more</p>
+        </a>
 
-      <a href="components.html" class="example-card">
-        <div class="icon">🧩</div>
-        <h2>Components</h2>
-        <p>Badges, cards, testimonials, and more</p>
-      </a>
+        <a href="accessibility.html" class="example-card">
+          <div class="icon">♿</div>
+          <h2>Accessibility</h2>
+          <p>Focus rings, touch targets, and accessibility tokens</p>
+        </a>
 
-      <a href="accessibility.html" class="example-card">
-        <div class="icon">♿</div>
-        <h2>Accessibility</h2>
-        <p>Focus rings, touch targets, and accessibility tokens</p>
-      </a>
+        <a href="icons.html" class="example-card">
+          <div class="icon">🎯</div>
+          <h2>Icons</h2>
+          <p>Icon size tokens for consistent iconography</p>
+        </a>
 
-      <a href="icons.html" class="example-card">
-        <div class="icon">🎯</div>
-        <h2>Icons</h2>
-        <p>Icon size tokens for consistent iconography</p>
-      </a>
-
-      <a href="aspect-ratios.html" class="example-card">
-        <div class="icon">🖼️</div>
-        <h2>Aspect Ratios</h2>
-        <p>Consistent aspect ratios for images and media</p>
-      </a>
+        <a href="aspect-ratios.html" class="example-card">
+          <div class="icon">🖼️</div>
+          <h2>Aspect Ratios</h2>
+          <p>Consistent aspect ratios for images and media</p>
+        </a>
+      </div>
     </div>
-  </div>
-</body>
-
+  </body>
 </html>
