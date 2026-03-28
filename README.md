@@ -13,10 +13,10 @@ downstream Spectre package.
 
 ## Overview
 
-`@phcdevworks/spectre-tokens` is the foundation of the Spectre suite. It
-follows a strict **JSON-first** policy: authoritative values live in `tokens/`
-and are transformed into multiple consumer-friendly outputs for JavaScript,
-TypeScript, Tailwind, and CSS.
+`@phcdevworks/spectre-tokens` is the foundation of the Spectre suite. It follows
+a strict **JSON-first** policy: authoritative values live in `tokens/` and are
+transformed into multiple consumer-friendly outputs for JavaScript, TypeScript,
+Tailwind, and CSS.
 
 - 🧬 **Authoritative JSON**: Domain-specific token storage for better
   maintainability.
