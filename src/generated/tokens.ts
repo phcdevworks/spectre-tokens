@@ -484,6 +484,9 @@ export interface SpectreGeneratedTokens {
         };
         alternate: {
           value: string;
+          metadata: {
+            pair: string;
+          };
         };
         hero: {
           value: string;
@@ -493,35 +496,65 @@ export interface SpectreGeneratedTokens {
         onPage: {
           default: {
             value: string;
+            metadata: {
+              pair: string;
+            };
           };
           muted: {
             value: string;
+            metadata: {
+              pair: string;
+            };
           };
           subtle: {
             value: string;
+            metadata: {
+              pair: string;
+            };
           };
           meta: {
             value: string;
+            metadata: {
+              pair: string;
+            };
           };
           brand: {
             value: string;
+            metadata: {
+              pair: string;
+            };
           };
         };
         onSurface: {
           default: {
             value: string;
+            metadata: {
+              pair: string;
+            };
           };
           muted: {
             value: string;
+            metadata: {
+              pair: string;
+            };
           };
           subtle: {
             value: string;
+            metadata: {
+              pair: string;
+            };
           };
           meta: {
             value: string;
+            metadata: {
+              pair: string;
+            };
           };
           brand: {
             value: string;
+            metadata: {
+              pair: string;
+            };
           };
         };
       };
@@ -643,6 +676,7 @@ export interface SpectreGeneratedTokens {
           bg: {
             value: string;
             metadata: {
+              pair: string;
             };
           };
           border: {
@@ -653,16 +687,19 @@ export interface SpectreGeneratedTokens {
           text: {
             value: string;
             metadata: {
+              pair: string;
             };
           };
           authorName: {
             value: string;
             metadata: {
+              pair: string;
             };
           };
           authorTitle: {
             value: string;
             metadata: {
+              pair: string;
             };
           };
           quoteMark: {
@@ -675,6 +712,7 @@ export interface SpectreGeneratedTokens {
           bg: {
             value: string;
             metadata: {
+              pair: string;
             };
           };
           border: {
@@ -707,11 +745,13 @@ export interface SpectreGeneratedTokens {
           price: {
             value: string;
             metadata: {
+              pair: string;
             };
           };
           priceDescription: {
             value: string;
             metadata: {
+              pair: string;
             };
           };
         };
@@ -759,6 +799,9 @@ export interface SpectreGeneratedTokens {
         };
         alternate: {
           value: string;
+          metadata: {
+            pair: string;
+          };
         };
         hero: {
           value: string;
@@ -768,35 +811,65 @@ export interface SpectreGeneratedTokens {
         onPage: {
           default: {
             value: string;
+            metadata: {
+              pair: string;
+            };
           };
           muted: {
             value: string;
+            metadata: {
+              pair: string;
+            };
           };
           subtle: {
             value: string;
+            metadata: {
+              pair: string;
+            };
           };
           meta: {
             value: string;
+            metadata: {
+              pair: string;
+            };
           };
           brand: {
             value: string;
+            metadata: {
+              pair: string;
+            };
           };
         };
         onSurface: {
           default: {
             value: string;
+            metadata: {
+              pair: string;
+            };
           };
           muted: {
             value: string;
+            metadata: {
+              pair: string;
+            };
           };
           subtle: {
             value: string;
+            metadata: {
+              pair: string;
+            };
           };
           meta: {
             value: string;
+            metadata: {
+              pair: string;
+            };
           };
           brand: {
             value: string;
+            metadata: {
+              pair: string;
+            };
           };
         };
       };
@@ -804,9 +877,15 @@ export interface SpectreGeneratedTokens {
         card: {
           text: {
             value: string;
+            metadata: {
+              pair: string;
+            };
           };
           textMuted: {
             value: string;
+            metadata: {
+              pair: string;
+            };
           };
         };
         input: {
@@ -834,6 +913,9 @@ export interface SpectreGeneratedTokens {
           };
           neutralBgHover: {
             value: string;
+            metadata: {
+              pair: string;
+            };
           };
           neutralText: {
             value: string;
@@ -848,6 +930,9 @@ export interface SpectreGeneratedTokens {
           };
           infoBgHover: {
             value: string;
+            metadata: {
+              pair: string;
+            };
           };
           infoText: {
             value: string;
@@ -862,6 +947,9 @@ export interface SpectreGeneratedTokens {
           };
           successBgHover: {
             value: string;
+            metadata: {
+              pair: string;
+            };
           };
           successText: {
             value: string;
@@ -876,6 +964,9 @@ export interface SpectreGeneratedTokens {
           };
           warningBgHover: {
             value: string;
+            metadata: {
+              pair: string;
+            };
           };
           warningText: {
             value: string;
@@ -890,6 +981,9 @@ export interface SpectreGeneratedTokens {
           };
           dangerBgHover: {
             value: string;
+            metadata: {
+              pair: string;
+            };
           };
           dangerText: {
             value: string;
@@ -933,6 +1027,7 @@ export interface SpectreGeneratedTokens {
           bg: {
             value: string;
             metadata: {
+              pair: string;
             };
           };
           border: {
@@ -943,16 +1038,19 @@ export interface SpectreGeneratedTokens {
           text: {
             value: string;
             metadata: {
+              pair: string;
             };
           };
           authorName: {
             value: string;
             metadata: {
+              pair: string;
             };
           };
           authorTitle: {
             value: string;
             metadata: {
+              pair: string;
             };
           };
           quoteMark: {
@@ -965,6 +1063,7 @@ export interface SpectreGeneratedTokens {
           bg: {
             value: string;
             metadata: {
+              pair: string;
             };
           };
           border: {
@@ -997,11 +1096,13 @@ export interface SpectreGeneratedTokens {
           price: {
             value: string;
             metadata: {
+              pair: string;
             };
           };
           priceDescription: {
             value: string;
             metadata: {
+              pair: string;
             };
           };
         };
@@ -1907,7 +2008,10 @@ export const coreTokens: SpectreGeneratedTokens = {
           "value": "{colors.neutral.900} / 0.6"
         },
         "alternate": {
-          "value": "{colors.neutral.100}"
+          "value": "{colors.neutral.100}",
+          "metadata": {
+            "pair": "modes.default.text.onPage.default"
+          }
         },
         "hero": {
           "value": "linear-gradient(135deg, {colors.indigo.500} 0%, {colors.violet.600} 100%)"
@@ -1916,36 +2020,66 @@ export const coreTokens: SpectreGeneratedTokens = {
       "text": {
         "onPage": {
           "default": {
-            "value": "{colors.neutral.900}"
+            "value": "{colors.neutral.900}",
+            "metadata": {
+              "pair": "modes.default.surface.page"
+            }
           },
           "muted": {
-            "value": "{colors.neutral.600}"
+            "value": "{colors.neutral.600}",
+            "metadata": {
+              "pair": "modes.default.surface.page"
+            }
           },
           "subtle": {
-            "value": "{colors.neutral.500}"
+            "value": "{colors.neutral.500}",
+            "metadata": {
+              "pair": "modes.default.surface.page"
+            }
           },
           "meta": {
-            "value": "{colors.neutral.500}"
+            "value": "{colors.neutral.500}",
+            "metadata": {
+              "pair": "modes.default.surface.page"
+            }
           },
           "brand": {
-            "value": "{colors.brand.600}"
+            "value": "{colors.brand.600}",
+            "metadata": {
+              "pair": "modes.default.surface.page"
+            }
           }
         },
         "onSurface": {
           "default": {
-            "value": "{colors.neutral.900}"
+            "value": "{colors.neutral.900}",
+            "metadata": {
+              "pair": "modes.default.surface.card"
+            }
           },
           "muted": {
-            "value": "{colors.neutral.600}"
+            "value": "{colors.neutral.600}",
+            "metadata": {
+              "pair": "modes.default.surface.card"
+            }
           },
           "subtle": {
-            "value": "{colors.neutral.500}"
+            "value": "{colors.neutral.500}",
+            "metadata": {
+              "pair": "modes.default.surface.card"
+            }
           },
           "meta": {
-            "value": "{colors.neutral.500}"
+            "value": "{colors.neutral.500}",
+            "metadata": {
+              "pair": "modes.default.surface.card"
+            }
           },
           "brand": {
-            "value": "{colors.brand.600}"
+            "value": "{colors.brand.600}",
+            "metadata": {
+              "pair": "modes.default.surface.card"
+            }
           }
         }
       },
@@ -2055,7 +2189,9 @@ export const coreTokens: SpectreGeneratedTokens = {
         "testimonial": {
           "bg": {
             "value": "{colors.white}",
-            "metadata": {}
+            "metadata": {
+              "pair": "modes.default.component.testimonial.text"
+            }
           },
           "border": {
             "value": "{colors.neutral.200}",
@@ -2063,15 +2199,21 @@ export const coreTokens: SpectreGeneratedTokens = {
           },
           "text": {
             "value": "{colors.neutral.700}",
-            "metadata": {}
+            "metadata": {
+              "pair": "modes.default.component.testimonial.bg"
+            }
           },
           "authorName": {
             "value": "{colors.neutral.900}",
-            "metadata": {}
+            "metadata": {
+              "pair": "modes.default.component.testimonial.bg"
+            }
           },
           "authorTitle": {
             "value": "{colors.neutral.500}",
-            "metadata": {}
+            "metadata": {
+              "pair": "modes.default.component.testimonial.bg"
+            }
           },
           "quoteMark": {
             "value": "{colors.neutral.300}",
@@ -2081,7 +2223,9 @@ export const coreTokens: SpectreGeneratedTokens = {
         "pricingCard": {
           "bg": {
             "value": "{colors.white}",
-            "metadata": {}
+            "metadata": {
+              "pair": "modes.default.component.pricingCard.price"
+            }
           },
           "border": {
             "value": "{colors.neutral.200}",
@@ -2109,11 +2253,15 @@ export const coreTokens: SpectreGeneratedTokens = {
           },
           "price": {
             "value": "{colors.neutral.900}",
-            "metadata": {}
+            "metadata": {
+              "pair": "modes.default.component.pricingCard.bg"
+            }
           },
           "priceDescription": {
             "value": "{colors.neutral.500}",
-            "metadata": {}
+            "metadata": {
+              "pair": "modes.default.component.pricingCard.bg"
+            }
           }
         },
         "rating": {
@@ -2156,7 +2304,10 @@ export const coreTokens: SpectreGeneratedTokens = {
           "value": "{colors.neutral.800}"
         },
         "alternate": {
-          "value": "{colors.neutral.800}"
+          "value": "{colors.neutral.800}",
+          "metadata": {
+            "pair": "modes.dark.text.onPage.default"
+          }
         },
         "hero": {
           "value": "linear-gradient(135deg, {colors.accent.900} 0%, {colors.accent.700} 100%)"
@@ -2165,46 +2316,82 @@ export const coreTokens: SpectreGeneratedTokens = {
       "text": {
         "onPage": {
           "default": {
-            "value": "{colors.neutral.50}"
+            "value": "{colors.neutral.50}",
+            "metadata": {
+              "pair": "modes.dark.surface.page"
+            }
           },
           "muted": {
-            "value": "{colors.neutral.300}"
+            "value": "{colors.neutral.200}",
+            "metadata": {
+              "pair": "modes.dark.surface.page"
+            }
           },
           "subtle": {
-            "value": "{colors.neutral.400}"
+            "value": "{colors.neutral.300}",
+            "metadata": {
+              "pair": "modes.dark.surface.page"
+            }
           },
           "meta": {
-            "value": "{colors.neutral.400}"
+            "value": "{colors.neutral.300}",
+            "metadata": {
+              "pair": "modes.dark.surface.page"
+            }
           },
           "brand": {
-            "value": "{colors.brand.400}"
+            "value": "{colors.brand.400}",
+            "metadata": {
+              "pair": "modes.dark.surface.page"
+            }
           }
         },
         "onSurface": {
           "default": {
-            "value": "{colors.neutral.100}"
+            "value": "{colors.neutral.100}",
+            "metadata": {
+              "pair": "modes.dark.surface.card"
+            }
           },
           "muted": {
-            "value": "{colors.neutral.300}"
+            "value": "{colors.neutral.200}",
+            "metadata": {
+              "pair": "modes.dark.surface.card"
+            }
           },
           "subtle": {
-            "value": "{colors.neutral.400}"
+            "value": "{colors.neutral.300}",
+            "metadata": {
+              "pair": "modes.dark.surface.card"
+            }
           },
           "meta": {
-            "value": "{colors.neutral.400}"
+            "value": "{colors.neutral.300}",
+            "metadata": {
+              "pair": "modes.dark.surface.card"
+            }
           },
           "brand": {
-            "value": "{colors.brand.400}"
+            "value": "{colors.brand.400}",
+            "metadata": {
+              "pair": "modes.dark.surface.card"
+            }
           }
         }
       },
       "component": {
         "card": {
           "text": {
-            "value": "{colors.neutral.100}"
+            "value": "{colors.neutral.100}",
+            "metadata": {
+              "pair": "modes.dark.surface.card"
+            }
           },
           "textMuted": {
-            "value": "{colors.neutral.300}"
+            "value": "{colors.neutral.200}",
+            "metadata": {
+              "pair": "modes.dark.surface.card"
+            }
           }
         },
         "input": {
@@ -2231,7 +2418,10 @@ export const coreTokens: SpectreGeneratedTokens = {
             }
           },
           "neutralBgHover": {
-            "value": "{colors.neutral.600}"
+            "value": "{colors.neutral.600}",
+            "metadata": {
+              "pair": "modes.dark.component.badge.neutralText"
+            }
           },
           "neutralText": {
             "value": "{colors.neutral.100}",
@@ -2244,7 +2434,10 @@ export const coreTokens: SpectreGeneratedTokens = {
             }
           },
           "infoBgHover": {
-            "value": "{colors.info.700}"
+            "value": "{colors.info.700}",
+            "metadata": {
+              "pair": "modes.dark.component.badge.infoText"
+            }
           },
           "infoText": {
             "value": "{colors.info.100}",
@@ -2257,7 +2450,10 @@ export const coreTokens: SpectreGeneratedTokens = {
             }
           },
           "successBgHover": {
-            "value": "{colors.success.700}"
+            "value": "{colors.success.700}",
+            "metadata": {
+              "pair": "modes.dark.component.badge.successText"
+            }
           },
           "successText": {
             "value": "{colors.success.100}",
@@ -2270,7 +2466,10 @@ export const coreTokens: SpectreGeneratedTokens = {
             }
           },
           "warningBgHover": {
-            "value": "{colors.warning.700}"
+            "value": "{colors.warning.700}",
+            "metadata": {
+              "pair": "modes.dark.component.badge.warningText"
+            }
           },
           "warningText": {
             "value": "{colors.warning.100}",
@@ -2283,7 +2482,10 @@ export const coreTokens: SpectreGeneratedTokens = {
             }
           },
           "dangerBgHover": {
-            "value": "{colors.error.700}"
+            "value": "{colors.error.700}",
+            "metadata": {
+              "pair": "modes.dark.component.badge.dangerText"
+            }
           },
           "dangerText": {
             "value": "{colors.error.100}",
@@ -2319,23 +2521,31 @@ export const coreTokens: SpectreGeneratedTokens = {
         "testimonial": {
           "bg": {
             "value": "{colors.neutral.800}",
-            "metadata": {}
+            "metadata": {
+              "pair": "modes.dark.component.testimonial.text"
+            }
           },
           "border": {
             "value": "{colors.neutral.700}",
             "metadata": {}
           },
           "text": {
-            "value": "{colors.neutral.300}",
-            "metadata": {}
+            "value": "{colors.neutral.200}",
+            "metadata": {
+              "pair": "modes.dark.component.testimonial.bg"
+            }
           },
           "authorName": {
             "value": "{colors.neutral.100}",
-            "metadata": {}
+            "metadata": {
+              "pair": "modes.dark.component.testimonial.bg"
+            }
           },
           "authorTitle": {
-            "value": "{colors.neutral.400}",
-            "metadata": {}
+            "value": "{colors.neutral.300}",
+            "metadata": {
+              "pair": "modes.dark.component.testimonial.bg"
+            }
           },
           "quoteMark": {
             "value": "{colors.neutral.600}",
@@ -2345,7 +2555,9 @@ export const coreTokens: SpectreGeneratedTokens = {
         "pricingCard": {
           "bg": {
             "value": "{colors.neutral.800}",
-            "metadata": {}
+            "metadata": {
+              "pair": "modes.dark.component.pricingCard.price"
+            }
           },
           "border": {
             "value": "{colors.neutral.700}",
@@ -2373,11 +2585,15 @@ export const coreTokens: SpectreGeneratedTokens = {
           },
           "price": {
             "value": "{colors.neutral.100}",
-            "metadata": {}
+            "metadata": {
+              "pair": "modes.dark.component.pricingCard.bg"
+            }
           },
           "priceDescription": {
-            "value": "{colors.neutral.400}",
-            "metadata": {}
+            "value": "{colors.neutral.300}",
+            "metadata": {
+              "pair": "modes.dark.component.pricingCard.bg"
+            }
           }
         },
         "rating": {
