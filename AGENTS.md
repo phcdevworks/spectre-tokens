@@ -1,12 +1,13 @@
 # Spectre Tokens Agent Guide
 
-This repository is maintained by PHCDevworks and represents Layer 1 of the
-Spectre suite.
+This repository is maintained by PHCDevworks and contains the design-token
+package of the Spectre system.
 
 ## Mission
 
-Protect the token contract. This package defines the semantic design values that
-the rest of Spectre consumes.
+Protect the token contract. This package defines the visual language, semantic
+roles, and token contracts consumed by downstream Spectre packages and
+compatible applications.
 
 ## Core Rules
 
@@ -19,9 +20,9 @@ the rest of Spectre consumes.
 ## Working Boundaries
 
 - Token meaning belongs here.
-- UI structure belongs in `@phcdevworks/spectre-ui`.
-- Framework delivery belongs in adapter packages such as
-  `@phcdevworks/spectre-ui-astro`.
+- Downstream UI packages define structure and composition.
+- Adapter packages translate Spectre contracts for specific frameworks and
+  runtimes.
 
 ## Validation Flow
 
