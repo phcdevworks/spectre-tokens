@@ -1,301 +1,357 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Forms - Spectre Tokens</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Forms - Spectre Tokens</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+      body {
+        font-family:
+          system-ui,
+          -apple-system,
+          sans-serif;
+        padding: 2rem;
+        background: #f8fafc;
+      }
 
-    body {
-      font-family: system-ui, -apple-system, sans-serif;
-      padding: 2rem;
-      background: #f8fafc;
-    }
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+      }
 
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-    }
+      .header {
+        margin-bottom: 2rem;
+      }
 
-    .header {
-      margin-bottom: 2rem;
-    }
+      .back-link {
+        color: #2563eb;
+        text-decoration: none;
+        margin-bottom: 1rem;
+        display: inline-block;
+      }
 
-    .back-link {
-      color: #2563eb;
-      text-decoration: none;
-      margin-bottom: 1rem;
-      display: inline-block;
-    }
+      h1 {
+        font-size: 3rem;
+        margin-bottom: 0.5rem;
+        color: #0f172a;
+      }
 
-    h1 {
-      font-size: 3rem;
-      margin-bottom: 0.5rem;
-      color: #0f172a;
-    }
+      .subtitle {
+        font-size: 1.125rem;
+        color: #475569;
+      }
 
-    .subtitle {
-      font-size: 1.125rem;
-      color: #475569;
-    }
+      .section {
+        background: white;
+        border-radius: 8px;
+        padding: 2rem;
+        margin-bottom: 2rem;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+      }
 
-    .section {
-      background: white;
-      border-radius: 8px;
-      padding: 2rem;
-      margin-bottom: 2rem;
-      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-    }
+      h2 {
+        font-size: 1.5rem;
+        color: #0f172a;
+        margin-bottom: 1.5rem;
+      }
 
-    h2 {
-      font-size: 1.5rem;
-      color: #0f172a;
-      margin-bottom: 1.5rem;
-    }
+      .form-group {
+        margin-bottom: 2rem;
+      }
 
-    .form-group {
-      margin-bottom: 2rem;
-    }
+      .form-label {
+        display: block;
+        font-size: 0.875rem;
+        font-weight: 600;
+        color: #0f172a;
+        margin-bottom: 0.5rem;
+      }
 
-    .form-label {
-      display: block;
-      font-size: 0.875rem;
-      font-weight: 600;
-      color: #0f172a;
-      margin-bottom: 0.5rem;
-    }
+      .form-input {
+        width: 100%;
+        padding: 0.625rem 0.875rem;
+        border-radius: 6px;
+        font-size: 0.875rem;
+        font-family:
+          system-ui,
+          -apple-system,
+          sans-serif;
+        transition: all 0.2s ease;
+      }
 
-    .form-input {
-      width: 100%;
-      padding: 0.625rem 0.875rem;
-      border-radius: 6px;
-      font-size: 0.875rem;
-      font-family: system-ui, -apple-system, sans-serif;
-      transition: all 0.2s ease;
-    }
+      .state-label {
+        font-size: 0.75rem;
+        color: #64748b;
+        margin-top: 0.5rem;
+        font-family: monospace;
+      }
 
-    .state-label {
-      font-size: 0.75rem;
-      color: #64748b;
-      margin-top: 0.5rem;
-      font-family: monospace;
-    }
+      /* Default State */
+      .input-default {
+        background: #ffffff;
+        border: 1px solid #cbd5e1;
+        color: #0f172a;
+      }
 
-    /* Default State */
-    .input-default {
-      background: #ffffff;
-      border: 1px solid #cbd5e1;
-      color: #0f172a;
-    }
+      .input-default::placeholder {
+        color: #94a3b8;
+      }
 
-    .input-default::placeholder {
-      color: #94a3b8;
-    }
+      /* Hover State */
+      .input-hover {
+        background: #ffffff;
+        border: 1px solid #3b82f6;
+        color: #0f172a;
+      }
 
-    /* Hover State */
-    .input-hover {
-      background: #ffffff;
-      border: 1px solid #3b82f6;
-      color: #0f172a;
-    }
+      /* Focus State */
+      .input-focus {
+        background: #ffffff;
+        border: 1px solid #3b82f6;
+        color: #0f172a;
+        outline: 2px solid #3b82f6;
+        outline-offset: 2px;
+      }
 
-    /* Focus State */
-    .input-focus {
-      background: #ffffff;
-      border: 1px solid #3b82f6;
-      color: #0f172a;
-      outline: 2px solid #3b82f6;
-      outline-offset: 2px;
-    }
+      /* Valid State */
+      .input-valid {
+        background: #f0fdf4;
+        border: 1px solid #22c55e;
+        color: #15803d;
+      }
 
-    /* Valid State */
-    .input-valid {
-      background: #f0fdf4;
-      border: 1px solid #22c55e;
-      color: #15803d;
-    }
+      /* Invalid State */
+      .input-invalid {
+        background: #fef2f2;
+        border: 1px solid #ef4444;
+        color: #b91c1c;
+      }
 
-    /* Invalid State */
-    .input-invalid {
-      background: #fef2f2;
-      border: 1px solid #ef4444;
-      color: #b91c1c;
-    }
+      /* Disabled State */
+      .input-disabled {
+        background: #f8fafc;
+        border: 1px solid #e2e8f0;
+        color: #94a3b8;
+        cursor: not-allowed;
+      }
 
-    /* Disabled State */
-    .input-disabled {
-      background: #f8fafc;
-      border: 1px solid #e2e8f0;
-      color: #94a3b8;
-      cursor: not-allowed;
-    }
+      .textarea {
+        min-height: 100px;
+        resize: vertical;
+      }
 
-    .textarea {
-      min-height: 100px;
-      resize: vertical;
-    }
+      .select {
+        appearance: none;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3E%3Cpath fill='%2364748b' d='M4.7 5.3a1 1 0 011.4 0L8 7.2l1.9-1.9a1 1 0 111.4 1.4l-2.6 2.6a1 1 0 01-1.4 0L4.7 6.7a1 1 0 010-1.4z'/%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: right 0.75rem center;
+        background-size: 16px;
+        padding-right: 2.5rem;
+      }
 
-    .select {
-      appearance: none;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3E%3Cpath fill='%2364748b' d='M4.7 5.3a1 1 0 011.4 0L8 7.2l1.9-1.9a1 1 0 111.4 1.4l-2.6 2.6a1 1 0 01-1.4 0L4.7 6.7a1 1 0 010-1.4z'/%3E%3C/svg%3E");
-      background-repeat: no-repeat;
-      background-position: right 0.75rem center;
-      background-size: 16px;
-      padding-right: 2.5rem;
-    }
+      .checkbox-wrapper {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
 
-    .checkbox-wrapper {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
+      .checkbox {
+        width: 18px;
+        height: 18px;
+        border: 1px solid #cbd5e1;
+        border-radius: 4px;
+        cursor: pointer;
+        accent-color: #2563eb;
+      }
 
-    .checkbox {
-      width: 18px;
-      height: 18px;
-      border: 1px solid #cbd5e1;
-      border-radius: 4px;
-      cursor: pointer;
-      accent-color: #2563eb;
-    }
+      .radio {
+        width: 18px;
+        height: 18px;
+        border: 1px solid #cbd5e1;
+        cursor: pointer;
+        accent-color: #2563eb;
+      }
+    </style>
+  </head>
 
-    .radio {
-      width: 18px;
-      height: 18px;
-      border: 1px solid #cbd5e1;
-      cursor: pointer;
-      accent-color: #2563eb;
-    }
-  </style>
-</head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <a href="index.html" class="back-link">← Back to Examples</a>
+        <h1>📋 Forms</h1>
+        <p class="subtitle">Form input styles and interactive states</p>
+      </div>
 
-<body>
-  <div class="container">
-    <div class="header">
-      <a href="index.html" class="back-link">← Back to Examples</a>
-      <h1>📋 Forms</h1>
-      <p class="subtitle">Form input styles and interactive states</p>
+      <div class="section">
+        <h2>Text Inputs</h2>
+        <div class="form-group">
+          <label class="form-label">Default State</label>
+          <input
+            type="text"
+            class="form-input input-default"
+            placeholder="Enter your text"
+          />
+          <div class="state-label">
+            bg: #ffffff, border: #cbd5e1, placeholder: #94a3b8
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Hover State</label>
+          <input
+            type="text"
+            class="form-input input-hover"
+            value="Hovered input"
+          />
+          <div class="state-label">border: #3b82f6</div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Focus State</label>
+          <input
+            type="text"
+            class="form-input input-focus"
+            value="Focused input"
+          />
+          <div class="state-label">border: #3b82f6, ring: #3b82f6</div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Valid State</label>
+          <input
+            type="text"
+            class="form-input input-valid"
+            value="Valid input"
+          />
+          <div class="state-label">
+            bg: #f0fdf4, border: #22c55e, text: #15803d
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Invalid State</label>
+          <input
+            type="text"
+            class="form-input input-invalid"
+            value="Invalid input"
+          />
+          <div class="state-label">
+            bg: #fef2f2, border: #ef4444, text: #b91c1c
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Disabled State</label>
+          <input
+            type="text"
+            class="form-input input-disabled"
+            value="Disabled input"
+            disabled
+          />
+          <div class="state-label">
+            bg: #f8fafc, border: #e2e8f0, text: #94a3b8
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>Textarea</h2>
+        <div class="form-group">
+          <label class="form-label">Default Textarea</label>
+          <textarea
+            class="form-input textarea input-default"
+            placeholder="Enter your message"
+          ></textarea>
+          <div class="state-label">Same states as text inputs</div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Valid Textarea</label>
+          <textarea class="form-input textarea input-valid">
+This is a valid textarea</textarea
+          >
+        </div>
+        <div class="form-group">
+          <label class="form-label">Invalid Textarea</label>
+          <textarea class="form-input textarea input-invalid">
+This is an invalid textarea</textarea
+          >
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>Select Dropdown</h2>
+        <div class="form-group">
+          <label class="form-label">Default Select</label>
+          <select class="form-input select input-default">
+            <option>Select an option</option>
+            <option>Option 1</option>
+            <option>Option 2</option>
+            <option>Option 3</option>
+          </select>
+          <div class="state-label">Same states as text inputs</div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Valid Select</label>
+          <select class="form-input select input-valid">
+            <option>Option 1</option>
+            <option>Option 2</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Disabled Select</label>
+          <select class="form-input select input-disabled" disabled>
+            <option>Disabled option</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>Checkboxes & Radios</h2>
+        <div class="form-group">
+          <label class="form-label">Checkboxes</label>
+          <div class="checkbox-wrapper">
+            <input type="checkbox" class="checkbox" id="check1" />
+            <label for="check1">Option 1</label>
+          </div>
+          <div class="checkbox-wrapper">
+            <input type="checkbox" class="checkbox" id="check2" checked />
+            <label for="check2">Option 2 (checked)</label>
+          </div>
+          <div class="checkbox-wrapper">
+            <input type="checkbox" class="checkbox" id="check3" disabled />
+            <label for="check3">Option 3 (disabled)</label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Radio Buttons</label>
+          <div class="checkbox-wrapper">
+            <input type="radio" class="radio" id="radio1" name="radio-group" />
+            <label for="radio1">Option 1</label>
+          </div>
+          <div class="checkbox-wrapper">
+            <input
+              type="radio"
+              class="radio"
+              id="radio2"
+              name="radio-group"
+              checked
+            />
+            <label for="radio2">Option 2 (selected)</label>
+          </div>
+          <div class="checkbox-wrapper">
+            <input
+              type="radio"
+              class="radio"
+              id="radio3"
+              name="radio-group"
+              disabled
+            />
+            <label for="radio3">Option 3 (disabled)</label>
+          </div>
+        </div>
+      </div>
     </div>
-
-    <div class="section">
-      <h2>Text Inputs</h2>
-      <div class="form-group">
-        <label class="form-label">Default State</label>
-        <input type="text" class="form-input input-default" placeholder="Enter your text">
-        <div class="state-label">bg: #ffffff, border: #cbd5e1, placeholder: #94a3b8</div>
-      </div>
-      <div class="form-group">
-        <label class="form-label">Hover State</label>
-        <input type="text" class="form-input input-hover" value="Hovered input">
-        <div class="state-label">border: #3b82f6</div>
-      </div>
-      <div class="form-group">
-        <label class="form-label">Focus State</label>
-        <input type="text" class="form-input input-focus" value="Focused input">
-        <div class="state-label">border: #3b82f6, ring: #3b82f6</div>
-      </div>
-      <div class="form-group">
-        <label class="form-label">Valid State</label>
-        <input type="text" class="form-input input-valid" value="Valid input">
-        <div class="state-label">bg: #f0fdf4, border: #22c55e, text: #15803d</div>
-      </div>
-      <div class="form-group">
-        <label class="form-label">Invalid State</label>
-        <input type="text" class="form-input input-invalid" value="Invalid input">
-        <div class="state-label">bg: #fef2f2, border: #ef4444, text: #b91c1c</div>
-      </div>
-      <div class="form-group">
-        <label class="form-label">Disabled State</label>
-        <input type="text" class="form-input input-disabled" value="Disabled input" disabled>
-        <div class="state-label">bg: #f8fafc, border: #e2e8f0, text: #94a3b8</div>
-      </div>
-    </div>
-
-    <div class="section">
-      <h2>Textarea</h2>
-      <div class="form-group">
-        <label class="form-label">Default Textarea</label>
-        <textarea class="form-input textarea input-default" placeholder="Enter your message"></textarea>
-        <div class="state-label">Same states as text inputs</div>
-      </div>
-      <div class="form-group">
-        <label class="form-label">Valid Textarea</label>
-        <textarea class="form-input textarea input-valid">This is a valid textarea</textarea>
-      </div>
-      <div class="form-group">
-        <label class="form-label">Invalid Textarea</label>
-        <textarea class="form-input textarea input-invalid">This is an invalid textarea</textarea>
-      </div>
-    </div>
-
-    <div class="section">
-      <h2>Select Dropdown</h2>
-      <div class="form-group">
-        <label class="form-label">Default Select</label>
-        <select class="form-input select input-default">
-          <option>Select an option</option>
-          <option>Option 1</option>
-          <option>Option 2</option>
-          <option>Option 3</option>
-        </select>
-        <div class="state-label">Same states as text inputs</div>
-      </div>
-      <div class="form-group">
-        <label class="form-label">Valid Select</label>
-        <select class="form-input select input-valid">
-          <option>Option 1</option>
-          <option>Option 2</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label class="form-label">Disabled Select</label>
-        <select class="form-input select input-disabled" disabled>
-          <option>Disabled option</option>
-        </select>
-      </div>
-    </div>
-
-    <div class="section">
-      <h2>Checkboxes & Radios</h2>
-      <div class="form-group">
-        <label class="form-label">Checkboxes</label>
-        <div class="checkbox-wrapper">
-          <input type="checkbox" class="checkbox" id="check1">
-          <label for="check1">Option 1</label>
-        </div>
-        <div class="checkbox-wrapper">
-          <input type="checkbox" class="checkbox" id="check2" checked>
-          <label for="check2">Option 2 (checked)</label>
-        </div>
-        <div class="checkbox-wrapper">
-          <input type="checkbox" class="checkbox" id="check3" disabled>
-          <label for="check3">Option 3 (disabled)</label>
-        </div>
-      </div>
-
-      <div class="form-group">
-        <label class="form-label">Radio Buttons</label>
-        <div class="checkbox-wrapper">
-          <input type="radio" class="radio" id="radio1" name="radio-group">
-          <label for="radio1">Option 1</label>
-        </div>
-        <div class="checkbox-wrapper">
-          <input type="radio" class="radio" id="radio2" name="radio-group" checked>
-          <label for="radio2">Option 2 (selected)</label>
-        </div>
-        <div class="checkbox-wrapper">
-          <input type="radio" class="radio" id="radio3" name="radio-group" disabled>
-          <label for="radio3">Option 3 (disabled)</label>
-        </div>
-      </div>
-    </div>
-  </div>
-</body>
-
+  </body>
 </html>

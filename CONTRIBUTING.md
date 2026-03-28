@@ -1,8 +1,8 @@
 # Contributing to @phcdevworks/spectre-tokens
 
-Thanks for helping improve Spectre. This package is maintained by PHCDevworks
-as Layer 1 of the Spectre suite. It is the source of truth for the design
-language consumed by the rest of the ecosystem.
+Thanks for helping improve Spectre. This package is maintained by PHCDevworks as
+Layer 1 of the Spectre suite. It is the source of truth for the design language
+consumed by the rest of the ecosystem.
 
 ## Spectre Suite Model
 
