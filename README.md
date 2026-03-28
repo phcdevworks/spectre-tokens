@@ -4,9 +4,9 @@
 [![GitHub pulls](https://img.shields.io/github/issues-pr/phcdevworks/spectre-tokens)](https://github.com/phcdevworks/spectre-tokens/pulls)
 [![License](https://img.shields.io/github/license/phcdevworks/spectre-tokens)](LICENSE)
 
-`@phcdevworks/spectre-tokens` is the design-token package of the Spectre system, maintained by PHCDevworks. It defines the visual language, semantic roles, and token contracts consumed by downstream Spectre packages and compatible applications.
+`@phcdevworks/spectre-tokens` is the design-token package of the Spectre system for downstream Spectre packages and compatible applications.
 
-Maintained by PHCDevworks, it keeps Spectre organized by responsibility rather than fixed stack positions. This package defines meaning, downstream UI packages define structure, and adapter packages translate those contracts for specific frameworks and runtimes.
+Maintained by PHCDevworks, it defines the visual language, semantic roles, and token contracts consumed downstream. It keeps visual meaning centralized in token data while downstream UI packages define structure and adapter packages translate those contracts for specific frameworks and runtimes.
 
 [Contributing](CONTRIBUTING.md) | [Changelog](CHANGELOG.md) | [Security Policy](SECURITY.md)
 
