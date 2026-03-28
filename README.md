@@ -6,9 +6,17 @@
 
 `@phcdevworks/spectre-tokens` is the design-token package of the Spectre system, maintained by PHCDevworks. It defines the visual language, semantic roles, and token contracts consumed by downstream Spectre packages and compatible applications.
 
-Spectre is organized as an expandable package system by responsibility. This package defines meaning, downstream UI packages define structure, and adapter packages translate those contracts for specific frameworks and runtimes.
+Maintained by PHCDevworks, it keeps Spectre organized by responsibility rather than fixed stack positions. This package defines meaning, downstream UI packages define structure, and adapter packages translate those contracts for specific frameworks and runtimes.
 
-`tokens/` is the source of truth. Build outputs for JavaScript, TypeScript, Tailwind, and CSS are generated from those token sources.
+[Contributing](CONTRIBUTING.md) | [Changelog](CHANGELOG.md) | [Security Policy](SECURITY.md)
+
+## Key capabilities
+
+- Uses `tokens/` as the source of truth for design-token data
+- Generates JavaScript, TypeScript, Tailwind, and CSS outputs from shared token sources
+- Defines semantic token contracts for surfaces, text, components, buttons, forms, and modes
+- Exposes primitives and semantic roles for downstream packages and compatible applications
+- Keeps visual meaning centralized so downstream consumers do not redefine token contracts
 
 ## Installation
 
@@ -16,7 +24,9 @@ Spectre is organized as an expandable package system by responsibility. This pac
 npm install @phcdevworks/spectre-tokens
 ```
 
-## Quick Start
+## Quick start
+
+### CSS import
 
 Import the generated CSS variables:
 
@@ -24,7 +34,9 @@ Import the generated CSS variables:
 @import '@phcdevworks/spectre-tokens/index.css';
 ```
 
-Or load the token object in JavaScript or TypeScript:
+### Token usage
+
+Load the token object in JavaScript or TypeScript:
 
 ```ts
 import tokens from '@phcdevworks/spectre-tokens'
@@ -37,7 +49,9 @@ const card = {
 }
 ```
 
-Use the Tailwind preset when you want the package to populate your theme values:
+### Tailwind preset usage
+
+Use the generated Tailwind preset when you want the package to populate theme values from the token contract:
 
 ```ts
 // tailwind.config.ts
@@ -48,41 +62,18 @@ export default {
 }
 ```
 
-Prefer semantic tokens such as `surface`, `text`, `component`, `buttons`, and `forms` for application UI. Raw palette values remain available for cases where fixed color access is appropriate.
+Prefer semantic tokens such as `surface`, `text`, `component`, `buttons`, and `forms` for application UI. Raw palette values remain available when fixed color access is appropriate.
 
-## Exports
+## What this package owns
 
-Package exports:
+- Visual language expressed as token data in `tokens/`
+- Semantic roles and token contracts consumed downstream
+- Generated token outputs for JavaScript, TypeScript, Tailwind, and CSS variables
+- Theme and mode definitions used by downstream consumers
 
-- `@phcdevworks/spectre-tokens`
-- `@phcdevworks/spectre-tokens/index.css`
+### Token model
 
-JavaScript and TypeScript exports:
-
-- `default` / `tokens`: complete token object
-- `tailwindTheme`: generated Tailwind theme object
-- `tailwindPreset`: Tailwind preset wrapper around `tailwindTheme`
-- `generateCssVariables()`: CSS custom property generator
-- exported TypeScript types from `src/types.ts`
-
-Example:
-
-```ts
-import tokens, {
-  generateCssVariables,
-  tailwindPreset,
-  tailwindTheme
-} from '@phcdevworks/spectre-tokens'
-
-const css = generateCssVariables(tokens, {
-  selector: ':root',
-  prefix: 'sp'
-})
-```
-
-## Token Model
-
-The generated token object includes semantic and primitive namespaces used across downstream consumers:
+The generated token object includes these namespaces:
 
 - `colors`
 - `space`
@@ -105,31 +96,63 @@ The generated token object includes semantic and primitive namespaces used acros
 - `component`
 - `modes`
 
-These contracts define visual meaning. They do not define component structure, rendering patterns, or framework behavior.
-
-## Themes and Modes
+### Themes and modes
 
 The package includes mode-aware semantic tokens under `modes`, with `default` and `dark` mode definitions in the generated output.
 
 Raw palette tokens are stable values. Semantic tokens are the preferred interface for theme-aware usage because they can map across modes without changing consumer code.
 
-## Repository Layout
+## What this package does not own
 
-```text
-tokens/            Source token data
-src/generated/     Generated token output
-src/               Package entry points, CSS generation, and types
-scripts/           Build and validation scripts
-example/           Usage examples
+- Component structure or composition
+  That belongs in downstream UI packages such as [`@phcdevworks/spectre-ui`](https://github.com/phcdevworks/spectre-ui).
+- Framework-specific delivery
+  Adapter packages translate Spectre contracts for specific frameworks and runtimes.
+- Local redefinition of token meaning
+  Downstream consumers should consume these contracts rather than recreate them independently.
+
+## Package exports / API surface
+
+### Root package
+
+`@phcdevworks/spectre-tokens` exports:
+
+- `default` / `tokens`
+- `tailwindTheme`
+- `tailwindPreset`
+- `generateCssVariables()`
+- TypeScript types including `SpectreTokens`, `TailwindTheme`, `SpectreModeTokens`, and `SpectreModeName`
+
+Example:
+
+```ts
+import tokens, {
+  generateCssVariables,
+  tailwindPreset,
+  tailwindTheme
+} from '@phcdevworks/spectre-tokens'
+
+const css = generateCssVariables(tokens, {
+  selector: ':root',
+  prefix: 'sp'
+})
 ```
 
-Package boundaries:
+### CSS entry point
 
-- `@phcdevworks/spectre-tokens` defines token meaning and contracts.
-- Downstream UI packages define component structure and composition.
-- Adapter packages translate Spectre contracts for framework-specific delivery.
+- `@phcdevworks/spectre-tokens/index.css`
 
-## Build
+## Relationship to the rest of Spectre
+
+Spectre keeps responsibilities separate:
+
+- [`@phcdevworks/spectre-tokens`](https://github.com/phcdevworks/spectre-tokens) defines visual language, semantic roles, and token contracts
+- [`@phcdevworks/spectre-ui`](https://github.com/phcdevworks/spectre-ui) turns those contracts into reusable CSS, Tailwind tooling, and shared styling behavior
+- Adapter packages translate Spectre contracts for framework-specific delivery
+
+That separation keeps token meaning centralized while letting the package system expand by responsibility.
+
+## Development
 
 Regenerate package outputs:
 
@@ -143,27 +166,27 @@ Run validation checks:
 npm run check
 ```
 
-The standard workflow is to update token sources in `tokens/`, rebuild outputs, and then run checks.
+Key source areas:
 
-## TypeScript Support
+- `tokens/` for source token data
+- `src/generated/` for generated token output
+- `src/` for package entry points, CSS generation, and types
+- `scripts/` for build and validation scripts
+- `example/` for usage examples
 
-The package ships typed JavaScript exports and generated declaration files.
+## Contributing
 
-Token types are available directly from the package exports, including:
+PHCDevworks maintains this package as part of the Spectre system.
 
-- `SpectreTokens`
-- `TailwindTheme`
-- `SpectreModeTokens`
-- `SpectreModeName`
+When contributing:
 
-Example:
+- treat `tokens/` as the source of truth
+- keep generated outputs derived from source data
+- avoid breaking token contracts without an intentional major-version change
+- run `npm run build` and `npm run check` before opening a pull request
 
-```ts
-import tokens, { type SpectreTokens } from '@phcdevworks/spectre-tokens'
-
-const theme: SpectreTokens = tokens
-```
+See [CONTRIBUTING.md](CONTRIBUTING.md) for the full workflow.
 
 ## License
 
-[MIT](LICENSE)
+MIT © PHCDevworks. See [LICENSE](LICENSE).
