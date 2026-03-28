@@ -475,6 +475,9 @@ interface SpectreGeneratedTokens {
                 };
                 alternate: {
                     value: string;
+                    metadata: {
+                        pair: string;
+                    };
                 };
                 hero: {
                     value: string;
@@ -484,35 +487,65 @@ interface SpectreGeneratedTokens {
                 onPage: {
                     default: {
                         value: string;
+                        metadata: {
+                            pair: string;
+                        };
                     };
                     muted: {
                         value: string;
+                        metadata: {
+                            pair: string;
+                        };
                     };
                     subtle: {
                         value: string;
+                        metadata: {
+                            pair: string;
+                        };
                     };
                     meta: {
                         value: string;
+                        metadata: {
+                            pair: string;
+                        };
                     };
                     brand: {
                         value: string;
+                        metadata: {
+                            pair: string;
+                        };
                     };
                 };
                 onSurface: {
                     default: {
                         value: string;
+                        metadata: {
+                            pair: string;
+                        };
                     };
                     muted: {
                         value: string;
+                        metadata: {
+                            pair: string;
+                        };
                     };
                     subtle: {
                         value: string;
+                        metadata: {
+                            pair: string;
+                        };
                     };
                     meta: {
                         value: string;
+                        metadata: {
+                            pair: string;
+                        };
                     };
                     brand: {
                         value: string;
+                        metadata: {
+                            pair: string;
+                        };
                     };
                 };
             };
@@ -622,7 +655,9 @@ interface SpectreGeneratedTokens {
                 testimonial: {
                     bg: {
                         value: string;
-                        metadata: {};
+                        metadata: {
+                            pair: string;
+                        };
                     };
                     border: {
                         value: string;
@@ -630,15 +665,21 @@ interface SpectreGeneratedTokens {
                     };
                     text: {
                         value: string;
-                        metadata: {};
+                        metadata: {
+                            pair: string;
+                        };
                     };
                     authorName: {
                         value: string;
-                        metadata: {};
+                        metadata: {
+                            pair: string;
+                        };
                     };
                     authorTitle: {
                         value: string;
-                        metadata: {};
+                        metadata: {
+                            pair: string;
+                        };
                     };
                     quoteMark: {
                         value: string;
@@ -648,7 +689,9 @@ interface SpectreGeneratedTokens {
                 pricingCard: {
                     bg: {
                         value: string;
-                        metadata: {};
+                        metadata: {
+                            pair: string;
+                        };
                     };
                     border: {
                         value: string;
@@ -676,11 +719,15 @@ interface SpectreGeneratedTokens {
                     };
                     price: {
                         value: string;
-                        metadata: {};
+                        metadata: {
+                            pair: string;
+                        };
                     };
                     priceDescription: {
                         value: string;
-                        metadata: {};
+                        metadata: {
+                            pair: string;
+                        };
                     };
                 };
                 rating: {
@@ -724,6 +771,9 @@ interface SpectreGeneratedTokens {
                 };
                 alternate: {
                     value: string;
+                    metadata: {
+                        pair: string;
+                    };
                 };
                 hero: {
                     value: string;
@@ -733,35 +783,65 @@ interface SpectreGeneratedTokens {
                 onPage: {
                     default: {
                         value: string;
+                        metadata: {
+                            pair: string;
+                        };
                     };
                     muted: {
                         value: string;
+                        metadata: {
+                            pair: string;
+                        };
                     };
                     subtle: {
                         value: string;
+                        metadata: {
+                            pair: string;
+                        };
                     };
                     meta: {
                         value: string;
+                        metadata: {
+                            pair: string;
+                        };
                     };
                     brand: {
                         value: string;
+                        metadata: {
+                            pair: string;
+                        };
                     };
                 };
                 onSurface: {
                     default: {
                         value: string;
+                        metadata: {
+                            pair: string;
+                        };
                     };
                     muted: {
                         value: string;
+                        metadata: {
+                            pair: string;
+                        };
                     };
                     subtle: {
                         value: string;
+                        metadata: {
+                            pair: string;
+                        };
                     };
                     meta: {
                         value: string;
+                        metadata: {
+                            pair: string;
+                        };
                     };
                     brand: {
                         value: string;
+                        metadata: {
+                            pair: string;
+                        };
                     };
                 };
             };
@@ -769,9 +849,15 @@ interface SpectreGeneratedTokens {
                 card: {
                     text: {
                         value: string;
+                        metadata: {
+                            pair: string;
+                        };
                     };
                     textMuted: {
                         value: string;
+                        metadata: {
+                            pair: string;
+                        };
                     };
                 };
                 input: {
@@ -799,6 +885,9 @@ interface SpectreGeneratedTokens {
                     };
                     neutralBgHover: {
                         value: string;
+                        metadata: {
+                            pair: string;
+                        };
                     };
                     neutralText: {
                         value: string;
@@ -812,6 +901,9 @@ interface SpectreGeneratedTokens {
                     };
                     infoBgHover: {
                         value: string;
+                        metadata: {
+                            pair: string;
+                        };
                     };
                     infoText: {
                         value: string;
@@ -825,6 +917,9 @@ interface SpectreGeneratedTokens {
                     };
                     successBgHover: {
                         value: string;
+                        metadata: {
+                            pair: string;
+                        };
                     };
                     successText: {
                         value: string;
@@ -838,6 +933,9 @@ interface SpectreGeneratedTokens {
                     };
                     warningBgHover: {
                         value: string;
+                        metadata: {
+                            pair: string;
+                        };
                     };
                     warningText: {
                         value: string;
@@ -851,6 +949,9 @@ interface SpectreGeneratedTokens {
                     };
                     dangerBgHover: {
                         value: string;
+                        metadata: {
+                            pair: string;
+                        };
                     };
                     dangerText: {
                         value: string;
@@ -886,7 +987,9 @@ interface SpectreGeneratedTokens {
                 testimonial: {
                     bg: {
                         value: string;
-                        metadata: {};
+                        metadata: {
+                            pair: string;
+                        };
                     };
                     border: {
                         value: string;
@@ -894,15 +997,21 @@ interface SpectreGeneratedTokens {
                     };
                     text: {
                         value: string;
-                        metadata: {};
+                        metadata: {
+                            pair: string;
+                        };
                     };
                     authorName: {
                         value: string;
-                        metadata: {};
+                        metadata: {
+                            pair: string;
+                        };
                     };
                     authorTitle: {
                         value: string;
-                        metadata: {};
+                        metadata: {
+                            pair: string;
+                        };
                     };
                     quoteMark: {
                         value: string;
@@ -912,7 +1021,9 @@ interface SpectreGeneratedTokens {
                 pricingCard: {
                     bg: {
                         value: string;
-                        metadata: {};
+                        metadata: {
+                            pair: string;
+                        };
                     };
                     border: {
                         value: string;
@@ -940,11 +1051,15 @@ interface SpectreGeneratedTokens {
                     };
                     price: {
                         value: string;
-                        metadata: {};
+                        metadata: {
+                            pair: string;
+                        };
                     };
                     priceDescription: {
                         value: string;
-                        metadata: {};
+                        metadata: {
+                            pair: string;
+                        };
                     };
                 };
                 rating: {
