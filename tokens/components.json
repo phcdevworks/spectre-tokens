@@ -32,7 +32,10 @@
         }
       },
       "neutralBgHover": {
-        "value": "{colors.neutral.200}"
+        "value": "{colors.neutral.200}",
+        "metadata": {
+          "pair": "component.badge.neutralText"
+        }
       },
       "neutralText": {
         "value": "{colors.neutral.700}"
@@ -44,7 +47,10 @@
         }
       },
       "infoBgHover": {
-        "value": "{colors.info.200}"
+        "value": "{colors.info.200}",
+        "metadata": {
+          "pair": "component.badge.infoText"
+        }
       },
       "infoText": {
         "value": "{colors.info.700}"
@@ -56,10 +62,13 @@
         }
       },
       "successBgHover": {
-        "value": "{colors.success.200}"
+        "value": "{colors.success.200}",
+        "metadata": {
+          "pair": "component.badge.successText"
+        }
       },
       "successText": {
-        "value": "{colors.success.700}"
+        "value": "{colors.success.800}"
       },
       "warningBg": {
         "value": "{colors.warning.100}",
@@ -68,10 +77,13 @@
         }
       },
       "warningBgHover": {
-        "value": "{colors.warning.200}"
+        "value": "{colors.warning.200}",
+        "metadata": {
+          "pair": "component.badge.warningText"
+        }
       },
       "warningText": {
-        "value": "{colors.warning.700}"
+        "value": "{colors.warning.800}"
       },
       "dangerBg": {
         "value": "{colors.error.100}",
@@ -80,10 +92,13 @@
         }
       },
       "dangerBgHover": {
-        "value": "{colors.error.200}"
+        "value": "{colors.error.200}",
+        "metadata": {
+          "pair": "component.badge.dangerText"
+        }
       },
       "dangerText": {
-        "value": "{colors.error.700}"
+        "value": "{colors.error.800}"
       }
     },
     "iconBox": {
