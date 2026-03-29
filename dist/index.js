@@ -33,7 +33,10 @@ var coreTokens = {
         }
       },
       "neutralBgHover": {
-        "value": "{colors.neutral.200}"
+        "value": "{colors.neutral.200}",
+        "metadata": {
+          "pair": "component.badge.neutralText"
+        }
       },
       "neutralText": {
         "value": "{colors.neutral.700}"
@@ -45,7 +48,10 @@ var coreTokens = {
         }
       },
       "infoBgHover": {
-        "value": "{colors.info.200}"
+        "value": "{colors.info.200}",
+        "metadata": {
+          "pair": "component.badge.infoText"
+        }
       },
       "infoText": {
         "value": "{colors.info.700}"
@@ -57,10 +63,13 @@ var coreTokens = {
         }
       },
       "successBgHover": {
-        "value": "{colors.success.200}"
+        "value": "{colors.success.200}",
+        "metadata": {
+          "pair": "component.badge.successText"
+        }
       },
       "successText": {
-        "value": "{colors.success.700}"
+        "value": "{colors.success.800}"
       },
       "warningBg": {
         "value": "{colors.warning.100}",
@@ -69,10 +78,13 @@ var coreTokens = {
         }
       },
       "warningBgHover": {
-        "value": "{colors.warning.200}"
+        "value": "{colors.warning.200}",
+        "metadata": {
+          "pair": "component.badge.warningText"
+        }
       },
       "warningText": {
-        "value": "{colors.warning.700}"
+        "value": "{colors.warning.800}"
       },
       "dangerBg": {
         "value": "{colors.error.100}",
@@ -81,10 +93,13 @@ var coreTokens = {
         }
       },
       "dangerBgHover": {
-        "value": "{colors.error.200}"
+        "value": "{colors.error.200}",
+        "metadata": {
+          "pair": "component.badge.dangerText"
+        }
       },
       "dangerText": {
-        "value": "{colors.error.700}"
+        "value": "{colors.error.800}"
       }
     },
     "iconBox": {
@@ -186,10 +201,16 @@ var coreTokens = {
         }
       },
       "bgHover": {
-        "value": "{colors.info.700}"
+        "value": "{colors.info.700}",
+        "metadata": {
+          "pair": "buttons.primary.text"
+        }
       },
       "bgActive": {
-        "value": "{colors.info.800}"
+        "value": "{colors.info.800}",
+        "metadata": {
+          "pair": "buttons.primary.text"
+        }
       },
       "bgDisabled": {
         "value": "{colors.neutral.200}"
@@ -279,10 +300,16 @@ var coreTokens = {
         }
       },
       "bgHover": {
-        "value": "{colors.error.700}"
+        "value": "{colors.error.700}",
+        "metadata": {
+          "pair": "buttons.danger.text"
+        }
       },
       "bgActive": {
-        "value": "{colors.error.800}"
+        "value": "{colors.error.800}",
+        "metadata": {
+          "pair": "buttons.danger.text"
+        }
       },
       "bgDisabled": {
         "value": "{colors.error.200}"
@@ -305,10 +332,16 @@ var coreTokens = {
         }
       },
       "bgHover": {
-        "value": "{colors.success.800}"
+        "value": "{colors.success.800}",
+        "metadata": {
+          "pair": "buttons.success.text"
+        }
       },
       "bgActive": {
-        "value": "{colors.success.900}"
+        "value": "{colors.success.900}",
+        "metadata": {
+          "pair": "buttons.success.text"
+        }
       },
       "bgDisabled": {
         "value": "{colors.success.200}"
@@ -331,7 +364,10 @@ var coreTokens = {
         }
       },
       "bgHover": {
-        "value": "{colors.warning.600}"
+        "value": "{colors.warning.600}",
+        "metadata": {
+          "pair": "buttons.cta.text"
+        }
       },
       "bgActive": {
         "value": "{colors.warning.600}",
@@ -363,10 +399,16 @@ var coreTokens = {
         }
       },
       "bgHover": {
-        "value": "{colors.accent.700}"
+        "value": "{colors.accent.700}",
+        "metadata": {
+          "pair": "buttons.accent.text"
+        }
       },
       "bgActive": {
-        "value": "{colors.accent.800}"
+        "value": "{colors.accent.800}",
+        "metadata": {
+          "pair": "buttons.accent.text"
+        }
       },
       "bgDisabled": {
         "value": "{colors.accent.200}"

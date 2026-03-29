@@ -33,6 +33,9 @@ interface SpectreGeneratedTokens {
             };
             neutralBgHover: {
                 value: string;
+                metadata: {
+                    pair: string;
+                };
             };
             neutralText: {
                 value: string;
@@ -45,6 +48,9 @@ interface SpectreGeneratedTokens {
             };
             infoBgHover: {
                 value: string;
+                metadata: {
+                    pair: string;
+                };
             };
             infoText: {
                 value: string;
@@ -57,6 +63,9 @@ interface SpectreGeneratedTokens {
             };
             successBgHover: {
                 value: string;
+                metadata: {
+                    pair: string;
+                };
             };
             successText: {
                 value: string;
@@ -69,6 +78,9 @@ interface SpectreGeneratedTokens {
             };
             warningBgHover: {
                 value: string;
+                metadata: {
+                    pair: string;
+                };
             };
             warningText: {
                 value: string;
@@ -81,6 +93,9 @@ interface SpectreGeneratedTokens {
             };
             dangerBgHover: {
                 value: string;
+                metadata: {
+                    pair: string;
+                };
             };
             dangerText: {
                 value: string;
@@ -186,9 +201,15 @@ interface SpectreGeneratedTokens {
             };
             bgHover: {
                 value: string;
+                metadata: {
+                    pair: string;
+                };
             };
             bgActive: {
                 value: string;
+                metadata: {
+                    pair: string;
+                };
             };
             bgDisabled: {
                 value: string;
@@ -279,9 +300,15 @@ interface SpectreGeneratedTokens {
             };
             bgHover: {
                 value: string;
+                metadata: {
+                    pair: string;
+                };
             };
             bgActive: {
                 value: string;
+                metadata: {
+                    pair: string;
+                };
             };
             bgDisabled: {
                 value: string;
@@ -305,9 +332,15 @@ interface SpectreGeneratedTokens {
             };
             bgHover: {
                 value: string;
+                metadata: {
+                    pair: string;
+                };
             };
             bgActive: {
                 value: string;
+                metadata: {
+                    pair: string;
+                };
             };
             bgDisabled: {
                 value: string;
@@ -331,6 +364,9 @@ interface SpectreGeneratedTokens {
             };
             bgHover: {
                 value: string;
+                metadata: {
+                    pair: string;
+                };
             };
             bgActive: {
                 value: string;
@@ -363,9 +399,15 @@ interface SpectreGeneratedTokens {
             };
             bgHover: {
                 value: string;
+                metadata: {
+                    pair: string;
+                };
             };
             bgActive: {
                 value: string;
+                metadata: {
+                    pair: string;
+                };
             };
             bgDisabled: {
                 value: string;

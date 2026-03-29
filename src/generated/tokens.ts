@@ -36,6 +36,9 @@ export interface SpectreGeneratedTokens {
       };
       neutralBgHover: {
         value: string;
+        metadata: {
+          pair: string;
+        };
       };
       neutralText: {
         value: string;
@@ -48,6 +51,9 @@ export interface SpectreGeneratedTokens {
       };
       infoBgHover: {
         value: string;
+        metadata: {
+          pair: string;
+        };
       };
       infoText: {
         value: string;
@@ -60,6 +66,9 @@ export interface SpectreGeneratedTokens {
       };
       successBgHover: {
         value: string;
+        metadata: {
+          pair: string;
+        };
       };
       successText: {
         value: string;
@@ -72,6 +81,9 @@ export interface SpectreGeneratedTokens {
       };
       warningBgHover: {
         value: string;
+        metadata: {
+          pair: string;
+        };
       };
       warningText: {
         value: string;
@@ -84,6 +96,9 @@ export interface SpectreGeneratedTokens {
       };
       dangerBgHover: {
         value: string;
+        metadata: {
+          pair: string;
+        };
       };
       dangerText: {
         value: string;
@@ -195,9 +210,15 @@ export interface SpectreGeneratedTokens {
       };
       bgHover: {
         value: string;
+        metadata: {
+          pair: string;
+        };
       };
       bgActive: {
         value: string;
+        metadata: {
+          pair: string;
+        };
       };
       bgDisabled: {
         value: string;
@@ -288,9 +309,15 @@ export interface SpectreGeneratedTokens {
       };
       bgHover: {
         value: string;
+        metadata: {
+          pair: string;
+        };
       };
       bgActive: {
         value: string;
+        metadata: {
+          pair: string;
+        };
       };
       bgDisabled: {
         value: string;
@@ -314,9 +341,15 @@ export interface SpectreGeneratedTokens {
       };
       bgHover: {
         value: string;
+        metadata: {
+          pair: string;
+        };
       };
       bgActive: {
         value: string;
+        metadata: {
+          pair: string;
+        };
       };
       bgDisabled: {
         value: string;
@@ -340,6 +373,9 @@ export interface SpectreGeneratedTokens {
       };
       bgHover: {
         value: string;
+        metadata: {
+          pair: string;
+        };
       };
       bgActive: {
         value: string;
@@ -372,9 +408,15 @@ export interface SpectreGeneratedTokens {
       };
       bgHover: {
         value: string;
+        metadata: {
+          pair: string;
+        };
       };
       bgActive: {
         value: string;
+        metadata: {
+          pair: string;
+        };
       };
       bgDisabled: {
         value: string;
@@ -1566,7 +1608,10 @@ export const coreTokens: SpectreGeneratedTokens = {
         }
       },
       "neutralBgHover": {
-        "value": "{colors.neutral.200}"
+        "value": "{colors.neutral.200}",
+        "metadata": {
+          "pair": "component.badge.neutralText"
+        }
       },
       "neutralText": {
         "value": "{colors.neutral.700}"
@@ -1578,7 +1623,10 @@ export const coreTokens: SpectreGeneratedTokens = {
         }
       },
       "infoBgHover": {
-        "value": "{colors.info.200}"
+        "value": "{colors.info.200}",
+        "metadata": {
+          "pair": "component.badge.infoText"
+        }
       },
       "infoText": {
         "value": "{colors.info.700}"
@@ -1590,10 +1638,13 @@ export const coreTokens: SpectreGeneratedTokens = {
         }
       },
       "successBgHover": {
-        "value": "{colors.success.200}"
+        "value": "{colors.success.200}",
+        "metadata": {
+          "pair": "component.badge.successText"
+        }
       },
       "successText": {
-        "value": "{colors.success.700}"
+        "value": "{colors.success.800}"
       },
       "warningBg": {
         "value": "{colors.warning.100}",
@@ -1602,10 +1653,13 @@ export const coreTokens: SpectreGeneratedTokens = {
         }
       },
       "warningBgHover": {
-        "value": "{colors.warning.200}"
+        "value": "{colors.warning.200}",
+        "metadata": {
+          "pair": "component.badge.warningText"
+        }
       },
       "warningText": {
-        "value": "{colors.warning.700}"
+        "value": "{colors.warning.800}"
       },
       "dangerBg": {
         "value": "{colors.error.100}",
@@ -1614,10 +1668,13 @@ export const coreTokens: SpectreGeneratedTokens = {
         }
       },
       "dangerBgHover": {
-        "value": "{colors.error.200}"
+        "value": "{colors.error.200}",
+        "metadata": {
+          "pair": "component.badge.dangerText"
+        }
       },
       "dangerText": {
-        "value": "{colors.error.700}"
+        "value": "{colors.error.800}"
       }
     },
     "iconBox": {
@@ -1719,10 +1776,16 @@ export const coreTokens: SpectreGeneratedTokens = {
         }
       },
       "bgHover": {
-        "value": "{colors.info.700}"
+        "value": "{colors.info.700}",
+        "metadata": {
+          "pair": "buttons.primary.text"
+        }
       },
       "bgActive": {
-        "value": "{colors.info.800}"
+        "value": "{colors.info.800}",
+        "metadata": {
+          "pair": "buttons.primary.text"
+        }
       },
       "bgDisabled": {
         "value": "{colors.neutral.200}"
@@ -1812,10 +1875,16 @@ export const coreTokens: SpectreGeneratedTokens = {
         }
       },
       "bgHover": {
-        "value": "{colors.error.700}"
+        "value": "{colors.error.700}",
+        "metadata": {
+          "pair": "buttons.danger.text"
+        }
       },
       "bgActive": {
-        "value": "{colors.error.800}"
+        "value": "{colors.error.800}",
+        "metadata": {
+          "pair": "buttons.danger.text"
+        }
       },
       "bgDisabled": {
         "value": "{colors.error.200}"
@@ -1838,10 +1907,16 @@ export const coreTokens: SpectreGeneratedTokens = {
         }
       },
       "bgHover": {
-        "value": "{colors.success.800}"
+        "value": "{colors.success.800}",
+        "metadata": {
+          "pair": "buttons.success.text"
+        }
       },
       "bgActive": {
-        "value": "{colors.success.900}"
+        "value": "{colors.success.900}",
+        "metadata": {
+          "pair": "buttons.success.text"
+        }
       },
       "bgDisabled": {
         "value": "{colors.success.200}"
@@ -1864,7 +1939,10 @@ export const coreTokens: SpectreGeneratedTokens = {
         }
       },
       "bgHover": {
-        "value": "{colors.warning.600}"
+        "value": "{colors.warning.600}",
+        "metadata": {
+          "pair": "buttons.cta.text"
+        }
       },
       "bgActive": {
         "value": "{colors.warning.600}",
@@ -1896,10 +1974,16 @@ export const coreTokens: SpectreGeneratedTokens = {
         }
       },
       "bgHover": {
-        "value": "{colors.accent.700}"
+        "value": "{colors.accent.700}",
+        "metadata": {
+          "pair": "buttons.accent.text"
+        }
       },
       "bgActive": {
-        "value": "{colors.accent.800}"
+        "value": "{colors.accent.800}",
+        "metadata": {
+          "pair": "buttons.accent.text"
+        }
       },
       "bgDisabled": {
         "value": "{colors.accent.200}"

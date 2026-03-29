@@ -1,7 +1,7 @@
 {
   "name": "@phcdevworks/spectre-tokens",
   "version": "2.1.1",
-  "description": "Layer 1 of the Spectre suite: design tokens with JavaScript, TypeScript, Tailwind, and CSS variable outputs.",
+  "description": "@phcdevworks/spectre-tokens is the design-token package of the Spectre system for downstream Spectre packages and compatible applications.",
   "keywords": [
     "phcdevworks",
     "spectre",
@@ -23,10 +23,6 @@
     {
       "type": "github",
       "url": "https://github.com/sponsors/phcdevworks"
-    },
-    {
-      "type": "buymeacoffee",
-      "url": "https://buymeacoffee.com/phcdevworks"
     }
   ],
   "repository": {
