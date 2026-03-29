@@ -357,37 +357,37 @@
     },
     "cta": {
       "bg": {
-        "value": "{colors.warning.500}",
+        "value": "{colors.brand.600}",
         "metadata": {
           "pair": "buttons.cta.text"
         }
       },
       "bgHover": {
-        "value": "{colors.warning.600}",
+        "value": "{colors.brand.700}",
         "metadata": {
           "pair": "buttons.cta.text"
         }
       },
       "bgActive": {
-        "value": "{colors.warning.600}",
+        "value": "{colors.brand.800}",
         "metadata": {
           "pair": "buttons.cta.text"
         }
       },
       "bgDisabled": {
-        "value": "{colors.warning.200}"
+        "value": "{colors.brand.200}"
       },
       "text": {
-        "value": "{colors.neutral.900}"
+        "value": "{colors.white}"
       },
       "textDisabled": {
         "value": "{colors.neutral.400}"
       },
       "shadow": {
-        "value": "0 4px 14px 0 {colors.warning.500} / 0.39"
+        "value": "0 4px 14px 0 {colors.brand.500} / 0.39"
       },
       "focusRing": {
-        "value": "{colors.warning.500} / 0.4"
+        "value": "{colors.brand.500} / 0.4"
       }
     },
     "accent": {
