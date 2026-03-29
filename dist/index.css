@@ -15,7 +15,7 @@
   --sp-component-card-text: #141b24;
   --sp-component-card-text-muted: #657287;
   --sp-component-input-text: #141b24;
-  --sp-component-input-placeholder: #8a96ad;
+  --sp-component-input-placeholder: #657287;
   --sp-button-text-default: #141b24;
   --sp-button-text-on-primary: #ffffff;
   --sp-badge-neutral-bg: #eef1f6;
@@ -353,7 +353,7 @@
   --sp-component-card-text: #eef1f6;
   --sp-component-card-text-muted: #d9dfeb;
   --sp-component-input-text: #eef1f6;
-  --sp-component-input-placeholder: #8a96ad;
+  --sp-component-input-placeholder: #b7c1d4;
   --sp-button-text-default: #eef1f6;
   --sp-button-text-on-primary: #ffffff;
   --sp-badge-neutral-bg: #374253;
