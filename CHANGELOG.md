@@ -4,6 +4,34 @@ All notable changes to this project will be documented here. The format follows
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) and the versioning
 reflects package releases published to npm.
 
+## [2.1.1] - 2026-03-29
+
+### Added
+
+- Added `metadata.pair` mappings across token definitions to make contrast
+  validation more explicit and easier to maintain across buttons, badges, and
+  semantic surfaces.
+
+### Changed
+
+- Refined the color system with clearer semantic separation between `brand`,
+  `info`, `success`, `warning`, `error`, and `accent` palettes.
+- Reworked CTA button tokens to use the brand ramp instead of the warning ramp
+  so primary conversion actions no longer read as cautionary.
+- Renamed the HTML examples hub from `index.html` to `examples.html` to better
+  reflect its purpose as a demo index rather than a site homepage.
+- Updated generated TypeScript and CSS outputs to reflect the revised token
+  source data.
+- Refreshed the main example pages and markdown references so the published
+  examples match the current token contract.
+
+### Fixed
+
+- Improved badge hover contrast and dark-mode badge pairings so warning and
+  status variants remain WCAG AA compliant.
+- Corrected stale example colors and back-navigation links in the example
+  documentation set.
+
 ## [2.1.0] - 2026-03-22
 
 ### Added
@@ -244,7 +272,9 @@ reflects package releases published to npm.
 - Standardized documentation and contributing guidelines.
 
 [unreleased]:
-  https://github.com/phcdevworks/spectre-tokens/compare/v2.0.0...HEAD
+  https://github.com/phcdevworks/spectre-tokens/compare/v2.1.1...HEAD
+[2.1.1]: https://github.com/phcdevworks/spectre-tokens/compare/v2.1.0...v2.1.1
+[2.1.0]: https://github.com/phcdevworks/spectre-tokens/compare/v2.0.0...v2.1.0
 [2.0.0]: https://github.com/phcdevworks/spectre-tokens/compare/v1.1.0...v2.0.0
 [1.1.0]: https://github.com/phcdevworks/spectre-tokens/compare/v0.2.1...v1.1.0
 [0.2.1]: https://github.com/phcdevworks/spectre-tokens/compare/v0.2.0...v0.2.1
