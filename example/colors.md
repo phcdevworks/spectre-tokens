@@ -53,46 +53,46 @@ Complete color palette for the Spectre design system.
 
 | Shade | Hex       | Usage              |
 | ----- | --------- | ------------------ |
-| 50    | `#ecfdf5` | Success background |
-| 100   | `#d1fae5` | Light success      |
-| 200   | `#a7f3d0` | Success tint       |
-| 300   | `#6ee7b7` | Success accent     |
-| 400   | `#34d399` | Success medium     |
-| 500   | `#10b981` | Base success       |
-| 600   | `#059669` | Success primary    |
-| 700   | `#047857` | Dark success       |
-| 800   | `#065f46` | Darker success     |
-| 900   | `#064e3b` | Darkest success    |
+| 50    | `#f0fdf4` | Success background |
+| 100   | `#dcfce7` | Light success      |
+| 200   | `#bbf7d0` | Success tint       |
+| 300   | `#86efac` | Success accent     |
+| 400   | `#4ade80` | Success medium     |
+| 500   | `#22c55e` | Base success       |
+| 600   | `#16a34a` | Success primary    |
+| 700   | `#15803d` | Dark success       |
+| 800   | `#166534` | Darker success     |
+| 900   | `#14532d` | Darkest success    |
 
 ## Warning Colors
 
 | Shade | Hex       | Usage              |
 | ----- | --------- | ------------------ |
-| 50    | `#fff7ed` | Warning background |
-| 100   | `#ffedd5` | Light warning      |
-| 200   | `#fed7aa` | Warning tint       |
-| 300   | `#fdba74` | Warning accent     |
-| 400   | `#fb923c` | Warning medium     |
-| 500   | `#f97316` | Base warning       |
-| 600   | `#ea580c` | Warning primary    |
-| 700   | `#c2410c` | Dark warning       |
-| 800   | `#9a3412` | Darker warning     |
-| 900   | `#7c2d12` | Darkest warning    |
+| 50    | `#fffbea` | Warning background |
+| 100   | `#fff1c2` | Light warning      |
+| 200   | `#ffe08a` | Warning tint       |
+| 300   | `#ffd24d` | Warning accent     |
+| 400   | `#ffc21a` | Warning medium     |
+| 500   | `#f5ad00` | Base warning       |
+| 600   | `#d48806` | Warning primary    |
+| 700   | `#ad6800` | Dark warning       |
+| 800   | `#8f5200` | Darker warning     |
+| 900   | `#734000` | Darkest warning    |
 
 ## Error Colors
 
 | Shade | Hex       | Usage            |
 | ----- | --------- | ---------------- |
-| 50    | `#fff1f2` | Error background |
-| 100   | `#ffe4e6` | Light error      |
-| 200   | `#fecdd3` | Error tint       |
-| 300   | `#fda4af` | Error accent     |
-| 400   | `#fb7185` | Error medium     |
-| 500   | `#f43f5e` | Base error       |
-| 600   | `#e11d48` | Error primary    |
-| 700   | `#be123c` | Dark error       |
-| 800   | `#9f1239` | Darker error     |
-| 900   | `#881337` | Darkest error    |
+| 50    | `#fef2f2` | Error background |
+| 100   | `#fee2e2` | Light error      |
+| 200   | `#fecaca` | Error tint       |
+| 300   | `#fca5a5` | Error accent     |
+| 400   | `#f87171` | Error medium     |
+| 500   | `#ef4444` | Base error       |
+| 600   | `#dc2626` | Error primary    |
+| 700   | `#b91c1c` | Dark error       |
+| 800   | `#991b1b` | Darker error     |
+| 900   | `#7f1d1d` | Darkest error    |
 
 ## Info Colors
 
@@ -114,7 +114,7 @@ Complete color palette for the Spectre design system.
 | Token           | Hex       | Usage              |
 | --------------- | --------- | ------------------ |
 | `focus.primary` | `#336df4` | Primary focus ring |
-| `focus.error`   | `#f43f5e` | Error focus ring   |
+| `focus.error`   | `#ef4444` | Error focus ring   |
 | `focus.info`    | `#0369a1` | Info focus ring    |
 
 ## Surface Colors
@@ -158,12 +158,12 @@ Complete color palette for the Spectre design system.
 | `badge.neutral.text` | `#374253` | `#d9dfeb` |
 | `badge.info.bg`      | `#e0f2fe` | `#082f49` |
 | `badge.info.text`    | `#075985` | `#e0f2fe` |
-| `badge.success.bg`   | `#d1fae5` | `#065f46` |
-| `badge.success.text` | `#065f46` | `#d1fae5` |
-| `badge.warning.bg`   | `#ffedd5` | `#9a3412` |
-| `badge.warning.text` | `#9a3412` | `#ffedd5` |
-| `badge.danger.bg`    | `#ffe4e6` | `#9f1239` |
-| `badge.danger.text`  | `#9f1239` | `#ffe4e6` |
+| `badge.success.bg`   | `#dcfce7` | `#166534` |
+| `badge.success.text` | `#166534` | `#dcfce7` |
+| `badge.warning.bg`   | `#fff1c2` | `#8f5200` |
+| `badge.warning.text` | `#8f5200` | `#fff1c2` |
+| `badge.danger.bg`    | `#fee2e2` | `#991b1b` |
+| `badge.danger.text`  | `#991b1b` | `#fee2e2` |
 
 ### Card
 
@@ -178,7 +178,7 @@ Complete color palette for the Spectre design system.
 | -------- | --------- | --------- | --------- | --------- |
 | `bg`     | `#ffffff` | `#ffffff` | `#ffffff` | `#ffffff` |
 | `border` | `#d9dfeb` | `#d9dfeb` | `#d9dfeb` | `#d9dfeb` |
-| `icon`   | `#0369a1` | `#059669` | `#ea580c` | `#e11d48` |
+| `icon`   | `#0369a1` | `#16a34a` | `#d48806` | `#dc2626` |
 
 ### Testimonial
 
@@ -197,7 +197,7 @@ Complete color palette for the Spectre design system.
 | ----------- | --------- | --------- |
 | `bg`        | `#ffffff` | `#0369a1` |
 | `border`    | `#d9dfeb` | `#0369a1` |
-| `badgeBg`   | `#ffedd5` | `#f97316` |
+| `badgeBg`   | `#fff1c2` | `#f5ad00` |
 | `badgeText` | `#141b24` | `#141b24` |
 | `price`     | `#141b24` | `#ffffff` |
 | `text`      | `#657287` | `#e0f2fe` |
@@ -206,7 +206,7 @@ Complete color palette for the Spectre design system.
 
 | Token        | Value     |
 | ------------ | --------- |
-| `starFilled` | `#f97316` |
+| `starFilled` | `#f5ad00` |
 | `starEmpty`  | `#d9dfeb` |
 | `text`       | `#657287` |
 

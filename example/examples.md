@@ -131,7 +131,7 @@ Consistent aspect ratio tokens for media:
 ## How to View
 
 Click any link above to view the markdown documentation for each token category.
-For interactive HTML demos, open `index.html` in a web browser.
+For interactive HTML demos, open `examples.html` in a web browser.
 
 Each example page includes:
 

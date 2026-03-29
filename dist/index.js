@@ -358,37 +358,37 @@ var coreTokens = {
     },
     "cta": {
       "bg": {
-        "value": "{colors.warning.500}",
+        "value": "{colors.brand.600}",
         "metadata": {
           "pair": "buttons.cta.text"
         }
       },
       "bgHover": {
-        "value": "{colors.warning.600}",
+        "value": "{colors.brand.700}",
         "metadata": {
           "pair": "buttons.cta.text"
         }
       },
       "bgActive": {
-        "value": "{colors.warning.600}",
+        "value": "{colors.brand.800}",
         "metadata": {
           "pair": "buttons.cta.text"
         }
       },
       "bgDisabled": {
-        "value": "{colors.warning.200}"
+        "value": "{colors.brand.200}"
       },
       "text": {
-        "value": "{colors.neutral.900}"
+        "value": "{colors.white}"
       },
       "textDisabled": {
         "value": "{colors.neutral.400}"
       },
       "shadow": {
-        "value": "0 4px 14px 0 {colors.warning.500} / 0.39"
+        "value": "0 4px 14px 0 {colors.brand.500} / 0.39"
       },
       "focusRing": {
-        "value": "{colors.warning.500} / 0.4"
+        "value": "{colors.brand.500} / 0.4"
       }
     },
     "accent": {
@@ -655,7 +655,7 @@ var coreTokens = {
             }
           },
           "warningText": {
-            "value": "{colors.warning.700}",
+            "value": "{colors.warning.800}",
             "metadata": {}
           },
           "dangerBg": {
@@ -975,7 +975,7 @@ var coreTokens = {
             }
           },
           "warningBgHover": {
-            "value": "{colors.warning.700}",
+            "value": "{colors.warning.800}",
             "metadata": {
               "pair": "modes.dark.component.badge.warningText"
             }
@@ -1160,40 +1160,40 @@ var coreTokens = {
       "900": "#401f75"
     },
     "success": {
-      "50": "#ecfdf5",
-      "100": "#d1fae5",
-      "200": "#a7f3d0",
-      "300": "#6ee7b7",
-      "400": "#34d399",
-      "500": "#10b981",
-      "600": "#059669",
-      "700": "#047857",
-      "800": "#065f46",
-      "900": "#064e3b"
+      "50": "#f0fdf4",
+      "100": "#dcfce7",
+      "200": "#bbf7d0",
+      "300": "#86efac",
+      "400": "#4ade80",
+      "500": "#22c55e",
+      "600": "#16a34a",
+      "700": "#15803d",
+      "800": "#166534",
+      "900": "#14532d"
     },
     "warning": {
-      "50": "#fff7ed",
-      "100": "#ffedd5",
-      "200": "#fed7aa",
-      "300": "#fdba74",
-      "400": "#fb923c",
-      "500": "#f97316",
-      "600": "#ea580c",
-      "700": "#c2410c",
-      "800": "#9a3412",
-      "900": "#7c2d12"
+      "50": "#fffbea",
+      "100": "#fff1c2",
+      "200": "#ffe08a",
+      "300": "#ffd24d",
+      "400": "#ffc21a",
+      "500": "#f5ad00",
+      "600": "#d48806",
+      "700": "#ad6800",
+      "800": "#8f5200",
+      "900": "#734000"
     },
     "error": {
-      "50": "#fff1f2",
-      "100": "#ffe4e6",
-      "200": "#fecdd3",
-      "300": "#fda4af",
-      "400": "#fb7185",
-      "500": "#f43f5e",
-      "600": "#e11d48",
-      "700": "#be123c",
-      "800": "#9f1239",
-      "900": "#881337"
+      "50": "#fef2f2",
+      "100": "#fee2e2",
+      "200": "#fecaca",
+      "300": "#fca5a5",
+      "400": "#f87171",
+      "500": "#ef4444",
+      "600": "#dc2626",
+      "700": "#b91c1c",
+      "800": "#991b1b",
+      "900": "#7f1d1d"
     },
     "info": {
       "50": "#f0f9ff",
@@ -1216,7 +1216,7 @@ var coreTokens = {
     },
     "focus": {
       "primary": "#336df4",
-      "error": "#f43f5e",
+      "error": "#ef4444",
       "info": "#0369a1"
     },
     "white": "#ffffff",

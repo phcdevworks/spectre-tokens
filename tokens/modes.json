@@ -162,7 +162,7 @@
             }
           },
           "warningText": {
-            "value": "{colors.warning.700}",
+            "value": "{colors.warning.800}",
             "metadata": {}
           },
           "dangerBg": {
@@ -482,7 +482,7 @@
             }
           },
           "warningBgHover": {
-            "value": "{colors.warning.700}",
+            "value": "{colors.warning.800}",
             "metadata": {
               "pair": "modes.dark.component.badge.warningText"
             }
