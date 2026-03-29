@@ -8,123 +8,123 @@ Complete color palette for the Spectre design system.
 
 | Shade | Hex       | Usage           |
 | ----- | --------- | --------------- |
-| 50    | `#eff6ff` | Lightest tint   |
-| 100   | `#dbeafe` | Very light      |
-| 200   | `#bfdbfe` | Light           |
-| 300   | `#93c5fd` | Light accent    |
-| 400   | `#60a5fa` | Medium light    |
-| 500   | `#3b82f6` | Base brand      |
-| 600   | `#2563eb` | Primary actions |
-| 700   | `#1d4ed8` | Dark brand      |
-| 800   | `#1e40af` | Darker          |
-| 900   | `#1e3a8a` | Darkest         |
+| 50    | `#eef4ff` | Lightest tint   |
+| 100   | `#d9e7ff` | Very light      |
+| 200   | `#b9d2ff` | Light           |
+| 300   | `#8ab6ff` | Light accent    |
+| 400   | `#5a92ff` | Medium light    |
+| 500   | `#336df4` | Base brand      |
+| 600   | `#1f57db` | Primary actions |
+| 700   | `#1946b4` | Dark brand      |
+| 800   | `#173b8f` | Darker          |
+| 900   | `#16336f` | Darkest         |
 
 ## Neutral Colors
 
 | Shade | Hex       | Usage            |
 | ----- | --------- | ---------------- |
-| 50    | `#f8fafc` | Page background  |
-| 100   | `#f1f5f9` | Card background  |
-| 200   | `#e2e8f0` | Borders          |
-| 300   | `#cbd5e1` | Input borders    |
-| 400   | `#94a3b8` | Placeholder text |
-| 500   | `#64748b` | Meta text        |
-| 600   | `#475569` | Subtle text      |
-| 700   | `#334155` | Muted text       |
-| 800   | `#1e293b` | Primary text     |
-| 900   | `#0f172a` | Darkest text     |
+| 50    | `#f7f8fb` | Page background  |
+| 100   | `#eef1f6` | Card background  |
+| 200   | `#d9dfeb` | Borders          |
+| 300   | `#b7c1d4` | Input borders    |
+| 400   | `#8a96ad` | Placeholder text |
+| 500   | `#657287` | Meta text        |
+| 600   | `#4b576a` | Subtle text      |
+| 700   | `#374253` | Muted text       |
+| 800   | `#222b38` | Primary text     |
+| 900   | `#141b24` | Darkest text     |
 
 ## Accent Colors
 
 | Shade | Hex       | Usage        |
 | ----- | --------- | ------------ |
-| 50    | `#fef3c7` | Lightest     |
-| 100   | `#fde68a` | Very light   |
-| 200   | `#fcd34d` | Light        |
-| 300   | `#fbbf24` | Light accent |
-| 400   | `#f59e0b` | Medium       |
-| 500   | `#d97706` | Base accent  |
-| 600   | `#b45309` | Dark         |
-| 700   | `#92400e` | Darker       |
-| 800   | `#78350f` | Darkest      |
-| 900   | `#451a03` | Deepest      |
+| 50    | `#f6f2ff` | Lightest     |
+| 100   | `#eee5ff` | Very light   |
+| 200   | `#ddccff` | Light        |
+| 300   | `#c3a7ff` | Light accent |
+| 400   | `#a279ff` | Medium       |
+| 500   | `#854ff7` | Base accent  |
+| 600   | `#7135dd` | Dark         |
+| 700   | `#5d28b8` | Darker       |
+| 800   | `#4d2393` | Darkest      |
+| 900   | `#401f75` | Deepest      |
 
 ## Success Colors
 
 | Shade | Hex       | Usage              |
 | ----- | --------- | ------------------ |
-| 50    | `#f0fdf4` | Success background |
-| 100   | `#dcfce7` | Light success      |
-| 200   | `#bbf7d0` | Success tint       |
-| 300   | `#86efac` | Success accent     |
-| 400   | `#4ade80` | Success medium     |
-| 500   | `#22c55e` | Base success       |
-| 600   | `#16a34a` | Success primary    |
-| 700   | `#15803d` | Dark success       |
-| 800   | `#166534` | Darker success     |
-| 900   | `#14532d` | Darkest success    |
+| 50    | `#ecfdf5` | Success background |
+| 100   | `#d1fae5` | Light success      |
+| 200   | `#a7f3d0` | Success tint       |
+| 300   | `#6ee7b7` | Success accent     |
+| 400   | `#34d399` | Success medium     |
+| 500   | `#10b981` | Base success       |
+| 600   | `#059669` | Success primary    |
+| 700   | `#047857` | Dark success       |
+| 800   | `#065f46` | Darker success     |
+| 900   | `#064e3b` | Darkest success    |
 
 ## Warning Colors
 
 | Shade | Hex       | Usage              |
 | ----- | --------- | ------------------ |
-| 50    | `#fffbeb` | Warning background |
-| 100   | `#fef3c7` | Light warning      |
-| 200   | `#fde68a` | Warning tint       |
-| 300   | `#fcd34d` | Warning accent     |
-| 400   | `#fbbf24` | Warning medium     |
-| 500   | `#f59e0b` | Base warning       |
-| 600   | `#d97706` | Warning primary    |
-| 700   | `#b45309` | Dark warning       |
-| 800   | `#92400e` | Darker warning     |
-| 900   | `#78350f` | Darkest warning    |
+| 50    | `#fff7ed` | Warning background |
+| 100   | `#ffedd5` | Light warning      |
+| 200   | `#fed7aa` | Warning tint       |
+| 300   | `#fdba74` | Warning accent     |
+| 400   | `#fb923c` | Warning medium     |
+| 500   | `#f97316` | Base warning       |
+| 600   | `#ea580c` | Warning primary    |
+| 700   | `#c2410c` | Dark warning       |
+| 800   | `#9a3412` | Darker warning     |
+| 900   | `#7c2d12` | Darkest warning    |
 
 ## Error Colors
 
 | Shade | Hex       | Usage            |
 | ----- | --------- | ---------------- |
-| 50    | `#fef2f2` | Error background |
-| 100   | `#fee2e2` | Light error      |
-| 200   | `#fecaca` | Error tint       |
-| 300   | `#fca5a5` | Error accent     |
-| 400   | `#f87171` | Error medium     |
-| 500   | `#ef4444` | Base error       |
-| 600   | `#dc2626` | Error primary    |
-| 700   | `#b91c1c` | Dark error       |
-| 800   | `#991b1b` | Darker error     |
-| 900   | `#7f1d1d` | Darkest error    |
+| 50    | `#fff1f2` | Error background |
+| 100   | `#ffe4e6` | Light error      |
+| 200   | `#fecdd3` | Error tint       |
+| 300   | `#fda4af` | Error accent     |
+| 400   | `#fb7185` | Error medium     |
+| 500   | `#f43f5e` | Base error       |
+| 600   | `#e11d48` | Error primary    |
+| 700   | `#be123c` | Dark error       |
+| 800   | `#9f1239` | Darker error     |
+| 900   | `#881337` | Darkest error    |
 
 ## Info Colors
 
 | Shade | Hex       | Usage           |
 | ----- | --------- | --------------- |
-| 50    | `#eff6ff` | Info background |
-| 100   | `#dbeafe` | Light info      |
-| 200   | `#bfdbfe` | Info tint       |
-| 300   | `#93c5fd` | Info accent     |
-| 400   | `#60a5fa` | Info medium     |
-| 500   | `#3b82f6` | Base info       |
-| 600   | `#2563eb` | Info primary    |
-| 700   | `#1d4ed8` | Dark info       |
-| 800   | `#1e40af` | Darker info     |
-| 900   | `#1e3a8a` | Darkest info    |
+| 50    | `#f0f9ff` | Info background |
+| 100   | `#e0f2fe` | Light info      |
+| 200   | `#bae6fd` | Info tint       |
+| 300   | `#7dd3fc` | Info accent     |
+| 400   | `#38bdf8` | Info medium     |
+| 500   | `#0ea5e9` | Base info       |
+| 600   | `#0369a1` | Info primary    |
+| 700   | `#075985` | Dark info       |
+| 800   | `#0c4a6e` | Darker info     |
+| 900   | `#082f49` | Darkest info    |
 
 ## Focus Colors
 
 | Token           | Hex       | Usage              |
 | --------------- | --------- | ------------------ |
-| `focus.primary` | `#2563eb` | Primary focus ring |
-| `focus.error`   | `#dc2626` | Error focus ring   |
-| `focus.info`    | `#2563eb` | Info focus ring    |
+| `focus.primary` | `#336df4` | Primary focus ring |
+| `focus.error`   | `#f43f5e` | Error focus ring   |
+| `focus.info`    | `#0369a1` | Info focus ring    |
 
 ## Surface Colors
 
 | Token             | Hex       | Usage                        |
 | ----------------- | --------- | ---------------------------- |
-| `surface.page`    | `#f8fafc` | Page background              |
+| `surface.page`    | `#f7f8fb` | Page background              |
 | `surface.card`    | `#ffffff` | Card background              |
 | `surface.input`   | `#ffffff` | Input background             |
-| `surface.overlay` | `#0f172a` | Modal overlay (with opacity) |
+| `surface.overlay` | `#141b24` | Modal overlay (with opacity) |
 
 ## Text Colors
 
@@ -132,21 +132,21 @@ Complete color palette for the Spectre design system.
 
 | Token                 | Hex       | Usage             |
 | --------------------- | --------- | ----------------- |
-| `text.onPage.default` | `#0f172a` | Primary text      |
-| `text.onPage.muted`   | `#334155` | Secondary text    |
-| `text.onPage.subtle`  | `#475569` | Tertiary text     |
-| `text.onPage.meta`    | `#64748b` | Meta information  |
-| `text.onPage.brand`   | `#2563eb` | Brand accent text |
+| `text.onPage.default` | `#141b24` | Primary text      |
+| `text.onPage.muted`   | `#4b576a` | Secondary text    |
+| `text.onPage.subtle`  | `#657287` | Tertiary text     |
+| `text.onPage.meta`    | `#657287` | Meta information  |
+| `text.onPage.brand`   | `#1f57db` | Brand accent text |
 
 ### On Surface
 
 | Token                    | Hex       | Usage              |
 | ------------------------ | --------- | ------------------ |
-| `text.onSurface.default` | `#0f172a` | Primary on cards   |
-| `text.onSurface.muted`   | `#334155` | Secondary on cards |
-| `text.onSurface.subtle`  | `#475569` | Tertiary on cards  |
-| `text.onSurface.meta`    | `#64748b` | Meta on cards      |
-| `text.onSurface.brand`   | `#2563eb` | Brand on cards     |
+| `text.onSurface.default` | `#141b24` | Primary on cards   |
+| `text.onSurface.muted`   | `#4b576a` | Secondary on cards |
+| `text.onSurface.subtle`  | `#657287` | Tertiary on cards  |
+| `text.onSurface.meta`    | `#657287` | Meta on cards      |
+| `text.onSurface.brand`   | `#1f57db` | Brand on cards     |
 
 ## Component Colors
 
@@ -154,63 +154,63 @@ Complete color palette for the Spectre design system.
 
 | Token                | Default   | Dark Mode |
 | -------------------- | --------- | --------- |
-| `badge.neutral.bg`   | `#f1f5f9` | `#1e293b` |
-| `badge.neutral.text` | `#475569` | `#cbd5e1` |
-| `badge.info.bg`      | `#dbeafe` | `#1e40af` |
-| `badge.info.text`    | `#1e40af` | `#dbeafe` |
-| `badge.success.bg`   | `#dcfce7` | `#166534` |
-| `badge.success.text` | `#166534` | `#dcfce7` |
-| `badge.warning.bg`   | `#fef3c7` | `#92400e` |
-| `badge.warning.text` | `#92400e` | `#fef3c7` |
-| `badge.danger.bg`    | `#fee2e2` | `#991b1b` |
-| `badge.danger.text`  | `#991b1b` | `#fee2e2` |
+| `badge.neutral.bg`   | `#eef1f6` | `#222b38` |
+| `badge.neutral.text` | `#374253` | `#d9dfeb` |
+| `badge.info.bg`      | `#e0f2fe` | `#082f49` |
+| `badge.info.text`    | `#075985` | `#e0f2fe` |
+| `badge.success.bg`   | `#d1fae5` | `#065f46` |
+| `badge.success.text` | `#065f46` | `#d1fae5` |
+| `badge.warning.bg`   | `#ffedd5` | `#9a3412` |
+| `badge.warning.text` | `#9a3412` | `#ffedd5` |
+| `badge.danger.bg`    | `#ffe4e6` | `#9f1239` |
+| `badge.danger.text`  | `#9f1239` | `#ffe4e6` |
 
 ### Card
 
 | Token            | Value     |
 | ---------------- | --------- |
-| `card.text`      | `#0f172a` |
-| `card.textMuted` | `#64748b` |
+| `card.text`      | `#141b24` |
+| `card.textMuted` | `#657287` |
 
 ### Icon Box
 
 | Token    | Default   | Success   | Warning   | Danger    |
 | -------- | --------- | --------- | --------- | --------- |
-| `bg`     | `#dbeafe` | `#dcfce7` | `#fef3c7` | `#fee2e2` |
-| `border` | `#93c5fd` | `#86efac` | `#fcd34d` | `#fca5a5` |
-| `icon`   | `#2563eb` | `#16a34a` | `#d97706` | `#dc2626` |
+| `bg`     | `#ffffff` | `#ffffff` | `#ffffff` | `#ffffff` |
+| `border` | `#d9dfeb` | `#d9dfeb` | `#d9dfeb` | `#d9dfeb` |
+| `icon`   | `#0369a1` | `#059669` | `#ea580c` | `#e11d48` |
 
 ### Testimonial
 
 | Token         | Default   | Dark Mode |
 | ------------- | --------- | --------- |
-| `bg`          | `#ffffff` | `#1e293b` |
-| `border`      | `#e2e8f0` | `#334155` |
-| `text`        | `#475569` | `#cbd5e1` |
-| `authorName`  | `#0f172a` | `#f8fafc` |
-| `authorTitle` | `#64748b` | `#94a3b8` |
-| `quoteMark`   | `#93c5fd` | `#3b82f6` |
+| `bg`          | `#ffffff` | `#222b38` |
+| `border`      | `#d9dfeb` | `#374253` |
+| `text`        | `#374253` | `#d9dfeb` |
+| `authorName`  | `#141b24` | `#f7f8fb` |
+| `authorTitle` | `#657287` | `#8a96ad` |
+| `quoteMark`   | `#b7c1d4` | `#0ea5e9` |
 
 ### Pricing Card
 
 | Token       | Default   | Featured  |
 | ----------- | --------- | --------- |
-| `bg`        | `#ffffff` | `#1e3a8a` |
-| `border`    | `#e2e8f0` | `#2563eb` |
-| `badgeBg`   | `#dbeafe` | `#3b82f6` |
-| `badgeText` | `#1e40af` | `#ffffff` |
-| `price`     | `#0f172a` | `#ffffff` |
-| `text`      | `#475569` | `#dbeafe` |
+| `bg`        | `#ffffff` | `#0369a1` |
+| `border`    | `#d9dfeb` | `#0369a1` |
+| `badgeBg`   | `#ffedd5` | `#f97316` |
+| `badgeText` | `#141b24` | `#141b24` |
+| `price`     | `#141b24` | `#ffffff` |
+| `text`      | `#657287` | `#e0f2fe` |
 
 ### Rating
 
 | Token        | Value     |
 | ------------ | --------- |
-| `starFilled` | `#f59e0b` |
-| `starEmpty`  | `#cbd5e1` |
-| `text`       | `#475569` |
+| `starFilled` | `#f97316` |
+| `starEmpty`  | `#d9dfeb` |
+| `text`       | `#657287` |
 
 ---
 
-All color values are from `tokens/core.json` and include both default and dark
+All color values are from `tokens/palette.json` and include both default and dark
 mode variants where applicable.
