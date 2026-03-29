@@ -595,17 +595,29 @@ interface SpectreGeneratedTokens {
                 card: {
                     text: {
                         value: string;
+                        metadata: {
+                            pair: string;
+                        };
                     };
                     textMuted: {
                         value: string;
+                        metadata: {
+                            pair: string;
+                        };
                     };
                 };
                 input: {
                     text: {
                         value: string;
+                        metadata: {
+                            pair: string;
+                        };
                     };
                     placeholder: {
                         value: string;
+                        metadata: {
+                            pair: string;
+                        };
                     };
                 };
                 button: {
@@ -783,7 +795,9 @@ interface SpectreGeneratedTokens {
                     };
                     text: {
                         value: string;
-                        metadata: {};
+                        metadata: {
+                            pair: string;
+                        };
                     };
                 };
             };
@@ -905,9 +919,15 @@ interface SpectreGeneratedTokens {
                 input: {
                     text: {
                         value: string;
+                        metadata: {
+                            pair: string;
+                        };
                     };
                     placeholder: {
                         value: string;
+                        metadata: {
+                            pair: string;
+                        };
                     };
                 };
                 button: {
@@ -1115,7 +1135,9 @@ interface SpectreGeneratedTokens {
                     };
                     text: {
                         value: string;
-                        metadata: {};
+                        metadata: {
+                            pair: string;
+                        };
                     };
                 };
             };
