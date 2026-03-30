@@ -595,18 +595,30 @@ var coreTokens = {
       "component": {
         "card": {
           "text": {
-            "value": "{colors.neutral.900}"
+            "value": "{colors.neutral.900}",
+            "metadata": {
+              "pair": "modes.default.surface.card"
+            }
           },
           "textMuted": {
-            "value": "{colors.neutral.500}"
+            "value": "{colors.neutral.500}",
+            "metadata": {
+              "pair": "modes.default.surface.card"
+            }
           }
         },
         "input": {
           "text": {
-            "value": "{colors.neutral.900}"
+            "value": "{colors.neutral.900}",
+            "metadata": {
+              "pair": "modes.default.surface.input"
+            }
           },
           "placeholder": {
-            "value": "{colors.neutral.400}"
+            "value": "{colors.neutral.500}",
+            "metadata": {
+              "pair": "modes.default.surface.input"
+            }
           }
         },
         "button": {
@@ -784,7 +796,9 @@ var coreTokens = {
           },
           "text": {
             "value": "{colors.neutral.500}",
-            "metadata": {}
+            "metadata": {
+              "pair": "modes.default.surface.card"
+            }
           }
         }
       }
@@ -905,10 +919,16 @@ var coreTokens = {
         },
         "input": {
           "text": {
-            "value": "{colors.neutral.100}"
+            "value": "{colors.neutral.100}",
+            "metadata": {
+              "pair": "modes.dark.surface.input"
+            }
           },
           "placeholder": {
-            "value": "{colors.neutral.400}"
+            "value": "{colors.neutral.300}",
+            "metadata": {
+              "pair": "modes.dark.surface.input"
+            }
           }
         },
         "button": {
@@ -1116,7 +1136,9 @@ var coreTokens = {
           },
           "text": {
             "value": "{colors.neutral.400}",
-            "metadata": {}
+            "metadata": {
+              "pair": "modes.dark.surface.card"
+            }
           }
         }
       }
