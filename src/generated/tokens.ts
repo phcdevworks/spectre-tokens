@@ -17,6 +17,9 @@ export interface SpectreGeneratedTokens {
       };
       placeholder: {
         value: string;
+        metadata: {
+          pair: string;
+        };
       };
     };
     button: {
@@ -445,6 +448,9 @@ export interface SpectreGeneratedTokens {
       };
       placeholder: {
         value: string;
+        metadata: {
+          pair: string;
+        };
       };
     };
     hover: {
@@ -1609,7 +1615,10 @@ export const coreTokens: SpectreGeneratedTokens = {
         "value": "{colors.neutral.900}"
       },
       "placeholder": {
-        "value": "{colors.neutral.400}"
+        "value": "{colors.neutral.500}",
+        "metadata": {
+          "pair": "forms.default.bg"
+        }
       }
     },
     "button": {
@@ -2031,7 +2040,10 @@ export const coreTokens: SpectreGeneratedTokens = {
         "value": "{colors.neutral.900}"
       },
       "placeholder": {
-        "value": "{colors.neutral.400}"
+        "value": "{colors.neutral.500}",
+        "metadata": {
+          "pair": "forms.default.bg"
+        }
       }
     },
     "hover": {
