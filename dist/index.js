@@ -14,7 +14,10 @@ var coreTokens = {
         "value": "{colors.neutral.900}"
       },
       "placeholder": {
-        "value": "{colors.neutral.400}"
+        "value": "{colors.neutral.500}",
+        "metadata": {
+          "pair": "forms.default.bg"
+        }
       }
     },
     "button": {
@@ -436,7 +439,10 @@ var coreTokens = {
         "value": "{colors.neutral.900}"
       },
       "placeholder": {
-        "value": "{colors.neutral.400}"
+        "value": "{colors.neutral.500}",
+        "metadata": {
+          "pair": "forms.default.bg"
+        }
       }
     },
     "hover": {
