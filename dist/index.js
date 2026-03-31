@@ -963,7 +963,7 @@ var coreTokens = {
             "metadata": {}
           },
           "infoBg": {
-            "value": "{colors.info.900}",
+            "value": "{colors.info.800}",
             "metadata": {
               "pair": "modes.dark.component.badge.infoText"
             }
