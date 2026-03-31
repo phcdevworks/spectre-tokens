@@ -14,6 +14,9 @@ interface SpectreGeneratedTokens {
             };
             placeholder: {
                 value: string;
+                metadata: {
+                    pair: string;
+                };
             };
         };
         button: {
@@ -436,6 +439,9 @@ interface SpectreGeneratedTokens {
             };
             placeholder: {
                 value: string;
+                metadata: {
+                    pair: string;
+                };
             };
         };
         hover: {
