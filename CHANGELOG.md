@@ -32,6 +32,21 @@ reflects package releases published to npm.
 - Corrected stale example colors and back-navigation links in the example
   documentation set.
 
+## [Unreleased]
+
+### Changed
+
+- Silenced the TypeScript 6 deprecation gate during DTS generation so
+  `npm run build` completes again under the current toolchain.
+- Clarified documentation that Tailwind support is exposed as theme exports and
+  that `example/` contains illustrative token demos rather than package-owned
+  UI primitives.
+
+### Added
+
+- Added a locked color contract regression check covering the protected success,
+  warning, danger, and CTA/brand-action families.
+
 ## [2.1.0] - 2026-03-22
 
 ### Added

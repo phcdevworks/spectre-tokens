@@ -3,6 +3,10 @@
 This directory contains comprehensive examples for all token categories in the
 Spectre design system.
 
+These files are documentation for the token contract. They demonstrate how
+token values can be applied, but they are not a UI package and do not define
+downstream component structure.
+
 ## Available Examples
 
 ### 🎨 [Colors](colors.md)
@@ -152,7 +156,7 @@ projects. Each token value is displayed with:
 4. Implementation examples
 5. Responsive considerations
 
-All examples use the exact token values from `tokens/core.json`.
+All examples are derived from the current token sources in `tokens/`.
 
 ## Navigation
 

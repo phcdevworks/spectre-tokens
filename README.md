@@ -18,8 +18,8 @@ translate those contracts for specific frameworks and runtimes.
 ## Key capabilities
 
 - Uses `tokens/` as the source of truth for design-token data
-- Generates JavaScript, TypeScript, Tailwind, and CSS outputs from shared token
-  sources
+- Generates JavaScript, TypeScript, CSS, and Tailwind theme exports from shared
+  token sources
 - Defines semantic token contracts for surfaces, text, components, buttons,
   forms, and modes
 - Exposes primitives and semantic roles for downstream packages and compatible
@@ -80,8 +80,8 @@ access is appropriate.
 
 - Visual language expressed as token data in `tokens/`
 - Semantic roles and token contracts consumed downstream
-- Generated token outputs for JavaScript, TypeScript, Tailwind, and CSS
-  variables
+- Generated token outputs for JavaScript, TypeScript, CSS variables, and
+  Tailwind theme exports
 - Theme and mode definitions used by downstream consumers
 
 ### Token model
@@ -195,6 +195,10 @@ Key source areas:
 - `scripts/` for build and validation scripts
 - `example/` for usage examples
 
+The files in `example/` are illustrative token demos only. They help explain
+the token contract, but they are not the package contract itself and should not
+be treated as downstream UI primitives.
+
 ## Contributing
 
 PHCDevworks maintains this package as part of the Spectre system.
@@ -205,6 +209,7 @@ When contributing:
 - keep generated outputs derived from source data
 - avoid breaking token contracts without an intentional major-version change
 - run `npm run build` and `npm run check` before opening a pull request
+- do not modify locked semantic color families without explicit approval
 
 See [CONTRIBUTING.md](CONTRIBUTING.md) for the full workflow.
 
