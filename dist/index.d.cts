@@ -641,6 +641,12 @@ interface SpectreGeneratedTokens {
                             pair: string;
                         };
                     };
+                    neutralBgHover: {
+                        value: string;
+                        metadata: {
+                            pair: string;
+                        };
+                    };
                     neutralText: {
                         value: string;
                         metadata: {};
