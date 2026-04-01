@@ -11,7 +11,8 @@ Spectre is organized as a strict layered system:
 ### Layer 1: `@phcdevworks/spectre-tokens`
 
 - Purpose: define semantic design values and token contracts
-- Scope: token JSON, transforms, typed exports, CSS variables, Tailwind outputs
+- Scope: token JSON, transforms, typed exports, CSS variables, Tailwind theme
+  exports, and validation tooling
 
 ### Layer 2: `@phcdevworks/spectre-ui`
 
@@ -50,6 +51,8 @@ structure, adapters define delivery.
    planned major release.
 4. Ensure new token categories are reflected in generated TypeScript, CSS, and
    Tailwind outputs when applicable.
+5. Do not modify locked `success`, `warning`, `danger`, or CTA/brand-action
+   color contracts unless explicitly approved.
 
 ### Code and tooling
 
@@ -64,6 +67,8 @@ structure, adapters define delivery.
   change.
 - Keep wording aligned with the rest of the Spectre suite and with PHCDevworks
   ownership.
+- Keep examples framed as documentation for token usage, not as canonical UI
+  components owned by this package.
 - Document contract changes clearly so downstream packages can stay in sync.
 
 ## Pull Request Checklist

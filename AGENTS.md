@@ -16,6 +16,20 @@ compatible applications.
 3. Keep generated outputs derived from source data, never hand-maintained.
 4. Prefer semantic naming and reusable contracts over package-specific wording.
 5. Verify token changes propagate cleanly to typed, CSS, and Tailwind outputs.
+6. Accessibility matters, but semantic clarity and visual quality must also be
+   preserved.
+7. Do not modify locked semantic color families without explicit approval.
+
+## Locked Color Contracts
+
+The following semantic color families are considered optimized and protected:
+
+- success
+- warning
+- danger
+- CTA / primary action / brand-action
+
+Do not change these color families unless explicitly directed by Bradley Potts.
 
 ## Working Boundaries
 
@@ -29,3 +43,4 @@ compatible applications.
 1. Update token sources.
 2. Regenerate outputs with `npm run build`.
 3. Validate with `npm run check`.
+4. Confirm locked color families were not changed unless explicitly approved.

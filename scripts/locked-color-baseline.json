@@ -1,0 +1,296 @@
+{
+  "colors.brand": {
+    "50": "#eef4ff",
+    "100": "#d9e7ff",
+    "200": "#b9d2ff",
+    "300": "#8ab6ff",
+    "400": "#5a92ff",
+    "500": "#336df4",
+    "600": "#1f57db",
+    "700": "#1946b4",
+    "800": "#173b8f",
+    "900": "#16336f"
+  },
+  "colors.success": {
+    "50": "#f0fdf4",
+    "100": "#dcfce7",
+    "200": "#bbf7d0",
+    "300": "#86efac",
+    "400": "#4ade80",
+    "500": "#22c55e",
+    "600": "#16a34a",
+    "700": "#15803d",
+    "800": "#166534",
+    "900": "#14532d"
+  },
+  "colors.warning": {
+    "50": "#fffbea",
+    "100": "#fff1c2",
+    "200": "#ffe08a",
+    "300": "#ffd24d",
+    "400": "#ffc21a",
+    "500": "#f5ad00",
+    "600": "#d48806",
+    "700": "#ad6800",
+    "800": "#8f5200",
+    "900": "#734000"
+  },
+  "colors.error": {
+    "50": "#fef2f2",
+    "100": "#fee2e2",
+    "200": "#fecaca",
+    "300": "#fca5a5",
+    "400": "#f87171",
+    "500": "#ef4444",
+    "600": "#dc2626",
+    "700": "#b91c1c",
+    "800": "#991b1b",
+    "900": "#7f1d1d"
+  },
+  "buttons.cta": {
+    "bg": {
+      "value": "{colors.brand.600}",
+      "metadata": {
+        "pair": "buttons.cta.text"
+      }
+    },
+    "bgHover": {
+      "value": "{colors.brand.700}",
+      "metadata": {
+        "pair": "buttons.cta.text"
+      }
+    },
+    "bgActive": {
+      "value": "{colors.brand.800}",
+      "metadata": {
+        "pair": "buttons.cta.text"
+      }
+    },
+    "bgDisabled": {
+      "value": "{colors.brand.200}"
+    },
+    "text": {
+      "value": "{colors.white}"
+    },
+    "textDisabled": {
+      "value": "{colors.neutral.400}"
+    },
+    "shadow": {
+      "value": "0 4px 14px 0 {colors.brand.500} / 0.39"
+    },
+    "focusRing": {
+      "value": "{colors.brand.500} / 0.4"
+    }
+  },
+  "buttons.success": {
+    "bg": {
+      "value": "{colors.success.700}",
+      "metadata": {
+        "pair": "buttons.success.text"
+      }
+    },
+    "bgHover": {
+      "value": "{colors.success.800}",
+      "metadata": {
+        "pair": "buttons.success.text"
+      }
+    },
+    "bgActive": {
+      "value": "{colors.success.900}",
+      "metadata": {
+        "pair": "buttons.success.text"
+      }
+    },
+    "bgDisabled": {
+      "value": "{colors.success.200}"
+    },
+    "text": {
+      "value": "{colors.white}"
+    },
+    "textDisabled": {
+      "value": "{colors.neutral.400}"
+    },
+    "focusRing": {
+      "value": "{colors.success.500} / 0.4"
+    }
+  },
+  "buttons.danger": {
+    "bg": {
+      "value": "{colors.error.600}",
+      "metadata": {
+        "pair": "buttons.danger.text"
+      }
+    },
+    "bgHover": {
+      "value": "{colors.error.700}",
+      "metadata": {
+        "pair": "buttons.danger.text"
+      }
+    },
+    "bgActive": {
+      "value": "{colors.error.800}",
+      "metadata": {
+        "pair": "buttons.danger.text"
+      }
+    },
+    "bgDisabled": {
+      "value": "{colors.error.200}"
+    },
+    "text": {
+      "value": "{colors.white}"
+    },
+    "textDisabled": {
+      "value": "{colors.neutral.400}"
+    },
+    "focusRing": {
+      "value": "{colors.error.500} / 0.4"
+    }
+  },
+  "component.badge.successBg": {
+    "value": "{colors.success.100}",
+    "metadata": {
+      "pair": "component.badge.successText"
+    }
+  },
+  "component.badge.successBgHover": {
+    "value": "{colors.success.200}",
+    "metadata": {
+      "pair": "component.badge.successText"
+    }
+  },
+  "component.badge.successText": {
+    "value": "{colors.success.800}"
+  },
+  "component.badge.warningBg": {
+    "value": "{colors.warning.100}",
+    "metadata": {
+      "pair": "component.badge.warningText"
+    }
+  },
+  "component.badge.warningBgHover": {
+    "value": "{colors.warning.200}",
+    "metadata": {
+      "pair": "component.badge.warningText"
+    }
+  },
+  "component.badge.warningText": {
+    "value": "{colors.warning.800}"
+  },
+  "component.badge.dangerBg": {
+    "value": "{colors.error.100}",
+    "metadata": {
+      "pair": "component.badge.dangerText"
+    }
+  },
+  "component.badge.dangerBgHover": {
+    "value": "{colors.error.200}",
+    "metadata": {
+      "pair": "component.badge.dangerText"
+    }
+  },
+  "component.badge.dangerText": {
+    "value": "{colors.error.800}"
+  },
+  "forms.valid.border": {
+    "value": "{colors.success.500}"
+  },
+  "forms.valid.bg": {
+    "value": "{colors.success.50}",
+    "metadata": {
+      "pair": "forms.valid.text"
+    }
+  },
+  "forms.valid.text": {
+    "value": "{colors.success.700}"
+  },
+  "forms.invalid.border": {
+    "value": "{colors.error.500}"
+  },
+  "forms.invalid.bg": {
+    "value": "{colors.error.50}",
+    "metadata": {
+      "pair": "forms.invalid.text"
+    }
+  },
+  "forms.invalid.text": {
+    "value": "{colors.error.700}"
+  },
+  "modes.default.component.badge.successBg": {
+    "value": "{colors.success.100}",
+    "metadata": {
+      "pair": "modes.default.component.badge.successText"
+    }
+  },
+  "modes.default.component.badge.successText": {
+    "value": "{colors.success.700}",
+    "metadata": {}
+  },
+  "modes.default.component.badge.warningBg": {
+    "value": "{colors.warning.100}",
+    "metadata": {
+      "pair": "modes.default.component.badge.warningText"
+    }
+  },
+  "modes.default.component.badge.warningText": {
+    "value": "{colors.warning.800}",
+    "metadata": {}
+  },
+  "modes.default.component.badge.dangerBg": {
+    "value": "{colors.error.100}",
+    "metadata": {
+      "pair": "modes.default.component.badge.dangerText"
+    }
+  },
+  "modes.default.component.badge.dangerText": {
+    "value": "{colors.error.700}",
+    "metadata": {}
+  },
+  "modes.dark.component.badge.successBg": {
+    "value": "{colors.success.800}",
+    "metadata": {
+      "pair": "modes.dark.component.badge.successText"
+    }
+  },
+  "modes.dark.component.badge.successBgHover": {
+    "value": "{colors.success.700}",
+    "metadata": {
+      "pair": "modes.dark.component.badge.successText"
+    }
+  },
+  "modes.dark.component.badge.successText": {
+    "value": "{colors.success.100}",
+    "metadata": {}
+  },
+  "modes.dark.component.badge.warningBg": {
+    "value": "{colors.warning.800}",
+    "metadata": {
+      "pair": "modes.dark.component.badge.warningText"
+    }
+  },
+  "modes.dark.component.badge.warningBgHover": {
+    "value": "{colors.warning.800}",
+    "metadata": {
+      "pair": "modes.dark.component.badge.warningText"
+    }
+  },
+  "modes.dark.component.badge.warningText": {
+    "value": "{colors.warning.100}",
+    "metadata": {}
+  },
+  "modes.dark.component.badge.dangerBg": {
+    "value": "{colors.error.800}",
+    "metadata": {
+      "pair": "modes.dark.component.badge.dangerText"
+    }
+  },
+  "modes.dark.component.badge.dangerBgHover": {
+    "value": "{colors.error.700}",
+    "metadata": {
+      "pair": "modes.dark.component.badge.dangerText"
+    }
+  },
+  "modes.dark.component.badge.dangerText": {
+    "value": "{colors.error.100}",
+    "metadata": {}
+  }
+}
