@@ -650,6 +650,12 @@ export interface SpectreGeneratedTokens {
               pair: string;
             };
           };
+          neutralBgHover: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
           neutralText: {
             value: string;
             metadata: {
@@ -2239,6 +2245,12 @@ export const coreTokens: SpectreGeneratedTokens = {
         "badge": {
           "neutralBg": {
             "value": "{colors.neutral.100}",
+            "metadata": {
+              "pair": "modes.default.component.badge.neutralText"
+            }
+          },
+          "neutralBgHover": {
+            "value": "{colors.neutral.200}",
             "metadata": {
               "pair": "modes.default.component.badge.neutralText"
             }
