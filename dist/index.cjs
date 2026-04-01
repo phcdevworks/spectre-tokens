@@ -672,6 +672,12 @@ var coreTokens = {
               "pair": "modes.default.component.badge.neutralText"
             }
           },
+          "neutralBgHover": {
+            "value": "{colors.neutral.200}",
+            "metadata": {
+              "pair": "modes.default.component.badge.neutralText"
+            }
+          },
           "neutralText": {
             "value": "{colors.neutral.700}",
             "metadata": {}
