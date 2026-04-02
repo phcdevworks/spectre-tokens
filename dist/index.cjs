@@ -688,6 +688,12 @@ var coreTokens = {
               "pair": "modes.default.component.badge.infoText"
             }
           },
+          "infoBgHover": {
+            "value": "{colors.info.200}",
+            "metadata": {
+              "pair": "modes.default.component.badge.infoText"
+            }
+          },
           "infoText": {
             "value": "{colors.info.700}",
             "metadata": {}
