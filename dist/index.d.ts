@@ -657,6 +657,12 @@ interface SpectreGeneratedTokens {
                             pair: string;
                         };
                     };
+                    infoBgHover: {
+                        value: string;
+                        metadata: {
+                            pair: string;
+                        };
+                    };
                     infoText: {
                         value: string;
                         metadata: {};
