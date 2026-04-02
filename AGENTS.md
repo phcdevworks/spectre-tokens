@@ -26,8 +26,9 @@ The following semantic color families are considered optimized and protected:
 
 - success
 - warning
-- danger
-- CTA / primary action / brand-action
+- danger (implemented through the `error` palette and danger semantic roles)
+- CTA / primary action / brand-action (implemented through `brand` and
+  `buttons.cta`)
 
 Do not change these color families unless explicitly directed by Bradley Potts.
 
@@ -37,6 +38,9 @@ Do not change these color families unless explicitly directed by Bradley Potts.
 - Downstream UI packages define structure and composition.
 - Adapter packages translate Spectre contracts for specific frameworks and
   runtimes.
+- `example/` exists to document and demonstrate token usage. It is not the
+  source of truth and should not be treated as ownership of downstream UI
+  primitives.
 
 ## Validation Flow
 
@@ -44,3 +48,12 @@ Do not change these color families unless explicitly directed by Bradley Potts.
 2. Regenerate outputs with `npm run build`.
 3. Validate with `npm run check`.
 4. Confirm locked color families were not changed unless explicitly approved.
+
+## Validation Notes
+
+- `npm run build` regenerates outputs and includes the locked color contract
+  check.
+- `npm run check` runs token structure, locked color, contrast, regression, and
+  lint validation.
+- Locked color changes should fail validation unless the baseline is
+  intentionally updated with explicit approval.
