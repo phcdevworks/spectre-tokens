@@ -702,7 +702,9 @@ var coreTokens = {
         "iconBox": {
           "bg": {
             "value": "{colors.white}",
-            "metadata": {}
+            "metadata": {
+              "pair": "modes.default.component.iconBox.iconDefault"
+            }
           },
           "border": {
             "value": "{colors.neutral.200}",
@@ -710,7 +712,9 @@ var coreTokens = {
           },
           "iconDefault": {
             "value": "{colors.info.600}",
-            "metadata": {}
+            "metadata": {
+              "pair": "modes.default.component.iconBox.bg"
+            }
           },
           "iconSuccess": {
             "value": "{colors.success.600}",
@@ -722,7 +726,9 @@ var coreTokens = {
           },
           "iconDanger": {
             "value": "{colors.error.600}",
-            "metadata": {}
+            "metadata": {
+              "pair": "modes.default.component.iconBox.bg"
+            }
           }
         },
         "testimonial": {
@@ -863,19 +869,19 @@ var coreTokens = {
             }
           },
           "muted": {
-            "value": "{colors.neutral.200}",
+            "value": "{colors.neutral.300}",
             "metadata": {
               "pair": "modes.dark.surface.page"
             }
           },
           "subtle": {
-            "value": "{colors.neutral.300}",
+            "value": "{colors.neutral.400}",
             "metadata": {
               "pair": "modes.dark.surface.page"
             }
           },
           "meta": {
-            "value": "{colors.neutral.300}",
+            "value": "{colors.neutral.400}",
             "metadata": {
               "pair": "modes.dark.surface.page"
             }
@@ -895,19 +901,19 @@ var coreTokens = {
             }
           },
           "muted": {
-            "value": "{colors.neutral.200}",
+            "value": "{colors.neutral.300}",
             "metadata": {
               "pair": "modes.dark.surface.card"
             }
           },
           "subtle": {
-            "value": "{colors.neutral.300}",
+            "value": "{colors.neutral.400}",
             "metadata": {
               "pair": "modes.dark.surface.card"
             }
           },
           "meta": {
-            "value": "{colors.neutral.300}",
+            "value": "{colors.neutral.400}",
             "metadata": {
               "pair": "modes.dark.surface.card"
             }
@@ -929,7 +935,7 @@ var coreTokens = {
             }
           },
           "textMuted": {
-            "value": "{colors.neutral.200}",
+            "value": "{colors.neutral.300}",
             "metadata": {
               "pair": "modes.dark.surface.card"
             }
@@ -1042,7 +1048,9 @@ var coreTokens = {
         "iconBox": {
           "bg": {
             "value": "{colors.neutral.800}",
-            "metadata": {}
+            "metadata": {
+              "pair": "modes.dark.component.iconBox.iconDefault"
+            }
           },
           "border": {
             "value": "{colors.neutral.700}",
@@ -1050,19 +1058,27 @@ var coreTokens = {
           },
           "iconDefault": {
             "value": "{colors.info.300}",
-            "metadata": {}
+            "metadata": {
+              "pair": "modes.dark.component.iconBox.bg"
+            }
           },
           "iconSuccess": {
             "value": "{colors.success.400}",
-            "metadata": {}
+            "metadata": {
+              "pair": "modes.dark.component.iconBox.bg"
+            }
           },
           "iconWarning": {
             "value": "{colors.warning.400}",
-            "metadata": {}
+            "metadata": {
+              "pair": "modes.dark.component.iconBox.bg"
+            }
           },
           "iconDanger": {
             "value": "{colors.error.400}",
-            "metadata": {}
+            "metadata": {
+              "pair": "modes.dark.component.iconBox.bg"
+            }
           }
         },
         "testimonial": {
@@ -1089,7 +1105,7 @@ var coreTokens = {
             }
           },
           "authorTitle": {
-            "value": "{colors.neutral.300}",
+            "value": "{colors.neutral.400}",
             "metadata": {
               "pair": "modes.dark.component.testimonial.bg"
             }
@@ -1137,7 +1153,7 @@ var coreTokens = {
             }
           },
           "priceDescription": {
-            "value": "{colors.neutral.300}",
+            "value": "{colors.neutral.400}",
             "metadata": {
               "pair": "modes.dark.component.pricingCard.bg"
             }
