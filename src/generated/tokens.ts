@@ -667,6 +667,12 @@ export interface SpectreGeneratedTokens {
               pair: string;
             };
           };
+          infoBgHover: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
           infoText: {
             value: string;
             metadata: {
@@ -2261,6 +2267,12 @@ export const coreTokens: SpectreGeneratedTokens = {
           },
           "infoBg": {
             "value": "{colors.info.100}",
+            "metadata": {
+              "pair": "modes.default.component.badge.infoText"
+            }
+          },
+          "infoBgHover": {
+            "value": "{colors.info.200}",
             "metadata": {
               "pair": "modes.default.component.badge.infoText"
             }
