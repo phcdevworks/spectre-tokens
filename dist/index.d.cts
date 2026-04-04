@@ -701,7 +701,9 @@ interface SpectreGeneratedTokens {
                 iconBox: {
                     bg: {
                         value: string;
-                        metadata: {};
+                        metadata: {
+                            pair: string;
+                        };
                     };
                     border: {
                         value: string;
@@ -709,7 +711,9 @@ interface SpectreGeneratedTokens {
                     };
                     iconDefault: {
                         value: string;
-                        metadata: {};
+                        metadata: {
+                            pair: string;
+                        };
                     };
                     iconSuccess: {
                         value: string;
@@ -721,7 +725,9 @@ interface SpectreGeneratedTokens {
                     };
                     iconDanger: {
                         value: string;
-                        metadata: {};
+                        metadata: {
+                            pair: string;
+                        };
                     };
                 };
                 testimonial: {
@@ -1041,7 +1047,9 @@ interface SpectreGeneratedTokens {
                 iconBox: {
                     bg: {
                         value: string;
-                        metadata: {};
+                        metadata: {
+                            pair: string;
+                        };
                     };
                     border: {
                         value: string;
@@ -1049,19 +1057,27 @@ interface SpectreGeneratedTokens {
                     };
                     iconDefault: {
                         value: string;
-                        metadata: {};
+                        metadata: {
+                            pair: string;
+                        };
                     };
                     iconSuccess: {
                         value: string;
-                        metadata: {};
+                        metadata: {
+                            pair: string;
+                        };
                     };
                     iconWarning: {
                         value: string;
-                        metadata: {};
+                        metadata: {
+                            pair: string;
+                        };
                     };
                     iconDanger: {
                         value: string;
-                        metadata: {};
+                        metadata: {
+                            pair: string;
+                        };
                     };
                 };
                 testimonial: {

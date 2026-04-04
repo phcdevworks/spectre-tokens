@@ -716,6 +716,7 @@ export interface SpectreGeneratedTokens {
           bg: {
             value: string;
             metadata: {
+              pair: string;
             };
           };
           border: {
@@ -726,6 +727,7 @@ export interface SpectreGeneratedTokens {
           iconDefault: {
             value: string;
             metadata: {
+              pair: string;
             };
           };
           iconSuccess: {
@@ -741,6 +743,7 @@ export interface SpectreGeneratedTokens {
           iconDanger: {
             value: string;
             metadata: {
+              pair: string;
             };
           };
         };
@@ -1074,6 +1077,7 @@ export interface SpectreGeneratedTokens {
           bg: {
             value: string;
             metadata: {
+              pair: string;
             };
           };
           border: {
@@ -1084,21 +1088,25 @@ export interface SpectreGeneratedTokens {
           iconDefault: {
             value: string;
             metadata: {
+              pair: string;
             };
           };
           iconSuccess: {
             value: string;
             metadata: {
+              pair: string;
             };
           };
           iconWarning: {
             value: string;
             metadata: {
+              pair: string;
             };
           };
           iconDanger: {
             value: string;
             metadata: {
+              pair: string;
             };
           };
         };
@@ -2315,7 +2323,9 @@ export const coreTokens: SpectreGeneratedTokens = {
         "iconBox": {
           "bg": {
             "value": "{colors.white}",
-            "metadata": {}
+            "metadata": {
+              "pair": "modes.default.component.iconBox.iconDefault"
+            }
           },
           "border": {
             "value": "{colors.neutral.200}",
@@ -2323,7 +2333,9 @@ export const coreTokens: SpectreGeneratedTokens = {
           },
           "iconDefault": {
             "value": "{colors.info.600}",
-            "metadata": {}
+            "metadata": {
+              "pair": "modes.default.component.iconBox.bg"
+            }
           },
           "iconSuccess": {
             "value": "{colors.success.600}",
@@ -2335,7 +2347,9 @@ export const coreTokens: SpectreGeneratedTokens = {
           },
           "iconDanger": {
             "value": "{colors.error.600}",
-            "metadata": {}
+            "metadata": {
+              "pair": "modes.default.component.iconBox.bg"
+            }
           }
         },
         "testimonial": {
@@ -2476,19 +2490,19 @@ export const coreTokens: SpectreGeneratedTokens = {
             }
           },
           "muted": {
-            "value": "{colors.neutral.200}",
+            "value": "{colors.neutral.300}",
             "metadata": {
               "pair": "modes.dark.surface.page"
             }
           },
           "subtle": {
-            "value": "{colors.neutral.300}",
+            "value": "{colors.neutral.400}",
             "metadata": {
               "pair": "modes.dark.surface.page"
             }
           },
           "meta": {
-            "value": "{colors.neutral.300}",
+            "value": "{colors.neutral.400}",
             "metadata": {
               "pair": "modes.dark.surface.page"
             }
@@ -2508,19 +2522,19 @@ export const coreTokens: SpectreGeneratedTokens = {
             }
           },
           "muted": {
-            "value": "{colors.neutral.200}",
+            "value": "{colors.neutral.300}",
             "metadata": {
               "pair": "modes.dark.surface.card"
             }
           },
           "subtle": {
-            "value": "{colors.neutral.300}",
+            "value": "{colors.neutral.400}",
             "metadata": {
               "pair": "modes.dark.surface.card"
             }
           },
           "meta": {
-            "value": "{colors.neutral.300}",
+            "value": "{colors.neutral.400}",
             "metadata": {
               "pair": "modes.dark.surface.card"
             }
@@ -2542,7 +2556,7 @@ export const coreTokens: SpectreGeneratedTokens = {
             }
           },
           "textMuted": {
-            "value": "{colors.neutral.200}",
+            "value": "{colors.neutral.300}",
             "metadata": {
               "pair": "modes.dark.surface.card"
             }
@@ -2655,7 +2669,9 @@ export const coreTokens: SpectreGeneratedTokens = {
         "iconBox": {
           "bg": {
             "value": "{colors.neutral.800}",
-            "metadata": {}
+            "metadata": {
+              "pair": "modes.dark.component.iconBox.iconDefault"
+            }
           },
           "border": {
             "value": "{colors.neutral.700}",
@@ -2663,19 +2679,27 @@ export const coreTokens: SpectreGeneratedTokens = {
           },
           "iconDefault": {
             "value": "{colors.info.300}",
-            "metadata": {}
+            "metadata": {
+              "pair": "modes.dark.component.iconBox.bg"
+            }
           },
           "iconSuccess": {
             "value": "{colors.success.400}",
-            "metadata": {}
+            "metadata": {
+              "pair": "modes.dark.component.iconBox.bg"
+            }
           },
           "iconWarning": {
             "value": "{colors.warning.400}",
-            "metadata": {}
+            "metadata": {
+              "pair": "modes.dark.component.iconBox.bg"
+            }
           },
           "iconDanger": {
             "value": "{colors.error.400}",
-            "metadata": {}
+            "metadata": {
+              "pair": "modes.dark.component.iconBox.bg"
+            }
           }
         },
         "testimonial": {
@@ -2702,7 +2726,7 @@ export const coreTokens: SpectreGeneratedTokens = {
             }
           },
           "authorTitle": {
-            "value": "{colors.neutral.300}",
+            "value": "{colors.neutral.400}",
             "metadata": {
               "pair": "modes.dark.component.testimonial.bg"
             }
@@ -2750,7 +2774,7 @@ export const coreTokens: SpectreGeneratedTokens = {
             }
           },
           "priceDescription": {
-            "value": "{colors.neutral.300}",
+            "value": "{colors.neutral.400}",
             "metadata": {
               "pair": "modes.dark.component.pricingCard.bg"
             }
