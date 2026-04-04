@@ -33,15 +33,24 @@ var coreTokens = {
   "component": {
     "card": {
       "text": {
-        "value": "{colors.neutral.900}"
+        "value": "{colors.neutral.900}",
+        "metadata": {
+          "pair": "surface.card"
+        }
       },
       "textMuted": {
-        "value": "{colors.neutral.500}"
+        "value": "{colors.neutral.500}",
+        "metadata": {
+          "pair": "surface.card"
+        }
       }
     },
     "input": {
       "text": {
-        "value": "{colors.neutral.900}"
+        "value": "{colors.neutral.900}",
+        "metadata": {
+          "pair": "surface.input"
+        }
       },
       "placeholder": {
         "value": "{colors.neutral.500}",
@@ -137,13 +146,19 @@ var coreTokens = {
     },
     "iconBox": {
       "bg": {
-        "value": "{colors.white}"
+        "value": "{colors.white}",
+        "metadata": {
+          "pair": "component.iconBox.iconDefault"
+        }
       },
       "border": {
         "value": "{colors.neutral.200}"
       },
       "iconDefault": {
-        "value": "{colors.info.600}"
+        "value": "{colors.info.600}",
+        "metadata": {
+          "pair": "component.iconBox.bg"
+        }
       },
       "iconSuccess": {
         "value": "{colors.success.600}"
@@ -157,19 +172,31 @@ var coreTokens = {
     },
     "testimonial": {
       "bg": {
-        "value": "{colors.white}"
+        "value": "{colors.white}",
+        "metadata": {
+          "pair": "component.testimonial.text"
+        }
       },
       "border": {
         "value": "{colors.neutral.200}"
       },
       "text": {
-        "value": "{colors.neutral.700}"
+        "value": "{colors.neutral.700}",
+        "metadata": {
+          "pair": "component.testimonial.bg"
+        }
       },
       "authorName": {
-        "value": "{colors.neutral.900}"
+        "value": "{colors.neutral.900}",
+        "metadata": {
+          "pair": "component.testimonial.bg"
+        }
       },
       "authorTitle": {
-        "value": "{colors.neutral.500}"
+        "value": "{colors.neutral.500}",
+        "metadata": {
+          "pair": "component.testimonial.bg"
+        }
       },
       "quoteMark": {
         "value": "{colors.neutral.300}"
@@ -178,7 +205,9 @@ var coreTokens = {
     "pricingCard": {
       "bg": {
         "value": "{colors.white}",
-        "metadata": {}
+        "metadata": {
+          "pair": "component.pricingCard.price"
+        }
       },
       "border": {
         "value": "{colors.neutral.200}",
@@ -206,11 +235,15 @@ var coreTokens = {
       },
       "price": {
         "value": "{colors.neutral.900}",
-        "metadata": {}
+        "metadata": {
+          "pair": "component.pricingCard.bg"
+        }
       },
       "priceDescription": {
         "value": "{colors.neutral.500}",
-        "metadata": {}
+        "metadata": {
+          "pair": "component.pricingCard.bg"
+        }
       }
     },
     "rating": {
@@ -221,7 +254,10 @@ var coreTokens = {
         "value": "{colors.neutral.200}"
       },
       "text": {
-        "value": "{colors.neutral.500}"
+        "value": "{colors.neutral.500}",
+        "metadata": {
+          "pair": "surface.card"
+        }
       }
     }
   },
