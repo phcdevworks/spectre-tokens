@@ -79,6 +79,17 @@ structure, adapters define delivery.
 4. Update docs if public behavior or guidance changed.
 5. Include regenerated artifacts when the release surface changed.
 
+## Release Hygiene
+
+For maintainers, every package release should keep these four records in sync:
+
+1. Update `package.json` to the release version.
+2. Move the relevant notes from `CHANGELOG.md` `Unreleased` into a dated versioned entry for that same version.
+3. Create a Git tag that exactly matches the package version, for example `2.1.2`.
+4. Publish the GitHub Release from that same tag and use the matching changelog entry as the release notes.
+
+If one of those four records does not change, it usually means the release metadata path is incomplete.
+
 ## Questions
 
 Open an issue or discussion in this repository if you need direction before
