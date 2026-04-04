@@ -32,7 +32,7 @@ structure, adapters define delivery.
 1. Clone the repository.
 2. Install dependencies with `npm install`.
 3. Run `npm run build` to regenerate outputs.
-4. Run `npm run check` before opening a pull request.
+4. Run `npm run check` as the full validation gate before opening a pull request.
 
 ## Project Structure
 
@@ -74,8 +74,8 @@ structure, adapters define delivery.
 ## Pull Request Checklist
 
 1. Keep the change focused.
-2. Run `npm run build`.
-3. Run `npm run check`.
+2. Run `npm run build` if you changed token sources and need regenerated outputs locally.
+3. Run `npm run check` as the final validation gate.
 4. Update docs if public behavior or guidance changed.
 5. Include regenerated artifacts when the release surface changed.
 

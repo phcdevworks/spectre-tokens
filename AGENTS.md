@@ -46,14 +46,13 @@ Do not change these color families unless explicitly directed by Bradley Potts.
 
 1. Update token sources.
 2. Regenerate outputs with `npm run build`.
-3. Validate with `npm run check`.
+3. Run `npm run check` as the full validation gate.
 4. Confirm locked color families were not changed unless explicitly approved.
 
 ## Validation Notes
 
-- `npm run build` regenerates outputs and includes the locked color contract
-  check.
-- `npm run check` runs token structure, locked color, contrast, regression, and
-  lint validation.
+- `npm run build` regenerates outputs only.
+- `npm run check` runs the full validation gate: build, token structure, locked
+  color, contrast, regression, and lint validation.
 - Locked color changes should fail validation unless the baseline is
   intentionally updated with explicit approval.
