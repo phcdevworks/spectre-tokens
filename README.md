@@ -181,7 +181,7 @@ Regenerate package outputs:
 npm run build
 ```
 
-Run validation checks:
+Run the full validation and release gate:
 
 ```bash
 npm run check
@@ -208,7 +208,8 @@ When contributing:
 - treat `tokens/` as the source of truth
 - keep generated outputs derived from source data
 - avoid breaking token contracts without an intentional major-version change
-- run `npm run build` and `npm run check` before opening a pull request
+- run `npm run build` to regenerate outputs when sources change
+- run `npm run check` as the full validation gate before opening a pull request
 - do not modify locked semantic color families without explicit approval
 
 See [CONTRIBUTING.md](CONTRIBUTING.md) for the full workflow.
