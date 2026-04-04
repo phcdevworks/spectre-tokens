@@ -1,10 +1,10 @@
 # 🔘 Buttons
 
-Button variants with all states for the Spectre design system.
+Illustrative button token applications for the Spectre design system.
 
 [← Back to Examples](examples.md)
 
-## Button Variants
+## Button Token Applications
 
 ### Primary Button
 
@@ -210,7 +210,7 @@ Button variants with all states for the Spectre design system.
 6. **CTA**: Reserve for high-value conversion actions only
 7. **Accent**: Use for actions that need visual distinction
 
-## Best Practices
+## Example Implementation Notes
 
 - Only one primary/CTA button per section
 - Group related buttons together
@@ -222,4 +222,6 @@ Button variants with all states for the Spectre design system.
 
 ---
 
-All button tokens are from `tokens/core.json`.
+These examples show one way to apply the button tokens from `tokens/`. The
+markup, class names, and interaction patterns are illustrative rather than
+package-owned button primitives.

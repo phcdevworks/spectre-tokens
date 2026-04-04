@@ -1,6 +1,6 @@
 # 📋 Forms
 
-Form input styles and states for the Spectre design system.
+Illustrative form token applications and states for the Spectre design system.
 
 [← Back to Examples](examples.md)
 
@@ -245,4 +245,6 @@ Position: After label text
 
 ---
 
-All form tokens are from `tokens/core.json`.
+These examples show one way to apply form tokens from `tokens/`. The field
+markup and behaviors are illustrative and do not define downstream form
+primitives.

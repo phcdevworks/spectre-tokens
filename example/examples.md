@@ -1,7 +1,7 @@
 # Spectre Tokens Examples
 
-This directory contains comprehensive examples for all token categories in the
-Spectre design system.
+This directory contains illustrative examples for the token categories exposed
+by `@phcdevworks/spectre-tokens`.
 
 These files are documentation for the token contract. They demonstrate how
 token values can be applied, but they are not a UI package and do not define
@@ -89,7 +89,7 @@ Motion and animation tokens:
 
 ### 🧩 [Components](components.md)
 
-Component-specific design tokens:
+Illustrative compositions built from component-oriented token groups:
 
 - Badges: neutral, info, success, warning, danger (with bg and text colors)
 - Cards: text and textMuted colors
@@ -140,20 +140,21 @@ For interactive HTML demos, open `examples.html` in a web browser.
 Each example page includes:
 
 - Complete token tables with values
-- Visual representations and examples
-- Usage guidelines and best practices
-- Code snippets for implementation
+- Visual demonstrations of token application
+- Usage guidance for token consumption
+- Code snippets showing one possible implementation
 - Accessibility considerations
 
 ## Usage
 
-These examples demonstrate how to use the Spectre design tokens in your
-projects. Each token value is displayed with:
+These examples demonstrate how to consume Spectre design tokens in your
+projects. The markup and CSS shown here are illustrative only. Each token value
+is displayed with:
 
 1. All available options and values
 2. Visual comparisons of variations
 3. Intended use cases and contexts
-4. Implementation examples
+4. Example implementations
 5. Responsive considerations
 
 All examples are derived from the current token sources in `tokens/`.

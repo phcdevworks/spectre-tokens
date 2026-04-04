@@ -1,6 +1,7 @@
 # 🧩 Components
 
-Component-specific design tokens for the Spectre design system.
+Illustrative examples for component-oriented token groups in the Spectre design
+system.
 
 [← Back to Examples](examples.md)
 
@@ -122,7 +123,7 @@ Component-specific design tokens for the Spectre design system.
 | Border Radius | `8px` (lg)          | `8px` (lg)          |
 | Padding       | `24px`              | `24px`              |
 
-### Structure
+### Example Composition
 
 ```
 ┌─────────────────────────────────┐
@@ -173,7 +174,7 @@ Component-specific design tokens for the Spectre design system.
 | Transform        | `scale(1.05)`                       |
 | Shadow           | `0 10px 15px rgba(15, 23, 42, 0.1)` |
 
-### Structure
+### Example Composition
 
 ```
 ┌─────────────────────────────────┐
@@ -321,5 +322,7 @@ Component-specific design tokens for the Spectre design system.
 
 ---
 
-All component tokens are from `tokens/core.json` and include dark mode variants
+These token examples are derived from `tokens/` and include dark mode variants
+where applicable. The compositions shown here are demonstrations of token usage,
+not package-owned UI primitives.
 where applicable.
