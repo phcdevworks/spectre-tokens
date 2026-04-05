@@ -8,6 +8,8 @@ reflects package releases published to npm.
 
 ## [2.1.2] - 2026-04-05
 
+**Release Title:** Validation Guardrails and CI
+
 ### Added
 
 - Added a locked color contract regression check and baseline covering the
@@ -43,6 +45,8 @@ reflects package releases published to npm.
 
 ## [2.1.1] - 2026-03-29
 
+**Release Title:** Semantic Color Refinement
+
 ### Added
 
 - Added `metadata.pair` mappings across token definitions to make contrast
@@ -70,6 +74,8 @@ reflects package releases published to npm.
   documentation set.
 
 ## [2.1.0] - 2026-03-22
+
+**Release Title:** Accessibility and Workflow Expansion
 
 ### Added
 
@@ -112,6 +118,8 @@ reflects package releases published to npm.
 
 ## [2.0.0] - 2026-03-15
 
+**Release Title:** Modular Token Architecture
+
 ### Added
 
 - Associated semantic brand text roles (`text.onPage.brand`,
@@ -144,6 +152,8 @@ reflects package releases published to npm.
 
 ## [1.1.0] - 2026-03-11
 
+**Release Title:** Generated Types and Strict Typing
+
 ### Added
 
 - Added automated TypeScript definition generation script (`generate-types.ts`)
@@ -169,6 +179,8 @@ reflects package releases published to npm.
   index styling logic.
 
 ## [1.0.0] - 2026-02-01
+
+**Release Title:** Stable Documentation and Component Coverage
 
 ### Added
 
@@ -205,6 +217,8 @@ reflects package releases published to npm.
 
 ## [0.2.1] - 2026-01-14
 
+**Release Title:** Documentation Expansion and Text Hierarchy
+
 ### Added
 
 - Added comprehensive Quick Start section representing integration approaches
@@ -235,6 +249,8 @@ reflects package releases published to npm.
 
 ## [0.2.0] - 2025-12-20
 
+**Release Title:** Spacing System Standardization
+
 ### Added
 
 - Added `layout.*` token group for semantic spacing patterns.
@@ -253,6 +269,8 @@ reflects package releases published to npm.
 
 ## [0.1.0] - 2025-12-08
 
+**Release Title:** Typography and Badge Foundations
+
 ### Added
 
 - Added `font` tokens with size, line-height, and weight properties for
@@ -263,6 +281,8 @@ reflects package releases published to npm.
 - Integrated new tokens into Tailwind theme system.
 
 ## [0.0.4] - 2025-12-07
+
+**Release Title:** Dark Mode and Token Validation
 
 ### Added
 
@@ -278,6 +298,8 @@ reflects package releases published to npm.
 
 ## [0.0.3] - 2025-12-06
 
+**Release Title:** Semantic Surfaces and Regression Protection
+
 ### Added
 
 - Introduced `surface.*` roles for page, card, input, and overlay backgrounds.
@@ -288,6 +310,8 @@ reflects package releases published to npm.
 - Added token regression check script to protect against breaking changes.
 
 ## [0.0.2] - 2025-12-04
+
+**Release Title:** Type Safety and Documentation Corrections
 
 ### Changed
 
@@ -301,6 +325,8 @@ reflects package releases published to npm.
 
 ## [0.0.1] - 2025-11-21
 
+**Release Title:** Initial Spectre Tokens Foundation
+
 ### Added
 
 - Initial Spectre Tokens package scaffolding with TypeScript build pipeline.
@@ -309,7 +335,8 @@ reflects package releases published to npm.
 - Standardized documentation and contributing guidelines.
 
 [unreleased]:
-  https://github.com/phcdevworks/spectre-tokens/compare/v2.1.1...HEAD
+  https://github.com/phcdevworks/spectre-tokens/compare/v2.1.2...HEAD
+[2.1.2]: https://github.com/phcdevworks/spectre-tokens/compare/v2.1.1...v2.1.2
 [2.1.1]: https://github.com/phcdevworks/spectre-tokens/compare/v2.1.0...v2.1.1
 [2.1.0]: https://github.com/phcdevworks/spectre-tokens/compare/v2.0.0...v2.1.0
 [2.0.0]: https://github.com/phcdevworks/spectre-tokens/compare/v1.1.0...v2.0.0
