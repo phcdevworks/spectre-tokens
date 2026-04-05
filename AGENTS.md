@@ -5,9 +5,10 @@ package of the Spectre system.
 
 ## Mission
 
-Protect the token contract. This package defines the visual language, semantic
-roles, and token contracts consumed by downstream Spectre packages and
-compatible applications.
+Protect the token contract.
+
+This package defines the visual language, semantic roles, and token contracts
+consumed by downstream Spectre packages and compatible applications.
 
 ## Core Rules
 
@@ -26,9 +27,8 @@ The following semantic color families are considered optimized and protected:
 
 - success
 - warning
-- danger (implemented through the `error` palette and danger semantic roles)
-- CTA / primary action / brand-action (implemented through `brand` and
-  `buttons.cta`)
+- danger semantic roles, backed by the `error` palette
+- CTA / primary action / brand-action, backed by `brand` and `buttons.cta`
 
 Do not change these color families unless explicitly directed by Bradley Potts.
 
@@ -48,11 +48,21 @@ Do not change these color families unless explicitly directed by Bradley Potts.
 2. Regenerate outputs with `npm run build`.
 3. Run `npm run check` as the full validation gate.
 4. Confirm locked color families were not changed unless explicitly approved.
+5. Ensure pull requests pass repository CI.
 
 ## Validation Notes
 
-- `npm run build` regenerates outputs only.
-- `npm run check` runs the full validation gate: build, token structure, locked
-  color, contrast, regression, and lint validation.
+- `npm run build` regenerates package outputs only:
+  - `npm run build:ts`
+  - `npm run build:css`
+- `npm run check` is the full validation gate and currently runs:
+  - build
+  - token structure validation
+  - locked color validation
+  - contrast validation
+  - regression validation
+  - lint validation
+- Pull requests must pass the repository CI workflow for `npm run build` and
+  `npm run check`.
 - Locked color changes should fail validation unless the baseline is
   intentionally updated with explicit approval.
