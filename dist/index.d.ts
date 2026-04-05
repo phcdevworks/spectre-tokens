@@ -3,14 +3,23 @@ interface SpectreGeneratedTokens {
         card: {
             text: {
                 value: string;
+                metadata: {
+                    pair: string;
+                };
             };
             textMuted: {
                 value: string;
+                metadata: {
+                    pair: string;
+                };
             };
         };
         input: {
             text: {
                 value: string;
+                metadata: {
+                    pair: string;
+                };
             };
             placeholder: {
                 value: string;
@@ -107,12 +116,18 @@ interface SpectreGeneratedTokens {
         iconBox: {
             bg: {
                 value: string;
+                metadata: {
+                    pair: string;
+                };
             };
             border: {
                 value: string;
             };
             iconDefault: {
                 value: string;
+                metadata: {
+                    pair: string;
+                };
             };
             iconSuccess: {
                 value: string;
@@ -127,18 +142,30 @@ interface SpectreGeneratedTokens {
         testimonial: {
             bg: {
                 value: string;
+                metadata: {
+                    pair: string;
+                };
             };
             border: {
                 value: string;
             };
             text: {
                 value: string;
+                metadata: {
+                    pair: string;
+                };
             };
             authorName: {
                 value: string;
+                metadata: {
+                    pair: string;
+                };
             };
             authorTitle: {
                 value: string;
+                metadata: {
+                    pair: string;
+                };
             };
             quoteMark: {
                 value: string;
@@ -147,7 +174,9 @@ interface SpectreGeneratedTokens {
         pricingCard: {
             bg: {
                 value: string;
-                metadata: {};
+                metadata: {
+                    pair: string;
+                };
             };
             border: {
                 value: string;
@@ -175,11 +204,15 @@ interface SpectreGeneratedTokens {
             };
             price: {
                 value: string;
-                metadata: {};
+                metadata: {
+                    pair: string;
+                };
             };
             priceDescription: {
                 value: string;
-                metadata: {};
+                metadata: {
+                    pair: string;
+                };
             };
         };
         rating: {
@@ -191,6 +224,9 @@ interface SpectreGeneratedTokens {
             };
             text: {
                 value: string;
+                metadata: {
+                    pair: string;
+                };
             };
         };
     };
