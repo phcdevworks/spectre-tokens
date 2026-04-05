@@ -4,6 +4,43 @@ All notable changes to this project will be documented here. The format follows
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) and the versioning
 reflects package releases published to npm.
 
+## [Unreleased]
+
+## [2.1.2] - 2026-04-05
+
+### Added
+
+- Added a locked color contract regression check and baseline covering the
+  protected success, warning, danger, and CTA/brand-action families.
+- Added a GitHub Actions CI workflow that runs `npm run build` and
+  `npm run check` on pushes to `main` and on pull requests.
+- Added `metadata.pair` mappings across inputs, badges, cards, ratings, and
+  icon box tokens to expand automated contrast validation coverage.
+- Added missing `neutralBgHover` and `infoBgHover` badge tokens in default mode
+  to improve hover-state parity across semantic variants.
+
+### Changed
+
+- Changed the validation flow so `npm run build` regenerates outputs only while
+  `npm run check` acts as the full validation gate for structure, locked
+  colors, contrast, regression, and linting.
+- Clarified repository guidance around release hygiene, locked color families,
+  Tailwind theme exports, and the role of `example/` as illustrative token
+  documentation rather than downstream UI ownership.
+- Refined dark-mode neutral text hierarchy and related component text tokens to
+  improve separation and readability while preserving semantic clarity.
+- Silenced the TypeScript 6 deprecation gate during DTS generation so
+  `npm run build` completes cleanly under the current toolchain.
+- Bumped the TypeScript, ESLint, and Node type tooling to current compatible
+  versions.
+
+### Fixed
+
+- Improved placeholder contrast for input and form tokens to meet WCAG AA and
+  wired those surfaces into automated contrast checks.
+- Standardized info badge dark-mode backgrounds and hover behavior to align
+  semantic badge ramps more consistently across modes.
+
 ## [2.1.1] - 2026-03-29
 
 ### Added
@@ -31,21 +68,6 @@ reflects package releases published to npm.
   status variants remain WCAG AA compliant.
 - Corrected stale example colors and back-navigation links in the example
   documentation set.
-
-## [Unreleased]
-
-### Changed
-
-- Silenced the TypeScript 6 deprecation gate during DTS generation so
-  `npm run build` completes again under the current toolchain.
-- Clarified documentation that Tailwind support is exposed as theme exports and
-  that `example/` contains illustrative token demos rather than package-owned
-  UI primitives.
-
-### Added
-
-- Added a locked color contract regression check covering the protected success,
-  warning, danger, and CTA/brand-action families.
 
 ## [2.1.0] - 2026-03-22
 
