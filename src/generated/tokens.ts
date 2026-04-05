@@ -2297,7 +2297,7 @@ export const coreTokens: SpectreGeneratedTokens = {
             }
           },
           "textMuted": {
-            "value": "{colors.neutral.500}",
+            "value": "{colors.neutral.600}",
             "metadata": {
               "pair": "modes.default.surface.card"
             }
