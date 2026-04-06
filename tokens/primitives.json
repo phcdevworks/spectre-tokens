@@ -138,10 +138,6 @@
     "minTouchTarget": "44px",
     "minTextSize": "16px"
   },
-  "borders": {
-    "card": "{colors.neutral.200}",
-    "input": "{colors.neutral.300}"
-  },
   "border": {
     "width": {
       "base": "1px",
