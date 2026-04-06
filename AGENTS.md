@@ -16,10 +16,16 @@ consumed by downstream Spectre packages and compatible applications.
 2. Avoid breaking token contracts without an intentional major-version change.
 3. Keep generated outputs derived from source data, never hand-maintained.
 4. Prefer semantic naming and reusable contracts over package-specific wording.
-5. Verify token changes propagate cleanly to typed, CSS, and Tailwind outputs.
-6. Accessibility matters, but semantic clarity and visual quality must also be
+5. Verify token changes propagate cleanly to runtime exports, TypeScript types,
+   CSS output, and Tailwind output.
+6. The documented public contract, exported runtime object, and generated
+   TypeScript contract must describe the same token shape.
+7. Accessibility matters, but semantic clarity and visual quality must also be
    preserved.
-7. Do not modify locked semantic color families without explicit approval.
+8. Do not modify locked semantic color families without explicit approval.
+9. Keep the namespace singular as `border`; do not reintroduce `borders`.
+10. Do not expand this package into downstream UI structure, composition, or
+    framework-specific adapter behavior.
 
 ## Locked Color Contracts
 
@@ -42,13 +48,29 @@ Do not change these color families unless explicitly directed by Bradley Potts.
   source of truth and should not be treated as ownership of downstream UI
   primitives.
 
+## Contract Rules
+
+- The public package API must stay aligned across:
+  - `README.md`
+  - `src/index.ts`
+  - generated TypeScript types
+  - validation scripts
+  - emitted CSS and Tailwind theme exports
+- If internal generation uses wrapper records such as `{ value, metadata }`,
+  keep that internal unless the public contract is intentionally changed.
+- If the public runtime export is flattened, the public TypeScript contract must
+  also be flattened.
+- Validation must fail if runtime exports and public TS types drift apart.
+
 ## Validation Flow
 
 1. Update token sources.
 2. Regenerate outputs with `npm run build`.
 3. Run `npm run check` as the full validation gate.
 4. Confirm locked color families were not changed unless explicitly approved.
-5. Ensure pull requests pass repository CI.
+5. Confirm the public exported token shape still matches the generated
+   TypeScript contract.
+6. Ensure pull requests pass repository CI.
 
 ## Validation Notes
 
@@ -66,3 +88,5 @@ Do not change these color families unless explicitly directed by Bradley Potts.
   `npm run check`.
 - Locked color changes should fail validation unless the baseline is
   intentionally updated with explicit approval.
+- Contract-shape drift between generated types and exported runtime tokens
+  should fail validation immediately.
