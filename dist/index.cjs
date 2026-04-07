@@ -342,7 +342,7 @@ var coreTokens = {
         "iconBox": {
           "bg": "{colors.neutral.800}",
           "border": "{colors.neutral.700}",
-          "iconDefault": "{colors.info.300}",
+          "iconDefault": "{colors.info.400}",
           "iconSuccess": "{colors.success.400}",
           "iconWarning": "{colors.warning.400}",
           "iconDanger": "{colors.error.400}"
