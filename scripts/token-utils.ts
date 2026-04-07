@@ -5,13 +5,13 @@ import { fileURLToPath } from 'node:url';
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const TOKENS_DIR = join(__dirname, '../tokens');
 
+const isObject = (value: unknown): value is Record<string, unknown> =>
+  !!value && typeof value === 'object' && !Array.isArray(value);
+
 /**
  * Deep merges two objects.
  */
 function deepMerge(target: Record<string, unknown>, source: Record<string, unknown>): Record<string, unknown> {
-  const isObject = (obj: unknown): obj is Record<string, unknown> =>
-    !!obj && typeof obj === 'object' && !Array.isArray(obj);
-
   Object.keys(source).forEach(key => {
     const targetValue = target[key];
     const sourceValue = source[key];
@@ -44,4 +44,26 @@ export function loadMergedTokens(): Record<string, unknown> {
   }
 
   return merged;
+}
+
+/**
+ * Flattens source token leaf records like { value, metadata } into their public
+ * runtime value while preserving the surrounding token tree shape.
+ */
+export function flattenTokenTree(value: unknown): unknown {
+  if (Array.isArray(value)) {
+    return value.map((entry) => flattenTokenTree(entry));
+  }
+
+  if (!isObject(value)) {
+    return value;
+  }
+
+  if ('value' in value) {
+    return flattenTokenTree(value.value);
+  }
+
+  return Object.fromEntries(
+    Object.entries(value).map(([key, entry]) => [key, flattenTokenTree(entry)])
+  );
 }

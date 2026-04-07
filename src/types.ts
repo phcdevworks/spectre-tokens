@@ -51,6 +51,7 @@ export interface ButtonStateTokens {
   border?: string;
   borderDisabled?: string;
   shadow?: string;
+  focusRing?: string;
 }
 
 export interface FormStateTokens {
@@ -132,7 +133,7 @@ export interface ComponentTokens<Value = string> {
 
 export type SpectreModeName = 'default' | 'dark';
 
-export type SemanticTokenValue = string | { value: string;[key: string]: unknown };
+export type SemanticTokenValue = string;
 
 export interface SpectreModeTokens {
   surface: {
@@ -162,7 +163,6 @@ export interface SpectreModeTokens {
 
 import type { SpectreGeneratedTokens } from './generated/tokens';
 
-
 export type SpectreTokens = SpectreGeneratedTokens;
 
 export interface LayoutTokens {
@@ -179,9 +179,7 @@ export interface LayoutTokens {
   };
 }
 
-export interface Tokens extends Omit<SpectreGeneratedTokens, 'modes' | 'surface' | 'text'> {
-  // Alias the strict properties directly from the generated tokens output
-}
+export type Tokens = SpectreGeneratedTokens;
 
 export type CssVariableMap = Record<string, string>;
 

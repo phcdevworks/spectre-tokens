@@ -1,1214 +1,343 @@
 interface SpectreGeneratedTokens {
     component: {
         card: {
-            text: {
-                value: string;
-                metadata: {
-                    pair: string;
-                };
-            };
-            textMuted: {
-                value: string;
-                metadata: {
-                    pair: string;
-                };
-            };
+            text: string;
+            textMuted: string;
         };
         input: {
-            text: {
-                value: string;
-                metadata: {
-                    pair: string;
-                };
-            };
-            placeholder: {
-                value: string;
-                metadata: {
-                    pair: string;
-                };
-            };
+            text: string;
+            placeholder: string;
         };
         button: {
-            textDefault: {
-                value: string;
-            };
-            textOnPrimary: {
-                value: string;
-            };
+            textDefault: string;
+            textOnPrimary: string;
         };
         badge: {
-            neutralBg: {
-                value: string;
-                metadata: {
-                    pair: string;
-                };
-            };
-            neutralBgHover: {
-                value: string;
-                metadata: {
-                    pair: string;
-                };
-            };
-            neutralText: {
-                value: string;
-            };
-            infoBg: {
-                value: string;
-                metadata: {
-                    pair: string;
-                };
-            };
-            infoBgHover: {
-                value: string;
-                metadata: {
-                    pair: string;
-                };
-            };
-            infoText: {
-                value: string;
-            };
-            successBg: {
-                value: string;
-                metadata: {
-                    pair: string;
-                };
-            };
-            successBgHover: {
-                value: string;
-                metadata: {
-                    pair: string;
-                };
-            };
-            successText: {
-                value: string;
-            };
-            warningBg: {
-                value: string;
-                metadata: {
-                    pair: string;
-                };
-            };
-            warningBgHover: {
-                value: string;
-                metadata: {
-                    pair: string;
-                };
-            };
-            warningText: {
-                value: string;
-            };
-            dangerBg: {
-                value: string;
-                metadata: {
-                    pair: string;
-                };
-            };
-            dangerBgHover: {
-                value: string;
-                metadata: {
-                    pair: string;
-                };
-            };
-            dangerText: {
-                value: string;
-            };
+            neutralBg: string;
+            neutralBgHover: string;
+            neutralText: string;
+            infoBg: string;
+            infoBgHover: string;
+            infoText: string;
+            successBg: string;
+            successBgHover: string;
+            successText: string;
+            warningBg: string;
+            warningBgHover: string;
+            warningText: string;
+            dangerBg: string;
+            dangerBgHover: string;
+            dangerText: string;
         };
         iconBox: {
-            bg: {
-                value: string;
-                metadata: {
-                    pair: string;
-                };
-            };
-            border: {
-                value: string;
-            };
-            iconDefault: {
-                value: string;
-                metadata: {
-                    pair: string;
-                };
-            };
-            iconSuccess: {
-                value: string;
-            };
-            iconWarning: {
-                value: string;
-            };
-            iconDanger: {
-                value: string;
-            };
+            bg: string;
+            border: string;
+            iconDefault: string;
+            iconSuccess: string;
+            iconWarning: string;
+            iconDanger: string;
         };
         testimonial: {
-            bg: {
-                value: string;
-                metadata: {
-                    pair: string;
-                };
-            };
-            border: {
-                value: string;
-            };
-            text: {
-                value: string;
-                metadata: {
-                    pair: string;
-                };
-            };
-            authorName: {
-                value: string;
-                metadata: {
-                    pair: string;
-                };
-            };
-            authorTitle: {
-                value: string;
-                metadata: {
-                    pair: string;
-                };
-            };
-            quoteMark: {
-                value: string;
-            };
+            bg: string;
+            border: string;
+            text: string;
+            authorName: string;
+            authorTitle: string;
+            quoteMark: string;
         };
         pricingCard: {
-            bg: {
-                value: string;
-                metadata: {
-                    pair: string;
-                };
-            };
-            border: {
-                value: string;
-                metadata: {};
-            };
-            featuredBg: {
-                value: string;
-                metadata: {
-                    pair: string;
-                };
-            };
-            featuredText: {
-                value: string;
-                metadata: {};
-            };
-            featuredBadgeBg: {
-                value: string;
-                metadata: {
-                    pair: string;
-                };
-            };
-            featuredBadgeText: {
-                value: string;
-                metadata: {};
-            };
-            price: {
-                value: string;
-                metadata: {
-                    pair: string;
-                };
-            };
-            priceDescription: {
-                value: string;
-                metadata: {
-                    pair: string;
-                };
-            };
+            bg: string;
+            border: string;
+            featuredBg: string;
+            featuredText: string;
+            featuredBadgeBg: string;
+            featuredBadgeText: string;
+            price: string;
+            priceDescription: string;
         };
         rating: {
-            starFilled: {
-                value: string;
-            };
-            starEmpty: {
-                value: string;
-            };
-            text: {
-                value: string;
-                metadata: {
-                    pair: string;
-                };
-            };
+            starFilled: string;
+            starEmpty: string;
+            text: string;
         };
     };
     buttons: {
         primary: {
-            bg: {
-                value: string;
-                metadata: {
-                    pair: string;
-                };
-            };
-            bgHover: {
-                value: string;
-                metadata: {
-                    pair: string;
-                };
-            };
-            bgActive: {
-                value: string;
-                metadata: {
-                    pair: string;
-                };
-            };
-            bgDisabled: {
-                value: string;
-            };
-            text: {
-                value: string;
-            };
-            textDisabled: {
-                value: string;
-            };
-            focusRing: {
-                value: string;
-            };
+            bg: string;
+            bgHover: string;
+            bgActive: string;
+            bgDisabled: string;
+            text: string;
+            textDisabled: string;
+            focusRing: string;
+            focusVisible: string;
         };
         secondary: {
-            bg: {
-                value: string;
-                metadata: {
-                    pair: string;
-                };
-            };
-            bgHover: {
-                value: string;
-                metadata: {
-                    pair: string;
-                };
-            };
-            bgActive: {
-                value: string;
-                metadata: {
-                    pair: string;
-                };
-            };
-            bgDisabled: {
-                value: string;
-            };
-            text: {
-                value: string;
-            };
-            textDisabled: {
-                value: string;
-            };
-            border: {
-                value: string;
-            };
-            borderDisabled: {
-                value: string;
-            };
-            focusRing: {
-                value: string;
-            };
+            bg: string;
+            bgHover: string;
+            bgActive: string;
+            bgDisabled: string;
+            text: string;
+            textDisabled: string;
+            border: string;
+            borderDisabled: string;
+            focusRing: string;
+            focusVisible: string;
         };
         ghost: {
-            bg: {
-                value: string;
-            };
-            bgHover: {
-                value: string;
-                metadata: {
-                    pair: string;
-                };
-            };
-            bgActive: {
-                value: string;
-                metadata: {
-                    pair: string;
-                };
-            };
-            bgDisabled: {
-                value: string;
-            };
-            text: {
-                value: string;
-            };
-            textDisabled: {
-                value: string;
-            };
-            focusRing: {
-                value: string;
-            };
+            bg: string;
+            bgHover: string;
+            bgActive: string;
+            bgDisabled: string;
+            text: string;
+            textDisabled: string;
+            focusRing: string;
+            focusVisible: string;
         };
         danger: {
-            bg: {
-                value: string;
-                metadata: {
-                    pair: string;
-                };
-            };
-            bgHover: {
-                value: string;
-                metadata: {
-                    pair: string;
-                };
-            };
-            bgActive: {
-                value: string;
-                metadata: {
-                    pair: string;
-                };
-            };
-            bgDisabled: {
-                value: string;
-            };
-            text: {
-                value: string;
-            };
-            textDisabled: {
-                value: string;
-            };
-            focusRing: {
-                value: string;
-            };
+            bg: string;
+            bgHover: string;
+            bgActive: string;
+            bgDisabled: string;
+            text: string;
+            textDisabled: string;
+            focusRing: string;
         };
         success: {
-            bg: {
-                value: string;
-                metadata: {
-                    pair: string;
-                };
-            };
-            bgHover: {
-                value: string;
-                metadata: {
-                    pair: string;
-                };
-            };
-            bgActive: {
-                value: string;
-                metadata: {
-                    pair: string;
-                };
-            };
-            bgDisabled: {
-                value: string;
-            };
-            text: {
-                value: string;
-            };
-            textDisabled: {
-                value: string;
-            };
-            focusRing: {
-                value: string;
-            };
+            bg: string;
+            bgHover: string;
+            bgActive: string;
+            bgDisabled: string;
+            text: string;
+            textDisabled: string;
+            focusRing: string;
         };
         cta: {
-            bg: {
-                value: string;
-                metadata: {
-                    pair: string;
-                };
-            };
-            bgHover: {
-                value: string;
-                metadata: {
-                    pair: string;
-                };
-            };
-            bgActive: {
-                value: string;
-                metadata: {
-                    pair: string;
-                };
-            };
-            bgDisabled: {
-                value: string;
-            };
-            text: {
-                value: string;
-            };
-            textDisabled: {
-                value: string;
-            };
-            shadow: {
-                value: string;
-            };
-            focusRing: {
-                value: string;
-            };
+            bg: string;
+            bgHover: string;
+            bgActive: string;
+            bgDisabled: string;
+            text: string;
+            textDisabled: string;
+            shadow: string;
+            focusRing: string;
         };
         accent: {
-            bg: {
-                value: string;
-                metadata: {
-                    pair: string;
-                };
-            };
-            bgHover: {
-                value: string;
-                metadata: {
-                    pair: string;
-                };
-            };
-            bgActive: {
-                value: string;
-                metadata: {
-                    pair: string;
-                };
-            };
-            bgDisabled: {
-                value: string;
-            };
-            text: {
-                value: string;
-            };
-            textDisabled: {
-                value: string;
-            };
-            focusRing: {
-                value: string;
-            };
+            bg: string;
+            bgHover: string;
+            bgActive: string;
+            bgDisabled: string;
+            text: string;
+            textDisabled: string;
+            focusRing: string;
+            focusVisible: string;
         };
     };
     forms: {
         default: {
-            bg: {
-                value: string;
-            };
-            border: {
-                value: string;
-            };
-            text: {
-                value: string;
-            };
-            placeholder: {
-                value: string;
-                metadata: {
-                    pair: string;
-                };
-            };
+            bg: string;
+            border: string;
+            text: string;
+            placeholder: string;
         };
         hover: {
-            border: {
-                value: string;
-            };
+            border: string;
         };
         focus: {
-            border: {
-                value: string;
-            };
-            ring: {
-                value: string;
-            };
+            border: string;
+            ring: string;
+        };
+        focusVisible: {
+            border: string;
+            ring: string;
         };
         valid: {
-            border: {
-                value: string;
-            };
-            bg: {
-                value: string;
-                metadata: {
-                    pair: string;
-                };
-            };
-            text: {
-                value: string;
-            };
+            border: string;
+            bg: string;
+            text: string;
         };
         invalid: {
-            border: {
-                value: string;
-            };
-            bg: {
-                value: string;
-                metadata: {
-                    pair: string;
-                };
-            };
-            text: {
-                value: string;
-            };
+            border: string;
+            bg: string;
+            text: string;
         };
         disabled: {
-            bg: {
-                value: string;
-            };
-            border: {
-                value: string;
-            };
-            text: {
-                value: string;
-            };
+            bg: string;
+            border: string;
+            text: string;
         };
     };
     modes: {
         default: {
             surface: {
-                page: {
-                    value: string;
-                    metadata: {
-                        pair: string;
-                    };
-                };
-                card: {
-                    value: string;
-                    metadata: {
-                        pair: string;
-                    };
-                };
-                input: {
-                    value: string;
-                    metadata: {
-                        pair: string;
-                    };
-                };
-                overlay: {
-                    value: string;
-                };
-                alternate: {
-                    value: string;
-                    metadata: {
-                        pair: string;
-                    };
-                };
-                hero: {
-                    value: string;
-                };
+                page: string;
+                card: string;
+                input: string;
+                overlay: string;
+                alternate: string;
+                hero: string;
             };
             text: {
                 onPage: {
-                    default: {
-                        value: string;
-                        metadata: {
-                            pair: string;
-                        };
-                    };
-                    muted: {
-                        value: string;
-                        metadata: {
-                            pair: string;
-                        };
-                    };
-                    subtle: {
-                        value: string;
-                        metadata: {
-                            pair: string;
-                        };
-                    };
-                    meta: {
-                        value: string;
-                        metadata: {
-                            pair: string;
-                        };
-                    };
-                    brand: {
-                        value: string;
-                        metadata: {
-                            pair: string;
-                        };
-                    };
+                    default: string;
+                    muted: string;
+                    subtle: string;
+                    meta: string;
+                    brand: string;
                 };
                 onSurface: {
-                    default: {
-                        value: string;
-                        metadata: {
-                            pair: string;
-                        };
-                    };
-                    muted: {
-                        value: string;
-                        metadata: {
-                            pair: string;
-                        };
-                    };
-                    subtle: {
-                        value: string;
-                        metadata: {
-                            pair: string;
-                        };
-                    };
-                    meta: {
-                        value: string;
-                        metadata: {
-                            pair: string;
-                        };
-                    };
-                    brand: {
-                        value: string;
-                        metadata: {
-                            pair: string;
-                        };
-                    };
+                    default: string;
+                    muted: string;
+                    subtle: string;
+                    meta: string;
+                    brand: string;
                 };
             };
             component: {
                 card: {
-                    text: {
-                        value: string;
-                        metadata: {
-                            pair: string;
-                        };
-                    };
-                    textMuted: {
-                        value: string;
-                        metadata: {
-                            pair: string;
-                        };
-                    };
+                    text: string;
+                    textMuted: string;
                 };
                 input: {
-                    text: {
-                        value: string;
-                        metadata: {
-                            pair: string;
-                        };
-                    };
-                    placeholder: {
-                        value: string;
-                        metadata: {
-                            pair: string;
-                        };
-                    };
+                    text: string;
+                    placeholder: string;
                 };
                 button: {
-                    textDefault: {
-                        value: string;
-                    };
-                    textOnPrimary: {
-                        value: string;
-                    };
+                    textDefault: string;
+                    textOnPrimary: string;
                 };
                 badge: {
-                    neutralBg: {
-                        value: string;
-                        metadata: {
-                            pair: string;
-                        };
-                    };
-                    neutralBgHover: {
-                        value: string;
-                        metadata: {
-                            pair: string;
-                        };
-                    };
-                    neutralText: {
-                        value: string;
-                        metadata: {};
-                    };
-                    infoBg: {
-                        value: string;
-                        metadata: {
-                            pair: string;
-                        };
-                    };
-                    infoBgHover: {
-                        value: string;
-                        metadata: {
-                            pair: string;
-                        };
-                    };
-                    infoText: {
-                        value: string;
-                        metadata: {};
-                    };
-                    successBg: {
-                        value: string;
-                        metadata: {
-                            pair: string;
-                        };
-                    };
-                    successText: {
-                        value: string;
-                        metadata: {};
-                    };
-                    warningBg: {
-                        value: string;
-                        metadata: {
-                            pair: string;
-                        };
-                    };
-                    warningText: {
-                        value: string;
-                        metadata: {};
-                    };
-                    dangerBg: {
-                        value: string;
-                        metadata: {
-                            pair: string;
-                        };
-                    };
-                    dangerText: {
-                        value: string;
-                        metadata: {};
-                    };
+                    neutralBg: string;
+                    neutralBgHover: string;
+                    neutralText: string;
+                    infoBg: string;
+                    infoBgHover: string;
+                    infoText: string;
+                    successBg: string;
+                    successText: string;
+                    warningBg: string;
+                    warningText: string;
+                    dangerBg: string;
+                    dangerText: string;
                 };
                 iconBox: {
-                    bg: {
-                        value: string;
-                        metadata: {
-                            pair: string;
-                        };
-                    };
-                    border: {
-                        value: string;
-                        metadata: {};
-                    };
-                    iconDefault: {
-                        value: string;
-                        metadata: {
-                            pair: string;
-                        };
-                    };
-                    iconSuccess: {
-                        value: string;
-                        metadata: {};
-                    };
-                    iconWarning: {
-                        value: string;
-                        metadata: {};
-                    };
-                    iconDanger: {
-                        value: string;
-                        metadata: {
-                            pair: string;
-                        };
-                    };
+                    bg: string;
+                    border: string;
+                    iconDefault: string;
+                    iconSuccess: string;
+                    iconWarning: string;
+                    iconDanger: string;
                 };
                 testimonial: {
-                    bg: {
-                        value: string;
-                        metadata: {
-                            pair: string;
-                        };
-                    };
-                    border: {
-                        value: string;
-                        metadata: {};
-                    };
-                    text: {
-                        value: string;
-                        metadata: {
-                            pair: string;
-                        };
-                    };
-                    authorName: {
-                        value: string;
-                        metadata: {
-                            pair: string;
-                        };
-                    };
-                    authorTitle: {
-                        value: string;
-                        metadata: {
-                            pair: string;
-                        };
-                    };
-                    quoteMark: {
-                        value: string;
-                        metadata: {};
-                    };
+                    bg: string;
+                    border: string;
+                    text: string;
+                    authorName: string;
+                    authorTitle: string;
+                    quoteMark: string;
                 };
                 pricingCard: {
-                    bg: {
-                        value: string;
-                        metadata: {
-                            pair: string;
-                        };
-                    };
-                    border: {
-                        value: string;
-                        metadata: {};
-                    };
-                    featuredBg: {
-                        value: string;
-                        metadata: {
-                            pair: string;
-                        };
-                    };
-                    featuredText: {
-                        value: string;
-                        metadata: {};
-                    };
-                    featuredBadgeBg: {
-                        value: string;
-                        metadata: {
-                            pair: string;
-                        };
-                    };
-                    featuredBadgeText: {
-                        value: string;
-                        metadata: {};
-                    };
-                    price: {
-                        value: string;
-                        metadata: {
-                            pair: string;
-                        };
-                    };
-                    priceDescription: {
-                        value: string;
-                        metadata: {
-                            pair: string;
-                        };
-                    };
+                    bg: string;
+                    border: string;
+                    featuredBg: string;
+                    featuredText: string;
+                    featuredBadgeBg: string;
+                    featuredBadgeText: string;
+                    price: string;
+                    priceDescription: string;
                 };
                 rating: {
-                    starFilled: {
-                        value: string;
-                        metadata: {};
-                    };
-                    starEmpty: {
-                        value: string;
-                        metadata: {};
-                    };
-                    text: {
-                        value: string;
-                        metadata: {
-                            pair: string;
-                        };
-                    };
+                    starFilled: string;
+                    starEmpty: string;
+                    text: string;
                 };
             };
         };
         dark: {
             surface: {
-                page: {
-                    value: string;
-                    metadata: {
-                        pair: string;
-                    };
-                };
-                card: {
-                    value: string;
-                    metadata: {
-                        pair: string;
-                    };
-                };
-                input: {
-                    value: string;
-                    metadata: {
-                        pair: string;
-                    };
-                };
-                overlay: {
-                    value: string;
-                };
-                alternate: {
-                    value: string;
-                    metadata: {
-                        pair: string;
-                    };
-                };
-                hero: {
-                    value: string;
-                };
+                page: string;
+                card: string;
+                input: string;
+                overlay: string;
+                alternate: string;
+                hero: string;
             };
             text: {
                 onPage: {
-                    default: {
-                        value: string;
-                        metadata: {
-                            pair: string;
-                        };
-                    };
-                    muted: {
-                        value: string;
-                        metadata: {
-                            pair: string;
-                        };
-                    };
-                    subtle: {
-                        value: string;
-                        metadata: {
-                            pair: string;
-                        };
-                    };
-                    meta: {
-                        value: string;
-                        metadata: {
-                            pair: string;
-                        };
-                    };
-                    brand: {
-                        value: string;
-                        metadata: {
-                            pair: string;
-                        };
-                    };
+                    default: string;
+                    muted: string;
+                    subtle: string;
+                    meta: string;
+                    brand: string;
                 };
                 onSurface: {
-                    default: {
-                        value: string;
-                        metadata: {
-                            pair: string;
-                        };
-                    };
-                    muted: {
-                        value: string;
-                        metadata: {
-                            pair: string;
-                        };
-                    };
-                    subtle: {
-                        value: string;
-                        metadata: {
-                            pair: string;
-                        };
-                    };
-                    meta: {
-                        value: string;
-                        metadata: {
-                            pair: string;
-                        };
-                    };
-                    brand: {
-                        value: string;
-                        metadata: {
-                            pair: string;
-                        };
-                    };
+                    default: string;
+                    muted: string;
+                    subtle: string;
+                    meta: string;
+                    brand: string;
                 };
             };
             component: {
                 card: {
-                    text: {
-                        value: string;
-                        metadata: {
-                            pair: string;
-                        };
-                    };
-                    textMuted: {
-                        value: string;
-                        metadata: {
-                            pair: string;
-                        };
-                    };
+                    text: string;
+                    textMuted: string;
                 };
                 input: {
-                    text: {
-                        value: string;
-                        metadata: {
-                            pair: string;
-                        };
-                    };
-                    placeholder: {
-                        value: string;
-                        metadata: {
-                            pair: string;
-                        };
-                    };
+                    text: string;
+                    placeholder: string;
                 };
                 button: {
-                    textDefault: {
-                        value: string;
-                    };
-                    textOnPrimary: {
-                        value: string;
-                    };
+                    textDefault: string;
+                    textOnPrimary: string;
                 };
                 badge: {
-                    neutralBg: {
-                        value: string;
-                        metadata: {
-                            pair: string;
-                        };
-                    };
-                    neutralBgHover: {
-                        value: string;
-                        metadata: {
-                            pair: string;
-                        };
-                    };
-                    neutralText: {
-                        value: string;
-                        metadata: {};
-                    };
-                    infoBg: {
-                        value: string;
-                        metadata: {
-                            pair: string;
-                        };
-                    };
-                    infoBgHover: {
-                        value: string;
-                        metadata: {
-                            pair: string;
-                        };
-                    };
-                    infoText: {
-                        value: string;
-                        metadata: {};
-                    };
-                    successBg: {
-                        value: string;
-                        metadata: {
-                            pair: string;
-                        };
-                    };
-                    successBgHover: {
-                        value: string;
-                        metadata: {
-                            pair: string;
-                        };
-                    };
-                    successText: {
-                        value: string;
-                        metadata: {};
-                    };
-                    warningBg: {
-                        value: string;
-                        metadata: {
-                            pair: string;
-                        };
-                    };
-                    warningBgHover: {
-                        value: string;
-                        metadata: {
-                            pair: string;
-                        };
-                    };
-                    warningText: {
-                        value: string;
-                        metadata: {};
-                    };
-                    dangerBg: {
-                        value: string;
-                        metadata: {
-                            pair: string;
-                        };
-                    };
-                    dangerBgHover: {
-                        value: string;
-                        metadata: {
-                            pair: string;
-                        };
-                    };
-                    dangerText: {
-                        value: string;
-                        metadata: {};
-                    };
+                    neutralBg: string;
+                    neutralBgHover: string;
+                    neutralText: string;
+                    infoBg: string;
+                    infoBgHover: string;
+                    infoText: string;
+                    successBg: string;
+                    successBgHover: string;
+                    successText: string;
+                    warningBg: string;
+                    warningBgHover: string;
+                    warningText: string;
+                    dangerBg: string;
+                    dangerBgHover: string;
+                    dangerText: string;
                 };
                 iconBox: {
-                    bg: {
-                        value: string;
-                        metadata: {
-                            pair: string;
-                        };
-                    };
-                    border: {
-                        value: string;
-                        metadata: {};
-                    };
-                    iconDefault: {
-                        value: string;
-                        metadata: {
-                            pair: string;
-                        };
-                    };
-                    iconSuccess: {
-                        value: string;
-                        metadata: {
-                            pair: string;
-                        };
-                    };
-                    iconWarning: {
-                        value: string;
-                        metadata: {
-                            pair: string;
-                        };
-                    };
-                    iconDanger: {
-                        value: string;
-                        metadata: {
-                            pair: string;
-                        };
-                    };
+                    bg: string;
+                    border: string;
+                    iconDefault: string;
+                    iconSuccess: string;
+                    iconWarning: string;
+                    iconDanger: string;
                 };
                 testimonial: {
-                    bg: {
-                        value: string;
-                        metadata: {
-                            pair: string;
-                        };
-                    };
-                    border: {
-                        value: string;
-                        metadata: {};
-                    };
-                    text: {
-                        value: string;
-                        metadata: {
-                            pair: string;
-                        };
-                    };
-                    authorName: {
-                        value: string;
-                        metadata: {
-                            pair: string;
-                        };
-                    };
-                    authorTitle: {
-                        value: string;
-                        metadata: {
-                            pair: string;
-                        };
-                    };
-                    quoteMark: {
-                        value: string;
-                        metadata: {};
-                    };
+                    bg: string;
+                    border: string;
+                    text: string;
+                    authorName: string;
+                    authorTitle: string;
+                    quoteMark: string;
                 };
                 pricingCard: {
-                    bg: {
-                        value: string;
-                        metadata: {
-                            pair: string;
-                        };
-                    };
-                    border: {
-                        value: string;
-                        metadata: {};
-                    };
-                    featuredBg: {
-                        value: string;
-                        metadata: {
-                            pair: string;
-                        };
-                    };
-                    featuredText: {
-                        value: string;
-                        metadata: {};
-                    };
-                    featuredBadgeBg: {
-                        value: string;
-                        metadata: {
-                            pair: string;
-                        };
-                    };
-                    featuredBadgeText: {
-                        value: string;
-                        metadata: {};
-                    };
-                    price: {
-                        value: string;
-                        metadata: {
-                            pair: string;
-                        };
-                    };
-                    priceDescription: {
-                        value: string;
-                        metadata: {
-                            pair: string;
-                        };
-                    };
+                    bg: string;
+                    border: string;
+                    featuredBg: string;
+                    featuredText: string;
+                    featuredBadgeBg: string;
+                    featuredBadgeText: string;
+                    price: string;
+                    priceDescription: string;
                 };
                 rating: {
-                    starFilled: {
-                        value: string;
-                        metadata: {};
-                    };
-                    starEmpty: {
-                        value: string;
-                        metadata: {};
-                    };
-                    text: {
-                        value: string;
-                        metadata: {
-                            pair: string;
-                        };
-                    };
+                    starFilled: string;
+                    starEmpty: string;
+                    text: string;
                 };
             };
         };
@@ -1452,10 +581,6 @@ interface SpectreGeneratedTokens {
         minTouchTarget: string;
         minTextSize: string;
     };
-    borders: {
-        card: string;
-        input: string;
-    };
     border: {
         width: {
             base: string;
@@ -1463,22 +588,10 @@ interface SpectreGeneratedTokens {
         };
     };
     surface: {
-        page: {
-            value: string;
-            description: string;
-        };
-        card: {
-            value: string;
-            description: string;
-        };
-        input: {
-            value: string;
-            description: string;
-        };
-        overlay: {
-            value: string;
-            description: string;
-        };
+        page: string;
+        card: string;
+        input: string;
+        overlay: string;
     };
     text: {
         onPage: {
@@ -1659,6 +772,7 @@ interface ButtonStateTokens {
     border?: string;
     borderDisabled?: string;
     shadow?: string;
+    focusRing?: string;
 }
 interface FormStateTokens {
     bg?: string;
@@ -1731,10 +845,7 @@ interface ComponentTokens<Value = string> {
     [key: string]: unknown;
 }
 type SpectreModeName = 'default' | 'dark';
-type SemanticTokenValue = string | {
-    value: string;
-    [key: string]: unknown;
-};
+type SemanticTokenValue = string;
 interface SpectreModeTokens {
     surface: {
         page: SemanticTokenValue;
@@ -1775,8 +886,7 @@ interface LayoutTokens {
         maxWidth: string;
     };
 }
-interface Tokens extends Omit<SpectreGeneratedTokens, 'modes' | 'surface' | 'text'> {
-}
+type Tokens = SpectreGeneratedTokens;
 interface CssVariableOptions {
     selector?: string;
     prefix?: string;

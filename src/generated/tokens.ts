@@ -1,7 +1,7 @@
 // This file is auto-generated. Do not edit directly.
 // Source: tokens/*.json
 
-export interface SpectreGeneratedTokens {
+export interface SpectreSourceTokens {
   component: {
     card: {
       text: {
@@ -268,6 +268,9 @@ export interface SpectreGeneratedTokens {
       focusRing: {
         value: string;
       };
+      focusVisible: {
+        value: string;
+      };
     };
     secondary: {
       bg: {
@@ -306,6 +309,9 @@ export interface SpectreGeneratedTokens {
       focusRing: {
         value: string;
       };
+      focusVisible: {
+        value: string;
+      };
     };
     ghost: {
       bg: {
@@ -333,6 +339,9 @@ export interface SpectreGeneratedTokens {
         value: string;
       };
       focusRing: {
+        value: string;
+      };
+      focusVisible: {
         value: string;
       };
     };
@@ -466,6 +475,9 @@ export interface SpectreGeneratedTokens {
       focusRing: {
         value: string;
       };
+      focusVisible: {
+        value: string;
+      };
     };
   };
   forms: {
@@ -492,6 +504,14 @@ export interface SpectreGeneratedTokens {
       };
     };
     focus: {
+      border: {
+        value: string;
+      };
+      ring: {
+        value: string;
+      };
+    };
+    focusVisible: {
       border: {
         value: string;
       };
@@ -1486,10 +1506,6 @@ export interface SpectreGeneratedTokens {
     minTouchTarget: string;
     minTextSize: string;
   };
-  borders: {
-    card: string;
-    input: string;
-  };
   border: {
     width: {
       base: string;
@@ -1653,1217 +1669,1080 @@ export interface SpectreGeneratedTokens {
   };
 }
 
+export interface SpectreGeneratedTokens {
+  component: {
+    card: {
+      text: string;
+      textMuted: string;
+    };
+    input: {
+      text: string;
+      placeholder: string;
+    };
+    button: {
+      textDefault: string;
+      textOnPrimary: string;
+    };
+    badge: {
+      neutralBg: string;
+      neutralBgHover: string;
+      neutralText: string;
+      infoBg: string;
+      infoBgHover: string;
+      infoText: string;
+      successBg: string;
+      successBgHover: string;
+      successText: string;
+      warningBg: string;
+      warningBgHover: string;
+      warningText: string;
+      dangerBg: string;
+      dangerBgHover: string;
+      dangerText: string;
+    };
+    iconBox: {
+      bg: string;
+      border: string;
+      iconDefault: string;
+      iconSuccess: string;
+      iconWarning: string;
+      iconDanger: string;
+    };
+    testimonial: {
+      bg: string;
+      border: string;
+      text: string;
+      authorName: string;
+      authorTitle: string;
+      quoteMark: string;
+    };
+    pricingCard: {
+      bg: string;
+      border: string;
+      featuredBg: string;
+      featuredText: string;
+      featuredBadgeBg: string;
+      featuredBadgeText: string;
+      price: string;
+      priceDescription: string;
+    };
+    rating: {
+      starFilled: string;
+      starEmpty: string;
+      text: string;
+    };
+  };
+  buttons: {
+    primary: {
+      bg: string;
+      bgHover: string;
+      bgActive: string;
+      bgDisabled: string;
+      text: string;
+      textDisabled: string;
+      focusRing: string;
+      focusVisible: string;
+    };
+    secondary: {
+      bg: string;
+      bgHover: string;
+      bgActive: string;
+      bgDisabled: string;
+      text: string;
+      textDisabled: string;
+      border: string;
+      borderDisabled: string;
+      focusRing: string;
+      focusVisible: string;
+    };
+    ghost: {
+      bg: string;
+      bgHover: string;
+      bgActive: string;
+      bgDisabled: string;
+      text: string;
+      textDisabled: string;
+      focusRing: string;
+      focusVisible: string;
+    };
+    danger: {
+      bg: string;
+      bgHover: string;
+      bgActive: string;
+      bgDisabled: string;
+      text: string;
+      textDisabled: string;
+      focusRing: string;
+    };
+    success: {
+      bg: string;
+      bgHover: string;
+      bgActive: string;
+      bgDisabled: string;
+      text: string;
+      textDisabled: string;
+      focusRing: string;
+    };
+    cta: {
+      bg: string;
+      bgHover: string;
+      bgActive: string;
+      bgDisabled: string;
+      text: string;
+      textDisabled: string;
+      shadow: string;
+      focusRing: string;
+    };
+    accent: {
+      bg: string;
+      bgHover: string;
+      bgActive: string;
+      bgDisabled: string;
+      text: string;
+      textDisabled: string;
+      focusRing: string;
+      focusVisible: string;
+    };
+  };
+  forms: {
+    default: {
+      bg: string;
+      border: string;
+      text: string;
+      placeholder: string;
+    };
+    hover: {
+      border: string;
+    };
+    focus: {
+      border: string;
+      ring: string;
+    };
+    focusVisible: {
+      border: string;
+      ring: string;
+    };
+    valid: {
+      border: string;
+      bg: string;
+      text: string;
+    };
+    invalid: {
+      border: string;
+      bg: string;
+      text: string;
+    };
+    disabled: {
+      bg: string;
+      border: string;
+      text: string;
+    };
+  };
+  modes: {
+    default: {
+      surface: {
+        page: string;
+        card: string;
+        input: string;
+        overlay: string;
+        alternate: string;
+        hero: string;
+      };
+      text: {
+        onPage: {
+          default: string;
+          muted: string;
+          subtle: string;
+          meta: string;
+          brand: string;
+        };
+        onSurface: {
+          default: string;
+          muted: string;
+          subtle: string;
+          meta: string;
+          brand: string;
+        };
+      };
+      component: {
+        card: {
+          text: string;
+          textMuted: string;
+        };
+        input: {
+          text: string;
+          placeholder: string;
+        };
+        button: {
+          textDefault: string;
+          textOnPrimary: string;
+        };
+        badge: {
+          neutralBg: string;
+          neutralBgHover: string;
+          neutralText: string;
+          infoBg: string;
+          infoBgHover: string;
+          infoText: string;
+          successBg: string;
+          successText: string;
+          warningBg: string;
+          warningText: string;
+          dangerBg: string;
+          dangerText: string;
+        };
+        iconBox: {
+          bg: string;
+          border: string;
+          iconDefault: string;
+          iconSuccess: string;
+          iconWarning: string;
+          iconDanger: string;
+        };
+        testimonial: {
+          bg: string;
+          border: string;
+          text: string;
+          authorName: string;
+          authorTitle: string;
+          quoteMark: string;
+        };
+        pricingCard: {
+          bg: string;
+          border: string;
+          featuredBg: string;
+          featuredText: string;
+          featuredBadgeBg: string;
+          featuredBadgeText: string;
+          price: string;
+          priceDescription: string;
+        };
+        rating: {
+          starFilled: string;
+          starEmpty: string;
+          text: string;
+        };
+      };
+    };
+    dark: {
+      surface: {
+        page: string;
+        card: string;
+        input: string;
+        overlay: string;
+        alternate: string;
+        hero: string;
+      };
+      text: {
+        onPage: {
+          default: string;
+          muted: string;
+          subtle: string;
+          meta: string;
+          brand: string;
+        };
+        onSurface: {
+          default: string;
+          muted: string;
+          subtle: string;
+          meta: string;
+          brand: string;
+        };
+      };
+      component: {
+        card: {
+          text: string;
+          textMuted: string;
+        };
+        input: {
+          text: string;
+          placeholder: string;
+        };
+        button: {
+          textDefault: string;
+          textOnPrimary: string;
+        };
+        badge: {
+          neutralBg: string;
+          neutralBgHover: string;
+          neutralText: string;
+          infoBg: string;
+          infoBgHover: string;
+          infoText: string;
+          successBg: string;
+          successBgHover: string;
+          successText: string;
+          warningBg: string;
+          warningBgHover: string;
+          warningText: string;
+          dangerBg: string;
+          dangerBgHover: string;
+          dangerText: string;
+        };
+        iconBox: {
+          bg: string;
+          border: string;
+          iconDefault: string;
+          iconSuccess: string;
+          iconWarning: string;
+          iconDanger: string;
+        };
+        testimonial: {
+          bg: string;
+          border: string;
+          text: string;
+          authorName: string;
+          authorTitle: string;
+          quoteMark: string;
+        };
+        pricingCard: {
+          bg: string;
+          border: string;
+          featuredBg: string;
+          featuredText: string;
+          featuredBadgeBg: string;
+          featuredBadgeText: string;
+          price: string;
+          priceDescription: string;
+        };
+        rating: {
+          starFilled: string;
+          starEmpty: string;
+          text: string;
+        };
+      };
+    };
+  };
+  colors: {
+    brand: {
+      '50': string;
+      '100': string;
+      '200': string;
+      '300': string;
+      '400': string;
+      '500': string;
+      '600': string;
+      '700': string;
+      '800': string;
+      '900': string;
+    };
+    neutral: {
+      '50': string;
+      '100': string;
+      '200': string;
+      '300': string;
+      '400': string;
+      '500': string;
+      '600': string;
+      '700': string;
+      '800': string;
+      '900': string;
+    };
+    accent: {
+      '50': string;
+      '100': string;
+      '200': string;
+      '300': string;
+      '400': string;
+      '500': string;
+      '600': string;
+      '700': string;
+      '800': string;
+      '900': string;
+    };
+    success: {
+      '50': string;
+      '100': string;
+      '200': string;
+      '300': string;
+      '400': string;
+      '500': string;
+      '600': string;
+      '700': string;
+      '800': string;
+      '900': string;
+    };
+    warning: {
+      '50': string;
+      '100': string;
+      '200': string;
+      '300': string;
+      '400': string;
+      '500': string;
+      '600': string;
+      '700': string;
+      '800': string;
+      '900': string;
+    };
+    error: {
+      '50': string;
+      '100': string;
+      '200': string;
+      '300': string;
+      '400': string;
+      '500': string;
+      '600': string;
+      '700': string;
+      '800': string;
+      '900': string;
+    };
+    info: {
+      '50': string;
+      '100': string;
+      '200': string;
+      '300': string;
+      '400': string;
+      '500': string;
+      '600': string;
+      '700': string;
+      '800': string;
+      '900': string;
+    };
+    indigo: {
+      '500': string;
+      '600': string;
+    };
+    violet: {
+      '600': string;
+    };
+    focus: {
+      primary: string;
+      error: string;
+      info: string;
+    };
+    white: string;
+    black: string;
+  };
+  space: {
+    '0': string;
+    '4': string;
+    '8': string;
+    '12': string;
+    '16': string;
+    '20': string;
+    '24': string;
+    '32': string;
+    '40': string;
+    '48': string;
+    '56': string;
+    '64': string;
+    '80': string;
+    '96': string;
+  };
+  radii: {
+    none: string;
+    sm: string;
+    md: string;
+    lg: string;
+    pill: string;
+  };
+  shadows: {
+    none: string;
+    sm: string;
+    md: string;
+    lg: string;
+  };
+  breakpoints: {
+    sm: string;
+    md: string;
+    lg: string;
+    xl: string;
+    '2xl': string;
+  };
+  zIndex: {
+    base: string;
+    dropdown: string;
+    sticky: string;
+    fixed: string;
+    overlay: string;
+    modal: string;
+    popover: string;
+    tooltip: string;
+  };
+  transitions: {
+    duration: {
+      instant: string;
+      fast: string;
+      base: string;
+      moderate: string;
+      slow: string;
+      slower: string;
+    };
+    easing: {
+      linear: string;
+      in: string;
+      out: string;
+      inOut: string;
+      spring: string;
+    };
+  };
+  animations: {
+    fadeIn: {
+      duration: string;
+      easing: string;
+      keyframes: string;
+    };
+    fadeOut: {
+      duration: string;
+      easing: string;
+      keyframes: string;
+    };
+    slideUp: {
+      duration: string;
+      easing: string;
+      keyframes: string;
+    };
+    slideDown: {
+      duration: string;
+      easing: string;
+      keyframes: string;
+    };
+    scaleIn: {
+      duration: string;
+      easing: string;
+      keyframes: string;
+    };
+    bounce: {
+      duration: string;
+      easing: string;
+      keyframes: string;
+    };
+    shake: {
+      duration: string;
+      easing: string;
+      keyframes: string;
+    };
+    pulse: {
+      duration: string;
+      easing: string;
+      keyframes: string;
+    };
+  };
+  opacity: {
+    disabled: string;
+    hover: string;
+    active: string;
+    focus: string;
+    overlay: string;
+    tooltip: string;
+  };
+  aspectRatios: {
+    square: string;
+    video: string;
+    portrait: string;
+    landscape: string;
+    ultrawide: string;
+    hero: string;
+  };
+  icons: {
+    xs: string;
+    sm: string;
+    md: string;
+    lg: string;
+    xl: string;
+    '2xl': string;
+    '3xl': string;
+  };
+  accessibility: {
+    focusRing: {
+      width: string;
+      offset: string;
+      style: string;
+    };
+    minTouchTarget: string;
+    minTextSize: string;
+  };
+  border: {
+    width: {
+      base: string;
+      thick: string;
+    };
+  };
+  surface: {
+    page: string;
+    card: string;
+    input: string;
+    overlay: string;
+  };
+  text: {
+    onPage: {
+      default: string;
+      muted: string;
+      subtle: string;
+      meta: string;
+      brand: string;
+    };
+    onSurface: {
+      default: string;
+      muted: string;
+      subtle: string;
+      meta: string;
+      brand: string;
+    };
+  };
+  layout: {
+    section: {
+      padding: {
+        sm: string;
+        md: string;
+        lg: string;
+      };
+      gap: {
+        sm: string;
+        md: string;
+        lg: string;
+      };
+    };
+    stack: {
+      gap: {
+        sm: string;
+        md: string;
+        lg: string;
+      };
+    };
+    container: {
+      paddingInline: {
+        sm: string;
+        md: string;
+        lg: string;
+      };
+      maxWidth: string;
+    };
+  };
+  font: {
+    xs: {
+      size: string;
+      lineHeight: string;
+      weight: number;
+    };
+    sm: {
+      size: string;
+      lineHeight: string;
+      weight: number;
+    };
+    md: {
+      size: string;
+      lineHeight: string;
+      weight: number;
+    };
+    lg: {
+      size: string;
+      lineHeight: string;
+      weight: number;
+    };
+    xl: {
+      size: string;
+      lineHeight: string;
+      weight: number;
+    };
+    '2xl': {
+      size: string;
+      lineHeight: string;
+      weight: number;
+    };
+  };
+  typography: {
+    families: {
+      sans: string;
+      serif: string;
+      mono: string;
+    };
+    scale: {
+      xs: {
+        fontSize: string;
+        lineHeight: string;
+        fontWeight: number;
+        letterSpacing: string;
+      };
+      sm: {
+        fontSize: string;
+        lineHeight: string;
+        fontWeight: number;
+      };
+      md: {
+        fontSize: string;
+        lineHeight: string;
+        fontWeight: number;
+      };
+      lg: {
+        fontSize: string;
+        lineHeight: string;
+        fontWeight: number;
+      };
+      xl: {
+        fontSize: string;
+        lineHeight: string;
+        fontWeight: number;
+      };
+      '2xl': {
+        fontSize: string;
+        lineHeight: string;
+        fontWeight: number;
+      };
+      '3xl': {
+        fontSize: string;
+        lineHeight: string;
+        fontWeight: number;
+      };
+      '4xl': {
+        fontSize: string;
+        lineHeight: string;
+        fontWeight: number;
+      };
+      '5xl': {
+        fontSize: string;
+        lineHeight: string;
+        fontWeight: number;
+      };
+      '6xl': {
+        fontSize: string;
+        lineHeight: string;
+        fontWeight: number;
+      };
+    };
+  };
+}
+
 export const coreTokens: SpectreGeneratedTokens = {
   "component": {
     "card": {
-      "text": {
-        "value": "{colors.neutral.900}",
-        "metadata": {
-          "pair": "surface.card"
-        }
-      },
-      "textMuted": {
-        "value": "{colors.neutral.500}",
-        "metadata": {
-          "pair": "surface.card"
-        }
-      }
+      "text": "{colors.neutral.900}",
+      "textMuted": "{colors.neutral.500}"
     },
     "input": {
-      "text": {
-        "value": "{colors.neutral.900}",
-        "metadata": {
-          "pair": "surface.input"
-        }
-      },
-      "placeholder": {
-        "value": "{colors.neutral.500}",
-        "metadata": {
-          "pair": "forms.default.bg"
-        }
-      }
+      "text": "{colors.neutral.900}",
+      "placeholder": "{colors.neutral.500}"
     },
     "button": {
-      "textDefault": {
-        "value": "{colors.neutral.900}"
-      },
-      "textOnPrimary": {
-        "value": "{colors.white}"
-      }
+      "textDefault": "{colors.neutral.900}",
+      "textOnPrimary": "{colors.white}"
     },
     "badge": {
-      "neutralBg": {
-        "value": "{colors.neutral.100}",
-        "metadata": {
-          "pair": "component.badge.neutralText"
-        }
-      },
-      "neutralBgHover": {
-        "value": "{colors.neutral.200}",
-        "metadata": {
-          "pair": "component.badge.neutralText"
-        }
-      },
-      "neutralText": {
-        "value": "{colors.neutral.700}"
-      },
-      "infoBg": {
-        "value": "{colors.info.100}",
-        "metadata": {
-          "pair": "component.badge.infoText"
-        }
-      },
-      "infoBgHover": {
-        "value": "{colors.info.200}",
-        "metadata": {
-          "pair": "component.badge.infoText"
-        }
-      },
-      "infoText": {
-        "value": "{colors.info.700}"
-      },
-      "successBg": {
-        "value": "{colors.success.100}",
-        "metadata": {
-          "pair": "component.badge.successText"
-        }
-      },
-      "successBgHover": {
-        "value": "{colors.success.200}",
-        "metadata": {
-          "pair": "component.badge.successText"
-        }
-      },
-      "successText": {
-        "value": "{colors.success.800}"
-      },
-      "warningBg": {
-        "value": "{colors.warning.100}",
-        "metadata": {
-          "pair": "component.badge.warningText"
-        }
-      },
-      "warningBgHover": {
-        "value": "{colors.warning.200}",
-        "metadata": {
-          "pair": "component.badge.warningText"
-        }
-      },
-      "warningText": {
-        "value": "{colors.warning.800}"
-      },
-      "dangerBg": {
-        "value": "{colors.error.100}",
-        "metadata": {
-          "pair": "component.badge.dangerText"
-        }
-      },
-      "dangerBgHover": {
-        "value": "{colors.error.200}",
-        "metadata": {
-          "pair": "component.badge.dangerText"
-        }
-      },
-      "dangerText": {
-        "value": "{colors.error.800}"
-      }
+      "neutralBg": "{colors.neutral.100}",
+      "neutralBgHover": "{colors.neutral.200}",
+      "neutralText": "{colors.neutral.700}",
+      "infoBg": "{colors.info.100}",
+      "infoBgHover": "{colors.info.200}",
+      "infoText": "{colors.info.700}",
+      "successBg": "{colors.success.100}",
+      "successBgHover": "{colors.success.200}",
+      "successText": "{colors.success.800}",
+      "warningBg": "{colors.warning.100}",
+      "warningBgHover": "{colors.warning.200}",
+      "warningText": "{colors.warning.800}",
+      "dangerBg": "{colors.error.100}",
+      "dangerBgHover": "{colors.error.200}",
+      "dangerText": "{colors.error.800}"
     },
     "iconBox": {
-      "bg": {
-        "value": "{colors.white}",
-        "metadata": {
-          "pair": "component.iconBox.iconDefault"
-        }
-      },
-      "border": {
-        "value": "{colors.neutral.200}"
-      },
-      "iconDefault": {
-        "value": "{colors.info.600}",
-        "metadata": {
-          "pair": "component.iconBox.bg"
-        }
-      },
-      "iconSuccess": {
-        "value": "{colors.success.600}"
-      },
-      "iconWarning": {
-        "value": "{colors.warning.600}"
-      },
-      "iconDanger": {
-        "value": "{colors.error.600}"
-      }
+      "bg": "{colors.white}",
+      "border": "{colors.neutral.200}",
+      "iconDefault": "{colors.info.600}",
+      "iconSuccess": "{colors.success.600}",
+      "iconWarning": "{colors.warning.600}",
+      "iconDanger": "{colors.error.600}"
     },
     "testimonial": {
-      "bg": {
-        "value": "{colors.white}",
-        "metadata": {
-          "pair": "component.testimonial.text"
-        }
-      },
-      "border": {
-        "value": "{colors.neutral.200}"
-      },
-      "text": {
-        "value": "{colors.neutral.700}",
-        "metadata": {
-          "pair": "component.testimonial.bg"
-        }
-      },
-      "authorName": {
-        "value": "{colors.neutral.900}",
-        "metadata": {
-          "pair": "component.testimonial.bg"
-        }
-      },
-      "authorTitle": {
-        "value": "{colors.neutral.500}",
-        "metadata": {
-          "pair": "component.testimonial.bg"
-        }
-      },
-      "quoteMark": {
-        "value": "{colors.neutral.300}"
-      }
+      "bg": "{colors.white}",
+      "border": "{colors.neutral.200}",
+      "text": "{colors.neutral.700}",
+      "authorName": "{colors.neutral.900}",
+      "authorTitle": "{colors.neutral.500}",
+      "quoteMark": "{colors.neutral.300}"
     },
     "pricingCard": {
-      "bg": {
-        "value": "{colors.white}",
-        "metadata": {
-          "pair": "component.pricingCard.price"
-        }
-      },
-      "border": {
-        "value": "{colors.neutral.200}",
-        "metadata": {}
-      },
-      "featuredBg": {
-        "value": "{colors.info.600}",
-        "metadata": {
-          "pair": "component.pricingCard.featuredText"
-        }
-      },
-      "featuredText": {
-        "value": "{colors.white}",
-        "metadata": {}
-      },
-      "featuredBadgeBg": {
-        "value": "{colors.warning.500}",
-        "metadata": {
-          "pair": "component.pricingCard.featuredBadgeText"
-        }
-      },
-      "featuredBadgeText": {
-        "value": "{colors.neutral.900}",
-        "metadata": {}
-      },
-      "price": {
-        "value": "{colors.neutral.900}",
-        "metadata": {
-          "pair": "component.pricingCard.bg"
-        }
-      },
-      "priceDescription": {
-        "value": "{colors.neutral.500}",
-        "metadata": {
-          "pair": "component.pricingCard.bg"
-        }
-      }
+      "bg": "{colors.white}",
+      "border": "{colors.neutral.200}",
+      "featuredBg": "{colors.info.600}",
+      "featuredText": "{colors.white}",
+      "featuredBadgeBg": "{colors.warning.500}",
+      "featuredBadgeText": "{colors.neutral.900}",
+      "price": "{colors.neutral.900}",
+      "priceDescription": "{colors.neutral.500}"
     },
     "rating": {
-      "starFilled": {
-        "value": "{colors.warning.500}"
-      },
-      "starEmpty": {
-        "value": "{colors.neutral.200}"
-      },
-      "text": {
-        "value": "{colors.neutral.500}",
-        "metadata": {
-          "pair": "surface.card"
-        }
-      }
+      "starFilled": "{colors.warning.500}",
+      "starEmpty": "{colors.neutral.200}",
+      "text": "{colors.neutral.500}"
     }
   },
   "buttons": {
     "primary": {
-      "bg": {
-        "value": "{colors.info.600}",
-        "metadata": {
-          "pair": "buttons.primary.text"
-        }
-      },
-      "bgHover": {
-        "value": "{colors.info.700}",
-        "metadata": {
-          "pair": "buttons.primary.text"
-        }
-      },
-      "bgActive": {
-        "value": "{colors.info.800}",
-        "metadata": {
-          "pair": "buttons.primary.text"
-        }
-      },
-      "bgDisabled": {
-        "value": "{colors.neutral.200}"
-      },
-      "text": {
-        "value": "{colors.white}"
-      },
-      "textDisabled": {
-        "value": "{colors.neutral.400}"
-      },
-      "focusRing": {
-        "value": "{colors.info.500} / 0.4"
-      }
+      "bg": "{colors.info.600}",
+      "bgHover": "{colors.info.700}",
+      "bgActive": "{colors.info.800}",
+      "bgDisabled": "{colors.neutral.200}",
+      "text": "{colors.white}",
+      "textDisabled": "{colors.neutral.400}",
+      "focusRing": "{colors.info.500} / 0.4",
+      "focusVisible": "{buttons.primary.focusRing}"
     },
     "secondary": {
-      "bg": {
-        "value": "{colors.white}",
-        "metadata": {
-          "pair": "buttons.secondary.text"
-        }
-      },
-      "bgHover": {
-        "value": "{colors.neutral.50}",
-        "metadata": {
-          "pair": "buttons.secondary.text"
-        }
-      },
-      "bgActive": {
-        "value": "{colors.neutral.100}",
-        "metadata": {
-          "pair": "buttons.secondary.text"
-        }
-      },
-      "bgDisabled": {
-        "value": "{colors.neutral.50}"
-      },
-      "text": {
-        "value": "{colors.info.700}"
-      },
-      "textDisabled": {
-        "value": "{colors.neutral.400}"
-      },
-      "border": {
-        "value": "{colors.info.700}"
-      },
-      "borderDisabled": {
-        "value": "{colors.neutral.200}"
-      },
-      "focusRing": {
-        "value": "{colors.info.500} / 0.4"
-      }
+      "bg": "{colors.white}",
+      "bgHover": "{colors.neutral.50}",
+      "bgActive": "{colors.neutral.100}",
+      "bgDisabled": "{colors.neutral.50}",
+      "text": "{colors.info.700}",
+      "textDisabled": "{colors.neutral.400}",
+      "border": "{colors.info.700}",
+      "borderDisabled": "{colors.neutral.200}",
+      "focusRing": "{colors.info.500} / 0.4",
+      "focusVisible": "{buttons.secondary.focusRing}"
     },
     "ghost": {
-      "bg": {
-        "value": "transparent"
-      },
-      "bgHover": {
-        "value": "{colors.info.50}",
-        "metadata": {
-          "pair": "buttons.ghost.text"
-        }
-      },
-      "bgActive": {
-        "value": "{colors.info.100}",
-        "metadata": {
-          "pair": "buttons.ghost.text"
-        }
-      },
-      "bgDisabled": {
-        "value": "transparent"
-      },
-      "text": {
-        "value": "{colors.info.700}"
-      },
-      "textDisabled": {
-        "value": "{colors.neutral.400}"
-      },
-      "focusRing": {
-        "value": "{colors.info.500} / 0.4"
-      }
+      "bg": "transparent",
+      "bgHover": "{colors.info.50}",
+      "bgActive": "{colors.info.100}",
+      "bgDisabled": "transparent",
+      "text": "{colors.info.700}",
+      "textDisabled": "{colors.neutral.400}",
+      "focusRing": "{colors.info.500} / 0.4",
+      "focusVisible": "{buttons.ghost.focusRing}"
     },
     "danger": {
-      "bg": {
-        "value": "{colors.error.600}",
-        "metadata": {
-          "pair": "buttons.danger.text"
-        }
-      },
-      "bgHover": {
-        "value": "{colors.error.700}",
-        "metadata": {
-          "pair": "buttons.danger.text"
-        }
-      },
-      "bgActive": {
-        "value": "{colors.error.800}",
-        "metadata": {
-          "pair": "buttons.danger.text"
-        }
-      },
-      "bgDisabled": {
-        "value": "{colors.error.200}"
-      },
-      "text": {
-        "value": "{colors.white}"
-      },
-      "textDisabled": {
-        "value": "{colors.neutral.400}"
-      },
-      "focusRing": {
-        "value": "{colors.error.500} / 0.4"
-      }
+      "bg": "{colors.error.600}",
+      "bgHover": "{colors.error.700}",
+      "bgActive": "{colors.error.800}",
+      "bgDisabled": "{colors.error.200}",
+      "text": "{colors.white}",
+      "textDisabled": "{colors.neutral.400}",
+      "focusRing": "{colors.error.500} / 0.4"
     },
     "success": {
-      "bg": {
-        "value": "{colors.success.700}",
-        "metadata": {
-          "pair": "buttons.success.text"
-        }
-      },
-      "bgHover": {
-        "value": "{colors.success.800}",
-        "metadata": {
-          "pair": "buttons.success.text"
-        }
-      },
-      "bgActive": {
-        "value": "{colors.success.900}",
-        "metadata": {
-          "pair": "buttons.success.text"
-        }
-      },
-      "bgDisabled": {
-        "value": "{colors.success.200}"
-      },
-      "text": {
-        "value": "{colors.white}"
-      },
-      "textDisabled": {
-        "value": "{colors.neutral.400}"
-      },
-      "focusRing": {
-        "value": "{colors.success.500} / 0.4"
-      }
+      "bg": "{colors.success.700}",
+      "bgHover": "{colors.success.800}",
+      "bgActive": "{colors.success.900}",
+      "bgDisabled": "{colors.success.200}",
+      "text": "{colors.white}",
+      "textDisabled": "{colors.neutral.400}",
+      "focusRing": "{colors.success.500} / 0.4"
     },
     "cta": {
-      "bg": {
-        "value": "{colors.brand.600}",
-        "metadata": {
-          "pair": "buttons.cta.text"
-        }
-      },
-      "bgHover": {
-        "value": "{colors.brand.700}",
-        "metadata": {
-          "pair": "buttons.cta.text"
-        }
-      },
-      "bgActive": {
-        "value": "{colors.brand.800}",
-        "metadata": {
-          "pair": "buttons.cta.text"
-        }
-      },
-      "bgDisabled": {
-        "value": "{colors.brand.200}"
-      },
-      "text": {
-        "value": "{colors.white}"
-      },
-      "textDisabled": {
-        "value": "{colors.neutral.400}"
-      },
-      "shadow": {
-        "value": "0 4px 14px 0 {colors.brand.500} / 0.39"
-      },
-      "focusRing": {
-        "value": "{colors.brand.500} / 0.4"
-      }
+      "bg": "{colors.brand.600}",
+      "bgHover": "{colors.brand.700}",
+      "bgActive": "{colors.brand.800}",
+      "bgDisabled": "{colors.brand.200}",
+      "text": "{colors.white}",
+      "textDisabled": "{colors.neutral.400}",
+      "shadow": "0 4px 14px 0 {colors.brand.500} / 0.39",
+      "focusRing": "{colors.brand.500} / 0.4"
     },
     "accent": {
-      "bg": {
-        "value": "{colors.accent.600}",
-        "metadata": {
-          "pair": "buttons.accent.text"
-        }
-      },
-      "bgHover": {
-        "value": "{colors.accent.700}",
-        "metadata": {
-          "pair": "buttons.accent.text"
-        }
-      },
-      "bgActive": {
-        "value": "{colors.accent.800}",
-        "metadata": {
-          "pair": "buttons.accent.text"
-        }
-      },
-      "bgDisabled": {
-        "value": "{colors.accent.200}"
-      },
-      "text": {
-        "value": "{colors.white}"
-      },
-      "textDisabled": {
-        "value": "{colors.neutral.400}"
-      },
-      "focusRing": {
-        "value": "{colors.accent.500} / 0.4"
-      }
+      "bg": "{colors.accent.600}",
+      "bgHover": "{colors.accent.700}",
+      "bgActive": "{colors.accent.800}",
+      "bgDisabled": "{colors.accent.200}",
+      "text": "{colors.white}",
+      "textDisabled": "{colors.neutral.400}",
+      "focusRing": "{colors.accent.500} / 0.4",
+      "focusVisible": "{buttons.accent.focusRing}"
     }
   },
   "forms": {
     "default": {
-      "bg": {
-        "value": "{colors.white}"
-      },
-      "border": {
-        "value": "{colors.neutral.300}"
-      },
-      "text": {
-        "value": "{colors.neutral.900}"
-      },
-      "placeholder": {
-        "value": "{colors.neutral.500}",
-        "metadata": {
-          "pair": "forms.default.bg"
-        }
-      }
+      "bg": "{colors.white}",
+      "border": "{colors.neutral.300}",
+      "text": "{colors.neutral.900}",
+      "placeholder": "{colors.neutral.500}"
     },
     "hover": {
-      "border": {
-        "value": "{colors.info.500}"
-      }
+      "border": "{colors.info.500}"
     },
     "focus": {
-      "border": {
-        "value": "{colors.info.500}"
-      },
-      "ring": {
-        "value": "{colors.info.500}"
-      }
+      "border": "{colors.info.500}",
+      "ring": "{colors.info.500}"
+    },
+    "focusVisible": {
+      "border": "{forms.focus.border}",
+      "ring": "{forms.focus.ring}"
     },
     "valid": {
-      "border": {
-        "value": "{colors.success.500}"
-      },
-      "bg": {
-        "value": "{colors.success.50}",
-        "metadata": {
-          "pair": "forms.valid.text"
-        }
-      },
-      "text": {
-        "value": "{colors.success.700}"
-      }
+      "border": "{colors.success.500}",
+      "bg": "{colors.success.50}",
+      "text": "{colors.success.700}"
     },
     "invalid": {
-      "border": {
-        "value": "{colors.error.500}"
-      },
-      "bg": {
-        "value": "{colors.error.50}",
-        "metadata": {
-          "pair": "forms.invalid.text"
-        }
-      },
-      "text": {
-        "value": "{colors.error.700}"
-      }
+      "border": "{colors.error.500}",
+      "bg": "{colors.error.50}",
+      "text": "{colors.error.700}"
     },
     "disabled": {
-      "bg": {
-        "value": "{colors.neutral.50}"
-      },
-      "border": {
-        "value": "{colors.neutral.200}"
-      },
-      "text": {
-        "value": "{colors.neutral.400}"
-      }
+      "bg": "{colors.neutral.50}",
+      "border": "{colors.neutral.200}",
+      "text": "{colors.neutral.400}"
     }
   },
   "modes": {
     "default": {
       "surface": {
-        "page": {
-          "value": "{colors.neutral.50}",
-          "metadata": {
-            "pair": "modes.default.text.onPage.default"
-          }
-        },
-        "card": {
-          "value": "{colors.white}",
-          "metadata": {
-            "pair": "modes.default.text.onSurface.default"
-          }
-        },
-        "input": {
-          "value": "{colors.white}",
-          "metadata": {
-            "pair": "modes.default.text.onSurface.default"
-          }
-        },
-        "overlay": {
-          "value": "{colors.neutral.900} / 0.6"
-        },
-        "alternate": {
-          "value": "{colors.neutral.100}",
-          "metadata": {
-            "pair": "modes.default.text.onPage.default"
-          }
-        },
-        "hero": {
-          "value": "linear-gradient(135deg, {colors.indigo.500} 0%, {colors.violet.600} 100%)"
-        }
+        "page": "{colors.neutral.50}",
+        "card": "{colors.white}",
+        "input": "{colors.white}",
+        "overlay": "{colors.neutral.900} / 0.6",
+        "alternate": "{colors.neutral.100}",
+        "hero": "linear-gradient(135deg, {colors.indigo.500} 0%, {colors.violet.600} 100%)"
       },
       "text": {
         "onPage": {
-          "default": {
-            "value": "{colors.neutral.900}",
-            "metadata": {
-              "pair": "modes.default.surface.page"
-            }
-          },
-          "muted": {
-            "value": "{colors.neutral.600}",
-            "metadata": {
-              "pair": "modes.default.surface.page"
-            }
-          },
-          "subtle": {
-            "value": "{colors.neutral.500}",
-            "metadata": {
-              "pair": "modes.default.surface.page"
-            }
-          },
-          "meta": {
-            "value": "{colors.neutral.500}",
-            "metadata": {
-              "pair": "modes.default.surface.page"
-            }
-          },
-          "brand": {
-            "value": "{colors.brand.600}",
-            "metadata": {
-              "pair": "modes.default.surface.page"
-            }
-          }
+          "default": "{colors.neutral.900}",
+          "muted": "{colors.neutral.600}",
+          "subtle": "{colors.neutral.500}",
+          "meta": "{colors.neutral.500}",
+          "brand": "{colors.brand.600}"
         },
         "onSurface": {
-          "default": {
-            "value": "{colors.neutral.900}",
-            "metadata": {
-              "pair": "modes.default.surface.card"
-            }
-          },
-          "muted": {
-            "value": "{colors.neutral.600}",
-            "metadata": {
-              "pair": "modes.default.surface.card"
-            }
-          },
-          "subtle": {
-            "value": "{colors.neutral.500}",
-            "metadata": {
-              "pair": "modes.default.surface.card"
-            }
-          },
-          "meta": {
-            "value": "{colors.neutral.500}",
-            "metadata": {
-              "pair": "modes.default.surface.card"
-            }
-          },
-          "brand": {
-            "value": "{colors.brand.600}",
-            "metadata": {
-              "pair": "modes.default.surface.card"
-            }
-          }
+          "default": "{colors.neutral.900}",
+          "muted": "{colors.neutral.600}",
+          "subtle": "{colors.neutral.500}",
+          "meta": "{colors.neutral.500}",
+          "brand": "{colors.brand.600}"
         }
       },
       "component": {
         "card": {
-          "text": {
-            "value": "{colors.neutral.900}",
-            "metadata": {
-              "pair": "modes.default.surface.card"
-            }
-          },
-          "textMuted": {
-            "value": "{colors.neutral.600}",
-            "metadata": {
-              "pair": "modes.default.surface.card"
-            }
-          }
+          "text": "{colors.neutral.900}",
+          "textMuted": "{colors.neutral.600}"
         },
         "input": {
-          "text": {
-            "value": "{colors.neutral.900}",
-            "metadata": {
-              "pair": "modes.default.surface.input"
-            }
-          },
-          "placeholder": {
-            "value": "{colors.neutral.500}",
-            "metadata": {
-              "pair": "modes.default.surface.input"
-            }
-          }
+          "text": "{colors.neutral.900}",
+          "placeholder": "{colors.neutral.500}"
         },
         "button": {
-          "textDefault": {
-            "value": "{colors.neutral.900}"
-          },
-          "textOnPrimary": {
-            "value": "{colors.white}"
-          }
+          "textDefault": "{colors.neutral.900}",
+          "textOnPrimary": "{colors.white}"
         },
         "badge": {
-          "neutralBg": {
-            "value": "{colors.neutral.100}",
-            "metadata": {
-              "pair": "modes.default.component.badge.neutralText"
-            }
-          },
-          "neutralBgHover": {
-            "value": "{colors.neutral.200}",
-            "metadata": {
-              "pair": "modes.default.component.badge.neutralText"
-            }
-          },
-          "neutralText": {
-            "value": "{colors.neutral.700}",
-            "metadata": {}
-          },
-          "infoBg": {
-            "value": "{colors.info.100}",
-            "metadata": {
-              "pair": "modes.default.component.badge.infoText"
-            }
-          },
-          "infoBgHover": {
-            "value": "{colors.info.200}",
-            "metadata": {
-              "pair": "modes.default.component.badge.infoText"
-            }
-          },
-          "infoText": {
-            "value": "{colors.info.700}",
-            "metadata": {}
-          },
-          "successBg": {
-            "value": "{colors.success.100}",
-            "metadata": {
-              "pair": "modes.default.component.badge.successText"
-            }
-          },
-          "successText": {
-            "value": "{colors.success.700}",
-            "metadata": {}
-          },
-          "warningBg": {
-            "value": "{colors.warning.100}",
-            "metadata": {
-              "pair": "modes.default.component.badge.warningText"
-            }
-          },
-          "warningText": {
-            "value": "{colors.warning.800}",
-            "metadata": {}
-          },
-          "dangerBg": {
-            "value": "{colors.error.100}",
-            "metadata": {
-              "pair": "modes.default.component.badge.dangerText"
-            }
-          },
-          "dangerText": {
-            "value": "{colors.error.700}",
-            "metadata": {}
-          }
+          "neutralBg": "{colors.neutral.100}",
+          "neutralBgHover": "{colors.neutral.200}",
+          "neutralText": "{colors.neutral.700}",
+          "infoBg": "{colors.info.100}",
+          "infoBgHover": "{colors.info.200}",
+          "infoText": "{colors.info.700}",
+          "successBg": "{colors.success.100}",
+          "successText": "{colors.success.700}",
+          "warningBg": "{colors.warning.100}",
+          "warningText": "{colors.warning.800}",
+          "dangerBg": "{colors.error.100}",
+          "dangerText": "{colors.error.700}"
         },
         "iconBox": {
-          "bg": {
-            "value": "{colors.white}",
-            "metadata": {
-              "pair": "modes.default.component.iconBox.iconDefault"
-            }
-          },
-          "border": {
-            "value": "{colors.neutral.200}",
-            "metadata": {}
-          },
-          "iconDefault": {
-            "value": "{colors.info.600}",
-            "metadata": {
-              "pair": "modes.default.component.iconBox.bg"
-            }
-          },
-          "iconSuccess": {
-            "value": "{colors.success.600}",
-            "metadata": {}
-          },
-          "iconWarning": {
-            "value": "{colors.warning.600}",
-            "metadata": {}
-          },
-          "iconDanger": {
-            "value": "{colors.error.600}",
-            "metadata": {
-              "pair": "modes.default.component.iconBox.bg"
-            }
-          }
+          "bg": "{colors.white}",
+          "border": "{colors.neutral.200}",
+          "iconDefault": "{colors.info.600}",
+          "iconSuccess": "{colors.success.600}",
+          "iconWarning": "{colors.warning.600}",
+          "iconDanger": "{colors.error.600}"
         },
         "testimonial": {
-          "bg": {
-            "value": "{colors.white}",
-            "metadata": {
-              "pair": "modes.default.component.testimonial.text"
-            }
-          },
-          "border": {
-            "value": "{colors.neutral.200}",
-            "metadata": {}
-          },
-          "text": {
-            "value": "{colors.neutral.700}",
-            "metadata": {
-              "pair": "modes.default.component.testimonial.bg"
-            }
-          },
-          "authorName": {
-            "value": "{colors.neutral.900}",
-            "metadata": {
-              "pair": "modes.default.component.testimonial.bg"
-            }
-          },
-          "authorTitle": {
-            "value": "{colors.neutral.500}",
-            "metadata": {
-              "pair": "modes.default.component.testimonial.bg"
-            }
-          },
-          "quoteMark": {
-            "value": "{colors.neutral.300}",
-            "metadata": {}
-          }
+          "bg": "{colors.white}",
+          "border": "{colors.neutral.200}",
+          "text": "{colors.neutral.700}",
+          "authorName": "{colors.neutral.900}",
+          "authorTitle": "{colors.neutral.500}",
+          "quoteMark": "{colors.neutral.300}"
         },
         "pricingCard": {
-          "bg": {
-            "value": "{colors.white}",
-            "metadata": {
-              "pair": "modes.default.component.pricingCard.price"
-            }
-          },
-          "border": {
-            "value": "{colors.neutral.200}",
-            "metadata": {}
-          },
-          "featuredBg": {
-            "value": "{colors.info.600}",
-            "metadata": {
-              "pair": "modes.default.component.pricingCard.featuredText"
-            }
-          },
-          "featuredText": {
-            "value": "{colors.white}",
-            "metadata": {}
-          },
-          "featuredBadgeBg": {
-            "value": "{colors.warning.500}",
-            "metadata": {
-              "pair": "modes.default.component.pricingCard.featuredBadgeText"
-            }
-          },
-          "featuredBadgeText": {
-            "value": "{colors.neutral.900}",
-            "metadata": {}
-          },
-          "price": {
-            "value": "{colors.neutral.900}",
-            "metadata": {
-              "pair": "modes.default.component.pricingCard.bg"
-            }
-          },
-          "priceDescription": {
-            "value": "{colors.neutral.500}",
-            "metadata": {
-              "pair": "modes.default.component.pricingCard.bg"
-            }
-          }
+          "bg": "{colors.white}",
+          "border": "{colors.neutral.200}",
+          "featuredBg": "{colors.info.600}",
+          "featuredText": "{colors.white}",
+          "featuredBadgeBg": "{colors.warning.500}",
+          "featuredBadgeText": "{colors.neutral.900}",
+          "price": "{colors.neutral.900}",
+          "priceDescription": "{colors.neutral.500}"
         },
         "rating": {
-          "starFilled": {
-            "value": "{colors.warning.500}",
-            "metadata": {}
-          },
-          "starEmpty": {
-            "value": "{colors.neutral.200}",
-            "metadata": {}
-          },
-          "text": {
-            "value": "{colors.neutral.500}",
-            "metadata": {
-              "pair": "modes.default.surface.card"
-            }
-          }
+          "starFilled": "{colors.warning.500}",
+          "starEmpty": "{colors.neutral.200}",
+          "text": "{colors.neutral.500}"
         }
       }
     },
     "dark": {
       "surface": {
-        "page": {
-          "value": "{colors.neutral.900}",
-          "metadata": {
-            "pair": "modes.dark.text.onPage.default"
-          }
-        },
-        "card": {
-          "value": "{colors.neutral.800}",
-          "metadata": {
-            "pair": "modes.dark.text.onSurface.default"
-          }
-        },
-        "input": {
-          "value": "{colors.neutral.700}",
-          "metadata": {
-            "pair": "modes.dark.text.onSurface.default"
-          }
-        },
-        "overlay": {
-          "value": "{colors.neutral.800}"
-        },
-        "alternate": {
-          "value": "{colors.neutral.800}",
-          "metadata": {
-            "pair": "modes.dark.text.onPage.default"
-          }
-        },
-        "hero": {
-          "value": "linear-gradient(135deg, {colors.accent.900} 0%, {colors.accent.700} 100%)"
-        }
+        "page": "{colors.neutral.900}",
+        "card": "{colors.neutral.800}",
+        "input": "{colors.neutral.700}",
+        "overlay": "{colors.neutral.800}",
+        "alternate": "{colors.neutral.800}",
+        "hero": "linear-gradient(135deg, {colors.accent.900} 0%, {colors.accent.700} 100%)"
       },
       "text": {
         "onPage": {
-          "default": {
-            "value": "{colors.neutral.50}",
-            "metadata": {
-              "pair": "modes.dark.surface.page"
-            }
-          },
-          "muted": {
-            "value": "{colors.neutral.300}",
-            "metadata": {
-              "pair": "modes.dark.surface.page"
-            }
-          },
-          "subtle": {
-            "value": "{colors.neutral.400}",
-            "metadata": {
-              "pair": "modes.dark.surface.page"
-            }
-          },
-          "meta": {
-            "value": "{colors.neutral.400}",
-            "metadata": {
-              "pair": "modes.dark.surface.page"
-            }
-          },
-          "brand": {
-            "value": "{colors.brand.400}",
-            "metadata": {
-              "pair": "modes.dark.surface.page"
-            }
-          }
+          "default": "{colors.neutral.50}",
+          "muted": "{colors.neutral.300}",
+          "subtle": "{colors.neutral.400}",
+          "meta": "{colors.neutral.400}",
+          "brand": "{colors.brand.400}"
         },
         "onSurface": {
-          "default": {
-            "value": "{colors.neutral.100}",
-            "metadata": {
-              "pair": "modes.dark.surface.card"
-            }
-          },
-          "muted": {
-            "value": "{colors.neutral.300}",
-            "metadata": {
-              "pair": "modes.dark.surface.card"
-            }
-          },
-          "subtle": {
-            "value": "{colors.neutral.400}",
-            "metadata": {
-              "pair": "modes.dark.surface.card"
-            }
-          },
-          "meta": {
-            "value": "{colors.neutral.400}",
-            "metadata": {
-              "pair": "modes.dark.surface.card"
-            }
-          },
-          "brand": {
-            "value": "{colors.brand.400}",
-            "metadata": {
-              "pair": "modes.dark.surface.card"
-            }
-          }
+          "default": "{colors.neutral.100}",
+          "muted": "{colors.neutral.300}",
+          "subtle": "{colors.neutral.400}",
+          "meta": "{colors.neutral.400}",
+          "brand": "{colors.brand.400}"
         }
       },
       "component": {
         "card": {
-          "text": {
-            "value": "{colors.neutral.100}",
-            "metadata": {
-              "pair": "modes.dark.surface.card"
-            }
-          },
-          "textMuted": {
-            "value": "{colors.neutral.300}",
-            "metadata": {
-              "pair": "modes.dark.surface.card"
-            }
-          }
+          "text": "{colors.neutral.100}",
+          "textMuted": "{colors.neutral.300}"
         },
         "input": {
-          "text": {
-            "value": "{colors.neutral.100}",
-            "metadata": {
-              "pair": "modes.dark.surface.input"
-            }
-          },
-          "placeholder": {
-            "value": "{colors.neutral.300}",
-            "metadata": {
-              "pair": "modes.dark.surface.input"
-            }
-          }
+          "text": "{colors.neutral.100}",
+          "placeholder": "{colors.neutral.300}"
         },
         "button": {
-          "textDefault": {
-            "value": "{colors.neutral.100}"
-          },
-          "textOnPrimary": {
-            "value": "{colors.white}"
-          }
+          "textDefault": "{colors.neutral.100}",
+          "textOnPrimary": "{colors.white}"
         },
         "badge": {
-          "neutralBg": {
-            "value": "{colors.neutral.700}",
-            "metadata": {
-              "pair": "modes.dark.component.badge.neutralText"
-            }
-          },
-          "neutralBgHover": {
-            "value": "{colors.neutral.600}",
-            "metadata": {
-              "pair": "modes.dark.component.badge.neutralText"
-            }
-          },
-          "neutralText": {
-            "value": "{colors.neutral.100}",
-            "metadata": {}
-          },
-          "infoBg": {
-            "value": "{colors.info.800}",
-            "metadata": {
-              "pair": "modes.dark.component.badge.infoText"
-            }
-          },
-          "infoBgHover": {
-            "value": "{colors.info.700}",
-            "metadata": {
-              "pair": "modes.dark.component.badge.infoText"
-            }
-          },
-          "infoText": {
-            "value": "{colors.info.100}",
-            "metadata": {}
-          },
-          "successBg": {
-            "value": "{colors.success.800}",
-            "metadata": {
-              "pair": "modes.dark.component.badge.successText"
-            }
-          },
-          "successBgHover": {
-            "value": "{colors.success.700}",
-            "metadata": {
-              "pair": "modes.dark.component.badge.successText"
-            }
-          },
-          "successText": {
-            "value": "{colors.success.100}",
-            "metadata": {}
-          },
-          "warningBg": {
-            "value": "{colors.warning.800}",
-            "metadata": {
-              "pair": "modes.dark.component.badge.warningText"
-            }
-          },
-          "warningBgHover": {
-            "value": "{colors.warning.800}",
-            "metadata": {
-              "pair": "modes.dark.component.badge.warningText"
-            }
-          },
-          "warningText": {
-            "value": "{colors.warning.100}",
-            "metadata": {}
-          },
-          "dangerBg": {
-            "value": "{colors.error.800}",
-            "metadata": {
-              "pair": "modes.dark.component.badge.dangerText"
-            }
-          },
-          "dangerBgHover": {
-            "value": "{colors.error.700}",
-            "metadata": {
-              "pair": "modes.dark.component.badge.dangerText"
-            }
-          },
-          "dangerText": {
-            "value": "{colors.error.100}",
-            "metadata": {}
-          }
+          "neutralBg": "{colors.neutral.700}",
+          "neutralBgHover": "{colors.neutral.600}",
+          "neutralText": "{colors.neutral.100}",
+          "infoBg": "{colors.info.800}",
+          "infoBgHover": "{colors.info.700}",
+          "infoText": "{colors.info.100}",
+          "successBg": "{colors.success.800}",
+          "successBgHover": "{colors.success.700}",
+          "successText": "{colors.success.100}",
+          "warningBg": "{colors.warning.800}",
+          "warningBgHover": "{colors.warning.800}",
+          "warningText": "{colors.warning.100}",
+          "dangerBg": "{colors.error.800}",
+          "dangerBgHover": "{colors.error.700}",
+          "dangerText": "{colors.error.100}"
         },
         "iconBox": {
-          "bg": {
-            "value": "{colors.neutral.800}",
-            "metadata": {
-              "pair": "modes.dark.component.iconBox.iconDefault"
-            }
-          },
-          "border": {
-            "value": "{colors.neutral.700}",
-            "metadata": {}
-          },
-          "iconDefault": {
-            "value": "{colors.info.300}",
-            "metadata": {
-              "pair": "modes.dark.component.iconBox.bg"
-            }
-          },
-          "iconSuccess": {
-            "value": "{colors.success.400}",
-            "metadata": {
-              "pair": "modes.dark.component.iconBox.bg"
-            }
-          },
-          "iconWarning": {
-            "value": "{colors.warning.400}",
-            "metadata": {
-              "pair": "modes.dark.component.iconBox.bg"
-            }
-          },
-          "iconDanger": {
-            "value": "{colors.error.400}",
-            "metadata": {
-              "pair": "modes.dark.component.iconBox.bg"
-            }
-          }
+          "bg": "{colors.neutral.800}",
+          "border": "{colors.neutral.700}",
+          "iconDefault": "{colors.info.300}",
+          "iconSuccess": "{colors.success.400}",
+          "iconWarning": "{colors.warning.400}",
+          "iconDanger": "{colors.error.400}"
         },
         "testimonial": {
-          "bg": {
-            "value": "{colors.neutral.800}",
-            "metadata": {
-              "pair": "modes.dark.component.testimonial.text"
-            }
-          },
-          "border": {
-            "value": "{colors.neutral.700}",
-            "metadata": {}
-          },
-          "text": {
-            "value": "{colors.neutral.200}",
-            "metadata": {
-              "pair": "modes.dark.component.testimonial.bg"
-            }
-          },
-          "authorName": {
-            "value": "{colors.neutral.100}",
-            "metadata": {
-              "pair": "modes.dark.component.testimonial.bg"
-            }
-          },
-          "authorTitle": {
-            "value": "{colors.neutral.400}",
-            "metadata": {
-              "pair": "modes.dark.component.testimonial.bg"
-            }
-          },
-          "quoteMark": {
-            "value": "{colors.neutral.600}",
-            "metadata": {}
-          }
+          "bg": "{colors.neutral.800}",
+          "border": "{colors.neutral.700}",
+          "text": "{colors.neutral.200}",
+          "authorName": "{colors.neutral.100}",
+          "authorTitle": "{colors.neutral.400}",
+          "quoteMark": "{colors.neutral.600}"
         },
         "pricingCard": {
-          "bg": {
-            "value": "{colors.neutral.800}",
-            "metadata": {
-              "pair": "modes.dark.component.pricingCard.price"
-            }
-          },
-          "border": {
-            "value": "{colors.neutral.700}",
-            "metadata": {}
-          },
-          "featuredBg": {
-            "value": "{colors.info.600}",
-            "metadata": {
-              "pair": "modes.dark.component.pricingCard.featuredText"
-            }
-          },
-          "featuredText": {
-            "value": "{colors.white}",
-            "metadata": {}
-          },
-          "featuredBadgeBg": {
-            "value": "{colors.warning.500}",
-            "metadata": {
-              "pair": "modes.dark.component.pricingCard.featuredBadgeText"
-            }
-          },
-          "featuredBadgeText": {
-            "value": "{colors.neutral.900}",
-            "metadata": {}
-          },
-          "price": {
-            "value": "{colors.neutral.100}",
-            "metadata": {
-              "pair": "modes.dark.component.pricingCard.bg"
-            }
-          },
-          "priceDescription": {
-            "value": "{colors.neutral.400}",
-            "metadata": {
-              "pair": "modes.dark.component.pricingCard.bg"
-            }
-          }
+          "bg": "{colors.neutral.800}",
+          "border": "{colors.neutral.700}",
+          "featuredBg": "{colors.info.600}",
+          "featuredText": "{colors.white}",
+          "featuredBadgeBg": "{colors.warning.500}",
+          "featuredBadgeText": "{colors.neutral.900}",
+          "price": "{colors.neutral.100}",
+          "priceDescription": "{colors.neutral.400}"
         },
         "rating": {
-          "starFilled": {
-            "value": "{colors.warning.400}",
-            "metadata": {}
-          },
-          "starEmpty": {
-            "value": "{colors.neutral.700}",
-            "metadata": {}
-          },
-          "text": {
-            "value": "{colors.neutral.400}",
-            "metadata": {
-              "pair": "modes.dark.surface.card"
-            }
-          }
+          "starFilled": "{colors.warning.400}",
+          "starEmpty": "{colors.neutral.700}",
+          "text": "{colors.neutral.400}"
         }
       }
     }
@@ -3107,10 +2986,6 @@ export const coreTokens: SpectreGeneratedTokens = {
     "minTouchTarget": "44px",
     "minTextSize": "16px"
   },
-  "borders": {
-    "card": "{colors.neutral.200}",
-    "input": "{colors.neutral.300}"
-  },
   "border": {
     "width": {
       "base": "1px",
@@ -3118,22 +2993,10 @@ export const coreTokens: SpectreGeneratedTokens = {
     }
   },
   "surface": {
-    "page": {
-      "value": "{colors.neutral.50}",
-      "description": "primary app background"
-    },
-    "card": {
-      "value": "{colors.white}",
-      "description": "containers and tiles"
-    },
-    "input": {
-      "value": "{colors.white}",
-      "description": "form inputs, textareas"
-    },
-    "overlay": {
-      "value": "{colors.neutral.900} / 0.6",
-      "description": "modals, dropdowns, flyouts"
-    }
+    "page": "{colors.neutral.50}",
+    "card": "{colors.white}",
+    "input": "{colors.white}",
+    "overlay": "{colors.neutral.900} / 0.6"
   },
   "text": {
     "onPage": {

@@ -1,17 +1,17 @@
 import { colord, extend } from 'colord';
 import a11yPlugin from 'colord/plugins/a11y';
-import type { SpectreTokens } from '../src/types';
+import type { SpectreSourceTokens } from '../src/generated/tokens';
 import { loadMergedTokens } from './token-utils';
 
 extend([a11yPlugin]);
 
-const tokens = loadMergedTokens();
+const tokens = loadMergedTokens() as SpectreSourceTokens;
 
 /**
  * Resolves a token reference like "{colors.info.600}" to its value.
  * Supports nested references and composite values.
  */
-function resolveToken(pathStr: string, allTokens: SpectreTokens): string {
+function resolveToken(pathStr: string, allTokens: SpectreSourceTokens): string {
   if (!pathStr || typeof pathStr !== 'string' || !pathStr.includes('{')) {
     if (typeof pathStr === 'string' && pathStr.includes(' / ')) {
       return pathStr.split(' / ')[0].trim();
@@ -53,7 +53,7 @@ function resolveToken(pathStr: string, allTokens: SpectreTokens): string {
 
 const failures: string[] = [];
 
-function checkTokensRecursively(obj: Record<string, unknown> | SpectreTokens, currentPath: string) {
+function checkTokensRecursively(obj: Record<string, unknown> | SpectreSourceTokens, currentPath: string) {
   const records = obj as Record<string, unknown>;
   for (const key in records) {
     if (key === 'metadata' || key === 'value') continue;
