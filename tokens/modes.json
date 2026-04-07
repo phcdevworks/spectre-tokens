@@ -558,7 +558,7 @@
             "metadata": {}
           },
           "iconDefault": {
-            "value": "{colors.info.300}",
+            "value": "{colors.info.400}",
             "metadata": {
               "pair": "modes.dark.component.iconBox.bg"
             }
