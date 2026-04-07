@@ -268,6 +268,9 @@ export interface SpectreGeneratedTokens {
       focusRing: {
         value: string;
       };
+      focusVisible: {
+        value: string;
+      };
     };
     secondary: {
       bg: {
@@ -306,6 +309,9 @@ export interface SpectreGeneratedTokens {
       focusRing: {
         value: string;
       };
+      focusVisible: {
+        value: string;
+      };
     };
     ghost: {
       bg: {
@@ -333,6 +339,9 @@ export interface SpectreGeneratedTokens {
         value: string;
       };
       focusRing: {
+        value: string;
+      };
+      focusVisible: {
         value: string;
       };
     };
@@ -466,6 +475,9 @@ export interface SpectreGeneratedTokens {
       focusRing: {
         value: string;
       };
+      focusVisible: {
+        value: string;
+      };
     };
   };
   forms: {
@@ -492,6 +504,14 @@ export interface SpectreGeneratedTokens {
       };
     };
     focus: {
+      border: {
+        value: string;
+      };
+      ring: {
+        value: string;
+      };
+    };
+    focusVisible: {
       border: {
         value: string;
       };
@@ -1486,10 +1506,6 @@ export interface SpectreGeneratedTokens {
     minTouchTarget: string;
     minTextSize: string;
   };
-  borders: {
-    card: string;
-    input: string;
-  };
   border: {
     width: {
       base: string;
@@ -1916,6 +1932,9 @@ export const coreTokens: SpectreGeneratedTokens = {
       },
       "focusRing": {
         "value": "{colors.info.500} / 0.4"
+      },
+      "focusVisible": {
+        "value": "{buttons.primary.focusRing.value}"
       }
     },
     "secondary": {
@@ -1954,6 +1973,9 @@ export const coreTokens: SpectreGeneratedTokens = {
       },
       "focusRing": {
         "value": "{colors.info.500} / 0.4"
+      },
+      "focusVisible": {
+        "value": "{buttons.secondary.focusRing.value}"
       }
     },
     "ghost": {
@@ -1983,6 +2005,9 @@ export const coreTokens: SpectreGeneratedTokens = {
       },
       "focusRing": {
         "value": "{colors.info.500} / 0.4"
+      },
+      "focusVisible": {
+        "value": "{buttons.ghost.focusRing.value}"
       }
     },
     "danger": {
@@ -2114,6 +2139,9 @@ export const coreTokens: SpectreGeneratedTokens = {
       },
       "focusRing": {
         "value": "{colors.accent.500} / 0.4"
+      },
+      "focusVisible": {
+        "value": "{buttons.accent.focusRing.value}"
       }
     }
   },
@@ -2146,6 +2174,14 @@ export const coreTokens: SpectreGeneratedTokens = {
       },
       "ring": {
         "value": "{colors.info.500}"
+      }
+    },
+    "focusVisible": {
+      "border": {
+        "value": "{forms.focus.border.value}"
+      },
+      "ring": {
+        "value": "{forms.focus.ring.value}"
       }
     },
     "valid": {
@@ -3106,10 +3142,6 @@ export const coreTokens: SpectreGeneratedTokens = {
     },
     "minTouchTarget": "44px",
     "minTextSize": "16px"
-  },
-  "borders": {
-    "card": "{colors.neutral.200}",
-    "input": "{colors.neutral.300}"
   },
   "border": {
     "width": {

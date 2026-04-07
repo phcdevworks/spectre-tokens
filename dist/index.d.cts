@@ -262,6 +262,9 @@ interface SpectreGeneratedTokens {
             focusRing: {
                 value: string;
             };
+            focusVisible: {
+                value: string;
+            };
         };
         secondary: {
             bg: {
@@ -300,6 +303,9 @@ interface SpectreGeneratedTokens {
             focusRing: {
                 value: string;
             };
+            focusVisible: {
+                value: string;
+            };
         };
         ghost: {
             bg: {
@@ -327,6 +333,9 @@ interface SpectreGeneratedTokens {
                 value: string;
             };
             focusRing: {
+                value: string;
+            };
+            focusVisible: {
                 value: string;
             };
         };
@@ -460,6 +469,9 @@ interface SpectreGeneratedTokens {
             focusRing: {
                 value: string;
             };
+            focusVisible: {
+                value: string;
+            };
         };
     };
     forms: {
@@ -486,6 +498,14 @@ interface SpectreGeneratedTokens {
             };
         };
         focus: {
+            border: {
+                value: string;
+            };
+            ring: {
+                value: string;
+            };
+        };
+        focusVisible: {
             border: {
                 value: string;
             };
@@ -1451,10 +1471,6 @@ interface SpectreGeneratedTokens {
         };
         minTouchTarget: string;
         minTextSize: string;
-    };
-    borders: {
-        card: string;
-        input: string;
     };
     border: {
         width: {

@@ -263,7 +263,7 @@
         "value": "{colors.info.500} / 0.4"
       },
       "focusVisible": {
-        "value": "{buttons.primary.focusRing}"
+        "value": "{buttons.primary.focusRing.value}"
       }
     },
     "secondary": {
@@ -304,7 +304,7 @@
         "value": "{colors.info.500} / 0.4"
       },
       "focusVisible": {
-        "value": "{buttons.secondary.focusRing}"
+        "value": "{buttons.secondary.focusRing.value}"
       }
     },
     "ghost": {
@@ -336,7 +336,7 @@
         "value": "{colors.info.500} / 0.4"
       },
       "focusVisible": {
-        "value": "{buttons.ghost.focusRing}"
+        "value": "{buttons.ghost.focusRing.value}"
       }
     },
     "danger": {
@@ -470,7 +470,7 @@
         "value": "{colors.accent.500} / 0.4"
       },
       "focusVisible": {
-        "value": "{buttons.accent.focusRing}"
+        "value": "{buttons.accent.focusRing.value}"
       }
     }
   },
@@ -507,10 +507,10 @@
     },
     "focusVisible": {
       "border": {
-        "value": "{forms.focus.border}"
+        "value": "{forms.focus.border.value}"
       },
       "ring": {
-        "value": "{forms.focus.ring}"
+        "value": "{forms.focus.ring.value}"
       }
     },
     "valid": {

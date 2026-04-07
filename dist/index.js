@@ -262,6 +262,9 @@ var coreTokens = {
       },
       "focusRing": {
         "value": "{colors.info.500} / 0.4"
+      },
+      "focusVisible": {
+        "value": "{buttons.primary.focusRing.value}"
       }
     },
     "secondary": {
@@ -300,6 +303,9 @@ var coreTokens = {
       },
       "focusRing": {
         "value": "{colors.info.500} / 0.4"
+      },
+      "focusVisible": {
+        "value": "{buttons.secondary.focusRing.value}"
       }
     },
     "ghost": {
@@ -329,6 +335,9 @@ var coreTokens = {
       },
       "focusRing": {
         "value": "{colors.info.500} / 0.4"
+      },
+      "focusVisible": {
+        "value": "{buttons.ghost.focusRing.value}"
       }
     },
     "danger": {
@@ -460,6 +469,9 @@ var coreTokens = {
       },
       "focusRing": {
         "value": "{colors.accent.500} / 0.4"
+      },
+      "focusVisible": {
+        "value": "{buttons.accent.focusRing.value}"
       }
     }
   },
@@ -492,6 +504,14 @@ var coreTokens = {
       },
       "ring": {
         "value": "{colors.info.500}"
+      }
+    },
+    "focusVisible": {
+      "border": {
+        "value": "{forms.focus.border.value}"
+      },
+      "ring": {
+        "value": "{forms.focus.ring.value}"
       }
     },
     "valid": {
@@ -1452,10 +1472,6 @@ var coreTokens = {
     },
     "minTouchTarget": "44px",
     "minTextSize": "16px"
-  },
-  "borders": {
-    "card": "{colors.neutral.200}",
-    "input": "{colors.neutral.300}"
   },
   "border": {
     "width": {

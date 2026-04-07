@@ -250,6 +250,7 @@
   --sp-button-primary-text: #ffffff;
   --sp-button-primary-textdisabled: #8a96ad;
   --sp-button-primary-focusring: rgba(14, 165, 233, 0.4);
+  --sp-button-primary-focusvisible: {colors.info.500} / 0.4;
   --sp-button-secondary-bg: #ffffff;
   --sp-button-secondary-bghover: #f7f8fb;
   --sp-button-secondary-bgactive: #eef1f6;
@@ -259,6 +260,7 @@
   --sp-button-secondary-border: #075985;
   --sp-button-secondary-borderdisabled: #d9dfeb;
   --sp-button-secondary-focusring: rgba(14, 165, 233, 0.4);
+  --sp-button-secondary-focusvisible: {colors.info.500} / 0.4;
   --sp-button-ghost-bg: transparent;
   --sp-button-ghost-bghover: #f0f9ff;
   --sp-button-ghost-bgactive: #e0f2fe;
@@ -266,6 +268,7 @@
   --sp-button-ghost-text: #075985;
   --sp-button-ghost-textdisabled: #8a96ad;
   --sp-button-ghost-focusring: rgba(14, 165, 233, 0.4);
+  --sp-button-ghost-focusvisible: {colors.info.500} / 0.4;
   --sp-button-danger-bg: #dc2626;
   --sp-button-danger-bghover: #b91c1c;
   --sp-button-danger-bgactive: #991b1b;
@@ -295,6 +298,7 @@
   --sp-button-accent-text: #ffffff;
   --sp-button-accent-textdisabled: #8a96ad;
   --sp-button-accent-focusring: rgba(133, 79, 247, 0.4);
+  --sp-button-accent-focusvisible: {colors.accent.500} / 0.4;
   --sp-form-default-bg: #ffffff;
   --sp-form-default-border: #b7c1d4;
   --sp-form-default-text: #141b24;
@@ -302,6 +306,8 @@
   --sp-form-hover-border: #0ea5e9;
   --sp-form-focus-border: #0ea5e9;
   --sp-form-focus-ring: #0ea5e9;
+  --sp-form-focusvisible-border: {colors.info.500};
+  --sp-form-focusvisible-ring: {colors.info.500};
   --sp-form-valid-border: #22c55e;
   --sp-form-valid-bg: #f0fdf4;
   --sp-form-valid-text: #15803d;
