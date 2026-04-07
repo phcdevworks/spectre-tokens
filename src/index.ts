@@ -17,7 +17,7 @@ const sanitizeFontFamily = (value: string): string[] =>
     .map((segment) => segment.trim().replace(/^['"]|['"]$/g, ''))
     .filter(Boolean);
 
-const createTailwindTheme = (source: Tokens = tokens as Tokens): TailwindTheme => {
+const createTailwindTheme = (source: Tokens = tokens): TailwindTheme => {
   const colors: TailwindTheme['colors'] = {};
   Object.entries(source.colors).forEach(([group, value]) => {
     if (typeof value === 'object' && value !== null) {
@@ -66,7 +66,7 @@ const createTailwindTheme = (source: Tokens = tokens as Tokens): TailwindTheme =
   };
 }
 
-export const tailwindTheme = createTailwindTheme(tokens as Tokens);
+export const tailwindTheme = createTailwindTheme(tokens);
 export const tailwindPreset = {
   theme: tailwindTheme
 };

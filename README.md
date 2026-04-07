@@ -109,6 +109,10 @@ The generated token object includes these namespaces:
 - `component`
 - `modes`
 
+The exported runtime token object is a flattened string-based tree generated
+from `tokens/`. Source-only wrapper fields such as `value` and `metadata` are
+internal generation details and are not part of the public package contract.
+
 ### Themes and modes
 
 The package includes mode-aware semantic tokens under `modes`, with `default`

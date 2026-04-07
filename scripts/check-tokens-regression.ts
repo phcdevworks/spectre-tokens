@@ -1,10 +1,23 @@
 import tokens from '../src/index';
+import type { SpectreTokens } from '../src/types';
 
 const REQUIRED_PATHS = [
   'colors.brand',
   'surface.page',
   'text.onPage.default',
   'text.onSurface.default'
+];
+
+const REQUIRED_STRING_PATHS = [
+  'surface.page',
+  'component.card.text',
+  'buttons.primary.bg',
+  'forms.default.border',
+  'modes.default.surface.page'
+];
+
+const BANNED_PATHS = [
+  'borders'
 ];
 
 const getPathValue = (obj: unknown, path: string): unknown =>
@@ -16,9 +29,10 @@ const getPathValue = (obj: unknown, path: string): unknown =>
   }, obj);
 
 const missing: string[] = [];
+const publicTokens = tokens as SpectreTokens;
 
 for (const path of REQUIRED_PATHS) {
-  const value = getPathValue(tokens, path);
+  const value = getPathValue(publicTokens, path);
   if (value === undefined) {
     missing.push(path);
   }
@@ -29,12 +43,44 @@ if (missing.length > 0) {
   process.exit(1);
 }
 
-if ('spacing' in (tokens as unknown as Record<string, unknown>)) {
+if ('spacing' in (publicTokens as unknown as Record<string, unknown>)) {
   console.error('Token regression detected. Do not reintroduce tokens.spacing; use tokens.space and tokens.layout only.');
   process.exit(1);
 }
 
-const spaceEntries = tokens.space as unknown as Record<string, unknown> | undefined;
+for (const path of BANNED_PATHS) {
+  if (getPathValue(publicTokens, path) !== undefined) {
+    console.error(`Token regression detected. Do not reintroduce tokens.${path}; use tokens.border only.`);
+    process.exit(1);
+  }
+}
+
+for (const path of REQUIRED_STRING_PATHS) {
+  const value = getPathValue(publicTokens, path);
+  if (typeof value !== 'string') {
+    console.error(`Token regression detected. ${path} must be a flattened string in the public token contract.`);
+    process.exit(1);
+  }
+}
+
+const assertNoWrappedEntries = (value: unknown, path: string[] = []): void => {
+  if (!value || typeof value !== 'object') return;
+
+  const record = value as Record<string, unknown>;
+  if ('value' in record || 'metadata' in record) {
+    const label = path.length > 0 ? path.join('.') : '<root>';
+    console.error(`Token regression detected. Public tokens must not expose wrapped token entries at ${label}.`);
+    process.exit(1);
+  }
+
+  Object.entries(record).forEach(([key, entry]) => {
+    assertNoWrappedEntries(entry, [...path, key]);
+  });
+};
+
+assertNoWrappedEntries(publicTokens);
+
+const spaceEntries = publicTokens.space as unknown as Record<string, unknown> | undefined;
 if (!spaceEntries || Object.keys(spaceEntries).length === 0) {
   console.error('Token regression detected. Missing tokens.space scale.');
   process.exit(1);
@@ -73,7 +119,7 @@ const getPathValueArray = (obj: unknown, path: string[]): unknown =>
   }, obj);
 
 const ensureLayoutValue = (path: string[]) => {
-  const value = getPathValueArray(tokens, path);
+  const value = getPathValueArray(publicTokens, path);
   const name = path.join('.');
   if (typeof value !== 'string') {
     console.error(`Token regression detected. ${name} must be a string that maps to tokens.space values.`);
