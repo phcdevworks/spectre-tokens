@@ -70,6 +70,7 @@ var coreTokens = {
     },
     "testimonial": {
       "bg": "{colors.white}",
+      "bgHover": "{colors.neutral.50}",
       "border": "{colors.neutral.200}",
       "text": "{colors.neutral.700}",
       "authorName": "{colors.neutral.900}",
@@ -78,6 +79,7 @@ var coreTokens = {
     },
     "pricingCard": {
       "bg": "{colors.white}",
+      "bgHover": "{colors.neutral.50}",
       "border": "{colors.neutral.200}",
       "featuredBg": "{colors.info.600}",
       "featuredText": "{colors.white}",
@@ -261,6 +263,7 @@ var coreTokens = {
         },
         "testimonial": {
           "bg": "{colors.white}",
+          "bgHover": "{colors.neutral.50}",
           "border": "{colors.neutral.200}",
           "text": "{colors.neutral.700}",
           "authorName": "{colors.neutral.900}",
@@ -269,6 +272,7 @@ var coreTokens = {
         },
         "pricingCard": {
           "bg": "{colors.white}",
+          "bgHover": "{colors.neutral.50}",
           "border": "{colors.neutral.200}",
           "featuredBg": "{colors.info.600}",
           "featuredText": "{colors.white}",
@@ -349,6 +353,7 @@ var coreTokens = {
         },
         "testimonial": {
           "bg": "{colors.neutral.800}",
+          "bgHover": "{colors.neutral.700}",
           "border": "{colors.neutral.700}",
           "text": "{colors.neutral.200}",
           "authorName": "{colors.neutral.100}",
@@ -357,6 +362,7 @@ var coreTokens = {
         },
         "pricingCard": {
           "bg": "{colors.neutral.800}",
+          "bgHover": "{colors.neutral.700}",
           "border": "{colors.neutral.700}",
           "featuredBg": "{colors.info.600}",
           "featuredText": "{colors.white}",
