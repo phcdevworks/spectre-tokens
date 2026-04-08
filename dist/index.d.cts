@@ -39,6 +39,7 @@ interface SpectreGeneratedTokens {
         };
         testimonial: {
             bg: string;
+            bgHover: string;
             border: string;
             text: string;
             authorName: string;
@@ -47,6 +48,7 @@ interface SpectreGeneratedTokens {
         };
         pricingCard: {
             bg: string;
+            bgHover: string;
             border: string;
             featuredBg: string;
             featuredText: string;
@@ -230,6 +232,7 @@ interface SpectreGeneratedTokens {
                 };
                 testimonial: {
                     bg: string;
+                    bgHover: string;
                     border: string;
                     text: string;
                     authorName: string;
@@ -238,6 +241,7 @@ interface SpectreGeneratedTokens {
                 };
                 pricingCard: {
                     bg: string;
+                    bgHover: string;
                     border: string;
                     featuredBg: string;
                     featuredText: string;
@@ -318,6 +322,7 @@ interface SpectreGeneratedTokens {
                 };
                 testimonial: {
                     bg: string;
+                    bgHover: string;
                     border: string;
                     text: string;
                     authorName: string;
@@ -326,6 +331,7 @@ interface SpectreGeneratedTokens {
                 };
                 pricingCard: {
                     bg: string;
+                    bgHover: string;
                     border: string;
                     featuredBg: string;
                     featuredText: string;
