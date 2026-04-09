@@ -239,6 +239,12 @@
               "pair": "modes.default.component.testimonial.text"
             }
           },
+          "bgHover": {
+            "value": "{colors.neutral.50}",
+            "metadata": {
+              "pair": "modes.default.component.testimonial.text"
+            }
+          },
           "border": {
             "value": "{colors.neutral.200}",
             "metadata": {}
@@ -269,6 +275,12 @@
         "pricingCard": {
           "bg": {
             "value": "{colors.white}",
+            "metadata": {
+              "pair": "modes.default.component.pricingCard.price"
+            }
+          },
+          "bgHover": {
+            "value": "{colors.neutral.50}",
             "metadata": {
               "pair": "modes.default.component.pricingCard.price"
             }
@@ -589,6 +601,12 @@
               "pair": "modes.dark.component.testimonial.text"
             }
           },
+          "bgHover": {
+            "value": "{colors.neutral.700}",
+            "metadata": {
+              "pair": "modes.dark.component.testimonial.text"
+            }
+          },
           "border": {
             "value": "{colors.neutral.700}",
             "metadata": {}
@@ -619,6 +637,12 @@
         "pricingCard": {
           "bg": {
             "value": "{colors.neutral.800}",
+            "metadata": {
+              "pair": "modes.dark.component.pricingCard.price"
+            }
+          },
+          "bgHover": {
+            "value": "{colors.neutral.700}",
             "metadata": {
               "pair": "modes.dark.component.pricingCard.price"
             }
