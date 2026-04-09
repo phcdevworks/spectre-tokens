@@ -675,6 +675,26 @@ interface SpectreGeneratedTokens {
             lineHeight: string;
             weight: number;
         };
+        '3xl': {
+            size: string;
+            lineHeight: string;
+            weight: number;
+        };
+        '4xl': {
+            size: string;
+            lineHeight: string;
+            weight: number;
+        };
+        '5xl': {
+            size: string;
+            lineHeight: string;
+            weight: number;
+        };
+        '6xl': {
+            size: string;
+            lineHeight: string;
+            weight: number;
+        };
     };
     typography: {
         families: {

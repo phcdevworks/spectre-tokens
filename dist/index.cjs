@@ -694,7 +694,7 @@ var coreTokens = {
     "lg": {
       "size": "1.25rem",
       "lineHeight": "2rem",
-      "weight": 500
+      "weight": 600
     },
     "xl": {
       "size": "1.5rem",
@@ -704,7 +704,27 @@ var coreTokens = {
     "2xl": {
       "size": "1.875rem",
       "lineHeight": "2.5rem",
-      "weight": 600
+      "weight": 700
+    },
+    "3xl": {
+      "size": "2.25rem",
+      "lineHeight": "2.75rem",
+      "weight": 700
+    },
+    "4xl": {
+      "size": "3rem",
+      "lineHeight": "3.5rem",
+      "weight": 800
+    },
+    "5xl": {
+      "size": "3.75rem",
+      "lineHeight": "4.25rem",
+      "weight": 800
+    },
+    "6xl": {
+      "size": "4.5rem",
+      "lineHeight": "5rem",
+      "weight": 900
     }
   },
   "typography": {
