@@ -146,6 +146,12 @@
           "pair": "component.testimonial.text"
         }
       },
+      "bgHover": {
+        "value": "{colors.neutral.50}",
+        "metadata": {
+          "pair": "component.testimonial.text"
+        }
+      },
       "border": {
         "value": "{colors.neutral.200}"
       },
@@ -174,6 +180,12 @@
     "pricingCard": {
       "bg": {
         "value": "{colors.white}",
+        "metadata": {
+          "pair": "component.pricingCard.price"
+        }
+      },
+      "bgHover": {
+        "value": "{colors.neutral.50}",
         "metadata": {
           "pair": "component.pricingCard.price"
         }
