@@ -1,0 +1,11 @@
+steps:
+  - label: ':node: spectre-tokens verify'
+    key: 'verify'
+    command:
+      - 'npm ci'
+      - 'npm run check'
+    agents:
+      queue: 'default'
+    artifact_paths:
+      - 'dist/**/*'
+    timeout_in_minutes: 15
