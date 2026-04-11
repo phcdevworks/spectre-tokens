@@ -851,6 +851,7 @@ export interface SpectreSourceTokens {
           quoteMark: {
             value: string;
             metadata: {
+              pair: string;
             };
           };
         };
@@ -1226,6 +1227,7 @@ export interface SpectreSourceTokens {
           quoteMark: {
             value: string;
             metadata: {
+              pair: string;
             };
           };
         };
@@ -2724,7 +2726,7 @@ export const coreTokens: SpectreGeneratedTokens = {
           "text": "{colors.neutral.700}",
           "authorName": "{colors.neutral.900}",
           "authorTitle": "{colors.neutral.500}",
-          "quoteMark": "{colors.neutral.300}"
+          "quoteMark": "{colors.neutral.500}"
         },
         "pricingCard": {
           "bg": "{colors.white}",
@@ -2814,7 +2816,7 @@ export const coreTokens: SpectreGeneratedTokens = {
           "text": "{colors.neutral.200}",
           "authorName": "{colors.neutral.100}",
           "authorTitle": "{colors.neutral.400}",
-          "quoteMark": "{colors.neutral.600}"
+          "quoteMark": "{colors.neutral.400}"
         },
         "pricingCard": {
           "bg": "{colors.neutral.800}",
