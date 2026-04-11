@@ -174,7 +174,10 @@
         }
       },
       "quoteMark": {
-        "value": "{colors.neutral.300}"
+        "value": "{colors.neutral.500}",
+        "metadata": {
+          "pair": "component.testimonial.bg"
+        }
       }
     },
     "pricingCard": {
