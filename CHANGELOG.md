@@ -6,6 +6,44 @@ reflects package releases published to npm.
 
 ## [Unreleased]
 
+## [2.2.0] - 2026-04-11
+
+**Release Title:** Contract Alignment and Interaction Coverage
+
+### Added
+
+- Added `focusVisible` token aliases for supported button variants plus a
+  top-level `forms.focusVisible` block to keep focus styling consistent across
+  the token contract.
+- Added `bgHover` interaction-state tokens for `pricingCard` and
+  `testimonial`, including mode-aware overrides and contrast-pair metadata for
+  validation coverage.
+- Added a Buildkite verification pipeline for repository validation alongside
+  the existing GitHub Actions workflow.
+
+### Changed
+
+- Flattened the generated public token tree to string values so the generated
+  TypeScript contract now matches the runtime export and keeps internal
+  `{ value, metadata }` wrappers private to source generation.
+- Synchronized the derived `font` scale with `typography.scale`, including the
+  missing larger size entries and corrected font weights.
+- Preserved the built `dist/index.css` artifact in published outputs and
+  clarified packaging behavior with `sideEffects`.
+- Clarified token contract rules, release hygiene, and validation expectations
+  across repository documentation and agent guidance.
+- Refined dependency-management automation and bumped development tooling to
+  current compatible versions.
+
+### Fixed
+
+- Aligned `component.card.textMuted` with the muted semantic role in default
+  mode.
+- Aligned dark-mode `iconBox.iconDefault` tokens more consistently with the
+  rest of the icon-box color system.
+- Improved testimonial `quoteMark` contrast and expanded contrast-validation
+  coverage for that component.
+
 ## [2.1.2] - 2026-04-05
 
 **Release Title:** Validation Guardrails and CI
