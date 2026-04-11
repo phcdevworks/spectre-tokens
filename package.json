@@ -48,7 +48,9 @@
     "dist",
     "tokens"
   ],
-  "sideEffects": false,
+  "sideEffects": [
+    "./dist/index.css"
+  ],
   "scripts": {
     "generate": "tsx scripts/generate-types.ts",
     "prebuild": "npm run generate",
