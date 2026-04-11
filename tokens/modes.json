@@ -268,8 +268,10 @@
             }
           },
           "quoteMark": {
-            "value": "{colors.neutral.300}",
-            "metadata": {}
+            "value": "{colors.neutral.500}",
+            "metadata": {
+              "pair": "modes.default.component.testimonial.bg"
+            }
           }
         },
         "pricingCard": {
@@ -630,8 +632,10 @@
             }
           },
           "quoteMark": {
-            "value": "{colors.neutral.600}",
-            "metadata": {}
+            "value": "{colors.neutral.400}",
+            "metadata": {
+              "pair": "modes.dark.component.testimonial.bg"
+            }
           }
         },
         "pricingCard": {
