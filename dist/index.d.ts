@@ -649,6 +649,7 @@ interface SpectreGeneratedTokens {
             size: string;
             lineHeight: string;
             weight: number;
+            letterSpacing: string;
         };
         sm: {
             size: string;
