@@ -45,7 +45,7 @@ var coreTokens = {
       "text": "{colors.neutral.700}",
       "authorName": "{colors.neutral.900}",
       "authorTitle": "{colors.neutral.500}",
-      "quoteMark": "{colors.neutral.300}"
+      "quoteMark": "{colors.neutral.500}"
     },
     "pricingCard": {
       "bg": "{colors.white}",
