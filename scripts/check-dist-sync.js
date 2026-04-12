@@ -19,6 +19,7 @@ function run(command, args, options = {}) {
 
   if (result.error) {
     throw result.error;
+  }
 
   return result;
 }
