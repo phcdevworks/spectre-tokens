@@ -57,6 +57,7 @@
     "build": "npm run build:ts && npm run build:css",
     "build:ts": "tsup --config tsup.config.ts",
     "build:css": "tsx scripts/build-css.ts",
+    "check:dist": "node scripts/check-dist-sync.js",
     "check:structure": "tsx scripts/assert-core-tokens.ts",
     "check:locked": "tsx scripts/check-locked-color-contracts.ts",
     "check:contrast": "tsx scripts/check-contrast.ts",
@@ -65,7 +66,8 @@
     "format": "prettier --write .",
     "check": "npm run build && npm run check:structure && npm run check:locked && npm run check:contrast && npm run check:regression && npm run lint",
     "check:all": "npm run check",
-    "test": "npm run check"
+    "test": "npm run check",
+    "prepublishOnly": "npm run check:dist"
   },
   "publishConfig": {
     "access": "public"
