@@ -1621,6 +1621,7 @@ export interface SpectreSourceTokens {
       size: string;
       lineHeight: string;
       weight: number;
+      letterSpacing: string;
     };
     sm: {
       size: string;
@@ -2381,6 +2382,7 @@ export interface SpectreGeneratedTokens {
       size: string;
       lineHeight: string;
       weight: number;
+      letterSpacing: string;
     };
     sm: {
       size: string;
@@ -3140,7 +3142,8 @@ export const coreTokens: SpectreGeneratedTokens = {
     "xs": {
       "size": "0.75rem",
       "lineHeight": "1.25rem",
-      "weight": 400
+      "weight": 400,
+      "letterSpacing": "0.02em"
     },
     "sm": {
       "size": "0.875rem",

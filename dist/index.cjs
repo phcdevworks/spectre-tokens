@@ -679,7 +679,8 @@ var coreTokens = {
     "xs": {
       "size": "0.75rem",
       "lineHeight": "1.25rem",
-      "weight": 400
+      "weight": 400,
+      "letterSpacing": "0.02em"
     },
     "sm": {
       "size": "0.875rem",
