@@ -67,7 +67,7 @@
     "check": "npm run build && npm run check:structure && npm run check:locked && npm run check:contrast && npm run check:regression && npm run lint",
     "check:all": "npm run check",
     "test": "npm run check",
-    "prepublishOnly": "npm run check:dist"
+    "prepublishOnly": "npm run check && npm run check:dist"
   },
   "publishConfig": {
     "access": "public"
