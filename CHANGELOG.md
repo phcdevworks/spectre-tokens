@@ -6,6 +6,13 @@ reflects package releases published to npm.
 
 ## [Unreleased]
 
+### Changed
+
+- Tightened the publish gate to run the full validation suite before verifying
+  `dist` sync to prevent releases without contract checks.
+- Aligned `font.xs` with `typography.scale.xs` to keep the font scale consistent
+  with the canonical typography sizing.
+
 ## [2.2.0] - 2026-04-11
 
 **Release Title:** Contract Alignment and Interaction Coverage
