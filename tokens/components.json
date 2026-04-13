@@ -16,13 +16,13 @@
     },
     "input": {
       "text": {
-        "value": "{colors.neutral.900}",
+        "value": "{forms.default.text}",
         "metadata": {
-          "pair": "surface.input"
+          "pair": "forms.default.bg"
         }
       },
       "placeholder": {
-        "value": "{colors.neutral.500}",
+        "value": "{forms.default.placeholder}",
         "metadata": {
           "pair": "forms.default.bg"
         }
@@ -498,7 +498,10 @@
         "value": "{colors.neutral.300}"
       },
       "text": {
-        "value": "{colors.neutral.900}"
+        "value": "{colors.neutral.900}",
+        "metadata": {
+          "pair": "forms.default.bg"
+        }
       },
       "placeholder": {
         "value": "{colors.neutral.500}",
