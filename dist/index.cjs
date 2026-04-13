@@ -36,8 +36,8 @@ var coreTokens = {
       "textMuted": "{colors.neutral.500}"
     },
     "input": {
-      "text": "{colors.neutral.900}",
-      "placeholder": "{colors.neutral.500}"
+      "text": "{forms.default.text}",
+      "placeholder": "{forms.default.placeholder}"
     },
     "button": {
       "textDefault": "{colors.neutral.900}",
