@@ -1,176 +1,334 @@
-# Roadmap
+# ROADMAP.md
 
-## Purpose
+# Spectre Tokens Roadmap
 
-`@phcdevworks/spectre-tokens` is the contract authority for Spectre token
-meaning. The roadmap is focused on keeping this package a trusted foundation
-for downstream UI packages, adapters, and compatible consumers.
+This roadmap is grounded in the current repository shape and public contract of
+`@phcdevworks/spectre-tokens` as it exists today.
 
-The priorities below are intentionally narrow:
+`@phcdevworks/spectre-tokens` is the authoritative contract layer for token
+meaning across the Spectre system. It owns token definitions, semantic token
+contracts, modes/themes, and the generated outputs consumed by downstream
+packages. Its job is not to model component structure or framework behavior. Its
+job is to keep token meaning stable, enforceable, and safe to consume.
 
-- protect determinism
-- protect public contract integrity
-- improve downstream safety
-- avoid expanding this repo into UI composition or framework behavior
+The work below is focused on strengthening determinism, contract authority,
+parity validation, and downstream safety without expanding package scope.
 
-## Current strengths
+## 1. Current Repo Assessment
 
-- `tokens/` is the source of truth
-- generated JS, TS, CSS, and Tailwind outputs are in place
-- contract authority exists in `contract.manifest.json`
-- validation fails fast for contract drift
-- consumer smoke validation exists for JS, TS, CSS, and Tailwind usage
-- protected semantic groups are documented and validated
+### Current strengths
 
-## P0: Foundation
+- The repo already treats `tokens/` as the source of truth.
+- The package already generates and publishes multiple consumer-facing surfaces:
+  - runtime JS
+  - generated TypeScript
+  - CSS variables
+  - Tailwind exports
+- Validation is already a first-class concern and is expected to run through the
+  main check flow.
+- The roadmap direction is already correctly centered on one machine-readable
+  contract anchor.
+- The package is already framed as upstream authority for downstream Spectre
+  packages, not as a general UI package.
 
-### 1. Keep contract authority authoritative
+### Current gaps to harden
 
-Objective:
-Keep `contract.manifest.json`, generated outputs, and contract docs aligned.
+- Token merge behavior must stay deterministic and must fail on duplicate path
+  ownership.
+- Public contract parity must be enforced across all published surfaces, not
+  inferred loosely from generation success.
+- Docs must stay executable against the declared contract, not manually trusted.
+- Dist sync and contract validation must be part of the main merge path, not
+  only a release concern.
+- Contract-impacting changes must be classified consistently for downstream
+  consumers.
+- Consumer validation should prove the real supported install paths, not only
+  source-level correctness.
 
-Why it matters:
-Downstream packages need one trustworthy contract surface.
+### Missing policy, docs, or tests that would improve downstream safety
 
-Deliverables:
+- File-targeted, maintainable contract validation built around
+  `contract.manifest.json`
+- Clear maintainer-facing mapping of which script/test protects which contract
+  surface
+- A more explicit execution order so contributors harden the contract in the
+  right sequence
+- More implementation-specific TODO guidance for contract-critical files
 
-- maintain `contract.manifest.json` as the single machine-readable contract
-  source
-- keep `README.md` and `TOKEN_CONTRACT.md` aligned with the manifest
-- keep contract checks in the main `npm run check` gate
+## 2. Roadmap
 
-Dependencies:
+## P0: Contract Integrity / Must-Do
 
-- current validation scripts
+### P0.1 Contract Authority in One Place
 
-Risk if skipped:
+Objective Use `contract.manifest.json` as the single machine-readable contract
+source for public token namespaces, required generated outputs, and protected
+semantic groups.
 
-- docs and outputs drift even when token data looks correct
+Why it matters This repo is the root authority for token meaning. Contract logic
+should be declared once and enforced from that declaration, not reconstructed
+separately from source, docs, and emitted artifacts.
 
-### 2. Preserve deterministic token generation
+Suggested deliverables
 
-Objective:
-Prevent silent token overwrite or merge-order drift.
+- Keep `contract.manifest.json` as the contract anchor
+- Ensure contract validation reads from it directly
+- Keep `README.md` and `TOKEN_CONTRACT.md` aligned to it
+- Ensure the contract anchor stays inside the normal `npm run check` path
 
-Why it matters:
-Source token changes must produce stable, predictable outputs.
+Dependency notes
 
-Deliverables:
+- This is the first move because downstream parity work should depend on it
 
-- keep deterministic token file loading
-- keep duplicate token-path ownership checks
-- extend those checks only if future token file structure changes require it
+Risk if skipped
 
-Dependencies:
+- Contract enforcement remains fragmented
+- Drift becomes harder to detect cleanly
 
-- `scripts/token-utils.ts`
+### P0.2 Deterministic Token Assembly
 
-Risk if skipped:
+Objective Make token loading deterministic and fail hard on duplicate token-path
+ownership.
 
-- source changes can silently alter the public contract
+Why it matters This repo cannot allow merge-order ambiguity. Silent overwrite
+behavior is dangerous in a token authority package because it changes meaning
+without an explicit decision.
 
-### 3. Protect downstream consumption paths
+Suggested deliverables
 
-Objective:
-Keep real consumer usage working for runtime tokens, CSS import, and Tailwind
-integration.
+- Stabilize token source load order
+- Fail validation on duplicate token-path ownership
+- Keep errors path-based and easy to act on
 
-Why it matters:
-Internal parity is not enough if downstream consumers cannot import the package
-the intended way.
+Dependency notes
 
-Deliverables:
+- Should happen immediately after contract authority is established
 
-- keep the smoke consumer fixture current
-- keep JS/TS/CSS/Tailwind import paths stable
-- keep failure messages readable for consumer-facing regressions
+Risk if skipped
 
-Dependencies:
+- Token meaning can drift silently through accidental overlap
 
-- `example/smoke-consumer`
-- `scripts/check-consumer-smoke.ts`
+### P0.3 Cross-Surface Contract Parity
 
-Risk if skipped:
+Objective Enforce parity across runtime JS, generated TS, CSS variables, and
+Tailwind outputs.
 
-- package exports can remain internally consistent while breaking consumers
+Why it matters A token contract package is only trustworthy if all public
+consumption surfaces reflect the same declared meaning.
 
-## P1: Next priority
+Suggested deliverables
 
-### 4. Tighten contract-doc discoverability
+- Validate namespace parity across all emitted surfaces
+- Fail on missing or undocumented outputs
+- Keep checks centered on declared public contract surfaces only
 
-Objective:
-Make contract rules easier to find for maintainers and downstream consumers.
+Dependency notes
 
-Why it matters:
-The repo now has strong contract rules, but discoverability still depends on
-reading multiple files.
+- Depends on the contract manifest
+- Should be complete before downstream smoke validation is treated as
+  authoritative
 
-Deliverables:
+Risk if skipped
 
-- link `TOKEN_CONTRACT.md`, `ROADMAP.md`, and `TODO.md` from `README.md`
-- keep contributor and consumer guidance cross-referenced
+- One consumer path can drift while others remain correct
 
-Dependencies:
+### P0.4 Documentation as Executable Contract
 
-- existing README and contract docs
+Objective Keep `README.md` and `TOKEN_CONTRACT.md` aligned to the
+machine-readable contract.
 
-Risk if skipped:
+Why it matters For public consumers, docs are part of the package surface. They
+must fail when they drift from the declared contract.
 
-- contract rules stay correct but harder to follow consistently
+Suggested deliverables
 
-### 5. Expand tokens only for proven semantic demand
+- Validate documented namespaces and supported outputs against
+  `contract.manifest.json`
+- Keep validation focused on contract-facing docs, not prose styling
+- Ensure doc drift fails inside the main check path
 
-Objective:
-Add only narrow, reusable semantic coverage when downstream demand is real.
+Dependency notes
 
-Why it matters:
-This repo should complete semantic contracts, not absorb component recipes.
+- Depends on the contract manifest and public-surface decisions being settled
 
-Deliverables:
+Risk if skipped
 
-- evaluate minimal semantic additions only when repeated downstream demand is
-  clear
-- prefer semantic contract completion over raw token proliferation
+- Consumers follow docs that no longer match the actual contract
 
-Dependencies:
+### P0.5 CI and Dist Enforcement
 
-- downstream package needs
-- current namespace and contract rules
+Objective Make stale generated artifacts and contract drift fail before merge.
 
-Risk if skipped:
+Why it matters This repo publishes generated outputs. Dist sync and contract
+checks must be part of merge discipline, not only release hygiene.
 
-- downstream packages may locally redefine repeated semantics
+Suggested deliverables
 
-## P2: Later
+- Keep `npm run check` as the authoritative gate
+- Ensure CI runs the full contract path
+- Ensure stale `dist` artifacts fail validation
 
-### 6. Improve maintainer reporting around contract changes
+Dependency notes
 
-Objective:
-Make contract-impacting changes easier to review and summarize.
+- Depends on the core contract checks being wired correctly
 
-Why it matters:
-The repo already classifies contract changes, but review communication can still
-be improved.
+Risk if skipped
 
-Deliverables:
+- Source and published artifacts can drift
 
-- clearer release note summaries for additive, semantic, and breaking changes
-- optional PR templates or checklist refinements focused on contract impact
+### P0.6 Classified Contract Change Enforcement
 
-Dependencies:
+Objective Require explicit contract change classification for contract-authority
+changes.
 
-- existing changelog classification flow
+Why it matters Downstream packages need to know whether a change is additive,
+semantic, or breaking.
 
-Risk if skipped:
+Suggested deliverables
 
-- contract changes stay safe but harder to review quickly
+- Enforce `additive`, `semantic change`, or `breaking` classification in
+  changelog/release flow for contract-impacting changes
+- Keep classification narrow to true contract changes
 
-## Explicit non-goals
+Dependency notes
 
-These do not belong on this roadmap for this repo:
+- Depends on the contract boundary being defined clearly
 
-- component anatomy ownership
-- styling recipe ownership
-- framework-specific theming behavior
-- adapter-specific runtime concerns
-- speculative raw token expansion without real downstream demand
+Risk if skipped
+
+- Downstream consumers cannot interpret upgrade impact cleanly
+
+### P0.7 Downstream Consumer Smoke Validation
+
+Objective Validate real consumer usage of the package across supported install
+paths.
+
+Why it matters Source correctness is not enough. The package must work the way
+downstream packages actually consume it.
+
+Suggested deliverables
+
+- Smoke validation for runtime token import
+- CSS import validation
+- Tailwind preset usage validation
+- Semantic token usage validation
+- Mode-aware usage validation
+
+Dependency notes
+
+- Best added after parity validation is strong
+
+Risk if skipped
+
+- Packaging or usage breakage can slip through despite correct source generation
+
+## P1: Maintainer and Consumer Clarity
+
+### P1.1 Improve Root Doc Discoverability
+
+Objective Make contract and planning docs easier to discover from the main
+package page.
+
+Why it matters Maintainers and public consumers should be able to find contract
+rules quickly.
+
+Suggested deliverables
+
+- Link `TOKEN_CONTRACT.md`, `ROADMAP.md`, and `TODO.md` from `README.md`
+
+Dependency notes
+
+- Low dependency
+
+Risk if skipped
+
+- Contract governance remains harder to discover than necessary
+
+### P1.2 Add a Maintainer Contract Summary
+
+Objective Add a short maintainer-facing summary for contract-impacting changes.
+
+Why it matters Maintainers should be able to see what must change when token
+contract surfaces move.
+
+Suggested deliverables
+
+- Add a concise summary to `README.md` or `CONTRIBUTING.md`
+- Focus on contract-impacting edits only
+
+Dependency notes
+
+- Best after P0 contract paths are stable
+
+Risk if skipped
+
+- Future maintainers can miss required contract updates
+
+### P1.3 Re-Evaluate Expansion Only on Proven Demand
+
+Objective Keep semantic expansion demand-led and token-layer appropriate.
+
+Why it matters This repo should complete semantic contracts where needed, not
+absorb UI structure or speculative growth.
+
+Suggested deliverables
+
+- Review proposed additions only against downstream demand
+- Reject anything that belongs in UI, components, or adapters
+
+Dependency notes
+
+- Only after the contract layer is stable
+
+Risk if skipped
+
+- The repo can bloat or drift into downstream ownership
+
+## P2: Later / Controlled Improvement
+
+### P2.1 Improve Release-Note Clarity
+
+Objective Make downstream impact easier to read in release notes.
+
+Why it matters A good contract repo should communicate upgrade impact cleanly.
+
+Suggested deliverables
+
+- Make additive, semantic, and breaking summaries more consistent
+
+Risk if skipped
+
+- Consumers will need to infer impact manually
+
+### P2.2 Keep Validation Messages Short and Actionable
+
+Objective Review whether failure output can be simplified further.
+
+Why it matters Contract checks should be strict without becoming noisy.
+
+Suggested deliverables
+
+- Keep errors path-based, short, and easy to act on
+
+Risk if skipped
+
+- Validation remains correct but less efficient to use
+
+## 3. Explicitly Out of Scope
+
+- Do not add component structure ownership here
+- Do not add framework-specific behavior here
+- Do not expand raw token families without proven downstream demand
+- Do not move styling, component anatomy, or adapter concerns into this repo
+
+## 4. Recommended Execution Order
+
+1. Lock `contract.manifest.json` as the contract authority
+2. Make token loading deterministic
+3. Enforce JS / TS / CSS / Tailwind parity
+4. Enforce docs against the machine-readable contract
+5. Move contract and dist enforcement fully into CI
+6. Add classified contract-change enforcement
+7. Add downstream smoke validation
+8. Improve maintainer and release clarity
+9. Revisit expansion only if downstream demand is proven
