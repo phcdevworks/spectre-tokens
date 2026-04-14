@@ -7,10 +7,17 @@ import { loadContractManifest } from './contract-utils';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const readmePath = join(__dirname, '../README.md');
+const tokenContractPath = join(__dirname, '../TOKEN_CONTRACT.md');
 const indexPath = join(__dirname, '../src/index.ts');
 const readme = readFileSync(readmePath, 'utf8');
+const tokenContract = readFileSync(tokenContractPath, 'utf8');
 const indexSource = readFileSync(indexPath, 'utf8');
 const manifest = loadContractManifest();
+
+manifest.docContract.requiredFiles.forEach((filePath) => {
+  const fullPath = join(__dirname, '..', filePath);
+  readFileSync(fullPath, 'utf8');
+});
 
 const tokenNamespaces = Object.keys(tokens).sort();
 const manifestNamespaces = [...manifest.publicNamespaces].sort();
@@ -62,4 +69,16 @@ manifest.requiredOutputs.js.rootExports
     }
   });
 
-console.log('README contract check passed.');
+manifest.docContract.tokenContractRequiredHeadings.forEach((heading) => {
+  if (!tokenContract.includes(heading)) {
+    throw new Error(`TOKEN_CONTRACT.md is missing required heading: ${heading}`);
+  }
+});
+
+manifest.publicNamespaces.forEach((namespace) => {
+  if (!tokenContract.includes(`- \`${namespace}\``)) {
+    throw new Error(`TOKEN_CONTRACT.md is missing public namespace: ${namespace}`);
+  }
+});
+
+console.log('README and TOKEN_CONTRACT contract checks passed.');
