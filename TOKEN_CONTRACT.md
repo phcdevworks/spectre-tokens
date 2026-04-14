@@ -1,0 +1,354 @@
+# Token Contract
+
+## Purpose
+
+`@phcdevworks/spectre-tokens` is the design-token package for the Spectre
+system.
+
+Its job is to define token meaning, semantic roles, mode-aware values, and
+generated token outputs that downstream Spectre packages and compatible
+applications can trust.
+
+This repository is the contract authority for token meaning.
+
+It does not own:
+
+- downstream UI structure or composition
+- framework adapters
+- local consumer reinterpretation of Spectre token meaning
+
+## Source Of Truth
+
+These rules apply in order:
+
+1. `tokens/` is the source of truth for token data.
+2. `contract.manifest.json` is the machine-readable source of truth for the
+   public token contract.
+3. Generated outputs must be derived from source data and must not be
+   hand-maintained.
+4. `README.md`, runtime exports, generated types, CSS output, Tailwind output,
+   and validation scripts must all describe the same public contract.
+
+Operationally:
+
+- Change token values in `tokens/`.
+- Change contract surface expectations in `contract.manifest.json`.
+- Regenerate outputs with `npm run build`.
+- Validate the full contract with `npm run check`.
+
+## What Is Public Contract
+
+The public contract of this package includes:
+
+- the runtime token object exported from the package root
+- the named root exports from `src/index.ts`
+- the generated TypeScript contract in `dist/index.d.ts`
+- the generated CSS entry point at `@phcdevworks/spectre-tokens/index.css`
+- the generated Tailwind theme and preset exports
+- the public namespaces declared in `contract.manifest.json`
+- the documented contract described in `README.md`
+
+The public contract does not include:
+
+- source-only wrapper records such as `{ value, metadata }`
+- implementation details of generation scripts
+- example pages in `example/`
+- internal helper behavior that is not exported
+
+## Public Stable Namespaces
+
+The current public top-level namespaces are:
+
+- `colors`
+- `space`
+- `layout`
+- `radii`
+- `typography`
+- `font`
+- `shadows`
+- `breakpoints`
+- `zIndex`
+- `transitions`
+- `animations`
+- `opacity`
+- `aspectRatios`
+- `icons`
+- `border`
+- `accessibility`
+- `buttons`
+- `forms`
+- `surface`
+- `text`
+- `component`
+- `modes`
+
+These namespaces are treated as public and stable unless intentionally changed
+through the contract process described in this document.
+
+## Protected Semantic Groups
+
+The following semantic groups are protected and must not change without
+explicit approval:
+
+- `success`
+- `warning`
+- `danger` semantic roles backed by the `error` palette
+- CTA / primary action / brand-action semantics backed by `brand` and
+  `buttons.cta`
+
+Repository guidance currently treats these groups as optimized and protected.
+This document formalizes that rule.
+
+## Runtime And Output Expectations
+
+This package currently guarantees these public output surfaces:
+
+- JavaScript runtime tokens
+- named exports for `tokens`, `tailwindTheme`, `tailwindPreset`, and
+  `generateCssVariables`
+- TypeScript contract exports including `SpectreTokens`, `TailwindTheme`,
+  `SpectreModeTokens`, and `SpectreModeName`
+- CSS variables in `dist/index.css`
+- Tailwind theme output derived from the token contract
+
+All of those outputs must remain aligned with `contract.manifest.json`.
+
+Validation is expected to fail fast on:
+
+- token overwrite across files in `tokens/`
+- undocumented namespaces
+- output drift across JS, CSS, and Tailwind
+- README mismatch with contract authority
+- stale `dist` artifacts
+
+## Semantic Tokens Vs Raw Palette Tokens
+
+Use semantic tokens as the default interface for downstream UI:
+
+- `surface`
+- `text`
+- `component`
+- `buttons`
+- `forms`
+- `modes`
+
+Use raw palette tokens from `colors` only when consumers need fixed color
+access and are intentionally opting out of semantic abstraction.
+
+Rules:
+
+- Semantic tokens should express meaning, not package-specific implementation.
+- Raw palette tokens may remain public, but they are not the preferred contract
+  for theme-aware UI behavior.
+- New downstream-facing token work should prefer semantic naming over direct
+  palette references when the value represents UI meaning.
+
+## Modes And Themes
+
+This package currently exposes mode-aware semantic values under `modes`.
+
+Current behavior:
+
+- `modes.default` and `modes.dark` are part of the public contract
+- semantic tokens are expected to map cleanly across modes
+- consumers should prefer semantic mode-aware tokens rather than branching on
+  palette values manually
+
+Rules:
+
+- Adding a new mode is additive only if it does not break existing mode shape
+  or existing consumer assumptions
+- changing the structure of `modes.default` or `modes.dark` is contract-impacting
+- removing a mode or renaming a mode is breaking
+
+Assumption:
+
+- The current stable mode names are `default` and `dark` because those are the
+  names exported and validated today
+
+## Change Types
+
+Every contract-affecting change must be classified in `CHANGELOG.md` using one
+of these labels:
+
+- `additive`
+- `semantic change`
+- `breaking`
+
+The required changelog prefix is:
+
+`Contract change type:`
+
+### Additive
+
+Use `additive` when the change expands the contract without invalidating
+existing consumer usage.
+
+Examples:
+
+- adding a new token namespace without changing existing ones
+- adding a new token inside an existing family while preserving current names
+  and meanings
+- adding a new mode-aware semantic alias while preserving current paths
+- adding new CSS variables or Tailwind mappings without changing existing ones
+
+### Semantic Change
+
+Use `semantic change` when the path stays the same but the meaning, expectation,
+or consumer interpretation changes in a meaningful way.
+
+Examples:
+
+- materially changing the intended semantic role of an existing token
+- changing a token so downstream UI meaning shifts even if the path is stable
+- changing protected semantic behavior with explicit approval
+- changing mode behavior in a way that affects design intent but not the path
+
+### Breaking
+
+Use `breaking` when existing consumers may need code changes, migration work,
+or contract updates.
+
+Examples:
+
+- renaming a public token path
+- removing a public token
+- removing a namespace
+- changing exported root API shape
+- changing mode names
+- reintroducing banned namespace shapes such as `borders`
+
+## Additive, Non-Breaking, And Breaking Rules
+
+For this repository, "non-breaking" means one of two things:
+
+- purely internal changes that do not alter the public contract
+- additive changes that preserve all existing consumer paths and meanings
+
+In practice:
+
+- internal refactors with no public surface change are non-breaking
+- additive public token additions are usually non-breaking and should be
+  classified as `additive`
+- semantic contract shifts are not breaking by path, but still require
+  explicit classification as `semantic change`
+- removals and renames are breaking
+
+## Rename And Removal Policy
+
+Public token renames and removals are breaking by default.
+
+Rules:
+
+- Do not rename public token paths in minor or patch releases.
+- Do not remove public token paths in minor or patch releases.
+- Do not remove public namespaces without a major-version decision.
+- If a rename or removal is necessary, stage it through deprecation first when
+  feasible.
+
+## Deprecation Policy
+
+This repo does not currently expose a formal deprecation mechanism in code.
+
+Practical policy:
+
+- Prefer additive aliasing before removal when the shape allows it.
+- Mark planned removals or replacements in `README.md`, `CHANGELOG.md`, and
+  release notes.
+- Keep deprecated paths working until the planned breaking release when
+  feasible.
+
+Assumption:
+
+- Because there is no dedicated runtime deprecation channel today, documentation
+  and changelog notices are the current deprecation mechanism.
+
+## Versioning Rules
+
+This package follows SemVer for public token contract changes.
+
+Guidance:
+
+- Patch: internal fixes, validation improvements, doc clarifications, or
+  generation fixes that do not change the public contract
+- Minor: additive public token changes that preserve existing paths and
+  semantics for current consumers
+- Major: breaking public contract changes such as removals, renames, namespace
+  changes, mode-name changes, or intentionally incompatible semantic contract
+  shifts
+
+If a change is hard to classify:
+
+- default to the safer downstream interpretation
+- document the assumption in the pull request and changelog
+
+## Generated Output Rules
+
+Generated outputs are part of the trust model for this repository.
+
+Rules:
+
+- `dist/` artifacts must stay in sync with source changes
+- generated runtime tokens must stay aligned with generated TypeScript types
+- CSS variables must stay aligned with runtime token meaning
+- Tailwind theme output must stay aligned with runtime token meaning
+- generated outputs must not expose internal source wrappers as public runtime
+  contract
+
+## Downstream Consumer Expectations
+
+Downstream packages may rely on this repo to provide:
+
+- stable semantic token paths
+- stable top-level namespaces
+- consistent generated CSS variables
+- consistent Tailwind theme values
+- mode-aware semantic tokens under `modes`
+
+Downstream packages should not:
+
+- redefine Spectre token meaning locally when a public semantic token already
+  exists
+- treat `example/` as a public contract surface
+- depend on source-only generation wrappers
+- assume undocumented token paths are stable
+
+## Review Requirements For Contract-Impacting Changes
+
+Before a contract-impacting change merges:
+
+1. Update token source data in `tokens/` when the change is token-driven.
+2. Update `contract.manifest.json` if public namespaces, required outputs, or
+   protected semantic rules change.
+3. Regenerate outputs with `npm run build`.
+4. Run `npm run check`.
+5. Confirm protected semantic groups were not changed without explicit approval.
+6. Update `README.md` and this document if operator guidance changed.
+7. Add a changelog note with `Contract change type: additive`,
+   `Contract change type: semantic change`, or `Contract change type: breaking`.
+8. Confirm the change does not expand this repo into downstream UI or adapter
+   responsibilities.
+
+## Acceptable Changes
+
+- adding a new semantic token that does not alter existing paths
+- adding a new raw palette value while preserving current semantic contracts
+- tightening validation so contract drift fails sooner
+- documenting an existing public namespace that was already exported
+- adding an alias path during a planned deprecation window
+- adding new CSS or Tailwind coverage for an already-public token group
+
+## Unacceptable Changes
+
+- changing protected semantic groups without explicit approval
+- renaming a public token path in a non-major release
+- removing a public token path in a non-major release
+- changing token meaning in a way that is undocumented and unclassified
+- hand-editing generated outputs as if they were source of truth
+- reintroducing `spacing` or `borders` as public contract namespaces
+- moving token ownership into downstream UI structure or framework adapters
+
+## Operating Principle
+
+When there is tension between convenience and contract safety, choose contract
+clarity and downstream trust.
