@@ -27,6 +27,31 @@ translate those contracts for specific frameworks and runtimes.
 - Keeps visual meaning centralized so downstream consumers do not redefine token
   contracts
 
+## What this package owns
+
+- Visual language expressed as token data in `tokens/`
+- Semantic roles and token contracts consumed downstream
+- Generated token outputs for JavaScript, TypeScript, CSS variables, and
+  Tailwind theme exports
+- Theme and mode definitions used by downstream consumers
+
+This package is the correct place to define token meaning.
+
+## What this package does not own
+
+- Component structure or composition
+  That belongs in downstream UI packages such as
+  [`@phcdevworks/spectre-ui`](https://github.com/phcdevworks/spectre-ui).
+- Framework-specific delivery
+  Adapter packages translate Spectre contracts for specific frameworks and
+  runtimes.
+- Local redefinition of token meaning
+  Downstream consumers should consume these contracts rather than recreate them
+  independently.
+- Example app architecture
+  The `example/` directory documents token usage; it is not the contract source
+  and should not become a downstream UI layer.
+
 ## Installation
 
 ```bash
@@ -72,17 +97,103 @@ export default {
 }
 ```
 
-Prefer semantic tokens such as `surface`, `text`, `component`, `buttons`, and
-`forms` for application UI. Raw palette values remain available when fixed color
-access is appropriate.
+## Consumer usage
 
-## What this package owns
+### Source of truth
 
-- Visual language expressed as token data in `tokens/`
-- Semantic roles and token contracts consumed downstream
-- Generated token outputs for JavaScript, TypeScript, CSS variables, and
-  Tailwind theme exports
-- Theme and mode definitions used by downstream consumers
+- Change token data in `tokens/`.
+- Treat generated outputs as derived artifacts.
+- Treat `contract.manifest.json` as the machine-readable contract authority for
+  public namespaces and required outputs.
+
+### JavaScript and TypeScript tokens
+
+Use the runtime token object when a consumer needs token values directly in
+code.
+
+```ts
+import tokens from '@phcdevworks/spectre-tokens'
+
+const card = {
+  background: tokens.surface.card,
+  color: tokens.text.onSurface.default,
+  borderColor: tokens.component.iconBox.border,
+  padding: tokens.space['16']
+}
+```
+
+Use named exports when you need generated helpers or Tailwind integration:
+
+```ts
+import tokens, {
+  generateCssVariables,
+  tailwindPreset,
+  tailwindTheme
+} from '@phcdevworks/spectre-tokens'
+
+const css = generateCssVariables(tokens)
+```
+
+### Generated CSS variables
+
+Import `index.css` when a downstream package or app wants the generated Spectre
+CSS variable contract.
+
+```css
+@import '@phcdevworks/spectre-tokens/index.css';
+
+.card {
+  background: var(--sp-surface-card);
+  color: var(--sp-text-on-surface-default);
+}
+```
+
+The CSS entry point is intended for consumers that want the token contract as
+variables rather than reading values in JavaScript.
+
+### Tailwind preset
+
+Use the Tailwind preset when a consumer wants Tailwind theme values derived from
+the same token contract.
+
+```ts
+import { tailwindPreset } from '@phcdevworks/spectre-tokens'
+
+export default {
+  presets: [tailwindPreset]
+}
+```
+
+Use `tailwindTheme` directly only when a consumer needs the generated theme
+object outside the preset shape.
+
+### Semantic tokens first
+
+Prefer semantic namespaces for downstream UI work:
+
+- `surface`
+- `text`
+- `component`
+- `buttons`
+- `forms`
+- `modes`
+
+These namespaces are the main consumer-facing contract because they express UI
+meaning rather than raw color selection.
+
+### When raw palette access is acceptable
+
+Raw palette access through `colors` is acceptable when a consumer deliberately
+needs fixed palette values.
+
+Typical cases:
+
+- data visualization or non-semantic decorative use
+- compatibility layers that need a specific raw ramp
+- tooling that inspects or serializes palette data directly
+
+Raw palette access should not replace semantic token usage for normal UI
+surfaces, text, buttons, forms, or mode-aware styling.
 
 ### Token model
 
@@ -135,18 +246,55 @@ output drift, and README mismatch with the contract authority.
 The package includes mode-aware semantic tokens under `modes`, with `default`
 and `dark` mode definitions in the generated output.
 
-Raw palette tokens are stable values. Semantic tokens are the preferred
-interface for theme-aware usage because they can map across modes without
-changing consumer code.
+Use semantic mode-aware values when the consumer needs light/dark or
+mode-specific behavior without branching on raw palette values.
 
-## What this package does not own
+```ts
+import tokens from '@phcdevworks/spectre-tokens'
 
-- Component structure or composition That belongs in downstream UI packages such
-  as [`@phcdevworks/spectre-ui`](https://github.com/phcdevworks/spectre-ui).
-- Framework-specific delivery Adapter packages translate Spectre contracts for
-  specific frameworks and runtimes.
-- Local redefinition of token meaning Downstream consumers should consume these
-  contracts rather than recreate them independently.
+const darkPage = tokens.modes.dark.surface.page
+const darkText = tokens.modes.dark.text.onPage.default
+```
+
+Guidance:
+
+- Prefer semantic tokens for theme-aware UI.
+- Prefer `modes` when a consumer explicitly needs mode-specific values.
+- Do not invent local light/dark token contracts when this package already
+  provides the semantic path.
+
+## Downstream boundaries
+
+Downstream packages should never redefine locally:
+
+- the meaning of `surface`, `text`, `component`, `buttons`, `forms`, or
+  `modes`
+- protected semantic groups such as `success`, `warning`, `danger`, or CTA /
+  brand-action semantics
+- public namespace shape that this package already exports
+
+Downstream packages may:
+
+- compose UI structure on top of this contract
+- map these tokens into framework-specific delivery
+- use raw palette values when the usage is intentionally non-semantic
+
+## Upgrade expectations for consumers
+
+Consumers should treat this package as a SemVer-governed contract.
+
+Practical guidance:
+
+- additive token paths are intended to be safe for existing consumers
+- semantic shifts may keep the same path but still affect visual meaning
+- renames and removals are breaking
+- generated JS, TS, CSS, and Tailwind outputs are expected to stay aligned
+
+If a downstream package depends on specific token paths or semantic meaning:
+
+- read `CHANGELOG.md` for contract change classification
+- read `TOKEN_CONTRACT.md` for contract rules
+- prefer documented public namespaces over undocumented internal assumptions
 
 ## Package exports / API surface
 
@@ -193,6 +341,18 @@ Spectre keeps responsibilities separate:
 
 That separation keeps token meaning centralized while letting the package system
 expand by responsibility.
+
+## Consumer checklist
+
+For downstream packages and compatible apps:
+
+- import tokens from the package root when you need runtime values
+- import `index.css` when you need generated CSS variables
+- use `tailwindPreset` when you need Tailwind theme integration
+- prefer semantic namespaces for UI behavior
+- use raw palette values only when fixed palette access is intentional
+- treat `tokens/` as source of truth and generated outputs as derived
+- do not redefine Spectre semantic contracts locally
 
 ## Development
 
