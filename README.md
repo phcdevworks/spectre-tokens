@@ -100,6 +100,8 @@ The generated token object includes these namespaces:
 - `transitions`
 - `animations`
 - `opacity`
+- `aspectRatios`
+- `icons`
 - `border`
 - `accessibility`
 - `buttons`
@@ -112,6 +114,21 @@ The generated token object includes these namespaces:
 The exported runtime token object is a flattened string-based tree generated
 from `tokens/`. Source-only wrapper fields such as `value` and `metadata` are
 internal generation details and are not part of the public package contract.
+
+## Public contract guarantees
+
+`contract.manifest.json` is the machine-readable contract authority for this
+package.
+
+It defines:
+
+- public namespaces
+- required output surfaces for JavaScript, CSS, and Tailwind
+- protected semantic groups
+
+Every contract-facing surface in this repository must match that manifest.
+Validation fails fast on token overwrite across files, undocumented namespaces,
+output drift, and README mismatch with the contract authority.
 
 ### Themes and modes
 
@@ -140,7 +157,7 @@ changing consumer code.
 - `default` / `tokens`
 - `tailwindTheme`
 - `tailwindPreset`
-- `generateCssVariables()`
+- `generateCssVariables`
 - TypeScript types including `SpectreTokens`, `TailwindTheme`,
   `SpectreModeTokens`, and `SpectreModeName`
 
@@ -215,6 +232,7 @@ When contributing:
 - run `npm run build` to regenerate outputs when sources change
 - run `npm run check` as the full validation gate before opening a pull request
 - do not modify locked semantic color families without explicit approval
+- keep `README.md`, generated outputs, and `contract.manifest.json` aligned
 
 See [CONTRIBUTING.md](CONTRIBUTING.md) for the full workflow.
 

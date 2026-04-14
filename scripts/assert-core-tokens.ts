@@ -1,48 +1,12 @@
+import { loadContractManifest } from './contract-utils';
 import { loadMergedTokens } from './token-utils';
 
 const tokens = loadMergedTokens();
+const manifest = loadContractManifest();
 
-const REQUIRED_PATHS = [
-  'surface.page',
-  'surface.card',
-  'surface.input',
-  'text.onPage.default',
-  'text.onPage.muted',
-  'text.onSurface.default',
-  'text.onSurface.muted',
-  'buttons.primary.bg',
-  'buttons.primary.text',
-  'forms.default.bg',
-  'forms.default.border',
-  'forms.default.text',
-  'forms.default.placeholder',
-  'component.badge.primary.bg',
-  'component.badge.primary.text',
-  'component.badge.success.bg',
-  'component.badge.success.text',
-  'component.badge.warning.bg',
-  'component.badge.warning.text',
-  'component.badge.danger.bg',
-  'component.badge.danger.text',
-  'component.badge.neutralBg',
-  'component.badge.neutralText',
-  'component.badge.infoBg',
-  'component.badge.infoText',
-  'component.badge.successBg',
-  'component.badge.successText',
-  'component.badge.warningBg',
-  'component.badge.warningText',
-  'component.badge.dangerBg',
-  'component.badge.dangerText',
-  'component.iconBox.bg',
-  'component.iconBox.border',
-  'component.iconBox.iconDefault',
-  'component.iconBox.iconSuccess',
-  'component.iconBox.iconWarning',
-  'component.iconBox.iconDanger',
-  'modes.default.surface.page',
-  'modes.dark.surface.page'
-];
+const requiredPaths = manifest.requiredOutputs.js.requiredPaths;
+const namespacePaths = manifest.publicNamespaces;
+const layoutPaths = manifest.requiredOutputs.js.spaceLinkedLayoutPaths;
 
 const badge = tokens.component?.badge as Record<string, unknown> | undefined;
 if (badge && typeof badge === 'object') {
@@ -82,9 +46,7 @@ function assertPath(obj: unknown, path: string): void {
   }
 }
 
-for (const path of REQUIRED_PATHS) {
-  assertPath(tokens, path);
-}
+[...requiredPaths, ...namespacePaths].forEach((path) => assertPath(tokens, path));
 
 if ('spacing' in tokens) {
   throw new Error('Do not reintroduce tokens.spacing; use tokens.space and tokens.layout only');
@@ -112,36 +74,15 @@ const ensureInSpace = (value: unknown, path: string): void => {
   }
 };
 
-const layout = tokens.layout as Record<string, unknown> | undefined;
-if (!layout) {
-  throw new Error('Missing token group: layout');
-}
+layoutPaths.forEach((path) => {
+  const value = path.split('.').reduce<unknown>((acc, part) => {
+    if (acc && typeof acc === 'object') {
+      return (acc as Record<string, unknown>)[part];
+    }
+    return undefined;
+  }, tokens);
 
-const layoutSection = layout.section as Record<string, unknown> | undefined;
-const layoutStack = layout.stack as Record<string, unknown> | undefined;
-const layoutContainer = layout.container as Record<string, unknown> | undefined;
+  ensureInSpace(value, path);
+});
 
-if (!layoutSection?.padding || !layoutSection?.gap) {
-  throw new Error('layout.section padding/gap required');
-}
-if (!layoutStack?.gap) {
-  throw new Error('layout.stack.gap required');
-}
-if (!layoutContainer?.paddingInline) {
-  throw new Error('layout.container.paddingInline required');
-}
-
-Object.entries(layoutSection.padding as Record<string, unknown>).forEach(([key, value]) =>
-  ensureInSpace(value, `layout.section.padding.${key}`)
-);
-Object.entries(layoutSection.gap as Record<string, unknown>).forEach(([key, value]) =>
-  ensureInSpace(value, `layout.section.gap.${key}`)
-);
-Object.entries(layoutStack.gap as Record<string, unknown>).forEach(([key, value]) =>
-  ensureInSpace(value, `layout.stack.gap.${key}`)
-);
-Object.entries(layoutContainer.paddingInline as Record<string, unknown>).forEach(([key, value]) =>
-  ensureInSpace(value, `layout.container.paddingInline.${key}`)
-);
-
-console.log('Core token regression check passed.');
+console.log('Core token contract check passed.');

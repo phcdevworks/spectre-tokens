@@ -6,12 +6,17 @@ reflects package releases published to npm.
 
 ## [Unreleased]
 
+Contract change type: semantic change
+
 ### Changed
 
 - Tightened the publish gate to run the full validation suite before verifying
   `dist` sync to prevent releases without contract checks.
 - Aligned `font.xs` with `typography.scale.xs` to keep the font scale consistent
   with the canonical typography sizing.
+- Added contract-authority enforcement through `contract.manifest.json`,
+  fail-fast namespace/output/doc validation, and downstream change
+  classification checks.
 
 ## [2.2.0] - 2026-04-11
 
