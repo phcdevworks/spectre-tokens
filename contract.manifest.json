@@ -147,10 +147,21 @@
     "cta-brand-action"
   ],
   "docContract": {
+    "requiredFiles": [
+      "README.md",
+      "TOKEN_CONTRACT.md"
+    ],
     "requiredSectionMarkers": [
       "### Token model",
       "### Root package",
       "## Public contract guarantees"
+    ],
+    "tokenContractRequiredHeadings": [
+      "# Token Contract",
+      "## What Is Public Contract",
+      "## Public Stable Namespaces",
+      "## Versioning Rules",
+      "## Review Requirements For Contract-Impacting Changes"
     ]
   },
   "changeClassification": {

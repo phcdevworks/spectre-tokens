@@ -23,6 +23,14 @@ if (manifest.requiredOutputs.tailwind.expectations.length === 0) {
   throw new Error('Contract manifest must declare required Tailwind expectations.');
 }
 
+if (!manifest.docContract.requiredFiles || manifest.docContract.requiredFiles.length === 0) {
+  throw new Error('Contract manifest must declare required contract documentation files.');
+}
+
+if (!manifest.docContract.tokenContractRequiredHeadings || manifest.docContract.tokenContractRequiredHeadings.length === 0) {
+  throw new Error('Contract manifest must declare required TOKEN_CONTRACT.md headings.');
+}
+
 manifest.publicNamespaces.forEach((namespace) => {
   if (getPathValue(tokens, namespace) === undefined) {
     throw new Error(`Contract manifest references undocumented namespace: ${namespace}`);

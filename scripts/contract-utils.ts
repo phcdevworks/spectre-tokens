@@ -33,7 +33,9 @@ export interface ContractManifest {
   };
   protectedSemanticGroups: string[];
   docContract: {
+    requiredFiles: string[];
     requiredSectionMarkers: string[];
+    tokenContractRequiredHeadings: string[];
   };
   changeClassification: {
     allowed: string[];
