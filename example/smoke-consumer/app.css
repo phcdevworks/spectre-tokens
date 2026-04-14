@@ -1,0 +1,12 @@
+@import '@phcdevworks/spectre-tokens/index.css';
+
+.smoke-card {
+  background: var(--sp-surface-card);
+  color: var(--sp-text-on-surface-default);
+  border: var(--sp-border-width-base) solid var(--sp-component-card-text);
+}
+
+:root[data-spectre-theme='dark'] .smoke-card {
+  background: var(--sp-surface-page);
+  color: var(--sp-text-on-page-default);
+}
