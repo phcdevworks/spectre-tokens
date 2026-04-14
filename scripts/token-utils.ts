@@ -8,6 +8,54 @@ const TOKENS_DIR = join(__dirname, '../tokens');
 const isObject = (value: unknown): value is Record<string, unknown> =>
   !!value && typeof value === 'object' && !Array.isArray(value);
 
+const collectLeafPaths = (value: unknown, path: string[] = []): string[] => {
+  if (Array.isArray(value)) {
+    return path.length > 0 ? [path.join('.')] : [];
+  }
+
+  if (!isObject(value)) {
+    return path.length > 0 ? [path.join('.')] : [];
+  }
+
+  return Object.entries(value).flatMap(([key, entry]) => collectLeafPaths(entry, [...path, key]));
+};
+
+export function getTokenSourceFiles(): string[] {
+  return readdirSync(TOKENS_DIR)
+    .filter((file) => extname(file) === '.json')
+    .sort((a, b) => a.localeCompare(b));
+}
+
+function assertNoDuplicateTokenPaths(files: string[]): void {
+  const owners = new Map<string, string>();
+  const duplicates: string[] = [];
+
+  files.forEach((file) => {
+    const fullPath = join(TOKENS_DIR, file);
+    const content = JSON.parse(readFileSync(fullPath, 'utf8')) as Record<string, unknown>;
+
+    collectLeafPaths(content).forEach((tokenPath) => {
+      const existingOwner = owners.get(tokenPath);
+      if (existingOwner && existingOwner !== file) {
+        duplicates.push(`${tokenPath} (${existingOwner}, ${file})`);
+        return;
+      }
+
+      owners.set(tokenPath, file);
+    });
+  });
+
+  if (duplicates.length > 0) {
+    throw new Error(
+      [
+        'Duplicate token ownership detected across tokens/*.json.',
+        'Each public token path should be owned by exactly one source file.',
+        ...duplicates.sort().map((entry) => `- ${entry}`)
+      ].join('\n')
+    );
+  }
+}
+
 /**
  * Deep merges two objects.
  */
@@ -34,11 +82,11 @@ function deepMerge(target: Record<string, unknown>, source: Record<string, unkno
 export function loadMergedTokens(): Record<string, unknown> {
   let merged: Record<string, unknown> = {};
 
-  // Load all JSON files and merge them
-  const files = readdirSync(TOKENS_DIR);
-  for (const file of files) {
-    if (extname(file) !== '.json') continue;
+  // Load JSON files in deterministic order so generated outputs stay stable.
+  const files = getTokenSourceFiles();
+  assertNoDuplicateTokenPaths(files);
 
+  for (const file of files) {
     const content = JSON.parse(readFileSync(join(TOKENS_DIR, file), 'utf8')) as Record<string, unknown>;
     merged = deepMerge(merged, content);
   }

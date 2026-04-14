@@ -1,0 +1,164 @@
+{
+  "version": 1,
+  "publicNamespaces": [
+    "colors",
+    "space",
+    "layout",
+    "radii",
+    "typography",
+    "font",
+    "shadows",
+    "breakpoints",
+    "zIndex",
+    "transitions",
+    "animations",
+    "opacity",
+    "aspectRatios",
+    "icons",
+    "border",
+    "accessibility",
+    "buttons",
+    "forms",
+    "surface",
+    "text",
+    "component",
+    "modes"
+  ],
+  "requiredOutputs": {
+    "js": {
+      "rootExports": [
+        "default",
+        "tokens",
+        "tailwindTheme",
+        "tailwindPreset",
+        "generateCssVariables"
+      ],
+      "rootTypeExports": [
+        "SpectreTokens",
+        "TailwindTheme",
+        "SpectreModeTokens",
+        "SpectreModeName"
+      ],
+      "requiredPaths": [
+        "colors.brand",
+        "surface.page",
+        "surface.card",
+        "surface.input",
+        "text.onPage.default",
+        "text.onPage.muted",
+        "text.onSurface.default",
+        "text.onSurface.muted",
+        "buttons.primary.bg",
+        "buttons.primary.text",
+        "forms.default.bg",
+        "forms.default.border",
+        "forms.default.text",
+        "forms.default.placeholder",
+        "component.badge.neutralBg",
+        "component.badge.neutralText",
+        "component.badge.infoBg",
+        "component.badge.infoText",
+        "component.badge.successBg",
+        "component.badge.successText",
+        "component.badge.warningBg",
+        "component.badge.warningText",
+        "component.badge.dangerBg",
+        "component.badge.dangerText",
+        "component.iconBox.bg",
+        "component.iconBox.border",
+        "component.iconBox.iconDefault",
+        "component.iconBox.iconSuccess",
+        "component.iconBox.iconWarning",
+        "component.iconBox.iconDanger",
+        "modes.default.surface.page",
+        "modes.dark.surface.page"
+      ],
+      "requiredStringPaths": [
+        "surface.page",
+        "component.card.text",
+        "buttons.primary.bg",
+        "forms.default.border",
+        "modes.default.surface.page"
+      ],
+      "spaceLinkedLayoutPaths": [
+        "layout.section.padding.sm",
+        "layout.section.padding.md",
+        "layout.section.padding.lg",
+        "layout.section.gap.sm",
+        "layout.section.gap.md",
+        "layout.section.gap.lg",
+        "layout.stack.gap.sm",
+        "layout.stack.gap.md",
+        "layout.stack.gap.lg",
+        "layout.container.paddingInline.sm",
+        "layout.container.paddingInline.md",
+        "layout.container.paddingInline.lg"
+      ],
+      "bannedPaths": [
+        "borders"
+      ]
+    },
+    "css": {
+      "requiredVariables": [
+        "--sp-color-brand-500",
+        "--sp-space-16",
+        "--sp-layout-section-padding-md",
+        "--sp-radius-md",
+        "--sp-font-family-sans",
+        "--sp-font-md-size",
+        "--sp-surface-page",
+        "--sp-text-on-page-default",
+        "--sp-button-primary-bg",
+        "--sp-form-default-border",
+        "--sp-animation-fadein-duration",
+        "--sp-focus-ring-width"
+      ],
+      "requiredDarkModeVariables": [
+        "--sp-surface-page",
+        "--sp-text-on-page-default",
+        "--sp-component-card-text",
+        "--sp-badge-success-bg"
+      ]
+    },
+    "tailwind": {
+      "expectations": [
+        { "themePath": "colors.brand.500", "tokenPath": "colors.brand.500" },
+        { "themePath": "spacing.16", "tokenPath": "space.16" },
+        { "themePath": "borderRadius.md", "tokenPath": "radii.md" },
+        { "themePath": "boxShadow.md", "tokenPath": "shadows.md" },
+        { "themePath": "screens.lg", "tokenPath": "breakpoints.lg" },
+        { "themePath": "zIndex.modal", "tokenPath": "zIndex.modal" },
+        { "themePath": "transitionDuration.base", "tokenPath": "transitions.duration.base" },
+        { "themePath": "transitionTimingFunction.inOut", "tokenPath": "transitions.easing.inOut" },
+        { "themePath": "opacity.disabled", "tokenPath": "opacity.disabled" },
+        { "themePath": "fontFamily.sans.0", "tokenPath": "typography.families.sans", "transform": "firstFontFamily" },
+        { "themePath": "fontSize.md.0", "tokenPath": "typography.scale.md.fontSize" },
+        { "themePath": "fontSize.md.1.lineHeight", "tokenPath": "typography.scale.md.lineHeight" },
+        { "themePath": "fontSize.md.1.fontWeight", "tokenPath": "typography.scale.md.fontWeight" },
+        { "themePath": "maxWidth.container", "tokenPath": "layout.container.maxWidth" },
+        { "themePath": "borderWidth.DEFAULT", "tokenPath": "border.width.base" }
+      ]
+    }
+  },
+  "protectedSemanticGroups": [
+    "success",
+    "warning",
+    "danger",
+    "cta-brand-action"
+  ],
+  "docContract": {
+    "requiredSectionMarkers": [
+      "### Token model",
+      "### Root package",
+      "## Public contract guarantees"
+    ]
+  },
+  "changeClassification": {
+    "allowed": [
+      "additive",
+      "semantic change",
+      "breaking"
+    ],
+    "requiredPrefix": "Contract change type:"
+  }
+}

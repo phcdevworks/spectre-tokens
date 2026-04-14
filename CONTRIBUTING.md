@@ -37,6 +37,7 @@ structure, adapters define delivery.
 ## Project Structure
 
 - `tokens/`: canonical JSON token sources
+- `contract.manifest.json`: machine-readable contract authority
 - `src/`: typed transforms and public exports
 - `scripts/`: generation and validation utilities
 - `dist/`: generated release artifacts
@@ -53,6 +54,24 @@ structure, adapters define delivery.
    Tailwind outputs when applicable.
 5. Do not modify locked `success`, `warning`, `danger`, or CTA/brand-action
    color contracts unless explicitly approved.
+6. Keep `contract.manifest.json` aligned with the public token contract.
+7. Classify contract-affecting changes as `additive`, `semantic change`, or
+   `breaking`.
+
+### Contract authority
+
+`contract.manifest.json` is the single machine-readable authority for:
+
+- public namespaces
+- required output surfaces: JavaScript, CSS, and Tailwind
+- protected semantic groups
+
+Validation fails fast when:
+
+- token paths are overwritten across `tokens/*.json`
+- namespaces exist in outputs but are undocumented by the contract authority
+- JavaScript, CSS, and Tailwind outputs drift from the declared contract
+- `README.md` drifts from the declared contract
 
 ### Code and tooling
 
@@ -78,6 +97,7 @@ structure, adapters define delivery.
 3. Run `npm run check` as the final validation gate.
 4. Update docs if public behavior or guidance changed.
 5. Include regenerated artifacts when the release surface changed.
+6. Add or update the `CHANGELOG.md` `Unreleased` note with `Contract change type: additive`, `Contract change type: semantic change`, or `Contract change type: breaking` when contract-authority files change.
 
 ## Release Hygiene
 
@@ -87,6 +107,13 @@ For maintainers, every package release should keep these four records in sync:
 2. Move the relevant notes from `CHANGELOG.md` `Unreleased` into a dated versioned entry for that same version, and include a short release title line beneath the heading.
 3. Create a Git tag that exactly matches the package version, for example `2.1.2`.
 4. Publish the GitHub Release from that same tag and use the matching changelog entry as the release notes.
+
+When token meaning or public contract surfaces change, the `Unreleased` notes
+must also include one classification line:
+
+- `Contract change type: additive`
+- `Contract change type: semantic change`
+- `Contract change type: breaking`
 
 If one of those four records does not change, it usually means the release metadata path is incomplete.
 
