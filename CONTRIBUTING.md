@@ -32,7 +32,8 @@ structure, adapters define delivery.
 1. Clone the repository.
 2. Install dependencies with `npm install`.
 3. Run `npm run build` to regenerate outputs.
-4. Run `npm run check` as the full validation gate before opening a pull request.
+4. Run `npm run check` as the full validation gate before opening a pull
+   request.
 
 ## Project Structure
 
@@ -93,20 +94,27 @@ Validation fails fast when:
 ## Pull Request Checklist
 
 1. Keep the change focused.
-2. Run `npm run build` if you changed token sources and need regenerated outputs locally.
+2. Run `npm run build` if you changed token sources and need regenerated outputs
+   locally.
 3. Run `npm run check` as the final validation gate.
 4. Update docs if public behavior or guidance changed.
 5. Include regenerated artifacts when the release surface changed.
-6. Add or update the `CHANGELOG.md` `Unreleased` note with `Contract change type: additive`, `Contract change type: semantic change`, or `Contract change type: breaking` when contract-authority files change.
+6. Add or update the `CHANGELOG.md` `Unreleased` note with
+   `Contract change type: additive`, `Contract change type: semantic change`, or
+   `Contract change type: breaking` when contract-authority files change.
 
 ## Release Hygiene
 
 For maintainers, every package release should keep these four records in sync:
 
 1. Update `package.json` to the release version.
-2. Move the relevant notes from `CHANGELOG.md` `Unreleased` into a dated versioned entry for that same version, and include a short release title line beneath the heading.
-3. Create a Git tag that exactly matches the package version, for example `2.1.2`.
-4. Publish the GitHub Release from that same tag and use the matching changelog entry as the release notes.
+2. Move the relevant notes from `CHANGELOG.md` `Unreleased` into a dated
+   versioned entry for that same version, and include a short release title line
+   beneath the heading.
+3. Create a Git tag that exactly matches the package version, for example
+   `2.1.2`.
+4. Publish the GitHub Release from that same tag and use the matching changelog
+   entry as the release notes.
 
 When token meaning or public contract surfaces change, the `Unreleased` notes
 must also include one classification line:
@@ -115,7 +123,8 @@ must also include one classification line:
 - `Contract change type: semantic change`
 - `Contract change type: breaking`
 
-If one of those four records does not change, it usually means the release metadata path is incomplete.
+If one of those four records does not change, it usually means the release
+metadata path is incomplete.
 
 ## Questions
 
