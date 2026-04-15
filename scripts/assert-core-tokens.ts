@@ -46,6 +46,29 @@ function assertPath(obj: unknown, path: string): void {
   }
 }
 
+function getPathValue(source: unknown, path: string): unknown {
+  return path.split('.').reduce<unknown>((acc, key) => {
+    if (acc && typeof acc === 'object') {
+      return (acc as Record<string, unknown>)[key];
+    }
+    return undefined;
+  }, source);
+}
+
+function normalizeFontToken(value: unknown): Record<string, unknown> | null {
+  if (!value || typeof value !== 'object' || Array.isArray(value)) {
+    return null;
+  }
+
+  const entry = value as Record<string, unknown>;
+  return {
+    fontSize: entry.size,
+    lineHeight: entry.lineHeight,
+    fontWeight: entry.weight,
+    letterSpacing: entry.letterSpacing
+  };
+}
+
 [...requiredPaths, ...namespacePaths].forEach((path) => assertPath(tokens, path));
 
 if ('spacing' in tokens) {
@@ -84,5 +107,28 @@ layoutPaths.forEach((path) => {
 
   ensureInSpace(value, path);
 });
+
+const fontXs = getPathValue(tokens, 'font.xs');
+const typographyScaleXs = getPathValue(tokens, 'typography.scale.xs');
+const normalizedFontXs = normalizeFontToken(fontXs);
+
+if (
+  !normalizedFontXs ||
+  !typographyScaleXs ||
+  typeof typographyScaleXs !== 'object' ||
+  Array.isArray(typographyScaleXs)
+) {
+  throw new Error('Expected token objects at font.xs and typography.scale.xs');
+}
+
+if (JSON.stringify(normalizedFontXs) !== JSON.stringify(typographyScaleXs)) {
+  throw new Error(
+    [
+      'font.xs must match typography.scale.xs.',
+      `font.xs: ${JSON.stringify(fontXs)}`,
+      `typography.scale.xs: ${JSON.stringify(typographyScaleXs)}`
+    ].join('\n')
+  );
+}
 
 console.log('Core token contract check passed.');
