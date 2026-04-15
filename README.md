@@ -39,18 +39,14 @@ This package is the correct place to define token meaning.
 
 ## What this package does not own
 
-- Component structure or composition
-  That belongs in downstream UI packages such as
-  [`@phcdevworks/spectre-ui`](https://github.com/phcdevworks/spectre-ui).
-- Framework-specific delivery
-  Adapter packages translate Spectre contracts for specific frameworks and
-  runtimes.
-- Local redefinition of token meaning
-  Downstream consumers should consume these contracts rather than recreate them
-  independently.
-- Example app architecture
-  The `example/` directory documents token usage; it is not the contract source
-  and should not become a downstream UI layer.
+- Component structure or composition That belongs in downstream UI packages such
+  as [`@phcdevworks/spectre-ui`](https://github.com/phcdevworks/spectre-ui).
+- Framework-specific delivery Adapter packages translate Spectre contracts for
+  specific frameworks and runtimes.
+- Local redefinition of token meaning Downstream consumers should consume these
+  contracts rather than recreate them independently.
+- Example app architecture The `example/` directory documents token usage; it is
+  not the contract source and should not become a downstream UI layer.
 
 ## Installation
 
@@ -267,8 +263,7 @@ Guidance:
 
 Downstream packages should never redefine locally:
 
-- the meaning of `surface`, `text`, `component`, `buttons`, `forms`, or
-  `modes`
+- the meaning of `surface`, `text`, `component`, `buttons`, `forms`, or `modes`
 - protected semantic groups such as `success`, `warning`, `danger`, or CTA /
   brand-action semantics
 - public namespace shape that this package already exports
@@ -376,9 +371,9 @@ Key source areas:
 - `scripts/` for build and validation scripts
 - `example/` for usage examples
 
-The files in `example/` are illustrative token demos only. They help explain
-the token contract, but they are not the package contract itself and should not
-be treated as downstream UI primitives.
+The files in `example/` are illustrative token demos only. They help explain the
+token contract, but they are not the package contract itself and should not be
+treated as downstream UI primitives.
 
 ## Contributing
 

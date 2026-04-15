@@ -87,8 +87,8 @@ through the contract process described in this document.
 
 ## Protected Semantic Groups
 
-The following semantic groups are protected and must not change without
-explicit approval:
+The following semantic groups are protected and must not change without explicit
+approval:
 
 - `success`
 - `warning`
@@ -132,8 +132,8 @@ Use semantic tokens as the default interface for downstream UI:
 - `forms`
 - `modes`
 
-Use raw palette tokens from `colors` only when consumers need fixed color
-access and are intentionally opting out of semantic abstraction.
+Use raw palette tokens from `colors` only when consumers need fixed color access
+and are intentionally opting out of semantic abstraction.
 
 Rules:
 
@@ -156,9 +156,10 @@ Current behavior:
 
 Rules:
 
-- Adding a new mode is additive only if it does not break existing mode shape
-  or existing consumer assumptions
-- changing the structure of `modes.default` or `modes.dark` is contract-impacting
+- Adding a new mode is additive only if it does not break existing mode shape or
+  existing consumer assumptions
+- changing the structure of `modes.default` or `modes.dark` is
+  contract-impacting
 - removing a mode or renaming a mode is breaking
 
 Assumption:
@@ -206,8 +207,8 @@ Examples:
 
 ### Breaking
 
-Use `breaking` when existing consumers may need code changes, migration work,
-or contract updates.
+Use `breaking` when existing consumers may need code changes, migration work, or
+contract updates.
 
 Examples:
 
@@ -230,8 +231,8 @@ In practice:
 - internal refactors with no public surface change are non-breaking
 - additive public token additions are usually non-breaking and should be
   classified as `additive`
-- semantic contract shifts are not breaking by path, but still require
-  explicit classification as `semantic change`
+- semantic contract shifts are not breaking by path, but still require explicit
+  classification as `semantic change`
 - removals and renames are breaking
 
 ## Rename And Removal Policy
