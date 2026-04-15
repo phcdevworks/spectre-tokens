@@ -36,8 +36,8 @@ var coreTokens = {
       "textMuted": "{colors.neutral.500}"
     },
     "input": {
-      "text": "{forms.default.text}",
-      "placeholder": "{forms.default.placeholder}"
+      "text": "{colors.neutral.900}",
+      "placeholder": "{colors.neutral.500}"
     },
     "button": {
       "textDefault": "{colors.neutral.900}",
@@ -103,7 +103,7 @@ var coreTokens = {
       "text": "{colors.white}",
       "textDisabled": "{colors.neutral.400}",
       "focusRing": "{colors.info.500} / 0.4",
-      "focusVisible": "{buttons.primary.focusRing}"
+      "focusVisible": "{colors.info.500} / 0.4"
     },
     "secondary": {
       "bg": "{colors.white}",
@@ -115,7 +115,7 @@ var coreTokens = {
       "border": "{colors.info.700}",
       "borderDisabled": "{colors.neutral.200}",
       "focusRing": "{colors.info.500} / 0.4",
-      "focusVisible": "{buttons.secondary.focusRing}"
+      "focusVisible": "{colors.info.500} / 0.4"
     },
     "ghost": {
       "bg": "transparent",
@@ -125,7 +125,7 @@ var coreTokens = {
       "text": "{colors.info.700}",
       "textDisabled": "{colors.neutral.400}",
       "focusRing": "{colors.info.500} / 0.4",
-      "focusVisible": "{buttons.ghost.focusRing}"
+      "focusVisible": "{colors.info.500} / 0.4"
     },
     "danger": {
       "bg": "{colors.error.600}",
@@ -163,7 +163,7 @@ var coreTokens = {
       "text": "{colors.white}",
       "textDisabled": "{colors.neutral.400}",
       "focusRing": "{colors.accent.500} / 0.4",
-      "focusVisible": "{buttons.accent.focusRing}"
+      "focusVisible": "{colors.accent.500} / 0.4"
     }
   },
   "forms": {
@@ -181,8 +181,8 @@ var coreTokens = {
       "ring": "{colors.info.500}"
     },
     "focusVisible": {
-      "border": "{forms.focus.border}",
-      "ring": "{forms.focus.ring}"
+      "border": "{colors.info.500}",
+      "ring": "{colors.info.500}"
     },
     "valid": {
       "border": "{colors.success.500}",
