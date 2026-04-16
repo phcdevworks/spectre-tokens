@@ -54,6 +54,34 @@ export function loadContractManifest(): ContractManifest {
   return cachedManifest;
 }
 
+export const formatList = (values: string[]): string => values.join(', ') || '(none)';
+
+export const compareStringSets = (
+  expected: string[],
+  actual: string[],
+  label: string
+): void => {
+  const expectedSet = new Set(expected);
+  const actualSet = new Set(actual);
+
+  const missing = expected.filter((value) => !actualSet.has(value));
+  const unexpected = actual.filter((value) => !expectedSet.has(value));
+
+  if (missing.length === 0 && unexpected.length === 0) {
+    return;
+  }
+
+  throw new Error(
+    [
+      `${label} do not match contract.manifest.json.`,
+      `Missing: ${formatList(missing)}`,
+      `Unexpected: ${formatList(unexpected)}`,
+      `Manifest: ${formatList(expected)}`,
+      `Actual: ${formatList(actual)}`
+    ].join('\n')
+  );
+};
+
 export const getPathValue = (source: unknown, path: string): unknown =>
   path.split('.').reduce<unknown>((acc, key) => {
     if (Array.isArray(acc) && /^\d+$/.test(key)) {
