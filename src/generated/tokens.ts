@@ -2761,7 +2761,7 @@ export const coreTokens: SpectreGeneratedTokens = {
         "input": "{colors.neutral.700}",
         "overlay": "{colors.neutral.800}",
         "alternate": "{colors.neutral.800}",
-        "hero": "linear-gradient(135deg, {colors.accent.900} 0%, {colors.accent.700} 100%)"
+        "hero": "linear-gradient(135deg, {colors.accent.700} 0%, {colors.accent.900} 100%)"
       },
       "text": {
         "onPage": {
