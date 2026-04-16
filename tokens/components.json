@@ -16,13 +16,13 @@
     },
     "input": {
       "text": {
-        "value": "{forms.default.text}",
+        "value": "{colors.neutral.900}",
         "metadata": {
           "pair": "forms.default.bg"
         }
       },
       "placeholder": {
-        "value": "{forms.default.placeholder}",
+        "value": "{colors.neutral.500}",
         "metadata": {
           "pair": "forms.default.bg"
         }
@@ -278,7 +278,7 @@
         "value": "{colors.info.500} / 0.4"
       },
       "focusVisible": {
-        "value": "{buttons.primary.focusRing}"
+        "value": "{colors.info.500} / 0.4"
       }
     },
     "secondary": {
@@ -319,7 +319,7 @@
         "value": "{colors.info.500} / 0.4"
       },
       "focusVisible": {
-        "value": "{buttons.secondary.focusRing}"
+        "value": "{colors.info.500} / 0.4"
       }
     },
     "ghost": {
@@ -351,7 +351,7 @@
         "value": "{colors.info.500} / 0.4"
       },
       "focusVisible": {
-        "value": "{buttons.ghost.focusRing}"
+        "value": "{colors.info.500} / 0.4"
       }
     },
     "danger": {
@@ -485,7 +485,7 @@
         "value": "{colors.accent.500} / 0.4"
       },
       "focusVisible": {
-        "value": "{buttons.accent.focusRing}"
+        "value": "{colors.accent.500} / 0.4"
       }
     }
   },
@@ -525,10 +525,10 @@
     },
     "focusVisible": {
       "border": {
-        "value": "{forms.focus.border}"
+        "value": "{colors.info.500}"
       },
       "ring": {
-        "value": "{forms.focus.ring}"
+        "value": "{colors.info.500}"
       }
     },
     "valid": {
