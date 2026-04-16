@@ -372,7 +372,7 @@
           }
         },
         "hero": {
-          "value": "linear-gradient(135deg, {colors.accent.900} 0%, {colors.accent.700} 100%)"
+          "value": "linear-gradient(135deg, {colors.accent.700} 0%, {colors.accent.900} 100%)"
         }
       },
       "text": {
