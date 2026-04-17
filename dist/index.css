@@ -359,7 +359,7 @@
   --sp-surface-card: #222b38;
   --sp-surface-input: #374253;
   --sp-surface-overlay: #222b38;
-  --sp-surface-hero: linear-gradient(135deg, #401f75 0%, #5d28b8 100%);
+  --sp-surface-hero: linear-gradient(135deg, #5d28b8 0%, #401f75 100%);
   --sp-text-on-page-default: #f7f8fb;
   --sp-text-on-page-muted: #b7c1d4;
   --sp-text-on-page-subtle: #8a96ad;
