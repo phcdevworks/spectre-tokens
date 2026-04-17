@@ -1,6 +1,6 @@
 {
   "name": "@phcdevworks/spectre-tokens",
-  "version": "2.2.0",
+  "version": "2.3.0",
   "description": "@phcdevworks/spectre-tokens is the design-token package of the Spectre system for downstream Spectre packages and compatible applications.",
   "keywords": [
     "phcdevworks",
