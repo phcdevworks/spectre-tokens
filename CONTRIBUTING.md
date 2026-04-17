@@ -66,6 +66,7 @@ structure, adapters define delivery.
 - public namespaces
 - required output surfaces: JavaScript, CSS, and Tailwind
 - protected semantic groups
+- the enforced public contract surface required for release
 
 Validation fails fast when:
 
@@ -73,6 +74,9 @@ Validation fails fast when:
 - namespaces exist in outputs but are undocumented by the contract authority
 - JavaScript, CSS, and Tailwind outputs drift from the declared contract
 - `README.md` drifts from the declared contract
+- any mismatch between `contract.manifest.json` and generated outputs or public exports is detected by `npm run check`
+
+Treat `contract.manifest.json` as release-blocking authority, not optional documentation. If the declared contract does not match generated outputs or exports, `npm run check` must fail and the release must not proceed. Any change to the contract surface must be intentional and reviewed for versioning impact before release.
 
 ### Code and tooling
 
