@@ -18,6 +18,12 @@ const ensureIncludes = (source: string, needle: string, label: string) => {
   }
 };
 
+const ensureExcludes = (source: string, needle: string, label: string) => {
+  if (source.includes(needle)) {
+    throw new Error(`${label} contains an unexpected CSS variable: ${needle}`);
+  }
+};
+
 if (!generatedCss.includes(':root {') || !generatedCss.includes(':root[data-spectre-theme="dark"] {')) {
   throw new Error('Generated CSS is missing the expected root or dark-mode block.');
 }
@@ -31,9 +37,26 @@ manifest.requiredOutputs.css.requiredVariables.forEach((variableName) => {
   ensureIncludes(builtCss, `${variableName}:`, 'Built CSS');
 });
 
+['--sp-color-white', '--sp-color-black', '--sp-text-on-page-brand', '--sp-text-on-surface-brand']
+  .forEach((variableName) => {
+    ensureIncludes(generatedCss, `${variableName}:`, 'Generated CSS');
+    ensureIncludes(builtCss, `${variableName}:`, 'Built CSS');
+  });
+
+['--sp-color-white-0', '--sp-color-black-0']
+  .forEach((variableName) => {
+    ensureExcludes(generatedCss, `${variableName}:`, 'Generated CSS');
+    ensureExcludes(builtCss, `${variableName}:`, 'Built CSS');
+  });
+
 const builtDarkBlock = builtCss.split(':root[data-spectre-theme="dark"] {')[1] ?? '';
 manifest.requiredOutputs.css.requiredDarkModeVariables.forEach((variableName) => {
   ensureIncludes(builtDarkBlock, `${variableName}:`, 'Built dark-mode CSS');
 });
+
+['--sp-text-on-page-brand', '--sp-text-on-surface-brand']
+  .forEach((variableName) => {
+    ensureIncludes(builtDarkBlock, `${variableName}:`, 'Built dark-mode CSS');
+  });
 
 console.log('CSS contract check passed.');

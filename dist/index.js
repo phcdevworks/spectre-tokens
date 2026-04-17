@@ -834,6 +834,10 @@ var createCssVariableMap = (tokens2, options = {}) => {
     map[name] = resolveValue(tokens2, value);
   };
   Object.entries(baseTokens.colors).forEach(([group, scale]) => {
+    if (typeof scale === "string" || typeof scale === "number") {
+      assign(toVariableName(prefix, "color", group), scale);
+      return;
+    }
     Object.entries(scale).forEach(([step, value]) => {
       assign(toVariableName(prefix, "color", group, step), value);
     });
@@ -999,15 +1003,18 @@ var generateCssVariables = (tokens2, options = {}) => {
   addBase(toVariableName(prefix, "surface", "card"), pickSemantic(tokens2, getPath(defaultMode, ["surface", "card"]), getPath(surfaceAliases, ["card"])));
   addBase(toVariableName(prefix, "surface", "input"), pickSemantic(tokens2, getPath(defaultMode, ["surface", "input"]), getPath(surfaceAliases, ["input"])));
   addBase(toVariableName(prefix, "surface", "overlay"), pickSemantic(tokens2, getPath(defaultMode, ["surface", "overlay"]), getPath(surfaceAliases, ["overlay"])));
+  addBase(toVariableName(prefix, "surface", "alternate"), pickSemantic(tokens2, getPath(defaultMode, ["surface", "alternate"])));
   addBase(toVariableName(prefix, "surface", "hero"), pickSemantic(tokens2, getPath(defaultMode, ["surface", "hero"]), getPath(surfaceAliases, ["hero"])));
   addBase(toVariableName(prefix, "text", "on", "page", "default"), pickSemantic(tokens2, getPath(defaultMode, ["text", "onPage", "default"]), getPath(textAliases, ["onPage", "default"])));
   addBase(toVariableName(prefix, "text", "on", "page", "muted"), pickSemantic(tokens2, getPath(defaultMode, ["text", "onPage", "muted"]), getPath(textAliases, ["onPage", "muted"])));
   addBase(toVariableName(prefix, "text", "on", "page", "subtle"), pickSemantic(tokens2, getPath(defaultMode, ["text", "onPage", "subtle"]), getPath(textAliases, ["onPage", "subtle"])));
   addBase(toVariableName(prefix, "text", "on", "page", "meta"), pickSemantic(tokens2, getPath(defaultMode, ["text", "onPage", "meta"]), getPath(textAliases, ["onPage", "meta"])));
+  addBase(toVariableName(prefix, "text", "on", "page", "brand"), pickSemantic(tokens2, getPath(defaultMode, ["text", "onPage", "brand"]), getPath(textAliases, ["onPage", "brand"])));
   addBase(toVariableName(prefix, "text", "on", "surface", "default"), pickSemantic(tokens2, getPath(defaultMode, ["text", "onSurface", "default"]), getPath(textAliases, ["onSurface", "default"])));
   addBase(toVariableName(prefix, "text", "on", "surface", "muted"), pickSemantic(tokens2, getPath(defaultMode, ["text", "onSurface", "muted"]), getPath(textAliases, ["onSurface", "muted"])));
   addBase(toVariableName(prefix, "text", "on", "surface", "subtle"), pickSemantic(tokens2, getPath(defaultMode, ["text", "onSurface", "subtle"]), getPath(textAliases, ["onSurface", "subtle"])));
   addBase(toVariableName(prefix, "text", "on", "surface", "meta"), pickSemantic(tokens2, getPath(defaultMode, ["text", "onSurface", "meta"]), getPath(textAliases, ["onSurface", "meta"])));
+  addBase(toVariableName(prefix, "text", "on", "surface", "brand"), pickSemantic(tokens2, getPath(defaultMode, ["text", "onSurface", "brand"]), getPath(textAliases, ["onSurface", "brand"])));
   addBase(toVariableName(prefix, "component", "card", "text"), pickSemantic(tokens2, getPath(defaultMode, ["component", "card", "text"]), getPath(componentAliases, ["card", "text"])));
   addBase(toVariableName(prefix, "component", "card", "text-muted"), pickSemantic(tokens2, getPath(defaultMode, ["component", "card", "textMuted"]), getPath(componentAliases, ["card", "textMuted"])));
   addBase(toVariableName(prefix, "component", "input", "text"), pickSemantic(tokens2, getPath(defaultMode, ["component", "input", "text"]), getPath(componentAliases, ["input", "text"])));
@@ -1052,6 +1059,10 @@ var generateCssVariables = (tokens2, options = {}) => {
     pickSemantic(tokens2, getPath(darkMode, ["surface", "overlay"]), getPath(defaultMode, ["surface", "overlay"]), getPath(surfaceAliases, ["overlay"]))
   );
   addDark(
+    toVariableName(prefix, "surface", "alternate"),
+    pickSemantic(tokens2, getPath(darkMode, ["surface", "alternate"]), getPath(defaultMode, ["surface", "alternate"]))
+  );
+  addDark(
     toVariableName(prefix, "surface", "hero"),
     pickSemantic(tokens2, getPath(darkMode, ["surface", "hero"]), getPath(defaultMode, ["surface", "hero"]), getPath(surfaceAliases, ["hero"]))
   );
@@ -1092,6 +1103,15 @@ var generateCssVariables = (tokens2, options = {}) => {
     )
   );
   addDark(
+    toVariableName(prefix, "text", "on", "page", "brand"),
+    pickSemantic(
+      tokens2,
+      getPath(darkMode, ["text", "onPage", "brand"]),
+      getPath(defaultMode, ["text", "onPage", "brand"]),
+      getPath(textAliases, ["onPage", "brand"])
+    )
+  );
+  addDark(
     toVariableName(prefix, "text", "on", "surface", "default"),
     pickSemantic(
       tokens2,
@@ -1125,6 +1145,15 @@ var generateCssVariables = (tokens2, options = {}) => {
       getPath(darkMode, ["text", "onSurface", "meta"]),
       getPath(defaultMode, ["text", "onSurface", "meta"]),
       getPath(textAliases, ["onSurface", "meta"])
+    )
+  );
+  addDark(
+    toVariableName(prefix, "text", "on", "surface", "brand"),
+    pickSemantic(
+      tokens2,
+      getPath(darkMode, ["text", "onSurface", "brand"]),
+      getPath(defaultMode, ["text", "onSurface", "brand"]),
+      getPath(textAliases, ["onSurface", "brand"])
     )
   );
   addDark(
