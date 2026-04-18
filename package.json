@@ -1,6 +1,6 @@
 {
   "name": "@phcdevworks/spectre-tokens",
-  "version": "2.2.0",
+  "version": "2.3.0",
   "description": "@phcdevworks/spectre-tokens is the design-token package of the Spectre system for downstream Spectre packages and compatible applications.",
   "keywords": [
     "phcdevworks",
@@ -89,7 +89,7 @@
     "@typescript-eslint/parser": "^8.58.2",
     "chroma-js": "^3.2.0",
     "colord": "^2.9.3",
-    "eslint": "^10.2.0",
+    "eslint": "^10.2.1",
     "jiti": "^2.6.1",
     "prettier": "^3.8.3",
     "ts-node": "^10.9.2",
