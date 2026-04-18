@@ -800,6 +800,7 @@ interface ButtonStateTokens {
     borderDisabled?: string;
     shadow?: string;
     focusRing?: string;
+    focusVisible?: string;
 }
 interface FormStateTokens {
     bg?: string;
@@ -810,14 +811,19 @@ interface FormStateTokens {
 }
 interface ComponentBadgeTokens<Value = string> {
     neutralBg: Value;
+    neutralBgHover?: Value;
     neutralText: Value;
     infoBg: Value;
+    infoBgHover?: Value;
     infoText: Value;
     successBg: Value;
+    successBgHover?: Value;
     successText: Value;
     warningBg: Value;
+    warningBgHover?: Value;
     warningText: Value;
     dangerBg: Value;
+    dangerBgHover?: Value;
     dangerText: Value;
 }
 interface ComponentIconBoxTokens<Value = string> {
@@ -830,6 +836,7 @@ interface ComponentIconBoxTokens<Value = string> {
 }
 interface ComponentTestimonialTokens<Value = string> {
     bg: Value;
+    bgHover?: Value;
     border: Value;
     text: Value;
     authorName: Value;
@@ -838,6 +845,7 @@ interface ComponentTestimonialTokens<Value = string> {
 }
 interface ComponentPricingCardTokens<Value = string> {
     bg: Value;
+    bgHover?: Value;
     border: Value;
     featuredBg: Value;
     featuredText: Value;
@@ -888,17 +896,18 @@ interface SpectreModeTokens {
             muted: SemanticTokenValue;
             subtle: SemanticTokenValue;
             meta: SemanticTokenValue;
+            brand: SemanticTokenValue;
         };
         onSurface: {
             default: SemanticTokenValue;
             muted: SemanticTokenValue;
             subtle: SemanticTokenValue;
             meta: SemanticTokenValue;
+            brand: SemanticTokenValue;
         };
     };
     component: ComponentTokens<SemanticTokenValue>;
 }
-
 type SpectreTokens = SpectreGeneratedTokens;
 interface LayoutTokens {
     section: {
