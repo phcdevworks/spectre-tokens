@@ -327,8 +327,8 @@ var coreTokens = {
           "border": "{colors.neutral.700}",
           "text": "{colors.neutral.200}",
           "authorName": "{colors.neutral.100}",
-          "authorTitle": "{colors.neutral.400}",
-          "quoteMark": "{colors.neutral.400}"
+          "authorTitle": "{colors.neutral.300}",
+          "quoteMark": "{colors.neutral.300}"
         },
         "pricingCard": {
           "bg": "{colors.neutral.800}",
@@ -339,7 +339,7 @@ var coreTokens = {
           "featuredBadgeBg": "{colors.warning.500}",
           "featuredBadgeText": "{colors.neutral.900}",
           "price": "{colors.neutral.100}",
-          "priceDescription": "{colors.neutral.400}"
+          "priceDescription": "{colors.neutral.300}"
         },
         "rating": {
           "starFilled": "{colors.warning.400}",

@@ -4,6 +4,10 @@ All notable changes to this project will be documented here. The format follows
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) and the versioning
 reflects package releases published to npm.
 
+## [Unreleased]
+
+Contract change type: semantic change
+
 ## [2.3.0] - 2026-04-18
 
 **Release Title:** Contract Authority and CSS Output Hardening
