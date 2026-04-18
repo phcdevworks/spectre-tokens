@@ -1,3 +1,5 @@
+import type { SpectreGeneratedTokens } from './generated/tokens';
+
 export type ColorScale = Record<string, string>;
 
 export type TokenScale = Record<string, string>;
@@ -52,6 +54,7 @@ export interface ButtonStateTokens {
   borderDisabled?: string;
   shadow?: string;
   focusRing?: string;
+  focusVisible?: string;
 }
 
 export interface FormStateTokens {
@@ -64,14 +67,19 @@ export interface FormStateTokens {
 
 export interface ComponentBadgeTokens<Value = string> {
   neutralBg: Value;
+  neutralBgHover?: Value;
   neutralText: Value;
   infoBg: Value;
+  infoBgHover?: Value;
   infoText: Value;
   successBg: Value;
+  successBgHover?: Value;
   successText: Value;
   warningBg: Value;
+  warningBgHover?: Value;
   warningText: Value;
   dangerBg: Value;
+  dangerBgHover?: Value;
   dangerText: Value;
 }
 
@@ -86,6 +94,7 @@ export interface ComponentIconBoxTokens<Value = string> {
 
 export interface ComponentTestimonialTokens<Value = string> {
   bg: Value;
+  bgHover?: Value;
   border: Value;
   text: Value;
   authorName: Value;
@@ -95,6 +104,7 @@ export interface ComponentTestimonialTokens<Value = string> {
 
 export interface ComponentPricingCardTokens<Value = string> {
   bg: Value;
+  bgHover?: Value;
   border: Value;
   featuredBg: Value;
   featuredText: Value;
@@ -150,18 +160,18 @@ export interface SpectreModeTokens {
       muted: SemanticTokenValue;
       subtle: SemanticTokenValue;
       meta: SemanticTokenValue;
+      brand: SemanticTokenValue;
     };
     onSurface: {
       default: SemanticTokenValue;
       muted: SemanticTokenValue;
       subtle: SemanticTokenValue;
       meta: SemanticTokenValue;
+      brand: SemanticTokenValue;
     };
   };
   component: ComponentTokens<SemanticTokenValue>;
 }
-
-import type { SpectreGeneratedTokens } from './generated/tokens';
 
 export type SpectreTokens = SpectreGeneratedTokens;
 
