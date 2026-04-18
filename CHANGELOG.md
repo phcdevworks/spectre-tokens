@@ -10,6 +10,29 @@ Contract change type: semantic change
 
 ### Changed
 
+- Improved dark mode legibility for `testimonial` and `pricingCard` by shifting subtle text roles from step 400 to 300, ensuring WCAG AA compliance (5.6:1) against hover backgrounds.
+- Updated automated contrast validation for dark mode subtle component text to pair with `bgHover` for stricter accessibility enforcement.
+
+## [2.3.0] - 2026-04-18
+
+**Release Title:** Contract Authority and CSS Output Hardening
+
+Contract change type: semantic change
+
+### Added
+
+- Added `contract.manifest.json` as the machine-readable contract authority for
+  public namespaces, required outputs, protected semantic groups, and change
+  classification rules.
+- Added `TOKEN_CONTRACT.md` and stronger doc validation so README, token
+  contract docs, runtime exports, and generated outputs are checked together.
+- Added smoke-consumer fixtures and a consumer contract check to verify the
+  package shape from a downstream integration path.
+- Added roadmap and TODO planning documents to make the contract-led direction
+  of the package more explicit.
+
+### Changed
+
 - Tightened the publish gate to run the full validation suite before verifying
   `dist` sync to prevent releases without contract checks.
 - Aligned `font.xs` with `typography.scale.xs` to keep the font scale consistent
@@ -17,6 +40,27 @@ Contract change type: semantic change
 - Added contract-authority enforcement through `contract.manifest.json`,
   fail-fast namespace/output/doc validation, and downstream change
   classification checks.
+- Clarified package ownership, consumer guidance, and documentation boundaries
+  so token meaning remains centralized in this package rather than drifting into
+  examples or downstream UI structure.
+- Refined contract manifest validation coverage, synchronized supporting docs,
+  and refreshed development dependencies for the current toolchain.
+
+### Fixed
+
+- Fixed CSS variable resolution for nested token references so generated CSS
+  resolves the intended token values consistently.
+- Aligned dark-mode hero gradient flow with the default-mode direction to keep
+  hero treatment visually consistent across themes.
+- Corrected CSS generation for scalar color groups so single-value palette
+  entries such as `white` and `black` emit stable CSS variables instead of
+  fragmented indexed artifacts.
+- Expanded emitted semantic CSS variables to include brand text aliases and the
+  mode-aware `surface.alternate` contract for better alignment with runtime
+  token semantics.
+- Tightened CSS contract validation and refreshed exported helper typings so
+  generated outputs, public TypeScript helpers, and runtime tokens stay in sync
+  more reliably.
 
 ## [2.2.0] - 2026-04-11
 
@@ -385,7 +429,7 @@ Contract change type: semantic change
 - Standardized documentation and contributing guidelines.
 
 [unreleased]:
-  https://github.com/phcdevworks/spectre-tokens/compare/v2.1.2...HEAD
+  https://github.com/phcdevworks/spectre-tokens/compare/v2.3.0...HEAD
 [2.1.2]: https://github.com/phcdevworks/spectre-tokens/compare/v2.1.1...v2.1.2
 [2.1.1]: https://github.com/phcdevworks/spectre-tokens/compare/v2.1.0...v2.1.1
 [2.1.0]: https://github.com/phcdevworks/spectre-tokens/compare/v2.0.0...v2.1.0
