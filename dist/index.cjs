@@ -293,7 +293,7 @@ var coreTokens = {
         "page": "{colors.neutral.900}",
         "card": "{colors.neutral.800}",
         "input": "{colors.neutral.700}",
-        "overlay": "{colors.neutral.800}",
+        "overlay": "{colors.neutral.900} / 0.6",
         "alternate": "{colors.neutral.800}",
         "hero": "linear-gradient(135deg, {colors.accent.700} 0%, {colors.accent.900} 100%)"
       },
