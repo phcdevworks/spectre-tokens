@@ -252,25 +252,25 @@
           "text": {
             "value": "{colors.neutral.700}",
             "metadata": {
-              "pair": "modes.default.component.testimonial.bg"
+              "pair": "modes.default.component.testimonial.bgHover"
             }
           },
           "authorName": {
             "value": "{colors.neutral.900}",
             "metadata": {
-              "pair": "modes.default.component.testimonial.bg"
+              "pair": "modes.default.component.testimonial.bgHover"
             }
           },
           "authorTitle": {
             "value": "{colors.neutral.500}",
             "metadata": {
-              "pair": "modes.default.component.testimonial.bg"
+              "pair": "modes.default.component.testimonial.bgHover"
             }
           },
           "quoteMark": {
             "value": "{colors.neutral.500}",
             "metadata": {
-              "pair": "modes.default.component.testimonial.bg"
+              "pair": "modes.default.component.testimonial.bgHover"
             }
           }
         },
@@ -616,13 +616,13 @@
           "text": {
             "value": "{colors.neutral.200}",
             "metadata": {
-              "pair": "modes.dark.component.testimonial.bg"
+              "pair": "modes.dark.component.testimonial.bgHover"
             }
           },
           "authorName": {
             "value": "{colors.neutral.100}",
             "metadata": {
-              "pair": "modes.dark.component.testimonial.bg"
+              "pair": "modes.dark.component.testimonial.bgHover"
             }
           },
           "authorTitle": {
