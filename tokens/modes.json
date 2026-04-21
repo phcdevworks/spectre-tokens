@@ -363,7 +363,7 @@
           }
         },
         "overlay": {
-          "value": "{colors.neutral.900} / 0.6"
+          "value": "{colors.black} / 0.6"
         },
         "alternate": {
           "value": "{colors.neutral.800}",

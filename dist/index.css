@@ -349,7 +349,7 @@
   --sp-surface-page: #141b24;
   --sp-surface-card: #222b38;
   --sp-surface-input: #374253;
-  --sp-surface-overlay: rgba(20, 27, 36, 0.6);
+  --sp-surface-overlay: rgba(0, 0, 0, 0.6);
   --sp-surface-alternate: #222b38;
   --sp-surface-hero: linear-gradient(135deg, #5d28b8 0%, #401f75 100%);
   --sp-text-on-page-default: #f7f8fb;
