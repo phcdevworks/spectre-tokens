@@ -262,13 +262,13 @@
             }
           },
           "authorTitle": {
-            "value": "{colors.neutral.500}",
+            "value": "{colors.neutral.600}",
             "metadata": {
               "pair": "modes.default.component.testimonial.bgHover"
             }
           },
           "quoteMark": {
-            "value": "{colors.neutral.500}",
+            "value": "{colors.neutral.600}",
             "metadata": {
               "pair": "modes.default.component.testimonial.bgHover"
             }
@@ -314,13 +314,13 @@
           "price": {
             "value": "{colors.neutral.900}",
             "metadata": {
-              "pair": "modes.default.component.pricingCard.bg"
+              "pair": "modes.default.component.pricingCard.bgHover"
             }
           },
           "priceDescription": {
-            "value": "{colors.neutral.500}",
+            "value": "{colors.neutral.600}",
             "metadata": {
-              "pair": "modes.default.component.pricingCard.bg"
+              "pair": "modes.default.component.pricingCard.bgHover"
             }
           }
         },
@@ -678,7 +678,7 @@
           "price": {
             "value": "{colors.neutral.100}",
             "metadata": {
-              "pair": "modes.dark.component.pricingCard.bg"
+              "pair": "modes.dark.component.pricingCard.bgHover"
             }
           },
           "priceDescription": {

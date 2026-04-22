@@ -2733,8 +2733,8 @@ export const coreTokens: SpectreGeneratedTokens = {
           "border": "{colors.neutral.200}",
           "text": "{colors.neutral.700}",
           "authorName": "{colors.neutral.900}",
-          "authorTitle": "{colors.neutral.500}",
-          "quoteMark": "{colors.neutral.500}"
+          "authorTitle": "{colors.neutral.600}",
+          "quoteMark": "{colors.neutral.600}"
         },
         "pricingCard": {
           "bg": "{colors.white}",
@@ -2745,7 +2745,7 @@ export const coreTokens: SpectreGeneratedTokens = {
           "featuredBadgeBg": "{colors.warning.500}",
           "featuredBadgeText": "{colors.neutral.900}",
           "price": "{colors.neutral.900}",
-          "priceDescription": "{colors.neutral.500}"
+          "priceDescription": "{colors.neutral.600}"
         },
         "rating": {
           "starFilled": "{colors.warning.500}",
