@@ -1,4 +1,4 @@
-import { loadContractManifest } from './contract-utils';
+import { loadContractManifest, getPathValue } from './contract-utils';
 import { loadMergedTokens } from './token-utils';
 
 const tokens = loadMergedTokens();
@@ -44,15 +44,6 @@ function assertPath(obj: unknown, path: string): void {
     }
     cur = (cur as Record<string, unknown>)[part];
   }
-}
-
-function getPathValue(source: unknown, path: string): unknown {
-  return path.split('.').reduce<unknown>((acc, key) => {
-    if (acc && typeof acc === 'object') {
-      return (acc as Record<string, unknown>)[key];
-    }
-    return undefined;
-  }, source);
 }
 
 function normalizeFontToken(value: unknown): Record<string, unknown> | null {

@@ -1,15 +1,8 @@
 import lockedColorBaseline from './locked-color-baseline.json';
+import { getPathValue } from './contract-utils';
 import { loadMergedTokens } from './token-utils';
 
 const tokens = loadMergedTokens();
-
-const getPathValue = (obj: unknown, path: string): unknown =>
-  path.split('.').reduce<unknown>((acc, segment) => {
-    if (acc && typeof acc === 'object') {
-      return (acc as Record<string, unknown>)[segment];
-    }
-    return undefined;
-  }, obj);
 
 const stableStringify = (value: unknown): string => {
   if (Array.isArray(value)) {
