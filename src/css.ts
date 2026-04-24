@@ -300,243 +300,58 @@ export const generateCssVariables = (tokens: SpectreTokens, options: CssVariable
   const textAliases = tokens.text ?? {};
   const componentAliases = tokens.component ?? {};
 
+  type SemanticEntry = {
+    varParts: string[];
+    modePath: string[];
+    aliasSrc?: unknown;
+    aliasPath?: string[];
+  };
+
+  const semanticEntries: SemanticEntry[] = [
+    { varParts: ['surface', 'page'],      modePath: ['surface', 'page'],      aliasSrc: surfaceAliases, aliasPath: ['page'] },
+    { varParts: ['surface', 'card'],      modePath: ['surface', 'card'],      aliasSrc: surfaceAliases, aliasPath: ['card'] },
+    { varParts: ['surface', 'input'],     modePath: ['surface', 'input'],     aliasSrc: surfaceAliases, aliasPath: ['input'] },
+    { varParts: ['surface', 'overlay'],   modePath: ['surface', 'overlay'],   aliasSrc: surfaceAliases, aliasPath: ['overlay'] },
+    { varParts: ['surface', 'alternate'], modePath: ['surface', 'alternate'] },
+    { varParts: ['surface', 'hero'],      modePath: ['surface', 'hero'],      aliasSrc: surfaceAliases, aliasPath: ['hero'] },
+    { varParts: ['text', 'on', 'page', 'default'], modePath: ['text', 'onPage', 'default'], aliasSrc: textAliases, aliasPath: ['onPage', 'default'] },
+    { varParts: ['text', 'on', 'page', 'muted'],   modePath: ['text', 'onPage', 'muted'],   aliasSrc: textAliases, aliasPath: ['onPage', 'muted'] },
+    { varParts: ['text', 'on', 'page', 'subtle'],  modePath: ['text', 'onPage', 'subtle'],  aliasSrc: textAliases, aliasPath: ['onPage', 'subtle'] },
+    { varParts: ['text', 'on', 'page', 'meta'],    modePath: ['text', 'onPage', 'meta'],    aliasSrc: textAliases, aliasPath: ['onPage', 'meta'] },
+    { varParts: ['text', 'on', 'page', 'brand'],   modePath: ['text', 'onPage', 'brand'],   aliasSrc: textAliases, aliasPath: ['onPage', 'brand'] },
+    { varParts: ['text', 'on', 'surface', 'default'], modePath: ['text', 'onSurface', 'default'], aliasSrc: textAliases, aliasPath: ['onSurface', 'default'] },
+    { varParts: ['text', 'on', 'surface', 'muted'],   modePath: ['text', 'onSurface', 'muted'],   aliasSrc: textAliases, aliasPath: ['onSurface', 'muted'] },
+    { varParts: ['text', 'on', 'surface', 'subtle'],  modePath: ['text', 'onSurface', 'subtle'],  aliasSrc: textAliases, aliasPath: ['onSurface', 'subtle'] },
+    { varParts: ['text', 'on', 'surface', 'meta'],    modePath: ['text', 'onSurface', 'meta'],    aliasSrc: textAliases, aliasPath: ['onSurface', 'meta'] },
+    { varParts: ['text', 'on', 'surface', 'brand'],   modePath: ['text', 'onSurface', 'brand'],   aliasSrc: textAliases, aliasPath: ['onSurface', 'brand'] },
+    { varParts: ['component', 'card', 'text'],         modePath: ['component', 'card', 'text'],         aliasSrc: componentAliases, aliasPath: ['card', 'text'] },
+    { varParts: ['component', 'card', 'text-muted'],   modePath: ['component', 'card', 'textMuted'],    aliasSrc: componentAliases, aliasPath: ['card', 'textMuted'] },
+    { varParts: ['component', 'input', 'text'],        modePath: ['component', 'input', 'text'],        aliasSrc: componentAliases, aliasPath: ['input', 'text'] },
+    { varParts: ['component', 'input', 'placeholder'], modePath: ['component', 'input', 'placeholder'], aliasSrc: componentAliases, aliasPath: ['input', 'placeholder'] },
+    { varParts: ['button', 'text', 'default'],        modePath: ['component', 'button', 'textDefault'],    aliasSrc: componentAliases, aliasPath: ['button', 'textDefault'] },
+    { varParts: ['button', 'text', 'on', 'primary'],  modePath: ['component', 'button', 'textOnPrimary'],  aliasSrc: componentAliases, aliasPath: ['button', 'textOnPrimary'] },
+    ...BADGE_VARIANTS.flatMap(({ variant, bgKey, textKey }) => [
+      { varParts: ['badge', variant, 'bg'],   modePath: ['component', 'badge', bgKey],   aliasSrc: componentAliases, aliasPath: ['badge', bgKey] },
+      { varParts: ['badge', variant, 'text'], modePath: ['component', 'badge', textKey], aliasSrc: componentAliases, aliasPath: ['badge', textKey] },
+    ]),
+    ...ICON_BOX_FIELDS.map(({ name, tokenKey }) => ({
+      varParts: ['icon-box', name], modePath: ['component', 'iconBox', tokenKey], aliasSrc: componentAliases, aliasPath: ['iconBox', tokenKey],
+    })),
+  ];
+
   const baseLines: string[] = [];
-  const addBase = (name: string, value?: string) => {
-    if (value !== undefined) baseLines.push(`  ${name}: ${value};`);
-  };
-
-  addBase(toVariableName(prefix, 'surface', 'page'), pickSemantic(tokens, getPath(defaultMode, ['surface', 'page']), getPath(surfaceAliases, ['page'])));
-  addBase(toVariableName(prefix, 'surface', 'card'), pickSemantic(tokens, getPath(defaultMode, ['surface', 'card']), getPath(surfaceAliases, ['card'])));
-  addBase(toVariableName(prefix, 'surface', 'input'), pickSemantic(tokens, getPath(defaultMode, ['surface', 'input']), getPath(surfaceAliases, ['input'])));
-  addBase(toVariableName(prefix, 'surface', 'overlay'), pickSemantic(tokens, getPath(defaultMode, ['surface', 'overlay']), getPath(surfaceAliases, ['overlay'])));
-  addBase(toVariableName(prefix, 'surface', 'alternate'), pickSemantic(tokens, getPath(defaultMode, ['surface', 'alternate'])));
-  addBase(toVariableName(prefix, 'surface', 'hero'), pickSemantic(tokens, getPath(defaultMode, ['surface', 'hero']), getPath(surfaceAliases, ['hero'])));
-
-  addBase(toVariableName(prefix, 'text', 'on', 'page', 'default'), pickSemantic(tokens, getPath(defaultMode, ['text', 'onPage', 'default']), getPath(textAliases, ['onPage', 'default'])));
-  addBase(toVariableName(prefix, 'text', 'on', 'page', 'muted'), pickSemantic(tokens, getPath(defaultMode, ['text', 'onPage', 'muted']), getPath(textAliases, ['onPage', 'muted'])));
-  addBase(toVariableName(prefix, 'text', 'on', 'page', 'subtle'), pickSemantic(tokens, getPath(defaultMode, ['text', 'onPage', 'subtle']), getPath(textAliases, ['onPage', 'subtle'])));
-  addBase(toVariableName(prefix, 'text', 'on', 'page', 'meta'), pickSemantic(tokens, getPath(defaultMode, ['text', 'onPage', 'meta']), getPath(textAliases, ['onPage', 'meta'])));
-  addBase(toVariableName(prefix, 'text', 'on', 'page', 'brand'), pickSemantic(tokens, getPath(defaultMode, ['text', 'onPage', 'brand']), getPath(textAliases, ['onPage', 'brand'])));
-  addBase(toVariableName(prefix, 'text', 'on', 'surface', 'default'), pickSemantic(tokens, getPath(defaultMode, ['text', 'onSurface', 'default']), getPath(textAliases, ['onSurface', 'default'])));
-  addBase(toVariableName(prefix, 'text', 'on', 'surface', 'muted'), pickSemantic(tokens, getPath(defaultMode, ['text', 'onSurface', 'muted']), getPath(textAliases, ['onSurface', 'muted'])));
-  addBase(toVariableName(prefix, 'text', 'on', 'surface', 'subtle'), pickSemantic(tokens, getPath(defaultMode, ['text', 'onSurface', 'subtle']), getPath(textAliases, ['onSurface', 'subtle'])));
-  addBase(toVariableName(prefix, 'text', 'on', 'surface', 'meta'), pickSemantic(tokens, getPath(defaultMode, ['text', 'onSurface', 'meta']), getPath(textAliases, ['onSurface', 'meta'])));
-  addBase(toVariableName(prefix, 'text', 'on', 'surface', 'brand'), pickSemantic(tokens, getPath(defaultMode, ['text', 'onSurface', 'brand']), getPath(textAliases, ['onSurface', 'brand'])));
-
-  addBase(toVariableName(prefix, 'component', 'card', 'text'), pickSemantic(tokens, getPath(defaultMode, ['component', 'card', 'text']), getPath(componentAliases, ['card', 'text'])));
-  addBase(toVariableName(prefix, 'component', 'card', 'text-muted'), pickSemantic(tokens, getPath(defaultMode, ['component', 'card', 'textMuted']), getPath(componentAliases, ['card', 'textMuted'])));
-  addBase(toVariableName(prefix, 'component', 'input', 'text'), pickSemantic(tokens, getPath(defaultMode, ['component', 'input', 'text']), getPath(componentAliases, ['input', 'text'])));
-  addBase(toVariableName(prefix, 'component', 'input', 'placeholder'), pickSemantic(tokens, getPath(defaultMode, ['component', 'input', 'placeholder']), getPath(componentAliases, ['input', 'placeholder'])));
-  addBase(toVariableName(prefix, 'button', 'text', 'default'), pickSemantic(tokens, getPath(defaultMode, ['component', 'button', 'textDefault']), getPath(componentAliases, ['button', 'textDefault'])));
-  addBase(toVariableName(prefix, 'button', 'text', 'on', 'primary'), pickSemantic(tokens, getPath(defaultMode, ['component', 'button', 'textOnPrimary']), getPath(componentAliases, ['button', 'textOnPrimary'])));
-  BADGE_VARIANTS.forEach(({ variant, bgKey, textKey }) => {
-    addBase(
-      toVariableName(prefix, 'badge', variant, 'bg'),
-      pickSemantic(tokens, getPath(defaultMode, ['component', 'badge', bgKey]), getPath(componentAliases, ['badge', bgKey]))
-    );
-    addBase(
-      toVariableName(prefix, 'badge', variant, 'text'),
-      pickSemantic(tokens, getPath(defaultMode, ['component', 'badge', textKey]), getPath(componentAliases, ['badge', textKey]))
-    );
-  });
-  ICON_BOX_FIELDS.forEach(({ name, tokenKey }) => {
-    addBase(
-      toVariableName(prefix, 'icon-box', name),
-      pickSemantic(tokens, getPath(defaultMode, ['component', 'iconBox', tokenKey]), getPath(componentAliases, ['iconBox', tokenKey]))
-    );
-  });
-
-  const rootLines = [...baseLines, ...mapLines];
-
   const darkLines: string[] = [];
-  const addDark = (name: string, value?: string) => {
-    if (value !== undefined) darkLines.push(`  ${name}: ${value};`);
-  };
+  const addBase = (name: string, value?: string) => { if (value !== undefined) baseLines.push(`  ${name}: ${value};`); };
+  const addDark = (name: string, value?: string) => { if (value !== undefined) darkLines.push(`  ${name}: ${value};`); };
 
-  addDark(
-    toVariableName(prefix, 'surface', 'page'),
-    pickSemantic(tokens, getPath(darkMode, ['surface', 'page']), getPath(defaultMode, ['surface', 'page']), getPath(surfaceAliases, ['page']))
-  );
-  addDark(
-    toVariableName(prefix, 'surface', 'card'),
-    pickSemantic(tokens, getPath(darkMode, ['surface', 'card']), getPath(defaultMode, ['surface', 'card']), getPath(surfaceAliases, ['card']))
-  );
-  addDark(
-    toVariableName(prefix, 'surface', 'input'),
-    pickSemantic(tokens, getPath(darkMode, ['surface', 'input']), getPath(defaultMode, ['surface', 'input']), getPath(surfaceAliases, ['input']))
-  );
-  addDark(
-    toVariableName(prefix, 'surface', 'overlay'),
-    pickSemantic(tokens, getPath(darkMode, ['surface', 'overlay']), getPath(defaultMode, ['surface', 'overlay']), getPath(surfaceAliases, ['overlay']))
-  );
-  addDark(
-    toVariableName(prefix, 'surface', 'alternate'),
-    pickSemantic(tokens, getPath(darkMode, ['surface', 'alternate']), getPath(defaultMode, ['surface', 'alternate']))
-  );
-  addDark(
-    toVariableName(prefix, 'surface', 'hero'),
-    pickSemantic(tokens, getPath(darkMode, ['surface', 'hero']), getPath(defaultMode, ['surface', 'hero']), getPath(surfaceAliases, ['hero']))
-  );
-
-  addDark(
-    toVariableName(prefix, 'text', 'on', 'page', 'default'),
-    pickSemantic(tokens,
-      getPath(darkMode, ['text', 'onPage', 'default']),
-      getPath(defaultMode, ['text', 'onPage', 'default']),
-      getPath(textAliases, ['onPage', 'default'])
-    )
-  );
-  addDark(
-    toVariableName(prefix, 'text', 'on', 'page', 'muted'),
-    pickSemantic(tokens,
-      getPath(darkMode, ['text', 'onPage', 'muted']),
-      getPath(defaultMode, ['text', 'onPage', 'muted']),
-      getPath(textAliases, ['onPage', 'muted'])
-    )
-  );
-  addDark(
-    toVariableName(prefix, 'text', 'on', 'page', 'subtle'),
-    pickSemantic(tokens,
-      getPath(darkMode, ['text', 'onPage', 'subtle']),
-      getPath(defaultMode, ['text', 'onPage', 'subtle']),
-      getPath(textAliases, ['onPage', 'subtle'])
-    )
-  );
-  addDark(
-    toVariableName(prefix, 'text', 'on', 'page', 'meta'),
-    pickSemantic(tokens,
-      getPath(darkMode, ['text', 'onPage', 'meta']),
-      getPath(defaultMode, ['text', 'onPage', 'meta']),
-      getPath(textAliases, ['onPage', 'meta'])
-    )
-  );
-  addDark(
-    toVariableName(prefix, 'text', 'on', 'page', 'brand'),
-    pickSemantic(tokens,
-      getPath(darkMode, ['text', 'onPage', 'brand']),
-      getPath(defaultMode, ['text', 'onPage', 'brand']),
-      getPath(textAliases, ['onPage', 'brand'])
-    )
-  );
-  addDark(
-    toVariableName(prefix, 'text', 'on', 'surface', 'default'),
-    pickSemantic(tokens,
-      getPath(darkMode, ['text', 'onSurface', 'default']),
-      getPath(defaultMode, ['text', 'onSurface', 'default']),
-      getPath(textAliases, ['onSurface', 'default'])
-    )
-  );
-  addDark(
-    toVariableName(prefix, 'text', 'on', 'surface', 'muted'),
-    pickSemantic(tokens,
-      getPath(darkMode, ['text', 'onSurface', 'muted']),
-      getPath(defaultMode, ['text', 'onSurface', 'muted']),
-      getPath(textAliases, ['onSurface', 'muted'])
-    )
-  );
-  addDark(
-    toVariableName(prefix, 'text', 'on', 'surface', 'subtle'),
-    pickSemantic(tokens,
-      getPath(darkMode, ['text', 'onSurface', 'subtle']),
-      getPath(defaultMode, ['text', 'onSurface', 'subtle']),
-      getPath(textAliases, ['onSurface', 'subtle'])
-    )
-  );
-  addDark(
-    toVariableName(prefix, 'text', 'on', 'surface', 'meta'),
-    pickSemantic(tokens,
-      getPath(darkMode, ['text', 'onSurface', 'meta']),
-      getPath(defaultMode, ['text', 'onSurface', 'meta']),
-      getPath(textAliases, ['onSurface', 'meta'])
-    )
-  );
-  addDark(
-    toVariableName(prefix, 'text', 'on', 'surface', 'brand'),
-    pickSemantic(tokens,
-      getPath(darkMode, ['text', 'onSurface', 'brand']),
-      getPath(defaultMode, ['text', 'onSurface', 'brand']),
-      getPath(textAliases, ['onSurface', 'brand'])
-    )
-  );
-
-  addDark(
-    toVariableName(prefix, 'component', 'card', 'text'),
-    pickSemantic(tokens,
-      getPath(darkMode, ['component', 'card', 'text']),
-      getPath(defaultMode, ['component', 'card', 'text']),
-      getPath(componentAliases, ['card', 'text'])
-    )
-  );
-  addDark(
-    toVariableName(prefix, 'component', 'card', 'text-muted'),
-    pickSemantic(tokens,
-      getPath(darkMode, ['component', 'card', 'textMuted']),
-      getPath(defaultMode, ['component', 'card', 'textMuted']),
-      getPath(componentAliases, ['card', 'textMuted'])
-    )
-  );
-  addDark(
-    toVariableName(prefix, 'component', 'input', 'text'),
-    pickSemantic(tokens,
-      getPath(darkMode, ['component', 'input', 'text']),
-      getPath(defaultMode, ['component', 'input', 'text']),
-      getPath(componentAliases, ['input', 'text'])
-    )
-  );
-  addDark(
-    toVariableName(prefix, 'component', 'input', 'placeholder'),
-    pickSemantic(tokens,
-      getPath(darkMode, ['component', 'input', 'placeholder']),
-      getPath(defaultMode, ['component', 'input', 'placeholder']),
-      getPath(componentAliases, ['input', 'placeholder'])
-    )
-  );
-  addDark(
-    toVariableName(prefix, 'button', 'text', 'default'),
-    pickSemantic(tokens,
-      getPath(darkMode, ['component', 'button', 'textDefault']),
-      getPath(defaultMode, ['component', 'button', 'textDefault']),
-      getPath(componentAliases, ['button', 'textDefault'])
-    )
-  );
-  addDark(
-    toVariableName(prefix, 'button', 'text', 'on', 'primary'),
-    pickSemantic(tokens,
-      getPath(darkMode, ['component', 'button', 'textOnPrimary']),
-      getPath(defaultMode, ['component', 'button', 'textOnPrimary']),
-      getPath(componentAliases, ['button', 'textOnPrimary'])
-    )
-  );
-  BADGE_VARIANTS.forEach(({ variant, bgKey, textKey }) => {
-    addDark(
-      toVariableName(prefix, 'badge', variant, 'bg'),
-      pickSemantic(tokens,
-        getPath(darkMode, ['component', 'badge', bgKey]),
-        getPath(defaultMode, ['component', 'badge', bgKey]),
-        getPath(componentAliases, ['badge', bgKey])
-      )
-    );
-    addDark(
-      toVariableName(prefix, 'badge', variant, 'text'),
-      pickSemantic(tokens,
-        getPath(darkMode, ['component', 'badge', textKey]),
-        getPath(defaultMode, ['component', 'badge', textKey]),
-        getPath(componentAliases, ['badge', textKey])
-      )
-    );
-  });
-  ICON_BOX_FIELDS.forEach(({ name, tokenKey }) => {
-    addDark(
-      toVariableName(prefix, 'icon-box', name),
-      pickSemantic(tokens,
-        getPath(darkMode, ['component', 'iconBox', tokenKey]),
-        getPath(defaultMode, ['component', 'iconBox', tokenKey]),
-        getPath(componentAliases, ['iconBox', tokenKey])
-      )
-    );
+  semanticEntries.forEach(({ varParts, modePath, aliasSrc, aliasPath }) => {
+    const varName = toVariableName(prefix, ...varParts);
+    const aliasCandidate = aliasSrc && aliasPath ? [getPath(aliasSrc, aliasPath)] : [];
+    addBase(varName, pickSemantic(tokens, getPath(defaultMode, modePath), ...aliasCandidate));
+    addDark(varName, pickSemantic(tokens, getPath(darkMode, modePath), getPath(defaultMode, modePath), ...aliasCandidate));
   });
 
-  const rootBlock = `${selector} {\n${rootLines.join('\n')}\n}`;
+  const rootBlock = `${selector} {\n${[...baseLines, ...mapLines].join('\n')}\n}`;
   const darkBlock = `${selector}[data-spectre-theme="dark"] {\n${darkLines.join('\n')}\n}`;
 
   return `${rootBlock}\n${darkBlock}\n`;
