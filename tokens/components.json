@@ -8,7 +8,7 @@
         }
       },
       "textMuted": {
-        "value": "{colors.neutral.500}",
+        "value": "{colors.neutral.600}",
         "metadata": {
           "pair": "surface.card"
         }
@@ -158,25 +158,25 @@
       "text": {
         "value": "{colors.neutral.700}",
         "metadata": {
-          "pair": "component.testimonial.bg"
+          "pair": "component.testimonial.bgHover"
         }
       },
       "authorName": {
         "value": "{colors.neutral.900}",
         "metadata": {
-          "pair": "component.testimonial.bg"
+          "pair": "component.testimonial.bgHover"
         }
       },
       "authorTitle": {
-        "value": "{colors.neutral.500}",
+        "value": "{colors.neutral.600}",
         "metadata": {
-          "pair": "component.testimonial.bg"
+          "pair": "component.testimonial.bgHover"
         }
       },
       "quoteMark": {
-        "value": "{colors.neutral.500}",
+        "value": "{colors.neutral.600}",
         "metadata": {
-          "pair": "component.testimonial.bg"
+          "pair": "component.testimonial.bgHover"
         }
       }
     },
@@ -220,13 +220,13 @@
       "price": {
         "value": "{colors.neutral.900}",
         "metadata": {
-          "pair": "component.pricingCard.bg"
+          "pair": "component.pricingCard.bgHover"
         }
       },
       "priceDescription": {
-        "value": "{colors.neutral.500}",
+        "value": "{colors.neutral.600}",
         "metadata": {
-          "pair": "component.pricingCard.bg"
+          "pair": "component.pricingCard.bgHover"
         }
       }
     },
