@@ -504,9 +504,9 @@ var coreTokens = {
   },
   "shadows": {
     "none": "none",
-    "sm": "0 1px 2px 0 {colors.neutral.800} / 0.06",
-    "md": "0 2px 6px -1px {colors.neutral.800} / 0.08",
-    "lg": "0 6px 16px -4px {colors.neutral.800} / 0.12"
+    "sm": "0 1px 2px 0 {colors.black} / 0.06",
+    "md": "0 2px 6px -1px {colors.black} / 0.08",
+    "lg": "0 6px 16px -4px {colors.black} / 0.12"
   },
   "breakpoints": {
     "sm": "640px",
