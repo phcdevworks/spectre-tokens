@@ -6,30 +6,31 @@ reflects package releases published to npm.
 
 ## [Unreleased]
 
-Contract change type: semantic change
+## [2.4.0] - 2026-04-25
 
-## [2.3.0] - 2026-04-18
-
-**Release Title:** Contract Authority and CSS Output Hardening
+**Release Title:** Surface Parity and Elevation Stabilization
 
 Contract change type: semantic change
-
-### Added
-
-- Added `contract.manifest.json` as the machine-readable contract authority for
-  public namespaces, required outputs, protected semantic groups, and change
-  classification rules.
-- Added `TOKEN_CONTRACT.md` and stronger doc validation so README, token
-  contract docs, runtime exports, and generated outputs are checked together.
-- Added smoke-consumer fixtures and a consumer contract check to verify the
-  package shape from a downstream integration path.
-- Added roadmap and TODO planning documents to make the contract-led direction
-  of the package more explicit.
 
 ### Changed
 
-- Improved dark mode legibility for `testimonial` and `pricingCard` by shifting subtle text roles from step 400 to 300, ensuring WCAG AA compliance (5.6:1) against hover backgrounds.
-- Updated automated contrast validation for dark mode subtle component text to pair with `bgHover` for stricter accessibility enforcement.
+- Standardized dark-mode `surface.overlay` on true black with opacity so overlay
+  treatment has consistent parity with the default mode.
+- Strengthened muted foreground tokens for cards, testimonials, and pricing
+  cards to improve readability while preserving their semantic roles.
+- Standardized shadow primitives on `colors.black` so elevation behaves
+  consistently across color modes.
+- Refactored CSS variable generation around shared semantic entry mappings to
+  reduce drift risk between default and dark mode output.
+- Removed the unused `chroma-js` dependency and refreshed Rollup and
+  TypeScript ESLint tooling.
+
+### Fixed
+
+- Updated testimonial and pricing-card contrast metadata to validate against
+  hover backgrounds where those components are most constrained.
+- Reused the shared `getPathValue` utility in validation scripts to keep
+  contract path checks consistent.
 
 ## [2.3.0] - 2026-04-18
 
