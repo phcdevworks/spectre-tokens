@@ -151,7 +151,9 @@
           },
           "neutralText": {
             "value": "{colors.neutral.700}",
-            "metadata": {}
+            "metadata": {
+              "pair": "modes.default.component.badge.neutralBgHover"
+            }
           },
           "infoBg": {
             "value": "{colors.info.100}",
@@ -493,7 +495,9 @@
           },
           "neutralText": {
             "value": "{colors.neutral.100}",
-            "metadata": {}
+            "metadata": {
+              "pair": "modes.dark.component.badge.neutralBgHover"
+            }
           },
           "infoBg": {
             "value": "{colors.info.800}",

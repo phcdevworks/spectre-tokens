@@ -6,6 +6,13 @@ reflects package releases published to npm.
 
 ## [Unreleased]
 
+Contract change type: semantic change
+
+### Fixed
+
+- Added explicit contrast-pair metadata to neutral badge foreground tokens in
+  both modes to ensure they are validated against their stricter hover state.
+
 ## [2.4.0] - 2026-04-25
 
 **Release Title:** Surface Parity and Elevation Stabilization
