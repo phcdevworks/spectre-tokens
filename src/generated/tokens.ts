@@ -2627,9 +2627,9 @@ export const coreTokens: SpectreGeneratedTokens = {
       "focusRing": "{colors.brand.500} / 0.4"
     },
     "accent": {
-      "bg": "{colors.accent.600}",
-      "bgHover": "{colors.accent.700}",
-      "bgActive": "{colors.accent.800}",
+      "bg": "{colors.accent.700}",
+      "bgHover": "{colors.accent.800}",
+      "bgActive": "{colors.accent.900}",
       "bgDisabled": "{colors.accent.200}",
       "text": "{colors.white}",
       "textDisabled": "{colors.neutral.400}",
