@@ -50,7 +50,10 @@
         }
       },
       "neutralText": {
-        "value": "{colors.neutral.700}"
+        "value": "{colors.neutral.700}",
+        "metadata": {
+          "pair": "component.badge.neutralBgHover"
+        }
       },
       "infoBg": {
         "value": "{colors.info.100}",
