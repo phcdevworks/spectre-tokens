@@ -8,6 +8,12 @@ reflects package releases published to npm.
 
 Contract change type: semantic change
 
+### Changed
+
+- Synchronized base `neutralText` badge contrast metadata with interactive
+  background states to ensure the core contract is validated consistently across
+  all themes.
+
 ### Fixed
 
 - Added explicit contrast-pair metadata to neutral badge foreground tokens in

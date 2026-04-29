@@ -54,6 +54,9 @@ export interface SpectreSourceTokens {
       };
       neutralText: {
         value: string;
+        metadata: {
+          pair: string;
+        };
       };
       infoBg: {
         value: string;
