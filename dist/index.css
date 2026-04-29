@@ -294,9 +294,9 @@
   --sp-button-cta-textdisabled: #8a96ad;
   --sp-button-cta-shadow: 0 4px 14px 0 rgba(51, 109, 244, 0.39);
   --sp-button-cta-focusring: rgba(51, 109, 244, 0.4);
-  --sp-button-accent-bg: #7135dd;
-  --sp-button-accent-bghover: #5d28b8;
-  --sp-button-accent-bgactive: #4d2393;
+  --sp-button-accent-bg: #5d28b8;
+  --sp-button-accent-bghover: #4d2393;
+  --sp-button-accent-bgactive: #401f75;
   --sp-button-accent-bgdisabled: #ddccff;
   --sp-button-accent-text: #ffffff;
   --sp-button-accent-textdisabled: #8a96ad;

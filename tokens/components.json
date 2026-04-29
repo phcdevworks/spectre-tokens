@@ -458,19 +458,19 @@
     },
     "accent": {
       "bg": {
-        "value": "{colors.accent.600}",
-        "metadata": {
-          "pair": "buttons.accent.text"
-        }
-      },
-      "bgHover": {
         "value": "{colors.accent.700}",
         "metadata": {
           "pair": "buttons.accent.text"
         }
       },
-      "bgActive": {
+      "bgHover": {
         "value": "{colors.accent.800}",
+        "metadata": {
+          "pair": "buttons.accent.text"
+        }
+      },
+      "bgActive": {
+        "value": "{colors.accent.900}",
         "metadata": {
           "pair": "buttons.accent.text"
         }
