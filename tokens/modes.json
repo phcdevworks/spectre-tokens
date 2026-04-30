@@ -169,7 +169,9 @@
           },
           "infoText": {
             "value": "{colors.info.700}",
-            "metadata": {}
+            "metadata": {
+              "pair": "modes.default.component.badge.infoBgHover"
+            }
           },
           "successBg": {
             "value": "{colors.success.100}",
@@ -513,7 +515,9 @@
           },
           "infoText": {
             "value": "{colors.info.100}",
-            "metadata": {}
+            "metadata": {
+              "pair": "modes.dark.component.badge.infoBgHover"
+            }
           },
           "successBg": {
             "value": "{colors.success.800}",
