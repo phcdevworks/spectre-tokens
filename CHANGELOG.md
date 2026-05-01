@@ -16,8 +16,9 @@ Contract change type: semantic change
 
 ### Fixed
 
-- Added explicit contrast-pair metadata to neutral badge foreground tokens in
-  both modes to ensure they are validated against their stricter hover state.
+- Added explicit contrast-pair metadata to neutral and info badge foreground
+  tokens in both modes to ensure they are validated against their stricter hover
+  state.
 
 ## [2.4.0] - 2026-04-25
 
