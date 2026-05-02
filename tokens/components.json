@@ -68,7 +68,10 @@
         }
       },
       "infoText": {
-        "value": "{colors.info.700}"
+        "value": "{colors.info.700}",
+        "metadata": {
+          "pair": "component.badge.infoBgHover"
+        }
       },
       "successBg": {
         "value": "{colors.success.100}",

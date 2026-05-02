@@ -72,6 +72,9 @@ export interface SpectreSourceTokens {
       };
       infoText: {
         value: string;
+        metadata: {
+          pair: string;
+        };
       };
       successBg: {
         value: string;
