@@ -10,9 +10,9 @@ Contract change type: semantic change
 
 ### Changed
 
-- Synchronized base `neutralText` badge contrast metadata with interactive
-  background states to ensure the core contract is validated consistently across
-  all themes.
+- Synchronized base `neutralText` and `infoText` badge contrast metadata with
+  interactive background states to ensure the core contract is validated
+  consistently across all themes.
 - Synchronized `infoText` badge contrast metadata in both default and dark modes
   to ensure foreground contrast is validated against the stricter hover state.
 
