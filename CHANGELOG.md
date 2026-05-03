@@ -6,7 +6,13 @@ reflects package releases published to npm.
 
 ## [Unreleased]
 
-Contract change type: semantic change
+Contract change type: additive
+
+### Added
+
+- Added explicit contrast-pair metadata to the base `infoText` badge foreground
+  token in `tokens/components.json` to enable automated contrast validation
+  against its interactive hover background at the source level.
 
 ### Changed
 
