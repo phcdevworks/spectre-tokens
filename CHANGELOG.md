@@ -6,13 +6,24 @@ reflects package releases published to npm.
 
 ## [Unreleased]
 
-Contract change type: additive
+Contract change type: semantic change
+
+## [2.5.0] - 2026-05-04
+
+**Release Title:** Badge Contrast Metadata and Contract Change Guidance
+
+Contract change type: semantic change
 
 ### Added
 
 - Added explicit contrast-pair metadata to the base `infoText` badge foreground
   token in `tokens/components.json` to enable automated contrast validation
   against its interactive hover background at the source level.
+- Added a maintainer-facing contract-impacting change checklist to
+  `CONTRIBUTING.md` covering required source, manifest, build, validation,
+  documentation, and changelog classification steps.
+- Linked `TOKEN_CONTRACT.md` and `ROADMAP.md` from the README navigation so
+  contract and planning docs are easier to find from the package homepage.
 
 ### Changed
 
@@ -21,12 +32,22 @@ Contract change type: additive
   consistently across all themes.
 - Synchronized `infoText` badge contrast metadata in both default and dark modes
   to ensure foreground contrast is validated against the stricter hover state.
+- Deepened accent button background, hover, and active tokens to improve text
+  contrast while preserving the existing accent button contract.
+- Updated CI to validate against Node.js 22 explicitly.
+- Refreshed the execution TODO to mark delivered contract-integrity work as
+  complete and keep remaining planning focused on maintainer clarity and
+  release-note quality.
+- Bumped ESLint and TypeScript ESLint tooling to current compatible patch
+  releases.
 
 ### Fixed
 
 - Added explicit contrast-pair metadata to neutral and info badge foreground
   tokens in both modes to ensure they are validated against their stricter hover
   state.
+- Improved accent button accessibility by moving interactive backgrounds to a
+  stronger accent ramp.
 
 ## [2.4.0] - 2026-04-25
 
