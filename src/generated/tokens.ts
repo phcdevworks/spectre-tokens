@@ -896,6 +896,7 @@ export interface SpectreSourceTokens {
           featuredText: {
             value: string;
             metadata: {
+              pair: string;
             };
           };
           featuredBadgeBg: {
@@ -907,6 +908,7 @@ export interface SpectreSourceTokens {
           featuredBadgeText: {
             value: string;
             metadata: {
+              pair: string;
             };
           };
           price: {
@@ -1274,6 +1276,7 @@ export interface SpectreSourceTokens {
           featuredText: {
             value: string;
             metadata: {
+              pair: string;
             };
           };
           featuredBadgeBg: {
@@ -1285,6 +1288,7 @@ export interface SpectreSourceTokens {
           featuredBadgeText: {
             value: string;
             metadata: {
+              pair: string;
             };
           };
           price: {

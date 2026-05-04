@@ -6,7 +6,13 @@ reflects package releases published to npm.
 
 ## [Unreleased]
 
-Contract change type: semantic change
+Contract change type: additive
+
+### Added
+
+- Added explicit contrast-pair metadata to the `pricingCard` featured text and
+  badge tokens in `tokens/modes.json` to enable automated contrast validation
+  against their respective backgrounds in both default and dark modes.
 
 ## [2.5.0] - 2026-05-04
 

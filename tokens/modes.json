@@ -303,7 +303,9 @@
           },
           "featuredText": {
             "value": "{colors.white}",
-            "metadata": {}
+            "metadata": {
+              "pair": "modes.default.component.pricingCard.featuredBg"
+            }
           },
           "featuredBadgeBg": {
             "value": "{colors.warning.500}",
@@ -313,7 +315,9 @@
           },
           "featuredBadgeText": {
             "value": "{colors.neutral.900}",
-            "metadata": {}
+            "metadata": {
+              "pair": "modes.default.component.pricingCard.featuredBadgeBg"
+            }
           },
           "price": {
             "value": "{colors.neutral.900}",
@@ -671,7 +675,9 @@
           },
           "featuredText": {
             "value": "{colors.white}",
-            "metadata": {}
+            "metadata": {
+              "pair": "modes.dark.component.pricingCard.featuredBg"
+            }
           },
           "featuredBadgeBg": {
             "value": "{colors.warning.500}",
@@ -681,7 +687,9 @@
           },
           "featuredBadgeText": {
             "value": "{colors.neutral.900}",
-            "metadata": {}
+            "metadata": {
+              "pair": "modes.dark.component.pricingCard.featuredBadgeBg"
+            }
           },
           "price": {
             "value": "{colors.neutral.100}",
