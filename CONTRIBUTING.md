@@ -95,6 +95,34 @@ Treat `contract.manifest.json` as release-blocking authority, not optional docum
   components owned by this package.
 - Document contract changes clearly so downstream packages can stay in sync.
 
+## Contract-Impacting Change Checklist
+
+Use this when touching any of these files: `tokens/`, `contract.manifest.json`,
+`src/index.ts`, `src/types.ts`, `src/css.ts`, `README.md`, or
+`TOKEN_CONTRACT.md`.
+
+**Every contract-impacting change must complete all of the following before
+merge:**
+
+1. Update token source data in `tokens/` if the change is token-driven.
+2. Update `contract.manifest.json` if public namespaces, required outputs, or
+   protected semantic groups changed.
+3. Run `npm run build` to regenerate all outputs.
+4. Run `npm run check` — this is the release gate and must pass clean.
+5. Confirm no protected semantic group (`success`, `warning`, `danger`,
+   CTA/brand-action) was changed without explicit approval from Bradley Potts.
+6. Update `README.md` and `TOKEN_CONTRACT.md` if the public contract surface or
+   operator guidance changed.
+7. Add a classification line to the `[Unreleased]` section of `CHANGELOG.md`:
+   - `Contract change type: additive`
+   - `Contract change type: semantic change`
+   - `Contract change type: breaking`
+8. Confirm the change does not pull component structure, composition, or
+   framework-specific behavior into this repo.
+
+When in doubt about classification, default to the safer downstream
+interpretation and document the assumption in the pull request.
+
 ## Pull Request Checklist
 
 1. Keep the change focused.

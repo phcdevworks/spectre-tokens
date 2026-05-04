@@ -13,6 +13,7 @@ token data while downstream UI packages define structure and adapter packages
 translate those contracts for specific frameworks and runtimes.
 
 [Contributing](CONTRIBUTING.md) | [Changelog](CHANGELOG.md) |
+[Token Contract](TOKEN_CONTRACT.md) | [Roadmap](ROADMAP.md) |
 [Security Policy](SECURITY.md)
 
 ## Key capabilities
