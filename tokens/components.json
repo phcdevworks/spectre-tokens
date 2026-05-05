@@ -211,7 +211,9 @@
       },
       "featuredText": {
         "value": "{colors.white}",
-        "metadata": {}
+        "metadata": {
+          "pair": "component.pricingCard.featuredBg"
+        }
       },
       "featuredBadgeBg": {
         "value": "{colors.warning.500}",
@@ -221,7 +223,9 @@
       },
       "featuredBadgeText": {
         "value": "{colors.neutral.900}",
-        "metadata": {}
+        "metadata": {
+          "pair": "component.pricingCard.featuredBadgeBg"
+        }
       },
       "price": {
         "value": "{colors.neutral.900}",
