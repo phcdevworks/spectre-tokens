@@ -11,8 +11,9 @@ Contract change type: additive
 ### Added
 
 - Added explicit contrast-pair metadata to the `pricingCard` featured text and
-  badge tokens in `tokens/modes.json` to enable automated contrast validation
-  against their respective backgrounds in both default and dark modes.
+  badge tokens in `tokens/components.json` and `tokens/modes.json` to enable
+  consistent automated contrast validation against their respective backgrounds
+  across the base contract and theme modes.
 
 ## [2.5.0] - 2026-05-04
 
