@@ -1,7 +1,7 @@
 # @phcdevworks/spectre-tokens
 
 [![GitHub issues](https://img.shields.io/github/issues/phcdevworks/spectre-tokens)](https://github.com/phcdevworks/spectre-tokens/issues)
-[![GitHub pulls](https://img.shields.io/github/issues-pr/phcdevworks/spectre-tokens)](https://github.com/phcdevworks/spectre-tokens/pulls)
+[![GitHub pull requests](https://img.shields.io/github/issues-pr/phcdevworks/spectre-tokens)](https://github.com/phcdevworks/spectre-tokens/pulls)
 [![License](https://img.shields.io/github/license/phcdevworks/spectre-tokens)](LICENSE)
 
 `@phcdevworks/spectre-tokens` is the design-token package of the Spectre system
@@ -40,14 +40,15 @@ This package is the correct place to define token meaning.
 
 ## What this package does not own
 
-- Component structure or composition That belongs in downstream UI packages such
-  as [`@phcdevworks/spectre-ui`](https://github.com/phcdevworks/spectre-ui).
-- Framework-specific delivery Adapter packages translate Spectre contracts for
+- Component structure or composition. That belongs in downstream UI packages
+  such as
+  [`@phcdevworks/spectre-ui`](https://github.com/phcdevworks/spectre-ui).
+- Framework-specific delivery. Adapter packages translate Spectre contracts for
   specific frameworks and runtimes.
-- Local redefinition of token meaning Downstream consumers should consume these
+- Local redefinition of token meaning. Downstream consumers should consume these
   contracts rather than recreate them independently.
-- Example app architecture The `example/` directory documents token usage; it is
-  not the contract source and should not become a downstream UI layer.
+- Example app architecture. The `example/` directory documents token usage; it
+  is not the contract source and should not become a downstream UI layer.
 
 ## Installation
 
@@ -352,16 +353,19 @@ For downstream packages and compatible apps:
 
 ## Development
 
-Regenerate package outputs:
+Install dependencies, then run the package verification flow:
+
+```bash
+npm install
+npm run check
+```
+
+This project expects Node.js `^22.12.0 || >=24.0.0` and npm `11.13.0`.
+
+Regenerate package outputs after token-source changes:
 
 ```bash
 npm run build
-```
-
-Run the full validation and release gate:
-
-```bash
-npm run check
 ```
 
 Key source areas:
