@@ -1592,17 +1592,65 @@ export interface SpectreSourceTokens {
   };
   text: {
     onPage: {
-      default: string;
-      muted: string;
-      subtle: string;
-      meta: string;
+      default: {
+        value: string;
+        description: string;
+        metadata: {
+          pair: string;
+        };
+      };
+      muted: {
+        value: string;
+        description: string;
+        metadata: {
+          pair: string;
+        };
+      };
+      subtle: {
+        value: string;
+        description: string;
+        metadata: {
+          pair: string;
+        };
+      };
+      meta: {
+        value: string;
+        description: string;
+        metadata: {
+          pair: string;
+        };
+      };
       brand: string;
     };
     onSurface: {
-      default: string;
-      muted: string;
-      subtle: string;
-      meta: string;
+      default: {
+        value: string;
+        description: string;
+        metadata: {
+          pair: string;
+        };
+      };
+      muted: {
+        value: string;
+        description: string;
+        metadata: {
+          pair: string;
+        };
+      };
+      subtle: {
+        value: string;
+        description: string;
+        metadata: {
+          pair: string;
+        };
+      };
+      meta: {
+        value: string;
+        description: string;
+        metadata: {
+          pair: string;
+        };
+      };
       brand: string;
     };
   };
