@@ -6,7 +6,7 @@ reflects package releases published to npm.
 
 ## [Unreleased]
 
-Contract change type: additive
+Contract change type: semantic change
 
 ### Added
 
@@ -14,6 +14,13 @@ Contract change type: additive
   badge tokens in `tokens/components.json` and `tokens/modes.json` to enable
   consistent automated contrast validation against their respective backgrounds
   across the base contract and theme modes.
+
+### Changed
+
+- Standardized non-protected semantic text roles (`default`, `muted`, `subtle`,
+  `meta`) in `tokens/semantic-roles.json` to the object-based structure to
+  enable automated contrast validation for the base semantic contract and
+  achieve structural parity with surface roles.
 
 ## [2.5.0] - 2026-05-04
 
