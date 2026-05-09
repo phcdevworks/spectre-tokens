@@ -6,7 +6,14 @@ reflects package releases published to npm.
 
 ## [Unreleased]
 
-Contract change type: additive
+Contract change type: semantic change
+
+### Changed
+
+- Standardized non-protected semantic text roles in `tokens/semantic-roles.json`
+  by converting them to the `{ value, metadata }` object structure and adding
+  explicit `pair` metadata to enable automated contrast validation for core UI
+  surfaces.
 
 ### Added
 
