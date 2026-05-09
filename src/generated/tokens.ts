@@ -1576,14 +1576,23 @@ export interface SpectreSourceTokens {
     page: {
       value: string;
       description: string;
+      metadata: {
+        pair: string;
+      };
     };
     card: {
       value: string;
       description: string;
+      metadata: {
+        pair: string;
+      };
     };
     input: {
       value: string;
       description: string;
+      metadata: {
+        pair: string;
+      };
     };
     overlay: {
       value: string;
@@ -1592,17 +1601,57 @@ export interface SpectreSourceTokens {
   };
   text: {
     onPage: {
-      default: string;
-      muted: string;
-      subtle: string;
-      meta: string;
+      default: {
+        value: string;
+        metadata: {
+          pair: string;
+        };
+      };
+      muted: {
+        value: string;
+        metadata: {
+          pair: string;
+        };
+      };
+      subtle: {
+        value: string;
+        metadata: {
+          pair: string;
+        };
+      };
+      meta: {
+        value: string;
+        metadata: {
+          pair: string;
+        };
+      };
       brand: string;
     };
     onSurface: {
-      default: string;
-      muted: string;
-      subtle: string;
-      meta: string;
+      default: {
+        value: string;
+        metadata: {
+          pair: string;
+        };
+      };
+      muted: {
+        value: string;
+        metadata: {
+          pair: string;
+        };
+      };
+      subtle: {
+        value: string;
+        metadata: {
+          pair: string;
+        };
+      };
+      meta: {
+        value: string;
+        metadata: {
+          pair: string;
+        };
+      };
       brand: string;
     };
   };
