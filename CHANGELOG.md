@@ -10,10 +10,13 @@ Contract change type: additive
 
 ### Added
 
-- Added explicit contrast-pair metadata to the `pricingCard` featured text and
-  badge tokens in `tokens/components.json` and `tokens/modes.json` to enable
-  consistent automated contrast validation against their respective backgrounds
-  across the base contract and theme modes.
+- Standardized the non-protected semantic text roles (`default`, `muted`,
+  `subtle`, `meta`) for both `onPage` and `onSurface` to the object structure
+  with explicit contrast-pair metadata in `tokens/semantic-roles.json` to enable
+  automated contrast validation for the base semantic contract.
+- Added explicit contrast-pair metadata to core surface roles (`page`, `card`,
+  `input`) in `tokens/semantic-roles.json` to ensure they are validated against
+  their respective default text roles.
 
 ## [2.5.0] - 2026-05-04
 
