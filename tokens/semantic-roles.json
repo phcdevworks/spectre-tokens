@@ -21,24 +21,28 @@
     "onPage": {
       "default": {
         "value": "{colors.neutral.900}",
+        "description": "base text on page background",
         "metadata": {
           "pair": "surface.page"
         }
       },
       "muted": {
         "value": "{colors.neutral.600}",
+        "description": "muted text for de-emphasized content",
         "metadata": {
           "pair": "surface.page"
         }
       },
       "subtle": {
         "value": "{colors.neutral.500}",
+        "description": "subtle text for secondary labels",
         "metadata": {
           "pair": "surface.page"
         }
       },
       "meta": {
         "value": "{colors.neutral.500}",
+        "description": "meta text for smallest labels and timestamps",
         "metadata": {
           "pair": "surface.page"
         }
@@ -48,24 +52,28 @@
     "onSurface": {
       "default": {
         "value": "{colors.neutral.900}",
+        "description": "base text on surface containers",
         "metadata": {
           "pair": "surface.card"
         }
       },
       "muted": {
         "value": "{colors.neutral.600}",
+        "description": "muted text on surfaces",
         "metadata": {
           "pair": "surface.card"
         }
       },
       "subtle": {
         "value": "{colors.neutral.500}",
+        "description": "subtle text on surfaces",
         "metadata": {
           "pair": "surface.card"
         }
       },
       "meta": {
         "value": "{colors.neutral.500}",
+        "description": "meta text on surfaces",
         "metadata": {
           "pair": "surface.card"
         }
