@@ -1576,14 +1576,23 @@ export interface SpectreSourceTokens {
     page: {
       value: string;
       description: string;
+      metadata: {
+        pair: string;
+      };
     };
     card: {
       value: string;
       description: string;
+      metadata: {
+        pair: string;
+      };
     };
     input: {
       value: string;
       description: string;
+      metadata: {
+        pair: string;
+      };
     };
     overlay: {
       value: string;
