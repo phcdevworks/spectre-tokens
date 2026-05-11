@@ -10,8 +10,6 @@ Contract change type: semantic change
 
 ### Added
 
-- Standardized the structure of base semantic text roles in `tokens/semantic-roles.json` by wrapping non-protected roles in `{ value, metadata }` objects to achieve structural parity with the surface group.
-- Enabled automated contrast validation for `onPage` and `onSurface` semantic text roles by adding explicit contrast-pair metadata to the base contract.
 - Added explicit contrast-pair metadata to the `pricingCard` featured text and
   badge tokens in `tokens/components.json` and `tokens/modes.json` to enable
   consistent automated contrast validation against their respective backgrounds
