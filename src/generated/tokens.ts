@@ -1603,24 +1603,28 @@ export interface SpectreSourceTokens {
     onPage: {
       default: {
         value: string;
+        description: string;
         metadata: {
           pair: string;
         };
       };
       muted: {
         value: string;
+        description: string;
         metadata: {
           pair: string;
         };
       };
       subtle: {
         value: string;
+        description: string;
         metadata: {
           pair: string;
         };
       };
       meta: {
         value: string;
+        description: string;
         metadata: {
           pair: string;
         };
@@ -1630,24 +1634,28 @@ export interface SpectreSourceTokens {
     onSurface: {
       default: {
         value: string;
+        description: string;
         metadata: {
           pair: string;
         };
       };
       muted: {
         value: string;
+        description: string;
         metadata: {
           pair: string;
         };
       };
       subtle: {
         value: string;
+        description: string;
         metadata: {
           pair: string;
         };
       };
       meta: {
         value: string;
+        description: string;
         metadata: {
           pair: string;
         };
