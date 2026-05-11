@@ -2,15 +2,24 @@
   "surface": {
     "page": {
       "value": "{colors.neutral.50}",
-      "description": "primary app background"
+      "description": "primary app background",
+      "metadata": {
+        "pair": "text.onPage.default"
+      }
     },
     "card": {
       "value": "{colors.white}",
-      "description": "containers and tiles"
+      "description": "containers and tiles",
+      "metadata": {
+        "pair": "text.onSurface.default"
+      }
     },
     "input": {
       "value": "{colors.white}",
-      "description": "form inputs, textareas"
+      "description": "form inputs, textareas",
+      "metadata": {
+        "pair": "text.onSurface.default"
+      }
     },
     "overlay": {
       "value": "{colors.neutral.900} / 0.6",
