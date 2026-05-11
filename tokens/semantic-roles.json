@@ -19,17 +19,57 @@
   },
   "text": {
     "onPage": {
-      "default": "{colors.neutral.900}",
-      "muted": "{colors.neutral.600}",
-      "subtle": "{colors.neutral.500}",
-      "meta": "{colors.neutral.500}",
+      "default": {
+        "value": "{colors.neutral.900}",
+        "metadata": {
+          "pair": "surface.page"
+        }
+      },
+      "muted": {
+        "value": "{colors.neutral.600}",
+        "metadata": {
+          "pair": "surface.page"
+        }
+      },
+      "subtle": {
+        "value": "{colors.neutral.500}",
+        "metadata": {
+          "pair": "surface.page"
+        }
+      },
+      "meta": {
+        "value": "{colors.neutral.500}",
+        "metadata": {
+          "pair": "surface.page"
+        }
+      },
       "brand": "{colors.brand.600}"
     },
     "onSurface": {
-      "default": "{colors.neutral.900}",
-      "muted": "{colors.neutral.600}",
-      "subtle": "{colors.neutral.500}",
-      "meta": "{colors.neutral.500}",
+      "default": {
+        "value": "{colors.neutral.900}",
+        "metadata": {
+          "pair": "surface.card"
+        }
+      },
+      "muted": {
+        "value": "{colors.neutral.600}",
+        "metadata": {
+          "pair": "surface.card"
+        }
+      },
+      "subtle": {
+        "value": "{colors.neutral.500}",
+        "metadata": {
+          "pair": "surface.card"
+        }
+      },
+      "meta": {
+        "value": "{colors.neutral.500}",
+        "metadata": {
+          "pair": "surface.card"
+        }
+      },
       "brand": "{colors.brand.600}"
     }
   },
