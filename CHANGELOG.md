@@ -6,17 +6,26 @@ reflects package releases published to npm.
 
 ## [Unreleased]
 
-Contract change type: additive
+Contract change type: semantic change
 
 ### Added
 
-- Standardized the non-protected semantic text roles (`default`, `muted`,
-  `subtle`, `meta`) for both `onPage` and `onSurface` to the object structure
-  with explicit contrast-pair metadata in `tokens/semantic-roles.json` to enable
-  automated contrast validation for the base semantic contract.
-- Added explicit contrast-pair metadata to core surface roles (`page`, `card`,
-  `input`) in `tokens/semantic-roles.json` to ensure they are validated against
-  their respective default text roles.
+- Added explicit contrast-pair metadata to the `pricingCard` featured text and
+  badge tokens in `tokens/components.json` and `tokens/modes.json` to enable
+  consistent automated contrast validation against their respective backgrounds
+  across the base contract and theme modes.
+- Standardized non-protected semantic text roles (`default`, `muted`, `subtle`,
+  `meta`) for both `onPage` and `onSurface` in `tokens/semantic-roles.json` by
+  converting them to the object structure with `metadata.pair` pointing to their
+  respective surface backgrounds, enabling automated contrast validation for the
+  core semantic hierarchy.
+
+### Changed
+
+- Standardized non-protected semantic text roles (`default`, `muted`, `subtle`,
+  `meta`) in `tokens/semantic-roles.json` to the object-based structure to
+  enable automated contrast validation for the base semantic contract and
+  achieve structural parity with surface roles.
 
 ## [2.5.0] - 2026-05-04
 
