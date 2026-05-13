@@ -8,6 +8,12 @@ reflects package releases published to npm.
 
 Contract change type: semantic change
 
+### Changed
+
+- Standardized the `surface.overlay` token in the default mode within
+  `tokens/modes.json` to `{colors.black} / 0.6`, achieving parity with the dark
+  mode definition and ensuring consistent overlay treatment across themes.
+
 ### Added
 
 - Added explicit contrast-pair metadata to the `pricingCard` featured text and
