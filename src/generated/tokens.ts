@@ -2745,7 +2745,7 @@ export const coreTokens: SpectreGeneratedTokens = {
         "page": "{colors.neutral.50}",
         "card": "{colors.white}",
         "input": "{colors.white}",
-        "overlay": "{colors.neutral.900} / 0.6",
+        "overlay": "{colors.black} / 0.6",
         "alternate": "{colors.neutral.100}",
         "hero": "linear-gradient(135deg, {colors.indigo.500} 0%, {colors.violet.600} 100%)"
       },
