@@ -12,6 +12,12 @@ consumed by downstream Spectre packages and compatible applications.
 This file is the authoritative guide for Claude Code operating in this
 repository. Read it before touching any source file.
 
+## Commit Policy
+
+Claude Code does not create git commits in this repository. Prepare changes,
+run all validation, and leave staging, committing, tagging, and pushing to
+human review.
+
 ## The One Rule That Overrides Everything
 
 `tokens/` is the source of truth. `contract.manifest.json` is the
@@ -110,8 +116,8 @@ The banned namespace is `borders` — always use `border` (singular).
    release title and date.
 3. Update the `[unreleased]` and add the new version compare link at the bottom
    of `CHANGELOG.md`.
-4. Create a Git tag matching the version (e.g., `v2.6.0`).
-5. Publish the GitHub Release from that tag using the changelog entry as notes.
+4. Run `npm run check` — must pass clean.
+5. Hand off to human for review, commit, tag, and GitHub Release publish.
 
 ## What This Package Does Not Own
 
