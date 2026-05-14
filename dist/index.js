@@ -820,6 +820,23 @@ var resolveValue = (tokens2, value) => {
   str = str.replace(opacityRegex, (match, hex, opacity) => hexToRgba(hex, opacity));
   return str;
 };
+var resolveSemanticValue = (value, tokens2) => {
+  if (typeof value === "string" || typeof value === "number") {
+    return resolveValue(tokens2, value);
+  }
+  if (value && typeof value === "object" && "value" in value) {
+    return resolveValue(tokens2, value.value);
+  }
+  return void 0;
+};
+var getPath = (source, path) => path.reduce((acc, key) => acc && typeof acc === "object" ? acc[key] : void 0, source);
+var pickSemantic = (tokens2, ...candidates) => {
+  for (const candidate of candidates) {
+    const resolved = resolveSemanticValue(candidate, tokens2);
+    if (resolved !== void 0) return resolved;
+  }
+  return void 0;
+};
 var createCssVariableMap = (tokens2, options = {}) => {
   const prefix = options.prefix ?? DEFAULT_PREFIX;
   const map = {};
@@ -967,23 +984,6 @@ var createCssVariableMap = (tokens2, options = {}) => {
     });
   }
   return map;
-};
-var resolveSemanticValue = (value, tokens2) => {
-  if (typeof value === "string" || typeof value === "number") {
-    return resolveValue(tokens2, value);
-  }
-  if (value && typeof value === "object" && "value" in value) {
-    return resolveValue(tokens2, value.value);
-  }
-  return void 0;
-};
-var getPath = (source, path) => path.reduce((acc, key) => acc && typeof acc === "object" ? acc[key] : void 0, source);
-var pickSemantic = (tokens2, ...candidates) => {
-  for (const candidate of candidates) {
-    const resolved = resolveSemanticValue(candidate, tokens2);
-    if (resolved !== void 0) return resolved;
-  }
-  return void 0;
 };
 var generateCssVariables = (tokens2, options = {}) => {
   const selector = options.selector ?? DEFAULT_SELECTOR;

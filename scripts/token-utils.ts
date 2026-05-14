@@ -56,9 +56,6 @@ function assertNoDuplicateTokenPaths(files: string[]): void {
   }
 }
 
-/**
- * Deep merges two objects.
- */
 function deepMerge(target: Record<string, unknown>, source: Record<string, unknown>): Record<string, unknown> {
   Object.keys(source).forEach(key => {
     const targetValue = target[key];
@@ -76,9 +73,6 @@ function deepMerge(target: Record<string, unknown>, source: Record<string, unkno
   return target;
 }
 
-/**
- * Loads and merges all JSON files in the tokens directory.
- */
 export function loadMergedTokens(): Record<string, unknown> {
   let merged: Record<string, unknown> = {};
 
@@ -94,10 +88,6 @@ export function loadMergedTokens(): Record<string, unknown> {
   return merged;
 }
 
-/**
- * Flattens source token leaf records like { value, metadata } into their public
- * runtime value while preserving the surrounding token tree shape.
- */
 export function flattenTokenTree(value: unknown): unknown {
   if (Array.isArray(value)) {
     return value.map((entry) => flattenTokenTree(entry));

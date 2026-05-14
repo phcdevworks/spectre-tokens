@@ -3,7 +3,7 @@
 # Spectre Tokens Execution Todo
 
 This todo list is aligned to the current repository and the roadmap in
-`ROADMAP.md`. It reflects the current state of the package as of v2.4.0.
+`ROADMAP.md`. It reflects the current state of the package as of v2.5.0.
 
 ## P0: Contract Integrity — Completed
 
