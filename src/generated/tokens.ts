@@ -3167,7 +3167,7 @@ export const coreTokens: SpectreGeneratedTokens = {
     "page": "{colors.neutral.50}",
     "card": "{colors.white}",
     "input": "{colors.white}",
-    "overlay": "{colors.neutral.900} / 0.6"
+    "overlay": "{colors.black} / 0.6"
   },
   "text": {
     "onPage": {
