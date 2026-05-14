@@ -5,13 +5,15 @@ package of the Spectre system.
 
 ## Primary AI Developer
 
-Claude Code (claude-sonnet-4-6) is the primary AI developer for this
-repository. Claude Code manages day-to-day development, validation, refactoring,
-and documentation maintenance.
+**Claude Code** (`claude-sonnet-4-6`) is the designated primary AI developer for
+this repository, maintained on behalf of Bradley Potts
+(brad.potts@coastdigitalgroup.com) at PHCDevworks. All development is driven
+through Claude Code operating from `CLAUDE.md` as the authoritative working
+guide. Human final review and commit authority rests with Bradley Potts.
 
-Human ownership and final approval authority rests with Bradley Potts
-(brad.potts@coastdigitalgroup.com). Protected semantic color families and major
-contract changes require explicit human approval before merge.
+Protected semantic color families and major contract changes require explicit
+human approval before merge. Claude Code does not create git commits — changes
+are prepared and validated, then handed off for human review and commit.
 
 ## Mission
 
