@@ -7,10 +7,6 @@ extend([a11yPlugin]);
 
 const tokens = loadMergedTokens() as SpectreSourceTokens;
 
-/**
- * Resolves a token reference like "{colors.info.600}" to its value.
- * Supports nested references and composite values.
- */
 function resolveToken(pathStr: string, allTokens: SpectreSourceTokens): string {
   if (!pathStr || typeof pathStr !== 'string' || !pathStr.includes('{')) {
     if (typeof pathStr === 'string' && pathStr.includes(' / ')) {

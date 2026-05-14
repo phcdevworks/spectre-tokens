@@ -360,7 +360,7 @@ npm install
 npm run check
 ```
 
-This project expects Node.js `^22.12.0 || >=24.0.0` and npm `11.13.0`.
+This project expects Node.js `^22.12.0 || >=24.0.0` and npm `11.14.1`.
 
 Regenerate package outputs after token-source changes:
 

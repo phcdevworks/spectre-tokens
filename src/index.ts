@@ -4,9 +4,26 @@ import { generateCssVariables } from './css';
 import type { SpectreTokens, TailwindTheme, Tokens } from './types';
 
 export type {
-  AccessibilityTokens, AnimationEntry, ButtonStateTokens, ColorScale, ComponentBadgeTokens,
-  ComponentIconBoxTokens, ComponentPricingCardTokens, ComponentRatingTokens, ComponentTestimonialTokens, ComponentTokens, FormStateTokens, LayoutTokens, SpectreModeName, SpectreModeTokens, SpectreTokens, TailwindTheme,
-  Tokens, TokenScale, TransitionTokens, TypographyTokens
+  AccessibilityTokens,
+  AnimationEntry,
+  ButtonStateTokens,
+  ColorScale,
+  ComponentBadgeTokens,
+  ComponentIconBoxTokens,
+  ComponentPricingCardTokens,
+  ComponentRatingTokens,
+  ComponentTestimonialTokens,
+  ComponentTokens,
+  FormStateTokens,
+  LayoutTokens,
+  SpectreModeName,
+  SpectreModeTokens,
+  SpectreTokens,
+  TailwindTheme,
+  TokenScale,
+  Tokens,
+  TransitionTokens,
+  TypographyTokens
 } from './types';
 
 const tokens: SpectreTokens = coreTokens;
