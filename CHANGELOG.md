@@ -10,6 +10,9 @@ Contract change type: semantic change
 
 ### Changed
 
+- Standardized the `surface.overlay` token in `tokens/semantic-roles.json` to
+  `{colors.black} / 0.6` to achieve full contract parity with mode-specific
+  overrides and ensure consistent overlay treatment without color casts.
 - Standardized the `surface.overlay` token in the default mode within
   `tokens/modes.json` to `{colors.black} / 0.6`, achieving parity with the dark
   mode definition and ensuring consistent overlay treatment across themes.
