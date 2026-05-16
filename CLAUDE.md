@@ -14,20 +14,19 @@ repository. Read it before touching any source file.
 
 ## Multi-Agent Team
 
-This repository operates with three AI agents working together:
+This repository follows the Spectre AI factory model:
 
-- **Claude Code** (primary AI developer) — token authoring, feature work,
-  source changes, architecture. Operates from this file (`CLAUDE.md`).
-- **Codex** (release/validation support) — contract integrity review,
-  release readiness checks, generated output sync, docs standardization.
-  Operates from `CODEX.md`, defers to this file for development authority.
-- **Jules** (autonomous scheduled agent) — executes defined maintenance tasks
-  on a schedule; commits and pushes autonomously when all validation gates
-  pass. Operates from `JULES.md`.
+| Agent | Role | Guide |
+| ----- | ---- | ----- |
+| Claude Code | Lead developer responsible for primary implementation, token authoring, source changes, and architecture | `CLAUDE.md` |
+| OpenAI Codex | Documentation, releases, production stabilization, repo hygiene, config standardization, contract review, and validation support | `CODEX.md` |
+| GitHub Copilot | General development assistance and GitHub-integrated editing support | `COPILOT.md` and `.github/copilot-instructions.md` |
+| Google Jules | Automated maintenance for small fixes, dependency updates, generated-output sync, and micro-updates | `JULES.md` |
 
-`AGENTS.md` is the shared guide read by all agents. Treat Codex reviews and
-Jules commits as peer input — resolve conflicts by referencing `CLAUDE.md`
-and `contract.manifest.json` as the authoritative sources.
+`AGENTS.md` is the shared guide read by all agents. Treat Codex reviews,
+Copilot suggestions, and Jules commits as peer input. Resolve conflicts by
+referencing `CLAUDE.md` and `contract.manifest.json` as the authoritative
+sources.
 
 ## Commit Policy
 

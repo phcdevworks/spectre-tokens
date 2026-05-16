@@ -2,9 +2,10 @@
 
 ## Role
 
-Jules is the autonomous scheduled agent for `@phcdevworks/spectre-tokens`. It
-executes defined maintenance tasks without human supervision, commits validated
-work, and pushes to the current branch when all gates pass.
+Jules is the autonomous scheduled maintenance agent for
+`@phcdevworks/spectre-tokens`. It executes defined small fixes, dependency
+updates, generated-output sync, and micro-updates without human supervision,
+commits validated work, and pushes to the current branch when all gates pass.
 
 Claude Code is the primary AI developer and `CLAUDE.md` is the authoritative
 development guide. Jules defers to both and reads `AGENTS.md` at the start of
@@ -27,6 +28,8 @@ breaking contract change.
 8. Commit and push only when all 13 validation gates pass clean.
 9. If a gate fails and cannot be safely resolved within scope — revert and
    report the blocker instead of committing a broken state.
+10. Do not take on large feature work, architectural ownership, or release
+    decisions.
 
 ## Task Scope
 

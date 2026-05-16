@@ -3,18 +3,23 @@
 ## Project Identity
 
 `@phcdevworks/spectre-tokens` represents the Layer 1 design-token package of the
-Spectre system. **Primary AI developer:** Claude Code (`claude-sonnet-4-6`)
-**Release & Validation Agent:** Codex **Support & Orchestration Agent:** GitHub
-Copilot
+Spectre system.
+
+**Primary AI developer:** Claude Code (`claude-sonnet-4-6`)
+**Documentation, release, stabilization, hygiene, and config agent:** Codex
+**General development assistance:** GitHub Copilot
+**Automated maintenance:** Google Jules
 
 This file defines the operating procedures for **GitHub Copilot** as part of the
 multi-agent AI team.
 
 ## Copilot's Role in the Team
 
-While Claude Code takes the lead on development (`CLAUDE.md`) and Codex provides
-oversight and release readiness (`CODEX.md`), GitHub Copilot serves as the
-**Supporting Services & Online Support Agent**.
+While Claude Code takes the lead on development (`CLAUDE.md`), Codex provides
+documentation, release readiness, production stabilization, repo hygiene, and
+config standardization (`CODEX.md`), and Jules handles bounded automated
+maintenance (`JULES.md`), GitHub Copilot serves as the general development
+assistance agent.
 
 My core responsibilities include:
 
@@ -40,6 +45,8 @@ My core responsibilities include:
 4. **Protect Semantic Families:** As dictated by `AGENTS.md`, do not change
    protected color families (success, warning, danger, CTA/brand) without
    explicit human approval.
+5. **Do Not Own Releases:** Release classification, final handoff, tagging, and
+   publishing decisions remain with Codex and Bradley Potts.
 
 ## Common Operations
 
