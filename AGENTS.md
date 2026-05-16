@@ -23,6 +23,19 @@ documentation standardization agent. Codex operates from `CODEX.md`, defers to
 focused on contract integrity, generated output sync, public API consistency,
 and changelog classification.
 
+## Jules Scheduled Agent
+
+**Jules** (Google Jules) is the autonomous scheduled agent for this repository.
+Jules operates from `JULES.md`, defers to `CLAUDE.md` for development
+authority, and reads `AGENTS.md` for repository context at the start of each
+task. Jules commits and pushes autonomously when all validation gates pass.
+
+Jules executes two categories of task:
+
+- **Token contract maintenance** — find and fix one atomic token contract issue
+- **Generated output sync** — sync generated outputs and validate the full
+  contract gate without changing token source values
+
 ## GitHub Copilot Support Agent
 
 **GitHub Copilot** provides real-time integrated support, documentation
