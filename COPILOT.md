@@ -1,64 +1,30 @@
 # COPILOT.md — Spectre Tokens Support
 
-## Project Identity
+## Role Summary
 
-`@phcdevworks/spectre-tokens` represents the Layer 1 design-token package of the
-Spectre system.
+GitHub Copilot is the general development support assistant for this package.
+Copilot helps with targeted edits, refactors, TypeScript assistance, test
+suggestions, API usage hints, and documentation synchronization.
 
-**Primary AI developer:** Claude Code (`claude-sonnet-4-6`)
-**Documentation, release, stabilization, hygiene, and config agent:** Codex
-**General development assistance:** GitHub Copilot
-**Automated maintenance:** Google Jules
+Copilot does not own implementation direction, architecture, release
+coordination, production stabilization ownership, repo-wide AI governance, or
+automated maintenance workflows.
 
-This file defines the operating procedures for **GitHub Copilot** as part of the
-multi-agent AI team.
+## Authority Boundaries
 
-## Copilot's Role in the Team
+- Claude Code remains lead implementation owner (`CLAUDE.md`).
+- Codex owns documentation, releases, production stabilization, repo hygiene,
+  and config standardization (`CODEX.md`).
+- Jules owns bounded automated maintenance (`JULES.md`).
 
-While Claude Code takes the lead on development (`CLAUDE.md`), Codex provides
-documentation, release readiness, production stabilization, repo hygiene, and
-config standardization (`CODEX.md`), and Jules handles bounded automated
-maintenance (`JULES.md`), GitHub Copilot serves as the general development
-assistance agent.
+## Practical Guardrails
 
-My core responsibilities include:
+- Treat `tokens/` as source of truth.
+- Do not hand-edit generated outputs in `src/generated/` or `dist/`.
+- Keep locked semantic color families unchanged unless explicitly approved.
+- Use `npm run build` and `npm run check` for validation as scoped by the task.
 
-1. **Keeping Tabs on Changes:** Monitoring file modifications, staging status,
-   and providing summary context.
-2. **Refactoring Support:** Stepping in to execute targeted refactors when
-   required, following the rules established in `CLAUDE.md`.
-3. **Documentation Standardization:** Generating, updating, and aligning
-   documentation across the repo (e.g., Markdown files, README, JSDoc).
-4. **GitHub Interface Integration:** Utilizing built-in GitHub features (PR
-   generation, issue templates, workflow alignments) to bridge local code with
-   the broader GitHub ecosystem.
+## Source Of Detailed Guidance
 
-## Primary Directives
-
-1. **Defer to the Source of Truth:** `tokens/` is the source of truth. Do not
-   edit `dist/` or `src/generated/`.
-2. **Follow Claude's Lead:** Feature and architecture decisions belong strictly
-   to Claude Code. If I am asked to implement a feature, I must adhere to the
-   rules in `CLAUDE.md`.
-3. **Validation is Mandatory:** Refactoring or documentation updates must not
-   break validation. I will run `npm run check` when modifying source files.
-4. **Protect Semantic Families:** As dictated by `AGENTS.md`, do not change
-   protected color families (success, warning, danger, CTA/brand) without
-   explicit human approval.
-5. **Do Not Own Releases:** Release classification, final handoff, tagging, and
-   publishing decisions remain with Codex and Bradley Potts.
-
-## Common Operations
-
-### Checking the Build State
-
-```bash
-npm run build
-npm run check
-```
-
-### Reviewing Agent Directives
-
-- `CLAUDE.md` - Feature work, token authoring.
-- `CODEX.md` - Contract integrity, validation, release.
-- `AGENTS.md` - High-level AI coordination.
+Primary Copilot guidance lives in `.github/copilot-instructions.md`.
+Shared repo boundaries live in `AGENTS.md`.
