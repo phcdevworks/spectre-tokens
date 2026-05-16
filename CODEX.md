@@ -89,6 +89,7 @@ source-of-truth boundaries:
 - `CLAUDE.md` is the primary Claude Code working guide.
 - `AGENTS.md` is the shared agent guide.
 - `CODEX.md` is Codex-specific release and validation guidance.
+- `JULES.md` is Jules-specific scheduled agent guidance.
 - `TOKEN_CONTRACT.md` documents public token contract behavior.
 - `README.md` documents consumer usage.
 - `CHANGELOG.md` records release-facing changes.
