@@ -486,7 +486,10 @@
         "value": "{colors.accent.200}"
       },
       "text": {
-        "value": "{colors.white}"
+        "value": "{colors.white}",
+        "metadata": {
+          "pair": "buttons.accent.bg"
+        }
       },
       "textDisabled": {
         "value": "{colors.neutral.400}"
