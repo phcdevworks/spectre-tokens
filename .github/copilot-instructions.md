@@ -42,5 +42,3 @@ handoff authority.
 - Copilot support context: `COPILOT.md`
 
 For complete rules, consult `CLAUDE.md`, `CODEX.md`, and `AGENTS.md`.
-
-For complete rules, consult `CLAUDE.md`, `CODEX.md`, and `AGENTS.md`.

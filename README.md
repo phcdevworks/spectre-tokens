@@ -1,8 +1,9 @@
 # @phcdevworks/spectre-tokens
 
-[![GitHub issues](https://img.shields.io/github/issues/phcdevworks/spectre-tokens)](https://github.com/phcdevworks/spectre-tokens/issues)
-[![GitHub pull requests](https://img.shields.io/github/issues-pr/phcdevworks/spectre-tokens)](https://github.com/phcdevworks/spectre-tokens/pulls)
+[![npm version](https://img.shields.io/npm/v/@phcdevworks/spectre-tokens)](https://www.npmjs.com/package/@phcdevworks/spectre-tokens)
+[![CI](https://img.shields.io/github/actions/workflow/status/phcdevworks/spectre-tokens/ci.yml?branch=main&label=CI)](https://github.com/phcdevworks/spectre-tokens/actions/workflows/ci.yml)
 [![License](https://img.shields.io/github/license/phcdevworks/spectre-tokens)](LICENSE)
+[![Node](https://img.shields.io/node/v/@phcdevworks/spectre-tokens)](https://nodejs.org)
 
 `@phcdevworks/spectre-tokens` is the design-token package of the Spectre system
 for downstream Spectre packages and compatible applications.
@@ -49,6 +50,21 @@ This package is the correct place to define token meaning.
   contracts rather than recreate them independently.
 - Example app architecture. The `example/` directory documents token usage; it
   is not the contract source and should not become a downstream UI layer.
+
+## When to use this package
+
+- You are building a Spectre ecosystem package and need the visual language contract.
+- You need design token values in JavaScript, TypeScript, CSS variables, or a Tailwind theme.
+- You want a single source of truth for semantic roles: `surface`, `text`, `component`, `buttons`, `forms`, `modes`.
+- You are consuming tokens as named values, not inventing new token meaning.
+
+## When not to use this package
+
+- You need UI components or component structure — use
+  [`@phcdevworks/spectre-ui`](https://github.com/phcdevworks/spectre-ui).
+- You need framework-specific component delivery — use the appropriate adapter package.
+- You want to define your own token meaning or override Spectre semantics locally —
+  this package is the authority; downstream consumers should consume, not redefine.
 
 ## Installation
 
@@ -379,6 +395,18 @@ Key source areas:
 The files in `example/` are illustrative token demos only. They help explain the
 token contract, but they are not the package contract itself and should not be
 treated as downstream UI primitives.
+
+## Troubleshooting
+
+| Failure | Cause | Fix |
+|---|---|---|
+| `check:regression` fails | A token value changed vs the recorded baseline | Revert the unintended change, or update the baseline if the change was intentional |
+| `check:locked` fails | A protected color family was modified | Revert unless Bradley Potts has explicitly approved the change |
+| `check:contrast` fails | A text/background token pair does not meet WCAG AA | Adjust the token value or the `metadata.pair` reference in the source JSON |
+| `check:dist` fails | Generated dist is out of sync | Run `npm run build` then re-run `npm run check` |
+| `check:manifest` fails | A namespace exists in outputs but is not declared in `contract.manifest.json` | Add the namespace to the manifest or remove it from the source |
+| `check:docs` fails | README or TOKEN_CONTRACT.md has drifted from the manifest | Update the doc to match the current contract |
+| `check:classification` fails | A contract-authority file changed without a classification entry | Add `Contract change type: additive`, `semantic change`, or `breaking` to `CHANGELOG.md [Unreleased]` |
 
 ## Contributing
 
