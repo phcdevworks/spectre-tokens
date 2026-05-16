@@ -491,6 +491,9 @@ export interface SpectreSourceTokens {
       };
       text: {
         value: string;
+        metadata: {
+          pair: string;
+        };
       };
       textDisabled: {
         value: string;
