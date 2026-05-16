@@ -135,12 +135,7 @@ Do not change these color families unless explicitly directed by Bradley Potts.
   - `npm run build:ts`
   - `npm run build:css`
 - `npm run check` is the full validation gate and currently runs:
-  - build
-  - token structure validation
-  - locked color validation
-  - contrast validation
-  - regression validation
-  - lint validation
+  - build → manifest → structure → locked-color → contrast → regression → docs → exports → css → tailwind → consumer → classification → dist → lint
 - Pull requests must pass the repository CI workflow for `npm run build` and
   `npm run check`.
 - Locked color changes should fail validation unless the baseline is
