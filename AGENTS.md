@@ -15,13 +15,28 @@ Protected semantic color families and major contract changes require explicit
 human approval before merge. Claude Code does not create git commits — changes
 are prepared and validated, then handed off for human review and commit.
 
+## AI Operating Model
+
+This repository follows the Spectre AI factory model:
+
+| Agent | Role | Authority |
+| ----- | ---- | --------- |
+| Claude Code | Lead developer responsible for primary implementation | `CLAUDE.md` |
+| OpenAI Codex | Documentation, releases, production stabilization, repo hygiene, and config standardization | `CODEX.md` |
+| GitHub Copilot | General development assistance | `COPILOT.md` and `.github/copilot-instructions.md` |
+| Google Jules | Automated maintenance for small fixes, dependency updates, and micro-updates | `JULES.md` |
+
+Claude Code keeps implementation leadership. Codex keeps release and
+stabilization work clean. Copilot assists without owning decisions. Jules
+handles bounded automated maintenance and must not take on large feature work.
+
 ## Codex Release Agent
 
-Codex supports Claude Code as the release, validation, refactor, and
-documentation standardization agent. Codex operates from `CODEX.md`, defers to
-`CLAUDE.md` for development authority, and keeps release-readiness checks
-focused on contract integrity, generated output sync, public API consistency,
-and changelog classification.
+Codex supports Claude Code as the documentation, release, production
+stabilization, repo hygiene, and configuration standardization agent. Codex
+operates from `CODEX.md`, defers to `CLAUDE.md` for development authority, and
+keeps release-readiness checks focused on contract integrity, generated output
+sync, public API consistency, and changelog classification.
 
 ## Jules Scheduled Agent
 
@@ -38,12 +53,11 @@ Jules executes two categories of task:
 
 ## GitHub Copilot Support Agent
 
-**GitHub Copilot** provides real-time integrated support, documentation
-standardization, targeted refactoring, and integration with GitHub features.
-Copilot operates from `COPILOT.md` and `.github/copilot-instructions.md`,
-assisting both Claude Code and Codex by monitoring file state, maintaining
-standards across the workspace, and bridging local development to production
-readiness features.
+**GitHub Copilot** provides general development assistance, real-time editing
+support, documentation synchronization, targeted refactoring, and integration
+with GitHub features. Copilot operates from `COPILOT.md` and
+`.github/copilot-instructions.md`, assisting Claude Code and Codex without
+owning implementation direction, release decisions, or final handoff authority.
 
 ## Mission
 

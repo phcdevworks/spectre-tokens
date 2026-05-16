@@ -2,16 +2,18 @@
 
 ## Role
 
-Codex acts as the release, validation, refactor, and documentation support
-agent for `@phcdevworks/spectre-tokens`.
+Codex acts as the documentation, release, production stabilization, repo
+hygiene, changelog/release note support, validation, and configuration
+standardization agent for `@phcdevworks/spectre-tokens`.
 
 Claude Code remains the primary AI developer for this repository and works from
 `CLAUDE.md` as the authoritative development guide. Codex keeps the work
 production-ready by checking contract integrity, release hygiene, validation
 coverage, and documentation consistency.
 
-Human final review, commit authority, tagging, and publishing remain with
-Bradley Potts.
+Human final review, release decisions, tagging, and publishing remain with
+Bradley Potts. Jules may commit only bounded automated maintenance when all
+Jules gates pass; Copilot provides assistance and does not own decisions.
 
 ## Operating Principles
 
@@ -25,6 +27,8 @@ Bradley Potts.
 6. Do not modify protected semantic color families without explicit approval
    from Bradley Potts.
 7. Do not create commits, tags, or releases unless Bradley explicitly asks.
+8. Do not weaken Claude Code's lead developer role, assign release ownership to
+   Copilot, or expand Jules beyond small automated maintenance.
 
 ## Primary Responsibilities
 
@@ -34,6 +38,7 @@ Bradley Potts.
 - Refactor validation or build scripts when they reduce drift risk.
 - Standardize documentation when repo guidance, release notes, or contract docs
   become inconsistent.
+- Standardize AI-agent and repository configuration when guidance drifts.
 - Keep `CHANGELOG.md [Unreleased]` classification accurate for
   contract-authority changes.
 - Confirm generated artifacts are derived from source with `npm run build`.
