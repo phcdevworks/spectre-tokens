@@ -1,0 +1,71 @@
+# yaml-language-server: $schema=https://coderabbit.ai/integrations/schema.v2.json
+language: "en-US"
+early_access: false
+reviews:
+  profile: "assertive"
+  request_changes_workflow: false
+  high_level_summary: true
+  high_level_summary_placeholder: "@coderabbitai summary"
+  auto_title_placeholder: "@coderabbitai"
+  review_status: true
+  commit_status: true
+  collapse_walkthrough: false
+  changed_files_summary: true
+  sequence_diagrams: true
+  assess_linked_issues: true
+  related_issues: true
+  related_prs: true
+  suggested_labels: true
+  auto_apply_labels: false
+  suggested_reviewers: false
+  poem: false
+  abort_on_close: true
+  auto_review:
+    enabled: true
+    auto_incremental_review: true
+    drafts: false
+  finishing_touches:
+    docstrings:
+      enabled: true
+  tools:
+    eslint:
+      enabled: true
+    markdownlint:
+      enabled: true
+    gitleaks:
+      enabled: true
+    github-checks:
+      enabled: true
+      timeout_ms: 90000
+    yamllint:
+      enabled: true
+    languagetool:
+      enabled: true
+      level: default
+    actionlint:
+      enabled: true
+  path_instructions:
+    - path: "**/*.ts"
+      instructions: "Enforce strict TypeScript: flag missing type annotations, any usage, and non-null assertions without justification."
+    - path: "tokens/**"
+      instructions: "L1 design token source of truth — changes here propagate to every Spectre consumer. Flag: any token removed without a deprecation cycle; naming convention violations; values that deviate from the established scale (spacing, typography, color). All new tokens must follow the existing naming convention and be documented in TOKEN_CONTRACT.md."
+    - path: "src/**"
+      instructions: "Token generation and build scripts. Verify output formats (CSS custom properties, JS objects) remain consistent with the contract manifest. Flag any changes to output structure without a corresponding contract.manifest.json update."
+    - path: "contract.manifest.json"
+      instructions: "The L1 token contract consumed by all downstream Spectre packages. Changes here are breaking for all consumers. Flag removals, type changes, and renamed tokens without a deprecation notice."
+    - path: "TOKEN_CONTRACT.md"
+      instructions: "Token contract documentation. Verify it stays in sync with contract.manifest.json and accurately describes all token categories, naming conventions, and usage guidelines."
+    - path: "package.json"
+      instructions: "Review dependency additions carefully. Flag unpinned major versions and any new packages that duplicate existing functionality."
+    - path: "CHANGELOG.md"
+      instructions: "Verify entries follow Keep a Changelog format with correct categorization (Added/Changed/Fixed/Removed) and link to a version tag."
+chat:
+  auto_reply: true
+knowledge_base:
+  opt_out: false
+  learnings:
+    scope: auto
+  issues:
+    scope: auto
+  pull_requests:
+    scope: auto
