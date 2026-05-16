@@ -15,6 +15,14 @@ Protected semantic color families and major contract changes require explicit
 human approval before merge. Claude Code does not create git commits — changes
 are prepared and validated, then handed off for human review and commit.
 
+## Codex Release Agent
+
+Codex supports Claude Code as the release, validation, refactor, and
+documentation standardization agent. Codex operates from `CODEX.md`, defers to
+`CLAUDE.md` for development authority, and keeps release-readiness checks
+focused on contract integrity, generated output sync, public API consistency,
+and changelog classification.
+
 ## Mission
 
 Protect the token contract.
