@@ -457,6 +457,21 @@ treated as downstream UI primitives.
 | `check:docs` fails | README or TOKEN_CONTRACT.md has drifted from the manifest | Update the doc to match the current contract |
 | `check:classification` fails | A contract-authority file changed without a classification entry | Add `Contract change type: additive`, `semantic change`, or `breaking` to `CHANGELOG.md [Unreleased]` |
 
+## AI and automation boundaries
+
+Claude Code (`claude-sonnet-4-6`) is the primary development agent for this
+repository. Codex handles releases and production stabilization. Jules handles
+small automated fixes and generated-output sync. GitHub Copilot provides
+development support.
+
+No agent creates git commits. All changes are prepared and validated, then
+handed off to Bradley Potts for human review and commit.
+
+**Protected from automated change:** locked color families (`success`,
+`warning`, `danger`, CTA/brand-action), `contract.manifest.json`, and
+`src/generated/tokens.ts`. See [AGENTS.md](AGENTS.md) for full agent
+governance and boundary rules.
+
 ## Contributing
 
 PHCDevworks maintains this package as part of the Spectre system.
