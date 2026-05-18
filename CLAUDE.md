@@ -2,12 +2,13 @@
 
 ## Project Identity
 
+**Package:** `@phcdevworks/spectre-tokens`
+**Human owner:** Bradley Potts (brad.potts@coastdigitalgroup.com)
+**Primary AI developer:** Claude Code (claude-sonnet-4-6)
+
 `@phcdevworks/spectre-tokens` is the Layer 1 design-token package of the
 Spectre system. It defines visual language, semantic roles, and token contracts
 consumed by downstream Spectre packages and compatible applications.
-
-**Human owner:** Bradley Potts (brad.potts@coastdigitalgroup.com)
-**Primary AI developer:** Claude Code (claude-sonnet-4-6)
 
 This file is the authoritative guide for Claude Code operating in this
 repository. Read it before touching any source file.

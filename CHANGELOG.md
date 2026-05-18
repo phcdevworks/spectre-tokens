@@ -8,6 +8,13 @@ reflects package releases published to npm.
 
 Contract change type: semantic change
 
+### Added
+
+- Added explicit contrast-pair metadata to the `pricingCard` featured text and
+  badge tokens in `tokens/components.json` and `tokens/modes.json` to enable
+  consistent automated contrast validation against their respective backgrounds
+  across the base contract and theme modes.
+
 ### Changed
 
 - Standardized the `surface.overlay` token in `tokens/semantic-roles.json` to
@@ -16,21 +23,6 @@ Contract change type: semantic change
 - Standardized the `surface.overlay` token in the default mode within
   `tokens/modes.json` to `{colors.black} / 0.6`, achieving parity with the dark
   mode definition and ensuring consistent overlay treatment across themes.
-
-### Added
-
-- Added explicit contrast-pair metadata to the `pricingCard` featured text and
-  badge tokens in `tokens/components.json` and `tokens/modes.json` to enable
-  consistent automated contrast validation against their respective backgrounds
-  across the base contract and theme modes.
-- Standardized non-protected semantic text roles (`default`, `muted`, `subtle`,
-  `meta`) for both `onPage` and `onSurface` in `tokens/semantic-roles.json` by
-  converting them to the object structure with `metadata.pair` pointing to their
-  respective surface backgrounds, enabling automated contrast validation for the
-  core semantic hierarchy.
-
-### Changed
-
 - Standardized non-protected semantic text roles (`default`, `muted`, `subtle`,
   `meta`) in `tokens/semantic-roles.json` to the object-based structure to
   enable automated contrast validation for the base semantic contract and
