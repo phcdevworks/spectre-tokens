@@ -464,8 +464,10 @@ repository. Codex handles releases and production stabilization. Jules handles
 small automated fixes and generated-output sync. GitHub Copilot provides
 development support.
 
-No agent creates git commits. All changes are prepared and validated, then
-handed off to Bradley Potts for human review and commit.
+Claude Code does not create git commits. All Claude Code changes are prepared
+and validated, then handed off to Bradley Potts for human review and commit.
+Jules commits bounded automated maintenance tasks autonomously when all
+validation gates pass.
 
 **Protected from automated change:** locked color families (`success`,
 `warning`, `danger`, CTA/brand-action), `contract.manifest.json`, and

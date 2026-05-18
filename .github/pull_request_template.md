@@ -14,7 +14,7 @@
 
 ## Checklist
 
-- [ ] `npm run check` passes (13-gate validation)
+- [ ] `npm run check` passes (14-gate validation)
 - [ ] Token sources changed in `tokens/` only (not in `dist/` or
       `src/generated/`)
 - [ ] Generated outputs regenerated via `npm run build`
