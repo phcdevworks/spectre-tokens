@@ -427,19 +427,28 @@ npm run check
 
 This project expects Node.js `^22.12.0 || >=24.0.0` and npm `11.14.1`.
 
-Regenerate package outputs after token-source changes:
+### Common commands
 
-```bash
-npm run build
-```
+| Command | What it does |
+|---|---|
+| `npm run build` | Regenerate all outputs — run after any token source change |
+| `npm run check` | Full validation gate — all 14 steps must pass before commit |
+| `npm run lint` | Run ESLint against all source files |
+| `npm run format` | Apply Prettier formatting to all files |
+| `npm run generate` | Regenerate `src/generated/tokens.ts` from token sources only |
+| `npm run check:manifest` | Validate public namespaces against `contract.manifest.json` |
+| `npm run check:docs` | Validate README and TOKEN_CONTRACT headings against manifest |
+| `npm run check:locked` | Confirm protected color families are unchanged |
+| `npm run check:contrast` | Confirm all paired tokens meet WCAG AA |
+| `npm run check:dist` | Confirm `dist/` artifacts are in sync with source |
 
-Key source areas:
+### Key source areas
 
-- `tokens/` for source token data
-- `src/generated/` for generated token output
-- `src/` for package entry points, CSS generation, and types
-- `scripts/` for build and validation scripts
-- `example/` for usage examples
+- `tokens/` — source token data (source of truth)
+- `src/` — package entry points, CSS generation, and public types
+- `src/generated/` — auto-generated output (do not edit directly)
+- `scripts/` — build and validation scripts
+- `example/` — usage examples and smoke consumer
 
 The files in `example/` are illustrative token demos only. They help explain the
 token contract, but they are not the package contract itself and should not be
