@@ -23,12 +23,19 @@ This repository follows the Spectre AI factory model:
 | ----- | ---- | --------- |
 | Claude Code | Lead developer responsible for primary implementation | `CLAUDE.md` |
 | OpenAI Codex | Documentation, releases, production stabilization, repo hygiene, and config standardization | `CODEX.md` |
+| ChatGPT | Strategy, coordination, prompt design, and external review — support layer only, no implementation ownership | — |
 | GitHub Copilot | General development assistance | `COPILOT.md` and `.github/copilot-instructions.md` |
 | Google Jules | Automated maintenance for small fixes, dependency updates, and micro-updates | `JULES.md` |
 
 Claude Code keeps implementation leadership. Codex keeps release and
-stabilization work clean. Copilot assists without owning decisions. Jules
-handles bounded automated maintenance and must not take on large feature work.
+stabilization work clean. ChatGPT provides strategy and coordination support
+only. Copilot assists without owning decisions. Jules handles bounded automated
+maintenance and must not take on large feature work.
+
+**Bradley Potts** holds final authority for all commits, merges, tags,
+publishing, and releases. No AI agent holds commit authority in this repository
+except Jules, which may commit bounded automated maintenance when all validation
+gates pass.
 
 ## Edit Permissions
 
