@@ -3,7 +3,8 @@
 # Spectre Tokens Execution Todo
 
 This todo list is aligned to the current repository and the roadmap in
-`ROADMAP.md`. It reflects the current state of the package as of v2.5.0.
+`ROADMAP.md`. Completed sections are kept as a project record. Active work
+starts at P3.
 
 ## P0: Contract Integrity — Completed
 
@@ -70,6 +71,71 @@ v2.0.0 through v2.4.0 release cycle:
   passing runs are silent. Shortened the success and failure banners.
   Simplified the `check-tokens-regression.ts` pass message to a single
   line.
+
+## P3: Downstream Integration Hardening
+
+- [ ] Replace or augment the smoke fixture with an integration test against a
+  real `spectre-ui` fixture
+  — Validate that the package works the way downstream packages actually
+  consume it, not just that the shape is correct in isolation.
+
+- [ ] Validate Tailwind preset composition against a downstream config
+  — Confirm the preset composes correctly with a consumer Tailwind config that
+  has its own theme extensions. Catch namespace collisions and merge conflicts.
+
+- [ ] Validate CSS variable output in a real integration context
+  — Confirm variables do not collide with or shadow downstream CSS when the
+  package is used alongside `spectre-ui`.
+
+- [ ] Document any integration constraints as explicit contract rules
+  — Add integration-level requirements to `TOKEN_CONTRACT.md` so they are
+  part of the declared public contract.
+
+## P4: Versioning Automation
+
+- [ ] Add a script that reads the classification line and proposes the semver bump
+  — `additive` → minor, `semantic change` → minor (or patch if no public
+  surface changed), `breaking` → major. Script proposes; Bradley confirms.
+
+- [ ] Wire the script into the release procedure in `CLAUDE.md` and `CODEX.md`
+  — Codex should run it during release handoff so the version proposal is
+  always present in the release summary.
+
+## P5: Design Tool Synchronization
+
+- [ ] Decide on the synchronization target — Tokens Studio or Style Dictionary
+  — Evaluate against the current Figma workflow before writing any output
+  code.
+
+- [ ] Add a `build:tokens-studio` or `build:style-dictionary` output to the
+  build pipeline
+  — Generated alongside existing artifacts so it is always in sync with
+  source.
+
+- [ ] Wire the new output into `check:dist` sync validation
+  — Stale design-tool output fails the check gate just like stale `dist/`.
+
+- [ ] Document the design handoff workflow in `CONTRIBUTING.md`
+  — Designers should know how to pull updated tokens into Figma from the
+  published source.
+
+## P6: Deprecation Policy
+
+- [ ] Define the deprecation lifecycle in `TOKEN_CONTRACT.md`
+  — `active` → `deprecated` → `removed`. Document the migration window
+  convention (e.g. one major version of deprecation notice before removal).
+
+- [ ] Add a `deprecated` marker to the token source schema
+  — Deprecated tokens are flagged at the source level, not just in the
+  changelog.
+
+- [ ] Add a validation check for deprecated and removed tokens
+  — Warn when deprecated tokens are present. Fail when a token marked for
+  removal is still in the public export.
+
+- [ ] Define the deprecation notice format for `CHANGELOG.md`
+  — Consumers should see exactly which token is deprecated, what replaces it,
+  and in which version it will be removed.
 
 ## Explicitly Out of Scope
 
