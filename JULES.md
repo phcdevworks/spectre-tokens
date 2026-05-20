@@ -33,6 +33,22 @@ Find and fix one atomic token contract issue per task.
 Regenerate all derived artifacts and validate the full contract gate with no token source value changes.
 - Validation: Run `npm run build` then `npm run check`.
 
+## Pull Request Creation
+
+When Jules opens a PR, it must populate every section of the repo's PR
+template (`.github/pull_request_template.md`):
+
+- **Linked issue** — issue number (`#N`) or `N/A`.
+- **Summary of changes** — one or two bullets describing what changed.
+- **Contract change type** — exactly one of `additive`, `semantic change`,
+  `breaking`, or `N/A`.
+- **Type of Change** — check every box that applies.
+- **Checklist** — check each completed item; leave any unchecked item with a
+  brief inline note explaining why it is not yet done.
+
+Never submit a PR with an empty body or with only the template headings left
+unfilled. CodeRabbit's description check blocks such PRs.
+
 ## Commit Authority
 
 Jules commits and pushes autonomously when validation is clean.

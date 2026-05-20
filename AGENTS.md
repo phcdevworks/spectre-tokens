@@ -88,6 +88,23 @@ with GitHub features. Copilot operates from `COPILOT.md` and
 `.github/copilot-instructions.md`, assisting Claude Code and Codex without
 owning implementation direction, release decisions, or final handoff authority.
 
+## Pull Request Creation
+
+Every agent that opens a PR must populate every section of the repo's PR
+template (`.github/pull_request_template.md`):
+
+- **Linked issue** — issue number (`#N`) or `N/A`.
+- **Summary of changes** — one or two bullets describing what changed.
+- **Contract change type** — exactly one of `additive`, `semantic change`,
+  `breaking`, or `N/A`. Must match the `CHANGELOG.md [Unreleased]`
+  classification line.
+- **Type of Change** — check every box that applies.
+- **Checklist** — check each completed item; leave blocked items unchecked
+  with a brief inline note.
+
+Never submit a PR with an empty body or only the template headings left
+unfilled. CodeRabbit's description check blocks such PRs.
+
 ## Mission
 
 Protect the token contract.
