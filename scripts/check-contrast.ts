@@ -67,10 +67,9 @@ function checkTokensRecursively(obj: Record<string, unknown> | SpectreSourceToke
           const textValue = resolveToken(`{${pairPath}}`, tokens);
 
           const contrast = colord(bgValue).contrast(textValue);
-          console.log(`[CHECK] ${fullPath} vs ${pairPath}: ${contrast.toFixed(2)}:1`);
 
           if (contrast < 4.5) {
-            failures.push(`Contrast failure: ${fullPath} (${bgValue}) vs ${pairPath} (${textValue}) = ${contrast.toFixed(2)}:1`);
+            failures.push(`${fullPath} vs ${pairPath}: ${contrast.toFixed(2)}:1 (need 4.5:1)`);
           }
         } else {
           checkTokensRecursively(value as Record<string, unknown>, fullPath);
@@ -83,13 +82,12 @@ function checkTokensRecursively(obj: Record<string, unknown> | SpectreSourceToke
   }
 }
 
-console.log('--- Spectre Token Contrast Validation ---');
 checkTokensRecursively(tokens, '');
 
 if (failures.length > 0) {
-  console.error('\nCONTRAST VALIDATION FAILED:');
+  console.error('Contrast check failed:');
   failures.forEach(f => console.error(` [FAIL] ${f}`));
   process.exit(1);
 } else {
-  console.log('\nCONTRAST VALIDATION PASSED! All pairs meet WCAG AA (4.5:1).');
+  console.log('Contrast check passed. All pairs meet WCAG AA (4.5:1).');
 }

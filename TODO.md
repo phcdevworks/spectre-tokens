@@ -58,14 +58,18 @@ v2.0.0 through v2.4.0 release cycle:
   (rule 10) and `TOKEN_CONTRACT.md` (Unacceptable Changes). No implementation
   required; policy is enforced through review.
 
-## P2: Later / Controlled Improvement
+## P2: Later / Controlled Improvement — Completed
 
-- [ ] Improve release-note clarity for contract changes
-  — Make additive, semantic, and breaking summaries more consistent for
-  downstream consumers.
+- [x] Improve release-note clarity for contract changes
+  — Added `Contract change type:` classification lines to all 2.x entries
+  that were missing them (2.0.0–2.2.0). Normalized bold-header formatting
+  in 2.0.0 and 2.1.0 to match the plain prose style of 2.3.0+.
 
-- [ ] Review validation message clarity
-  — Keep failure output short, path-based, and easy to act on.
+- [x] Review validation message clarity
+  — Removed per-pair `[CHECK]` log lines from `check-contrast.ts` so
+  passing runs are silent. Shortened the success and failure banners.
+  Simplified the `check-tokens-regression.ts` pass message to a single
+  line.
 
 ## Explicitly Out of Scope
 
