@@ -133,6 +133,24 @@ change without a major-version increment.
 
 ---
 
+## Pull Request Creation
+
+When opening a PR, Codex must populate every section of
+`.github/pull_request_template.md`:
+
+- **Linked issue** — issue number (`#N`) or `N/A`.
+- **Summary of changes** — one or two bullets describing what changed.
+- **Contract change type** — exactly one of `additive`, `semantic change`,
+  `breaking`, or `N/A`. Must match the `CHANGELOG.md [Unreleased]` classification line.
+- **Type of Change** — check every box that applies.
+- **Checklist** — check each completed item; leave blocked items unchecked
+  with a brief inline note.
+
+Never submit a PR with an empty body or only the template headings left
+unfilled. CodeRabbit's description check will flag it and block the PR.
+
+---
+
 ## Release Review Checklist
 
 Use this checklist before every release handoff to Bradley Potts.

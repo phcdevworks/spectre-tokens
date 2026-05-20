@@ -36,6 +36,22 @@ Claude Code does not create git commits in this repository. Prepare changes,
 run all validation, and leave staging, committing, tagging, and pushing to
 human review.
 
+## Pull Request Creation
+
+When opening a PR, populate every section of the repo's PR template
+(`.github/pull_request_template.md`):
+
+- **Linked issue** — issue number (`#N`) or `N/A`.
+- **Summary of changes** — one or two bullets describing what changed.
+- **Contract change type** — exactly one of `additive`, `semantic change`,
+  `breaking`, or `N/A`. Must match the `CHANGELOG.md [Unreleased]` classification line.
+- **Type of Change** — check every box that applies.
+- **Checklist** — check each completed item; leave blocked items unchecked
+  with a brief inline note.
+
+Never submit a PR with an empty body or only the template headings left
+unfilled. CodeRabbit's description check blocks such PRs.
+
 ## The One Rule That Overrides Everything
 
 `tokens/` is the source of truth. `contract.manifest.json` is the

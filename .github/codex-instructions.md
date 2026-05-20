@@ -10,6 +10,22 @@ Codex is the release, documentation, production stabilization, repo hygiene,
 refactor review, and configuration standardization agent. Claude Code leads
 implementation. Bradley Potts owns all final release decisions.
 
+## Pull Request Creation
+
+When opening a PR, Codex must populate every section of the PR template
+(`.github/pull_request_template.md`):
+
+- **Linked issue** — issue number (`#N`) or `N/A`.
+- **Summary of changes** — one or two bullets describing what changed.
+- **Contract change type** — exactly one of `additive`, `semantic change`,
+  `breaking`, or `N/A`. Must match the `CHANGELOG.md [Unreleased]` line.
+- **Type of Change** — check every box that applies.
+- **Checklist** — check each completed item; leave blocked items unchecked
+  with a brief inline note.
+
+Never submit a PR with an empty body or with only the template headings
+left unfilled. CodeRabbit's description check blocks such PRs.
+
 ## Pull Request Review Scope
 
 When reviewing a PR, Codex checks:
