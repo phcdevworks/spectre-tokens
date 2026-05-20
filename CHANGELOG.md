@@ -6,6 +6,10 @@ reflects package releases published to npm.
 
 ## [Unreleased]
 
+## [2.6.0] - 2026-05-21
+
+**Release Title:** Contrast Metadata and Overlay Stabilization
+
 Contract change type: additive
 
 ### Added
@@ -518,7 +522,8 @@ Contract change type: breaking
 - Standardized documentation and contributing guidelines.
 
 [unreleased]:
-  https://github.com/phcdevworks/spectre-tokens/compare/v2.5.0...HEAD
+  https://github.com/phcdevworks/spectre-tokens/compare/v2.6.0...HEAD
+[2.6.0]: https://github.com/phcdevworks/spectre-tokens/compare/v2.5.0...v2.6.0
 [2.5.0]: https://github.com/phcdevworks/spectre-tokens/compare/v2.4.0...v2.5.0
 [2.4.0]: https://github.com/phcdevworks/spectre-tokens/compare/v2.3.0...v2.4.0
 [2.3.0]: https://github.com/phcdevworks/spectre-tokens/compare/v2.2.0...v2.3.0
