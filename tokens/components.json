@@ -279,7 +279,10 @@
         "value": "{colors.neutral.200}"
       },
       "text": {
-        "value": "{colors.white}"
+        "value": "{colors.white}",
+        "metadata": {
+          "pair": "buttons.primary.bg"
+        }
       },
       "textDisabled": {
         "value": "{colors.neutral.400}"
@@ -314,7 +317,10 @@
         "value": "{colors.neutral.50}"
       },
       "text": {
-        "value": "{colors.info.700}"
+        "value": "{colors.info.700}",
+        "metadata": {
+          "pair": "buttons.secondary.bg"
+        }
       },
       "textDisabled": {
         "value": "{colors.neutral.400}"
@@ -352,7 +358,10 @@
         "value": "transparent"
       },
       "text": {
-        "value": "{colors.info.700}"
+        "value": "{colors.info.700}",
+        "metadata": {
+          "pair": "buttons.ghost.bgHover"
+        }
       },
       "textDisabled": {
         "value": "{colors.neutral.400}"

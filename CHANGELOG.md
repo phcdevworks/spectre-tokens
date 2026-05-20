@@ -6,10 +6,14 @@ reflects package releases published to npm.
 
 ## [Unreleased]
 
-Contract change type: semantic change
+Contract change type: additive
 
 ### Added
 
+- Added explicit contrast-pair metadata to the `buttons` text tokens for
+  `primary`, `secondary`, and `ghost` variants in `tokens/components.json` to
+  enable automated reverse contrast validation against their respective
+  backgrounds.
 - Added explicit contrast-pair metadata to the `pricingCard` featured text and
   badge tokens in `tokens/components.json` and `tokens/modes.json` to enable
   consistent automated contrast validation against their respective backgrounds
