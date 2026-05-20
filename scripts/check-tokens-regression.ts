@@ -102,4 +102,4 @@ manifest.requiredOutputs.js.spaceLinkedLayoutPaths.forEach((path) => {
   }
 });
 
-console.log('Token regression check passed for paths:', manifest.requiredOutputs.js.requiredPaths.join(', '));
+console.log('Token regression check passed.');

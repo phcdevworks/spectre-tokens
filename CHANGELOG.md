@@ -152,6 +152,8 @@ Contract change type: semantic change
 
 **Release Title:** Contract Alignment and Interaction Coverage
 
+Contract change type: semantic change
+
 ### Added
 
 - Added `focusVisible` token aliases for supported button variants plus a
@@ -190,6 +192,8 @@ Contract change type: semantic change
 
 **Release Title:** Validation Guardrails and CI
 
+Contract change type: additive
+
 ### Added
 
 - Added a locked color contract regression check and baseline covering the
@@ -227,6 +231,8 @@ Contract change type: semantic change
 
 **Release Title:** Semantic Color Refinement
 
+Contract change type: semantic change
+
 ### Added
 
 - Added `metadata.pair` mappings across token definitions to make contrast
@@ -257,62 +263,60 @@ Contract change type: semantic change
 
 **Release Title:** Accessibility and Workflow Expansion
 
+Contract change type: additive
+
 ### Added
 
-- **Interactive Accessibility**: Added `focusRing` tokens to all button variants
-  (Primary, Secondary, Success, Danger) and established a top-level
-  `accessibility.focusRing` accessibility token group.
-- **Badge Evolution**: Introduced `BgHover` overrides for dark mode badges to
-  ensure CRO consistency across themes.
-- **Layout & Borders**: Added `borderWidth` tokens with Tailwind mapping and new
-  `maxWidth` container tokens.
-- **Tooling**: Integrated **ESLint** and **Prettier** into `devDependencies` for
-  automated code health.
-- **Auto-Sync**: Standardized `npm run lint` and `npm run format` scripts for
-  standardized development workflows.
+- Added `focusRing` tokens to all button variants (Primary, Secondary, Success,
+  Danger) and established a top-level `accessibility.focusRing` token group.
+- Introduced `BgHover` overrides for dark mode badges to ensure consistent
+  hover-state coverage across themes.
+- Added `borderWidth` tokens with Tailwind mapping and new `maxWidth` container
+  tokens.
+- Integrated ESLint and Prettier into `devDependencies` for automated code
+  health.
+- Standardized `npm run lint` and `npm run format` scripts for consistent
+  development workflows.
 
 ### Changed
 
-- **Palette Harmonization**: Harmonized the `accent` color palette for better
-  visual consistency across the ecosystem.
-- **Workspace Modernization**: Replaced legacy `.vscode` settings with a
-  centralized `phcdevworks.workspace` configuration.
-- **Documentation Refresh**: Revised `README.md` and `CONTRIBUTING.md` to
-  emphasize the **DNA (Layer 1)** layer hierarchy and modular token structure.
-- **Project Hygiene**: Standardized ESM import ordering and reformatted the
-  entire codebase for better "grep-ability."
-- **Architecture Purge**: Removed all legacy Astro dependencies and associated
-  associations to the internal `tsup` build pipeline.
+- Harmonized the `accent` color palette for better visual consistency across
+  the ecosystem.
+- Replaced legacy `.vscode` settings with a centralized `phcdevworks.workspace`
+  configuration.
+- Revised `README.md` and `CONTRIBUTING.md` to emphasize the Layer 1 hierarchy
+  and modular token structure.
+- Standardized ESM import ordering and reformatted the codebase.
+- Removed all legacy Astro dependencies from the `tsup` build pipeline.
 
 ### Removed
 
 - Removed legacy `.vscode` folder and Astro-specific configurations.
-- Temporary AI skill references (preparing for future integration).
 
 ### Fixed
 
-- **Circular Reference Protection**: Implemented robust detection in
-  `check-contrast.ts` via visited set tracking to prevent infinite recursion.
-- **Type Safety**: Eradicated remaining `any` type-casts in `src/css.ts` in
-  favor of strict `Record<string, unknown>` validation.
+- Implemented circular reference detection in `check-contrast.ts` via a visited
+  set to prevent infinite recursion.
+- Removed remaining `any` type-casts in `src/css.ts` in favor of strict
+  `Record<string, unknown>` validation.
 
 ## [2.0.0] - 2026-03-15
 
 **Release Title:** Modular Token Architecture
 
+Contract change type: breaking
+
 ### Added
 
-- Associated semantic brand text roles (`text.onPage.brand`,
-  `text.onSurface.brand`) for theme-aware brand typography.
-- Associated interactive state tokens (`hoverBg`) to component badge
-  definitions.
+- Added semantic brand text roles (`text.onPage.brand`, `text.onSurface.brand`)
+  for theme-aware brand typography.
+- Added interactive state tokens (`hoverBg`) to component badge definitions.
 
 ### Changed
 
-- **Major Architectural Refactor**: Modularized token storage by splitting the
-  monolithic `core.json` into domain-specific files (`palette.json`,
-  `primitives.json`, `semantic-roles.json`, `components.json`,
-  `typography.json`, `modes.json`).
+- Split the monolithic `core.json` into domain-specific source files
+  (`palette.json`, `primitives.json`, `semantic-roles.json`,
+  `components.json`, `typography.json`, `modes.json`).
 - Re-engineered the build pipeline to use a type-safe deep-merge engine
   (`token-utils.ts`) for multi-file token resolution.
 - Updated `generate-types.ts` to export both strict interfaces and the internal
@@ -325,8 +329,7 @@ Contract change type: semantic change
 
 ### Fixed
 
-- Enforced strict typing by eliminating the `any` keyword across all project
-  scripts and utilities.
+- Eliminated the `any` keyword across all project scripts and utilities.
 - Resolved performance bottlenecks and potential hangs in recursive token
   validation.
 
