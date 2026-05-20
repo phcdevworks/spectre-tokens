@@ -2,333 +2,215 @@
 
 # Spectre Tokens Roadmap
 
-This roadmap is grounded in the current repository shape and public contract of
-`@phcdevworks/spectre-tokens` as it exists today.
-
 `@phcdevworks/spectre-tokens` is the authoritative contract layer for token
 meaning across the Spectre system. It owns token definitions, semantic token
-contracts, modes/themes, and the generated outputs consumed by downstream
-packages. Its job is not to model component structure or framework behavior. Its
-job is to keep token meaning stable, enforceable, and safe to consume.
+contracts, modes and themes, and the generated outputs consumed by downstream
+packages. Its job is to keep token meaning stable, enforceable, and safe to
+consume — not to model component structure or framework behavior.
 
-The work below is focused on strengthening determinism, contract authority,
-parity validation, and downstream safety without expanding package scope.
+---
+
+## 1. Foundation Status — Delivered
+
+All contract foundation work is complete as of v2.5.0. The package is mature
+at the contract layer.
+
+### What is in place
 
-## 1. Current Repo Assessment
+- `tokens/` is the single source of truth. Token loading is deterministic and
+  fails hard on duplicate path ownership.
+- `contract.manifest.json` is the machine-readable contract authority for
+  public namespaces, required outputs, protected semantic groups, and change
+  classification rules.
+- A 14-gate `npm run check` validation chain covers: build, manifest,
+  structure, locked color, contrast, regression, docs, exports, CSS, Tailwind,
+  consumer smoke, classification, dist sync, and lint. All gates must pass
+  before merge.
+- Runtime JS, generated TypeScript, CSS variables, and Tailwind exports are
+  validated for parity against the declared contract.
+- `README.md` and `TOKEN_CONTRACT.md` are validated against the manifest —
+  documentation drift fails the check gate.
+- Contract-impacting changes require explicit classification (`additive`,
+  `semantic change`, `breaking`) in `CHANGELOG.md [Unreleased]` before merge.
+- A downstream smoke fixture validates runtime token import, CSS import,
+  Tailwind preset usage, semantic token usage, and mode-aware usage.
+- CI runs the full validation chain on Node 22 and 24 for every push and pull
+  request.
+- A multi-agent team (Claude Code, Codex, Copilot, Jules) operates with
+  documented authority boundaries, PR creation requirements, and CodeRabbit
+  review integration.
 
-### Current strengths
+### What will not change
 
-- The repo already treats `tokens/` as the source of truth.
-- The package already generates and publishes multiple consumer-facing surfaces:
-  - runtime JS
-  - generated TypeScript
-  - CSS variables
-  - Tailwind exports
-- Validation is already a first-class concern and is expected to run through the
-  main check flow.
-- The roadmap direction is already correctly centered on one machine-readable
-  contract anchor.
-- The package is already framed as upstream authority for downstream Spectre
-  packages, not as a general UI package.
+- `tokens/` remains the only source of truth. No hand-editing generated files.
+- The 14-gate chain is the release standard. No gate is optional.
+- Protected semantic color families (`success`, `warning`, `danger`,
+  CTA/brand-action) require explicit Bradley Potts approval to change.
+- This package does not own component structure, framework behavior, or
+  adapter concerns.
 
-### Current gaps to harden
+---
 
-- Token merge behavior must stay deterministic and must fail on duplicate path
-  ownership.
-- Public contract parity must be enforced across all published surfaces, not
-  inferred loosely from generation success.
-- Docs must stay executable against the declared contract, not manually trusted.
-- Dist sync and contract validation must be part of the main merge path, not
-  only a release concern.
-- Contract-impacting changes must be classified consistently for downstream
-  consumers.
-- Consumer validation should prove the real supported install paths, not only
-  source-level correctness.
+## 2. Roadmap — Mature Phase
 
-### Missing policy, docs, or tests that would improve downstream safety
+The foundation is stable. The next phase hardens the contract against real
+downstream consumption, automates manual release steps, and opens the token
+system to design tooling.
 
-- File-targeted, maintainable contract validation built around
-  `contract.manifest.json`
-- Clear maintainer-facing mapping of which script/test protects which contract
-  surface
-- A more explicit execution order so contributors harden the contract in the
-  right sequence
-- More implementation-specific TODO guidance for contract-critical files
+---
 
-## 2. Roadmap
+### P0: Downstream Integration Hardening
 
-## P0: Contract Integrity / Must-Do
+**Objective** Prove the contract against real `spectre-ui` consumption, not
+only the internal smoke fixture.
 
-### P0.1 Contract Authority in One Place
+**Why it matters** The smoke fixture validates the package shape in isolation.
+Real downstream usage surfaces integration mismatches that isolated checks
+cannot catch — namespace collisions, Tailwind theme conflicts, CSS variable
+scope assumptions, and peer dependency constraints.
 
-Objective Use `contract.manifest.json` as the single machine-readable contract
-source for public token namespaces, required generated outputs, and protected
-semantic groups.
+**Deliverables**
 
-Why it matters This repo is the root authority for token meaning. Contract logic
-should be declared once and enforced from that declaration, not reconstructed
-separately from source, docs, and emitted artifacts.
+- Replace or augment the smoke fixture with an integration test that imports
+  and exercises `@phcdevworks/spectre-tokens` from a real `spectre-ui` fixture.
+- Validate that the Tailwind preset composes correctly with a downstream
+  Tailwind config that has its own theme extensions.
+- Validate that CSS variable output does not collide with or shadow downstream
+  CSS in a real integration context.
+- Document any integration constraints as explicit contract rules in
+  `TOKEN_CONTRACT.md`.
 
-Suggested deliverables
+**Dependency notes**
 
-- Keep `contract.manifest.json` as the contract anchor
-- Ensure contract validation reads from it directly
-- Keep `README.md` and `TOKEN_CONTRACT.md` aligned to it
-- Ensure the contract anchor stays inside the normal `npm run check` path
+- Requires a stable `spectre-ui` fixture or package to test against.
 
-Dependency notes
+**Risk if skipped**
 
-- This is the first move because downstream parity work should depend on it
+- Integration breakage can ship undetected because the smoke fixture validates
+  shape, not real composition behavior.
 
-Risk if skipped
+---
 
-- Contract enforcement remains fragmented
-- Drift becomes harder to detect cleanly
+### P1: Versioning Automation
 
-### P0.2 Deterministic Token Assembly
+**Objective** Use the existing contract change classification to automate semver
+decisions and reduce manual release overhead.
 
-Objective Make token loading deterministic and fail hard on duplicate token-path
-ownership.
+**Why it matters** The classification system (`additive`, `semantic change`,
+`breaking`) already encodes the semver signal. Right now that signal is read
+manually at release time. Automating it removes human error from version bumps
+and makes the release procedure faster and more consistent.
 
-Why it matters This repo cannot allow merge-order ambiguity. Silent overwrite
-behavior is dangerous in a token authority package because it changes meaning
-without an explicit decision.
+**Deliverables**
 
-Suggested deliverables
+- Add a script that reads the `Contract change type:` line from
+  `CHANGELOG.md [Unreleased]` and proposes the correct version bump
+  (`patch` / `minor` / `major`) based on classification:
+  - `additive` → minor
+  - `semantic change` → minor (or patch if no public surface changed)
+  - `breaking` → major
+- Integrate the script into the release procedure documented in `CLAUDE.md`
+  and `CODEX.md` so Codex can use it during release handoff.
+- Keep the final version decision with Bradley Potts — the script proposes,
+  the human confirms.
 
-- Stabilize token source load order
-- Fail validation on duplicate token-path ownership
-- Keep errors path-based and easy to act on
+**Dependency notes**
 
-Dependency notes
+- No upstream dependency. Can be built independently of P0.
 
-- Should happen immediately after contract authority is established
+**Risk if skipped**
 
-Risk if skipped
+- Version bumps remain manual and error-prone. A breaking change could ship
+  as a minor bump if the classification line is misread.
 
-- Token meaning can drift silently through accidental overlap
+---
 
-### P0.3 Cross-Surface Contract Parity
+### P2: Design Tool Synchronization
 
-Objective Enforce parity across runtime JS, generated TS, CSS variables, and
-Tailwind outputs.
+**Objective** Make tokens available in the design tool so token meaning flows
+from source into Figma rather than being maintained in parallel.
 
-Why it matters A token contract package is only trustworthy if all public
-consumption surfaces reflect the same declared meaning.
+**Why it matters** A token contract that lives only in code creates a
+design–development gap. Designers reference Figma; developers reference the
+package. When those diverge, the token contract is only partially enforced.
+Synchronizing them from a single source closes the gap.
 
-Suggested deliverables
+**Deliverables**
 
-- Validate namespace parity across all emitted surfaces
-- Fail on missing or undocumented outputs
-- Keep checks centered on declared public contract surfaces only
+- Evaluate Tokens Studio (Figma plugin) and Style Dictionary as the
+  synchronization target. Choose based on the current Figma workflow.
+- Add a `build:tokens-studio` or `build:style-dictionary` output to the build
+  pipeline that produces a format compatible with the chosen tool.
+- Wire the output into `npm run build` so it is always regenerated alongside
+  existing artifacts.
+- Add the generated file to `check:dist` sync validation.
+- Document the design handoff workflow in `CONTRIBUTING.md`.
 
-Dependency notes
+**Dependency notes**
 
-- Depends on the contract manifest
-- Should be complete before downstream smoke validation is treated as
-  authoritative
+- Requires a decision on the target design tool format before implementation.
+- Does not block P0 or P1.
 
-Risk if skipped
+**Risk if skipped**
 
-- One consumer path can drift while others remain correct
+- Token meaning diverges between design and implementation over time, and
+  divergence is caught only at review or QA rather than at source.
 
-### P0.4 Documentation as Executable Contract
+---
 
-Objective Keep `README.md` and `TOKEN_CONTRACT.md` aligned to the
-machine-readable contract.
+### P3: Deprecation Policy
 
-Why it matters For public consumers, docs are part of the package surface. They
-must fail when they drift from the declared contract.
+**Objective** Define a formal, machine-enforceable path for retiring tokens
+from the public contract.
 
-Suggested deliverables
+**Why it matters** As the Spectre system matures, some tokens will need to be
+renamed, replaced, or removed. Without a deprecation policy, removal is a
+silent breaking change. With one, downstream consumers get a migration window
+and a clear upgrade path.
 
-- Validate documented namespaces and supported outputs against
-  `contract.manifest.json`
-- Keep validation focused on contract-facing docs, not prose styling
-- Ensure doc drift fails inside the main check path
+**Deliverables**
 
-Dependency notes
+- Define the deprecation lifecycle: `active` → `deprecated` → `removed`.
+- Add a `deprecated` marker to the token source schema so deprecated tokens
+  can be flagged at the source level.
+- Add a validation check that warns when deprecated tokens are present and
+  fails when a token marked for removal is still in the public export.
+- Add a deprecation notice format to the changelog convention — consumers
+  should see exactly which token is deprecated, what replaces it, and in which
+  version it will be removed.
+- Document the deprecation process in `CONTRIBUTING.md` and
+  `TOKEN_CONTRACT.md`.
 
-- Depends on the contract manifest and public-surface decisions being settled
+**Dependency notes**
 
-Risk if skipped
+- Best implemented after P0 downstream integration is solid, so the
+  deprecation path can be tested end-to-end.
 
-- Consumers follow docs that no longer match the actual contract
+**Risk if skipped**
 
-### P0.5 CI and Dist Enforcement
+- Token removal becomes a silent breaking change. Downstream consumers have
+  no migration window and no automated signal.
 
-Objective Make stale generated artifacts and contract drift fail before merge.
-
-Why it matters This repo publishes generated outputs. Dist sync and contract
-checks must be part of merge discipline, not only release hygiene.
-
-Suggested deliverables
-
-- Keep `npm run check` as the authoritative gate
-- Ensure CI runs the full contract path
-- Ensure stale `dist` artifacts fail validation
-
-Dependency notes
-
-- Depends on the core contract checks being wired correctly
-
-Risk if skipped
-
-- Source and published artifacts can drift
-
-### P0.6 Classified Contract Change Enforcement
-
-Objective Require explicit contract change classification for contract-authority
-changes.
-
-Why it matters Downstream packages need to know whether a change is additive,
-semantic, or breaking.
-
-Suggested deliverables
-
-- Enforce `additive`, `semantic change`, or `breaking` classification in
-  changelog/release flow for contract-impacting changes
-- Keep classification narrow to true contract changes
-
-Dependency notes
-
-- Depends on the contract boundary being defined clearly
-
-Risk if skipped
-
-- Downstream consumers cannot interpret upgrade impact cleanly
-
-### P0.7 Downstream Consumer Smoke Validation
-
-Objective Validate real consumer usage of the package across supported install
-paths.
-
-Why it matters Source correctness is not enough. The package must work the way
-downstream packages actually consume it.
-
-Suggested deliverables
-
-- Smoke validation for runtime token import
-- CSS import validation
-- Tailwind preset usage validation
-- Semantic token usage validation
-- Mode-aware usage validation
-
-Dependency notes
-
-- Best added after parity validation is strong
-
-Risk if skipped
-
-- Packaging or usage breakage can slip through despite correct source generation
-
-## P1: Maintainer and Consumer Clarity
-
-### P1.1 Improve Root Doc Discoverability
-
-Objective Make contract and planning docs easier to discover from the main
-package page.
-
-Why it matters Maintainers and public consumers should be able to find contract
-rules quickly.
-
-Suggested deliverables
-
-- Link `TOKEN_CONTRACT.md`, `ROADMAP.md`, and `TODO.md` from `README.md`
-
-Dependency notes
-
-- Low dependency
-
-Risk if skipped
-
-- Contract governance remains harder to discover than necessary
-
-### P1.2 Add a Maintainer Contract Summary
-
-Objective Add a short maintainer-facing summary for contract-impacting changes.
-
-Why it matters Maintainers should be able to see what must change when token
-contract surfaces move.
-
-Suggested deliverables
-
-- Add a concise summary to `README.md` or `CONTRIBUTING.md`
-- Focus on contract-impacting edits only
-
-Dependency notes
-
-- Best after P0 contract paths are stable
-
-Risk if skipped
-
-- Future maintainers can miss required contract updates
-
-### P1.3 Re-Evaluate Expansion Only on Proven Demand
-
-Objective Keep semantic expansion demand-led and token-layer appropriate.
-
-Why it matters This repo should complete semantic contracts where needed, not
-absorb UI structure or speculative growth.
-
-Suggested deliverables
-
-- Review proposed additions only against downstream demand
-- Reject anything that belongs in UI, components, or adapters
-
-Dependency notes
-
-- Only after the contract layer is stable
-
-Risk if skipped
-
-- The repo can bloat or drift into downstream ownership
-
-## P2: Later / Controlled Improvement
-
-### P2.1 Improve Release-Note Clarity
-
-Objective Make downstream impact easier to read in release notes.
-
-Why it matters A good contract repo should communicate upgrade impact cleanly.
-
-Suggested deliverables
-
-- Make additive, semantic, and breaking summaries more consistent
-
-Risk if skipped
-
-- Consumers will need to infer impact manually
-
-### P2.2 Keep Validation Messages Short and Actionable
-
-Objective Review whether failure output can be simplified further.
-
-Why it matters Contract checks should be strict without becoming noisy.
-
-Suggested deliverables
-
-- Keep errors path-based, short, and easy to act on
-
-Risk if skipped
-
-- Validation remains correct but less efficient to use
+---
 
 ## 3. Explicitly Out of Scope
 
-- Do not add component structure ownership here
-- Do not add framework-specific behavior here
-- Do not expand raw token families without proven downstream demand
-- Do not move styling, component anatomy, or adapter concerns into this repo
+- Component structure or composition — belongs in `@phcdevworks/spectre-ui`.
+- Framework-specific token delivery — belongs in adapter packages.
+- UI primitives or component anatomy — `example/` is illustrative only.
+- Speculative token expansion without proven downstream demand.
+- Anything that moves styling, component anatomy, or adapter concerns into
+  this repo.
+
+---
 
 ## 4. Recommended Execution Order
 
-1. Lock `contract.manifest.json` as the contract authority
-2. Make token loading deterministic
-3. Enforce JS / TS / CSS / Tailwind parity
-4. Enforce docs against the machine-readable contract
-5. Move contract and dist enforcement fully into CI
-6. Add classified contract-change enforcement
-7. Add downstream smoke validation
-8. Improve maintainer and release clarity
-9. Revisit expansion only if downstream demand is proven
+1. **P0 — Downstream integration** — highest risk if deferred; real usage
+   surfaces what isolation testing cannot.
+2. **P1 — Versioning automation** — low effort, high consistency payoff;
+   can run in parallel with P0.
+3. **P2 — Design tool sync** — requires a tool decision first; implement once
+   the Figma workflow is confirmed.
+4. **P3 — Deprecation policy** — implement when the first token retirement is
+   approaching; do not over-engineer before there is a real use case.
