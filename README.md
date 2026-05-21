@@ -1,11 +1,9 @@
 # @phcdevworks/spectre-tokens
 
 [![npm version](https://img.shields.io/npm/v/@phcdevworks/spectre-tokens)](https://www.npmjs.com/package/@phcdevworks/spectre-tokens)
-[![CI](https://img.shields.io/github/actions/workflow/status/phcdevworks/spectre-tokens/ci.yml?branch=main&label=CI)](https://github.com/phcdevworks/spectre-tokens/actions/workflows/ci.yml)
-[![Issues](https://img.shields.io/github/issues/phcdevworks/spectre-tokens?label=Issues)](https://github.com/phcdevworks/spectre-tokens/issues)
-[![PRs](https://img.shields.io/github/issues-pr/phcdevworks/spectre-tokens?label=PRs)](https://github.com/phcdevworks/spectre-tokens/pulls)
-[![License](https://img.shields.io/github/license/phcdevworks/spectre-tokens)](LICENSE)
-[![Node](https://img.shields.io/badge/node-%5E22.12.0%20%7C%7C%20%3E%3D24.0.0-brightgreen)](https://nodejs.org)
+[![CI](https://github.com/phcdevworks/spectre-tokens/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/phcdevworks/spectre-tokens/actions/workflows/ci.yml)
+[![License](https://img.shields.io/npm/l/@phcdevworks/spectre-tokens)](LICENSE)
+[![Node](https://img.shields.io/node/v/@phcdevworks/spectre-tokens)](https://nodejs.org)
 
 `@phcdevworks/spectre-tokens` is the design-token package of the Spectre system
 for downstream Spectre packages and compatible applications.
