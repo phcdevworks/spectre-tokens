@@ -3,142 +3,157 @@
 # Spectre Tokens Execution Todo
 
 This todo list is aligned to the current repository and the roadmap in
-`ROADMAP.md`. Completed sections are kept as a project record. Active work
-starts at P3.
+`ROADMAP.md`. It is intentionally scoped to token contract integrity,
+downstream consumption safety, release automation, and design-tool handoff.
 
-## P0: Contract Integrity — Completed
+## Phase 1 - Contract Foundation: Completed
 
-All P0 items have been delivered. The following were completed during the
-v2.0.0 through v2.4.0 release cycle:
+All Phase 1 items have been delivered. The following were completed during the
+v2.0.0 through v2.5.0 release cycle.
+
+### P0: Contract Integrity
 
 - [x] Lock machine-readable contract authority in `contract.manifest.json`
-  — Public namespaces, required outputs, and protected semantic groups are
-  declared in one place. Contract validation reads from it directly.
-  `README.md` and `TOKEN_CONTRACT.md` are checked against it in the main
-  validation path.
+  - Public namespaces, required outputs, protected semantic groups, and change
+  classification rules are declared in one place. Contract validation reads
+  from it directly.
 
 - [x] Make token source loading deterministic
-  — Token files load in stable alphabetical order. Duplicate token-path
+  - Token files load in stable alphabetical order. Duplicate token-path
   ownership fails validation with a short, path-based error.
 
 - [x] Enforce contract parity across runtime JS, generated TS, CSS, and
   Tailwind
-  — `npm run check` fails on output drift across all public package surfaces.
+  - `npm run check` fails on output drift across all public package surfaces.
   Missing or undocumented public outputs fail validation.
 
 - [x] Enforce docs against the machine-readable contract
-  — `README.md` and `TOKEN_CONTRACT.md` fail validation if they drift from
+  - `README.md` and `TOKEN_CONTRACT.md` fail validation if they drift from
   the declared public contract.
 
 - [x] Move `dist` sync and contract validation fully into the main CI gate
-  — CI runs the full `npm run check` path. Stale `dist` artifacts fail before
+  - CI runs the full `npm run check` path. Stale `dist` artifacts fail before
   merge. Contract drift also fails before merge.
 
 - [x] Add classified contract-change enforcement
-  — Contract-authority changes require `additive`, `semantic change`, or
-  `breaking` classification in the `Unreleased` changelog section.
+  - Contract-authority changes require `additive`, `semantic change`, or
+  `breaking` classification in the `CHANGELOG.md [Unreleased]` section.
 
 - [x] Add a downstream smoke consumer fixture
-  — Runtime token import, CSS import, Tailwind preset usage, semantic token
+  - Runtime token import, CSS import, Tailwind preset usage, semantic token
   usage, and mode-aware usage are all validated through the normal check path.
 
-## P1: Maintainer and Consumer Clarity
+### P1: Maintainer and Consumer Clarity
 
 - [x] Link contract and planning docs from `README.md`
-  — `TOKEN_CONTRACT.md` and `ROADMAP.md` are now linked from the package
-  homepage header.
+  - `TOKEN_CONTRACT.md` and `ROADMAP.md` are linked from the package homepage
+  header.
 
-- [x] Add a short maintainer-facing summary for contract-impacting changes
-  — `CONTRIBUTING.md` now contains a dedicated "Contract-Impacting Change
-  Checklist" section covering the required steps for any change that touches
+- [x] Add a maintainer-facing summary for contract-impacting changes
+  - `CONTRIBUTING.md` contains a dedicated "Contract-Impacting Change
+  Checklist" section covering the required steps for changes that touch
   `tokens/`, `contract.manifest.json`, `src/`, `README.md`, or
   `TOKEN_CONTRACT.md`.
 
 - [x] Re-evaluate semantic expansion only for proven downstream demand
-  — Standing policy, not a one-time deliverable. Documented in `AGENTS.md`
-  (rule 10) and `TOKEN_CONTRACT.md` (Unacceptable Changes). No implementation
-  required; policy is enforced through review.
+  - Standing policy, not a one-time deliverable. Documented in `AGENTS.md`
+  and `TOKEN_CONTRACT.md`. No implementation required; policy is enforced
+  through review.
 
-## P2: Later / Controlled Improvement — Completed
+### P2: Controlled Improvement
 
 - [x] Improve release-note clarity for contract changes
-  — Added `Contract change type:` classification lines to all 2.x entries
-  that were missing them (2.0.0–2.2.0). Normalized bold-header formatting
-  in 2.0.0 and 2.1.0 to match the plain prose style of 2.3.0+.
+  - Added `Contract change type:` classification lines to all 2.x entries
+  that were missing them. Normalized changelog formatting across the completed
+  release history.
 
 - [x] Review validation message clarity
-  — Removed per-pair `[CHECK]` log lines from `check-contrast.ts` so
-  passing runs are silent. Shortened the success and failure banners.
-  Simplified the `check-tokens-regression.ts` pass message to a single
-  line.
+  - Reduced noisy passing logs from validation scripts and kept success/failure
+  output short enough to make CI failures easier to scan.
 
-## P3: Downstream Integration Hardening
+---
 
-- [ ] Replace or augment the smoke fixture with an integration test against a
-  real `spectre-ui` fixture
-  — Validate that the package works the way downstream packages actually
-  consume it, not just that the shape is correct in isolation.
+## Phase 2 - Mature Contract Operations
+
+All items below are forward-looking. This phase starts from the stable v2.5.0
+contract foundation and focuses on real downstream use, release consistency,
+design synchronization, and safe retirement paths.
+
+### P0: Downstream Integration Hardening
+
+- [ ] Replace or augment the smoke fixture with a real `spectre-ui`
+  integration fixture
+  - Validate that the package works the way downstream packages actually
+  consume it, not just that the token shape is correct in isolation.
 
 - [ ] Validate Tailwind preset composition against a downstream config
-  — Confirm the preset composes correctly with a consumer Tailwind config that
+  - Confirm the preset composes correctly with a consumer Tailwind config that
   has its own theme extensions. Catch namespace collisions and merge conflicts.
 
 - [ ] Validate CSS variable output in a real integration context
-  — Confirm variables do not collide with or shadow downstream CSS when the
+  - Confirm variables do not collide with or shadow downstream CSS when the
   package is used alongside `spectre-ui`.
 
 - [ ] Document any integration constraints as explicit contract rules
-  — Add integration-level requirements to `TOKEN_CONTRACT.md` so they are
-  part of the declared public contract.
+  - Add integration-level requirements to `TOKEN_CONTRACT.md` so they are part
+  of the declared public contract.
 
-## P4: Versioning Automation
+### P1: Versioning Automation
 
-- [ ] Add a script that reads the classification line and proposes the semver bump
-  — `additive` → minor, `semantic change` → minor (or patch if no public
-  surface changed), `breaking` → major. Script proposes; Bradley confirms.
+- [ ] Add a semver proposal script
+  - Read the `CHANGELOG.md [Unreleased]` classification line and propose the
+  release bump: `additive` -> minor, `semantic change` -> minor unless a patch
+  is clearly appropriate, and `breaking` -> major.
 
 - [ ] Wire the script into the release procedure in `CLAUDE.md` and `CODEX.md`
-  — Codex should run it during release handoff so the version proposal is
-  always present in the release summary.
+  - Codex should run it during release handoff so the version proposal is
+  always present, while Bradley Potts keeps final version authority.
 
-## P5: Design Tool Synchronization
+### P2: Design Tool Synchronization
 
-- [ ] Decide on the synchronization target — Tokens Studio or Style Dictionary
-  — Evaluate against the current Figma workflow before writing any output
-  code.
+- [ ] Decide on the synchronization target: Tokens Studio or Style Dictionary
+  - Evaluate against the current Figma workflow before writing any output code.
 
-- [ ] Add a `build:tokens-studio` or `build:style-dictionary` output to the
-  build pipeline
-  — Generated alongside existing artifacts so it is always in sync with
-  source.
+- [ ] Add a design-tool output to the build pipeline
+  - Generate either a `build:tokens-studio` or `build:style-dictionary` output
+  alongside existing artifacts so the handoff file stays in sync with source.
 
-- [ ] Wire the new output into `check:dist` sync validation
-  — Stale design-tool output fails the check gate just like stale `dist/`.
+- [ ] Wire the new output into dist sync validation
+  - Stale design-tool output should fail the check gate just like stale
+  `dist/` artifacts.
 
 - [ ] Document the design handoff workflow in `CONTRIBUTING.md`
-  — Designers should know how to pull updated tokens into Figma from the
+  - Designers should know how to pull updated tokens into Figma from the
   published source.
 
-## P6: Deprecation Policy
+### P3: Deprecation Policy
 
 - [ ] Define the deprecation lifecycle in `TOKEN_CONTRACT.md`
-  — `active` → `deprecated` → `removed`. Document the migration window
-  convention (e.g. one major version of deprecation notice before removal).
+  - Document `active` -> `deprecated` -> `removed`, including the expected
+  migration window before removal.
 
 - [ ] Add a `deprecated` marker to the token source schema
-  — Deprecated tokens are flagged at the source level, not just in the
-  changelog.
+  - Deprecated tokens should be flagged at the source level, not only in
+  release notes.
 
-- [ ] Add a validation check for deprecated and removed tokens
-  — Warn when deprecated tokens are present. Fail when a token marked for
+- [ ] Add validation for deprecated and removed tokens
+  - Warn when deprecated tokens are present. Fail when a token marked for
   removal is still in the public export.
 
 - [ ] Define the deprecation notice format for `CHANGELOG.md`
-  — Consumers should see exactly which token is deprecated, what replaces it,
+  - Consumers should see exactly which token is deprecated, what replaces it,
   and in which version it will be removed.
+
+## Recommended Execution Order
+
+1. Downstream integration hardening against `spectre-ui`.
+2. Semver proposal automation for release handoff.
+3. Design-tool synchronization after the Figma target is confirmed.
+4. Deprecation policy when the first token retirement is approaching.
 
 ## Explicitly Out of Scope
 
-- Do not add component structure ownership here
-- Do not add framework-specific token behavior here
-- Do not expand raw token families without clear downstream demand
+- Do not add component structure ownership here.
+- Do not add framework-specific token behavior here.
+- Do not expand raw token families without clear downstream demand.
+- Do not move recipe, component anatomy, or adapter concerns into this package.
