@@ -2,6 +2,8 @@
 
 [![npm version](https://img.shields.io/npm/v/@phcdevworks/spectre-tokens)](https://www.npmjs.com/package/@phcdevworks/spectre-tokens)
 [![CI](https://img.shields.io/github/actions/workflow/status/phcdevworks/spectre-tokens/ci.yml?branch=main&label=CI)](https://github.com/phcdevworks/spectre-tokens/actions/workflows/ci.yml)
+[![GitHub issues](https://img.shields.io/github/issues/phcdevworks/spectre-tokens)](https://github.com/phcdevworks/spectre-tokens/issues)
+[![GitHub pull requests](https://img.shields.io/github/issues-pr/phcdevworks/spectre-tokens)](https://github.com/phcdevworks/spectre-tokens/pulls)
 [![License](https://img.shields.io/github/license/phcdevworks/spectre-tokens)](LICENSE)
 [![Node](https://img.shields.io/badge/node-%5E22.12.0%20%7C%7C%20%3E%3D24.0.0-brightgreen)](https://nodejs.org)
 
@@ -13,9 +15,9 @@ token contracts consumed downstream. It keeps visual meaning centralized in
 token data while downstream UI packages define structure and adapter packages
 translate those contracts for specific frameworks and runtimes.
 
-[Contributing](CONTRIBUTING.md) | [Changelog](CHANGELOG.md) |
-[Token Contract](TOKEN_CONTRACT.md) | [Roadmap](ROADMAP.md) |
-[Security Policy](SECURITY.md)
+[Contributing](CONTRIBUTING.md) | [Code of Conduct](CODE_OF_CONDUCT.md) |
+[Changelog](CHANGELOG.md) | [Token Contract](TOKEN_CONTRACT.md) |
+[Roadmap](ROADMAP.md) | [Security Policy](SECURITY.md)
 
 ## Source of truth
 
