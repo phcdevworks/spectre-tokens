@@ -1,4 +1,4 @@
-# CODEX.md — Spectre Tokens Release Agent
+# CODEX.md - Spectre Tokens Release Agent
 
 ## Role
 
@@ -53,9 +53,9 @@ npm run build
 npm run check
 ```
 
-`npm run check` runs: build → manifest → structure → locked-color → contrast →
-regression → docs → exports → css → tailwind → consumer → classification →
-dist → lint. All steps must pass clean.
+`npm run check` runs: build -> manifest -> structure -> locked-color -> contrast ->
+regression -> docs -> exports -> css -> tailwind -> consumer -> classification ->
+dist -> lint. All steps must pass clean.
 
 When a gate fails, Codex must:
 - Identify the failing script and its output.
@@ -83,17 +83,17 @@ When Claude Code (or a human) makes changes, Codex reviews for:
 When documentation diverges from contract reality, Codex brings it back.
 
 Audit sequence:
-1. `contract.manifest.json` → source of truth for public namespaces and
+1. `contract.manifest.json` -> source of truth for public namespaces and
    required outputs.
-2. `TOKEN_CONTRACT.md` → must include all required headings declared in
+2. `TOKEN_CONTRACT.md` -> must include all required headings declared in
    `contract.manifest.json` under `docContract`.
-3. `README.md` → must include all required section markers declared in
+3. `README.md` -> must include all required section markers declared in
    `contract.manifest.json` under `docContract`.
-4. `AGENTS.md` → must accurately describe the agent roster, roles, and
+4. `AGENTS.md` -> must accurately describe the agent roster, roles, and
    authority split.
-5. `CLAUDE.md`, `CODEX.md`, `JULES.md`, `COPILOT.md` → must stay internally
+5. `CLAUDE.md`, `CODEX.md`, `JULES.md`, `COPILOT.md` -> must stay internally
    consistent and agree on the authority hierarchy.
-6. `CHANGELOG.md` → must have a classification line in `[Unreleased]` whenever
+6. `CHANGELOG.md` -> must have a classification line in `[Unreleased]` whenever
    a contract-authority file changed.
 
 Do not expand documentation into downstream UI composition, adapter behavior,
@@ -135,19 +135,9 @@ change without a major-version increment.
 
 ## Pull Request Creation
 
-When opening a PR, Codex must populate every section of
-`.github/pull_request_template.md`:
-
-- **Linked issue** — issue number (`#N`) or `N/A`.
-- **Summary of changes** — one or two bullets describing what changed.
-- **Contract change type** — exactly one of `additive`, `semantic change`,
-  `breaking`, or `N/A`. Must match the `CHANGELOG.md [Unreleased]` classification line.
-- **Type of Change** — check every box that applies.
-- **Checklist** — check each completed item; leave blocked items unchecked
-  with a brief inline note.
-
-Never submit a PR with an empty body or only the template headings left
-unfilled. CodeRabbit's description check will flag it and block the PR.
+Follow the shared PR requirements in `AGENTS.md`. When Codex prepares a PR
+handoff, include the validation status, classification, and any unresolved
+release risk in the summary.
 
 ---
 
@@ -159,10 +149,10 @@ Use this checklist before every release handoff to Bradley Potts.
 
 - [ ] `npm run build` completes without error.
 - [ ] `npm run check` passes all gates clean.
-- [ ] `check:locked` passed — no unauthorized protected color changes.
-- [ ] `check:contrast` passed — all paired tokens meet WCAG AA.
-- [ ] `check:regression` passed — no unintentional token value drift.
-- [ ] `check:dist` passed — `dist/` artifacts are in sync with source.
+- [ ] `check:locked` passed - no unauthorized protected color changes.
+- [ ] `check:contrast` passed - all paired tokens meet WCAG AA.
+- [ ] `check:regression` passed - no unintentional token value drift.
+- [ ] `check:dist` passed - `dist/` artifacts are in sync with source.
 
 ### Contract Integrity
 
@@ -210,11 +200,11 @@ npm run check:exports    # validates public runtime exports match contract
 
 If any of these fail, audit the relevant file:
 
-- `check:manifest` failure → `README.md` or `TOKEN_CONTRACT.md` are missing
+- `check:manifest` failure -> `README.md` or `TOKEN_CONTRACT.md` are missing
   required section markers. Add the missing markers; do not restructure
   sections unnecessarily.
-- `check:docs` failure → heading case or wording drifted. Match exactly.
-- `check:exports` failure → runtime exports in `src/index.ts` no longer match
+- `check:docs` failure -> heading case or wording drifted. Match exactly.
+- `check:exports` failure -> runtime exports in `src/index.ts` no longer match
   the declared contract. This requires Claude Code review if token source
   changes are involved.
 
@@ -247,38 +237,6 @@ Not approved without Claude Code or human confirmation:
 
 ---
 
-## Protected Contracts
-
-These semantic color areas are locked unless Bradley explicitly approves the
-change:
-
-- `success`
-- `warning`
-- `danger` semantic roles backed by the `error` palette
-- CTA, primary action, and brand-action roles backed by `brand` and
-  `buttons.cta`
-
-When reviewing changes, flag any diff to these areas immediately. Do not
-proceed with a release if locked color validation failed without an explicit
-approval on record.
-
----
-
-## Agent Boundaries
-
-| Agent | Role | Authority file |
-|---|---|---|
-| Claude Code | Lead developer | `CLAUDE.md` |
-| Codex | Release, docs, stabilization | `CODEX.md` (this file) |
-| Copilot | General assistance | `COPILOT.md`, `.github/copilot-instructions.md` |
-| Jules | Automated maintenance | `JULES.md` |
-
-Resolve conflicts by referencing `CLAUDE.md` and `contract.manifest.json` as
-the authoritative sources. Codex never overrides Claude Code's implementation
-decisions. Codex never expands Jules beyond its bounded maintenance scope.
-
----
-
 ## Git Boundaries
 
 Codex may inspect git status and diffs freely. Codex must not reset, discard,
@@ -294,8 +252,8 @@ the exact status for human review.
 
 When guidance conflicts, resolve in this order:
 
-1. `contract.manifest.json` — machine-readable contract authority
-2. `CLAUDE.md` — development authority
-3. `AGENTS.md` — shared agent boundaries
-4. This file (`CODEX.md`) — Codex operational procedures
-5. `TOKEN_CONTRACT.md` — public contract documentation
+1. `contract.manifest.json` - machine-readable contract authority
+2. `CLAUDE.md` - development authority
+3. `AGENTS.md` - shared agent boundaries
+4. This file (`CODEX.md`) - Codex operational procedures
+5. `TOKEN_CONTRACT.md` - public contract documentation

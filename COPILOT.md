@@ -1,4 +1,4 @@
-# COPILOT.md — Spectre Tokens Support
+# COPILOT.md - Spectre Tokens Support
 
 ## Role Summary
 
@@ -19,26 +19,13 @@ automated maintenance workflows.
 
 ## Practical Guardrails
 
-- Treat `tokens/` as source of truth.
-- Do not hand-edit generated outputs in `src/generated/` or `dist/`.
-- Keep locked semantic color families unchanged unless explicitly approved.
-- Use `npm run build` and `npm run check` for validation as scoped by the task.
+- Follow the shared source, validation, and PR rules in `AGENTS.md`.
+- Keep assistance scoped to targeted edits, suggestions, and local cleanup.
+- Defer release, architecture, and governance decisions to the owning guide.
 
 ## Pull Request Creation
 
-When opening a PR, populate every section of the repo's PR template
-(`.github/pull_request_template.md`):
-
-- **Linked issue** — issue number (`#N`) or `N/A`.
-- **Summary of changes** — one or two bullets describing what changed.
-- **Contract change type** — exactly one of `additive`, `semantic change`,
-  `breaking`, or `N/A`.
-- **Type of Change** — check every box that applies.
-- **Checklist** — check each completed item; leave blocked items unchecked
-  with a brief inline note.
-
-Never submit a PR with an empty body or only the template headings left
-unfilled. CodeRabbit's description check blocks such PRs.
+Follow the shared PR requirements in `AGENTS.md`.
 
 ## Source Of Detailed Guidance
 
