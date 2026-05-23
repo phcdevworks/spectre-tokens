@@ -133,13 +133,16 @@ The banned namespace is `borders` - always use `border` (singular).
 
 ## Release Procedure
 
-1. Update `package.json` version.
-2. Move `[Unreleased]` notes in `CHANGELOG.md` to a new versioned entry with a
+1. Run `npm run release:propose` to get the semver bump proposal from the
+   `CHANGELOG.md [Unreleased]` classification. Bradley Potts has final version
+   authority; the script is advisory.
+2. Update `package.json` version.
+3. Move `[Unreleased]` notes in `CHANGELOG.md` to a new versioned entry with a
    release title and date.
-3. Update the `[unreleased]` and add the new version compare link at the bottom
+4. Update the `[unreleased]` and add the new version compare link at the bottom
    of `CHANGELOG.md`.
-4. Run `npm run check` - must pass clean.
-5. Hand off to human for review, commit, tag, and GitHub Release publish.
+5. Run `npm run check` - must pass clean.
+6. Hand off to human for review, commit, tag, and GitHub Release publish.
 
 ## What This Package Does Not Own
 

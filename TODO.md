@@ -100,14 +100,16 @@ design synchronization, and safe retirement paths.
 
 ### P1: Versioning Automation
 
-- [ ] Add a semver proposal script
-  - Read the `CHANGELOG.md [Unreleased]` classification line and propose the
-  release bump: `additive` -> minor, `semantic change` -> minor unless a patch
-  is clearly appropriate, and `breaking` -> major.
+- [x] Add a semver proposal script
+  - `scripts/propose-version.ts` reads the `Contract change type:` line from
+  `CHANGELOG.md [Unreleased]` and proposes the version bump: `additive` ->
+  minor, `semantic change` -> minor, `breaking` -> major. Run via
+  `npm run release:propose`.
 
-- [ ] Wire the script into the release procedure in `CLAUDE.md` and `CODEX.md`
-  - Codex should run it during release handoff so the version proposal is
-  always present, while Bradley Potts keeps final version authority.
+- [x] Wire the script into the release procedure in `CLAUDE.md` and `CODEX.md`
+  - `CLAUDE.md` Release Procedure lists `npm run release:propose` as step 1.
+  `CODEX.md` Release Review Checklist includes the script and its output in
+  the handoff summary. Bradley Potts retains final version authority.
 
 ### P2: Design Tool Synchronization
 

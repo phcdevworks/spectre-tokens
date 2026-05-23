@@ -173,6 +173,9 @@ Use this checklist before every release handoff to Bradley Potts.
 
 ### Release Mechanics
 
+- [ ] `npm run release:propose` has been run and its output is included in the
+      handoff summary. Bradley Potts has final version authority; the proposal
+      is advisory.
 - [ ] `package.json` version is bumped to the intended release version.
 - [ ] `CHANGELOG.md [Unreleased]` notes are moved to a new versioned entry.
 - [ ] The new entry has a **Release Title** and date.
