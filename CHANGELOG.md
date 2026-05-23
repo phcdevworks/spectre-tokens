@@ -6,6 +6,15 @@ reflects package releases published to npm.
 
 ## [Unreleased]
 
+Contract change type: semantic change
+
+### Fixed
+
+- Improved WCAG AA contrast for the neutral badge in dark mode by updating
+  `modes.dark.component.badge.neutralText` to `{colors.neutral.50}`. This
+  resolves a contrast failure (4.41:1 -> 4.79:1) against the interactive
+  `neutralBgHover` background.
+
 ## [2.6.0] - 2026-05-21
 
 **Release Title:** Contrast Metadata and Overlay Stabilization

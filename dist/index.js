@@ -299,7 +299,7 @@ var coreTokens = {
         "badge": {
           "neutralBg": "{colors.neutral.700}",
           "neutralBgHover": "{colors.neutral.600}",
-          "neutralText": "{colors.neutral.100}",
+          "neutralText": "{colors.neutral.50}",
           "infoBg": "{colors.info.800}",
           "infoBgHover": "{colors.info.700}",
           "infoText": "{colors.info.100}",
