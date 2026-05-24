@@ -500,7 +500,7 @@
             }
           },
           "neutralText": {
-            "value": "{colors.neutral.100}",
+            "value": "{colors.neutral.50}",
             "metadata": {
               "pair": "modes.dark.component.badge.neutralBgHover"
             }
