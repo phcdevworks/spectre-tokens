@@ -592,6 +592,10 @@ interface SpectreGeneratedTokens {
             base: string;
             thick: string;
         };
+        style: {
+            none: string;
+            solid: string;
+        };
     };
     surface: {
         page: string;

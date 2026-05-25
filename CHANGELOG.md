@@ -6,7 +6,12 @@ reflects package releases published to npm.
 
 ## [Unreleased]
 
-Contract change type: semantic change
+Contract change type: additive
+
+### Added
+
+- Added `style` tokens (`solid` and `none`) to the `border` primitive family in
+  `tokens/primitives.json` to complete the core border contract.
 
 ### Fixed
 

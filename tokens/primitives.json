@@ -142,6 +142,10 @@
     "width": {
       "base": "1px",
       "thick": "2px"
+    },
+    "style": {
+      "none": "none",
+      "solid": "solid"
     }
   }
 }

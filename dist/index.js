@@ -592,6 +592,10 @@ var coreTokens = {
     "width": {
       "base": "1px",
       "thick": "2px"
+    },
+    "style": {
+      "none": "none",
+      "solid": "solid"
     }
   },
   "surface": {
@@ -895,6 +899,11 @@ var createCssVariableMap = (tokens2, options = {}) => {
   if (border?.width) {
     Object.entries(border.width).forEach(([key, value]) => {
       assign(toVariableName(prefix, "border", "width", key), value);
+    });
+  }
+  if (border?.style) {
+    Object.entries(border.style).forEach(([key, value]) => {
+      assign(toVariableName(prefix, "border", "style", key), value);
     });
   }
   Object.entries(baseTokens.radii).forEach(([key, value]) => {
