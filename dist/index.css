@@ -144,6 +144,8 @@
   --sp-layout-container-max-width: 72rem;
   --sp-border-width-base: 1px;
   --sp-border-width-thick: 2px;
+  --sp-border-style-none: none;
+  --sp-border-style-solid: solid;
   --sp-radius-none: 0;
   --sp-radius-sm: 2px;
   --sp-radius-md: 4px;

@@ -1583,6 +1583,10 @@ export interface SpectreSourceTokens {
       base: string;
       thick: string;
     };
+    style: {
+      none: string;
+      solid: string;
+    };
   };
   surface: {
     page: {
@@ -2413,6 +2417,10 @@ export interface SpectreGeneratedTokens {
       base: string;
       thick: string;
     };
+    style: {
+      none: string;
+      solid: string;
+    };
   };
   surface: {
     page: string;
@@ -3173,6 +3181,10 @@ export const coreTokens: SpectreGeneratedTokens = {
     "width": {
       "base": "1px",
       "thick": "2px"
+    },
+    "style": {
+      "none": "none",
+      "solid": "solid"
     }
   },
   "surface": {
