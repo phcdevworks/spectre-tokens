@@ -150,6 +150,8 @@
   --sp-radius-sm: 2px;
   --sp-radius-md: 4px;
   --sp-radius-lg: 8px;
+  --sp-radius-xl: 12px;
+  --sp-radius-2xl: 16px;
   --sp-radius-pill: 999px;
   --sp-font-family-sans: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
   --sp-font-family-serif: 'Times New Roman', Times, serif;
