@@ -74,10 +74,11 @@
     "check:tailwind": "tsx scripts/check-tailwind-contract.ts",
     "check:consumer": "tsx scripts/check-consumer-smoke.ts",
     "check:classification": "tsx scripts/check-change-classification.ts",
+    "check:deprecation": "tsx scripts/check-deprecation.ts",
     "release:propose": "tsx scripts/propose-version.ts",
     "lint": "eslint .",
     "format": "prettier --write .",
-    "check": "npm run build && npm run check:manifest && npm run check:structure && npm run check:locked && npm run check:contrast && npm run check:regression && npm run check:docs && npm run check:exports && npm run check:css && npm run check:tailwind && npm run check:consumer && npm run check:classification && npm run check:dist && npm run lint",
+    "check": "npm run build && npm run check:manifest && npm run check:structure && npm run check:locked && npm run check:contrast && npm run check:regression && npm run check:docs && npm run check:exports && npm run check:css && npm run check:tailwind && npm run check:consumer && npm run check:classification && npm run check:deprecation && npm run check:dist && npm run lint",
     "check:all": "npm run check",
     "test": "npm run check",
     "prepublishOnly": "npm run check"

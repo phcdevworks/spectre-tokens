@@ -94,7 +94,7 @@ design synchronization, and safe retirement paths.
   - Confirm variables do not collide with or shadow downstream CSS when the
   package is used alongside `spectre-ui`.
 
-- [ ] Document any integration constraints as explicit contract rules
+- [x] Document any integration constraints as explicit contract rules
   - Add integration-level requirements to `TOKEN_CONTRACT.md` so they are part
   of the declared public contract.
 
@@ -130,19 +130,19 @@ design synchronization, and safe retirement paths.
 
 ### P3: Deprecation Policy
 
-- [ ] Define the deprecation lifecycle in `TOKEN_CONTRACT.md`
+- [x] Define the deprecation lifecycle in `TOKEN_CONTRACT.md`
   - Document `active` -> `deprecated` -> `removed`, including the expected
   migration window before removal.
 
-- [ ] Add a `deprecated` marker to the token source schema
+- [x] Add a `deprecated` marker to the token source schema
   - Deprecated tokens should be flagged at the source level, not only in
   release notes.
 
-- [ ] Add validation for deprecated and removed tokens
+- [x] Add validation for deprecated and removed tokens
   - Warn when deprecated tokens are present. Fail when a token marked for
   removal is still in the public export.
 
-- [ ] Define the deprecation notice format for `CHANGELOG.md`
+- [x] Define the deprecation notice format for `CHANGELOG.md`
   - Consumers should see exactly which token is deprecated, what replaces it,
   and in which version it will be removed.
 
