@@ -501,9 +501,12 @@ interface SpectreGeneratedTokens {
             instant: string;
             fast: string;
             base: string;
+            relaxed: string;
             moderate: string;
             slow: string;
             slower: string;
+            long: string;
+            slowest: string;
         };
         easing: {
             linear: string;
@@ -511,6 +514,7 @@ interface SpectreGeneratedTokens {
             out: string;
             inOut: string;
             spring: string;
+            overshoot: string;
         };
     };
     animations: {
