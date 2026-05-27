@@ -231,14 +231,18 @@
   --sp-duration-instant: 75ms;
   --sp-duration-fast: 150ms;
   --sp-duration-base: 200ms;
+  --sp-duration-relaxed: 250ms;
   --sp-duration-moderate: 300ms;
   --sp-duration-slow: 500ms;
   --sp-duration-slower: 700ms;
+  --sp-duration-long: 1000ms;
+  --sp-duration-slowest: 1200ms;
   --sp-easing-linear: linear;
   --sp-easing-in: cubic-bezier(0.4, 0, 1, 1);
   --sp-easing-out: cubic-bezier(0, 0, 0.2, 1);
   --sp-easing-inout: cubic-bezier(0.4, 0, 0.2, 1);
   --sp-easing-spring: cubic-bezier(0.4, 0, 0.2, 1);
+  --sp-easing-overshoot: cubic-bezier(0.34, 1.56, 0.64, 1);
   --sp-opacity-disabled: 0.38;
   --sp-opacity-hover: 0.92;
   --sp-opacity-active: 0.84;
