@@ -12,6 +12,9 @@ Contract change type: additive
 
 - Added `style` tokens (`solid` and `none`) to the `border` primitive family in
   `tokens/primitives.json` to complete the core border contract.
+- Added `xl` (12px) and `2xl` (16px) radius tokens to the `radii` primitive
+  family in `tokens/primitives.json` to address the scale gap between `lg` and
+  `pill`.
 
 ### Fixed
 
@@ -249,7 +252,7 @@ Contract change type: additive
 
 **Release Title:** Semantic Color Refinement
 
-Contract change type: semantic change
+Contract change type: additive
 
 ### Added
 
