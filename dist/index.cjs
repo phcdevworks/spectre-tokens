@@ -532,57 +532,61 @@ var coreTokens = {
       "instant": "75ms",
       "fast": "150ms",
       "base": "200ms",
+      "relaxed": "250ms",
       "moderate": "300ms",
       "slow": "500ms",
-      "slower": "700ms"
+      "slower": "700ms",
+      "long": "1000ms",
+      "slowest": "1200ms"
     },
     "easing": {
       "linear": "linear",
       "in": "cubic-bezier(0.4, 0, 1, 1)",
       "out": "cubic-bezier(0, 0, 0.2, 1)",
       "inOut": "cubic-bezier(0.4, 0, 0.2, 1)",
-      "spring": "cubic-bezier(0.4, 0, 0.2, 1)"
+      "spring": "cubic-bezier(0.4, 0, 0.2, 1)",
+      "overshoot": "cubic-bezier(0.34, 1.56, 0.64, 1)"
     }
   },
   "animations": {
     "fadeIn": {
-      "duration": "200ms",
-      "easing": "cubic-bezier(0, 0, 0.2, 1)",
+      "duration": "{transitions.duration.base}",
+      "easing": "{transitions.easing.out}",
       "keyframes": "fade-in"
     },
     "fadeOut": {
-      "duration": "150ms",
-      "easing": "cubic-bezier(0.4, 0, 1, 1)",
+      "duration": "{transitions.duration.fast}",
+      "easing": "{transitions.easing.in}",
       "keyframes": "fade-out"
     },
     "slideUp": {
-      "duration": "300ms",
-      "easing": "cubic-bezier(0, 0, 0.2, 1)",
+      "duration": "{transitions.duration.moderate}",
+      "easing": "{transitions.easing.out}",
       "keyframes": "slide-up"
     },
     "slideDown": {
-      "duration": "300ms",
-      "easing": "cubic-bezier(0, 0, 0.2, 1)",
+      "duration": "{transitions.duration.moderate}",
+      "easing": "{transitions.easing.out}",
       "keyframes": "slide-down"
     },
     "scaleIn": {
-      "duration": "200ms",
-      "easing": "cubic-bezier(0.34, 1.56, 0.64, 1)",
+      "duration": "{transitions.duration.base}",
+      "easing": "{transitions.easing.overshoot}",
       "keyframes": "scale-in"
     },
     "bounce": {
-      "duration": "300ms",
-      "easing": "cubic-bezier(0.4, 0, 0.2, 1)",
+      "duration": "{transitions.duration.moderate}",
+      "easing": "{transitions.easing.spring}",
       "keyframes": "bounce"
     },
     "shake": {
-      "duration": "250ms",
-      "easing": "cubic-bezier(0.4, 0, 0.2, 1)",
+      "duration": "{transitions.duration.relaxed}",
+      "easing": "{transitions.easing.spring}",
       "keyframes": "shake"
     },
     "pulse": {
-      "duration": "1200ms",
-      "easing": "cubic-bezier(0.4, 0, 0.2, 1)",
+      "duration": "{transitions.duration.slowest}",
+      "easing": "{transitions.easing.spring}",
       "keyframes": "pulse"
     }
   },

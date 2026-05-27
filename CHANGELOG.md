@@ -15,6 +15,12 @@ Contract change type: additive
 - Added `xl` (12px) and `2xl` (16px) radius tokens to the `radii` primitive
   family in `tokens/primitives.json` to address the scale gap between `lg` and
   `pill`.
+- Added `relaxed` (250ms), `long` (1000ms), and `slowest` (1200ms) duration
+  tokens and `overshoot` easing token to the `transitions` primitive family in
+  `tokens/primitives.json` to complete the motion scale.
+- Refactored all `animations` in `tokens/primitives.json` to use semantic
+  `transitions` token references instead of hardcoded literal values, ensuring
+  contract integrity.
 
 ### Fixed
 
