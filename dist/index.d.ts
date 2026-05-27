@@ -469,6 +469,8 @@ interface SpectreGeneratedTokens {
         sm: string;
         md: string;
         lg: string;
+        xl: string;
+        '2xl': string;
         pill: string;
     };
     shadows: {
