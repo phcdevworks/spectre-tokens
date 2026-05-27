@@ -89,14 +89,7 @@ const ensureInSpace = (value: unknown, path: string): void => {
 };
 
 layoutPaths.forEach((path) => {
-  const value = path.split('.').reduce<unknown>((acc, part) => {
-    if (acc && typeof acc === 'object') {
-      return (acc as Record<string, unknown>)[part];
-    }
-    return undefined;
-  }, tokens);
-
-  ensureInSpace(value, path);
+  ensureInSpace(getPathValue(tokens, path), path);
 });
 
 const fontXs = getPathValue(tokens, 'font.xs');

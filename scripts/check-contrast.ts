@@ -7,6 +7,8 @@ extend([a11yPlugin]);
 
 const tokens = loadMergedTokens() as SpectreSourceTokens;
 
+const TOKEN_REF_REGEX = /\{([^}]+)\}/;
+
 function resolveToken(pathStr: string, allTokens: SpectreSourceTokens): string {
   if (!pathStr || typeof pathStr !== 'string' || !pathStr.includes('{')) {
     if (typeof pathStr === 'string' && pathStr.includes(' / ')) {
@@ -15,8 +17,7 @@ function resolveToken(pathStr: string, allTokens: SpectreSourceTokens): string {
     return pathStr;
   }
 
-  const regex = /\{([^}]+)\}/;
-  const match = pathStr.match(regex);
+  const match = pathStr.match(TOKEN_REF_REGEX);
   if (!match) return pathStr;
 
   const fullMatch = match[0];
@@ -50,11 +51,9 @@ function resolveToken(pathStr: string, allTokens: SpectreSourceTokens): string {
 const failures: string[] = [];
 
 function checkTokensRecursively(obj: Record<string, unknown> | SpectreSourceTokens, currentPath: string) {
-  const records = obj as Record<string, unknown>;
-  for (const key in records) {
+  for (const [key, value] of Object.entries(obj as Record<string, unknown>)) {
     if (key === 'metadata' || key === 'value') continue;
 
-    const value = records[key];
     const fullPath = currentPath ? `${currentPath}.${key}` : key;
 
     try {
