@@ -604,7 +604,8 @@ var coreTokens = {
     "portrait": "3/4",
     "landscape": "4/3",
     "ultrawide": "21/9",
-    "hero": "2/1"
+    "hero": "2/1",
+    "classic": "3/2"
   },
   "icons": {
     "xs": "12px",

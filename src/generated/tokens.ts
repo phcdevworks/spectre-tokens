@@ -1565,6 +1565,7 @@ export interface SpectreSourceTokens {
     landscape: string;
     ultrawide: string;
     hero: string;
+    classic: string;
   };
   icons: {
     xs: string;
@@ -2405,6 +2406,7 @@ export interface SpectreGeneratedTokens {
     landscape: string;
     ultrawide: string;
     hero: string;
+    classic: string;
   };
   icons: {
     xs: string;
@@ -3175,7 +3177,8 @@ export const coreTokens: SpectreGeneratedTokens = {
     "portrait": "3/4",
     "landscape": "4/3",
     "ultrawide": "21/9",
-    "hero": "2/1"
+    "hero": "2/1",
+    "classic": "3/2"
   },
   "icons": {
     "xs": "12px",
