@@ -574,6 +574,7 @@ interface SpectreGeneratedTokens {
         landscape: string;
         ultrawide: string;
         hero: string;
+        classic: string;
     };
     icons: {
         xs: string;
