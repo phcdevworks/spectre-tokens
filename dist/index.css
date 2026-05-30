@@ -187,6 +187,15 @@
   --sp-font-6xl-line-height: 5rem;
   --sp-font-6xl-weight: 900;
   --sp-font-xs-letter-spacing: 0.02em;
+  --sp-font-sm-letter-spacing: 0em;
+  --sp-font-md-letter-spacing: 0em;
+  --sp-font-lg-letter-spacing: 0em;
+  --sp-font-xl-letter-spacing: 0em;
+  --sp-font-2xl-letter-spacing: 0em;
+  --sp-font-3xl-letter-spacing: 0em;
+  --sp-font-4xl-letter-spacing: 0em;
+  --sp-font-5xl-letter-spacing: 0em;
+  --sp-font-6xl-letter-spacing: 0em;
   --sp-text-on-page-default: #141b24;
   --sp-text-on-page-muted: #4b576a;
   --sp-text-on-page-subtle: #657287;

@@ -10,6 +10,9 @@ Contract change type: additive
 
 ### Added
 
+- Standardized `letterSpacing` across the entire typography scale in
+  `tokens/typography.json`, adding explicit `0em` values to all sizes from `sm`
+  through `6xl` to complete the typographic contract.
 - Added `style` tokens (`solid` and `none`) to the `border` primitive family in
   `tokens/primitives.json` to complete the core border contract.
 - Added `xl` (12px) and `2xl` (16px) radius tokens to the `radii` primitive

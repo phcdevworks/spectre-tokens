@@ -1725,46 +1725,55 @@ export interface SpectreSourceTokens {
       size: string;
       lineHeight: string;
       weight: number;
+      letterSpacing: string;
     };
     md: {
       size: string;
       lineHeight: string;
       weight: number;
+      letterSpacing: string;
     };
     lg: {
       size: string;
       lineHeight: string;
       weight: number;
+      letterSpacing: string;
     };
     xl: {
       size: string;
       lineHeight: string;
       weight: number;
+      letterSpacing: string;
     };
     '2xl': {
       size: string;
       lineHeight: string;
       weight: number;
+      letterSpacing: string;
     };
     '3xl': {
       size: string;
       lineHeight: string;
       weight: number;
+      letterSpacing: string;
     };
     '4xl': {
       size: string;
       lineHeight: string;
       weight: number;
+      letterSpacing: string;
     };
     '5xl': {
       size: string;
       lineHeight: string;
       weight: number;
+      letterSpacing: string;
     };
     '6xl': {
       size: string;
       lineHeight: string;
       weight: number;
+      letterSpacing: string;
     };
   };
   typography: {
@@ -1784,46 +1793,55 @@ export interface SpectreSourceTokens {
         fontSize: string;
         lineHeight: string;
         fontWeight: number;
+        letterSpacing: string;
       };
       md: {
         fontSize: string;
         lineHeight: string;
         fontWeight: number;
+        letterSpacing: string;
       };
       lg: {
         fontSize: string;
         lineHeight: string;
         fontWeight: number;
+        letterSpacing: string;
       };
       xl: {
         fontSize: string;
         lineHeight: string;
         fontWeight: number;
+        letterSpacing: string;
       };
       '2xl': {
         fontSize: string;
         lineHeight: string;
         fontWeight: number;
+        letterSpacing: string;
       };
       '3xl': {
         fontSize: string;
         lineHeight: string;
         fontWeight: number;
+        letterSpacing: string;
       };
       '4xl': {
         fontSize: string;
         lineHeight: string;
         fontWeight: number;
+        letterSpacing: string;
       };
       '5xl': {
         fontSize: string;
         lineHeight: string;
         fontWeight: number;
+        letterSpacing: string;
       };
       '6xl': {
         fontSize: string;
         lineHeight: string;
         fontWeight: number;
+        letterSpacing: string;
       };
     };
   };
@@ -2496,46 +2514,55 @@ export interface SpectreGeneratedTokens {
       size: string;
       lineHeight: string;
       weight: number;
+      letterSpacing: string;
     };
     md: {
       size: string;
       lineHeight: string;
       weight: number;
+      letterSpacing: string;
     };
     lg: {
       size: string;
       lineHeight: string;
       weight: number;
+      letterSpacing: string;
     };
     xl: {
       size: string;
       lineHeight: string;
       weight: number;
+      letterSpacing: string;
     };
     '2xl': {
       size: string;
       lineHeight: string;
       weight: number;
+      letterSpacing: string;
     };
     '3xl': {
       size: string;
       lineHeight: string;
       weight: number;
+      letterSpacing: string;
     };
     '4xl': {
       size: string;
       lineHeight: string;
       weight: number;
+      letterSpacing: string;
     };
     '5xl': {
       size: string;
       lineHeight: string;
       weight: number;
+      letterSpacing: string;
     };
     '6xl': {
       size: string;
       lineHeight: string;
       weight: number;
+      letterSpacing: string;
     };
   };
   typography: {
@@ -2555,46 +2582,55 @@ export interface SpectreGeneratedTokens {
         fontSize: string;
         lineHeight: string;
         fontWeight: number;
+        letterSpacing: string;
       };
       md: {
         fontSize: string;
         lineHeight: string;
         fontWeight: number;
+        letterSpacing: string;
       };
       lg: {
         fontSize: string;
         lineHeight: string;
         fontWeight: number;
+        letterSpacing: string;
       };
       xl: {
         fontSize: string;
         lineHeight: string;
         fontWeight: number;
+        letterSpacing: string;
       };
       '2xl': {
         fontSize: string;
         lineHeight: string;
         fontWeight: number;
+        letterSpacing: string;
       };
       '3xl': {
         fontSize: string;
         lineHeight: string;
         fontWeight: number;
+        letterSpacing: string;
       };
       '4xl': {
         fontSize: string;
         lineHeight: string;
         fontWeight: number;
+        letterSpacing: string;
       };
       '5xl': {
         fontSize: string;
         lineHeight: string;
         fontWeight: number;
+        letterSpacing: string;
       };
       '6xl': {
         fontSize: string;
         lineHeight: string;
         fontWeight: number;
+        letterSpacing: string;
       };
     };
   };
@@ -3266,47 +3302,56 @@ export const coreTokens: SpectreGeneratedTokens = {
     "sm": {
       "size": "0.875rem",
       "lineHeight": "1.5rem",
-      "weight": 400
+      "weight": 400,
+      "letterSpacing": "0em"
     },
     "md": {
       "size": "1rem",
       "lineHeight": "1.75rem",
-      "weight": 500
+      "weight": 500,
+      "letterSpacing": "0em"
     },
     "lg": {
       "size": "1.25rem",
       "lineHeight": "2rem",
-      "weight": 600
+      "weight": 600,
+      "letterSpacing": "0em"
     },
     "xl": {
       "size": "1.5rem",
       "lineHeight": "2.125rem",
-      "weight": 600
+      "weight": 600,
+      "letterSpacing": "0em"
     },
     "2xl": {
       "size": "1.875rem",
       "lineHeight": "2.5rem",
-      "weight": 700
+      "weight": 700,
+      "letterSpacing": "0em"
     },
     "3xl": {
       "size": "2.25rem",
       "lineHeight": "2.75rem",
-      "weight": 700
+      "weight": 700,
+      "letterSpacing": "0em"
     },
     "4xl": {
       "size": "3rem",
       "lineHeight": "3.5rem",
-      "weight": 800
+      "weight": 800,
+      "letterSpacing": "0em"
     },
     "5xl": {
       "size": "3.75rem",
       "lineHeight": "4.25rem",
-      "weight": 800
+      "weight": 800,
+      "letterSpacing": "0em"
     },
     "6xl": {
       "size": "4.5rem",
       "lineHeight": "5rem",
-      "weight": 900
+      "weight": 900,
+      "letterSpacing": "0em"
     }
   },
   "typography": {
@@ -3325,47 +3370,56 @@ export const coreTokens: SpectreGeneratedTokens = {
       "sm": {
         "fontSize": "0.875rem",
         "lineHeight": "1.5rem",
-        "fontWeight": 400
+        "fontWeight": 400,
+        "letterSpacing": "0em"
       },
       "md": {
         "fontSize": "1rem",
         "lineHeight": "1.75rem",
-        "fontWeight": 500
+        "fontWeight": 500,
+        "letterSpacing": "0em"
       },
       "lg": {
         "fontSize": "1.25rem",
         "lineHeight": "2rem",
-        "fontWeight": 600
+        "fontWeight": 600,
+        "letterSpacing": "0em"
       },
       "xl": {
         "fontSize": "1.5rem",
         "lineHeight": "2.125rem",
-        "fontWeight": 600
+        "fontWeight": 600,
+        "letterSpacing": "0em"
       },
       "2xl": {
         "fontSize": "1.875rem",
         "lineHeight": "2.5rem",
-        "fontWeight": 700
+        "fontWeight": 700,
+        "letterSpacing": "0em"
       },
       "3xl": {
         "fontSize": "2.25rem",
         "lineHeight": "2.75rem",
-        "fontWeight": 700
+        "fontWeight": 700,
+        "letterSpacing": "0em"
       },
       "4xl": {
         "fontSize": "3rem",
         "lineHeight": "3.5rem",
-        "fontWeight": 800
+        "fontWeight": 800,
+        "letterSpacing": "0em"
       },
       "5xl": {
         "fontSize": "3.75rem",
         "lineHeight": "4.25rem",
-        "fontWeight": 800
+        "fontWeight": 800,
+        "letterSpacing": "0em"
       },
       "6xl": {
         "fontSize": "4.5rem",
         "lineHeight": "5rem",
-        "fontWeight": 900
+        "fontWeight": 900,
+        "letterSpacing": "0em"
       }
     }
   }
