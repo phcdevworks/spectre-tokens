@@ -1561,6 +1561,7 @@ export interface SpectreSourceTokens {
   aspectRatios: {
     square: string;
     video: string;
+    classic: string;
     portrait: string;
     landscape: string;
     ultrawide: string;
@@ -2401,6 +2402,7 @@ export interface SpectreGeneratedTokens {
   aspectRatios: {
     square: string;
     video: string;
+    classic: string;
     portrait: string;
     landscape: string;
     ultrawide: string;
@@ -3172,6 +3174,7 @@ export const coreTokens: SpectreGeneratedTokens = {
   "aspectRatios": {
     "square": "1/1",
     "video": "16/9",
+    "classic": "3/2",
     "portrait": "3/4",
     "landscape": "4/3",
     "ultrawide": "21/9",
