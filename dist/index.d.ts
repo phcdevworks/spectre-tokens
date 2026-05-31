@@ -666,46 +666,55 @@ interface SpectreGeneratedTokens {
             size: string;
             lineHeight: string;
             weight: number;
+            letterSpacing: string;
         };
         md: {
             size: string;
             lineHeight: string;
             weight: number;
+            letterSpacing: string;
         };
         lg: {
             size: string;
             lineHeight: string;
             weight: number;
+            letterSpacing: string;
         };
         xl: {
             size: string;
             lineHeight: string;
             weight: number;
+            letterSpacing: string;
         };
         '2xl': {
             size: string;
             lineHeight: string;
             weight: number;
+            letterSpacing: string;
         };
         '3xl': {
             size: string;
             lineHeight: string;
             weight: number;
+            letterSpacing: string;
         };
         '4xl': {
             size: string;
             lineHeight: string;
             weight: number;
+            letterSpacing: string;
         };
         '5xl': {
             size: string;
             lineHeight: string;
             weight: number;
+            letterSpacing: string;
         };
         '6xl': {
             size: string;
             lineHeight: string;
             weight: number;
+            letterSpacing: string;
         };
     };
     typography: {
@@ -725,46 +734,55 @@ interface SpectreGeneratedTokens {
                 fontSize: string;
                 lineHeight: string;
                 fontWeight: number;
+                letterSpacing: string;
             };
             md: {
                 fontSize: string;
                 lineHeight: string;
                 fontWeight: number;
+                letterSpacing: string;
             };
             lg: {
                 fontSize: string;
                 lineHeight: string;
                 fontWeight: number;
+                letterSpacing: string;
             };
             xl: {
                 fontSize: string;
                 lineHeight: string;
                 fontWeight: number;
+                letterSpacing: string;
             };
             '2xl': {
                 fontSize: string;
                 lineHeight: string;
                 fontWeight: number;
+                letterSpacing: string;
             };
             '3xl': {
                 fontSize: string;
                 lineHeight: string;
                 fontWeight: number;
+                letterSpacing: string;
             };
             '4xl': {
                 fontSize: string;
                 lineHeight: string;
                 fontWeight: number;
+                letterSpacing: string;
             };
             '5xl': {
                 fontSize: string;
                 lineHeight: string;
                 fontWeight: number;
+                letterSpacing: string;
             };
             '6xl': {
                 fontSize: string;
                 lineHeight: string;
                 fontWeight: number;
+                letterSpacing: string;
             };
         };
     };
