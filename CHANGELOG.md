@@ -10,6 +10,9 @@ Contract change type: additive
 
 ### Added
 
+- Standardized `letterSpacing` across the entire typography scale in
+  `tokens/typography.json`, adding explicit `0em` values to all sizes from `sm`
+  through `6xl` to complete the typographic contract.
 - Added `classic` (3:2) aspect ratio to the `aspectRatios` primitive family in
   `tokens/primitives.json` to fill the gap in common photographic ratios.
 - Added `style` tokens (`solid` and `none`) to the `border` primitive family in

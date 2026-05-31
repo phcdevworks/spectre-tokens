@@ -666,47 +666,56 @@ var coreTokens = {
     "sm": {
       "size": "0.875rem",
       "lineHeight": "1.5rem",
-      "weight": 400
+      "weight": 400,
+      "letterSpacing": "0em"
     },
     "md": {
       "size": "1rem",
       "lineHeight": "1.75rem",
-      "weight": 500
+      "weight": 500,
+      "letterSpacing": "0em"
     },
     "lg": {
       "size": "1.25rem",
       "lineHeight": "2rem",
-      "weight": 600
+      "weight": 600,
+      "letterSpacing": "0em"
     },
     "xl": {
       "size": "1.5rem",
       "lineHeight": "2.125rem",
-      "weight": 600
+      "weight": 600,
+      "letterSpacing": "0em"
     },
     "2xl": {
       "size": "1.875rem",
       "lineHeight": "2.5rem",
-      "weight": 700
+      "weight": 700,
+      "letterSpacing": "0em"
     },
     "3xl": {
       "size": "2.25rem",
       "lineHeight": "2.75rem",
-      "weight": 700
+      "weight": 700,
+      "letterSpacing": "0em"
     },
     "4xl": {
       "size": "3rem",
       "lineHeight": "3.5rem",
-      "weight": 800
+      "weight": 800,
+      "letterSpacing": "0em"
     },
     "5xl": {
       "size": "3.75rem",
       "lineHeight": "4.25rem",
-      "weight": 800
+      "weight": 800,
+      "letterSpacing": "0em"
     },
     "6xl": {
       "size": "4.5rem",
       "lineHeight": "5rem",
-      "weight": 900
+      "weight": 900,
+      "letterSpacing": "0em"
     }
   },
   "typography": {
@@ -725,47 +734,56 @@ var coreTokens = {
       "sm": {
         "fontSize": "0.875rem",
         "lineHeight": "1.5rem",
-        "fontWeight": 400
+        "fontWeight": 400,
+        "letterSpacing": "0em"
       },
       "md": {
         "fontSize": "1rem",
         "lineHeight": "1.75rem",
-        "fontWeight": 500
+        "fontWeight": 500,
+        "letterSpacing": "0em"
       },
       "lg": {
         "fontSize": "1.25rem",
         "lineHeight": "2rem",
-        "fontWeight": 600
+        "fontWeight": 600,
+        "letterSpacing": "0em"
       },
       "xl": {
         "fontSize": "1.5rem",
         "lineHeight": "2.125rem",
-        "fontWeight": 600
+        "fontWeight": 600,
+        "letterSpacing": "0em"
       },
       "2xl": {
         "fontSize": "1.875rem",
         "lineHeight": "2.5rem",
-        "fontWeight": 700
+        "fontWeight": 700,
+        "letterSpacing": "0em"
       },
       "3xl": {
         "fontSize": "2.25rem",
         "lineHeight": "2.75rem",
-        "fontWeight": 700
+        "fontWeight": 700,
+        "letterSpacing": "0em"
       },
       "4xl": {
         "fontSize": "3rem",
         "lineHeight": "3.5rem",
-        "fontWeight": 800
+        "fontWeight": 800,
+        "letterSpacing": "0em"
       },
       "5xl": {
         "fontSize": "3.75rem",
         "lineHeight": "4.25rem",
-        "fontWeight": 800
+        "fontWeight": 800,
+        "letterSpacing": "0em"
       },
       "6xl": {
         "fontSize": "4.5rem",
         "lineHeight": "5rem",
-        "fontWeight": 900
+        "fontWeight": 900,
+        "letterSpacing": "0em"
       }
     }
   }
