@@ -1469,6 +1469,8 @@ export interface SpectreSourceTokens {
     sm: string;
     md: string;
     lg: string;
+    xl: string;
+    '2xl': string;
   };
   breakpoints: {
     sm: string;
@@ -2328,6 +2330,8 @@ export interface SpectreGeneratedTokens {
     sm: string;
     md: string;
     lg: string;
+    xl: string;
+    '2xl': string;
   };
   breakpoints: {
     sm: string;
@@ -3117,7 +3121,9 @@ export const coreTokens: SpectreGeneratedTokens = {
     "none": "none",
     "sm": "0 1px 2px 0 {colors.black} / 0.06",
     "md": "0 2px 6px -1px {colors.black} / 0.08",
-    "lg": "0 6px 16px -4px {colors.black} / 0.12"
+    "lg": "0 6px 16px -4px {colors.black} / 0.12",
+    "xl": "0 12px 24px -6px {colors.black} / 0.15",
+    "2xl": "0 20px 48px -12px {colors.black} / 0.20"
   },
   "breakpoints": {
     "sm": "640px",
