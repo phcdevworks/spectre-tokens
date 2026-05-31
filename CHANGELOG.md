@@ -33,6 +33,15 @@ Contract change type: additive
   `modes.dark.component.badge.neutralText` to `{colors.neutral.50}`. This
   resolves a contrast failure (4.41:1 -> 4.79:1) against the interactive
   `neutralBgHover` background.
+- Fixed duplicate CSS variable declarations in `generateCssVariables` output.
+  The `text`, `badge`, and `iconBox` semantic tokens were emitted twice per
+  `:root` block — once via `semanticEntries` (mode-resolved) and once via
+  `createCssVariableMap` (base-only). The base-only block was winning via CSS
+  cascade, silently applying wrong badge text colors (e.g. `successText`
+  resolved to `colors.success.800` instead of the mode override `.700`).
+  Removed the redundant assignments from `createCssVariableMap`; the
+  `semanticEntries` path in `generateCssVariables` is now the sole emitter for
+  these tokens.
 
 ## [2.6.0] - 2026-05-21
 

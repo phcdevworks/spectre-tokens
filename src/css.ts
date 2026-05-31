@@ -211,30 +211,6 @@ export const createCssVariableMap = (tokens: SpectreTokens, options: CssVariable
     assign(toVariableName(prefix, 'font', key, 'letter-spacing'), scaleEntry.letterSpacing)
   })
 
-  assign(toVariableName(prefix, 'text', 'on', 'page', 'default'), tokens.text.onPage.default)
-  assign(toVariableName(prefix, 'text', 'on', 'page', 'muted'), tokens.text.onPage.muted)
-  assign(toVariableName(prefix, 'text', 'on', 'page', 'subtle'), tokens.text.onPage.subtle)
-  assign(toVariableName(prefix, 'text', 'on', 'page', 'meta'), tokens.text.onPage.meta)
-  assign(toVariableName(prefix, 'text', 'on', 'surface', 'default'), tokens.text.onSurface.default)
-  assign(toVariableName(prefix, 'text', 'on', 'surface', 'muted'), tokens.text.onSurface.muted)
-  assign(toVariableName(prefix, 'text', 'on', 'surface', 'subtle'), tokens.text.onSurface.subtle)
-  assign(toVariableName(prefix, 'text', 'on', 'surface', 'meta'), tokens.text.onSurface.meta)
-
-  const badge = tokens.component?.badge
-  if (badge) {
-    BADGE_VARIANTS.forEach(({ variant, bgKey, textKey }) => {
-      assign(toVariableName(prefix, 'badge', variant, 'bg'), badge[bgKey])
-      assign(toVariableName(prefix, 'badge', variant, 'text'), badge[textKey])
-    })
-  }
-
-  const iconBox = tokens.component?.iconBox
-  if (iconBox) {
-    ICON_BOX_FIELDS.forEach(({ name, tokenKey }) => {
-      assign(toVariableName(prefix, 'icon-box', name), iconBox[tokenKey])
-    })
-  }
-
   Object.entries(baseTokens.shadows).forEach(([key, value]) => {
     assign(toVariableName(prefix, 'shadow', key), value)
   })
