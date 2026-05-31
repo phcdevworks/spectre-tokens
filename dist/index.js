@@ -956,27 +956,6 @@ var createCssVariableMap = (tokens2, options = {}) => {
     const scaleEntry = entry;
     assign(toVariableName(prefix, "font", key, "letter-spacing"), scaleEntry.letterSpacing);
   });
-  assign(toVariableName(prefix, "text", "on", "page", "default"), tokens2.text.onPage.default);
-  assign(toVariableName(prefix, "text", "on", "page", "muted"), tokens2.text.onPage.muted);
-  assign(toVariableName(prefix, "text", "on", "page", "subtle"), tokens2.text.onPage.subtle);
-  assign(toVariableName(prefix, "text", "on", "page", "meta"), tokens2.text.onPage.meta);
-  assign(toVariableName(prefix, "text", "on", "surface", "default"), tokens2.text.onSurface.default);
-  assign(toVariableName(prefix, "text", "on", "surface", "muted"), tokens2.text.onSurface.muted);
-  assign(toVariableName(prefix, "text", "on", "surface", "subtle"), tokens2.text.onSurface.subtle);
-  assign(toVariableName(prefix, "text", "on", "surface", "meta"), tokens2.text.onSurface.meta);
-  const badge = tokens2.component?.badge;
-  if (badge) {
-    BADGE_VARIANTS.forEach(({ variant, bgKey, textKey }) => {
-      assign(toVariableName(prefix, "badge", variant, "bg"), badge[bgKey]);
-      assign(toVariableName(prefix, "badge", variant, "text"), badge[textKey]);
-    });
-  }
-  const iconBox = tokens2.component?.iconBox;
-  if (iconBox) {
-    ICON_BOX_FIELDS.forEach(({ name, tokenKey }) => {
-      assign(toVariableName(prefix, "icon-box", name), iconBox[tokenKey]);
-    });
-  }
   Object.entries(baseTokens.shadows).forEach(([key, value]) => {
     assign(toVariableName(prefix, "shadow", key), value);
   });
