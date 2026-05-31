@@ -570,6 +570,7 @@ interface SpectreGeneratedTokens {
     aspectRatios: {
         square: string;
         video: string;
+        classic: string;
         portrait: string;
         landscape: string;
         ultrawide: string;
