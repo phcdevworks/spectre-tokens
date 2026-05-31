@@ -10,8 +10,8 @@ Contract change type: additive
 
 ### Added
 
-- Added `classic` (3/2) aspect ratio to the `aspectRatios` family in
-  `tokens/primitives.json` to address common photographic ratio requirements.
+- Added `classic` (3:2) aspect ratio to the `aspectRatios` primitive family in
+  `tokens/primitives.json` to fill the gap in common photographic ratios.
 - Added `style` tokens (`solid` and `none`) to the `border` primitive family in
   `tokens/primitives.json` to complete the core border contract.
 - Added `xl` (12px) and `2xl` (16px) radius tokens to the `radii` primitive
