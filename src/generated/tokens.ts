@@ -1556,6 +1556,7 @@ export interface SpectreSourceTokens {
     disabled: string;
     hover: string;
     active: string;
+    loading: string;
     focus: string;
     overlay: string;
     tooltip: string;
@@ -2417,6 +2418,7 @@ export interface SpectreGeneratedTokens {
     disabled: string;
     hover: string;
     active: string;
+    loading: string;
     focus: string;
     overlay: string;
     tooltip: string;
@@ -3209,6 +3211,7 @@ export const coreTokens: SpectreGeneratedTokens = {
     "disabled": "0.38",
     "hover": "0.92",
     "active": "0.84",
+    "loading": "0.6",
     "focus": "1",
     "overlay": "0.5",
     "tooltip": "0.95"

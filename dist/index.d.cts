@@ -565,6 +565,7 @@ interface SpectreGeneratedTokens {
         disabled: string;
         hover: string;
         active: string;
+        loading: string;
         focus: string;
         overlay: string;
         tooltip: string;

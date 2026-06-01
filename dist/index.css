@@ -233,6 +233,7 @@
   --sp-opacity-disabled: 0.38;
   --sp-opacity-hover: 0.92;
   --sp-opacity-active: 0.84;
+  --sp-opacity-loading: 0.6;
   --sp-opacity-focus: 1;
   --sp-opacity-overlay: 0.5;
   --sp-opacity-tooltip: 0.95;
