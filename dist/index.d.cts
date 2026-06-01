@@ -478,6 +478,8 @@ interface SpectreGeneratedTokens {
         sm: string;
         md: string;
         lg: string;
+        xl: string;
+        '2xl': string;
     };
     breakpoints: {
         sm: string;
