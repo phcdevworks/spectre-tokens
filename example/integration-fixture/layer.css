@@ -1,0 +1,97 @@
+@import '@phcdevworks/spectre-tokens/index.css';
+
+@layer base, components, utilities;
+
+@layer base {
+  :root {
+    --ui-radius-card: var(--sp-radius-lg);
+    --ui-radius-btn: var(--sp-radius-md);
+    --ui-radius-input: var(--sp-radius-md);
+    --ui-space-section: var(--sp-space-48);
+    --ui-space-card: var(--sp-space-24);
+    --ui-space-btn-block: var(--sp-space-8);
+    --ui-space-btn-inline: var(--sp-space-16);
+  }
+}
+
+@layer components {
+  .ui-btn-primary {
+    background-color: var(--sp-button-primary-bg);
+    color: var(--sp-button-primary-text);
+    border-radius: var(--ui-radius-btn);
+    padding-block: var(--ui-space-btn-block);
+    padding-inline: var(--ui-space-btn-inline);
+    border: none;
+  }
+
+  .ui-btn-primary:hover {
+    background-color: var(--sp-button-primary-bghover);
+  }
+
+  .ui-btn-primary:focus-visible {
+    outline: 2px solid var(--sp-button-primary-focusring);
+    outline-offset: 2px;
+  }
+
+  .ui-btn-secondary {
+    background-color: var(--sp-button-secondary-bg);
+    color: var(--sp-button-secondary-text);
+    border: var(--sp-border-width-base) solid var(--sp-button-secondary-border);
+    border-radius: var(--ui-radius-btn);
+    padding-block: var(--ui-space-btn-block);
+    padding-inline: var(--ui-space-btn-inline);
+  }
+
+  .ui-card {
+    background-color: var(--sp-surface-card);
+    color: var(--sp-text-on-surface-default);
+    border-radius: var(--ui-radius-card);
+    padding: var(--ui-space-card);
+    border: var(--sp-border-width-base) solid var(--sp-color-neutral-200);
+  }
+
+  .ui-card__title {
+    color: var(--sp-component-card-text);
+  }
+
+  .ui-card__meta {
+    color: var(--sp-component-card-text-muted);
+  }
+
+  .ui-input {
+    background-color: var(--sp-surface-input);
+    color: var(--sp-component-input-text);
+    border: var(--sp-border-width-base) solid var(--sp-form-default-border);
+    border-radius: var(--ui-radius-input);
+    padding-block: var(--ui-space-btn-block);
+    padding-inline: var(--sp-space-12);
+  }
+
+  .ui-input:hover {
+    border-color: var(--sp-form-hover-border);
+  }
+
+  .ui-input:focus {
+    border-color: var(--sp-form-focus-border);
+    outline: 2px solid var(--sp-form-focus-ring);
+    outline-offset: -1px;
+  }
+
+  .ui-input--invalid {
+    border-color: var(--sp-form-invalid-border);
+    background-color: var(--sp-form-invalid-bg);
+    color: var(--sp-form-invalid-text);
+  }
+
+  .ui-input--disabled {
+    background-color: var(--sp-form-disabled-bg);
+    border-color: var(--sp-form-disabled-border);
+    color: var(--sp-form-disabled-text);
+    cursor: not-allowed;
+  }
+}
+
+[data-spectre-theme='dark'] .ui-card {
+  background-color: var(--sp-surface-card);
+  color: var(--sp-text-on-surface-default);
+}
