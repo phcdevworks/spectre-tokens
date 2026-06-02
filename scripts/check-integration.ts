@@ -185,4 +185,62 @@ if (components.typedRef !== tokens) {
   fail('typedRef must be the same tokens object (SpectreTokens type reference check).')
 }
 
+// ─── 4. Nav component — surface and text namespace coverage ───────────────────
+
+if (components.navStyles?.container?.backgroundColor !== tokens.surface.page) {
+  fail('navStyles.container.backgroundColor drifted from tokens.surface.page.')
+}
+
+if (components.navStyles.container.color !== tokens.text.onPage.default) {
+  fail('navStyles.container.color drifted from tokens.text.onPage.default.')
+}
+
+if (components.navStyles.container.minHeight !== tokens.accessibility.minTouchTarget) {
+  fail('navStyles.container.minHeight drifted from tokens.accessibility.minTouchTarget.')
+}
+
+if (components.navStyles.linkActive.color !== tokens.text.onPage.brand) {
+  fail('navStyles.linkActive.color drifted from tokens.text.onPage.brand.')
+}
+
+// ─── 5. Alert component — semantic color namespace coverage ───────────────────
+
+if (components.alertStyles?.success?.backgroundColor !== tokens.component.badge.successBg) {
+  fail('alertStyles.success.backgroundColor drifted from tokens.component.badge.successBg.')
+}
+
+if (components.alertStyles.warning.backgroundColor !== tokens.component.badge.warningBg) {
+  fail('alertStyles.warning.backgroundColor drifted from tokens.component.badge.warningBg.')
+}
+
+if (components.alertStyles.danger.backgroundColor !== tokens.component.badge.dangerBg) {
+  fail('alertStyles.danger.backgroundColor drifted from tokens.component.badge.dangerBg.')
+}
+
+// ─── 6. Badge component — component.badge namespace coverage ─────────────────
+
+if (components.badgeStyles?.neutral?.backgroundColor !== tokens.component.badge.neutralBg) {
+  fail('badgeStyles.neutral.backgroundColor drifted from tokens.component.badge.neutralBg.')
+}
+
+if (components.badgeStyles.success.backgroundColor !== tokens.component.badge.successBg) {
+  fail('badgeStyles.success.backgroundColor drifted from tokens.component.badge.successBg.')
+}
+
+if (components.badgeStyles.warning.backgroundColor !== tokens.component.badge.warningBg) {
+  fail('badgeStyles.warning.backgroundColor drifted from tokens.component.badge.warningBg.')
+}
+
+if (components.badgeStyles.danger.backgroundColor !== tokens.component.badge.dangerBg) {
+  fail('badgeStyles.danger.backgroundColor drifted from tokens.component.badge.dangerBg.')
+}
+
+// All semantic variants must use distinct colors
+if (
+  components.badgeStyles.success.backgroundColor === components.badgeStyles.warning.backgroundColor ||
+  components.badgeStyles.warning.backgroundColor === components.badgeStyles.danger.backgroundColor
+) {
+  fail('Badge semantic variants must use distinct background colors.')
+}
+
 console.log('Integration fixture passed.')

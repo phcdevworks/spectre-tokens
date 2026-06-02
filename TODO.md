@@ -81,10 +81,14 @@ design synchronization, and safe retirement paths.
 
 ### P0: Downstream Integration Hardening
 
-- [ ] Replace or augment the smoke fixture with a real `spectre-ui`
+- [x] Replace or augment the smoke fixture with a real `spectre-ui`
   integration fixture
   - Validate that the package works the way downstream packages actually
   consume it, not just that the token shape is correct in isolation.
+  - Delivered via `example/integration-fixture/components.ts` — nav, alert,
+  and badge component styles exercise the `surface`, `text`, `accessibility`,
+  and `component.badge` namespaces the way a downstream UI library would.
+  Validated by six additional assertion blocks in `check:integration`.
 
 - [x] Validate Tailwind preset composition against a downstream config
   - Confirm the preset composes correctly with a consumer Tailwind config that
@@ -149,12 +153,49 @@ design synchronization, and safe retirement paths.
   - Consumers should see exactly which token is deprecated, what replaces it,
   and in which version it will be removed.
 
+---
+
+## Phase 3 - Validation Integrity
+
+Harden the validation layer itself. The `check` scripts are only tested on the
+happy path today — a bug in a validator silently passes bad tokens through to
+consumers.
+
+### P0: Test Harness Setup
+
+- [ ] Add vitest as a dev dependency and wire `npm test` to run it
+  - The existing `npm run check` alias should stay; `npm test` should run the
+  vitest suite alongside it, or be updated to run both.
+
+### P1: Unit Tests for Pure Utility Functions
+
+- [ ] Unit-test `scripts/token-utils.ts`
+  - Cover all exported helpers. These are used by multiple validation scripts
+  so a bug here propagates silently across the entire check gate.
+
+- [ ] Unit-test `scripts/propose-version.ts`
+  - Cover `additive` → minor, `semantic change` → minor, `breaking` → major,
+  and the no-classification error case.
+
+### P2: Negative-Path Tests for Critical Validators
+
+- [ ] Negative-path test for `check:contrast`
+  - Confirm the script exits non-zero when a paired token fails WCAG AA.
+  Currently only tested on passing data.
+
+- [ ] Negative-path test for `check:locked`
+  - Confirm the script catches a mutation to a protected color family value.
+
+- [ ] Negative-path test for `check:regression`
+  - Confirm the script exits non-zero when a token value drifts from baseline.
+
 ## Recommended Execution Order
 
 1. Downstream integration hardening against `spectre-ui`.
 2. Semver proposal automation for release handoff.
 3. Design-tool synchronization after the Figma target is confirmed.
 4. Deprecation policy when the first token retirement is approaching.
+5. Validation integrity after the contract surface is stable.
 
 ## Explicitly Out of Scope
 
