@@ -193,24 +193,97 @@ and a clear upgrade path.
 
 ---
 
-## 3. Explicitly Out of Scope
+---
+
+## 3. Roadmap — Token Surface Completion
+
+The contract infrastructure is mature. This phase completes the token
+vocabulary so `spectre-ui` and downstream consumers have everything they need
+to build a full UI from token contracts rather than raw palette values.
+
+---
+
+### P0: Correctness Fixes
+
+**Objective** Eliminate drift risks and inconsistencies in the existing token
+surface before expanding it.
+
+**Deliverables**
+
+- Fix `colors.focus.*` to use palette references instead of hardcoded hex, so
+  brand or error palette updates propagate automatically.
+- Add `focusVisible` to `buttons.danger` and `buttons.success` to bring them
+  in line with `primary`, `secondary`, and `ghost`.
+
+---
+
+### P1: Interactive UI Semantic Tokens
+
+**Objective** Cover the semantic gaps that every UI component library hits
+immediately: links, interactive surface states, and dividers.
+
+**Deliverables**
+
+- Add a `link` namespace: `default`, `hover`, `active`, `visited`.
+- Add interactive surface states: `surface.hover`, `surface.selected`,
+  `surface.active`.
+- Add a semantic divider token: `surface.divider` (or
+  `border.color.default` / `border.color.subtle`).
+
+---
+
+### P2: Component Token Expansion
+
+**Objective** Add dedicated token groups for the UI patterns that appear in
+every component library but are not yet in the contract: nav, modal, toast,
+tooltip, dropdown.
+
+**Deliverables**
+
+- `component.nav` — `bg`, `text`, `link`, `linkHover`, `linkActive`, `border`.
+- `component.modal` — `bg`, `shadow`, `border`, `overlay`.
+- `component.toast` — success, warning, danger, info variants with `bg`,
+  `text`, `border`, `icon`.
+- `component.tooltip` — `bg`, `text`, `border`.
+- `component.dropdown` — `bg`, `border`, item states.
+
+---
+
+### P3: Motion and Surface Polish
+
+**Objective** Close the remaining gaps in the motion system and clean up
+surface tokens that have ambiguous meaning or unusual shapes.
+
+**Deliverables**
+
+- Add `animations.reducedMotion.*` variants for all named animations.
+- Resolve `surface.hero` — either move the gradient to a `gradients` namespace
+  or document its usage constraints explicitly.
+- Clarify or rename `surface.alternate` to express explicit semantic intent.
+
+---
+
+## 4. Explicitly Out of Scope
 
 - Component structure or composition — belongs in `@phcdevworks/spectre-ui`.
 - Framework-specific token delivery — belongs in adapter packages.
 - UI primitives or component anatomy — `example/` is illustrative only.
-- Speculative token expansion without proven downstream demand.
+- Local consumer reinterpretation of Spectre token meaning.
 - Anything that moves styling, component anatomy, or adapter concerns into
   this repo.
 
 ---
 
-## 4. Recommended Execution Order
+## 5. Recommended Execution Order
 
-1. **P0 — Downstream integration** — highest risk if deferred; real usage
-   surfaces what isolation testing cannot.
-2. **P1 — Versioning automation** — low effort, high consistency payoff;
-   can run in parallel with P0.
-3. **P2 — Design tool sync** — requires a tool decision first; implement once
-   the Figma workflow is confirmed.
-4. **P3 — Deprecation policy** — implement when the first token retirement is
-   approaching; do not over-engineer before there is a real use case.
+1. **Phase 2 P0 — Downstream integration** — done.
+2. **Phase 2 P1 — Versioning automation** — done.
+3. **Phase 2 P3 — Deprecation policy** — done.
+4. **Phase 2 P2 — Design tool sync** — requires a Figma tool decision first.
+5. **Phase 3 P0 — Correctness fixes** — no new tokens; fix existing drift risks.
+6. **Phase 3 P1 — Interactive semantic tokens** — additive; unblocks spectre-ui.
+7. **Phase 3 P2 — Component token expansion** — additive; driven by UI component
+   needs as spectre-ui builds out.
+8. **Phase 3 P3 — Motion and surface polish** — lowest urgency; do last.
+9. **Phase 2 P2 — Design tool sync** — can overlap with Phase 3 work once the
+   Figma target is confirmed.
