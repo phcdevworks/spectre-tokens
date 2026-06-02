@@ -8,8 +8,22 @@ reflects package releases published to npm.
 
 Contract change type: additive
 
+## [2.7.0] - 2026-06-03
+
+**Release Title:** Token Vocabulary and Integration Hardening
+
+Contract change type: additive
+
 ### Added
 
+- Added integration fixture coverage for downstream-style component usage,
+  Tailwind preset composition, and CSS variable namespace collision checks.
+- Added `scripts/check-integration.ts` and wired the integration check into the
+  main validation gate.
+- Added deprecation policy documentation, source-level deprecation metadata
+  support, and `scripts/check-deprecation.ts` validation.
+- Added `npm run release:propose` to derive an advisory version bump from the
+  `CHANGELOG.md [Unreleased]` contract classification.
 - Standardized `letterSpacing` across the entire typography scale in
   `tokens/typography.json`, adding explicit `0em` values to all sizes from `sm`
   through `6xl` to complete the typographic contract.
@@ -20,12 +34,26 @@ Contract change type: additive
 - Added `xl` (12px) and `2xl` (16px) radius tokens to the `radii` primitive
   family in `tokens/primitives.json` to address the scale gap between `lg` and
   `pill`.
+- Added `xl` and `2xl` shadow elevation tokens to complete the shadow scale.
+- Added `toast` to the z-index scale for application notification layering.
+- Added `loading` to the opacity scale for semantic loading and disabled-like
+  pending states.
 - Added `relaxed` (250ms), `long` (1000ms), and `slowest` (1200ms) duration
   tokens and `overshoot` easing token to the `transitions` primitive family in
   `tokens/primitives.json` to complete the motion scale.
+
+### Changed
+
 - Refactored all `animations` in `tokens/primitives.json` to use semantic
   `transitions` token references instead of hardcoded literal values, ensuring
   contract integrity.
+- Refreshed repository guidance, roadmap, TODO, README badges, and release
+  documentation so maintenance procedures reflect the current validation and
+  release workflow.
+- Bumped the npm package manager declaration to `npm@11.16.0` and refreshed
+  compatible lint/build dependency versions.
+- Refactored token utility loops for clearer validation internals without
+  changing the public token contract.
 
 ### Fixed
 
@@ -559,7 +587,8 @@ Contract change type: breaking
 - Standardized documentation and contributing guidelines.
 
 [unreleased]:
-  https://github.com/phcdevworks/spectre-tokens/compare/v2.6.0...HEAD
+  https://github.com/phcdevworks/spectre-tokens/compare/v2.7.0...HEAD
+[2.7.0]: https://github.com/phcdevworks/spectre-tokens/compare/v2.6.0...v2.7.0
 [2.6.0]: https://github.com/phcdevworks/spectre-tokens/compare/v2.5.0...v2.6.0
 [2.5.0]: https://github.com/phcdevworks/spectre-tokens/compare/v2.4.0...v2.5.0
 [2.4.0]: https://github.com/phcdevworks/spectre-tokens/compare/v2.3.0...v2.4.0

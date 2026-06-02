@@ -14,6 +14,14 @@ const { allowed, requiredPrefix } = manifest.changeClassification
 
 const changelog = readFileSync(changelogPath, 'utf8')
 const unreleasedSection = changelog.split('## [Unreleased]')[1]?.split('\n## [')[0] ?? ''
+const unreleasedWithoutClassification = unreleasedSection
+  .replace(new RegExp(`${requiredPrefix}\\s*(${allowed.join('|')})`, 'i'), '')
+  .trim()
+
+if (unreleasedWithoutClassification.length === 0) {
+  console.log('No unreleased changes. No version bump needed.')
+  process.exit(0)
+}
 
 const classificationPattern = new RegExp(
   `${requiredPrefix}\\s*(${allowed.join('|')})`,
@@ -22,11 +30,6 @@ const classificationPattern = new RegExp(
 const match = unreleasedSection.match(classificationPattern)
 
 if (!match) {
-  const hasContent = unreleasedSection.trim().length > 0
-  if (!hasContent) {
-    console.log('No unreleased changes. No version bump needed.')
-    process.exit(0)
-  }
   throw new Error(
     [
       'Unreleased section has content but is missing a contract change classification.',
