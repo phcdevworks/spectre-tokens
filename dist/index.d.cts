@@ -497,6 +497,7 @@ interface SpectreGeneratedTokens {
         modal: string;
         popover: string;
         tooltip: string;
+        toast: string;
     };
     transitions: {
         duration: {
