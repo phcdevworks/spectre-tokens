@@ -7,7 +7,8 @@ system.
 
 Its job is to define token meaning, semantic roles, mode-aware values, and
 generated token outputs that downstream Spectre packages and compatible
-applications can trust.
+applications can trust. The goal is a complete, UI-ready token surface so
+consumers never need to fill gaps with raw palette values or local inventions.
 
 This repository is the contract authority for token meaning.
 
@@ -16,6 +17,9 @@ It does not own:
 - downstream UI structure or composition
 - framework adapters
 - local consumer reinterpretation of Spectre token meaning
+
+Token vocabulary expansion — new semantic roles, interactive states, component
+token groups — is in scope here. Component structure and adapter behavior are not.
 
 ## Source Of Truth
 

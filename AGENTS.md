@@ -107,12 +107,15 @@ consumed by downstream Spectre packages and compatible applications.
    Bradley Potts.
 9. Keep the namespace singular as `border`; do not reintroduce `borders`.
 10. Do not expand this package into downstream UI structure, composition, or
-    framework-specific adapter behavior.
+    framework-specific adapter behavior. Token vocabulary expansion is in scope;
+    component structure and framework adapters are not.
 
 ## Working Boundaries
 
-- Token meaning belongs here.
-- Downstream UI packages define structure and composition.
+- Token meaning — including proactive expansion of the semantic vocabulary —
+  belongs here. The package should ship a complete UI-ready token surface, not
+  wait for downstream demand to drive every addition.
+- Downstream UI packages define structure, composition, and component anatomy.
 - Adapter packages translate Spectre contracts for specific frameworks and
   runtimes.
 - `example/` exists to document and demonstrate token usage. It is not the

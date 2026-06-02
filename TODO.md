@@ -189,6 +189,86 @@ consumers.
 - [ ] Negative-path test for `check:regression`
   - Confirm the script exits non-zero when a token value drifts from baseline.
 
+---
+
+## Phase 4 - Token Surface Completion
+
+The contract foundation and validation infrastructure are solid. This phase
+completes the token vocabulary so `spectre-ui` and any downstream consumer has
+everything they need to build a full UI without falling back on raw palette
+values or inventing local token contracts.
+
+### P0: Correctness Fixes
+
+- [ ] Fix `colors.focus.*` — replace raw hex with palette references
+  - `focus.primary`, `focus.error`, and `focus.info` are hardcoded hex that
+  duplicate palette values. Replace with `{colors.brand.500}`,
+  `{colors.error.500}`, and `{colors.info.600}` to eliminate silent drift risk
+  when the palette is updated.
+
+- [ ] Complete `focusVisible` across all interactive button variants
+  - `buttons.danger` and `buttons.success` are missing `focusVisible`.
+  Every interactive button variant needs it for consistent keyboard-navigation
+  behavior. Additive only — no existing paths change.
+
+### P1: Interactive UI Semantic Tokens
+
+- [ ] Add `link` semantic namespace
+  - `link.default`, `link.hover`, `link.active`, `link.visited`. Consumers
+  currently fall back to raw brand palette colors for inline links. Sealing
+  this here prevents downstream packages from diverging on link appearance.
+
+- [ ] Add interactive surface state tokens
+  - `surface.hover`, `surface.selected`, `surface.active`. Without these,
+  clickable list items, table rows, and menu items must compose backgrounds
+  from raw palette values or guess at semantic equivalents.
+
+- [ ] Add semantic divider token
+  - `surface.divider` (or `border.color.default` and `border.color.subtle`).
+  Currently there is no semantic token for `<hr>`, table borders, or section
+  separators — a gap that every UI component library hits immediately.
+
+### P2: Component Token Expansion
+
+- [ ] Add `component.nav` token group
+  - `bg`, `text`, `link`, `linkHover`, `linkActive`, `border`. Nav is the most
+  common component that spans multiple namespaces; first-class tokens prevent
+  raw palette references in `spectre-ui`.
+
+- [ ] Add `component.modal` token group
+  - `bg`, `shadow`, `border`, `overlay`. Modals have a distinct visual
+  treatment from cards and need dedicated tokens rather than surface.card
+  overrides.
+
+- [ ] Add `component.toast` token group
+  - Success, warning, danger, and info variants each with `bg`, `text`,
+  `border`, `icon` tokens. Toast/notification is a common pattern currently
+  without a dedicated group.
+
+- [ ] Add `component.tooltip` token group
+  - `bg`, `text`, `border`. Tooltips invert the standard surface/text
+  contrast; they need their own tokens rather than ad-hoc inverted values.
+
+- [ ] Add `component.dropdown` token group
+  - `bg`, `border`, `item.default`, `item.hover`, `item.active`, `item.text`.
+
+### P3: Motion and Surface Polish
+
+- [ ] Add reduced-motion token variants
+  - Near-zero duration alternatives under `animations.reducedMotion.*` for
+  each named animation, so consumers can respect `prefers-reduced-motion`
+  without per-component overrides.
+
+- [ ] Audit and resolve `surface.hero`
+  - A gradient string in the `surface` namespace is unusual and breaks
+  theme adaptability. Evaluate moving it to a `gradients` namespace or
+  documenting it as explicitly intentional with usage constraints.
+
+- [ ] Clarify or rename `surface.alternate`
+  - "Alternate" is too vague for a public contract token. Rename to something
+  with explicit semantic intent (e.g., `surface.subtle` or `surface.raised`)
+  or improve the description significantly.
+
 ## Recommended Execution Order
 
 1. Downstream integration hardening against `spectre-ui`.
@@ -196,6 +276,7 @@ consumers.
 3. Design-tool synchronization after the Figma target is confirmed.
 4. Deprecation policy when the first token retirement is approaching.
 5. Validation integrity after the contract surface is stable.
+6. Token surface completion — P0 corrections first, then P1–P3 in order.
 
 ## Explicitly Out of Scope
 

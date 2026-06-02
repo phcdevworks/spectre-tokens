@@ -5,13 +5,15 @@
 [![License](https://img.shields.io/npm/l/@phcdevworks/spectre-tokens)](LICENSE)
 [![Node](https://img.shields.io/node/v/@phcdevworks/spectre-tokens)](https://nodejs.org)
 
-`@phcdevworks/spectre-tokens` is the design-token package of the Spectre system
-for downstream Spectre packages and compatible applications.
+`@phcdevworks/spectre-tokens` is the design-token package of the Spectre system.
+It provides a complete, UI-ready token surface for downstream Spectre packages
+and compatible applications.
 
 Maintained by PHCDevworks, it defines the visual language, semantic roles, and
-token contracts consumed downstream. It keeps visual meaning centralized in
-token data while downstream UI packages define structure and adapter packages
-translate those contracts for specific frameworks and runtimes.
+token contracts that downstream consumers can rely on without filling gaps with
+raw palette values or local token inventions. Downstream UI packages define
+structure; adapter packages translate Spectre contracts for specific frameworks
+and runtimes.
 
 [Contributing](CONTRIBUTING.md) | [Code of Conduct](CODE_OF_CONDUCT.md) |
 [Changelog](CHANGELOG.md) | [Token Contract](TOKEN_CONTRACT.md) |

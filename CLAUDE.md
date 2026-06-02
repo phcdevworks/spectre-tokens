@@ -8,7 +8,9 @@
 
 `@phcdevworks/spectre-tokens` is the Layer 1 design-token package of the
 Spectre system. It defines visual language, semantic roles, and token contracts
-consumed by downstream Spectre packages and compatible applications.
+consumed by downstream Spectre packages and compatible applications. The goal
+is a complete, UI-ready token surface — not a minimal set that waits for
+downstream demand to drive every addition.
 
 This file is the authoritative guide for Claude Code operating in this
 repository. Read it before touching any source file.
@@ -114,10 +116,13 @@ Changes to these require explicit approval from Bradley Potts.
 
 ## Public Contract Namespaces
 
-`colors`, `space`, `layout`, `radii`, `typography`, `font`, `shadows`,
-`breakpoints`, `zIndex`, `transitions`, `animations`, `opacity`,
+Current: `colors`, `space`, `layout`, `radii`, `typography`, `font`,
+`shadows`, `breakpoints`, `zIndex`, `transitions`, `animations`, `opacity`,
 `aspectRatios`, `icons`, `border`, `accessibility`, `buttons`, `forms`,
 `surface`, `text`, `component`, `modes`
+
+Planned additions (see `TODO.md` Phase 4): `link`, and expanded `surface`,
+`component`, and `animations` sub-paths.
 
 Adding a new namespace is additive. Removing or renaming is breaking.
 The banned namespace is `borders` - always use `border` (singular).
@@ -147,8 +152,9 @@ The banned namespace is `borders` - always use `border` (singular).
 ## What This Package Does Not Own
 
 Shared ownership boundaries live in `AGENTS.md` and `TOKEN_CONTRACT.md`.
-Claude Code must keep this package focused on token meaning, not component
-structure, adapter behavior, or downstream UI anatomy.
+Claude Code must keep this package focused on token meaning — expanding it
+proactively to cover the full UI vocabulary is in scope. Component structure,
+adapter behavior, and downstream UI anatomy are not.
 
 ## Gotchas
 
