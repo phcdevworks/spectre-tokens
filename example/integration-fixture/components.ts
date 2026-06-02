@@ -82,4 +82,78 @@ export const pageLayoutStyles = {
   } satisfies Record<string, string>,
 }
 
+export const navStyles = {
+  container: {
+    backgroundColor: tokens.surface.page,
+    color: tokens.text.onPage.default,
+    minHeight: tokens.accessibility.minTouchTarget,
+  } satisfies Record<string, string>,
+
+  link: {
+    color: tokens.text.onPage.default,
+    minHeight: tokens.accessibility.minTouchTarget,
+  } satisfies Record<string, string>,
+
+  linkActive: {
+    color: tokens.text.onPage.brand,
+  } satisfies Record<string, string>,
+}
+
+export const alertStyles = {
+  success: {
+    backgroundColor: tokens.component.badge.successBg,
+    color: tokens.component.badge.successText,
+    borderRadius: tokens.radii.md,
+    padding: tokens.space['16'],
+  } satisfies Record<string, string>,
+
+  warning: {
+    backgroundColor: tokens.component.badge.warningBg,
+    color: tokens.component.badge.warningText,
+    borderRadius: tokens.radii.md,
+    padding: tokens.space['16'],
+  } satisfies Record<string, string>,
+
+  danger: {
+    backgroundColor: tokens.component.badge.dangerBg,
+    color: tokens.component.badge.dangerText,
+    borderRadius: tokens.radii.md,
+    padding: tokens.space['16'],
+  } satisfies Record<string, string>,
+}
+
+export const badgeStyles = {
+  neutral: {
+    backgroundColor: tokens.component.badge.neutralBg,
+    color: tokens.component.badge.neutralText,
+    borderRadius: tokens.radii.sm,
+    paddingBlock: tokens.space['4'],
+    paddingInline: tokens.space['8'],
+  } satisfies Record<string, string>,
+
+  success: {
+    backgroundColor: tokens.component.badge.successBg,
+    color: tokens.component.badge.successText,
+    borderRadius: tokens.radii.sm,
+    paddingBlock: tokens.space['4'],
+    paddingInline: tokens.space['8'],
+  } satisfies Record<string, string>,
+
+  warning: {
+    backgroundColor: tokens.component.badge.warningBg,
+    color: tokens.component.badge.warningText,
+    borderRadius: tokens.radii.sm,
+    paddingBlock: tokens.space['4'],
+    paddingInline: tokens.space['8'],
+  } satisfies Record<string, string>,
+
+  danger: {
+    backgroundColor: tokens.component.badge.dangerBg,
+    color: tokens.component.badge.dangerText,
+    borderRadius: tokens.radii.sm,
+    paddingBlock: tokens.space['4'],
+    paddingInline: tokens.space['8'],
+  } satisfies Record<string, string>,
+}
+
 export const typedRef: SpectreTokens = tokens
