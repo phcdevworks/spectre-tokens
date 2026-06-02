@@ -86,13 +86,16 @@ design synchronization, and safe retirement paths.
   - Validate that the package works the way downstream packages actually
   consume it, not just that the token shape is correct in isolation.
 
-- [ ] Validate Tailwind preset composition against a downstream config
+- [x] Validate Tailwind preset composition against a downstream config
   - Confirm the preset composes correctly with a consumer Tailwind config that
   has its own theme extensions. Catch namespace collisions and merge conflicts.
+  - Delivered via `example/integration-fixture/` validated by `check:integration`.
 
-- [ ] Validate CSS variable output in a real integration context
+- [x] Validate CSS variable output in a real integration context
   - Confirm variables do not collide with or shadow downstream CSS when the
   package is used alongside `spectre-ui`.
+  - Delivered via `example/integration-fixture/layer.css` and `check:integration`
+  namespace-collision checks.
 
 - [x] Document any integration constraints as explicit contract rules
   - Add integration-level requirements to `TOKEN_CONTRACT.md` so they are part
