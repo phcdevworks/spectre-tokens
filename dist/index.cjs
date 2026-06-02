@@ -527,7 +527,8 @@ var coreTokens = {
     "overlay": "1300",
     "modal": "1400",
     "popover": "1500",
-    "tooltip": "1600"
+    "tooltip": "1600",
+    "toast": "1700"
   },
   "transitions": {
     "duration": {

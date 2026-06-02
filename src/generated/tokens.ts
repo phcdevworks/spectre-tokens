@@ -1488,6 +1488,7 @@ export interface SpectreSourceTokens {
     modal: string;
     popover: string;
     tooltip: string;
+    toast: string;
   };
   transitions: {
     duration: {
@@ -2350,6 +2351,7 @@ export interface SpectreGeneratedTokens {
     modal: string;
     popover: string;
     tooltip: string;
+    toast: string;
   };
   transitions: {
     duration: {
@@ -3142,7 +3144,8 @@ export const coreTokens: SpectreGeneratedTokens = {
     "overlay": "1300",
     "modal": "1400",
     "popover": "1500",
-    "tooltip": "1600"
+    "tooltip": "1600",
+    "toast": "1700"
   },
   "transitions": {
     "duration": {

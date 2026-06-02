@@ -215,6 +215,7 @@
   --sp-z-index-modal: 1400;
   --sp-z-index-popover: 1500;
   --sp-z-index-tooltip: 1600;
+  --sp-z-index-toast: 1700;
   --sp-duration-instant: 75ms;
   --sp-duration-fast: 150ms;
   --sp-duration-base: 200ms;
