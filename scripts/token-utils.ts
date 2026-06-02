@@ -30,20 +30,19 @@ function assertNoDuplicateTokenPaths(files: string[]): void {
   const owners = new Map<string, string>();
   const duplicates: string[] = [];
 
-  files.forEach((file) => {
+  for (const file of files) {
     const fullPath = join(TOKENS_DIR, file);
     const content = JSON.parse(readFileSync(fullPath, 'utf8')) as Record<string, unknown>;
 
-    collectLeafPaths(content).forEach((tokenPath) => {
+    for (const tokenPath of collectLeafPaths(content)) {
       const existingOwner = owners.get(tokenPath);
       if (existingOwner && existingOwner !== file) {
         duplicates.push(`${tokenPath} (${existingOwner}, ${file})`);
-        return;
+        continue;
       }
-
       owners.set(tokenPath, file);
-    });
-  });
+    }
+  }
 
   if (duplicates.length > 0) {
     throw new Error(
@@ -57,10 +56,8 @@ function assertNoDuplicateTokenPaths(files: string[]): void {
 }
 
 function deepMerge(target: Record<string, unknown>, source: Record<string, unknown>): Record<string, unknown> {
-  Object.keys(source).forEach(key => {
+  for (const [key, sourceValue] of Object.entries(source)) {
     const targetValue = target[key];
-    const sourceValue = source[key];
-
     if (Array.isArray(targetValue) && Array.isArray(sourceValue)) {
       target[key] = sourceValue;
     } else if (isObject(targetValue) && isObject(sourceValue)) {
@@ -68,8 +65,7 @@ function deepMerge(target: Record<string, unknown>, source: Record<string, unkno
     } else {
       target[key] = sourceValue;
     }
-  });
-
+  }
   return target;
 }
 
