@@ -1441,17 +1441,24 @@ export interface SpectreSourceTokens {
   };
   space: {
     '0': string;
+    '1': string;
+    '2': string;
     '4': string;
+    '6': string;
     '8': string;
+    '10': string;
     '12': string;
+    '14': string;
     '16': string;
     '20': string;
     '24': string;
+    '28': string;
     '32': string;
     '40': string;
     '48': string;
     '56': string;
     '64': string;
+    '72': string;
     '80': string;
     '96': string;
   };
@@ -2304,17 +2311,24 @@ export interface SpectreGeneratedTokens {
   };
   space: {
     '0': string;
+    '1': string;
+    '2': string;
     '4': string;
+    '6': string;
     '8': string;
+    '10': string;
     '12': string;
+    '14': string;
     '16': string;
     '20': string;
     '24': string;
+    '28': string;
     '32': string;
     '40': string;
     '48': string;
     '56': string;
     '64': string;
+    '72': string;
     '80': string;
     '96': string;
   };
@@ -3098,17 +3112,24 @@ export const coreTokens: SpectreGeneratedTokens = {
   },
   "space": {
     "0": "0rem",
+    "1": "0.0625rem",
+    "2": "0.125rem",
     "4": "0.25rem",
+    "6": "0.375rem",
     "8": "0.5rem",
+    "10": "0.625rem",
     "12": "0.75rem",
+    "14": "0.875rem",
     "16": "1rem",
     "20": "1.25rem",
     "24": "1.5rem",
+    "28": "1.75rem",
     "32": "2rem",
     "40": "2.5rem",
     "48": "3rem",
     "56": "3.5rem",
     "64": "4rem",
+    "72": "4.5rem",
     "80": "5rem",
     "96": "6rem"
   },

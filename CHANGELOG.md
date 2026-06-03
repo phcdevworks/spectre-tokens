@@ -8,6 +8,10 @@ reflects package releases published to npm.
 
 Contract change type: additive
 
+### Added
+
+- Added missing scale steps to the `space` primitive family in `tokens/primitives.json`: `1` (1px), `2` (2px), `6` (6px), `10` (10px), `14` (14px), `28` (28px), and `72` (72px). These additions bridge gaps and provide finer increments (down to 2px in key ranges) at both the low and high ends of the spacing scale to support more precise layout control.
+
 ## [2.7.0] - 2026-06-03
 
 **Release Title:** Token Vocabulary and Integration Hardening
