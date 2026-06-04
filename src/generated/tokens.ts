@@ -1598,12 +1598,15 @@ export interface SpectreSourceTokens {
   };
   border: {
     width: {
+      none: string;
       base: string;
       thick: string;
     };
     style: {
       none: string;
       solid: string;
+      dashed: string;
+      dotted: string;
     };
   };
   surface: {
@@ -2468,12 +2471,15 @@ export interface SpectreGeneratedTokens {
   };
   border: {
     width: {
+      none: string;
       base: string;
       thick: string;
     };
     style: {
       none: string;
       solid: string;
+      dashed: string;
+      dotted: string;
     };
   };
   surface: {
@@ -3269,12 +3275,15 @@ export const coreTokens: SpectreGeneratedTokens = {
   },
   "border": {
     "width": {
+      "none": "0",
       "base": "1px",
       "thick": "2px"
     },
     "style": {
       "none": "none",
-      "solid": "solid"
+      "solid": "solid",
+      "dashed": "dashed",
+      "dotted": "dotted"
     }
   },
   "surface": {

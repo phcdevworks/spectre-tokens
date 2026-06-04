@@ -1903,6 +1903,10 @@
   },
   "border": {
     "width": {
+      "none": {
+        "$value": "0",
+        "$type": "dimension"
+      },
       "base": {
         "$value": "1px",
         "$type": "dimension"
@@ -1919,6 +1923,14 @@
       },
       "solid": {
         "$value": "solid",
+        "$type": "string"
+      },
+      "dashed": {
+        "$value": "dashed",
+        "$type": "string"
+      },
+      "dotted": {
+        "$value": "dotted",
         "$type": "string"
       }
     }
