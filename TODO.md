@@ -274,12 +274,15 @@ values or inventing local token contracts.
 
 ## Recommended Execution Order
 
-1. Downstream integration hardening against `spectre-ui`.
-2. Semver proposal automation for release handoff.
-3. Design-tool synchronization after the Figma target is confirmed.
-4. Deprecation policy when the first token retirement is approaching.
-5. Validation integrity after the contract surface is stable.
-6. Token surface completion — P0 corrections first, then P1–P3 in order.
+1. Phase 1 — done.
+2. Phase 2 — done.
+3. Phase 3 P0 — add vitest; unblocks all unit and negative-path tests.
+4. Phase 3 P1 — unit-test shared utilities.
+5. Phase 3 P2 — negative-path tests for contrast, locked, and regression.
+6. Phase 4 P0 — correctness fixes first; eliminates existing drift risks.
+7. Phase 4 P1 — interactive semantic tokens; additive, unblocks spectre-ui.
+8. Phase 4 P2 — component token expansion; driven by spectre-ui component needs.
+9. Phase 4 P3 — motion and surface polish; lowest urgency.
 
 ## Explicitly Out of Scope
 

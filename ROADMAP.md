@@ -10,7 +10,7 @@ consume — not to model component structure or framework behavior.
 
 ---
 
-## 1. Foundation Status — Delivered
+## 1. Phase 1 — Contract Foundation — Delivered
 
 All contract foundation work is complete as of v2.5.0. The package is mature
 at the contract layer.
@@ -32,8 +32,9 @@ at the contract layer.
   documentation drift fails the check gate.
 - Contract-impacting changes require explicit classification (`additive`,
   `semantic change`, `breaking`) in `CHANGELOG.md [Unreleased]` before merge.
-- A downstream smoke fixture validates runtime token import, CSS import,
-  Tailwind preset usage, semantic token usage, and mode-aware usage.
+- A downstream smoke and integration fixture validates runtime token import,
+  CSS import, Tailwind preset usage, semantic token usage, mode-aware usage,
+  namespace collision checks, and component-style fixture patterns.
 - CI runs the full validation chain on Node 22 and 24 for every push and pull
   request.
 - A multi-agent team (Claude Code, Codex, Copilot, Jules) operates with
@@ -43,7 +44,7 @@ at the contract layer.
 ### What will not change
 
 - `tokens/` remains the only source of truth. No hand-editing generated files.
-- The 14-gate chain is the release standard. No gate is optional.
+- The 15-gate chain is the release standard. No gate is optional.
 - Protected semantic color families (`success`, `warning`, `danger`,
   CTA/brand-action) require explicit Bradley Potts approval to change.
 - This package does not own component structure, framework behavior, or
@@ -51,144 +52,117 @@ at the contract layer.
 
 ---
 
-## 2. Roadmap — Mature Phase
+## 2. Phase 2 — Mature Contract Operations — Delivered
 
-The foundation is stable. The next phase hardens the contract against real
-downstream consumption, automates manual release steps, and opens the token
-system to design tooling.
+All Phase 2 work is complete. The contract is hardened against real downstream
+consumption, release steps are automated, design tooling is wired in, and the
+deprecation lifecycle is formally enforced.
 
----
+### P0: Downstream Integration Hardening — Delivered
 
-### P0: Downstream Integration Hardening
-
-**Objective** Prove the contract against real `spectre-ui` consumption, not
-only the internal smoke fixture.
-
-**Why it matters** The smoke fixture validates the package shape in isolation.
-Real downstream usage surfaces integration mismatches that isolated checks
-cannot catch — namespace collisions, Tailwind theme conflicts, CSS variable
-scope assumptions, and peer dependency constraints.
-
-**Deliverables**
-
-- Replace or augment the smoke fixture with an integration test that imports
-  and exercises `@phcdevworks/spectre-tokens` from a real `spectre-ui` fixture.
-- Validate that the Tailwind preset composes correctly with a downstream
-  Tailwind config that has its own theme extensions.
-- Validate that CSS variable output does not collide with or shadow downstream
-  CSS in a real integration context.
-- Document any integration constraints as explicit contract rules in
+- Integration fixture in `example/integration-fixture/` exercises nav, alert,
+  and badge component styles against the `surface`, `text`, `accessibility`,
+  and `component.badge` namespaces the way a downstream UI library would.
+- Tailwind preset composition validated against a downstream config with its
+  own theme extensions.
+- CSS variable namespace collision checks confirm no `--sp-*` shadowing risk.
+- Integration constraints documented as explicit contract rules in
   `TOKEN_CONTRACT.md`.
 
-**Dependency notes**
+### P1: Versioning Automation — Delivered
 
-- Requires a stable `spectre-ui` fixture or package to test against.
-
-**Risk if skipped**
-
-- Integration breakage can ship undetected because the smoke fixture validates
-  shape, not real composition behavior.
-
----
-
-### P1: Versioning Automation
-
-**Objective** Use the existing contract change classification to automate semver
-decisions and reduce manual release overhead.
-
-**Why it matters** The classification system (`additive`, `semantic change`,
-`breaking`) already encodes the semver signal. Right now that signal is read
-manually at release time. Automating it removes human error from version bumps
-and makes the release procedure faster and more consistent.
-
-**Deliverables**
-
-- Add a script that reads the `Contract change type:` line from
-  `CHANGELOG.md [Unreleased]` and proposes the correct version bump
-  (`patch` / `minor` / `major`) based on classification:
-  - `additive` → minor
-  - `semantic change` → minor (or patch if no public surface changed)
-  - `breaking` → major
-- Integrate the script into the release procedure documented in `CLAUDE.md`
-  and `CODEX.md` so Codex can use it during release handoff.
-- Keep the final version decision with Bradley Potts — the script proposes,
-  the human confirms.
-
-**Dependency notes**
-
-- No upstream dependency. Can be built independently of P0.
-
-**Risk if skipped**
-
-- Version bumps remain manual and error-prone. A breaking change could ship
-  as a minor bump if the classification line is misread.
-
----
+- `scripts/propose-version.ts` reads the `Contract change type:` line from
+  `CHANGELOG.md [Unreleased]` and proposes the correct semver bump:
+  `additive` → minor, `semantic change` → minor, `breaking` → major.
+- Wired into the release procedure in `CLAUDE.md` and `CODEX.md` as step 1.
+  Bradley Potts retains final version authority.
 
 ### P2: Design Tool Synchronization — Delivered
 
-**Objective** Make tokens available in the design tool so token meaning flows
-from source into Figma rather than being maintained in parallel.
-
-#### Delivered
-
-- `scripts/build-dtcg.ts` generates `dist/tokens.dtcg.json` in W3C DTCG format
-  (no external dependency). Tokens Studio and Style Dictionary v4 both consume
-  DTCG natively. 546 tokens across all public namespaces with inferred
+- `scripts/build-dtcg.ts` generates `dist/tokens.dtcg.json` in W3C DTCG
+  format (no external dependency). Tokens Studio and Style Dictionary v4 both
+  consume DTCG natively. 546 tokens across all public namespaces with inferred
   `$type`, `$value`, and `$description`.
 - Wired into `npm run build` via `build:design`. `check:dist` automatically
   catches stale output. `check:manifest` validates the file exists and contains
   valid DTCG tokens.
 - `CONTRIBUTING.md` documents the Tokens Studio setup and sync workflow.
-- `contract.manifest.json` declares the `design` output with required top-level
-  keys.
+- `contract.manifest.json` declares the `design` output with required
+  top-level keys.
+
+### P3: Deprecation Policy — Delivered
+
+- Deprecation lifecycle (`active` → `deprecated` → `removed`) defined in
+  `TOKEN_CONTRACT.md`.
+- `deprecated` marker added to the token source schema via `metadata.deprecated`
+  with `since`, `replacedBy`, and `removeIn` fields.
+- `scripts/check-deprecation.ts` warns on deprecated tokens and fails when
+  a token has passed its `removeIn` version. Wired into `npm run check`.
+- Deprecation notice format documented in `TOKEN_CONTRACT.md` and
+  `CHANGELOG.md` convention.
 
 ---
 
-### P3: Deprecation Policy
+## 3. Phase 3 — Validation Integrity
 
-**Objective** Define a formal, machine-enforceable path for retiring tokens
-from the public contract.
+The validation chain is only tested on the happy path today. A bug in a
+validator silently passes bad tokens through to consumers. This phase hardens
+the validation layer itself.
 
-**Why it matters** As the Spectre system matures, some tokens will need to be
-renamed, replaced, or removed. Without a deprecation policy, removal is a
-silent breaking change. With one, downstream consumers get a migration window
-and a clear upgrade path.
+### P0: Test Harness Setup
+
+**Objective** Introduce a unit test runner alongside the existing check gate.
 
 **Deliverables**
 
-- Define the deprecation lifecycle: `active` → `deprecated` → `removed`.
-- Add a `deprecated` marker to the token source schema so deprecated tokens
-  can be flagged at the source level.
-- Add a validation check that warns when deprecated tokens are present and
-  fails when a token marked for removal is still in the public export.
-- Add a deprecation notice format to the changelog convention — consumers
-  should see exactly which token is deprecated, what replaces it, and in which
-  version it will be removed.
-- Document the deprecation process in `CONTRIBUTING.md` and
-  `TOKEN_CONTRACT.md`.
+- Add vitest as a dev dependency.
+- Wire `npm test` to run the vitest suite. The existing `npm run check` alias
+  stays unchanged.
 
-**Dependency notes**
-
-- Best implemented after P0 downstream integration is solid, so the
-  deprecation path can be tested end-to-end.
-
-**Risk if skipped**
-
-- Token removal becomes a silent breaking change. Downstream consumers have
-  no migration window and no automated signal.
+**Why it matters** The current check gate runs scripts end-to-end and only
+catches failures at the output level. Unit tests catch logic bugs in the
+scripts themselves before they can silently pass bad data through.
 
 ---
 
+### P1: Unit Tests for Pure Utility Functions
+
+**Objective** Cover the shared helpers that all validation scripts depend on.
+
+**Deliverables**
+
+- Unit-test all exported helpers in `scripts/token-utils.ts`. A bug here
+  propagates silently across every gate that calls these functions.
+- Unit-test `scripts/propose-version.ts`: cover `additive` → minor,
+  `semantic change` → minor, `breaking` → major, and the no-classification
+  error case.
+
 ---
 
-## 3. Roadmap — Token Surface Completion
+### P2: Negative-Path Tests for Critical Validators
+
+**Objective** Confirm that validators exit non-zero when they should — not just
+when the data is clean.
+
+**Deliverables**
+
+- Negative-path test for `check:contrast` — confirm the script fails when a
+  paired token does not meet WCAG AA.
+- Negative-path test for `check:locked` — confirm the script catches a
+  mutation to a protected color family value.
+- Negative-path test for `check:regression` — confirm the script fails when a
+  token value drifts from the recorded baseline.
+
+**Why it matters** Validators that pass on good data but do not fail on bad
+data provide false confidence. A silent validator is worse than no validator.
+
+---
+
+## 4. Phase 4 — Token Surface Completion
 
 The contract infrastructure is mature. This phase completes the token
 vocabulary so `spectre-ui` and downstream consumers have everything they need
 to build a full UI from token contracts rather than raw palette values.
-
----
 
 ### P0: Correctness Fixes
 
@@ -250,7 +224,7 @@ surface tokens that have ambiguous meaning or unusual shapes.
 
 ---
 
-## 4. Explicitly Out of Scope
+## 5. Explicitly Out of Scope
 
 - Component structure or composition — belongs in `@phcdevworks/spectre-ui`.
 - Framework-specific token delivery — belongs in adapter packages.
@@ -261,14 +235,14 @@ surface tokens that have ambiguous meaning or unusual shapes.
 
 ---
 
-## 5. Recommended Execution Order
+## 6. Recommended Execution Order
 
-1. **Phase 2 P0 — Downstream integration** — done.
-2. **Phase 2 P1 — Versioning automation** — done.
-3. **Phase 2 P3 — Deprecation policy** — done.
-4. **Phase 2 P2 — Design tool sync** — done.
-5. **Phase 3 P0 — Correctness fixes** — no new tokens; fix existing drift risks.
-6. **Phase 3 P1 — Interactive semantic tokens** — additive; unblocks spectre-ui.
-7. **Phase 3 P2 — Component token expansion** — additive; driven by UI component
-   needs as spectre-ui builds out.
-8. **Phase 3 P3 — Motion and surface polish** — lowest urgency; do last.
+1. **Phase 1** — done.
+2. **Phase 2** — done.
+3. **Phase 3 P0** — add vitest; unblocks all unit and negative-path tests.
+4. **Phase 3 P1** — unit-test shared utilities; protects the check gate foundation.
+5. **Phase 3 P2** — negative-path tests for contrast, locked, and regression validators.
+6. **Phase 4 P0** — correctness fixes; no new tokens, eliminates existing drift risks.
+7. **Phase 4 P1** — interactive semantic tokens; additive, unblocks spectre-ui.
+8. **Phase 4 P2** — component token expansion; driven by spectre-ui component needs.
+9. **Phase 4 P3** — motion and surface polish; lowest urgency, do last.
