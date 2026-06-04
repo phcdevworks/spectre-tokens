@@ -114,6 +114,7 @@ This package currently guarantees these public output surfaces:
   `SpectreModeTokens`, and `SpectreModeName`
 - CSS variables in `dist/index.css`
 - Tailwind theme output derived from the token contract
+- W3C DTCG design-tool export in `dist/tokens.dtcg.json` for Figma/Tokens Studio sync
 
 All of those outputs must remain aligned with `contract.manifest.json`.
 
