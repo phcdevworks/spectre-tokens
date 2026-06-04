@@ -608,12 +608,15 @@ var coreTokens = {
   },
   "border": {
     "width": {
+      "none": "0",
       "base": "1px",
       "thick": "2px"
     },
     "style": {
       "none": "none",
-      "solid": "solid"
+      "solid": "solid",
+      "dashed": "dashed",
+      "dotted": "dotted"
     }
   },
   "surface": {
