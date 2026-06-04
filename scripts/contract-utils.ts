@@ -11,6 +11,11 @@ export interface TailwindExpectation {
   transform?: 'firstFontFamily';
 }
 
+export interface DesignOutput {
+  requiredFile: string;
+  requiredTopLevelKeys: string[];
+}
+
 export interface ContractManifest {
   version: number;
   publicNamespaces: string[];
@@ -27,6 +32,7 @@ export interface ContractManifest {
       requiredVariables: string[];
       requiredDarkModeVariables: string[];
     };
+    design: DesignOutput;
     tailwind: {
       expectations: TailwindExpectation[];
     };

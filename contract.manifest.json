@@ -120,6 +120,19 @@
         "--sp-badge-success-bg"
       ]
     },
+    "design": {
+      "requiredFile": "dist/tokens.dtcg.json",
+      "requiredTopLevelKeys": [
+        "colors",
+        "space",
+        "radii",
+        "surface",
+        "text",
+        "buttons",
+        "forms",
+        "component"
+      ]
+    },
     "tailwind": {
       "expectations": [
         { "themePath": "colors.brand.500", "tokenPath": "colors.brand.500" },

@@ -120,20 +120,23 @@ design synchronization, and safe retirement paths.
 
 ### P2: Design Tool Synchronization
 
-- [ ] Decide on the synchronization target: Tokens Studio or Style Dictionary
-  - Evaluate against the current Figma workflow before writing any output code.
+- [x] Decide on the synchronization target: Tokens Studio or Style Dictionary
+  - W3C DTCG format (no external dependency). Tokens Studio and Style Dictionary
+  v4 both consume DTCG natively. Fits the existing custom-script build pattern.
 
-- [ ] Add a design-tool output to the build pipeline
-  - Generate either a `build:tokens-studio` or `build:style-dictionary` output
-  alongside existing artifacts so the handoff file stays in sync with source.
+- [x] Add a design-tool output to the build pipeline
+  - `scripts/build-dtcg.ts` generates `dist/tokens.dtcg.json` (W3C DTCG format).
+  Wired into `npm run build` via the `build:design` script.
 
-- [ ] Wire the new output into dist sync validation
-  - Stale design-tool output should fail the check gate just like stale
-  `dist/` artifacts.
+- [x] Wire the new output into dist sync validation
+  - `build:design` is part of `npm run build`, which `check:dist` reruns before
+  checking `git status -- dist`. Stale DTCG output fails the check gate.
+  - `check:manifest` validates the DTCG file exists, has required top-level
+  keys, and contains `$value` tokens.
 
-- [ ] Document the design handoff workflow in `CONTRIBUTING.md`
-  - Designers should know how to pull updated tokens into Figma from the
-  published source.
+- [x] Document the design handoff workflow in `CONTRIBUTING.md`
+  - Added "Design Tool Handoff" section covering Tokens Studio setup and the
+  sync workflow (build → commit → Figma pull).
 
 ### P3: Deprecation Policy
 
