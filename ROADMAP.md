@@ -22,10 +22,10 @@ at the contract layer.
 - `contract.manifest.json` is the machine-readable contract authority for
   public namespaces, required outputs, protected semantic groups, and change
   classification rules.
-- A 14-gate `npm run check` validation chain covers: build, manifest,
+- A 15-gate `npm run check` validation chain covers: build, manifest,
   structure, locked color, contrast, regression, docs, exports, CSS, Tailwind,
-  consumer smoke, classification, dist sync, and lint. All gates must pass
-  before merge.
+  consumer smoke, integration, classification, deprecation, dist sync, and lint.
+  All gates must pass before merge.
 - Runtime JS, generated TypeScript, CSS variables, and Tailwind exports are
   validated for parity against the declared contract.
 - `README.md` and `TOKEN_CONTRACT.md` are validated against the manifest —
@@ -125,36 +125,23 @@ and makes the release procedure faster and more consistent.
 
 ---
 
-### P2: Design Tool Synchronization
+### P2: Design Tool Synchronization — Delivered
 
 **Objective** Make tokens available in the design tool so token meaning flows
 from source into Figma rather than being maintained in parallel.
 
-**Why it matters** A token contract that lives only in code creates a
-design–development gap. Designers reference Figma; developers reference the
-package. When those diverge, the token contract is only partially enforced.
-Synchronizing them from a single source closes the gap.
+#### Delivered
 
-**Deliverables**
-
-- Evaluate Tokens Studio (Figma plugin) and Style Dictionary as the
-  synchronization target. Choose based on the current Figma workflow.
-- Add a `build:tokens-studio` or `build:style-dictionary` output to the build
-  pipeline that produces a format compatible with the chosen tool.
-- Wire the output into `npm run build` so it is always regenerated alongside
-  existing artifacts.
-- Add the generated file to `check:dist` sync validation.
-- Document the design handoff workflow in `CONTRIBUTING.md`.
-
-**Dependency notes**
-
-- Requires a decision on the target design tool format before implementation.
-- Does not block P0 or P1.
-
-**Risk if skipped**
-
-- Token meaning diverges between design and implementation over time, and
-  divergence is caught only at review or QA rather than at source.
+- `scripts/build-dtcg.ts` generates `dist/tokens.dtcg.json` in W3C DTCG format
+  (no external dependency). Tokens Studio and Style Dictionary v4 both consume
+  DTCG natively. 546 tokens across all public namespaces with inferred
+  `$type`, `$value`, and `$description`.
+- Wired into `npm run build` via `build:design`. `check:dist` automatically
+  catches stale output. `check:manifest` validates the file exists and contains
+  valid DTCG tokens.
+- `CONTRIBUTING.md` documents the Tokens Studio setup and sync workflow.
+- `contract.manifest.json` declares the `design` output with required top-level
+  keys.
 
 ---
 
@@ -279,11 +266,9 @@ surface tokens that have ambiguous meaning or unusual shapes.
 1. **Phase 2 P0 — Downstream integration** — done.
 2. **Phase 2 P1 — Versioning automation** — done.
 3. **Phase 2 P3 — Deprecation policy** — done.
-4. **Phase 2 P2 — Design tool sync** — requires a Figma tool decision first.
+4. **Phase 2 P2 — Design tool sync** — done.
 5. **Phase 3 P0 — Correctness fixes** — no new tokens; fix existing drift risks.
 6. **Phase 3 P1 — Interactive semantic tokens** — additive; unblocks spectre-ui.
 7. **Phase 3 P2 — Component token expansion** — additive; driven by UI component
    needs as spectre-ui builds out.
 8. **Phase 3 P3 — Motion and surface polish** — lowest urgency; do last.
-9. **Phase 2 P2 — Design tool sync** — can overlap with Phase 3 work once the
-   Figma target is confirmed.
