@@ -3,7 +3,7 @@
 ## Project Identity
 
 **Package:** `@phcdevworks/spectre-tokens`
-**Human owner:** Bradley Potts (brad.potts@coastdigitalgroup.com)
+**Human owner:** Bradley Potts
 **Primary AI developer:** Claude Code (claude-sonnet-4-6)
 
 `@phcdevworks/spectre-tokens` is the Layer 1 design-token package of the
