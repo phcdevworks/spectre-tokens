@@ -3,7 +3,7 @@
 ## Project Identity
 
 **Package:** `@phcdevworks/spectre-tokens`
-**Human owner:** Bradley Potts (brad.potts@coastdigitalgroup.com)
+**Human owner:** Bradley Potts
 **Primary AI developer:** Claude Code (claude-sonnet-4-6)
 
 `@phcdevworks/spectre-tokens` is the Layer 1 design-token package of the
@@ -49,8 +49,8 @@ npm run check         # full validation gate - must pass before any commit
 ```
 
 `npm run check` runs build -> manifest -> structure -> locked-color -> contrast ->
-regression -> docs -> exports -> css -> tailwind -> consumer -> classification ->
-dist -> lint. All must pass.
+regression -> docs -> exports -> css -> tailwind -> consumer -> integration ->
+classification -> deprecation -> dist -> lint. All must pass.
 
 ## File Structure
 
