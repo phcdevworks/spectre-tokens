@@ -607,12 +607,15 @@ interface SpectreGeneratedTokens {
     };
     border: {
         width: {
+            none: string;
             base: string;
             thick: string;
         };
         style: {
             none: string;
             solid: string;
+            dashed: string;
+            dotted: string;
         };
     };
     surface: {
