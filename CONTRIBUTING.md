@@ -158,6 +158,30 @@ must also include one classification line:
 If one of those four records does not change, it usually means the release
 metadata path is incomplete.
 
+## Design Tool Handoff
+
+`dist/tokens.dtcg.json` is generated automatically by `npm run build`. It is a
+W3C DTCG (Design Tokens Community Group) format export — each token has
+`$value`, `$type`, and optionally `$description`. Reference tokens use
+`{path.to.token}` syntax, which Tokens Studio resolves automatically.
+
+### Connecting Tokens Studio
+
+1. Install the [Tokens Studio](https://tokens.studio/) plugin in Figma.
+2. Open the plugin and choose **Sync → File** as the storage provider, or use
+   the GitHub sync option and point it at `dist/tokens.dtcg.json` in the
+   repository.
+3. Pull updates to apply the current token values to your Figma document.
+
+### Keeping Figma in sync with source
+
+- After any token change, run `npm run build` to regenerate `dist/tokens.dtcg.json`.
+- Commit the updated `dist/tokens.dtcg.json` alongside the token source change.
+- In Figma, trigger a pull from Tokens Studio to pick up the new values.
+
+The file is included in the published npm package under `dist/` and is also
+available directly from the repository for file-system-based sync workflows.
+
 ## Questions
 
 Open an issue or discussion in this repository if you need direction before

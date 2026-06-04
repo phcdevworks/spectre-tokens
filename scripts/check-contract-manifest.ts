@@ -1,5 +1,5 @@
 import { readFileSync } from 'node:fs';
-import { dirname, join } from 'node:path';
+import { dirname, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 import * as indexModule from '../src/index';
@@ -167,5 +167,34 @@ manifest.changeClassification.allowed.forEach((entry) => {
     throw new Error(`Unsupported contract change classification: ${entry}`);
   }
 });
+
+const designOutput = manifest.requiredOutputs.design;
+const dtcgPath = resolve(__dirname, '..', designOutput.requiredFile);
+
+let dtcg: Record<string, unknown>;
+try {
+  dtcg = JSON.parse(readFileSync(dtcgPath, 'utf8')) as Record<string, unknown>;
+} catch {
+  throw new Error(
+    `Design output file is missing or invalid: ${designOutput.requiredFile}. Run \`npm run build\`.`
+  );
+}
+
+for (const key of designOutput.requiredTopLevelKeys) {
+  if (!(key in dtcg)) {
+    throw new Error(`Design output is missing required top-level key: ${key}`);
+  }
+}
+
+const isObj = (v: unknown): v is Record<string, unknown> =>
+  !!v && typeof v === 'object' && !Array.isArray(v);
+
+const hasDtcgValues = Object.values(dtcg).some(
+  (ns) => isObj(ns) && Object.values(ns).some((v) => isObj(v) && '$value' in v)
+);
+
+if (!hasDtcgValues) {
+  throw new Error('Design output does not contain valid DTCG $value tokens.');
+}
 
 console.log('Contract manifest check passed.');
