@@ -149,10 +149,13 @@
   --sp-layout-container-padding-inline-md: 1.5rem;
   --sp-layout-container-padding-inline-lg: 2rem;
   --sp-layout-container-max-width: 72rem;
+  --sp-border-width-none: 0;
   --sp-border-width-base: 1px;
   --sp-border-width-thick: 2px;
   --sp-border-style-none: none;
   --sp-border-style-solid: solid;
+  --sp-border-style-dashed: dashed;
+  --sp-border-style-dotted: dotted;
   --sp-radius-none: 0;
   --sp-radius-sm: 2px;
   --sp-radius-md: 4px;
