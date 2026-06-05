@@ -1,0 +1,94 @@
+{
+  "$schema": "./node_modules/@phcdevworks/spectre-manifest/schema/spectre.manifest.schema.json",
+  "$id": "urn:phcdevworks:spectre-tokens:manifest",
+  "schemaVersion": "0.1",
+  "system": {
+    "name": "Spectre",
+    "version": "1.0.0",
+    "manifestVersion": "0.1",
+    "summary": "Ecosystem manifest for @phcdevworks/spectre-tokens — the Layer 1 design-token package of the Spectre system.",
+    "packageManager": "npm",
+    "repository": "https://github.com/phcdevworks/spectre-tokens"
+  },
+  "layers": {
+    "foundation": {
+      "title": "Foundation",
+      "description": "Base design-system packages and adapters that higher layers build on.",
+      "order": 10,
+      "dependsOn": [],
+      "notes": [
+        "Foundation packages must remain reusable, framework-light, and safe for broad consumption."
+      ]
+    }
+  },
+  "packages": {
+    "@phcdevworks/spectre-tokens": {
+      "role": "design-tokens",
+      "layer": "foundation",
+      "stability": "stable",
+      "description": "Design-token source for the Spectre system. Defines visual language, semantic roles, and token contracts consumed by downstream packages.",
+      "exports": [".", "./index.css"],
+      "dependencies": [],
+      "allowedTargets": ["external"],
+      "notes": [
+        "Layer 1 of the Spectre system. Must not take runtime dependencies on other Spectre packages.",
+        "Token source lives in tokens/*.json. All other outputs are generated — never hand-edit dist/ or src/generated/.",
+        "Known consumers: spectre-ui, spectre-components, spectre-shell, spectre-ui-astro, spectre-base (declared in the central spectre-manifest registry)."
+      ]
+    }
+  },
+  "rules": {
+    "dependencyDirection": [
+      {
+        "fromLayer": "foundation",
+        "allowedLayers": ["foundation"],
+        "notes": [
+          "Foundation packages may depend only on other foundation packages or external libraries."
+        ]
+      }
+    ],
+    "forbiddenImports": [],
+    "boundaryConstraints": [
+      {
+        "scope": "package:@phcdevworks/spectre-tokens",
+        "rule": "No runtime dependencies on other Spectre packages.",
+        "reason": "spectre-tokens is Layer 1. Runtime imports from higher-layer Spectre packages would create circular or upward dependencies."
+      }
+    ]
+  },
+  "ai": {
+    "preferredEntrypoints": [
+      {
+        "task": "consume design tokens in TypeScript or JavaScript",
+        "kind": "package",
+        "entrypoint": "@phcdevworks/spectre-tokens"
+      },
+      {
+        "task": "read or edit token source values",
+        "kind": "file",
+        "entrypoint": "tokens/"
+      },
+      {
+        "task": "run full validation gate",
+        "kind": "command",
+        "entrypoint": "npm run check"
+      }
+    ],
+    "generationRules": [
+      "Always edit token values in tokens/*.json — never in src/generated/ or dist/.",
+      "Run npm run build after any token change to regenerate all outputs.",
+      "Run npm run check before staging any commit — all checks must pass.",
+      "A classification line (Contract change type: additive|semantic change|breaking) is required in CHANGELOG.md [Unreleased] whenever a contract-authority file changes."
+    ],
+    "usageGuidance": [
+      "Import tokens from @phcdevworks/spectre-tokens for TypeScript/JS consumers.",
+      "Include ./index.css (or dist/index.css) for CSS custom property consumers.",
+      "Use the exported tailwindPreset to integrate token values into a Tailwind CSS project."
+    ],
+    "safeDefaults": [
+      "Do not modify locked color families (success, warning, danger, cta-brand-action) without explicit human approval.",
+      "Do not hand-edit any file in src/generated/ or dist/ — they are always regenerated on build.",
+      "Do not add runtime Spectre package dependencies — this package is the base layer."
+    ]
+  }
+}
