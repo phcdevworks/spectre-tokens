@@ -50,7 +50,7 @@ npm run check         # full validation gate - must pass before any commit
 
 `npm run check` runs build -> manifest -> structure -> locked-color -> contrast ->
 regression -> docs -> exports -> css -> tailwind -> consumer -> integration ->
-ecosystem -> classification -> deprecation -> dist -> lint. All must pass.
+classification -> deprecation -> dist -> lint. All must pass.
 
 ## File Structure
 
@@ -64,8 +64,7 @@ src/
     tokens.ts         auto-generated - DO NOT EDIT
 scripts/              build and validation scripts
 dist/                 generated release artifacts - DO NOT EDIT
-contract.manifest.json  token contract authority (namespaces, outputs, CSS vars)
-spectre.manifest.json   ecosystem contract (role, layer, dependency rules, AI guidance)
+contract.manifest.json  machine-readable contract authority
 ```
 
 ## Edit Permissions
@@ -90,7 +89,6 @@ Changes to those files must be regenerated, validated, and classified in
 | `check:css` | required CSS variables present |
 | `check:tailwind` | Tailwind theme values match token contract |
 | `check:consumer` | downstream smoke fixture passes |
-| `check:ecosystem` | spectre.manifest.json is schema-valid and this package is correctly registered |
 | `check:classification` | contract-authority changes have changelog entry |
 | `check:dist` | dist artifacts are in sync with source |
 | `lint` | ESLint passes |
@@ -168,8 +166,3 @@ adapter behavior, and downstream UI anatomy are not.
   contrast validation. It is stripped from the public runtime export.
 - `check:classification` only fires when contract-authority files changed in the
   working tree or HEAD commit. It is a no-op when nothing contract-related changed.
-- `spectre.manifest.json` is the ecosystem contract (role, layer, rules, AI guidance)
-  for this package. `contract.manifest.json` is the internal token contract
-  (namespaces, outputs, CSS variables). They serve different purposes — do not
-  conflate them. When the package exports or declared consumers change, update
-  `spectre.manifest.json` to match.
