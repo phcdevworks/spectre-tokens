@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Spectre Tokens - Examples</title>
+    <link rel="stylesheet" href="../dist/index.css" />
     <style>
       * {
         margin: 0;
@@ -12,12 +13,9 @@
       }
 
       body {
-        font-family:
-          system-ui,
-          -apple-system,
-          sans-serif;
-        padding: 2rem;
-        background: #f8fafc;
+        font-family: var(--sp-font-family-sans);
+        padding: var(--sp-space-32);
+        background: var(--sp-surface-page);
       }
 
       .container {
@@ -26,55 +24,55 @@
       }
 
       h1 {
-        font-size: 3rem;
-        margin-bottom: 1rem;
-        color: #0f172a;
+        font-size: var(--sp-font-4xl-size);
+        margin-bottom: var(--sp-space-16);
+        color: var(--sp-color-neutral-900);
       }
 
       p {
         font-size: 1.125rem;
-        color: #475569;
-        margin-bottom: 2rem;
+        color: var(--sp-text-on-page-muted);
+        margin-bottom: var(--sp-space-32);
       }
 
       .examples-grid {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-        gap: 1.5rem;
-        margin-top: 2rem;
+        gap: var(--sp-space-24);
+        margin-top: var(--sp-space-32);
       }
 
       .example-card {
-        background: white;
-        border-radius: 8px;
-        padding: 1.5rem;
-        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        background: var(--sp-surface-card);
+        border-radius: var(--sp-radius-lg);
+        padding: var(--sp-space-24);
+        box-shadow: var(--sp-shadow-sm);
         text-decoration: none;
         color: inherit;
-        transition: all 200ms;
-        border: 1px solid #e2e8f0;
+        transition: all var(--sp-duration-base);
+        border: var(--sp-border-width-base) var(--sp-border-style-solid) var(--sp-color-neutral-200);
       }
 
       .example-card:hover {
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        box-shadow: var(--sp-shadow-md);
         transform: translateY(-2px);
       }
 
       .example-card h2 {
-        font-size: 1.5rem;
-        color: #1f57db;
-        margin-bottom: 0.5rem;
+        font-size: var(--sp-font-xl-size);
+        color: var(--sp-text-on-page-brand);
+        margin-bottom: var(--sp-space-8);
       }
 
       .example-card p {
-        font-size: 0.875rem;
-        color: #64748b;
+        font-size: var(--sp-font-sm-size);
+        color: var(--sp-color-neutral-500);
         margin-bottom: 0;
       }
 
       .icon {
-        font-size: 2rem;
-        margin-bottom: 0.75rem;
+        font-size: var(--sp-font-2xl-size);
+        margin-bottom: var(--sp-space-12);
       }
     </style>
   </head>

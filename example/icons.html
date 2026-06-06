@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Icons - Spectre Tokens</title>
+    <link rel="stylesheet" href="../dist/index.css" />
     <style>
       * {
         margin: 0;
@@ -12,12 +13,9 @@
       }
 
       body {
-        font-family:
-          system-ui,
-          -apple-system,
-          sans-serif;
-        padding: 2rem;
-        background: #f8fafc;
+        font-family: var(--sp-font-family-sans);
+        padding: var(--sp-space-32);
+        background: var(--sp-surface-page);
       }
 
       .container {
@@ -26,48 +24,48 @@
       }
 
       .header {
-        margin-bottom: 2rem;
+        margin-bottom: var(--sp-space-32);
       }
 
       .back-link {
-        color: #1f57db;
+        color: var(--sp-text-on-page-brand);
         text-decoration: none;
-        margin-bottom: 1rem;
+        margin-bottom: var(--sp-space-16);
         display: inline-block;
       }
 
       h1 {
-        font-size: 3rem;
-        margin-bottom: 0.5rem;
-        color: #0f172a;
+        font-size: var(--sp-font-4xl-size);
+        margin-bottom: var(--sp-space-8);
+        color: var(--sp-color-neutral-900);
       }
 
       .subtitle {
         font-size: 1.125rem;
-        color: #475569;
+        color: var(--sp-text-on-page-muted);
       }
 
       .section {
-        background: white;
-        border-radius: 8px;
-        padding: 2rem;
-        margin-bottom: 2rem;
-        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        background: var(--sp-surface-card);
+        border-radius: var(--sp-radius-lg);
+        padding: var(--sp-space-32);
+        margin-bottom: var(--sp-space-32);
+        box-shadow: var(--sp-shadow-sm);
       }
 
       h2 {
-        font-size: 1.5rem;
-        color: #0f172a;
-        margin-bottom: 1.5rem;
+        font-size: var(--sp-font-xl-size);
+        color: var(--sp-color-neutral-900);
+        margin-bottom: var(--sp-space-24);
       }
 
       .icon-grid {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-        gap: 2rem;
-        padding: 2rem;
-        background: #f8fafc;
-        border-radius: 8px;
+        gap: var(--sp-space-32);
+        padding: var(--sp-space-32);
+        background: var(--sp-surface-page);
+        border-radius: var(--sp-radius-lg);
       }
 
       .icon-example {
@@ -79,91 +77,64 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        padding: 2rem;
-        background: white;
-        border-radius: 8px;
-        border: 1px solid #e2e8f0;
-        margin-bottom: 0.75rem;
+        padding: var(--sp-space-32);
+        background: var(--sp-surface-card);
+        border-radius: var(--sp-radius-lg);
+        border: var(--sp-border-width-base) var(--sp-border-style-solid) var(--sp-color-neutral-200);
+        margin-bottom: var(--sp-space-12);
         min-height: 120px;
       }
 
       .icon-svg {
-        fill: #0369a1;
+        fill: var(--sp-icon-box-icon-default);
       }
 
-      .icon-xs {
-        width: 12px;
-        height: 12px;
-      }
-
-      .icon-sm {
-        width: 16px;
-        height: 16px;
-      }
-
-      .icon-md {
-        width: 20px;
-        height: 20px;
-      }
-
-      .icon-lg {
-        width: 24px;
-        height: 24px;
-      }
-
-      .icon-xl {
-        width: 32px;
-        height: 32px;
-      }
-
-      .icon-2xl {
-        width: 40px;
-        height: 40px;
-      }
-
-      .icon-3xl {
-        width: 48px;
-        height: 48px;
-      }
+      .icon-xs { width: 12px; height: 12px; }
+      .icon-sm { width: 16px; height: 16px; }
+      .icon-md { width: 20px; height: 20px; }
+      .icon-lg { width: 24px; height: 24px; }
+      .icon-xl { width: 32px; height: 32px; }
+      .icon-2xl { width: 40px; height: 40px; }
+      .icon-3xl { width: 48px; height: 48px; }
 
       .icon-label {
-        font-size: 1rem;
+        font-size: var(--sp-font-md-size);
         font-weight: 600;
-        color: #0f172a;
-        margin-bottom: 0.25rem;
+        color: var(--sp-color-neutral-900);
+        margin-bottom: var(--sp-space-4);
       }
 
       .icon-value {
-        font-size: 0.875rem;
+        font-size: var(--sp-font-sm-size);
         font-family: monospace;
-        color: #64748b;
+        color: var(--sp-color-neutral-500);
       }
 
       .usage-examples {
         display: grid;
-        gap: 1.5rem;
+        gap: var(--sp-space-24);
       }
 
       .usage-card {
-        padding: 1.5rem;
-        background: #f8fafc;
-        border-radius: 8px;
-        border: 1px solid #e2e8f0;
+        padding: var(--sp-space-24);
+        background: var(--sp-surface-page);
+        border-radius: var(--sp-radius-lg);
+        border: var(--sp-border-width-base) var(--sp-border-style-solid) var(--sp-color-neutral-200);
       }
 
       .usage-title {
-        font-size: 1rem;
+        font-size: var(--sp-font-md-size);
         font-weight: 600;
-        color: #0f172a;
-        margin-bottom: 1rem;
+        color: var(--sp-color-neutral-900);
+        margin-bottom: var(--sp-space-16);
         display: flex;
         align-items: center;
-        gap: 0.5rem;
+        gap: var(--sp-space-8);
       }
 
       .usage-description {
-        font-size: 0.875rem;
-        color: #64748b;
+        font-size: var(--sp-font-sm-size);
+        color: var(--sp-color-neutral-500);
         line-height: 1.6;
       }
     </style>
@@ -276,7 +247,7 @@
               <svg
                 class="icon-svg icon-xs"
                 viewBox="0 0 24 24"
-                style="fill: #64748b"
+                style="fill: var(--sp-color-neutral-500)"
               >
                 <path
                   d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"
@@ -294,7 +265,7 @@
               <svg
                 class="icon-svg icon-sm"
                 viewBox="0 0 24 24"
-                style="fill: #64748b"
+                style="fill: var(--sp-color-neutral-500)"
               >
                 <path
                   d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"
@@ -313,7 +284,7 @@
               <svg
                 class="icon-svg icon-md"
                 viewBox="0 0 24 24"
-                style="fill: #64748b"
+                style="fill: var(--sp-color-neutral-500)"
               >
                 <path
                   d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"
@@ -331,7 +302,7 @@
               <svg
                 class="icon-svg icon-lg"
                 viewBox="0 0 24 24"
-                style="fill: #64748b"
+                style="fill: var(--sp-color-neutral-500)"
               >
                 <path
                   d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"
@@ -350,7 +321,7 @@
               <svg
                 class="icon-svg icon-xl"
                 viewBox="0 0 24 24"
-                style="fill: #64748b"
+                style="fill: var(--sp-color-neutral-500)"
               >
                 <path
                   d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"
@@ -368,7 +339,7 @@
               <svg
                 class="icon-svg icon-2xl"
                 viewBox="0 0 24 24"
-                style="fill: #64748b"
+                style="fill: var(--sp-color-neutral-500)"
               >
                 <path
                   d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"
@@ -387,7 +358,7 @@
               <svg
                 class="icon-svg icon-3xl"
                 viewBox="0 0 24 24"
-                style="fill: #64748b"
+                style="fill: var(--sp-color-neutral-500)"
               >
                 <path
                   d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"

@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Borders & Radii - Spectre Tokens</title>
+    <link rel="stylesheet" href="../dist/index.css" />
     <style>
       * {
         margin: 0;
@@ -12,12 +13,9 @@
       }
 
       body {
-        font-family:
-          system-ui,
-          -apple-system,
-          sans-serif;
-        padding: 2rem;
-        background: #f8fafc;
+        font-family: var(--sp-font-family-sans);
+        padding: var(--sp-space-32);
+        background: var(--sp-surface-page);
       }
 
       .container {
@@ -26,45 +24,45 @@
       }
 
       .header {
-        margin-bottom: 2rem;
+        margin-bottom: var(--sp-space-32);
       }
 
       .back-link {
-        color: #0369a1;
+        color: var(--sp-button-primary-bg);
         text-decoration: none;
-        margin-bottom: 1rem;
+        margin-bottom: var(--sp-space-16);
         display: inline-block;
       }
 
       h1 {
-        font-size: 3rem;
-        margin-bottom: 0.5rem;
-        color: #0f172a;
+        font-size: var(--sp-font-4xl-size);
+        margin-bottom: var(--sp-space-8);
+        color: var(--sp-color-neutral-900);
       }
 
       .subtitle {
         font-size: 1.125rem;
-        color: #475569;
+        color: var(--sp-text-on-page-muted);
       }
 
       .section {
-        background: white;
-        border-radius: 8px;
-        padding: 2rem;
-        margin-bottom: 2rem;
-        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        background: var(--sp-surface-card);
+        border-radius: var(--sp-radius-lg);
+        padding: var(--sp-space-32);
+        margin-bottom: var(--sp-space-32);
+        box-shadow: var(--sp-shadow-sm);
       }
 
       h2 {
-        font-size: 1.5rem;
-        color: #0f172a;
-        margin-bottom: 1.5rem;
+        font-size: var(--sp-font-xl-size);
+        color: var(--sp-color-neutral-900);
+        margin-bottom: var(--sp-space-24);
       }
 
       .radii-grid {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-        gap: 2rem;
+        gap: var(--sp-space-32);
       }
 
       .radius-example {
@@ -74,47 +72,33 @@
       .radius-box {
         width: 150px;
         height: 150px;
-        background: linear-gradient(135deg, #0ea5e9, #0369a1);
-        margin: 0 auto 1rem;
+        background: linear-gradient(135deg, var(--sp-color-info-500), var(--sp-color-info-600));
+        margin: 0 auto var(--sp-space-16);
       }
 
-      .radius-none {
-        border-radius: 0;
-      }
-
-      .radius-sm {
-        border-radius: 2px;
-      }
-
-      .radius-md {
-        border-radius: 4px;
-      }
-
-      .radius-lg {
-        border-radius: 8px;
-      }
-
-      .radius-pill {
-        border-radius: 999px;
-      }
+      .radius-none { border-radius: var(--sp-radius-none); }
+      .radius-sm { border-radius: var(--sp-radius-sm); }
+      .radius-md { border-radius: var(--sp-radius-md); }
+      .radius-lg { border-radius: var(--sp-radius-lg); }
+      .radius-pill { border-radius: var(--sp-radius-pill); }
 
       .radius-label {
-        font-size: 1rem;
+        font-size: var(--sp-font-md-size);
         font-weight: 600;
-        color: #0f172a;
-        margin-bottom: 0.25rem;
+        color: var(--sp-color-neutral-900);
+        margin-bottom: var(--sp-space-4);
       }
 
       .radius-value {
-        font-size: 0.875rem;
+        font-size: var(--sp-font-sm-size);
         font-family: monospace;
-        color: #64748b;
+        color: var(--sp-color-neutral-500);
       }
 
       .border-grid {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-        gap: 2rem;
+        gap: var(--sp-space-32);
       }
 
       .border-example {
@@ -124,46 +108,46 @@
       .border-box {
         width: 100%;
         height: 100px;
-        background: white;
-        margin-bottom: 1rem;
+        background: var(--sp-surface-card);
+        margin-bottom: var(--sp-space-16);
         display: flex;
         align-items: center;
         justify-content: center;
         font-weight: 500;
-        color: #64748b;
+        color: var(--sp-color-neutral-500);
       }
 
       .border-card {
-        border: 1px solid #e2e8f0;
+        border: var(--sp-border-width-base) var(--sp-border-style-solid) var(--sp-color-neutral-200);
       }
 
       .border-input {
-        border: 1px solid #cbd5e1;
+        border: var(--sp-border-width-base) var(--sp-border-style-solid) var(--sp-form-default-border);
       }
 
       .border-focus {
-        border: 2px solid #0ea5e9;
+        border: var(--sp-border-width-thick) var(--sp-border-style-solid) var(--sp-form-hover-border);
       }
 
       .border-success {
-        border: 2px solid #22c55e;
+        border: var(--sp-border-width-thick) var(--sp-border-style-solid) var(--sp-form-valid-border);
       }
 
       .border-error {
-        border: 2px solid #ef4444;
+        border: var(--sp-border-width-thick) var(--sp-border-style-solid) var(--sp-form-invalid-border);
       }
 
       .border-label {
-        font-size: 1rem;
+        font-size: var(--sp-font-md-size);
         font-weight: 600;
-        color: #0f172a;
-        margin-bottom: 0.25rem;
+        color: var(--sp-color-neutral-900);
+        margin-bottom: var(--sp-space-4);
       }
 
       .border-value {
-        font-size: 0.875rem;
+        font-size: var(--sp-font-sm-size);
         font-family: monospace;
-        color: #64748b;
+        color: var(--sp-color-neutral-500);
       }
     </style>
   </head>
@@ -182,27 +166,27 @@
           <div class="radius-example">
             <div class="radius-box radius-none"></div>
             <div class="radius-label">None</div>
-            <div class="radius-value">0</div>
+            <div class="radius-value">--sp-radius-none</div>
           </div>
           <div class="radius-example">
             <div class="radius-box radius-sm"></div>
             <div class="radius-label">Small</div>
-            <div class="radius-value">2px</div>
+            <div class="radius-value">--sp-radius-sm</div>
           </div>
           <div class="radius-example">
             <div class="radius-box radius-md"></div>
             <div class="radius-label">Medium</div>
-            <div class="radius-value">4px</div>
+            <div class="radius-value">--sp-radius-md</div>
           </div>
           <div class="radius-example">
             <div class="radius-box radius-lg"></div>
             <div class="radius-label">Large</div>
-            <div class="radius-value">8px</div>
+            <div class="radius-value">--sp-radius-lg</div>
           </div>
           <div class="radius-example">
             <div class="radius-box radius-pill"></div>
             <div class="radius-label">Pill</div>
-            <div class="radius-value">999px</div>
+            <div class="radius-value">--sp-radius-pill</div>
           </div>
         </div>
       </div>
@@ -213,12 +197,12 @@
           <div class="border-example">
             <div class="border-box border-card">Card Border</div>
             <div class="border-label">Card</div>
-            <div class="border-value">#e2e8f0</div>
+            <div class="border-value">--sp-color-neutral-200</div>
           </div>
           <div class="border-example">
             <div class="border-box border-input">Input Border</div>
             <div class="border-label">Input</div>
-            <div class="border-value">#cbd5e1</div>
+            <div class="border-value">--sp-form-default-border</div>
           </div>
         </div>
       </div>
@@ -229,17 +213,17 @@
           <div class="border-example">
             <div class="border-box border-focus">Focus State</div>
             <div class="border-label">Focus</div>
-            <div class="border-value">forms.focus.border (colors.info.500)</div>
+            <div class="border-value">--sp-form-hover-border</div>
           </div>
           <div class="border-example">
             <div class="border-box border-success">Valid State</div>
             <div class="border-label">Success</div>
-            <div class="border-value">2px solid #22c55e</div>
+            <div class="border-value">--sp-form-valid-border</div>
           </div>
           <div class="border-example">
             <div class="border-box border-error">Error State</div>
             <div class="border-label">Error</div>
-            <div class="border-value">2px solid #ef4444</div>
+            <div class="border-value">--sp-form-invalid-border</div>
           </div>
         </div>
       </div>
