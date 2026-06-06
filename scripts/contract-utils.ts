@@ -98,3 +98,16 @@ export const getPathValue = (source: unknown, path: string): unknown =>
     }
     return undefined;
   }, source);
+
+export function findWrappedEntry(value: unknown, path: string[] = []): string | null {
+  if (!value || typeof value !== 'object' || Array.isArray(value)) return null;
+  const record = value as Record<string, unknown>;
+  if ('value' in record || 'metadata' in record) {
+    return path.length > 0 ? path.join('.') : '<root>';
+  }
+  for (const [key, entry] of Object.entries(record)) {
+    const found = findWrappedEntry(entry, [...path, key]);
+    if (found !== null) return found;
+  }
+  return null;
+}

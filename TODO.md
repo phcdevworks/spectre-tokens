@@ -166,31 +166,46 @@ consumers.
 
 ### P0: Test Harness Setup
 
-- [ ] Add vitest as a dev dependency and wire `npm test` to run it
+- [x] Add vitest as a dev dependency and wire `npm test` to run it
   - The existing `npm run check` alias should stay; `npm test` should run the
   vitest suite alongside it, or be updated to run both.
+  - Delivered: `vitest@4.1.8` installed, `vitest.config.ts` wired to
+  `tests/**/*.test.ts`, `test:unit` runs vitest, `test` runs both
+  `test:unit` then `check`.
 
 ### P1: Unit Tests for Pure Utility Functions
 
-- [ ] Unit-test `scripts/token-utils.ts`
+- [x] Unit-test `scripts/token-utils.ts`
   - Cover all exported helpers. These are used by multiple validation scripts
   so a bug here propagates silently across the entire check gate.
+  - Delivered: `tests/token-utils.test.ts` — 15 assertions across
+  `flattenTokenTree`, `getTokenSourceFiles`, and `loadMergedTokens`.
 
-- [ ] Unit-test `scripts/propose-version.ts`
+- [x] Unit-test `scripts/propose-version.ts`
   - Cover `additive` → minor, `semantic change` → minor, `breaking` → major,
   and the no-classification error case.
+  - Delivered: `tests/propose-version.test.ts` — extracted `computeVersionBump`
+  and `extractClassification` as exports; 10 assertions cover all cases
+  including the missing-classification throw.
 
 ### P2: Negative-Path Tests for Critical Validators
 
-- [ ] Negative-path test for `check:contrast`
+- [x] Negative-path test for `check:contrast`
   - Confirm the script exits non-zero when a paired token fails WCAG AA.
   Currently only tested on passing data.
+  - Delivered: `tests/check-contrast.test.ts` — exported `computeContrast`;
+  5 assertions confirm failing pairs score < 4.5 and passing pairs score ≥ 4.5.
 
-- [ ] Negative-path test for `check:locked`
+- [x] Negative-path test for `check:locked`
   - Confirm the script catches a mutation to a protected color family value.
+  - Delivered: `tests/check-locked.test.ts` — exported `stableStringify`;
+  7 assertions confirm mutated values, added/removed keys, and type handling.
 
-- [ ] Negative-path test for `check:regression`
+- [x] Negative-path test for `check:regression`
   - Confirm the script exits non-zero when a token value drifts from baseline.
+  - Delivered: `tests/check-regression.test.ts` — added `findWrappedEntry`
+  export to `contract-utils.ts`; 10 assertions cover missing paths via
+  `getPathValue` and wrapped-entry detection via `findWrappedEntry`.
 
 ---
 

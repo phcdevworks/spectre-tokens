@@ -1,13 +1,16 @@
 import { colord, extend } from 'colord';
 import a11yPlugin from 'colord/plugins/a11y';
+import { fileURLToPath } from 'node:url';
 import type { SpectreSourceTokens } from '../src/generated/tokens';
 import { loadMergedTokens } from './token-utils';
 
 extend([a11yPlugin]);
 
-const tokens = loadMergedTokens() as SpectreSourceTokens;
-
 const TOKEN_REF_REGEX = /\{([^}]+)\}/;
+
+export function computeContrast(bg: string, text: string): number {
+  return colord(bg).contrast(text)
+}
 
 function resolveToken(pathStr: string, allTokens: SpectreSourceTokens): string {
   if (!pathStr || typeof pathStr !== 'string' || !pathStr.includes('{')) {
@@ -48,45 +51,48 @@ function resolveToken(pathStr: string, allTokens: SpectreSourceTokens): string {
   return resolveToken(resolvedString, allTokens);
 }
 
-const failures: string[] = [];
+if (process.argv[1] !== undefined && fileURLToPath(import.meta.url) === process.argv[1]) {
+  const tokens = loadMergedTokens() as SpectreSourceTokens;
+  const failures: string[] = [];
 
-function checkTokensRecursively(obj: Record<string, unknown> | SpectreSourceTokens, currentPath: string) {
-  for (const [key, value] of Object.entries(obj as Record<string, unknown>)) {
-    if (key === 'metadata' || key === 'value') continue;
+  function checkTokensRecursively(obj: Record<string, unknown> | SpectreSourceTokens, currentPath: string) {
+    for (const [key, value] of Object.entries(obj as Record<string, unknown>)) {
+      if (key === 'metadata' || key === 'value') continue;
 
-    const fullPath = currentPath ? `${currentPath}.${key}` : key;
+      const fullPath = currentPath ? `${currentPath}.${key}` : key;
 
-    try {
-      if (value && typeof value === 'object') {
-        const valObj = value as { value?: unknown; metadata?: { pair?: string } };
+      try {
+        if (value && typeof value === 'object') {
+          const valObj = value as { value?: unknown; metadata?: { pair?: string } };
 
-        if (typeof valObj.value === 'string' && valObj.metadata?.pair) {
-          const bgValue = resolveToken(valObj.value, tokens);
-          const pairPath = valObj.metadata.pair;
-          const textValue = resolveToken(`{${pairPath}}`, tokens);
+          if (typeof valObj.value === 'string' && valObj.metadata?.pair) {
+            const bgValue = resolveToken(valObj.value, tokens);
+            const pairPath = valObj.metadata.pair;
+            const textValue = resolveToken(`{${pairPath}}`, tokens);
 
-          const contrast = colord(bgValue).contrast(textValue);
+            const contrast = computeContrast(bgValue, textValue);
 
-          if (contrast < 4.5) {
-            failures.push(`${fullPath} vs ${pairPath}: ${contrast.toFixed(2)}:1 (need 4.5:1)`);
+            if (contrast < 4.5) {
+              failures.push(`${fullPath} vs ${pairPath}: ${contrast.toFixed(2)}:1 (need 4.5:1)`);
+            }
+          } else {
+            checkTokensRecursively(value as Record<string, unknown>, fullPath);
           }
-        } else {
-          checkTokensRecursively(value as Record<string, unknown>, fullPath);
         }
+      } catch (err: unknown) {
+        console.error(`[ERROR] ${fullPath}: ${(err as Error).message}`);
+        process.exit(1);
       }
-    } catch (err: unknown) {
-      console.error(`[ERROR] ${fullPath}: ${(err as Error).message}`);
-      process.exit(1);
     }
   }
-}
 
-checkTokensRecursively(tokens, '');
+  checkTokensRecursively(tokens, '');
 
-if (failures.length > 0) {
-  console.error('Contrast check failed:');
-  failures.forEach(f => console.error(` [FAIL] ${f}`));
-  process.exit(1);
-} else {
-  console.log('Contrast check passed. All pairs meet WCAG AA (4.5:1).');
+  if (failures.length > 0) {
+    console.error('Contrast check failed:');
+    failures.forEach(f => console.error(` [FAIL] ${f}`));
+    process.exit(1);
+  } else {
+    console.log('Contrast check passed. All pairs meet WCAG AA (4.5:1).');
+  }
 }

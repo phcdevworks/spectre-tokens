@@ -22,6 +22,6 @@
     "resolveJsonModule": true,
     "esModuleInterop": true
   },
-  "include": ["src", "tokens", "scripts", "eslint.config.ts", "tsup.config.ts"],
+  "include": ["src", "tokens", "scripts", "tests", "eslint.config.ts", "tsup.config.ts", "vitest.config.ts"],
   "exclude": ["dist", "node_modules"]
 }
