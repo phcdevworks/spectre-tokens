@@ -1516,6 +1516,14 @@
       "$value": "16px",
       "$type": "dimension"
     },
+    "3xl": {
+      "$value": "24px",
+      "$type": "dimension"
+    },
+    "4xl": {
+      "$value": "32px",
+      "$type": "dimension"
+    },
     "pill": {
       "$value": "999px",
       "$type": "dimension"
