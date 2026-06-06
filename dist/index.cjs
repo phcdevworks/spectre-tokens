@@ -543,6 +543,7 @@ var coreTokens = {
   },
   "transitions": {
     "duration": {
+      "reduced": "0.01ms",
       "instant": "75ms",
       "fast": "150ms",
       "base": "200ms",
@@ -602,6 +603,48 @@ var coreTokens = {
       "duration": "{transitions.duration.slowest}",
       "easing": "{transitions.easing.spring}",
       "keyframes": "pulse"
+    },
+    "reducedMotion": {
+      "fadeIn": {
+        "duration": "{transitions.duration.reduced}",
+        "easing": "{transitions.easing.linear}",
+        "keyframes": "fade-in"
+      },
+      "fadeOut": {
+        "duration": "{transitions.duration.reduced}",
+        "easing": "{transitions.easing.linear}",
+        "keyframes": "fade-out"
+      },
+      "slideUp": {
+        "duration": "{transitions.duration.reduced}",
+        "easing": "{transitions.easing.linear}",
+        "keyframes": "slide-up"
+      },
+      "slideDown": {
+        "duration": "{transitions.duration.reduced}",
+        "easing": "{transitions.easing.linear}",
+        "keyframes": "slide-down"
+      },
+      "scaleIn": {
+        "duration": "{transitions.duration.reduced}",
+        "easing": "{transitions.easing.linear}",
+        "keyframes": "scale-in"
+      },
+      "bounce": {
+        "duration": "{transitions.duration.reduced}",
+        "easing": "{transitions.easing.linear}",
+        "keyframes": "bounce"
+      },
+      "shake": {
+        "duration": "{transitions.duration.reduced}",
+        "easing": "{transitions.easing.linear}",
+        "keyframes": "shake"
+      },
+      "pulse": {
+        "duration": "{transitions.duration.reduced}",
+        "easing": "{transitions.easing.linear}",
+        "keyframes": "pulse"
+      }
     }
   },
   "opacity": {
@@ -637,6 +680,7 @@ var coreTokens = {
       "offset": "2px",
       "style": "solid"
     },
+    "reducedMotion": "{transitions.duration.reduced}",
     "minTouchTarget": "44px",
     "minTextSize": "16px"
   },
@@ -1027,6 +1071,7 @@ var createCssVariableMap = (tokens2, options = {}) => {
   assign(toVariableName(prefix, "focus-ring-style"), baseTokens.accessibility.focusRing.style);
   assign(toVariableName(prefix, "min-touch-target"), baseTokens.accessibility.minTouchTarget);
   assign(toVariableName(prefix, "min-text-size"), baseTokens.accessibility.minTextSize);
+  assign(toVariableName(prefix, "reduced-motion"), baseTokens.accessibility.reducedMotion);
   Object.entries(baseTokens.buttons).forEach(([variant, states]) => {
     Object.entries(states).forEach(([state, value]) => {
       assign(toVariableName(prefix, "button", variant, state), value);
@@ -1038,11 +1083,22 @@ var createCssVariableMap = (tokens2, options = {}) => {
     });
   });
   if (baseTokens.animations) {
-    Object.entries(baseTokens.animations).forEach(([name, animation]) => {
-      assign(toVariableName(prefix, "animation", name, "duration"), animation.duration);
-      assign(toVariableName(prefix, "animation", name, "easing"), animation.easing);
-      assign(toVariableName(prefix, "animation", name, "keyframes"), animation.keyframes);
-    });
+    Object.entries(baseTokens.animations).forEach(
+      ([name, animation]) => {
+        if (name === "reducedMotion") {
+          Object.entries(animation).forEach(([subName, subAnimation]) => {
+            assign(toVariableName(prefix, "animation", "reduced-motion", subName, "duration"), subAnimation.duration);
+            assign(toVariableName(prefix, "animation", "reduced-motion", subName, "easing"), subAnimation.easing);
+            assign(toVariableName(prefix, "animation", "reduced-motion", subName, "keyframes"), subAnimation.keyframes);
+          });
+        } else {
+          const entry = animation;
+          assign(toVariableName(prefix, "animation", name, "duration"), entry.duration);
+          assign(toVariableName(prefix, "animation", name, "easing"), entry.easing);
+          assign(toVariableName(prefix, "animation", name, "keyframes"), entry.keyframes);
+        }
+      }
+    );
   }
   return map;
 };

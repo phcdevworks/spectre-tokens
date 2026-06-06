@@ -61,6 +61,7 @@
   },
   "transitions": {
     "duration": {
+      "reduced": "0.01ms",
       "instant": "75ms",
       "fast": "150ms",
       "base": "200ms",
@@ -120,6 +121,48 @@
       "duration": "{transitions.duration.slowest}",
       "easing": "{transitions.easing.spring}",
       "keyframes": "pulse"
+    },
+    "reducedMotion": {
+      "fadeIn": {
+        "duration": "{transitions.duration.reduced}",
+        "easing": "{transitions.easing.linear}",
+        "keyframes": "fade-in"
+      },
+      "fadeOut": {
+        "duration": "{transitions.duration.reduced}",
+        "easing": "{transitions.easing.linear}",
+        "keyframes": "fade-out"
+      },
+      "slideUp": {
+        "duration": "{transitions.duration.reduced}",
+        "easing": "{transitions.easing.linear}",
+        "keyframes": "slide-up"
+      },
+      "slideDown": {
+        "duration": "{transitions.duration.reduced}",
+        "easing": "{transitions.easing.linear}",
+        "keyframes": "slide-down"
+      },
+      "scaleIn": {
+        "duration": "{transitions.duration.reduced}",
+        "easing": "{transitions.easing.linear}",
+        "keyframes": "scale-in"
+      },
+      "bounce": {
+        "duration": "{transitions.duration.reduced}",
+        "easing": "{transitions.easing.linear}",
+        "keyframes": "bounce"
+      },
+      "shake": {
+        "duration": "{transitions.duration.reduced}",
+        "easing": "{transitions.easing.linear}",
+        "keyframes": "shake"
+      },
+      "pulse": {
+        "duration": "{transitions.duration.reduced}",
+        "easing": "{transitions.easing.linear}",
+        "keyframes": "pulse"
+      }
     }
   },
   "opacity": {
@@ -155,6 +198,7 @@
       "offset": "2px",
       "style": "solid"
     },
+    "reducedMotion": "{transitions.duration.reduced}",
     "minTouchTarget": "44px",
     "minTextSize": "16px"
   },
