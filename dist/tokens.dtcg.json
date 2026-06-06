@@ -1625,6 +1625,10 @@
   },
   "transitions": {
     "duration": {
+      "reduced": {
+        "$value": "0.01ms",
+        "$type": "duration"
+      },
       "instant": {
         "$value": "75ms",
         "$type": "duration"
@@ -1801,6 +1805,120 @@
         "$value": "pulse",
         "$type": "string"
       }
+    },
+    "reducedMotion": {
+      "fadeIn": {
+        "duration": {
+          "$value": "{transitions.duration.reduced}",
+          "$type": "string"
+        },
+        "easing": {
+          "$value": "{transitions.easing.linear}",
+          "$type": "string"
+        },
+        "keyframes": {
+          "$value": "fade-in",
+          "$type": "string"
+        }
+      },
+      "fadeOut": {
+        "duration": {
+          "$value": "{transitions.duration.reduced}",
+          "$type": "string"
+        },
+        "easing": {
+          "$value": "{transitions.easing.linear}",
+          "$type": "string"
+        },
+        "keyframes": {
+          "$value": "fade-out",
+          "$type": "string"
+        }
+      },
+      "slideUp": {
+        "duration": {
+          "$value": "{transitions.duration.reduced}",
+          "$type": "string"
+        },
+        "easing": {
+          "$value": "{transitions.easing.linear}",
+          "$type": "string"
+        },
+        "keyframes": {
+          "$value": "slide-up",
+          "$type": "string"
+        }
+      },
+      "slideDown": {
+        "duration": {
+          "$value": "{transitions.duration.reduced}",
+          "$type": "string"
+        },
+        "easing": {
+          "$value": "{transitions.easing.linear}",
+          "$type": "string"
+        },
+        "keyframes": {
+          "$value": "slide-down",
+          "$type": "string"
+        }
+      },
+      "scaleIn": {
+        "duration": {
+          "$value": "{transitions.duration.reduced}",
+          "$type": "string"
+        },
+        "easing": {
+          "$value": "{transitions.easing.linear}",
+          "$type": "string"
+        },
+        "keyframes": {
+          "$value": "scale-in",
+          "$type": "string"
+        }
+      },
+      "bounce": {
+        "duration": {
+          "$value": "{transitions.duration.reduced}",
+          "$type": "string"
+        },
+        "easing": {
+          "$value": "{transitions.easing.linear}",
+          "$type": "string"
+        },
+        "keyframes": {
+          "$value": "bounce",
+          "$type": "string"
+        }
+      },
+      "shake": {
+        "duration": {
+          "$value": "{transitions.duration.reduced}",
+          "$type": "string"
+        },
+        "easing": {
+          "$value": "{transitions.easing.linear}",
+          "$type": "string"
+        },
+        "keyframes": {
+          "$value": "shake",
+          "$type": "string"
+        }
+      },
+      "pulse": {
+        "duration": {
+          "$value": "{transitions.duration.reduced}",
+          "$type": "string"
+        },
+        "easing": {
+          "$value": "{transitions.easing.linear}",
+          "$type": "string"
+        },
+        "keyframes": {
+          "$value": "pulse",
+          "$type": "string"
+        }
+      }
     }
   },
   "opacity": {
@@ -1907,6 +2025,10 @@
         "$value": "solid",
         "$type": "string"
       }
+    },
+    "reducedMotion": {
+      "$value": "{transitions.duration.reduced}",
+      "$type": "string"
     },
     "minTouchTarget": {
       "$value": "44px",

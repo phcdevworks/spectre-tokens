@@ -1,4 +1,5 @@
 import type {
+  AnimationEntry,
   ComponentBadgeTokens,
   ComponentIconBoxTokens,
   CssVariableMap,
@@ -240,6 +241,7 @@ export const createCssVariableMap = (tokens: SpectreTokens, options: CssVariable
   assign(toVariableName(prefix, 'focus-ring-style'), baseTokens.accessibility.focusRing.style)
   assign(toVariableName(prefix, 'min-touch-target'), baseTokens.accessibility.minTouchTarget)
   assign(toVariableName(prefix, 'min-text-size'), baseTokens.accessibility.minTextSize)
+  assign(toVariableName(prefix, 'reduced-motion'), baseTokens.accessibility.reducedMotion)
 
   Object.entries(baseTokens.buttons).forEach(([variant, states]) => {
     Object.entries(states).forEach(([state, value]) => {
@@ -254,11 +256,22 @@ export const createCssVariableMap = (tokens: SpectreTokens, options: CssVariable
   })
 
   if (baseTokens.animations) {
-    Object.entries(baseTokens.animations as unknown as Record<string, { duration: string; easing: string; keyframes: string }>).forEach(([name, animation]) => {
-      assign(toVariableName(prefix, 'animation', name, 'duration'), animation.duration)
-      assign(toVariableName(prefix, 'animation', name, 'easing'), animation.easing)
-      assign(toVariableName(prefix, 'animation', name, 'keyframes'), animation.keyframes)
-    })
+    Object.entries(baseTokens.animations as unknown as Record<string, AnimationEntry | Record<string, AnimationEntry>>).forEach(
+      ([name, animation]) => {
+        if (name === 'reducedMotion') {
+          Object.entries(animation as Record<string, AnimationEntry>).forEach(([subName, subAnimation]) => {
+            assign(toVariableName(prefix, 'animation', 'reduced-motion', subName, 'duration'), subAnimation.duration)
+            assign(toVariableName(prefix, 'animation', 'reduced-motion', subName, 'easing'), subAnimation.easing)
+            assign(toVariableName(prefix, 'animation', 'reduced-motion', subName, 'keyframes'), subAnimation.keyframes)
+          })
+        } else {
+          const entry = animation as AnimationEntry
+          assign(toVariableName(prefix, 'animation', name, 'duration'), entry.duration)
+          assign(toVariableName(prefix, 'animation', name, 'easing'), entry.easing)
+          assign(toVariableName(prefix, 'animation', name, 'keyframes'), entry.keyframes)
+        }
+      }
+    )
   }
 
   return map
