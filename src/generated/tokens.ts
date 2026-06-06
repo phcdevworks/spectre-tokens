@@ -1507,6 +1507,7 @@ export interface SpectreSourceTokens {
   };
   transitions: {
     duration: {
+      reduced: string;
       instant: string;
       fast: string;
       base: string;
@@ -1567,6 +1568,48 @@ export interface SpectreSourceTokens {
       easing: string;
       keyframes: string;
     };
+    reducedMotion: {
+      fadeIn: {
+        duration: string;
+        easing: string;
+        keyframes: string;
+      };
+      fadeOut: {
+        duration: string;
+        easing: string;
+        keyframes: string;
+      };
+      slideUp: {
+        duration: string;
+        easing: string;
+        keyframes: string;
+      };
+      slideDown: {
+        duration: string;
+        easing: string;
+        keyframes: string;
+      };
+      scaleIn: {
+        duration: string;
+        easing: string;
+        keyframes: string;
+      };
+      bounce: {
+        duration: string;
+        easing: string;
+        keyframes: string;
+      };
+      shake: {
+        duration: string;
+        easing: string;
+        keyframes: string;
+      };
+      pulse: {
+        duration: string;
+        easing: string;
+        keyframes: string;
+      };
+    };
   };
   opacity: {
     disabled: string;
@@ -1601,6 +1644,7 @@ export interface SpectreSourceTokens {
       offset: string;
       style: string;
     };
+    reducedMotion: string;
     minTouchTarget: string;
     minTextSize: string;
   };
@@ -2384,6 +2428,7 @@ export interface SpectreGeneratedTokens {
   };
   transitions: {
     duration: {
+      reduced: string;
       instant: string;
       fast: string;
       base: string;
@@ -2444,6 +2489,48 @@ export interface SpectreGeneratedTokens {
       easing: string;
       keyframes: string;
     };
+    reducedMotion: {
+      fadeIn: {
+        duration: string;
+        easing: string;
+        keyframes: string;
+      };
+      fadeOut: {
+        duration: string;
+        easing: string;
+        keyframes: string;
+      };
+      slideUp: {
+        duration: string;
+        easing: string;
+        keyframes: string;
+      };
+      slideDown: {
+        duration: string;
+        easing: string;
+        keyframes: string;
+      };
+      scaleIn: {
+        duration: string;
+        easing: string;
+        keyframes: string;
+      };
+      bounce: {
+        duration: string;
+        easing: string;
+        keyframes: string;
+      };
+      shake: {
+        duration: string;
+        easing: string;
+        keyframes: string;
+      };
+      pulse: {
+        duration: string;
+        easing: string;
+        keyframes: string;
+      };
+    };
   };
   opacity: {
     disabled: string;
@@ -2478,6 +2565,7 @@ export interface SpectreGeneratedTokens {
       offset: string;
       style: string;
     };
+    reducedMotion: string;
     minTouchTarget: string;
     minTextSize: string;
   };
@@ -3192,6 +3280,7 @@ export const coreTokens: SpectreGeneratedTokens = {
   },
   "transitions": {
     "duration": {
+      "reduced": "0.01ms",
       "instant": "75ms",
       "fast": "150ms",
       "base": "200ms",
@@ -3251,6 +3340,48 @@ export const coreTokens: SpectreGeneratedTokens = {
       "duration": "{transitions.duration.slowest}",
       "easing": "{transitions.easing.spring}",
       "keyframes": "pulse"
+    },
+    "reducedMotion": {
+      "fadeIn": {
+        "duration": "{transitions.duration.reduced}",
+        "easing": "{transitions.easing.linear}",
+        "keyframes": "fade-in"
+      },
+      "fadeOut": {
+        "duration": "{transitions.duration.reduced}",
+        "easing": "{transitions.easing.linear}",
+        "keyframes": "fade-out"
+      },
+      "slideUp": {
+        "duration": "{transitions.duration.reduced}",
+        "easing": "{transitions.easing.linear}",
+        "keyframes": "slide-up"
+      },
+      "slideDown": {
+        "duration": "{transitions.duration.reduced}",
+        "easing": "{transitions.easing.linear}",
+        "keyframes": "slide-down"
+      },
+      "scaleIn": {
+        "duration": "{transitions.duration.reduced}",
+        "easing": "{transitions.easing.linear}",
+        "keyframes": "scale-in"
+      },
+      "bounce": {
+        "duration": "{transitions.duration.reduced}",
+        "easing": "{transitions.easing.linear}",
+        "keyframes": "bounce"
+      },
+      "shake": {
+        "duration": "{transitions.duration.reduced}",
+        "easing": "{transitions.easing.linear}",
+        "keyframes": "shake"
+      },
+      "pulse": {
+        "duration": "{transitions.duration.reduced}",
+        "easing": "{transitions.easing.linear}",
+        "keyframes": "pulse"
+      }
     }
   },
   "opacity": {
@@ -3286,6 +3417,7 @@ export const coreTokens: SpectreGeneratedTokens = {
       "offset": "2px",
       "style": "solid"
     },
+    "reducedMotion": "{transitions.duration.reduced}",
     "minTouchTarget": "44px",
     "minTextSize": "16px"
   },

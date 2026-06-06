@@ -8,6 +8,11 @@ reflects package releases published to npm.
 
 Contract change type: additive
 
+### Added
+
+- Added `reduced` (0.01ms) duration to `transitions.duration` and `reducedMotion` semantic token to `accessibility` in `tokens/primitives.json`.
+- Added `animations.reducedMotion` variants for all 8 named animations (`fadeIn`, `fadeOut`, `slideUp`, `slideDown`, `scaleIn`, `bounce`, `shake`, `pulse`) to provide near-zero duration alternatives for reduced-motion accessibility.
+
 ## [2.8.0] - 2026-06-06
 
 **Release Title:** Focus Token Parity and Color Reference Consistency
