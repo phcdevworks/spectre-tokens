@@ -509,6 +509,8 @@ var coreTokens = {
     "lg": "8px",
     "xl": "12px",
     "2xl": "16px",
+    "3xl": "24px",
+    "4xl": "32px",
     "pill": "999px"
   },
   "shadows": {

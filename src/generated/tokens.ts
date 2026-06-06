@@ -1469,6 +1469,8 @@ export interface SpectreSourceTokens {
     lg: string;
     xl: string;
     '2xl': string;
+    '3xl': string;
+    '4xl': string;
     pill: string;
   };
   shadows: {
@@ -2342,6 +2344,8 @@ export interface SpectreGeneratedTokens {
     lg: string;
     xl: string;
     '2xl': string;
+    '3xl': string;
+    '4xl': string;
     pill: string;
   };
   shadows: {
@@ -3146,6 +3150,8 @@ export const coreTokens: SpectreGeneratedTokens = {
     "lg": "8px",
     "xl": "12px",
     "2xl": "16px",
+    "3xl": "24px",
+    "4xl": "32px",
     "pill": "999px"
   },
   "shadows": {
