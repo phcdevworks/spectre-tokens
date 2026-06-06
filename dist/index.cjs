@@ -1083,21 +1083,22 @@ var createCssVariableMap = (tokens2, options = {}) => {
     });
   });
   if (baseTokens.animations) {
-    Object.entries(baseTokens.animations).forEach(([name, animation]) => {
-      if (name === "reducedMotion") {
-        Object.entries(animation).forEach(
-          ([subName, subAnimation]) => {
+    Object.entries(baseTokens.animations).forEach(
+      ([name, animation]) => {
+        if (name === "reducedMotion") {
+          Object.entries(animation).forEach(([subName, subAnimation]) => {
             assign(toVariableName(prefix, "animation", "reduced-motion", subName, "duration"), subAnimation.duration);
             assign(toVariableName(prefix, "animation", "reduced-motion", subName, "easing"), subAnimation.easing);
             assign(toVariableName(prefix, "animation", "reduced-motion", subName, "keyframes"), subAnimation.keyframes);
-          }
-        );
-      } else {
-        assign(toVariableName(prefix, "animation", name, "duration"), animation.duration);
-        assign(toVariableName(prefix, "animation", name, "easing"), animation.easing);
-        assign(toVariableName(prefix, "animation", name, "keyframes"), animation.keyframes);
+          });
+        } else {
+          const entry = animation;
+          assign(toVariableName(prefix, "animation", name, "duration"), entry.duration);
+          assign(toVariableName(prefix, "animation", name, "easing"), entry.easing);
+          assign(toVariableName(prefix, "animation", name, "keyframes"), entry.keyframes);
+        }
       }
-    });
+    );
   }
   return map;
 };
