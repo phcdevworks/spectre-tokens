@@ -288,6 +288,7 @@
   --sp-button-danger-text: #ffffff;
   --sp-button-danger-textdisabled: #8a96ad;
   --sp-button-danger-focusring: rgba(239, 68, 68, 0.4);
+  --sp-button-danger-focusvisible: rgba(239, 68, 68, 0.4);
   --sp-button-success-bg: #15803d;
   --sp-button-success-bghover: #166534;
   --sp-button-success-bgactive: #14532d;
@@ -295,6 +296,7 @@
   --sp-button-success-text: #ffffff;
   --sp-button-success-textdisabled: #8a96ad;
   --sp-button-success-focusring: rgba(34, 197, 94, 0.4);
+  --sp-button-success-focusvisible: rgba(34, 197, 94, 0.4);
   --sp-button-cta-bg: #1f57db;
   --sp-button-cta-bghover: #1946b4;
   --sp-button-cta-bgactive: #173b8f;

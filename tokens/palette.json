@@ -92,9 +92,9 @@
       "600": "#6f3fd7"
     },
     "focus": {
-      "primary": "#336df4",
-      "error": "#ef4444",
-      "info": "#0369a1"
+      "primary": "{colors.brand.500}",
+      "error": "{colors.error.500}",
+      "info": "{colors.info.600}"
     },
     "white": "#ffffff",
     "black": "#000000"
