@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Typography - Spectre Tokens</title>
+    <link rel="stylesheet" href="../dist/index.css" />
     <style>
       * {
         margin: 0;
@@ -12,12 +13,9 @@
       }
 
       body {
-        font-family:
-          system-ui,
-          -apple-system,
-          sans-serif;
-        padding: 2rem;
-        background: #f8fafc;
+        font-family: var(--sp-font-family-sans);
+        padding: var(--sp-space-32);
+        background: var(--sp-surface-page);
       }
 
       .container {
@@ -26,44 +24,44 @@
       }
 
       .header {
-        margin-bottom: 2rem;
+        margin-bottom: var(--sp-space-32);
       }
 
       .back-link {
-        color: #1f57db;
+        color: var(--sp-text-on-page-brand);
         text-decoration: none;
-        margin-bottom: 1rem;
+        margin-bottom: var(--sp-space-16);
         display: inline-block;
       }
 
       h1 {
-        font-size: 3rem;
-        margin-bottom: 0.5rem;
-        color: #0f172a;
+        font-size: var(--sp-font-4xl-size);
+        margin-bottom: var(--sp-space-8);
+        color: var(--sp-color-neutral-900);
       }
 
       .subtitle {
         font-size: 1.125rem;
-        color: #475569;
+        color: var(--sp-text-on-page-muted);
       }
 
       .section {
-        background: white;
-        border-radius: 8px;
-        padding: 2rem;
-        margin-bottom: 2rem;
-        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        background: var(--sp-surface-card);
+        border-radius: var(--sp-radius-lg);
+        padding: var(--sp-space-32);
+        margin-bottom: var(--sp-space-32);
+        box-shadow: var(--sp-shadow-sm);
       }
 
       h2 {
-        font-size: 1.5rem;
-        color: #0f172a;
-        margin-bottom: 1.5rem;
+        font-size: var(--sp-font-xl-size);
+        color: var(--sp-color-neutral-900);
+        margin-bottom: var(--sp-space-24);
       }
 
       .type-example {
-        padding: 1.5rem;
-        border-bottom: 1px solid #e2e8f0;
+        padding: var(--sp-space-24);
+        border-bottom: var(--sp-border-width-base) var(--sp-border-style-solid) var(--sp-color-neutral-200);
       }
 
       .type-example:last-child {
@@ -71,124 +69,97 @@
       }
 
       .type-sample {
-        margin-bottom: 0.5rem;
-        color: #0f172a;
+        margin-bottom: var(--sp-space-8);
+        color: var(--sp-color-neutral-900);
       }
 
       .type-meta {
-        font-size: 0.875rem;
-        color: #64748b;
+        font-size: var(--sp-font-sm-size);
+        color: var(--sp-color-neutral-500);
         font-family: monospace;
       }
 
       /* Typography Scale */
       .type-6xl {
-        font-size: 4.5rem;
-        line-height: 5rem;
-        font-weight: 900;
+        font-size: var(--sp-font-6xl-size);
+        line-height: var(--sp-font-6xl-line-height);
+        font-weight: var(--sp-font-6xl-weight);
       }
 
       .type-5xl {
-        font-size: 3.75rem;
-        line-height: 4.25rem;
-        font-weight: 800;
+        font-size: var(--sp-font-5xl-size);
+        line-height: var(--sp-font-5xl-line-height);
+        font-weight: var(--sp-font-5xl-weight);
       }
 
       .type-4xl {
-        font-size: 3rem;
-        line-height: 3.5rem;
-        font-weight: 800;
+        font-size: var(--sp-font-4xl-size);
+        line-height: var(--sp-font-4xl-line-height);
+        font-weight: var(--sp-font-4xl-weight);
       }
 
       .type-3xl {
-        font-size: 2.25rem;
-        line-height: 2.75rem;
-        font-weight: 700;
+        font-size: var(--sp-font-3xl-size);
+        line-height: var(--sp-font-3xl-line-height);
+        font-weight: var(--sp-font-3xl-weight);
       }
 
       .type-2xl {
-        font-size: 1.875rem;
-        line-height: 2.5rem;
-        font-weight: 700;
+        font-size: var(--sp-font-2xl-size);
+        line-height: var(--sp-font-2xl-line-height);
+        font-weight: var(--sp-font-2xl-weight);
       }
 
       .type-xl {
-        font-size: 1.5rem;
-        line-height: 2.125rem;
-        font-weight: 600;
+        font-size: var(--sp-font-xl-size);
+        line-height: var(--sp-font-xl-line-height);
+        font-weight: var(--sp-font-xl-weight);
       }
 
       .type-lg {
-        font-size: 1.25rem;
-        line-height: 2rem;
-        font-weight: 600;
+        font-size: var(--sp-font-lg-size);
+        line-height: var(--sp-font-lg-line-height);
+        font-weight: var(--sp-font-lg-weight);
       }
 
       .type-md {
-        font-size: 1rem;
-        line-height: 1.75rem;
-        font-weight: 500;
+        font-size: var(--sp-font-md-size);
+        line-height: var(--sp-font-md-line-height);
+        font-weight: var(--sp-font-md-weight);
       }
 
       .type-sm {
-        font-size: 0.875rem;
-        line-height: 1.5rem;
-        font-weight: 400;
+        font-size: var(--sp-font-sm-size);
+        line-height: var(--sp-font-sm-line-height);
+        font-weight: var(--sp-font-sm-weight);
       }
 
       .type-xs {
-        font-size: 0.75rem;
-        line-height: 1.25rem;
-        font-weight: 400;
+        font-size: var(--sp-font-xs-size);
+        line-height: var(--sp-font-xs-line-height);
+        font-weight: var(--sp-font-xs-weight);
         letter-spacing: 0.02em;
       }
 
       .font-families {
         display: grid;
-        gap: 1.5rem;
+        gap: var(--sp-space-24);
       }
 
       .font-family-example {
-        padding: 1.5rem;
-        background: #f8fafc;
-        border-radius: 8px;
+        padding: var(--sp-space-24);
+        background: var(--sp-surface-page);
+        border-radius: var(--sp-radius-lg);
       }
 
-      .font-sans {
-        font-family:
-          system-ui,
-          -apple-system,
-          Segoe UI,
-          Roboto,
-          Helvetica,
-          Arial,
-          sans-serif;
-      }
+      .font-sans { font-family: var(--sp-font-family-sans); }
+      .font-serif { font-family: var(--sp-font-family-serif); }
+      .font-mono { font-family: var(--sp-font-family-mono); }
 
-      .font-serif {
-        font-family: 'Times New Roman', Times, serif;
-      }
-
-      .font-mono {
-        font-family:
-          'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
-      }
-
-      .role-brand {
-        color: #1f57db;
-      }
-
-      .role-muted {
-        color: #334155;
-      }
-
-      .role-subtle {
-        color: #475569;
-      }
-
-      .role-meta {
-        color: #64748b;
-      }
+      .role-brand { color: var(--sp-text-on-page-brand); }
+      .role-muted { color: var(--sp-text-on-page-muted); }
+      .role-subtle { color: var(--sp-text-on-page-subtle); }
+      .role-meta { color: var(--sp-text-on-page-meta); }
     </style>
   </head>
 
@@ -204,43 +175,43 @@
         <h2>Type Scale</h2>
         <div class="type-example">
           <div class="type-sample type-6xl">Heading 6XL</div>
-          <div class="type-meta">6xl: 4.5rem / 5rem / 900</div>
+          <div class="type-meta">6xl: --sp-font-6xl-size / --sp-font-6xl-line-height / --sp-font-6xl-weight</div>
         </div>
         <div class="type-example">
           <div class="type-sample type-5xl">Heading 5XL</div>
-          <div class="type-meta">5xl: 3.75rem / 4.25rem / 800</div>
+          <div class="type-meta">5xl: --sp-font-5xl-size / --sp-font-5xl-line-height / --sp-font-5xl-weight</div>
         </div>
         <div class="type-example">
           <div class="type-sample type-4xl">Heading 4XL</div>
-          <div class="type-meta">4xl: 3rem / 3.5rem / 800</div>
+          <div class="type-meta">4xl: --sp-font-4xl-size / --sp-font-4xl-line-height / --sp-font-4xl-weight</div>
         </div>
         <div class="type-example">
           <div class="type-sample type-3xl">Heading 3XL</div>
-          <div class="type-meta">3xl: 2.25rem / 2.75rem / 700</div>
+          <div class="type-meta">3xl: --sp-font-3xl-size / --sp-font-3xl-line-height / --sp-font-3xl-weight</div>
         </div>
         <div class="type-example">
           <div class="type-sample type-2xl">Heading 2XL</div>
-          <div class="type-meta">2xl: 1.875rem / 2.5rem / 700</div>
+          <div class="type-meta">2xl: --sp-font-2xl-size / --sp-font-2xl-line-height / --sp-font-2xl-weight</div>
         </div>
         <div class="type-example">
           <div class="type-sample type-xl">Heading XL</div>
-          <div class="type-meta">xl: 1.5rem / 2.125rem / 600</div>
+          <div class="type-meta">xl: --sp-font-xl-size / --sp-font-xl-line-height / --sp-font-xl-weight</div>
         </div>
         <div class="type-example">
           <div class="type-sample type-lg">Heading Large</div>
-          <div class="type-meta">lg: 1.25rem / 2rem / 600</div>
+          <div class="type-meta">lg: --sp-font-lg-size / --sp-font-lg-line-height / --sp-font-lg-weight</div>
         </div>
         <div class="type-example">
           <div class="type-sample type-md">Body Medium</div>
-          <div class="type-meta">md: 1rem / 1.75rem / 500</div>
+          <div class="type-meta">md: --sp-font-md-size / --sp-font-md-line-height / --sp-font-md-weight</div>
         </div>
         <div class="type-example">
           <div class="type-sample type-sm">Body Small</div>
-          <div class="type-meta">sm: 0.875rem / 1.5rem / 400</div>
+          <div class="type-meta">sm: --sp-font-sm-size / --sp-font-sm-line-height / --sp-font-sm-weight</div>
         </div>
         <div class="type-example">
           <div class="type-sample type-xs">Caption/Label</div>
-          <div class="type-meta">xs: 0.75rem / 1.25rem / 400</div>
+          <div class="type-meta">xs: --sp-font-xs-size / --sp-font-xs-line-height / --sp-font-xs-weight</div>
         </div>
       </div>
 
@@ -254,11 +225,8 @@
             >
               Sans Serif Font Family
             </div>
-            <div class="type-meta">
-              system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial,
-              sans-serif
-            </div>
-            <p class="font-sans" style="margin-top: 1rem; color: #475569">
+            <div class="type-meta">--sp-font-family-sans</div>
+            <p class="font-sans" style="margin-top: 1rem; color: var(--sp-text-on-page-subtle)">
               The quick brown fox jumps over the lazy dog. This is the default
               sans-serif font stack used throughout the design system for
               optimal readability and native appearance across all platforms.
@@ -272,8 +240,8 @@
             >
               Serif Font Family
             </div>
-            <div class="type-meta">'Times New Roman', Times, serif</div>
-            <p class="font-serif" style="margin-top: 1rem; color: #475569">
+            <div class="type-meta">--sp-font-family-serif</div>
+            <p class="font-serif" style="margin-top: 1rem; color: var(--sp-text-on-page-subtle)">
               The quick brown fox jumps over the lazy dog. Serif fonts are ideal
               for long-form content, editorial design, and creating a more
               traditional, formal appearance.
@@ -287,10 +255,8 @@
             >
               Monospace Font Family
             </div>
-            <div class="type-meta">
-              'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace
-            </div>
-            <p class="font-mono" style="margin-top: 1rem; color: #475569">
+            <div class="type-meta">--sp-font-family-mono</div>
+            <p class="font-mono" style="margin-top: 1rem; color: var(--sp-text-on-page-subtle)">
               The quick brown fox jumps over the lazy dog. Monospace fonts are
               perfect for code blocks, technical documentation, and any content
               where character alignment matters.
@@ -305,21 +271,21 @@
           <div class="type-sample type-xl role-brand" style="font-weight: 700">
             Brand Accent Text
           </div>
-          <div class="type-meta">text.onPage.brand (colors.brand.600 → #1f57db)</div>
+          <div class="type-meta">--sp-text-on-page-brand</div>
         </div>
         <div class="type-example">
           <div class="type-sample type-md role-muted">Muted Body Text</div>
-          <div class="type-meta">text.onPage.muted (#334155)</div>
+          <div class="type-meta">--sp-text-on-page-muted</div>
         </div>
         <div class="type-example">
           <div class="type-sample type-md role-subtle">
             Subtle Secondary Text
           </div>
-          <div class="type-meta">text.onPage.subtle (#475569)</div>
+          <div class="type-meta">--sp-text-on-page-subtle</div>
         </div>
         <div class="type-example">
           <div class="type-sample type-xs role-meta">Metadata and Captions</div>
-          <div class="type-meta">text.onPage.meta (#64748b)</div>
+          <div class="type-meta">--sp-text-on-page-meta</div>
         </div>
       </div>
     </div>

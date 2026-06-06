@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Animations & Transitions - Spectre Tokens</title>
+    <link rel="stylesheet" href="../dist/index.css" />
     <style>
       * {
         margin: 0;
@@ -12,12 +13,9 @@
       }
 
       body {
-        font-family:
-          system-ui,
-          -apple-system,
-          sans-serif;
-        padding: 2rem;
-        background: #f8fafc;
+        font-family: var(--sp-font-family-sans);
+        padding: var(--sp-space-32);
+        background: var(--sp-surface-page);
       }
 
       .container {
@@ -26,243 +24,209 @@
       }
 
       .header {
-        margin-bottom: 2rem;
+        margin-bottom: var(--sp-space-32);
       }
 
       .back-link {
-        color: #1f57db;
+        color: var(--sp-text-on-page-brand);
         text-decoration: none;
-        margin-bottom: 1rem;
+        margin-bottom: var(--sp-space-16);
         display: inline-block;
       }
 
       h1 {
-        font-size: 3rem;
-        margin-bottom: 0.5rem;
-        color: #0f172a;
+        font-size: var(--sp-font-4xl-size);
+        margin-bottom: var(--sp-space-8);
+        color: var(--sp-color-neutral-900);
       }
 
       .subtitle {
         font-size: 1.125rem;
-        color: #475569;
+        color: var(--sp-text-on-page-muted);
       }
 
       .section {
-        background: white;
-        border-radius: 8px;
-        padding: 2rem;
-        margin-bottom: 2rem;
-        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        background: var(--sp-surface-card);
+        border-radius: var(--sp-radius-lg);
+        padding: var(--sp-space-32);
+        margin-bottom: var(--sp-space-32);
+        box-shadow: var(--sp-shadow-sm);
       }
 
       h2 {
-        font-size: 1.5rem;
-        color: #0f172a;
-        margin-bottom: 1.5rem;
+        font-size: var(--sp-font-xl-size);
+        color: var(--sp-color-neutral-900);
+        margin-bottom: var(--sp-space-24);
       }
 
       .animation-grid {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-        gap: 2rem;
+        gap: var(--sp-space-32);
       }
 
       .animation-demo {
         text-align: center;
-        padding: 2rem;
-        background: #f8fafc;
-        border-radius: 8px;
+        padding: var(--sp-space-32);
+        background: var(--sp-surface-page);
+        border-radius: var(--sp-radius-lg);
       }
 
       .animation-box {
         width: 100px;
         height: 100px;
-        background: linear-gradient(135deg, #0ea5e9, #0369a1);
-        border-radius: 8px;
-        margin: 0 auto 1rem;
+        background: linear-gradient(135deg, var(--sp-color-info-500), var(--sp-color-info-600));
+        border-radius: var(--sp-radius-lg);
+        margin: 0 auto var(--sp-space-16);
       }
 
       .animation-label {
-        font-size: 1rem;
+        font-size: var(--sp-font-md-size);
         font-weight: 600;
-        color: #0f172a;
-        margin-bottom: 0.25rem;
+        color: var(--sp-color-neutral-900);
+        margin-bottom: var(--sp-space-4);
       }
 
       .animation-value {
-        font-size: 0.75rem;
+        font-size: var(--sp-font-xs-size);
         font-family: monospace;
-        color: #64748b;
+        color: var(--sp-color-neutral-500);
       }
 
       /* Keyframes */
       @keyframes fade-in {
-        from {
-          opacity: 0;
-        }
-
-        to {
-          opacity: 1;
-        }
+        from { opacity: 0; }
+        to { opacity: 1; }
       }
 
       @keyframes fade-out {
-        from {
-          opacity: 1;
-        }
-
-        to {
-          opacity: 0;
-        }
+        from { opacity: 1; }
+        to { opacity: 0; }
       }
 
       @keyframes slide-up {
-        from {
-          transform: translateY(20px);
-          opacity: 0;
-        }
-
-        to {
-          transform: translateY(0);
-          opacity: 1;
-        }
+        from { transform: translateY(20px); opacity: 0; }
+        to { transform: translateY(0); opacity: 1; }
       }
 
       @keyframes slide-down {
-        from {
-          transform: translateY(-20px);
-          opacity: 0;
-        }
-
-        to {
-          transform: translateY(0);
-          opacity: 1;
-        }
+        from { transform: translateY(-20px); opacity: 0; }
+        to { transform: translateY(0); opacity: 1; }
       }
 
       @keyframes scale-in {
-        from {
-          transform: scale(0.8);
-          opacity: 0;
-        }
-
-        to {
-          transform: scale(1);
-          opacity: 1;
-        }
+        from { transform: scale(0.8); opacity: 0; }
+        to { transform: scale(1); opacity: 1; }
       }
 
       @keyframes bounce {
-        0%,
-        100% {
-          transform: translateY(0);
-        }
-
-        50% {
-          transform: translateY(-10px);
-        }
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-10px); }
       }
 
       @keyframes shake {
-        0%,
-        100% {
-          transform: translateX(0);
-        }
-
-        25% {
-          transform: translateX(-10px);
-        }
-
-        75% {
-          transform: translateX(10px);
-        }
+        0%, 100% { transform: translateX(0); }
+        25% { transform: translateX(-10px); }
+        75% { transform: translateX(10px); }
       }
 
       @keyframes pulse {
-        0%,
-        100% {
-          opacity: 1;
-        }
-
-        50% {
-          opacity: 0.7;
-        }
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0.7; }
       }
 
       /* Animation classes */
       .anim-fade-in {
-        animation: fade-in 200ms cubic-bezier(0, 0, 0.2, 1);
+        animation: fade-in var(--sp-animation-fadein-duration) var(--sp-animation-fadein-easing);
       }
 
       .anim-slide-up {
-        animation: slide-up 300ms cubic-bezier(0, 0, 0.2, 1);
+        animation: slide-up var(--sp-animation-slideup-duration) var(--sp-animation-slideup-easing);
       }
 
       .anim-slide-down {
-        animation: slide-down 300ms cubic-bezier(0, 0, 0.2, 1);
+        animation: slide-down var(--sp-animation-slidedown-duration) var(--sp-animation-slidedown-easing);
       }
 
       .anim-scale-in {
-        animation: scale-in 200ms cubic-bezier(0.34, 1.56, 0.64, 1);
+        animation: scale-in var(--sp-animation-scalein-duration) var(--sp-animation-scalein-easing);
       }
 
       .anim-bounce {
-        animation: bounce 300ms cubic-bezier(0.4, 0, 0.2, 1) infinite;
+        animation: bounce var(--sp-animation-bounce-duration) var(--sp-animation-bounce-easing) infinite;
       }
 
       .anim-shake {
-        animation: shake 250ms cubic-bezier(0.4, 0, 0.2, 1);
+        animation: shake var(--sp-animation-shake-duration) var(--sp-animation-shake-easing);
       }
 
       .anim-pulse {
-        animation: pulse 1200ms cubic-bezier(0.4, 0, 0.2, 1) infinite;
+        animation: pulse var(--sp-animation-pulse-duration) var(--sp-animation-pulse-easing) infinite;
       }
 
       .trigger-btn {
-        margin-top: 1rem;
-        padding: 0.5rem 1rem;
-        background: #0369a1;
-        color: white;
+        margin-top: var(--sp-space-16);
+        padding: var(--sp-space-8) var(--sp-space-16);
+        background: var(--sp-button-primary-bg);
+        color: var(--sp-color-white);
         border: none;
         border-radius: 6px;
         cursor: pointer;
-        font-size: 0.875rem;
+        font-size: var(--sp-font-sm-size);
         font-weight: 600;
       }
 
       .trigger-btn:hover {
-        background: #075985;
+        background: var(--sp-button-primary-bghover);
       }
 
       .duration-demo {
         display: flex;
-        gap: 1rem;
+        gap: var(--sp-space-16);
         align-items: center;
-        padding: 1rem;
-        background: #f8fafc;
-        border-radius: 8px;
-        margin-bottom: 1rem;
+        padding: var(--sp-space-16);
+        background: var(--sp-surface-page);
+        border-radius: var(--sp-radius-lg);
+        margin-bottom: var(--sp-space-16);
       }
 
       .duration-bar {
         height: 8px;
-        background: linear-gradient(90deg, #0ea5e9, #0369a1);
-        border-radius: 4px;
-        transition: width 0.3s ease;
+        background: linear-gradient(90deg, var(--sp-color-info-500), var(--sp-color-info-600));
+        border-radius: var(--sp-radius-md);
+        transition: width var(--sp-duration-moderate) var(--sp-easing-out);
       }
 
       .duration-label {
         min-width: 120px;
-        font-size: 0.875rem;
+        font-size: var(--sp-font-sm-size);
         font-weight: 600;
-        color: #0f172a;
+        color: var(--sp-color-neutral-900);
       }
 
       .duration-value {
-        font-size: 0.75rem;
+        font-size: var(--sp-font-xs-size);
         font-family: monospace;
-        color: #64748b;
-        min-width: 60px;
+        color: var(--sp-color-neutral-500);
+        min-width: 80px;
+      }
+
+      .easing-block {
+        padding: var(--sp-space-16);
+        background: var(--sp-surface-page);
+        border-radius: var(--sp-radius-lg);
+      }
+
+      .easing-title {
+        font-weight: 600;
+        color: var(--sp-color-neutral-900);
+        margin-bottom: var(--sp-space-8);
+      }
+
+      .easing-description {
+        color: var(--sp-color-neutral-500);
+        font-size: var(--sp-font-sm-size);
+        margin-top: var(--sp-space-8);
       }
     </style>
   </head>
@@ -279,14 +243,14 @@
 
       <div class="section">
         <h2>Animation Examples</h2>
-        <p style="color: #64748b; margin-bottom: 2rem">
+        <p style="color: var(--sp-color-neutral-500); margin-bottom: var(--sp-space-32)">
           Click "Replay" to see each animation
         </p>
         <div class="animation-grid">
           <div class="animation-demo">
             <div class="animation-box anim-fade-in" id="fadeBox"></div>
             <div class="animation-label">Fade In</div>
-            <div class="animation-value">200ms, ease-out</div>
+            <div class="animation-value">--sp-animation-fadein-duration / --sp-animation-fadein-easing</div>
             <button
               class="trigger-btn"
               onclick="replay('fadeBox', 'anim-fade-in')"
@@ -298,7 +262,7 @@
           <div class="animation-demo">
             <div class="animation-box anim-slide-up" id="slideUpBox"></div>
             <div class="animation-label">Slide Up</div>
-            <div class="animation-value">300ms, ease-out</div>
+            <div class="animation-value">--sp-animation-slideup-duration / --sp-animation-slideup-easing</div>
             <button
               class="trigger-btn"
               onclick="replay('slideUpBox', 'anim-slide-up')"
@@ -310,7 +274,7 @@
           <div class="animation-demo">
             <div class="animation-box anim-slide-down" id="slideDownBox"></div>
             <div class="animation-label">Slide Down</div>
-            <div class="animation-value">300ms, ease-out</div>
+            <div class="animation-value">--sp-animation-slidedown-duration / --sp-animation-slidedown-easing</div>
             <button
               class="trigger-btn"
               onclick="replay('slideDownBox', 'anim-slide-down')"
@@ -322,7 +286,7 @@
           <div class="animation-demo">
             <div class="animation-box anim-scale-in" id="scaleBox"></div>
             <div class="animation-label">Scale In</div>
-            <div class="animation-value">200ms, spring</div>
+            <div class="animation-value">--sp-animation-scalein-duration / --sp-animation-scalein-easing</div>
             <button
               class="trigger-btn"
               onclick="replay('scaleBox', 'anim-scale-in')"
@@ -334,13 +298,13 @@
           <div class="animation-demo">
             <div class="animation-box anim-bounce" id="bounceBox"></div>
             <div class="animation-label">Bounce</div>
-            <div class="animation-value">300ms, infinite</div>
+            <div class="animation-value">--sp-animation-bounce-duration, infinite</div>
           </div>
 
           <div class="animation-demo">
             <div class="animation-box anim-shake" id="shakeBox"></div>
             <div class="animation-label">Shake</div>
-            <div class="animation-value">250ms</div>
+            <div class="animation-value">--sp-animation-shake-duration / --sp-animation-shake-easing</div>
             <button
               class="trigger-btn"
               onclick="replay('shakeBox', 'anim-shake')"
@@ -352,7 +316,7 @@
           <div class="animation-demo">
             <div class="animation-box anim-pulse" id="pulseBox"></div>
             <div class="animation-label">Pulse</div>
-            <div class="animation-value">1200ms, infinite</div>
+            <div class="animation-value">--sp-animation-pulse-duration, infinite</div>
           </div>
         </div>
       </div>
@@ -362,100 +326,62 @@
         <div class="duration-demo">
           <div class="duration-label">Instant</div>
           <div class="duration-bar" style="width: 75px"></div>
-          <div class="duration-value">75ms</div>
+          <div class="duration-value">--sp-duration-instant (75ms)</div>
         </div>
         <div class="duration-demo">
           <div class="duration-label">Fast</div>
           <div class="duration-bar" style="width: 150px"></div>
-          <div class="duration-value">150ms</div>
+          <div class="duration-value">--sp-duration-fast (150ms)</div>
         </div>
         <div class="duration-demo">
           <div class="duration-label">Base</div>
           <div class="duration-bar" style="width: 200px"></div>
-          <div class="duration-value">200ms</div>
+          <div class="duration-value">--sp-duration-base (200ms)</div>
         </div>
         <div class="duration-demo">
           <div class="duration-label">Moderate</div>
           <div class="duration-bar" style="width: 300px"></div>
-          <div class="duration-value">300ms</div>
+          <div class="duration-value">--sp-duration-moderate (300ms)</div>
         </div>
         <div class="duration-demo">
           <div class="duration-label">Slow</div>
           <div class="duration-bar" style="width: 400px"></div>
-          <div class="duration-value">500ms</div>
+          <div class="duration-value">--sp-duration-slow (500ms)</div>
         </div>
         <div class="duration-demo">
           <div class="duration-label">Slower</div>
           <div class="duration-bar" style="width: 500px"></div>
-          <div class="duration-value">700ms</div>
+          <div class="duration-value">--sp-duration-slower (700ms)</div>
         </div>
       </div>
 
       <div class="section">
         <h2>Easing Functions</h2>
-        <div style="display: grid; gap: 1rem">
-          <div style="padding: 1rem; background: #f8fafc; border-radius: 8px">
-            <div
-              style="font-weight: 600; color: #0f172a; margin-bottom: 0.5rem"
-            >
-              Linear
-            </div>
-            <code style="color: #64748b; font-size: 0.875rem">linear</code>
-            <p style="color: #64748b; font-size: 0.875rem; margin-top: 0.5rem">
-              Constant speed throughout
-            </p>
+        <div style="display: grid; gap: var(--sp-space-16)">
+          <div class="easing-block">
+            <div class="easing-title">Linear</div>
+            <code style="color: var(--sp-color-neutral-500); font-size: var(--sp-font-sm-size)">--sp-easing-linear</code>
+            <p class="easing-description">Constant speed throughout</p>
           </div>
-          <div style="padding: 1rem; background: #f8fafc; border-radius: 8px">
-            <div
-              style="font-weight: 600; color: #0f172a; margin-bottom: 0.5rem"
-            >
-              Ease In
-            </div>
-            <code style="color: #64748b; font-size: 0.875rem"
-              >cubic-bezier(0.4, 0, 1, 1)</code
-            >
-            <p style="color: #64748b; font-size: 0.875rem; margin-top: 0.5rem">
-              Starts slow, ends fast
-            </p>
+          <div class="easing-block">
+            <div class="easing-title">Ease In</div>
+            <code style="color: var(--sp-color-neutral-500); font-size: var(--sp-font-sm-size)">--sp-easing-in</code>
+            <p class="easing-description">Starts slow, ends fast</p>
           </div>
-          <div style="padding: 1rem; background: #f8fafc; border-radius: 8px">
-            <div
-              style="font-weight: 600; color: #0f172a; margin-bottom: 0.5rem"
-            >
-              Ease Out
-            </div>
-            <code style="color: #64748b; font-size: 0.875rem"
-              >cubic-bezier(0, 0, 0.2, 1)</code
-            >
-            <p style="color: #64748b; font-size: 0.875rem; margin-top: 0.5rem">
-              Starts fast, ends slow
-            </p>
+          <div class="easing-block">
+            <div class="easing-title">Ease Out</div>
+            <code style="color: var(--sp-color-neutral-500); font-size: var(--sp-font-sm-size)">--sp-easing-out</code>
+            <p class="easing-description">Starts fast, ends slow</p>
           </div>
-          <div style="padding: 1rem; background: #f8fafc; border-radius: 8px">
-            <div
-              style="font-weight: 600; color: #0f172a; margin-bottom: 0.5rem"
-            >
-              Ease In-Out
-            </div>
-            <code style="color: #64748b; font-size: 0.875rem"
-              >cubic-bezier(0.4, 0, 0.2, 1)</code
-            >
-            <p style="color: #64748b; font-size: 0.875rem; margin-top: 0.5rem">
-              Smooth acceleration and deceleration
-            </p>
+          <div class="easing-block">
+            <div class="easing-title">Ease In-Out</div>
+            <code style="color: var(--sp-color-neutral-500); font-size: var(--sp-font-sm-size)">--sp-easing-inout</code>
+            <p class="easing-description">Smooth acceleration and deceleration</p>
           </div>
-          <div style="padding: 1rem; background: #f8fafc; border-radius: 8px">
-            <div
-              style="font-weight: 600; color: #0f172a; margin-bottom: 0.5rem"
-            >
-              Spring
-            </div>
-            <code style="color: #64748b; font-size: 0.875rem"
-              >cubic-bezier(0.4, 0, 0.2, 1)</code
-            >
-            <p style="color: #64748b; font-size: 0.875rem; margin-top: 0.5rem">
-              Natural, bouncy motion
-            </p>
+          <div class="easing-block">
+            <div class="easing-title">Spring (Overshoot)</div>
+            <code style="color: var(--sp-color-neutral-500); font-size: var(--sp-font-sm-size)">--sp-easing-overshoot</code>
+            <p class="easing-description">Natural, bouncy motion</p>
           </div>
         </div>
       </div>

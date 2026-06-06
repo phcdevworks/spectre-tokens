@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Forms - Spectre Tokens</title>
+    <link rel="stylesheet" href="../dist/index.css" />
     <style>
       * {
         margin: 0;
@@ -12,12 +13,9 @@
       }
 
       body {
-        font-family:
-          system-ui,
-          -apple-system,
-          sans-serif;
-        padding: 2rem;
-        background: #f8fafc;
+        font-family: var(--sp-font-family-sans);
+        padding: var(--sp-space-32);
+        background: var(--sp-surface-page);
       }
 
       .container {
@@ -26,118 +24,115 @@
       }
 
       .header {
-        margin-bottom: 2rem;
+        margin-bottom: var(--sp-space-32);
       }
 
       .back-link {
-        color: #1f57db;
+        color: var(--sp-text-on-page-brand);
         text-decoration: none;
-        margin-bottom: 1rem;
+        margin-bottom: var(--sp-space-16);
         display: inline-block;
       }
 
       h1 {
-        font-size: 3rem;
-        margin-bottom: 0.5rem;
-        color: #0f172a;
+        font-size: var(--sp-font-4xl-size);
+        margin-bottom: var(--sp-space-8);
+        color: var(--sp-color-neutral-900);
       }
 
       .subtitle {
         font-size: 1.125rem;
-        color: #475569;
+        color: var(--sp-text-on-page-muted);
       }
 
       .section {
-        background: white;
-        border-radius: 8px;
-        padding: 2rem;
-        margin-bottom: 2rem;
-        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        background: var(--sp-surface-card);
+        border-radius: var(--sp-radius-lg);
+        padding: var(--sp-space-32);
+        margin-bottom: var(--sp-space-32);
+        box-shadow: var(--sp-shadow-sm);
       }
 
       h2 {
-        font-size: 1.5rem;
-        color: #0f172a;
-        margin-bottom: 1.5rem;
+        font-size: var(--sp-font-xl-size);
+        color: var(--sp-color-neutral-900);
+        margin-bottom: var(--sp-space-24);
       }
 
       .form-group {
-        margin-bottom: 2rem;
+        margin-bottom: var(--sp-space-32);
       }
 
       .form-label {
         display: block;
-        font-size: 0.875rem;
+        font-size: var(--sp-font-sm-size);
         font-weight: 600;
-        color: #0f172a;
-        margin-bottom: 0.5rem;
+        color: var(--sp-color-neutral-900);
+        margin-bottom: var(--sp-space-8);
       }
 
       .form-input {
         width: 100%;
-        padding: 0.625rem 0.875rem;
+        padding: var(--sp-space-10) var(--sp-space-14);
         border-radius: 6px;
-        font-size: 0.875rem;
-        font-family:
-          system-ui,
-          -apple-system,
-          sans-serif;
-        transition: all 0.2s ease;
+        font-size: var(--sp-font-sm-size);
+        font-family: var(--sp-font-family-sans);
+        transition: all var(--sp-duration-base) var(--sp-easing-inout);
       }
 
       .state-label {
-        font-size: 0.75rem;
-        color: #64748b;
-        margin-top: 0.5rem;
+        font-size: var(--sp-font-xs-size);
+        color: var(--sp-color-neutral-500);
+        margin-top: var(--sp-space-8);
         font-family: monospace;
       }
 
       /* Default State */
       .input-default {
-        background: #ffffff;
-        border: 1px solid #cbd5e1;
-        color: #0f172a;
+        background: var(--sp-form-default-bg);
+        border: var(--sp-border-width-base) var(--sp-border-style-solid) var(--sp-form-default-border);
+        color: var(--sp-form-default-text);
       }
 
       .input-default::placeholder {
-        color: #94a3b8;
+        color: var(--sp-form-default-placeholder);
       }
 
       /* Hover State */
       .input-hover {
-        background: #ffffff;
-        border: 1px solid #0ea5e9;
-        color: #0f172a;
+        background: var(--sp-form-default-bg);
+        border: var(--sp-border-width-base) var(--sp-border-style-solid) var(--sp-form-hover-border);
+        color: var(--sp-form-default-text);
       }
 
       /* Focus State */
       .input-focus {
-        background: #ffffff;
-        border: 1px solid #0ea5e9;
-        color: #0f172a;
-        outline: 2px solid #0ea5e9;
-        outline-offset: 2px;
+        background: var(--sp-form-default-bg);
+        border: var(--sp-border-width-base) var(--sp-border-style-solid) var(--sp-form-focus-border);
+        color: var(--sp-form-default-text);
+        outline: var(--sp-focus-ring-width) var(--sp-focus-ring-style) var(--sp-form-focus-ring);
+        outline-offset: var(--sp-focus-ring-offset);
       }
 
       /* Valid State */
       .input-valid {
-        background: #f0fdf4;
-        border: 1px solid #22c55e;
-        color: #15803d;
+        background: var(--sp-form-valid-bg);
+        border: var(--sp-border-width-base) var(--sp-border-style-solid) var(--sp-form-valid-border);
+        color: var(--sp-form-valid-text);
       }
 
       /* Invalid State */
       .input-invalid {
-        background: #fef2f2;
-        border: 1px solid #ef4444;
-        color: #b91c1c;
+        background: var(--sp-form-invalid-bg);
+        border: var(--sp-border-width-base) var(--sp-border-style-solid) var(--sp-form-invalid-border);
+        color: var(--sp-form-invalid-text);
       }
 
       /* Disabled State */
       .input-disabled {
-        background: #f8fafc;
-        border: 1px solid #e2e8f0;
-        color: #94a3b8;
+        background: var(--sp-form-disabled-bg);
+        border: var(--sp-border-width-base) var(--sp-border-style-solid) var(--sp-form-disabled-border);
+        color: var(--sp-form-disabled-text);
         cursor: not-allowed;
       }
 
@@ -158,24 +153,24 @@
       .checkbox-wrapper {
         display: flex;
         align-items: center;
-        gap: 0.5rem;
+        gap: var(--sp-space-8);
       }
 
       .checkbox {
         width: 18px;
         height: 18px;
-        border: 1px solid #cbd5e1;
-        border-radius: 4px;
+        border: var(--sp-border-width-base) var(--sp-border-style-solid) var(--sp-form-default-border);
+        border-radius: var(--sp-radius-md);
         cursor: pointer;
-        accent-color: #0369a1;
+        accent-color: var(--sp-button-primary-bg);
       }
 
       .radio {
         width: 18px;
         height: 18px;
-        border: 1px solid #cbd5e1;
+        border: var(--sp-border-width-base) var(--sp-border-style-solid) var(--sp-form-default-border);
         cursor: pointer;
-        accent-color: #0369a1;
+        accent-color: var(--sp-button-primary-bg);
       }
     </style>
   </head>
@@ -200,7 +195,7 @@
             placeholder="Enter your text"
           />
           <div class="state-label">
-            bg: #ffffff, border: #cbd5e1, placeholder: #94a3b8
+            bg: --sp-form-default-bg, border: --sp-form-default-border, placeholder: --sp-form-default-placeholder
           </div>
         </div>
         <div class="form-group">
@@ -210,7 +205,7 @@
             class="form-input input-hover"
             value="Hovered input"
           />
-          <div class="state-label">forms.hover.border (colors.info.500)</div>
+          <div class="state-label">border: --sp-form-hover-border</div>
         </div>
         <div class="form-group">
           <label class="form-label">Focus State</label>
@@ -219,7 +214,7 @@
             class="form-input input-focus"
             value="Focused input"
           />
-          <div class="state-label">forms.focus.border / forms.focus.ring (colors.info.500)</div>
+          <div class="state-label">border: --sp-form-focus-border, ring: --sp-form-focus-ring</div>
         </div>
         <div class="form-group">
           <label class="form-label">Valid State</label>
@@ -229,7 +224,7 @@
             value="Valid input"
           />
           <div class="state-label">
-            bg: #f0fdf4, border: #22c55e, text: #15803d
+            bg: --sp-form-valid-bg, border: --sp-form-valid-border, text: --sp-form-valid-text
           </div>
         </div>
         <div class="form-group">
@@ -240,7 +235,7 @@
             value="Invalid input"
           />
           <div class="state-label">
-            bg: #fef2f2, border: #ef4444, text: #b91c1c
+            bg: --sp-form-invalid-bg, border: --sp-form-invalid-border, text: --sp-form-invalid-text
           </div>
         </div>
         <div class="form-group">
@@ -252,7 +247,7 @@
             disabled
           />
           <div class="state-label">
-            bg: #f8fafc, border: #e2e8f0, text: #94a3b8
+            bg: --sp-form-disabled-bg, border: --sp-form-disabled-border, text: --sp-form-disabled-text
           </div>
         </div>
       </div>

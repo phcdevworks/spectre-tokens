@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Aspect Ratios - Spectre Tokens</title>
+    <link rel="stylesheet" href="../dist/index.css" />
     <style>
       * {
         margin: 0;
@@ -12,12 +13,9 @@
       }
 
       body {
-        font-family:
-          system-ui,
-          -apple-system,
-          sans-serif;
-        padding: 2rem;
-        background: #f8fafc;
+        font-family: var(--sp-font-family-sans);
+        padding: var(--sp-space-32);
+        background: var(--sp-surface-page);
       }
 
       .container {
@@ -26,61 +24,61 @@
       }
 
       .header {
-        margin-bottom: 2rem;
+        margin-bottom: var(--sp-space-32);
       }
 
       .back-link {
-        color: #1f57db;
+        color: var(--sp-text-on-page-brand);
         text-decoration: none;
-        margin-bottom: 1rem;
+        margin-bottom: var(--sp-space-16);
         display: inline-block;
       }
 
       h1 {
-        font-size: 3rem;
-        margin-bottom: 0.5rem;
-        color: #0f172a;
+        font-size: var(--sp-font-4xl-size);
+        margin-bottom: var(--sp-space-8);
+        color: var(--sp-color-neutral-900);
       }
 
       .subtitle {
         font-size: 1.125rem;
-        color: #475569;
+        color: var(--sp-text-on-page-muted);
       }
 
       .section {
-        background: white;
-        border-radius: 8px;
-        padding: 2rem;
-        margin-bottom: 2rem;
-        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        background: var(--sp-surface-card);
+        border-radius: var(--sp-radius-lg);
+        padding: var(--sp-space-32);
+        margin-bottom: var(--sp-space-32);
+        box-shadow: var(--sp-shadow-sm);
       }
 
       h2 {
-        font-size: 1.5rem;
-        color: #0f172a;
-        margin-bottom: 1.5rem;
+        font-size: var(--sp-font-xl-size);
+        color: var(--sp-color-neutral-900);
+        margin-bottom: var(--sp-space-24);
       }
 
       .ratio-grid {
         display: grid;
-        gap: 2rem;
+        gap: var(--sp-space-32);
       }
 
       .ratio-example {
         display: grid;
-        gap: 1rem;
+        gap: var(--sp-space-16);
       }
 
       .ratio-display {
         width: 100%;
-        background: linear-gradient(135deg, #0ea5e9, #0369a1);
-        border-radius: 8px;
+        background: linear-gradient(135deg, var(--sp-color-info-500), var(--sp-color-info-600));
+        border-radius: var(--sp-radius-lg);
         display: flex;
         align-items: center;
         justify-content: center;
-        color: white;
+        color: var(--sp-color-white);
         font-weight: 600;
-        font-size: 1.25rem;
+        font-size: var(--sp-font-lg-size);
         position: relative;
         overflow: hidden;
       }
@@ -113,29 +111,12 @@
       }
 
       /* Aspect Ratios */
-      .ratio-square {
-        aspect-ratio: 1/1;
-      }
-
-      .ratio-video {
-        aspect-ratio: 16/9;
-      }
-
-      .ratio-portrait {
-        aspect-ratio: 3/4;
-      }
-
-      .ratio-landscape {
-        aspect-ratio: 4/3;
-      }
-
-      .ratio-ultrawide {
-        aspect-ratio: 21/9;
-      }
-
-      .ratio-hero {
-        aspect-ratio: 2/1;
-      }
+      .ratio-square { aspect-ratio: 1/1; }
+      .ratio-video { aspect-ratio: 16/9; }
+      .ratio-portrait { aspect-ratio: 3/4; }
+      .ratio-landscape { aspect-ratio: 4/3; }
+      .ratio-ultrawide { aspect-ratio: 21/9; }
+      .ratio-hero { aspect-ratio: 2/1; }
 
       .ratio-info {
         display: flex;
@@ -144,46 +125,46 @@
       }
 
       .ratio-label {
-        font-size: 1rem;
+        font-size: var(--sp-font-md-size);
         font-weight: 600;
-        color: #0f172a;
+        color: var(--sp-color-neutral-900);
       }
 
       .ratio-value {
-        font-size: 0.875rem;
+        font-size: var(--sp-font-sm-size);
         font-family: monospace;
-        color: #64748b;
+        color: var(--sp-color-neutral-500);
       }
 
       .usage-note {
-        font-size: 0.875rem;
-        color: #64748b;
-        margin-top: 0.5rem;
+        font-size: var(--sp-font-sm-size);
+        color: var(--sp-color-neutral-500);
+        margin-top: var(--sp-space-8);
         line-height: 1.5;
       }
 
       .usage-grid {
         display: grid;
-        gap: 1.5rem;
+        gap: var(--sp-space-24);
       }
 
       .usage-card {
-        padding: 1.5rem;
-        background: #f8fafc;
-        border-radius: 8px;
-        border: 1px solid #e2e8f0;
+        padding: var(--sp-space-24);
+        background: var(--sp-surface-page);
+        border-radius: var(--sp-radius-lg);
+        border: var(--sp-border-width-base) var(--sp-border-style-solid) var(--sp-color-neutral-200);
       }
 
       .usage-title {
-        font-size: 1rem;
+        font-size: var(--sp-font-md-size);
         font-weight: 600;
-        color: #0f172a;
-        margin-bottom: 0.5rem;
+        color: var(--sp-color-neutral-900);
+        margin-bottom: var(--sp-space-8);
       }
 
       .usage-description {
-        font-size: 0.875rem;
-        color: #64748b;
+        font-size: var(--sp-font-sm-size);
+        color: var(--sp-color-neutral-500);
         line-height: 1.6;
       }
     </style>

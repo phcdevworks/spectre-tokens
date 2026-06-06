@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Colors - Spectre Tokens</title>
+    <link rel="stylesheet" href="../dist/index.css" />
     <style>
       * {
         margin: 0;
@@ -12,12 +13,9 @@
       }
 
       body {
-        font-family:
-          system-ui,
-          -apple-system,
-          sans-serif;
-        padding: 2rem;
-        background: #f7f8fb;
+        font-family: var(--sp-font-family-sans);
+        padding: var(--sp-space-32);
+        background: var(--sp-surface-page);
       }
 
       .container {
@@ -26,45 +24,45 @@
       }
 
       .header {
-        margin-bottom: 2rem;
+        margin-bottom: var(--sp-space-32);
       }
 
       .back-link {
-        color: #1f57db;
+        color: var(--sp-text-on-page-brand);
         text-decoration: none;
-        margin-bottom: 1rem;
+        margin-bottom: var(--sp-space-16);
         display: inline-block;
       }
 
       h1 {
-        font-size: 3rem;
-        margin-bottom: 0.5rem;
-        color: #141b24;
+        font-size: var(--sp-font-4xl-size);
+        margin-bottom: var(--sp-space-8);
+        color: var(--sp-text-on-page-default);
       }
 
       .subtitle {
         font-size: 1.125rem;
-        color: #4b576a;
+        color: var(--sp-text-on-page-muted);
       }
 
       .section {
-        background: white;
-        border-radius: 8px;
-        padding: 2rem;
-        margin-bottom: 2rem;
-        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        background: var(--sp-surface-card);
+        border-radius: var(--sp-radius-lg);
+        padding: var(--sp-space-32);
+        margin-bottom: var(--sp-space-32);
+        box-shadow: var(--sp-shadow-sm);
       }
 
       h2 {
-        font-size: 1.5rem;
-        color: #141b24;
-        margin-bottom: 1rem;
+        font-size: var(--sp-font-xl-size);
+        color: var(--sp-text-on-page-default);
+        margin-bottom: var(--sp-space-16);
       }
 
       .color-grid {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-        gap: 1rem;
+        gap: var(--sp-space-16);
       }
 
       .color-swatch {
@@ -73,346 +71,137 @@
 
       .color-box {
         height: 80px;
-        border-radius: 8px;
-        margin-bottom: 0.5rem;
-        border: 1px solid #d9dfeb;
+        border-radius: var(--sp-radius-lg);
+        margin-bottom: var(--sp-space-8);
+        border: var(--sp-border-width-base) var(--sp-border-style-solid) var(--sp-color-neutral-200);
       }
 
       .color-label {
-        font-size: 0.875rem;
+        font-size: var(--sp-font-sm-size);
         font-weight: 600;
-        color: #141b24;
-        margin-bottom: 0.25rem;
+        color: var(--sp-text-on-page-default);
+        margin-bottom: var(--sp-space-4);
       }
 
       .color-value {
-        font-size: 0.75rem;
+        font-size: var(--sp-font-xs-size);
         font-family: monospace;
-        color: #657287;
+        color: var(--sp-text-on-page-subtle);
       }
 
       /* Brand Colors */
-      .brand-50 {
-        background: #eef4ff;
-      }
-
-      .brand-100 {
-        background: #d9e7ff;
-      }
-
-      .brand-200 {
-        background: #b9d2ff;
-      }
-
-      .brand-300 {
-        background: #8ab6ff;
-      }
-
-      .brand-400 {
-        background: #5a92ff;
-      }
-
-      .brand-500 {
-        background: #336df4;
-      }
-
-      .brand-600 {
-        background: #1f57db;
-      }
-
-      .brand-700 {
-        background: #1946b4;
-      }
-
-      .brand-800 {
-        background: #173b8f;
-      }
-
-      .brand-900 {
-        background: #16336f;
-      }
+      .brand-50 { background: var(--sp-color-brand-50); }
+      .brand-100 { background: var(--sp-color-brand-100); }
+      .brand-200 { background: var(--sp-color-brand-200); }
+      .brand-300 { background: var(--sp-color-brand-300); }
+      .brand-400 { background: var(--sp-color-brand-400); }
+      .brand-500 { background: var(--sp-color-brand-500); }
+      .brand-600 { background: var(--sp-color-brand-600); }
+      .brand-700 { background: var(--sp-color-brand-700); }
+      .brand-800 { background: var(--sp-color-brand-800); }
+      .brand-900 { background: var(--sp-color-brand-900); }
 
       /* Neutral Colors */
-      .neutral-50 {
-        background: #f7f8fb;
-      }
-
-      .neutral-100 {
-        background: #eef1f6;
-      }
-
-      .neutral-200 {
-        background: #d9dfeb;
-      }
-
-      .neutral-300 {
-        background: #b7c1d4;
-      }
-
-      .neutral-400 {
-        background: #8a96ad;
-      }
-
-      .neutral-500 {
-        background: #657287;
-      }
-
-      .neutral-600 {
-        background: #4b576a;
-      }
-
-      .neutral-700 {
-        background: #374253;
-      }
-
-      .neutral-800 {
-        background: #222b38;
-      }
-
-      .neutral-900 {
-        background: #141b24;
-      }
+      .neutral-50 { background: var(--sp-color-neutral-50); }
+      .neutral-100 { background: var(--sp-color-neutral-100); }
+      .neutral-200 { background: var(--sp-color-neutral-200); }
+      .neutral-300 { background: var(--sp-color-neutral-300); }
+      .neutral-400 { background: var(--sp-color-neutral-400); }
+      .neutral-500 { background: var(--sp-color-neutral-500); }
+      .neutral-600 { background: var(--sp-color-neutral-600); }
+      .neutral-700 { background: var(--sp-color-neutral-700); }
+      .neutral-800 { background: var(--sp-color-neutral-800); }
+      .neutral-900 { background: var(--sp-color-neutral-900); }
 
       /* Success Colors */
-      .success-50 {
-        background: #f0fdf4;
-      }
-
-      .success-100 {
-        background: #dcfce7;
-      }
-
-      .success-200 {
-        background: #bbf7d0;
-      }
-
-      .success-300 {
-        background: #86efac;
-      }
-
-      .success-400 {
-        background: #4ade80;
-      }
-
-      .success-500 {
-        background: #22c55e;
-      }
-
-      .success-600 {
-        background: #16a34a;
-      }
-
-      .success-700 {
-        background: #15803d;
-      }
-
-      .success-800 {
-        background: #166534;
-      }
-
-      .success-900 {
-        background: #14532d;
-      }
+      .success-50 { background: var(--sp-color-success-50); }
+      .success-100 { background: var(--sp-color-success-100); }
+      .success-200 { background: var(--sp-color-success-200); }
+      .success-300 { background: var(--sp-color-success-300); }
+      .success-400 { background: var(--sp-color-success-400); }
+      .success-500 { background: var(--sp-color-success-500); }
+      .success-600 { background: var(--sp-color-success-600); }
+      .success-700 { background: var(--sp-color-success-700); }
+      .success-800 { background: var(--sp-color-success-800); }
+      .success-900 { background: var(--sp-color-success-900); }
 
       /* Warning Colors */
-      .warning-50 {
-        background: #fffbea;
-      }
-
-      .warning-100 {
-        background: #fff1c2;
-      }
-
-      .warning-200 {
-        background: #ffe08a;
-      }
-
-      .warning-300 {
-        background: #ffd24d;
-      }
-
-      .warning-400 {
-        background: #ffc21a;
-      }
-
-      .warning-500 {
-        background: #f5ad00;
-      }
-
-      .warning-600 {
-        background: #d48806;
-      }
-
-      .warning-700 {
-        background: #ad6800;
-      }
-
-      .warning-800 {
-        background: #8f5200;
-      }
-
-      .warning-900 {
-        background: #734000;
-      }
+      .warning-50 { background: var(--sp-color-warning-50); }
+      .warning-100 { background: var(--sp-color-warning-100); }
+      .warning-200 { background: var(--sp-color-warning-200); }
+      .warning-300 { background: var(--sp-color-warning-300); }
+      .warning-400 { background: var(--sp-color-warning-400); }
+      .warning-500 { background: var(--sp-color-warning-500); }
+      .warning-600 { background: var(--sp-color-warning-600); }
+      .warning-700 { background: var(--sp-color-warning-700); }
+      .warning-800 { background: var(--sp-color-warning-800); }
+      .warning-900 { background: var(--sp-color-warning-900); }
 
       /* Error Colors */
-      .error-50 {
-        background: #fef2f2;
-      }
-
-      .error-100 {
-        background: #fee2e2;
-      }
-
-      .error-200 {
-        background: #fecaca;
-      }
-
-      .error-300 {
-        background: #fca5a5;
-      }
-
-      .error-400 {
-        background: #f87171;
-      }
-
-      .error-500 {
-        background: #ef4444;
-      }
-
-      .error-600 {
-        background: #dc2626;
-      }
-
-      .error-700 {
-        background: #b91c1c;
-      }
-
-      .error-800 {
-        background: #991b1b;
-      }
-
-      .error-900 {
-        background: #7f1d1d;
-      }
+      .error-50 { background: var(--sp-color-error-50); }
+      .error-100 { background: var(--sp-color-error-100); }
+      .error-200 { background: var(--sp-color-error-200); }
+      .error-300 { background: var(--sp-color-error-300); }
+      .error-400 { background: var(--sp-color-error-400); }
+      .error-500 { background: var(--sp-color-error-500); }
+      .error-600 { background: var(--sp-color-error-600); }
+      .error-700 { background: var(--sp-color-error-700); }
+      .error-800 { background: var(--sp-color-error-800); }
+      .error-900 { background: var(--sp-color-error-900); }
 
       /* Info Colors */
-      .info-50 {
-        background: #f0f9ff;
-      }
-
-      .info-100 {
-        background: #e0f2fe;
-      }
-
-      .info-200 {
-        background: #bae6fd;
-      }
-
-      .info-300 {
-        background: #7dd3fc;
-      }
-
-      .info-400 {
-        background: #38bdf8;
-      }
-
-      .info-500 {
-        background: #0ea5e9;
-      }
-
-      .info-600 {
-        background: #0369a1;
-      }
-
-      .info-700 {
-        background: #075985;
-      }
-
-      .info-800 {
-        background: #0c4a6e;
-      }
-
-      .info-900 {
-        background: #082f49;
-      }
+      .info-50 { background: var(--sp-color-info-50); }
+      .info-100 { background: var(--sp-color-info-100); }
+      .info-200 { background: var(--sp-color-info-200); }
+      .info-300 { background: var(--sp-color-info-300); }
+      .info-400 { background: var(--sp-color-info-400); }
+      .info-500 { background: var(--sp-color-info-500); }
+      .info-600 { background: var(--sp-color-info-600); }
+      .info-700 { background: var(--sp-color-info-700); }
+      .info-800 { background: var(--sp-color-info-800); }
+      .info-900 { background: var(--sp-color-info-900); }
 
       /* Focus Colors */
-      .focus-primary {
-        background: #336df4;
-      }
-
-      .focus-error {
-        background: #ef4444;
-      }
-
-      .focus-info {
-        background: #0369a1;
-      }
+      .focus-primary { background: var(--sp-color-focus-primary); }
+      .focus-error { background: var(--sp-color-focus-error); }
+      .focus-info { background: var(--sp-color-focus-info); }
 
       .surface-grid {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-        gap: 1rem;
+        gap: var(--sp-space-16);
       }
 
       .surface-box {
-        padding: 2rem;
-        border-radius: 8px;
-        border: 1px solid #d9dfeb;
+        padding: var(--sp-space-32);
+        border-radius: var(--sp-radius-lg);
+        border: var(--sp-border-width-base) var(--sp-border-style-solid) var(--sp-color-neutral-200);
         text-align: center;
       }
 
-      .surface-page {
-        background: #f7f8fb;
-      }
-
-      .surface-card {
-        background: #ffffff;
-      }
-
-      .surface-input {
-        background: #ffffff;
-      }
-
-      .surface-overlay {
-        background: rgba(20, 27, 36, 0.6);
-        color: white;
-      }
+      .surface-page { background: var(--sp-surface-page); }
+      .surface-card { background: var(--sp-surface-card); }
+      .surface-input { background: var(--sp-surface-input); }
+      .surface-overlay { background: var(--sp-surface-overlay); color: var(--sp-color-white); }
 
       .text-role-grid {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-        gap: 1.5rem;
+        gap: var(--sp-space-24);
       }
 
       .text-role-example {
-        padding: 1.5rem;
-        border-radius: 8px;
-        border: 1px solid #d9dfeb;
-        background: #ffffff;
+        padding: var(--sp-space-24);
+        border-radius: var(--sp-radius-lg);
+        border: var(--sp-border-width-base) var(--sp-border-style-solid) var(--sp-color-neutral-200);
+        background: var(--sp-surface-card);
       }
 
-      .text-default {
-        color: #141b24;
-      }
-
-      .text-muted {
-        color: #4b576a;
-      }
-
-      .text-subtle {
-        color: #657287;
-      }
-
-      .text-meta {
-        color: #657287;
-      }
-
-      .text-brand {
-        color: #1f57db;
-        font-weight: 600;
-      }
+      .text-default { color: var(--sp-text-on-page-default); }
+      .text-muted { color: var(--sp-text-on-page-muted); }
+      .text-subtle { color: var(--sp-text-on-page-subtle); }
+      .text-meta { color: var(--sp-text-on-page-meta); }
+      .text-brand { color: var(--sp-text-on-page-brand); font-weight: 600; }
     </style>
   </head>
 
@@ -432,52 +221,52 @@
           <div class="color-swatch">
             <div class="color-box brand-50"></div>
             <div class="color-label">50</div>
-            <div class="color-value">#eef4ff</div>
+            <div class="color-value">--sp-color-brand-50</div>
           </div>
           <div class="color-swatch">
             <div class="color-box brand-100"></div>
             <div class="color-label">100</div>
-            <div class="color-value">#d9e7ff</div>
+            <div class="color-value">--sp-color-brand-100</div>
           </div>
           <div class="color-swatch">
             <div class="color-box brand-200"></div>
             <div class="color-label">200</div>
-            <div class="color-value">#b9d2ff</div>
+            <div class="color-value">--sp-color-brand-200</div>
           </div>
           <div class="color-swatch">
             <div class="color-box brand-300"></div>
             <div class="color-label">300</div>
-            <div class="color-value">#8ab6ff</div>
+            <div class="color-value">--sp-color-brand-300</div>
           </div>
           <div class="color-swatch">
             <div class="color-box brand-400"></div>
             <div class="color-label">400</div>
-            <div class="color-value">#5a92ff</div>
+            <div class="color-value">--sp-color-brand-400</div>
           </div>
           <div class="color-swatch">
             <div class="color-box brand-500"></div>
             <div class="color-label">500</div>
-            <div class="color-value">#336df4</div>
+            <div class="color-value">--sp-color-brand-500</div>
           </div>
           <div class="color-swatch">
             <div class="color-box brand-600"></div>
             <div class="color-label">600</div>
-            <div class="color-value">#1f57db</div>
+            <div class="color-value">--sp-color-brand-600</div>
           </div>
           <div class="color-swatch">
             <div class="color-box brand-700"></div>
             <div class="color-label">700</div>
-            <div class="color-value">#1946b4</div>
+            <div class="color-value">--sp-color-brand-700</div>
           </div>
           <div class="color-swatch">
             <div class="color-box brand-800"></div>
             <div class="color-label">800</div>
-            <div class="color-value">#173b8f</div>
+            <div class="color-value">--sp-color-brand-800</div>
           </div>
           <div class="color-swatch">
             <div class="color-box brand-900"></div>
             <div class="color-label">900</div>
-            <div class="color-value">#16336f</div>
+            <div class="color-value">--sp-color-brand-900</div>
           </div>
         </div>
       </div>
@@ -488,52 +277,52 @@
           <div class="color-swatch">
             <div class="color-box neutral-50"></div>
             <div class="color-label">50</div>
-            <div class="color-value">#f7f8fb</div>
+            <div class="color-value">--sp-color-neutral-50</div>
           </div>
           <div class="color-swatch">
             <div class="color-box neutral-100"></div>
             <div class="color-label">100</div>
-            <div class="color-value">#eef1f6</div>
+            <div class="color-value">--sp-color-neutral-100</div>
           </div>
           <div class="color-swatch">
             <div class="color-box neutral-200"></div>
             <div class="color-label">200</div>
-            <div class="color-value">#d9dfeb</div>
+            <div class="color-value">--sp-color-neutral-200</div>
           </div>
           <div class="color-swatch">
             <div class="color-box neutral-300"></div>
             <div class="color-label">300</div>
-            <div class="color-value">#b7c1d4</div>
+            <div class="color-value">--sp-color-neutral-300</div>
           </div>
           <div class="color-swatch">
             <div class="color-box neutral-400"></div>
             <div class="color-label">400</div>
-            <div class="color-value">#8a96ad</div>
+            <div class="color-value">--sp-color-neutral-400</div>
           </div>
           <div class="color-swatch">
             <div class="color-box neutral-500"></div>
             <div class="color-label">500</div>
-            <div class="color-value">#657287</div>
+            <div class="color-value">--sp-color-neutral-500</div>
           </div>
           <div class="color-swatch">
             <div class="color-box neutral-600"></div>
             <div class="color-label">600</div>
-            <div class="color-value">#4b576a</div>
+            <div class="color-value">--sp-color-neutral-600</div>
           </div>
           <div class="color-swatch">
             <div class="color-box neutral-700"></div>
             <div class="color-label">700</div>
-            <div class="color-value">#374253</div>
+            <div class="color-value">--sp-color-neutral-700</div>
           </div>
           <div class="color-swatch">
             <div class="color-box neutral-800"></div>
             <div class="color-label">800</div>
-            <div class="color-value">#222b38</div>
+            <div class="color-value">--sp-color-neutral-800</div>
           </div>
           <div class="color-swatch">
             <div class="color-box neutral-900"></div>
             <div class="color-label">900</div>
-            <div class="color-value">#141b24</div>
+            <div class="color-value">--sp-color-neutral-900</div>
           </div>
         </div>
       </div>
@@ -544,52 +333,52 @@
           <div class="color-swatch">
             <div class="color-box success-50"></div>
             <div class="color-label">50</div>
-            <div class="color-value">#f0fdf4</div>
+            <div class="color-value">--sp-color-success-50</div>
           </div>
           <div class="color-swatch">
             <div class="color-box success-100"></div>
             <div class="color-label">100</div>
-            <div class="color-value">#dcfce7</div>
+            <div class="color-value">--sp-color-success-100</div>
           </div>
           <div class="color-swatch">
             <div class="color-box success-200"></div>
             <div class="color-label">200</div>
-            <div class="color-value">#bbf7d0</div>
+            <div class="color-value">--sp-color-success-200</div>
           </div>
           <div class="color-swatch">
             <div class="color-box success-300"></div>
             <div class="color-label">300</div>
-            <div class="color-value">#86efac</div>
+            <div class="color-value">--sp-color-success-300</div>
           </div>
           <div class="color-swatch">
             <div class="color-box success-400"></div>
             <div class="color-label">400</div>
-            <div class="color-value">#4ade80</div>
+            <div class="color-value">--sp-color-success-400</div>
           </div>
           <div class="color-swatch">
             <div class="color-box success-500"></div>
             <div class="color-label">500</div>
-            <div class="color-value">#22c55e</div>
+            <div class="color-value">--sp-color-success-500</div>
           </div>
           <div class="color-swatch">
             <div class="color-box success-600"></div>
             <div class="color-label">600</div>
-            <div class="color-value">#16a34a</div>
+            <div class="color-value">--sp-color-success-600</div>
           </div>
           <div class="color-swatch">
             <div class="color-box success-700"></div>
             <div class="color-label">700</div>
-            <div class="color-value">#15803d</div>
+            <div class="color-value">--sp-color-success-700</div>
           </div>
           <div class="color-swatch">
             <div class="color-box success-800"></div>
             <div class="color-label">800</div>
-            <div class="color-value">#166534</div>
+            <div class="color-value">--sp-color-success-800</div>
           </div>
           <div class="color-swatch">
             <div class="color-box success-900"></div>
             <div class="color-label">900</div>
-            <div class="color-value">#14532d</div>
+            <div class="color-value">--sp-color-success-900</div>
           </div>
         </div>
       </div>
@@ -600,52 +389,52 @@
           <div class="color-swatch">
             <div class="color-box warning-50"></div>
             <div class="color-label">50</div>
-            <div class="color-value">#fffbea</div>
+            <div class="color-value">--sp-color-warning-50</div>
           </div>
           <div class="color-swatch">
             <div class="color-box warning-100"></div>
             <div class="color-label">100</div>
-            <div class="color-value">#fff1c2</div>
+            <div class="color-value">--sp-color-warning-100</div>
           </div>
           <div class="color-swatch">
             <div class="color-box warning-200"></div>
             <div class="color-label">200</div>
-            <div class="color-value">#ffe08a</div>
+            <div class="color-value">--sp-color-warning-200</div>
           </div>
           <div class="color-swatch">
             <div class="color-box warning-300"></div>
             <div class="color-label">300</div>
-            <div class="color-value">#ffd24d</div>
+            <div class="color-value">--sp-color-warning-300</div>
           </div>
           <div class="color-swatch">
             <div class="color-box warning-400"></div>
             <div class="color-label">400</div>
-            <div class="color-value">#ffc21a</div>
+            <div class="color-value">--sp-color-warning-400</div>
           </div>
           <div class="color-swatch">
             <div class="color-box warning-500"></div>
             <div class="color-label">500</div>
-            <div class="color-value">#f5ad00</div>
+            <div class="color-value">--sp-color-warning-500</div>
           </div>
           <div class="color-swatch">
             <div class="color-box warning-600"></div>
             <div class="color-label">600</div>
-            <div class="color-value">#d48806</div>
+            <div class="color-value">--sp-color-warning-600</div>
           </div>
           <div class="color-swatch">
             <div class="color-box warning-700"></div>
             <div class="color-label">700</div>
-            <div class="color-value">#ad6800</div>
+            <div class="color-value">--sp-color-warning-700</div>
           </div>
           <div class="color-swatch">
             <div class="color-box warning-800"></div>
             <div class="color-label">800</div>
-            <div class="color-value">#8f5200</div>
+            <div class="color-value">--sp-color-warning-800</div>
           </div>
           <div class="color-swatch">
             <div class="color-box warning-900"></div>
             <div class="color-label">900</div>
-            <div class="color-value">#734000</div>
+            <div class="color-value">--sp-color-warning-900</div>
           </div>
         </div>
       </div>
@@ -656,52 +445,52 @@
           <div class="color-swatch">
             <div class="color-box error-50"></div>
             <div class="color-label">50</div>
-            <div class="color-value">#fef2f2</div>
+            <div class="color-value">--sp-color-error-50</div>
           </div>
           <div class="color-swatch">
             <div class="color-box error-100"></div>
             <div class="color-label">100</div>
-            <div class="color-value">#fee2e2</div>
+            <div class="color-value">--sp-color-error-100</div>
           </div>
           <div class="color-swatch">
             <div class="color-box error-200"></div>
             <div class="color-label">200</div>
-            <div class="color-value">#fecaca</div>
+            <div class="color-value">--sp-color-error-200</div>
           </div>
           <div class="color-swatch">
             <div class="color-box error-300"></div>
             <div class="color-label">300</div>
-            <div class="color-value">#fca5a5</div>
+            <div class="color-value">--sp-color-error-300</div>
           </div>
           <div class="color-swatch">
             <div class="color-box error-400"></div>
             <div class="color-label">400</div>
-            <div class="color-value">#f87171</div>
+            <div class="color-value">--sp-color-error-400</div>
           </div>
           <div class="color-swatch">
             <div class="color-box error-500"></div>
             <div class="color-label">500</div>
-            <div class="color-value">#ef4444</div>
+            <div class="color-value">--sp-color-error-500</div>
           </div>
           <div class="color-swatch">
             <div class="color-box error-600"></div>
             <div class="color-label">600</div>
-            <div class="color-value">#dc2626</div>
+            <div class="color-value">--sp-color-error-600</div>
           </div>
           <div class="color-swatch">
             <div class="color-box error-700"></div>
             <div class="color-label">700</div>
-            <div class="color-value">#b91c1c</div>
+            <div class="color-value">--sp-color-error-700</div>
           </div>
           <div class="color-swatch">
             <div class="color-box error-800"></div>
             <div class="color-label">800</div>
-            <div class="color-value">#991b1b</div>
+            <div class="color-value">--sp-color-error-800</div>
           </div>
           <div class="color-swatch">
             <div class="color-box error-900"></div>
             <div class="color-label">900</div>
-            <div class="color-value">#7f1d1d</div>
+            <div class="color-value">--sp-color-error-900</div>
           </div>
         </div>
       </div>
@@ -712,52 +501,52 @@
           <div class="color-swatch">
             <div class="color-box info-50"></div>
             <div class="color-label">50</div>
-            <div class="color-value">#f0f9ff</div>
+            <div class="color-value">--sp-color-info-50</div>
           </div>
           <div class="color-swatch">
             <div class="color-box info-100"></div>
             <div class="color-label">100</div>
-            <div class="color-value">#e0f2fe</div>
+            <div class="color-value">--sp-color-info-100</div>
           </div>
           <div class="color-swatch">
             <div class="color-box info-200"></div>
             <div class="color-label">200</div>
-            <div class="color-value">#bae6fd</div>
+            <div class="color-value">--sp-color-info-200</div>
           </div>
           <div class="color-swatch">
             <div class="color-box info-300"></div>
             <div class="color-label">300</div>
-            <div class="color-value">#7dd3fc</div>
+            <div class="color-value">--sp-color-info-300</div>
           </div>
           <div class="color-swatch">
             <div class="color-box info-400"></div>
             <div class="color-label">400</div>
-            <div class="color-value">#38bdf8</div>
+            <div class="color-value">--sp-color-info-400</div>
           </div>
           <div class="color-swatch">
             <div class="color-box info-500"></div>
             <div class="color-label">500</div>
-            <div class="color-value">#0ea5e9</div>
+            <div class="color-value">--sp-color-info-500</div>
           </div>
           <div class="color-swatch">
             <div class="color-box info-600"></div>
             <div class="color-label">600</div>
-            <div class="color-value">#0369a1</div>
+            <div class="color-value">--sp-color-info-600</div>
           </div>
           <div class="color-swatch">
             <div class="color-box info-700"></div>
             <div class="color-label">700</div>
-            <div class="color-value">#075985</div>
+            <div class="color-value">--sp-color-info-700</div>
           </div>
           <div class="color-swatch">
             <div class="color-box info-800"></div>
             <div class="color-label">800</div>
-            <div class="color-value">#0c4a6e</div>
+            <div class="color-value">--sp-color-info-800</div>
           </div>
           <div class="color-swatch">
             <div class="color-box info-900"></div>
             <div class="color-label">900</div>
-            <div class="color-value">#082f49</div>
+            <div class="color-value">--sp-color-info-900</div>
           </div>
         </div>
       </div>
@@ -768,17 +557,17 @@
           <div class="color-swatch">
             <div class="color-box focus-primary"></div>
             <div class="color-label">primary</div>
-            <div class="color-value">colors.brand.500</div>
+            <div class="color-value">--sp-color-focus-primary</div>
           </div>
           <div class="color-swatch">
             <div class="color-box focus-error"></div>
             <div class="color-label">error</div>
-            <div class="color-value">colors.error.500</div>
+            <div class="color-value">--sp-color-focus-error</div>
           </div>
           <div class="color-swatch">
             <div class="color-box focus-info"></div>
             <div class="color-label">info</div>
-            <div class="color-value">colors.info.600</div>
+            <div class="color-value">--sp-color-focus-info</div>
           </div>
         </div>
       </div>
@@ -791,31 +580,31 @@
             <p class="text-default">
               The quick brown fox jumps over the lazy dog.
             </p>
-            <div class="color-value">text.onPage.default (#141b24)</div>
+            <div class="color-value">--sp-text-on-page-default</div>
           </div>
           <div class="text-role-example">
             <div class="color-label">Muted</div>
             <p class="text-muted">
               The quick brown fox jumps over the lazy dog.
             </p>
-            <div class="color-value">text.onPage.muted (#4b576a)</div>
+            <div class="color-value">--sp-text-on-page-muted</div>
           </div>
           <div class="text-role-example">
             <div class="color-label">Subtle</div>
             <p class="text-subtle">
               The quick brown fox jumps over the lazy dog.
             </p>
-            <div class="color-value">text.onPage.subtle (#657287)</div>
+            <div class="color-value">--sp-text-on-page-subtle</div>
           </div>
           <div class="text-role-example">
             <div class="color-label">Meta</div>
             <p class="text-meta">Posted on March 15, 2026</p>
-            <div class="color-value">text.onPage.meta (#657287)</div>
+            <div class="color-value">--sp-text-on-page-meta</div>
           </div>
           <div class="text-role-example">
             <div class="color-label">Brand</div>
             <p class="text-brand">Featured Highlighted Content</p>
-            <div class="color-value">text.onPage.brand (#1f57db)</div>
+            <div class="color-value">--sp-text-on-page-brand</div>
           </div>
         </div>
       </div>

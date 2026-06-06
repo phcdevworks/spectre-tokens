@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Button Token Examples - Spectre Tokens</title>
+    <link rel="stylesheet" href="../dist/index.css" />
     <style>
       * {
         margin: 0;
@@ -12,12 +13,9 @@
       }
 
       body {
-        font-family:
-          system-ui,
-          -apple-system,
-          sans-serif;
-        padding: 2rem;
-        background: #f7f8fb;
+        font-family: var(--sp-font-family-sans);
+        padding: var(--sp-space-32);
+        background: var(--sp-surface-page);
       }
 
       .container {
@@ -26,295 +24,292 @@
       }
 
       .header {
-        margin-bottom: 2rem;
+        margin-bottom: var(--sp-space-32);
       }
 
       .back-link {
-        color: #1f57db;
+        color: var(--sp-text-on-page-brand);
         text-decoration: none;
-        margin-bottom: 1rem;
+        margin-bottom: var(--sp-space-16);
         display: inline-block;
       }
 
       h1 {
-        font-size: 3rem;
-        margin-bottom: 0.5rem;
-        color: #141b24;
+        font-size: var(--sp-font-4xl-size);
+        margin-bottom: var(--sp-space-8);
+        color: var(--sp-text-on-page-default);
       }
 
       .subtitle {
         font-size: 1.125rem;
-        color: #4b576a;
+        color: var(--sp-text-on-page-muted);
       }
 
       .section {
-        background: white;
-        border-radius: 8px;
-        padding: 2rem;
-        margin-bottom: 2rem;
-        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        background: var(--sp-surface-card);
+        border-radius: var(--sp-radius-lg);
+        padding: var(--sp-space-32);
+        margin-bottom: var(--sp-space-32);
+        box-shadow: var(--sp-shadow-sm);
       }
 
       h2 {
-        font-size: 1.5rem;
-        color: #141b24;
-        margin-bottom: 1.5rem;
+        font-size: var(--sp-font-xl-size);
+        color: var(--sp-text-on-page-default);
+        margin-bottom: var(--sp-space-24);
       }
 
       .button-grid {
         display: grid;
-        gap: 2rem;
+        gap: var(--sp-space-32);
       }
 
       .button-row {
         display: flex;
-        gap: 1rem;
+        gap: var(--sp-space-16);
         align-items: center;
         flex-wrap: wrap;
       }
 
       .button-label {
-        font-size: 0.875rem;
+        font-size: var(--sp-font-sm-size);
         font-weight: 600;
-        color: #141b24;
+        color: var(--sp-text-on-page-default);
         min-width: 120px;
       }
 
       .btn {
-        padding: 0.625rem 1.25rem;
+        padding: var(--sp-space-10) var(--sp-space-20);
         border-radius: 6px;
         border: none;
-        font-size: 0.875rem;
+        font-size: var(--sp-font-sm-size);
         font-weight: 600;
         cursor: pointer;
-        transition: all 0.2s ease;
-        font-family:
-          system-ui,
-          -apple-system,
-          sans-serif;
+        transition: all var(--sp-duration-base) var(--sp-easing-inout);
+        font-family: var(--sp-font-family-sans);
         outline: none;
       }
 
       /* Primary Button */
       .btn-primary {
-        background: #0369a1;
-        color: #ffffff;
+        background: var(--sp-button-primary-bg);
+        color: var(--sp-button-primary-text);
       }
 
       .btn-primary:hover {
-        background: #075985;
+        background: var(--sp-button-primary-bghover);
       }
 
       .btn-primary:active {
-        background: #0c4a6e;
+        background: var(--sp-button-primary-bgactive);
       }
 
       .btn-primary:disabled {
-        background: #d9dfeb;
-        color: #8a96ad;
+        background: var(--sp-button-primary-bgdisabled);
+        color: var(--sp-button-primary-textdisabled);
         cursor: not-allowed;
       }
 
       .btn-primary.focus-ring-demo {
-        background: #0369a1;
-        box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.4);
+        background: var(--sp-button-primary-bg);
+        box-shadow: 0 0 0 3px var(--sp-button-primary-focusring);
       }
 
       .btn-primary.focus-visible-demo {
-        background: #0369a1;
-        outline: 2px solid rgba(14, 165, 233, 0.4);
-        outline-offset: 2px;
+        background: var(--sp-button-primary-bg);
+        outline: var(--sp-focus-ring-width) var(--sp-focus-ring-style) var(--sp-button-primary-focusring);
+        outline-offset: var(--sp-focus-ring-offset);
       }
 
       /* Secondary Button */
       .btn-secondary {
-        background: #ffffff;
-        color: #075985;
-        border: 2px solid #075985;
+        background: var(--sp-button-secondary-bg);
+        color: var(--sp-button-secondary-text);
+        border: var(--sp-border-width-thick) var(--sp-border-style-solid) var(--sp-button-secondary-text);
       }
 
       .btn-secondary:hover {
-        background: #f7f8fb;
+        background: var(--sp-button-secondary-bghover);
       }
 
       .btn-secondary:active {
-        background: #eef1f6;
+        background: var(--sp-button-secondary-bgactive);
       }
 
       .btn-secondary:disabled {
-        background: #f7f8fb;
-        color: #8a96ad;
-        border-color: #d9dfeb;
+        background: var(--sp-button-secondary-bgdisabled);
+        color: var(--sp-button-secondary-textdisabled);
+        border-color: var(--sp-button-secondary-borderdisabled);
         cursor: not-allowed;
       }
 
       .btn-secondary.focus-ring-demo {
-        background: #ffffff;
-        border-color: #075985;
-        box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.4);
+        background: var(--sp-button-secondary-bg);
+        border-color: var(--sp-button-secondary-text);
+        box-shadow: 0 0 0 3px var(--sp-button-secondary-focusring);
       }
 
       .btn-secondary.focus-visible-demo {
-        background: #ffffff;
-        border-color: #075985;
-        outline: 2px solid rgba(14, 165, 233, 0.4);
-        outline-offset: 2px;
+        background: var(--sp-button-secondary-bg);
+        border-color: var(--sp-button-secondary-text);
+        outline: var(--sp-focus-ring-width) var(--sp-focus-ring-style) var(--sp-button-secondary-focusring);
+        outline-offset: var(--sp-focus-ring-offset);
       }
 
       /* Ghost Button */
       .btn-ghost {
         background: transparent;
-        color: #075985;
+        color: var(--sp-button-ghost-text);
       }
 
       .btn-ghost:hover {
-        background: #f0f9ff;
+        background: var(--sp-button-ghost-bghover);
       }
 
       .btn-ghost:active {
-        background: #e0f2fe;
+        background: var(--sp-button-ghost-bgactive);
       }
 
       .btn-ghost:disabled {
         background: transparent;
-        color: #8a96ad;
+        color: var(--sp-button-ghost-textdisabled);
         cursor: not-allowed;
       }
 
       .btn-ghost.focus-ring-demo {
         background: transparent;
-        box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.4);
+        box-shadow: 0 0 0 3px var(--sp-button-ghost-focusring);
       }
 
       .btn-ghost.focus-visible-demo {
         background: transparent;
-        outline: 2px solid rgba(14, 165, 233, 0.4);
-        outline-offset: 2px;
+        outline: var(--sp-focus-ring-width) var(--sp-focus-ring-style) var(--sp-button-ghost-focusring);
+        outline-offset: var(--sp-focus-ring-offset);
       }
 
       /* Danger Button */
       .btn-danger {
-        background: #dc2626;
-        color: #ffffff;
+        background: var(--sp-button-danger-bg);
+        color: var(--sp-button-danger-text);
       }
 
       .btn-danger:hover {
-        background: #b91c1c;
+        background: var(--sp-button-danger-bghover);
       }
 
       .btn-danger:active {
-        background: #991b1b;
+        background: var(--sp-button-danger-bgactive);
       }
 
       .btn-danger:disabled {
-        background: #fecaca;
-        color: #8a96ad;
+        background: var(--sp-button-danger-bgdisabled);
+        color: var(--sp-button-danger-textdisabled);
         cursor: not-allowed;
       }
 
       .btn-danger.focus-ring-demo {
-        background: #dc2626;
-        box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.4);
+        background: var(--sp-button-danger-bg);
+        box-shadow: 0 0 0 3px var(--sp-button-danger-focusring);
       }
 
       .btn-danger.focus-visible-demo {
-        background: #dc2626;
-        outline: 2px solid rgba(239, 68, 68, 0.4);
-        outline-offset: 2px;
+        background: var(--sp-button-danger-bg);
+        outline: var(--sp-focus-ring-width) var(--sp-focus-ring-style) var(--sp-button-danger-focusring);
+        outline-offset: var(--sp-focus-ring-offset);
       }
 
       /* Success Button */
       .btn-success {
-        background: #15803d;
-        color: #ffffff;
+        background: var(--sp-button-success-bg);
+        color: var(--sp-button-success-text);
       }
 
       .btn-success:hover {
-        background: #166534;
+        background: var(--sp-button-success-bghover);
       }
 
       .btn-success:active {
-        background: #14532d;
+        background: var(--sp-button-success-bgactive);
       }
 
       .btn-success:disabled {
-        background: #bbf7d0;
-        color: #8a96ad;
+        background: var(--sp-button-success-bgdisabled);
+        color: var(--sp-button-success-textdisabled);
         cursor: not-allowed;
       }
 
       .btn-success.focus-ring-demo {
-        background: #15803d;
-        box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.4);
+        background: var(--sp-button-success-bg);
+        box-shadow: 0 0 0 3px var(--sp-button-success-focusring);
       }
 
       .btn-success.focus-visible-demo {
-        background: #15803d;
-        outline: 2px solid rgba(34, 197, 94, 0.4);
-        outline-offset: 2px;
+        background: var(--sp-button-success-bg);
+        outline: var(--sp-focus-ring-width) var(--sp-focus-ring-style) var(--sp-button-success-focusring);
+        outline-offset: var(--sp-focus-ring-offset);
       }
 
       /* CTA Button */
       .btn-cta {
-        background: #1f57db;
-        color: #ffffff;
-        box-shadow: 0 4px 14px 0 rgba(51, 109, 244, 0.39);
+        background: var(--sp-button-cta-bg);
+        color: var(--sp-button-cta-text);
+        box-shadow: var(--sp-button-cta-shadow);
       }
 
       .btn-cta:hover {
-        background: #1946b4;
+        background: var(--sp-button-cta-bghover);
       }
 
       .btn-cta:active {
-        background: #173b8f;
+        background: var(--sp-button-cta-bgactive);
       }
 
       .btn-cta:disabled {
-        background: #b9d2ff;
-        color: #8a96ad;
+        background: var(--sp-button-cta-bgdisabled);
+        color: var(--sp-button-cta-textdisabled);
         box-shadow: none;
         cursor: not-allowed;
       }
 
       .btn-cta.focus-ring-demo {
-        background: #1f57db;
-        box-shadow: 0 4px 14px 0 rgba(51, 109, 244, 0.39), 0 0 0 3px rgba(51, 109, 244, 0.4);
+        background: var(--sp-button-cta-bg);
+        box-shadow: var(--sp-button-cta-shadow), 0 0 0 3px var(--sp-button-cta-focusring);
       }
 
       /* Accent Button */
       .btn-accent {
-        background: #7135dd;
-        color: #ffffff;
+        background: var(--sp-button-accent-bg);
+        color: var(--sp-button-accent-text);
       }
 
       .btn-accent:hover {
-        background: #5d28b8;
+        background: var(--sp-button-accent-bghover);
       }
 
       .btn-accent:active {
-        background: #4d2393;
+        background: var(--sp-button-accent-bgactive);
       }
 
       .btn-accent:disabled {
-        background: #ddccff;
-        color: #8a96ad;
+        background: var(--sp-button-accent-bgdisabled);
+        color: var(--sp-button-accent-textdisabled);
         cursor: not-allowed;
       }
 
       .btn-accent.focus-ring-demo {
-        background: #7135dd;
-        box-shadow: 0 0 0 3px rgba(133, 79, 247, 0.4);
+        background: var(--sp-button-accent-bg);
+        box-shadow: 0 0 0 3px var(--sp-button-accent-focusring);
       }
 
       .btn-accent.focus-visible-demo {
-        background: #7135dd;
-        outline: 2px solid rgba(133, 79, 247, 0.4);
-        outline-offset: 2px;
+        background: var(--sp-button-accent-bg);
+        outline: var(--sp-focus-ring-width) var(--sp-focus-ring-style) var(--sp-button-accent-focusring);
+        outline-offset: var(--sp-focus-ring-offset);
       }
 
       .state-label {
-        font-size: 0.75rem;
-        color: #657287;
+        font-size: var(--sp-font-xs-size);
+        color: var(--sp-text-on-page-subtle);
         text-transform: uppercase;
         letter-spacing: 0.05em;
       }
@@ -341,12 +336,12 @@
           </div>
           <div class="button-row">
             <span class="button-label">Hover</span>
-            <button class="btn btn-primary" style="background: #075985">Primary Button</button>
+            <button class="btn btn-primary" style="background: var(--sp-button-primary-bghover)">Primary Button</button>
             <span class="state-label">bg: buttons.primary.bgHover</span>
           </div>
           <div class="button-row">
             <span class="button-label">Active</span>
-            <button class="btn btn-primary" style="background: #0c4a6e">Primary Button</button>
+            <button class="btn btn-primary" style="background: var(--sp-button-primary-bgactive)">Primary Button</button>
             <span class="state-label">bg: buttons.primary.bgActive</span>
           </div>
           <div class="button-row">
@@ -377,12 +372,12 @@
           </div>
           <div class="button-row">
             <span class="button-label">Hover</span>
-            <button class="btn btn-secondary" style="background: #f7f8fb">Secondary Button</button>
+            <button class="btn btn-secondary" style="background: var(--sp-button-secondary-bghover)">Secondary Button</button>
             <span class="state-label">bg: buttons.secondary.bgHover</span>
           </div>
           <div class="button-row">
             <span class="button-label">Active</span>
-            <button class="btn btn-secondary" style="background: #eef1f6">Secondary Button</button>
+            <button class="btn btn-secondary" style="background: var(--sp-button-secondary-bgactive)">Secondary Button</button>
             <span class="state-label">bg: buttons.secondary.bgActive</span>
           </div>
           <div class="button-row">
@@ -413,12 +408,12 @@
           </div>
           <div class="button-row">
             <span class="button-label">Hover</span>
-            <button class="btn btn-ghost" style="background: #f0f9ff">Ghost Button</button>
+            <button class="btn btn-ghost" style="background: var(--sp-button-ghost-bghover)">Ghost Button</button>
             <span class="state-label">bg: buttons.ghost.bgHover</span>
           </div>
           <div class="button-row">
             <span class="button-label">Active</span>
-            <button class="btn btn-ghost" style="background: #e0f2fe">Ghost Button</button>
+            <button class="btn btn-ghost" style="background: var(--sp-button-ghost-bgactive)">Ghost Button</button>
             <span class="state-label">bg: buttons.ghost.bgActive</span>
           </div>
           <div class="button-row">
@@ -449,12 +444,12 @@
           </div>
           <div class="button-row">
             <span class="button-label">Hover</span>
-            <button class="btn btn-danger" style="background: #b91c1c">Delete</button>
+            <button class="btn btn-danger" style="background: var(--sp-button-danger-bghover)">Delete</button>
             <span class="state-label">bg: buttons.danger.bgHover</span>
           </div>
           <div class="button-row">
             <span class="button-label">Active</span>
-            <button class="btn btn-danger" style="background: #991b1b">Delete</button>
+            <button class="btn btn-danger" style="background: var(--sp-button-danger-bgactive)">Delete</button>
             <span class="state-label">bg: buttons.danger.bgActive</span>
           </div>
           <div class="button-row">
@@ -485,12 +480,12 @@
           </div>
           <div class="button-row">
             <span class="button-label">Hover</span>
-            <button class="btn btn-success" style="background: #166534">Confirm</button>
+            <button class="btn btn-success" style="background: var(--sp-button-success-bghover)">Confirm</button>
             <span class="state-label">bg: buttons.success.bgHover</span>
           </div>
           <div class="button-row">
             <span class="button-label">Active</span>
-            <button class="btn btn-success" style="background: #14532d">Confirm</button>
+            <button class="btn btn-success" style="background: var(--sp-button-success-bgactive)">Confirm</button>
             <span class="state-label">bg: buttons.success.bgActive</span>
           </div>
           <div class="button-row">
@@ -521,12 +516,12 @@
           </div>
           <div class="button-row">
             <span class="button-label">Hover</span>
-            <button class="btn btn-cta" style="background: #1946b4">Get Started</button>
+            <button class="btn btn-cta" style="background: var(--sp-button-cta-bghover)">Get Started</button>
             <span class="state-label">bg: buttons.cta.bgHover</span>
           </div>
           <div class="button-row">
             <span class="button-label">Active</span>
-            <button class="btn btn-cta" style="background: #173b8f">Get Started</button>
+            <button class="btn btn-cta" style="background: var(--sp-button-cta-bgactive)">Get Started</button>
             <span class="state-label">bg: buttons.cta.bgActive</span>
           </div>
           <div class="button-row">
@@ -552,12 +547,12 @@
           </div>
           <div class="button-row">
             <span class="button-label">Hover</span>
-            <button class="btn btn-accent" style="background: #5d28b8">Accent Button</button>
+            <button class="btn btn-accent" style="background: var(--sp-button-accent-bghover)">Accent Button</button>
             <span class="state-label">bg: buttons.accent.bgHover</span>
           </div>
           <div class="button-row">
             <span class="button-label">Active</span>
-            <button class="btn btn-accent" style="background: #4d2393">Accent Button</button>
+            <button class="btn btn-accent" style="background: var(--sp-button-accent-bgactive)">Accent Button</button>
             <span class="state-label">bg: buttons.accent.bgActive</span>
           </div>
           <div class="button-row">

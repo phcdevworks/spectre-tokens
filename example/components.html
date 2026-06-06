@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Components - Spectre Tokens</title>
+    <link rel="stylesheet" href="../dist/index.css" />
     <style>
       * {
         margin: 0;
@@ -12,12 +13,9 @@
       }
 
       body {
-        font-family:
-          system-ui,
-          -apple-system,
-          sans-serif;
-        padding: 2rem;
-        background: #f7f8fb;
+        font-family: var(--sp-font-family-sans);
+        padding: var(--sp-space-32);
+        background: var(--sp-surface-page);
       }
 
       .container {
@@ -26,116 +24,116 @@
       }
 
       .header {
-        margin-bottom: 2rem;
+        margin-bottom: var(--sp-space-32);
       }
 
       .back-link {
-        color: #1f57db;
+        color: var(--sp-text-on-page-brand);
         text-decoration: none;
-        margin-bottom: 1rem;
+        margin-bottom: var(--sp-space-16);
         display: inline-block;
       }
 
       h1 {
-        font-size: 3rem;
-        margin-bottom: 0.5rem;
-        color: #141b24;
+        font-size: var(--sp-font-4xl-size);
+        margin-bottom: var(--sp-space-8);
+        color: var(--sp-text-on-page-default);
       }
 
       .subtitle {
         font-size: 1.125rem;
-        color: #4b576a;
+        color: var(--sp-text-on-page-muted);
       }
 
       .section {
-        background: white;
-        border-radius: 8px;
-        padding: 2rem;
-        margin-bottom: 2rem;
-        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        background: var(--sp-surface-card);
+        border-radius: var(--sp-radius-lg);
+        padding: var(--sp-space-32);
+        margin-bottom: var(--sp-space-32);
+        box-shadow: var(--sp-shadow-sm);
       }
 
       h2 {
-        font-size: 1.5rem;
-        color: #141b24;
-        margin-bottom: 1.5rem;
+        font-size: var(--sp-font-xl-size);
+        color: var(--sp-text-on-page-default);
+        margin-bottom: var(--sp-space-24);
       }
 
       /* Badges */
       .badge {
         display: inline-block;
-        padding: 0.25rem 0.75rem;
-        border-radius: 999px;
-        font-size: 0.75rem;
+        padding: var(--sp-space-4) var(--sp-space-12);
+        border-radius: var(--sp-radius-pill);
+        font-size: var(--sp-font-xs-size);
         font-weight: 600;
-        margin: 0.25rem;
-        transition: background 200ms;
+        margin: var(--sp-space-4);
+        transition: background var(--sp-animation-fadein-duration);
         cursor: pointer;
       }
 
-      .badge-neutral:hover {
-        background: #d9dfeb;
-      }
-
-      .badge-info:hover {
-        background: #bae6fd;
-      }
-
-      .badge-success:hover {
-        background: #bbf7d0;
-      }
-
-      .badge-warning:hover {
-        background: #ffe08a;
-      }
-
-      .badge-danger:hover {
-        background: #fecaca;
-      }
-
       .badge-neutral {
-        background: #eef1f6;
-        color: #374253;
+        background: var(--sp-badge-neutral-bg);
+        color: var(--sp-badge-neutral-text);
+      }
+
+      .badge-neutral:hover {
+        background: var(--sp-color-neutral-200);
       }
 
       .badge-info {
-        background: #e0f2fe;
-        color: #075985;
+        background: var(--sp-badge-info-bg);
+        color: var(--sp-badge-info-text);
+      }
+
+      .badge-info:hover {
+        background: var(--sp-color-info-200);
       }
 
       .badge-success {
-        background: #dcfce7;
-        color: #15803d;
+        background: var(--sp-badge-success-bg);
+        color: var(--sp-badge-success-text);
+      }
+
+      .badge-success:hover {
+        background: var(--sp-color-success-200);
       }
 
       .badge-warning {
-        background: #fff1c2;
-        color: #ad6800;
+        background: var(--sp-badge-warning-bg);
+        color: var(--sp-badge-warning-text);
+      }
+
+      .badge-warning:hover {
+        background: var(--sp-color-warning-200);
       }
 
       .badge-danger {
-        background: #fee2e2;
-        color: #b91c1c;
+        background: var(--sp-badge-danger-bg);
+        color: var(--sp-badge-danger-text);
+      }
+
+      .badge-danger:hover {
+        background: var(--sp-color-error-200);
       }
 
       /* Cards */
       .card {
-        background: white;
-        border: 1px solid #d9dfeb;
-        border-radius: 8px;
-        padding: 1.5rem;
-        margin-bottom: 1rem;
+        background: var(--sp-surface-card);
+        border: var(--sp-border-width-base) var(--sp-border-style-solid) var(--sp-icon-box-border);
+        border-radius: var(--sp-radius-lg);
+        padding: var(--sp-space-24);
+        margin-bottom: var(--sp-space-16);
       }
 
       .card-title {
-        font-size: 1.25rem;
+        font-size: var(--sp-font-lg-size);
         font-weight: 600;
-        color: #141b24;
-        margin-bottom: 0.5rem;
+        color: var(--sp-text-on-page-default);
+        margin-bottom: var(--sp-space-8);
       }
 
       .card-text {
-        color: #657287;
+        color: var(--sp-text-on-page-subtle);
         line-height: 1.6;
       }
 
@@ -143,92 +141,92 @@
       .icon-box-grid {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-        gap: 1rem;
+        gap: var(--sp-space-16);
       }
 
       .icon-box {
-        background: #ffffff;
-        border: 1px solid #d9dfeb;
-        border-radius: 8px;
-        padding: 1.5rem;
+        background: var(--sp-icon-box-bg);
+        border: var(--sp-border-width-base) var(--sp-border-style-solid) var(--sp-icon-box-border);
+        border-radius: var(--sp-radius-lg);
+        padding: var(--sp-space-24);
         text-align: center;
       }
 
       .icon {
         width: 48px;
         height: 48px;
-        border-radius: 8px;
+        border-radius: var(--sp-radius-lg);
         display: flex;
         align-items: center;
         justify-content: center;
-        margin: 0 auto 0.75rem;
-        font-size: 1.5rem;
+        margin: 0 auto var(--sp-space-12);
+        font-size: var(--sp-font-xl-size);
       }
 
       .icon-default {
-        background: #ffffff;
-        color: #075985;
+        background: var(--sp-surface-card);
+        color: var(--sp-icon-box-icon-default);
       }
 
       .icon-success {
-        background: #ffffff;
-        color: #15803d;
+        background: var(--sp-surface-card);
+        color: var(--sp-icon-box-icon-success);
       }
 
       .icon-warning {
-        background: #ffffff;
-        color: #d48806;
+        background: var(--sp-surface-card);
+        color: var(--sp-icon-box-icon-warning);
       }
 
       .icon-danger {
-        background: #ffffff;
-        color: #dc2626;
+        background: var(--sp-surface-card);
+        color: var(--sp-icon-box-icon-danger);
       }
 
       .icon-label {
-        font-size: 0.875rem;
+        font-size: var(--sp-font-sm-size);
         font-weight: 600;
-        color: #141b24;
+        color: var(--sp-text-on-page-default);
       }
 
       /* Testimonials */
       .testimonial {
-        background: #ffffff;
-        border: 1px solid #d9dfeb;
-        border-radius: 8px;
-        padding: 2rem;
+        background: var(--sp-surface-card);
+        border: var(--sp-border-width-base) var(--sp-border-style-solid) var(--sp-color-neutral-200);
+        border-radius: var(--sp-radius-lg);
+        padding: var(--sp-space-32);
         position: relative;
-        margin-bottom: 1rem;
+        margin-bottom: var(--sp-space-16);
       }
 
       .quote-mark {
         font-size: 3rem;
-        color: #b7c1d4;
+        color: var(--sp-color-neutral-300);
         position: absolute;
-        top: 1rem;
-        left: 1rem;
+        top: var(--sp-space-16);
+        left: var(--sp-space-16);
       }
 
       .testimonial-text {
-        color: #374253;
+        color: var(--sp-color-neutral-700);
         line-height: 1.7;
-        margin-bottom: 1rem;
+        margin-bottom: var(--sp-space-16);
         font-style: italic;
-        padding-left: 2rem;
+        padding-left: var(--sp-space-32);
       }
 
       .testimonial-author {
         display: flex;
         align-items: center;
-        gap: 1rem;
-        padding-left: 2rem;
+        gap: var(--sp-space-16);
+        padding-left: var(--sp-space-32);
       }
 
       .author-avatar {
         width: 48px;
         height: 48px;
         border-radius: 50%;
-        background: linear-gradient(135deg, #5b6ee1, #6f3fd7);
+        background: linear-gradient(135deg, var(--sp-color-indigo-500), var(--sp-color-violet-600));
       }
 
       .author-info {
@@ -237,109 +235,86 @@
 
       .author-name {
         font-weight: 600;
-        color: #141b24;
+        color: var(--sp-text-on-page-default);
       }
 
       .author-title {
-        font-size: 0.875rem;
-        color: #657287;
+        font-size: var(--sp-font-sm-size);
+        color: var(--sp-text-on-page-subtle);
       }
 
       /* Pricing Cards */
       .pricing-grid {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-        gap: 1.5rem;
+        gap: var(--sp-space-24);
       }
 
       .pricing-card {
-        background: #ffffff;
-        border: 1px solid #d9dfeb;
-        border-radius: 8px;
-        padding: 2rem;
+        background: var(--sp-surface-card);
+        border: var(--sp-border-width-base) var(--sp-border-style-solid) var(--sp-color-neutral-200);
+        border-radius: var(--sp-radius-lg);
+        padding: var(--sp-space-32);
         text-align: center;
       }
 
       .pricing-card.featured {
-        background: #075985;
-        border-color: #075985;
+        background: var(--sp-button-secondary-text);
+        border-color: var(--sp-button-secondary-text);
         transform: scale(1.05);
       }
 
       .pricing-badge {
         display: inline-block;
-        padding: 0.25rem 0.75rem;
-        background: #f5ad00;
-        color: #141b24;
-        border-radius: 999px;
-        font-size: 0.75rem;
+        padding: var(--sp-space-4) var(--sp-space-12);
+        background: var(--sp-color-warning-500);
+        color: var(--sp-text-on-page-default);
+        border-radius: var(--sp-radius-pill);
+        font-size: var(--sp-font-xs-size);
         font-weight: 600;
-        margin-bottom: 1rem;
+        margin-bottom: var(--sp-space-16);
       }
 
       .pricing-title {
-        font-size: 1.25rem;
+        font-size: var(--sp-font-lg-size);
         font-weight: 600;
-        margin-bottom: 0.5rem;
+        margin-bottom: var(--sp-space-8);
       }
 
-      .pricing-card .pricing-title {
-        color: #141b24;
-      }
-
-      .pricing-card.featured .pricing-title {
-        color: #ffffff;
-      }
+      .pricing-card .pricing-title { color: var(--sp-text-on-page-default); }
+      .pricing-card.featured .pricing-title { color: var(--sp-color-white); }
 
       .pricing-price {
         font-size: 2.5rem;
         font-weight: 700;
-        margin-bottom: 0.25rem;
+        margin-bottom: var(--sp-space-4);
       }
 
-      .pricing-card .pricing-price {
-        color: #141b24;
-      }
-
-      .pricing-card.featured .pricing-price {
-        color: #ffffff;
-      }
+      .pricing-card .pricing-price { color: var(--sp-text-on-page-default); }
+      .pricing-card.featured .pricing-price { color: var(--sp-color-white); }
 
       .pricing-period {
-        font-size: 0.875rem;
-        margin-bottom: 1.5rem;
+        font-size: var(--sp-font-sm-size);
+        margin-bottom: var(--sp-space-24);
       }
 
-      .pricing-card .pricing-period {
-        color: #657287;
-      }
-
-      .pricing-card.featured .pricing-period {
-        color: #e0f2fe;
-      }
+      .pricing-card .pricing-period { color: var(--sp-text-on-page-subtle); }
+      .pricing-card.featured .pricing-period { color: var(--sp-color-info-100); }
 
       /* Rating */
       .rating {
         display: flex;
         align-items: center;
-        gap: 0.5rem;
+        gap: var(--sp-space-8);
       }
 
-      .star {
-        font-size: 1.25rem;
-      }
-
-      .star-filled {
-        color: #f5ad00;
-      }
-
-      .star-empty {
-        color: #d9dfeb;
-      }
+      .star { font-size: var(--sp-font-lg-size); }
+      .star-filled { color: var(--sp-color-warning-500); }
+      .star-empty { color: var(--sp-color-neutral-200); }
 
       .rating-text {
-        color: #657287;
-        font-size: 0.875rem;
+        color: var(--sp-text-on-page-subtle);
+        font-size: var(--sp-font-sm-size);
       }
     </style>
   </head>
@@ -357,7 +332,7 @@
 
       <div class="section">
         <h2>Badges (Interactive)</h2>
-        <p style="font-size: 0.875rem; color: #657287; margin-bottom: 1rem">
+        <p style="font-size: var(--sp-font-sm-size); color: var(--sp-text-on-page-subtle); margin-bottom: var(--sp-space-16)">
           Hover over badges to see the new state tokens in action.
         </p>
         <div>
@@ -375,8 +350,9 @@
           <div class="card-title">Card Title</div>
           <div class="card-text">
             This is a card component with title and body text. Cards are used to
-            group related content and actions. The card uses border color
-            #d9dfeb, background #ffffff, and text colors from the tokens.
+            group related content and actions. The card uses --sp-icon-box-border
+            for the border, --sp-surface-card for background, and text colors
+            from the semantic text role tokens.
           </div>
         </div>
         <div class="card">
@@ -470,7 +446,7 @@
               <span class="star star-filled">★</span>
               <span class="star star-filled">★</span>
               <span class="star star-filled">★</span>
-              <span class="rating-text" style="color: #e0f2fe">(5.0)</span>
+              <span class="rating-text" style="color: var(--sp-color-info-100)">(5.0)</span>
             </div>
           </div>
           <div class="pricing-card">
@@ -491,7 +467,7 @@
 
       <div class="section">
         <h2>Rating</h2>
-        <div style="display: flex; flex-direction: column; gap: 1rem">
+        <div style="display: flex; flex-direction: column; gap: var(--sp-space-16)">
           <div class="rating">
             <span class="star star-filled">★</span>
             <span class="star star-filled">★</span>

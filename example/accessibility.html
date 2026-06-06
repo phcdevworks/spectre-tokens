@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Accessibility - Spectre Tokens</title>
+    <link rel="stylesheet" href="../dist/index.css" />
     <style>
       * {
         margin: 0;
@@ -12,12 +13,9 @@
       }
 
       body {
-        font-family:
-          system-ui,
-          -apple-system,
-          sans-serif;
-        padding: 2rem;
-        background: #f8fafc;
+        font-family: var(--sp-font-family-sans);
+        padding: var(--sp-space-32);
+        background: var(--sp-surface-page);
       }
 
       .container {
@@ -26,102 +24,102 @@
       }
 
       .header {
-        margin-bottom: 2rem;
+        margin-bottom: var(--sp-space-32);
       }
 
       .back-link {
-        color: #0369a1;
+        color: var(--sp-button-primary-bg);
         text-decoration: none;
-        margin-bottom: 1rem;
+        margin-bottom: var(--sp-space-16);
         display: inline-block;
       }
 
       h1 {
-        font-size: 3rem;
-        margin-bottom: 0.5rem;
-        color: #0f172a;
+        font-size: var(--sp-font-4xl-size);
+        margin-bottom: var(--sp-space-8);
+        color: var(--sp-color-neutral-900);
       }
 
       .subtitle {
         font-size: 1.125rem;
-        color: #475569;
+        color: var(--sp-text-on-page-muted);
       }
 
       .section {
-        background: white;
-        border-radius: 8px;
-        padding: 2rem;
-        margin-bottom: 2rem;
-        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        background: var(--sp-surface-card);
+        border-radius: var(--sp-radius-lg);
+        padding: var(--sp-space-32);
+        margin-bottom: var(--sp-space-32);
+        box-shadow: var(--sp-shadow-sm);
       }
 
       h2 {
-        font-size: 1.5rem;
-        color: #0f172a;
-        margin-bottom: 1.5rem;
+        font-size: var(--sp-font-xl-size);
+        color: var(--sp-color-neutral-900);
+        margin-bottom: var(--sp-space-24);
       }
 
       .demo-box {
-        padding: 1.5rem;
-        background: #f8fafc;
-        border-radius: 8px;
-        margin-bottom: 1.5rem;
+        padding: var(--sp-space-24);
+        background: var(--sp-surface-page);
+        border-radius: var(--sp-radius-lg);
+        margin-bottom: var(--sp-space-24);
       }
 
       .focus-demo {
         display: flex;
-        gap: 1rem;
+        gap: var(--sp-space-16);
         flex-wrap: wrap;
       }
 
       .focus-btn {
-        padding: 0.625rem 1.25rem;
-        background: #0369a1;
-        color: white;
+        padding: var(--sp-space-10) var(--sp-space-20);
+        background: var(--sp-button-primary-bg);
+        color: var(--sp-color-white);
         border: none;
         border-radius: 6px;
-        font-size: 0.875rem;
+        font-size: var(--sp-font-sm-size);
         font-weight: 600;
         cursor: pointer;
       }
 
       .focus-btn:focus {
-        outline: 2px solid #336df4;
-        outline-offset: 2px;
+        outline: var(--sp-focus-ring-width) var(--sp-focus-ring-style) var(--sp-color-focus-primary);
+        outline-offset: var(--sp-focus-ring-offset);
       }
 
       .focus-input {
-        padding: 0.625rem 0.875rem;
-        border: 1px solid #cbd5e1;
+        padding: var(--sp-space-10) var(--sp-space-14);
+        border: var(--sp-border-width-base) var(--sp-border-style-solid) var(--sp-form-default-border);
         border-radius: 6px;
-        font-size: 0.875rem;
+        font-size: var(--sp-font-sm-size);
       }
 
       .focus-input:focus {
-        outline: 2px solid #336df4;
-        outline-offset: 2px;
-        border-color: #336df4;
+        outline: var(--sp-focus-ring-width) var(--sp-focus-ring-style) var(--sp-color-focus-primary);
+        outline-offset: var(--sp-focus-ring-offset);
+        border-color: var(--sp-color-focus-primary);
       }
 
       .token-info {
-        margin-top: 1rem;
-        padding: 1rem;
-        background: white;
+        margin-top: var(--sp-space-16);
+        padding: var(--sp-space-16);
+        background: var(--sp-surface-card);
         border-radius: 6px;
-        border: 1px solid #e2e8f0;
+        border: var(--sp-border-width-base) var(--sp-border-style-solid) var(--sp-color-neutral-200);
       }
 
       .token-label {
-        font-size: 0.875rem;
+        font-size: var(--sp-font-sm-size);
         font-weight: 600;
-        color: #0f172a;
-        margin-bottom: 0.5rem;
+        color: var(--sp-color-neutral-900);
+        margin-bottom: var(--sp-space-8);
       }
 
       .token-value {
-        font-size: 0.75rem;
+        font-size: var(--sp-font-xs-size);
         font-family: monospace;
-        color: #64748b;
+        color: var(--sp-color-neutral-500);
         line-height: 1.6;
       }
 
@@ -129,7 +127,7 @@
       .touch-target-grid {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-        gap: 2rem;
+        gap: var(--sp-space-32);
       }
 
       .touch-example {
@@ -137,11 +135,11 @@
       }
 
       .touch-btn {
-        background: #0369a1;
-        color: white;
+        background: var(--sp-button-primary-bg);
+        color: var(--sp-color-white);
         border: none;
         border-radius: 6px;
-        font-size: 0.875rem;
+        font-size: var(--sp-font-sm-size);
         font-weight: 600;
         cursor: pointer;
         display: inline-flex;
@@ -152,63 +150,58 @@
       .touch-btn-small {
         min-width: 32px;
         min-height: 32px;
-        padding: 0.5rem;
+        padding: var(--sp-space-8);
       }
 
       .touch-btn-proper {
-        min-width: 44px;
-        min-height: 44px;
-        padding: 0.625rem 1.25rem;
+        min-width: var(--sp-min-touch-target);
+        min-height: var(--sp-min-touch-target);
+        padding: var(--sp-space-10) var(--sp-space-20);
       }
 
       .touch-label {
-        margin-top: 1rem;
-        font-size: 0.875rem;
+        margin-top: var(--sp-space-16);
+        font-size: var(--sp-font-sm-size);
         font-weight: 600;
-        color: #0f172a;
+        color: var(--sp-color-neutral-900);
       }
 
       .touch-description {
-        font-size: 0.75rem;
-        color: #64748b;
-        margin-top: 0.25rem;
+        font-size: var(--sp-font-xs-size);
+        color: var(--sp-color-neutral-500);
+        margin-top: var(--sp-space-4);
       }
 
       .status-indicator {
         display: inline-block;
-        padding: 0.25rem 0.75rem;
-        border-radius: 999px;
-        font-size: 0.75rem;
+        padding: var(--sp-space-4) var(--sp-space-12);
+        border-radius: var(--sp-radius-pill);
+        font-size: var(--sp-font-xs-size);
         font-weight: 600;
-        margin-top: 0.5rem;
+        margin-top: var(--sp-space-8);
       }
 
       .status-fail {
-        background: #fee2e2;
-        color: #b91c1c;
+        background: var(--sp-color-error-100);
+        color: var(--sp-form-invalid-text);
       }
 
       .status-pass {
-        background: #dcfce7;
-        color: #15803d;
+        background: var(--sp-color-success-100);
+        color: var(--sp-form-valid-text);
       }
 
       /* Text Size Examples */
       .text-size-example {
-        padding: 1.5rem;
-        background: white;
-        border: 1px solid #e2e8f0;
-        border-radius: 8px;
-        margin-bottom: 1rem;
+        padding: var(--sp-space-24);
+        background: var(--sp-surface-card);
+        border: var(--sp-border-width-base) var(--sp-border-style-solid) var(--sp-color-neutral-200);
+        border-radius: var(--sp-radius-lg);
+        margin-bottom: var(--sp-space-16);
       }
 
-      .text-too-small {
-        font-size: 12px;
-      }
-
-      .text-proper {
-        font-size: 16px;
-      }
+      .text-too-small { font-size: 12px; }
+      .text-proper { font-size: var(--sp-min-text-size); }
     </style>
   </head>
 
@@ -224,7 +217,7 @@
 
       <div class="section">
         <h2>Focus Rings</h2>
-        <p style="color: #64748b; margin-bottom: 1.5rem">
+        <p style="color: var(--sp-color-neutral-500); margin-bottom: var(--sp-space-24)">
           Tab through the elements below to see the focus indicators in action
         </p>
         <div class="demo-box">
@@ -238,10 +231,10 @@
           <div class="token-info">
             <div class="token-label">Focus Ring Tokens</div>
             <div class="token-value">
-              width: 2px<br />
-              offset: 2px<br />
-              style: solid<br />
-              color: colors.focus.primary (colors.brand.500 → #336df4)
+              width: --sp-focus-ring-width (2px)<br />
+              offset: --sp-focus-ring-offset (2px)<br />
+              style: --sp-focus-ring-style (solid)<br />
+              color: --sp-color-focus-primary
             </div>
           </div>
         </div>
@@ -249,7 +242,7 @@
 
       <div class="section">
         <h2>Touch Targets</h2>
-        <p style="color: #64748b; margin-bottom: 1.5rem">
+        <p style="color: var(--sp-color-neutral-500); margin-bottom: var(--sp-space-24)">
           Minimum touch target size ensures interactive elements are easy to tap
           on mobile devices
         </p>
@@ -270,7 +263,7 @@
         <div class="token-info">
           <div class="token-label">Touch Target Token</div>
           <div class="token-value">
-            minTouchTarget: 44px<br />
+            --sp-min-touch-target: 44px<br />
             <br />
             WCAG 2.1 Level AAA requires a minimum touch target size of 44×44 CSS
             pixels. This ensures interactive elements are accessible for users
@@ -281,7 +274,7 @@
 
       <div class="section">
         <h2>Text Size</h2>
-        <p style="color: #64748b; margin-bottom: 1.5rem">
+        <p style="color: var(--sp-color-neutral-500); margin-bottom: var(--sp-space-24)">
           Minimum text size helps ensure readability for all users
         </p>
         <div class="text-size-example">
@@ -300,7 +293,7 @@
         <div class="token-info">
           <div class="token-label">Text Size Token</div>
           <div class="token-value">
-            minTextSize: 16px<br />
+            --sp-min-text-size: 16px<br />
             <br />
             A minimum of 16px base font size ensures text is readable without
             zooming on mobile devices and helps users with low vision.
@@ -310,16 +303,16 @@
 
       <div class="section">
         <h2>Color Contrast Ratios</h2>
-        <p style="color: #64748b; margin-bottom: 1.5rem">
+        <p style="color: var(--sp-color-neutral-500); margin-bottom: var(--sp-space-24)">
           All text/background combinations meet WCAG AA or AAA standards
         </p>
-        <div style="display: grid; gap: 1rem">
+        <div style="display: grid; gap: var(--sp-space-16)">
           <div
             style="
-              padding: 1.5rem;
-              background: #ffffff;
-              border: 1px solid #e2e8f0;
-              border-radius: 8px;
+              padding: var(--sp-space-24);
+              background: var(--sp-surface-card);
+              border: var(--sp-border-width-base) var(--sp-border-style-solid) var(--sp-color-neutral-200);
+              border-radius: var(--sp-radius-lg);
             "
           >
             <div
@@ -327,40 +320,40 @@
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
-                margin-bottom: 1rem;
+                margin-bottom: var(--sp-space-16);
               "
             >
               <div>
                 <div
-                  style="font-size: 1.25rem; font-weight: 600; color: #0f172a"
+                  style="font-size: var(--sp-font-lg-size); font-weight: 600; color: var(--sp-color-neutral-900)"
                 >
                   Primary Text on Light Background
                 </div>
                 <div
                   style="
-                    font-size: 0.875rem;
-                    color: #64748b;
+                    font-size: var(--sp-font-sm-size);
+                    color: var(--sp-color-neutral-500);
                     font-family: monospace;
-                    margin-top: 0.25rem;
+                    margin-top: var(--sp-space-4);
                   "
                 >
-                  #0f172a on #ffffff
+                  --sp-color-neutral-900 on --sp-surface-card
                 </div>
               </div>
               <div style="text-align: right">
                 <div
-                  style="font-size: 1.5rem; font-weight: 700; color: #15803d"
+                  style="font-size: var(--sp-font-xl-size); font-weight: 700; color: var(--sp-form-valid-text)"
                 >
                   19.07:1
                 </div>
                 <div
-                  style="font-size: 0.75rem; color: #15803d; font-weight: 600"
+                  style="font-size: var(--sp-font-xs-size); color: var(--sp-form-valid-text); font-weight: 600"
                 >
                   AAA ✓✓✓
                 </div>
               </div>
             </div>
-            <p style="font-size: 0.875rem; color: #0f172a">
+            <p style="font-size: var(--sp-font-sm-size); color: var(--sp-color-neutral-900)">
               Example of body text with excellent contrast. Exceeds WCAG AAA
               requirements (7:1) for normal text and AA requirements (4.5:1) for
               large text.
@@ -369,10 +362,10 @@
 
           <div
             style="
-              padding: 1.5rem;
-              background: #ffffff;
-              border: 1px solid #e2e8f0;
-              border-radius: 8px;
+              padding: var(--sp-space-24);
+              background: var(--sp-surface-card);
+              border: var(--sp-border-width-base) var(--sp-border-style-solid) var(--sp-color-neutral-200);
+              border-radius: var(--sp-radius-lg);
             "
           >
             <div
@@ -380,40 +373,40 @@
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
-                margin-bottom: 1rem;
+                margin-bottom: var(--sp-space-16);
               "
             >
               <div>
                 <div
-                  style="font-size: 1.25rem; font-weight: 600; color: #64748b"
+                  style="font-size: var(--sp-font-lg-size); font-weight: 600; color: var(--sp-color-neutral-500)"
                 >
                   Muted Text on Light Background
                 </div>
                 <div
                   style="
-                    font-size: 0.875rem;
-                    color: #64748b;
+                    font-size: var(--sp-font-sm-size);
+                    color: var(--sp-color-neutral-500);
                     font-family: monospace;
-                    margin-top: 0.25rem;
+                    margin-top: var(--sp-space-4);
                   "
                 >
-                  #64748b on #ffffff
+                  --sp-color-neutral-500 on --sp-surface-card
                 </div>
               </div>
               <div style="text-align: right">
                 <div
-                  style="font-size: 1.5rem; font-weight: 700; color: #15803d"
+                  style="font-size: var(--sp-font-xl-size); font-weight: 700; color: var(--sp-form-valid-text)"
                 >
                   7.51:1
                 </div>
                 <div
-                  style="font-size: 0.75rem; color: #15803d; font-weight: 600"
+                  style="font-size: var(--sp-font-xs-size); color: var(--sp-form-valid-text); font-weight: 600"
                 >
                   AAA ✓✓✓
                 </div>
               </div>
             </div>
-            <p style="font-size: 0.875rem; color: #64748b">
+            <p style="font-size: var(--sp-font-sm-size); color: var(--sp-color-neutral-500)">
               Example of secondary text with strong contrast. Meets WCAG AAA
               requirements for normal text.
             </p>
@@ -421,10 +414,10 @@
 
           <div
             style="
-              padding: 1.5rem;
-              background: #ffffff;
-              border: 1px solid #e2e8f0;
-              border-radius: 8px;
+              padding: var(--sp-space-24);
+              background: var(--sp-surface-card);
+              border: var(--sp-border-width-base) var(--sp-border-style-solid) var(--sp-color-neutral-200);
+              border-radius: var(--sp-radius-lg);
             "
           >
             <div
@@ -432,40 +425,40 @@
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
-                margin-bottom: 1rem;
+                margin-bottom: var(--sp-space-16);
               "
             >
               <div>
                 <div
-                  style="font-size: 1.25rem; font-weight: 600; color: #94a3b8"
+                  style="font-size: var(--sp-font-lg-size); font-weight: 600; color: var(--sp-color-neutral-400)"
                 >
                   Subtle Text on Light Background
                 </div>
                 <div
                   style="
-                    font-size: 0.875rem;
-                    color: #64748b;
+                    font-size: var(--sp-font-sm-size);
+                    color: var(--sp-color-neutral-500);
                     font-family: monospace;
-                    margin-top: 0.25rem;
+                    margin-top: var(--sp-space-4);
                   "
                 >
-                  #94a3b8 on #ffffff
+                  --sp-color-neutral-400 on --sp-surface-card
                 </div>
               </div>
               <div style="text-align: right">
                 <div
-                  style="font-size: 1.5rem; font-weight: 700; color: #16a34a"
+                  style="font-size: var(--sp-font-xl-size); font-weight: 700; color: var(--sp-color-success-600)"
                 >
                   4.55:1
                 </div>
                 <div
-                  style="font-size: 0.75rem; color: #16a34a; font-weight: 600"
+                  style="font-size: var(--sp-font-xs-size); color: var(--sp-color-success-600); font-weight: 600"
                 >
                   AA ✓✓
                 </div>
               </div>
             </div>
-            <p style="font-size: 0.875rem; color: #94a3b8">
+            <p style="font-size: var(--sp-font-sm-size); color: var(--sp-color-neutral-400)">
               Example of subtle/meta text. Meets WCAG AA requirements (4.5:1)
               for normal text.
             </p>
@@ -473,10 +466,10 @@
 
           <div
             style="
-              padding: 1.5rem;
-              background: #0369a1;
-              border: 1px solid #075985;
-              border-radius: 8px;
+              padding: var(--sp-space-24);
+              background: var(--sp-button-primary-bg);
+              border: var(--sp-border-width-base) var(--sp-border-style-solid) var(--sp-button-primary-bghover);
+              border-radius: var(--sp-radius-lg);
             "
           >
             <div
@@ -484,40 +477,40 @@
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
-                margin-bottom: 1rem;
+                margin-bottom: var(--sp-space-16);
               "
             >
               <div>
                 <div
-                  style="font-size: 1.25rem; font-weight: 600; color: #ffffff"
+                  style="font-size: var(--sp-font-lg-size); font-weight: 600; color: var(--sp-color-white)"
                 >
                   White Text on Primary Button
                 </div>
                 <div
                   style="
-                    font-size: 0.875rem;
-                    color: #e0f2fe;
+                    font-size: var(--sp-font-sm-size);
+                    color: var(--sp-color-info-100);
                     font-family: monospace;
-                    margin-top: 0.25rem;
+                    margin-top: var(--sp-space-4);
                   "
                 >
-                  buttons.primary.text on buttons.primary.bg
+                  --sp-button-primary-text on --sp-button-primary-bg
                 </div>
               </div>
               <div style="text-align: right">
                 <div
-                  style="font-size: 1.5rem; font-weight: 700; color: #dcfce7"
+                  style="font-size: var(--sp-font-xl-size); font-weight: 700; color: var(--sp-color-success-100)"
                 >
                   5.92:1
                 </div>
                 <div
-                  style="font-size: 0.75rem; color: #dcfce7; font-weight: 600"
+                  style="font-size: var(--sp-font-xs-size); color: var(--sp-color-success-100); font-weight: 600"
                 >
                   AA ✓✓
                 </div>
               </div>
             </div>
-            <p style="font-size: 0.875rem; color: #ffffff">
+            <p style="font-size: var(--sp-font-sm-size); color: var(--sp-color-white)">
               Example of button text. Exceeds WCAG AA requirements for normal
               text and AAA for large text.
             </p>
@@ -525,10 +518,10 @@
 
           <div
             style="
-              padding: 1.5rem;
-              background: #0f172a;
-              border: 1px solid #1e293b;
-              border-radius: 8px;
+              padding: var(--sp-space-24);
+              background: var(--sp-color-neutral-900);
+              border: var(--sp-border-width-base) var(--sp-border-style-solid) var(--sp-color-neutral-800);
+              border-radius: var(--sp-radius-lg);
             "
           >
             <div
@@ -536,40 +529,40 @@
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
-                margin-bottom: 1rem;
+                margin-bottom: var(--sp-space-16);
               "
             >
               <div>
                 <div
-                  style="font-size: 1.25rem; font-weight: 600; color: #f8fafc"
+                  style="font-size: var(--sp-font-lg-size); font-weight: 600; color: var(--sp-surface-page)"
                 >
                   Light Text on Dark Background
                 </div>
                 <div
                   style="
-                    font-size: 0.875rem;
-                    color: #cbd5e1;
+                    font-size: var(--sp-font-sm-size);
+                    color: var(--sp-color-neutral-300);
                     font-family: monospace;
-                    margin-top: 0.25rem;
+                    margin-top: var(--sp-space-4);
                   "
                 >
-                  #f8fafc on #0f172a (Dark Mode)
+                  --sp-surface-page on --sp-color-neutral-900 (Dark Mode)
                 </div>
               </div>
               <div style="text-align: right">
                 <div
-                  style="font-size: 1.5rem; font-weight: 700; color: #dcfce7"
+                  style="font-size: var(--sp-font-xl-size); font-weight: 700; color: var(--sp-color-success-100)"
                 >
                   18.23:1
                 </div>
                 <div
-                  style="font-size: 0.75rem; color: #dcfce7; font-weight: 600"
+                  style="font-size: var(--sp-font-xs-size); color: var(--sp-color-success-100); font-weight: 600"
                 >
                   AAA ✓✓✓
                 </div>
               </div>
             </div>
-            <p style="font-size: 0.875rem; color: #f8fafc">
+            <p style="font-size: var(--sp-font-sm-size); color: var(--sp-surface-page)">
               Example of dark mode text. Exceeds WCAG AAA requirements for all
               text sizes.
             </p>
@@ -577,10 +570,10 @@
 
           <div
             style="
-              padding: 1.5rem;
-              background: #fee2e2;
-              border: 1px solid #fecaca;
-              border-radius: 8px;
+              padding: var(--sp-space-24);
+              background: var(--sp-form-invalid-bg);
+              border: var(--sp-border-width-base) var(--sp-border-style-solid) var(--sp-color-error-200);
+              border-radius: var(--sp-radius-lg);
             "
           >
             <div
@@ -588,40 +581,40 @@
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
-                margin-bottom: 1rem;
+                margin-bottom: var(--sp-space-16);
               "
             >
               <div>
                 <div
-                  style="font-size: 1.25rem; font-weight: 600; color: #b91c1c"
+                  style="font-size: var(--sp-font-lg-size); font-weight: 600; color: var(--sp-form-invalid-text)"
                 >
                   Error Text on Error Background
                 </div>
                 <div
                   style="
-                    font-size: 0.875rem;
-                    color: #991b1b;
+                    font-size: var(--sp-font-sm-size);
+                    color: var(--sp-color-error-800);
                     font-family: monospace;
-                    margin-top: 0.25rem;
+                    margin-top: var(--sp-space-4);
                   "
                 >
-                  #b91c1c on #fee2e2
+                  --sp-form-invalid-text on --sp-form-invalid-bg
                 </div>
               </div>
               <div style="text-align: right">
                 <div
-                  style="font-size: 1.5rem; font-weight: 700; color: #15803d"
+                  style="font-size: var(--sp-font-xl-size); font-weight: 700; color: var(--sp-form-valid-text)"
                 >
                   6.29:1
                 </div>
                 <div
-                  style="font-size: 0.75rem; color: #15803d; font-weight: 600"
+                  style="font-size: var(--sp-font-xs-size); color: var(--sp-form-valid-text); font-weight: 600"
                 >
                   AA ✓✓
                 </div>
               </div>
             </div>
-            <p style="font-size: 0.875rem; color: #b91c1c">
+            <p style="font-size: var(--sp-font-sm-size); color: var(--sp-form-invalid-text)">
               Example of semantic error text. Meets WCAG AA requirements for
               normal text.
             </p>
@@ -629,10 +622,10 @@
 
           <div
             style="
-              padding: 1.5rem;
-              background: #dcfce7;
-              border: 1px solid #bbf7d0;
-              border-radius: 8px;
+              padding: var(--sp-space-24);
+              background: var(--sp-color-success-100);
+              border: var(--sp-border-width-base) var(--sp-border-style-solid) var(--sp-color-success-200);
+              border-radius: var(--sp-radius-lg);
             "
           >
             <div
@@ -640,40 +633,40 @@
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
-                margin-bottom: 1rem;
+                margin-bottom: var(--sp-space-16);
               "
             >
               <div>
                 <div
-                  style="font-size: 1.25rem; font-weight: 600; color: #15803d"
+                  style="font-size: var(--sp-font-lg-size); font-weight: 600; color: var(--sp-form-valid-text)"
                 >
                   Success Text on Success Background
                 </div>
                 <div
                   style="
-                    font-size: 0.875rem;
-                    color: #166534;
+                    font-size: var(--sp-font-sm-size);
+                    color: var(--sp-color-success-800);
                     font-family: monospace;
-                    margin-top: 0.25rem;
+                    margin-top: var(--sp-space-4);
                   "
                 >
-                  #15803d on #dcfce7
+                  --sp-form-valid-text on --sp-color-success-100
                 </div>
               </div>
               <div style="text-align: right">
                 <div
-                  style="font-size: 1.5rem; font-weight: 700; color: #15803d"
+                  style="font-size: var(--sp-font-xl-size); font-weight: 700; color: var(--sp-form-valid-text)"
                 >
                   7.15:1
                 </div>
                 <div
-                  style="font-size: 0.75rem; color: #15803d; font-weight: 600"
+                  style="font-size: var(--sp-font-xs-size); color: var(--sp-form-valid-text); font-weight: 600"
                 >
                   AAA ✓✓✓
                 </div>
               </div>
             </div>
-            <p style="font-size: 0.875rem; color: #15803d">
+            <p style="font-size: var(--sp-font-sm-size); color: var(--sp-form-valid-text)">
               Example of semantic success text. Exceeds WCAG AAA requirements
               for normal text.
             </p>
@@ -681,17 +674,17 @@
         </div>
         <div
           style="
-            margin-top: 1.5rem;
-            padding: 1rem;
-            background: #eff6ff;
-            border-radius: 8px;
-            border: 1px solid #bfdbfe;
+            margin-top: var(--sp-space-24);
+            padding: var(--sp-space-16);
+            background: var(--sp-color-info-50);
+            border-radius: var(--sp-radius-lg);
+            border: var(--sp-border-width-base) var(--sp-border-style-solid) var(--sp-color-info-200);
           "
         >
-          <div style="font-weight: 600; color: #075985; margin-bottom: 0.5rem">
+          <div style="font-weight: 600; color: var(--sp-button-primary-bghover); margin-bottom: var(--sp-space-8)">
             📊 WCAG Contrast Standards
           </div>
-          <div style="font-size: 0.875rem; color: #0c4a6e; line-height: 1.6">
+          <div style="font-size: var(--sp-font-sm-size); color: var(--sp-button-primary-bgactive); line-height: 1.6">
             <strong>Level AA:</strong> 4.5:1 for normal text, 3:1 for large text
             (18px+ or 14px+ bold)<br />
             <strong>Level AAA:</strong> 7:1 for normal text, 4.5:1 for large
@@ -703,21 +696,21 @@
 
       <div class="section">
         <h2>Accessibility Guidelines</h2>
-        <div style="display: grid; gap: 1rem">
+        <div style="display: grid; gap: var(--sp-space-16)">
           <div
             style="
-              padding: 1.5rem;
-              background: #f0fdf4;
-              border: 1px solid #86efac;
-              border-radius: 8px;
+              padding: var(--sp-space-24);
+              background: var(--sp-color-success-50);
+              border: var(--sp-border-width-base) var(--sp-border-style-solid) var(--sp-color-success-300);
+              border-radius: var(--sp-radius-lg);
             "
           >
             <div
-              style="font-weight: 600; color: #15803d; margin-bottom: 0.5rem"
+              style="font-weight: 600; color: var(--sp-form-valid-text); margin-bottom: var(--sp-space-8)"
             >
               ✓ Color Contrast
             </div>
-            <p style="color: #166534; font-size: 0.875rem; line-height: 1.6">
+            <p style="color: var(--sp-color-success-800); font-size: var(--sp-font-sm-size); line-height: 1.6">
               All color combinations in Spectre tokens meet WCAG AA standards
               for color contrast, ensuring text is readable for users with low
               vision or color blindness.
@@ -726,18 +719,18 @@
 
           <div
             style="
-              padding: 1.5rem;
-              background: #f0fdf4;
-              border: 1px solid #86efac;
-              border-radius: 8px;
+              padding: var(--sp-space-24);
+              background: var(--sp-color-success-50);
+              border: var(--sp-border-width-base) var(--sp-border-style-solid) var(--sp-color-success-300);
+              border-radius: var(--sp-radius-lg);
             "
           >
             <div
-              style="font-weight: 600; color: #15803d; margin-bottom: 0.5rem"
+              style="font-weight: 600; color: var(--sp-form-valid-text); margin-bottom: var(--sp-space-8)"
             >
               ✓ Focus Indicators
             </div>
-            <p style="color: #166534; font-size: 0.875rem; line-height: 1.6">
+            <p style="color: var(--sp-color-success-800); font-size: var(--sp-font-sm-size); line-height: 1.6">
               All interactive elements have clear, visible focus indicators that
               meet WCAG requirements for keyboard navigation.
             </p>
@@ -745,18 +738,18 @@
 
           <div
             style="
-              padding: 1.5rem;
-              background: #f0fdf4;
-              border: 1px solid #86efac;
-              border-radius: 8px;
+              padding: var(--sp-space-24);
+              background: var(--sp-color-success-50);
+              border: var(--sp-border-width-base) var(--sp-border-style-solid) var(--sp-color-success-300);
+              border-radius: var(--sp-radius-lg);
             "
           >
             <div
-              style="font-weight: 600; color: #15803d; margin-bottom: 0.5rem"
+              style="font-weight: 600; color: var(--sp-form-valid-text); margin-bottom: var(--sp-space-8)"
             >
               ✓ Touch Targets
             </div>
-            <p style="color: #166534; font-size: 0.875rem; line-height: 1.6">
+            <p style="color: var(--sp-color-success-800); font-size: var(--sp-font-sm-size); line-height: 1.6">
               Minimum touch target size of 44×44px ensures interactive elements
               are accessible on touch devices and for users with motor
               impairments.
@@ -765,18 +758,18 @@
 
           <div
             style="
-              padding: 1.5rem;
-              background: #f0fdf4;
-              border: 1px solid #86efac;
-              border-radius: 8px;
+              padding: var(--sp-space-24);
+              background: var(--sp-color-success-50);
+              border: var(--sp-border-width-base) var(--sp-border-style-solid) var(--sp-color-success-300);
+              border-radius: var(--sp-radius-lg);
             "
           >
             <div
-              style="font-weight: 600; color: #15803d; margin-bottom: 0.5rem"
+              style="font-weight: 600; color: var(--sp-form-valid-text); margin-bottom: var(--sp-space-8)"
             >
               ✓ Readable Text
             </div>
-            <p style="color: #166534; font-size: 0.875rem; line-height: 1.6">
+            <p style="color: var(--sp-color-success-800); font-size: var(--sp-font-sm-size); line-height: 1.6">
               Base font size of 16px and appropriate line heights ensure text is
               comfortable to read without zooming, especially on mobile devices.
             </p>
@@ -786,75 +779,75 @@
 
       <div class="section">
         <h2>Opacity Tokens</h2>
-        <p style="color: #64748b; margin-bottom: 1.5rem">
+        <p style="color: var(--sp-color-neutral-500); margin-bottom: var(--sp-space-24)">
           Opacity values for different states and elements
         </p>
-        <div style="display: grid; gap: 1rem">
-          <div style="display: flex; align-items: center; gap: 1rem">
+        <div style="display: grid; gap: var(--sp-space-16)">
+          <div style="display: flex; align-items: center; gap: var(--sp-space-16)">
             <div
               style="
                 width: 100px;
                 height: 60px;
-                background: #0369a1;
-                opacity: 0.38;
+                background: var(--sp-button-primary-bg);
+                opacity: var(--sp-opacity-disabled);
                 border-radius: 6px;
               "
             ></div>
             <div>
-              <div style="font-weight: 600; color: #0f172a">Disabled</div>
-              <div style="font-size: 0.875rem; color: #64748b">
-                0.38 opacity
+              <div style="font-weight: 600; color: var(--sp-color-neutral-900)">Disabled</div>
+              <div style="font-size: var(--sp-font-sm-size); color: var(--sp-color-neutral-500)">
+                --sp-opacity-disabled (0.38)
               </div>
             </div>
           </div>
-          <div style="display: flex; align-items: center; gap: 1rem">
+          <div style="display: flex; align-items: center; gap: var(--sp-space-16)">
             <div
               style="
                 width: 100px;
                 height: 60px;
-                background: #0369a1;
-                opacity: 0.92;
+                background: var(--sp-button-primary-bg);
+                opacity: var(--sp-opacity-hover);
                 border-radius: 6px;
               "
             ></div>
             <div>
-              <div style="font-weight: 600; color: #0f172a">Hover</div>
-              <div style="font-size: 0.875rem; color: #64748b">
-                0.92 opacity
+              <div style="font-weight: 600; color: var(--sp-color-neutral-900)">Hover</div>
+              <div style="font-size: var(--sp-font-sm-size); color: var(--sp-color-neutral-500)">
+                --sp-opacity-hover (0.92)
               </div>
             </div>
           </div>
-          <div style="display: flex; align-items: center; gap: 1rem">
+          <div style="display: flex; align-items: center; gap: var(--sp-space-16)">
             <div
               style="
                 width: 100px;
                 height: 60px;
-                background: #0369a1;
-                opacity: 0.84;
+                background: var(--sp-button-primary-bg);
+                opacity: var(--sp-opacity-active);
                 border-radius: 6px;
               "
             ></div>
             <div>
-              <div style="font-weight: 600; color: #0f172a">Active</div>
-              <div style="font-size: 0.875rem; color: #64748b">
-                0.84 opacity
+              <div style="font-weight: 600; color: var(--sp-color-neutral-900)">Active</div>
+              <div style="font-size: var(--sp-font-sm-size); color: var(--sp-color-neutral-500)">
+                --sp-opacity-active (0.84)
               </div>
             </div>
           </div>
-          <div style="display: flex; align-items: center; gap: 1rem">
+          <div style="display: flex; align-items: center; gap: var(--sp-space-16)">
             <div
               style="
                 width: 100px;
                 height: 60px;
-                background: #0369a1;
-                opacity: 1;
+                background: var(--sp-button-primary-bg);
+                opacity: var(--sp-opacity-focus);
                 border-radius: 6px;
               "
             ></div>
             <div>
-              <div style="font-weight: 600; color: #0f172a">Focus</div>
-              <div style="font-size: 0.875rem; color: #64748b">
-                1.0 opacity (full)
+              <div style="font-weight: 600; color: var(--sp-color-neutral-900)">Focus</div>
+              <div style="font-size: var(--sp-font-sm-size); color: var(--sp-color-neutral-500)">
+                --sp-opacity-focus (1.0 full)
               </div>
             </div>
           </div>
