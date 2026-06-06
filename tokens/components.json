@@ -403,6 +403,9 @@
       },
       "focusRing": {
         "value": "{colors.error.500} / 0.4"
+      },
+      "focusVisible": {
+        "value": "{colors.error.500} / 0.4"
       }
     },
     "success": {
@@ -434,6 +437,9 @@
         "value": "{colors.neutral.400}"
       },
       "focusRing": {
+        "value": "{colors.success.500} / 0.4"
+      },
+      "focusVisible": {
         "value": "{colors.success.500} / 0.4"
       }
     },

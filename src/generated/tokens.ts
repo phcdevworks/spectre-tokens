@@ -408,6 +408,9 @@ export interface SpectreSourceTokens {
       focusRing: {
         value: string;
       };
+      focusVisible: {
+        value: string;
+      };
     };
     success: {
       bg: {
@@ -438,6 +441,9 @@ export interface SpectreSourceTokens {
         value: string;
       };
       focusRing: {
+        value: string;
+      };
+      focusVisible: {
         value: string;
       };
     };
@@ -1970,6 +1976,7 @@ export interface SpectreGeneratedTokens {
       text: string;
       textDisabled: string;
       focusRing: string;
+      focusVisible: string;
     };
     success: {
       bg: string;
@@ -1979,6 +1986,7 @@ export interface SpectreGeneratedTokens {
       text: string;
       textDisabled: string;
       focusRing: string;
+      focusVisible: string;
     };
     cta: {
       bg: string;
@@ -2775,7 +2783,8 @@ export const coreTokens: SpectreGeneratedTokens = {
       "bgDisabled": "{colors.error.200}",
       "text": "{colors.white}",
       "textDisabled": "{colors.neutral.400}",
-      "focusRing": "{colors.error.500} / 0.4"
+      "focusRing": "{colors.error.500} / 0.4",
+      "focusVisible": "{colors.error.500} / 0.4"
     },
     "success": {
       "bg": "{colors.success.700}",
@@ -2784,7 +2793,8 @@ export const coreTokens: SpectreGeneratedTokens = {
       "bgDisabled": "{colors.success.200}",
       "text": "{colors.white}",
       "textDisabled": "{colors.neutral.400}",
-      "focusRing": "{colors.success.500} / 0.4"
+      "focusRing": "{colors.success.500} / 0.4",
+      "focusVisible": "{colors.success.500} / 0.4"
     },
     "cta": {
       "bg": "{colors.brand.600}",
@@ -3113,9 +3123,9 @@ export const coreTokens: SpectreGeneratedTokens = {
       "600": "#6f3fd7"
     },
     "focus": {
-      "primary": "#336df4",
-      "error": "#ef4444",
-      "info": "#0369a1"
+      "primary": "{colors.brand.500}",
+      "error": "{colors.error.500}",
+      "info": "{colors.info.600}"
     },
     "white": "#ffffff",
     "black": "#000000"

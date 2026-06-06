@@ -104,6 +104,7 @@ interface SpectreGeneratedTokens {
             text: string;
             textDisabled: string;
             focusRing: string;
+            focusVisible: string;
         };
         success: {
             bg: string;
@@ -113,6 +114,7 @@ interface SpectreGeneratedTokens {
             text: string;
             textDisabled: string;
             focusRing: string;
+            focusVisible: string;
         };
         cta: {
             bg: string;

@@ -8,6 +8,12 @@ reflects package releases published to npm.
 
 Contract change type: additive
 
+## [2.8.0] - 2026-06-06
+
+**Release Title:** Focus Token Parity and Color Reference Consistency
+
+Contract change type: additive
+
 ### Added
 
 - Added `@phcdevworks/spectre-manifest` as a devDependency and wired ecosystem
@@ -28,6 +34,8 @@ Contract change type: additive
 - Added Design Tool Handoff section to `CONTRIBUTING.md` documenting the Tokens
   Studio workflow for pulling updated tokens into Figma.
 - Added missing scale steps to the `space` primitive family in `tokens/primitives.json`: `1` (1px), `2` (2px), `6` (6px), `10` (10px), `14` (14px), `28` (28px), and `72` (72px). These additions bridge gaps and provide finer increments (down to 2px in key ranges) at both the low and high ends of the spacing scale to support more precise layout control.
+- Added `focusVisible` token to `buttons.danger` (`{colors.error.500} / 0.4`) and `buttons.success` (`{colors.success.500} / 0.4`) to match the parity already present on `primary`, `secondary`, `ghost`, and `accent` variants. Updated `locked-color-baseline.json` to record the approved new state. Closes the gap identified in spectre-ui Phase 3 P1 token sync audit.
+- Converted `colors.focus.primary`, `colors.focus.error`, and `colors.focus.info` from raw hex literals to token references (`{colors.brand.500}`, `{colors.error.500}`, `{colors.info.600}`) for consistency with the rest of the token system.
 
 ## [2.7.0] - 2026-06-03
 
@@ -608,7 +616,8 @@ Contract change type: breaking
 - Standardized documentation and contributing guidelines.
 
 [unreleased]:
-  https://github.com/phcdevworks/spectre-tokens/compare/v2.7.0...HEAD
+  https://github.com/phcdevworks/spectre-tokens/compare/v2.8.0...HEAD
+[2.8.0]: https://github.com/phcdevworks/spectre-tokens/compare/v2.7.0...v2.8.0
 [2.7.0]: https://github.com/phcdevworks/spectre-tokens/compare/v2.6.0...v2.7.0
 [2.6.0]: https://github.com/phcdevworks/spectre-tokens/compare/v2.5.0...v2.6.0
 [2.5.0]: https://github.com/phcdevworks/spectre-tokens/compare/v2.4.0...v2.5.0

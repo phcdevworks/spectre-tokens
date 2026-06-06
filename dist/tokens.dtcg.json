@@ -340,6 +340,10 @@
       "focusRing": {
         "$value": "{colors.error.500} / 0.4",
         "$type": "color"
+      },
+      "focusVisible": {
+        "$value": "{colors.error.500} / 0.4",
+        "$type": "color"
       }
     },
     "success": {
@@ -368,6 +372,10 @@
         "$type": "color"
       },
       "focusRing": {
+        "$value": "{colors.success.500} / 0.4",
+        "$type": "color"
+      },
+      "focusVisible": {
         "$value": "{colors.success.500} / 0.4",
         "$type": "color"
       }
@@ -1384,15 +1392,15 @@
     },
     "focus": {
       "primary": {
-        "$value": "#336df4",
+        "$value": "{colors.brand.500}",
         "$type": "color"
       },
       "error": {
-        "$value": "#ef4444",
+        "$value": "{colors.error.500}",
         "$type": "color"
       },
       "info": {
-        "$value": "#0369a1",
+        "$value": "{colors.info.600}",
         "$type": "color"
       }
     },
