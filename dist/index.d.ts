@@ -512,6 +512,7 @@ interface SpectreGeneratedTokens {
     };
     transitions: {
         duration: {
+            reduced: string;
             instant: string;
             fast: string;
             base: string;
@@ -572,6 +573,48 @@ interface SpectreGeneratedTokens {
             easing: string;
             keyframes: string;
         };
+        reducedMotion: {
+            fadeIn: {
+                duration: string;
+                easing: string;
+                keyframes: string;
+            };
+            fadeOut: {
+                duration: string;
+                easing: string;
+                keyframes: string;
+            };
+            slideUp: {
+                duration: string;
+                easing: string;
+                keyframes: string;
+            };
+            slideDown: {
+                duration: string;
+                easing: string;
+                keyframes: string;
+            };
+            scaleIn: {
+                duration: string;
+                easing: string;
+                keyframes: string;
+            };
+            bounce: {
+                duration: string;
+                easing: string;
+                keyframes: string;
+            };
+            shake: {
+                duration: string;
+                easing: string;
+                keyframes: string;
+            };
+            pulse: {
+                duration: string;
+                easing: string;
+                keyframes: string;
+            };
+        };
     };
     opacity: {
         disabled: string;
@@ -606,6 +649,7 @@ interface SpectreGeneratedTokens {
             offset: string;
             style: string;
         };
+        reducedMotion: string;
         minTouchTarget: string;
         minTextSize: string;
     };

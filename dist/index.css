@@ -228,6 +228,7 @@
   --sp-z-index-popover: 1500;
   --sp-z-index-tooltip: 1600;
   --sp-z-index-toast: 1700;
+  --sp-duration-reduced: 0.01ms;
   --sp-duration-instant: 75ms;
   --sp-duration-fast: 150ms;
   --sp-duration-base: 200ms;
@@ -255,6 +256,7 @@
   --sp-focus-ring-style: solid;
   --sp-min-touch-target: 44px;
   --sp-min-text-size: 16px;
+  --sp-reduced-motion: 0.01ms;
   --sp-button-primary-bg: #0369a1;
   --sp-button-primary-bghover: #075985;
   --sp-button-primary-bgactive: #0c4a6e;
@@ -355,6 +357,30 @@
   --sp-animation-pulse-duration: 1200ms;
   --sp-animation-pulse-easing: cubic-bezier(0.4, 0, 0.2, 1);
   --sp-animation-pulse-keyframes: pulse;
+  --sp-animation-reduced-motion-fadein-duration: 0.01ms;
+  --sp-animation-reduced-motion-fadein-easing: linear;
+  --sp-animation-reduced-motion-fadein-keyframes: fade-in;
+  --sp-animation-reduced-motion-fadeout-duration: 0.01ms;
+  --sp-animation-reduced-motion-fadeout-easing: linear;
+  --sp-animation-reduced-motion-fadeout-keyframes: fade-out;
+  --sp-animation-reduced-motion-slideup-duration: 0.01ms;
+  --sp-animation-reduced-motion-slideup-easing: linear;
+  --sp-animation-reduced-motion-slideup-keyframes: slide-up;
+  --sp-animation-reduced-motion-slidedown-duration: 0.01ms;
+  --sp-animation-reduced-motion-slidedown-easing: linear;
+  --sp-animation-reduced-motion-slidedown-keyframes: slide-down;
+  --sp-animation-reduced-motion-scalein-duration: 0.01ms;
+  --sp-animation-reduced-motion-scalein-easing: linear;
+  --sp-animation-reduced-motion-scalein-keyframes: scale-in;
+  --sp-animation-reduced-motion-bounce-duration: 0.01ms;
+  --sp-animation-reduced-motion-bounce-easing: linear;
+  --sp-animation-reduced-motion-bounce-keyframes: bounce;
+  --sp-animation-reduced-motion-shake-duration: 0.01ms;
+  --sp-animation-reduced-motion-shake-easing: linear;
+  --sp-animation-reduced-motion-shake-keyframes: shake;
+  --sp-animation-reduced-motion-pulse-duration: 0.01ms;
+  --sp-animation-reduced-motion-pulse-easing: linear;
+  --sp-animation-reduced-motion-pulse-keyframes: pulse;
 }
 :root[data-spectre-theme="dark"] {
   --sp-surface-page: #141b24;
