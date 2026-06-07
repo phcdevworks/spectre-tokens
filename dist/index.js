@@ -651,6 +651,7 @@ var coreTokens = {
       "style": "solid"
     },
     "reducedMotion": "{transitions.duration.reduced}",
+    "forcedColors": "auto",
     "minTouchTarget": "44px",
     "minTextSize": "16px"
   },

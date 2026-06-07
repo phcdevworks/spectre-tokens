@@ -2030,6 +2030,10 @@
       "$value": "{transitions.duration.reduced}",
       "$type": "string"
     },
+    "forcedColors": {
+      "$value": "auto",
+      "$type": "string"
+    },
     "minTouchTarget": {
       "$value": "44px",
       "$type": "dimension"
