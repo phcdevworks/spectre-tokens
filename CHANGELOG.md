@@ -12,6 +12,7 @@ Contract change type: additive
 
 - Added `reduced` (0.01ms) duration to `transitions.duration` and `reducedMotion` semantic token to `accessibility` in `tokens/primitives.json`.
 - Added `animations.reducedMotion` variants for all 8 named animations (`fadeIn`, `fadeOut`, `slideUp`, `slideDown`, `scaleIn`, `bounce`, `shake`, `pulse`) to provide near-zero duration alternatives for reduced-motion accessibility.
+- Added `forcedColors` token with value `"auto"` to the `accessibility` family in `tokens/primitives.json` to address a Priority 1 gap in the accessibility contract.
 
 ## [2.8.0] - 2026-06-06
 
