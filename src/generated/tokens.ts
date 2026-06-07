@@ -1645,6 +1645,7 @@ export interface SpectreSourceTokens {
       style: string;
     };
     reducedMotion: string;
+    forcedColors: string;
     minTouchTarget: string;
     minTextSize: string;
   };
@@ -2566,6 +2567,7 @@ export interface SpectreGeneratedTokens {
       style: string;
     };
     reducedMotion: string;
+    forcedColors: string;
     minTouchTarget: string;
     minTextSize: string;
   };
@@ -3418,6 +3420,7 @@ export const coreTokens: SpectreGeneratedTokens = {
       "style": "solid"
     },
     "reducedMotion": "{transitions.duration.reduced}",
+    "forcedColors": "auto",
     "minTouchTarget": "44px",
     "minTextSize": "16px"
   },

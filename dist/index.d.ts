@@ -650,6 +650,7 @@ interface SpectreGeneratedTokens {
             style: string;
         };
         reducedMotion: string;
+        forcedColors: string;
         minTouchTarget: string;
         minTextSize: string;
     };
