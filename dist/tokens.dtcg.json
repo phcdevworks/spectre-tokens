@@ -563,6 +563,22 @@
         "hero": {
           "$value": "linear-gradient(135deg, {colors.indigo.500} 0%, {colors.violet.600} 100%)",
           "$type": "string"
+        },
+        "hover": {
+          "$value": "{colors.neutral.100}",
+          "$type": "color"
+        },
+        "selected": {
+          "$value": "{colors.info.50}",
+          "$type": "color"
+        },
+        "active": {
+          "$value": "{colors.neutral.200}",
+          "$type": "color"
+        },
+        "divider": {
+          "$value": "{colors.neutral.200}",
+          "$type": "color"
         }
       },
       "text": {
@@ -827,6 +843,22 @@
         "hero": {
           "$value": "linear-gradient(135deg, {colors.accent.700} 0%, {colors.accent.900} 100%)",
           "$type": "string"
+        },
+        "hover": {
+          "$value": "{colors.neutral.700}",
+          "$type": "color"
+        },
+        "selected": {
+          "$value": "{colors.info.900}",
+          "$type": "color"
+        },
+        "active": {
+          "$value": "{colors.neutral.600}",
+          "$type": "color"
+        },
+        "divider": {
+          "$value": "{colors.neutral.700}",
+          "$type": "color"
         }
       },
       "text": {
@@ -2097,6 +2129,48 @@
       "$value": "{colors.black} / 0.6",
       "$type": "color",
       "$description": "modals, dropdowns, flyouts"
+    },
+    "hover": {
+      "$value": "{colors.neutral.100}",
+      "$type": "color",
+      "$description": "background for hovered clickable rows, items, and menu entries"
+    },
+    "selected": {
+      "$value": "{colors.info.50}",
+      "$type": "color",
+      "$description": "background for selected list items, rows, and menu entries"
+    },
+    "active": {
+      "$value": "{colors.neutral.200}",
+      "$type": "color",
+      "$description": "background for pressed/active clickable rows, items, and menu entries"
+    },
+    "divider": {
+      "$value": "{colors.neutral.200}",
+      "$type": "color",
+      "$description": "hairline color for <hr>, table borders, and section separators"
+    }
+  },
+  "link": {
+    "default": {
+      "$value": "{colors.brand.600}",
+      "$type": "color",
+      "$description": "default inline link color"
+    },
+    "hover": {
+      "$value": "{colors.brand.700}",
+      "$type": "color",
+      "$description": "link color on hover"
+    },
+    "active": {
+      "$value": "{colors.brand.800}",
+      "$type": "color",
+      "$description": "link color while pressed"
+    },
+    "visited": {
+      "$value": "{colors.accent.700}",
+      "$type": "color",
+      "$description": "link color after the destination has been visited"
     }
   },
   "text": {

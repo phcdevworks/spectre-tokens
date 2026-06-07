@@ -636,6 +636,18 @@ export interface SpectreSourceTokens {
         hero: {
           value: string;
         };
+        hover: {
+          value: string;
+        };
+        selected: {
+          value: string;
+        };
+        active: {
+          value: string;
+        };
+        divider: {
+          value: string;
+        };
       };
       text: {
         onPage: {
@@ -994,6 +1006,18 @@ export interface SpectreSourceTokens {
           };
         };
         hero: {
+          value: string;
+        };
+        hover: {
+          value: string;
+        };
+        selected: {
+          value: string;
+        };
+        active: {
+          value: string;
+        };
+        divider: {
           value: string;
         };
       };
@@ -1688,6 +1712,43 @@ export interface SpectreSourceTokens {
       value: string;
       description: string;
     };
+    hover: {
+      value: string;
+      description: string;
+    };
+    selected: {
+      value: string;
+      description: string;
+    };
+    active: {
+      value: string;
+      description: string;
+    };
+    divider: {
+      value: string;
+      description: string;
+    };
+  };
+  link: {
+    default: {
+      value: string;
+      description: string;
+      metadata: {
+        pair: string;
+      };
+    };
+    hover: {
+      value: string;
+      description: string;
+    };
+    active: {
+      value: string;
+      description: string;
+    };
+    visited: {
+      value: string;
+      description: string;
+    };
   };
   text: {
     onPage: {
@@ -2097,6 +2158,10 @@ export interface SpectreGeneratedTokens {
         overlay: string;
         alternate: string;
         hero: string;
+        hover: string;
+        selected: string;
+        active: string;
+        divider: string;
       };
       text: {
         onPage: {
@@ -2184,6 +2249,10 @@ export interface SpectreGeneratedTokens {
         overlay: string;
         alternate: string;
         hero: string;
+        hover: string;
+        selected: string;
+        active: string;
+        divider: string;
       };
       text: {
         onPage: {
@@ -2589,6 +2658,16 @@ export interface SpectreGeneratedTokens {
     card: string;
     input: string;
     overlay: string;
+    hover: string;
+    selected: string;
+    active: string;
+    divider: string;
+  };
+  link: {
+    default: string;
+    hover: string;
+    active: string;
+    visited: string;
   };
   text: {
     onPage: {
@@ -2949,7 +3028,11 @@ export const coreTokens: SpectreGeneratedTokens = {
         "input": "{colors.white}",
         "overlay": "{colors.black} / 0.6",
         "alternate": "{colors.neutral.100}",
-        "hero": "linear-gradient(135deg, {colors.indigo.500} 0%, {colors.violet.600} 100%)"
+        "hero": "linear-gradient(135deg, {colors.indigo.500} 0%, {colors.violet.600} 100%)",
+        "hover": "{colors.neutral.100}",
+        "selected": "{colors.info.50}",
+        "active": "{colors.neutral.200}",
+        "divider": "{colors.neutral.200}"
       },
       "text": {
         "onPage": {
@@ -3036,7 +3119,11 @@ export const coreTokens: SpectreGeneratedTokens = {
         "input": "{colors.neutral.700}",
         "overlay": "{colors.black} / 0.6",
         "alternate": "{colors.neutral.800}",
-        "hero": "linear-gradient(135deg, {colors.accent.700} 0%, {colors.accent.900} 100%)"
+        "hero": "linear-gradient(135deg, {colors.accent.700} 0%, {colors.accent.900} 100%)",
+        "hover": "{colors.neutral.700}",
+        "selected": "{colors.info.900}",
+        "active": "{colors.neutral.600}",
+        "divider": "{colors.neutral.700}"
       },
       "text": {
         "onPage": {
@@ -3441,7 +3528,17 @@ export const coreTokens: SpectreGeneratedTokens = {
     "page": "{colors.neutral.50}",
     "card": "{colors.white}",
     "input": "{colors.white}",
-    "overlay": "{colors.black} / 0.6"
+    "overlay": "{colors.black} / 0.6",
+    "hover": "{colors.neutral.100}",
+    "selected": "{colors.info.50}",
+    "active": "{colors.neutral.200}",
+    "divider": "{colors.neutral.200}"
+  },
+  "link": {
+    "default": "{colors.brand.600}",
+    "hover": "{colors.brand.700}",
+    "active": "{colors.brand.800}",
+    "visited": "{colors.accent.700}"
   },
   "text": {
     "onPage": {

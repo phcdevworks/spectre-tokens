@@ -128,11 +128,12 @@ mode-aware styling.
 
 | Namespace | What it expresses |
 |---|---|
-| `surface` | Background roles: page, card, overlay, sidebar |
+| `surface` | Background roles: page, card, overlay, sidebar, hover, selected, active, divider |
 | `text` | Foreground roles: default, muted, subtle, meta, on-surface, on-page |
 | `component` | Role-specific tokens for icon boxes, badges, ratings, testimonials, pricing cards |
 | `buttons` | Button state tokens: default, hover, active, disabled, CTA |
 | `forms` | Form state tokens: default, focused, error, disabled |
+| `link` | Inline link color roles: default, hover, active, visited |
 | `modes` | Mode-aware overrides under `modes.default` and `modes.dark` |
 
 ```ts
@@ -252,6 +253,7 @@ The generated token object includes these namespaces:
 - `accessibility`
 - `buttons`
 - `forms`
+- `link`
 - `surface`
 - `text`
 - `component`

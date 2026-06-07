@@ -24,6 +24,43 @@
     "overlay": {
       "value": "{colors.black} / 0.6",
       "description": "modals, dropdowns, flyouts"
+    },
+    "hover": {
+      "value": "{colors.neutral.100}",
+      "description": "background for hovered clickable rows, items, and menu entries"
+    },
+    "selected": {
+      "value": "{colors.info.50}",
+      "description": "background for selected list items, rows, and menu entries"
+    },
+    "active": {
+      "value": "{colors.neutral.200}",
+      "description": "background for pressed/active clickable rows, items, and menu entries"
+    },
+    "divider": {
+      "value": "{colors.neutral.200}",
+      "description": "hairline color for <hr>, table borders, and section separators"
+    }
+  },
+  "link": {
+    "default": {
+      "value": "{colors.brand.600}",
+      "description": "default inline link color",
+      "metadata": {
+        "pair": "surface.page"
+      }
+    },
+    "hover": {
+      "value": "{colors.brand.700}",
+      "description": "link color on hover"
+    },
+    "active": {
+      "value": "{colors.brand.800}",
+      "description": "link color while pressed"
+    },
+    "visited": {
+      "value": "{colors.accent.700}",
+      "description": "link color after the destination has been visited"
     }
   },
   "text": {

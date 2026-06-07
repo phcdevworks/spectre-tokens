@@ -210,7 +210,11 @@ var coreTokens = {
         "input": "{colors.white}",
         "overlay": "{colors.black} / 0.6",
         "alternate": "{colors.neutral.100}",
-        "hero": "linear-gradient(135deg, {colors.indigo.500} 0%, {colors.violet.600} 100%)"
+        "hero": "linear-gradient(135deg, {colors.indigo.500} 0%, {colors.violet.600} 100%)",
+        "hover": "{colors.neutral.100}",
+        "selected": "{colors.info.50}",
+        "active": "{colors.neutral.200}",
+        "divider": "{colors.neutral.200}"
       },
       "text": {
         "onPage": {
@@ -297,7 +301,11 @@ var coreTokens = {
         "input": "{colors.neutral.700}",
         "overlay": "{colors.black} / 0.6",
         "alternate": "{colors.neutral.800}",
-        "hero": "linear-gradient(135deg, {colors.accent.700} 0%, {colors.accent.900} 100%)"
+        "hero": "linear-gradient(135deg, {colors.accent.700} 0%, {colors.accent.900} 100%)",
+        "hover": "{colors.neutral.700}",
+        "selected": "{colors.info.900}",
+        "active": "{colors.neutral.600}",
+        "divider": "{colors.neutral.700}"
       },
       "text": {
         "onPage": {
@@ -702,7 +710,17 @@ var coreTokens = {
     "page": "{colors.neutral.50}",
     "card": "{colors.white}",
     "input": "{colors.white}",
-    "overlay": "{colors.black} / 0.6"
+    "overlay": "{colors.black} / 0.6",
+    "hover": "{colors.neutral.100}",
+    "selected": "{colors.info.50}",
+    "active": "{colors.neutral.200}",
+    "divider": "{colors.neutral.200}"
+  },
+  "link": {
+    "default": "{colors.brand.600}",
+    "hover": "{colors.brand.700}",
+    "active": "{colors.brand.800}",
+    "visited": "{colors.accent.700}"
   },
   "text": {
     "onPage": {

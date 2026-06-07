@@ -13,6 +13,8 @@ Contract change type: additive
 - Added `reduced` (0.01ms) duration to `transitions.duration` and `reducedMotion` semantic token to `accessibility` in `tokens/primitives.json`.
 - Added `animations.reducedMotion` variants for all 8 named animations (`fadeIn`, `fadeOut`, `slideUp`, `slideDown`, `scaleIn`, `bounce`, `shake`, `pulse`) to provide near-zero duration alternatives for reduced-motion accessibility.
 - Added `forcedColors` token with value `"auto"` to the `accessibility` family in `tokens/primitives.json` to address a Priority 1 gap in the accessibility contract.
+- Added `link` semantic namespace (`link.default`, `link.hover`, `link.active`, `link.visited`) to `tokens/semantic-roles.json` so consumers no longer need to fall back to raw `colors.brand`/`colors.accent` palette values for inline links. Registered in `contract.manifest.json` `publicNamespaces` and `SpectreModeTokens` is unaffected since `link` is not mode-scoped.
+- Added interactive surface state tokens `surface.hover`, `surface.selected`, `surface.active`, and a semantic divider token `surface.divider` to `tokens/semantic-roles.json`, with `default`/`dark` mode variants in `tokens/modes.json` and corresponding fields on `SpectreModeTokens` in `src/types.ts`. These cover clickable list items, table rows, menu items, and `<hr>`/section-separator styling without composing from raw palette values.
 
 ## [2.8.0] - 2026-06-06
 
