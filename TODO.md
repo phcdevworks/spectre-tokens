@@ -218,33 +218,43 @@ values or inventing local token contracts.
 
 ### P0: Correctness Fixes
 
-- [ ] Fix `colors.focus.*` — replace raw hex with palette references
+- [x] Fix `colors.focus.*` — replace raw hex with palette references
   - `focus.primary`, `focus.error`, and `focus.info` are hardcoded hex that
   duplicate palette values. Replace with `{colors.brand.500}`,
   `{colors.error.500}`, and `{colors.info.600}` to eliminate silent drift risk
   when the palette is updated.
+  - Delivered in `9aa5d59` ("Add focusVisible tokens and unify focus colors").
 
-- [ ] Complete `focusVisible` across all interactive button variants
+- [x] Complete `focusVisible` across all interactive button variants
   - `buttons.danger` and `buttons.success` are missing `focusVisible`.
   Every interactive button variant needs it for consistent keyboard-navigation
   behavior. Additive only — no existing paths change.
+  - Delivered in `9aa5d59` ("Add focusVisible tokens and unify focus colors").
 
 ### P1: Interactive UI Semantic Tokens
 
-- [ ] Add `link` semantic namespace
+- [x] Add `link` semantic namespace
   - `link.default`, `link.hover`, `link.active`, `link.visited`. Consumers
   currently fall back to raw brand palette colors for inline links. Sealing
   this here prevents downstream packages from diverging on link appearance.
+  - Delivered: added to `tokens/semantic-roles.json` (brand 600/700/800 plus
+  `accent.700` for `visited`), registered in `contract.manifest.json`
+  `publicNamespaces`, and documented in `README.md`/`TOKEN_CONTRACT.md`.
 
-- [ ] Add interactive surface state tokens
+- [x] Add interactive surface state tokens
   - `surface.hover`, `surface.selected`, `surface.active`. Without these,
   clickable list items, table rows, and menu items must compose backgrounds
   from raw palette values or guess at semantic equivalents.
+  - Delivered: added to `tokens/semantic-roles.json` with `default`/`dark`
+  variants in `tokens/modes.json` and corresponding `SpectreModeTokens`
+  fields in `src/types.ts`.
 
-- [ ] Add semantic divider token
+- [x] Add semantic divider token
   - `surface.divider` (or `border.color.default` and `border.color.subtle`).
   Currently there is no semantic token for `<hr>`, table borders, or section
   separators — a gap that every UI component library hits immediately.
+  - Delivered as `surface.divider` alongside the interactive surface state
+  tokens above, with mode-aware variants.
 
 ### P2: Component Token Expansion
 

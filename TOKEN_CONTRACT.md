@@ -81,6 +81,7 @@ The current public top-level namespaces are:
 - `accessibility`
 - `buttons`
 - `forms`
+- `link`
 - `surface`
 - `text`
 - `component`
@@ -135,6 +136,7 @@ Use semantic tokens as the default interface for downstream UI:
 - `component`
 - `buttons`
 - `forms`
+- `link`
 - `modes`
 
 Use raw palette tokens from `colors` only when consumers need fixed color access

@@ -180,6 +180,10 @@ interface SpectreGeneratedTokens {
                 overlay: string;
                 alternate: string;
                 hero: string;
+                hover: string;
+                selected: string;
+                active: string;
+                divider: string;
             };
             text: {
                 onPage: {
@@ -267,6 +271,10 @@ interface SpectreGeneratedTokens {
                 overlay: string;
                 alternate: string;
                 hero: string;
+                hover: string;
+                selected: string;
+                active: string;
+                divider: string;
             };
             text: {
                 onPage: {
@@ -672,6 +680,16 @@ interface SpectreGeneratedTokens {
         card: string;
         input: string;
         overlay: string;
+        hover: string;
+        selected: string;
+        active: string;
+        divider: string;
+    };
+    link: {
+        default: string;
+        hover: string;
+        active: string;
+        visited: string;
     };
     text: {
         onPage: {
@@ -981,6 +999,10 @@ interface SpectreModeTokens {
         overlay: SemanticTokenValue;
         alternate: SemanticTokenValue;
         hero: SemanticTokenValue;
+        hover: SemanticTokenValue;
+        selected: SemanticTokenValue;
+        active: SemanticTokenValue;
+        divider: SemanticTokenValue;
     };
     text: {
         onPage: {

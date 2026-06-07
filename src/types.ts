@@ -153,6 +153,10 @@ export interface SpectreModeTokens {
     overlay: SemanticTokenValue;
     alternate: SemanticTokenValue;
     hero: SemanticTokenValue;
+    hover: SemanticTokenValue;
+    selected: SemanticTokenValue;
+    active: SemanticTokenValue;
+    divider: SemanticTokenValue;
   };
   text: {
     onPage: {
