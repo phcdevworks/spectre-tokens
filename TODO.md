@@ -256,7 +256,11 @@ values or inventing local token contracts.
   - Delivered as `surface.divider` alongside the interactive surface state
   tokens above, with mode-aware variants.
 
-### P2: Component Token Expansion
+### P2: Component Token Expansion (Active — downstream blocker)
+
+`spectre-ui` Phase 4 (Nav, Toast, Tooltip, Dropdown, Modal recipes) and
+`spectre-ui-astro` Phase 4 are both gated on these five groups publishing.
+This is now the priority work in Phase 4 — land it before P3 polish items.
 
 - [ ] Add `component.nav` token group
   - `bg`, `text`, `link`, `linkHover`, `linkActive`, `border`. Nav is the most
@@ -280,7 +284,7 @@ values or inventing local token contracts.
 - [ ] Add `component.dropdown` token group
   - `bg`, `border`, `item.default`, `item.hover`, `item.active`, `item.text`.
 
-### P3: Motion and Surface Polish
+### P3: Motion and Surface Polish (Deferred — after P2 component groups ship)
 
 - [ ] Add reduced-motion token variants
   - Near-zero duration alternatives under `animations.reducedMotion.*` for
@@ -306,8 +310,10 @@ values or inventing local token contracts.
 5. Phase 3 P2 — negative-path tests for contrast, locked, and regression.
 6. Phase 4 P0 — correctness fixes first; eliminates existing drift risks.
 7. Phase 4 P1 — interactive semantic tokens; additive, unblocks spectre-ui.
-8. Phase 4 P2 — component token expansion; driven by spectre-ui component needs.
-9. Phase 4 P3 — motion and surface polish; lowest urgency.
+8. Phase 4 P2 — component token expansion (active); unblocks `spectre-ui`
+   Phase 4 recipes and `spectre-ui-astro` Phase 4 components — highest
+   remaining priority.
+9. Phase 4 P3 — motion and surface polish; deferred until P2 ships.
 
 ## Explicitly Out of Scope
 
