@@ -1,5 +1,3 @@
-# TODO.md
-
 # Spectre Tokens Execution Todo
 
 This todo list is aligned to the current repository and the roadmap in
@@ -305,15 +303,13 @@ This is now the priority work in Phase 4 — land it before P3 polish items.
 
 1. Phase 1 — done.
 2. Phase 2 — done.
-3. Phase 3 P0 — add vitest; unblocks all unit and negative-path tests.
-4. Phase 3 P1 — unit-test shared utilities.
-5. Phase 3 P2 — negative-path tests for contrast, locked, and regression.
-6. Phase 4 P0 — correctness fixes first; eliminates existing drift risks.
-7. Phase 4 P1 — interactive semantic tokens; additive, unblocks spectre-ui.
-8. Phase 4 P2 — component token expansion (active); unblocks `spectre-ui`
-   Phase 4 recipes and `spectre-ui-astro` Phase 4 components — highest
-   remaining priority.
-9. Phase 4 P3 — motion and surface polish; deferred until P2 ships.
+3. Phase 3 — done.
+4. Phase 4 P0 — done.
+5. Phase 4 P1 — done.
+6. **Phase 4 P2 — active.** Add component.nav, component.modal,
+   component.toast, component.tooltip, component.dropdown token groups.
+   This unblocks spectre-ui Phase 4 recipes and spectre-ui-astro Phase 4.
+7. Phase 4 P3 — deferred; do after P2 ships.
 
 ## Explicitly Out of Scope
 
