@@ -253,6 +253,173 @@
           "pair": "surface.card"
         }
       }
+    },
+    "nav": {
+      "bg": {
+        "value": "{colors.white}",
+        "metadata": {
+          "pair": "component.nav.text"
+        }
+      },
+      "text": {
+        "value": "{colors.neutral.900}",
+        "metadata": {
+          "pair": "component.nav.bg"
+        }
+      },
+      "link": {
+        "value": "{colors.neutral.700}"
+      },
+      "linkHover": {
+        "value": "{colors.brand.600}"
+      },
+      "linkActive": {
+        "value": "{colors.brand.700}"
+      },
+      "border": {
+        "value": "{colors.neutral.200}"
+      }
+    },
+    "modal": {
+      "bg": {
+        "value": "{colors.white}"
+      },
+      "shadow": {
+        "value": "0 20px 48px -12px {colors.black} / 0.20"
+      },
+      "border": {
+        "value": "{colors.neutral.200}"
+      },
+      "overlay": {
+        "value": "{colors.black} / 0.6"
+      }
+    },
+    "toast": {
+      "success": {
+        "bg": {
+          "value": "{colors.success.50}",
+          "metadata": {
+            "pair": "component.toast.success.text"
+          }
+        },
+        "text": {
+          "value": "{colors.success.800}",
+          "metadata": {
+            "pair": "component.toast.success.bg"
+          }
+        },
+        "border": {
+          "value": "{colors.success.200}"
+        },
+        "icon": {
+          "value": "{colors.success.600}"
+        }
+      },
+      "warning": {
+        "bg": {
+          "value": "{colors.warning.50}",
+          "metadata": {
+            "pair": "component.toast.warning.text"
+          }
+        },
+        "text": {
+          "value": "{colors.warning.800}",
+          "metadata": {
+            "pair": "component.toast.warning.bg"
+          }
+        },
+        "border": {
+          "value": "{colors.warning.200}"
+        },
+        "icon": {
+          "value": "{colors.warning.600}"
+        }
+      },
+      "danger": {
+        "bg": {
+          "value": "{colors.error.50}",
+          "metadata": {
+            "pair": "component.toast.danger.text"
+          }
+        },
+        "text": {
+          "value": "{colors.error.800}",
+          "metadata": {
+            "pair": "component.toast.danger.bg"
+          }
+        },
+        "border": {
+          "value": "{colors.error.200}"
+        },
+        "icon": {
+          "value": "{colors.error.600}"
+        }
+      },
+      "info": {
+        "bg": {
+          "value": "{colors.info.50}",
+          "metadata": {
+            "pair": "component.toast.info.text"
+          }
+        },
+        "text": {
+          "value": "{colors.info.800}",
+          "metadata": {
+            "pair": "component.toast.info.bg"
+          }
+        },
+        "border": {
+          "value": "{colors.info.200}"
+        },
+        "icon": {
+          "value": "{colors.info.600}"
+        }
+      }
+    },
+    "tooltip": {
+      "bg": {
+        "value": "{colors.neutral.900}",
+        "metadata": {
+          "pair": "component.tooltip.text"
+        }
+      },
+      "text": {
+        "value": "{colors.white}",
+        "metadata": {
+          "pair": "component.tooltip.bg"
+        }
+      },
+      "border": {
+        "value": "{colors.neutral.700}"
+      }
+    },
+    "dropdown": {
+      "bg": {
+        "value": "{colors.white}",
+        "metadata": {
+          "pair": "component.dropdown.item.text"
+        }
+      },
+      "border": {
+        "value": "{colors.neutral.200}"
+      },
+      "item": {
+        "default": {
+          "value": "transparent"
+        },
+        "hover": {
+          "value": "{colors.neutral.100}"
+        },
+        "active": {
+          "value": "{colors.info.50}"
+        },
+        "text": {
+          "value": "{colors.neutral.900}",
+          "metadata": {
+            "pair": "component.dropdown.bg"
+          }
+        }
+      }
     }
   },
   "buttons": {

@@ -120,6 +120,53 @@ export interface ComponentRatingTokens<Value = string> {
   text: Value;
 }
 
+export interface ComponentNavTokens<Value = string> {
+  bg: Value;
+  text: Value;
+  link: Value;
+  linkHover: Value;
+  linkActive: Value;
+  border: Value;
+}
+
+export interface ComponentModalTokens<Value = string> {
+  bg: Value;
+  shadow: Value;
+  border: Value;
+  overlay: Value;
+}
+
+export interface ComponentToastVariantTokens<Value = string> {
+  bg: Value;
+  text: Value;
+  border: Value;
+  icon: Value;
+}
+
+export interface ComponentToastTokens<Value = string> {
+  success: ComponentToastVariantTokens<Value>;
+  warning: ComponentToastVariantTokens<Value>;
+  danger: ComponentToastVariantTokens<Value>;
+  info: ComponentToastVariantTokens<Value>;
+}
+
+export interface ComponentTooltipTokens<Value = string> {
+  bg: Value;
+  text: Value;
+  border: Value;
+}
+
+export interface ComponentDropdownTokens<Value = string> {
+  bg: Value;
+  border: Value;
+  item: {
+    default: Value;
+    hover: Value;
+    active: Value;
+    text: Value;
+  };
+}
+
 export interface ComponentTokens<Value = string> {
   card: {
     text: Value;
@@ -138,6 +185,11 @@ export interface ComponentTokens<Value = string> {
   testimonial: ComponentTestimonialTokens<Value>;
   pricingCard: ComponentPricingCardTokens<Value>;
   rating: ComponentRatingTokens<Value>;
+  nav: ComponentNavTokens<Value>;
+  modal: ComponentModalTokens<Value>;
+  toast: ComponentToastTokens<Value>;
+  tooltip: ComponentTooltipTokens<Value>;
+  dropdown: ComponentDropdownTokens<Value>;
   [key: string]: unknown;
 }
 

@@ -254,33 +254,42 @@ values or inventing local token contracts.
   - Delivered as `surface.divider` alongside the interactive surface state
   tokens above, with mode-aware variants.
 
-### P2: Component Token Expansion (Active — downstream blocker)
+### P2: Component Token Expansion (Done)
 
 `spectre-ui` Phase 4 (Nav, Toast, Tooltip, Dropdown, Modal recipes) and
 `spectre-ui-astro` Phase 4 are both gated on these five groups publishing.
-This is now the priority work in Phase 4 — land it before P3 polish items.
 
-- [ ] Add `component.nav` token group
+- [x] Add `component.nav` token group
   - `bg`, `text`, `link`, `linkHover`, `linkActive`, `border`. Nav is the most
   common component that spans multiple namespaces; first-class tokens prevent
   raw palette references in `spectre-ui`.
+  - Delivered with `default`/`dark` mode variants in `tokens/modes.json`,
+  `ComponentNavTokens` in `src/types.ts`, and `--sp-nav-*` CSS variables.
 
-- [ ] Add `component.modal` token group
+- [x] Add `component.modal` token group
   - `bg`, `shadow`, `border`, `overlay`. Modals have a distinct visual
   treatment from cards and need dedicated tokens rather than surface.card
   overrides.
+  - Delivered with `default`/`dark` mode variants, `ComponentModalTokens` in
+  `src/types.ts`, and `--sp-modal-*` CSS variables.
 
-- [ ] Add `component.toast` token group
+- [x] Add `component.toast` token group
   - Success, warning, danger, and info variants each with `bg`, `text`,
   `border`, `icon` tokens. Toast/notification is a common pattern currently
   without a dedicated group.
+  - Delivered with `default`/`dark` mode variants, `ComponentToastTokens` in
+  `src/types.ts`, and `--sp-toast-*` CSS variables.
 
-- [ ] Add `component.tooltip` token group
+- [x] Add `component.tooltip` token group
   - `bg`, `text`, `border`. Tooltips invert the standard surface/text
   contrast; they need their own tokens rather than ad-hoc inverted values.
+  - Delivered with `default`/`dark` mode variants, `ComponentTooltipTokens` in
+  `src/types.ts`, and `--sp-tooltip-*` CSS variables.
 
-- [ ] Add `component.dropdown` token group
+- [x] Add `component.dropdown` token group
   - `bg`, `border`, `item.default`, `item.hover`, `item.active`, `item.text`.
+  - Delivered with `default`/`dark` mode variants, `ComponentDropdownTokens` in
+  `src/types.ts`, and `--sp-dropdown-*` CSS variables.
 
 ### P3: Motion and Surface Polish (Deferred — after P2 component groups ship)
 
@@ -306,10 +315,10 @@ This is now the priority work in Phase 4 — land it before P3 polish items.
 3. Phase 3 — done.
 4. Phase 4 P0 — done.
 5. Phase 4 P1 — done.
-6. **Phase 4 P2 — active.** Add component.nav, component.modal,
+6. Phase 4 P2 — done. Added component.nav, component.modal,
    component.toast, component.tooltip, component.dropdown token groups.
    This unblocks spectre-ui Phase 4 recipes and spectre-ui-astro Phase 4.
-7. Phase 4 P3 — deferred; do after P2 ships.
+7. **Phase 4 P3 — active.**
 
 ## Explicitly Out of Scope
 

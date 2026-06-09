@@ -92,6 +92,61 @@ var coreTokens = {
       "starFilled": "{colors.warning.500}",
       "starEmpty": "{colors.neutral.200}",
       "text": "{colors.neutral.500}"
+    },
+    "nav": {
+      "bg": "{colors.white}",
+      "text": "{colors.neutral.900}",
+      "link": "{colors.neutral.700}",
+      "linkHover": "{colors.brand.600}",
+      "linkActive": "{colors.brand.700}",
+      "border": "{colors.neutral.200}"
+    },
+    "modal": {
+      "bg": "{colors.white}",
+      "shadow": "0 20px 48px -12px {colors.black} / 0.20",
+      "border": "{colors.neutral.200}",
+      "overlay": "{colors.black} / 0.6"
+    },
+    "toast": {
+      "success": {
+        "bg": "{colors.success.50}",
+        "text": "{colors.success.800}",
+        "border": "{colors.success.200}",
+        "icon": "{colors.success.600}"
+      },
+      "warning": {
+        "bg": "{colors.warning.50}",
+        "text": "{colors.warning.800}",
+        "border": "{colors.warning.200}",
+        "icon": "{colors.warning.600}"
+      },
+      "danger": {
+        "bg": "{colors.error.50}",
+        "text": "{colors.error.800}",
+        "border": "{colors.error.200}",
+        "icon": "{colors.error.600}"
+      },
+      "info": {
+        "bg": "{colors.info.50}",
+        "text": "{colors.info.800}",
+        "border": "{colors.info.200}",
+        "icon": "{colors.info.600}"
+      }
+    },
+    "tooltip": {
+      "bg": "{colors.neutral.900}",
+      "text": "{colors.white}",
+      "border": "{colors.neutral.700}"
+    },
+    "dropdown": {
+      "bg": "{colors.white}",
+      "border": "{colors.neutral.200}",
+      "item": {
+        "default": "transparent",
+        "hover": "{colors.neutral.100}",
+        "active": "{colors.info.50}",
+        "text": "{colors.neutral.900}"
+      }
     }
   },
   "buttons": {
@@ -291,6 +346,61 @@ var coreTokens = {
           "starFilled": "{colors.warning.500}",
           "starEmpty": "{colors.neutral.200}",
           "text": "{colors.neutral.500}"
+        },
+        "nav": {
+          "bg": "{colors.white}",
+          "text": "{colors.neutral.900}",
+          "link": "{colors.neutral.700}",
+          "linkHover": "{colors.brand.600}",
+          "linkActive": "{colors.brand.700}",
+          "border": "{colors.neutral.200}"
+        },
+        "modal": {
+          "bg": "{colors.white}",
+          "shadow": "0 20px 48px -12px {colors.black} / 0.20",
+          "border": "{colors.neutral.200}",
+          "overlay": "{colors.black} / 0.6"
+        },
+        "toast": {
+          "success": {
+            "bg": "{colors.success.50}",
+            "text": "{colors.success.800}",
+            "border": "{colors.success.200}",
+            "icon": "{colors.success.600}"
+          },
+          "warning": {
+            "bg": "{colors.warning.50}",
+            "text": "{colors.warning.800}",
+            "border": "{colors.warning.200}",
+            "icon": "{colors.warning.600}"
+          },
+          "danger": {
+            "bg": "{colors.error.50}",
+            "text": "{colors.error.800}",
+            "border": "{colors.error.200}",
+            "icon": "{colors.error.600}"
+          },
+          "info": {
+            "bg": "{colors.info.50}",
+            "text": "{colors.info.800}",
+            "border": "{colors.info.200}",
+            "icon": "{colors.info.600}"
+          }
+        },
+        "tooltip": {
+          "bg": "{colors.neutral.900}",
+          "text": "{colors.white}",
+          "border": "{colors.neutral.700}"
+        },
+        "dropdown": {
+          "bg": "{colors.white}",
+          "border": "{colors.neutral.200}",
+          "item": {
+            "default": "transparent",
+            "hover": "{colors.neutral.100}",
+            "active": "{colors.info.50}",
+            "text": "{colors.neutral.900}"
+          }
         }
       }
     },
@@ -385,6 +495,61 @@ var coreTokens = {
           "starFilled": "{colors.warning.400}",
           "starEmpty": "{colors.neutral.700}",
           "text": "{colors.neutral.400}"
+        },
+        "nav": {
+          "bg": "{colors.neutral.900}",
+          "text": "{colors.neutral.50}",
+          "link": "{colors.neutral.300}",
+          "linkHover": "{colors.brand.400}",
+          "linkActive": "{colors.brand.300}",
+          "border": "{colors.neutral.700}"
+        },
+        "modal": {
+          "bg": "{colors.neutral.800}",
+          "shadow": "0 20px 48px -12px {colors.black} / 0.20",
+          "border": "{colors.neutral.700}",
+          "overlay": "{colors.black} / 0.6"
+        },
+        "toast": {
+          "success": {
+            "bg": "{colors.success.900}",
+            "text": "{colors.success.100}",
+            "border": "{colors.success.700}",
+            "icon": "{colors.success.400}"
+          },
+          "warning": {
+            "bg": "{colors.warning.900}",
+            "text": "{colors.warning.100}",
+            "border": "{colors.warning.700}",
+            "icon": "{colors.warning.400}"
+          },
+          "danger": {
+            "bg": "{colors.error.900}",
+            "text": "{colors.error.100}",
+            "border": "{colors.error.700}",
+            "icon": "{colors.error.400}"
+          },
+          "info": {
+            "bg": "{colors.info.900}",
+            "text": "{colors.info.100}",
+            "border": "{colors.info.700}",
+            "icon": "{colors.info.400}"
+          }
+        },
+        "tooltip": {
+          "bg": "{colors.neutral.50}",
+          "text": "{colors.neutral.900}",
+          "border": "{colors.neutral.300}"
+        },
+        "dropdown": {
+          "bg": "{colors.neutral.800}",
+          "border": "{colors.neutral.700}",
+          "item": {
+            "default": "transparent",
+            "hover": "{colors.neutral.700}",
+            "active": "{colors.info.900}",
+            "text": "{colors.neutral.100}"
+          }
         }
       }
     }
@@ -923,6 +1088,42 @@ var ICON_BOX_FIELDS = [
   { name: "icon-warning", tokenKey: "iconWarning" },
   { name: "icon-danger", tokenKey: "iconDanger" }
 ];
+var NAV_FIELDS = [
+  { name: "bg", tokenKey: "bg" },
+  { name: "text", tokenKey: "text" },
+  { name: "link", tokenKey: "link" },
+  { name: "link-hover", tokenKey: "linkHover" },
+  { name: "link-active", tokenKey: "linkActive" },
+  { name: "border", tokenKey: "border" }
+];
+var MODAL_FIELDS = [
+  { name: "bg", tokenKey: "bg" },
+  { name: "shadow", tokenKey: "shadow" },
+  { name: "border", tokenKey: "border" },
+  { name: "overlay", tokenKey: "overlay" }
+];
+var TOAST_VARIANTS = ["success", "warning", "danger", "info"].map((variant) => ({
+  variant,
+  fields: [
+    { name: "bg", tokenKey: "bg" },
+    { name: "text", tokenKey: "text" },
+    { name: "border", tokenKey: "border" },
+    { name: "icon", tokenKey: "icon" }
+  ]
+}));
+var TOOLTIP_FIELDS = [
+  { name: "bg", tokenKey: "bg" },
+  { name: "text", tokenKey: "text" },
+  { name: "border", tokenKey: "border" }
+];
+var DROPDOWN_FIELDS = [
+  { name: "bg", modePath: ["bg"], aliasPath: ["bg"] },
+  { name: "border", modePath: ["border"], aliasPath: ["border"] },
+  { name: "item-default", modePath: ["item", "default"], aliasPath: ["item", "default"] },
+  { name: "item-hover", modePath: ["item", "hover"], aliasPath: ["item", "hover"] },
+  { name: "item-active", modePath: ["item", "active"], aliasPath: ["item", "active"] },
+  { name: "item-text", modePath: ["item", "text"], aliasPath: ["item", "text"] }
+];
 var resolveTokenReference = (tokens2, reference) => {
   const path = reference.slice(1, -1).split(".");
   let current = tokens2;
@@ -1163,6 +1364,36 @@ var generateCssVariables = (tokens2, options = {}) => {
       modePath: ["component", "iconBox", tokenKey],
       aliasSrc: componentAliases,
       aliasPath: ["iconBox", tokenKey]
+    })),
+    ...NAV_FIELDS.map(({ name, tokenKey }) => ({
+      varParts: ["nav", name],
+      modePath: ["component", "nav", tokenKey],
+      aliasSrc: componentAliases,
+      aliasPath: ["nav", tokenKey]
+    })),
+    ...MODAL_FIELDS.map(({ name, tokenKey }) => ({
+      varParts: ["modal", name],
+      modePath: ["component", "modal", tokenKey],
+      aliasSrc: componentAliases,
+      aliasPath: ["modal", tokenKey]
+    })),
+    ...TOAST_VARIANTS.flatMap(({ variant, fields }) => fields.map(({ name, tokenKey }) => ({
+      varParts: ["toast", variant, name],
+      modePath: ["component", "toast", variant, tokenKey],
+      aliasSrc: componentAliases,
+      aliasPath: ["toast", variant, tokenKey]
+    }))),
+    ...TOOLTIP_FIELDS.map(({ name, tokenKey }) => ({
+      varParts: ["tooltip", name],
+      modePath: ["component", "tooltip", tokenKey],
+      aliasSrc: componentAliases,
+      aliasPath: ["tooltip", tokenKey]
+    })),
+    ...DROPDOWN_FIELDS.map(({ name, modePath, aliasPath }) => ({
+      varParts: ["dropdown", name],
+      modePath: ["component", "dropdown", ...modePath],
+      aliasSrc: componentAliases,
+      aliasPath: ["dropdown", ...aliasPath]
     }))
   ];
   const baseLines = [];

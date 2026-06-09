@@ -2,6 +2,11 @@ import type {
   AnimationEntry,
   ComponentBadgeTokens,
   ComponentIconBoxTokens,
+  ComponentModalTokens,
+  ComponentNavTokens,
+  ComponentToastTokens,
+  ComponentToastVariantTokens,
+  ComponentTooltipTokens,
   CssVariableMap,
   CssVariableOptions,
   SpectreTokens,
@@ -38,6 +43,48 @@ const ICON_BOX_FIELDS: Array<{ name: string; tokenKey: keyof ComponentIconBoxTok
   { name: 'icon-success', tokenKey: 'iconSuccess' },
   { name: 'icon-warning', tokenKey: 'iconWarning' },
   { name: 'icon-danger', tokenKey: 'iconDanger' }
+]
+
+const NAV_FIELDS: Array<{ name: string; tokenKey: keyof ComponentNavTokens }> = [
+  { name: 'bg', tokenKey: 'bg' },
+  { name: 'text', tokenKey: 'text' },
+  { name: 'link', tokenKey: 'link' },
+  { name: 'link-hover', tokenKey: 'linkHover' },
+  { name: 'link-active', tokenKey: 'linkActive' },
+  { name: 'border', tokenKey: 'border' }
+]
+
+const MODAL_FIELDS: Array<{ name: string; tokenKey: keyof ComponentModalTokens }> = [
+  { name: 'bg', tokenKey: 'bg' },
+  { name: 'shadow', tokenKey: 'shadow' },
+  { name: 'border', tokenKey: 'border' },
+  { name: 'overlay', tokenKey: 'overlay' }
+]
+
+const TOAST_VARIANTS: Array<{ variant: string; fields: Array<{ name: string; tokenKey: keyof ComponentToastVariantTokens }> }> =
+  (['success', 'warning', 'danger', 'info'] as Array<keyof ComponentToastTokens>).map((variant) => ({
+    variant,
+    fields: [
+      { name: 'bg', tokenKey: 'bg' },
+      { name: 'text', tokenKey: 'text' },
+      { name: 'border', tokenKey: 'border' },
+      { name: 'icon', tokenKey: 'icon' }
+    ]
+  }))
+
+const TOOLTIP_FIELDS: Array<{ name: string; tokenKey: keyof ComponentTooltipTokens }> = [
+  { name: 'bg', tokenKey: 'bg' },
+  { name: 'text', tokenKey: 'text' },
+  { name: 'border', tokenKey: 'border' }
+]
+
+const DROPDOWN_FIELDS: Array<{ name: string; modePath: string[]; aliasPath: string[] }> = [
+  { name: 'bg', modePath: ['bg'], aliasPath: ['bg'] },
+  { name: 'border', modePath: ['border'], aliasPath: ['border'] },
+  { name: 'item-default', modePath: ['item', 'default'], aliasPath: ['item', 'default'] },
+  { name: 'item-hover', modePath: ['item', 'hover'], aliasPath: ['item', 'hover'] },
+  { name: 'item-active', modePath: ['item', 'active'], aliasPath: ['item', 'active'] },
+  { name: 'item-text', modePath: ['item', 'text'], aliasPath: ['item', 'text'] }
 ]
 
 const resolveTokenReference = (tokens: SpectreTokens, reference: string): string => {
@@ -325,6 +372,21 @@ export const generateCssVariables = (tokens: SpectreTokens, options: CssVariable
     ]),
     ...ICON_BOX_FIELDS.map(({ name, tokenKey }) => ({
       varParts: ['icon-box', name], modePath: ['component', 'iconBox', tokenKey], aliasSrc: componentAliases, aliasPath: ['iconBox', tokenKey],
+    })),
+    ...NAV_FIELDS.map(({ name, tokenKey }) => ({
+      varParts: ['nav', name], modePath: ['component', 'nav', tokenKey], aliasSrc: componentAliases, aliasPath: ['nav', tokenKey],
+    })),
+    ...MODAL_FIELDS.map(({ name, tokenKey }) => ({
+      varParts: ['modal', name], modePath: ['component', 'modal', tokenKey], aliasSrc: componentAliases, aliasPath: ['modal', tokenKey],
+    })),
+    ...TOAST_VARIANTS.flatMap(({ variant, fields }) => fields.map(({ name, tokenKey }) => ({
+      varParts: ['toast', variant, name], modePath: ['component', 'toast', variant, tokenKey], aliasSrc: componentAliases, aliasPath: ['toast', variant, tokenKey],
+    }))),
+    ...TOOLTIP_FIELDS.map(({ name, tokenKey }) => ({
+      varParts: ['tooltip', name], modePath: ['component', 'tooltip', tokenKey], aliasSrc: componentAliases, aliasPath: ['tooltip', tokenKey],
+    })),
+    ...DROPDOWN_FIELDS.map(({ name, modePath, aliasPath }) => ({
+      varParts: ['dropdown', name], modePath: ['component', 'dropdown', ...modePath], aliasSrc: componentAliases, aliasPath: ['dropdown', ...aliasPath],
     })),
   ]
 
