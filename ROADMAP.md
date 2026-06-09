@@ -103,124 +103,78 @@ deprecation lifecycle is formally enforced.
 
 ---
 
-## 3. Phase 3 — Validation Integrity
+## 3. Phase 3 — Validation Integrity — Delivered
 
-The validation chain is only tested on the happy path today. A bug in a
-validator silently passes bad tokens through to consumers. This phase hardens
-the validation layer itself.
+The validation layer is hardened. Unit tests cover pure utilities and all
+critical validators are tested on negative paths.
 
-### P0: Test Harness Setup
+### What was delivered
 
-**Objective** Introduce a unit test runner alongside the existing check gate.
-
-**Deliverables**
-
-- Add vitest as a dev dependency.
-- Wire `npm test` to run the vitest suite. The existing `npm run check` alias
-  stays unchanged.
-
-**Why it matters** The current check gate runs scripts end-to-end and only
-catches failures at the output level. Unit tests catch logic bugs in the
-scripts themselves before they can silently pass bad data through.
-
----
-
-### P1: Unit Tests for Pure Utility Functions
-
-**Objective** Cover the shared helpers that all validation scripts depend on.
-
-**Deliverables**
-
-- Unit-test all exported helpers in `scripts/token-utils.ts`. A bug here
-  propagates silently across every gate that calls these functions.
-- Unit-test `scripts/propose-version.ts`: cover `additive` → minor,
-  `semantic change` → minor, `breaking` → major, and the no-classification
-  error case.
-
----
-
-### P2: Negative-Path Tests for Critical Validators
-
-**Objective** Confirm that validators exit non-zero when they should — not just
-when the data is clean.
-
-**Deliverables**
-
-- Negative-path test for `check:contrast` — confirm the script fails when a
-  paired token does not meet WCAG AA.
-- Negative-path test for `check:locked` — confirm the script catches a
-  mutation to a protected color family value.
-- Negative-path test for `check:regression` — confirm the script fails when a
-  token value drifts from the recorded baseline.
-
-**Why it matters** Validators that pass on good data but do not fail on bad
-data provide false confidence. A silent validator is worse than no validator.
+- `vitest` installed and wired. `npm test` runs the unit suite alongside the
+  check gate.
+- `tests/token-utils.test.ts` — 15 assertions across `flattenTokenTree`,
+  `getTokenSourceFiles`, and `loadMergedTokens`.
+- `tests/propose-version.test.ts` — `computeVersionBump` and
+  `extractClassification` extracted and tested; 10 assertions.
+- `tests/check-contrast.test.ts` — `computeContrast` exported; 5 assertions
+  confirming failing pairs < 4.5 and passing pairs ≥ 4.5.
+- `tests/check-locked.test.ts` — `stableStringify` exported; 7 assertions
+  covering mutated values, added/removed keys, and type handling.
+- `tests/check-regression.test.ts` — `findWrappedEntry` exported from
+  `contract-utils.ts`; 10 assertions covering missing paths and wrapped-entry
+  detection.
 
 ---
 
 ## 4. Phase 4 — Token Surface Completion
 
-The contract infrastructure is mature. This phase completes the token
-vocabulary so `spectre-ui` and downstream consumers have everything they need
-to build a full UI from token contracts rather than raw palette values.
+### P0: Correctness Fixes — Delivered
 
-### P0: Correctness Fixes
-
-**Objective** Eliminate drift risks and inconsistencies in the existing token
-surface before expanding it.
-
-**Deliverables**
-
-- Fix `colors.focus.*` to use palette references instead of hardcoded hex, so
-  brand or error palette updates propagate automatically.
-- Add `focusVisible` to `buttons.danger` and `buttons.success` to bring them
-  in line with `primary`, `secondary`, and `ghost`.
+- `colors.focus.primary`, `colors.focus.error`, `colors.focus.info` replaced
+  with palette references — no more hardcoded hex.
+- `focusVisible` added to `buttons.danger` and `buttons.success`, matching
+  all other button variants.
 
 ---
 
-### P1: Interactive UI Semantic Tokens
+### P1: Interactive UI Semantic Tokens — Delivered
 
-**Objective** Cover the semantic gaps that every UI component library hits
-immediately: links, interactive surface states, and dividers.
-
-**Deliverables**
-
-- Add a `link` namespace: `default`, `hover`, `active`, `visited`.
-- Add interactive surface states: `surface.hover`, `surface.selected`,
-  `surface.active`.
-- Add a semantic divider token: `surface.divider` (or
-  `border.color.default` / `border.color.subtle`).
+- `link` namespace published: `default`, `hover`, `active`, `visited`.
+- Interactive surface states published: `surface.hover`, `surface.selected`,
+  `surface.active` with mode-aware variants.
+- Semantic divider published: `surface.divider` with mode-aware variants.
 
 ---
 
-### P2: Component Token Expansion
+### P2: Component Token Expansion — Active (downstream blocker)
 
-**Objective** Add dedicated token groups for the UI patterns that appear in
-every component library but are not yet in the contract: nav, modal, toast,
-tooltip, dropdown.
+`spectre-ui` Phase 4 recipes and `spectre-ui-astro` Phase 4 are both gated on
+these five groups. This is the highest-priority remaining work.
 
 **Deliverables**
 
 - `component.nav` — `bg`, `text`, `link`, `linkHover`, `linkActive`, `border`.
 - `component.modal` — `bg`, `shadow`, `border`, `overlay`.
-- `component.toast` — success, warning, danger, info variants with `bg`,
+- `component.toast` — success, warning, danger, info variants each with `bg`,
   `text`, `border`, `icon`.
 - `component.tooltip` — `bg`, `text`, `border`.
-- `component.dropdown` — `bg`, `border`, item states.
+- `component.dropdown` — `bg`, `border`, `item.default`, `item.hover`,
+  `item.active`, `item.text`.
+
+For each group: add to `tokens/components.json`, run `npm run build`, run
+`npm run check`, add `Contract change type: additive` to
+`CHANGELOG.md [Unreleased]`.
 
 ---
 
-### P3: Motion and Surface Polish
+### P3: Motion and Surface Polish — Deferred
 
-**Objective** Close the remaining gaps in the motion system and clean up
-surface tokens that have ambiguous meaning or unusual shapes.
+Do after P2 ships.
 
-**Deliverables**
-
-- Add `animations.reducedMotion.*` variants for all named animations.
-- Resolve `surface.hero` — either move the gradient to a `gradients` namespace
-  or document its usage constraints explicitly.
-- Clarify or rename `surface.alternate` to express explicit semantic intent.
+- Add `animations.reducedMotion.*` variants for each named animation.
+- Resolve `surface.hero` — gradient string in the `surface` namespace is
+  unusual; move to `gradients` or document usage constraints explicitly.
+- Clarify or rename `surface.alternate` — too vague for a public contract.
 
 ---
 
@@ -239,10 +193,9 @@ surface tokens that have ambiguous meaning or unusual shapes.
 
 1. **Phase 1** — done.
 2. **Phase 2** — done.
-3. **Phase 3 P0** — add vitest; unblocks all unit and negative-path tests.
-4. **Phase 3 P1** — unit-test shared utilities; protects the check gate foundation.
-5. **Phase 3 P2** — negative-path tests for contrast, locked, and regression validators.
-6. **Phase 4 P0** — correctness fixes; no new tokens, eliminates existing drift risks.
-7. **Phase 4 P1** — interactive semantic tokens; additive, unblocks spectre-ui.
-8. **Phase 4 P2** — component token expansion; driven by spectre-ui component needs.
-9. **Phase 4 P3** — motion and surface polish; lowest urgency, do last.
+3. **Phase 3** — done.
+4. **Phase 4 P0** — done.
+5. **Phase 4 P1** — done.
+6. **Phase 4 P2** — component token expansion; **active** — unblocks spectre-ui
+   Phase 4 and spectre-ui-astro Phase 4.
+7. **Phase 4 P3** — motion and surface polish; deferred, lowest urgency.
