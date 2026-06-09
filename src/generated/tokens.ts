@@ -258,6 +258,173 @@ export interface SpectreSourceTokens {
         };
       };
     };
+    nav: {
+      bg: {
+        value: string;
+        metadata: {
+          pair: string;
+        };
+      };
+      text: {
+        value: string;
+        metadata: {
+          pair: string;
+        };
+      };
+      link: {
+        value: string;
+      };
+      linkHover: {
+        value: string;
+      };
+      linkActive: {
+        value: string;
+      };
+      border: {
+        value: string;
+      };
+    };
+    modal: {
+      bg: {
+        value: string;
+      };
+      shadow: {
+        value: string;
+      };
+      border: {
+        value: string;
+      };
+      overlay: {
+        value: string;
+      };
+    };
+    toast: {
+      success: {
+        bg: {
+          value: string;
+          metadata: {
+            pair: string;
+          };
+        };
+        text: {
+          value: string;
+          metadata: {
+            pair: string;
+          };
+        };
+        border: {
+          value: string;
+        };
+        icon: {
+          value: string;
+        };
+      };
+      warning: {
+        bg: {
+          value: string;
+          metadata: {
+            pair: string;
+          };
+        };
+        text: {
+          value: string;
+          metadata: {
+            pair: string;
+          };
+        };
+        border: {
+          value: string;
+        };
+        icon: {
+          value: string;
+        };
+      };
+      danger: {
+        bg: {
+          value: string;
+          metadata: {
+            pair: string;
+          };
+        };
+        text: {
+          value: string;
+          metadata: {
+            pair: string;
+          };
+        };
+        border: {
+          value: string;
+        };
+        icon: {
+          value: string;
+        };
+      };
+      info: {
+        bg: {
+          value: string;
+          metadata: {
+            pair: string;
+          };
+        };
+        text: {
+          value: string;
+          metadata: {
+            pair: string;
+          };
+        };
+        border: {
+          value: string;
+        };
+        icon: {
+          value: string;
+        };
+      };
+    };
+    tooltip: {
+      bg: {
+        value: string;
+        metadata: {
+          pair: string;
+        };
+      };
+      text: {
+        value: string;
+        metadata: {
+          pair: string;
+        };
+      };
+      border: {
+        value: string;
+      };
+    };
+    dropdown: {
+      bg: {
+        value: string;
+        metadata: {
+          pair: string;
+        };
+      };
+      border: {
+        value: string;
+      };
+      item: {
+        default: {
+          value: string;
+        };
+        hover: {
+          value: string;
+        };
+        active: {
+          value: string;
+        };
+        text: {
+          value: string;
+          metadata: {
+            pair: string;
+          };
+        };
+      };
+    };
   };
   buttons: {
     primary: {
@@ -974,6 +1141,215 @@ export interface SpectreSourceTokens {
             };
           };
         };
+        nav: {
+          bg: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+          text: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+          link: {
+            value: string;
+            metadata: {
+            };
+          };
+          linkHover: {
+            value: string;
+            metadata: {
+            };
+          };
+          linkActive: {
+            value: string;
+            metadata: {
+            };
+          };
+          border: {
+            value: string;
+            metadata: {
+            };
+          };
+        };
+        modal: {
+          bg: {
+            value: string;
+            metadata: {
+            };
+          };
+          shadow: {
+            value: string;
+            metadata: {
+            };
+          };
+          border: {
+            value: string;
+            metadata: {
+            };
+          };
+          overlay: {
+            value: string;
+            metadata: {
+            };
+          };
+        };
+        toast: {
+          success: {
+            bg: {
+              value: string;
+              metadata: {
+                pair: string;
+              };
+            };
+            text: {
+              value: string;
+              metadata: {
+                pair: string;
+              };
+            };
+            border: {
+              value: string;
+              metadata: {
+              };
+            };
+            icon: {
+              value: string;
+              metadata: {
+              };
+            };
+          };
+          warning: {
+            bg: {
+              value: string;
+              metadata: {
+                pair: string;
+              };
+            };
+            text: {
+              value: string;
+              metadata: {
+                pair: string;
+              };
+            };
+            border: {
+              value: string;
+              metadata: {
+              };
+            };
+            icon: {
+              value: string;
+              metadata: {
+              };
+            };
+          };
+          danger: {
+            bg: {
+              value: string;
+              metadata: {
+                pair: string;
+              };
+            };
+            text: {
+              value: string;
+              metadata: {
+                pair: string;
+              };
+            };
+            border: {
+              value: string;
+              metadata: {
+              };
+            };
+            icon: {
+              value: string;
+              metadata: {
+              };
+            };
+          };
+          info: {
+            bg: {
+              value: string;
+              metadata: {
+                pair: string;
+              };
+            };
+            text: {
+              value: string;
+              metadata: {
+                pair: string;
+              };
+            };
+            border: {
+              value: string;
+              metadata: {
+              };
+            };
+            icon: {
+              value: string;
+              metadata: {
+              };
+            };
+          };
+        };
+        tooltip: {
+          bg: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+          text: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+          border: {
+            value: string;
+            metadata: {
+            };
+          };
+        };
+        dropdown: {
+          bg: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+          border: {
+            value: string;
+            metadata: {
+            };
+          };
+          item: {
+            default: {
+              value: string;
+              metadata: {
+              };
+            };
+            hover: {
+              value: string;
+              metadata: {
+              };
+            };
+            active: {
+              value: string;
+              metadata: {
+              };
+            };
+            text: {
+              value: string;
+              metadata: {
+                pair: string;
+              };
+            };
+          };
+        };
       };
     };
     dark: {
@@ -1363,6 +1739,215 @@ export interface SpectreSourceTokens {
             value: string;
             metadata: {
               pair: string;
+            };
+          };
+        };
+        nav: {
+          bg: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+          text: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+          link: {
+            value: string;
+            metadata: {
+            };
+          };
+          linkHover: {
+            value: string;
+            metadata: {
+            };
+          };
+          linkActive: {
+            value: string;
+            metadata: {
+            };
+          };
+          border: {
+            value: string;
+            metadata: {
+            };
+          };
+        };
+        modal: {
+          bg: {
+            value: string;
+            metadata: {
+            };
+          };
+          shadow: {
+            value: string;
+            metadata: {
+            };
+          };
+          border: {
+            value: string;
+            metadata: {
+            };
+          };
+          overlay: {
+            value: string;
+            metadata: {
+            };
+          };
+        };
+        toast: {
+          success: {
+            bg: {
+              value: string;
+              metadata: {
+                pair: string;
+              };
+            };
+            text: {
+              value: string;
+              metadata: {
+                pair: string;
+              };
+            };
+            border: {
+              value: string;
+              metadata: {
+              };
+            };
+            icon: {
+              value: string;
+              metadata: {
+              };
+            };
+          };
+          warning: {
+            bg: {
+              value: string;
+              metadata: {
+                pair: string;
+              };
+            };
+            text: {
+              value: string;
+              metadata: {
+                pair: string;
+              };
+            };
+            border: {
+              value: string;
+              metadata: {
+              };
+            };
+            icon: {
+              value: string;
+              metadata: {
+              };
+            };
+          };
+          danger: {
+            bg: {
+              value: string;
+              metadata: {
+                pair: string;
+              };
+            };
+            text: {
+              value: string;
+              metadata: {
+                pair: string;
+              };
+            };
+            border: {
+              value: string;
+              metadata: {
+              };
+            };
+            icon: {
+              value: string;
+              metadata: {
+              };
+            };
+          };
+          info: {
+            bg: {
+              value: string;
+              metadata: {
+                pair: string;
+              };
+            };
+            text: {
+              value: string;
+              metadata: {
+                pair: string;
+              };
+            };
+            border: {
+              value: string;
+              metadata: {
+              };
+            };
+            icon: {
+              value: string;
+              metadata: {
+              };
+            };
+          };
+        };
+        tooltip: {
+          bg: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+          text: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+          border: {
+            value: string;
+            metadata: {
+            };
+          };
+        };
+        dropdown: {
+          bg: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+          border: {
+            value: string;
+            metadata: {
+            };
+          };
+          item: {
+            default: {
+              value: string;
+              metadata: {
+              };
+            };
+            hover: {
+              value: string;
+              metadata: {
+              };
+            };
+            active: {
+              value: string;
+              metadata: {
+              };
+            };
+            text: {
+              value: string;
+              metadata: {
+                pair: string;
+              };
             };
           };
         };
@@ -2040,6 +2625,61 @@ export interface SpectreGeneratedTokens {
       starEmpty: string;
       text: string;
     };
+    nav: {
+      bg: string;
+      text: string;
+      link: string;
+      linkHover: string;
+      linkActive: string;
+      border: string;
+    };
+    modal: {
+      bg: string;
+      shadow: string;
+      border: string;
+      overlay: string;
+    };
+    toast: {
+      success: {
+        bg: string;
+        text: string;
+        border: string;
+        icon: string;
+      };
+      warning: {
+        bg: string;
+        text: string;
+        border: string;
+        icon: string;
+      };
+      danger: {
+        bg: string;
+        text: string;
+        border: string;
+        icon: string;
+      };
+      info: {
+        bg: string;
+        text: string;
+        border: string;
+        icon: string;
+      };
+    };
+    tooltip: {
+      bg: string;
+      text: string;
+      border: string;
+    };
+    dropdown: {
+      bg: string;
+      border: string;
+      item: {
+        default: string;
+        hover: string;
+        active: string;
+        text: string;
+      };
+    };
   };
   buttons: {
     primary: {
@@ -2239,6 +2879,61 @@ export interface SpectreGeneratedTokens {
           starEmpty: string;
           text: string;
         };
+        nav: {
+          bg: string;
+          text: string;
+          link: string;
+          linkHover: string;
+          linkActive: string;
+          border: string;
+        };
+        modal: {
+          bg: string;
+          shadow: string;
+          border: string;
+          overlay: string;
+        };
+        toast: {
+          success: {
+            bg: string;
+            text: string;
+            border: string;
+            icon: string;
+          };
+          warning: {
+            bg: string;
+            text: string;
+            border: string;
+            icon: string;
+          };
+          danger: {
+            bg: string;
+            text: string;
+            border: string;
+            icon: string;
+          };
+          info: {
+            bg: string;
+            text: string;
+            border: string;
+            icon: string;
+          };
+        };
+        tooltip: {
+          bg: string;
+          text: string;
+          border: string;
+        };
+        dropdown: {
+          bg: string;
+          border: string;
+          item: {
+            default: string;
+            hover: string;
+            active: string;
+            text: string;
+          };
+        };
       };
     };
     dark: {
@@ -2332,6 +3027,61 @@ export interface SpectreGeneratedTokens {
           starFilled: string;
           starEmpty: string;
           text: string;
+        };
+        nav: {
+          bg: string;
+          text: string;
+          link: string;
+          linkHover: string;
+          linkActive: string;
+          border: string;
+        };
+        modal: {
+          bg: string;
+          shadow: string;
+          border: string;
+          overlay: string;
+        };
+        toast: {
+          success: {
+            bg: string;
+            text: string;
+            border: string;
+            icon: string;
+          };
+          warning: {
+            bg: string;
+            text: string;
+            border: string;
+            icon: string;
+          };
+          danger: {
+            bg: string;
+            text: string;
+            border: string;
+            icon: string;
+          };
+          info: {
+            bg: string;
+            text: string;
+            border: string;
+            icon: string;
+          };
+        };
+        tooltip: {
+          bg: string;
+          text: string;
+          border: string;
+        };
+        dropdown: {
+          bg: string;
+          border: string;
+          item: {
+            default: string;
+            hover: string;
+            active: string;
+            text: string;
+          };
         };
       };
     };
@@ -2910,6 +3660,61 @@ export const coreTokens: SpectreGeneratedTokens = {
       "starFilled": "{colors.warning.500}",
       "starEmpty": "{colors.neutral.200}",
       "text": "{colors.neutral.500}"
+    },
+    "nav": {
+      "bg": "{colors.white}",
+      "text": "{colors.neutral.900}",
+      "link": "{colors.neutral.700}",
+      "linkHover": "{colors.brand.600}",
+      "linkActive": "{colors.brand.700}",
+      "border": "{colors.neutral.200}"
+    },
+    "modal": {
+      "bg": "{colors.white}",
+      "shadow": "0 20px 48px -12px {colors.black} / 0.20",
+      "border": "{colors.neutral.200}",
+      "overlay": "{colors.black} / 0.6"
+    },
+    "toast": {
+      "success": {
+        "bg": "{colors.success.50}",
+        "text": "{colors.success.800}",
+        "border": "{colors.success.200}",
+        "icon": "{colors.success.600}"
+      },
+      "warning": {
+        "bg": "{colors.warning.50}",
+        "text": "{colors.warning.800}",
+        "border": "{colors.warning.200}",
+        "icon": "{colors.warning.600}"
+      },
+      "danger": {
+        "bg": "{colors.error.50}",
+        "text": "{colors.error.800}",
+        "border": "{colors.error.200}",
+        "icon": "{colors.error.600}"
+      },
+      "info": {
+        "bg": "{colors.info.50}",
+        "text": "{colors.info.800}",
+        "border": "{colors.info.200}",
+        "icon": "{colors.info.600}"
+      }
+    },
+    "tooltip": {
+      "bg": "{colors.neutral.900}",
+      "text": "{colors.white}",
+      "border": "{colors.neutral.700}"
+    },
+    "dropdown": {
+      "bg": "{colors.white}",
+      "border": "{colors.neutral.200}",
+      "item": {
+        "default": "transparent",
+        "hover": "{colors.neutral.100}",
+        "active": "{colors.info.50}",
+        "text": "{colors.neutral.900}"
+      }
     }
   },
   "buttons": {
@@ -3109,6 +3914,61 @@ export const coreTokens: SpectreGeneratedTokens = {
           "starFilled": "{colors.warning.500}",
           "starEmpty": "{colors.neutral.200}",
           "text": "{colors.neutral.500}"
+        },
+        "nav": {
+          "bg": "{colors.white}",
+          "text": "{colors.neutral.900}",
+          "link": "{colors.neutral.700}",
+          "linkHover": "{colors.brand.600}",
+          "linkActive": "{colors.brand.700}",
+          "border": "{colors.neutral.200}"
+        },
+        "modal": {
+          "bg": "{colors.white}",
+          "shadow": "0 20px 48px -12px {colors.black} / 0.20",
+          "border": "{colors.neutral.200}",
+          "overlay": "{colors.black} / 0.6"
+        },
+        "toast": {
+          "success": {
+            "bg": "{colors.success.50}",
+            "text": "{colors.success.800}",
+            "border": "{colors.success.200}",
+            "icon": "{colors.success.600}"
+          },
+          "warning": {
+            "bg": "{colors.warning.50}",
+            "text": "{colors.warning.800}",
+            "border": "{colors.warning.200}",
+            "icon": "{colors.warning.600}"
+          },
+          "danger": {
+            "bg": "{colors.error.50}",
+            "text": "{colors.error.800}",
+            "border": "{colors.error.200}",
+            "icon": "{colors.error.600}"
+          },
+          "info": {
+            "bg": "{colors.info.50}",
+            "text": "{colors.info.800}",
+            "border": "{colors.info.200}",
+            "icon": "{colors.info.600}"
+          }
+        },
+        "tooltip": {
+          "bg": "{colors.neutral.900}",
+          "text": "{colors.white}",
+          "border": "{colors.neutral.700}"
+        },
+        "dropdown": {
+          "bg": "{colors.white}",
+          "border": "{colors.neutral.200}",
+          "item": {
+            "default": "transparent",
+            "hover": "{colors.neutral.100}",
+            "active": "{colors.info.50}",
+            "text": "{colors.neutral.900}"
+          }
         }
       }
     },
@@ -3203,6 +4063,61 @@ export const coreTokens: SpectreGeneratedTokens = {
           "starFilled": "{colors.warning.400}",
           "starEmpty": "{colors.neutral.700}",
           "text": "{colors.neutral.400}"
+        },
+        "nav": {
+          "bg": "{colors.neutral.900}",
+          "text": "{colors.neutral.50}",
+          "link": "{colors.neutral.300}",
+          "linkHover": "{colors.brand.400}",
+          "linkActive": "{colors.brand.300}",
+          "border": "{colors.neutral.700}"
+        },
+        "modal": {
+          "bg": "{colors.neutral.800}",
+          "shadow": "0 20px 48px -12px {colors.black} / 0.20",
+          "border": "{colors.neutral.700}",
+          "overlay": "{colors.black} / 0.6"
+        },
+        "toast": {
+          "success": {
+            "bg": "{colors.success.900}",
+            "text": "{colors.success.100}",
+            "border": "{colors.success.700}",
+            "icon": "{colors.success.400}"
+          },
+          "warning": {
+            "bg": "{colors.warning.900}",
+            "text": "{colors.warning.100}",
+            "border": "{colors.warning.700}",
+            "icon": "{colors.warning.400}"
+          },
+          "danger": {
+            "bg": "{colors.error.900}",
+            "text": "{colors.error.100}",
+            "border": "{colors.error.700}",
+            "icon": "{colors.error.400}"
+          },
+          "info": {
+            "bg": "{colors.info.900}",
+            "text": "{colors.info.100}",
+            "border": "{colors.info.700}",
+            "icon": "{colors.info.400}"
+          }
+        },
+        "tooltip": {
+          "bg": "{colors.neutral.50}",
+          "text": "{colors.neutral.900}",
+          "border": "{colors.neutral.300}"
+        },
+        "dropdown": {
+          "bg": "{colors.neutral.800}",
+          "border": "{colors.neutral.700}",
+          "item": {
+            "default": "transparent",
+            "hover": "{colors.neutral.700}",
+            "active": "{colors.info.900}",
+            "text": "{colors.neutral.100}"
+          }
         }
       }
     }

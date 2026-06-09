@@ -62,6 +62,61 @@ interface SpectreGeneratedTokens {
             starEmpty: string;
             text: string;
         };
+        nav: {
+            bg: string;
+            text: string;
+            link: string;
+            linkHover: string;
+            linkActive: string;
+            border: string;
+        };
+        modal: {
+            bg: string;
+            shadow: string;
+            border: string;
+            overlay: string;
+        };
+        toast: {
+            success: {
+                bg: string;
+                text: string;
+                border: string;
+                icon: string;
+            };
+            warning: {
+                bg: string;
+                text: string;
+                border: string;
+                icon: string;
+            };
+            danger: {
+                bg: string;
+                text: string;
+                border: string;
+                icon: string;
+            };
+            info: {
+                bg: string;
+                text: string;
+                border: string;
+                icon: string;
+            };
+        };
+        tooltip: {
+            bg: string;
+            text: string;
+            border: string;
+        };
+        dropdown: {
+            bg: string;
+            border: string;
+            item: {
+                default: string;
+                hover: string;
+                active: string;
+                text: string;
+            };
+        };
     };
     buttons: {
         primary: {
@@ -261,6 +316,61 @@ interface SpectreGeneratedTokens {
                     starEmpty: string;
                     text: string;
                 };
+                nav: {
+                    bg: string;
+                    text: string;
+                    link: string;
+                    linkHover: string;
+                    linkActive: string;
+                    border: string;
+                };
+                modal: {
+                    bg: string;
+                    shadow: string;
+                    border: string;
+                    overlay: string;
+                };
+                toast: {
+                    success: {
+                        bg: string;
+                        text: string;
+                        border: string;
+                        icon: string;
+                    };
+                    warning: {
+                        bg: string;
+                        text: string;
+                        border: string;
+                        icon: string;
+                    };
+                    danger: {
+                        bg: string;
+                        text: string;
+                        border: string;
+                        icon: string;
+                    };
+                    info: {
+                        bg: string;
+                        text: string;
+                        border: string;
+                        icon: string;
+                    };
+                };
+                tooltip: {
+                    bg: string;
+                    text: string;
+                    border: string;
+                };
+                dropdown: {
+                    bg: string;
+                    border: string;
+                    item: {
+                        default: string;
+                        hover: string;
+                        active: string;
+                        text: string;
+                    };
+                };
             };
         };
         dark: {
@@ -354,6 +464,61 @@ interface SpectreGeneratedTokens {
                     starFilled: string;
                     starEmpty: string;
                     text: string;
+                };
+                nav: {
+                    bg: string;
+                    text: string;
+                    link: string;
+                    linkHover: string;
+                    linkActive: string;
+                    border: string;
+                };
+                modal: {
+                    bg: string;
+                    shadow: string;
+                    border: string;
+                    overlay: string;
+                };
+                toast: {
+                    success: {
+                        bg: string;
+                        text: string;
+                        border: string;
+                        icon: string;
+                    };
+                    warning: {
+                        bg: string;
+                        text: string;
+                        border: string;
+                        icon: string;
+                    };
+                    danger: {
+                        bg: string;
+                        text: string;
+                        border: string;
+                        icon: string;
+                    };
+                    info: {
+                        bg: string;
+                        text: string;
+                        border: string;
+                        icon: string;
+                    };
+                };
+                tooltip: {
+                    bg: string;
+                    text: string;
+                    border: string;
+                };
+                dropdown: {
+                    bg: string;
+                    border: string;
+                    item: {
+                        default: string;
+                        hover: string;
+                        active: string;
+                        text: string;
+                    };
                 };
             };
         };
@@ -969,6 +1134,47 @@ interface ComponentRatingTokens<Value = string> {
     starEmpty: Value;
     text: Value;
 }
+interface ComponentNavTokens<Value = string> {
+    bg: Value;
+    text: Value;
+    link: Value;
+    linkHover: Value;
+    linkActive: Value;
+    border: Value;
+}
+interface ComponentModalTokens<Value = string> {
+    bg: Value;
+    shadow: Value;
+    border: Value;
+    overlay: Value;
+}
+interface ComponentToastVariantTokens<Value = string> {
+    bg: Value;
+    text: Value;
+    border: Value;
+    icon: Value;
+}
+interface ComponentToastTokens<Value = string> {
+    success: ComponentToastVariantTokens<Value>;
+    warning: ComponentToastVariantTokens<Value>;
+    danger: ComponentToastVariantTokens<Value>;
+    info: ComponentToastVariantTokens<Value>;
+}
+interface ComponentTooltipTokens<Value = string> {
+    bg: Value;
+    text: Value;
+    border: Value;
+}
+interface ComponentDropdownTokens<Value = string> {
+    bg: Value;
+    border: Value;
+    item: {
+        default: Value;
+        hover: Value;
+        active: Value;
+        text: Value;
+    };
+}
 interface ComponentTokens<Value = string> {
     card: {
         text: Value;
@@ -987,6 +1193,11 @@ interface ComponentTokens<Value = string> {
     testimonial: ComponentTestimonialTokens<Value>;
     pricingCard: ComponentPricingCardTokens<Value>;
     rating: ComponentRatingTokens<Value>;
+    nav: ComponentNavTokens<Value>;
+    modal: ComponentModalTokens<Value>;
+    toast: ComponentToastTokens<Value>;
+    tooltip: ComponentTooltipTokens<Value>;
+    dropdown: ComponentDropdownTokens<Value>;
     [key: string]: unknown;
 }
 type SpectreModeName = 'default' | 'dark';
