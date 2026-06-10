@@ -8,6 +8,12 @@ reflects package releases published to npm.
 
 Contract change type: additive
 
+## [2.9.0] - 2026-06-10
+
+**Release Title:** Motion Accessibility and UI Component Tokens
+
+Contract change type: additive
+
 ### Added
 
 - Added `reduced` (0.01ms) duration to `transitions.duration` and `reducedMotion` semantic token to `accessibility` in `tokens/primitives.json`.
@@ -625,7 +631,8 @@ Contract change type: breaking
 - Standardized documentation and contributing guidelines.
 
 [unreleased]:
-  https://github.com/phcdevworks/spectre-tokens/compare/v2.8.0...HEAD
+  https://github.com/phcdevworks/spectre-tokens/compare/v2.9.0...HEAD
+[2.9.0]: https://github.com/phcdevworks/spectre-tokens/compare/v2.8.0...v2.9.0
 [2.8.0]: https://github.com/phcdevworks/spectre-tokens/compare/v2.7.0...v2.8.0
 [2.7.0]: https://github.com/phcdevworks/spectre-tokens/compare/v2.6.0...v2.7.0
 [2.6.0]: https://github.com/phcdevworks/spectre-tokens/compare/v2.5.0...v2.6.0
