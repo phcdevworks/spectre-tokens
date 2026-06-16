@@ -233,7 +233,7 @@ interface SpectreGeneratedTokens {
                 card: string;
                 input: string;
                 overlay: string;
-                alternate: string;
+                subtle: string;
                 hero: string;
                 hover: string;
                 selected: string;
@@ -379,7 +379,7 @@ interface SpectreGeneratedTokens {
                 card: string;
                 input: string;
                 overlay: string;
-                alternate: string;
+                subtle: string;
                 hero: string;
                 hover: string;
                 selected: string;
@@ -1208,7 +1208,7 @@ interface SpectreModeTokens {
         card: SemanticTokenValue;
         input: SemanticTokenValue;
         overlay: SemanticTokenValue;
-        alternate: SemanticTokenValue;
+        subtle: SemanticTokenValue;
         hero: SemanticTokenValue;
         hover: SemanticTokenValue;
         selected: SemanticTokenValue;

@@ -348,7 +348,7 @@ export const generateCssVariables = (tokens: SpectreTokens, options: CssVariable
     { varParts: ['surface', 'card'],      modePath: ['surface', 'card'],      aliasSrc: surfaceAliases, aliasPath: ['card'] },
     { varParts: ['surface', 'input'],     modePath: ['surface', 'input'],     aliasSrc: surfaceAliases, aliasPath: ['input'] },
     { varParts: ['surface', 'overlay'],   modePath: ['surface', 'overlay'],   aliasSrc: surfaceAliases, aliasPath: ['overlay'] },
-    { varParts: ['surface', 'alternate'], modePath: ['surface', 'alternate'] },
+    { varParts: ['surface', 'subtle'], modePath: ['surface', 'subtle'] },
     { varParts: ['surface', 'hero'],      modePath: ['surface', 'hero'],      aliasSrc: surfaceAliases, aliasPath: ['hero'] },
     { varParts: ['text', 'on', 'page', 'default'], modePath: ['text', 'onPage', 'default'], aliasSrc: textAliases, aliasPath: ['onPage', 'default'] },
     { varParts: ['text', 'on', 'page', 'muted'],   modePath: ['text', 'onPage', 'muted'],   aliasSrc: textAliases, aliasPath: ['onPage', 'muted'] },

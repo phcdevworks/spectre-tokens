@@ -14,7 +14,7 @@
 
 ## Checklist
 
-- [ ] `npm run check` passes (14-gate validation)
+- [ ] `npm run check` passes (full validation gate)
 - [ ] Token sources changed in `tokens/` only (not in `dist/` or
       `src/generated/`)
 - [ ] Generated outputs regenerated via `npm run build`
@@ -23,8 +23,8 @@
 - [ ] `CHANGELOG.md [Unreleased]` updated with `Contract change type:` line
 - [ ] `README.md` and `TOKEN_CONTRACT.md` updated if public contract surface
       changed
-- [ ] `contract.manifest.json` updated if public namespaces or required
-      outputs changed
+- [ ] `contract.manifest.json` updated if public namespaces or required outputs
+      changed
 
 ## Screenshots (if applicable)
 

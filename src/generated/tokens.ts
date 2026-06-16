@@ -794,14 +794,16 @@ export interface SpectreSourceTokens {
         overlay: {
           value: string;
         };
-        alternate: {
+        subtle: {
           value: string;
+          description: string;
           metadata: {
             pair: string;
           };
         };
         hero: {
           value: string;
+          description: string;
         };
         hover: {
           value: string;
@@ -1375,14 +1377,16 @@ export interface SpectreSourceTokens {
         overlay: {
           value: string;
         };
-        alternate: {
+        subtle: {
           value: string;
+          description: string;
           metadata: {
             pair: string;
           };
         };
         hero: {
           value: string;
+          description: string;
         };
         hover: {
           value: string;
@@ -2796,7 +2800,7 @@ export interface SpectreGeneratedTokens {
         card: string;
         input: string;
         overlay: string;
-        alternate: string;
+        subtle: string;
         hero: string;
         hover: string;
         selected: string;
@@ -2942,7 +2946,7 @@ export interface SpectreGeneratedTokens {
         card: string;
         input: string;
         overlay: string;
-        alternate: string;
+        subtle: string;
         hero: string;
         hover: string;
         selected: string;
@@ -3832,7 +3836,7 @@ export const coreTokens: SpectreGeneratedTokens = {
         "card": "{colors.white}",
         "input": "{colors.white}",
         "overlay": "{colors.black} / 0.6",
-        "alternate": "{colors.neutral.100}",
+        "subtle": "{colors.neutral.100}",
         "hero": "linear-gradient(135deg, {colors.indigo.500} 0%, {colors.violet.600} 100%)",
         "hover": "{colors.neutral.100}",
         "selected": "{colors.info.50}",
@@ -3978,7 +3982,7 @@ export const coreTokens: SpectreGeneratedTokens = {
         "card": "{colors.neutral.800}",
         "input": "{colors.neutral.700}",
         "overlay": "{colors.black} / 0.6",
-        "alternate": "{colors.neutral.800}",
+        "subtle": "{colors.neutral.800}",
         "hero": "linear-gradient(135deg, {colors.accent.700} 0%, {colors.accent.900} 100%)",
         "hover": "{colors.neutral.700}",
         "selected": "{colors.info.900}",

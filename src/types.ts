@@ -203,7 +203,7 @@ export interface SpectreModeTokens {
     card: SemanticTokenValue;
     input: SemanticTokenValue;
     overlay: SemanticTokenValue;
-    alternate: SemanticTokenValue;
+    subtle: SemanticTokenValue;
     hero: SemanticTokenValue;
     hover: SemanticTokenValue;
     selected: SemanticTokenValue;

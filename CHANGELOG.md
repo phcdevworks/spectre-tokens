@@ -6,7 +6,23 @@ reflects package releases published to npm.
 
 ## [Unreleased]
 
-Contract change type: additive
+Contract change type: breaking
+
+### Changed
+
+- Standardized repository guidance around current public namespaces, Phase 4
+  roadmap status, package-manager expectations, and the full validation gate.
+- Renamed `surface.alternate` to `surface.subtle` in `tokens/modes.json`,
+  `src/types.ts`, and `src/css.ts`. "alternate" was too vague for a public
+  contract token; "subtle" precisely describes a one-step-recessed background
+  used for zebra rows, section bands, and inset panels. CSS variable renamed
+  from `--sp-surface-alternate` to `--sp-surface-subtle`. **Breaking** —
+  consumers using `surface.alternate` or `--sp-surface-alternate` must update
+  to `surface.subtle` / `--sp-surface-subtle`.
+- Added explicit `description` to `surface.hero` in `tokens/modes.json`
+  (both default and dark modes) documenting it as a gradient surface for
+  hero and marketing sections only, not a general-purpose surface role.
+  No value change — semantic change only.
 
 ## [2.9.0] - 2026-06-10
 
@@ -16,12 +32,37 @@ Contract change type: additive
 
 ### Added
 
-- Added `reduced` (0.01ms) duration to `transitions.duration` and `reducedMotion` semantic token to `accessibility` in `tokens/primitives.json`.
-- Added `animations.reducedMotion` variants for all 8 named animations (`fadeIn`, `fadeOut`, `slideUp`, `slideDown`, `scaleIn`, `bounce`, `shake`, `pulse`) to provide near-zero duration alternatives for reduced-motion accessibility.
-- Added `forcedColors` token with value `"auto"` to the `accessibility` family in `tokens/primitives.json` to address a Priority 1 gap in the accessibility contract.
-- Added `link` semantic namespace (`link.default`, `link.hover`, `link.active`, `link.visited`) to `tokens/semantic-roles.json` so consumers no longer need to fall back to raw `colors.brand`/`colors.accent` palette values for inline links. Registered in `contract.manifest.json` `publicNamespaces` and `SpectreModeTokens` is unaffected since `link` is not mode-scoped.
-- Added interactive surface state tokens `surface.hover`, `surface.selected`, `surface.active`, and a semantic divider token `surface.divider` to `tokens/semantic-roles.json`, with `default`/`dark` mode variants in `tokens/modes.json` and corresponding fields on `SpectreModeTokens` in `src/types.ts`. These cover clickable list items, table rows, menu items, and `<hr>`/section-separator styling without composing from raw palette values.
-- Added `component.nav`, `component.modal`, `component.toast`, `component.tooltip`, and `component.dropdown` token groups to `tokens/components.json`, with `default`/`dark` mode variants in `tokens/modes.json`, corresponding `ComponentNavTokens`, `ComponentModalTokens`, `ComponentToastTokens`, `ComponentTooltipTokens`, and `ComponentDropdownTokens` interfaces in `src/types.ts`, and mode-aware CSS variables (`--sp-nav-*`, `--sp-modal-*`, `--sp-toast-*`, `--sp-tooltip-*`, `--sp-dropdown-*`) in `src/css.ts`. Registered new required paths and CSS variables in `contract.manifest.json`. This unblocks `spectre-ui` and `spectre-ui-astro` Phase 4 recipes (Nav, Toast, Tooltip, Dropdown, Modal) that previously had to compose these from raw palette values.
+- Added `reduced` (0.01ms) duration to `transitions.duration` and
+  `reducedMotion` semantic token to `accessibility` in `tokens/primitives.json`.
+- Added `animations.reducedMotion` variants for all 8 named animations
+  (`fadeIn`, `fadeOut`, `slideUp`, `slideDown`, `scaleIn`, `bounce`, `shake`,
+  `pulse`) to provide near-zero duration alternatives for reduced-motion
+  accessibility.
+- Added `forcedColors` token with value `"auto"` to the `accessibility` family
+  in `tokens/primitives.json` to address a Priority 1 gap in the accessibility
+  contract.
+- Added `link` semantic namespace (`link.default`, `link.hover`, `link.active`,
+  `link.visited`) to `tokens/semantic-roles.json` so consumers no longer need to
+  fall back to raw `colors.brand`/`colors.accent` palette values for inline
+  links. Registered in `contract.manifest.json` `publicNamespaces` and
+  `SpectreModeTokens` is unaffected since `link` is not mode-scoped.
+- Added interactive surface state tokens `surface.hover`, `surface.selected`,
+  `surface.active`, and a semantic divider token `surface.divider` to
+  `tokens/semantic-roles.json`, with `default`/`dark` mode variants in
+  `tokens/modes.json` and corresponding fields on `SpectreModeTokens` in
+  `src/types.ts`. These cover clickable list items, table rows, menu items, and
+  `<hr>`/section-separator styling without composing from raw palette values.
+- Added `component.nav`, `component.modal`, `component.toast`,
+  `component.tooltip`, and `component.dropdown` token groups to
+  `tokens/components.json`, with `default`/`dark` mode variants in
+  `tokens/modes.json`, corresponding `ComponentNavTokens`,
+  `ComponentModalTokens`, `ComponentToastTokens`, `ComponentTooltipTokens`, and
+  `ComponentDropdownTokens` interfaces in `src/types.ts`, and mode-aware CSS
+  variables (`--sp-nav-*`, `--sp-modal-*`, `--sp-toast-*`, `--sp-tooltip-*`,
+  `--sp-dropdown-*`) in `src/css.ts`. Registered new required paths and CSS
+  variables in `contract.manifest.json`. This unblocks `spectre-ui` and
+  `spectre-ui-astro` Phase 4 recipes (Nav, Toast, Tooltip, Dropdown, Modal) that
+  previously had to compose these from raw palette values.
 
 ## [2.8.0] - 2026-06-06
 
@@ -39,8 +80,13 @@ Contract change type: additive
   `spectre-manifest-validate` (schema check) followed by
   `spectre-manifest-check` (package registration check) and is placed in the
   gate after `check:integration`.
-- Added `3xl` (24px) and `4xl` (32px) radius tokens to the `radii` primitive family in `tokens/primitives.json` to fill the scale gap between `2xl` and `pill`, providing more options for larger rounded UI elements like cards and modals.
-- Added `none` (0) to `border.width` and `dashed`, `dotted` to `border.style` in `tokens/primitives.json` to complete the core border primitive scale and provide more options for decorative and conditional borders.
+- Added `3xl` (24px) and `4xl` (32px) radius tokens to the `radii` primitive
+  family in `tokens/primitives.json` to fill the scale gap between `2xl` and
+  `pill`, providing more options for larger rounded UI elements like cards and
+  modals.
+- Added `none` (0) to `border.width` and `dashed`, `dotted` to `border.style` in
+  `tokens/primitives.json` to complete the core border primitive scale and
+  provide more options for decorative and conditional borders.
 - Added W3C DTCG design-tool output at `dist/tokens.dtcg.json`, generated by
   `npm run build:design` (wired into the main `npm run build`). Tokens Studio
   and Style Dictionary v4 can consume this file directly for Figma sync.
@@ -48,9 +94,20 @@ Contract change type: additive
   top-level keys and DTCG structure validation in `check:manifest`.
 - Added Design Tool Handoff section to `CONTRIBUTING.md` documenting the Tokens
   Studio workflow for pulling updated tokens into Figma.
-- Added missing scale steps to the `space` primitive family in `tokens/primitives.json`: `1` (1px), `2` (2px), `6` (6px), `10` (10px), `14` (14px), `28` (28px), and `72` (72px). These additions bridge gaps and provide finer increments (down to 2px in key ranges) at both the low and high ends of the spacing scale to support more precise layout control.
-- Added `focusVisible` token to `buttons.danger` (`{colors.error.500} / 0.4`) and `buttons.success` (`{colors.success.500} / 0.4`) to match the parity already present on `primary`, `secondary`, `ghost`, and `accent` variants. Updated `locked-color-baseline.json` to record the approved new state. Closes the gap identified in spectre-ui Phase 3 P1 token sync audit.
-- Converted `colors.focus.primary`, `colors.focus.error`, and `colors.focus.info` from raw hex literals to token references (`{colors.brand.500}`, `{colors.error.500}`, `{colors.info.600}`) for consistency with the rest of the token system.
+- Added missing scale steps to the `space` primitive family in
+  `tokens/primitives.json`: `1` (1px), `2` (2px), `6` (6px), `10` (10px), `14`
+  (14px), `28` (28px), and `72` (72px). These additions bridge gaps and provide
+  finer increments (down to 2px in key ranges) at both the low and high ends of
+  the spacing scale to support more precise layout control.
+- Added `focusVisible` token to `buttons.danger` (`{colors.error.500} / 0.4`)
+  and `buttons.success` (`{colors.success.500} / 0.4`) to match the parity
+  already present on `primary`, `secondary`, `ghost`, and `accent` variants.
+  Updated `locked-color-baseline.json` to record the approved new state. Closes
+  the gap identified in spectre-ui Phase 3 P1 token sync audit.
+- Converted `colors.focus.primary`, `colors.focus.error`, and
+  `colors.focus.info` from raw hex literals to token references
+  (`{colors.brand.500}`, `{colors.error.500}`, `{colors.info.600}`) for
+  consistency with the rest of the token system.
 
 ## [2.7.0] - 2026-06-03
 
@@ -110,10 +167,9 @@ Contract change type: additive
   `:root` block — once via `semanticEntries` (mode-resolved) and once via
   `createCssVariableMap` (base-only). The base-only block was winning via CSS
   cascade, silently applying wrong badge text colors (e.g. `successText`
-  resolved to `colors.success.800` instead of the mode override `.700`).
-  Removed the redundant assignments from `createCssVariableMap`; the
-  `semanticEntries` path in `generateCssVariables` is now the sole emitter for
-  these tokens.
+  resolved to `colors.success.800` instead of the mode override `.700`). Removed
+  the redundant assignments from `createCssVariableMap`; the `semanticEntries`
+  path in `generateCssVariables` is now the sole emitter for these tokens.
 
 ## [2.6.0] - 2026-05-21
 
@@ -202,8 +258,8 @@ Contract change type: semantic change
   consistently across color modes.
 - Refactored CSS variable generation around shared semantic entry mappings to
   reduce drift risk between default and dark mode output.
-- Removed the unused `chroma-js` dependency and refreshed Rollup and
-  TypeScript ESLint tooling.
+- Removed the unused `chroma-js` dependency and refreshed Rollup and TypeScript
+  ESLint tooling.
 
 ### Fixed
 
@@ -272,9 +328,9 @@ Contract change type: semantic change
 - Added `focusVisible` token aliases for supported button variants plus a
   top-level `forms.focusVisible` block to keep focus styling consistent across
   the token contract.
-- Added `bgHover` interaction-state tokens for `pricingCard` and
-  `testimonial`, including mode-aware overrides and contrast-pair metadata for
-  validation coverage.
+- Added `bgHover` interaction-state tokens for `pricingCard` and `testimonial`,
+  including mode-aware overrides and contrast-pair metadata for validation
+  coverage.
 - Added a Buildkite verification pipeline for repository validation alongside
   the existing GitHub Actions workflow.
 
@@ -296,8 +352,8 @@ Contract change type: semantic change
 
 - Aligned `component.card.textMuted` with the muted semantic role in default
   mode.
-- Aligned dark-mode `iconBox.iconDefault` tokens more consistently with the
-  rest of the icon-box color system.
+- Aligned dark-mode `iconBox.iconDefault` tokens more consistently with the rest
+  of the icon-box color system.
 - Improved testimonial `quoteMark` contrast and expanded contrast-validation
   coverage for that component.
 
@@ -313,16 +369,16 @@ Contract change type: additive
   protected success, warning, danger, and CTA/brand-action families.
 - Added a GitHub Actions CI workflow that runs `npm run build` and
   `npm run check` on pushes to `main` and on pull requests.
-- Added `metadata.pair` mappings across inputs, badges, cards, ratings, and
-  icon box tokens to expand automated contrast validation coverage.
+- Added `metadata.pair` mappings across inputs, badges, cards, ratings, and icon
+  box tokens to expand automated contrast validation coverage.
 - Added missing `neutralBgHover` and `infoBgHover` badge tokens in default mode
   to improve hover-state parity across semantic variants.
 
 ### Changed
 
 - Changed the validation flow so `npm run build` regenerates outputs only while
-  `npm run check` acts as the full validation gate for structure, locked
-  colors, contrast, regression, and linting.
+  `npm run check` acts as the full validation gate for structure, locked colors,
+  contrast, regression, and linting.
 - Clarified repository guidance around release hygiene, locked color families,
   Tailwind theme exports, and the role of `example/` as illustrative token
   documentation rather than downstream UI ownership.
@@ -393,8 +449,8 @@ Contract change type: additive
 
 ### Changed
 
-- Harmonized the `accent` color palette for better visual consistency across
-  the ecosystem.
+- Harmonized the `accent` color palette for better visual consistency across the
+  ecosystem.
 - Replaced legacy `.vscode` settings with a centralized `phcdevworks.workspace`
   configuration.
 - Revised `README.md` and `CONTRIBUTING.md` to emphasize the Layer 1 hierarchy
@@ -428,8 +484,8 @@ Contract change type: breaking
 ### Changed
 
 - Split the monolithic `core.json` into domain-specific source files
-  (`palette.json`, `primitives.json`, `semantic-roles.json`,
-  `components.json`, `typography.json`, `modes.json`).
+  (`palette.json`, `primitives.json`, `semantic-roles.json`, `components.json`,
+  `typography.json`, `modes.json`).
 - Re-engineered the build pipeline to use a type-safe deep-merge engine
   (`token-utils.ts`) for multi-file token resolution.
 - Updated `generate-types.ts` to export both strict interfaces and the internal

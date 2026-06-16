@@ -2,15 +2,15 @@
 
 ## Project Identity
 
-**Package:** `@phcdevworks/spectre-tokens`
-**Human owner:** Bradley Potts
-**Primary AI developer:** Claude Code (claude-sonnet-4-6)
+- **Package:** `@phcdevworks/spectre-tokens`
+- **Human owner:** Bradley Potts
+- **Primary AI developer:** Claude Code (claude-sonnet-4-6)
 
-`@phcdevworks/spectre-tokens` is the Layer 1 design-token package of the
-Spectre system. It defines visual language, semantic roles, and token contracts
-consumed by downstream Spectre packages and compatible applications. The goal
-is a complete, UI-ready token surface — not a minimal set that waits for
-downstream demand to drive every addition.
+`@phcdevworks/spectre-tokens` is the Layer 1 design-token package of the Spectre
+system. It defines visual language, semantic roles, and token contracts consumed
+by downstream Spectre packages and compatible applications. The goal is a
+complete, UI-ready token surface — not a minimal set that waits for downstream
+demand to drive every addition.
 
 This file is the authoritative guide for Claude Code operating in this
 repository. Read it before touching any source file.
@@ -19,20 +19,20 @@ repository. Read it before touching any source file.
 
 `AGENTS.md` is the shared guide for agent roles, edit boundaries, and PR
 requirements. Claude Code remains the lead implementation authority for token
-authoring, source changes, and architecture. Resolve implementation conflicts
-by referencing this file and `contract.manifest.json`.
+authoring, source changes, and architecture. Resolve implementation conflicts by
+referencing this file and `contract.manifest.json`.
 
 ## Commit Policy
 
-Claude Code does not create git commits in this repository. Prepare changes,
-run all validation, and leave staging, committing, tagging, and pushing to
-human review.
+Claude Code does not create git commits in this repository. Prepare changes, run
+all validation, and leave staging, committing, tagging, and pushing to human
+review.
 
 ## Pull Request Creation
 
-Follow the shared PR requirements in `AGENTS.md`. Claude Code prepares
-validated changes for human review; Bradley Potts handles final commit, merge,
-tag, and release authority.
+Follow the shared PR requirements in `AGENTS.md`. Claude Code prepares validated
+changes for human review; Bradley Potts handles final commit, merge, tag, and
+release authority.
 
 ## The One Rule That Overrides Everything
 
@@ -48,9 +48,9 @@ npm run build         # regenerate all outputs (always run after token changes)
 npm run check         # full validation gate - must pass before any commit
 ```
 
-`npm run check` runs build -> manifest -> structure -> locked-color -> contrast ->
-regression -> docs -> exports -> css -> tailwind -> consumer -> integration ->
-classification -> deprecation -> dist -> lint. All must pass.
+`npm run check` runs build -> manifest -> structure -> locked-color -> contrast
+-> regression -> docs -> exports -> css -> tailwind -> consumer -> integration
+-> classification -> deprecation -> dist -> lint. All must pass.
 
 ## File Structure
 
@@ -77,21 +77,21 @@ Changes to those files must be regenerated, validated, and classified in
 
 ## Key Scripts Reference
 
-| Script | What it validates |
-|---|---|
-| `check:manifest` | public namespaces and required outputs vs contract.manifest.json |
-| `check:structure` | token tree shape |
-| `check:locked` | protected color families unchanged |
-| `check:contrast` | WCAG AA contrast for all paired tokens |
-| `check:regression` | token values unchanged vs baseline |
-| `check:docs` | README.md and TOKEN_CONTRACT.md aligned to manifest |
-| `check:exports` | public runtime exports match declared contract |
-| `check:css` | required CSS variables present |
-| `check:tailwind` | Tailwind theme values match token contract |
-| `check:consumer` | downstream smoke fixture passes |
-| `check:classification` | contract-authority changes have changelog entry |
-| `check:dist` | dist artifacts are in sync with source |
-| `lint` | ESLint passes |
+| Script                 | What it validates                                                |
+| ---------------------- | ---------------------------------------------------------------- |
+| `check:manifest`       | public namespaces and required outputs vs contract.manifest.json |
+| `check:structure`      | token tree shape                                                 |
+| `check:locked`         | protected color families unchanged                               |
+| `check:contrast`       | WCAG AA contrast for all paired tokens                           |
+| `check:regression`     | token values unchanged vs baseline                               |
+| `check:docs`           | README.md and TOKEN_CONTRACT.md aligned to manifest              |
+| `check:exports`        | public runtime exports match declared contract                   |
+| `check:css`            | required CSS variables present                                   |
+| `check:tailwind`       | Tailwind theme values match token contract                       |
+| `check:consumer`       | downstream smoke fixture passes                                  |
+| `check:classification` | contract-authority changes have changelog entry                  |
+| `check:dist`           | dist artifacts are in sync with source                           |
+| `lint`                 | ESLint passes                                                    |
 
 ## Token Change Procedure
 
@@ -116,16 +116,16 @@ Changes to these require explicit approval from Bradley Potts.
 
 ## Public Contract Namespaces
 
-Current: `colors`, `space`, `layout`, `radii`, `typography`, `font`,
-`shadows`, `breakpoints`, `zIndex`, `transitions`, `animations`, `opacity`,
-`aspectRatios`, `icons`, `border`, `accessibility`, `buttons`, `forms`,
-`surface`, `text`, `component`, `modes`
+Current: `colors`, `space`, `layout`, `radii`, `typography`, `font`, `shadows`,
+`breakpoints`, `zIndex`, `transitions`, `animations`, `opacity`, `aspectRatios`,
+`icons`, `border`, `accessibility`, `buttons`, `forms`, `link`, `surface`,
+`text`, `component`, `modes`
 
-Planned additions (see `TODO.md` Phase 4): `link`, and expanded `surface`,
-`component`, and `animations` sub-paths.
+Phase 4 (see `TODO.md`) is complete. No active planning focus is currently
+open; next priorities are tracked in `TODO.md` as they are identified.
 
-Adding a new namespace is additive. Removing or renaming is breaking.
-The banned namespace is `borders` - always use `border` (singular).
+Adding a new namespace is additive. Removing or renaming is breaking. The banned
+namespace is `borders` - always use `border` (singular).
 
 ## Code Style
 
@@ -151,18 +151,19 @@ The banned namespace is `borders` - always use `border` (singular).
 
 ## What This Package Does Not Own
 
-Shared ownership boundaries live in `AGENTS.md` and `TOKEN_CONTRACT.md`.
-Claude Code must keep this package focused on token meaning — expanding it
-proactively to cover the full UI vocabulary is in scope. Component structure,
-adapter behavior, and downstream UI anatomy are not.
+Shared ownership boundaries live in `AGENTS.md` and `TOKEN_CONTRACT.md`. Claude
+Code must keep this package focused on token meaning — expanding it proactively
+to cover the full UI vocabulary is in scope. Component structure, adapter
+behavior, and downstream UI anatomy are not.
 
 ## Gotchas
 
-- `src/generated/tokens.ts` is always regenerated on `npm run build`. Any
-  manual edits are immediately overwritten.
+- `src/generated/tokens.ts` is always regenerated on `npm run build`. Any manual
+  edits are immediately overwritten.
 - Token values using `{path.to.token}` references are resolved at CSS-generation
   time in `src/css.ts`. They are NOT resolved in the JS runtime object.
 - The `metadata.pair` field on token objects in source JSON drives automated
   contrast validation. It is stripped from the public runtime export.
 - `check:classification` only fires when contract-authority files changed in the
-  working tree or HEAD commit. It is a no-op when nothing contract-related changed.
+  working tree or HEAD commit. It is a no-op when nothing contract-related
+  changed.
