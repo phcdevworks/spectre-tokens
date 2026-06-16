@@ -6,6 +6,10 @@ reflects package releases published to npm.
 
 ## [Unreleased]
 
+## [3.0.0] - 2026-06-17
+
+**Release Title:** Surface Subtle Contract Rename
+
 Contract change type: breaking
 
 ### Changed
@@ -687,7 +691,8 @@ Contract change type: breaking
 - Standardized documentation and contributing guidelines.
 
 [unreleased]:
-  https://github.com/phcdevworks/spectre-tokens/compare/v2.9.0...HEAD
+  https://github.com/phcdevworks/spectre-tokens/compare/v3.0.0...HEAD
+[3.0.0]: https://github.com/phcdevworks/spectre-tokens/compare/v2.9.0...v3.0.0
 [2.9.0]: https://github.com/phcdevworks/spectre-tokens/compare/v2.8.0...v2.9.0
 [2.8.0]: https://github.com/phcdevworks/spectre-tokens/compare/v2.7.0...v2.8.0
 [2.7.0]: https://github.com/phcdevworks/spectre-tokens/compare/v2.6.0...v2.7.0
