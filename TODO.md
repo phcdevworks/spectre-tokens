@@ -318,6 +318,43 @@ values or inventing local token contracts.
     `src/types.ts`, and `src/css.ts`. CSS variable updated from
     `--sp-surface-alternate` to `--sp-surface-subtle`. Breaking change logged.
 
+---
+
+## Phase 5 - CSS Generation Bug: Dropped Semantic Variables
+
+`generateCssVariables` in `src/css.ts` builds `dist/index.css` from a
+hand-maintained `semanticEntries` array (around line 346), not by iterating
+the full `tokens` object. `link.*` and `surface.hover/selected/active/divider`
+exist in `tokens/semantic-roles.json` and in the compiled `tokens` export
+(confirmed via `dist/index.js`), but have no corresponding entries in
+`semanticEntries`, so they are silently omitted from `dist/index.css` in every
+release, including `2.9.0` and `3.0.0`. TODO.md Phase 4 P1 incorrectly marked
+these as fully "Delivered" — they shipped to JS/TS/types but never to CSS.
+
+### P0: Fix Missing CSS Variable Output
+
+- [ ] Add `link.default/hover/active/visited` to `semanticEntries` in
+      `src/css.ts`
+  - Should emit `--sp-link-default`, `--sp-link-hover`, `--sp-link-active`,
+    `--sp-link-visited` in `dist/index.css`.
+
+- [ ] Add `surface.hover/selected/active/divider` to `semanticEntries` in
+      `src/css.ts`
+  - Should emit `--sp-surface-hover`, `--sp-surface-selected`,
+    `--sp-surface-active`, `--sp-surface-divider` in `dist/index.css`.
+
+- [ ] Add a regression test asserting every top-level key under
+      `tokens.link` and `tokens.surface` has a corresponding CSS variable in
+      `generateCssVariables` output
+  - Prevents this class of silent drop from recurring when new semantic roles
+    are added without a matching `semanticEntries` entry.
+
+- [ ] Republish a patch/minor release once fixed and update
+      `spectre-ui`'s `TODO.md` Phase 3 P2 to unblock Link, interactive surface
+      state, and Divider styling work.
+
+---
+
 ## Recommended Execution Order
 
 1. Phase 1 — done.
