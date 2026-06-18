@@ -8,6 +8,7 @@ import { loadContractManifest } from './contract-utils';
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const repoRoot = join(__dirname, '..');
 const changelogPath = join(repoRoot, 'CHANGELOG.md');
+const packagePath = join(repoRoot, 'package.json');
 const manifest = loadContractManifest();
 
 const contractAuthorityFiles = ['tokens', 'contract.manifest.json', 'README.md', 'src/index.ts', 'src/types.ts', 'src/css.ts'];
@@ -47,24 +48,32 @@ if (changedFiles.length === 0) {
 }
 
 const changelog = readFileSync(changelogPath, 'utf8');
+const pkg = JSON.parse(readFileSync(packagePath, 'utf8')) as { version: string };
 const unreleasedSection = changelog.split('## [Unreleased]')[1]?.split('\n## [')[0] ?? '';
-const latestReleaseSection =
-  changelog
-    .split('## [Unreleased]')[1]
-    ?.match(/\n## \[\d+\.\d+\.\d+\][\s\S]*?(?=\n## \[|$)/)?.[0] ?? '';
+const latestReleaseMatch = changelog
+  .split('## [Unreleased]')[1]
+  ?.match(/\n## \[(\d+\.\d+\.\d+)\][\s\S]*?(?=\n## \[|$)/);
+const latestReleaseVersion = latestReleaseMatch?.[1] ?? '';
+const latestReleaseSection = latestReleaseMatch?.[0] ?? '';
 const classificationPattern = new RegExp(
   `${manifest.changeClassification.requiredPrefix}\\s*(${manifest.changeClassification.allowed.join('|')})`,
   'i'
 );
+const currentVersionTagExists =
+  runGit(['tag', '--list', `v${pkg.version}`]).trim().length > 0;
+const canUsePendingReleaseEntry =
+  workingTreeChangedFiles.length > 0 &&
+  latestReleaseVersion === pkg.version &&
+  !currentVersionTagExists;
 const classificationSection =
-  workingTreeChangedFiles.length > 0 ||
+  (workingTreeChangedFiles.length > 0 && !canUsePendingReleaseEntry) ||
   classificationPattern.test(unreleasedSection)
     ? unreleasedSection
     : latestReleaseSection;
 
 if (!classificationPattern.test(classificationSection)) {
   const expectedSection =
-    workingTreeChangedFiles.length > 0
+    workingTreeChangedFiles.length > 0 && !canUsePendingReleaseEntry
       ? 'the Unreleased section'
       : 'the Unreleased section or latest release entry';
 

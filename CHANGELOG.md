@@ -33,6 +33,8 @@ Contract change type: additive
   `dist/index.css`, and `maxWidth.prose` / `width.sidebar` in the Tailwind
   theme export. Unblocks `spectre-ui` Phase 4d (Sidebar recipe, Container
   prose variant).
+- Updated README consumer examples to document the new runtime, CSS variable,
+  and Tailwind layout width mappings for prose containers and sidebars.
 
 ## [3.0.0] - 2026-06-17
 
