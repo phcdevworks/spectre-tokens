@@ -99,7 +99,10 @@
         "component.dropdown.item.active",
         "component.dropdown.item.text",
         "modes.default.surface.page",
-        "modes.dark.surface.page"
+        "modes.dark.surface.page",
+        "layout.container.maxWidth",
+        "layout.container.maxWidthProse",
+        "layout.sidebar.width"
       ],
       "requiredStringPaths": [
         "surface.page",
@@ -182,6 +185,8 @@
         { "themePath": "fontSize.md.1.lineHeight", "tokenPath": "typography.scale.md.lineHeight" },
         { "themePath": "fontSize.md.1.fontWeight", "tokenPath": "typography.scale.md.fontWeight" },
         { "themePath": "maxWidth.container", "tokenPath": "layout.container.maxWidth" },
+        { "themePath": "maxWidth.prose", "tokenPath": "layout.container.maxWidthProse" },
+        { "themePath": "width.sidebar", "tokenPath": "layout.sidebar.width" },
         { "themePath": "borderWidth.DEFAULT", "tokenPath": "border.width.base" }
       ]
     }

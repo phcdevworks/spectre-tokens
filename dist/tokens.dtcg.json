@@ -2776,6 +2776,16 @@
       "maxWidth": {
         "$value": "72rem",
         "$type": "dimension"
+      },
+      "maxWidthProse": {
+        "$value": "65ch",
+        "$type": "string"
+      }
+    },
+    "sidebar": {
+      "width": {
+        "$value": "16rem",
+        "$type": "dimension"
       }
     }
   },

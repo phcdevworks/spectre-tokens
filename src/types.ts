@@ -242,6 +242,10 @@ export interface LayoutTokens {
   container: {
     paddingInline: TokenScale;
     maxWidth: string;
+    maxWidthProse: string;
+  };
+  sidebar: {
+    width: string;
   };
 }
 
@@ -267,5 +271,6 @@ export interface TailwindTheme {
   transitionTimingFunction: SpectreGeneratedTokens['transitions']['easing'];
   opacity: SpectreGeneratedTokens['opacity'];
   maxWidth: Record<string, string | undefined>;
+  width: Record<string, string | undefined>;
   borderWidth: Record<string, string | undefined>;
 }

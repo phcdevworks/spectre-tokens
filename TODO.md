@@ -379,18 +379,32 @@ namespace at all.
 
 ### P0: Add Missing Width Tokens
 
-- [ ] Add `layout.sidebar.width` — a single fixed value (matching how
+- [x] Add `layout.sidebar.width` — a single fixed value (matching how
       `container.maxWidth` is a single value, not a multi-step scale), not a
       multi-size scale unless a second real consumer need shows up.
+  - Delivered: `layout.sidebar.width` = `16rem` in `tokens/semantic-roles.json`,
+    typed in `src/types.ts`, emitted as `--sp-layout-sidebar-width` in
+    `src/css.ts`, and mapped to `width.sidebar` in the Tailwind theme export
+    in `src/index.ts`.
 
-- [ ] Add a second `container.maxWidth` value for readable prose width
+- [x] Add a second `container.maxWidth` value for readable prose width
       (e.g. nested under `layout.container.maxWidth` as a named variant
       alongside the existing default) — coordinate exact naming with
       `spectre-ui`'s Phase 4d before finalizing, since it consumes this
       directly.
+  - Delivered as a sibling key, `layout.container.maxWidthProse` = `65ch`,
+    rather than nesting `maxWidth` into an object — keeps the existing
+    `layout.container.maxWidth` string contract non-breaking. Emitted as
+    `--sp-layout-container-max-width-prose` and mapped to `maxWidth.prose`
+    in the Tailwind theme export. Naming/shape not yet confirmed against
+    `spectre-ui`'s actual Phase 4d consumption — flag for adjustment if it
+    expects a different path.
 
 - [ ] Publish and version-bump. This is a hard blocker for `spectre-ui`
       Phase 4d, not a parallel-track item.
+  - Code is complete and `npm run check` passes (pending dist commit).
+    Release authority belongs to Bradley Potts per the Release Procedure
+    in `CLAUDE.md`.
 
 ---
 
@@ -410,8 +424,9 @@ namespace at all.
    `surface.hover/selected/active/divider` now emit correctly in
    `dist/index.css`, with a regression test guarding against recurrence.
    Awaiting publish and the `spectre-ui` TODO update to unblock Phase 3 P2.
-9. **Phase 6 — needed, not started.** Add `layout.sidebar.width` and a prose
-   `container.maxWidth` variant; hard-blocks `spectre-ui` Phase 4d.
+9. **Phase 6 — code done, release pending.** Added `layout.sidebar.width`
+   (`16rem`) and `layout.container.maxWidthProse` (`65ch`). Awaiting publish
+   to unblock `spectre-ui` Phase 4d.
 
 ## Explicitly Out of Scope
 

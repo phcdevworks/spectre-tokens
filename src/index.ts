@@ -74,7 +74,11 @@ const createTailwindTheme = (source: Tokens = tokens): TailwindTheme => {
     transitionTimingFunction: { ...source.transitions.easing },
     opacity: { ...source.opacity },
     maxWidth: {
-      container: source.layout?.container?.maxWidth
+      container: source.layout?.container?.maxWidth,
+      prose: source.layout?.container?.maxWidthProse
+    },
+    width: {
+      sidebar: source.layout?.sidebar?.width
     },
     borderWidth: {
       DEFAULT: source.border?.width.base,

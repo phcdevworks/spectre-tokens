@@ -19,6 +19,17 @@ Contract change type: additive
   `--sp-surface-hover`, `--sp-surface-selected`, `--sp-surface-active`, and
   `--sp-surface-divider`.
 
+### Added
+
+- Added `layout.container.maxWidthProse` (`65ch`) for readable prose-width
+  containers, and a new `layout.sidebar.width` (`16rem`) for app shell
+  sidebar layouts. Both are fixed single values, matching the existing
+  `layout.container.maxWidth` precedent, not multi-step scales. Emits
+  `--sp-layout-container-max-width-prose` and `--sp-layout-sidebar-width` in
+  `dist/index.css`, and `maxWidth.prose` / `width.sidebar` in the Tailwind
+  theme export. Unblocks `spectre-ui` Phase 4d (Sidebar recipe, Container
+  prose variant).
+
 ## [3.0.0] - 2026-06-17
 
 **Release Title:** Surface Subtle Contract Rename

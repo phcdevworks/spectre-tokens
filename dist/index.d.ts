@@ -899,6 +899,10 @@ interface SpectreGeneratedTokens {
                 lg: string;
             };
             maxWidth: string;
+            maxWidthProse: string;
+        };
+        sidebar: {
+            width: string;
         };
     };
     font: {
@@ -1245,6 +1249,10 @@ interface LayoutTokens {
     container: {
         paddingInline: TokenScale;
         maxWidth: string;
+        maxWidthProse: string;
+    };
+    sidebar: {
+        width: string;
     };
 }
 type Tokens = SpectreGeneratedTokens;
@@ -1269,6 +1277,7 @@ interface TailwindTheme {
     transitionTimingFunction: SpectreGeneratedTokens['transitions']['easing'];
     opacity: SpectreGeneratedTokens['opacity'];
     maxWidth: Record<string, string | undefined>;
+    width: Record<string, string | undefined>;
     borderWidth: Record<string, string | undefined>;
 }
 
