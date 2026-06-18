@@ -163,18 +163,62 @@ five groups. They are now published in the token contract.
 
 ---
 
-### P3: Motion and Surface Polish — Active
+### P3: Motion and Surface Polish — Delivered
 
-Reduced-motion variants shipped in 2.9.0. The remaining work is a focused
-semantic audit of broad surface roles.
-
-- Resolve `surface.hero` — gradient string in the `surface` namespace is
-  unusual; move to `gradients` or document usage constraints explicitly.
-- Clarify or rename `surface.alternate` — too vague for a public contract.
+- Reduced-motion variants shipped in 2.9.0.
+- `surface.hero` resolved: retained in the `surface` namespace, documented
+  with explicit hero/marketing-only usage constraints.
+- `surface.alternate` renamed to `surface.subtle` (`--sp-surface-subtle`).
+  Breaking change, logged.
 
 ---
 
-## 5. Explicitly Out of Scope
+## 5. Phase 5 — CSS Generation Bug: Dropped Semantic Variables — Active
+
+`generateCssVariables` in `src/css.ts` builds `dist/index.css` from a
+hand-maintained `semanticEntries` array, not by iterating the full `tokens`
+object. `link.*` and `surface.hover/selected/active/divider` exist in
+`tokens/semantic-roles.json` and in the compiled `tokens` export, but have no
+corresponding entries in `semanticEntries`, so they are silently omitted from
+`dist/index.css` in every release, including `2.9.0` and `3.0.0`. Prior
+roadmap notes incorrectly marked these as fully delivered — they shipped to
+JS/TS/types but never to CSS. This blocks `spectre-ui` Phase 3 P2 (Link,
+interactive surface states, Divider styling), which needs the CSS variables,
+not just the JS token values.
+
+- [ ] Add the missing entries to `semanticEntries` in `src/css.ts` so
+  `--sp-link-*` and `--sp-surface-hover/selected/active/divider` actually
+  emit in `dist/index.css`.
+- [ ] Add a regression test asserting every top-level key under
+  `tokens.link` and `tokens.surface` has a corresponding CSS variable in
+  `generateCssVariables` output, to prevent this class of silent drop.
+- [ ] Republish and update `spectre-ui` TODO.md Phase 3 P2 to unblock.
+
+---
+
+## 6. Phase 4 P4 — Layout Width Scale — Needed, not started
+
+Real downstream need: `spectre-ui` Phase 4d (app shell layout — Sidebar
+recipe, Container `maxWidth` prose variant) needs fixed-width values that do
+not exist anywhere in the published token object today. Confirmed by reading
+the live package directly — `layout` only has `section`, `stack` (gap only),
+and `container` (`paddingInline` + one fixed `maxWidth`). There is no
+`width` or `sizing` namespace at all. This is the first layout-adjacent gap
+since Phase 4 P2 that isn't satisfiable from existing tokens.
+
+- [ ] Add `layout.sidebar.width` — a single fixed value (matching how
+  `container.maxWidth` is a single value, not a multi-step scale), not a
+  multi-size scale unless a second real consumer need shows up.
+- [ ] Add a second `container.maxWidth` value for readable prose width
+  (e.g. nested under `layout.container.maxWidth` as a named variant
+  alongside the existing default, exact naming TBD — coordinate with
+  `spectre-ui`'s Phase 4d before finalizing since it consumes this directly).
+- [ ] Publish and version-bump before `spectre-ui` Phase 4d can proceed —
+  this is a hard blocker, not a parallel-track item.
+
+---
+
+## 8. Explicitly Out of Scope
 
 - Component structure or composition — belongs in `@phcdevworks/spectre-ui`.
 - Framework-specific token delivery — belongs in adapter packages.
@@ -185,7 +229,7 @@ semantic audit of broad surface roles.
 
 ---
 
-## 6. Recommended Execution Order
+## 9. Recommended Execution Order
 
 1. **Phase 1** — done.
 2. **Phase 2** — done.
@@ -194,4 +238,9 @@ semantic audit of broad surface roles.
 5. **Phase 4 P1** — done.
 6. **Phase 4 P2** — done. Component token expansion unblocked spectre-ui Phase 4
    and spectre-ui-astro Phase 4.
-7. **Phase 4 P3** — active. Remaining focus: surface role clarity.
+7. **Phase 4 P3** — done. `surface.hero`/`surface.alternate` resolved.
+8. **Phase 5** — active. CSS generation silently drops `link.*` and
+   `surface.hover/selected/active/divider` from `dist/index.css`; blocks
+   `spectre-ui` Phase 3 P2.
+9. **Phase 4 P4** — needed, not started. Add `layout.sidebar.width` and a
+   prose `container.maxWidth` variant; hard-blocks `spectre-ui` Phase 4d.
