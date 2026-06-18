@@ -6,6 +6,19 @@ reflects package releases published to npm.
 
 ## [Unreleased]
 
+Contract change type: additive
+
+### Fixed
+
+- Fixed `generateCssVariables` in `src/css.ts` silently dropping `link.*`
+  and `surface.hover/selected/active/divider` from `dist/index.css`. These
+  tokens existed in the runtime JS/TS export since `2.9.0`/`3.0.0` but had no
+  corresponding entry in the hand-maintained `semanticEntries` array, so they
+  never reached the generated CSS. Now emits `--sp-link-default`,
+  `--sp-link-hover`, `--sp-link-active`, `--sp-link-visited`,
+  `--sp-surface-hover`, `--sp-surface-selected`, `--sp-surface-active`, and
+  `--sp-surface-divider`.
+
 ## [3.0.0] - 2026-06-17
 
 **Release Title:** Surface Subtle Contract Rename

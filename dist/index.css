@@ -5,6 +5,10 @@
   --sp-surface-overlay: rgba(0, 0, 0, 0.6);
   --sp-surface-subtle: #eef1f6;
   --sp-surface-hero: linear-gradient(135deg, #5b6ee1 0%, #6f3fd7 100%);
+  --sp-surface-hover: #eef1f6;
+  --sp-surface-selected: #f0f9ff;
+  --sp-surface-active: #d9dfeb;
+  --sp-surface-divider: #d9dfeb;
   --sp-text-on-page-default: #141b24;
   --sp-text-on-page-muted: #4b576a;
   --sp-text-on-page-subtle: #657287;
@@ -72,6 +76,10 @@
   --sp-dropdown-item-hover: #eef1f6;
   --sp-dropdown-item-active: #f0f9ff;
   --sp-dropdown-item-text: #141b24;
+  --sp-link-default: #1f57db;
+  --sp-link-hover: #1946b4;
+  --sp-link-active: #173b8f;
+  --sp-link-visited: #5d28b8;
   --sp-color-brand-50: #eef4ff;
   --sp-color-brand-100: #d9e7ff;
   --sp-color-brand-200: #b9d2ff;
@@ -424,6 +432,10 @@
   --sp-surface-overlay: rgba(0, 0, 0, 0.6);
   --sp-surface-subtle: #222b38;
   --sp-surface-hero: linear-gradient(135deg, #5d28b8 0%, #401f75 100%);
+  --sp-surface-hover: #374253;
+  --sp-surface-selected: #082f49;
+  --sp-surface-active: #4b576a;
+  --sp-surface-divider: #374253;
   --sp-text-on-page-default: #f7f8fb;
   --sp-text-on-page-muted: #b7c1d4;
   --sp-text-on-page-subtle: #8a96ad;
@@ -491,4 +503,8 @@
   --sp-dropdown-item-hover: #374253;
   --sp-dropdown-item-active: #082f49;
   --sp-dropdown-item-text: #eef1f6;
+  --sp-link-default: #1f57db;
+  --sp-link-hover: #1946b4;
+  --sp-link-active: #173b8f;
+  --sp-link-visited: #5d28b8;
 }
