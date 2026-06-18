@@ -27,10 +27,11 @@ const runGit = (args: string[]): string => {
 };
 
 const workingTreeChanges = runGit(['diff', '--name-only', 'HEAD', '--', ...contractAuthorityFiles]);
-let changedFiles = workingTreeChanges
+const workingTreeChangedFiles = workingTreeChanges
   .split('\n')
   .map((entry) => entry.trim())
   .filter(Boolean);
+let changedFiles = workingTreeChangedFiles;
 
 if (changedFiles.length === 0) {
   const headCommitChanges = runGit(['diff-tree', '--no-commit-id', '--name-only', '-r', 'HEAD', '--', ...contractAuthorityFiles]);
@@ -47,15 +48,29 @@ if (changedFiles.length === 0) {
 
 const changelog = readFileSync(changelogPath, 'utf8');
 const unreleasedSection = changelog.split('## [Unreleased]')[1]?.split('\n## [')[0] ?? '';
+const latestReleaseSection =
+  changelog
+    .split('## [Unreleased]')[1]
+    ?.match(/\n## \[\d+\.\d+\.\d+\][\s\S]*?(?=\n## \[|$)/)?.[0] ?? '';
 const classificationPattern = new RegExp(
   `${manifest.changeClassification.requiredPrefix}\\s*(${manifest.changeClassification.allowed.join('|')})`,
   'i'
 );
+const classificationSection =
+  workingTreeChangedFiles.length > 0 ||
+  classificationPattern.test(unreleasedSection)
+    ? unreleasedSection
+    : latestReleaseSection;
 
-if (!classificationPattern.test(unreleasedSection)) {
+if (!classificationPattern.test(classificationSection)) {
+  const expectedSection =
+    workingTreeChangedFiles.length > 0
+      ? 'the Unreleased section'
+      : 'the Unreleased section or latest release entry';
+
   throw new Error(
     [
-      'Contract-authority changes require a classified changelog note in the Unreleased section.',
+      `Contract-authority changes require a classified changelog note in ${expectedSection}.`,
       `Expected prefix: ${manifest.changeClassification.requiredPrefix}`,
       `Allowed values: ${manifest.changeClassification.allowed.join(', ')}`,
       `Changed files: ${changedFiles.join(', ')}`
