@@ -355,6 +355,33 @@ these as fully "Delivered" — they shipped to JS/TS/types but never to CSS.
 
 ---
 
+## Phase 6 - Layout Width Scale
+
+Real downstream need: `spectre-ui` Phase 4d (app shell layout — Sidebar
+recipe, Container `maxWidth` prose variant) needs fixed-width values that do
+not exist anywhere in the published token object today. Confirmed by reading
+the live package directly (`require('@phcdevworks/spectre-tokens').tokens`)
+— `layout` only has `section`, `stack` (gap only), and `container`
+(`paddingInline` + one fixed `maxWidth`). There is no `width` or `sizing`
+namespace at all.
+
+### P0: Add Missing Width Tokens
+
+- [ ] Add `layout.sidebar.width` — a single fixed value (matching how
+      `container.maxWidth` is a single value, not a multi-step scale), not a
+      multi-size scale unless a second real consumer need shows up.
+
+- [ ] Add a second `container.maxWidth` value for readable prose width
+      (e.g. nested under `layout.container.maxWidth` as a named variant
+      alongside the existing default) — coordinate exact naming with
+      `spectre-ui`'s Phase 4d before finalizing, since it consumes this
+      directly.
+
+- [ ] Publish and version-bump. This is a hard blocker for `spectre-ui`
+      Phase 4d, not a parallel-track item.
+
+---
+
 ## Recommended Execution Order
 
 1. Phase 1 — done.
@@ -367,6 +394,10 @@ these as fully "Delivered" — they shipped to JS/TS/types but never to CSS.
    Phase 4 recipes and spectre-ui-astro Phase 4.
 7. **Phase 4 P3 — done.** `surface.alternate` renamed to `surface.subtle`;
    `surface.hero` documented with explicit usage constraints.
+8. **Phase 5 — active.** CSS generation silently drops `link.*` and
+   `surface.hover/selected/active/divider`; blocks `spectre-ui` Phase 3 P2.
+9. **Phase 6 — needed, not started.** Add `layout.sidebar.width` and a prose
+   `container.maxWidth` variant; hard-blocks `spectre-ui` Phase 4d.
 
 ## Explicitly Out of Scope
 
