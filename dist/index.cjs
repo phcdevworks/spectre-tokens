@@ -1332,6 +1332,7 @@ var generateCssVariables = (tokens2, options = {}) => {
   const surfaceAliases = tokens2.surface ?? {};
   const textAliases = tokens2.text ?? {};
   const componentAliases = tokens2.component ?? {};
+  const linkTokens = tokens2.link ?? {};
   const semanticEntries = [
     { varParts: ["surface", "page"], modePath: ["surface", "page"], aliasSrc: surfaceAliases, aliasPath: ["page"] },
     { varParts: ["surface", "card"], modePath: ["surface", "card"], aliasSrc: surfaceAliases, aliasPath: ["card"] },
@@ -1339,6 +1340,10 @@ var generateCssVariables = (tokens2, options = {}) => {
     { varParts: ["surface", "overlay"], modePath: ["surface", "overlay"], aliasSrc: surfaceAliases, aliasPath: ["overlay"] },
     { varParts: ["surface", "subtle"], modePath: ["surface", "subtle"] },
     { varParts: ["surface", "hero"], modePath: ["surface", "hero"], aliasSrc: surfaceAliases, aliasPath: ["hero"] },
+    { varParts: ["surface", "hover"], modePath: ["surface", "hover"], aliasSrc: surfaceAliases, aliasPath: ["hover"] },
+    { varParts: ["surface", "selected"], modePath: ["surface", "selected"], aliasSrc: surfaceAliases, aliasPath: ["selected"] },
+    { varParts: ["surface", "active"], modePath: ["surface", "active"], aliasSrc: surfaceAliases, aliasPath: ["active"] },
+    { varParts: ["surface", "divider"], modePath: ["surface", "divider"], aliasSrc: surfaceAliases, aliasPath: ["divider"] },
     { varParts: ["text", "on", "page", "default"], modePath: ["text", "onPage", "default"], aliasSrc: textAliases, aliasPath: ["onPage", "default"] },
     { varParts: ["text", "on", "page", "muted"], modePath: ["text", "onPage", "muted"], aliasSrc: textAliases, aliasPath: ["onPage", "muted"] },
     { varParts: ["text", "on", "page", "subtle"], modePath: ["text", "onPage", "subtle"], aliasSrc: textAliases, aliasPath: ["onPage", "subtle"] },
@@ -1409,6 +1414,12 @@ var generateCssVariables = (tokens2, options = {}) => {
     const aliasCandidate = aliasSrc && aliasPath ? [getPath(aliasSrc, aliasPath)] : [];
     addBase(varName, pickSemantic(tokens2, getPath(defaultMode, modePath), ...aliasCandidate));
     addDark(varName, pickSemantic(tokens2, getPath(darkMode, modePath), getPath(defaultMode, modePath), ...aliasCandidate));
+  });
+  Object.entries(linkTokens).forEach(([key, value]) => {
+    const varName = toVariableName(prefix, "link", key);
+    const resolved = pickSemantic(tokens2, value);
+    addBase(varName, resolved);
+    addDark(varName, resolved);
   });
   const rootBlock = `${selector} {
 ${[...baseLines, ...mapLines].join("\n")}

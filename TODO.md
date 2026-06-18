@@ -333,25 +333,37 @@ these as fully "Delivered" — they shipped to JS/TS/types but never to CSS.
 
 ### P0: Fix Missing CSS Variable Output
 
-- [ ] Add `link.default/hover/active/visited` to `semanticEntries` in
+- [x] Add `link.default/hover/active/visited` to `semanticEntries` in
       `src/css.ts`
-  - Should emit `--sp-link-default`, `--sp-link-hover`, `--sp-link-active`,
-    `--sp-link-visited` in `dist/index.css`.
+  - Delivered: `link.*` is mode-independent (not nested under `tokens.modes`),
+    so it is emitted via a dedicated loop over `tokens.link` rather than the
+    `modePath`-based `semanticEntries` shape used by mode-aware tokens. Emits
+    `--sp-link-default`, `--sp-link-hover`, `--sp-link-active`,
+    `--sp-link-visited` in `dist/index.css` (identical value in both the base
+    and `[data-spectre-theme="dark"]` blocks, since the token has no dark
+    variant).
 
-- [ ] Add `surface.hover/selected/active/divider` to `semanticEntries` in
+- [x] Add `surface.hover/selected/active/divider` to `semanticEntries` in
       `src/css.ts`
-  - Should emit `--sp-surface-hover`, `--sp-surface-selected`,
-    `--sp-surface-active`, `--sp-surface-divider` in `dist/index.css`.
+  - Delivered: added as four new mode-aware `semanticEntries` rows following
+    the existing `surface.*` pattern. Emits `--sp-surface-hover`,
+    `--sp-surface-selected`, `--sp-surface-active`, `--sp-surface-divider` in
+    both light and dark blocks of `dist/index.css`.
 
-- [ ] Add a regression test asserting every top-level key under
+- [x] Add a regression test asserting every top-level key under
       `tokens.link` and `tokens.surface` has a corresponding CSS variable in
       `generateCssVariables` output
-  - Prevents this class of silent drop from recurring when new semantic roles
-    are added without a matching `semanticEntries` entry.
+  - Delivered: `tests/css-semantic-coverage.test.ts` iterates
+    `Object.keys(tokens.link)` and `Object.keys(tokens.modes.default.surface)`
+    and asserts each has a matching `--sp-link-*` / `--sp-surface-*` variable
+    in the generated CSS string.
 
 - [ ] Republish a patch/minor release once fixed and update
       `spectre-ui`'s `TODO.md` Phase 3 P2 to unblock Link, interactive surface
       state, and Divider styling work.
+  - Code fix is complete and `npm run check` passes (pending dist commit).
+    Release authority and the `spectre-ui` TODO update belong to Bradley
+    Potts per the Release Procedure in `CLAUDE.md`.
 
 ---
 
@@ -394,8 +406,10 @@ namespace at all.
    Phase 4 recipes and spectre-ui-astro Phase 4.
 7. **Phase 4 P3 — done.** `surface.alternate` renamed to `surface.subtle`;
    `surface.hero` documented with explicit usage constraints.
-8. **Phase 5 — active.** CSS generation silently drops `link.*` and
-   `surface.hover/selected/active/divider`; blocks `spectre-ui` Phase 3 P2.
+8. **Phase 5 — code fix done, release pending.** `link.*` and
+   `surface.hover/selected/active/divider` now emit correctly in
+   `dist/index.css`, with a regression test guarding against recurrence.
+   Awaiting publish and the `spectre-ui` TODO update to unblock Phase 3 P2.
 9. **Phase 6 — needed, not started.** Add `layout.sidebar.width` and a prose
    `container.maxWidth` variant; hard-blocks `spectre-ui` Phase 4d.
 
