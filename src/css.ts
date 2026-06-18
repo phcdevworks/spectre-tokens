@@ -214,6 +214,14 @@ export const createCssVariableMap = (tokens: SpectreTokens, options: CssVariable
     if (container?.maxWidth) {
       assign(toVariableName(prefix, 'layout', 'container', 'max-width'), container.maxWidth)
     }
+    if (container?.maxWidthProse) {
+      assign(toVariableName(prefix, 'layout', 'container', 'max-width-prose'), container.maxWidthProse)
+    }
+
+    const sidebar = layout.sidebar as Record<string, unknown> | undefined
+    if (sidebar?.width) {
+      assign(toVariableName(prefix, 'layout', 'sidebar', 'width'), sidebar.width)
+    }
   }
 
   const border = (baseTokens as unknown as Record<string, unknown>).border as Record<string, Record<string, string>> | undefined

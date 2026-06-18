@@ -2430,6 +2430,10 @@ export interface SpectreSourceTokens {
         lg: string;
       };
       maxWidth: string;
+      maxWidthProse: string;
+    };
+    sidebar: {
+      width: string;
     };
   };
   font: {
@@ -3466,6 +3470,10 @@ export interface SpectreGeneratedTokens {
         lg: string;
       };
       maxWidth: string;
+      maxWidthProse: string;
+    };
+    sidebar: {
+      width: string;
     };
   };
   font: {
@@ -4501,7 +4509,11 @@ export const coreTokens: SpectreGeneratedTokens = {
         "md": "1.5rem",
         "lg": "2rem"
       },
-      "maxWidth": "72rem"
+      "maxWidth": "72rem",
+      "maxWidthProse": "65ch"
+    },
+    "sidebar": {
+      "width": "16rem"
     }
   },
   "font": {

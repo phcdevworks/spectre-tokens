@@ -899,7 +899,11 @@ var coreTokens = {
         "md": "1.5rem",
         "lg": "2rem"
       },
-      "maxWidth": "72rem"
+      "maxWidth": "72rem",
+      "maxWidthProse": "65ch"
+    },
+    "sidebar": {
+      "width": "16rem"
     }
   },
   "font": {
@@ -1201,6 +1205,13 @@ var createCssVariableMap = (tokens2, options = {}) => {
     if (container?.maxWidth) {
       assign(toVariableName(prefix, "layout", "container", "max-width"), container.maxWidth);
     }
+    if (container?.maxWidthProse) {
+      assign(toVariableName(prefix, "layout", "container", "max-width-prose"), container.maxWidthProse);
+    }
+    const sidebar = layout.sidebar;
+    if (sidebar?.width) {
+      assign(toVariableName(prefix, "layout", "sidebar", "width"), sidebar.width);
+    }
   }
   const border = baseTokens.border;
   if (border?.width) {
@@ -1442,7 +1453,11 @@ var createTailwindTheme = (source = tokens) => {
     transitionTimingFunction: { ...source.transitions.easing },
     opacity: { ...source.opacity },
     maxWidth: {
-      container: source.layout?.container?.maxWidth
+      container: source.layout?.container?.maxWidth,
+      prose: source.layout?.container?.maxWidthProse
+    },
+    width: {
+      sidebar: source.layout?.sidebar?.width
     },
     borderWidth: {
       DEFAULT: source.border?.width.base,
