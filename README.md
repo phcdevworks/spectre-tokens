@@ -7,7 +7,7 @@
 | Project team           | `project-design`                 |
 | Repository role        | Spectre L1 design-token contract |
 | Package/artifact       | `@phcdevworks/spectre-tokens`    |
-| Current version/status | 2.9.0                            |
+| Current version/status | 3.1.0                            |
 
 ## Standard Workflow
 
@@ -136,6 +136,7 @@ import tokens from '@phcdevworks/spectre-tokens'
 const card = {
   background: tokens.surface.page,
   color: tokens.text.onPage.default,
+  maxWidth: tokens.layout.container.maxWidthProse,
   padding: tokens.space['16'],
   borderRadius: tokens.radii.md
 }
@@ -219,6 +220,7 @@ const card = {
   background: tokens.surface.card,
   color: tokens.text.onSurface.default,
   borderColor: tokens.component.iconBox.border,
+  maxWidth: tokens.layout.container.maxWidthProse,
   padding: tokens.space['16']
 }
 ```
@@ -246,6 +248,11 @@ CSS variable contract.
 .card {
   background: var(--sp-surface-card);
   color: var(--sp-text-on-surface-default);
+  max-width: var(--sp-layout-container-max-width-prose);
+}
+
+.app-shell {
+  width: var(--sp-layout-sidebar-width);
 }
 ```
 
@@ -267,6 +274,21 @@ export default {
 
 Use `tailwindTheme` directly only when a consumer needs the generated theme
 object outside the preset shape.
+
+The generated Tailwind theme includes the layout width mappings
+`maxWidth.container`, `maxWidth.prose`, and `width.sidebar`, derived from
+`layout.container.maxWidth`, `layout.container.maxWidthProse`, and
+`layout.sidebar.width`.
+
+```tsx
+export function ArticleShell() {
+  return (
+    <main className="mx-auto max-w-prose">
+      <aside className="w-sidebar" />
+    </main>
+  )
+}
+```
 
 ### Token model
 
@@ -299,6 +321,11 @@ The generated token object includes these namespaces:
 The exported runtime token object is a flattened string-based tree generated
 from `tokens/`. Source-only wrapper fields such as `value` and `metadata` are
 internal generation details and are not part of the public package contract.
+
+The `layout` namespace includes section, stack, and container spacing tokens,
+plus fixed layout width tokens for common consumer shells:
+`layout.container.maxWidth`, `layout.container.maxWidthProse`, and
+`layout.sidebar.width`.
 
 ## Public contract guarantees
 
