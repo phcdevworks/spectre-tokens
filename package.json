@@ -95,7 +95,7 @@
   },
   "devDependencies": {
     "@phcdevworks/spectre-manifest": "^1.0.0",
-    "@types/node": "^25.9.3",
+    "@types/node": "^26.0.0",
     "@typescript-eslint/eslint-plugin": "^8.61.1",
     "@typescript-eslint/parser": "^8.61.1",
     "colord": "^2.9.3",
