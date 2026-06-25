@@ -425,6 +425,147 @@ export interface SpectreSourceTokens {
         };
       };
     };
+    checkbox: {
+      bg: {
+        value: string;
+      };
+      border: {
+        value: string;
+      };
+      checkedBg: {
+        value: string;
+        metadata: {
+          pair: string;
+        };
+      };
+      checkedBorder: {
+        value: string;
+      };
+      text: {
+        value: string;
+        metadata: {
+          pair: string;
+        };
+      };
+      disabledBg: {
+        value: string;
+      };
+      disabledBorder: {
+        value: string;
+      };
+    };
+    radio: {
+      bg: {
+        value: string;
+      };
+      border: {
+        value: string;
+      };
+      checkedBg: {
+        value: string;
+        metadata: {
+          pair: string;
+        };
+      };
+      checkedBorder: {
+        value: string;
+      };
+      text: {
+        value: string;
+        metadata: {
+          pair: string;
+        };
+      };
+      disabledBg: {
+        value: string;
+      };
+      disabledBorder: {
+        value: string;
+      };
+    };
+    select: {
+      bg: {
+        value: string;
+        metadata: {
+          pair: string;
+        };
+      };
+      border: {
+        value: string;
+      };
+      text: {
+        value: string;
+        metadata: {
+          pair: string;
+        };
+      };
+      placeholderText: {
+        value: string;
+        metadata: {
+          pair: string;
+        };
+      };
+      disabledBg: {
+        value: string;
+      };
+      disabledBorder: {
+        value: string;
+      };
+      focusBorder: {
+        value: string;
+      };
+    };
+    textarea: {
+      bg: {
+        value: string;
+        metadata: {
+          pair: string;
+        };
+      };
+      border: {
+        value: string;
+      };
+      text: {
+        value: string;
+        metadata: {
+          pair: string;
+        };
+      };
+      placeholder: {
+        value: string;
+        metadata: {
+          pair: string;
+        };
+      };
+      disabledBg: {
+        value: string;
+      };
+      disabledBorder: {
+        value: string;
+      };
+      focusBorder: {
+        value: string;
+      };
+    };
+    fieldset: {
+      border: {
+        value: string;
+      };
+      legendText: {
+        value: string;
+      };
+    };
+    label: {
+      text: {
+        value: string;
+      };
+      disabledText: {
+        value: string;
+      };
+      requiredIndicatorText: {
+        value: string;
+      };
+    };
   };
   buttons: {
     primary: {
@@ -1352,6 +1493,193 @@ export interface SpectreSourceTokens {
             };
           };
         };
+        checkbox: {
+          bg: {
+            value: string;
+            metadata: {
+            };
+          };
+          border: {
+            value: string;
+            metadata: {
+            };
+          };
+          checkedBg: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+          checkedBorder: {
+            value: string;
+            metadata: {
+            };
+          };
+          text: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+          disabledBg: {
+            value: string;
+            metadata: {
+            };
+          };
+          disabledBorder: {
+            value: string;
+            metadata: {
+            };
+          };
+        };
+        radio: {
+          bg: {
+            value: string;
+            metadata: {
+            };
+          };
+          border: {
+            value: string;
+            metadata: {
+            };
+          };
+          checkedBg: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+          checkedBorder: {
+            value: string;
+            metadata: {
+            };
+          };
+          text: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+          disabledBg: {
+            value: string;
+            metadata: {
+            };
+          };
+          disabledBorder: {
+            value: string;
+            metadata: {
+            };
+          };
+        };
+        select: {
+          bg: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+          border: {
+            value: string;
+            metadata: {
+            };
+          };
+          text: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+          placeholderText: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+          disabledBg: {
+            value: string;
+            metadata: {
+            };
+          };
+          disabledBorder: {
+            value: string;
+            metadata: {
+            };
+          };
+          focusBorder: {
+            value: string;
+            metadata: {
+            };
+          };
+        };
+        textarea: {
+          bg: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+          border: {
+            value: string;
+            metadata: {
+            };
+          };
+          text: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+          placeholder: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+          disabledBg: {
+            value: string;
+            metadata: {
+            };
+          };
+          disabledBorder: {
+            value: string;
+            metadata: {
+            };
+          };
+          focusBorder: {
+            value: string;
+            metadata: {
+            };
+          };
+        };
+        fieldset: {
+          border: {
+            value: string;
+            metadata: {
+            };
+          };
+          legendText: {
+            value: string;
+            metadata: {
+            };
+          };
+        };
+        label: {
+          text: {
+            value: string;
+            metadata: {
+            };
+          };
+          disabledText: {
+            value: string;
+            metadata: {
+            };
+          };
+          requiredIndicatorText: {
+            value: string;
+            metadata: {
+            };
+          };
+        };
       };
     };
     dark: {
@@ -1952,6 +2280,193 @@ export interface SpectreSourceTokens {
               metadata: {
                 pair: string;
               };
+            };
+          };
+        };
+        checkbox: {
+          bg: {
+            value: string;
+            metadata: {
+            };
+          };
+          border: {
+            value: string;
+            metadata: {
+            };
+          };
+          checkedBg: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+          checkedBorder: {
+            value: string;
+            metadata: {
+            };
+          };
+          text: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+          disabledBg: {
+            value: string;
+            metadata: {
+            };
+          };
+          disabledBorder: {
+            value: string;
+            metadata: {
+            };
+          };
+        };
+        radio: {
+          bg: {
+            value: string;
+            metadata: {
+            };
+          };
+          border: {
+            value: string;
+            metadata: {
+            };
+          };
+          checkedBg: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+          checkedBorder: {
+            value: string;
+            metadata: {
+            };
+          };
+          text: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+          disabledBg: {
+            value: string;
+            metadata: {
+            };
+          };
+          disabledBorder: {
+            value: string;
+            metadata: {
+            };
+          };
+        };
+        select: {
+          bg: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+          border: {
+            value: string;
+            metadata: {
+            };
+          };
+          text: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+          placeholderText: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+          disabledBg: {
+            value: string;
+            metadata: {
+            };
+          };
+          disabledBorder: {
+            value: string;
+            metadata: {
+            };
+          };
+          focusBorder: {
+            value: string;
+            metadata: {
+            };
+          };
+        };
+        textarea: {
+          bg: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+          border: {
+            value: string;
+            metadata: {
+            };
+          };
+          text: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+          placeholder: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+          disabledBg: {
+            value: string;
+            metadata: {
+            };
+          };
+          disabledBorder: {
+            value: string;
+            metadata: {
+            };
+          };
+          focusBorder: {
+            value: string;
+            metadata: {
+            };
+          };
+        };
+        fieldset: {
+          border: {
+            value: string;
+            metadata: {
+            };
+          };
+          legendText: {
+            value: string;
+            metadata: {
+            };
+          };
+        };
+        label: {
+          text: {
+            value: string;
+            metadata: {
+            };
+          };
+          disabledText: {
+            value: string;
+            metadata: {
+            };
+          };
+          requiredIndicatorText: {
+            value: string;
+            metadata: {
             };
           };
         };
@@ -2688,6 +3203,51 @@ export interface SpectreGeneratedTokens {
         text: string;
       };
     };
+    checkbox: {
+      bg: string;
+      border: string;
+      checkedBg: string;
+      checkedBorder: string;
+      text: string;
+      disabledBg: string;
+      disabledBorder: string;
+    };
+    radio: {
+      bg: string;
+      border: string;
+      checkedBg: string;
+      checkedBorder: string;
+      text: string;
+      disabledBg: string;
+      disabledBorder: string;
+    };
+    select: {
+      bg: string;
+      border: string;
+      text: string;
+      placeholderText: string;
+      disabledBg: string;
+      disabledBorder: string;
+      focusBorder: string;
+    };
+    textarea: {
+      bg: string;
+      border: string;
+      text: string;
+      placeholder: string;
+      disabledBg: string;
+      disabledBorder: string;
+      focusBorder: string;
+    };
+    fieldset: {
+      border: string;
+      legendText: string;
+    };
+    label: {
+      text: string;
+      disabledText: string;
+      requiredIndicatorText: string;
+    };
   };
   buttons: {
     primary: {
@@ -2942,6 +3502,51 @@ export interface SpectreGeneratedTokens {
             text: string;
           };
         };
+        checkbox: {
+          bg: string;
+          border: string;
+          checkedBg: string;
+          checkedBorder: string;
+          text: string;
+          disabledBg: string;
+          disabledBorder: string;
+        };
+        radio: {
+          bg: string;
+          border: string;
+          checkedBg: string;
+          checkedBorder: string;
+          text: string;
+          disabledBg: string;
+          disabledBorder: string;
+        };
+        select: {
+          bg: string;
+          border: string;
+          text: string;
+          placeholderText: string;
+          disabledBg: string;
+          disabledBorder: string;
+          focusBorder: string;
+        };
+        textarea: {
+          bg: string;
+          border: string;
+          text: string;
+          placeholder: string;
+          disabledBg: string;
+          disabledBorder: string;
+          focusBorder: string;
+        };
+        fieldset: {
+          border: string;
+          legendText: string;
+        };
+        label: {
+          text: string;
+          disabledText: string;
+          requiredIndicatorText: string;
+        };
       };
     };
     dark: {
@@ -3090,6 +3695,51 @@ export interface SpectreGeneratedTokens {
             active: string;
             text: string;
           };
+        };
+        checkbox: {
+          bg: string;
+          border: string;
+          checkedBg: string;
+          checkedBorder: string;
+          text: string;
+          disabledBg: string;
+          disabledBorder: string;
+        };
+        radio: {
+          bg: string;
+          border: string;
+          checkedBg: string;
+          checkedBorder: string;
+          text: string;
+          disabledBg: string;
+          disabledBorder: string;
+        };
+        select: {
+          bg: string;
+          border: string;
+          text: string;
+          placeholderText: string;
+          disabledBg: string;
+          disabledBorder: string;
+          focusBorder: string;
+        };
+        textarea: {
+          bg: string;
+          border: string;
+          text: string;
+          placeholder: string;
+          disabledBg: string;
+          disabledBorder: string;
+          focusBorder: string;
+        };
+        fieldset: {
+          border: string;
+          legendText: string;
+        };
+        label: {
+          text: string;
+          disabledText: string;
+          requiredIndicatorText: string;
         };
       };
     };
@@ -3727,6 +4377,51 @@ export const coreTokens: SpectreGeneratedTokens = {
         "active": "{colors.info.50}",
         "text": "{colors.neutral.900}"
       }
+    },
+    "checkbox": {
+      "bg": "{colors.white}",
+      "border": "{colors.neutral.300}",
+      "checkedBg": "{colors.info.600}",
+      "checkedBorder": "{colors.info.600}",
+      "text": "{colors.white}",
+      "disabledBg": "{colors.neutral.50}",
+      "disabledBorder": "{colors.neutral.200}"
+    },
+    "radio": {
+      "bg": "{colors.white}",
+      "border": "{colors.neutral.300}",
+      "checkedBg": "{colors.info.600}",
+      "checkedBorder": "{colors.info.600}",
+      "text": "{colors.white}",
+      "disabledBg": "{colors.neutral.50}",
+      "disabledBorder": "{colors.neutral.200}"
+    },
+    "select": {
+      "bg": "{colors.white}",
+      "border": "{colors.neutral.300}",
+      "text": "{colors.neutral.900}",
+      "placeholderText": "{colors.neutral.500}",
+      "disabledBg": "{colors.neutral.50}",
+      "disabledBorder": "{colors.neutral.200}",
+      "focusBorder": "{colors.info.500}"
+    },
+    "textarea": {
+      "bg": "{colors.white}",
+      "border": "{colors.neutral.300}",
+      "text": "{colors.neutral.900}",
+      "placeholder": "{colors.neutral.500}",
+      "disabledBg": "{colors.neutral.50}",
+      "disabledBorder": "{colors.neutral.200}",
+      "focusBorder": "{colors.info.500}"
+    },
+    "fieldset": {
+      "border": "{colors.neutral.200}",
+      "legendText": "{colors.neutral.900}"
+    },
+    "label": {
+      "text": "{colors.neutral.900}",
+      "disabledText": "{colors.neutral.400}",
+      "requiredIndicatorText": "{colors.error.600}"
     }
   },
   "buttons": {
@@ -3981,6 +4676,51 @@ export const coreTokens: SpectreGeneratedTokens = {
             "active": "{colors.info.50}",
             "text": "{colors.neutral.900}"
           }
+        },
+        "checkbox": {
+          "bg": "{colors.white}",
+          "border": "{colors.neutral.300}",
+          "checkedBg": "{colors.info.600}",
+          "checkedBorder": "{colors.info.600}",
+          "text": "{colors.white}",
+          "disabledBg": "{colors.neutral.50}",
+          "disabledBorder": "{colors.neutral.200}"
+        },
+        "radio": {
+          "bg": "{colors.white}",
+          "border": "{colors.neutral.300}",
+          "checkedBg": "{colors.info.600}",
+          "checkedBorder": "{colors.info.600}",
+          "text": "{colors.white}",
+          "disabledBg": "{colors.neutral.50}",
+          "disabledBorder": "{colors.neutral.200}"
+        },
+        "select": {
+          "bg": "{colors.white}",
+          "border": "{colors.neutral.300}",
+          "text": "{colors.neutral.900}",
+          "placeholderText": "{colors.neutral.500}",
+          "disabledBg": "{colors.neutral.50}",
+          "disabledBorder": "{colors.neutral.200}",
+          "focusBorder": "{colors.info.500}"
+        },
+        "textarea": {
+          "bg": "{colors.white}",
+          "border": "{colors.neutral.300}",
+          "text": "{colors.neutral.900}",
+          "placeholder": "{colors.neutral.500}",
+          "disabledBg": "{colors.neutral.50}",
+          "disabledBorder": "{colors.neutral.200}",
+          "focusBorder": "{colors.info.500}"
+        },
+        "fieldset": {
+          "border": "{colors.neutral.200}",
+          "legendText": "{colors.neutral.900}"
+        },
+        "label": {
+          "text": "{colors.neutral.900}",
+          "disabledText": "{colors.neutral.400}",
+          "requiredIndicatorText": "{colors.error.600}"
         }
       }
     },
@@ -4130,6 +4870,51 @@ export const coreTokens: SpectreGeneratedTokens = {
             "active": "{colors.info.900}",
             "text": "{colors.neutral.100}"
           }
+        },
+        "checkbox": {
+          "bg": "{colors.neutral.800}",
+          "border": "{colors.neutral.600}",
+          "checkedBg": "{colors.info.600}",
+          "checkedBorder": "{colors.info.600}",
+          "text": "{colors.white}",
+          "disabledBg": "{colors.neutral.900}",
+          "disabledBorder": "{colors.neutral.700}"
+        },
+        "radio": {
+          "bg": "{colors.neutral.800}",
+          "border": "{colors.neutral.600}",
+          "checkedBg": "{colors.info.600}",
+          "checkedBorder": "{colors.info.600}",
+          "text": "{colors.white}",
+          "disabledBg": "{colors.neutral.900}",
+          "disabledBorder": "{colors.neutral.700}"
+        },
+        "select": {
+          "bg": "{colors.neutral.800}",
+          "border": "{colors.neutral.600}",
+          "text": "{colors.neutral.50}",
+          "placeholderText": "{colors.neutral.400}",
+          "disabledBg": "{colors.neutral.900}",
+          "disabledBorder": "{colors.neutral.700}",
+          "focusBorder": "{colors.info.400}"
+        },
+        "textarea": {
+          "bg": "{colors.neutral.800}",
+          "border": "{colors.neutral.600}",
+          "text": "{colors.neutral.50}",
+          "placeholder": "{colors.neutral.400}",
+          "disabledBg": "{colors.neutral.900}",
+          "disabledBorder": "{colors.neutral.700}",
+          "focusBorder": "{colors.info.400}"
+        },
+        "fieldset": {
+          "border": "{colors.neutral.700}",
+          "legendText": "{colors.neutral.50}"
+        },
+        "label": {
+          "text": "{colors.neutral.50}",
+          "disabledText": "{colors.neutral.600}",
+          "requiredIndicatorText": "{colors.error.400}"
         }
       }
     }

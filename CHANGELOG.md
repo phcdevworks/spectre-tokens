@@ -6,6 +6,29 @@ reflects package releases published to npm.
 
 ## [Unreleased]
 
+## [3.2.0] - 2026-06-26
+
+**Release Title:** Form Field Component Tokens
+
+Contract change type: additive
+
+### Added
+
+- Added `component.checkbox`, `component.radio`, `component.select`,
+  `component.textarea`, `component.fieldset`, and `component.label` token
+  groups, backing the `sp-checkbox`, `sp-radio`, `sp-select`, `sp-textarea`,
+  `sp-fieldset`, and `sp-label` components already shipped in
+  `spectre-components` since Phase 1 with no token contract behind them.
+  `checkbox` and `radio` share the same shape (`bg`, `border`, `checkedBg`,
+  `checkedBorder`, `text`, `disabledBg`, `disabledBorder`); `select` and
+  `textarea` add `focusBorder`; `fieldset` covers `border` and `legendText`;
+  `label` covers `text`, `disabledText`, and `requiredIndicatorText`. Emits
+  `--sp-checkbox-*`, `--sp-radio-*`, `--sp-select-*`, `--sp-textarea-*`,
+  `--sp-fieldset-*`, and `--sp-label-*` CSS variables in both light and dark
+  mode. Unblocks the corresponding `spectre-ui` recipes (`getCheckboxClasses`,
+  `getRadioClasses`, `getSelectClasses`, `getTextareaClasses`,
+  `getFieldsetClasses`, `getLabelClasses`).
+
 ## [3.1.0] - 2026-06-19
 
 **Release Title:** Layout Width Tokens and CSS Variable Parity
@@ -721,7 +744,8 @@ Contract change type: breaking
 - Standardized documentation and contributing guidelines.
 
 [unreleased]:
-  https://github.com/phcdevworks/spectre-tokens/compare/v3.1.0...HEAD
+  https://github.com/phcdevworks/spectre-tokens/compare/v3.2.0...HEAD
+[3.2.0]: https://github.com/phcdevworks/spectre-tokens/compare/v3.1.0...v3.2.0
 [3.1.0]: https://github.com/phcdevworks/spectre-tokens/compare/v3.0.0...v3.1.0
 [3.0.0]: https://github.com/phcdevworks/spectre-tokens/compare/v2.9.0...v3.0.0
 [2.9.0]: https://github.com/phcdevworks/spectre-tokens/compare/v2.8.0...v2.9.0

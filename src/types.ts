@@ -167,6 +167,47 @@ export interface ComponentDropdownTokens<Value = string> {
   };
 }
 
+export interface ComponentSelectionControlTokens<Value = string> {
+  bg: Value;
+  border: Value;
+  checkedBg: Value;
+  checkedBorder: Value;
+  text: Value;
+  disabledBg: Value;
+  disabledBorder: Value;
+}
+
+export interface ComponentSelectTokens<Value = string> {
+  bg: Value;
+  border: Value;
+  text: Value;
+  placeholderText: Value;
+  disabledBg: Value;
+  disabledBorder: Value;
+  focusBorder: Value;
+}
+
+export interface ComponentTextareaTokens<Value = string> {
+  bg: Value;
+  border: Value;
+  text: Value;
+  placeholder: Value;
+  disabledBg: Value;
+  disabledBorder: Value;
+  focusBorder: Value;
+}
+
+export interface ComponentFieldsetTokens<Value = string> {
+  border: Value;
+  legendText: Value;
+}
+
+export interface ComponentLabelTokens<Value = string> {
+  text: Value;
+  disabledText: Value;
+  requiredIndicatorText: Value;
+}
+
 export interface ComponentTokens<Value = string> {
   card: {
     text: Value;
@@ -190,6 +231,12 @@ export interface ComponentTokens<Value = string> {
   toast: ComponentToastTokens<Value>;
   tooltip: ComponentTooltipTokens<Value>;
   dropdown: ComponentDropdownTokens<Value>;
+  checkbox: ComponentSelectionControlTokens<Value>;
+  radio: ComponentSelectionControlTokens<Value>;
+  select: ComponentSelectTokens<Value>;
+  textarea: ComponentTextareaTokens<Value>;
+  fieldset: ComponentFieldsetTokens<Value>;
+  label: ComponentLabelTokens<Value>;
   [key: string]: unknown;
 }
 

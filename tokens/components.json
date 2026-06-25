@@ -420,6 +420,147 @@
           }
         }
       }
+    },
+    "checkbox": {
+      "bg": {
+        "value": "{colors.white}"
+      },
+      "border": {
+        "value": "{colors.neutral.300}"
+      },
+      "checkedBg": {
+        "value": "{colors.info.600}",
+        "metadata": {
+          "pair": "component.checkbox.text"
+        }
+      },
+      "checkedBorder": {
+        "value": "{colors.info.600}"
+      },
+      "text": {
+        "value": "{colors.white}",
+        "metadata": {
+          "pair": "component.checkbox.checkedBg"
+        }
+      },
+      "disabledBg": {
+        "value": "{colors.neutral.50}"
+      },
+      "disabledBorder": {
+        "value": "{colors.neutral.200}"
+      }
+    },
+    "radio": {
+      "bg": {
+        "value": "{colors.white}"
+      },
+      "border": {
+        "value": "{colors.neutral.300}"
+      },
+      "checkedBg": {
+        "value": "{colors.info.600}",
+        "metadata": {
+          "pair": "component.radio.text"
+        }
+      },
+      "checkedBorder": {
+        "value": "{colors.info.600}"
+      },
+      "text": {
+        "value": "{colors.white}",
+        "metadata": {
+          "pair": "component.radio.checkedBg"
+        }
+      },
+      "disabledBg": {
+        "value": "{colors.neutral.50}"
+      },
+      "disabledBorder": {
+        "value": "{colors.neutral.200}"
+      }
+    },
+    "select": {
+      "bg": {
+        "value": "{colors.white}",
+        "metadata": {
+          "pair": "component.select.text"
+        }
+      },
+      "border": {
+        "value": "{colors.neutral.300}"
+      },
+      "text": {
+        "value": "{colors.neutral.900}",
+        "metadata": {
+          "pair": "component.select.bg"
+        }
+      },
+      "placeholderText": {
+        "value": "{colors.neutral.500}",
+        "metadata": {
+          "pair": "component.select.bg"
+        }
+      },
+      "disabledBg": {
+        "value": "{colors.neutral.50}"
+      },
+      "disabledBorder": {
+        "value": "{colors.neutral.200}"
+      },
+      "focusBorder": {
+        "value": "{colors.info.500}"
+      }
+    },
+    "textarea": {
+      "bg": {
+        "value": "{colors.white}",
+        "metadata": {
+          "pair": "component.textarea.text"
+        }
+      },
+      "border": {
+        "value": "{colors.neutral.300}"
+      },
+      "text": {
+        "value": "{colors.neutral.900}",
+        "metadata": {
+          "pair": "component.textarea.bg"
+        }
+      },
+      "placeholder": {
+        "value": "{colors.neutral.500}",
+        "metadata": {
+          "pair": "component.textarea.bg"
+        }
+      },
+      "disabledBg": {
+        "value": "{colors.neutral.50}"
+      },
+      "disabledBorder": {
+        "value": "{colors.neutral.200}"
+      },
+      "focusBorder": {
+        "value": "{colors.info.500}"
+      }
+    },
+    "fieldset": {
+      "border": {
+        "value": "{colors.neutral.200}"
+      },
+      "legendText": {
+        "value": "{colors.neutral.900}"
+      }
+    },
+    "label": {
+      "text": {
+        "value": "{colors.neutral.900}"
+      },
+      "disabledText": {
+        "value": "{colors.neutral.400}"
+      },
+      "requiredIndicatorText": {
+        "value": "{colors.error.600}"
+      }
     }
   },
   "buttons": {

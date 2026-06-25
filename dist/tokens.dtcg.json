@@ -359,6 +359,150 @@
           "$type": "color"
         }
       }
+    },
+    "checkbox": {
+      "bg": {
+        "$value": "{colors.white}",
+        "$type": "color"
+      },
+      "border": {
+        "$value": "{colors.neutral.300}",
+        "$type": "color"
+      },
+      "checkedBg": {
+        "$value": "{colors.info.600}",
+        "$type": "color"
+      },
+      "checkedBorder": {
+        "$value": "{colors.info.600}",
+        "$type": "color"
+      },
+      "text": {
+        "$value": "{colors.white}",
+        "$type": "color"
+      },
+      "disabledBg": {
+        "$value": "{colors.neutral.50}",
+        "$type": "color"
+      },
+      "disabledBorder": {
+        "$value": "{colors.neutral.200}",
+        "$type": "color"
+      }
+    },
+    "radio": {
+      "bg": {
+        "$value": "{colors.white}",
+        "$type": "color"
+      },
+      "border": {
+        "$value": "{colors.neutral.300}",
+        "$type": "color"
+      },
+      "checkedBg": {
+        "$value": "{colors.info.600}",
+        "$type": "color"
+      },
+      "checkedBorder": {
+        "$value": "{colors.info.600}",
+        "$type": "color"
+      },
+      "text": {
+        "$value": "{colors.white}",
+        "$type": "color"
+      },
+      "disabledBg": {
+        "$value": "{colors.neutral.50}",
+        "$type": "color"
+      },
+      "disabledBorder": {
+        "$value": "{colors.neutral.200}",
+        "$type": "color"
+      }
+    },
+    "select": {
+      "bg": {
+        "$value": "{colors.white}",
+        "$type": "color"
+      },
+      "border": {
+        "$value": "{colors.neutral.300}",
+        "$type": "color"
+      },
+      "text": {
+        "$value": "{colors.neutral.900}",
+        "$type": "color"
+      },
+      "placeholderText": {
+        "$value": "{colors.neutral.500}",
+        "$type": "color"
+      },
+      "disabledBg": {
+        "$value": "{colors.neutral.50}",
+        "$type": "color"
+      },
+      "disabledBorder": {
+        "$value": "{colors.neutral.200}",
+        "$type": "color"
+      },
+      "focusBorder": {
+        "$value": "{colors.info.500}",
+        "$type": "color"
+      }
+    },
+    "textarea": {
+      "bg": {
+        "$value": "{colors.white}",
+        "$type": "color"
+      },
+      "border": {
+        "$value": "{colors.neutral.300}",
+        "$type": "color"
+      },
+      "text": {
+        "$value": "{colors.neutral.900}",
+        "$type": "color"
+      },
+      "placeholder": {
+        "$value": "{colors.neutral.500}",
+        "$type": "color"
+      },
+      "disabledBg": {
+        "$value": "{colors.neutral.50}",
+        "$type": "color"
+      },
+      "disabledBorder": {
+        "$value": "{colors.neutral.200}",
+        "$type": "color"
+      },
+      "focusBorder": {
+        "$value": "{colors.info.500}",
+        "$type": "color"
+      }
+    },
+    "fieldset": {
+      "border": {
+        "$value": "{colors.neutral.200}",
+        "$type": "color"
+      },
+      "legendText": {
+        "$value": "{colors.neutral.900}",
+        "$type": "color"
+      }
+    },
+    "label": {
+      "text": {
+        "$value": "{colors.neutral.900}",
+        "$type": "color"
+      },
+      "disabledText": {
+        "$value": "{colors.neutral.400}",
+        "$type": "color"
+      },
+      "requiredIndicatorText": {
+        "$value": "{colors.error.600}",
+        "$type": "color"
+      }
     }
   },
   "buttons": {
@@ -1137,6 +1281,150 @@
               "$type": "color"
             }
           }
+        },
+        "checkbox": {
+          "bg": {
+            "$value": "{colors.white}",
+            "$type": "color"
+          },
+          "border": {
+            "$value": "{colors.neutral.300}",
+            "$type": "color"
+          },
+          "checkedBg": {
+            "$value": "{colors.info.600}",
+            "$type": "color"
+          },
+          "checkedBorder": {
+            "$value": "{colors.info.600}",
+            "$type": "color"
+          },
+          "text": {
+            "$value": "{colors.white}",
+            "$type": "color"
+          },
+          "disabledBg": {
+            "$value": "{colors.neutral.50}",
+            "$type": "color"
+          },
+          "disabledBorder": {
+            "$value": "{colors.neutral.200}",
+            "$type": "color"
+          }
+        },
+        "radio": {
+          "bg": {
+            "$value": "{colors.white}",
+            "$type": "color"
+          },
+          "border": {
+            "$value": "{colors.neutral.300}",
+            "$type": "color"
+          },
+          "checkedBg": {
+            "$value": "{colors.info.600}",
+            "$type": "color"
+          },
+          "checkedBorder": {
+            "$value": "{colors.info.600}",
+            "$type": "color"
+          },
+          "text": {
+            "$value": "{colors.white}",
+            "$type": "color"
+          },
+          "disabledBg": {
+            "$value": "{colors.neutral.50}",
+            "$type": "color"
+          },
+          "disabledBorder": {
+            "$value": "{colors.neutral.200}",
+            "$type": "color"
+          }
+        },
+        "select": {
+          "bg": {
+            "$value": "{colors.white}",
+            "$type": "color"
+          },
+          "border": {
+            "$value": "{colors.neutral.300}",
+            "$type": "color"
+          },
+          "text": {
+            "$value": "{colors.neutral.900}",
+            "$type": "color"
+          },
+          "placeholderText": {
+            "$value": "{colors.neutral.500}",
+            "$type": "color"
+          },
+          "disabledBg": {
+            "$value": "{colors.neutral.50}",
+            "$type": "color"
+          },
+          "disabledBorder": {
+            "$value": "{colors.neutral.200}",
+            "$type": "color"
+          },
+          "focusBorder": {
+            "$value": "{colors.info.500}",
+            "$type": "color"
+          }
+        },
+        "textarea": {
+          "bg": {
+            "$value": "{colors.white}",
+            "$type": "color"
+          },
+          "border": {
+            "$value": "{colors.neutral.300}",
+            "$type": "color"
+          },
+          "text": {
+            "$value": "{colors.neutral.900}",
+            "$type": "color"
+          },
+          "placeholder": {
+            "$value": "{colors.neutral.500}",
+            "$type": "color"
+          },
+          "disabledBg": {
+            "$value": "{colors.neutral.50}",
+            "$type": "color"
+          },
+          "disabledBorder": {
+            "$value": "{colors.neutral.200}",
+            "$type": "color"
+          },
+          "focusBorder": {
+            "$value": "{colors.info.500}",
+            "$type": "color"
+          }
+        },
+        "fieldset": {
+          "border": {
+            "$value": "{colors.neutral.200}",
+            "$type": "color"
+          },
+          "legendText": {
+            "$value": "{colors.neutral.900}",
+            "$type": "color"
+          }
+        },
+        "label": {
+          "text": {
+            "$value": "{colors.neutral.900}",
+            "$type": "color"
+          },
+          "disabledText": {
+            "$value": "{colors.neutral.400}",
+            "$type": "color"
+          },
+          "requiredIndicatorText": {
+            "$value": "{colors.error.600}",
+            "$type": "color"
+          }
         }
       }
     },
@@ -1590,6 +1878,150 @@
               "$value": "{colors.neutral.100}",
               "$type": "color"
             }
+          }
+        },
+        "checkbox": {
+          "bg": {
+            "$value": "{colors.neutral.800}",
+            "$type": "color"
+          },
+          "border": {
+            "$value": "{colors.neutral.600}",
+            "$type": "color"
+          },
+          "checkedBg": {
+            "$value": "{colors.info.600}",
+            "$type": "color"
+          },
+          "checkedBorder": {
+            "$value": "{colors.info.600}",
+            "$type": "color"
+          },
+          "text": {
+            "$value": "{colors.white}",
+            "$type": "color"
+          },
+          "disabledBg": {
+            "$value": "{colors.neutral.900}",
+            "$type": "color"
+          },
+          "disabledBorder": {
+            "$value": "{colors.neutral.700}",
+            "$type": "color"
+          }
+        },
+        "radio": {
+          "bg": {
+            "$value": "{colors.neutral.800}",
+            "$type": "color"
+          },
+          "border": {
+            "$value": "{colors.neutral.600}",
+            "$type": "color"
+          },
+          "checkedBg": {
+            "$value": "{colors.info.600}",
+            "$type": "color"
+          },
+          "checkedBorder": {
+            "$value": "{colors.info.600}",
+            "$type": "color"
+          },
+          "text": {
+            "$value": "{colors.white}",
+            "$type": "color"
+          },
+          "disabledBg": {
+            "$value": "{colors.neutral.900}",
+            "$type": "color"
+          },
+          "disabledBorder": {
+            "$value": "{colors.neutral.700}",
+            "$type": "color"
+          }
+        },
+        "select": {
+          "bg": {
+            "$value": "{colors.neutral.800}",
+            "$type": "color"
+          },
+          "border": {
+            "$value": "{colors.neutral.600}",
+            "$type": "color"
+          },
+          "text": {
+            "$value": "{colors.neutral.50}",
+            "$type": "color"
+          },
+          "placeholderText": {
+            "$value": "{colors.neutral.400}",
+            "$type": "color"
+          },
+          "disabledBg": {
+            "$value": "{colors.neutral.900}",
+            "$type": "color"
+          },
+          "disabledBorder": {
+            "$value": "{colors.neutral.700}",
+            "$type": "color"
+          },
+          "focusBorder": {
+            "$value": "{colors.info.400}",
+            "$type": "color"
+          }
+        },
+        "textarea": {
+          "bg": {
+            "$value": "{colors.neutral.800}",
+            "$type": "color"
+          },
+          "border": {
+            "$value": "{colors.neutral.600}",
+            "$type": "color"
+          },
+          "text": {
+            "$value": "{colors.neutral.50}",
+            "$type": "color"
+          },
+          "placeholder": {
+            "$value": "{colors.neutral.400}",
+            "$type": "color"
+          },
+          "disabledBg": {
+            "$value": "{colors.neutral.900}",
+            "$type": "color"
+          },
+          "disabledBorder": {
+            "$value": "{colors.neutral.700}",
+            "$type": "color"
+          },
+          "focusBorder": {
+            "$value": "{colors.info.400}",
+            "$type": "color"
+          }
+        },
+        "fieldset": {
+          "border": {
+            "$value": "{colors.neutral.700}",
+            "$type": "color"
+          },
+          "legendText": {
+            "$value": "{colors.neutral.50}",
+            "$type": "color"
+          }
+        },
+        "label": {
+          "text": {
+            "$value": "{colors.neutral.50}",
+            "$type": "color"
+          },
+          "disabledText": {
+            "$value": "{colors.neutral.600}",
+            "$type": "color"
+          },
+          "requiredIndicatorText": {
+            "$value": "{colors.error.400}",
+            "$type": "color"
           }
         }
       }

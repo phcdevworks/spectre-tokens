@@ -1,9 +1,14 @@
 import type {
   AnimationEntry,
   ComponentBadgeTokens,
+  ComponentFieldsetTokens,
   ComponentIconBoxTokens,
+  ComponentLabelTokens,
   ComponentModalTokens,
   ComponentNavTokens,
+  ComponentSelectionControlTokens,
+  ComponentSelectTokens,
+  ComponentTextareaTokens,
   ComponentToastTokens,
   ComponentToastVariantTokens,
   ComponentTooltipTokens,
@@ -85,6 +90,47 @@ const DROPDOWN_FIELDS: Array<{ name: string; modePath: string[]; aliasPath: stri
   { name: 'item-hover', modePath: ['item', 'hover'], aliasPath: ['item', 'hover'] },
   { name: 'item-active', modePath: ['item', 'active'], aliasPath: ['item', 'active'] },
   { name: 'item-text', modePath: ['item', 'text'], aliasPath: ['item', 'text'] }
+]
+
+const SELECTION_CONTROL_FIELDS: Array<{ name: string; tokenKey: keyof ComponentSelectionControlTokens }> = [
+  { name: 'bg', tokenKey: 'bg' },
+  { name: 'border', tokenKey: 'border' },
+  { name: 'checked-bg', tokenKey: 'checkedBg' },
+  { name: 'checked-border', tokenKey: 'checkedBorder' },
+  { name: 'text', tokenKey: 'text' },
+  { name: 'disabled-bg', tokenKey: 'disabledBg' },
+  { name: 'disabled-border', tokenKey: 'disabledBorder' }
+]
+
+const SELECT_FIELDS: Array<{ name: string; tokenKey: keyof ComponentSelectTokens }> = [
+  { name: 'bg', tokenKey: 'bg' },
+  { name: 'border', tokenKey: 'border' },
+  { name: 'text', tokenKey: 'text' },
+  { name: 'placeholder-text', tokenKey: 'placeholderText' },
+  { name: 'disabled-bg', tokenKey: 'disabledBg' },
+  { name: 'disabled-border', tokenKey: 'disabledBorder' },
+  { name: 'focus-border', tokenKey: 'focusBorder' }
+]
+
+const TEXTAREA_FIELDS: Array<{ name: string; tokenKey: keyof ComponentTextareaTokens }> = [
+  { name: 'bg', tokenKey: 'bg' },
+  { name: 'border', tokenKey: 'border' },
+  { name: 'text', tokenKey: 'text' },
+  { name: 'placeholder', tokenKey: 'placeholder' },
+  { name: 'disabled-bg', tokenKey: 'disabledBg' },
+  { name: 'disabled-border', tokenKey: 'disabledBorder' },
+  { name: 'focus-border', tokenKey: 'focusBorder' }
+]
+
+const FIELDSET_FIELDS: Array<{ name: string; tokenKey: keyof ComponentFieldsetTokens }> = [
+  { name: 'border', tokenKey: 'border' },
+  { name: 'legend-text', tokenKey: 'legendText' }
+]
+
+const LABEL_FIELDS: Array<{ name: string; tokenKey: keyof ComponentLabelTokens }> = [
+  { name: 'text', tokenKey: 'text' },
+  { name: 'disabled-text', tokenKey: 'disabledText' },
+  { name: 'required-indicator-text', tokenKey: 'requiredIndicatorText' }
 ]
 
 const resolveTokenReference = (tokens: SpectreTokens, reference: string): string => {
@@ -400,6 +446,24 @@ export const generateCssVariables = (tokens: SpectreTokens, options: CssVariable
     })),
     ...DROPDOWN_FIELDS.map(({ name, modePath, aliasPath }) => ({
       varParts: ['dropdown', name], modePath: ['component', 'dropdown', ...modePath], aliasSrc: componentAliases, aliasPath: ['dropdown', ...aliasPath],
+    })),
+    ...SELECTION_CONTROL_FIELDS.map(({ name, tokenKey }) => ({
+      varParts: ['checkbox', name], modePath: ['component', 'checkbox', tokenKey], aliasSrc: componentAliases, aliasPath: ['checkbox', tokenKey],
+    })),
+    ...SELECTION_CONTROL_FIELDS.map(({ name, tokenKey }) => ({
+      varParts: ['radio', name], modePath: ['component', 'radio', tokenKey], aliasSrc: componentAliases, aliasPath: ['radio', tokenKey],
+    })),
+    ...SELECT_FIELDS.map(({ name, tokenKey }) => ({
+      varParts: ['select', name], modePath: ['component', 'select', tokenKey], aliasSrc: componentAliases, aliasPath: ['select', tokenKey],
+    })),
+    ...TEXTAREA_FIELDS.map(({ name, tokenKey }) => ({
+      varParts: ['textarea', name], modePath: ['component', 'textarea', tokenKey], aliasSrc: componentAliases, aliasPath: ['textarea', tokenKey],
+    })),
+    ...FIELDSET_FIELDS.map(({ name, tokenKey }) => ({
+      varParts: ['fieldset', name], modePath: ['component', 'fieldset', tokenKey], aliasSrc: componentAliases, aliasPath: ['fieldset', tokenKey],
+    })),
+    ...LABEL_FIELDS.map(({ name, tokenKey }) => ({
+      varParts: ['label', name], modePath: ['component', 'label', tokenKey], aliasSrc: componentAliases, aliasPath: ['label', tokenKey],
     })),
   ]
 
