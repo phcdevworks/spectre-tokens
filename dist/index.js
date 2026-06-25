@@ -117,6 +117,51 @@ var coreTokens = {
         "active": "{colors.info.50}",
         "text": "{colors.neutral.900}"
       }
+    },
+    "checkbox": {
+      "bg": "{colors.white}",
+      "border": "{colors.neutral.300}",
+      "checkedBg": "{colors.info.600}",
+      "checkedBorder": "{colors.info.600}",
+      "text": "{colors.white}",
+      "disabledBg": "{colors.neutral.50}",
+      "disabledBorder": "{colors.neutral.200}"
+    },
+    "radio": {
+      "bg": "{colors.white}",
+      "border": "{colors.neutral.300}",
+      "checkedBg": "{colors.info.600}",
+      "checkedBorder": "{colors.info.600}",
+      "text": "{colors.white}",
+      "disabledBg": "{colors.neutral.50}",
+      "disabledBorder": "{colors.neutral.200}"
+    },
+    "select": {
+      "bg": "{colors.white}",
+      "border": "{colors.neutral.300}",
+      "text": "{colors.neutral.900}",
+      "placeholderText": "{colors.neutral.500}",
+      "disabledBg": "{colors.neutral.50}",
+      "disabledBorder": "{colors.neutral.200}",
+      "focusBorder": "{colors.info.500}"
+    },
+    "textarea": {
+      "bg": "{colors.white}",
+      "border": "{colors.neutral.300}",
+      "text": "{colors.neutral.900}",
+      "placeholder": "{colors.neutral.500}",
+      "disabledBg": "{colors.neutral.50}",
+      "disabledBorder": "{colors.neutral.200}",
+      "focusBorder": "{colors.info.500}"
+    },
+    "fieldset": {
+      "border": "{colors.neutral.200}",
+      "legendText": "{colors.neutral.900}"
+    },
+    "label": {
+      "text": "{colors.neutral.900}",
+      "disabledText": "{colors.neutral.400}",
+      "requiredIndicatorText": "{colors.error.600}"
     }
   },
   "buttons": {
@@ -371,6 +416,51 @@ var coreTokens = {
             "active": "{colors.info.50}",
             "text": "{colors.neutral.900}"
           }
+        },
+        "checkbox": {
+          "bg": "{colors.white}",
+          "border": "{colors.neutral.300}",
+          "checkedBg": "{colors.info.600}",
+          "checkedBorder": "{colors.info.600}",
+          "text": "{colors.white}",
+          "disabledBg": "{colors.neutral.50}",
+          "disabledBorder": "{colors.neutral.200}"
+        },
+        "radio": {
+          "bg": "{colors.white}",
+          "border": "{colors.neutral.300}",
+          "checkedBg": "{colors.info.600}",
+          "checkedBorder": "{colors.info.600}",
+          "text": "{colors.white}",
+          "disabledBg": "{colors.neutral.50}",
+          "disabledBorder": "{colors.neutral.200}"
+        },
+        "select": {
+          "bg": "{colors.white}",
+          "border": "{colors.neutral.300}",
+          "text": "{colors.neutral.900}",
+          "placeholderText": "{colors.neutral.500}",
+          "disabledBg": "{colors.neutral.50}",
+          "disabledBorder": "{colors.neutral.200}",
+          "focusBorder": "{colors.info.500}"
+        },
+        "textarea": {
+          "bg": "{colors.white}",
+          "border": "{colors.neutral.300}",
+          "text": "{colors.neutral.900}",
+          "placeholder": "{colors.neutral.500}",
+          "disabledBg": "{colors.neutral.50}",
+          "disabledBorder": "{colors.neutral.200}",
+          "focusBorder": "{colors.info.500}"
+        },
+        "fieldset": {
+          "border": "{colors.neutral.200}",
+          "legendText": "{colors.neutral.900}"
+        },
+        "label": {
+          "text": "{colors.neutral.900}",
+          "disabledText": "{colors.neutral.400}",
+          "requiredIndicatorText": "{colors.error.600}"
         }
       }
     },
@@ -520,6 +610,51 @@ var coreTokens = {
             "active": "{colors.info.900}",
             "text": "{colors.neutral.100}"
           }
+        },
+        "checkbox": {
+          "bg": "{colors.neutral.800}",
+          "border": "{colors.neutral.600}",
+          "checkedBg": "{colors.info.600}",
+          "checkedBorder": "{colors.info.600}",
+          "text": "{colors.white}",
+          "disabledBg": "{colors.neutral.900}",
+          "disabledBorder": "{colors.neutral.700}"
+        },
+        "radio": {
+          "bg": "{colors.neutral.800}",
+          "border": "{colors.neutral.600}",
+          "checkedBg": "{colors.info.600}",
+          "checkedBorder": "{colors.info.600}",
+          "text": "{colors.white}",
+          "disabledBg": "{colors.neutral.900}",
+          "disabledBorder": "{colors.neutral.700}"
+        },
+        "select": {
+          "bg": "{colors.neutral.800}",
+          "border": "{colors.neutral.600}",
+          "text": "{colors.neutral.50}",
+          "placeholderText": "{colors.neutral.400}",
+          "disabledBg": "{colors.neutral.900}",
+          "disabledBorder": "{colors.neutral.700}",
+          "focusBorder": "{colors.info.400}"
+        },
+        "textarea": {
+          "bg": "{colors.neutral.800}",
+          "border": "{colors.neutral.600}",
+          "text": "{colors.neutral.50}",
+          "placeholder": "{colors.neutral.400}",
+          "disabledBg": "{colors.neutral.900}",
+          "disabledBorder": "{colors.neutral.700}",
+          "focusBorder": "{colors.info.400}"
+        },
+        "fieldset": {
+          "border": "{colors.neutral.700}",
+          "legendText": "{colors.neutral.50}"
+        },
+        "label": {
+          "text": "{colors.neutral.50}",
+          "disabledText": "{colors.neutral.600}",
+          "requiredIndicatorText": "{colors.error.400}"
         }
       }
     }
@@ -1098,6 +1233,42 @@ var DROPDOWN_FIELDS = [
   { name: "item-active", modePath: ["item", "active"], aliasPath: ["item", "active"] },
   { name: "item-text", modePath: ["item", "text"], aliasPath: ["item", "text"] }
 ];
+var SELECTION_CONTROL_FIELDS = [
+  { name: "bg", tokenKey: "bg" },
+  { name: "border", tokenKey: "border" },
+  { name: "checked-bg", tokenKey: "checkedBg" },
+  { name: "checked-border", tokenKey: "checkedBorder" },
+  { name: "text", tokenKey: "text" },
+  { name: "disabled-bg", tokenKey: "disabledBg" },
+  { name: "disabled-border", tokenKey: "disabledBorder" }
+];
+var SELECT_FIELDS = [
+  { name: "bg", tokenKey: "bg" },
+  { name: "border", tokenKey: "border" },
+  { name: "text", tokenKey: "text" },
+  { name: "placeholder-text", tokenKey: "placeholderText" },
+  { name: "disabled-bg", tokenKey: "disabledBg" },
+  { name: "disabled-border", tokenKey: "disabledBorder" },
+  { name: "focus-border", tokenKey: "focusBorder" }
+];
+var TEXTAREA_FIELDS = [
+  { name: "bg", tokenKey: "bg" },
+  { name: "border", tokenKey: "border" },
+  { name: "text", tokenKey: "text" },
+  { name: "placeholder", tokenKey: "placeholder" },
+  { name: "disabled-bg", tokenKey: "disabledBg" },
+  { name: "disabled-border", tokenKey: "disabledBorder" },
+  { name: "focus-border", tokenKey: "focusBorder" }
+];
+var FIELDSET_FIELDS = [
+  { name: "border", tokenKey: "border" },
+  { name: "legend-text", tokenKey: "legendText" }
+];
+var LABEL_FIELDS = [
+  { name: "text", tokenKey: "text" },
+  { name: "disabled-text", tokenKey: "disabledText" },
+  { name: "required-indicator-text", tokenKey: "requiredIndicatorText" }
+];
 var resolveTokenReference = (tokens2, reference) => {
   const path = reference.slice(1, -1).split(".");
   let current = tokens2;
@@ -1380,6 +1551,42 @@ var generateCssVariables = (tokens2, options = {}) => {
       modePath: ["component", "dropdown", ...modePath],
       aliasSrc: componentAliases,
       aliasPath: ["dropdown", ...aliasPath]
+    })),
+    ...SELECTION_CONTROL_FIELDS.map(({ name, tokenKey }) => ({
+      varParts: ["checkbox", name],
+      modePath: ["component", "checkbox", tokenKey],
+      aliasSrc: componentAliases,
+      aliasPath: ["checkbox", tokenKey]
+    })),
+    ...SELECTION_CONTROL_FIELDS.map(({ name, tokenKey }) => ({
+      varParts: ["radio", name],
+      modePath: ["component", "radio", tokenKey],
+      aliasSrc: componentAliases,
+      aliasPath: ["radio", tokenKey]
+    })),
+    ...SELECT_FIELDS.map(({ name, tokenKey }) => ({
+      varParts: ["select", name],
+      modePath: ["component", "select", tokenKey],
+      aliasSrc: componentAliases,
+      aliasPath: ["select", tokenKey]
+    })),
+    ...TEXTAREA_FIELDS.map(({ name, tokenKey }) => ({
+      varParts: ["textarea", name],
+      modePath: ["component", "textarea", tokenKey],
+      aliasSrc: componentAliases,
+      aliasPath: ["textarea", tokenKey]
+    })),
+    ...FIELDSET_FIELDS.map(({ name, tokenKey }) => ({
+      varParts: ["fieldset", name],
+      modePath: ["component", "fieldset", tokenKey],
+      aliasSrc: componentAliases,
+      aliasPath: ["fieldset", tokenKey]
+    })),
+    ...LABEL_FIELDS.map(({ name, tokenKey }) => ({
+      varParts: ["label", name],
+      modePath: ["component", "label", tokenKey],
+      aliasSrc: componentAliases,
+      aliasPath: ["label", tokenKey]
     }))
   ];
   const baseLines = [];

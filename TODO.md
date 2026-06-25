@@ -358,12 +358,12 @@ these as fully "Delivered" — they shipped to JS/TS/types but never to CSS.
     and asserts each has a matching `--sp-link-*` / `--sp-surface-*` variable
     in the generated CSS string.
 
-- [ ] Republish a patch/minor release once fixed and update
+- [x] Republish a patch/minor release once fixed and update
       `spectre-ui`'s `TODO.md` Phase 3 P2 to unblock Link, interactive surface
       state, and Divider styling work.
-  - Code fix is complete and `npm run check` passes (pending dist commit).
-    Release authority and the `spectre-ui` TODO update belong to Bradley
-    Potts per the Release Procedure in `CLAUDE.md`.
+  - Delivered in `3.1.0`, which is published on npm as the current latest
+    version. Release authority and the `spectre-ui` TODO update belong to
+    Bradley Potts per the Release Procedure in `CLAUDE.md`.
 
 ---
 
@@ -400,11 +400,66 @@ namespace at all.
     `spectre-ui`'s actual Phase 4d consumption — flag for adjustment if it
     expects a different path.
 
-- [ ] Publish and version-bump. This is a hard blocker for `spectre-ui`
+- [x] Publish and version-bump. This was a hard blocker for `spectre-ui`
       Phase 4d, not a parallel-track item.
-  - Code is complete and `npm run check` passes (pending dist commit).
-    Release authority belongs to Bradley Potts per the Release Procedure
+  - Delivered in `3.1.0` (published on npm as the current latest version):
+    layout width tokens are available to unblock `spectre-ui` Phase 4d.
+    Release authority remains with Bradley Potts per the Release Procedure
     in `CLAUDE.md`.
+
+---
+
+## Phase 7 - Form-Field Component Token Groups
+
+Cross-repo audit (`spectre-components` vs. `spectre-ui-astro`) found
+`sp-checkbox`, `sp-fieldset`, `sp-label`, `sp-radio`, `sp-select`, and
+`sp-textarea` shipped in `spectre-components` since Phase 1 with no backing
+`component.*` token group here and no recipe in `spectre-ui` — the same gating
+pattern Phase 4 used for Nav/Toast/Tooltip/Dropdown/Modal. `spectre-ui`'s own
+`TODO.md` confirms these are unblocked-but-missing, not deferred by design.
+
+### P0: Add Missing Form-Field Token Groups
+
+- [x] Add `component.checkbox` token group
+  - Delivered with roles `bg`, `border`, `checkedBg`, `checkedBorder`, `text`,
+    `disabledBg`, `disabledBorder` in `tokens/components.json` and
+    `tokens/modes.json` (default + dark), typed in `src/types.ts`
+    (`ComponentSelectionControlTokens`), and emitted as `--sp-checkbox-*` in
+    `src/css.ts`.
+
+- [x] Add `component.radio` token group
+  - Delivered mirroring `component.checkbox` shape exactly (shares the
+    `ComponentSelectionControlTokens` type), emitted as `--sp-radio-*`.
+
+- [x] Add `component.select` token group
+  - Delivered with roles `bg`, `border`, `text`, `placeholderText`,
+    `disabledBg`, `disabledBorder`, `focusBorder`, emitted as `--sp-select-*`.
+
+- [x] Add `component.textarea` token group
+  - Delivered as its own group (not merged with `component.input`, which
+    remains the minimal `text`/`placeholder` pair it already was) with roles
+    `bg`, `border`, `text`, `placeholder`, `disabledBg`, `disabledBorder`,
+    `focusBorder`, emitted as `--sp-textarea-*`.
+
+- [x] Add `component.fieldset` token group
+  - Delivered with roles `border`, `legendText`, emitted as
+    `--sp-fieldset-*`.
+
+- [x] Add `component.label` token group
+  - Delivered with roles `text`, `disabledText`, `requiredIndicatorText`,
+    emitted as `--sp-label-*`.
+
+- [ ] Publish once all six groups land. This is a hard
+      blocker for the corresponding `spectre-ui` recipes
+      (`getCheckboxClasses`, `getRadioClasses`, `getSelectClasses`,
+      `getTextareaClasses`, `getFieldsetClasses`, `getLabelClasses`).
+  - Code is complete and the local release metadata is prepared as `3.2.0`
+    with the changelog entry dated `2026-06-26`. `npm run check` passes through
+    contract, docs, export, CSS, Tailwind, consumer, integration, ecosystem,
+    classification, deprecation, and lint validation; `check:dist` remains
+    blocked until the regenerated `dist/` artifacts are committed. Release and
+    publish authority belongs to Bradley Potts per the Release Procedure in
+    `CLAUDE.md`.
 
 ---
 
@@ -420,13 +475,18 @@ namespace at all.
    Phase 4 recipes and spectre-ui-astro Phase 4.
 7. **Phase 4 P3 — done.** `surface.alternate` renamed to `surface.subtle`;
    `surface.hero` documented with explicit usage constraints.
-8. **Phase 5 — code fix done, release pending.** `link.*` and
+8. **Phase 5 — done and published in `3.1.0`.** `link.*` and
    `surface.hover/selected/active/divider` now emit correctly in
    `dist/index.css`, with a regression test guarding against recurrence.
-   Awaiting publish and the `spectre-ui` TODO update to unblock Phase 3 P2.
-9. **Phase 6 — code done, release pending.** Added `layout.sidebar.width`
-   (`16rem`) and `layout.container.maxWidthProse` (`65ch`). Awaiting publish
-   to unblock `spectre-ui` Phase 4d.
+   This unblocks the `spectre-ui` Phase 3 P2 token dependency.
+9. **Phase 6 — done and published in `3.1.0`.** Added
+   `layout.sidebar.width` (`16rem`) and `layout.container.maxWidthProse`
+   (`65ch`) to unblock `spectre-ui` Phase 4d.
+10. **Phase 7 — code done, `3.2.0` release prepared.** Added `component.checkbox`,
+    `component.radio`, `component.select`, `component.textarea`,
+    `component.fieldset`, and `component.label` token groups. Awaiting commit,
+    tag, and publish to unblock the corresponding `spectre-ui` form-field
+    recipes.
 
 ## Explicitly Out of Scope
 

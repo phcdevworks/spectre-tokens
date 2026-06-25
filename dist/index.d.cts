@@ -117,6 +117,51 @@ interface SpectreGeneratedTokens {
                 text: string;
             };
         };
+        checkbox: {
+            bg: string;
+            border: string;
+            checkedBg: string;
+            checkedBorder: string;
+            text: string;
+            disabledBg: string;
+            disabledBorder: string;
+        };
+        radio: {
+            bg: string;
+            border: string;
+            checkedBg: string;
+            checkedBorder: string;
+            text: string;
+            disabledBg: string;
+            disabledBorder: string;
+        };
+        select: {
+            bg: string;
+            border: string;
+            text: string;
+            placeholderText: string;
+            disabledBg: string;
+            disabledBorder: string;
+            focusBorder: string;
+        };
+        textarea: {
+            bg: string;
+            border: string;
+            text: string;
+            placeholder: string;
+            disabledBg: string;
+            disabledBorder: string;
+            focusBorder: string;
+        };
+        fieldset: {
+            border: string;
+            legendText: string;
+        };
+        label: {
+            text: string;
+            disabledText: string;
+            requiredIndicatorText: string;
+        };
     };
     buttons: {
         primary: {
@@ -371,6 +416,51 @@ interface SpectreGeneratedTokens {
                         text: string;
                     };
                 };
+                checkbox: {
+                    bg: string;
+                    border: string;
+                    checkedBg: string;
+                    checkedBorder: string;
+                    text: string;
+                    disabledBg: string;
+                    disabledBorder: string;
+                };
+                radio: {
+                    bg: string;
+                    border: string;
+                    checkedBg: string;
+                    checkedBorder: string;
+                    text: string;
+                    disabledBg: string;
+                    disabledBorder: string;
+                };
+                select: {
+                    bg: string;
+                    border: string;
+                    text: string;
+                    placeholderText: string;
+                    disabledBg: string;
+                    disabledBorder: string;
+                    focusBorder: string;
+                };
+                textarea: {
+                    bg: string;
+                    border: string;
+                    text: string;
+                    placeholder: string;
+                    disabledBg: string;
+                    disabledBorder: string;
+                    focusBorder: string;
+                };
+                fieldset: {
+                    border: string;
+                    legendText: string;
+                };
+                label: {
+                    text: string;
+                    disabledText: string;
+                    requiredIndicatorText: string;
+                };
             };
         };
         dark: {
@@ -519,6 +609,51 @@ interface SpectreGeneratedTokens {
                         active: string;
                         text: string;
                     };
+                };
+                checkbox: {
+                    bg: string;
+                    border: string;
+                    checkedBg: string;
+                    checkedBorder: string;
+                    text: string;
+                    disabledBg: string;
+                    disabledBorder: string;
+                };
+                radio: {
+                    bg: string;
+                    border: string;
+                    checkedBg: string;
+                    checkedBorder: string;
+                    text: string;
+                    disabledBg: string;
+                    disabledBorder: string;
+                };
+                select: {
+                    bg: string;
+                    border: string;
+                    text: string;
+                    placeholderText: string;
+                    disabledBg: string;
+                    disabledBorder: string;
+                    focusBorder: string;
+                };
+                textarea: {
+                    bg: string;
+                    border: string;
+                    text: string;
+                    placeholder: string;
+                    disabledBg: string;
+                    disabledBorder: string;
+                    focusBorder: string;
+                };
+                fieldset: {
+                    border: string;
+                    legendText: string;
+                };
+                label: {
+                    text: string;
+                    disabledText: string;
+                    requiredIndicatorText: string;
                 };
             };
         };
@@ -1179,6 +1314,42 @@ interface ComponentDropdownTokens<Value = string> {
         text: Value;
     };
 }
+interface ComponentSelectionControlTokens<Value = string> {
+    bg: Value;
+    border: Value;
+    checkedBg: Value;
+    checkedBorder: Value;
+    text: Value;
+    disabledBg: Value;
+    disabledBorder: Value;
+}
+interface ComponentSelectTokens<Value = string> {
+    bg: Value;
+    border: Value;
+    text: Value;
+    placeholderText: Value;
+    disabledBg: Value;
+    disabledBorder: Value;
+    focusBorder: Value;
+}
+interface ComponentTextareaTokens<Value = string> {
+    bg: Value;
+    border: Value;
+    text: Value;
+    placeholder: Value;
+    disabledBg: Value;
+    disabledBorder: Value;
+    focusBorder: Value;
+}
+interface ComponentFieldsetTokens<Value = string> {
+    border: Value;
+    legendText: Value;
+}
+interface ComponentLabelTokens<Value = string> {
+    text: Value;
+    disabledText: Value;
+    requiredIndicatorText: Value;
+}
 interface ComponentTokens<Value = string> {
     card: {
         text: Value;
@@ -1202,6 +1373,12 @@ interface ComponentTokens<Value = string> {
     toast: ComponentToastTokens<Value>;
     tooltip: ComponentTooltipTokens<Value>;
     dropdown: ComponentDropdownTokens<Value>;
+    checkbox: ComponentSelectionControlTokens<Value>;
+    radio: ComponentSelectionControlTokens<Value>;
+    select: ComponentSelectTokens<Value>;
+    textarea: ComponentTextareaTokens<Value>;
+    fieldset: ComponentFieldsetTokens<Value>;
+    label: ComponentLabelTokens<Value>;
     [key: string]: unknown;
 }
 type SpectreModeName = 'default' | 'dark';
