@@ -9,10 +9,22 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const readmePath = join(__dirname, '../README.md');
 const tokenContractPath = join(__dirname, '../TOKEN_CONTRACT.md');
 const indexPath = join(__dirname, '../src/index.ts');
+const packageJsonPath = join(__dirname, '../package.json');
 const readme = readFileSync(readmePath, 'utf8');
 const tokenContract = readFileSync(tokenContractPath, 'utf8');
 const indexSource = readFileSync(indexPath, 'utf8');
+const packageJson = JSON.parse(readFileSync(packageJsonPath, 'utf8'));
 const manifest = loadContractManifest();
+
+const versionMatch = readme.match(/\|\s*Current version\/status\s*\|\s*([^\s|]+)\s*\|/i);
+if (!versionMatch) {
+  throw new Error('README is missing the "Current version/status" row in the Repository Snapshot table.');
+}
+if (versionMatch[1] !== packageJson.version) {
+  throw new Error(
+    `README "Current version/status" is "${versionMatch[1]}" but package.json version is "${packageJson.version}". Update README.md to match.`
+  );
+}
 
 manifest.docContract.requiredFiles.forEach((filePath) => {
   const fullPath = join(__dirname, '..', filePath);
