@@ -36,6 +36,27 @@ Protected semantic color families and major contract changes require explicit hu
 This repository is maintained by PHCDevworks and contains the design-token
 package of the Spectre system.
 
+## Upstream Requests and Roadmap Self-Expansion
+
+Full directive: project-team [AGENTS.md](../AGENTS.md) "Upstream Requests and
+Roadmap Self-Expansion." Applied to this repo:
+
+- This repo is L1 — the root of the Spectre design system. It has no upstream
+  dependency within this workspace; do not invent one.
+- Downstream repos (`spectre-ui`, and transitively `spectre-components`,
+  `spectre-ui-astro`, `spectre-base`, plus consumers in `project-shell` and
+  `project-web`) may append a token or semantic-vocabulary request to this
+  repo's own `TODO.md` under `## Requested by Downstream`. Keep that section
+  visible and separate from this repo's self-planned token work.
+- This repo's own [ROADMAP.md](ROADMAP.md) may be proactively expanded with new
+  or reordered phases by the agent's own analysis — but never mark a phase
+  delivered without `npm run check` passing, and never contradict the locked
+  protected-color-family approval gate (`success`, `warning`, `danger`, CTA /
+  brand-action require Bradley Potts approval regardless of roadmap state).
+- Surface any new TODO request or roadmap expansion in the handoff for Bradley
+  Potts in the same change it was made, and reflect cross-repo-relevant
+  changes in the project-team's own ROADMAP.md/TODO.md.
+
 ## Shared Source Rules
 
 These rules apply to every agent without exception.
@@ -109,6 +130,8 @@ consumed by downstream Spectre packages and compatible applications.
 10. Do not expand this package into downstream UI structure, composition, or
     framework-specific adapter behavior. Token vocabulary expansion is in scope;
     component structure and framework adapters are not.
+11. All `scripts/` tooling is TypeScript (`.ts`), run via `tsx`; never add a
+    new `.js`/`.mjs` script.
 
 ## Working Boundaries
 
