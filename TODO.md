@@ -449,16 +449,14 @@ pattern Phase 4 used for Nav/Toast/Tooltip/Dropdown/Modal. `spectre-ui`'s own
   - Delivered with roles `text`, `disabledText`, `requiredIndicatorText`,
     emitted as `--sp-label-*`.
 
-- [ ] Publish once all six groups land. This is a hard
+- [x] Publish once all six groups land. This is a hard
       blocker for the corresponding `spectre-ui` recipes
       (`getCheckboxClasses`, `getRadioClasses`, `getSelectClasses`,
       `getTextareaClasses`, `getFieldsetClasses`, `getLabelClasses`).
-  - Code is complete and the local release metadata is prepared as `3.2.0`
-    with the changelog entry dated `2026-06-26`. `npm run check` passes through
-    contract, docs, export, CSS, Tailwind, consumer, integration, ecosystem,
-    classification, deprecation, and lint validation; `check:dist` remains
-    blocked until the regenerated `dist/` artifacts are committed. Release and
-    publish authority belongs to Bradley Potts per the Release Procedure in
+  - Delivered: `3.2.0` published on npm (`package.json` version matches).
+    Unblocks the corresponding `spectre-ui` form-field recipes. Note: the
+    `v3.2.0` git tag has not been created yet (latest tag is still `3.0.0`) —
+    tagging remains with Bradley Potts per the Release Procedure in
     `CLAUDE.md`.
 
 ---
@@ -482,11 +480,11 @@ pattern Phase 4 used for Nav/Toast/Tooltip/Dropdown/Modal. `spectre-ui`'s own
 9. **Phase 6 — done and published in `3.1.0`.** Added
    `layout.sidebar.width` (`16rem`) and `layout.container.maxWidthProse`
    (`65ch`) to unblock `spectre-ui` Phase 4d.
-10. **Phase 7 — code done, `3.2.0` release prepared.** Added `component.checkbox`,
+10. **Phase 7 — done and published in `3.2.0`.** Added `component.checkbox`,
     `component.radio`, `component.select`, `component.textarea`,
-    `component.fieldset`, and `component.label` token groups. Awaiting commit,
-    tag, and publish to unblock the corresponding `spectre-ui` form-field
-    recipes.
+    `component.fieldset`, and `component.label` token groups. Unblocks the
+    corresponding `spectre-ui` form-field recipes. The `v3.2.0` git tag is
+    still outstanding.
 
 ## Explicitly Out of Scope
 
