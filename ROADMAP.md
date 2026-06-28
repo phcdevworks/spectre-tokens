@@ -173,48 +173,61 @@ five groups. They are now published in the token contract.
 
 ---
 
-## 5. Phase 5 — CSS Generation Bug: Dropped Semantic Variables — Active
+## 5. Phase 5 — CSS Generation Bug: Dropped Semantic Variables — Delivered
 
-`generateCssVariables` in `src/css.ts` builds `dist/index.css` from a
+`generateCssVariables` in `src/css.ts` built `dist/index.css` from a
 hand-maintained `semanticEntries` array, not by iterating the full `tokens`
-object. `link.*` and `surface.hover/selected/active/divider` exist in
-`tokens/semantic-roles.json` and in the compiled `tokens` export, but have no
-corresponding entries in `semanticEntries`, so they are silently omitted from
-`dist/index.css` in every release, including `2.9.0` and `3.0.0`. Prior
-roadmap notes incorrectly marked these as fully delivered — they shipped to
-JS/TS/types but never to CSS. This blocks `spectre-ui` Phase 3 P2 (Link,
-interactive surface states, Divider styling), which needs the CSS variables,
-not just the JS token values.
+object. `link.*` and `surface.hover/selected/active/divider` existed in
+`tokens/semantic-roles.json` and in the compiled `tokens` export, but had no
+corresponding entries in `semanticEntries`, so they were silently omitted
+from `dist/index.css` in every release through `3.0.0`.
 
-- [ ] Add the missing entries to `semanticEntries` in `src/css.ts` so
-  `--sp-link-*` and `--sp-surface-hover/selected/active/divider` actually
-  emit in `dist/index.css`.
-- [ ] Add a regression test asserting every top-level key under
-  `tokens.link` and `tokens.surface` has a corresponding CSS variable in
-  `generateCssVariables` output, to prevent this class of silent drop.
-- [ ] Republish and update `spectre-ui` TODO.md Phase 3 P2 to unblock.
+- `--sp-link-default/hover/active/visited` and
+  `--sp-surface-hover/selected/active/divider` now emit correctly in
+  `dist/index.css` (light and dark blocks).
+- `tests/css-semantic-coverage.test.ts` asserts every top-level key under
+  `tokens.link` and `tokens.modes.default.surface` has a matching CSS
+  variable in `generateCssVariables` output, guarding against recurrence.
+- Published in `3.1.0`, unblocking `spectre-ui` Phase 3 P2 (Link,
+  interactive surface states, Divider styling).
 
 ---
 
-## 6. Phase 4 P4 — Layout Width Scale — Needed, not started
+## 6. Phase 4 P4 — Layout Width Scale — Delivered
 
 Real downstream need: `spectre-ui` Phase 4d (app shell layout — Sidebar
-recipe, Container `maxWidth` prose variant) needs fixed-width values that do
-not exist anywhere in the published token object today. Confirmed by reading
-the live package directly — `layout` only has `section`, `stack` (gap only),
-and `container` (`paddingInline` + one fixed `maxWidth`). There is no
-`width` or `sizing` namespace at all. This is the first layout-adjacent gap
-since Phase 4 P2 that isn't satisfiable from existing tokens.
+recipe, Container `maxWidth` prose variant) needed fixed-width values that
+did not exist anywhere in the published token object. Confirmed by reading
+the live package directly — `layout` only had `section`, `stack` (gap only),
+and `container` (`paddingInline` + one fixed `maxWidth`).
 
-- [ ] Add `layout.sidebar.width` — a single fixed value (matching how
-  `container.maxWidth` is a single value, not a multi-step scale), not a
-  multi-size scale unless a second real consumer need shows up.
-- [ ] Add a second `container.maxWidth` value for readable prose width
-  (e.g. nested under `layout.container.maxWidth` as a named variant
-  alongside the existing default, exact naming TBD — coordinate with
-  `spectre-ui`'s Phase 4d before finalizing since it consumes this directly).
-- [ ] Publish and version-bump before `spectre-ui` Phase 4d can proceed —
-  this is a hard blocker, not a parallel-track item.
+- `layout.sidebar.width` added as a single fixed value (`16rem`), matching
+  the existing `container.maxWidth` precedent rather than introducing a
+  multi-step scale.
+- `layout.container.maxWidthProse` (`65ch`) added as a sibling key to the
+  existing `container.maxWidth`, keeping that contract non-breaking.
+- Published in `3.1.0`, unblocking `spectre-ui` Phase 4d.
+
+---
+
+## 7. Phase 7 — Form-Field Component Token Groups — Delivered
+
+Cross-repo audit found `sp-checkbox`, `sp-fieldset`, `sp-label`, `sp-radio`,
+`sp-select`, and `sp-textarea` shipped in `spectre-components` with no
+backing `component.*` token group here and no recipe in `spectre-ui` — the
+same gating pattern Phase 4 P2 used for Nav/Toast/Tooltip/Dropdown/Modal.
+
+- `component.checkbox` and `component.radio` — `bg`, `border`, `checkedBg`,
+  `checkedBorder`, `text`, `disabledBg`, `disabledBorder`.
+- `component.select` — `bg`, `border`, `text`, `placeholderText`,
+  `disabledBg`, `disabledBorder`, `focusBorder`.
+- `component.textarea` — `bg`, `border`, `text`, `placeholder`,
+  `disabledBg`, `disabledBorder`, `focusBorder`.
+- `component.fieldset` — `border`, `legendText`.
+- `component.label` — `text`, `disabledText`, `requiredIndicatorText`.
+- Published in `3.2.0`, unblocking the corresponding `spectre-ui` form-field
+  recipes (`getCheckboxClasses`, `getRadioClasses`, `getSelectClasses`,
+  `getTextareaClasses`, `getFieldsetClasses`, `getLabelClasses`).
 
 ---
 
@@ -239,8 +252,12 @@ since Phase 4 P2 that isn't satisfiable from existing tokens.
 6. **Phase 4 P2** — done. Component token expansion unblocked spectre-ui Phase 4
    and spectre-ui-astro Phase 4.
 7. **Phase 4 P3** — done. `surface.hero`/`surface.alternate` resolved.
-8. **Phase 5** — active. CSS generation silently drops `link.*` and
-   `surface.hover/selected/active/divider` from `dist/index.css`; blocks
-   `spectre-ui` Phase 3 P2.
-9. **Phase 4 P4** — needed, not started. Add `layout.sidebar.width` and a
-   prose `container.maxWidth` variant; hard-blocks `spectre-ui` Phase 4d.
+8. **Phase 5** — done, published in `3.1.0`. `link.*` and
+   `surface.hover/selected/active/divider` now emit correctly in
+   `dist/index.css`, unblocking `spectre-ui` Phase 3 P2.
+9. **Phase 4 P4** — done, published in `3.1.0`. Added `layout.sidebar.width`
+   and `layout.container.maxWidthProse`, unblocking `spectre-ui` Phase 4d.
+10. **Phase 7** — done, published in `3.2.0`. Added `component.checkbox`,
+    `component.radio`, `component.select`, `component.textarea`,
+    `component.fieldset`, and `component.label`, unblocking the
+    corresponding `spectre-ui` form-field recipes.
