@@ -6,6 +6,25 @@ reflects package releases published to npm.
 
 ## [Unreleased]
 
+## [3.3.0] - 2026-06-30
+
+**Release Title:** Form Validation State Tokens
+
+Contract change type: additive
+
+### Added
+
+- Added `borderInvalid`, `bgInvalid`, `borderSuccess`, and `bgSuccess` roles to
+  `component.select` and `component.textarea`, mirroring the `forms.invalid`/
+  `forms.valid` border/bg pair already used by `component.input`. Emits
+  `--sp-select-border-invalid`, `--sp-select-bg-invalid`,
+  `--sp-select-border-success`, `--sp-select-bg-success`, and the
+  `--sp-textarea-*` equivalents. Unblocks `spectre-ui`'s deferred
+  `invalid`/`success` state options on `getSelectClasses`/`getTextareaClasses`
+  (see `spectre-ui/TODO.md` Phase 5 P0). `loading` state remains
+  structural-only (opacity/cursor) with no dedicated color role, matching
+  `getInputClasses`'s existing handling.
+
 ## [3.2.0] - 2026-06-26
 
 **Release Title:** Form Field Component Tokens
@@ -28,16 +47,6 @@ Contract change type: additive
   mode. Unblocks the corresponding `spectre-ui` recipes (`getCheckboxClasses`,
   `getRadioClasses`, `getSelectClasses`, `getTextareaClasses`,
   `getFieldsetClasses`, `getLabelClasses`).
-- Added `borderInvalid`, `bgInvalid`, `borderSuccess`, and `bgSuccess` roles to
-  `component.select` and `component.textarea`, mirroring the `forms.invalid`/
-  `forms.valid` border/bg pair already used by `component.input`. Emits
-  `--sp-select-border-invalid`, `--sp-select-bg-invalid`,
-  `--sp-select-border-success`, `--sp-select-bg-success`, and the
-  `--sp-textarea-*` equivalents. Unblocks `spectre-ui`'s deferred
-  `invalid`/`success` state options on `getSelectClasses`/`getTextareaClasses`
-  (see `spectre-ui/TODO.md` Phase 5 P0). `loading` state remains
-  structural-only (opacity/cursor) with no dedicated color role, matching
-  `getInputClasses`'s existing handling.
 
 ## [3.1.0] - 2026-06-19
 
@@ -754,7 +763,8 @@ Contract change type: breaking
 - Standardized documentation and contributing guidelines.
 
 [unreleased]:
-  https://github.com/phcdevworks/spectre-tokens/compare/v3.2.0...HEAD
+  https://github.com/phcdevworks/spectre-tokens/compare/v3.3.0...HEAD
+[3.3.0]: https://github.com/phcdevworks/spectre-tokens/compare/v3.2.0...v3.3.0
 [3.2.0]: https://github.com/phcdevworks/spectre-tokens/compare/v3.1.0...v3.2.0
 [3.1.0]: https://github.com/phcdevworks/spectre-tokens/compare/v3.0.0...v3.1.0
 [3.0.0]: https://github.com/phcdevworks/spectre-tokens/compare/v2.9.0...v3.0.0
