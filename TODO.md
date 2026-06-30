@@ -488,7 +488,7 @@ pattern Phase 4 used for Nav/Toast/Tooltip/Dropdown/Modal. `spectre-ui`'s own
 
 ---
 
-## Phase 8 - Select/Textarea Invalid and Success State Roles (done in 3.3.0; CSS generation fix ready for 3.3.1)
+## Phase 8 - Select/Textarea Invalid and Success State Roles (done in 3.3.0; CSS generation fix in 3.3.1)
 
 `spectre-ui` audited `component.select`/`component.textarea` while adding
 `size`/`fullWidth`/`pill` options to `getSelectClasses`/`getTextareaClasses`
@@ -524,7 +524,7 @@ rule) — see `spectre-ui/TODO.md` Phase 5 P0.
       on `getSelectClasses`/`getTextareaClasses` — see `spectre-ui/TODO.md`
       Phase 5 P0.
 
-### P0: Fix 3.3.0 — Component CSS Generation Coverage Gaps (ready, pending 3.3.1 release)
+### P0: Fix 3.3.0 — Component CSS Generation Coverage Gaps (published in 3.3.1)
 
 `src/css.ts` builds component CSS variables from hand-maintained field-mapping
 arrays (`SELECT_FIELDS`, `TEXTAREA_FIELDS`, `BADGE_VARIANTS`, etc.) instead of
@@ -570,12 +570,11 @@ fix's regression test only covered `tokens.link`/`tokens.surface`, not
       under every `tokens.component.*` group has a matching CSS variable in
       `generateCssVariables` output, generalizing the Phase 5 regression
       test so this bug class can't silently recur on any component group.
-- [x] Full `npm run check` gate passes clean (only the expected
-      `check:dist` staleness pending a rebuild/commit), plus full
-      `vitest run` (47/47 tests passing).
-- [ ] Hand off to Bradley Potts to publish as `3.3.1` — patch fix, `### Fixed`
+- [x] Full `npm run check` gate passes clean, including `check:dist`, plus
+      full `vitest run` (47/47 tests passing).
+- [x] Hand off to Bradley Potts to publish as `3.3.1` — patch fix, `### Fixed`
       changelog entry distinct from the `3.3.0` `### Added` entry.
-- [ ] `spectre-ui` should bump its declared `spectre-tokens` range to
+- [x] `spectre-ui` should bump its declared `spectre-tokens` range to
       `^3.3.1` (not `^3.3.0`) before starting Phase 5 P0 adoption, since
       `3.3.0` is missing the variables it needs.
 
