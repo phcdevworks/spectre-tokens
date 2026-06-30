@@ -1191,11 +1191,11 @@ var toVariableName = (prefix, ...parts) => {
   return `--${prefix}-${filtered.join("-")}`;
 };
 var BADGE_VARIANTS = [
-  { variant: "neutral", bgKey: "neutralBg", textKey: "neutralText" },
-  { variant: "info", bgKey: "infoBg", textKey: "infoText" },
-  { variant: "success", bgKey: "successBg", textKey: "successText" },
-  { variant: "warning", bgKey: "warningBg", textKey: "warningText" },
-  { variant: "danger", bgKey: "dangerBg", textKey: "dangerText" }
+  { variant: "neutral", bgKey: "neutralBg", bgHoverKey: "neutralBgHover", textKey: "neutralText" },
+  { variant: "info", bgKey: "infoBg", bgHoverKey: "infoBgHover", textKey: "infoText" },
+  { variant: "success", bgKey: "successBg", bgHoverKey: "successBgHover", textKey: "successText" },
+  { variant: "warning", bgKey: "warningBg", bgHoverKey: "warningBgHover", textKey: "warningText" },
+  { variant: "danger", bgKey: "dangerBg", bgHoverKey: "dangerBgHover", textKey: "dangerText" }
 ];
 var ICON_BOX_FIELDS = [
   { name: "bg", tokenKey: "bg" },
@@ -1218,6 +1218,31 @@ var MODAL_FIELDS = [
   { name: "shadow", tokenKey: "shadow" },
   { name: "border", tokenKey: "border" },
   { name: "overlay", tokenKey: "overlay" }
+];
+var TESTIMONIAL_FIELDS = [
+  { name: "bg", tokenKey: "bg" },
+  { name: "bg-hover", tokenKey: "bgHover" },
+  { name: "border", tokenKey: "border" },
+  { name: "text", tokenKey: "text" },
+  { name: "author-name", tokenKey: "authorName" },
+  { name: "author-title", tokenKey: "authorTitle" },
+  { name: "quote-mark", tokenKey: "quoteMark" }
+];
+var PRICING_CARD_FIELDS = [
+  { name: "bg", tokenKey: "bg" },
+  { name: "bg-hover", tokenKey: "bgHover" },
+  { name: "border", tokenKey: "border" },
+  { name: "featured-bg", tokenKey: "featuredBg" },
+  { name: "featured-text", tokenKey: "featuredText" },
+  { name: "featured-badge-bg", tokenKey: "featuredBadgeBg" },
+  { name: "featured-badge-text", tokenKey: "featuredBadgeText" },
+  { name: "price", tokenKey: "price" },
+  { name: "price-description", tokenKey: "priceDescription" }
+];
+var RATING_FIELDS = [
+  { name: "star-filled", tokenKey: "starFilled" },
+  { name: "star-empty", tokenKey: "starEmpty" },
+  { name: "text", tokenKey: "text" }
 ];
 var TOAST_VARIANTS = ["success", "warning", "danger", "info"].map((variant) => ({
   variant,
@@ -1257,7 +1282,11 @@ var SELECT_FIELDS = [
   { name: "placeholder-text", tokenKey: "placeholderText" },
   { name: "disabled-bg", tokenKey: "disabledBg" },
   { name: "disabled-border", tokenKey: "disabledBorder" },
-  { name: "focus-border", tokenKey: "focusBorder" }
+  { name: "focus-border", tokenKey: "focusBorder" },
+  { name: "border-invalid", tokenKey: "borderInvalid" },
+  { name: "bg-invalid", tokenKey: "bgInvalid" },
+  { name: "border-success", tokenKey: "borderSuccess" },
+  { name: "bg-success", tokenKey: "bgSuccess" }
 ];
 var TEXTAREA_FIELDS = [
   { name: "bg", tokenKey: "bg" },
@@ -1266,7 +1295,11 @@ var TEXTAREA_FIELDS = [
   { name: "placeholder", tokenKey: "placeholder" },
   { name: "disabled-bg", tokenKey: "disabledBg" },
   { name: "disabled-border", tokenKey: "disabledBorder" },
-  { name: "focus-border", tokenKey: "focusBorder" }
+  { name: "focus-border", tokenKey: "focusBorder" },
+  { name: "border-invalid", tokenKey: "borderInvalid" },
+  { name: "bg-invalid", tokenKey: "bgInvalid" },
+  { name: "border-success", tokenKey: "borderSuccess" },
+  { name: "bg-success", tokenKey: "bgSuccess" }
 ];
 var FIELDSET_FIELDS = [
   { name: "border", tokenKey: "border" },
@@ -1520,8 +1553,9 @@ var generateCssVariables = (tokens2, options = {}) => {
     { varParts: ["component", "input", "placeholder"], modePath: ["component", "input", "placeholder"], aliasSrc: componentAliases, aliasPath: ["input", "placeholder"] },
     { varParts: ["button", "text", "default"], modePath: ["component", "button", "textDefault"], aliasSrc: componentAliases, aliasPath: ["button", "textDefault"] },
     { varParts: ["button", "text", "on", "primary"], modePath: ["component", "button", "textOnPrimary"], aliasSrc: componentAliases, aliasPath: ["button", "textOnPrimary"] },
-    ...BADGE_VARIANTS.flatMap(({ variant, bgKey, textKey }) => [
+    ...BADGE_VARIANTS.flatMap(({ variant, bgKey, bgHoverKey, textKey }) => [
       { varParts: ["badge", variant, "bg"], modePath: ["component", "badge", bgKey], aliasSrc: componentAliases, aliasPath: ["badge", bgKey] },
+      { varParts: ["badge", variant, "bg-hover"], modePath: ["component", "badge", bgHoverKey], aliasSrc: componentAliases, aliasPath: ["badge", bgHoverKey] },
       { varParts: ["badge", variant, "text"], modePath: ["component", "badge", textKey], aliasSrc: componentAliases, aliasPath: ["badge", textKey] }
     ]),
     ...ICON_BOX_FIELDS.map(({ name, tokenKey }) => ({
@@ -1595,6 +1629,24 @@ var generateCssVariables = (tokens2, options = {}) => {
       modePath: ["component", "label", tokenKey],
       aliasSrc: componentAliases,
       aliasPath: ["label", tokenKey]
+    })),
+    ...TESTIMONIAL_FIELDS.map(({ name, tokenKey }) => ({
+      varParts: ["testimonial", name],
+      modePath: ["component", "testimonial", tokenKey],
+      aliasSrc: componentAliases,
+      aliasPath: ["testimonial", tokenKey]
+    })),
+    ...PRICING_CARD_FIELDS.map(({ name, tokenKey }) => ({
+      varParts: ["pricing-card", name],
+      modePath: ["component", "pricingCard", tokenKey],
+      aliasSrc: componentAliases,
+      aliasPath: ["pricingCard", tokenKey]
+    })),
+    ...RATING_FIELDS.map(({ name, tokenKey }) => ({
+      varParts: ["rating", name],
+      modePath: ["component", "rating", tokenKey],
+      aliasSrc: componentAliases,
+      aliasPath: ["rating", tokenKey]
     }))
   ];
   const baseLines = [];

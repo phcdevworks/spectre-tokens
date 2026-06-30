@@ -1339,6 +1339,10 @@ interface ComponentSelectTokens<Value = string> {
     disabledBg: Value;
     disabledBorder: Value;
     focusBorder: Value;
+    borderInvalid: Value;
+    bgInvalid: Value;
+    borderSuccess: Value;
+    bgSuccess: Value;
 }
 interface ComponentTextareaTokens<Value = string> {
     bg: Value;
@@ -1348,6 +1352,10 @@ interface ComponentTextareaTokens<Value = string> {
     disabledBg: Value;
     disabledBorder: Value;
     focusBorder: Value;
+    borderInvalid: Value;
+    bgInvalid: Value;
+    borderSuccess: Value;
+    bgSuccess: Value;
 }
 interface ComponentFieldsetTokens<Value = string> {
     border: Value;

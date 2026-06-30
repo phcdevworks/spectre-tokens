@@ -6,6 +6,51 @@ reflects package releases published to npm.
 
 ## [Unreleased]
 
+## [3.3.1] - 2026-06-30
+
+**Release Title:** Component CSS Generation Coverage Fix
+
+Contract change type: additive
+
+### Fixed
+
+- `generateCssVariables` in `src/css.ts` builds component CSS variables from
+  hand-maintained field-mapping arrays (e.g. `SELECT_FIELDS`,
+  `TEXTAREA_FIELDS`, `BADGE_VARIANTS`) instead of iterating the token JSON
+  directly, so adding a field to `tokens/components.json` does not
+  automatically reach generated CSS or `src/types.ts`. This bug recurred
+  three times, all fixed in this release:
+  - `component.select`/`component.textarea`: the `3.3.0` token additions
+    (`borderInvalid`, `bgInvalid`, `borderSuccess`, `bgSuccess`) were never
+    added to `SELECT_FIELDS`/`TEXTAREA_FIELDS`, so
+    `--sp-select-border-invalid`, `--sp-select-bg-invalid`,
+    `--sp-select-border-success`, `--sp-select-bg-success`, and the
+    `--sp-textarea-*` equivalents were silently missing from
+    `dist/index.css` in `3.3.0` despite that release's changelog claiming
+    they were emitted. `ComponentSelectTokens`/`ComponentTextareaTokens` in
+    `src/types.ts` were also missing the four new fields.
+  - `component.badge`: the `*BgHover` fields (`neutralBgHover`,
+    `infoBgHover`, `successBgHover`, `warningBgHover`, `dangerBgHover`) had
+    no corresponding CSS variable at all — `BADGE_VARIANTS` only ever mapped
+    a `bg`/`text` pair per variant, never the hover key.
+  - `component.testimonial`, `component.pricingCard`, `component.rating`:
+    entirely absent from `generateCssVariables` — no field-mapping arrays
+    existed for these groups despite the tokens and TypeScript types being
+    fully defined, so none of their 19 combined fields ever reached CSS in
+    any prior release.
+  - Same class of bug as the `3.1.0` CSS generation fix (Phase 5), which
+    only covered `tokens.link`/`tokens.surface` drift and so didn't catch
+    any of the above.
+- Added the missing fields/groups to `src/css.ts` (`SELECT_FIELDS`,
+  `TEXTAREA_FIELDS`, `BADGE_VARIANTS`, and new `TESTIMONIAL_FIELDS`,
+  `PRICING_CARD_FIELDS`, `RATING_FIELDS` arrays) and to `src/types.ts`
+  (`ComponentSelectTokens`, `ComponentTextareaTokens`). `dist/index.css` now
+  emits all of the above in both light and dark blocks.
+- Extended `tests/css-semantic-coverage.test.ts` to assert every key under
+  every `tokens.component.*` group (not just `link`/`surface`) has a
+  matching CSS variable in `generateCssVariables` output, closing the gap
+  that let this bug class recur three times across `3.1.0`–`3.3.0`.
+
 ## [3.3.0] - 2026-06-30
 
 **Release Title:** Form Validation State Tokens
@@ -763,7 +808,8 @@ Contract change type: breaking
 - Standardized documentation and contributing guidelines.
 
 [unreleased]:
-  https://github.com/phcdevworks/spectre-tokens/compare/v3.3.0...HEAD
+  https://github.com/phcdevworks/spectre-tokens/compare/v3.3.1...HEAD
+[3.3.1]: https://github.com/phcdevworks/spectre-tokens/compare/v3.3.0...v3.3.1
 [3.3.0]: https://github.com/phcdevworks/spectre-tokens/compare/v3.2.0...v3.3.0
 [3.2.0]: https://github.com/phcdevworks/spectre-tokens/compare/v3.1.0...v3.2.0
 [3.1.0]: https://github.com/phcdevworks/spectre-tokens/compare/v3.0.0...v3.1.0
