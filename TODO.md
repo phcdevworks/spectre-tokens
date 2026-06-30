@@ -488,7 +488,7 @@ pattern Phase 4 used for Nav/Toast/Tooltip/Dropdown/Modal. `spectre-ui`'s own
 
 ---
 
-## Phase 8 - Select/Textarea Invalid and Success State Roles (done, pending publish)
+## Phase 8 - Select/Textarea Invalid and Success State Roles (done, published in 3.3.0)
 
 `spectre-ui` audited `component.select`/`component.textarea` while adding
 `size`/`fullWidth`/`pill` options to `getSelectClasses`/`getTextareaClasses`
@@ -518,8 +518,10 @@ rule) — see `spectre-ui/TODO.md` Phase 5 P0.
 - [x] Decided `loading` stays structural-only (opacity/cursor, no new token),
       matching `getInputClasses`'s existing `sp-input--loading` handling in
       `spectre-ui` (`src/styles/components.css`) — no color role added.
-- [ ] Publish once both groups land; bump `spectre-ui`'s declared range to
-      cover the new version.
+- [x] Published in `3.3.0`. `spectre-ui` still needs to bump its declared
+      range to cover the new version before adopting `invalid`/`success`
+      options on `getSelectClasses`/`getTextareaClasses` — see
+      `spectre-ui/TODO.md` Phase 5 P0.
 
 ## Explicitly Out of Scope
 

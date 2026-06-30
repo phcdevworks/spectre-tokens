@@ -261,3 +261,8 @@ same gating pattern Phase 4 P2 used for Nav/Toast/Tooltip/Dropdown/Modal.
     `component.radio`, `component.select`, `component.textarea`,
     `component.fieldset`, and `component.label`, unblocking the
     corresponding `spectre-ui` form-field recipes.
+11. **Phase 8** — done, published in `3.3.0`. Added `borderInvalid`,
+    `bgInvalid`, `borderSuccess`, and `bgSuccess` to `component.select` and
+    `component.textarea`, mirroring `forms.invalid`/`forms.valid`. Unblocks
+    `spectre-ui` Phase 5 P0's deferred `invalid`/`success` options on
+    `getSelectClasses`/`getTextareaClasses` — adoption still pending there.
