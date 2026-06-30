@@ -28,6 +28,16 @@ Contract change type: additive
   mode. Unblocks the corresponding `spectre-ui` recipes (`getCheckboxClasses`,
   `getRadioClasses`, `getSelectClasses`, `getTextareaClasses`,
   `getFieldsetClasses`, `getLabelClasses`).
+- Added `borderInvalid`, `bgInvalid`, `borderSuccess`, and `bgSuccess` roles to
+  `component.select` and `component.textarea`, mirroring the `forms.invalid`/
+  `forms.valid` border/bg pair already used by `component.input`. Emits
+  `--sp-select-border-invalid`, `--sp-select-bg-invalid`,
+  `--sp-select-border-success`, `--sp-select-bg-success`, and the
+  `--sp-textarea-*` equivalents. Unblocks `spectre-ui`'s deferred
+  `invalid`/`success` state options on `getSelectClasses`/`getTextareaClasses`
+  (see `spectre-ui/TODO.md` Phase 5 P0). `loading` state remains
+  structural-only (opacity/cursor) with no dedicated color role, matching
+  `getInputClasses`'s existing handling.
 
 ## [3.1.0] - 2026-06-19
 

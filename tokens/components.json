@@ -509,6 +509,24 @@
       },
       "focusBorder": {
         "value": "{colors.info.500}"
+      },
+      "borderInvalid": {
+        "value": "{colors.error.500}"
+      },
+      "bgInvalid": {
+        "value": "{colors.error.50}",
+        "metadata": {
+          "pair": "component.select.text"
+        }
+      },
+      "borderSuccess": {
+        "value": "{colors.success.500}"
+      },
+      "bgSuccess": {
+        "value": "{colors.success.50}",
+        "metadata": {
+          "pair": "component.select.text"
+        }
       }
     },
     "textarea": {
@@ -541,6 +559,24 @@
       },
       "focusBorder": {
         "value": "{colors.info.500}"
+      },
+      "borderInvalid": {
+        "value": "{colors.error.500}"
+      },
+      "bgInvalid": {
+        "value": "{colors.error.50}",
+        "metadata": {
+          "pair": "component.textarea.text"
+        }
+      },
+      "borderSuccess": {
+        "value": "{colors.success.500}"
+      },
+      "bgSuccess": {
+        "value": "{colors.success.50}",
+        "metadata": {
+          "pair": "component.textarea.text"
+        }
       }
     },
     "fieldset": {

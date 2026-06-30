@@ -448,6 +448,22 @@
       "focusBorder": {
         "$value": "{colors.info.500}",
         "$type": "color"
+      },
+      "borderInvalid": {
+        "$value": "{colors.error.500}",
+        "$type": "color"
+      },
+      "bgInvalid": {
+        "$value": "{colors.error.50}",
+        "$type": "color"
+      },
+      "borderSuccess": {
+        "$value": "{colors.success.500}",
+        "$type": "color"
+      },
+      "bgSuccess": {
+        "$value": "{colors.success.50}",
+        "$type": "color"
       }
     },
     "textarea": {
@@ -477,6 +493,22 @@
       },
       "focusBorder": {
         "$value": "{colors.info.500}",
+        "$type": "color"
+      },
+      "borderInvalid": {
+        "$value": "{colors.error.500}",
+        "$type": "color"
+      },
+      "bgInvalid": {
+        "$value": "{colors.error.50}",
+        "$type": "color"
+      },
+      "borderSuccess": {
+        "$value": "{colors.success.500}",
+        "$type": "color"
+      },
+      "bgSuccess": {
+        "$value": "{colors.success.50}",
         "$type": "color"
       }
     },

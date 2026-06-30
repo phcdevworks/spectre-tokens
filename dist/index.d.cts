@@ -143,6 +143,10 @@ interface SpectreGeneratedTokens {
             disabledBg: string;
             disabledBorder: string;
             focusBorder: string;
+            borderInvalid: string;
+            bgInvalid: string;
+            borderSuccess: string;
+            bgSuccess: string;
         };
         textarea: {
             bg: string;
@@ -152,6 +156,10 @@ interface SpectreGeneratedTokens {
             disabledBg: string;
             disabledBorder: string;
             focusBorder: string;
+            borderInvalid: string;
+            bgInvalid: string;
+            borderSuccess: string;
+            bgSuccess: string;
         };
         fieldset: {
             border: string;
