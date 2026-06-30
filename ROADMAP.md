@@ -266,3 +266,13 @@ same gating pattern Phase 4 P2 used for Nav/Toast/Tooltip/Dropdown/Modal.
     `component.textarea`, mirroring `forms.invalid`/`forms.valid`. Unblocks
     `spectre-ui` Phase 5 P0's deferred `invalid`/`success` options on
     `getSelectClasses`/`getTextareaClasses` — adoption still pending there.
+12. **3.3.1 fix (ready, pending release)** — `3.3.0`'s new select/textarea
+    fields never reached generated CSS/types due to a hand-maintained
+    field-mapping array bug in `src/css.ts` (same class as the `3.1.0` Phase
+    5 fix). Generalizing the regression test to cover all of
+    `tokens.component.*` also surfaced two more pre-existing instances of the
+    same bug: `component.badge`'s `*BgHover` fields, and
+    `component.testimonial`/`component.pricingCard`/`component.rating` being
+    entirely absent from CSS generation. All fixed; full `npm run check` gate
+    and `vitest run` pass clean. `spectre-ui` should depend on `^3.3.1`, not
+    `^3.3.0`, once published.

@@ -6,8 +6,11 @@ import type {
   ComponentLabelTokens,
   ComponentModalTokens,
   ComponentNavTokens,
+  ComponentPricingCardTokens,
+  ComponentRatingTokens,
   ComponentSelectionControlTokens,
   ComponentSelectTokens,
+  ComponentTestimonialTokens,
   ComponentTextareaTokens,
   ComponentToastTokens,
   ComponentToastVariantTokens,
@@ -33,12 +36,12 @@ const toVariableName = (prefix: string, ...parts: string[]): string => {
   return `--${prefix}-${filtered.join('-')}`
 }
 
-const BADGE_VARIANTS: Array<{ variant: string; bgKey: keyof ComponentBadgeTokens; textKey: keyof ComponentBadgeTokens }> = [
-  { variant: 'neutral', bgKey: 'neutralBg', textKey: 'neutralText' },
-  { variant: 'info', bgKey: 'infoBg', textKey: 'infoText' },
-  { variant: 'success', bgKey: 'successBg', textKey: 'successText' },
-  { variant: 'warning', bgKey: 'warningBg', textKey: 'warningText' },
-  { variant: 'danger', bgKey: 'dangerBg', textKey: 'dangerText' }
+const BADGE_VARIANTS: Array<{ variant: string; bgKey: keyof ComponentBadgeTokens; bgHoverKey: keyof ComponentBadgeTokens; textKey: keyof ComponentBadgeTokens }> = [
+  { variant: 'neutral', bgKey: 'neutralBg', bgHoverKey: 'neutralBgHover', textKey: 'neutralText' },
+  { variant: 'info', bgKey: 'infoBg', bgHoverKey: 'infoBgHover', textKey: 'infoText' },
+  { variant: 'success', bgKey: 'successBg', bgHoverKey: 'successBgHover', textKey: 'successText' },
+  { variant: 'warning', bgKey: 'warningBg', bgHoverKey: 'warningBgHover', textKey: 'warningText' },
+  { variant: 'danger', bgKey: 'dangerBg', bgHoverKey: 'dangerBgHover', textKey: 'dangerText' }
 ]
 
 const ICON_BOX_FIELDS: Array<{ name: string; tokenKey: keyof ComponentIconBoxTokens }> = [
@@ -64,6 +67,34 @@ const MODAL_FIELDS: Array<{ name: string; tokenKey: keyof ComponentModalTokens }
   { name: 'shadow', tokenKey: 'shadow' },
   { name: 'border', tokenKey: 'border' },
   { name: 'overlay', tokenKey: 'overlay' }
+]
+
+const TESTIMONIAL_FIELDS: Array<{ name: string; tokenKey: keyof ComponentTestimonialTokens }> = [
+  { name: 'bg', tokenKey: 'bg' },
+  { name: 'bg-hover', tokenKey: 'bgHover' },
+  { name: 'border', tokenKey: 'border' },
+  { name: 'text', tokenKey: 'text' },
+  { name: 'author-name', tokenKey: 'authorName' },
+  { name: 'author-title', tokenKey: 'authorTitle' },
+  { name: 'quote-mark', tokenKey: 'quoteMark' }
+]
+
+const PRICING_CARD_FIELDS: Array<{ name: string; tokenKey: keyof ComponentPricingCardTokens }> = [
+  { name: 'bg', tokenKey: 'bg' },
+  { name: 'bg-hover', tokenKey: 'bgHover' },
+  { name: 'border', tokenKey: 'border' },
+  { name: 'featured-bg', tokenKey: 'featuredBg' },
+  { name: 'featured-text', tokenKey: 'featuredText' },
+  { name: 'featured-badge-bg', tokenKey: 'featuredBadgeBg' },
+  { name: 'featured-badge-text', tokenKey: 'featuredBadgeText' },
+  { name: 'price', tokenKey: 'price' },
+  { name: 'price-description', tokenKey: 'priceDescription' }
+]
+
+const RATING_FIELDS: Array<{ name: string; tokenKey: keyof ComponentRatingTokens }> = [
+  { name: 'star-filled', tokenKey: 'starFilled' },
+  { name: 'star-empty', tokenKey: 'starEmpty' },
+  { name: 'text', tokenKey: 'text' }
 ]
 
 const TOAST_VARIANTS: Array<{ variant: string; fields: Array<{ name: string; tokenKey: keyof ComponentToastVariantTokens }> }> =
@@ -109,7 +140,11 @@ const SELECT_FIELDS: Array<{ name: string; tokenKey: keyof ComponentSelectTokens
   { name: 'placeholder-text', tokenKey: 'placeholderText' },
   { name: 'disabled-bg', tokenKey: 'disabledBg' },
   { name: 'disabled-border', tokenKey: 'disabledBorder' },
-  { name: 'focus-border', tokenKey: 'focusBorder' }
+  { name: 'focus-border', tokenKey: 'focusBorder' },
+  { name: 'border-invalid', tokenKey: 'borderInvalid' },
+  { name: 'bg-invalid', tokenKey: 'bgInvalid' },
+  { name: 'border-success', tokenKey: 'borderSuccess' },
+  { name: 'bg-success', tokenKey: 'bgSuccess' }
 ]
 
 const TEXTAREA_FIELDS: Array<{ name: string; tokenKey: keyof ComponentTextareaTokens }> = [
@@ -119,7 +154,11 @@ const TEXTAREA_FIELDS: Array<{ name: string; tokenKey: keyof ComponentTextareaTo
   { name: 'placeholder', tokenKey: 'placeholder' },
   { name: 'disabled-bg', tokenKey: 'disabledBg' },
   { name: 'disabled-border', tokenKey: 'disabledBorder' },
-  { name: 'focus-border', tokenKey: 'focusBorder' }
+  { name: 'focus-border', tokenKey: 'focusBorder' },
+  { name: 'border-invalid', tokenKey: 'borderInvalid' },
+  { name: 'bg-invalid', tokenKey: 'bgInvalid' },
+  { name: 'border-success', tokenKey: 'borderSuccess' },
+  { name: 'bg-success', tokenKey: 'bgSuccess' }
 ]
 
 const FIELDSET_FIELDS: Array<{ name: string; tokenKey: keyof ComponentFieldsetTokens }> = [
@@ -425,9 +464,10 @@ export const generateCssVariables = (tokens: SpectreTokens, options: CssVariable
     { varParts: ['component', 'input', 'placeholder'], modePath: ['component', 'input', 'placeholder'], aliasSrc: componentAliases, aliasPath: ['input', 'placeholder'] },
     { varParts: ['button', 'text', 'default'],        modePath: ['component', 'button', 'textDefault'],    aliasSrc: componentAliases, aliasPath: ['button', 'textDefault'] },
     { varParts: ['button', 'text', 'on', 'primary'],  modePath: ['component', 'button', 'textOnPrimary'],  aliasSrc: componentAliases, aliasPath: ['button', 'textOnPrimary'] },
-    ...BADGE_VARIANTS.flatMap(({ variant, bgKey, textKey }) => [
-      { varParts: ['badge', variant, 'bg'],   modePath: ['component', 'badge', bgKey],   aliasSrc: componentAliases, aliasPath: ['badge', bgKey] },
-      { varParts: ['badge', variant, 'text'], modePath: ['component', 'badge', textKey], aliasSrc: componentAliases, aliasPath: ['badge', textKey] },
+    ...BADGE_VARIANTS.flatMap(({ variant, bgKey, bgHoverKey, textKey }) => [
+      { varParts: ['badge', variant, 'bg'],       modePath: ['component', 'badge', bgKey],       aliasSrc: componentAliases, aliasPath: ['badge', bgKey] },
+      { varParts: ['badge', variant, 'bg-hover'], modePath: ['component', 'badge', bgHoverKey],  aliasSrc: componentAliases, aliasPath: ['badge', bgHoverKey] },
+      { varParts: ['badge', variant, 'text'],     modePath: ['component', 'badge', textKey],     aliasSrc: componentAliases, aliasPath: ['badge', textKey] },
     ]),
     ...ICON_BOX_FIELDS.map(({ name, tokenKey }) => ({
       varParts: ['icon-box', name], modePath: ['component', 'iconBox', tokenKey], aliasSrc: componentAliases, aliasPath: ['iconBox', tokenKey],
@@ -464,6 +504,15 @@ export const generateCssVariables = (tokens: SpectreTokens, options: CssVariable
     })),
     ...LABEL_FIELDS.map(({ name, tokenKey }) => ({
       varParts: ['label', name], modePath: ['component', 'label', tokenKey], aliasSrc: componentAliases, aliasPath: ['label', tokenKey],
+    })),
+    ...TESTIMONIAL_FIELDS.map(({ name, tokenKey }) => ({
+      varParts: ['testimonial', name], modePath: ['component', 'testimonial', tokenKey], aliasSrc: componentAliases, aliasPath: ['testimonial', tokenKey],
+    })),
+    ...PRICING_CARD_FIELDS.map(({ name, tokenKey }) => ({
+      varParts: ['pricing-card', name], modePath: ['component', 'pricingCard', tokenKey], aliasSrc: componentAliases, aliasPath: ['pricingCard', tokenKey],
+    })),
+    ...RATING_FIELDS.map(({ name, tokenKey }) => ({
+      varParts: ['rating', name], modePath: ['component', 'rating', tokenKey], aliasSrc: componentAliases, aliasPath: ['rating', tokenKey],
     })),
   ]
 

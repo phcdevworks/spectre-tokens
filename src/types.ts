@@ -185,6 +185,10 @@ export interface ComponentSelectTokens<Value = string> {
   disabledBg: Value;
   disabledBorder: Value;
   focusBorder: Value;
+  borderInvalid: Value;
+  bgInvalid: Value;
+  borderSuccess: Value;
+  bgSuccess: Value;
 }
 
 export interface ComponentTextareaTokens<Value = string> {
@@ -195,6 +199,10 @@ export interface ComponentTextareaTokens<Value = string> {
   disabledBg: Value;
   disabledBorder: Value;
   focusBorder: Value;
+  borderInvalid: Value;
+  bgInvalid: Value;
+  borderSuccess: Value;
+  bgSuccess: Value;
 }
 
 export interface ComponentFieldsetTokens<Value = string> {

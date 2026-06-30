@@ -132,6 +132,19 @@ consumed by downstream Spectre packages and compatible applications.
     component structure and framework adapters are not.
 11. All `scripts/` tooling is TypeScript (`.ts`), run via `tsx`; never add a
     new `.js`/`.mjs` script.
+12. After adding or renaming any field in `tokens/*.json`, run
+    `npx vitest run tests/css-semantic-coverage.test.ts` before considering
+    the change complete. `src/css.ts` builds CSS output from hand-maintained
+    field-mapping arrays per component group (e.g. `SELECT_FIELDS`,
+    `BADGE_VARIANTS`), not by iterating the token tree, so a token can be
+    added to `tokens/*.json` and `src/types.ts` while silently never reaching
+    `dist/index.css`. This has happened three times (`3.1.0`, `3.3.0`
+    select/textarea, and `component.badge`/`testimonial`/`pricingCard`/
+    `rating` simultaneously) and `npm run check`'s `check:css` step does not
+    catch it — `check:css` only validates a fixed allowlist of required
+    variables, not full token-tree coverage. The coverage test is the only
+    gate that walks every `tokens.component.*` key against generated CSS; do
+    not skip it and do not narrow its scope back to specific namespaces.
 
 ## Working Boundaries
 

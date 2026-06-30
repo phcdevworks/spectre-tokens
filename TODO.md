@@ -488,7 +488,7 @@ pattern Phase 4 used for Nav/Toast/Tooltip/Dropdown/Modal. `spectre-ui`'s own
 
 ---
 
-## Phase 8 - Select/Textarea Invalid and Success State Roles (done, published in 3.3.0)
+## Phase 8 - Select/Textarea Invalid and Success State Roles (done in 3.3.0; CSS generation fix ready for 3.3.1)
 
 `spectre-ui` audited `component.select`/`component.textarea` while adding
 `size`/`fullWidth`/`pill` options to `getSelectClasses`/`getTextareaClasses`
@@ -518,10 +518,66 @@ rule) — see `spectre-ui/TODO.md` Phase 5 P0.
 - [x] Decided `loading` stays structural-only (opacity/cursor, no new token),
       matching `getInputClasses`'s existing `sp-input--loading` handling in
       `spectre-ui` (`src/styles/components.css`) — no color role added.
-- [x] Published in `3.3.0`. `spectre-ui` still needs to bump its declared
-      range to cover the new version before adopting `invalid`/`success`
-      options on `getSelectClasses`/`getTextareaClasses` — see
-      `spectre-ui/TODO.md` Phase 5 P0.
+- [x] Published in `3.3.0`, with the CSS/types sync bug fixed in `3.3.1`
+      (see below, pending release). `spectre-ui` still needs to bump its
+      declared range to `^3.3.1` before adopting `invalid`/`success` options
+      on `getSelectClasses`/`getTextareaClasses` — see `spectre-ui/TODO.md`
+      Phase 5 P0.
+
+### P0: Fix 3.3.0 — Component CSS Generation Coverage Gaps (ready, pending 3.3.1 release)
+
+`src/css.ts` builds component CSS variables from hand-maintained field-mapping
+arrays (`SELECT_FIELDS`, `TEXTAREA_FIELDS`, `BADGE_VARIANTS`, etc.) instead of
+iterating the token JSON directly, so a field added to `tokens/components.json`
+does not automatically reach generated CSS or `src/types.ts`. The regression
+test added below (generalizing the Phase 5 fix to cover all of
+`tokens.component.*`, not just `link`/`surface`) surfaced three separate,
+previously-undetected instances of this bug:
+
+- `component.select`/`component.textarea`: the `3.3.0` token-source change
+  (`borderInvalid`, `bgInvalid`, `borderSuccess`, `bgSuccess`) was never added
+  to `SELECT_FIELDS`/`TEXTAREA_FIELDS`, so `dist/index.css` (light and dark)
+  and `ComponentSelectTokens`/`ComponentTextareaTokens` in `src/types.ts`
+  shipped without the new `--sp-select-border-invalid` / `-bg-invalid` /
+  `-border-success` / `-bg-success` variables (and `--sp-textarea-*`
+  equivalents) despite the `3.3.0` changelog claiming they were emitted.
+- `component.badge`: the `*BgHover` fields (`neutralBgHover`, `infoBgHover`,
+  `successBgHover`, `warningBgHover`, `dangerBgHover`) had no CSS variable in
+  any prior release — `BADGE_VARIANTS` only ever mapped a `bg`/`text` pair per
+  variant.
+- `component.testimonial`, `component.pricingCard`, `component.rating`: no
+  field-mapping arrays existed for these groups at all, despite the tokens and
+  TypeScript types being fully defined — none of their 19 combined fields ever
+  reached CSS in any prior release.
+
+Same class of bug as the `3.1.0` `generateCssVariables` fix (Phase 5) — that
+fix's regression test only covered `tokens.link`/`tokens.surface`, not
+`tokens.component.*`, so it didn't catch any of the above until generalized.
+
+- [x] Added the four missing entries to `SELECT_FIELDS`/`TEXTAREA_FIELDS` in
+      `src/css.ts` and to `ComponentSelectTokens`/`ComponentTextareaTokens` in
+      `src/types.ts`.
+- [x] Added the missing `bgHoverKey` mapping to `BADGE_VARIANTS` in
+      `src/css.ts` so `--sp-badge-<variant>-bg-hover` is emitted for all five
+      variants.
+- [x] Added new `TESTIMONIAL_FIELDS`, `PRICING_CARD_FIELDS`, `RATING_FIELDS`
+      arrays in `src/css.ts` and wired them into `generateCssVariables`, so
+      `component.testimonial`/`component.pricingCard`/`component.rating` now
+      emit CSS variables for the first time.
+      Rebuilt — `dist/index.css` now emits all of the above in both light
+      and dark blocks.
+- [x] Extended `tests/css-semantic-coverage.test.ts` to assert every key
+      under every `tokens.component.*` group has a matching CSS variable in
+      `generateCssVariables` output, generalizing the Phase 5 regression
+      test so this bug class can't silently recur on any component group.
+- [x] Full `npm run check` gate passes clean (only the expected
+      `check:dist` staleness pending a rebuild/commit), plus full
+      `vitest run` (47/47 tests passing).
+- [ ] Hand off to Bradley Potts to publish as `3.3.1` — patch fix, `### Fixed`
+      changelog entry distinct from the `3.3.0` `### Added` entry.
+- [ ] `spectre-ui` should bump its declared `spectre-tokens` range to
+      `^3.3.1` (not `^3.3.0`) before starting Phase 5 P0 adoption, since
+      `3.3.0` is missing the variables it needs.
 
 ## Explicitly Out of Scope
 

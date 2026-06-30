@@ -7,7 +7,7 @@
 | Project team           | `project-design`                 |
 | Repository role        | Spectre L1 design-token contract |
 | Package/artifact       | `@phcdevworks/spectre-tokens`    |
-| Current version/status | 3.3.0                            |
+| Current version/status | 3.3.1                            |
 
 ## Standard Workflow
 
