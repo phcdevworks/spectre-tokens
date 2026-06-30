@@ -486,6 +486,41 @@ pattern Phase 4 used for Nav/Toast/Tooltip/Dropdown/Modal. `spectre-ui`'s own
     corresponding `spectre-ui` form-field recipes. The `v3.2.0` git tag is
     still outstanding.
 
+---
+
+## Phase 8 - Select/Textarea Invalid and Success State Roles (done, pending publish)
+
+`spectre-ui` audited `component.select`/`component.textarea` while adding
+`size`/`fullWidth`/`pill` options to `getSelectClasses`/`getTextareaClasses`
+(2026-06-30) and found both groups only carry
+`bg`/`border`/`text`/`placeholder`/`disabledBg`/`disabledBorder`/
+`focusBorder` roles — no `invalid`/`success` (or `loading`) color roles,
+unlike `component.input`'s `bg`/`border` pairs for `error` and `success`
+states (emitted as `--sp-component-input-role-border-error` /
+`-bg-error` / `-border-success` / `-bg-success`). This blocks
+`spectre-ui`'s Phase 5 P0 from adding `invalid`/`success`/`loading` options
+to `getSelectClasses`/`getTextareaClasses` without either reusing
+`component.input`'s role tokens (blurs the per-component namespace
+boundary) or inventing local color values (violates the zero-raw-value
+rule) — see `spectre-ui/TODO.md` Phase 5 P0.
+
+### P0: Add Missing State Roles
+
+- [x] Add `borderInvalid`, `bgInvalid` to `component.select` and
+      `component.textarea`, mirroring `forms.invalid`'s border/bg pair
+      (`colors.error.500` / `colors.error.50`). `bgInvalid` pairs with the
+      component's existing `text` role for contrast (passes AA at 2026-06-30
+      audit).
+- [x] Add `borderSuccess`, `bgSuccess` to `component.select` and
+      `component.textarea`, mirroring `forms.valid`'s border/bg pair
+      (`colors.success.500` / `colors.success.50`), paired with `text` the
+      same way.
+- [x] Decided `loading` stays structural-only (opacity/cursor, no new token),
+      matching `getInputClasses`'s existing `sp-input--loading` handling in
+      `spectre-ui` (`src/styles/components.css`) — no color role added.
+- [ ] Publish once both groups land; bump `spectre-ui`'s declared range to
+      cover the new version.
+
 ## Explicitly Out of Scope
 
 - Do not add component structure ownership here.

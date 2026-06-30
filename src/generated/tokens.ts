@@ -514,6 +514,24 @@ export interface SpectreSourceTokens {
       focusBorder: {
         value: string;
       };
+      borderInvalid: {
+        value: string;
+      };
+      bgInvalid: {
+        value: string;
+        metadata: {
+          pair: string;
+        };
+      };
+      borderSuccess: {
+        value: string;
+      };
+      bgSuccess: {
+        value: string;
+        metadata: {
+          pair: string;
+        };
+      };
     };
     textarea: {
       bg: {
@@ -545,6 +563,24 @@ export interface SpectreSourceTokens {
       };
       focusBorder: {
         value: string;
+      };
+      borderInvalid: {
+        value: string;
+      };
+      bgInvalid: {
+        value: string;
+        metadata: {
+          pair: string;
+        };
+      };
+      borderSuccess: {
+        value: string;
+      };
+      bgSuccess: {
+        value: string;
+        metadata: {
+          pair: string;
+        };
       };
     };
     fieldset: {
@@ -3229,6 +3265,10 @@ export interface SpectreGeneratedTokens {
       disabledBg: string;
       disabledBorder: string;
       focusBorder: string;
+      borderInvalid: string;
+      bgInvalid: string;
+      borderSuccess: string;
+      bgSuccess: string;
     };
     textarea: {
       bg: string;
@@ -3238,6 +3278,10 @@ export interface SpectreGeneratedTokens {
       disabledBg: string;
       disabledBorder: string;
       focusBorder: string;
+      borderInvalid: string;
+      bgInvalid: string;
+      borderSuccess: string;
+      bgSuccess: string;
     };
     fieldset: {
       border: string;
@@ -4403,7 +4447,11 @@ export const coreTokens: SpectreGeneratedTokens = {
       "placeholderText": "{colors.neutral.500}",
       "disabledBg": "{colors.neutral.50}",
       "disabledBorder": "{colors.neutral.200}",
-      "focusBorder": "{colors.info.500}"
+      "focusBorder": "{colors.info.500}",
+      "borderInvalid": "{colors.error.500}",
+      "bgInvalid": "{colors.error.50}",
+      "borderSuccess": "{colors.success.500}",
+      "bgSuccess": "{colors.success.50}"
     },
     "textarea": {
       "bg": "{colors.white}",
@@ -4412,7 +4460,11 @@ export const coreTokens: SpectreGeneratedTokens = {
       "placeholder": "{colors.neutral.500}",
       "disabledBg": "{colors.neutral.50}",
       "disabledBorder": "{colors.neutral.200}",
-      "focusBorder": "{colors.info.500}"
+      "focusBorder": "{colors.info.500}",
+      "borderInvalid": "{colors.error.500}",
+      "bgInvalid": "{colors.error.50}",
+      "borderSuccess": "{colors.success.500}",
+      "bgSuccess": "{colors.success.50}"
     },
     "fieldset": {
       "border": "{colors.neutral.200}",

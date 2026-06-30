@@ -143,7 +143,11 @@ var coreTokens = {
       "placeholderText": "{colors.neutral.500}",
       "disabledBg": "{colors.neutral.50}",
       "disabledBorder": "{colors.neutral.200}",
-      "focusBorder": "{colors.info.500}"
+      "focusBorder": "{colors.info.500}",
+      "borderInvalid": "{colors.error.500}",
+      "bgInvalid": "{colors.error.50}",
+      "borderSuccess": "{colors.success.500}",
+      "bgSuccess": "{colors.success.50}"
     },
     "textarea": {
       "bg": "{colors.white}",
@@ -152,7 +156,11 @@ var coreTokens = {
       "placeholder": "{colors.neutral.500}",
       "disabledBg": "{colors.neutral.50}",
       "disabledBorder": "{colors.neutral.200}",
-      "focusBorder": "{colors.info.500}"
+      "focusBorder": "{colors.info.500}",
+      "borderInvalid": "{colors.error.500}",
+      "bgInvalid": "{colors.error.50}",
+      "borderSuccess": "{colors.success.500}",
+      "bgSuccess": "{colors.success.50}"
     },
     "fieldset": {
       "border": "{colors.neutral.200}",

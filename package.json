@@ -37,7 +37,7 @@
     "node": "^22.12.0 || >=24.0.0"
   },
   "type": "module",
-  "packageManager": "npm@11.17.0",
+  "packageManager": "npm@11.18.0",
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -97,17 +97,17 @@
   "devDependencies": {
     "@phcdevworks/spectre-manifest": "^1.0.0",
     "@types/node": "^26.0.1",
-    "@typescript-eslint/eslint-plugin": "^8.62.0",
-    "@typescript-eslint/parser": "^8.62.0",
+    "@typescript-eslint/eslint-plugin": "^8.62.1",
+    "@typescript-eslint/parser": "^8.62.1",
     "colord": "^2.9.3",
     "eslint": "^10.6.0",
     "jiti": "^2.7.0",
-    "prettier": "^3.9.3",
+    "prettier": "^3.9.4",
     "ts-node": "^10.9.2",
     "tsup": "^8.5.1",
     "tsx": "^4.22.4",
     "typescript": "^6.0.3",
-    "typescript-eslint": "^8.62.0",
+    "typescript-eslint": "^8.62.1",
     "vitest": "^4.1.9"
   },
   "overrides": {
