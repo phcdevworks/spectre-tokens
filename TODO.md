@@ -454,10 +454,9 @@ pattern Phase 4 used for Nav/Toast/Tooltip/Dropdown/Modal. `spectre-ui`'s own
       (`getCheckboxClasses`, `getRadioClasses`, `getSelectClasses`,
       `getTextareaClasses`, `getFieldsetClasses`, `getLabelClasses`).
   - Delivered: `3.2.0` published on npm (`package.json` version matches).
-    Unblocks the corresponding `spectre-ui` form-field recipes. Note: the
-    `v3.2.0` git tag has not been created yet (latest tag is still `3.0.0`) —
-    tagging remains with Bradley Potts per the Release Procedure in
-    `CLAUDE.md`.
+    Unblocks the corresponding `spectre-ui` form-field recipes. The
+    `v3.2.0` git tag has since been created (tags now run through
+    `v3.3.1`).
 
 ---
 
@@ -483,8 +482,7 @@ pattern Phase 4 used for Nav/Toast/Tooltip/Dropdown/Modal. `spectre-ui`'s own
 10. **Phase 7 — done and published in `3.2.0`.** Added `component.checkbox`,
     `component.radio`, `component.select`, `component.textarea`,
     `component.fieldset`, and `component.label` token groups. Unblocks the
-    corresponding `spectre-ui` form-field recipes. The `v3.2.0` git tag is
-    still outstanding.
+    corresponding `spectre-ui` form-field recipes.
 
 ---
 

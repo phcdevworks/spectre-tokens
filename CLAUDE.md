@@ -50,7 +50,7 @@ npm run check         # full validation gate - must pass before any commit
 
 `npm run check` runs build -> manifest -> structure -> locked-color -> contrast
 -> regression -> docs -> exports -> css -> tailwind -> consumer -> integration
--> classification -> deprecation -> dist -> lint. All must pass.
+-> ecosystem -> classification -> deprecation -> dist -> lint. All must pass.
 
 ## File Structure
 

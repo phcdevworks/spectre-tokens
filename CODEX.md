@@ -55,7 +55,8 @@ npm run check
 
 `npm run check` runs: build -> manifest -> structure -> locked-color -> contrast ->
 regression -> docs -> exports -> css -> tailwind -> consumer -> integration ->
-classification -> deprecation -> dist -> lint. All steps must pass clean.
+ecosystem -> classification -> deprecation -> dist -> lint. All steps must pass
+clean.
 
 When a gate fails, Codex must:
 - Identify the failing script and its output.

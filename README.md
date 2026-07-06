@@ -500,7 +500,7 @@ This project expects Node.js `^22.12.0 || >=24.0.0` and npm `11.17.0`.
 | Command                  | What it does                                                 |
 | ------------------------ | ------------------------------------------------------------ |
 | `npm run build`          | Regenerate all outputs — run after any token source change   |
-| `npm run check`          | Full validation gate — all 15 steps must pass before commit  |
+| `npm run check`          | Full validation gate — all 16 steps must pass before commit  |
 | `npm run lint`           | Run ESLint against all source files                          |
 | `npm run format`         | Apply Prettier formatting to all files                       |
 | `npm run generate`       | Regenerate `src/generated/tokens.ts` from token sources only |
