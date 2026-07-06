@@ -1,5 +1,3 @@
-# ROADMAP.md
-
 # Spectre Tokens Roadmap
 
 `@phcdevworks/spectre-tokens` is the authoritative contract layer for token
@@ -22,10 +20,10 @@ the contract layer.
 - `contract.manifest.json` is the machine-readable contract authority for public
   namespaces, required outputs, protected semantic groups, and change
   classification rules.
-- A 15-gate `npm run check` validation chain covers: build, manifest, structure,
+- A 16-gate `npm run check` validation chain covers: build, manifest, structure,
   locked color, contrast, regression, docs, exports, CSS, Tailwind, consumer
-  smoke, integration, classification, deprecation, dist sync, and lint. All
-  gates must pass before merge.
+  smoke, integration, ecosystem, classification, deprecation, dist sync, and
+  lint. All gates must pass before merge.
 - Runtime JS, generated TypeScript, CSS variables, and Tailwind exports are
   validated for parity against the declared contract.
 - `README.md` and `TOKEN_CONTRACT.md` are validated against the manifest —
@@ -44,7 +42,7 @@ the contract layer.
 ### What will not change
 
 - `tokens/` remains the only source of truth. No hand-editing generated files.
-- The 15-gate chain is the release standard. No gate is optional.
+- The 16-gate chain is the release standard. No gate is optional.
 - Protected semantic color families (`success`, `warning`, `danger`,
   CTA/brand-action) require explicit Bradley Potts approval to change.
 - This package does not own component structure, framework behavior, or adapter
@@ -150,8 +148,6 @@ critical validators are tested on negative paths.
 
 `spectre-ui` Phase 4 recipes and `spectre-ui-astro` Phase 4 were gated on these
 five groups. They are now published in the token contract.
-
-**Delivered**
 
 - `component.nav` — `bg`, `text`, `link`, `linkHover`, `linkActive`, `border`.
 - `component.modal` — `bg`, `shadow`, `border`, `overlay`.

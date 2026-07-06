@@ -60,7 +60,7 @@ directed to Claude Code.
 
 ```bash
 npm run build              # regenerate all derived outputs
-npm run check              # full 15-gate validation suite
+npm run check              # full 16-gate validation suite
 npm run check:manifest     # public namespaces and required outputs
 npm run check:structure    # token tree shape
 npm run check:docs         # README and TOKEN_CONTRACT headings
@@ -72,6 +72,7 @@ npm run check:css          # required CSS variables present
 npm run check:tailwind     # Tailwind theme values match token contract
 npm run check:consumer     # downstream smoke fixture passes
 npm run check:integration  # downstream integration fixture passes
+npm run check:ecosystem    # spectre.manifest.json validated against ecosystem registry
 npm run check:classification # contract-authority changes have changelog entry
 npm run check:deprecation  # deprecated token markers and removal deadlines
 npm run check:dist         # dist artifacts in sync with source

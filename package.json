@@ -97,8 +97,8 @@
   "devDependencies": {
     "@phcdevworks/spectre-manifest": "^1.0.0",
     "@types/node": "^26.1.0",
-    "@typescript-eslint/eslint-plugin": "^8.62.1",
-    "@typescript-eslint/parser": "^8.62.1",
+    "@typescript-eslint/eslint-plugin": "^8.63.0",
+    "@typescript-eslint/parser": "^8.63.0",
     "colord": "^2.9.3",
     "eslint": "^10.6.0",
     "jiti": "^2.7.0",
@@ -107,8 +107,8 @@
     "tsup": "^8.5.1",
     "tsx": "^4.23.0",
     "typescript": "^6.0.3",
-    "typescript-eslint": "^8.62.1",
-    "vitest": "^4.1.9"
+    "typescript-eslint": "^8.63.0",
+    "vitest": "^4.1.10"
   },
   "overrides": {
     "esbuild": "0.28.1"
