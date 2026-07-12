@@ -227,7 +227,28 @@ same gating pattern Phase 4 P2 used for Nav/Toast/Tooltip/Dropdown/Modal.
 
 ---
 
-## 8. Explicitly Out of Scope
+## 8. Phase 8 — Select/Textarea Invalid and Success State Roles — Delivered
+
+`spectre-ui` audited `component.select`/`component.textarea` while adding
+`size`/`fullWidth`/`pill` options and found both groups missing
+`invalid`/`success` color roles, unlike `component.input`'s existing
+`error`/`success` border-bg pairs — blocking `spectre-ui` Phase 5 P0.
+
+- Added `borderInvalid`/`bgInvalid` and `borderSuccess`/`bgSuccess` to
+  `component.select` and `component.textarea`, mirroring `forms.invalid`/
+  `forms.valid`. Published in `3.3.0`.
+- `3.3.0`'s new fields never reached generated CSS/types due to a
+  hand-maintained field-mapping array bug in `src/css.ts` (same class as the
+  `3.1.0` Phase 5 fix). Generalizing the regression test to cover all of
+  `tokens.component.*` also surfaced two more pre-existing instances:
+  `component.badge`'s `*BgHover` fields, and `component.testimonial`/
+  `component.pricingCard`/`component.rating` being entirely absent from CSS
+  generation. All fixed and published in `3.3.1` — `spectre-ui` must depend
+  on `^3.3.1`, not `^3.3.0`.
+
+---
+
+## 9. Explicitly Out of Scope
 
 - Component structure or composition — belongs in `@phcdevworks/spectre-ui`.
 - Framework-specific token delivery — belongs in adapter packages.
@@ -238,7 +259,7 @@ same gating pattern Phase 4 P2 used for Nav/Toast/Tooltip/Dropdown/Modal.
 
 ---
 
-## 9. Recommended Execution Order
+## 10. Recommended Execution Order
 
 1. **Phase 1** — done.
 2. **Phase 2** — done.

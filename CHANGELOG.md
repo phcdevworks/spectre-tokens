@@ -49,7 +49,7 @@ Contract change type: additive
 - Extended `tests/css-semantic-coverage.test.ts` to assert every key under
   every `tokens.component.*` group (not just `link`/`surface`) has a
   matching CSS variable in `generateCssVariables` output, closing the gap
-  that let this bug class recur three times across `3.1.0`–`3.3.0`.
+  that let this bug class recur three times across `3.1.0`-`3.3.0`.
 
 ## [3.3.0] - 2026-06-30
 
