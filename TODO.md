@@ -107,8 +107,8 @@ design synchronization, and safe retirement paths.
 
 - [x] Add a semver proposal script
   - `scripts/propose-version.ts` reads the `Contract change type:` line from
-    `CHANGELOG.md [Unreleased]` and proposes the version bump: `additive` ->
-    minor, `semantic change` -> minor, `breaking` -> major. Run via
+    `CHANGELOG.md [Unreleased]` and proposes the version bump: `additive` →
+    minor, `semantic change` → minor, `breaking` → major. Run via
     `npm run release:propose`.
 
 - [x] Wire the script into the release procedure in `CLAUDE.md` and `CODEX.md`
@@ -140,7 +140,7 @@ design synchronization, and safe retirement paths.
 ### P3: Deprecation Policy
 
 - [x] Define the deprecation lifecycle in `TOKEN_CONTRACT.md`
-  - Document `active` -> `deprecated` -> `removed`, including the expected
+  - Document `active` → `deprecated` → `removed`, including the expected
     migration window before removal.
 
 - [x] Add a `deprecated` marker to the token source schema

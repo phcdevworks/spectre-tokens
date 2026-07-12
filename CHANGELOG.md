@@ -137,7 +137,7 @@ Contract change type: breaking
   `src/types.ts`, and `src/css.ts`. "alternate" was too vague for a public
   contract token; "subtle" precisely describes a one-step-recessed background
   used for zebra rows, section bands, and inset panels. CSS variable renamed
-  from `--sp-surface-alternate` to `--sp-surface-subtle`. **Breaking** —
+  from `--sp-surface-alternate` to `--sp-surface-subtle`. **Breaking** -
   consumers using `surface.alternate` or `--sp-surface-alternate` must update
   to `surface.subtle` / `--sp-surface-subtle`.
 - Added explicit `description` to `surface.hero` in `tokens/modes.json`
