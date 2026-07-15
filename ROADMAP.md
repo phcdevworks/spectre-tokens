@@ -248,7 +248,74 @@ same gating pattern Phase 4 P2 used for Nav/Toast/Tooltip/Dropdown/Modal.
 
 ---
 
-## 9. Explicitly Out of Scope
+## 9. Phase 9 — Contract Generation and Ecosystem Maturity
+
+The contract surface is mature. Future work should reduce maintenance risk,
+prove compatibility, and make downstream adoption safer. New token families
+remain demand-driven unless a downstream package demonstrates a concrete
+missing contract.
+
+### P0: Manifest-Driven CSS Generation
+
+`src/css.ts` still uses hand-maintained field maps for several semantic and
+component groups. This caused missing generated CSS variables in `3.1.0`,
+`3.3.0`, and `3.3.1`. Coverage tests now detect more omissions, but the
+architecture still requires additive contract changes in multiple places.
+
+- Replace hand-maintained semantic/component field arrays with recursive or
+  manifest-driven CSS generation.
+- Preserve existing public CSS variable names through an explicit compatibility
+  map where generated path names differ from legacy names.
+- Make unsupported value shapes fail with a precise token path instead of being
+  silently skipped.
+- Treat completion as removal of the recurring “token exists but CSS output is
+  missing” failure class, not merely additional regression assertions.
+
+### P1: Complete Cross-Output Parity
+
+- Derive parity assertions from `contract.manifest.json` for every declared
+  public namespace.
+- Verify every applicable public token reaches runtime JavaScript, generated
+  TypeScript, CSS, DTCG, and Tailwind output.
+- Validate complete default and dark mode output rather than selected required
+  variables.
+- Keep intentional output exceptions machine-readable.
+
+### P2: DTCG Conformance Hardening
+
+- Add fixture tests for aliases, font families, shadows, gradients,
+  cubic-bezier values, unitless numbers, dimensions, typography values, and
+  array/composite values.
+- Validate inferred `$type` values against actual source value shapes.
+- Add one real downstream round-trip test with a supported DTCG consumer such
+  as Style Dictionary.
+- Document intentional DTCG transformations and unsupported source shapes.
+
+### P3: Consumer Compatibility Baseline
+
+- Test the packed npm artifact in plain JavaScript, TypeScript 5.9, TypeScript
+  6, Node ESM, Node CommonJS, CSS import, and a browser-oriented bundler.
+- Determine whether TypeScript is genuinely required as a peer dependency; if
+  consumers only need emitted declarations, remove the peer requirement.
+- Determine the oldest Node runtime required by the published output and align
+  `engines.node` with evidence.
+- Run compatibility checks against the packed tarball so validation exercises
+  exactly what npm consumers receive.
+
+### P4: Live Downstream Compatibility
+
+- Add a release-candidate or scheduled compatibility matrix covering
+  `spectre-ui`, `spectre-ui-astro`, and `spectre-components`.
+- Validate supported downstream versions against the packed candidate artifact
+  before release.
+- Retain repository-local fixtures for fast checks while using live downstream
+  validation as the ecosystem contract authority.
+- Convert concrete downstream gaps into demand-backed token proposals rather
+  than speculative namespace expansion.
+
+---
+
+## 10. Explicitly Out of Scope
 
 - Component structure or composition — belongs in `@phcdevworks/spectre-ui`.
 - Framework-specific token delivery — belongs in adapter packages.
@@ -259,7 +326,7 @@ same gating pattern Phase 4 P2 used for Nav/Toast/Tooltip/Dropdown/Modal.
 
 ---
 
-## 10. Recommended Execution Order
+## 11. Recommended Execution Order
 
 1. **Phase 1** — done.
 2. **Phase 2** — done.
@@ -293,3 +360,13 @@ same gating pattern Phase 4 P2 used for Nav/Toast/Tooltip/Dropdown/Modal.
     entirely absent from CSS generation. All fixed; full `npm run check` gate
     and `vitest run` pass clean. `spectre-ui` should depend on `^3.3.1`, not
     `^3.3.0`, once published.
+13. **Phase 9 P0** — next. Replace hand-maintained CSS field maps with
+    manifest-driven generation while preserving existing variable names.
+14. **Phase 9 P1** — generalize cross-output parity across every
+    manifest-declared public namespace and both modes.
+15. **Phase 9 P2** — harden DTCG inference with fixture coverage and one real
+    consumer round-trip.
+16. **Phase 9 P3** — validate the packed artifact across supported JavaScript,
+    TypeScript, Node, CSS, and bundler consumers; align metadata with evidence.
+17. **Phase 9 P4** — add live downstream compatibility checks for the three
+    consuming Spectre packages.
