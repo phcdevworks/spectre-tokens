@@ -1185,131 +1185,13 @@ var coreTokens = {
 // src/css.ts
 var DEFAULT_PREFIX = "sp";
 var DEFAULT_SELECTOR = ":root";
+var LEGACY_COMPONENT_PREFIX_GROUPS = /* @__PURE__ */ new Set(["card", "input"]);
 var formatKey = (segment) => segment.replace(/[^a-z0-9]+/gi, "-").replace(/^-+|-+$/g, "").toLowerCase();
 var toVariableName = (prefix, ...parts) => {
   const filtered = parts.filter(Boolean).map(formatKey);
   return `--${prefix}-${filtered.join("-")}`;
 };
-var BADGE_VARIANTS = [
-  { variant: "neutral", bgKey: "neutralBg", bgHoverKey: "neutralBgHover", textKey: "neutralText" },
-  { variant: "info", bgKey: "infoBg", bgHoverKey: "infoBgHover", textKey: "infoText" },
-  { variant: "success", bgKey: "successBg", bgHoverKey: "successBgHover", textKey: "successText" },
-  { variant: "warning", bgKey: "warningBg", bgHoverKey: "warningBgHover", textKey: "warningText" },
-  { variant: "danger", bgKey: "dangerBg", bgHoverKey: "dangerBgHover", textKey: "dangerText" }
-];
-var ICON_BOX_FIELDS = [
-  { name: "bg", tokenKey: "bg" },
-  { name: "border", tokenKey: "border" },
-  { name: "icon-default", tokenKey: "iconDefault" },
-  { name: "icon-success", tokenKey: "iconSuccess" },
-  { name: "icon-warning", tokenKey: "iconWarning" },
-  { name: "icon-danger", tokenKey: "iconDanger" }
-];
-var NAV_FIELDS = [
-  { name: "bg", tokenKey: "bg" },
-  { name: "text", tokenKey: "text" },
-  { name: "link", tokenKey: "link" },
-  { name: "link-hover", tokenKey: "linkHover" },
-  { name: "link-active", tokenKey: "linkActive" },
-  { name: "border", tokenKey: "border" }
-];
-var MODAL_FIELDS = [
-  { name: "bg", tokenKey: "bg" },
-  { name: "shadow", tokenKey: "shadow" },
-  { name: "border", tokenKey: "border" },
-  { name: "overlay", tokenKey: "overlay" }
-];
-var TESTIMONIAL_FIELDS = [
-  { name: "bg", tokenKey: "bg" },
-  { name: "bg-hover", tokenKey: "bgHover" },
-  { name: "border", tokenKey: "border" },
-  { name: "text", tokenKey: "text" },
-  { name: "author-name", tokenKey: "authorName" },
-  { name: "author-title", tokenKey: "authorTitle" },
-  { name: "quote-mark", tokenKey: "quoteMark" }
-];
-var PRICING_CARD_FIELDS = [
-  { name: "bg", tokenKey: "bg" },
-  { name: "bg-hover", tokenKey: "bgHover" },
-  { name: "border", tokenKey: "border" },
-  { name: "featured-bg", tokenKey: "featuredBg" },
-  { name: "featured-text", tokenKey: "featuredText" },
-  { name: "featured-badge-bg", tokenKey: "featuredBadgeBg" },
-  { name: "featured-badge-text", tokenKey: "featuredBadgeText" },
-  { name: "price", tokenKey: "price" },
-  { name: "price-description", tokenKey: "priceDescription" }
-];
-var RATING_FIELDS = [
-  { name: "star-filled", tokenKey: "starFilled" },
-  { name: "star-empty", tokenKey: "starEmpty" },
-  { name: "text", tokenKey: "text" }
-];
-var TOAST_VARIANTS = ["success", "warning", "danger", "info"].map((variant) => ({
-  variant,
-  fields: [
-    { name: "bg", tokenKey: "bg" },
-    { name: "text", tokenKey: "text" },
-    { name: "border", tokenKey: "border" },
-    { name: "icon", tokenKey: "icon" }
-  ]
-}));
-var TOOLTIP_FIELDS = [
-  { name: "bg", tokenKey: "bg" },
-  { name: "text", tokenKey: "text" },
-  { name: "border", tokenKey: "border" }
-];
-var DROPDOWN_FIELDS = [
-  { name: "bg", modePath: ["bg"], aliasPath: ["bg"] },
-  { name: "border", modePath: ["border"], aliasPath: ["border"] },
-  { name: "item-default", modePath: ["item", "default"], aliasPath: ["item", "default"] },
-  { name: "item-hover", modePath: ["item", "hover"], aliasPath: ["item", "hover"] },
-  { name: "item-active", modePath: ["item", "active"], aliasPath: ["item", "active"] },
-  { name: "item-text", modePath: ["item", "text"], aliasPath: ["item", "text"] }
-];
-var SELECTION_CONTROL_FIELDS = [
-  { name: "bg", tokenKey: "bg" },
-  { name: "border", tokenKey: "border" },
-  { name: "checked-bg", tokenKey: "checkedBg" },
-  { name: "checked-border", tokenKey: "checkedBorder" },
-  { name: "text", tokenKey: "text" },
-  { name: "disabled-bg", tokenKey: "disabledBg" },
-  { name: "disabled-border", tokenKey: "disabledBorder" }
-];
-var SELECT_FIELDS = [
-  { name: "bg", tokenKey: "bg" },
-  { name: "border", tokenKey: "border" },
-  { name: "text", tokenKey: "text" },
-  { name: "placeholder-text", tokenKey: "placeholderText" },
-  { name: "disabled-bg", tokenKey: "disabledBg" },
-  { name: "disabled-border", tokenKey: "disabledBorder" },
-  { name: "focus-border", tokenKey: "focusBorder" },
-  { name: "border-invalid", tokenKey: "borderInvalid" },
-  { name: "bg-invalid", tokenKey: "bgInvalid" },
-  { name: "border-success", tokenKey: "borderSuccess" },
-  { name: "bg-success", tokenKey: "bgSuccess" }
-];
-var TEXTAREA_FIELDS = [
-  { name: "bg", tokenKey: "bg" },
-  { name: "border", tokenKey: "border" },
-  { name: "text", tokenKey: "text" },
-  { name: "placeholder", tokenKey: "placeholder" },
-  { name: "disabled-bg", tokenKey: "disabledBg" },
-  { name: "disabled-border", tokenKey: "disabledBorder" },
-  { name: "focus-border", tokenKey: "focusBorder" },
-  { name: "border-invalid", tokenKey: "borderInvalid" },
-  { name: "bg-invalid", tokenKey: "bgInvalid" },
-  { name: "border-success", tokenKey: "borderSuccess" },
-  { name: "bg-success", tokenKey: "bgSuccess" }
-];
-var FIELDSET_FIELDS = [
-  { name: "border", tokenKey: "border" },
-  { name: "legend-text", tokenKey: "legendText" }
-];
-var LABEL_FIELDS = [
-  { name: "text", tokenKey: "text" },
-  { name: "disabled-text", tokenKey: "disabledText" },
-  { name: "required-indicator-text", tokenKey: "requiredIndicatorText" }
-];
+var isPlainObject = (value) => typeof value === "object" && value !== null && !Array.isArray(value);
 var resolveTokenReference = (tokens2, reference) => {
   const path = reference.slice(1, -1).split(".");
   let current = tokens2;
@@ -1347,14 +1229,21 @@ var resolveValue = (tokens2, value) => {
   str = str.replace(opacityRegex, (match, hex, opacity) => hexToRgba(hex, opacity));
   return str;
 };
-var resolveSemanticValue = (value, tokens2) => {
+var resolveSemanticValue = (value, tokens2, path) => {
+  if (value === void 0) return void 0;
   if (typeof value === "string" || typeof value === "number") {
     return resolveValue(tokens2, value);
   }
-  if (value && typeof value === "object" && "value" in value) {
-    return resolveValue(tokens2, value.value);
+  if (isPlainObject(value)) {
+    if ("value" in value) {
+      return resolveValue(tokens2, value.value);
+    }
+    if ("metadata" in value || "description" in value) {
+      throw new Error(`Unsupported token value shape at "${path ?? "(unknown path)"}": expected a string, number, or { value } wrapper.`);
+    }
+    return void 0;
   }
-  return void 0;
+  throw new Error(`Unsupported token value shape at "${path ?? "(unknown path)"}": ${JSON.stringify(value)}`);
 };
 var getPath = (source, path) => path.reduce((acc, key) => acc && typeof acc === "object" ? acc[key] : void 0, source);
 var pickSemantic = (tokens2, ...candidates) => {
@@ -1526,129 +1415,7 @@ var generateCssVariables = (tokens2, options = {}) => {
   const textAliases = tokens2.text ?? {};
   const componentAliases = tokens2.component ?? {};
   const linkTokens = tokens2.link ?? {};
-  const semanticEntries = [
-    { varParts: ["surface", "page"], modePath: ["surface", "page"], aliasSrc: surfaceAliases, aliasPath: ["page"] },
-    { varParts: ["surface", "card"], modePath: ["surface", "card"], aliasSrc: surfaceAliases, aliasPath: ["card"] },
-    { varParts: ["surface", "input"], modePath: ["surface", "input"], aliasSrc: surfaceAliases, aliasPath: ["input"] },
-    { varParts: ["surface", "overlay"], modePath: ["surface", "overlay"], aliasSrc: surfaceAliases, aliasPath: ["overlay"] },
-    { varParts: ["surface", "subtle"], modePath: ["surface", "subtle"] },
-    { varParts: ["surface", "hero"], modePath: ["surface", "hero"], aliasSrc: surfaceAliases, aliasPath: ["hero"] },
-    { varParts: ["surface", "hover"], modePath: ["surface", "hover"], aliasSrc: surfaceAliases, aliasPath: ["hover"] },
-    { varParts: ["surface", "selected"], modePath: ["surface", "selected"], aliasSrc: surfaceAliases, aliasPath: ["selected"] },
-    { varParts: ["surface", "active"], modePath: ["surface", "active"], aliasSrc: surfaceAliases, aliasPath: ["active"] },
-    { varParts: ["surface", "divider"], modePath: ["surface", "divider"], aliasSrc: surfaceAliases, aliasPath: ["divider"] },
-    { varParts: ["text", "on", "page", "default"], modePath: ["text", "onPage", "default"], aliasSrc: textAliases, aliasPath: ["onPage", "default"] },
-    { varParts: ["text", "on", "page", "muted"], modePath: ["text", "onPage", "muted"], aliasSrc: textAliases, aliasPath: ["onPage", "muted"] },
-    { varParts: ["text", "on", "page", "subtle"], modePath: ["text", "onPage", "subtle"], aliasSrc: textAliases, aliasPath: ["onPage", "subtle"] },
-    { varParts: ["text", "on", "page", "meta"], modePath: ["text", "onPage", "meta"], aliasSrc: textAliases, aliasPath: ["onPage", "meta"] },
-    { varParts: ["text", "on", "page", "brand"], modePath: ["text", "onPage", "brand"], aliasSrc: textAliases, aliasPath: ["onPage", "brand"] },
-    { varParts: ["text", "on", "surface", "default"], modePath: ["text", "onSurface", "default"], aliasSrc: textAliases, aliasPath: ["onSurface", "default"] },
-    { varParts: ["text", "on", "surface", "muted"], modePath: ["text", "onSurface", "muted"], aliasSrc: textAliases, aliasPath: ["onSurface", "muted"] },
-    { varParts: ["text", "on", "surface", "subtle"], modePath: ["text", "onSurface", "subtle"], aliasSrc: textAliases, aliasPath: ["onSurface", "subtle"] },
-    { varParts: ["text", "on", "surface", "meta"], modePath: ["text", "onSurface", "meta"], aliasSrc: textAliases, aliasPath: ["onSurface", "meta"] },
-    { varParts: ["text", "on", "surface", "brand"], modePath: ["text", "onSurface", "brand"], aliasSrc: textAliases, aliasPath: ["onSurface", "brand"] },
-    { varParts: ["component", "card", "text"], modePath: ["component", "card", "text"], aliasSrc: componentAliases, aliasPath: ["card", "text"] },
-    { varParts: ["component", "card", "text-muted"], modePath: ["component", "card", "textMuted"], aliasSrc: componentAliases, aliasPath: ["card", "textMuted"] },
-    { varParts: ["component", "input", "text"], modePath: ["component", "input", "text"], aliasSrc: componentAliases, aliasPath: ["input", "text"] },
-    { varParts: ["component", "input", "placeholder"], modePath: ["component", "input", "placeholder"], aliasSrc: componentAliases, aliasPath: ["input", "placeholder"] },
-    { varParts: ["button", "text", "default"], modePath: ["component", "button", "textDefault"], aliasSrc: componentAliases, aliasPath: ["button", "textDefault"] },
-    { varParts: ["button", "text", "on", "primary"], modePath: ["component", "button", "textOnPrimary"], aliasSrc: componentAliases, aliasPath: ["button", "textOnPrimary"] },
-    ...BADGE_VARIANTS.flatMap(({ variant, bgKey, bgHoverKey, textKey }) => [
-      { varParts: ["badge", variant, "bg"], modePath: ["component", "badge", bgKey], aliasSrc: componentAliases, aliasPath: ["badge", bgKey] },
-      { varParts: ["badge", variant, "bg-hover"], modePath: ["component", "badge", bgHoverKey], aliasSrc: componentAliases, aliasPath: ["badge", bgHoverKey] },
-      { varParts: ["badge", variant, "text"], modePath: ["component", "badge", textKey], aliasSrc: componentAliases, aliasPath: ["badge", textKey] }
-    ]),
-    ...ICON_BOX_FIELDS.map(({ name, tokenKey }) => ({
-      varParts: ["icon-box", name],
-      modePath: ["component", "iconBox", tokenKey],
-      aliasSrc: componentAliases,
-      aliasPath: ["iconBox", tokenKey]
-    })),
-    ...NAV_FIELDS.map(({ name, tokenKey }) => ({
-      varParts: ["nav", name],
-      modePath: ["component", "nav", tokenKey],
-      aliasSrc: componentAliases,
-      aliasPath: ["nav", tokenKey]
-    })),
-    ...MODAL_FIELDS.map(({ name, tokenKey }) => ({
-      varParts: ["modal", name],
-      modePath: ["component", "modal", tokenKey],
-      aliasSrc: componentAliases,
-      aliasPath: ["modal", tokenKey]
-    })),
-    ...TOAST_VARIANTS.flatMap(({ variant, fields }) => fields.map(({ name, tokenKey }) => ({
-      varParts: ["toast", variant, name],
-      modePath: ["component", "toast", variant, tokenKey],
-      aliasSrc: componentAliases,
-      aliasPath: ["toast", variant, tokenKey]
-    }))),
-    ...TOOLTIP_FIELDS.map(({ name, tokenKey }) => ({
-      varParts: ["tooltip", name],
-      modePath: ["component", "tooltip", tokenKey],
-      aliasSrc: componentAliases,
-      aliasPath: ["tooltip", tokenKey]
-    })),
-    ...DROPDOWN_FIELDS.map(({ name, modePath, aliasPath }) => ({
-      varParts: ["dropdown", name],
-      modePath: ["component", "dropdown", ...modePath],
-      aliasSrc: componentAliases,
-      aliasPath: ["dropdown", ...aliasPath]
-    })),
-    ...SELECTION_CONTROL_FIELDS.map(({ name, tokenKey }) => ({
-      varParts: ["checkbox", name],
-      modePath: ["component", "checkbox", tokenKey],
-      aliasSrc: componentAliases,
-      aliasPath: ["checkbox", tokenKey]
-    })),
-    ...SELECTION_CONTROL_FIELDS.map(({ name, tokenKey }) => ({
-      varParts: ["radio", name],
-      modePath: ["component", "radio", tokenKey],
-      aliasSrc: componentAliases,
-      aliasPath: ["radio", tokenKey]
-    })),
-    ...SELECT_FIELDS.map(({ name, tokenKey }) => ({
-      varParts: ["select", name],
-      modePath: ["component", "select", tokenKey],
-      aliasSrc: componentAliases,
-      aliasPath: ["select", tokenKey]
-    })),
-    ...TEXTAREA_FIELDS.map(({ name, tokenKey }) => ({
-      varParts: ["textarea", name],
-      modePath: ["component", "textarea", tokenKey],
-      aliasSrc: componentAliases,
-      aliasPath: ["textarea", tokenKey]
-    })),
-    ...FIELDSET_FIELDS.map(({ name, tokenKey }) => ({
-      varParts: ["fieldset", name],
-      modePath: ["component", "fieldset", tokenKey],
-      aliasSrc: componentAliases,
-      aliasPath: ["fieldset", tokenKey]
-    })),
-    ...LABEL_FIELDS.map(({ name, tokenKey }) => ({
-      varParts: ["label", name],
-      modePath: ["component", "label", tokenKey],
-      aliasSrc: componentAliases,
-      aliasPath: ["label", tokenKey]
-    })),
-    ...TESTIMONIAL_FIELDS.map(({ name, tokenKey }) => ({
-      varParts: ["testimonial", name],
-      modePath: ["component", "testimonial", tokenKey],
-      aliasSrc: componentAliases,
-      aliasPath: ["testimonial", tokenKey]
-    })),
-    ...PRICING_CARD_FIELDS.map(({ name, tokenKey }) => ({
-      varParts: ["pricing-card", name],
-      modePath: ["component", "pricingCard", tokenKey],
-      aliasSrc: componentAliases,
-      aliasPath: ["pricingCard", tokenKey]
-    })),
-    ...RATING_FIELDS.map(({ name, tokenKey }) => ({
-      varParts: ["rating", name],
-      modePath: ["component", "rating", tokenKey],
-      aliasSrc: componentAliases,
-      aliasPath: ["rating", tokenKey]
-    }))
-  ];
+  const componentVarParts = (group, kebabGroup, path) => LEGACY_COMPONENT_PREFIX_GROUPS.has(group) ? ["component", kebabGroup, ...path] : [kebabGroup, ...path];
   const baseLines = [];
   const darkLines = [];
   const addBase = (name, value) => {
@@ -1657,12 +1424,56 @@ var generateCssVariables = (tokens2, options = {}) => {
   const addDark = (name, value) => {
     if (value !== void 0) darkLines.push(`  ${name}: ${value};`);
   };
-  semanticEntries.forEach(({ varParts, modePath, aliasSrc, aliasPath }) => {
-    const varName = toVariableName(prefix, ...varParts);
-    const aliasCandidate = aliasSrc && aliasPath ? [getPath(aliasSrc, aliasPath)] : [];
-    addBase(varName, pickSemantic(tokens2, getPath(defaultMode, modePath), ...aliasCandidate));
-    addDark(varName, pickSemantic(tokens2, getPath(darkMode, modePath), getPath(defaultMode, modePath), ...aliasCandidate));
-  });
+  const walkSemanticGroup = (namespace, varPartsFor, aliasSrc) => {
+    const defaultNode = defaultMode[namespace];
+    const darkNode = darkMode[namespace];
+    const paths = /* @__PURE__ */ new Set();
+    const collectPaths = (node, path) => {
+      if (node === void 0) return;
+      const leaf = resolveSemanticValue(node, tokens2, [namespace, ...path].join("."));
+      if (leaf !== void 0) {
+        paths.add(path.join("."));
+        return;
+      }
+      if (isPlainObject(node)) {
+        Object.keys(node).forEach((key) => collectPaths(node[key], [...path, key]));
+      }
+    };
+    collectPaths(defaultNode, []);
+    collectPaths(darkNode, []);
+    collectPaths(aliasSrc, []);
+    paths.forEach((joinedPath) => {
+      const path = joinedPath.split(".");
+      const varName = toVariableName(prefix, ...varPartsFor(path));
+      const aliasCandidate = getPath(aliasSrc, path);
+      const baseValue = pickSemantic(tokens2, getPath(defaultNode, path), aliasCandidate);
+      const darkValue = pickSemantic(tokens2, getPath(darkNode, path), getPath(defaultNode, path), aliasCandidate);
+      addBase(varName, baseValue);
+      addDark(varName, darkValue);
+    });
+  };
+  const kebabPathSegment = (segment) => formatKey(segment.replace(/([a-z0-9])([A-Z])/g, "$1-$2"));
+  walkSemanticGroup(
+    "surface",
+    (path) => ["surface", ...path.map(kebabPathSegment)],
+    surfaceAliases
+  );
+  walkSemanticGroup(
+    "text",
+    (path) => {
+      const [scope, ...rest] = path;
+      return ["text", ...kebabPathSegment(scope).split("-"), ...rest.map(kebabPathSegment)];
+    },
+    textAliases
+  );
+  walkSemanticGroup(
+    "component",
+    (path) => {
+      const [group, ...rest] = path;
+      return componentVarParts(group, kebabPathSegment(group), rest.map(kebabPathSegment));
+    },
+    componentAliases
+  );
   Object.entries(linkTokens).forEach(([key, value]) => {
     const varName = toVariableName(prefix, "link", key);
     const resolved = pickSemantic(tokens2, value);
