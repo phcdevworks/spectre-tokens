@@ -6,6 +6,34 @@ reflects package releases published to npm.
 
 ## [Unreleased]
 
+Contract change type: additive
+
+### Changed
+
+- Phase 9 P0: replaced the hand-maintained field-mapping arrays in
+  `generateCssVariables` (`src/css.ts`) — `BADGE_VARIANTS`, `ICON_BOX_FIELDS`,
+  `NAV_FIELDS`, `MODAL_FIELDS`, `TESTIMONIAL_FIELDS`, `PRICING_CARD_FIELDS`,
+  `RATING_FIELDS`, `TOAST_VARIANTS`, `TOOLTIP_FIELDS`, `DROPDOWN_FIELDS`,
+  `SELECTION_CONTROL_FIELDS`, `SELECT_FIELDS`, `TEXTAREA_FIELDS`,
+  `FIELDSET_FIELDS`, `LABEL_FIELDS` — with a recursive walker that derives
+  every leaf path directly from `tokens.modes.default.*` /
+  `tokens.modes.dark.*` (unioned with the top-level `surface`/`text`/
+  `component` alias objects), so a new field under any `component.*`,
+  `surface`, or `text` group reaches generated CSS by construction instead of
+  requiring a matching array update. This is the defect class behind the
+  `3.1.0`, `3.3.0`, and `3.3.1` CSS-generation gaps.
+- `resolveSemanticValue` now throws with the precise token path when it
+  encounters a value shape it cannot resolve (an object with `metadata`/
+  `description` but no `value`, or a non-object/non-primitive), instead of
+  silently skipping it — turning "token exists but CSS output is missing"
+  into a build-time failure.
+- Generated `dist/index.css` variable names and values are unchanged (byte-
+  identical variable-to-value mapping in both light and dark blocks;
+  declaration order within each block differs since it now follows object
+  key order instead of a curated array order).
+- `tests/css-semantic-coverage.test.ts` continues to pass unmodified,
+  confirming coverage parity with the array-based implementation it replaces.
+
 ## [3.3.1] - 2026-06-30
 
 **Release Title:** Phase 8 - Component CSS Generation Coverage Fix

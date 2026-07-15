@@ -1,20 +1,5 @@
 import type {
   AnimationEntry,
-  ComponentBadgeTokens,
-  ComponentFieldsetTokens,
-  ComponentIconBoxTokens,
-  ComponentLabelTokens,
-  ComponentModalTokens,
-  ComponentNavTokens,
-  ComponentPricingCardTokens,
-  ComponentRatingTokens,
-  ComponentSelectionControlTokens,
-  ComponentSelectTokens,
-  ComponentTestimonialTokens,
-  ComponentTextareaTokens,
-  ComponentToastTokens,
-  ComponentToastVariantTokens,
-  ComponentTooltipTokens,
   CssVariableMap,
   CssVariableOptions,
   SpectreTokens,
@@ -24,6 +9,11 @@ import type {
 
 const DEFAULT_PREFIX = 'sp'
 export const DEFAULT_SELECTOR = ':root'
+
+// component groups that keep the legacy `--sp-component-*` prefix; every
+// group added after Phase 4 P2 drops it (`--sp-select-bg`, not
+// `--sp-component-select-bg`)
+const LEGACY_COMPONENT_PREFIX_GROUPS = new Set(['card', 'input'])
 
 const formatKey = (segment: string): string =>
   segment
@@ -36,141 +26,8 @@ const toVariableName = (prefix: string, ...parts: string[]): string => {
   return `--${prefix}-${filtered.join('-')}`
 }
 
-const BADGE_VARIANTS: Array<{ variant: string; bgKey: keyof ComponentBadgeTokens; bgHoverKey: keyof ComponentBadgeTokens; textKey: keyof ComponentBadgeTokens }> = [
-  { variant: 'neutral', bgKey: 'neutralBg', bgHoverKey: 'neutralBgHover', textKey: 'neutralText' },
-  { variant: 'info', bgKey: 'infoBg', bgHoverKey: 'infoBgHover', textKey: 'infoText' },
-  { variant: 'success', bgKey: 'successBg', bgHoverKey: 'successBgHover', textKey: 'successText' },
-  { variant: 'warning', bgKey: 'warningBg', bgHoverKey: 'warningBgHover', textKey: 'warningText' },
-  { variant: 'danger', bgKey: 'dangerBg', bgHoverKey: 'dangerBgHover', textKey: 'dangerText' }
-]
-
-const ICON_BOX_FIELDS: Array<{ name: string; tokenKey: keyof ComponentIconBoxTokens }> = [
-  { name: 'bg', tokenKey: 'bg' },
-  { name: 'border', tokenKey: 'border' },
-  { name: 'icon-default', tokenKey: 'iconDefault' },
-  { name: 'icon-success', tokenKey: 'iconSuccess' },
-  { name: 'icon-warning', tokenKey: 'iconWarning' },
-  { name: 'icon-danger', tokenKey: 'iconDanger' }
-]
-
-const NAV_FIELDS: Array<{ name: string; tokenKey: keyof ComponentNavTokens }> = [
-  { name: 'bg', tokenKey: 'bg' },
-  { name: 'text', tokenKey: 'text' },
-  { name: 'link', tokenKey: 'link' },
-  { name: 'link-hover', tokenKey: 'linkHover' },
-  { name: 'link-active', tokenKey: 'linkActive' },
-  { name: 'border', tokenKey: 'border' }
-]
-
-const MODAL_FIELDS: Array<{ name: string; tokenKey: keyof ComponentModalTokens }> = [
-  { name: 'bg', tokenKey: 'bg' },
-  { name: 'shadow', tokenKey: 'shadow' },
-  { name: 'border', tokenKey: 'border' },
-  { name: 'overlay', tokenKey: 'overlay' }
-]
-
-const TESTIMONIAL_FIELDS: Array<{ name: string; tokenKey: keyof ComponentTestimonialTokens }> = [
-  { name: 'bg', tokenKey: 'bg' },
-  { name: 'bg-hover', tokenKey: 'bgHover' },
-  { name: 'border', tokenKey: 'border' },
-  { name: 'text', tokenKey: 'text' },
-  { name: 'author-name', tokenKey: 'authorName' },
-  { name: 'author-title', tokenKey: 'authorTitle' },
-  { name: 'quote-mark', tokenKey: 'quoteMark' }
-]
-
-const PRICING_CARD_FIELDS: Array<{ name: string; tokenKey: keyof ComponentPricingCardTokens }> = [
-  { name: 'bg', tokenKey: 'bg' },
-  { name: 'bg-hover', tokenKey: 'bgHover' },
-  { name: 'border', tokenKey: 'border' },
-  { name: 'featured-bg', tokenKey: 'featuredBg' },
-  { name: 'featured-text', tokenKey: 'featuredText' },
-  { name: 'featured-badge-bg', tokenKey: 'featuredBadgeBg' },
-  { name: 'featured-badge-text', tokenKey: 'featuredBadgeText' },
-  { name: 'price', tokenKey: 'price' },
-  { name: 'price-description', tokenKey: 'priceDescription' }
-]
-
-const RATING_FIELDS: Array<{ name: string; tokenKey: keyof ComponentRatingTokens }> = [
-  { name: 'star-filled', tokenKey: 'starFilled' },
-  { name: 'star-empty', tokenKey: 'starEmpty' },
-  { name: 'text', tokenKey: 'text' }
-]
-
-const TOAST_VARIANTS: Array<{ variant: string; fields: Array<{ name: string; tokenKey: keyof ComponentToastVariantTokens }> }> =
-  (['success', 'warning', 'danger', 'info'] as Array<keyof ComponentToastTokens>).map((variant) => ({
-    variant,
-    fields: [
-      { name: 'bg', tokenKey: 'bg' },
-      { name: 'text', tokenKey: 'text' },
-      { name: 'border', tokenKey: 'border' },
-      { name: 'icon', tokenKey: 'icon' }
-    ]
-  }))
-
-const TOOLTIP_FIELDS: Array<{ name: string; tokenKey: keyof ComponentTooltipTokens }> = [
-  { name: 'bg', tokenKey: 'bg' },
-  { name: 'text', tokenKey: 'text' },
-  { name: 'border', tokenKey: 'border' }
-]
-
-const DROPDOWN_FIELDS: Array<{ name: string; modePath: string[]; aliasPath: string[] }> = [
-  { name: 'bg', modePath: ['bg'], aliasPath: ['bg'] },
-  { name: 'border', modePath: ['border'], aliasPath: ['border'] },
-  { name: 'item-default', modePath: ['item', 'default'], aliasPath: ['item', 'default'] },
-  { name: 'item-hover', modePath: ['item', 'hover'], aliasPath: ['item', 'hover'] },
-  { name: 'item-active', modePath: ['item', 'active'], aliasPath: ['item', 'active'] },
-  { name: 'item-text', modePath: ['item', 'text'], aliasPath: ['item', 'text'] }
-]
-
-const SELECTION_CONTROL_FIELDS: Array<{ name: string; tokenKey: keyof ComponentSelectionControlTokens }> = [
-  { name: 'bg', tokenKey: 'bg' },
-  { name: 'border', tokenKey: 'border' },
-  { name: 'checked-bg', tokenKey: 'checkedBg' },
-  { name: 'checked-border', tokenKey: 'checkedBorder' },
-  { name: 'text', tokenKey: 'text' },
-  { name: 'disabled-bg', tokenKey: 'disabledBg' },
-  { name: 'disabled-border', tokenKey: 'disabledBorder' }
-]
-
-const SELECT_FIELDS: Array<{ name: string; tokenKey: keyof ComponentSelectTokens }> = [
-  { name: 'bg', tokenKey: 'bg' },
-  { name: 'border', tokenKey: 'border' },
-  { name: 'text', tokenKey: 'text' },
-  { name: 'placeholder-text', tokenKey: 'placeholderText' },
-  { name: 'disabled-bg', tokenKey: 'disabledBg' },
-  { name: 'disabled-border', tokenKey: 'disabledBorder' },
-  { name: 'focus-border', tokenKey: 'focusBorder' },
-  { name: 'border-invalid', tokenKey: 'borderInvalid' },
-  { name: 'bg-invalid', tokenKey: 'bgInvalid' },
-  { name: 'border-success', tokenKey: 'borderSuccess' },
-  { name: 'bg-success', tokenKey: 'bgSuccess' }
-]
-
-const TEXTAREA_FIELDS: Array<{ name: string; tokenKey: keyof ComponentTextareaTokens }> = [
-  { name: 'bg', tokenKey: 'bg' },
-  { name: 'border', tokenKey: 'border' },
-  { name: 'text', tokenKey: 'text' },
-  { name: 'placeholder', tokenKey: 'placeholder' },
-  { name: 'disabled-bg', tokenKey: 'disabledBg' },
-  { name: 'disabled-border', tokenKey: 'disabledBorder' },
-  { name: 'focus-border', tokenKey: 'focusBorder' },
-  { name: 'border-invalid', tokenKey: 'borderInvalid' },
-  { name: 'bg-invalid', tokenKey: 'bgInvalid' },
-  { name: 'border-success', tokenKey: 'borderSuccess' },
-  { name: 'bg-success', tokenKey: 'bgSuccess' }
-]
-
-const FIELDSET_FIELDS: Array<{ name: string; tokenKey: keyof ComponentFieldsetTokens }> = [
-  { name: 'border', tokenKey: 'border' },
-  { name: 'legend-text', tokenKey: 'legendText' }
-]
-
-const LABEL_FIELDS: Array<{ name: string; tokenKey: keyof ComponentLabelTokens }> = [
-  { name: 'text', tokenKey: 'text' },
-  { name: 'disabled-text', tokenKey: 'disabledText' },
-  { name: 'required-indicator-text', tokenKey: 'requiredIndicatorText' }
-]
+const isPlainObject = (value: unknown): value is Record<string, unknown> =>
+  typeof value === 'object' && value !== null && !Array.isArray(value)
 
 const resolveTokenReference = (tokens: SpectreTokens, reference: string): string => {
   const path = reference.slice(1, -1).split('.')
@@ -215,14 +72,21 @@ const resolveValue = (tokens: SpectreTokens, value: unknown): string => {
   return str
 }
 
-const resolveSemanticValue = (value: unknown, tokens: SpectreTokens): string | undefined => {
+const resolveSemanticValue = (value: unknown, tokens: SpectreTokens, path?: string): string | undefined => {
+  if (value === undefined) return undefined
   if (typeof value === 'string' || typeof value === 'number') {
     return resolveValue(tokens, value)
   }
-  if (value && typeof value === 'object' && 'value' in (value as Record<string, unknown>)) {
-    return resolveValue(tokens, (value as Record<string, unknown>).value)
+  if (isPlainObject(value)) {
+    if ('value' in value) {
+      return resolveValue(tokens, value.value)
+    }
+    if ('metadata' in value || 'description' in value) {
+      throw new Error(`Unsupported token value shape at "${path ?? '(unknown path)'}": expected a string, number, or { value } wrapper.`)
+    }
+    return undefined
   }
-  return undefined
+  throw new Error(`Unsupported token value shape at "${path ?? '(unknown path)'}": ${JSON.stringify(value)}`)
 }
 
 const getPath = (source: unknown, path: string[]): unknown =>
@@ -430,103 +294,84 @@ export const generateCssVariables = (tokens: SpectreTokens, options: CssVariable
   const componentAliases = tokens.component ?? {}
   const linkTokens = tokens.link ?? {}
 
-  type SemanticEntry = {
-    varParts: string[]
-    modePath: string[]
-    aliasSrc?: unknown
-    aliasPath?: string[]
-  }
-
-  const semanticEntries: SemanticEntry[] = [
-    { varParts: ['surface', 'page'],      modePath: ['surface', 'page'],      aliasSrc: surfaceAliases, aliasPath: ['page'] },
-    { varParts: ['surface', 'card'],      modePath: ['surface', 'card'],      aliasSrc: surfaceAliases, aliasPath: ['card'] },
-    { varParts: ['surface', 'input'],     modePath: ['surface', 'input'],     aliasSrc: surfaceAliases, aliasPath: ['input'] },
-    { varParts: ['surface', 'overlay'],   modePath: ['surface', 'overlay'],   aliasSrc: surfaceAliases, aliasPath: ['overlay'] },
-    { varParts: ['surface', 'subtle'], modePath: ['surface', 'subtle'] },
-    { varParts: ['surface', 'hero'],      modePath: ['surface', 'hero'],      aliasSrc: surfaceAliases, aliasPath: ['hero'] },
-    { varParts: ['surface', 'hover'],     modePath: ['surface', 'hover'],     aliasSrc: surfaceAliases, aliasPath: ['hover'] },
-    { varParts: ['surface', 'selected'],  modePath: ['surface', 'selected'],  aliasSrc: surfaceAliases, aliasPath: ['selected'] },
-    { varParts: ['surface', 'active'],    modePath: ['surface', 'active'],    aliasSrc: surfaceAliases, aliasPath: ['active'] },
-    { varParts: ['surface', 'divider'],   modePath: ['surface', 'divider'],   aliasSrc: surfaceAliases, aliasPath: ['divider'] },
-    { varParts: ['text', 'on', 'page', 'default'], modePath: ['text', 'onPage', 'default'], aliasSrc: textAliases, aliasPath: ['onPage', 'default'] },
-    { varParts: ['text', 'on', 'page', 'muted'],   modePath: ['text', 'onPage', 'muted'],   aliasSrc: textAliases, aliasPath: ['onPage', 'muted'] },
-    { varParts: ['text', 'on', 'page', 'subtle'],  modePath: ['text', 'onPage', 'subtle'],  aliasSrc: textAliases, aliasPath: ['onPage', 'subtle'] },
-    { varParts: ['text', 'on', 'page', 'meta'],    modePath: ['text', 'onPage', 'meta'],    aliasSrc: textAliases, aliasPath: ['onPage', 'meta'] },
-    { varParts: ['text', 'on', 'page', 'brand'],   modePath: ['text', 'onPage', 'brand'],   aliasSrc: textAliases, aliasPath: ['onPage', 'brand'] },
-    { varParts: ['text', 'on', 'surface', 'default'], modePath: ['text', 'onSurface', 'default'], aliasSrc: textAliases, aliasPath: ['onSurface', 'default'] },
-    { varParts: ['text', 'on', 'surface', 'muted'],   modePath: ['text', 'onSurface', 'muted'],   aliasSrc: textAliases, aliasPath: ['onSurface', 'muted'] },
-    { varParts: ['text', 'on', 'surface', 'subtle'],  modePath: ['text', 'onSurface', 'subtle'],  aliasSrc: textAliases, aliasPath: ['onSurface', 'subtle'] },
-    { varParts: ['text', 'on', 'surface', 'meta'],    modePath: ['text', 'onSurface', 'meta'],    aliasSrc: textAliases, aliasPath: ['onSurface', 'meta'] },
-    { varParts: ['text', 'on', 'surface', 'brand'],   modePath: ['text', 'onSurface', 'brand'],   aliasSrc: textAliases, aliasPath: ['onSurface', 'brand'] },
-    { varParts: ['component', 'card', 'text'],         modePath: ['component', 'card', 'text'],         aliasSrc: componentAliases, aliasPath: ['card', 'text'] },
-    { varParts: ['component', 'card', 'text-muted'],   modePath: ['component', 'card', 'textMuted'],    aliasSrc: componentAliases, aliasPath: ['card', 'textMuted'] },
-    { varParts: ['component', 'input', 'text'],        modePath: ['component', 'input', 'text'],        aliasSrc: componentAliases, aliasPath: ['input', 'text'] },
-    { varParts: ['component', 'input', 'placeholder'], modePath: ['component', 'input', 'placeholder'], aliasSrc: componentAliases, aliasPath: ['input', 'placeholder'] },
-    { varParts: ['button', 'text', 'default'],        modePath: ['component', 'button', 'textDefault'],    aliasSrc: componentAliases, aliasPath: ['button', 'textDefault'] },
-    { varParts: ['button', 'text', 'on', 'primary'],  modePath: ['component', 'button', 'textOnPrimary'],  aliasSrc: componentAliases, aliasPath: ['button', 'textOnPrimary'] },
-    ...BADGE_VARIANTS.flatMap(({ variant, bgKey, bgHoverKey, textKey }) => [
-      { varParts: ['badge', variant, 'bg'],       modePath: ['component', 'badge', bgKey],       aliasSrc: componentAliases, aliasPath: ['badge', bgKey] },
-      { varParts: ['badge', variant, 'bg-hover'], modePath: ['component', 'badge', bgHoverKey],  aliasSrc: componentAliases, aliasPath: ['badge', bgHoverKey] },
-      { varParts: ['badge', variant, 'text'],     modePath: ['component', 'badge', textKey],     aliasSrc: componentAliases, aliasPath: ['badge', textKey] },
-    ]),
-    ...ICON_BOX_FIELDS.map(({ name, tokenKey }) => ({
-      varParts: ['icon-box', name], modePath: ['component', 'iconBox', tokenKey], aliasSrc: componentAliases, aliasPath: ['iconBox', tokenKey],
-    })),
-    ...NAV_FIELDS.map(({ name, tokenKey }) => ({
-      varParts: ['nav', name], modePath: ['component', 'nav', tokenKey], aliasSrc: componentAliases, aliasPath: ['nav', tokenKey],
-    })),
-    ...MODAL_FIELDS.map(({ name, tokenKey }) => ({
-      varParts: ['modal', name], modePath: ['component', 'modal', tokenKey], aliasSrc: componentAliases, aliasPath: ['modal', tokenKey],
-    })),
-    ...TOAST_VARIANTS.flatMap(({ variant, fields }) => fields.map(({ name, tokenKey }) => ({
-      varParts: ['toast', variant, name], modePath: ['component', 'toast', variant, tokenKey], aliasSrc: componentAliases, aliasPath: ['toast', variant, tokenKey],
-    }))),
-    ...TOOLTIP_FIELDS.map(({ name, tokenKey }) => ({
-      varParts: ['tooltip', name], modePath: ['component', 'tooltip', tokenKey], aliasSrc: componentAliases, aliasPath: ['tooltip', tokenKey],
-    })),
-    ...DROPDOWN_FIELDS.map(({ name, modePath, aliasPath }) => ({
-      varParts: ['dropdown', name], modePath: ['component', 'dropdown', ...modePath], aliasSrc: componentAliases, aliasPath: ['dropdown', ...aliasPath],
-    })),
-    ...SELECTION_CONTROL_FIELDS.map(({ name, tokenKey }) => ({
-      varParts: ['checkbox', name], modePath: ['component', 'checkbox', tokenKey], aliasSrc: componentAliases, aliasPath: ['checkbox', tokenKey],
-    })),
-    ...SELECTION_CONTROL_FIELDS.map(({ name, tokenKey }) => ({
-      varParts: ['radio', name], modePath: ['component', 'radio', tokenKey], aliasSrc: componentAliases, aliasPath: ['radio', tokenKey],
-    })),
-    ...SELECT_FIELDS.map(({ name, tokenKey }) => ({
-      varParts: ['select', name], modePath: ['component', 'select', tokenKey], aliasSrc: componentAliases, aliasPath: ['select', tokenKey],
-    })),
-    ...TEXTAREA_FIELDS.map(({ name, tokenKey }) => ({
-      varParts: ['textarea', name], modePath: ['component', 'textarea', tokenKey], aliasSrc: componentAliases, aliasPath: ['textarea', tokenKey],
-    })),
-    ...FIELDSET_FIELDS.map(({ name, tokenKey }) => ({
-      varParts: ['fieldset', name], modePath: ['component', 'fieldset', tokenKey], aliasSrc: componentAliases, aliasPath: ['fieldset', tokenKey],
-    })),
-    ...LABEL_FIELDS.map(({ name, tokenKey }) => ({
-      varParts: ['label', name], modePath: ['component', 'label', tokenKey], aliasSrc: componentAliases, aliasPath: ['label', tokenKey],
-    })),
-    ...TESTIMONIAL_FIELDS.map(({ name, tokenKey }) => ({
-      varParts: ['testimonial', name], modePath: ['component', 'testimonial', tokenKey], aliasSrc: componentAliases, aliasPath: ['testimonial', tokenKey],
-    })),
-    ...PRICING_CARD_FIELDS.map(({ name, tokenKey }) => ({
-      varParts: ['pricing-card', name], modePath: ['component', 'pricingCard', tokenKey], aliasSrc: componentAliases, aliasPath: ['pricingCard', tokenKey],
-    })),
-    ...RATING_FIELDS.map(({ name, tokenKey }) => ({
-      varParts: ['rating', name], modePath: ['component', 'rating', tokenKey], aliasSrc: componentAliases, aliasPath: ['rating', tokenKey],
-    })),
-  ]
+  // `component.card`/`component.input` predate the Phase 4 P2 component
+  // groups and keep the legacy `component-` segment in their variable name;
+  // every group added since drops it (`--sp-select-bg`, not
+  // `--sp-component-select-bg`).
+  const componentVarParts = (group: string, kebabGroup: string, path: string[]): string[] =>
+    LEGACY_COMPONENT_PREFIX_GROUPS.has(group) ? ['component', kebabGroup, ...path] : [kebabGroup, ...path]
 
   const baseLines: string[] = []
   const darkLines: string[] = []
   const addBase = (name: string, value?: string) => { if (value !== undefined) baseLines.push(`  ${name}: ${value};`) }
   const addDark = (name: string, value?: string) => { if (value !== undefined) darkLines.push(`  ${name}: ${value};`) }
 
-  semanticEntries.forEach(({ varParts, modePath, aliasSrc, aliasPath }) => {
-    const varName = toVariableName(prefix, ...varParts)
-    const aliasCandidate = aliasSrc && aliasPath ? [getPath(aliasSrc, aliasPath)] : []
-    addBase(varName, pickSemantic(tokens, getPath(defaultMode, modePath), ...aliasCandidate))
-    addDark(varName, pickSemantic(tokens, getPath(darkMode, modePath), getPath(defaultMode, modePath), ...aliasCandidate))
-  })
+  // Recursively derives every leaf path under `tokens.modes.default.<namespace>`
+  // and `tokens.modes.dark.<namespace>`, unioned so a leaf present in only one
+  // mode is still emitted. Each leaf resolves its base/dark CSS value from the
+  // matching mode node, falling back to the opposite mode then the top-level
+  // `tokens.<namespace>` alias — replacing what used to be a hand-maintained
+  // per-component field list.
+  const walkSemanticGroup = (
+    namespace: 'surface' | 'text' | 'component',
+    varPartsFor: (path: string[]) => string[],
+    aliasSrc: unknown
+  ): void => {
+    const defaultNode = (defaultMode as Record<string, unknown>)[namespace]
+    const darkNode = (darkMode as Record<string, unknown>)[namespace]
+    const paths = new Set<string>()
+    const collectPaths = (node: unknown, path: string[]): void => {
+      if (node === undefined) return
+      const leaf = resolveSemanticValue(node, tokens, [namespace, ...path].join('.'))
+      if (leaf !== undefined) {
+        paths.add(path.join('.'))
+        return
+      }
+      if (isPlainObject(node)) {
+        Object.keys(node).forEach((key) => collectPaths((node as Record<string, unknown>)[key], [...path, key]))
+      }
+    }
+    collectPaths(defaultNode, [])
+    collectPaths(darkNode, [])
+    collectPaths(aliasSrc, [])
+
+    paths.forEach((joinedPath) => {
+      const path = joinedPath.split('.')
+      const varName = toVariableName(prefix, ...varPartsFor(path))
+      const aliasCandidate = getPath(aliasSrc, path)
+      const baseValue = pickSemantic(tokens, getPath(defaultNode, path), aliasCandidate)
+      const darkValue = pickSemantic(tokens, getPath(darkNode, path), getPath(defaultNode, path), aliasCandidate)
+      addBase(varName, baseValue)
+      addDark(varName, darkValue)
+    })
+  }
+
+  const kebabPathSegment = (segment: string): string =>
+    formatKey(segment.replace(/([a-z0-9])([A-Z])/g, '$1-$2'))
+
+  walkSemanticGroup(
+    'surface',
+    (path) => ['surface', ...path.map(kebabPathSegment)],
+    surfaceAliases
+  )
+
+  walkSemanticGroup(
+    'text',
+    (path) => {
+      const [scope, ...rest] = path as [string, ...string[]]
+      return ['text', ...kebabPathSegment(scope).split('-'), ...rest.map(kebabPathSegment)]
+    },
+    textAliases
+  )
+
+  walkSemanticGroup(
+    'component',
+    (path) => {
+      const [group, ...rest] = path as [string, ...string[]]
+      return componentVarParts(group, kebabPathSegment(group), rest.map(kebabPathSegment))
+    },
+    componentAliases
+  )
 
   Object.entries(linkTokens).forEach(([key, value]) => {
     const varName = toVariableName(prefix, 'link', key)
