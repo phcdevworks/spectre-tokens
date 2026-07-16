@@ -33,6 +33,35 @@ Contract change type: additive
   key order instead of a curated array order).
 - `tests/css-semantic-coverage.test.ts` continues to pass unmodified,
   confirming coverage parity with the array-based implementation it replaces.
+- Phase 9 P1: added `contract.manifest.json`'s `outputParity` section and
+  `scripts/check-output-parity.ts` (wired into `npm run check` as
+  `check:parity`), which derives exhaustive leaf-path coverage assertions
+  from the token tree instead of the curated path samples
+  `requiredOutputs.js.requiredPaths` / `requiredOutputs.css.requiredVariables`
+  relied on:
+  - JS: every leaf under each `outputParity.js.namespaces` entry must resolve
+    to an equal value in both the runtime `tokens` export and generated
+    `coreTokens`.
+  - DTCG: every leaf under each `outputParity.dtcg.namespaces` entry must
+    have a corresponding `$value` in `dist/tokens.dtcg.json`.
+  - CSS: `outputParity.css.groups` declares, per CSS-emitting group, the
+    source path and variable-name prefix parts; every leaf under that source
+    path must appear as a CSS variable in the generated `:root` block (and
+    the dark-mode block too, for groups marked `hasModes`). Namespaces with
+    genuinely irregular per-field CSS naming (`typography`, `font`, `layout`,
+    `accessibility`, `buttons`, `forms`, `animations`) are listed as
+    documented `outputParity.css.exceptions` rather than force-fit into the
+    generic walker, and remain covered by the existing curated
+    `requiredVariables` checks.
+  - Running this check against the pre-fix codebase surfaced two real,
+    previously-undetected gaps: `icons` and `aspectRatios` are public
+    namespaces with zero CSS output, and `accessibility.forcedColors` was
+    never emitted. All three are fixed in `src/css.ts` (`--sp-icon-*`,
+    `--sp-aspect-ratio-*`, `--sp-forced-colors`) as part of this change —
+    purely additive, no existing CSS variable name or value changed.
+  - `collectRuntimeLeafPaths` added to `scripts/token-utils.ts`: walks a
+    runtime (already-unwrapped) token subtree and returns every leaf path,
+    for use by output-parity assertions.
 
 ## [3.3.1] - 2026-06-30
 

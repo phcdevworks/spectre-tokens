@@ -41,6 +41,18 @@ if (manifest.requiredOutputs.tailwind.expectations.length === 0) {
   throw new Error('Contract manifest must declare required Tailwind expectations.');
 }
 
+if (manifest.outputParity.js.namespaces.length === 0) {
+  throw new Error('Contract manifest must declare output parity JS namespaces.');
+}
+
+if (manifest.outputParity.dtcg.namespaces.length === 0) {
+  throw new Error('Contract manifest must declare output parity DTCG namespaces.');
+}
+
+if (manifest.outputParity.css.groups.length === 0) {
+  throw new Error('Contract manifest must declare output parity CSS groups.');
+}
+
 if (!manifest.docContract.requiredFiles || manifest.docContract.requiredFiles.length === 0) {
   throw new Error('Contract manifest must declare required contract documentation files.');
 }
