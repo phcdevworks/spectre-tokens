@@ -226,6 +226,56 @@
       ]
     }
   },
+  "outputParity": {
+    "description": "Phase 9 P1: full leaf-path coverage across runtime JS, generated TypeScript, CSS, and DTCG, derived from the token tree rather than a curated sample.",
+    "js": {
+      "namespaces": [
+        "colors", "space", "layout", "radii", "typography", "font", "shadows",
+        "breakpoints", "zIndex", "transitions", "animations", "opacity",
+        "aspectRatios", "icons", "border", "accessibility", "buttons", "forms",
+        "link", "surface", "text", "component", "modes"
+      ]
+    },
+    "dtcg": {
+      "namespaces": [
+        "colors", "space", "layout", "radii", "typography", "font", "shadows",
+        "breakpoints", "zIndex", "transitions", "animations", "opacity",
+        "aspectRatios", "icons", "border", "accessibility", "buttons", "forms",
+        "link", "surface", "text", "component"
+      ]
+    },
+    "css": {
+      "description": "Each group declares the CSS variable prefix parts for every leaf under sourcePath. hasModes groups are checked in both the default (:root) and dark ([data-spectre-theme=\"dark\"]) blocks; the rest are mode-invariant and checked once.",
+      "groups": [
+        { "sourcePath": "colors", "prefixParts": ["color"], "hasModes": false },
+        { "sourcePath": "space", "prefixParts": ["space"], "hasModes": false },
+        { "sourcePath": "radii", "prefixParts": ["radius"], "hasModes": false },
+        { "sourcePath": "shadows", "prefixParts": ["shadow"], "hasModes": false },
+        { "sourcePath": "breakpoints", "prefixParts": ["breakpoint"], "hasModes": false },
+        { "sourcePath": "zIndex", "prefixParts": ["z-index"], "hasModes": false },
+        { "sourcePath": "opacity", "prefixParts": ["opacity"], "hasModes": false },
+        { "sourcePath": "icons", "prefixParts": ["icon"], "hasModes": false },
+        { "sourcePath": "aspectRatios", "prefixParts": ["aspect-ratio"], "hasModes": false },
+        { "sourcePath": "border.width", "prefixParts": ["border", "width"], "hasModes": false },
+        { "sourcePath": "border.style", "prefixParts": ["border", "style"], "hasModes": false },
+        { "sourcePath": "transitions.duration", "prefixParts": ["duration"], "hasModes": false },
+        { "sourcePath": "transitions.easing", "prefixParts": ["easing"], "hasModes": false },
+        { "sourcePath": "link", "prefixParts": ["link"], "hasModes": false },
+        { "sourcePath": "modes.default.surface", "prefixParts": ["surface"], "hasModes": true },
+        { "sourcePath": "modes.default.text.onPage", "prefixParts": ["text", "on", "page"], "hasModes": true },
+        { "sourcePath": "modes.default.text.onSurface", "prefixParts": ["text", "on", "surface"], "hasModes": true }
+      ],
+      "exceptions": [
+        "typography and font describe the same font scale via two parallel key shapes (fontSize/lineHeight/fontWeight vs size/lineHeight/weight/letterSpacing); css.ts emits from whichever is populated. Covered by check:css requiredVariables, not a generic per-leaf walk.",
+        "layout emits per-branch (section.padding, section.gap, stack.gap, container.paddingInline, container.maxWidth/maxWidthProse, sidebar.width) with no shared prefix across the namespace. Covered by check:css requiredVariables and manifest spaceLinkedLayoutPaths.",
+        "accessibility fields (focusRing.width/offset/style, minTouchTarget, minTextSize, reducedMotion, forcedColors) each have an independent CSS variable name with no shared prefix. Covered by check:css requiredVariables.",
+        "buttons and forms nest by variant/state (buttons.primary.bg, forms.invalid.text) with irregular optional fields (border, shadow, focusRing only on some variants). Covered by check:css requiredVariables and existing button/form tests.",
+        "animations splits into a flat set (fadeIn, fadeOut, ...) plus a nested reducedMotion sub-object emitted with an extra reduced-motion path segment. Covered by check:css requiredVariables.",
+        "component is covered exhaustively by tests/css-semantic-coverage.test.ts, which already asserts full leaf coverage per component group.",
+        "modes.dark.text is covered by the css-semantic-coverage test asserting tokens.modes.default.surface keys; dark-mode text/surface parity is asserted via requiredDarkModeVariables."
+      ]
+    }
+  },
   "protectedSemanticGroups": [
     "success",
     "warning",

@@ -190,6 +190,20 @@ export const createCssVariableMap = (tokens: SpectreTokens, options: CssVariable
     assign(toVariableName(prefix, 'radius', key), value)
   })
 
+  const icons = (baseTokens as unknown as Record<string, unknown>).icons as Record<string, string> | undefined
+  if (icons) {
+    Object.entries(icons).forEach(([key, value]) => {
+      assign(toVariableName(prefix, 'icon', key), value)
+    })
+  }
+
+  const aspectRatios = (baseTokens as unknown as Record<string, unknown>).aspectRatios as Record<string, string> | undefined
+  if (aspectRatios) {
+    Object.entries(aspectRatios).forEach(([key, value]) => {
+      assign(toVariableName(prefix, 'aspect-ratio', key), value)
+    })
+  }
+
   Object.entries(baseTokens.typography.families).forEach(([key, value]) => {
     assign(toVariableName(prefix, 'font-family', key), value)
   })
@@ -246,6 +260,7 @@ export const createCssVariableMap = (tokens: SpectreTokens, options: CssVariable
   assign(toVariableName(prefix, 'min-touch-target'), baseTokens.accessibility.minTouchTarget)
   assign(toVariableName(prefix, 'min-text-size'), baseTokens.accessibility.minTextSize)
   assign(toVariableName(prefix, 'reduced-motion'), baseTokens.accessibility.reducedMotion)
+  assign(toVariableName(prefix, 'forced-colors'), (baseTokens.accessibility as unknown as Record<string, unknown>).forcedColors)
 
   Object.entries(baseTokens.buttons).forEach(([variant, states]) => {
     Object.entries(states).forEach(([state, value]) => {

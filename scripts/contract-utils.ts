@@ -16,6 +16,23 @@ export interface DesignOutput {
   requiredTopLevelKeys: string[];
 }
 
+export interface CssParityGroup {
+  sourcePath: string;
+  prefixParts: string[];
+  hasModes: boolean;
+}
+
+export interface OutputParity {
+  description: string;
+  js: { namespaces: string[] };
+  dtcg: { namespaces: string[] };
+  css: {
+    description: string;
+    groups: CssParityGroup[];
+    exceptions: string[];
+  };
+}
+
 export interface ContractManifest {
   version: number;
   publicNamespaces: string[];
@@ -37,6 +54,7 @@ export interface ContractManifest {
       expectations: TailwindExpectation[];
     };
   };
+  outputParity: OutputParity;
   protectedSemanticGroups: string[];
   docContract: {
     requiredFiles: string[];

@@ -84,6 +84,14 @@ export function loadMergedTokens(): Record<string, unknown> {
   return merged;
 }
 
+export function collectRuntimeLeafPaths(value: unknown, path: string[] = []): string[] {
+  if (!isObject(value) || Array.isArray(value)) {
+    return path.length > 0 ? [path.join('.')] : [];
+  }
+
+  return Object.entries(value).flatMap(([key, entry]) => collectRuntimeLeafPaths(entry, [...path, key]));
+}
+
 export function flattenTokenTree(value: unknown): unknown {
   if (Array.isArray(value)) {
     return value.map((entry) => flattenTokenTree(entry));
