@@ -517,10 +517,9 @@ rule) — see `spectre-ui/TODO.md` Phase 5 P0.
       matching `getInputClasses`'s existing `sp-input--loading` handling in
       `spectre-ui` (`src/styles/components.css`) — no color role added.
 - [x] Published in `3.3.0`, with the CSS/types sync bug fixed in `3.3.1`
-      (see below, pending release). `spectre-ui` still needs to bump its
-      declared range to `^3.3.1` before adopting `invalid`/`success` options
-      on `getSelectClasses`/`getTextareaClasses` — see `spectre-ui/TODO.md`
-      Phase 5 P0.
+      (see below). `spectre-ui` now declares `^3.3.1` and can adopt the
+      `invalid`/`success` options on `getSelectClasses`/`getTextareaClasses`
+      tracked in its Phase 5 P0 TODO.
 
 ### P0: Fix 3.3.0 — Component CSS Generation Coverage Gaps (published in 3.3.1)
 

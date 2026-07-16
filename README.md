@@ -17,7 +17,7 @@ translate Spectre contracts for specific frameworks and runtimes.
 | Project team           | `project-design`                 |
 | Repository role        | Spectre L1 design-token contract |
 | Package/artifact       | `@phcdevworks/spectre-tokens`    |
-| Current version/status | 3.3.1                            |
+| Current version/status | 3.4.0                            |
 
 ## Standard Workflow
 
