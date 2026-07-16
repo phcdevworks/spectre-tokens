@@ -94,6 +94,7 @@ Changes to those files must be regenerated, validated, and classified in
 | `check:consumer`       | downstream smoke fixture passes                                                      |
 | `check:classification` | contract-authority changes have changelog entry                                      |
 | `check:dist`           | dist artifacts are in sync with source                                               |
+| `check:downstream`     | packs the tarball and runs spectre-ui/spectre-ui-astro/spectre-components's own `npm run check` against it (sibling repos on disk only; not part of `npm run check`) |
 | `lint`                 | ESLint passes                                                    |
 
 ## Token Change Procedure
@@ -150,7 +151,10 @@ namespace is `borders` - always use `border` (singular).
 4. Update the `[unreleased]` and add the new version compare link at the bottom
    of `CHANGELOG.md`.
 5. Run `npm run check` - must pass clean.
-6. Hand off to human for review, commit, tag, and GitHub Release publish.
+6. Run `npm run check:downstream` if `spectre-ui`, `spectre-ui-astro`, and
+   `spectre-components` are present as sibling repos - validates the packed
+   candidate tarball against each one's own check gate before release.
+7. Hand off to human for review, commit, tag, and GitHub Release publish.
 
 ## What This Package Does Not Own
 

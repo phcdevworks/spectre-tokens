@@ -82,6 +82,7 @@
     "check:ecosystem": "spectre-manifest-validate spectre.manifest.json && spectre-manifest-check spectre.manifest.json .",
     "check:classification": "tsx scripts/check-change-classification.ts",
     "check:deprecation": "tsx scripts/check-deprecation.ts",
+    "check:downstream": "tsx scripts/check-downstream-compat.ts",
     "release:propose": "tsx scripts/propose-version.ts",
     "lint": "eslint .",
     "format": "prettier --write .",

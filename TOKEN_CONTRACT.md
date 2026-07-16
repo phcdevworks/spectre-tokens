@@ -423,6 +423,38 @@ string:
   so the generator does not need to special-case keyword weights, but
   `check-dtcg-conformance.ts`'s validator accepts both shapes.
 
+## Live Downstream Compatibility
+
+`scripts/check-downstream-compat.ts` (`npm run check:downstream`) packs this
+repo into a real npm tarball and, for each of `spectre-ui`,
+`spectre-ui-astro`, and `spectre-components` present as a sibling repo on
+disk, installs that tarball and runs the sibling's own `npm run check` — the
+same gate that repo runs on every one of its own changes. This is the
+ecosystem contract authority for compatibility: it validates against each
+downstream package's real build, lint, type, and test suite, not a
+repository-local guess at what they need.
+
+Rules:
+
+- Each sibling repo must have a clean working tree before this check runs
+  against it; a dirty tree is skipped rather than risking the check's
+  restore step reverting uncommitted work.
+- The sibling's `package.json`/`package-lock.json` are always restored to
+  their committed state afterward via `git checkout` + `npm install`, whether
+  the check passes or fails.
+- This check requires the sibling repos to exist as local checkouts
+  alongside this one; it is not part of `npm run check` and is not expected
+  to run in every environment (e.g. CI that only checks out this repo).
+  Repository-local fixtures (`check:consumer`, `check:integration`) remain
+  the fast, always-available compatibility signal; this check is the
+  pre-release confirmation against real consumers.
+- A concrete failure surfaced here — a real downstream build/type/lint/test
+  break caused by a token contract change — is the trigger for a token
+  proposal (new namespace, new field, a fix). This check is not a license to
+  speculatively expand the token surface; only a demonstrated downstream gap
+  justifies a contract change, per this package's demand-driven expansion
+  policy.
+
 ## Downstream Consumer Expectations
 
 Downstream packages may rely on this repo to provide:

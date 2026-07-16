@@ -186,6 +186,26 @@ Contract change type: additive
   - The full generated output was diffed leaf-by-leaf before/after: every
     change is additive/corrective to a `$value`'s shape or a `$type`'s
     correctness; no token path was added, removed, or renamed.
+- Phase 9 P3: added `scripts/check-downstream-compat.ts` (`npm run
+  check:downstream`), the live downstream compatibility check the roadmap
+  called for. It packs this repo into a real npm tarball, then for each of
+  `spectre-ui`, `spectre-ui-astro`, and `spectre-components` present as a
+  sibling checkout on disk, installs that tarball and runs the sibling's own
+  `npm run check` — proving the packed candidate artifact against each
+  downstream package's actual build/lint/type/test gate, not a
+  repository-local guess at what they need. A sibling with a dirty working
+  tree is skipped rather than risking its uncommitted work; every sibling's
+  `package.json`/`package-lock.json` is restored via `git checkout` + `npm
+  install` afterward regardless of pass/fail. Verified end-to-end against
+  the real sibling repos: all three passed against the current candidate,
+  and all three were confirmed clean (`git status`) after the run. Not part
+  of `npm run check` — it requires sibling repos on disk and is
+  meaningfully slower (three full downstream check suites), so it's wired as
+  a separate pre-release gate (documented in `CLAUDE.md`'s Release
+  Procedure) rather than the fast default loop. `TOKEN_CONTRACT.md` gained a
+  "Live Downstream Compatibility" section documenting the mechanism and the
+  demand-driven policy: a concrete failure here is what justifies a token
+  proposal, not speculative namespace expansion.
 
 ## [3.3.1] - 2026-06-30
 
