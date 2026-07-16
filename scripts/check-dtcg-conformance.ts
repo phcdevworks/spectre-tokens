@@ -33,6 +33,9 @@ const isShadowObject = (value: unknown): boolean =>
   isObject(value) &&
   ['color', 'offsetX', 'offsetY', 'blur', 'spread'].every((key) => typeof value[key] === 'string');
 
+const isGradientStop = (value: unknown): boolean =>
+  isObject(value) && typeof value.color === 'string' && typeof value.position === 'number' && Number.isFinite(value.position);
+
 // Per-$type structural conformance rules. Each validator receives the $value
 // and returns true if its shape matches what that $type requires — this is
 // the "validate inferred $type against actual source value shapes"
@@ -47,6 +50,7 @@ const TYPE_VALIDATORS: Record<string, (value: unknown) => boolean> = {
   cubicBezier: (v) => isFiniteNumberArray(v) && (v as number[]).length === 4,
   fontFamily: (v) => isStringArray(v) && v.length > 0,
   shadow: (v) => isShadowObject(v) || (Array.isArray(v) && v.length > 0 && v.every(isShadowObject)),
+  gradient: (v) => Array.isArray(v) && v.length >= 2 && v.every(isGradientStop),
   string: (v) => typeof v === 'string' || Array.isArray(v)
 };
 

@@ -25,6 +25,13 @@ export function isShadowPath(keyPath: string): boolean {
   return SHADOW_PATH_PREFIXES.some((prefix) => withoutModePrefix.startsWith(prefix))
 }
 
+const GRADIENT_LEAF_PATHS = new Set(['surface.hero'])
+
+export function isGradientPath(keyPath: string): boolean {
+  const withoutModePrefix = keyPath.replace(/^modes\.(default|dark)\./, '')
+  return GRADIENT_LEAF_PATHS.has(withoutModePrefix)
+}
+
 function getAtPath(source: unknown, path: string): unknown {
   return path.split('.').reduce<unknown>((acc, key) => {
     if (isObject(acc)) return acc[key]
@@ -60,6 +67,36 @@ export function parseCubicBezier(value: string): [number, number, number, number
   const match = value.match(/^cubic-bezier\(\s*([\d.-]+)\s*,\s*([\d.-]+)\s*,\s*([\d.-]+)\s*,\s*([\d.-]+)\s*\)$/)
   if (!match) return undefined
   return [Number(match[1]), Number(match[2]), Number(match[3]), Number(match[4])]
+}
+
+export interface DtcgGradientStop {
+  color: string
+  position: number
+}
+
+// DTCG's gradient $type (Format Module 2025.10) represents color stops only
+// — a { color, position } array, with position normalized to 0–1 — not CSS
+// gradient geometry (angle/shape/repeating). `direction` therefore has no
+// place in the DTCG value and is intentionally dropped; see
+// TOKEN_CONTRACT.md's DTCG section for why that's a spec limitation, not an
+// oversight here.
+const LINEAR_GRADIENT_PATTERN = /^linear-gradient\(\s*[^,]+,\s*(.+)\)$/
+
+function parseGradientStop(stop: string): DtcgGradientStop | undefined {
+  const match = stop.trim().match(/^(.+?)\s+(-?[\d.]+)%$/)
+  if (!match) return undefined
+  const [, color, percentage] = match
+  return { color, position: Number(percentage) / 100 }
+}
+
+export function parseGradientValue(value: string): DtcgGradientStop[] | undefined {
+  const match = value.match(LINEAR_GRADIENT_PATTERN)
+  if (!match) return undefined
+
+  const stops = match[1].split(/,(?![^(]*\))/).map((stop) => parseGradientStop(stop))
+  if (stops.length < 2 || stops.some((stop) => stop === undefined)) return undefined
+
+  return stops as DtcgGradientStop[]
 }
 
 export function parseFontFamily(value: string): string[] {
@@ -182,6 +219,11 @@ function buildLeaf(value: unknown, keyPath: string, merged: unknown): unknown {
     if (isShadowPath(keyPath) && value !== 'none') {
       const shadow = parseShadowValue(value)
       if (shadow) return { $value: shadow, $type: 'shadow' }
+    }
+
+    if (isGradientPath(keyPath)) {
+      const gradient = parseGradientValue(value)
+      if (gradient) return { $value: gradient, $type: 'gradient' }
     }
   }
 
