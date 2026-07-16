@@ -248,60 +248,90 @@ same gating pattern Phase 4 P2 used for Nav/Toast/Tooltip/Dropdown/Modal.
 
 ---
 
-## 9. Phase 9 — Contract Generation and Ecosystem Maturity
+## 9. Phase 9 — Contract Generation and Ecosystem Maturity — Delivered
 
-The contract surface is mature. Future work should reduce maintenance risk,
-prove compatibility, and make downstream adoption safer. New token families
-remain demand-driven unless a downstream package demonstrates a concrete
-missing contract.
+All Phase 9 work is complete. The recurring "token exists but output is
+missing" failure class is closed by construction, cross-output coverage is
+exhaustive and manifest-derived, the DTCG export is spec-conformant with a
+real consumer round-trip, and every release can be validated against the
+actual downstream packages before publishing. New token families remain
+demand-driven unless a downstream package demonstrates a concrete missing
+contract.
 
-### P0: Manifest-Driven CSS Generation
+### P0: Manifest-Driven CSS Generation — Delivered
 
-`src/css.ts` still uses hand-maintained field maps for several semantic and
-component groups. This caused missing generated CSS variables in `3.1.0`,
-`3.3.0`, and `3.3.1`. Coverage tests now detect more omissions, but the
-architecture still requires additive contract changes in multiple places.
+`src/css.ts`'s hand-maintained semantic/component field-mapping arrays
+(`BADGE_VARIANTS`, `ICON_BOX_FIELDS`, `NAV_FIELDS`, and twelve others) are
+replaced by a recursive walker that derives every leaf path directly from
+`tokens.modes.default.*`/`tokens.modes.dark.*`, unioned with the top-level
+`surface`/`text`/`component` alias objects. A new field under any
+`component.*`, `surface`, or `text` group now reaches generated CSS by
+construction — no matching array to remember to update. `resolveSemanticValue`
+throws with the precise token path on an unsupported value shape instead of
+silently skipping it. Generated `dist/index.css` variable names and values
+were confirmed byte-identical to the prior hand-maintained implementation
+before/after the refactor.
 
-- Replace hand-maintained semantic/component field arrays with recursive or
-  manifest-driven CSS generation.
-- Preserve existing public CSS variable names through an explicit compatibility
-  map where generated path names differ from legacy names.
-- Make unsupported value shapes fail with a precise token path instead of being
-  silently skipped.
-- Treat completion as removal of the recurring “token exists but CSS output is
-  missing” failure class, not merely additional regression assertions.
+### P1: Complete Cross-Output Parity — Delivered
 
-### P1: Complete Cross-Output Parity
+`contract.manifest.json`'s new `outputParity` section and
+`scripts/check-output-parity.ts` (`check:parity`) derive exhaustive leaf-path
+coverage assertions from the token tree, replacing the curated path samples
+`requiredOutputs.js.requiredPaths`/`requiredOutputs.css.requiredVariables`
+relied on. Covers JS runtime (`tokens` vs. generated `coreTokens`), the
+generated TypeScript declaration actually shipped in `dist/index.d.ts` (via
+the TypeScript compiler API), DTCG (`$value` presence), and CSS — with a
+`blockStrategy` per CSS group (`cascade-only`, `mode-scoped`, `duplicated`)
+describing how each variable is expected to reach the dark-mode block, not
+merely "the variable appears somewhere in the generated CSS." Running this
+against the pre-fix codebase surfaced two real, previously undetected gaps —
+`icons` and `aspectRatios` had zero CSS output, and `accessibility.forcedColors`
+was never emitted — fixed as part of this work. Namespaces with genuinely
+irregular per-field CSS naming are listed as documented
+`outputParity.css.exceptions` rather than force-fit into the generic walker.
 
-- Derive parity assertions from `contract.manifest.json` for every declared
-  public namespace.
-- Verify every applicable public token reaches runtime JavaScript, generated
-  TypeScript, CSS, DTCG, and Tailwind output.
-- Validate complete default and dark mode output rather than selected required
-  variables.
-- Keep intentional output exceptions machine-readable.
+### P2: DTCG Conformance Hardening — Delivered
 
-### P2: DTCG Conformance Hardening
+`scripts/build-dtcg.ts` now emits spec-conformant `$type`/`$value` pairs
+throughout: `zIndex`/`opacity` as real JSON numbers (previously numeric
+strings), `transitions.easing.*` as 4-number `cubicBezier` arrays (including
+the `"linear"` keyword mapped to `[0, 0, 1, 1]`), `typography.families.*` as
+`fontFamily` string arrays, `shadows.*`/`component.modal.shadow`/
+`buttons.cta.shadow` as structured `shadow` objects, and `surface.hero` as a
+`gradient` stop array per the DTCG Format Module's gradient type (stable as of
+the 2025.10 draft — an initial pass incorrectly treated gradients as
+unsupported; corrected before merge). Whole-value alias references resolve
+`$type` from the alias target's real shape rather than falling back to
+`string`. `scripts/check-dtcg-conformance.ts` (`check:dtcg`) validates every
+leaf's `$value` against its declared `$type`'s structural shape on every
+build. `scripts/check-dtcg-style-dictionary.ts` (`check:dtcg-roundtrip`, with
+`style-dictionary` added as a devDependency) builds the real DTCG output with
+a real consumer and asserts the rendered CSS is correct. `tests/build-dtcg.test.ts`
+adds 50 fixture assertions across aliases, font families, shadows, gradients,
+cubic-bezier values, unitless numbers, dimensions, typography values, and
+array/composite values. `TOKEN_CONTRACT.md`'s "DTCG Design-Tool Export"
+section documents every intentional transformation and the two genuinely
+unsupported shapes (`shadows.none`, and gradient angle/direction — DTCG's
+gradient type represents stops, not CSS geometry).
 
-- Add fixture tests for aliases, font families, shadows, gradients,
-  cubic-bezier values, unitless numbers, dimensions, typography values, and
-  array/composite values.
-- Validate inferred `$type` values against actual source value shapes.
-- Add one real downstream round-trip test with a supported DTCG consumer such
-  as Style Dictionary.
-- Document intentional DTCG transformations and unsupported source shapes.
+### P3: Live Downstream Compatibility — Delivered
 
-### P3: Live Downstream Compatibility
-
-- Add a release-candidate or scheduled compatibility matrix covering
-  `spectre-ui`, `spectre-ui-astro`, and `spectre-components`.
-- Validate supported downstream versions against the packed candidate artifact
-  before release.
-- Retain repository-local fixtures for fast checks while using live downstream
-  validation as the ecosystem contract authority.
-- Convert concrete downstream gaps into demand-backed token proposals rather
-  than speculative namespace expansion.
-
+`scripts/check-downstream-compat.ts` (`check:downstream`) packs this repo
+into a real npm tarball and, for each of `spectre-ui`, `spectre-ui-astro`,
+and `spectre-components` present as a sibling checkout, installs that tarball
+and runs the sibling's own `npm run check` — the same gate each repo runs on
+its own changes, proving compatibility against real downstream builds/lint/
+types/tests rather than a repository-local guess. A sibling with a dirty
+working tree is skipped rather than risked; every sibling's
+`package.json`/`package-lock.json` is restored via `git checkout` + `npm
+install` regardless of outcome. Verified end-to-end against the real sibling
+repos: all three passed against the current candidate and were confirmed
+clean afterward. Deliberately not part of `npm run check` — it requires
+sibling repos on disk and runs three full downstream suites — so it's wired
+as a separate pre-release gate (`CLAUDE.md`'s Release Procedure, step 6).
+`TOKEN_CONTRACT.md`'s "Live Downstream Compatibility" section documents the
+mechanism and the demand-driven policy: a concrete failure here is what
+justifies a token proposal, not speculative namespace expansion.
 
 ---
 
@@ -340,7 +370,7 @@ architecture still requires additive contract changes in multiple places.
     `component.textarea`, mirroring `forms.invalid`/`forms.valid`. Unblocks
     `spectre-ui` Phase 5 P0's deferred `invalid`/`success` options on
     `getSelectClasses`/`getTextareaClasses` — adoption still pending there.
-12. **3.3.1 fix (ready, pending release)** — `3.3.0`'s new select/textarea
+12. **3.3.1 fix (done and published)** — `3.3.0`'s new select/textarea
     fields never reached generated CSS/types due to a hand-maintained
     field-mapping array bug in `src/css.ts` (same class as the `3.1.0` Phase
     5 fix). Generalizing the regression test to cover all of
@@ -348,13 +378,30 @@ architecture still requires additive contract changes in multiple places.
     same bug: `component.badge`'s `*BgHover` fields, and
     `component.testimonial`/`component.pricingCard`/`component.rating` being
     entirely absent from CSS generation. All fixed; full `npm run check` gate
-    and `vitest run` pass clean. `spectre-ui` should depend on `^3.3.1`, not
-    `^3.3.0`, once published.
-13. **Phase 9 P0** — next. Replace hand-maintained CSS field maps with
-    manifest-driven generation while preserving existing variable names.
-14. **Phase 9 P1** — generalize cross-output parity across every
-    manifest-declared public namespace and both modes.
-15. **Phase 9 P2** — harden DTCG inference with fixture coverage and one real
-    consumer round-trip.
-16. **Phase 9 P3** — add live downstream compatibility checks for the three
-    consuming Spectre packages.
+    and `vitest run` pass clean. `spectre-ui` now depends on `^3.3.1`, not
+    `^3.3.0`.
+13. **Phase 9 P0** — done. Replaced hand-maintained CSS field maps with a
+    recursive, manifest-shape-driven walker; generated CSS confirmed
+    byte-identical to the prior implementation.
+14. **Phase 9 P1** — done. Exhaustive, manifest-derived cross-output parity
+    (JS, generated TypeScript, CSS with per-group dark-mode block strategy,
+    DTCG) surfaced and fixed two real pre-existing CSS gaps (`icons`,
+    `aspectRatios`) and one accessibility gap (`forcedColors`).
+15. **Phase 9 P2** — done. DTCG `$type`/`$value` conformance hardened
+    (numbers, cubicBezier arrays, fontFamily arrays, structured shadows,
+    gradient stop arrays, alias type resolution); real Style Dictionary
+    round-trip test added; 50 fixture assertions; intentional transformations
+    and the true gradient-geometry limitation documented in
+    `TOKEN_CONTRACT.md`.
+16. **Phase 9 P3** — done. Live downstream compatibility check
+    (`check:downstream`) packs the tarball and runs `spectre-ui`,
+    `spectre-ui-astro`, and `spectre-components`'s own check gates against
+    it; verified end-to-end against the real sibling repos, all passing and
+    left clean. Wired as a separate pre-release gate, not part of the fast
+    `npm run check` loop.
+
+**Phase 9 is complete.** Future work in this package is demand-driven: a
+concrete downstream gap (surfaced by `check:downstream`, a real `spectre-ui`/
+`spectre-ui-astro`/`spectre-components` need, or a genuine spec-conformance
+bug) is what justifies the next contract change — not speculative namespace
+expansion.
