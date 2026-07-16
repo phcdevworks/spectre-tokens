@@ -395,6 +395,14 @@ string:
   path-scoped, not shape-detected, so composite alpha-colors that happen to
   contain a `/ <alpha>` suffix (e.g. `surface.overlay`, `buttons.*.focusRing`)
   are never mistaken for a shadow and stay `$type: "color"`.
+- **`surface.hero`**: CSS `linear-gradient(<angle>, <color> <pos>%, ...)`
+  strings are parsed into DTCG's `gradient` `$type` — an array of
+  `{ color, position }` stops, with `position` normalized from a CSS
+  percentage to a 0–1 number — per the [DTCG Format Module's gradient
+  type](https://www.designtokens.org/tr/drafts/format/#gradient) (stable as
+  of the 2025.10 draft). Each stop's `color` keeps the literal `{path}` alias
+  reference where the source uses one, consistent with every other composite
+  type here.
 
 ### Unsupported Source Shapes
 
@@ -402,10 +410,14 @@ string:
   parseable offset/blur/spread/color layers) has no structural DTCG shadow
   representation and is left as `$type: "string"` rather than forced into a
   shadow shape it doesn't have.
-- **Gradients** (`surface.hero`'s `linear-gradient(...)` values): DTCG has no
-  `gradient` `$type` in the current spec. These remain `$type: "string"`.
-  Downstream consumers that need structured gradient stops must parse the CSS
-  string themselves.
+- **Gradient angle/direction**: the DTCG `gradient` `$type` represents color
+  stops only — it has no field for CSS gradient geometry (angle, shape,
+  repeating). `surface.hero`'s `135deg` direction is therefore dropped when
+  converting to DTCG; a downstream consumer reconstructing CSS from the DTCG
+  value must supply its own direction (Spectre's gradients are always
+  `135deg`, documented per-token via `$description`, so a consumer can hardcode
+  it or fall back to `spectre-ui`'s CSS output, which retains the full
+  `linear-gradient(...)` string).
 - **`fontWeight`**: DTCG permits either a number or one of a small set of CSS
   keyword strings (e.g. `"bold"`); this repo only ever emits numeric weights,
   so the generator does not need to special-case keyword weights, but

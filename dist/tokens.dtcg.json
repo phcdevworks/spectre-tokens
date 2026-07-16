@@ -910,8 +910,17 @@
           "$description": "slightly recessed background for zebra rows, section bands, and inset panels — one step below surface.page"
         },
         "hero": {
-          "$value": "linear-gradient(135deg, {colors.indigo.500} 0%, {colors.violet.600} 100%)",
-          "$type": "string",
+          "$value": [
+            {
+              "color": "{colors.indigo.500}",
+              "position": 0
+            },
+            {
+              "color": "{colors.violet.600}",
+              "position": 1
+            }
+          ],
+          "$type": "gradient",
           "$description": "full-bleed gradient background for hero and marketing sections only — not a general surface; pair with light text tokens explicitly"
         },
         "hover": {
@@ -1502,8 +1511,17 @@
           "$description": "slightly recessed background for zebra rows, section bands, and inset panels — one step below surface.page"
         },
         "hero": {
-          "$value": "linear-gradient(135deg, {colors.accent.700} 0%, {colors.accent.900} 100%)",
-          "$type": "string",
+          "$value": [
+            {
+              "color": "{colors.accent.700}",
+              "position": 0
+            },
+            {
+              "color": "{colors.accent.900}",
+              "position": 1
+            }
+          ],
+          "$type": "gradient",
           "$description": "full-bleed gradient background for hero and marketing sections only — not a general surface; pair with light text tokens explicitly"
         },
         "hover": {

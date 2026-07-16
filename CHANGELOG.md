@@ -130,17 +130,28 @@ Contract change type: additive
     infers from what it actually resolves to. `$value` keeps the literal
     `{path}` reference string (valid DTCG alias syntax); only `$type`
     changes.
-  - Gradients (`surface.hero`) are left as `$type: "string"` — the current
-    DTCG spec has no `gradient` type — and this is now documented as
-    intentional rather than an oversight.
+  - `surface.hero`: **correction to an initial pass of this change** — the
+    DTCG Format Module's `gradient` `$type` (stable as of the 2025.10 draft)
+    was initially and incorrectly treated as nonexistent, leaving gradients
+    as `$type: "string"`. It is a real, implementation-ready type: an array
+    of `{ color, position }` stops with `position` normalized 0–1. CSS
+    `linear-gradient(<angle>, <color> <pos>%, ...)` strings are now parsed
+    into that stop-array shape to match `$type: "gradient"`. The `color`
+    field of each stop keeps the literal `{path}` alias reference where the
+    source uses one, consistent with the other composite types here. The
+    CSS gradient angle/direction (`135deg`) has no field in the DTCG gradient
+    type — it represents stops only, not CSS geometry — so it is correctly
+    dropped, and this is documented as the real (spec-level) limitation
+    rather than "gradients aren't supported."
   - `scripts/check-dtcg-conformance.ts` added (wired into `npm run check` as
     `check:dtcg`): walks the full generated `dist/tokens.dtcg.json` and
     validates every `$value` against its declared `$type`'s required
     structural shape (color/dimension/duration/number/cubicBezier/
-    fontFamily/shadow/fontWeight/string), skipping whole-value alias
+    fontFamily/shadow/gradient/fontWeight/string), skipping whole-value alias
     references (valid for any `$type`). Verified to catch real regressions
-    by deliberately reintroducing the zIndex string/number mismatch and an
-    unrecognized `$type`, confirming both fail with a precise path, then
+    by deliberately reintroducing the zIndex string/number mismatch, an
+    unrecognized `$type`, and a malformed gradient stop (single-stop array,
+    non-numeric `position`), confirming all fail with a precise path, then
     confirming a clean pass once reverted.
   - `scripts/check-dtcg-style-dictionary.ts` added (wired into `npm run
     check` as `check:dtcg-roundtrip`; `style-dictionary` added as a
@@ -151,15 +162,22 @@ Contract change type: additive
     discriminate a correctly-typed value from a mistyped one (e.g. Style
     Dictionary renders a wrongly-`string`-typed shadow object as the literal
     text `[object Object]`, verified by deliberately breaking that field);
-    the zIndex/color checks are weaker in that specific sense since a
-    `number` and a numeric-looking string render identical CSS text, but
-    `check:dtcg` already covers that discrimination.
-  - `tests/build-dtcg.test.ts` added: 41 fixture assertions across
+    the zIndex/color/gradient checks are weaker in that specific sense —
+    Style Dictionary's built-in `css/variables` format has no
+    gradient-to-CSS transform yet (as of v5.5.0), so a `gradient` stop array
+    and a `string`-typed array both stringify to the same
+    `[object Object],[object Object]` text, and a `number` and a
+    numeric-looking string likewise render identical CSS text — but they
+    still confirm real ingestion (ambient parsing, alias resolution) succeeds
+    without erroring; `check:dtcg` is what rejects the wrong JS shape for
+    these specific types.
+  - `tests/build-dtcg.test.ts` added: 50 fixture assertions across
     `inferType`, `inferTypeWithAliasResolution`, `parseCubicBezier`,
-    `parseFontFamily`, `parseShadowValue`, `isShadowPath`, and `toDTCG`,
-    covering aliases, font families, shadows, gradients, cubic-bezier values,
-    unitless numbers, dimensions, typography values, and array/composite
-    values per the roadmap's fixture list.
+    `parseFontFamily`, `parseShadowValue`, `parseGradientValue`,
+    `isShadowPath`, `isGradientPath`, and `toDTCG`, covering aliases, font
+    families, shadows, gradients, cubic-bezier values, unitless numbers,
+    dimensions, typography values, and array/composite values per the
+    roadmap's fixture list.
   - `TOKEN_CONTRACT.md` gained a "DTCG Design-Tool Export" section
     documenting every intentional transformation and unsupported source
     shape above, so the distinction between "not yet handled" and

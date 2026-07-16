@@ -5,7 +5,9 @@ import {
   parseCubicBezier,
   parseFontFamily,
   parseShadowValue,
+  parseGradientValue,
   isShadowPath,
+  isGradientPath,
   toDTCG
 } from '../scripts/build-dtcg'
 
@@ -190,6 +192,53 @@ describe('parseShadowValue', () => {
   })
 })
 
+describe('isGradientPath', () => {
+  it('matches the known gradient leaf path', () => {
+    expect(isGradientPath('surface.hero')).toBe(true)
+  })
+
+  it('matches mode-scoped duplicates of the gradient leaf path', () => {
+    expect(isGradientPath('modes.default.surface.hero')).toBe(true)
+    expect(isGradientPath('modes.dark.surface.hero')).toBe(true)
+  })
+
+  it('does not match other surface paths', () => {
+    expect(isGradientPath('surface.page')).toBe(false)
+    expect(isGradientPath('surface.overlay')).toBe(false)
+  })
+})
+
+describe('parseGradientValue', () => {
+  it('parses a two-stop linear-gradient into a stop array with normalized 0-1 positions', () => {
+    expect(parseGradientValue('linear-gradient(135deg, {colors.indigo.500} 0%, {colors.violet.600} 100%)')).toEqual([
+      { color: '{colors.indigo.500}', position: 0 },
+      { color: '{colors.violet.600}', position: 1 }
+    ])
+  })
+
+  it('parses stops with intermediate percentages', () => {
+    expect(parseGradientValue('linear-gradient(90deg, #fff 0%, #888 50%, #000 100%)')).toEqual([
+      { color: '#fff', position: 0 },
+      { color: '#888', position: 0.5 },
+      { color: '#000', position: 1 }
+    ])
+  })
+
+  it('drops the gradient angle/direction — DTCG gradient represents stops, not CSS geometry', () => {
+    const result = parseGradientValue('linear-gradient(135deg, #fff 0%, #000 100%)')
+    expect(result).not.toContain('135deg')
+    expect(JSON.stringify(result)).not.toContain('deg')
+  })
+
+  it('returns undefined for a non-linear-gradient value', () => {
+    expect(parseGradientValue('radial-gradient(circle, #fff 0%, #000 100%)')).toBeUndefined()
+  })
+
+  it('returns undefined for a single-stop or unparseable gradient', () => {
+    expect(parseGradientValue('linear-gradient(135deg, #fff 100%)')).toBeUndefined()
+  })
+})
+
 describe('toDTCG — structural transforms and composite/array handling', () => {
   it('converts a zIndex string leaf to a numeric $value', () => {
     const result = toDTCG('1400', {}, 'zIndex.modal') as { $value: unknown; $type: string }
@@ -230,13 +279,28 @@ describe('toDTCG — structural transforms and composite/array handling', () => 
     expect(result.$value).toMatchObject({ offsetX: '0', offsetY: '1px', blur: '2px', spread: '0' })
   })
 
-  it('leaves a gradient value as a plain string (no DTCG gradient $type exists)', () => {
+  it('converts a gradient leaf to a $type: gradient stop array', () => {
     const result = toDTCG('linear-gradient(135deg, {colors.indigo.500} 0%, {colors.violet.600} 100%)', {}, 'surface.hero') as {
       $value: unknown
       $type: string
     }
-    expect(result.$value).toBe('linear-gradient(135deg, {colors.indigo.500} 0%, {colors.violet.600} 100%)')
-    expect(result.$type).toBe('string')
+    expect(result.$type).toBe('gradient')
+    expect(result.$value).toEqual([
+      { color: '{colors.indigo.500}', position: 0 },
+      { color: '{colors.violet.600}', position: 1 }
+    ])
+  })
+
+  it('converts the mode-scoped duplicate of the gradient leaf path the same way', () => {
+    const result = toDTCG('linear-gradient(135deg, {colors.accent.700} 0%, {colors.accent.900} 100%)', {}, 'modes.dark.surface.hero') as {
+      $value: unknown
+      $type: string
+    }
+    expect(result.$type).toBe('gradient')
+    expect(result.$value).toEqual([
+      { color: '{colors.accent.700}', position: 0 },
+      { color: '{colors.accent.900}', position: 1 }
+    ])
   })
 
   it('preserves an already-array node as a string-typed array $value', () => {
