@@ -77,20 +77,23 @@ Changes to those files must be regenerated, validated, and classified in
 
 ## Key Scripts Reference
 
-| Script                 | What it validates                                                |
-| ---------------------- | ---------------------------------------------------------------- |
-| `check:manifest`       | public namespaces and required outputs vs contract.manifest.json |
-| `check:structure`      | token tree shape                                                 |
-| `check:locked`         | protected color families unchanged                               |
-| `check:contrast`       | WCAG AA contrast for all paired tokens                           |
-| `check:regression`     | token values unchanged vs baseline                               |
-| `check:docs`           | README.md and TOKEN_CONTRACT.md aligned to manifest              |
-| `check:exports`        | public runtime exports match declared contract                   |
-| `check:css`            | required CSS variables present                                   |
-| `check:tailwind`       | Tailwind theme values match token contract                       |
-| `check:consumer`       | downstream smoke fixture passes                                  |
-| `check:classification` | contract-authority changes have changelog entry                  |
-| `check:dist`           | dist artifacts are in sync with source                           |
+| Script                 | What it validates                                                                    |
+| ---------------------- | ------------------------------------------------------------------------------------ |
+| `check:manifest`       | public namespaces and required outputs vs contract.manifest.json                     |
+| `check:structure`      | token tree shape                                                                     |
+| `check:locked`         | protected color families unchanged                                                   |
+| `check:contrast`       | WCAG AA contrast for all paired tokens                                               |
+| `check:regression`     | token values unchanged vs baseline                                                   |
+| `check:docs`           | README.md and TOKEN_CONTRACT.md aligned to manifest                                  |
+| `check:exports`        | public runtime exports match declared contract                                       |
+| `check:css`            | required CSS variables present                                                       |
+| `check:tailwind`       | Tailwind theme values match token contract                                           |
+| `check:parity`         | exhaustive JS/TS/CSS/DTCG leaf-path coverage per contract.manifest.json outputParity |
+| `check:dtcg`           | every DTCG $value matches its declared $type structural shape                        |
+| `check:dtcg-roundtrip` | a real DTCG consumer (Style Dictionary) builds dist/tokens.dtcg.json successfully    |
+| `check:consumer`       | downstream smoke fixture passes                                                      |
+| `check:classification` | contract-authority changes have changelog entry                                      |
+| `check:dist`           | dist artifacts are in sync with source                                               |
 | `lint`                 | ESLint passes                                                    |
 
 ## Token Change Procedure

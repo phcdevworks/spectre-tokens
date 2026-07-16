@@ -232,8 +232,14 @@
         "$type": "color"
       },
       "shadow": {
-        "$value": "0 20px 48px -12px {colors.black} / 0.20",
-        "$type": "string"
+        "$value": {
+          "color": "{colors.black} / 0.20",
+          "offsetX": "0",
+          "offsetY": "20px",
+          "blur": "48px",
+          "spread": "-12px"
+        },
+        "$type": "shadow"
       },
       "border": {
         "$value": "{colors.neutral.200}",
@@ -742,8 +748,14 @@
         "$type": "color"
       },
       "shadow": {
-        "$value": "0 4px 14px 0 {colors.brand.500} / 0.39",
-        "$type": "string"
+        "$value": {
+          "color": "{colors.brand.500} / 0.39",
+          "offsetX": "0",
+          "offsetY": "4px",
+          "blur": "14px",
+          "spread": "0"
+        },
+        "$type": "shadow"
       },
       "focusRing": {
         "$value": "{colors.brand.500} / 0.4",
@@ -1186,8 +1198,14 @@
             "$type": "color"
           },
           "shadow": {
-            "$value": "0 20px 48px -12px {colors.black} / 0.20",
-            "$type": "string"
+            "$value": {
+              "color": "{colors.black} / 0.20",
+              "offsetX": "0",
+              "offsetY": "20px",
+              "blur": "48px",
+              "spread": "-12px"
+            },
+            "$type": "shadow"
           },
           "border": {
             "$value": "{colors.neutral.200}",
@@ -1784,8 +1802,14 @@
             "$type": "color"
           },
           "shadow": {
-            "$value": "0 20px 48px -12px {colors.black} / 0.20",
-            "$type": "string"
+            "$value": {
+              "color": "{colors.black} / 0.20",
+              "offsetX": "0",
+              "offsetY": "20px",
+              "blur": "48px",
+              "spread": "-12px"
+            },
+            "$type": "shadow"
           },
           "border": {
             "$value": "{colors.neutral.700}",
@@ -2523,24 +2547,54 @@
       "$type": "string"
     },
     "sm": {
-      "$value": "0 1px 2px 0 {colors.black} / 0.06",
-      "$type": "string"
+      "$value": {
+        "color": "{colors.black} / 0.06",
+        "offsetX": "0",
+        "offsetY": "1px",
+        "blur": "2px",
+        "spread": "0"
+      },
+      "$type": "shadow"
     },
     "md": {
-      "$value": "0 2px 6px -1px {colors.black} / 0.08",
-      "$type": "string"
+      "$value": {
+        "color": "{colors.black} / 0.08",
+        "offsetX": "0",
+        "offsetY": "2px",
+        "blur": "6px",
+        "spread": "-1px"
+      },
+      "$type": "shadow"
     },
     "lg": {
-      "$value": "0 6px 16px -4px {colors.black} / 0.12",
-      "$type": "string"
+      "$value": {
+        "color": "{colors.black} / 0.12",
+        "offsetX": "0",
+        "offsetY": "6px",
+        "blur": "16px",
+        "spread": "-4px"
+      },
+      "$type": "shadow"
     },
     "xl": {
-      "$value": "0 12px 24px -6px {colors.black} / 0.15",
-      "$type": "string"
+      "$value": {
+        "color": "{colors.black} / 0.15",
+        "offsetX": "0",
+        "offsetY": "12px",
+        "blur": "24px",
+        "spread": "-6px"
+      },
+      "$type": "shadow"
     },
     "2xl": {
-      "$value": "0 20px 48px -12px {colors.black} / 0.20",
-      "$type": "string"
+      "$value": {
+        "color": "{colors.black} / 0.20",
+        "offsetX": "0",
+        "offsetY": "20px",
+        "blur": "48px",
+        "spread": "-12px"
+      },
+      "$type": "shadow"
     }
   },
   "breakpoints": {
@@ -2567,39 +2621,39 @@
   },
   "zIndex": {
     "base": {
-      "$value": "0",
+      "$value": 0,
       "$type": "number"
     },
     "dropdown": {
-      "$value": "1000",
+      "$value": 1000,
       "$type": "number"
     },
     "sticky": {
-      "$value": "1100",
+      "$value": 1100,
       "$type": "number"
     },
     "fixed": {
-      "$value": "1200",
+      "$value": 1200,
       "$type": "number"
     },
     "overlay": {
-      "$value": "1300",
+      "$value": 1300,
       "$type": "number"
     },
     "modal": {
-      "$value": "1400",
+      "$value": 1400,
       "$type": "number"
     },
     "popover": {
-      "$value": "1500",
+      "$value": 1500,
       "$type": "number"
     },
     "tooltip": {
-      "$value": "1600",
+      "$value": 1600,
       "$type": "number"
     },
     "toast": {
-      "$value": "1700",
+      "$value": 1700,
       "$type": "number"
     }
   },
@@ -2648,27 +2702,57 @@
     },
     "easing": {
       "linear": {
-        "$value": "linear",
+        "$value": [
+          0,
+          0,
+          1,
+          1
+        ],
         "$type": "cubicBezier"
       },
       "in": {
-        "$value": "cubic-bezier(0.4, 0, 1, 1)",
+        "$value": [
+          0.4,
+          0,
+          1,
+          1
+        ],
         "$type": "cubicBezier"
       },
       "out": {
-        "$value": "cubic-bezier(0, 0, 0.2, 1)",
+        "$value": [
+          0,
+          0,
+          0.2,
+          1
+        ],
         "$type": "cubicBezier"
       },
       "inOut": {
-        "$value": "cubic-bezier(0.4, 0, 0.2, 1)",
+        "$value": [
+          0.4,
+          0,
+          0.2,
+          1
+        ],
         "$type": "cubicBezier"
       },
       "spring": {
-        "$value": "cubic-bezier(0.4, 0, 0.2, 1)",
+        "$value": [
+          0.4,
+          0,
+          0.2,
+          1
+        ],
         "$type": "cubicBezier"
       },
       "overshoot": {
-        "$value": "cubic-bezier(0.34, 1.56, 0.64, 1)",
+        "$value": [
+          0.34,
+          1.56,
+          0.64,
+          1
+        ],
         "$type": "cubicBezier"
       }
     }
@@ -2677,11 +2761,11 @@
     "fadeIn": {
       "duration": {
         "$value": "{transitions.duration.base}",
-        "$type": "string"
+        "$type": "duration"
       },
       "easing": {
         "$value": "{transitions.easing.out}",
-        "$type": "string"
+        "$type": "cubicBezier"
       },
       "keyframes": {
         "$value": "fade-in",
@@ -2691,11 +2775,11 @@
     "fadeOut": {
       "duration": {
         "$value": "{transitions.duration.fast}",
-        "$type": "string"
+        "$type": "duration"
       },
       "easing": {
         "$value": "{transitions.easing.in}",
-        "$type": "string"
+        "$type": "cubicBezier"
       },
       "keyframes": {
         "$value": "fade-out",
@@ -2705,11 +2789,11 @@
     "slideUp": {
       "duration": {
         "$value": "{transitions.duration.moderate}",
-        "$type": "string"
+        "$type": "duration"
       },
       "easing": {
         "$value": "{transitions.easing.out}",
-        "$type": "string"
+        "$type": "cubicBezier"
       },
       "keyframes": {
         "$value": "slide-up",
@@ -2719,11 +2803,11 @@
     "slideDown": {
       "duration": {
         "$value": "{transitions.duration.moderate}",
-        "$type": "string"
+        "$type": "duration"
       },
       "easing": {
         "$value": "{transitions.easing.out}",
-        "$type": "string"
+        "$type": "cubicBezier"
       },
       "keyframes": {
         "$value": "slide-down",
@@ -2733,11 +2817,11 @@
     "scaleIn": {
       "duration": {
         "$value": "{transitions.duration.base}",
-        "$type": "string"
+        "$type": "duration"
       },
       "easing": {
         "$value": "{transitions.easing.overshoot}",
-        "$type": "string"
+        "$type": "cubicBezier"
       },
       "keyframes": {
         "$value": "scale-in",
@@ -2747,11 +2831,11 @@
     "bounce": {
       "duration": {
         "$value": "{transitions.duration.moderate}",
-        "$type": "string"
+        "$type": "duration"
       },
       "easing": {
         "$value": "{transitions.easing.spring}",
-        "$type": "string"
+        "$type": "cubicBezier"
       },
       "keyframes": {
         "$value": "bounce",
@@ -2761,11 +2845,11 @@
     "shake": {
       "duration": {
         "$value": "{transitions.duration.relaxed}",
-        "$type": "string"
+        "$type": "duration"
       },
       "easing": {
         "$value": "{transitions.easing.spring}",
-        "$type": "string"
+        "$type": "cubicBezier"
       },
       "keyframes": {
         "$value": "shake",
@@ -2775,11 +2859,11 @@
     "pulse": {
       "duration": {
         "$value": "{transitions.duration.slowest}",
-        "$type": "string"
+        "$type": "duration"
       },
       "easing": {
         "$value": "{transitions.easing.spring}",
-        "$type": "string"
+        "$type": "cubicBezier"
       },
       "keyframes": {
         "$value": "pulse",
@@ -2790,11 +2874,11 @@
       "fadeIn": {
         "duration": {
           "$value": "{transitions.duration.reduced}",
-          "$type": "string"
+          "$type": "duration"
         },
         "easing": {
           "$value": "{transitions.easing.linear}",
-          "$type": "string"
+          "$type": "cubicBezier"
         },
         "keyframes": {
           "$value": "fade-in",
@@ -2804,11 +2888,11 @@
       "fadeOut": {
         "duration": {
           "$value": "{transitions.duration.reduced}",
-          "$type": "string"
+          "$type": "duration"
         },
         "easing": {
           "$value": "{transitions.easing.linear}",
-          "$type": "string"
+          "$type": "cubicBezier"
         },
         "keyframes": {
           "$value": "fade-out",
@@ -2818,11 +2902,11 @@
       "slideUp": {
         "duration": {
           "$value": "{transitions.duration.reduced}",
-          "$type": "string"
+          "$type": "duration"
         },
         "easing": {
           "$value": "{transitions.easing.linear}",
-          "$type": "string"
+          "$type": "cubicBezier"
         },
         "keyframes": {
           "$value": "slide-up",
@@ -2832,11 +2916,11 @@
       "slideDown": {
         "duration": {
           "$value": "{transitions.duration.reduced}",
-          "$type": "string"
+          "$type": "duration"
         },
         "easing": {
           "$value": "{transitions.easing.linear}",
-          "$type": "string"
+          "$type": "cubicBezier"
         },
         "keyframes": {
           "$value": "slide-down",
@@ -2846,11 +2930,11 @@
       "scaleIn": {
         "duration": {
           "$value": "{transitions.duration.reduced}",
-          "$type": "string"
+          "$type": "duration"
         },
         "easing": {
           "$value": "{transitions.easing.linear}",
-          "$type": "string"
+          "$type": "cubicBezier"
         },
         "keyframes": {
           "$value": "scale-in",
@@ -2860,11 +2944,11 @@
       "bounce": {
         "duration": {
           "$value": "{transitions.duration.reduced}",
-          "$type": "string"
+          "$type": "duration"
         },
         "easing": {
           "$value": "{transitions.easing.linear}",
-          "$type": "string"
+          "$type": "cubicBezier"
         },
         "keyframes": {
           "$value": "bounce",
@@ -2874,11 +2958,11 @@
       "shake": {
         "duration": {
           "$value": "{transitions.duration.reduced}",
-          "$type": "string"
+          "$type": "duration"
         },
         "easing": {
           "$value": "{transitions.easing.linear}",
-          "$type": "string"
+          "$type": "cubicBezier"
         },
         "keyframes": {
           "$value": "shake",
@@ -2888,11 +2972,11 @@
       "pulse": {
         "duration": {
           "$value": "{transitions.duration.reduced}",
-          "$type": "string"
+          "$type": "duration"
         },
         "easing": {
           "$value": "{transitions.easing.linear}",
-          "$type": "string"
+          "$type": "cubicBezier"
         },
         "keyframes": {
           "$value": "pulse",
@@ -2903,31 +2987,31 @@
   },
   "opacity": {
     "disabled": {
-      "$value": "0.38",
+      "$value": 0.38,
       "$type": "number"
     },
     "hover": {
-      "$value": "0.92",
+      "$value": 0.92,
       "$type": "number"
     },
     "active": {
-      "$value": "0.84",
+      "$value": 0.84,
       "$type": "number"
     },
     "loading": {
-      "$value": "0.6",
+      "$value": 0.6,
       "$type": "number"
     },
     "focus": {
-      "$value": "1",
+      "$value": 1,
       "$type": "number"
     },
     "overlay": {
-      "$value": "0.5",
+      "$value": 0.5,
       "$type": "number"
     },
     "tooltip": {
-      "$value": "0.95",
+      "$value": 0.95,
       "$type": "number"
     }
   },
@@ -3008,7 +3092,7 @@
     },
     "reducedMotion": {
       "$value": "{transitions.duration.reduced}",
-      "$type": "string"
+      "$type": "duration"
     },
     "forcedColors": {
       "$value": "auto",
@@ -3438,15 +3522,33 @@
   "typography": {
     "families": {
       "sans": {
-        "$value": "system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif",
+        "$value": [
+          "system-ui",
+          "-apple-system",
+          "Segoe UI",
+          "Roboto",
+          "Helvetica",
+          "Arial",
+          "sans-serif"
+        ],
         "$type": "fontFamily"
       },
       "serif": {
-        "$value": "'Times New Roman', Times, serif",
+        "$value": [
+          "Times New Roman",
+          "Times",
+          "serif"
+        ],
         "$type": "fontFamily"
       },
       "mono": {
-        "$value": "'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace",
+        "$value": [
+          "SFMono-Regular",
+          "Consolas",
+          "Liberation Mono",
+          "Menlo",
+          "monospace"
+        ],
         "$type": "fontFamily"
       }
     },
