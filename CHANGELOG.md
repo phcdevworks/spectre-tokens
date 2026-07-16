@@ -96,6 +96,78 @@ Contract change type: additive
   passes; `check:dist` fails only because the rebuilt `dist/` artifacts from
   this change are not yet committed (expected — dist is committed by human
   review, not by Claude Code); `lint` was verified separately and passes.
+- Phase 9 P2: hardened `scripts/build-dtcg.ts`'s DTCG conformance and added
+  the validation/interop coverage the roadmap's DTCG hardening item called
+  for. Auditing the generator's `$type` inference against every namespace's
+  actual value shape found several real spec-conformance gaps — not just
+  missing test coverage — all fixed here:
+  - `zIndex.*` / `opacity.*`: source values are numeric strings (`"1000"`,
+    `"0.38"`); DTCG `$value` now emits an actual JSON `number` to match
+    `$type: "number"` (previously a string tagged as `number`, which the DTCG
+    spec does not permit).
+  - `transitions.easing.*`: `cubic-bezier(x1, y1, x2, y2)` CSS strings (and
+    the `"linear"` keyword, mapped to its mathematically equivalent
+    `[0, 0, 1, 1]`) are now parsed into a 4-number array to match
+    `$type: "cubicBezier"` (previously the raw CSS string, which is not a
+    valid `cubicBezier` `$value` per spec).
+  - `typography.families.*`: comma-separated CSS font stacks are now split
+    into an array of unquoted family names to match `$type: "fontFamily"`
+    (previously a single joined string).
+  - `shadows.*`, `component.modal.shadow`, `buttons.cta.shadow`: CSS
+    `box-shadow` strings are now parsed into DTCG's structured shadow shape
+    (`{ color, offsetX, offsetY, blur, spread }`, array for multi-layer) to
+    match `$type: "shadow"` (previously `$type: "string"`, a weaker
+    representation). `shadows.none` and other unparseable single-keyword
+    values are left as `$type: "string"` rather than forced into a shape they
+    don't have. This transform is path-scoped, not shape-detected, so
+    composite alpha-colors like `surface.overlay` (`"{colors.black} / 0.6"`)
+    are never mistaken for a shadow.
+  - Whole-value alias references (e.g. `animations.fadeIn.easing`'s
+    `"{transitions.easing.out}"`) now resolve `$type` from the alias
+    *target's* real value shape instead of falling through to
+    `$type: "string"` — `inferTypeWithAliasResolution` looks up the
+    referenced token in the merged source tree (following alias chains) and
+    infers from what it actually resolves to. `$value` keeps the literal
+    `{path}` reference string (valid DTCG alias syntax); only `$type`
+    changes.
+  - Gradients (`surface.hero`) are left as `$type: "string"` — the current
+    DTCG spec has no `gradient` type — and this is now documented as
+    intentional rather than an oversight.
+  - `scripts/check-dtcg-conformance.ts` added (wired into `npm run check` as
+    `check:dtcg`): walks the full generated `dist/tokens.dtcg.json` and
+    validates every `$value` against its declared `$type`'s required
+    structural shape (color/dimension/duration/number/cubicBezier/
+    fontFamily/shadow/fontWeight/string), skipping whole-value alias
+    references (valid for any `$type`). Verified to catch real regressions
+    by deliberately reintroducing the zIndex string/number mismatch and an
+    unrecognized `$type`, confirming both fail with a precise path, then
+    confirming a clean pass once reverted.
+  - `scripts/check-dtcg-style-dictionary.ts` added (wired into `npm run
+    check` as `check:dtcg-roundtrip`; `style-dictionary` added as a
+    devDependency): builds `dist/tokens.dtcg.json` with a real DTCG consumer
+    and asserts the rendered CSS output is correct for every structural
+    transform above — proving genuine downstream interoperability, not just
+    that our own scripts consider the file well-formed. Most assertions
+    discriminate a correctly-typed value from a mistyped one (e.g. Style
+    Dictionary renders a wrongly-`string`-typed shadow object as the literal
+    text `[object Object]`, verified by deliberately breaking that field);
+    the zIndex/color checks are weaker in that specific sense since a
+    `number` and a numeric-looking string render identical CSS text, but
+    `check:dtcg` already covers that discrimination.
+  - `tests/build-dtcg.test.ts` added: 41 fixture assertions across
+    `inferType`, `inferTypeWithAliasResolution`, `parseCubicBezier`,
+    `parseFontFamily`, `parseShadowValue`, `isShadowPath`, and `toDTCG`,
+    covering aliases, font families, shadows, gradients, cubic-bezier values,
+    unitless numbers, dimensions, typography values, and array/composite
+    values per the roadmap's fixture list.
+  - `TOKEN_CONTRACT.md` gained a "DTCG Design-Tool Export" section
+    documenting every intentional transformation and unsupported source
+    shape above, so the distinction between "not yet handled" and
+    "deliberately left as a string" is explicit contract text, not tribal
+    knowledge.
+  - The full generated output was diffed leaf-by-leaf before/after: every
+    change is additive/corrective to a `$value`'s shape or a `$type`'s
+    correctness; no token path was added, removed, or renamed.
 
 ## [3.3.1] - 2026-06-30
 
