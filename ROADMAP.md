@@ -291,18 +291,7 @@ architecture still requires additive contract changes in multiple places.
   as Style Dictionary.
 - Document intentional DTCG transformations and unsupported source shapes.
 
-### P3: Consumer Compatibility Baseline
-
-- Test the packed npm artifact in plain JavaScript, TypeScript 5.9, TypeScript
-  6, Node ESM, Node CommonJS, CSS import, and a browser-oriented bundler.
-- Determine whether TypeScript is genuinely required as a peer dependency; if
-  consumers only need emitted declarations, remove the peer requirement.
-- Determine the oldest Node runtime required by the published output and align
-  `engines.node` with evidence.
-- Run compatibility checks against the packed tarball so validation exercises
-  exactly what npm consumers receive.
-
-### P4: Live Downstream Compatibility
+### P3: Live Downstream Compatibility
 
 - Add a release-candidate or scheduled compatibility matrix covering
   `spectre-ui`, `spectre-ui-astro`, and `spectre-components`.
@@ -366,7 +355,5 @@ architecture still requires additive contract changes in multiple places.
     manifest-declared public namespace and both modes.
 15. **Phase 9 P2** — harden DTCG inference with fixture coverage and one real
     consumer round-trip.
-16. **Phase 9 P3** — validate the packed artifact across supported JavaScript,
-    TypeScript, Node, CSS, and bundler consumers; align metadata with evidence.
-17. **Phase 9 P4** — add live downstream compatibility checks for the three
+16. **Phase 9 P3** — add live downstream compatibility checks for the three
     consuming Spectre packages.
