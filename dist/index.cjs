@@ -1358,6 +1358,18 @@ var createCssVariableMap = (tokens2, options = {}) => {
   Object.entries(baseTokens.radii).forEach(([key, value]) => {
     assign(toVariableName(prefix, "radius", key), value);
   });
+  const icons = baseTokens.icons;
+  if (icons) {
+    Object.entries(icons).forEach(([key, value]) => {
+      assign(toVariableName(prefix, "icon", key), value);
+    });
+  }
+  const aspectRatios = baseTokens.aspectRatios;
+  if (aspectRatios) {
+    Object.entries(aspectRatios).forEach(([key, value]) => {
+      assign(toVariableName(prefix, "aspect-ratio", key), value);
+    });
+  }
   Object.entries(baseTokens.typography.families).forEach(([key, value]) => {
     assign(toVariableName(prefix, "font-family", key), value);
   });
@@ -1404,6 +1416,7 @@ var createCssVariableMap = (tokens2, options = {}) => {
   assign(toVariableName(prefix, "min-touch-target"), baseTokens.accessibility.minTouchTarget);
   assign(toVariableName(prefix, "min-text-size"), baseTokens.accessibility.minTextSize);
   assign(toVariableName(prefix, "reduced-motion"), baseTokens.accessibility.reducedMotion);
+  assign(toVariableName(prefix, "forced-colors"), baseTokens.accessibility.forcedColors);
   Object.entries(baseTokens.buttons).forEach(([variant, states]) => {
     Object.entries(states).forEach(([state, value]) => {
       assign(toVariableName(prefix, "button", variant, state), value);
