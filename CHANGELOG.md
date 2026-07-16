@@ -39,20 +39,40 @@ Contract change type: additive
   from the token tree instead of the curated path samples
   `requiredOutputs.js.requiredPaths` / `requiredOutputs.css.requiredVariables`
   relied on:
-  - JS: every leaf under each `outputParity.js.namespaces` entry must resolve
-    to an equal value in both the runtime `tokens` export and generated
-    `coreTokens`.
+  - JS runtime: every leaf under each `outputParity.js.namespaces` entry must
+    resolve to an equal value in both the runtime `tokens` export and
+    generated `coreTokens`.
+  - Generated TypeScript: every leaf under each `outputParity.js.namespaces`
+    entry (excluding `modes`, which is JS/DTCG-only) must have a concrete
+    (`string`/`number`/`boolean`/literal/array — not `unknown`/`any`/an index
+    signature) field in the `SpectreGeneratedTokens` interface as it appears
+    in the *shipped* `dist/index.d.ts`, parsed via the TypeScript compiler
+    API. `SpectreGeneratedTokens` and `coreTokens` are generated from the
+    same object literal in `generate-types.ts` and so cannot structurally
+    drift from each other, and `tsc` (via `build:ts`) already guarantees
+    `coreTokens` type-checks against its own declared type; this check
+    verifies the thing `tsc` does not — that the bundled declaration
+    downstream consumers actually type-check against was not separately
+    narrowed by a hand-edit to `src/types.ts` or a bundling change.
   - DTCG: every leaf under each `outputParity.dtcg.namespaces` entry must
     have a corresponding `$value` in `dist/tokens.dtcg.json`.
   - CSS: `outputParity.css.groups` declares, per CSS-emitting group, the
-    source path and variable-name prefix parts; every leaf under that source
-    path must appear as a CSS variable in the generated `:root` block (and
-    the dark-mode block too, for groups marked `hasModes`). Namespaces with
-    genuinely irregular per-field CSS naming (`typography`, `font`, `layout`,
-    `accessibility`, `buttons`, `forms`, `animations`) are listed as
-    documented `outputParity.css.exceptions` rather than force-fit into the
-    generic walker, and remain covered by the existing curated
-    `requiredVariables` checks.
+    source path, variable-name prefix parts, and a `blockStrategy` describing
+    how the variable is expected to reach dark mode: `cascade-only` (declared
+    once in `:root`; MUST be absent from the dark block, reaching dark mode
+    purely via CSS cascade inheritance — colors, space, radii, shadows, and
+    other mode-invariant primitives), `mode-scoped` (explicitly redeclared in
+    both blocks from independent `modes.default.*`/`modes.dark.*` sources —
+    surface/text), or `duplicated` (explicitly redeclared in both blocks with
+    the same value, no `modes.*` backing — link). Every leaf is checked
+    against the default block unconditionally, and against the dark block
+    according to its `blockStrategy` — not merely "the variable appears
+    somewhere in the generated CSS." Namespaces with genuinely irregular
+    per-field CSS naming (`typography`, `font`, `layout`, `accessibility`,
+    `buttons`, `forms`, `animations`) are listed as documented
+    `outputParity.css.exceptions` rather than force-fit into the generic
+    walker, and remain covered by the existing curated `requiredVariables`
+    checks.
   - Running this check against the pre-fix codebase surfaced two real,
     previously-undetected gaps: `icons` and `aspectRatios` are public
     namespaces with zero CSS output, and `accessibility.forcedColors` was
@@ -62,6 +82,20 @@ Contract change type: additive
   - `collectRuntimeLeafPaths` added to `scripts/token-utils.ts`: walks a
     runtime (already-unwrapped) token subtree and returns every leaf path,
     for use by output-parity assertions.
+  - Both the CSS `blockStrategy` semantics and the TypeScript declaration
+    check were verified by deliberately reintroducing each regression class
+    (a dropped dark-mode variable, a cascade-only primitive wrongly
+    redeclared in the dark block, a missing `.d.ts` field, a `.d.ts` field
+    widened to `unknown`) against a temporary copy of the built output and
+    confirming `check:parity` fails with the precise token/type path, then
+    confirming it passes clean again once reverted.
+- Corrected release-note phrasing: `npm run check` runs `build` through
+  `lint` as one `&&` chain, so it does not "pass" if any stage — including
+  `check:dist`, which fails whenever `dist/` has uncommitted rebuild output —
+  exits non-zero. As of this change, every stage through `check:deprecation`
+  passes; `check:dist` fails only because the rebuilt `dist/` artifacts from
+  this change are not yet committed (expected — dist is committed by human
+  review, not by Claude Code); `lint` was verified separately and passes.
 
 ## [3.3.1] - 2026-06-30
 

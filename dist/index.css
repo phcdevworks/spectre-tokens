@@ -275,6 +275,20 @@
   --sp-radius-3xl: 24px;
   --sp-radius-4xl: 32px;
   --sp-radius-pill: 999px;
+  --sp-icon-xs: 12px;
+  --sp-icon-sm: 16px;
+  --sp-icon-md: 20px;
+  --sp-icon-lg: 24px;
+  --sp-icon-xl: 32px;
+  --sp-icon-2xl: 40px;
+  --sp-icon-3xl: 48px;
+  --sp-aspect-ratio-square: 1/1;
+  --sp-aspect-ratio-video: 16/9;
+  --sp-aspect-ratio-classic: 3/2;
+  --sp-aspect-ratio-portrait: 3/4;
+  --sp-aspect-ratio-landscape: 4/3;
+  --sp-aspect-ratio-ultrawide: 21/9;
+  --sp-aspect-ratio-hero: 2/1;
   --sp-font-family-sans: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
   --sp-font-family-serif: 'Times New Roman', Times, serif;
   --sp-font-family-mono: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
@@ -367,6 +381,7 @@
   --sp-min-touch-target: 44px;
   --sp-min-text-size: 16px;
   --sp-reduced-motion: 0.01ms;
+  --sp-forced-colors: auto;
   --sp-button-primary-bg: #0369a1;
   --sp-button-primary-bghover: #075985;
   --sp-button-primary-bgactive: #0c4a6e;

@@ -16,10 +16,12 @@ export interface DesignOutput {
   requiredTopLevelKeys: string[];
 }
 
+export type CssBlockStrategy = 'cascade-only' | 'mode-scoped' | 'duplicated';
+
 export interface CssParityGroup {
   sourcePath: string;
   prefixParts: string[];
-  hasModes: boolean;
+  blockStrategy: CssBlockStrategy;
 }
 
 export interface OutputParity {
