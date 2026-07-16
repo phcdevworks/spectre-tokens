@@ -302,6 +302,7 @@ architecture still requires additive contract changes in multiple places.
 - Convert concrete downstream gaps into demand-backed token proposals rather
   than speculative namespace expansion.
 
+
 ---
 
 ## 10. Explicitly Out of Scope
