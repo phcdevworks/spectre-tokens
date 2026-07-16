@@ -291,6 +291,18 @@ architecture still requires additive contract changes in multiple places.
   as Style Dictionary.
 - Document intentional DTCG transformations and unsupported source shapes.
 
+### P3: Live Downstream Compatibility
+
+- Add a release-candidate or scheduled compatibility matrix covering
+  `spectre-ui`, `spectre-ui-astro`, and `spectre-components`.
+- Validate supported downstream versions against the packed candidate artifact
+  before release.
+- Retain repository-local fixtures for fast checks while using live downstream
+  validation as the ecosystem contract authority.
+- Convert concrete downstream gaps into demand-backed token proposals rather
+  than speculative namespace expansion.
+
+
 ---
 
 ## 10. Explicitly Out of Scope
@@ -344,3 +356,5 @@ architecture still requires additive contract changes in multiple places.
     manifest-declared public namespace and both modes.
 15. **Phase 9 P2** — harden DTCG inference with fixture coverage and one real
     consumer round-trip.
+16. **Phase 9 P3** — add live downstream compatibility checks for the three
+    consuming Spectre packages.
