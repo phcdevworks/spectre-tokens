@@ -6,6 +6,10 @@ reflects package releases published to npm.
 
 ## [Unreleased]
 
+## [3.5.0] - 2026-07-21
+
+**Release Title:** TypeScript 7 Compatibility
+
 Contract change type: additive
 
 ### Changed
@@ -1024,7 +1028,8 @@ Contract change type: breaking
 - Standardized documentation and contributing guidelines.
 
 [unreleased]:
-  https://github.com/phcdevworks/spectre-tokens/compare/v3.4.0...HEAD
+  https://github.com/phcdevworks/spectre-tokens/compare/v3.5.0...HEAD
+[3.5.0]: https://github.com/phcdevworks/spectre-tokens/compare/v3.4.0...v3.5.0
 [3.4.0]: https://github.com/phcdevworks/spectre-tokens/compare/v3.3.1...v3.4.0
 [3.3.1]: https://github.com/phcdevworks/spectre-tokens/compare/v3.3.0...v3.3.1
 [3.3.0]: https://github.com/phcdevworks/spectre-tokens/compare/v3.2.0...v3.3.0
