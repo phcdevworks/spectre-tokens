@@ -8,14 +8,14 @@ reflects package releases published to npm.
 
 ## [3.5.0] - 2026-07-21
 
-**Release Title:** TypeScript 7 Compatibility
+**Release Title:** Phase 9 - TypeScript 7 Compatibility
 
 Contract change type: additive
 
 ### Changed
 
-- Widened the `typescript` peer dependency range to add TypeScript 7
-  support: `^5.9 || ^6.0` → `^5.0 || ^6.0 || ^7.0`. Internal tooling
+- Widened the `typescript` peer dependency range to add TypeScript 7 support:
+  `^5.9 || ^6.0` → `^5.0 || ^6.0 || ^7.0`. Internal tooling
   (ESLint/typescript-eslint) runs against TypeScript 6 via an
   `npm:@typescript/typescript6` alias since `typescript-eslint` does not yet
   support TypeScript 7's programmatic API; TypeScript 7's native compiler is
@@ -34,197 +34,192 @@ Contract change type: additive
   `NAV_FIELDS`, `MODAL_FIELDS`, `TESTIMONIAL_FIELDS`, `PRICING_CARD_FIELDS`,
   `RATING_FIELDS`, `TOAST_VARIANTS`, `TOOLTIP_FIELDS`, `DROPDOWN_FIELDS`,
   `SELECTION_CONTROL_FIELDS`, `SELECT_FIELDS`, `TEXTAREA_FIELDS`,
-  `FIELDSET_FIELDS`, `LABEL_FIELDS` — with a recursive walker that derives
-  every leaf path directly from `tokens.modes.default.*` /
-  `tokens.modes.dark.*` (unioned with the top-level `surface`/`text`/
-  `component` alias objects), so a new field under any `component.*`,
-  `surface`, or `text` group reaches generated CSS by construction instead of
-  requiring a matching array update. This is the defect class behind the
-  `3.1.0`, `3.3.0`, and `3.3.1` CSS-generation gaps.
+  `FIELDSET_FIELDS`, `LABEL_FIELDS` — with a recursive walker that derives every
+  leaf path directly from `tokens.modes.default.*` / `tokens.modes.dark.*`
+  (unioned with the top-level `surface`/`text`/ `component` alias objects), so a
+  new field under any `component.*`, `surface`, or `text` group reaches
+  generated CSS by construction instead of requiring a matching array update.
+  This is the defect class behind the `3.1.0`, `3.3.0`, and `3.3.1`
+  CSS-generation gaps.
 - `resolveSemanticValue` now throws with the precise token path when it
   encounters a value shape it cannot resolve (an object with `metadata`/
   `description` but no `value`, or a non-object/non-primitive), instead of
-  silently skipping it — turning "token exists but CSS output is missing"
-  into a build-time failure.
+  silently skipping it — turning "token exists but CSS output is missing" into a
+  build-time failure.
 - Generated `dist/index.css` variable names and values are unchanged (byte-
-  identical variable-to-value mapping in both light and dark blocks;
-  declaration order within each block differs since it now follows object
-  key order instead of a curated array order).
-- `tests/css-semantic-coverage.test.ts` continues to pass unmodified,
-  confirming coverage parity with the array-based implementation it replaces.
+  identical variable-to-value mapping in both light and dark blocks; declaration
+  order within each block differs since it now follows object key order instead
+  of a curated array order).
+- `tests/css-semantic-coverage.test.ts` continues to pass unmodified, confirming
+  coverage parity with the array-based implementation it replaces.
 - Phase 9 P1: added `contract.manifest.json`'s `outputParity` section and
   `scripts/check-output-parity.ts` (wired into `npm run check` as
-  `check:parity`), which derives exhaustive leaf-path coverage assertions
-  from the token tree instead of the curated path samples
+  `check:parity`), which derives exhaustive leaf-path coverage assertions from
+  the token tree instead of the curated path samples
   `requiredOutputs.js.requiredPaths` / `requiredOutputs.css.requiredVariables`
   relied on:
   - JS runtime: every leaf under each `outputParity.js.namespaces` entry must
-    resolve to an equal value in both the runtime `tokens` export and
-    generated `coreTokens`.
+    resolve to an equal value in both the runtime `tokens` export and generated
+    `coreTokens`.
   - Generated TypeScript: every leaf under each `outputParity.js.namespaces`
     entry (excluding `modes`, which is JS/DTCG-only) must have a concrete
     (`string`/`number`/`boolean`/literal/array — not `unknown`/`any`/an index
-    signature) field in the `SpectreGeneratedTokens` interface as it appears
-    in the *shipped* `dist/index.d.ts`, parsed via the TypeScript compiler
-    API. `SpectreGeneratedTokens` and `coreTokens` are generated from the
-    same object literal in `generate-types.ts` and so cannot structurally
-    drift from each other, and `tsc` (via `build:ts`) already guarantees
-    `coreTokens` type-checks against its own declared type; this check
-    verifies the thing `tsc` does not — that the bundled declaration
-    downstream consumers actually type-check against was not separately
-    narrowed by a hand-edit to `src/types.ts` or a bundling change.
-  - DTCG: every leaf under each `outputParity.dtcg.namespaces` entry must
-    have a corresponding `$value` in `dist/tokens.dtcg.json`.
-  - CSS: `outputParity.css.groups` declares, per CSS-emitting group, the
-    source path, variable-name prefix parts, and a `blockStrategy` describing
-    how the variable is expected to reach dark mode: `cascade-only` (declared
-    once in `:root`; MUST be absent from the dark block, reaching dark mode
-    purely via CSS cascade inheritance — colors, space, radii, shadows, and
-    other mode-invariant primitives), `mode-scoped` (explicitly redeclared in
-    both blocks from independent `modes.default.*`/`modes.dark.*` sources —
+    signature) field in the `SpectreGeneratedTokens` interface as it appears in
+    the _shipped_ `dist/index.d.ts`, parsed via the TypeScript compiler API.
+    `SpectreGeneratedTokens` and `coreTokens` are generated from the same object
+    literal in `generate-types.ts` and so cannot structurally drift from each
+    other, and `tsc` (via `build:ts`) already guarantees `coreTokens`
+    type-checks against its own declared type; this check verifies the thing
+    `tsc` does not — that the bundled declaration downstream consumers actually
+    type-check against was not separately narrowed by a hand-edit to
+    `src/types.ts` or a bundling change.
+  - DTCG: every leaf under each `outputParity.dtcg.namespaces` entry must have a
+    corresponding `$value` in `dist/tokens.dtcg.json`.
+  - CSS: `outputParity.css.groups` declares, per CSS-emitting group, the source
+    path, variable-name prefix parts, and a `blockStrategy` describing how the
+    variable is expected to reach dark mode: `cascade-only` (declared once in
+    `:root`; MUST be absent from the dark block, reaching dark mode purely via
+    CSS cascade inheritance — colors, space, radii, shadows, and other
+    mode-invariant primitives), `mode-scoped` (explicitly redeclared in both
+    blocks from independent `modes.default.*`/`modes.dark.*` sources —
     surface/text), or `duplicated` (explicitly redeclared in both blocks with
-    the same value, no `modes.*` backing — link). Every leaf is checked
-    against the default block unconditionally, and against the dark block
-    according to its `blockStrategy` — not merely "the variable appears
-    somewhere in the generated CSS." Namespaces with genuinely irregular
-    per-field CSS naming (`typography`, `font`, `layout`, `accessibility`,
-    `buttons`, `forms`, `animations`) are listed as documented
-    `outputParity.css.exceptions` rather than force-fit into the generic
-    walker, and remain covered by the existing curated `requiredVariables`
-    checks.
+    the same value, no `modes.*` backing — link). Every leaf is checked against
+    the default block unconditionally, and against the dark block according to
+    its `blockStrategy` — not merely "the variable appears somewhere in the
+    generated CSS." Namespaces with genuinely irregular per-field CSS naming
+    (`typography`, `font`, `layout`, `accessibility`, `buttons`, `forms`,
+    `animations`) are listed as documented `outputParity.css.exceptions` rather
+    than force-fit into the generic walker, and remain covered by the existing
+    curated `requiredVariables` checks.
   - Running this check against the pre-fix codebase surfaced two real,
-    previously-undetected gaps: `icons` and `aspectRatios` are public
-    namespaces with zero CSS output, and `accessibility.forcedColors` was
-    never emitted. All three are fixed in `src/css.ts` (`--sp-icon-*`,
-    `--sp-aspect-ratio-*`, `--sp-forced-colors`) as part of this change —
-    purely additive, no existing CSS variable name or value changed.
-  - `collectRuntimeLeafPaths` added to `scripts/token-utils.ts`: walks a
-    runtime (already-unwrapped) token subtree and returns every leaf path,
-    for use by output-parity assertions.
-  - Both the CSS `blockStrategy` semantics and the TypeScript declaration
-    check were verified by deliberately reintroducing each regression class
-    (a dropped dark-mode variable, a cascade-only primitive wrongly
-    redeclared in the dark block, a missing `.d.ts` field, a `.d.ts` field
-    widened to `unknown`) against a temporary copy of the built output and
-    confirming `check:parity` fails with the precise token/type path, then
-    confirming it passes clean again once reverted.
-- Corrected release-note phrasing: `npm run check` runs `build` through
-  `lint` as one `&&` chain, so it does not "pass" if any stage — including
+    previously-undetected gaps: `icons` and `aspectRatios` are public namespaces
+    with zero CSS output, and `accessibility.forcedColors` was never emitted.
+    All three are fixed in `src/css.ts` (`--sp-icon-*`, `--sp-aspect-ratio-*`,
+    `--sp-forced-colors`) as part of this change — purely additive, no existing
+    CSS variable name or value changed.
+  - `collectRuntimeLeafPaths` added to `scripts/token-utils.ts`: walks a runtime
+    (already-unwrapped) token subtree and returns every leaf path, for use by
+    output-parity assertions.
+  - Both the CSS `blockStrategy` semantics and the TypeScript declaration check
+    were verified by deliberately reintroducing each regression class (a dropped
+    dark-mode variable, a cascade-only primitive wrongly redeclared in the dark
+    block, a missing `.d.ts` field, a `.d.ts` field widened to `unknown`)
+    against a temporary copy of the built output and confirming `check:parity`
+    fails with the precise token/type path, then confirming it passes clean
+    again once reverted.
+- Corrected release-note phrasing: `npm run check` runs `build` through `lint`
+  as one `&&` chain, so it does not "pass" if any stage — including
   `check:dist`, which fails whenever `dist/` has uncommitted rebuild output —
   exits non-zero. As of this change, every stage through `check:deprecation`
   passes; `check:dist` fails only because the rebuilt `dist/` artifacts from
   this change are not yet committed (expected — dist is committed by human
   review, not by Claude Code); `lint` was verified separately and passes.
-- Phase 9 P2: hardened `scripts/build-dtcg.ts`'s DTCG conformance and added
-  the validation/interop coverage the roadmap's DTCG hardening item called
-  for. Auditing the generator's `$type` inference against every namespace's
-  actual value shape found several real spec-conformance gaps — not just
-  missing test coverage — all fixed here:
+- Phase 9 P2: hardened `scripts/build-dtcg.ts`'s DTCG conformance and added the
+  validation/interop coverage the roadmap's DTCG hardening item called for.
+  Auditing the generator's `$type` inference against every namespace's actual
+  value shape found several real spec-conformance gaps — not just missing test
+  coverage — all fixed here:
   - `zIndex.*` / `opacity.*`: source values are numeric strings (`"1000"`,
     `"0.38"`); DTCG `$value` now emits an actual JSON `number` to match
     `$type: "number"` (previously a string tagged as `number`, which the DTCG
     spec does not permit).
-  - `transitions.easing.*`: `cubic-bezier(x1, y1, x2, y2)` CSS strings (and
-    the `"linear"` keyword, mapped to its mathematically equivalent
-    `[0, 0, 1, 1]`) are now parsed into a 4-number array to match
-    `$type: "cubicBezier"` (previously the raw CSS string, which is not a
-    valid `cubicBezier` `$value` per spec).
-  - `typography.families.*`: comma-separated CSS font stacks are now split
-    into an array of unquoted family names to match `$type: "fontFamily"`
-    (previously a single joined string).
+  - `transitions.easing.*`: `cubic-bezier(x1, y1, x2, y2)` CSS strings (and the
+    `"linear"` keyword, mapped to its mathematically equivalent `[0, 0, 1, 1]`)
+    are now parsed into a 4-number array to match `$type: "cubicBezier"`
+    (previously the raw CSS string, which is not a valid `cubicBezier` `$value`
+    per spec).
+  - `typography.families.*`: comma-separated CSS font stacks are now split into
+    an array of unquoted family names to match `$type: "fontFamily"` (previously
+    a single joined string).
   - `shadows.*`, `component.modal.shadow`, `buttons.cta.shadow`: CSS
     `box-shadow` strings are now parsed into DTCG's structured shadow shape
     (`{ color, offsetX, offsetY, blur, spread }`, array for multi-layer) to
     match `$type: "shadow"` (previously `$type: "string"`, a weaker
-    representation). `shadows.none` and other unparseable single-keyword
-    values are left as `$type: "string"` rather than forced into a shape they
-    don't have. This transform is path-scoped, not shape-detected, so
-    composite alpha-colors like `surface.overlay` (`"{colors.black} / 0.6"`)
-    are never mistaken for a shadow.
+    representation). `shadows.none` and other unparseable single-keyword values
+    are left as `$type: "string"` rather than forced into a shape they don't
+    have. This transform is path-scoped, not shape-detected, so composite
+    alpha-colors like `surface.overlay` (`"{colors.black} / 0.6"`) are never
+    mistaken for a shadow.
   - Whole-value alias references (e.g. `animations.fadeIn.easing`'s
-    `"{transitions.easing.out}"`) now resolve `$type` from the alias
-    *target's* real value shape instead of falling through to
-    `$type: "string"` — `inferTypeWithAliasResolution` looks up the
-    referenced token in the merged source tree (following alias chains) and
-    infers from what it actually resolves to. `$value` keeps the literal
-    `{path}` reference string (valid DTCG alias syntax); only `$type`
-    changes.
-  - `surface.hero`: **correction to an initial pass of this change** — the
-    DTCG Format Module's `gradient` `$type` (stable as of the 2025.10 draft)
-    was initially and incorrectly treated as nonexistent, leaving gradients
-    as `$type: "string"`. It is a real, implementation-ready type: an array
-    of `{ color, position }` stops with `position` normalized 0–1. CSS
-    `linear-gradient(<angle>, <color> <pos>%, ...)` strings are now parsed
-    into that stop-array shape to match `$type: "gradient"`. The `color`
-    field of each stop keeps the literal `{path}` alias reference where the
-    source uses one, consistent with the other composite types here. The
-    CSS gradient angle/direction (`135deg`) has no field in the DTCG gradient
-    type — it represents stops only, not CSS geometry — so it is correctly
-    dropped, and this is documented as the real (spec-level) limitation
-    rather than "gradients aren't supported."
+    `"{transitions.easing.out}"`) now resolve `$type` from the alias _target's_
+    real value shape instead of falling through to `$type: "string"` —
+    `inferTypeWithAliasResolution` looks up the referenced token in the merged
+    source tree (following alias chains) and infers from what it actually
+    resolves to. `$value` keeps the literal `{path}` reference string (valid
+    DTCG alias syntax); only `$type` changes.
+  - `surface.hero`: **correction to an initial pass of this change** — the DTCG
+    Format Module's `gradient` `$type` (stable as of the 2025.10 draft) was
+    initially and incorrectly treated as nonexistent, leaving gradients as
+    `$type: "string"`. It is a real, implementation-ready type: an array of
+    `{ color, position }` stops with `position` normalized 0–1. CSS
+    `linear-gradient(<angle>, <color> <pos>%, ...)` strings are now parsed into
+    that stop-array shape to match `$type: "gradient"`. The `color` field of
+    each stop keeps the literal `{path}` alias reference where the source uses
+    one, consistent with the other composite types here. The CSS gradient
+    angle/direction (`135deg`) has no field in the DTCG gradient type — it
+    represents stops only, not CSS geometry — so it is correctly dropped, and
+    this is documented as the real (spec-level) limitation rather than
+    "gradients aren't supported."
   - `scripts/check-dtcg-conformance.ts` added (wired into `npm run check` as
     `check:dtcg`): walks the full generated `dist/tokens.dtcg.json` and
-    validates every `$value` against its declared `$type`'s required
-    structural shape (color/dimension/duration/number/cubicBezier/
+    validates every `$value` against its declared `$type`'s required structural
+    shape (color/dimension/duration/number/cubicBezier/
     fontFamily/shadow/gradient/fontWeight/string), skipping whole-value alias
-    references (valid for any `$type`). Verified to catch real regressions
-    by deliberately reintroducing the zIndex string/number mismatch, an
+    references (valid for any `$type`). Verified to catch real regressions by
+    deliberately reintroducing the zIndex string/number mismatch, an
     unrecognized `$type`, and a malformed gradient stop (single-stop array,
     non-numeric `position`), confirming all fail with a precise path, then
     confirming a clean pass once reverted.
-  - `scripts/check-dtcg-style-dictionary.ts` added (wired into `npm run
-    check` as `check:dtcg-roundtrip`; `style-dictionary` added as a
-    devDependency): builds `dist/tokens.dtcg.json` with a real DTCG consumer
-    and asserts the rendered CSS output is correct for every structural
-    transform above — proving genuine downstream interoperability, not just
-    that our own scripts consider the file well-formed. Most assertions
-    discriminate a correctly-typed value from a mistyped one (e.g. Style
-    Dictionary renders a wrongly-`string`-typed shadow object as the literal
-    text `[object Object]`, verified by deliberately breaking that field);
-    the zIndex/color/gradient checks are weaker in that specific sense —
-    Style Dictionary's built-in `css/variables` format has no
-    gradient-to-CSS transform yet (as of v5.5.0), so a `gradient` stop array
-    and a `string`-typed array both stringify to the same
-    `[object Object],[object Object]` text, and a `number` and a
-    numeric-looking string likewise render identical CSS text — but they
-    still confirm real ingestion (ambient parsing, alias resolution) succeeds
-    without erroring; `check:dtcg` is what rejects the wrong JS shape for
-    these specific types.
-  - `tests/build-dtcg.test.ts` added: 50 fixture assertions across
-    `inferType`, `inferTypeWithAliasResolution`, `parseCubicBezier`,
-    `parseFontFamily`, `parseShadowValue`, `parseGradientValue`,
-    `isShadowPath`, `isGradientPath`, and `toDTCG`, covering aliases, font
-    families, shadows, gradients, cubic-bezier values, unitless numbers,
-    dimensions, typography values, and array/composite values per the
-    roadmap's fixture list.
-  - `TOKEN_CONTRACT.md` gained a "DTCG Design-Tool Export" section
-    documenting every intentional transformation and unsupported source
-    shape above, so the distinction between "not yet handled" and
-    "deliberately left as a string" is explicit contract text, not tribal
-    knowledge.
-  - The full generated output was diffed leaf-by-leaf before/after: every
-    change is additive/corrective to a `$value`'s shape or a `$type`'s
-    correctness; no token path was added, removed, or renamed.
-- Phase 9 P3: added `scripts/check-downstream-compat.ts` (`npm run
-  check:downstream`), the live downstream compatibility check the roadmap
-  called for. It packs this repo into a real npm tarball, then for each of
-  `spectre-ui`, `spectre-ui-astro`, and `spectre-components` present as a
+  - `scripts/check-dtcg-style-dictionary.ts` added (wired into `npm run check`
+    as `check:dtcg-roundtrip`; `style-dictionary` added as a devDependency):
+    builds `dist/tokens.dtcg.json` with a real DTCG consumer and asserts the
+    rendered CSS output is correct for every structural transform above —
+    proving genuine downstream interoperability, not just that our own scripts
+    consider the file well-formed. Most assertions discriminate a
+    correctly-typed value from a mistyped one (e.g. Style Dictionary renders a
+    wrongly-`string`-typed shadow object as the literal text `[object Object]`,
+    verified by deliberately breaking that field); the zIndex/color/gradient
+    checks are weaker in that specific sense — Style Dictionary's built-in
+    `css/variables` format has no gradient-to-CSS transform yet (as of v5.5.0),
+    so a `gradient` stop array and a `string`-typed array both stringify to the
+    same `[object Object],[object Object]` text, and a `number` and a
+    numeric-looking string likewise render identical CSS text — but they still
+    confirm real ingestion (ambient parsing, alias resolution) succeeds without
+    erroring; `check:dtcg` is what rejects the wrong JS shape for these specific
+    types.
+  - `tests/build-dtcg.test.ts` added: 50 fixture assertions across `inferType`,
+    `inferTypeWithAliasResolution`, `parseCubicBezier`, `parseFontFamily`,
+    `parseShadowValue`, `parseGradientValue`, `isShadowPath`, `isGradientPath`,
+    and `toDTCG`, covering aliases, font families, shadows, gradients,
+    cubic-bezier values, unitless numbers, dimensions, typography values, and
+    array/composite values per the roadmap's fixture list.
+  - `TOKEN_CONTRACT.md` gained a "DTCG Design-Tool Export" section documenting
+    every intentional transformation and unsupported source shape above, so the
+    distinction between "not yet handled" and "deliberately left as a string" is
+    explicit contract text, not tribal knowledge.
+  - The full generated output was diffed leaf-by-leaf before/after: every change
+    is additive/corrective to a `$value`'s shape or a `$type`'s correctness; no
+    token path was added, removed, or renamed.
+- Phase 9 P3: added `scripts/check-downstream-compat.ts`
+  (`npm run check:downstream`), the live downstream compatibility check the
+  roadmap called for. It packs this repo into a real npm tarball, then for each
+  of `spectre-ui`, `spectre-ui-astro`, and `spectre-components` present as a
   sibling checkout on disk, installs that tarball and runs the sibling's own
   `npm run check` — proving the packed candidate artifact against each
-  downstream package's actual build/lint/type/test gate, not a
-  repository-local guess at what they need. A sibling with a dirty working
-  tree is skipped rather than risking its uncommitted work; every sibling's
-  `package.json`/`package-lock.json` is restored via `git checkout` + `npm
-  install` afterward regardless of pass/fail. Verified end-to-end against
-  the real sibling repos: all three passed against the current candidate,
-  and all three were confirmed clean (`git status`) after the run. Not part
-  of `npm run check` — it requires sibling repos on disk and is
-  meaningfully slower (three full downstream check suites), so it's wired as
-  a separate pre-release gate (documented in `CLAUDE.md`'s Release
-  Procedure) rather than the fast default loop. `TOKEN_CONTRACT.md` gained a
-  "Live Downstream Compatibility" section documenting the mechanism and the
-  demand-driven policy: a concrete failure here is what justifies a token
-  proposal, not speculative namespace expansion.
+  downstream package's actual build/lint/type/test gate, not a repository-local
+  guess at what they need. A sibling with a dirty working tree is skipped rather
+  than risking its uncommitted work; every sibling's
+  `package.json`/`package-lock.json` is restored via `git checkout` +
+  `npm install` afterward regardless of pass/fail. Verified end-to-end against
+  the real sibling repos: all three passed against the current candidate, and
+  all three were confirmed clean (`git status`) after the run. Not part of
+  `npm run check` — it requires sibling repos on disk and is meaningfully slower
+  (three full downstream check suites), so it's wired as a separate pre-release
+  gate (documented in `CLAUDE.md`'s Release Procedure) rather than the fast
+  default loop. `TOKEN_CONTRACT.md` gained a "Live Downstream Compatibility"
+  section documenting the mechanism and the demand-driven policy: a concrete
+  failure here is what justifies a token proposal, not speculative namespace
+  expansion.
 
 ## [3.3.1] - 2026-06-30
 
@@ -235,41 +230,40 @@ Contract change type: additive
 ### Fixed
 
 - `generateCssVariables` in `src/css.ts` builds component CSS variables from
-  hand-maintained field-mapping arrays (e.g. `SELECT_FIELDS`,
-  `TEXTAREA_FIELDS`, `BADGE_VARIANTS`) instead of iterating the token JSON
-  directly, so adding a field to `tokens/components.json` does not
-  automatically reach generated CSS or `src/types.ts`. This bug recurred
-  three times, all fixed in this release:
+  hand-maintained field-mapping arrays (e.g. `SELECT_FIELDS`, `TEXTAREA_FIELDS`,
+  `BADGE_VARIANTS`) instead of iterating the token JSON directly, so adding a
+  field to `tokens/components.json` does not automatically reach generated CSS
+  or `src/types.ts`. This bug recurred three times, all fixed in this release:
   - `component.select`/`component.textarea`: the `3.3.0` token additions
     (`borderInvalid`, `bgInvalid`, `borderSuccess`, `bgSuccess`) were never
-    added to `SELECT_FIELDS`/`TEXTAREA_FIELDS`, so
-    `--sp-select-border-invalid`, `--sp-select-bg-invalid`,
-    `--sp-select-border-success`, `--sp-select-bg-success`, and the
-    `--sp-textarea-*` equivalents were silently missing from
-    `dist/index.css` in `3.3.0` despite that release's changelog claiming
-    they were emitted. `ComponentSelectTokens`/`ComponentTextareaTokens` in
-    `src/types.ts` were also missing the four new fields.
-  - `component.badge`: the `*BgHover` fields (`neutralBgHover`,
-    `infoBgHover`, `successBgHover`, `warningBgHover`, `dangerBgHover`) had
-    no corresponding CSS variable at all - `BADGE_VARIANTS` only ever mapped
-    a `bg`/`text` pair per variant, never the hover key.
+    added to `SELECT_FIELDS`/`TEXTAREA_FIELDS`, so `--sp-select-border-invalid`,
+    `--sp-select-bg-invalid`, `--sp-select-border-success`,
+    `--sp-select-bg-success`, and the `--sp-textarea-*` equivalents were
+    silently missing from `dist/index.css` in `3.3.0` despite that release's
+    changelog claiming they were emitted.
+    `ComponentSelectTokens`/`ComponentTextareaTokens` in `src/types.ts` were
+    also missing the four new fields.
+  - `component.badge`: the `*BgHover` fields (`neutralBgHover`, `infoBgHover`,
+    `successBgHover`, `warningBgHover`, `dangerBgHover`) had no corresponding
+    CSS variable at all - `BADGE_VARIANTS` only ever mapped a `bg`/`text` pair
+    per variant, never the hover key.
   - `component.testimonial`, `component.pricingCard`, `component.rating`:
     entirely absent from `generateCssVariables` - no field-mapping arrays
-    existed for these groups despite the tokens and TypeScript types being
-    fully defined, so none of their 19 combined fields ever reached CSS in
-    any prior release.
-  - Same class of bug as the `3.1.0` CSS generation fix (Phase 5), which
-    only covered `tokens.link`/`tokens.surface` drift and so didn't catch
-    any of the above.
+    existed for these groups despite the tokens and TypeScript types being fully
+    defined, so none of their 19 combined fields ever reached CSS in any prior
+    release.
+  - Same class of bug as the `3.1.0` CSS generation fix (Phase 5), which only
+    covered `tokens.link`/`tokens.surface` drift and so didn't catch any of the
+    above.
 - Added the missing fields/groups to `src/css.ts` (`SELECT_FIELDS`,
   `TEXTAREA_FIELDS`, `BADGE_VARIANTS`, and new `TESTIMONIAL_FIELDS`,
   `PRICING_CARD_FIELDS`, `RATING_FIELDS` arrays) and to `src/types.ts`
   (`ComponentSelectTokens`, `ComponentTextareaTokens`). `dist/index.css` now
   emits all of the above in both light and dark blocks.
-- Extended `tests/css-semantic-coverage.test.ts` to assert every key under
-  every `tokens.component.*` group (not just `link`/`surface`) has a
-  matching CSS variable in `generateCssVariables` output, closing the gap
-  that let this bug class recur three times across `3.1.0`-`3.3.0`.
+- Extended `tests/css-semantic-coverage.test.ts` to assert every key under every
+  `tokens.component.*` group (not just `link`/`surface`) has a matching CSS
+  variable in `generateCssVariables` output, closing the gap that let this bug
+  class recur three times across `3.1.0`-`3.3.0`.
 
 ## [3.3.0] - 2026-06-30
 
@@ -286,9 +280,9 @@ Contract change type: additive
   `--sp-select-border-success`, `--sp-select-bg-success`, and the
   `--sp-textarea-*` equivalents. Unblocks `spectre-ui`'s deferred
   `invalid`/`success` state options on `getSelectClasses`/`getTextareaClasses`
-  (see `spectre-ui/TODO.md` Phase 5 P0). `loading` state remains
-  structural-only (opacity/cursor) with no dedicated color role, matching
-  `getInputClasses`'s existing handling.
+  (see `spectre-ui/TODO.md` Phase 5 P0). `loading` state remains structural-only
+  (opacity/cursor) with no dedicated color role, matching `getInputClasses`'s
+  existing handling.
 
 ## [3.2.0] - 2026-06-26
 
@@ -321,9 +315,9 @@ Contract change type: additive
 
 ### Fixed
 
-- Fixed `generateCssVariables` in `src/css.ts` silently dropping `link.*`
-  and `surface.hover/selected/active/divider` from `dist/index.css`. These
-  tokens existed in the runtime JS/TS export since `2.9.0`/`3.0.0` but had no
+- Fixed `generateCssVariables` in `src/css.ts` silently dropping `link.*` and
+  `surface.hover/selected/active/divider` from `dist/index.css`. These tokens
+  existed in the runtime JS/TS export since `2.9.0`/`3.0.0` but had no
   corresponding entry in the hand-maintained `semanticEntries` array, so they
   never reached the generated CSS. Now emits `--sp-link-default`,
   `--sp-link-hover`, `--sp-link-active`, `--sp-link-visited`,
@@ -333,13 +327,13 @@ Contract change type: additive
 ### Added
 
 - Added `layout.container.maxWidthProse` (`65ch`) for readable prose-width
-  containers, and a new `layout.sidebar.width` (`16rem`) for app shell
-  sidebar layouts. Both are fixed single values, matching the existing
+  containers, and a new `layout.sidebar.width` (`16rem`) for app shell sidebar
+  layouts. Both are fixed single values, matching the existing
   `layout.container.maxWidth` precedent, not multi-step scales. Emits
   `--sp-layout-container-max-width-prose` and `--sp-layout-sidebar-width` in
-  `dist/index.css`, and `maxWidth.prose` / `width.sidebar` in the Tailwind
-  theme export. Unblocks `spectre-ui` Phase 4d (Sidebar recipe, Container
-  prose variant).
+  `dist/index.css`, and `maxWidth.prose` / `width.sidebar` in the Tailwind theme
+  export. Unblocks `spectre-ui` Phase 4d (Sidebar recipe, Container prose
+  variant).
 - Updated README consumer examples to document the new runtime, CSS variable,
   and Tailwind layout width mappings for prose containers and sidebars.
 
@@ -358,12 +352,12 @@ Contract change type: breaking
   contract token; "subtle" precisely describes a one-step-recessed background
   used for zebra rows, section bands, and inset panels. CSS variable renamed
   from `--sp-surface-alternate` to `--sp-surface-subtle`. **Breaking** -
-  consumers using `surface.alternate` or `--sp-surface-alternate` must update
-  to `surface.subtle` / `--sp-surface-subtle`.
-- Added explicit `description` to `surface.hero` in `tokens/modes.json`
-  (both default and dark modes) documenting it as a gradient surface for
-  hero and marketing sections only, not a general-purpose surface role.
-  No value change - semantic change only.
+  consumers using `surface.alternate` or `--sp-surface-alternate` must update to
+  `surface.subtle` / `--sp-surface-subtle`.
+- Added explicit `description` to `surface.hero` in `tokens/modes.json` (both
+  default and dark modes) documenting it as a gradient surface for hero and
+  marketing sections only, not a general-purpose surface role. No value change -
+  semantic change only.
 
 ## [2.9.0] - 2026-06-10
 
@@ -407,7 +401,8 @@ Contract change type: additive
 
 ## [2.8.0] - 2026-06-06
 
-**Release Title:** Phase 4 P1 - Focus Token Parity and Color Reference Consistency
+**Release Title:** Phase 4 P1 - Focus Token Parity and Color Reference
+Consistency
 
 Contract change type: additive
 
@@ -544,7 +539,8 @@ Contract change type: additive
 
 ## [2.5.0] - 2026-05-04
 
-**Release Title:** Phase 2 - Badge Contrast Metadata and Contract Change Guidance
+**Release Title:** Phase 2 - Badge Contrast Metadata and Contract Change
+Guidance
 
 Contract change type: semantic change
 
