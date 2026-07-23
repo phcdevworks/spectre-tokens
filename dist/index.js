@@ -1178,6 +1178,43 @@ var coreTokens = {
         "fontWeight": 900,
         "letterSpacing": "0em"
       }
+    },
+    "heading": {
+      "h1": {
+        "scale": "5xl",
+        "fontWeight": 800,
+        "family": "sans"
+      },
+      "h2": {
+        "scale": "4xl",
+        "fontWeight": 700,
+        "family": "sans"
+      },
+      "h3": {
+        "scale": "3xl",
+        "fontWeight": 700,
+        "family": "sans"
+      },
+      "h4": {
+        "scale": "2xl",
+        "fontWeight": 600,
+        "family": "sans"
+      },
+      "h5": {
+        "scale": "xl",
+        "fontWeight": 600,
+        "family": "sans"
+      },
+      "h6": {
+        "scale": "lg",
+        "fontWeight": 600,
+        "family": "sans"
+      }
+    },
+    "body": {
+      "scale": "md",
+      "fontWeight": 400,
+      "family": "sans"
     }
   }
 };
@@ -1362,6 +1399,22 @@ var createCssVariableMap = (tokens2, options = {}) => {
     const scaleEntry = entry;
     assign(toVariableName(prefix, "font", key, "letter-spacing"), scaleEntry.letterSpacing);
   });
+  const heading = baseTokens.typography?.heading;
+  if (heading) {
+    Object.entries(heading).forEach(([level, entry]) => {
+      assign(toVariableName(prefix, "heading", level, "size"), `var(${toVariableName(prefix, "font", entry.scale, "size")})`);
+      assign(toVariableName(prefix, "heading", level, "line-height"), `var(${toVariableName(prefix, "font", entry.scale, "line-height")})`);
+      assign(toVariableName(prefix, "heading", level, "weight"), entry.fontWeight);
+      assign(toVariableName(prefix, "heading", level, "family"), `var(${toVariableName(prefix, "font-family", entry.family)})`);
+    });
+  }
+  const body = baseTokens.typography?.body;
+  if (body) {
+    assign(toVariableName(prefix, "body", "size"), `var(${toVariableName(prefix, "font", body.scale, "size")})`);
+    assign(toVariableName(prefix, "body", "line-height"), `var(${toVariableName(prefix, "font", body.scale, "line-height")})`);
+    assign(toVariableName(prefix, "body", "weight"), body.fontWeight);
+    assign(toVariableName(prefix, "body", "family"), `var(${toVariableName(prefix, "font-family", body.family)})`);
+  }
   Object.entries(baseTokens.shadows).forEach(([key, value]) => {
     assign(toVariableName(prefix, "shadow", key), value);
   });

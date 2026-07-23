@@ -17,9 +17,23 @@ export interface FontScaleEntry {
   weight: number;
 }
 
+export interface TypographyHeadingEntry {
+  scale: string;
+  fontWeight: number;
+  family: string;
+}
+
+export interface TypographyBodyEntry {
+  scale: string;
+  fontWeight: number;
+  family: string;
+}
+
 export interface TypographyTokens {
   families: Record<string, string>;
   scale: Record<string, TypographyScaleEntry>;
+  heading: Record<string, TypographyHeadingEntry>;
+  body: TypographyBodyEntry;
 }
 
 export interface TransitionTokens {

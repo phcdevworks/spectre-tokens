@@ -3751,6 +3751,106 @@
           "$type": "dimension"
         }
       }
+    },
+    "heading": {
+      "h1": {
+        "scale": {
+          "$value": "5xl",
+          "$type": "string"
+        },
+        "fontWeight": {
+          "$value": 800,
+          "$type": "fontWeight"
+        },
+        "family": {
+          "$value": "sans",
+          "$type": "string"
+        }
+      },
+      "h2": {
+        "scale": {
+          "$value": "4xl",
+          "$type": "string"
+        },
+        "fontWeight": {
+          "$value": 700,
+          "$type": "fontWeight"
+        },
+        "family": {
+          "$value": "sans",
+          "$type": "string"
+        }
+      },
+      "h3": {
+        "scale": {
+          "$value": "3xl",
+          "$type": "string"
+        },
+        "fontWeight": {
+          "$value": 700,
+          "$type": "fontWeight"
+        },
+        "family": {
+          "$value": "sans",
+          "$type": "string"
+        }
+      },
+      "h4": {
+        "scale": {
+          "$value": "2xl",
+          "$type": "string"
+        },
+        "fontWeight": {
+          "$value": 600,
+          "$type": "fontWeight"
+        },
+        "family": {
+          "$value": "sans",
+          "$type": "string"
+        }
+      },
+      "h5": {
+        "scale": {
+          "$value": "xl",
+          "$type": "string"
+        },
+        "fontWeight": {
+          "$value": 600,
+          "$type": "fontWeight"
+        },
+        "family": {
+          "$value": "sans",
+          "$type": "string"
+        }
+      },
+      "h6": {
+        "scale": {
+          "$value": "lg",
+          "$type": "string"
+        },
+        "fontWeight": {
+          "$value": 600,
+          "$type": "fontWeight"
+        },
+        "family": {
+          "$value": "sans",
+          "$type": "string"
+        }
+      }
+    },
+    "body": {
+      "scale": {
+        "$value": "md",
+        "$type": "string"
+      },
+      "fontWeight": {
+        "$value": 400,
+        "$type": "fontWeight"
+      },
+      "family": {
+        "$value": "sans",
+        "$type": "string"
+      }
     }
   }
 }

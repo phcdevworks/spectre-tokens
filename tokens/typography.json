@@ -128,6 +128,19 @@
         "fontWeight": 900,
         "letterSpacing": "0em"
       }
+    },
+    "heading": {
+      "h1": { "scale": "5xl", "fontWeight": 800, "family": "sans" },
+      "h2": { "scale": "4xl", "fontWeight": 700, "family": "sans" },
+      "h3": { "scale": "3xl", "fontWeight": 700, "family": "sans" },
+      "h4": { "scale": "2xl", "fontWeight": 600, "family": "sans" },
+      "h5": { "scale": "xl", "fontWeight": 600, "family": "sans" },
+      "h6": { "scale": "lg", "fontWeight": 600, "family": "sans" }
+    },
+    "body": {
+      "scale": "md",
+      "fontWeight": 400,
+      "family": "sans"
     }
   }
 }

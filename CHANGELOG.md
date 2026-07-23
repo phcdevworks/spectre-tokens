@@ -6,6 +6,18 @@ reflects package releases published to npm.
 
 ## [Unreleased]
 
+Contract change type: additive
+
+### Added
+
+- Added `typography.heading` (h1-h6, each mapping to a scale step, font
+  weight, and family) and `typography.body` (scale step, font weight,
+  family) so downstream consumers have a semantic heading/body contract
+  instead of hand-picking raw `typography.scale` steps. Emits
+  `--sp-heading-{level}-{size,line-height,weight,family}` and
+  `--sp-body-{size,line-height,weight,family}` CSS variables, each
+  referencing the underlying `--sp-font-*` variables.
+
 ## [3.5.0] - 2026-07-21
 
 **Release Title:** Phase 9 - TypeScript 7 Compatibility
