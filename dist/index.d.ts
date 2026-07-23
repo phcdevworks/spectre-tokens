@@ -1178,6 +1178,43 @@ interface SpectreGeneratedTokens {
                 letterSpacing: string;
             };
         };
+        heading: {
+            h1: {
+                scale: string;
+                fontWeight: number;
+                family: string;
+            };
+            h2: {
+                scale: string;
+                fontWeight: number;
+                family: string;
+            };
+            h3: {
+                scale: string;
+                fontWeight: number;
+                family: string;
+            };
+            h4: {
+                scale: string;
+                fontWeight: number;
+                family: string;
+            };
+            h5: {
+                scale: string;
+                fontWeight: number;
+                family: string;
+            };
+            h6: {
+                scale: string;
+                fontWeight: number;
+                family: string;
+            };
+        };
+        body: {
+            scale: string;
+            fontWeight: number;
+            family: string;
+        };
     };
 }
 
@@ -1189,9 +1226,21 @@ interface TypographyScaleEntry {
     fontWeight?: number;
     letterSpacing?: string;
 }
+interface TypographyHeadingEntry {
+    scale: string;
+    fontWeight: number;
+    family: string;
+}
+interface TypographyBodyEntry {
+    scale: string;
+    fontWeight: number;
+    family: string;
+}
 interface TypographyTokens {
     families: Record<string, string>;
     scale: Record<string, TypographyScaleEntry>;
+    heading: Record<string, TypographyHeadingEntry>;
+    body: TypographyBodyEntry;
 }
 interface TransitionTokens {
     duration: TokenScale;

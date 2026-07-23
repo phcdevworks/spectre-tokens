@@ -3117,6 +3117,43 @@ export interface SpectreSourceTokens {
         letterSpacing: string;
       };
     };
+    heading: {
+      h1: {
+        scale: string;
+        fontWeight: number;
+        family: string;
+      };
+      h2: {
+        scale: string;
+        fontWeight: number;
+        family: string;
+      };
+      h3: {
+        scale: string;
+        fontWeight: number;
+        family: string;
+      };
+      h4: {
+        scale: string;
+        fontWeight: number;
+        family: string;
+      };
+      h5: {
+        scale: string;
+        fontWeight: number;
+        family: string;
+      };
+      h6: {
+        scale: string;
+        fontWeight: number;
+        family: string;
+      };
+    };
+    body: {
+      scale: string;
+      fontWeight: number;
+      family: string;
+    };
   };
 }
 
@@ -4300,6 +4337,43 @@ export interface SpectreGeneratedTokens {
         letterSpacing: string;
       };
     };
+    heading: {
+      h1: {
+        scale: string;
+        fontWeight: number;
+        family: string;
+      };
+      h2: {
+        scale: string;
+        fontWeight: number;
+        family: string;
+      };
+      h3: {
+        scale: string;
+        fontWeight: number;
+        family: string;
+      };
+      h4: {
+        scale: string;
+        fontWeight: number;
+        family: string;
+      };
+      h5: {
+        scale: string;
+        fontWeight: number;
+        family: string;
+      };
+      h6: {
+        scale: string;
+        fontWeight: number;
+        family: string;
+      };
+    };
+    body: {
+      scale: string;
+      fontWeight: number;
+      family: string;
+    };
   };
 }
 
@@ -5482,6 +5556,43 @@ export const coreTokens: SpectreGeneratedTokens = {
         "fontWeight": 900,
         "letterSpacing": "0em"
       }
+    },
+    "heading": {
+      "h1": {
+        "scale": "5xl",
+        "fontWeight": 800,
+        "family": "sans"
+      },
+      "h2": {
+        "scale": "4xl",
+        "fontWeight": 700,
+        "family": "sans"
+      },
+      "h3": {
+        "scale": "3xl",
+        "fontWeight": 700,
+        "family": "sans"
+      },
+      "h4": {
+        "scale": "2xl",
+        "fontWeight": 600,
+        "family": "sans"
+      },
+      "h5": {
+        "scale": "xl",
+        "fontWeight": 600,
+        "family": "sans"
+      },
+      "h6": {
+        "scale": "lg",
+        "fontWeight": 600,
+        "family": "sans"
+      }
+    },
+    "body": {
+      "scale": "md",
+      "fontWeight": 400,
+      "family": "sans"
     }
   }
 } as const;
