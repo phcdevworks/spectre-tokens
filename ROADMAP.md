@@ -335,7 +335,72 @@ justifies a token proposal, not speculative namespace expansion.
 
 ---
 
-## 10. Explicitly Out of Scope
+## 10. Phase 10 — Utility-Engine Token Foundation
+
+This phase is a deliberate, stated exception to Phase 9's demand-driven-only
+closing policy: `spectre-ui`'s Phase 7 needs a broader, generator-ready raw
+color and scale surface to expand its own utility-class coverage. That is
+the concrete downstream requirement Phase 9 P3's `check:downstream`
+mechanism was built to detect. It is not speculative namespace expansion.
+
+`colors.palette.<hue>.<step>` — a broad raw color ramp (26 hues including
+`mauve`/`olive`/`mist`/`taupe`, steps 50-950) — was added as a new,
+additive namespace ahead of this phase being formally opened; it is the raw
+material this phase's utility-engine work in `spectre-ui` consumes. It sits
+alongside, not in place of, the existing
+`colors.brand`/`neutral`/`accent`/`success`/`warning`/`error`/`info` ramps.
+
+The escape-hatch question — whether the resulting utility layer allows
+arbitrary values outside the token scale — is resolved as token-only, no
+escape hatch. No raw hex/px/rem values are introduced downstream as a
+result of this phase; a design need outside the existing scale is a token
+proposal, not an arbitrary value in markup.
+
+### What will not change
+
+- `success`, `warning`, `danger` semantic roles, and CTA/brand-action remain
+  locked. No changes to these families under this phase.
+- `tokens/` remains the only source of design values. The utility engine
+  this phase feeds is token-only by design — no arbitrary-value support is
+  introduced anywhere in the Spectre stack as a result of this phase.
+
+### P0: Gap Closure
+
+- Confirm `src/css.ts`'s recursive color walker (deepened to support
+  `colors.palette.<hue>.<step>`) reaches every new leaf per `check:parity`'s
+  `outputParity` section — already verified clean; this is a
+  re-confirmation at phase start, not new work.
+- Add a `containerQueries` breakpoint namespace only if `spectre-ui` Phase
+  7's responsive-variant design ends up needing `@container` support. Do
+  not add it speculatively ahead of that decision.
+
+### P1: Utility-Contract Manifest Surface
+
+Default position: no new `contract.manifest.json` section is needed. The
+utility engine consumes published CSS variables through the same contract
+every recipe already uses — a Layer 2 concern. Only add manifest surface
+here if `spectre-ui` Phase 7 P0 surfaces a token-shape guarantee that
+`outputParity` doesn't already provide.
+
+### P2: Tailwind Export Deprecation
+
+- Mark `tailwindTheme`/`tailwindPreset` root exports and the
+  `tailwind.expectations` section of `contract.manifest.json` `deprecated`,
+  using the existing `metadata.deprecated` (`since`/`replacedBy`/`removeIn`)
+  lifecycle documented in `TOKEN_CONTRACT.md`. Do not remove anything this
+  phase — `removeIn` stays open/TBD until downstream migration is confirmed
+  complete across every consuming repo.
+- `check:tailwind` stays green and running unchanged through this phase.
+- Paired with the equivalent deprecation in `spectre-ui` Phase 7 P2; both
+  repos' deprecation notices should reference each other.
+
+**Unblocks:** `spectre-ui` Phase 7 P0/P1 — the generator cannot consume
+`colors.palette` or any new container-query tokens until they are published
+here first.
+
+---
+
+## 11. Explicitly Out of Scope
 
 - Component structure or composition — belongs in `@phcdevworks/spectre-ui`.
 - Framework-specific token delivery — belongs in adapter packages.
@@ -346,7 +411,7 @@ justifies a token proposal, not speculative namespace expansion.
 
 ---
 
-## 11. Recommended Execution Order
+## 12. Recommended Execution Order
 
 1. **Phase 1** — done.
 2. **Phase 2** — done.
@@ -399,9 +464,14 @@ justifies a token proposal, not speculative namespace expansion.
     it; verified end-to-end against the real sibling repos, all passing and
     left clean. Wired as a separate pre-release gate, not part of the fast
     `npm run check` loop.
+17. **Phase 10 P0** — gap closure: reconfirm `colors.palette` CSS-output
+    parity; add `containerQueries` only if `spectre-ui` Phase 7 needs it.
+18. **Phase 10 P1** — utility-contract manifest surface, only if `spectre-ui`
+    Phase 7 P0 reveals a real gap in `outputParity`.
+19. **Phase 10 P2** — deprecate `tailwindTheme`/`tailwindPreset`, paired
+    with `spectre-ui` Phase 7 P2.
 
-**Phase 9 is complete.** Future work in this package is demand-driven: a
-concrete downstream gap (surfaced by `check:downstream`, a real `spectre-ui`/
-`spectre-ui-astro`/`spectre-components` need, or a genuine spec-conformance
-bug) is what justifies the next contract change — not speculative namespace
-expansion.
+**Phase 9 is complete.** Phase 10 is the first phase since to reopen new
+namespace/contract work, explicitly justified by `spectre-ui` Phase 7's
+utility-engine coverage need — not a return to speculative expansion.
+Future work beyond Phase 10 remains demand-driven.

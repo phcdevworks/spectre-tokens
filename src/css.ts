@@ -116,15 +116,19 @@ export const createCssVariableMap = (tokens: SpectreTokens, options: CssVariable
     map[name] = resolveValue(tokens, value)
   }
 
-  Object.entries(baseTokens.colors).forEach(([group, scale]) => {
-    if (typeof scale === 'string' || typeof scale === 'number') {
-      assign(toVariableName(prefix, 'color', group), scale)
+  const assignColorGroup = (parts: string[], value: unknown): void => {
+    if (typeof value === 'string' || typeof value === 'number') {
+      assign(toVariableName(prefix, 'color', ...parts), value)
       return
     }
 
-    Object.entries(scale).forEach(([step, value]) => {
-      assign(toVariableName(prefix, 'color', group, step), value)
+    Object.entries(value as Record<string, unknown>).forEach(([key, nested]) => {
+      assignColorGroup([...parts, key], nested)
     })
+  }
+
+  Object.entries(baseTokens.colors).forEach(([group, scale]) => {
+    assignColorGroup([group], scale)
   })
 
   if (baseTokens.space) {
