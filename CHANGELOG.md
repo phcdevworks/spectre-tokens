@@ -6,6 +6,10 @@ reflects package releases published to npm.
 
 ## [Unreleased]
 
+## [3.6.0] - 2026-07-24
+
+**Release Title:** Semantic Typography Role Tokens
+
 Contract change type: additive
 
 ### Added
@@ -29,6 +33,12 @@ Contract change type: additive
   heading/body role field is a `{...}` reference (never a bare string) that
   resolves to a real `typography.json` leaf, and that generated CSS carries
   the fully resolved value through with no dangling references.
+
+### Fixed
+
+- Updated the live downstream compatibility gate to accept both the array and
+  package-name-keyed object JSON shapes emitted by supported npm versions when
+  running `npm pack --json`.
 
 ## [3.5.0] - 2026-07-21
 
@@ -1048,7 +1058,8 @@ Contract change type: breaking
 - Standardized documentation and contributing guidelines.
 
 [unreleased]:
-  https://github.com/phcdevworks/spectre-tokens/compare/v3.5.0...HEAD
+  https://github.com/phcdevworks/spectre-tokens/compare/v3.6.0...HEAD
+[3.6.0]: https://github.com/phcdevworks/spectre-tokens/compare/v3.5.0...v3.6.0
 [3.5.0]: https://github.com/phcdevworks/spectre-tokens/compare/v3.4.0...v3.5.0
 [3.4.0]: https://github.com/phcdevworks/spectre-tokens/compare/v3.3.1...v3.4.0
 [3.3.1]: https://github.com/phcdevworks/spectre-tokens/compare/v3.3.0...v3.3.1
