@@ -6,6 +6,26 @@ reflects package releases published to npm.
 
 ## [Unreleased]
 
+Contract change type: additive
+
+### Added
+
+- Added `colors.palette` — the full Tailwind CSS v4.3 raw color ramp (red,
+  orange, amber, yellow, lime, green, emerald, teal, cyan, sky, blue, indigo,
+  violet, purple, fuchsia, pink, rose, slate, gray, zinc, neutral, stone,
+  mauve, olive, mist, taupe; steps 50-950), ported to hex for consistency with
+  the rest of `colors`. This is a new, separate sub-namespace alongside the
+  existing brand/neutral/accent/success/warning/error/info ramps in `colors`
+  and does not replace or alter them. `src/css.ts`'s color CSS-variable
+  generation now walks `colors` recursively to support this extra nesting
+  depth, so existing two-level color groups are unaffected.
+
+### Changed
+
+- `src/css.ts`: color CSS variable generation now recurses through arbitrary
+  nesting depth under `colors` instead of assuming exactly two levels
+  (group/step), to support `colors.palette.<hue>.<step>`.
+
 ## [3.6.0] - 2026-07-24
 
 **Release Title:** Phase 9 - Semantic Typography Role Tokens
