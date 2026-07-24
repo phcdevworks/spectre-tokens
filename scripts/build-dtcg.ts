@@ -2,7 +2,7 @@ import { mkdir, writeFile } from 'node:fs/promises'
 import { dirname, resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
 
-import { loadMergedTokens } from './token-utils.js'
+import { loadMergedTokens, resolveReferences } from './token-utils.js'
 
 const here = dirname(fileURLToPath(import.meta.url))
 const outPath = resolve(here, '../dist/tokens.dtcg.json')
@@ -230,7 +230,8 @@ function buildLeaf(value: unknown, keyPath: string, merged: unknown): unknown {
   return { $value: value, $type: inferTypeWithAliasResolution(keyPath, value, merged) }
 }
 
-const merged = loadMergedTokens()
+const rawMerged = loadMergedTokens()
+const merged = { ...rawMerged, font: resolveReferences(rawMerged.font, rawMerged) }
 const dtcg = toDTCG(merged, merged)
 
 await mkdir(resolve(here, '../dist'), { recursive: true })
