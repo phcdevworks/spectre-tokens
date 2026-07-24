@@ -92,6 +92,39 @@ export function collectRuntimeLeafPaths(value: unknown, path: string[] = []): st
   return Object.entries(value).flatMap(([key, entry]) => collectRuntimeLeafPaths(entry, [...path, key]));
 }
 
+const REFERENCE_PATTERN = /^\{([^}]+)\}$/;
+
+function getAtPath(root: unknown, path: string): unknown {
+  return path.split('.').reduce<unknown>((acc, key) => {
+    if (isObject(acc)) return acc[key];
+    return undefined;
+  }, root);
+}
+
+export function resolveReferences(tree: unknown, root: unknown): unknown {
+  if (Array.isArray(tree)) {
+    return tree.map((entry) => resolveReferences(entry, root));
+  }
+
+  if (isObject(tree)) {
+    return Object.fromEntries(
+      Object.entries(tree).map(([key, entry]) => [key, resolveReferences(entry, root)])
+    );
+  }
+
+  if (typeof tree === 'string') {
+    const match = tree.match(REFERENCE_PATTERN);
+    if (match) {
+      const resolved = getAtPath(root, match[1]);
+      if (typeof resolved === 'string' || typeof resolved === 'number') {
+        return resolved;
+      }
+    }
+  }
+
+  return tree;
+}
+
 export function flattenTokenTree(value: unknown): unknown {
   if (Array.isArray(value)) {
     return value.map((entry) => flattenTokenTree(entry));

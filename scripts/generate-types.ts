@@ -1,14 +1,18 @@
 import { existsSync, mkdirSync, writeFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { flattenTokenTree, loadMergedTokens } from './token-utils';
+import { flattenTokenTree, loadMergedTokens, resolveReferences } from './token-utils';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
 const outputDir = join(__dirname, '../src/generated');
 const outputPath = join(outputDir, 'tokens.ts');
 
-const sourceJson = loadMergedTokens();
+const mergedTokens = loadMergedTokens();
+const sourceJson = {
+  ...mergedTokens,
+  font: resolveReferences(mergedTokens.font, mergedTokens)
+};
 const publicJson = flattenTokenTree(sourceJson);
 
 function generateType(obj: unknown, indent = ''): string {

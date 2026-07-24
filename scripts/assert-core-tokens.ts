@@ -1,7 +1,8 @@
 import { loadContractManifest, getPathValue } from './contract-utils';
-import { loadMergedTokens } from './token-utils';
+import { loadMergedTokens, resolveReferences } from './token-utils';
 
-const tokens = loadMergedTokens();
+const rawTokens = loadMergedTokens();
+const tokens = { ...rawTokens, font: resolveReferences(rawTokens.font, rawTokens) };
 const manifest = loadContractManifest();
 
 const requiredPaths = manifest.requiredOutputs.js.requiredPaths;
