@@ -8,7 +8,7 @@ reflects package releases published to npm.
 
 ## [3.6.0] - 2026-07-24
 
-**Release Title:** Semantic Typography Role Tokens
+**Release Title:** Phase 9 - Semantic Typography Role Tokens
 
 Contract change type: additive
 
@@ -16,23 +16,22 @@ Contract change type: additive
 
 - Added `typography.heading` (h1-h6) and `typography.body` role tokens so
   downstream consumers have a semantic heading/body contract instead of
-  hand-picking raw `typography.scale` steps. Each role is a complete,
-  portable token (`fontFamily`, `fontSize`, `lineHeight`, `fontWeight`,
-  `letterSpacing`) expressed via `{typography.scale.*}` /
-  `{typography.families.*}` references rather than bare scale/family keys, so
-  every consumer format receives a real, resolvable reference instead of a
-  string only the CSS generator knows how to interpret. Runtime (JS/TS)
-  consumers receive the portable `{...}` reference strings as-is, for the
-  consumer to resolve; DTCG output emits the same references as standards-based
-  aliases; CSS output resolves them at generation time to fully resolved
-  literal values —
+  hand-picking raw `typography.scale` steps. Each role is a complete, portable
+  token (`fontFamily`, `fontSize`, `lineHeight`, `fontWeight`, `letterSpacing`)
+  expressed via `{typography.scale.*}` / `{typography.families.*}` references
+  rather than bare scale/family keys, so every consumer format receives a real,
+  resolvable reference instead of a string only the CSS generator knows how to
+  interpret. Runtime (JS/TS) consumers receive the portable `{...}` reference
+  strings as-is, for the consumer to resolve; DTCG output emits the same
+  references as standards-based aliases; CSS output resolves them at generation
+  time to fully resolved literal values —
   `--sp-heading-{level}-{family,size,line-height,weight,letter-spacing}` and
   `--sp-body-{family,size,line-height,weight,letter-spacing}` — none of these
   variables reference another `--sp-font-*` variable at runtime. A new
   `check:typography-refs` gate, part of `npm run check`, validates that every
   heading/body role field is a `{...}` reference (never a bare string) that
-  resolves to a real `typography.json` leaf, and that generated CSS carries
-  the fully resolved value through with no dangling references.
+  resolves to a real `typography.json` leaf, and that generated CSS carries the
+  fully resolved value through with no dangling references.
 
 ### Fixed
 
