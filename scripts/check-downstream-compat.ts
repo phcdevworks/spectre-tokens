@@ -28,7 +28,22 @@ const packResult = spawnSync('npm', ['pack', '--json'], { cwd: repoRoot, encodin
 if (packResult.status !== 0) {
   fail(`npm pack failed: ${packResult.stderr}`);
 }
-const [{ filename }] = JSON.parse(packResult.stdout) as Array<{ filename: string }>;
+const packOutput: unknown = JSON.parse(packResult.stdout);
+const packEntries = Array.isArray(packOutput)
+  ? packOutput
+  : packOutput !== null && typeof packOutput === 'object'
+    ? Object.values(packOutput)
+    : [];
+const [packEntry] = packEntries;
+if (
+  packEntry === null ||
+  typeof packEntry !== 'object' ||
+  !('filename' in packEntry) ||
+  typeof packEntry.filename !== 'string'
+) {
+  fail('npm pack returned an unexpected JSON shape');
+}
+const { filename } = packEntry;
 const tarballPath = resolve(repoRoot, filename);
 
 const results: Array<{ repo: string; status: 'passed' | 'failed' | 'skipped'; detail?: string }> = [];
