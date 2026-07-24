@@ -17,17 +17,17 @@ export interface FontScaleEntry {
   weight: number;
 }
 
-export interface TypographyHeadingEntry {
-  scale: string;
+export interface TypographyRoleEntry {
+  fontFamily: string;
+  fontSize: string;
+  lineHeight: string;
   fontWeight: number;
-  family: string;
+  letterSpacing: string;
 }
 
-export interface TypographyBodyEntry {
-  scale: string;
-  fontWeight: number;
-  family: string;
-}
+export type TypographyHeadingEntry = TypographyRoleEntry;
+
+export type TypographyBodyEntry = TypographyRoleEntry;
 
 export interface TypographyTokens {
   families: Record<string, string>;

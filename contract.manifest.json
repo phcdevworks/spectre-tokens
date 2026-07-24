@@ -272,7 +272,8 @@
         "buttons and forms nest by variant/state (buttons.primary.bg, forms.invalid.text) with irregular optional fields (border, shadow, focusRing only on some variants). Covered by check:css requiredVariables and existing button/form tests.",
         "animations splits into a flat set (fadeIn, fadeOut, ...) plus a nested reducedMotion sub-object emitted with an extra reduced-motion path segment. Covered by check:css requiredVariables.",
         "component is covered exhaustively by tests/css-semantic-coverage.test.ts, which already asserts full leaf coverage per component group.",
-        "modes.dark.text is covered by the css-semantic-coverage test asserting tokens.modes.default.surface keys; dark-mode text/surface parity is asserted via requiredDarkModeVariables."
+        "modes.dark.text is covered by the css-semantic-coverage test asserting tokens.modes.default.surface keys; dark-mode text/surface parity is asserted via requiredDarkModeVariables.",
+        "typography.heading.* and typography.body map camelCase role fields (fontFamily, fontSize, lineHeight, fontWeight, letterSpacing) to distinct CSS suffixes (family, size, line-height, weight, letter-spacing) rather than the generic per-leaf checker's default kebab-of-field-name suffix. Covered by check:typography-refs, which is part of npm run check and asserts: every role field is a {typography.*} reference (not a bare scale/family string) that resolves to a real leaf, and generated CSS emits the fully resolved literal for every role variable with no dangling {} references and no var(--sp-font-*) indirection. tests/typography-roles.test.ts duplicates this CSS coverage as a Vitest suite for local dev feedback; it is not part of npm run check and is not the enforced gate."
       ]
     }
   },

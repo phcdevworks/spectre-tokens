@@ -4,6 +4,7 @@ import type {
   CssVariableOptions,
   SpectreTokens,
   Tokens,
+  TypographyRoleEntry,
   TypographyScaleEntry
 } from './types'
 
@@ -230,22 +231,24 @@ export const createCssVariableMap = (tokens: SpectreTokens, options: CssVariable
     assign(toVariableName(prefix, 'font', key, 'letter-spacing'), scaleEntry.letterSpacing)
   })
 
+  const assignRole = (rolePrefixParts: string[], entry: TypographyRoleEntry) => {
+    assign(toVariableName(prefix, ...rolePrefixParts, 'family'), entry.fontFamily)
+    assign(toVariableName(prefix, ...rolePrefixParts, 'size'), entry.fontSize)
+    assign(toVariableName(prefix, ...rolePrefixParts, 'line-height'), entry.lineHeight)
+    assign(toVariableName(prefix, ...rolePrefixParts, 'weight'), entry.fontWeight)
+    assign(toVariableName(prefix, ...rolePrefixParts, 'letter-spacing'), entry.letterSpacing)
+  }
+
   const heading = baseTokens.typography?.heading
   if (heading) {
     Object.entries(heading).forEach(([level, entry]) => {
-      assign(toVariableName(prefix, 'heading', level, 'size'), `var(${toVariableName(prefix, 'font', entry.scale, 'size')})`)
-      assign(toVariableName(prefix, 'heading', level, 'line-height'), `var(${toVariableName(prefix, 'font', entry.scale, 'line-height')})`)
-      assign(toVariableName(prefix, 'heading', level, 'weight'), entry.fontWeight)
-      assign(toVariableName(prefix, 'heading', level, 'family'), `var(${toVariableName(prefix, 'font-family', entry.family)})`)
+      assignRole(['heading', level], entry)
     })
   }
 
   const body = baseTokens.typography?.body
   if (body) {
-    assign(toVariableName(prefix, 'body', 'size'), `var(${toVariableName(prefix, 'font', body.scale, 'size')})`)
-    assign(toVariableName(prefix, 'body', 'line-height'), `var(${toVariableName(prefix, 'font', body.scale, 'line-height')})`)
-    assign(toVariableName(prefix, 'body', 'weight'), body.fontWeight)
-    assign(toVariableName(prefix, 'body', 'family'), `var(${toVariableName(prefix, 'font-family', body.family)})`)
+    assignRole(['body'], body)
   }
 
   Object.entries(baseTokens.shadows).forEach(([key, value]) => {

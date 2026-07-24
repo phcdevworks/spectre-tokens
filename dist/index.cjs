@@ -1211,40 +1211,54 @@ var coreTokens = {
     },
     "heading": {
       "h1": {
-        "scale": "5xl",
+        "fontFamily": "{typography.families.sans}",
+        "fontSize": "{typography.scale.5xl.fontSize}",
+        "lineHeight": "{typography.scale.5xl.lineHeight}",
         "fontWeight": 800,
-        "family": "sans"
+        "letterSpacing": "{typography.scale.5xl.letterSpacing}"
       },
       "h2": {
-        "scale": "4xl",
+        "fontFamily": "{typography.families.sans}",
+        "fontSize": "{typography.scale.4xl.fontSize}",
+        "lineHeight": "{typography.scale.4xl.lineHeight}",
         "fontWeight": 700,
-        "family": "sans"
+        "letterSpacing": "{typography.scale.4xl.letterSpacing}"
       },
       "h3": {
-        "scale": "3xl",
+        "fontFamily": "{typography.families.sans}",
+        "fontSize": "{typography.scale.3xl.fontSize}",
+        "lineHeight": "{typography.scale.3xl.lineHeight}",
         "fontWeight": 700,
-        "family": "sans"
+        "letterSpacing": "{typography.scale.3xl.letterSpacing}"
       },
       "h4": {
-        "scale": "2xl",
+        "fontFamily": "{typography.families.sans}",
+        "fontSize": "{typography.scale.2xl.fontSize}",
+        "lineHeight": "{typography.scale.2xl.lineHeight}",
         "fontWeight": 600,
-        "family": "sans"
+        "letterSpacing": "{typography.scale.2xl.letterSpacing}"
       },
       "h5": {
-        "scale": "xl",
+        "fontFamily": "{typography.families.sans}",
+        "fontSize": "{typography.scale.xl.fontSize}",
+        "lineHeight": "{typography.scale.xl.lineHeight}",
         "fontWeight": 600,
-        "family": "sans"
+        "letterSpacing": "{typography.scale.xl.letterSpacing}"
       },
       "h6": {
-        "scale": "lg",
+        "fontFamily": "{typography.families.sans}",
+        "fontSize": "{typography.scale.lg.fontSize}",
+        "lineHeight": "{typography.scale.lg.lineHeight}",
         "fontWeight": 600,
-        "family": "sans"
+        "letterSpacing": "{typography.scale.lg.letterSpacing}"
       }
     },
     "body": {
-      "scale": "md",
+      "fontFamily": "{typography.families.sans}",
+      "fontSize": "{typography.scale.md.fontSize}",
+      "lineHeight": "{typography.scale.md.lineHeight}",
       "fontWeight": 400,
-      "family": "sans"
+      "letterSpacing": "{typography.scale.md.letterSpacing}"
     }
   }
 };
@@ -1429,21 +1443,22 @@ var createCssVariableMap = (tokens2, options = {}) => {
     const scaleEntry = entry;
     assign(toVariableName(prefix, "font", key, "letter-spacing"), scaleEntry.letterSpacing);
   });
+  const assignRole = (rolePrefixParts, entry) => {
+    assign(toVariableName(prefix, ...rolePrefixParts, "family"), entry.fontFamily);
+    assign(toVariableName(prefix, ...rolePrefixParts, "size"), entry.fontSize);
+    assign(toVariableName(prefix, ...rolePrefixParts, "line-height"), entry.lineHeight);
+    assign(toVariableName(prefix, ...rolePrefixParts, "weight"), entry.fontWeight);
+    assign(toVariableName(prefix, ...rolePrefixParts, "letter-spacing"), entry.letterSpacing);
+  };
   const heading = baseTokens.typography?.heading;
   if (heading) {
     Object.entries(heading).forEach(([level, entry]) => {
-      assign(toVariableName(prefix, "heading", level, "size"), `var(${toVariableName(prefix, "font", entry.scale, "size")})`);
-      assign(toVariableName(prefix, "heading", level, "line-height"), `var(${toVariableName(prefix, "font", entry.scale, "line-height")})`);
-      assign(toVariableName(prefix, "heading", level, "weight"), entry.fontWeight);
-      assign(toVariableName(prefix, "heading", level, "family"), `var(${toVariableName(prefix, "font-family", entry.family)})`);
+      assignRole(["heading", level], entry);
     });
   }
   const body = baseTokens.typography?.body;
   if (body) {
-    assign(toVariableName(prefix, "body", "size"), `var(${toVariableName(prefix, "font", body.scale, "size")})`);
-    assign(toVariableName(prefix, "body", "line-height"), `var(${toVariableName(prefix, "font", body.scale, "line-height")})`);
-    assign(toVariableName(prefix, "body", "weight"), body.fontWeight);
-    assign(toVariableName(prefix, "body", "family"), `var(${toVariableName(prefix, "font-family", body.family)})`);
+    assignRole(["body"], body);
   }
   Object.entries(baseTokens.shadows).forEach(([key, value]) => {
     assign(toVariableName(prefix, "shadow", key), value);

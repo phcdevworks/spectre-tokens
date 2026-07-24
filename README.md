@@ -264,10 +264,32 @@ CSS variable contract.
 .app-shell {
   width: var(--sp-layout-sidebar-width);
 }
+
+h1 {
+  font-family: var(--sp-heading-h1-family);
+  font-size: var(--sp-heading-h1-size);
+  line-height: var(--sp-heading-h1-line-height);
+  font-weight: var(--sp-heading-h1-weight);
+  letter-spacing: var(--sp-heading-h1-letter-spacing);
+}
+
+body {
+  font-family: var(--sp-body-family);
+  font-size: var(--sp-body-size);
+  line-height: var(--sp-body-line-height);
+  font-weight: var(--sp-body-weight);
+  letter-spacing: var(--sp-body-letter-spacing);
+}
 ```
 
 The CSS entry point is intended for consumers that want the token contract as
 variables rather than reading values in JavaScript.
+
+`typography.heading.{h1..h6}` and `typography.body` are semantic role tokens —
+each a complete `{ fontFamily, fontSize, lineHeight, fontWeight,
+letterSpacing }` object referencing `typography.scale.*` and
+`typography.families.*` — so downstream consumers get a heading/body contract
+instead of hand-picking a raw `typography.scale` step per heading level.
 
 ### Tailwind preset
 
