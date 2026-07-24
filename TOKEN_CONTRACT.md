@@ -138,9 +138,13 @@ Use semantic tokens as the default interface for downstream UI:
 - `forms`
 - `link`
 - `modes`
+- `typography.heading`, `typography.body`
 
 Use raw palette tokens from `colors` only when consumers need fixed color access
-and are intentionally opting out of semantic abstraction.
+and are intentionally opting out of semantic abstraction. The same rule applies
+to `typography.scale`: prefer `typography.heading.{h1..h6}` and `typography.body`
+for document/UI text roles, and reach for a raw `typography.scale` step only
+when a consumer needs a font size independent of any heading/body meaning.
 
 Rules:
 
@@ -149,6 +153,12 @@ Rules:
   for theme-aware UI behavior.
 - New downstream-facing token work should prefer semantic naming over direct
   palette references when the value represents UI meaning.
+- `typography.heading.{h1..h6}` and `typography.body` are each a complete role
+  object (`fontFamily`, `fontSize`, `lineHeight`, `fontWeight`,
+  `letterSpacing`) expressed as `{typography.scale.*}` /
+  `{typography.families.*}` references, never bare scale-step or family-name
+  strings — every field must independently resolve for runtime, DTCG, and CSS
+  consumers alike. `npm run check:typography-refs` enforces this.
 
 ## Modes And Themes
 

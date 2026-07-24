@@ -3119,40 +3119,54 @@ export interface SpectreSourceTokens {
     };
     heading: {
       h1: {
-        scale: string;
+        fontFamily: string;
+        fontSize: string;
+        lineHeight: string;
         fontWeight: number;
-        family: string;
+        letterSpacing: string;
       };
       h2: {
-        scale: string;
+        fontFamily: string;
+        fontSize: string;
+        lineHeight: string;
         fontWeight: number;
-        family: string;
+        letterSpacing: string;
       };
       h3: {
-        scale: string;
+        fontFamily: string;
+        fontSize: string;
+        lineHeight: string;
         fontWeight: number;
-        family: string;
+        letterSpacing: string;
       };
       h4: {
-        scale: string;
+        fontFamily: string;
+        fontSize: string;
+        lineHeight: string;
         fontWeight: number;
-        family: string;
+        letterSpacing: string;
       };
       h5: {
-        scale: string;
+        fontFamily: string;
+        fontSize: string;
+        lineHeight: string;
         fontWeight: number;
-        family: string;
+        letterSpacing: string;
       };
       h6: {
-        scale: string;
+        fontFamily: string;
+        fontSize: string;
+        lineHeight: string;
         fontWeight: number;
-        family: string;
+        letterSpacing: string;
       };
     };
     body: {
-      scale: string;
+      fontFamily: string;
+      fontSize: string;
+      lineHeight: string;
       fontWeight: number;
-      family: string;
+      letterSpacing: string;
     };
   };
 }
@@ -4339,40 +4353,54 @@ export interface SpectreGeneratedTokens {
     };
     heading: {
       h1: {
-        scale: string;
+        fontFamily: string;
+        fontSize: string;
+        lineHeight: string;
         fontWeight: number;
-        family: string;
+        letterSpacing: string;
       };
       h2: {
-        scale: string;
+        fontFamily: string;
+        fontSize: string;
+        lineHeight: string;
         fontWeight: number;
-        family: string;
+        letterSpacing: string;
       };
       h3: {
-        scale: string;
+        fontFamily: string;
+        fontSize: string;
+        lineHeight: string;
         fontWeight: number;
-        family: string;
+        letterSpacing: string;
       };
       h4: {
-        scale: string;
+        fontFamily: string;
+        fontSize: string;
+        lineHeight: string;
         fontWeight: number;
-        family: string;
+        letterSpacing: string;
       };
       h5: {
-        scale: string;
+        fontFamily: string;
+        fontSize: string;
+        lineHeight: string;
         fontWeight: number;
-        family: string;
+        letterSpacing: string;
       };
       h6: {
-        scale: string;
+        fontFamily: string;
+        fontSize: string;
+        lineHeight: string;
         fontWeight: number;
-        family: string;
+        letterSpacing: string;
       };
     };
     body: {
-      scale: string;
+      fontFamily: string;
+      fontSize: string;
+      lineHeight: string;
       fontWeight: number;
-      family: string;
+      letterSpacing: string;
     };
   };
 }
@@ -5559,40 +5587,54 @@ export const coreTokens: SpectreGeneratedTokens = {
     },
     "heading": {
       "h1": {
-        "scale": "5xl",
+        "fontFamily": "{typography.families.sans}",
+        "fontSize": "{typography.scale.5xl.fontSize}",
+        "lineHeight": "{typography.scale.5xl.lineHeight}",
         "fontWeight": 800,
-        "family": "sans"
+        "letterSpacing": "{typography.scale.5xl.letterSpacing}"
       },
       "h2": {
-        "scale": "4xl",
+        "fontFamily": "{typography.families.sans}",
+        "fontSize": "{typography.scale.4xl.fontSize}",
+        "lineHeight": "{typography.scale.4xl.lineHeight}",
         "fontWeight": 700,
-        "family": "sans"
+        "letterSpacing": "{typography.scale.4xl.letterSpacing}"
       },
       "h3": {
-        "scale": "3xl",
+        "fontFamily": "{typography.families.sans}",
+        "fontSize": "{typography.scale.3xl.fontSize}",
+        "lineHeight": "{typography.scale.3xl.lineHeight}",
         "fontWeight": 700,
-        "family": "sans"
+        "letterSpacing": "{typography.scale.3xl.letterSpacing}"
       },
       "h4": {
-        "scale": "2xl",
+        "fontFamily": "{typography.families.sans}",
+        "fontSize": "{typography.scale.2xl.fontSize}",
+        "lineHeight": "{typography.scale.2xl.lineHeight}",
         "fontWeight": 600,
-        "family": "sans"
+        "letterSpacing": "{typography.scale.2xl.letterSpacing}"
       },
       "h5": {
-        "scale": "xl",
+        "fontFamily": "{typography.families.sans}",
+        "fontSize": "{typography.scale.xl.fontSize}",
+        "lineHeight": "{typography.scale.xl.lineHeight}",
         "fontWeight": 600,
-        "family": "sans"
+        "letterSpacing": "{typography.scale.xl.letterSpacing}"
       },
       "h6": {
-        "scale": "lg",
+        "fontFamily": "{typography.families.sans}",
+        "fontSize": "{typography.scale.lg.fontSize}",
+        "lineHeight": "{typography.scale.lg.lineHeight}",
         "fontWeight": 600,
-        "family": "sans"
+        "letterSpacing": "{typography.scale.lg.letterSpacing}"
       }
     },
     "body": {
-      "scale": "md",
+      "fontFamily": "{typography.families.sans}",
+      "fontSize": "{typography.scale.md.fontSize}",
+      "lineHeight": "{typography.scale.md.lineHeight}",
       "fontWeight": 400,
-      "family": "sans"
+      "letterSpacing": "{typography.scale.md.letterSpacing}"
     }
   }
 } as const;

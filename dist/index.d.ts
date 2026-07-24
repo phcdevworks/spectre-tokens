@@ -1180,40 +1180,54 @@ interface SpectreGeneratedTokens {
         };
         heading: {
             h1: {
-                scale: string;
+                fontFamily: string;
+                fontSize: string;
+                lineHeight: string;
                 fontWeight: number;
-                family: string;
+                letterSpacing: string;
             };
             h2: {
-                scale: string;
+                fontFamily: string;
+                fontSize: string;
+                lineHeight: string;
                 fontWeight: number;
-                family: string;
+                letterSpacing: string;
             };
             h3: {
-                scale: string;
+                fontFamily: string;
+                fontSize: string;
+                lineHeight: string;
                 fontWeight: number;
-                family: string;
+                letterSpacing: string;
             };
             h4: {
-                scale: string;
+                fontFamily: string;
+                fontSize: string;
+                lineHeight: string;
                 fontWeight: number;
-                family: string;
+                letterSpacing: string;
             };
             h5: {
-                scale: string;
+                fontFamily: string;
+                fontSize: string;
+                lineHeight: string;
                 fontWeight: number;
-                family: string;
+                letterSpacing: string;
             };
             h6: {
-                scale: string;
+                fontFamily: string;
+                fontSize: string;
+                lineHeight: string;
                 fontWeight: number;
-                family: string;
+                letterSpacing: string;
             };
         };
         body: {
-            scale: string;
+            fontFamily: string;
+            fontSize: string;
+            lineHeight: string;
             fontWeight: number;
-            family: string;
+            letterSpacing: string;
         };
     };
 }
@@ -1226,16 +1240,15 @@ interface TypographyScaleEntry {
     fontWeight?: number;
     letterSpacing?: string;
 }
-interface TypographyHeadingEntry {
-    scale: string;
+interface TypographyRoleEntry {
+    fontFamily: string;
+    fontSize: string;
+    lineHeight: string;
     fontWeight: number;
-    family: string;
+    letterSpacing: string;
 }
-interface TypographyBodyEntry {
-    scale: string;
-    fontWeight: number;
-    family: string;
-}
+type TypographyHeadingEntry = TypographyRoleEntry;
+type TypographyBodyEntry = TypographyRoleEntry;
 interface TypographyTokens {
     families: Record<string, string>;
     scale: Record<string, TypographyScaleEntry>;
