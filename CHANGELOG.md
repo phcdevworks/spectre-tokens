@@ -6,6 +6,10 @@ reflects package releases published to npm.
 
 ## [Unreleased]
 
+## [3.6.0] - 2026-07-24
+
+**Release Title:** Phase 9 - Semantic Typography and Color Palette Expansion
+
 Contract change type: additive
 
 ### Added
@@ -19,21 +23,6 @@ Contract change type: additive
   and does not replace or alter them. `src/css.ts`'s color CSS-variable
   generation now walks `colors` recursively to support this extra nesting
   depth, so existing two-level color groups are unaffected.
-
-### Changed
-
-- `src/css.ts`: color CSS variable generation now recurses through arbitrary
-  nesting depth under `colors` instead of assuming exactly two levels
-  (group/step), to support `colors.palette.<hue>.<step>`.
-
-## [3.6.0] - 2026-07-24
-
-**Release Title:** Phase 9 - Semantic Typography Role Tokens
-
-Contract change type: additive
-
-### Added
-
 - Added `typography.heading` (h1-h6) and `typography.body` role tokens so
   downstream consumers have a semantic heading/body contract instead of
   hand-picking raw `typography.scale` steps. Each role is a complete, portable
@@ -52,6 +41,12 @@ Contract change type: additive
   heading/body role field is a `{...}` reference (never a bare string) that
   resolves to a real `typography.json` leaf, and that generated CSS carries the
   fully resolved value through with no dangling references.
+
+### Changed
+
+- `src/css.ts`: color CSS variable generation now recurses through arbitrary
+  nesting depth under `colors` instead of assuming exactly two levels
+  (group/step), to support `colors.palette.<hue>.<step>`.
 
 ### Fixed
 
