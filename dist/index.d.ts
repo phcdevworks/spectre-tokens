@@ -1855,33 +1855,9 @@ interface CssVariableOptions {
     selector?: string;
     prefix?: string;
 }
-interface TailwindTheme {
-    colors: SpectreGeneratedTokens['colors'] | Record<string, string | Record<string, string>>;
-    spacing: SpectreGeneratedTokens['space'];
-    borderRadius: SpectreGeneratedTokens['radii'];
-    fontFamily: Record<string, string[]>;
-    fontSize: Record<string, [string, {
-        lineHeight: string;
-        fontWeight?: number;
-        letterSpacing?: string;
-    }]>;
-    boxShadow: SpectreGeneratedTokens['shadows'];
-    screens: SpectreGeneratedTokens['breakpoints'];
-    zIndex: SpectreGeneratedTokens['zIndex'];
-    transitionDuration: SpectreGeneratedTokens['transitions']['duration'];
-    transitionTimingFunction: SpectreGeneratedTokens['transitions']['easing'];
-    opacity: SpectreGeneratedTokens['opacity'];
-    maxWidth: Record<string, string | undefined>;
-    width: Record<string, string | undefined>;
-    borderWidth: Record<string, string | undefined>;
-}
 
 declare const generateCssVariables: (tokens: SpectreTokens, options?: CssVariableOptions) => string;
 
 declare const tokens: SpectreTokens;
-declare const tailwindTheme: TailwindTheme;
-declare const tailwindPreset: {
-    theme: TailwindTheme;
-};
 
-export { type AccessibilityTokens, type AnimationEntry, type ButtonStateTokens, type ColorScale, type ComponentBadgeTokens, type ComponentIconBoxTokens, type ComponentPricingCardTokens, type ComponentRatingTokens, type ComponentTestimonialTokens, type ComponentTokens, type FormStateTokens, type LayoutTokens, type SpectreModeName, type SpectreModeTokens, type SpectreTokens, type TailwindTheme, type TokenScale, type Tokens, type TransitionTokens, type TypographyTokens, tokens as default, generateCssVariables, tailwindPreset, tailwindTheme, tokens };
+export { type AccessibilityTokens, type AnimationEntry, type ButtonStateTokens, type ColorScale, type ComponentBadgeTokens, type ComponentIconBoxTokens, type ComponentPricingCardTokens, type ComponentRatingTokens, type ComponentTestimonialTokens, type ComponentTokens, type FormStateTokens, type LayoutTokens, type SpectreModeName, type SpectreModeTokens, type SpectreTokens, type TokenScale, type Tokens, type TransitionTokens, type TypographyTokens, tokens as default, generateCssVariables, tokens };

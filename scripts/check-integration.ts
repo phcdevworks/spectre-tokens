@@ -2,13 +2,10 @@ import { readFileSync } from 'node:fs'
 import { dirname, join } from 'node:path'
 import { fileURLToPath, pathToFileURL } from 'node:url'
 
-import jitiFactory from 'jiti'
-
 const __dirname = dirname(fileURLToPath(import.meta.url))
 const repoRoot = join(__dirname, '..')
 const fixtureDir = join(repoRoot, 'example/integration-fixture')
 
-const tailwindConfigPath = join(fixtureDir, 'tailwind.config.ts')
 const layerCssPath = join(fixtureDir, 'layer.css')
 const componentsPath = join(fixtureDir, 'components.ts')
 
@@ -17,75 +14,6 @@ const tokens = packageEsm.default
 
 const fail = (message: string): never => {
   throw new Error(`Integration fixture failed: ${message}`)
-}
-
-// ─── 1. Tailwind preset composition ──────────────────────────────────────────
-
-const jiti = jitiFactory(import.meta.url, { moduleCache: false })
-const rawConfig = jiti(tailwindConfigPath)
-const config = rawConfig.default ?? rawConfig
-
-if (!Array.isArray(config.presets) || config.presets.length === 0) {
-  fail('Integration Tailwind config must declare presets.')
-}
-
-const preset = config.presets[0]
-const presetColors = preset?.theme?.colors as Record<string, unknown> | undefined
-
-if (!presetColors?.brand || typeof presetColors.brand !== 'object') {
-  fail('Preset brand color scale is missing from the integration Tailwind config presets.')
-}
-
-if (typeof (presetColors.brand as Record<string, unknown>)['500'] !== 'string') {
-  fail('Preset brand.500 is not a string — preset theme may not have loaded correctly.')
-}
-
-if (!presetColors?.neutral || !presetColors?.info) {
-  fail('Preset neutral and info color scales must be present alongside consumer extensions.')
-}
-
-const consumerExtend = config.theme?.extend as Record<string, unknown> | undefined
-
-if (!consumerExtend?.colors || typeof consumerExtend.colors !== 'object') {
-  fail('Consumer Tailwind extend.colors is missing.')
-}
-
-const consumerColors = consumerExtend.colors as Record<string, unknown>
-
-if (typeof consumerColors['ui-primary'] !== 'string') {
-  fail('Consumer ui-primary color is missing from extend.colors.')
-}
-
-if (typeof consumerColors['ui-surface'] !== 'string') {
-  fail('Consumer ui-surface color is missing from extend.colors.')
-}
-
-// Consumer extend must not shadow any top-level preset color group
-const presetColorKeys = new Set(Object.keys(presetColors))
-const consumerColorKeys = Object.keys(consumerColors)
-const collisions = consumerColorKeys.filter((k) => presetColorKeys.has(k))
-if (collisions.length > 0) {
-  fail(`Consumer extend.colors shadows preset color keys: ${collisions.join(', ')}. Use unique consumer-namespaced keys (e.g. ui-*).`)
-}
-
-// Consumer extend must not shadow preset spacing keys
-const presetSpacing = preset?.theme?.spacing as Record<string, unknown> | undefined
-const consumerSpacing = (consumerExtend?.spacing ?? {}) as Record<string, unknown>
-if (presetSpacing) {
-  const spacingCollisions = Object.keys(consumerSpacing).filter((k) => k in presetSpacing)
-  if (spacingCollisions.length > 0) {
-    fail(`Consumer extend.spacing shadows preset spacing keys: ${spacingCollisions.join(', ')}. Use unique consumer-namespaced keys (e.g. ui-*).`)
-  }
-}
-
-// Consumer extend must not shadow preset borderRadius keys
-const presetRadii = preset?.theme?.borderRadius as Record<string, unknown> | undefined
-const consumerRadii = (consumerExtend?.borderRadius ?? {}) as Record<string, unknown>
-if (presetRadii) {
-  const radiiCollisions = Object.keys(consumerRadii).filter((k) => k in presetRadii)
-  if (radiiCollisions.length > 0) {
-    fail(`Consumer extend.borderRadius shadows preset keys: ${radiiCollisions.join(', ')}. Use unique consumer-namespaced keys (e.g. ui-*).`)
-  }
 }
 
 // ─── 2. CSS variable co-existence ────────────────────────────────────────────

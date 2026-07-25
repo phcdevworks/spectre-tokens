@@ -13,7 +13,6 @@ import {
 const {
   default: defaultTokens,
   generateCssVariables,
-  tailwindTheme,
   tokens
 } = indexModule;
 
@@ -35,10 +34,6 @@ if (manifest.requiredOutputs.js.rootExports.length === 0) {
 
 if (manifest.requiredOutputs.css.requiredVariables.length === 0) {
   throw new Error('Contract manifest must declare required CSS variables.');
-}
-
-if (manifest.requiredOutputs.tailwind.expectations.length === 0) {
-  throw new Error('Contract manifest must declare required Tailwind expectations.');
 }
 
 if (manifest.outputParity.js.namespaces.length === 0) {
@@ -119,16 +114,6 @@ manifest.requiredOutputs.js.bannedPaths.forEach((path) => {
   }
 });
 
-const allowedTransforms = new Set(['firstFontFamily']);
-manifest.requiredOutputs.tailwind.expectations.forEach(({ themePath, tokenPath, transform }) => {
-  if (!themePath || !tokenPath) {
-    throw new Error('Each Tailwind expectation must define themePath and tokenPath.');
-  }
-  if (transform && !allowedTransforms.has(transform)) {
-    throw new Error(`Unsupported Tailwind expectation transform: ${transform}`);
-  }
-});
-
 const generatedCss = generateCssVariables(tokens);
 if (!generatedCss.includes(':root {') || !generatedCss.includes(':root[data-spectre-theme="dark"] {')) {
   throw new Error('Generated CSS is missing the expected root or dark-mode block.');
@@ -144,32 +129,6 @@ const generatedDarkBlock = generatedCss.split(':root[data-spectre-theme="dark"] 
 manifest.requiredOutputs.css.requiredDarkModeVariables.forEach((variableName) => {
   if (!generatedDarkBlock.includes(`${variableName}:`)) {
     throw new Error(`Generated dark-mode CSS is missing manifest variable: ${variableName}`);
-  }
-});
-
-manifest.requiredOutputs.tailwind.expectations.forEach(({ themePath, tokenPath, transform }) => {
-  const themeValue = getPathValue(tailwindTheme, themePath);
-  let tokenValue = getPathValue(tokens, tokenPath);
-
-  if (themeValue === undefined) {
-    throw new Error(`Tailwind theme is missing expected path declared in manifest: ${themePath}`);
-  }
-
-  if (tokenValue === undefined) {
-    throw new Error(`Tokens are missing Tailwind backing path declared in manifest: ${tokenPath}`);
-  }
-
-  if (transform === 'firstFontFamily') {
-    tokenValue = String(tokenValue)
-      .split(',')
-      .map((segment) => segment.trim().replace(/^['"]|['"]$/g, ''))
-      .filter(Boolean)[0];
-  }
-
-  if (themeValue !== tokenValue) {
-    throw new Error(
-      `Tailwind expectation mismatch for ${themePath}. Expected ${tokenValue}, received ${themeValue}`
-    );
   }
 });
 

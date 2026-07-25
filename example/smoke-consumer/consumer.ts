@@ -1,6 +1,5 @@
 import tokens, {
   generateCssVariables,
-  tailwindPreset,
   type SpectreModeName,
   type SpectreTokens
 } from '@phcdevworks/spectre-tokens';
@@ -24,7 +23,5 @@ export const themedSurface = (mode: SpectreModeName) => {
 };
 
 export const cssPreview = generateCssVariables(tokens).slice(0, 120);
-
-export const presetBrand500 = tailwindPreset.theme.colors.brand['500'];
 
 export const typedTokens: SpectreTokens = tokens;

@@ -6,6 +6,18 @@ reflects package releases published to npm.
 
 ## [Unreleased]
 
+Contract change type: breaking
+
+### Removed
+
+- Removed the `tailwindTheme` and `tailwindPreset` root exports and the
+  `TailwindTheme` type export. Spectre no longer ships a Tailwind CSS
+  integration — consumers should use the `tokens` runtime object and
+  `index.css` custom properties directly, or `generateCssVariables` for a
+  custom CSS build. `contract.manifest.json`'s `requiredOutputs.tailwind`
+  section and the `check:tailwind` validation gate are removed. The consumer
+  smoke and integration fixtures no longer exercise a Tailwind config.
+
 ## [3.6.0] - 2026-07-24
 
 **Release Title:** Phase 9 - Semantic Typography and Color Palette Expansion

@@ -604,13 +604,18 @@ fix's regression test only covered `tokens.link`/`tokens.surface`, not
 
 ---
 
-## Phase 10 - Utility-Engine Token Foundation (Active)
+## Phase 10 - Utility-Engine Token Foundation (Tailwind Replacement, Active)
 
-Deliberate, stated exception to Phase 9's demand-driven-only closing policy:
-`spectre-ui`'s Phase 7 needs a broader, generator-ready raw color and scale
-surface to expand its own utility-class coverage — the concrete downstream
-requirement Phase 9 P3's `check:downstream` mechanism was built to detect,
-not speculative namespace expansion.
+PHCDevworks is replacing TailwindCSS across the Spectre design system with a
+first-party, token-driven utility-class engine owned by `spectre-ui`. This
+phase is a deliberate exception to Phase 9's demand-driven-only closing
+policy: `spectre-ui`'s Phase 7 needs a broader, generator-ready raw color and
+scale surface to expand its own utility-class coverage ahead of building
+that engine — the concrete downstream requirement Phase 9 P3's
+`check:downstream` mechanism was built to detect, not speculative namespace
+expansion. The utility-class engine itself is entirely `spectre-ui` Phase 7
+scope; this package's role is publishing the raw token surface it consumes
+and retiring the Tailwind exports.
 
 `colors.palette.<hue>.<step>` (26 hues, steps 50-950) already shipped in
 `3.6.0` ahead of this phase being formally opened; it is the raw material
@@ -642,18 +647,28 @@ value in markup. `success`/`warning`/`danger`/CTA-brand-action remain locked
       manifest surface here if `spectre-ui` Phase 7 P0 surfaces a
       token-shape guarantee `outputParity` doesn't already provide.
 
-### P2: Tailwind Export Deprecation
+### P2: Tailwind Export Removal — Done
 
-- [ ] Mark `tailwindTheme`/`tailwindPreset` root exports and the
-      `tailwind.expectations` section of `contract.manifest.json`
-      `deprecated`, using the existing `metadata.deprecated`
-      (`since`/`replacedBy`/`removeIn`) lifecycle documented in
-      `TOKEN_CONTRACT.md`. Do not remove anything this phase — `removeIn`
-      stays open/TBD until downstream migration is confirmed complete
-      across every consuming repo.
-- [ ] Keep `check:tailwind` green and running unchanged through this phase.
-- [ ] Coordinate with the equivalent deprecation in `spectre-ui` Phase 7 P2;
-      both repos' deprecation notices should reference each other.
+- [x] Removed `tailwindTheme`/`tailwindPreset` root exports and the
+      `TailwindTheme` type from `src/index.ts`/`src/types.ts`, rather than
+      deprecating first — a direct breaking removal ahead of `spectre-ui`'s
+      generator landing, since this package no longer treats a Tailwind
+      preset as part of its public contract.
+- [x] Removed `contract.manifest.json`'s `requiredOutputs.tailwind` section
+      and its entries from `rootExports`/`rootTypeExports`.
+- [x] Deleted `check:tailwind` (`scripts/check-tailwind-contract.ts`) and the
+      Tailwind-specific assertions in `check-contract-manifest.ts`,
+      `check-consumer-smoke.ts`, `check-integration.ts`, and
+      `contract-utils.ts`.
+- [x] Removed `tailwind.config.ts` from `example/smoke-consumer/` and
+      `example/integration-fixture/`; updated `consumer.ts`/`consumer.mjs`
+      to drop Tailwind-derived assertions.
+- [x] Classified `Contract change type: breaking` in `CHANGELOG.md
+      [Unreleased]`. Full `npm run check` gate passes clean.
+- [ ] Coordinate with the equivalent removal/migration in `spectre-ui`
+      Phase 7 P2 — any downstream repo still importing `tailwindTheme`/
+      `tailwindPreset` will break on upgrade to the version publishing this
+      change.
 
 **Unblocks:** `spectre-ui` Phase 7 P0/P1 — the generator cannot consume
 `colors.palette` or any new container-query tokens until they are published

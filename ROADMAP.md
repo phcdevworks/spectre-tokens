@@ -335,13 +335,33 @@ justifies a token proposal, not speculative namespace expansion.
 
 ---
 
-## 10. Phase 10 — Utility-Engine Token Foundation
+## 10. Phase 10 — Utility-Engine Token Foundation (Tailwind Replacement)
 
-This phase is a deliberate, stated exception to Phase 9's demand-driven-only
+PHCDevworks is replacing TailwindCSS across the Spectre design system with a
+first-party, token-driven utility-class engine owned by `spectre-ui`. This
+phase is a deliberate, stated exception to Phase 9's demand-driven-only
 closing policy: `spectre-ui`'s Phase 7 needs a broader, generator-ready raw
-color and scale surface to expand its own utility-class coverage. That is
-the concrete downstream requirement Phase 9 P3's `check:downstream`
-mechanism was built to detect. It is not speculative namespace expansion.
+color and scale surface to expand its own utility-class coverage ahead of
+building that engine. That is the concrete downstream requirement Phase 9
+P3's `check:downstream` mechanism was built to detect. It is not speculative
+namespace expansion.
+
+`spectre-tokens`' role in the replacement is narrow and already mostly
+delivered: publish the raw color/scale surface the generator consumes
+(`colors.palette`, and any further scale gaps `spectre-ui` Phase 7
+identifies), then retire the `tailwindTheme`/`tailwindPreset` exports once
+the generator is live and no downstream package still imports them. The
+utility-class engine itself — class-name generation, responsive/state/dark
+variants, purge/build tooling — is entirely `spectre-ui` Phase 7 scope, not
+this package's.
+
+The `tailwindTheme`/`tailwindPreset` root exports, the `TailwindTheme` type,
+and the `contract.manifest.json` `requiredOutputs.tailwind` section were
+removed as a breaking change ahead of the generator's completion, since this
+package no longer treats a Tailwind preset as part of its public contract.
+Downstream repos still depending on Tailwind utility classes continue to
+consume `index.css` custom properties directly until `spectre-ui`'s
+first-party generator replaces that usage.
 
 `colors.palette.<hue>.<step>` — a broad raw color ramp (26 hues including
 `mauve`/`olive`/`mist`/`taupe`, steps 50-950) — was added as a new,
@@ -382,17 +402,20 @@ every recipe already uses — a Layer 2 concern. Only add manifest surface
 here if `spectre-ui` Phase 7 P0 surfaces a token-shape guarantee that
 `outputParity` doesn't already provide.
 
-### P2: Tailwind Export Deprecation
+### P2: Tailwind Export Removal — Delivered
 
-- Mark `tailwindTheme`/`tailwindPreset` root exports and the
-  `tailwind.expectations` section of `contract.manifest.json` `deprecated`,
-  using the existing `metadata.deprecated` (`since`/`replacedBy`/`removeIn`)
-  lifecycle documented in `TOKEN_CONTRACT.md`. Do not remove anything this
-  phase — `removeIn` stays open/TBD until downstream migration is confirmed
-  complete across every consuming repo.
-- `check:tailwind` stays green and running unchanged through this phase.
-- Paired with the equivalent deprecation in `spectre-ui` Phase 7 P2; both
-  repos' deprecation notices should reference each other.
+Superseded by a direct removal rather than a deprecate-first path: the
+`tailwindTheme`/`tailwindPreset` root exports, the `TailwindTheme` type, and
+`contract.manifest.json`'s `requiredOutputs.tailwind` section (and its
+`check:tailwind` gate) are removed outright as a breaking change, ahead of
+`spectre-ui`'s generator landing. `contract.manifest.json`'s
+`requiredOutputs.js.rootExports`/`rootTypeExports` no longer list them. The
+consumer smoke and integration fixtures (`example/smoke-consumer/`,
+`example/integration-fixture/`) no longer exercise a `tailwind.config.ts`.
+Classified `Contract change type: breaking` in `CHANGELOG.md [Unreleased]`.
+Coordinate with the equivalent removal/migration in `spectre-ui` Phase 7 P2 —
+any downstream repo still importing these exports will break on upgrade to
+the version that ships this change.
 
 **Unblocks:** `spectre-ui` Phase 7 P0/P1 — the generator cannot consume
 `colors.palette` or any new container-query tokens until they are published
