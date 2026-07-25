@@ -460,32 +460,6 @@ pattern Phase 4 used for Nav/Toast/Tooltip/Dropdown/Modal. `spectre-ui`'s own
 
 ---
 
-## Recommended Execution Order
-
-1. Phase 1 — done.
-2. Phase 2 — done.
-3. Phase 3 — done.
-4. Phase 4 P0 — done.
-5. Phase 4 P1 — done.
-6. Phase 4 P2 — done. Added component.nav, component.modal, component.toast,
-   component.tooltip, component.dropdown token groups. This unblocks spectre-ui
-   Phase 4 recipes and spectre-ui-astro Phase 4.
-7. **Phase 4 P3 — done.** `surface.alternate` renamed to `surface.subtle`;
-   `surface.hero` documented with explicit usage constraints.
-8. **Phase 5 — done and published in `3.1.0`.** `link.*` and
-   `surface.hover/selected/active/divider` now emit correctly in
-   `dist/index.css`, with a regression test guarding against recurrence.
-   This unblocks the `spectre-ui` Phase 3 P2 token dependency.
-9. **Phase 6 — done and published in `3.1.0`.** Added
-   `layout.sidebar.width` (`16rem`) and `layout.container.maxWidthProse`
-   (`65ch`) to unblock `spectre-ui` Phase 4d.
-10. **Phase 7 — done and published in `3.2.0`.** Added `component.checkbox`,
-    `component.radio`, `component.select`, `component.textarea`,
-    `component.fieldset`, and `component.label` token groups. Unblocks the
-    corresponding `spectre-ui` form-field recipes.
-
----
-
 ## Phase 8 - Select/Textarea Invalid and Success State Roles (done in 3.3.0; CSS generation fix in 3.3.1)
 
 `spectre-ui` audited `component.select`/`component.textarea` while adding
@@ -574,6 +548,59 @@ fix's regression test only covered `tokens.link`/`tokens.surface`, not
 - [x] `spectre-ui` should bump its declared `spectre-tokens` range to
       `^3.3.1` (not `^3.3.0`) before starting Phase 5 P0 adoption, since
       `3.3.0` is missing the variables it needs.
+
+---
+
+## Phase 9 - Semantic Typography and Color Palette Expansion (done in 3.6.0)
+
+- [x] Add `colors.palette` — the full Tailwind CSS v4.3 raw color ramp
+      (red through stone plus mauve/olive/mist/taupe, steps 50-950), ported
+      to hex, as a new sub-namespace alongside the existing brand/neutral/
+      accent/success/warning/error/info ramps in `colors`.
+- [x] Add `typography.heading` (h1-h6) and `typography.body` role tokens
+      expressed via `{typography.scale.*}` / `{typography.families.*}`
+      references, giving downstream consumers a semantic heading/body
+      contract instead of hand-picking raw `typography.scale` steps.
+- [x] Add `check:typography-refs` validation gate (part of `npm run check`)
+      confirming every heading/body role resolves to a valid scale/family
+      reference.
+- [x] Published in `3.6.0`.
+
+---
+
+## Recommended Execution Order
+
+1. Phase 1 — done.
+2. Phase 2 — done.
+3. Phase 3 — done.
+4. Phase 4 P0 — done.
+5. Phase 4 P1 — done.
+6. Phase 4 P2 — done. Added component.nav, component.modal, component.toast,
+   component.tooltip, component.dropdown token groups. This unblocks spectre-ui
+   Phase 4 recipes and spectre-ui-astro Phase 4.
+7. **Phase 4 P3 — done.** `surface.alternate` renamed to `surface.subtle`;
+   `surface.hero` documented with explicit usage constraints.
+8. **Phase 5 — done and published in `3.1.0`.** `link.*` and
+   `surface.hover/selected/active/divider` now emit correctly in
+   `dist/index.css`, with a regression test guarding against recurrence.
+   This unblocks the `spectre-ui` Phase 3 P2 token dependency.
+9. **Phase 6 — done and published in `3.1.0`.** Added
+   `layout.sidebar.width` (`16rem`) and `layout.container.maxWidthProse`
+   (`65ch`) to unblock `spectre-ui` Phase 4d.
+10. **Phase 7 — done and published in `3.2.0`.** Added `component.checkbox`,
+    `component.radio`, `component.select`, `component.textarea`,
+    `component.fieldset`, and `component.label` token groups. Unblocks the
+    corresponding `spectre-ui` form-field recipes.
+11. **Phase 8 — done and published in `3.3.0`, CSS generation fix in
+    `3.3.1`.** Added `borderInvalid`/`bgInvalid`/`borderSuccess`/`bgSuccess`
+    to `component.select`/`component.textarea`; fixed a class of hand-
+    maintained-array CSS generation gaps affecting select, textarea, badge,
+    testimonial, pricingCard, and rating token groups.
+12. **Phase 9 — done and published in `3.6.0`.** Added `colors.palette`
+    (full Tailwind v4.3 raw ramp) and `typography.heading`/`typography.body`
+    semantic role tokens.
+
+---
 
 ## Explicitly Out of Scope
 
