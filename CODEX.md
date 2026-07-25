@@ -7,10 +7,10 @@ refactor review, and configuration standardization agent for
 `@phcdevworks/spectre-tokens`.
 
 Full roster and authority table: [AGENTS.md](AGENTS.md). Codex keeps Claude
-Code's work production-ready; npm publishing and release-authority decisions
-remain with Bradley Potts. Codex has commit, push, and tag authority for its
-own scope of work (documentation, release readiness, stabilization, repo
-hygiene) — validate changes, then stage, commit, and push.
+Code's work production-ready — validate changes, then stage, commit, tag,
+and push, including cutting the release itself once `CHANGELOG.md` shows a
+release-ready `[Unreleased]` section. npm publishing remains a separate,
+manual step owned by Bradley Potts (see "Release Mechanics" below).
 
 ## Operating Principles
 
@@ -22,7 +22,10 @@ hygiene) — validate changes, then stage, commit, and push.
    patterns.
 5. Do not modify protected semantic color families without explicit approval
    from Bradley Potts.
-6. Do not create commits, tags, or releases unless Bradley explicitly asks.
+6. Commit, tag (`v<version>`, e.g. `v4.1.0`), and publish a GitHub Release
+   for every release-ready `CHANGELOG.md [Unreleased]` section — see
+   "Release Mechanics" below for the full procedure. Do not run `npm
+   publish`; that stays with Bradley Potts.
 
 ## Entry Point
 
@@ -142,7 +145,7 @@ release risk in the summary.
 
 ## Release Review Checklist
 
-Use this checklist before every release handoff to Bradley Potts.
+Use this checklist before cutting every release (tag + GitHub Release).
 
 ### Pre-Release Validation
 
@@ -172,21 +175,39 @@ Use this checklist before every release handoff to Bradley Potts.
 
 ### Release Mechanics
 
-- [ ] `npm run release:propose` has been run and its output is included in the
-      handoff summary. Bradley Potts has final version authority; the proposal
-      is advisory.
-- [ ] `package.json` version is bumped to the intended release version.
-- [ ] `CHANGELOG.md [Unreleased]` notes are moved to a new versioned entry.
-- [ ] The new entry has a **Release Title** and date.
-- [ ] Compare links at the bottom of `CHANGELOG.md` are updated for the new
-      version and the new `[unreleased]` range.
-- [ ] `npm run check` passes clean on the release-ready state.
+1. Run `npm run release:propose` to get the semver bump proposal from the
+   `CHANGELOG.md [Unreleased]` classification.
+2. Bump `package.json` to the proposed version.
+3. Move `[Unreleased]` notes into a new versioned entry:
+   `## [<version>] - <YYYY-MM-DD>`, with a release title line in the format
+   `**Release Title:** Phase <N> - <short title>`, where `Phase <N>` is the
+   active phase name from this repo's own `ROADMAP.md` (e.g. `Phase 4 —
+   Token Surface Completion` becomes `Phase 4 - Token Surface Completion`)
+   and `<short title>` is a concise summary of what shipped in this release.
+   If the release spans no single ROADMAP phase (e.g. a hygiene-only patch),
+   state that explicitly instead of inventing a phase.
+4. Add the new version's compare link at the bottom of `CHANGELOG.md` and
+   update the `[Unreleased]` compare link range.
+5. Run `npm run check` — must pass clean on the release-ready state.
+6. Run `npm run check:downstream` if `spectre-ui`, `spectre-ui-astro`, and
+   `spectre-components` are present as sibling repos.
+7. Stage and commit the version bump and changelog update.
+8. Create the git tag: `git tag v<version>` (e.g. `v4.1.0`), matching
+   `package.json` exactly, then push the commit and tag.
+9. Publish the GitHub Release from that tag: `gh release create v<version>
+   --title "v<version>: Phase <N> - <short title>" --notes-file` (extract the
+   new version's changelog section, or pass `--notes` inline for a short
+   release).
+10. `npm publish` is **not** run by Codex — that step, and any npm
+    release-authority decision, stays with Bradley Potts.
 
 ### Handoff
 
-- [ ] All changes are staged but not committed.
+- [ ] The commit, tag, and GitHub Release are complete (or, if blocked,
+      exactly which step failed and why).
 - [ ] A clear summary of what changed, what classification applies, and any
-      blockers is prepared for Bradley Potts.
+      unresolved risk is prepared for Bradley Potts, including the npm
+      publish step still pending his action.
 
 ---
 
