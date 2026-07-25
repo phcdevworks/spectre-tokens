@@ -1,8 +1,8 @@
 # Codex Instructions — Spectre Tokens
 
-This file is the GitHub-integrated Codex guide for `@phcdevworks/spectre-tokens`.
-Read `CODEX.md` at the repo root for the full operational playbook. Read
-`AGENTS.md` for shared agent boundaries.
+This file is the GitHub-integrated Codex guide for
+`@phcdevworks/spectre-tokens`. Read `CODEX.md` at the repo root for the full
+operational playbook. Read `AGENTS.md` for shared agent boundaries.
 
 ## Role Summary
 
@@ -20,18 +20,18 @@ When opening a PR, Codex must populate every section of the PR template
 - **Contract change type** — exactly one of `additive`, `semantic change`,
   `breaking`, or `N/A`. Must match the `CHANGELOG.md [Unreleased]` line.
 - **Type of Change** — check every box that applies.
-- **Checklist** — check each completed item; leave blocked items unchecked
-  with a brief inline note.
+- **Checklist** — check each completed item; leave blocked items unchecked with
+  a brief inline note.
 
-Never submit a PR with an empty body or with only the template headings
-left unfilled. CodeRabbit's description check blocks such PRs.
+Never submit a PR with an empty body or with only the template headings left
+unfilled. CodeRabbit's description check blocks such PRs.
 
 ## Pull Request Review Scope
 
 When reviewing a PR, Codex checks:
 
-1. **Contract drift** — do runtime exports, generated types, CSS, Tailwind, and
-   docs all describe the same public token shape?
+1. **Contract drift** — do runtime exports, generated types, CSS, DTCG, and docs
+   all describe the same public token shape?
 2. **Locked color families** — were `success`, `warning`, `danger`, or
    CTA/brand-action tokens changed without explicit Bradley Potts approval?
 3. **Changelog classification** — does `CHANGELOG.md [Unreleased]` have a
@@ -60,7 +60,7 @@ directed to Claude Code.
 
 ```bash
 npm run build              # regenerate all derived outputs
-npm run check              # full 16-gate validation suite
+npm run check              # full validation suite
 npm run check:manifest     # public namespaces and required outputs
 npm run check:structure    # token tree shape
 npm run check:docs         # README and TOKEN_CONTRACT headings
@@ -69,7 +69,10 @@ npm run check:contrast     # WCAG AA contrast for all paired tokens
 npm run check:regression   # token values unchanged vs baseline
 npm run check:exports      # public runtime exports match declared contract
 npm run check:css          # required CSS variables present
-npm run check:tailwind     # Tailwind theme values match token contract
+npm run check:typography-refs # semantic typography references resolve
+npm run check:parity       # JS/TS/CSS/DTCG output parity
+npm run check:dtcg         # DTCG structural conformance
+npm run check:dtcg-roundtrip # Style Dictionary round-trip
 npm run check:consumer     # downstream smoke fixture passes
 npm run check:integration  # downstream integration fixture passes
 npm run check:ecosystem    # spectre.manifest.json validated against ecosystem registry

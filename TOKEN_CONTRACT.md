@@ -19,7 +19,8 @@ It does not own:
 - local consumer reinterpretation of Spectre token meaning
 
 Token vocabulary expansion — new semantic roles, interactive states, component
-token groups — is in scope here. Component structure and adapter behavior are not.
+token groups — is in scope here. Component structure and adapter behavior are
+not.
 
 ## Source Of Truth
 
@@ -30,8 +31,8 @@ These rules apply in order:
    public token contract.
 3. Generated outputs must be derived from source data and must not be
    hand-maintained.
-4. `README.md`, runtime exports, generated types, CSS output, Tailwind output,
-   and validation scripts must all describe the same public contract.
+4. `README.md`, runtime exports, generated types, CSS output, DTCG output, and
+   validation scripts must all describe the same public contract.
 
 Operationally:
 
@@ -48,7 +49,6 @@ The public contract of this package includes:
 - the named root exports from `src/index.ts`
 - the generated TypeScript contract in `dist/index.d.ts`
 - the generated CSS entry point at `@phcdevworks/spectre-tokens/index.css`
-- the generated Tailwind theme and preset exports
 - the public namespaces declared in `contract.manifest.json`
 - the documented contract described in `README.md`
 
@@ -109,13 +109,12 @@ This document formalizes that rule.
 This package currently guarantees these public output surfaces:
 
 - JavaScript runtime tokens
-- named exports for `tokens`, `tailwindTheme`, `tailwindPreset`, and
-  `generateCssVariables`
-- TypeScript contract exports including `SpectreTokens`, `TailwindTheme`,
-  `SpectreModeTokens`, and `SpectreModeName`
+- named exports for `tokens` and `generateCssVariables`
+- TypeScript contract exports including `SpectreTokens`, `SpectreModeTokens`,
+  and `SpectreModeName`
 - CSS variables in `dist/index.css`
-- Tailwind theme output derived from the token contract
-- W3C DTCG design-tool export in `dist/tokens.dtcg.json` for Figma/Tokens Studio sync
+- W3C DTCG design-tool export in `dist/tokens.dtcg.json` for Figma/Tokens Studio
+  sync
 
 All of those outputs must remain aligned with `contract.manifest.json`.
 
@@ -123,7 +122,7 @@ Validation is expected to fail fast on:
 
 - token overwrite across files in `tokens/`
 - undocumented namespaces
-- output drift across JS, CSS, and Tailwind
+- output drift across JS, CSS, and DTCG
 - README mismatch with contract authority
 - stale `dist` artifacts
 
@@ -142,9 +141,10 @@ Use semantic tokens as the default interface for downstream UI:
 
 Use raw palette tokens from `colors` only when consumers need fixed color access
 and are intentionally opting out of semantic abstraction. The same rule applies
-to `typography.scale`: prefer `typography.heading.{h1..h6}` and `typography.body`
-for document/UI text roles, and reach for a raw `typography.scale` step only
-when a consumer needs a font size independent of any heading/body meaning.
+to `typography.scale`: prefer `typography.heading.{h1..h6}` and
+`typography.body` for document/UI text roles, and reach for a raw
+`typography.scale` step only when a consumer needs a font size independent of
+any heading/body meaning.
 
 Rules:
 
@@ -154,11 +154,11 @@ Rules:
 - New downstream-facing token work should prefer semantic naming over direct
   palette references when the value represents UI meaning.
 - `typography.heading.{h1..h6}` and `typography.body` are each a complete role
-  object (`fontFamily`, `fontSize`, `lineHeight`, `fontWeight`,
-  `letterSpacing`) expressed as `{typography.scale.*}` /
-  `{typography.families.*}` references, never bare scale-step or family-name
-  strings — every field must independently resolve for runtime, DTCG, and CSS
-  consumers alike. `npm run check:typography-refs` enforces this.
+  object (`fontFamily`, `fontSize`, `lineHeight`, `fontWeight`, `letterSpacing`)
+  expressed as `{typography.scale.*}` / `{typography.families.*}` references,
+  never bare scale-step or family-name strings — every field must independently
+  resolve for runtime, DTCG, and CSS consumers alike.
+  `npm run check:typography-refs` enforces this.
 
 ## Modes And Themes
 
@@ -208,7 +208,7 @@ Examples:
 - adding a new token inside an existing family while preserving current names
   and meanings
 - adding a new mode-aware semantic alias while preserving current paths
-- adding new CSS variables or Tailwind mappings without changing existing ones
+- adding new CSS variables or DTCG coverage without changing existing ones
 
 ### Semantic Change
 
@@ -274,8 +274,8 @@ Every token follows one of three states:
   removal
 - **deprecated** — the token is marked for future removal; it remains in the
   public export but consumers should migrate away from it
-- **removed** — the token has been eliminated in a major release; its path is
-  no longer part of the public contract
+- **removed** — the token has been eliminated in a major release; its path is no
+  longer part of the public contract
 
 ### Marking A Token Deprecated
 
@@ -322,8 +322,8 @@ Add a `### Deprecated` subsection under the affected version entry:
 ```markdown
 ### Deprecated
 
-- `namespace.token.path` — deprecated in favor of `new.token.path`.
-  Will be removed in vX.0.0.
+- `namespace.token.path` — deprecated in favor of `new.token.path`. Will be
+  removed in vX.0.0.
 ```
 
 If there is no direct replacement, omit the "in favor of" clause and document
@@ -363,32 +363,31 @@ Rules:
 - `dist/` artifacts must stay in sync with source changes
 - generated runtime tokens must stay aligned with generated TypeScript types
 - CSS variables must stay aligned with runtime token meaning
-- Tailwind theme output must stay aligned with runtime token meaning
+- DTCG output must stay aligned with runtime token meaning
 - generated outputs must not expose internal source wrappers as public runtime
   contract
 
 ## DTCG Design-Tool Export
 
-`dist/tokens.dtcg.json` is generated by `scripts/build-dtcg.ts` in the [W3C
-Design Tokens Community Group format](https://design-tokens.github.io/community-group/format/).
-Every leaf is a `{ $value, $type }` object (plus `$description` where the
-source token has one), mirroring the source token tree 1:1 under the same
-public namespaces. `check:dtcg` validates every `$value` against its declared
-`$type`'s structural shape; `check:dtcg-roundtrip` builds the file with a real
-DTCG consumer (Style Dictionary) and asserts the rendered output is correct.
+`dist/tokens.dtcg.json` is generated by `scripts/build-dtcg.ts` in the
+[W3C Design Tokens Community Group format](https://design-tokens.github.io/community-group/format/).
+Every leaf is a `{ $value, $type }` object (plus `$description` where the source
+token has one), mirroring the source token tree 1:1 under the same public
+namespaces. `check:dtcg` validates every `$value` against its declared `$type`'s
+structural shape; `check:dtcg-roundtrip` builds the file with a real DTCG
+consumer (Style Dictionary) and asserts the rendered output is correct.
 
 ### Intentional Transformations
 
-The generator applies structural transforms so `$value` matches the shape
-DTCG's `$type` system expects, rather than emitting every value as a raw CSS
-string:
+The generator applies structural transforms so `$value` matches the shape DTCG's
+`$type` system expects, rather than emitting every value as a raw CSS string:
 
 - **Aliases** (`{path.to.token}`): kept as the literal reference string in
   `$value` (valid DTCG alias syntax) — never resolved to a literal value. The
-  `$type` is resolved from the alias *target's* actual value shape (e.g.
+  `$type` is resolved from the alias _target's_ actual value shape (e.g.
   `animations.fadeIn.easing` is `"{transitions.easing.out}"` typed
-  `cubicBezier`, not `string`), so a consumer's alias-resolution step lands on
-  a correctly-typed token.
+  `cubicBezier`, not `string`), so a consumer's alias-resolution step lands on a
+  correctly-typed token.
 - **`zIndex.*` / `opacity.*`**: source values are numeric strings (`"1000"`,
   `"0.38"`); the DTCG `$value` is converted to an actual JSON number to match
   `$type: "number"`.
@@ -396,8 +395,8 @@ string:
   the `"linear"` keyword, mapped to its mathematically equivalent
   `[0, 0, 1, 1]`) are parsed into a 4-number array to match
   `$type: "cubicBezier"`.
-- **`typography.families.*`**: comma-separated CSS font stacks are split into
-  an array of unquoted family names to match `$type: "fontFamily"`.
+- **`typography.families.*`**: comma-separated CSS font stacks are split into an
+  array of unquoted family names to match `$type: "fontFamily"`.
 - **`shadows.*`, `component.modal.shadow`, `buttons.cta.shadow`**: CSS
   `box-shadow` strings are parsed into DTCG's structured shadow shape
   (`{ color, offsetX, offsetY, blur, spread }`, or an array of these for
@@ -407,12 +406,12 @@ string:
   are never mistaken for a shadow and stay `$type: "color"`.
 - **`surface.hero`**: CSS `linear-gradient(<angle>, <color> <pos>%, ...)`
   strings are parsed into DTCG's `gradient` `$type` — an array of
-  `{ color, position }` stops, with `position` normalized from a CSS
-  percentage to a 0–1 number — per the [DTCG Format Module's gradient
-  type](https://www.designtokens.org/tr/drafts/format/#gradient) (stable as
-  of the 2025.10 draft). Each stop's `color` keeps the literal `{path}` alias
-  reference where the source uses one, consistent with every other composite
-  type here.
+  `{ color, position }` stops, with `position` normalized from a CSS percentage
+  to a 0–1 number — per the
+  [DTCG Format Module's gradient type](https://www.designtokens.org/tr/drafts/format/#gradient)
+  (stable as of the 2025.10 draft). Each stop's `color` keeps the literal
+  `{path}` alias reference where the source uses one, consistent with every
+  other composite type here.
 
 ### Unsupported Source Shapes
 
@@ -424,43 +423,42 @@ string:
   stops only — it has no field for CSS gradient geometry (angle, shape,
   repeating). `surface.hero`'s `135deg` direction is therefore dropped when
   converting to DTCG; a downstream consumer reconstructing CSS from the DTCG
-  value must supply its own direction (Spectre's gradients are always
-  `135deg`, documented per-token via `$description`, so a consumer can hardcode
-  it or fall back to `spectre-ui`'s CSS output, which retains the full
+  value must supply its own direction (Spectre's gradients are always `135deg`,
+  documented per-token via `$description`, so a consumer can hardcode it or fall
+  back to `spectre-ui`'s CSS output, which retains the full
   `linear-gradient(...)` string).
 - **`fontWeight`**: DTCG permits either a number or one of a small set of CSS
-  keyword strings (e.g. `"bold"`); this repo only ever emits numeric weights,
-  so the generator does not need to special-case keyword weights, but
+  keyword strings (e.g. `"bold"`); this repo only ever emits numeric weights, so
+  the generator does not need to special-case keyword weights, but
   `check-dtcg-conformance.ts`'s validator accepts both shapes.
 
 ## Live Downstream Compatibility
 
 `scripts/check-downstream-compat.ts` (`npm run check:downstream`) packs this
-repo into a real npm tarball and, for each of `spectre-ui`,
-`spectre-ui-astro`, and `spectre-components` present as a sibling repo on
-disk, installs that tarball and runs the sibling's own `npm run check` — the
-same gate that repo runs on every one of its own changes. This is the
-ecosystem contract authority for compatibility: it validates against each
-downstream package's real build, lint, type, and test suite, not a
-repository-local guess at what they need.
+repo into a real npm tarball and, for each of `spectre-ui`, `spectre-ui-astro`,
+and `spectre-components` present as a sibling repo on disk, installs that
+tarball and runs the sibling's own `npm run check` — the same gate that repo
+runs on every one of its own changes. This is the ecosystem contract authority
+for compatibility: it validates against each downstream package's real build,
+lint, type, and test suite, not a repository-local guess at what they need.
 
 Rules:
 
 - Each sibling repo must have a clean working tree before this check runs
-  against it; a dirty tree is skipped rather than risking the check's
-  restore step reverting uncommitted work.
-- The sibling's `package.json`/`package-lock.json` are always restored to
-  their committed state afterward via `git checkout` + `npm install`, whether
-  the check passes or fails.
-- This check requires the sibling repos to exist as local checkouts
-  alongside this one; it is not part of `npm run check` and is not expected
-  to run in every environment (e.g. CI that only checks out this repo).
-  Repository-local fixtures (`check:consumer`, `check:integration`) remain
-  the fast, always-available compatibility signal; this check is the
-  pre-release confirmation against real consumers.
+  against it; a dirty tree is skipped rather than risking the check's restore
+  step reverting uncommitted work.
+- The sibling's `package.json`/`package-lock.json` are always restored to their
+  committed state afterward via `git checkout` + `npm install`, whether the
+  check passes or fails.
+- This check requires the sibling repos to exist as local checkouts alongside
+  this one; it is not part of `npm run check` and is not expected to run in
+  every environment (e.g. CI that only checks out this repo). Repository-local
+  fixtures (`check:consumer`, `check:integration`) remain the fast,
+  always-available compatibility signal; this check is the pre-release
+  confirmation against real consumers.
 - A concrete failure surfaced here — a real downstream build/type/lint/test
-  break caused by a token contract change — is the trigger for a token
-  proposal (new namespace, new field, a fix). This check is not a license to
+  break caused by a token contract change — is the trigger for a token proposal
+  (new namespace, new field, a fix). This check is not a license to
   speculatively expand the token surface; only a demonstrated downstream gap
   justifies a contract change, per this package's demand-driven expansion
   policy.
@@ -472,7 +470,7 @@ Downstream packages may rely on this repo to provide:
 - stable semantic token paths
 - stable top-level namespaces
 - consistent generated CSS variables
-- consistent Tailwind theme values
+- consistent DTCG token values
 - mode-aware semantic tokens under `modes`
 
 Downstream packages should not:
@@ -502,24 +500,6 @@ Rules:
   must not apply this attribute to elements that are not intended to receive the
   full Spectre dark token set.
 
-### Tailwind Preset Composition
-
-The exported `tailwindPreset` extends the Tailwind color scale with the
-following top-level color namespaces: `brand`, `neutral`, `success`, `warning`,
-`error`, `info`, `black`, and `white`.
-
-Rules:
-
-- Consumers that extend `colors` in their own Tailwind config alongside this
-  preset may shadow or be shadowed by these namespaces. Test for collisions
-  before shipping.
-- The preset is designed for use via the `presets` array, not via manual
-  `theme.extend` merging. Using it outside `presets` is unsupported and may
-  produce unexpected merge behavior.
-- Do not override `brand`, `neutral`, `success`, `warning`, or `error` in a
-  consumer config that also uses this preset. Those namespaces back protected
-  semantic groups.
-
 ### Semantic Token Meaning
 
 Rules:
@@ -536,8 +516,8 @@ Rules:
 
 ### Token Path Stability Expectations
 
-- Consumers may depend on all paths listed in `contract.manifest.json` as
-  stable across minor and patch releases.
+- Consumers may depend on all paths listed in `contract.manifest.json` as stable
+  across minor and patch releases.
 - Paths not listed in the manifest are internal and may change without notice.
 - Deprecated token paths remain stable until their declared `removeIn` version.
 
@@ -564,7 +544,7 @@ Before a contract-impacting change merges:
 - tightening validation so contract drift fails sooner
 - documenting an existing public namespace that was already exported
 - adding an alias path during a planned deprecation window
-- adding new CSS or Tailwind coverage for an already-public token group
+- adding new CSS or DTCG coverage for an already-public token group
 
 ## Unacceptable Changes
 
