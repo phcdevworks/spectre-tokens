@@ -22,8 +22,6 @@ var index_exports = {};
 __export(index_exports, {
   default: () => index_default,
   generateCssVariables: () => generateCssVariables,
-  tailwindPreset: () => tailwindPreset,
-  tailwindTheme: () => tailwindTheme,
   tokens: () => tokens
 });
 module.exports = __toCommonJS(index_exports);
@@ -1947,66 +1945,10 @@ ${darkBlock}
 
 // src/index.ts
 var tokens = coreTokens;
-var sanitizeFontFamily = (value) => value.split(",").map((segment) => segment.trim().replace(/^['"]|['"]$/g, "")).filter(Boolean);
-var createTailwindTheme = (source = tokens) => {
-  const colors = {};
-  Object.entries(source.colors).forEach(([group, value]) => {
-    if (typeof value === "object" && value !== null) {
-      colors[group] = { ...value };
-    } else {
-      colors[group] = value;
-    }
-  });
-  const fontFamily = Object.entries(source.typography.families).reduce((acc, [key, value]) => {
-    acc[key] = sanitizeFontFamily(value);
-    return acc;
-  }, {});
-  const fontSize = Object.entries(source.typography.scale).reduce((acc, [key, entry]) => {
-    acc[key] = [
-      entry.fontSize,
-      {
-        lineHeight: entry.lineHeight,
-        ...entry.fontWeight ? { fontWeight: entry.fontWeight } : {},
-        ..."letterSpacing" in entry ? { letterSpacing: entry.letterSpacing } : {}
-      }
-    ];
-    return acc;
-  }, {});
-  return {
-    colors,
-    spacing: { ...source.space ?? {} },
-    borderRadius: { ...source.radii ?? {} },
-    fontFamily,
-    fontSize,
-    boxShadow: { ...source.shadows },
-    screens: { ...source.breakpoints },
-    zIndex: { ...source.zIndex },
-    transitionDuration: { ...source.transitions.duration },
-    transitionTimingFunction: { ...source.transitions.easing },
-    opacity: { ...source.opacity },
-    maxWidth: {
-      container: source.layout?.container?.maxWidth,
-      prose: source.layout?.container?.maxWidthProse
-    },
-    width: {
-      sidebar: source.layout?.sidebar?.width
-    },
-    borderWidth: {
-      DEFAULT: source.border?.width.base,
-      ...source.border?.width ?? {}
-    }
-  };
-};
-var tailwindTheme = createTailwindTheme(tokens);
-var tailwindPreset = {
-  theme: tailwindTheme
-};
 var index_default = tokens;
 // Annotate the CommonJS export names for ESM import in node:
 0 && (module.exports = {
   generateCssVariables,
-  tailwindPreset,
-  tailwindTheme,
   tokens
 });
 //# sourceMappingURL=index.cjs.map

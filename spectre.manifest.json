@@ -82,8 +82,7 @@
     ],
     "usageGuidance": [
       "Import tokens from @phcdevworks/spectre-tokens for TypeScript/JS consumers.",
-      "Include ./index.css (or dist/index.css) for CSS custom property consumers.",
-      "Use the exported tailwindPreset to integrate token values into a Tailwind CSS project."
+      "Include ./index.css (or dist/index.css) for CSS custom property consumers."
     ],
     "safeDefaults": [
       "Do not modify locked color families (success, warning, danger, cta-brand-action) without explicit human approval.",

@@ -5,12 +5,6 @@ import { fileURLToPath } from 'node:url';
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const manifestPath = join(__dirname, '../contract.manifest.json');
 
-export interface TailwindExpectation {
-  themePath: string;
-  tokenPath: string;
-  transform?: 'firstFontFamily';
-}
-
 export interface DesignOutput {
   requiredFile: string;
   requiredTopLevelKeys: string[];
@@ -52,9 +46,6 @@ export interface ContractManifest {
       requiredDarkModeVariables: string[];
     };
     design: DesignOutput;
-    tailwind: {
-      expectations: TailwindExpectation[];
-    };
   };
   outputParity: OutputParity;
   protectedSemanticGroups: string[];

@@ -327,19 +327,3 @@ export interface CssVariableOptions {
   prefix?: string;
 }
 
-export interface TailwindTheme {
-  colors: SpectreGeneratedTokens['colors'] | Record<string, string | Record<string, string>>;
-  spacing: SpectreGeneratedTokens['space'];
-  borderRadius: SpectreGeneratedTokens['radii'];
-  fontFamily: Record<string, string[]>;
-  fontSize: Record<string, [string, { lineHeight: string; fontWeight?: number; letterSpacing?: string }]>;
-  boxShadow: SpectreGeneratedTokens['shadows'];
-  screens: SpectreGeneratedTokens['breakpoints'];
-  zIndex: SpectreGeneratedTokens['zIndex'];
-  transitionDuration: SpectreGeneratedTokens['transitions']['duration'];
-  transitionTimingFunction: SpectreGeneratedTokens['transitions']['easing'];
-  opacity: SpectreGeneratedTokens['opacity'];
-  maxWidth: Record<string, string | undefined>;
-  width: Record<string, string | undefined>;
-  borderWidth: Record<string, string | undefined>;
-}

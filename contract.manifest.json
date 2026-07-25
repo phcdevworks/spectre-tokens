@@ -30,13 +30,10 @@
       "rootExports": [
         "default",
         "tokens",
-        "tailwindTheme",
-        "tailwindPreset",
         "generateCssVariables"
       ],
       "rootTypeExports": [
         "SpectreTokens",
-        "TailwindTheme",
         "SpectreModeTokens",
         "SpectreModeName"
       ],
@@ -202,27 +199,6 @@
         "buttons",
         "forms",
         "component"
-      ]
-    },
-    "tailwind": {
-      "expectations": [
-        { "themePath": "colors.brand.500", "tokenPath": "colors.brand.500" },
-        { "themePath": "spacing.16", "tokenPath": "space.16" },
-        { "themePath": "borderRadius.md", "tokenPath": "radii.md" },
-        { "themePath": "boxShadow.md", "tokenPath": "shadows.md" },
-        { "themePath": "screens.lg", "tokenPath": "breakpoints.lg" },
-        { "themePath": "zIndex.modal", "tokenPath": "zIndex.modal" },
-        { "themePath": "transitionDuration.base", "tokenPath": "transitions.duration.base" },
-        { "themePath": "transitionTimingFunction.inOut", "tokenPath": "transitions.easing.inOut" },
-        { "themePath": "opacity.disabled", "tokenPath": "opacity.disabled" },
-        { "themePath": "fontFamily.sans.0", "tokenPath": "typography.families.sans", "transform": "firstFontFamily" },
-        { "themePath": "fontSize.md.0", "tokenPath": "typography.scale.md.fontSize" },
-        { "themePath": "fontSize.md.1.lineHeight", "tokenPath": "typography.scale.md.lineHeight" },
-        { "themePath": "fontSize.md.1.fontWeight", "tokenPath": "typography.scale.md.fontWeight" },
-        { "themePath": "maxWidth.container", "tokenPath": "layout.container.maxWidth" },
-        { "themePath": "maxWidth.prose", "tokenPath": "layout.container.maxWidthProse" },
-        { "themePath": "width.sidebar", "tokenPath": "layout.sidebar.width" },
-        { "themePath": "borderWidth.DEFAULT", "tokenPath": "border.width.base" }
       ]
     }
   },
