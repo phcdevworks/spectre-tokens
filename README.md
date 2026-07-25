@@ -1,14 +1,14 @@
 # @phcdevworks/spectre-tokens
 
-`@phcdevworks/spectre-tokens` is the design-token package of the Spectre
-system. It provides a complete, UI-ready token surface for downstream Spectre
-packages and compatible applications.
+`@phcdevworks/spectre-tokens` is the design-token package of the Spectre system.
+It provides a complete, UI-ready token surface for downstream Spectre packages
+and compatible applications.
 
 Maintained by [PHCDevworks](https://go.phcdev.co). It defines the visual
-language, semantic roles, and token contracts that downstream consumers can
-rely on without filling gaps with raw palette values or local token
-inventions. Downstream UI packages define structure; adapter packages
-translate Spectre contracts for specific frameworks and runtimes.
+language, semantic roles, and token contracts that downstream consumers can rely
+on without filling gaps with raw palette values or local token inventions.
+Downstream UI packages define structure; adapter packages translate Spectre
+contracts for specific frameworks and runtimes.
 
 ## Repository Snapshot
 
@@ -17,7 +17,7 @@ translate Spectre contracts for specific frameworks and runtimes.
 | Project team           | `project-design`                 |
 | Repository role        | Spectre L1 design-token contract |
 | Package/artifact       | `@phcdevworks/spectre-tokens`    |
-| Current version/status | 3.6.0                            |
+| Current version/status | 4.0.0                            |
 
 ## Standard Workflow
 
@@ -82,8 +82,7 @@ After any source change: run `npm run build` to regenerate outputs, then
 
 - Visual language expressed as token data in `tokens/`
 - Semantic roles and token contracts consumed downstream
-- Generated token outputs for JavaScript, TypeScript, CSS variables, and
-  Tailwind theme exports
+- Generated token outputs for JavaScript, TypeScript, CSS variables, and DTCG
 - Theme and mode definitions used by downstream consumers
 
 This package is the correct place to define token meaning.
@@ -104,8 +103,8 @@ This package is the correct place to define token meaning.
 
 - You are building a Spectre ecosystem package and need the visual language
   contract.
-- You need design token values in JavaScript, TypeScript, CSS variables, or a
-  Tailwind theme.
+- You need design token values in JavaScript, TypeScript, CSS variables, or DTCG
+  format.
 - You want a single source of truth for semantic roles: `surface`, `text`,
   `component`, `buttons`, `forms`, `modes`.
 - You are consuming tokens as named values, not inventing new token meaning.
@@ -152,20 +151,6 @@ const card = {
 }
 ```
 
-### Tailwind preset usage
-
-Use the generated Tailwind preset when you want the package to populate theme
-values from the token contract:
-
-```ts
-// tailwind.config.ts
-import { tailwindPreset } from '@phcdevworks/spectre-tokens'
-
-export default {
-  presets: [tailwindPreset]
-}
-```
-
 ## Semantic tokens vs raw palette tokens
 
 Semantic tokens express UI meaning. Raw palette tokens expose the fixed color
@@ -174,15 +159,15 @@ mode-aware styling.
 
 ### Semantic namespaces (prefer for all UI work)
 
-| Namespace   | What it expresses                                                                                                       |
-| ----------- | ----------------------------------------------------------------------------------------------------------------------- |
+| Namespace   | What it expresses                                                                                                           |
+| ----------- | --------------------------------------------------------------------------------------------------------------------------- |
 | `surface`   | Background roles: page, card, input, overlay, subtle, hero (gradient, hero sections only), hover, selected, active, divider |
-| `text`      | Foreground roles: default, muted, subtle, meta, on-surface, on-page                                                     |
-| `component` | Role-specific tokens for icon boxes, badges, ratings, testimonials, pricing cards, nav, modal, toast, tooltip, dropdown |
-| `buttons`   | Button state tokens: default, hover, active, disabled, CTA                                                              |
-| `forms`     | Form state tokens: default, focused, error, disabled                                                                    |
-| `link`      | Inline link color roles: default, hover, active, visited                                                                |
-| `modes`     | Mode-aware overrides under `modes.default` and `modes.dark`                                                             |
+| `text`      | Foreground roles: default, muted, subtle, meta, on-surface, on-page                                                         |
+| `component` | Role-specific tokens for icon boxes, badges, ratings, testimonials, pricing cards, nav, modal, toast, tooltip, dropdown     |
+| `buttons`   | Button state tokens: default, hover, active, disabled, CTA                                                                  |
+| `forms`     | Form state tokens: default, focused, error, disabled                                                                        |
+| `link`      | Inline link color roles: default, hover, active, visited                                                                    |
+| `modes`     | Mode-aware overrides under `modes.default` and `modes.dark`                                                                 |
 
 ```ts
 import tokens from '@phcdevworks/spectre-tokens'
@@ -235,14 +220,10 @@ const card = {
 }
 ```
 
-Use named exports when you need generated helpers or Tailwind integration:
+Use named exports when you need generated helpers:
 
 ```ts
-import tokens, {
-  generateCssVariables,
-  tailwindPreset,
-  tailwindTheme
-} from '@phcdevworks/spectre-tokens'
+import tokens, { generateCssVariables } from '@phcdevworks/spectre-tokens'
 
 const css = generateCssVariables(tokens)
 ```
@@ -286,41 +267,11 @@ The CSS entry point is intended for consumers that want the token contract as
 variables rather than reading values in JavaScript.
 
 `typography.heading.{h1..h6}` and `typography.body` are semantic role tokens —
-each a complete `{ fontFamily, fontSize, lineHeight, fontWeight,
-letterSpacing }` object referencing `typography.scale.*` and
-`typography.families.*` — so downstream consumers get a heading/body contract
-instead of hand-picking a raw `typography.scale` step per heading level.
-
-### Tailwind preset
-
-Use the Tailwind preset when a consumer wants Tailwind theme values derived from
-the same token contract.
-
-```ts
-import { tailwindPreset } from '@phcdevworks/spectre-tokens'
-
-export default {
-  presets: [tailwindPreset]
-}
-```
-
-Use `tailwindTheme` directly only when a consumer needs the generated theme
-object outside the preset shape.
-
-The generated Tailwind theme includes the layout width mappings
-`maxWidth.container`, `maxWidth.prose`, and `width.sidebar`, derived from
-`layout.container.maxWidth`, `layout.container.maxWidthProse`, and
-`layout.sidebar.width`.
-
-```tsx
-export function ArticleShell() {
-  return (
-    <main className="mx-auto max-w-prose">
-      <aside className="w-sidebar" />
-    </main>
-  )
-}
-```
+each a complete
+`{ fontFamily, fontSize, lineHeight, fontWeight, letterSpacing }` object
+referencing `typography.scale.*` and `typography.families.*` — so downstream
+consumers get a heading/body contract instead of hand-picking a raw
+`typography.scale` step per heading level.
 
 ### Token model
 
@@ -367,7 +318,7 @@ package.
 It defines:
 
 - public namespaces
-- required output surfaces for JavaScript, CSS, and Tailwind
+- required output surfaces for JavaScript, CSS, and DTCG
 - protected semantic groups
 
 Every contract-facing surface in this repository must match that manifest.
@@ -437,7 +388,7 @@ Practical guidance:
 - additive token paths are intended to be safe for existing consumers
 - semantic shifts may keep the same path but still affect visual meaning
 - renames and removals are breaking
-- generated JS, TS, CSS, and Tailwind outputs are expected to stay aligned
+- generated JS, TS, CSS, and DTCG outputs are expected to stay aligned
 
 If a downstream package depends on specific token paths or semantic meaning:
 
@@ -465,20 +416,14 @@ Renames and removals are always breaking regardless of perceived scope.
 `@phcdevworks/spectre-tokens` exports:
 
 - `default` / `tokens`
-- `tailwindTheme`
-- `tailwindPreset`
 - `generateCssVariables`
-- TypeScript types including `SpectreTokens`, `TailwindTheme`,
-  `SpectreModeTokens`, and `SpectreModeName`
+- TypeScript types including `SpectreTokens`, `SpectreModeTokens`, and
+  `SpectreModeName`
 
 Example:
 
 ```ts
-import tokens, {
-  generateCssVariables,
-  tailwindPreset,
-  tailwindTheme
-} from '@phcdevworks/spectre-tokens'
+import tokens, { generateCssVariables } from '@phcdevworks/spectre-tokens'
 
 const css = generateCssVariables(tokens, {
   selector: ':root',
@@ -497,7 +442,7 @@ Spectre keeps responsibilities separate:
 - [`@phcdevworks/spectre-tokens`](https://github.com/phcdevworks/spectre-tokens)
   defines visual language, semantic roles, and token contracts
 - [`@phcdevworks/spectre-ui`](https://github.com/phcdevworks/spectre-ui) turns
-  those contracts into reusable CSS, Tailwind tooling, and shared styling
+  those contracts into reusable CSS, utility tooling, and shared styling
   behavior
 - Adapter packages translate Spectre contracts for framework-specific delivery
 
@@ -510,7 +455,6 @@ For downstream packages and compatible apps:
 
 - import tokens from the package root when you need runtime values
 - import `index.css` when you need generated CSS variables
-- use `tailwindPreset` when you need Tailwind theme integration
 - prefer semantic namespaces for UI behavior
 - use raw palette values only when fixed palette access is intentional
 - treat `tokens/` as source of truth and generated outputs as derived
@@ -525,14 +469,14 @@ npm install
 npm run check
 ```
 
-This project expects Node.js `^22.12.0 || >=24.0.0` and npm `11.17.0`.
+This project expects Node.js `^22.12.0 || >=24.0.0` and npm `12.0.1`.
 
 ### Common commands
 
 | Command                  | What it does                                                 |
 | ------------------------ | ------------------------------------------------------------ |
 | `npm run build`          | Regenerate all outputs — run after any token source change   |
-| `npm run check`          | Full validation gate — all 16 steps must pass before commit  |
+| `npm run check`          | Full validation gate — every step must pass before commit    |
 | `npm run lint`           | Run ESLint against all source files                          |
 | `npm run format`         | Apply Prettier formatting to all files                       |
 | `npm run generate`       | Regenerate `src/generated/tokens.ts` from token sources only |

@@ -6,35 +6,33 @@ reflects package releases published to npm.
 
 ## [Unreleased]
 
+## [4.0.0] - 2026-07-25
+
+**Release Title:** Tailwind Integration Removal and Token Contract Expansion
+
 Contract change type: breaking
 
 ### Removed
 
 - Removed the `tailwindTheme` and `tailwindPreset` root exports and the
   `TailwindTheme` type export. Spectre no longer ships a Tailwind CSS
-  integration — consumers should use the `tokens` runtime object and
-  `index.css` custom properties directly, or `generateCssVariables` for a
-  custom CSS build. `contract.manifest.json`'s `requiredOutputs.tailwind`
-  section and the `check:tailwind` validation gate are removed. The consumer
-  smoke and integration fixtures no longer exercise a Tailwind config.
-
-## [3.6.0] - 2026-07-24
-
-**Release Title:** Phase 9 - Semantic Typography and Color Palette Expansion
-
-Contract change type: additive
+  integration — consumers should use the `tokens` runtime object and `index.css`
+  custom properties directly, or `generateCssVariables` for a custom CSS build.
+  `contract.manifest.json`'s `requiredOutputs.tailwind` section and the
+  `check:tailwind` validation gate are removed. The consumer smoke and
+  integration fixtures no longer exercise a Tailwind config.
 
 ### Added
 
 - Added `colors.palette` — the full Tailwind CSS v4.3 raw color ramp (red,
   orange, amber, yellow, lime, green, emerald, teal, cyan, sky, blue, indigo,
-  violet, purple, fuchsia, pink, rose, slate, gray, zinc, neutral, stone,
-  mauve, olive, mist, taupe; steps 50-950), ported to hex for consistency with
-  the rest of `colors`. This is a new, separate sub-namespace alongside the
-  existing brand/neutral/accent/success/warning/error/info ramps in `colors`
-  and does not replace or alter them. `src/css.ts`'s color CSS-variable
-  generation now walks `colors` recursively to support this extra nesting
-  depth, so existing two-level color groups are unaffected.
+  violet, purple, fuchsia, pink, rose, slate, gray, zinc, neutral, stone, mauve,
+  olive, mist, taupe; steps 50-950), ported to hex for consistency with the rest
+  of `colors`. This is a new, separate sub-namespace alongside the existing
+  brand/neutral/accent/success/warning/error/info ramps in `colors` and does not
+  replace or alter them. `src/css.ts`'s color CSS-variable generation now walks
+  `colors` recursively to support this extra nesting depth, so existing
+  two-level color groups are unaffected.
 - Added `typography.heading` (h1-h6) and `typography.body` role tokens so
   downstream consumers have a semantic heading/body contract instead of
   hand-picking raw `typography.scale` steps. Each role is a complete, portable
@@ -1084,8 +1082,8 @@ Contract change type: breaking
 - Standardized documentation and contributing guidelines.
 
 [unreleased]:
-  https://github.com/phcdevworks/spectre-tokens/compare/v3.6.0...HEAD
-[3.6.0]: https://github.com/phcdevworks/spectre-tokens/compare/v3.5.0...v3.6.0
+  https://github.com/phcdevworks/spectre-tokens/compare/v4.0.0...HEAD
+[4.0.0]: https://github.com/phcdevworks/spectre-tokens/compare/v3.5.0...v4.0.0
 [3.5.0]: https://github.com/phcdevworks/spectre-tokens/compare/v3.4.0...v3.5.0
 [3.4.0]: https://github.com/phcdevworks/spectre-tokens/compare/v3.3.1...v3.4.0
 [3.3.1]: https://github.com/phcdevworks/spectre-tokens/compare/v3.3.0...v3.3.1

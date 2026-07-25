@@ -53,18 +53,19 @@ npm run build
 npm run check
 ```
 
-`npm run check` runs: build -> manifest -> structure -> locked-color -> contrast ->
-regression -> docs -> exports -> css -> tailwind -> consumer -> integration ->
-ecosystem -> classification -> deprecation -> dist -> lint. All steps must pass
-clean.
+`npm run check` runs: build -> manifest -> structure -> locked-color -> contrast
+-> regression -> docs -> exports -> css -> typography references -> parity ->
+DTCG conformance -> DTCG round-trip -> consumer -> integration -> ecosystem ->
+classification -> deprecation -> dist -> lint. All steps must pass clean.
 
 When a gate fails, Codex must:
+
 - Identify the failing script and its output.
-- Determine whether the failure is a contract issue, a documentation drift, or
-  a generated output sync problem.
-- Fix the issue if it is within Codex scope (documentation, script, or
-  generated output sync), or clearly flag it for Claude Code if it requires
-  token source changes.
+- Determine whether the failure is a contract issue, a documentation drift, or a
+  generated output sync problem.
+- Fix the issue if it is within Codex scope (documentation, script, or generated
+  output sync), or clearly flag it for Claude Code if it requires token source
+  changes.
 
 ### 2. Change Review
 
@@ -72,18 +73,19 @@ When Claude Code (or a human) makes changes, Codex reviews for:
 
 - Contract drift between `tokens/`, `contract.manifest.json`, `src/index.ts`,
   generated outputs, `README.md`, and `TOKEN_CONTRACT.md`.
-- Unauthorized changes to locked color families (`success`, `warning`,
-  `danger`, CTA/brand-action).
+- Unauthorized changes to locked color families (`success`, `warning`, `danger`,
+  CTA/brand-action).
 - Missing contract change classification in `CHANGELOG.md [Unreleased]`.
 - Generated files that were hand-edited instead of regenerated.
 - Public namespace renames or removals without a major-version bump.
-- CSS variable or Tailwind theme drift from token source.
+- CSS variable or DTCG drift from token source.
 
 ### 3. Documentation Standardization
 
 When documentation diverges from contract reality, Codex brings it back.
 
 Audit sequence:
+
 1. `contract.manifest.json` -> source of truth for public namespaces and
    required outputs.
 2. `TOKEN_CONTRACT.md` -> must include all required headings declared in
@@ -97,22 +99,24 @@ Audit sequence:
 6. `CHANGELOG.md` -> must have a classification line in `[Unreleased]` whenever
    a contract-authority file changed.
 
-Do not expand documentation into downstream UI composition, adapter behavior,
-or framework-specific concerns. This package owns token meaning only.
+Do not expand documentation into downstream UI composition, adapter behavior, or
+framework-specific concerns. This package owns token meaning only.
 
 ### 4. Refactor Review
 
 Codex evaluates whether a refactor is warranted and scopes it conservatively.
 
 Trigger conditions for a refactor recommendation:
+
 - A validation script references a path more than once without a shared utility.
-- A script duplicates logic that `contract-utils.ts` or `token-utils.ts`
-  already provides.
+- A script duplicates logic that `contract-utils.ts` or `token-utils.ts` already
+  provides.
 - A generated output has drifted from source data in a way that suggests the
   generation logic is fragile.
 - Documentation describes behavior that has changed in the scripts.
 
 Codex does not refactor:
+
 - Token source data in `tokens/` (Claude Code authority).
 - Public API surface in `src/index.ts` or `src/types.ts` without a clear
   contract reason.
@@ -124,7 +128,9 @@ Codex does not refactor:
 Codex tracks pending unreleased work by reading `CHANGELOG.md [Unreleased]`.
 
 For each unreleased entry, verify:
-- A contract change classification line is present (`Contract change type: ...`).
+
+- A contract change classification line is present
+  (`Contract change type: ...`).
 - The type is one of: `additive`, `semantic change`, `breaking`.
 - The entries accurately describe the actual token source changes.
 - No protected color family was changed without human approval.
@@ -157,8 +163,8 @@ Use this checklist before every release handoff to Bradley Potts.
 
 ### Contract Integrity
 
-- [ ] Runtime exports, generated TypeScript types, CSS output, Tailwind output,
-      and docs describe the same public token shape.
+- [ ] Runtime exports, generated TypeScript types, CSS output, DTCG output, and
+      docs describe the same public token shape.
 - [ ] No public namespace was renamed or removed without a major-version bump.
 - [ ] No generated files in `src/generated/` or `dist/` were hand-edited.
 - [ ] `contract.manifest.json` version and required outputs match the actual
@@ -169,8 +175,8 @@ Use this checklist before every release handoff to Bradley Potts.
 - [ ] `CHANGELOG.md [Unreleased]` has a `Contract change type:` classification
       line.
 - [ ] Classification is accurate: `additive`, `semantic change`, or `breaking`.
-- [ ] All changed items are described with enough detail for downstream consumers
-      to understand the impact.
+- [ ] All changed items are described with enough detail for downstream
+      consumers to understand the impact.
 
 ### Release Mechanics
 
@@ -205,8 +211,8 @@ npm run check:exports    # validates public runtime exports match contract
 If any of these fail, audit the relevant file:
 
 - `check:manifest` failure -> `README.md` or `TOKEN_CONTRACT.md` are missing
-  required section markers. Add the missing markers; do not restructure
-  sections unnecessarily.
+  required section markers. Add the missing markers; do not restructure sections
+  unnecessarily.
 - `check:docs` failure -> heading case or wording drifted. Match exactly.
 - `check:exports` failure -> runtime exports in `src/index.ts` no longer match
   the declared contract. This requires Claude Code review if token source
@@ -218,16 +224,17 @@ If any of these fail, audit the relevant file:
 
 Before recommending a refactor, answer:
 
-1. **Does a shared utility already exist for this?**
-   Check `scripts/contract-utils.ts` and `scripts/token-utils.ts` first.
-2. **Is the duplication actually causing drift or bugs?**
-   If no, leave it. Three similar lines is better than a premature abstraction.
-3. **Does the refactor require contract-authority file changes?**
-   If yes, classify the change and flag it in `CHANGELOG.md [Unreleased]`.
-4. **Does the refactor touch protected color families?**
-   If yes, stop and confirm with Bradley Potts before proceeding.
+1. **Does a shared utility already exist for this?** Check
+   `scripts/contract-utils.ts` and `scripts/token-utils.ts` first.
+2. **Is the duplication actually causing drift or bugs?** If no, leave it. Three
+   similar lines is better than a premature abstraction.
+3. **Does the refactor require contract-authority file changes?** If yes,
+   classify the change and flag it in `CHANGELOG.md [Unreleased]`.
+4. **Does the refactor touch protected color families?** If yes, stop and
+   confirm with Bradley Potts before proceeding.
 
 Approved refactor scope for Codex:
+
 - Validation scripts in `scripts/` that do not change what they validate.
 - Shared utility extraction within `scripts/` when logic is clearly repeated.
 - Documentation rewriting for clarity when content is accurate but inconsistent
@@ -235,6 +242,7 @@ Approved refactor scope for Codex:
 - Build script cleanup that produces identical output.
 
 Not approved without Claude Code or human confirmation:
+
 - Changes to `src/index.ts`, `src/types.ts`, or `src/css.ts`.
 - Changes to `tokens/*.json`.
 - Changes that alter what `npm run check` validates.
@@ -243,9 +251,9 @@ Not approved without Claude Code or human confirmation:
 
 ## Git Boundaries
 
-Codex may inspect git status and diffs freely. Codex must not reset, discard,
-or overwrite changes it did not make. Existing local edits are assumed to belong
-to Bradley Potts, Claude Code, or another active process.
+Codex may inspect git status and diffs freely. Codex must not reset, discard, or
+overwrite changes it did not make. Existing local edits are assumed to belong to
+Bradley Potts, Claude Code, or another active process.
 
 Codex does not commit by default. Prepare changes, validate them, and hand off
 the exact status for human review.

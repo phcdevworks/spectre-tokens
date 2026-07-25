@@ -11,8 +11,8 @@ Spectre is organized as a strict layered system:
 ### Layer 1: `@phcdevworks/spectre-tokens`
 
 - Purpose: define semantic design values and token contracts
-- Scope: token JSON, transforms, typed exports, CSS variables, Tailwind theme
-  exports, and validation tooling
+- Scope: token JSON, transforms, typed exports, CSS variables, DTCG exports, and
+  validation tooling
 
 ### Layer 2: `@phcdevworks/spectre-ui`
 
@@ -52,7 +52,7 @@ structure, adapters define delivery.
 3. Treat deletions and renames as breaking changes unless they are part of a
    planned major release.
 4. Ensure new token categories are reflected in generated TypeScript, CSS, and
-   Tailwind outputs when applicable.
+   DTCG outputs when applicable.
 5. Do not modify locked `success`, `warning`, `danger`, or CTA/brand-action
    color contracts unless explicitly approved.
 6. Keep `contract.manifest.json` aligned with the public token contract.
@@ -64,7 +64,7 @@ structure, adapters define delivery.
 `contract.manifest.json` is the single machine-readable authority for:
 
 - public namespaces
-- required output surfaces: JavaScript, CSS, and Tailwind
+- required output surfaces: JavaScript, CSS, and DTCG
 - protected semantic groups
 - the enforced public contract surface required for release
 
@@ -72,11 +72,16 @@ Validation fails fast when:
 
 - token paths are overwritten across `tokens/*.json`
 - namespaces exist in outputs but are undocumented by the contract authority
-- JavaScript, CSS, and Tailwind outputs drift from the declared contract
+- JavaScript, CSS, and DTCG outputs drift from the declared contract
 - `README.md` drifts from the declared contract
-- any mismatch between `contract.manifest.json` and generated outputs or public exports is detected by `npm run check`
+- any mismatch between `contract.manifest.json` and generated outputs or public
+  exports is detected by `npm run check`
 
-Treat `contract.manifest.json` as release-blocking authority, not optional documentation. If the declared contract does not match generated outputs or exports, `npm run check` must fail and the release must not proceed. Any change to the contract surface must be intentional and reviewed for versioning impact before release.
+Treat `contract.manifest.json` as release-blocking authority, not optional
+documentation. If the declared contract does not match generated outputs or
+exports, `npm run check` must fail and the release must not proceed. Any change
+to the contract surface must be intentional and reviewed for versioning impact
+before release.
 
 ### Code and tooling
 
@@ -175,7 +180,8 @@ W3C DTCG (Design Tokens Community Group) format export — each token has
 
 ### Keeping Figma in sync with source
 
-- After any token change, run `npm run build` to regenerate `dist/tokens.dtcg.json`.
+- After any token change, run `npm run build` to regenerate
+  `dist/tokens.dtcg.json`.
 - Commit the updated `dist/tokens.dtcg.json` alongside the token source change.
 - In Figma, trigger a pull from Tokens Studio to pick up the new values.
 

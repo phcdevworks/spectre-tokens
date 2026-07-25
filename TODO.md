@@ -323,13 +323,13 @@ values or inventing local token contracts.
 ## Phase 5 - CSS Generation Bug: Dropped Semantic Variables
 
 `generateCssVariables` in `src/css.ts` builds `dist/index.css` from a
-hand-maintained `semanticEntries` array (around line 346), not by iterating
-the full `tokens` object. `link.*` and `surface.hover/selected/active/divider`
-exist in `tokens/semantic-roles.json` and in the compiled `tokens` export
-(confirmed via `dist/index.js`), but have no corresponding entries in
-`semanticEntries`, so they are silently omitted from `dist/index.css` in every
-release, including `2.9.0` and `3.0.0`. TODO.md Phase 4 P1 incorrectly marked
-these as fully "Delivered" — they shipped to JS/TS/types but never to CSS.
+hand-maintained `semanticEntries` array (around line 346), not by iterating the
+full `tokens` object. `link.*` and `surface.hover/selected/active/divider` exist
+in `tokens/semantic-roles.json` and in the compiled `tokens` export (confirmed
+via `dist/index.js`), but have no corresponding entries in `semanticEntries`, so
+they are silently omitted from `dist/index.css` in every release, including
+`2.9.0` and `3.0.0`. TODO.md Phase 4 P1 incorrectly marked these as fully
+"Delivered" — they shipped to JS/TS/types but never to CSS.
 
 ### P0: Fix Missing CSS Variable Output
 
@@ -345,22 +345,22 @@ these as fully "Delivered" — they shipped to JS/TS/types but never to CSS.
 
 - [x] Add `surface.hover/selected/active/divider` to `semanticEntries` in
       `src/css.ts`
-  - Delivered: added as four new mode-aware `semanticEntries` rows following
-    the existing `surface.*` pattern. Emits `--sp-surface-hover`,
+  - Delivered: added as four new mode-aware `semanticEntries` rows following the
+    existing `surface.*` pattern. Emits `--sp-surface-hover`,
     `--sp-surface-selected`, `--sp-surface-active`, `--sp-surface-divider` in
     both light and dark blocks of `dist/index.css`.
 
-- [x] Add a regression test asserting every top-level key under
-      `tokens.link` and `tokens.surface` has a corresponding CSS variable in
+- [x] Add a regression test asserting every top-level key under `tokens.link`
+      and `tokens.surface` has a corresponding CSS variable in
       `generateCssVariables` output
   - Delivered: `tests/css-semantic-coverage.test.ts` iterates
     `Object.keys(tokens.link)` and `Object.keys(tokens.modes.default.surface)`
-    and asserts each has a matching `--sp-link-*` / `--sp-surface-*` variable
-    in the generated CSS string.
+    and asserts each has a matching `--sp-link-*` / `--sp-surface-*` variable in
+    the generated CSS string.
 
-- [x] Republish a patch/minor release once fixed and update
-      `spectre-ui`'s `TODO.md` Phase 3 P2 to unblock Link, interactive surface
-      state, and Divider styling work.
+- [x] Republish a patch/minor release once fixed and update `spectre-ui`'s
+      `TODO.md` Phase 3 P2 to unblock Link, interactive surface state, and
+      Divider styling work.
   - Delivered in `3.1.0`, which is published on npm as the current latest
     version. Release authority and the `spectre-ui` TODO update belong to
     Bradley Potts per the Release Procedure in `CLAUDE.md`.
@@ -369,13 +369,12 @@ these as fully "Delivered" — they shipped to JS/TS/types but never to CSS.
 
 ## Phase 6 - Layout Width Scale
 
-Real downstream need: `spectre-ui` Phase 4d (app shell layout — Sidebar
-recipe, Container `maxWidth` prose variant) needs fixed-width values that do
-not exist anywhere in the published token object today. Confirmed by reading
-the live package directly (`require('@phcdevworks/spectre-tokens').tokens`)
-— `layout` only has `section`, `stack` (gap only), and `container`
-(`paddingInline` + one fixed `maxWidth`). There is no `width` or `sizing`
-namespace at all.
+Real downstream need: `spectre-ui` Phase 4d (app shell layout — Sidebar recipe,
+Container `maxWidth` prose variant) needs fixed-width values that do not exist
+anywhere in the published token object today. Confirmed by reading the live
+package directly (`require('@phcdevworks/spectre-tokens').tokens`) — `layout`
+only has `section`, `stack` (gap only), and `container` (`paddingInline` + one
+fixed `maxWidth`). There is no `width` or `sizing` namespace at all.
 
 ### P0: Add Missing Width Tokens
 
@@ -384,28 +383,27 @@ namespace at all.
       multi-size scale unless a second real consumer need shows up.
   - Delivered: `layout.sidebar.width` = `16rem` in `tokens/semantic-roles.json`,
     typed in `src/types.ts`, emitted as `--sp-layout-sidebar-width` in
-    `src/css.ts`, and mapped to `width.sidebar` in the Tailwind theme export
-    in `src/index.ts`.
+    `src/css.ts`, and mapped to `width.sidebar` in the Tailwind theme export in
+    `src/index.ts`.
 
-- [x] Add a second `container.maxWidth` value for readable prose width
-      (e.g. nested under `layout.container.maxWidth` as a named variant
-      alongside the existing default) — coordinate exact naming with
-      `spectre-ui`'s Phase 4d before finalizing, since it consumes this
-      directly.
+- [x] Add a second `container.maxWidth` value for readable prose width (e.g.
+      nested under `layout.container.maxWidth` as a named variant alongside the
+      existing default) — coordinate exact naming with `spectre-ui`'s Phase 4d
+      before finalizing, since it consumes this directly.
   - Delivered as a sibling key, `layout.container.maxWidthProse` = `65ch`,
     rather than nesting `maxWidth` into an object — keeps the existing
     `layout.container.maxWidth` string contract non-breaking. Emitted as
-    `--sp-layout-container-max-width-prose` and mapped to `maxWidth.prose`
-    in the Tailwind theme export. Naming/shape not yet confirmed against
+    `--sp-layout-container-max-width-prose` and mapped to `maxWidth.prose` in
+    the Tailwind theme export. Naming/shape not yet confirmed against
     `spectre-ui`'s actual Phase 4d consumption — flag for adjustment if it
     expects a different path.
 
-- [x] Publish and version-bump. This was a hard blocker for `spectre-ui`
-      Phase 4d, not a parallel-track item.
+- [x] Publish and version-bump. This was a hard blocker for `spectre-ui` Phase
+      4d, not a parallel-track item.
   - Delivered in `3.1.0` (published on npm as the current latest version):
-    layout width tokens are available to unblock `spectre-ui` Phase 4d.
-    Release authority remains with Bradley Potts per the Release Procedure
-    in `CLAUDE.md`.
+    layout width tokens are available to unblock `spectre-ui` Phase 4d. Release
+    authority remains with Bradley Potts per the Release Procedure in
+    `CLAUDE.md`.
 
 ---
 
@@ -436,27 +434,25 @@ pattern Phase 4 used for Nav/Toast/Tooltip/Dropdown/Modal. `spectre-ui`'s own
     `disabledBg`, `disabledBorder`, `focusBorder`, emitted as `--sp-select-*`.
 
 - [x] Add `component.textarea` token group
-  - Delivered as its own group (not merged with `component.input`, which
-    remains the minimal `text`/`placeholder` pair it already was) with roles
-    `bg`, `border`, `text`, `placeholder`, `disabledBg`, `disabledBorder`,
+  - Delivered as its own group (not merged with `component.input`, which remains
+    the minimal `text`/`placeholder` pair it already was) with roles `bg`,
+    `border`, `text`, `placeholder`, `disabledBg`, `disabledBorder`,
     `focusBorder`, emitted as `--sp-textarea-*`.
 
 - [x] Add `component.fieldset` token group
-  - Delivered with roles `border`, `legendText`, emitted as
-    `--sp-fieldset-*`.
+  - Delivered with roles `border`, `legendText`, emitted as `--sp-fieldset-*`.
 
 - [x] Add `component.label` token group
   - Delivered with roles `text`, `disabledText`, `requiredIndicatorText`,
     emitted as `--sp-label-*`.
 
-- [x] Publish once all six groups land. This is a hard
-      blocker for the corresponding `spectre-ui` recipes
-      (`getCheckboxClasses`, `getRadioClasses`, `getSelectClasses`,
-      `getTextareaClasses`, `getFieldsetClasses`, `getLabelClasses`).
+- [x] Publish once all six groups land. This is a hard blocker for the
+      corresponding `spectre-ui` recipes (`getCheckboxClasses`,
+      `getRadioClasses`, `getSelectClasses`, `getTextareaClasses`,
+      `getFieldsetClasses`, `getLabelClasses`).
   - Delivered: `3.2.0` published on npm (`package.json` version matches).
-    Unblocks the corresponding `spectre-ui` form-field recipes. The
-    `v3.2.0` git tag has since been created (tags now run through
-    `v3.3.1`).
+    Unblocks the corresponding `spectre-ui` form-field recipes. The `v3.2.0` git
+    tag has since been created (tags now run through `v3.3.1`).
 
 ---
 
@@ -465,16 +461,16 @@ pattern Phase 4 used for Nav/Toast/Tooltip/Dropdown/Modal. `spectre-ui`'s own
 `spectre-ui` audited `component.select`/`component.textarea` while adding
 `size`/`fullWidth`/`pill` options to `getSelectClasses`/`getTextareaClasses`
 (2026-06-30) and found both groups only carry
-`bg`/`border`/`text`/`placeholder`/`disabledBg`/`disabledBorder`/
-`focusBorder` roles — no `invalid`/`success` (or `loading`) color roles,
-unlike `component.input`'s `bg`/`border` pairs for `error` and `success`
-states (emitted as `--sp-component-input-role-border-error` /
-`-bg-error` / `-border-success` / `-bg-success`). This blocks
-`spectre-ui`'s Phase 5 P0 from adding `invalid`/`success`/`loading` options
-to `getSelectClasses`/`getTextareaClasses` without either reusing
-`component.input`'s role tokens (blurs the per-component namespace
-boundary) or inventing local color values (violates the zero-raw-value
-rule) — see `spectre-ui/TODO.md` Phase 5 P0.
+`bg`/`border`/`text`/`placeholder`/`disabledBg`/`disabledBorder`/ `focusBorder`
+roles — no `invalid`/`success` (or `loading`) color roles, unlike
+`component.input`'s `bg`/`border` pairs for `error` and `success` states
+(emitted as `--sp-component-input-role-border-error` / `-bg-error` /
+`-border-success` / `-bg-success`). This blocks `spectre-ui`'s Phase 5 P0 from
+adding `invalid`/`success`/`loading` options to
+`getSelectClasses`/`getTextareaClasses` without either reusing
+`component.input`'s role tokens (blurs the per-component namespace boundary) or
+inventing local color values (violates the zero-raw-value rule) — see
+`spectre-ui/TODO.md` Phase 5 P0.
 
 ### P0: Add Missing State Roles
 
@@ -485,13 +481,13 @@ rule) — see `spectre-ui/TODO.md` Phase 5 P0.
       audit).
 - [x] Add `borderSuccess`, `bgSuccess` to `component.select` and
       `component.textarea`, mirroring `forms.valid`'s border/bg pair
-      (`colors.success.500` / `colors.success.50`), paired with `text` the
-      same way.
+      (`colors.success.500` / `colors.success.50`), paired with `text` the same
+      way.
 - [x] Decided `loading` stays structural-only (opacity/cursor, no new token),
       matching `getInputClasses`'s existing `sp-input--loading` handling in
       `spectre-ui` (`src/styles/components.css`) — no color role added.
-- [x] Published in `3.3.0`, with the CSS/types sync bug fixed in `3.3.1`
-      (see below). `spectre-ui` now declares `^3.3.1` and can adopt the
+- [x] Published in `3.3.0`, with the CSS/types sync bug fixed in `3.3.1` (see
+      below). `spectre-ui` now declares `^3.3.1` and can adopt the
       `invalid`/`success` options on `getSelectClasses`/`getTextareaClasses`
       tracked in its Phase 5 P0 TODO.
 
@@ -507,9 +503,9 @@ previously-undetected instances of this bug:
 
 - `component.select`/`component.textarea`: the `3.3.0` token-source change
   (`borderInvalid`, `bgInvalid`, `borderSuccess`, `bgSuccess`) was never added
-  to `SELECT_FIELDS`/`TEXTAREA_FIELDS`, so `dist/index.css` (light and dark)
-  and `ComponentSelectTokens`/`ComponentTextareaTokens` in `src/types.ts`
-  shipped without the new `--sp-select-border-invalid` / `-bg-invalid` /
+  to `SELECT_FIELDS`/`TEXTAREA_FIELDS`, so `dist/index.css` (light and dark) and
+  `ComponentSelectTokens`/`ComponentTextareaTokens` in `src/types.ts` shipped
+  without the new `--sp-select-border-invalid` / `-bg-invalid` /
   `-border-success` / `-bg-success` variables (and `--sp-textarea-*`
   equivalents) despite the `3.3.0` changelog claiming they were emitted.
 - `component.badge`: the `*BgHover` fields (`neutralBgHover`, `infoBgHover`,
@@ -528,43 +524,41 @@ fix's regression test only covered `tokens.link`/`tokens.surface`, not
 - [x] Added the four missing entries to `SELECT_FIELDS`/`TEXTAREA_FIELDS` in
       `src/css.ts` and to `ComponentSelectTokens`/`ComponentTextareaTokens` in
       `src/types.ts`.
-- [x] Added the missing `bgHoverKey` mapping to `BADGE_VARIANTS` in
-      `src/css.ts` so `--sp-badge-<variant>-bg-hover` is emitted for all five
-      variants.
+- [x] Added the missing `bgHoverKey` mapping to `BADGE_VARIANTS` in `src/css.ts`
+      so `--sp-badge-<variant>-bg-hover` is emitted for all five variants.
 - [x] Added new `TESTIMONIAL_FIELDS`, `PRICING_CARD_FIELDS`, `RATING_FIELDS`
       arrays in `src/css.ts` and wired them into `generateCssVariables`, so
       `component.testimonial`/`component.pricingCard`/`component.rating` now
-      emit CSS variables for the first time.
-      Rebuilt — `dist/index.css` now emits all of the above in both light
-      and dark blocks.
-- [x] Extended `tests/css-semantic-coverage.test.ts` to assert every key
-      under every `tokens.component.*` group has a matching CSS variable in
-      `generateCssVariables` output, generalizing the Phase 5 regression
-      test so this bug class can't silently recur on any component group.
-- [x] Full `npm run check` gate passes clean, including `check:dist`, plus
-      full `vitest run` (47/47 tests passing).
+      emit CSS variables for the first time. Rebuilt — `dist/index.css` now
+      emits all of the above in both light and dark blocks.
+- [x] Extended `tests/css-semantic-coverage.test.ts` to assert every key under
+      every `tokens.component.*` group has a matching CSS variable in
+      `generateCssVariables` output, generalizing the Phase 5 regression test so
+      this bug class can't silently recur on any component group.
+- [x] Full `npm run check` gate passes clean, including `check:dist`, plus full
+      `vitest run` (47/47 tests passing).
 - [x] Hand off to Bradley Potts to publish as `3.3.1` — patch fix, `### Fixed`
       changelog entry distinct from the `3.3.0` `### Added` entry.
-- [x] `spectre-ui` should bump its declared `spectre-tokens` range to
-      `^3.3.1` (not `^3.3.0`) before starting Phase 5 P0 adoption, since
-      `3.3.0` is missing the variables it needs.
+- [x] `spectre-ui` should bump its declared `spectre-tokens` range to `^3.3.1`
+      (not `^3.3.0`) before starting Phase 5 P0 adoption, since `3.3.0` is
+      missing the variables it needs.
 
 ---
 
-## Phase 9 - Semantic Typography and Color Palette Expansion (done in 3.6.0)
+## Phase 9 - Semantic Typography and Color Palette Expansion (included in 4.0.0)
 
-- [x] Add `colors.palette` — the full Tailwind CSS v4.3 raw color ramp
-      (red through stone plus mauve/olive/mist/taupe, steps 50-950), ported
-      to hex, as a new sub-namespace alongside the existing brand/neutral/
+- [x] Add `colors.palette` — the full Tailwind CSS v4.3 raw color ramp (red
+      through stone plus mauve/olive/mist/taupe, steps 50-950), ported to hex,
+      as a new sub-namespace alongside the existing brand/neutral/
       accent/success/warning/error/info ramps in `colors`.
 - [x] Add `typography.heading` (h1-h6) and `typography.body` role tokens
       expressed via `{typography.scale.*}` / `{typography.families.*}`
-      references, giving downstream consumers a semantic heading/body
-      contract instead of hand-picking raw `typography.scale` steps.
+      references, giving downstream consumers a semantic heading/body contract
+      instead of hand-picking raw `typography.scale` steps.
 - [x] Add `check:typography-refs` validation gate (part of `npm run check`)
       confirming every heading/body role resolves to a valid scale/family
       reference.
-- [x] Published in `3.6.0`.
+- [x] Included in the `4.0.0` release candidate after `3.6.0` was not published.
 
 ---
 
@@ -582,23 +576,23 @@ fix's regression test only covered `tokens.link`/`tokens.surface`, not
    `surface.hero` documented with explicit usage constraints.
 8. **Phase 5 — done and published in `3.1.0`.** `link.*` and
    `surface.hover/selected/active/divider` now emit correctly in
-   `dist/index.css`, with a regression test guarding against recurrence.
-   This unblocks the `spectre-ui` Phase 3 P2 token dependency.
-9. **Phase 6 — done and published in `3.1.0`.** Added
-   `layout.sidebar.width` (`16rem`) and `layout.container.maxWidthProse`
-   (`65ch`) to unblock `spectre-ui` Phase 4d.
+   `dist/index.css`, with a regression test guarding against recurrence. This
+   unblocks the `spectre-ui` Phase 3 P2 token dependency.
+9. **Phase 6 — done and published in `3.1.0`.** Added `layout.sidebar.width`
+   (`16rem`) and `layout.container.maxWidthProse` (`65ch`) to unblock
+   `spectre-ui` Phase 4d.
 10. **Phase 7 — done and published in `3.2.0`.** Added `component.checkbox`,
     `component.radio`, `component.select`, `component.textarea`,
     `component.fieldset`, and `component.label` token groups. Unblocks the
     corresponding `spectre-ui` form-field recipes.
-11. **Phase 8 — done and published in `3.3.0`, CSS generation fix in
-    `3.3.1`.** Added `borderInvalid`/`bgInvalid`/`borderSuccess`/`bgSuccess`
-    to `component.select`/`component.textarea`; fixed a class of hand-
+11. **Phase 8 — done and published in `3.3.0`, CSS generation fix in `3.3.1`.**
+    Added `borderInvalid`/`bgInvalid`/`borderSuccess`/`bgSuccess` to
+    `component.select`/`component.textarea`; fixed a class of hand-
     maintained-array CSS generation gaps affecting select, textarea, badge,
     testimonial, pricingCard, and rating token groups.
-12. **Phase 9 — done and published in `3.6.0`.** Added `colors.palette`
-    (full Tailwind v4.3 raw ramp) and `typography.heading`/`typography.body`
-    semantic role tokens.
+12. **Phase 9 — done and included in the `4.0.0` release candidate.** Added
+    `colors.palette` (full Tailwind v4.3 raw ramp) and
+    `typography.heading`/`typography.body` semantic role tokens.
 13. **Phase 10 — active.** Utility-engine token foundation for `spectre-ui`
     Phase 7. See below.
 
@@ -607,72 +601,69 @@ fix's regression test only covered `tokens.link`/`tokens.surface`, not
 ## Phase 10 - Utility-Engine Token Foundation (Tailwind Replacement, Active)
 
 PHCDevworks is replacing TailwindCSS across the Spectre design system with a
-first-party, token-driven utility-class engine owned by `spectre-ui`. This
-phase is a deliberate exception to Phase 9's demand-driven-only closing
-policy: `spectre-ui`'s Phase 7 needs a broader, generator-ready raw color and
-scale surface to expand its own utility-class coverage ahead of building
-that engine — the concrete downstream requirement Phase 9 P3's
-`check:downstream` mechanism was built to detect, not speculative namespace
-expansion. The utility-class engine itself is entirely `spectre-ui` Phase 7
-scope; this package's role is publishing the raw token surface it consumes
-and retiring the Tailwind exports.
+first-party, token-driven utility-class engine owned by `spectre-ui`. This phase
+is a deliberate exception to Phase 9's demand-driven-only closing policy:
+`spectre-ui`'s Phase 7 needs a broader, generator-ready raw color and scale
+surface to expand its own utility-class coverage ahead of building that engine —
+the concrete downstream requirement Phase 9 P3's `check:downstream` mechanism
+was built to detect, not speculative namespace expansion. The utility-class
+engine itself is entirely `spectre-ui` Phase 7 scope; this package's role is
+publishing the raw token surface it consumes and retiring the Tailwind exports.
 
-`colors.palette.<hue>.<step>` (26 hues, steps 50-950) already shipped in
-`3.6.0` ahead of this phase being formally opened; it is the raw material
-this phase's `spectre-ui` utility-engine work consumes, additive alongside
-the existing `colors.brand`/`neutral`/`accent`/`success`/`warning`/`error`/
-`info` ramps.
+`colors.palette.<hue>.<step>` (26 hues, steps 50-950) is included in the `4.0.0`
+release candidate; it is the raw material this phase's `spectre-ui`
+utility-engine work consumes, additive alongside the existing
+`colors.brand`/`neutral`/`accent`/`success`/`warning`/`error`/`info` ramps.
 
 Resolved: the resulting utility layer is token-only, no escape hatch. No raw
-hex/px/rem values are introduced downstream as a result of this phase; a
-design need outside the existing scale is a token proposal, not an arbitrary
-value in markup. `success`/`warning`/`danger`/CTA-brand-action remain locked
-— no changes to these families under this phase.
+hex/px/rem values are introduced downstream as a result of this phase; a design
+need outside the existing scale is a token proposal, not an arbitrary value in
+markup. `success`/`warning`/`danger`/CTA-brand-action remain locked — no changes
+to these families under this phase.
 
 ### P0: Gap Closure
 
 - [ ] Reconfirm `src/css.ts`'s recursive color walker reaches every
       `colors.palette.<hue>.<step>` leaf per `check:parity`'s `outputParity`
-      section. Already verified clean once; this is a re-confirmation at
-      phase start, not new work.
-- [ ] Add a `containerQueries` breakpoint namespace only if `spectre-ui`
-      Phase 7's responsive-variant design ends up needing `@container`
-      support. Do not add speculatively ahead of that decision.
+      section. Already verified clean once; this is a re-confirmation at phase
+      start, not new work.
+- [ ] Add a `containerQueries` breakpoint namespace only if `spectre-ui` Phase
+      7's responsive-variant design ends up needing `@container` support. Do not
+      add speculatively ahead of that decision.
 
 ### P1: Utility-Contract Manifest Surface
 
 - [ ] Default position: no new `contract.manifest.json` section needed. The
-      utility engine consumes published CSS variables through the same
-      contract every recipe already uses (a Layer 2 concern). Only add
-      manifest surface here if `spectre-ui` Phase 7 P0 surfaces a
-      token-shape guarantee `outputParity` doesn't already provide.
+      utility engine consumes published CSS variables through the same contract
+      every recipe already uses (a Layer 2 concern). Only add manifest surface
+      here if `spectre-ui` Phase 7 P0 surfaces a token-shape guarantee
+      `outputParity` doesn't already provide.
 
 ### P2: Tailwind Export Removal — Done
 
 - [x] Removed `tailwindTheme`/`tailwindPreset` root exports and the
       `TailwindTheme` type from `src/index.ts`/`src/types.ts`, rather than
       deprecating first — a direct breaking removal ahead of `spectre-ui`'s
-      generator landing, since this package no longer treats a Tailwind
-      preset as part of its public contract.
-- [x] Removed `contract.manifest.json`'s `requiredOutputs.tailwind` section
-      and its entries from `rootExports`/`rootTypeExports`.
+      generator landing, since this package no longer treats a Tailwind preset
+      as part of its public contract.
+- [x] Removed `contract.manifest.json`'s `requiredOutputs.tailwind` section and
+      its entries from `rootExports`/`rootTypeExports`.
 - [x] Deleted `check:tailwind` (`scripts/check-tailwind-contract.ts`) and the
       Tailwind-specific assertions in `check-contract-manifest.ts`,
       `check-consumer-smoke.ts`, `check-integration.ts`, and
       `contract-utils.ts`.
 - [x] Removed `tailwind.config.ts` from `example/smoke-consumer/` and
-      `example/integration-fixture/`; updated `consumer.ts`/`consumer.mjs`
-      to drop Tailwind-derived assertions.
-- [x] Classified `Contract change type: breaking` in `CHANGELOG.md
-      [Unreleased]`. Full `npm run check` gate passes clean.
-- [ ] Coordinate with the equivalent removal/migration in `spectre-ui`
-      Phase 7 P2 — any downstream repo still importing `tailwindTheme`/
-      `tailwindPreset` will break on upgrade to the version publishing this
-      change.
+      `example/integration-fixture/`; updated `consumer.ts`/`consumer.mjs` to
+      drop Tailwind-derived assertions.
+- [x] Classified `Contract change type: breaking` in the `CHANGELOG.md` `4.0.0`
+      release entry.
+- [ ] Coordinate with the equivalent removal/migration in `spectre-ui` Phase 7
+      P2 — any downstream repo still importing `tailwindTheme`/ `tailwindPreset`
+      will break on upgrade to the version publishing this change.
 
 **Unblocks:** `spectre-ui` Phase 7 P0/P1 — the generator cannot consume
-`colors.palette` or any new container-query tokens until they are published
-here first.
+`colors.palette` or any new container-query tokens until they are published here
+first.
 
 ---
 

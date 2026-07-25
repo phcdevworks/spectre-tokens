@@ -24,15 +24,20 @@ referencing this file and `contract.manifest.json`.
 
 ## Commit Policy
 
-Claude Code does not create git commits in this repository. Prepare changes, run
-all validation, and leave staging, committing, tagging, and pushing to human
-review.
+Claude Code has full commit, push, and tag authority in this repository,
+effective 2026-07-25 by explicit direction from Bradley Potts. Run all
+validation (`npm run check`) before committing, then stage, commit, tag, and
+push without per-action confirmation. This includes direct pushes to `main`
+and cutting release tags for this npm-published package — there is no
+additional review gate before a change, including a breaking change, reaches
+a tag or push under this policy.
 
 ## Pull Request Creation
 
-Follow the shared PR requirements in `AGENTS.md`. Claude Code prepares validated
-changes for human review; Bradley Potts handles final commit, merge, tag, and
-release authority.
+Follow the shared PR requirements in `AGENTS.md`. Claude Code may create
+commits and tags directly per the Commit Policy above; PR creation still
+follows the process in `AGENTS.md` where the repository's workflow calls for
+a PR rather than a direct push.
 
 ## The One Rule That Overrides Everything
 
@@ -49,15 +54,16 @@ npm run check         # full validation gate - must pass before any commit
 ```
 
 `npm run check` runs build -> manifest -> structure -> locked-color -> contrast
--> regression -> docs -> exports -> css -> tailwind -> consumer -> integration
--> ecosystem -> classification -> deprecation -> dist -> lint. All must pass.
+-> regression -> docs -> exports -> css -> typography references -> parity ->
+DTCG conformance -> DTCG round-trip -> consumer -> integration -> ecosystem ->
+classification -> deprecation -> dist -> lint. All must pass.
 
 ## File Structure
 
 ```
 tokens/               source token JSON (source of truth)
 src/
-  index.ts            public package entry point and Tailwind theme
+  index.ts            public package entry point
   css.ts              CSS variable generation
   types.ts            public TypeScript types
   generated/
@@ -77,25 +83,24 @@ Changes to those files must be regenerated, validated, and classified in
 
 ## Key Scripts Reference
 
-| Script                 | What it validates                                                                    |
-| ---------------------- | ------------------------------------------------------------------------------------ |
-| `check:manifest`       | public namespaces and required outputs vs contract.manifest.json                     |
-| `check:structure`      | token tree shape                                                                     |
-| `check:locked`         | protected color families unchanged                                                   |
-| `check:contrast`       | WCAG AA contrast for all paired tokens                                               |
-| `check:regression`     | token values unchanged vs baseline                                                   |
-| `check:docs`           | README.md and TOKEN_CONTRACT.md aligned to manifest                                  |
-| `check:exports`        | public runtime exports match declared contract                                       |
-| `check:css`            | required CSS variables present                                                       |
-| `check:tailwind`       | Tailwind theme values match token contract                                           |
-| `check:parity`         | exhaustive JS/TS/CSS/DTCG leaf-path coverage per contract.manifest.json outputParity |
-| `check:dtcg`           | every DTCG $value matches its declared $type structural shape                        |
-| `check:dtcg-roundtrip` | a real DTCG consumer (Style Dictionary) builds dist/tokens.dtcg.json successfully    |
-| `check:consumer`       | downstream smoke fixture passes                                                      |
-| `check:classification` | contract-authority changes have changelog entry                                      |
-| `check:dist`           | dist artifacts are in sync with source                                               |
+| Script                 | What it validates                                                                                                                                                    |
+| ---------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `check:manifest`       | public namespaces and required outputs vs contract.manifest.json                                                                                                     |
+| `check:structure`      | token tree shape                                                                                                                                                     |
+| `check:locked`         | protected color families unchanged                                                                                                                                   |
+| `check:contrast`       | WCAG AA contrast for all paired tokens                                                                                                                               |
+| `check:regression`     | token values unchanged vs baseline                                                                                                                                   |
+| `check:docs`           | README.md and TOKEN_CONTRACT.md aligned to manifest                                                                                                                  |
+| `check:exports`        | public runtime exports match declared contract                                                                                                                       |
+| `check:css`            | required CSS variables present                                                                                                                                       |
+| `check:parity`         | exhaustive JS/TS/CSS/DTCG leaf-path coverage per contract.manifest.json outputParity                                                                                 |
+| `check:dtcg`           | every DTCG $value matches its declared $type structural shape                                                                                                        |
+| `check:dtcg-roundtrip` | a real DTCG consumer (Style Dictionary) builds dist/tokens.dtcg.json successfully                                                                                    |
+| `check:consumer`       | downstream smoke fixture passes                                                                                                                                      |
+| `check:classification` | contract-authority changes have changelog entry                                                                                                                      |
+| `check:dist`           | dist artifacts are in sync with source                                                                                                                               |
 | `check:downstream`     | packs the tarball and runs spectre-ui/spectre-ui-astro/spectre-components's own `npm run check` against it (sibling repos on disk only; not part of `npm run check`) |
-| `lint`                 | ESLint passes                                                    |
+| `lint`                 | ESLint passes                                                                                                                                                        |
 
 ## Token Change Procedure
 
@@ -125,8 +130,8 @@ Current: `colors`, `space`, `layout`, `radii`, `typography`, `font`, `shadows`,
 `icons`, `border`, `accessibility`, `buttons`, `forms`, `link`, `surface`,
 `text`, `component`, `modes`
 
-Phase 4 (see `TODO.md`) is complete. No active planning focus is currently
-open; next priorities are tracked in `TODO.md` as they are identified.
+Phase 4 (see `TODO.md`) is complete. No active planning focus is currently open;
+next priorities are tracked in `TODO.md` as they are identified.
 
 Adding a new namespace is additive. Removing or renaming is breaking. The banned
 namespace is `borders` - always use `border` (singular).

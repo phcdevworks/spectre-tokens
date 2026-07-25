@@ -20,19 +20,20 @@ the contract layer.
 - `contract.manifest.json` is the machine-readable contract authority for public
   namespaces, required outputs, protected semantic groups, and change
   classification rules.
-- A 16-gate `npm run check` validation chain covers: build, manifest, structure,
-  locked color, contrast, regression, docs, exports, CSS, Tailwind, consumer
-  smoke, integration, ecosystem, classification, deprecation, dist sync, and
-  lint. All gates must pass before merge.
-- Runtime JS, generated TypeScript, CSS variables, and Tailwind exports are
-  validated for parity against the declared contract.
+- The `npm run check` validation chain covers build, manifest, structure, locked
+  color, contrast, regression, docs, exports, CSS, typography references, output
+  parity, DTCG conformance and round-trip, consumer smoke, integration,
+  ecosystem, classification, deprecation, dist sync, and lint. All gates must
+  pass before merge.
+- Runtime JS, generated TypeScript, CSS variables, and DTCG output are validated
+  for parity against the declared contract.
 - `README.md` and `TOKEN_CONTRACT.md` are validated against the manifest —
   documentation drift fails the check gate.
 - Contract-impacting changes require explicit classification (`additive`,
   `semantic change`, `breaking`) in `CHANGELOG.md [Unreleased]` before merge.
 - A downstream smoke and integration fixture validates runtime token import, CSS
-  import, Tailwind preset usage, semantic token usage, mode-aware usage,
-  namespace collision checks, and component-style fixture patterns.
+  import, semantic token usage, mode-aware usage, namespace collision checks,
+  and component-style fixture patterns.
 - CI runs the full validation chain on Node 22 and 24 for every push and pull
   request.
 - A multi-agent team (Claude Code, Codex, Copilot, Jules) operates with
@@ -42,7 +43,7 @@ the contract layer.
 ### What will not change
 
 - `tokens/` remains the only source of truth. No hand-editing generated files.
-- The 16-gate chain is the release standard. No gate is optional.
+- The full validation chain is the release standard. No gate is optional.
 - Protected semantic color families (`success`, `warning`, `danger`,
   CTA/brand-action) require explicit Bradley Potts approval to change.
 - This package does not own component structure, framework behavior, or adapter
@@ -162,8 +163,8 @@ five groups. They are now published in the token contract.
 ### P3: Motion and Surface Polish — Delivered
 
 - Reduced-motion variants shipped in 2.9.0.
-- `surface.hero` resolved: retained in the `surface` namespace, documented
-  with explicit hero/marketing-only usage constraints.
+- `surface.hero` resolved: retained in the `surface` namespace, documented with
+  explicit hero/marketing-only usage constraints.
 - `surface.alternate` renamed to `surface.subtle` (`--sp-surface-subtle`).
   Breaking change, logged.
 
@@ -175,31 +176,31 @@ five groups. They are now published in the token contract.
 hand-maintained `semanticEntries` array, not by iterating the full `tokens`
 object. `link.*` and `surface.hover/selected/active/divider` existed in
 `tokens/semantic-roles.json` and in the compiled `tokens` export, but had no
-corresponding entries in `semanticEntries`, so they were silently omitted
-from `dist/index.css` in every release through `3.0.0`.
+corresponding entries in `semanticEntries`, so they were silently omitted from
+`dist/index.css` in every release through `3.0.0`.
 
 - `--sp-link-default/hover/active/visited` and
   `--sp-surface-hover/selected/active/divider` now emit correctly in
   `dist/index.css` (light and dark blocks).
 - `tests/css-semantic-coverage.test.ts` asserts every top-level key under
-  `tokens.link` and `tokens.modes.default.surface` has a matching CSS
-  variable in `generateCssVariables` output, guarding against recurrence.
-- Published in `3.1.0`, unblocking `spectre-ui` Phase 3 P2 (Link,
-  interactive surface states, Divider styling).
+  `tokens.link` and `tokens.modes.default.surface` has a matching CSS variable
+  in `generateCssVariables` output, guarding against recurrence.
+- Published in `3.1.0`, unblocking `spectre-ui` Phase 3 P2 (Link, interactive
+  surface states, Divider styling).
 
 ---
 
 ## 6. Phase 4 P4 — Layout Width Scale — Delivered
 
-Real downstream need: `spectre-ui` Phase 4d (app shell layout — Sidebar
-recipe, Container `maxWidth` prose variant) needed fixed-width values that
-did not exist anywhere in the published token object. Confirmed by reading
-the live package directly — `layout` only had `section`, `stack` (gap only),
-and `container` (`paddingInline` + one fixed `maxWidth`).
+Real downstream need: `spectre-ui` Phase 4d (app shell layout — Sidebar recipe,
+Container `maxWidth` prose variant) needed fixed-width values that did not exist
+anywhere in the published token object. Confirmed by reading the live package
+directly — `layout` only had `section`, `stack` (gap only), and `container`
+(`paddingInline` + one fixed `maxWidth`).
 
-- `layout.sidebar.width` added as a single fixed value (`16rem`), matching
-  the existing `container.maxWidth` precedent rather than introducing a
-  multi-step scale.
+- `layout.sidebar.width` added as a single fixed value (`16rem`), matching the
+  existing `container.maxWidth` precedent rather than introducing a multi-step
+  scale.
 - `layout.container.maxWidthProse` (`65ch`) added as a sibling key to the
   existing `container.maxWidth`, keeping that contract non-breaking.
 - Published in `3.1.0`, unblocking `spectre-ui` Phase 4d.
@@ -209,16 +210,16 @@ and `container` (`paddingInline` + one fixed `maxWidth`).
 ## 7. Phase 7 — Form-Field Component Token Groups — Delivered
 
 Cross-repo audit found `sp-checkbox`, `sp-fieldset`, `sp-label`, `sp-radio`,
-`sp-select`, and `sp-textarea` shipped in `spectre-components` with no
-backing `component.*` token group here and no recipe in `spectre-ui` — the
-same gating pattern Phase 4 P2 used for Nav/Toast/Tooltip/Dropdown/Modal.
+`sp-select`, and `sp-textarea` shipped in `spectre-components` with no backing
+`component.*` token group here and no recipe in `spectre-ui` — the same gating
+pattern Phase 4 P2 used for Nav/Toast/Tooltip/Dropdown/Modal.
 
 - `component.checkbox` and `component.radio` — `bg`, `border`, `checkedBg`,
   `checkedBorder`, `text`, `disabledBg`, `disabledBorder`.
-- `component.select` — `bg`, `border`, `text`, `placeholderText`,
-  `disabledBg`, `disabledBorder`, `focusBorder`.
-- `component.textarea` — `bg`, `border`, `text`, `placeholder`,
-  `disabledBg`, `disabledBorder`, `focusBorder`.
+- `component.select` — `bg`, `border`, `text`, `placeholderText`, `disabledBg`,
+  `disabledBorder`, `focusBorder`.
+- `component.textarea` — `bg`, `border`, `text`, `placeholder`, `disabledBg`,
+  `disabledBorder`, `focusBorder`.
 - `component.fieldset` — `border`, `legendText`.
 - `component.label` — `text`, `disabledText`, `requiredIndicatorText`.
 - Published in `3.2.0`, unblocking the corresponding `spectre-ui` form-field
@@ -243,20 +244,19 @@ same gating pattern Phase 4 P2 used for Nav/Toast/Tooltip/Dropdown/Modal.
   `tokens.component.*` also surfaced two more pre-existing instances:
   `component.badge`'s `*BgHover` fields, and `component.testimonial`/
   `component.pricingCard`/`component.rating` being entirely absent from CSS
-  generation. All fixed and published in `3.3.1` — `spectre-ui` must depend
-  on `^3.3.1`, not `^3.3.0`.
+  generation. All fixed and published in `3.3.1` — `spectre-ui` must depend on
+  `^3.3.1`, not `^3.3.0`.
 
 ---
 
 ## 9. Phase 9 — Contract Generation and Ecosystem Maturity — Delivered
 
-All Phase 9 work is complete. The recurring "token exists but output is
-missing" failure class is closed by construction, cross-output coverage is
-exhaustive and manifest-derived, the DTCG export is spec-conformant with a
-real consumer round-trip, and every release can be validated against the
-actual downstream packages before publishing. New token families remain
-demand-driven unless a downstream package demonstrates a concrete missing
-contract.
+All Phase 9 work is complete. The recurring "token exists but output is missing"
+failure class is closed by construction, cross-output coverage is exhaustive and
+manifest-derived, the DTCG export is spec-conformant with a real consumer
+round-trip, and every release can be validated against the actual downstream
+packages before publishing. New token families remain demand-driven unless a
+downstream package demonstrates a concrete missing contract.
 
 ### P0: Manifest-Driven CSS Generation — Delivered
 
@@ -264,13 +264,13 @@ contract.
 (`BADGE_VARIANTS`, `ICON_BOX_FIELDS`, `NAV_FIELDS`, and twelve others) are
 replaced by a recursive walker that derives every leaf path directly from
 `tokens.modes.default.*`/`tokens.modes.dark.*`, unioned with the top-level
-`surface`/`text`/`component` alias objects. A new field under any
-`component.*`, `surface`, or `text` group now reaches generated CSS by
-construction — no matching array to remember to update. `resolveSemanticValue`
-throws with the precise token path on an unsupported value shape instead of
-silently skipping it. Generated `dist/index.css` variable names and values
-were confirmed byte-identical to the prior hand-maintained implementation
-before/after the refactor.
+`surface`/`text`/`component` alias objects. A new field under any `component.*`,
+`surface`, or `text` group now reaches generated CSS by construction — no
+matching array to remember to update. `resolveSemanticValue` throws with the
+precise token path on an unsupported value shape instead of silently skipping
+it. Generated `dist/index.css` variable names and values were confirmed
+byte-identical to the prior hand-maintained implementation before/after the
+refactor.
 
 ### P1: Complete Cross-Output Parity — Delivered
 
@@ -279,8 +279,8 @@ before/after the refactor.
 coverage assertions from the token tree, replacing the curated path samples
 `requiredOutputs.js.requiredPaths`/`requiredOutputs.css.requiredVariables`
 relied on. Covers JS runtime (`tokens` vs. generated `coreTokens`), the
-generated TypeScript declaration actually shipped in `dist/index.d.ts` (via
-the TypeScript compiler API), DTCG (`$value` presence), and CSS — with a
+generated TypeScript declaration actually shipped in `dist/index.d.ts` (via the
+TypeScript compiler API), DTCG (`$value` presence), and CSS — with a
 `blockStrategy` per CSS group (`cascade-only`, `mode-scoped`, `duplicated`)
 describing how each variable is expected to reach the dark-mode block, not
 merely "the variable appears somewhere in the generated CSS." Running this
@@ -294,113 +294,112 @@ irregular per-field CSS naming are listed as documented
 
 `scripts/build-dtcg.ts` now emits spec-conformant `$type`/`$value` pairs
 throughout: `zIndex`/`opacity` as real JSON numbers (previously numeric
-strings), `transitions.easing.*` as 4-number `cubicBezier` arrays (including
-the `"linear"` keyword mapped to `[0, 0, 1, 1]`), `typography.families.*` as
+strings), `transitions.easing.*` as 4-number `cubicBezier` arrays (including the
+`"linear"` keyword mapped to `[0, 0, 1, 1]`), `typography.families.*` as
 `fontFamily` string arrays, `shadows.*`/`component.modal.shadow`/
 `buttons.cta.shadow` as structured `shadow` objects, and `surface.hero` as a
 `gradient` stop array per the DTCG Format Module's gradient type (stable as of
 the 2025.10 draft — an initial pass incorrectly treated gradients as
 unsupported; corrected before merge). Whole-value alias references resolve
-`$type` from the alias target's real shape rather than falling back to
-`string`. `scripts/check-dtcg-conformance.ts` (`check:dtcg`) validates every
-leaf's `$value` against its declared `$type`'s structural shape on every
-build. `scripts/check-dtcg-style-dictionary.ts` (`check:dtcg-roundtrip`, with
-`style-dictionary` added as a devDependency) builds the real DTCG output with
-a real consumer and asserts the rendered CSS is correct. `tests/build-dtcg.test.ts`
-adds 50 fixture assertions across aliases, font families, shadows, gradients,
-cubic-bezier values, unitless numbers, dimensions, typography values, and
-array/composite values. `TOKEN_CONTRACT.md`'s "DTCG Design-Tool Export"
-section documents every intentional transformation and the two genuinely
-unsupported shapes (`shadows.none`, and gradient angle/direction — DTCG's
-gradient type represents stops, not CSS geometry).
+`$type` from the alias target's real shape rather than falling back to `string`.
+`scripts/check-dtcg-conformance.ts` (`check:dtcg`) validates every leaf's
+`$value` against its declared `$type`'s structural shape on every build.
+`scripts/check-dtcg-style-dictionary.ts` (`check:dtcg-roundtrip`, with
+`style-dictionary` added as a devDependency) builds the real DTCG output with a
+real consumer and asserts the rendered CSS is correct.
+`tests/build-dtcg.test.ts` adds 50 fixture assertions across aliases, font
+families, shadows, gradients, cubic-bezier values, unitless numbers, dimensions,
+typography values, and array/composite values. `TOKEN_CONTRACT.md`'s "DTCG
+Design-Tool Export" section documents every intentional transformation and the
+two genuinely unsupported shapes (`shadows.none`, and gradient angle/direction —
+DTCG's gradient type represents stops, not CSS geometry).
 
 ### P3: Live Downstream Compatibility — Delivered
 
-`scripts/check-downstream-compat.ts` (`check:downstream`) packs this repo
-into a real npm tarball and, for each of `spectre-ui`, `spectre-ui-astro`,
-and `spectre-components` present as a sibling checkout, installs that tarball
-and runs the sibling's own `npm run check` — the same gate each repo runs on
-its own changes, proving compatibility against real downstream builds/lint/
-types/tests rather than a repository-local guess. A sibling with a dirty
-working tree is skipped rather than risked; every sibling's
-`package.json`/`package-lock.json` is restored via `git checkout` + `npm
-install` regardless of outcome. Verified end-to-end against the real sibling
-repos: all three passed against the current candidate and were confirmed
-clean afterward. Deliberately not part of `npm run check` — it requires
-sibling repos on disk and runs three full downstream suites — so it's wired
-as a separate pre-release gate (`CLAUDE.md`'s Release Procedure, step 6).
-`TOKEN_CONTRACT.md`'s "Live Downstream Compatibility" section documents the
-mechanism and the demand-driven policy: a concrete failure here is what
-justifies a token proposal, not speculative namespace expansion.
+`scripts/check-downstream-compat.ts` (`check:downstream`) packs this repo into a
+real npm tarball and, for each of `spectre-ui`, `spectre-ui-astro`, and
+`spectre-components` present as a sibling checkout, installs that tarball and
+runs the sibling's own `npm run check` — the same gate each repo runs on its own
+changes, proving compatibility against real downstream builds/lint/ types/tests
+rather than a repository-local guess. A sibling with a dirty working tree is
+skipped rather than risked; every sibling's `package.json`/`package-lock.json`
+is restored via `git checkout` + `npm install` regardless of outcome. Verified
+end-to-end against the real sibling repos: all three passed against the current
+candidate and were confirmed clean afterward. Deliberately not part of
+`npm run check` — it requires sibling repos on disk and runs three full
+downstream suites — so it's wired as a separate pre-release gate (`CLAUDE.md`'s
+Release Procedure, step 6). `TOKEN_CONTRACT.md`'s "Live Downstream
+Compatibility" section documents the mechanism and the demand-driven policy: a
+concrete failure here is what justifies a token proposal, not speculative
+namespace expansion.
 
 ---
 
 ## 10. Phase 10 — Utility-Engine Token Foundation (Tailwind Replacement)
 
 PHCDevworks is replacing TailwindCSS across the Spectre design system with a
-first-party, token-driven utility-class engine owned by `spectre-ui`. This
-phase is a deliberate, stated exception to Phase 9's demand-driven-only
-closing policy: `spectre-ui`'s Phase 7 needs a broader, generator-ready raw
-color and scale surface to expand its own utility-class coverage ahead of
-building that engine. That is the concrete downstream requirement Phase 9
-P3's `check:downstream` mechanism was built to detect. It is not speculative
+first-party, token-driven utility-class engine owned by `spectre-ui`. This phase
+is a deliberate, stated exception to Phase 9's demand-driven-only closing
+policy: `spectre-ui`'s Phase 7 needs a broader, generator-ready raw color and
+scale surface to expand its own utility-class coverage ahead of building that
+engine. That is the concrete downstream requirement Phase 9 P3's
+`check:downstream` mechanism was built to detect. It is not speculative
 namespace expansion.
 
 `spectre-tokens`' role in the replacement is narrow and already mostly
 delivered: publish the raw color/scale surface the generator consumes
-(`colors.palette`, and any further scale gaps `spectre-ui` Phase 7
-identifies), then retire the `tailwindTheme`/`tailwindPreset` exports once
-the generator is live and no downstream package still imports them. The
-utility-class engine itself — class-name generation, responsive/state/dark
-variants, purge/build tooling — is entirely `spectre-ui` Phase 7 scope, not
-this package's.
+(`colors.palette`, and any further scale gaps `spectre-ui` Phase 7 identifies),
+then retire the `tailwindTheme`/`tailwindPreset` exports once the generator is
+live and no downstream package still imports them. The utility-class engine
+itself — class-name generation, responsive/state/dark variants, purge/build
+tooling — is entirely `spectre-ui` Phase 7 scope, not this package's.
 
-The `tailwindTheme`/`tailwindPreset` root exports, the `TailwindTheme` type,
-and the `contract.manifest.json` `requiredOutputs.tailwind` section were
-removed as a breaking change ahead of the generator's completion, since this
-package no longer treats a Tailwind preset as part of its public contract.
-Downstream repos still depending on Tailwind utility classes continue to
-consume `index.css` custom properties directly until `spectre-ui`'s
-first-party generator replaces that usage.
+The `tailwindTheme`/`tailwindPreset` root exports, the `TailwindTheme` type, and
+the `contract.manifest.json` `requiredOutputs.tailwind` section were removed as
+a breaking change ahead of the generator's completion, since this package no
+longer treats a Tailwind preset as part of its public contract. Downstream repos
+still depending on Tailwind utility classes continue to consume `index.css`
+custom properties directly until `spectre-ui`'s first-party generator replaces
+that usage.
 
 `colors.palette.<hue>.<step>` — a broad raw color ramp (26 hues including
-`mauve`/`olive`/`mist`/`taupe`, steps 50-950) — was added as a new,
-additive namespace ahead of this phase being formally opened; it is the raw
-material this phase's utility-engine work in `spectre-ui` consumes. It sits
-alongside, not in place of, the existing
+`mauve`/`olive`/`mist`/`taupe`, steps 50-950) — was added as a new, additive
+namespace ahead of this phase being formally opened; it is the raw material this
+phase's utility-engine work in `spectre-ui` consumes. It sits alongside, not in
+place of, the existing
 `colors.brand`/`neutral`/`accent`/`success`/`warning`/`error`/`info` ramps.
 
-The escape-hatch question — whether the resulting utility layer allows
-arbitrary values outside the token scale — is resolved as token-only, no
-escape hatch. No raw hex/px/rem values are introduced downstream as a
-result of this phase; a design need outside the existing scale is a token
-proposal, not an arbitrary value in markup.
+The escape-hatch question — whether the resulting utility layer allows arbitrary
+values outside the token scale — is resolved as token-only, no escape hatch. No
+raw hex/px/rem values are introduced downstream as a result of this phase; a
+design need outside the existing scale is a token proposal, not an arbitrary
+value in markup.
 
 ### What will not change
 
 - `success`, `warning`, `danger` semantic roles, and CTA/brand-action remain
   locked. No changes to these families under this phase.
-- `tokens/` remains the only source of design values. The utility engine
-  this phase feeds is token-only by design — no arbitrary-value support is
-  introduced anywhere in the Spectre stack as a result of this phase.
+- `tokens/` remains the only source of design values. The utility engine this
+  phase feeds is token-only by design — no arbitrary-value support is introduced
+  anywhere in the Spectre stack as a result of this phase.
 
 ### P0: Gap Closure
 
 - Confirm `src/css.ts`'s recursive color walker (deepened to support
   `colors.palette.<hue>.<step>`) reaches every new leaf per `check:parity`'s
-  `outputParity` section — already verified clean; this is a
-  re-confirmation at phase start, not new work.
-- Add a `containerQueries` breakpoint namespace only if `spectre-ui` Phase
-  7's responsive-variant design ends up needing `@container` support. Do
-  not add it speculatively ahead of that decision.
+  `outputParity` section — already verified clean; this is a re-confirmation at
+  phase start, not new work.
+- Add a `containerQueries` breakpoint namespace only if `spectre-ui` Phase 7's
+  responsive-variant design ends up needing `@container` support. Do not add it
+  speculatively ahead of that decision.
 
 ### P1: Utility-Contract Manifest Surface
 
-Default position: no new `contract.manifest.json` section is needed. The
-utility engine consumes published CSS variables through the same contract
-every recipe already uses — a Layer 2 concern. Only add manifest surface
-here if `spectre-ui` Phase 7 P0 surfaces a token-shape guarantee that
-`outputParity` doesn't already provide.
+Default position: no new `contract.manifest.json` section is needed. The utility
+engine consumes published CSS variables through the same contract every recipe
+already uses — a Layer 2 concern. Only add manifest surface here if `spectre-ui`
+Phase 7 P0 surfaces a token-shape guarantee that `outputParity` doesn't already
+provide.
 
 ### P2: Tailwind Export Removal — Delivered
 
@@ -414,12 +413,12 @@ consumer smoke and integration fixtures (`example/smoke-consumer/`,
 `example/integration-fixture/`) no longer exercise a `tailwind.config.ts`.
 Classified `Contract change type: breaking` in `CHANGELOG.md [Unreleased]`.
 Coordinate with the equivalent removal/migration in `spectre-ui` Phase 7 P2 —
-any downstream repo still importing these exports will break on upgrade to
-the version that ships this change.
+any downstream repo still importing these exports will break on upgrade to the
+version that ships this change.
 
 **Unblocks:** `spectre-ui` Phase 7 P0/P1 — the generator cannot consume
-`colors.palette` or any new container-query tokens until they are published
-here first.
+`colors.palette` or any new container-query tokens until they are published here
+first.
 
 ---
 
@@ -447,23 +446,23 @@ here first.
 8. **Phase 5** — done, published in `3.1.0`. `link.*` and
    `surface.hover/selected/active/divider` now emit correctly in
    `dist/index.css`, unblocking `spectre-ui` Phase 3 P2.
-9. **Phase 4 P4** — done, published in `3.1.0`. Added `layout.sidebar.width`
-   and `layout.container.maxWidthProse`, unblocking `spectre-ui` Phase 4d.
+9. **Phase 4 P4** — done, published in `3.1.0`. Added `layout.sidebar.width` and
+   `layout.container.maxWidthProse`, unblocking `spectre-ui` Phase 4d.
 10. **Phase 7** — done, published in `3.2.0`. Added `component.checkbox`,
     `component.radio`, `component.select`, `component.textarea`,
-    `component.fieldset`, and `component.label`, unblocking the
-    corresponding `spectre-ui` form-field recipes.
+    `component.fieldset`, and `component.label`, unblocking the corresponding
+    `spectre-ui` form-field recipes.
 11. **Phase 8** — done, published in `3.3.0`. Added `borderInvalid`,
     `bgInvalid`, `borderSuccess`, and `bgSuccess` to `component.select` and
     `component.textarea`, mirroring `forms.invalid`/`forms.valid`. Unblocks
     `spectre-ui` Phase 5 P0's deferred `invalid`/`success` options on
     `getSelectClasses`/`getTextareaClasses` — adoption still pending there.
-12. **3.3.1 fix (done and published)** — `3.3.0`'s new select/textarea
-    fields never reached generated CSS/types due to a hand-maintained
-    field-mapping array bug in `src/css.ts` (same class as the `3.1.0` Phase
-    5 fix). Generalizing the regression test to cover all of
-    `tokens.component.*` also surfaced two more pre-existing instances of the
-    same bug: `component.badge`'s `*BgHover` fields, and
+12. **3.3.1 fix (done and published)** — `3.3.0`'s new select/textarea fields
+    never reached generated CSS/types due to a hand-maintained field-mapping
+    array bug in `src/css.ts` (same class as the `3.1.0` Phase 5 fix).
+    Generalizing the regression test to cover all of `tokens.component.*` also
+    surfaced two more pre-existing instances of the same bug:
+    `component.badge`'s `*BgHover` fields, and
     `component.testimonial`/`component.pricingCard`/`component.rating` being
     entirely absent from CSS generation. All fixed; full `npm run check` gate
     and `vitest run` pass clean. `spectre-ui` now depends on `^3.3.1`, not
@@ -471,30 +470,29 @@ here first.
 13. **Phase 9 P0** — done. Replaced hand-maintained CSS field maps with a
     recursive, manifest-shape-driven walker; generated CSS confirmed
     byte-identical to the prior implementation.
-14. **Phase 9 P1** — done. Exhaustive, manifest-derived cross-output parity
-    (JS, generated TypeScript, CSS with per-group dark-mode block strategy,
-    DTCG) surfaced and fixed two real pre-existing CSS gaps (`icons`,
-    `aspectRatios`) and one accessibility gap (`forcedColors`).
-15. **Phase 9 P2** — done. DTCG `$type`/`$value` conformance hardened
-    (numbers, cubicBezier arrays, fontFamily arrays, structured shadows,
-    gradient stop arrays, alias type resolution); real Style Dictionary
-    round-trip test added; 50 fixture assertions; intentional transformations
-    and the true gradient-geometry limitation documented in
-    `TOKEN_CONTRACT.md`.
+14. **Phase 9 P1** — done. Exhaustive, manifest-derived cross-output parity (JS,
+    generated TypeScript, CSS with per-group dark-mode block strategy, DTCG)
+    surfaced and fixed two real pre-existing CSS gaps (`icons`, `aspectRatios`)
+    and one accessibility gap (`forcedColors`).
+15. **Phase 9 P2** — done. DTCG `$type`/`$value` conformance hardened (numbers,
+    cubicBezier arrays, fontFamily arrays, structured shadows, gradient stop
+    arrays, alias type resolution); real Style Dictionary round-trip test added;
+    50 fixture assertions; intentional transformations and the true
+    gradient-geometry limitation documented in `TOKEN_CONTRACT.md`.
 16. **Phase 9 P3** — done. Live downstream compatibility check
     (`check:downstream`) packs the tarball and runs `spectre-ui`,
-    `spectre-ui-astro`, and `spectre-components`'s own check gates against
-    it; verified end-to-end against the real sibling repos, all passing and
-    left clean. Wired as a separate pre-release gate, not part of the fast
+    `spectre-ui-astro`, and `spectre-components`'s own check gates against it;
+    verified end-to-end against the real sibling repos, all passing and left
+    clean. Wired as a separate pre-release gate, not part of the fast
     `npm run check` loop.
-17. **Phase 10 P0** — gap closure: reconfirm `colors.palette` CSS-output
-    parity; add `containerQueries` only if `spectre-ui` Phase 7 needs it.
+17. **Phase 10 P0** — gap closure: reconfirm `colors.palette` CSS-output parity;
+    add `containerQueries` only if `spectre-ui` Phase 7 needs it.
 18. **Phase 10 P1** — utility-contract manifest surface, only if `spectre-ui`
     Phase 7 P0 reveals a real gap in `outputParity`.
-19. **Phase 10 P2** — deprecate `tailwindTheme`/`tailwindPreset`, paired
+19. **Phase 10 P2** — remove `tailwindTheme`/`tailwindPreset` in `4.0.0`, paired
     with `spectre-ui` Phase 7 P2.
 
 **Phase 9 is complete.** Phase 10 is the first phase since to reopen new
 namespace/contract work, explicitly justified by `spectre-ui` Phase 7's
-utility-engine coverage need — not a return to speculative expansion.
-Future work beyond Phase 10 remains demand-driven.
+utility-engine coverage need — not a return to speculative expansion. Future
+work beyond Phase 10 remains demand-driven.
