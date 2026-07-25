@@ -599,6 +599,65 @@ fix's regression test only covered `tokens.link`/`tokens.surface`, not
 12. **Phase 9 — done and published in `3.6.0`.** Added `colors.palette`
     (full Tailwind v4.3 raw ramp) and `typography.heading`/`typography.body`
     semantic role tokens.
+13. **Phase 10 — active.** Utility-engine token foundation for `spectre-ui`
+    Phase 7. See below.
+
+---
+
+## Phase 10 - Utility-Engine Token Foundation (Active)
+
+Deliberate, stated exception to Phase 9's demand-driven-only closing policy:
+`spectre-ui`'s Phase 7 needs a broader, generator-ready raw color and scale
+surface to expand its own utility-class coverage — the concrete downstream
+requirement Phase 9 P3's `check:downstream` mechanism was built to detect,
+not speculative namespace expansion.
+
+`colors.palette.<hue>.<step>` (26 hues, steps 50-950) already shipped in
+`3.6.0` ahead of this phase being formally opened; it is the raw material
+this phase's `spectre-ui` utility-engine work consumes, additive alongside
+the existing `colors.brand`/`neutral`/`accent`/`success`/`warning`/`error`/
+`info` ramps.
+
+Resolved: the resulting utility layer is token-only, no escape hatch. No raw
+hex/px/rem values are introduced downstream as a result of this phase; a
+design need outside the existing scale is a token proposal, not an arbitrary
+value in markup. `success`/`warning`/`danger`/CTA-brand-action remain locked
+— no changes to these families under this phase.
+
+### P0: Gap Closure
+
+- [ ] Reconfirm `src/css.ts`'s recursive color walker reaches every
+      `colors.palette.<hue>.<step>` leaf per `check:parity`'s `outputParity`
+      section. Already verified clean once; this is a re-confirmation at
+      phase start, not new work.
+- [ ] Add a `containerQueries` breakpoint namespace only if `spectre-ui`
+      Phase 7's responsive-variant design ends up needing `@container`
+      support. Do not add speculatively ahead of that decision.
+
+### P1: Utility-Contract Manifest Surface
+
+- [ ] Default position: no new `contract.manifest.json` section needed. The
+      utility engine consumes published CSS variables through the same
+      contract every recipe already uses (a Layer 2 concern). Only add
+      manifest surface here if `spectre-ui` Phase 7 P0 surfaces a
+      token-shape guarantee `outputParity` doesn't already provide.
+
+### P2: Tailwind Export Deprecation
+
+- [ ] Mark `tailwindTheme`/`tailwindPreset` root exports and the
+      `tailwind.expectations` section of `contract.manifest.json`
+      `deprecated`, using the existing `metadata.deprecated`
+      (`since`/`replacedBy`/`removeIn`) lifecycle documented in
+      `TOKEN_CONTRACT.md`. Do not remove anything this phase — `removeIn`
+      stays open/TBD until downstream migration is confirmed complete
+      across every consuming repo.
+- [ ] Keep `check:tailwind` green and running unchanged through this phase.
+- [ ] Coordinate with the equivalent deprecation in `spectre-ui` Phase 7 P2;
+      both repos' deprecation notices should reference each other.
+
+**Unblocks:** `spectre-ui` Phase 7 P0/P1 — the generator cannot consume
+`colors.palette` or any new container-query tokens until they are published
+here first.
 
 ---
 
