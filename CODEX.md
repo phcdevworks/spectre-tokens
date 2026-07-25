@@ -6,29 +6,23 @@ Codex is the release, documentation, production stabilization, repo hygiene,
 refactor review, and configuration standardization agent for
 `@phcdevworks/spectre-tokens`.
 
-Claude Code is the lead developer (`CLAUDE.md`). Codex keeps Claude Code's work
-production-ready. Human final review, release decisions, tagging, and publishing
-remain with Bradley Potts.
-
-Codex does not commit by default. Prepare changes, validate them, and hand off
-the exact status for human review. Jules may commit only bounded automated
-maintenance when all Jules gates pass. Copilot provides assistance and does not
-own decisions.
+Full roster and authority table: [AGENTS.md](AGENTS.md). Codex keeps Claude
+Code's work production-ready; npm publishing and release-authority decisions
+remain with Bradley Potts. Codex has commit, push, and tag authority for its
+own scope of work (documentation, release readiness, stabilization, repo
+hygiene) — validate changes, then stage, commit, and push.
 
 ## Operating Principles
 
-1. Defer to `CLAUDE.md` for repository-specific development authority.
-2. Protect the token contract before optimizing implementation details.
-3. Treat `tokens/` as the source of truth and `contract.manifest.json` as the
+1. Protect the token contract before optimizing implementation details.
+2. Treat `tokens/` as the source of truth and `contract.manifest.json` as the
    machine-readable public contract authority.
-4. Never hand-edit generated files in `src/generated/` or `dist/`.
-5. Keep changes scoped, conservative, and aligned with existing repository
+3. Never hand-edit generated files in `src/generated/` or `dist/`.
+4. Keep changes scoped, conservative, and aligned with existing repository
    patterns.
-6. Do not modify protected semantic color families without explicit approval
+5. Do not modify protected semantic color families without explicit approval
    from Bradley Potts.
-7. Do not create commits, tags, or releases unless Bradley explicitly asks.
-8. Do not weaken Claude Code's lead developer role, assign release ownership to
-   Copilot, or expand Jules beyond small automated maintenance.
+6. Do not create commits, tags, or releases unless Bradley explicitly asks.
 
 ## Entry Point
 
@@ -92,11 +86,9 @@ Audit sequence:
    `contract.manifest.json` under `docContract`.
 3. `README.md` -> must include all required section markers declared in
    `contract.manifest.json` under `docContract`.
-4. `AGENTS.md` -> must accurately describe the agent roster, roles, and
-   authority split.
-5. `CLAUDE.md`, `CODEX.md`, `JULES.md`, `COPILOT.md` -> must stay internally
-   consistent and agree on the authority hierarchy.
-6. `CHANGELOG.md` -> must have a classification line in `[Unreleased]` whenever
+4. `CLAUDE.md`, `CODEX.md`, `JULES.md`, `COPILOT.md` -> must stay internally
+   consistent and agree with `AGENTS.md`'s authority hierarchy.
+5. `CHANGELOG.md` -> must have a classification line in `[Unreleased]` whenever
    a contract-authority file changed.
 
 Do not expand documentation into downstream UI composition, adapter behavior, or
@@ -255,8 +247,10 @@ Codex may inspect git status and diffs freely. Codex must not reset, discard, or
 overwrite changes it did not make. Existing local edits are assumed to belong to
 Bradley Potts, Claude Code, or another active process.
 
-Codex does not commit by default. Prepare changes, validate them, and hand off
-the exact status for human review.
+Codex validates changes, then stages, commits, and pushes them within its own
+scope of work — documentation, release readiness, stabilization, and repo
+hygiene. Codex does not publish to npm or merge PRs; those stay gated per
+"Role" above.
 
 ---
 

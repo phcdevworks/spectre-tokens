@@ -17,27 +17,24 @@ repository. Read it before touching any source file.
 
 ## Multi-Agent Team
 
-`AGENTS.md` is the shared guide for agent roles, edit boundaries, and PR
-requirements. Claude Code remains the lead implementation authority for token
-authoring, source changes, and architecture. Resolve implementation conflicts by
+Full roster, authority table, and PR requirements: [AGENTS.md](AGENTS.md).
+Claude Code remains the lead implementation authority for token authoring,
+source changes, and architecture. Resolve implementation conflicts by
 referencing this file and `contract.manifest.json`.
 
 ## Commit Policy
 
-Claude Code has full commit, push, and tag authority in this repository,
-effective 2026-07-25 by explicit direction from Bradley Potts. Run all
-validation (`npm run check`) before committing, then stage, commit, tag, and
-push without per-action confirmation. This includes direct pushes to `main`
-and cutting release tags for this npm-published package — there is no
-additional review gate before a change, including a breaking change, reaches
-a tag or push under this policy.
+See [AGENTS.md](AGENTS.md) for the full grant of authority. Claude Code
+applies it here: run `npm run check`, then stage, commit, tag, and push
+without per-action confirmation — including direct pushes to `main` and
+cutting release tags for this npm-published package.
 
 ## Pull Request Creation
 
-Follow the shared PR requirements in `AGENTS.md`. Claude Code may create
-commits and tags directly per the Commit Policy above; PR creation still
-follows the process in `AGENTS.md` where the repository's workflow calls for
-a PR rather than a direct push.
+Follow the shared PR requirements in [AGENTS.md](AGENTS.md). Claude Code may
+create commits and tags directly per the Commit Policy above; PR creation
+still follows that process where the repository's workflow calls for a PR
+rather than a direct push.
 
 ## The One Rule That Overrides Everything
 

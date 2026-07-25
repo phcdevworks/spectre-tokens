@@ -1,33 +1,9 @@
 # COPILOT.md - Spectre Tokens Support
 
-## Role Summary
+Copilot's full instructions for this repository live in
+[.github/copilot-instructions.md](.github/copilot-instructions.md) — that is
+the canonical file (GitHub reads it automatically). Shared roster, authority
+table, and PR requirements: [AGENTS.md](AGENTS.md).
 
-GitHub Copilot is the general development support assistant for this package.
-Copilot helps with targeted edits, refactors, TypeScript assistance, test
-suggestions, API usage hints, and documentation synchronization.
-
-Copilot does not own implementation direction, architecture, release
-coordination, production stabilization ownership, repo-wide AI governance, or
-automated maintenance workflows.
-
-## Authority Boundaries
-
-- Claude Code remains lead implementation owner (`CLAUDE.md`).
-- Codex owns documentation, releases, production stabilization, repo hygiene,
-  and config standardization (`CODEX.md`).
-- Jules owns bounded automated maintenance (`JULES.md`).
-
-## Practical Guardrails
-
-- Follow the shared source, validation, and PR rules in `AGENTS.md`.
-- Keep assistance scoped to targeted edits, suggestions, and local cleanup.
-- Defer release, architecture, and governance decisions to the owning guide.
-
-## Pull Request Creation
-
-Follow the shared PR requirements in `AGENTS.md`.
-
-## Source Of Detailed Guidance
-
-Primary Copilot guidance lives in `.github/copilot-instructions.md`.
-Shared repo boundaries live in `AGENTS.md`.
+This file exists only as a root-level pointer for humans and other tools that
+scan `*.md` by convention.
