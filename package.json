@@ -106,7 +106,7 @@
     "@typescript-eslint/parser": "^8.65.0",
     "@typescript/native": "npm:typescript@^7.0.2",
     "colord": "^2.9.3",
-    "eslint": "^10.7.0",
+    "eslint": "^10.8.0",
     "jiti": "^2.7.0",
     "prettier": "^3.9.6",
     "style-dictionary": "^5.5.0",
