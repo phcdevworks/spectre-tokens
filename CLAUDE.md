@@ -144,19 +144,12 @@ namespace is `borders` - always use `border` (singular).
 
 ## Release Procedure
 
-1. Run `npm run release:propose` to get the semver bump proposal from the
-   `CHANGELOG.md [Unreleased]` classification. Bradley Potts has final version
-   authority; the script is advisory.
-2. Update `package.json` version.
-3. Move `[Unreleased]` notes in `CHANGELOG.md` to a new versioned entry with a
-   release title and date.
-4. Update the `[unreleased]` and add the new version compare link at the bottom
-   of `CHANGELOG.md`.
-5. Run `npm run check` - must pass clean.
-6. Run `npm run check:downstream` if `spectre-ui`, `spectre-ui-astro`, and
-   `spectre-components` are present as sibling repos - validates the packed
-   candidate tarball against each one's own check gate before release.
-7. Hand off to human for review, commit, tag, and GitHub Release publish.
+Claude Code implements features and fixes with a `CHANGELOG.md [Unreleased]`
+entry classified per change (additive / semantic change / breaking). Cutting
+the release itself — version bump, changelog versioning, `v<version>` tag,
+and GitHub Release — is Codex's job; see `CODEX.md` "Release Mechanics" for
+the full procedure. `npm publish` stays with Bradley Potts regardless of who
+prepares the release.
 
 ## What This Package Does Not Own
 
