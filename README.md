@@ -61,7 +61,7 @@ and runtimes.
 [Changelog](CHANGELOG.md) | [Token Contract](TOKEN_CONTRACT.md) |
 [Roadmap](ROADMAP.md) | [Security Policy](SECURITY.md)
 
-## Source of truth
+## Source Of Truth
 
 `tokens/` is the source of truth. `contract.manifest.json` is the
 machine-readable contract authority. Everything else is derived from them or
@@ -78,7 +78,7 @@ validated against them.
 After any source change: run `npm run build` to regenerate outputs, then
 `npm run check` to validate the full contract.
 
-## What this package owns
+## What This Package Owns
 
 - Visual language expressed as token data in `tokens/`
 - Semantic roles and token contracts consumed downstream
@@ -87,7 +87,7 @@ After any source change: run `npm run build` to regenerate outputs, then
 
 This package is the correct place to define token meaning.
 
-## What this package does not own
+## What This Package Does Not Own
 
 - Component structure or composition. That belongs in downstream UI packages
   such as
@@ -99,7 +99,7 @@ This package is the correct place to define token meaning.
 - Example app architecture. The `example/` directory documents token usage; it
   is not the contract source and should not become a downstream UI layer.
 
-## When to use this package
+## When To Use This Package
 
 - You are building a Spectre ecosystem package and need the visual language
   contract.
@@ -109,7 +109,7 @@ This package is the correct place to define token meaning.
   `component`, `buttons`, `forms`, `modes`.
 - You are consuming tokens as named values, not inventing new token meaning.
 
-## When not to use this package
+## When Not To Use This Package
 
 - You need UI components or component structure — use
   [`@phcdevworks/spectre-ui`](https://github.com/phcdevworks/spectre-ui).
@@ -125,7 +125,7 @@ This package is the correct place to define token meaning.
 npm install @phcdevworks/spectre-tokens
 ```
 
-## Quick start
+## Quick Start
 
 ### CSS import
 
@@ -151,7 +151,7 @@ const card = {
 }
 ```
 
-## Semantic tokens vs raw palette tokens
+## Semantic Tokens Vs Raw Palette Tokens
 
 Semantic tokens express UI meaning. Raw palette tokens expose the fixed color
 ramp. Always prefer semantic tokens for UI surfaces, text, buttons, forms, and
@@ -201,7 +201,7 @@ const chart = {
 
 Do not use `colors` as a substitute for semantic tokens in normal UI surfaces.
 
-## Consumer usage
+## Consumer Usage
 
 ### JavaScript and TypeScript tokens
 
@@ -310,7 +310,7 @@ plus fixed layout width tokens for common consumer shells:
 `layout.container.maxWidth`, `layout.container.maxWidthProse`, and
 `layout.sidebar.width`.
 
-## Public contract guarantees
+## Public Contract Guarantees
 
 `contract.manifest.json` is the machine-readable contract authority for this
 package.
@@ -347,7 +347,7 @@ Guidance:
 - Do not invent local light/dark token contracts when this package already
   provides the semantic path.
 
-## Protected token families
+## Protected Token Families
 
 The following semantic groups are locked. Their values must not change without
 explicit approval from Bradley Potts. This applies to all contributors and all
@@ -364,7 +364,7 @@ AI agents — apparent visual improvements still require human sign-off.
 recorded baseline. An intentional change requires updating the baseline as part
 of an approved, classified release.
 
-## Downstream boundaries
+## Downstream Boundaries
 
 Downstream packages should never redefine locally:
 
@@ -379,7 +379,7 @@ Downstream packages may:
 - map these tokens into framework-specific delivery
 - use raw palette values when the usage is intentionally non-semantic
 
-## Upgrade expectations for consumers
+## Upgrade Expectations For Consumers
 
 Consumers should treat this package as a SemVer-governed contract.
 
@@ -409,7 +409,7 @@ with a `Contract change type:` line before release.
 
 Renames and removals are always breaking regardless of perceived scope.
 
-## Package exports / API surface
+## Package Exports / API Surface
 
 ### Root package
 
@@ -435,7 +435,7 @@ const css = generateCssVariables(tokens, {
 
 - `@phcdevworks/spectre-tokens/index.css`
 
-## Relationship to the rest of Spectre
+## Relationship To The Rest Of Spectre
 
 Spectre keeps responsibilities separate:
 
@@ -449,7 +449,7 @@ Spectre keeps responsibilities separate:
 That separation keeps token meaning centralized while letting the package system
 expand by responsibility.
 
-## Consumer checklist
+## Consumer Checklist
 
 For downstream packages and compatible apps:
 
@@ -510,17 +510,18 @@ treated as downstream UI primitives.
 | `check:docs` fails           | README or TOKEN_CONTRACT.md has drifted from the manifest                     | Update the doc to match the current contract                                                          |
 | `check:classification` fails | A contract-authority file changed without a classification entry              | Add `Contract change type: additive`, `semantic change`, or `breaking` to `CHANGELOG.md [Unreleased]` |
 
-## AI and automation boundaries
+## AI And Automation Boundaries
 
 Claude Code (`claude-sonnet-4-6`) is the primary development agent for this
-repository. Codex handles releases and production stabilization. Jules handles
-small automated fixes and generated-output sync. GitHub Copilot provides
-development support.
+repository. Codex handles releases and production stabilization, including
+cutting tagged releases and GitHub Releases. Jules handles small automated
+fixes and generated-output sync. GitHub Copilot provides development
+support.
 
-Claude Code does not create git commits. All Claude Code changes are prepared
-and validated, then handed off to Bradley Potts for human review and commit.
-Jules commits bounded automated maintenance tasks autonomously when all
-validation gates pass.
+All AI agents with repository access (Claude Code, Codex, Copilot, Jules)
+have commit, push, and tag authority in this repository. Publishing to npm
+remains Bradley Potts's sole authority. See [AGENTS.md](AGENTS.md) for the
+full commit-policy and release-authority grant.
 
 **Protected from automated change:** locked color families (`success`,
 `warning`, `danger`, CTA/brand-action), `contract.manifest.json`, and
