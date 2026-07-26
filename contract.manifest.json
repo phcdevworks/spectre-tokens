@@ -267,7 +267,7 @@
     "requiredSectionMarkers": [
       "### Token model",
       "### Root package",
-      "## Public contract guarantees"
+      "## Public Contract Guarantees"
     ],
     "tokenContractRequiredHeadings": [
       "# Token Contract",
