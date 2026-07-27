@@ -593,12 +593,15 @@ fix's regression test only covered `tokens.link`/`tokens.surface`, not
 12. **Phase 9 — done and included in the `4.0.0` release candidate.** Added
     `colors.palette` (full Tailwind v4.3 raw ramp) and
     `typography.heading`/`typography.body` semantic role tokens.
-13. **Phase 10 — active.** Utility-engine token foundation for `spectre-ui`
-    Phase 7. See below.
+13. **Phase 10 — done.** Utility-engine token foundation for `spectre-ui`
+    Phase 7. Color-palette CSS parity re-confirmed (286/286 leaves emit
+    correctly); container-query namespace correctly deferred (no downstream
+    signal yet — `spectre-ui` hasn't reached its own Phase 7); Tailwind
+    export removal confirmed propagated cleanly downstream. See below.
 
 ---
 
-## Phase 10 - Utility-Engine Token Foundation (Tailwind Replacement, Active)
+## Phase 10 - Utility-Engine Token Foundation (Tailwind Replacement, Done)
 
 PHCDevworks is replacing TailwindCSS across the Spectre design system with a
 first-party, token-driven utility-class engine owned by `spectre-ui`. This phase
@@ -623,21 +626,32 @@ to these families under this phase.
 
 ### P0: Gap Closure
 
-- [ ] Reconfirm `src/css.ts`'s recursive color walker reaches every
+- [x] Reconfirm `src/css.ts`'s recursive color walker reaches every
       `colors.palette.<hue>.<step>` leaf per `check:parity`'s `outputParity`
-      section. Already verified clean once; this is a re-confirmation at phase
-      start, not new work.
-- [ ] Add a `containerQueries` breakpoint namespace only if `spectre-ui` Phase
+      section. Re-confirmed: `check:parity` passes clean, and a direct check
+      against the built `dist/index.js` (`generateCssVariables`) confirms all
+      286 `--sp-color-palette-<hue>-<step>` variables (26 hues × steps
+      50-950) are present in the generated CSS. `assignColorGroup` in
+      `src/css.ts` recurses generically over `tokens.colors`, so `palette` is
+      covered automatically with no special-casing.
+- [x] Add a `containerQueries` breakpoint namespace only if `spectre-ui` Phase
       7's responsive-variant design ends up needing `@container` support. Do not
       add speculatively ahead of that decision.
+  - Not needed: `spectre-ui`'s `TODO.md` has not yet reached a Phase 7 (tops
+      out at Phase 5); its existing responsive work (Grid, Sidebar) uses
+      `@media` against `breakpoints.*` exclusively, with no `@container`
+      usage anywhere in source. No downstream signal exists yet, so per this
+      item's own instruction this stays undone by design, not left open.
 
 ### P1: Utility-Contract Manifest Surface
 
-- [ ] Default position: no new `contract.manifest.json` section needed. The
+- [x] Default position: no new `contract.manifest.json` section needed. The
       utility engine consumes published CSS variables through the same contract
       every recipe already uses (a Layer 2 concern). Only add manifest surface
       here if `spectre-ui` Phase 7 P0 surfaces a token-shape guarantee
       `outputParity` doesn't already provide.
+  - Confirmed still the right call: no such Phase 7 P0 exists yet in
+      `spectre-ui`'s `TODO.md`, so no new manifest surface is warranted.
 
 ### P2: Tailwind Export Removal — Done
 
@@ -657,9 +671,14 @@ to these families under this phase.
       drop Tailwind-derived assertions.
 - [x] Classified `Contract change type: breaking` in the `CHANGELOG.md` `4.0.0`
       release entry.
-- [ ] Coordinate with the equivalent removal/migration in `spectre-ui` Phase 7
+- [x] Coordinate with the equivalent removal/migration in `spectre-ui` Phase 7
       P2 — any downstream repo still importing `tailwindTheme`/ `tailwindPreset`
       will break on upgrade to the version publishing this change.
+  - Confirmed clean: `spectre-ui/package.json` already declares
+      `"@phcdevworks/spectre-tokens": "^4.0.0"`, and its `src/` has no
+      references to `tailwindTheme`, `tailwindPreset`, or `tailwind.config`
+      remaining. The removal has already propagated downstream without
+      breakage.
 
 **Unblocks:** `spectre-ui` Phase 7 P0/P1 — the generator cannot consume
 `colors.palette` or any new container-query tokens until they are published here
