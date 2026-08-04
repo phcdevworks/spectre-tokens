@@ -262,7 +262,8 @@
   "docContract": {
     "requiredFiles": [
       "README.md",
-      "TOKEN_CONTRACT.md"
+      "TOKEN_CONTRACT.md",
+      "TOKEN_REFERENCE.md"
     ],
     "requiredSectionMarkers": [
       "### Token model",

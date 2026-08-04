@@ -125,6 +125,33 @@ export function resolveReferences(tree: unknown, root: unknown): unknown {
   return tree;
 }
 
+export interface TokenLeafDetail {
+  path: string;
+  value: unknown;
+  description?: string;
+  pair?: string;
+}
+
+export function collectLeafDetails(tree: unknown, path: string[] = []): TokenLeafDetail[] {
+  if (Array.isArray(tree)) {
+    return path.length > 0 ? [{ path: path.join('.'), value: tree }] : [];
+  }
+
+  if (!isObject(tree)) {
+    return path.length > 0 ? [{ path: path.join('.'), value: tree }] : [];
+  }
+
+  if ('value' in tree) {
+    const metadata = isObject(tree.metadata) ? tree.metadata : undefined;
+    const detail: TokenLeafDetail = { path: path.join('.'), value: tree.value };
+    if (typeof tree.description === 'string') detail.description = tree.description;
+    if (typeof metadata?.pair === 'string') detail.pair = metadata.pair;
+    return [detail];
+  }
+
+  return Object.entries(tree).flatMap(([key, entry]) => collectLeafDetails(entry, [...path, key]));
+}
+
 export function flattenTokenTree(value: unknown): unknown {
   if (Array.isArray(value)) {
     return value.map((entry) => flattenTokenTree(entry));

@@ -30,17 +30,18 @@ contracts for specific frameworks and runtimes.
 
 ## Documentation Map
 
-| Guide       | Path                         |
-| ----------- | ---------------------------- |
-| Agent rules | [AGENTS.md](AGENTS.md)       |
-| Claude Code | [CLAUDE.md](CLAUDE.md)       |
-| Codex       | [CODEX.md](CODEX.md)         |
-| Copilot     | [COPILOT.md](COPILOT.md)     |
-| Jules       | [JULES.md](JULES.md)         |
-| Roadmap     | [ROADMAP.md](ROADMAP.md)     |
-| Todo        | [TODO.md](TODO.md)           |
-| Changelog   | [CHANGELOG.md](CHANGELOG.md) |
-| Security    | [SECURITY.md](SECURITY.md)   |
+| Guide           | Path                                     |
+| --------------- | ---------------------------------------- |
+| Agent rules     | [AGENTS.md](AGENTS.md)                   |
+| Claude Code     | [CLAUDE.md](CLAUDE.md)                   |
+| Codex           | [CODEX.md](CODEX.md)                     |
+| Copilot         | [COPILOT.md](COPILOT.md)                 |
+| Jules           | [JULES.md](JULES.md)                     |
+| Roadmap         | [ROADMAP.md](ROADMAP.md)                 |
+| Todo            | [TODO.md](TODO.md)                       |
+| Token reference | [TOKEN_REFERENCE.md](TOKEN_REFERENCE.md) |
+| Changelog       | [CHANGELOG.md](CHANGELOG.md)             |
+| Security        | [SECURITY.md](SECURITY.md)               |
 
 [![npm version](https://img.shields.io/npm/v/@phcdevworks/spectre-tokens)](https://www.npmjs.com/package/@phcdevworks/spectre-tokens)
 [![CI](https://github.com/phcdevworks/spectre-tokens/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/phcdevworks/spectre-tokens/actions/workflows/ci.yml)
@@ -305,6 +306,9 @@ The exported runtime token object is a flattened string-based tree generated
 from `tokens/`. Source-only wrapper fields such as `value` and `metadata` are
 internal generation details and are not part of the public package contract.
 
+See [TOKEN_REFERENCE.md](TOKEN_REFERENCE.md) for the exhaustive, generated
+list of every token path, resolved value, and usage note.
+
 The `layout` namespace includes section, stack, and container spacing tokens,
 plus fixed layout width tokens for common consumer shells:
 `layout.container.maxWidth`, `layout.container.maxWidthProse`, and
@@ -514,14 +518,13 @@ treated as downstream UI primitives.
 
 Claude Code (`claude-sonnet-4-6`) is the primary development agent for this
 repository. Codex handles releases and production stabilization, including
-cutting tagged releases and GitHub Releases. Jules handles small automated
-fixes and generated-output sync. GitHub Copilot provides development
-support.
+cutting tagged releases and GitHub Releases. Jules handles small automated fixes
+and generated-output sync. GitHub Copilot provides development support.
 
-All AI agents with repository access (Claude Code, Codex, Copilot, Jules)
-have commit, push, and tag authority in this repository. Publishing to npm
-remains Bradley Potts's sole authority. See [AGENTS.md](AGENTS.md) for the
-full commit-policy and release-authority grant.
+All AI agents with repository access (Claude Code, Codex, Copilot, Jules) have
+commit, push, and tag authority in this repository. Publishing to npm remains
+Bradley Potts's sole authority. See [AGENTS.md](AGENTS.md) for the full
+commit-policy and release-authority grant.
 
 **Protected from automated change:** locked color families (`success`,
 `warning`, `danger`, CTA/brand-action), `contract.manifest.json`, and

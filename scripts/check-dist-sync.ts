@@ -45,7 +45,7 @@ function runOrExit(command: string, args: string[], options: SpawnSyncOptions = 
 
 runOrExit(npmCommand, ['run', 'build']);
 
-const status = run('git', ['status', '--porcelain', '--', 'dist']);
+const status = run('git', ['status', '--porcelain', '--', 'dist', 'TOKEN_REFERENCE.md']);
 
 if (status.status !== 0) {
   if (status.stdout) {
@@ -60,8 +60,8 @@ if (status.status !== 0) {
 }
 
 if (status.stdout.trim()) {
-  console.error('dist artifacts are out of sync with the committed build output.');
-  console.error('Run `npm run build` and commit the updated dist files.');
+  console.error('dist artifacts or TOKEN_REFERENCE.md are out of sync with the committed build output.');
+  console.error('Run `npm run build` and commit the updated files.');
   process.stdout.write(status.stdout);
   process.exit(1);
 }

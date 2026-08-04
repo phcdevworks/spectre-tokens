@@ -57,10 +57,11 @@
   "scripts": {
     "generate": "tsx scripts/generate-types.ts",
     "prebuild": "npm run generate",
-    "build": "npm run build:ts && npm run build:css && npm run build:design",
+    "build": "npm run build:ts && npm run build:css && npm run build:design && npm run build:docs",
     "build:ts": "tsup --config tsup.config.ts",
     "build:css": "tsx scripts/build-css.ts",
     "build:design": "tsx scripts/build-dtcg.ts",
+    "build:docs": "tsx scripts/build-token-reference.ts",
     "check:manifest": "tsx scripts/check-contract-manifest.ts",
     "check:docs": "tsx scripts/check-doc-contract.ts",
     "check:version-sync": "npm run check:docs",
@@ -99,8 +100,8 @@
   "devDependencies": {
     "@phcdevworks/spectre-manifest": "^1.1.0",
     "@types/node": "^26.1.2",
-    "@typescript-eslint/eslint-plugin": "^8.65.0",
-    "@typescript-eslint/parser": "^8.65.0",
+    "@typescript-eslint/eslint-plugin": "^8.66.0",
+    "@typescript-eslint/parser": "^8.66.0",
     "@typescript/native": "npm:typescript@^7.0.2",
     "colord": "^2.9.3",
     "eslint": "^10.8.0",
@@ -109,9 +110,9 @@
     "style-dictionary": "^5.5.0",
     "ts-node": "^10.9.2",
     "tsup": "^8.5.1",
-    "tsx": "^4.23.4",
+    "tsx": "^4.23.5",
     "typescript": "npm:@typescript/typescript6@^6.0.2",
-    "typescript-eslint": "^8.65.0",
+    "typescript-eslint": "^8.66.0",
     "vitest": "^4.1.10"
   },
   "overrides": {

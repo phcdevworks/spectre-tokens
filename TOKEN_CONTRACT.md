@@ -115,6 +115,10 @@ This package currently guarantees these public output surfaces:
 - CSS variables in `dist/index.css`
 - W3C DTCG design-tool export in `dist/tokens.dtcg.json` for Figma/Tokens Studio
   sync
+- `TOKEN_REFERENCE.md`, a generated exhaustive per-leaf reference (path,
+  resolved value, usage note) for every public token. Like CSS and DTCG
+  output, it is a derived artifact, not contract authority — `tokens/*.json`
+  remains the source of truth.
 
 All of those outputs must remain aligned with `contract.manifest.json`.
 
@@ -124,7 +128,7 @@ Validation is expected to fail fast on:
 - undocumented namespaces
 - output drift across JS, CSS, and DTCG
 - README mismatch with contract authority
-- stale `dist` artifacts
+- stale `dist` artifacts or a stale `TOKEN_REFERENCE.md`
 
 ## Semantic Tokens Vs Raw Palette Tokens
 
