@@ -147,11 +147,12 @@ For maintainers, every package release should keep these four records in sync:
 1. Update `package.json` to the release version.
 2. Move the relevant notes from `CHANGELOG.md` `Unreleased` into a dated
    versioned entry for that same version, and include a short release title line
-   beneath the heading.
+   beneath the heading. Keep the title descriptive; do not include a roadmap
+   phase or version number.
 3. Create a Git tag that exactly matches the package version, for example
    `2.1.2`.
 4. Publish the GitHub Release from that same tag and use the matching changelog
-   entry as the release notes.
+   entry as the release notes. Its title must match the changelog release title.
 
 When token meaning or public contract surfaces change, the `Unreleased` notes
 must also include one classification line:

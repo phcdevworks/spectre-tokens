@@ -179,13 +179,9 @@ Use this checklist before cutting every release (tag + GitHub Release).
    `CHANGELOG.md [Unreleased]` classification.
 2. Bump `package.json` to the proposed version.
 3. Move `[Unreleased]` notes into a new versioned entry:
-   `## [<version>] - <YYYY-MM-DD>`, with a release title line in the format
-   `**Release Title:** Phase <N> - <short title>`, where `Phase <N>` is the
-   active phase name from this repo's own `ROADMAP.md` (e.g. `Phase 4 —
-   Token Surface Completion` becomes `Phase 4 - Token Surface Completion`)
-   and `<short title>` is a concise summary of what shipped in this release.
-   If the release spans no single ROADMAP phase (e.g. a hygiene-only patch),
-   state that explicitly instead of inventing a phase.
+   `## [<version>] - <YYYY-MM-DD>`, with a concise descriptive title line in
+   the format `**Release Title:** <short title>`. Do not include a roadmap
+   phase or version number in the title.
 4. Add the new version's compare link at the bottom of `CHANGELOG.md` and
    update the `[Unreleased]` compare link range.
 5. Run `npm run check` — must pass clean on the release-ready state.
@@ -195,9 +191,10 @@ Use this checklist before cutting every release (tag + GitHub Release).
 8. Create the git tag: `git tag v<version>` (e.g. `v4.1.0`), matching
    `package.json` exactly, then push the commit and tag.
 9. Publish the GitHub Release from that tag: `gh release create v<version>
-   --title "v<version>: Phase <N> - <short title>" --notes-file` (extract the
-   new version's changelog section, or pass `--notes` inline for a short
-   release).
+   --title "<short title>" --notes-file` (extract the new version's changelog
+   section, or pass `--notes` inline for a short release). The GitHub Release
+   title must match the changelog release title and must not include the
+   roadmap phase or version number.
 10. `npm publish` is **not** run by Codex — that step, and any npm
     release-authority decision, stays with Bradley Potts.
 

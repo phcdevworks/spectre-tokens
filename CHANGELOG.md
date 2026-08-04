@@ -8,7 +8,7 @@ reflects package releases published to npm.
 
 ## [4.1.0] - 2026-08-05
 
-**Release Title:** No Active Roadmap Phase - Documentation and Dependency Maintenance
+**Release Title:** Documentation and Dependency Maintenance
 
 Contract change type: additive
 
@@ -85,7 +85,7 @@ Contract change type: breaking
 
 ## [3.5.0] - 2026-07-21
 
-**Release Title:** Phase 9 - TypeScript 7 Compatibility
+**Release Title:** TypeScript 7 Compatibility
 
 Contract change type: additive
 
@@ -100,7 +100,7 @@ Contract change type: additive
 
 ## [3.4.0] - 2026-07-16
 
-**Release Title:** Phase 9 - Contract Generation and Ecosystem Maturity
+**Release Title:** Contract Generation and Ecosystem Maturity
 
 Contract change type: additive
 
@@ -300,7 +300,7 @@ Contract change type: additive
 
 ## [3.3.1] - 2026-06-30
 
-**Release Title:** Phase 8 - Component CSS Generation Coverage Fix
+**Release Title:** Component CSS Generation Coverage Fix
 
 Contract change type: additive
 
@@ -344,7 +344,7 @@ Contract change type: additive
 
 ## [3.3.0] - 2026-06-30
 
-**Release Title:** Phase 8 - Form Validation State Tokens
+**Release Title:** Form Validation State Tokens
 
 Contract change type: additive
 
@@ -363,7 +363,7 @@ Contract change type: additive
 
 ## [3.2.0] - 2026-06-26
 
-**Release Title:** Phase 7 - Form Field Component Tokens
+**Release Title:** Form Field Component Tokens
 
 Contract change type: additive
 
@@ -386,7 +386,7 @@ Contract change type: additive
 
 ## [3.1.0] - 2026-06-19
 
-**Release Title:** Phase 5/6 - Layout Width Tokens and CSS Variable Parity
+**Release Title:** Layout Width Tokens and CSS Variable Parity
 
 Contract change type: additive
 
@@ -416,7 +416,7 @@ Contract change type: additive
 
 ## [3.0.0] - 2026-06-17
 
-**Release Title:** Phase 4 P3 - Surface Subtle Contract Rename
+**Release Title:** Surface Subtle Contract Rename
 
 Contract change type: breaking
 
@@ -438,7 +438,7 @@ Contract change type: breaking
 
 ## [2.9.0] - 2026-06-10
 
-**Release Title:** Phase 4 P2 - Motion Accessibility and UI Component Tokens
+**Release Title:** Motion Accessibility and UI Component Tokens
 
 Contract change type: additive
 
@@ -478,8 +478,7 @@ Contract change type: additive
 
 ## [2.8.0] - 2026-06-06
 
-**Release Title:** Phase 4 P1 - Focus Token Parity and Color Reference
-Consistency
+**Release Title:** Focus Token Parity and Color Reference Consistency
 
 Contract change type: additive
 
@@ -524,7 +523,7 @@ Contract change type: additive
 
 ## [2.7.0] - 2026-06-03
 
-**Release Title:** Phase 2/3 - Token Vocabulary and Integration Hardening
+**Release Title:** Token Vocabulary and Integration Hardening
 
 Contract change type: additive
 
@@ -586,7 +585,7 @@ Contract change type: additive
 
 ## [2.6.0] - 2026-05-21
 
-**Release Title:** Phase 2 - Contrast Metadata and Overlay Stabilization
+**Release Title:** Contrast Metadata and Overlay Stabilization
 
 Contract change type: additive
 
@@ -616,8 +615,7 @@ Contract change type: additive
 
 ## [2.5.0] - 2026-05-04
 
-**Release Title:** Phase 2 - Badge Contrast Metadata and Contract Change
-Guidance
+**Release Title:** Badge Contrast Metadata and Contract Change Guidance
 
 Contract change type: semantic change
 
@@ -658,7 +656,7 @@ Contract change type: semantic change
 
 ## [2.4.0] - 2026-04-25
 
-**Release Title:** Phase 2 - Surface Parity and Elevation Stabilization
+**Release Title:** Surface Parity and Elevation Stabilization
 
 Contract change type: semantic change
 
@@ -684,7 +682,7 @@ Contract change type: semantic change
 
 ## [2.3.0] - 2026-04-18
 
-**Release Title:** Phase 2 - Contract Authority and CSS Output Hardening
+**Release Title:** Contract Authority and CSS Output Hardening
 
 Contract change type: semantic change
 
@@ -733,7 +731,7 @@ Contract change type: semantic change
 
 ## [2.2.0] - 2026-04-11
 
-**Release Title:** Phase 2 - Contract Alignment and Interaction Coverage
+**Release Title:** Contract Alignment and Interaction Coverage
 
 Contract change type: semantic change
 
@@ -773,7 +771,7 @@ Contract change type: semantic change
 
 ## [2.1.2] - 2026-04-05
 
-**Release Title:** Phase 2 - Validation Guardrails and CI
+**Release Title:** Validation Guardrails and CI
 
 Contract change type: additive
 
@@ -812,7 +810,7 @@ Contract change type: additive
 
 ## [2.1.1] - 2026-03-29
 
-**Release Title:** Phase 2 - Semantic Color Refinement
+**Release Title:** Semantic Color Refinement
 
 Contract change type: additive
 
@@ -844,7 +842,7 @@ Contract change type: additive
 
 ## [2.1.0] - 2026-03-22
 
-**Release Title:** Phase 2 - Accessibility and Workflow Expansion
+**Release Title:** Accessibility and Workflow Expansion
 
 Contract change type: additive
 
@@ -885,7 +883,7 @@ Contract change type: additive
 
 ## [2.0.0] - 2026-03-15
 
-**Release Title:** Phase 2 - Modular Token Architecture
+**Release Title:** Modular Token Architecture
 
 Contract change type: breaking
 
@@ -918,7 +916,7 @@ Contract change type: breaking
 
 ## [1.1.0] - 2026-03-11
 
-**Release Title:** Phase 1 - Generated Types and Strict Typing
+**Release Title:** Generated Types and Strict Typing
 
 ### Added
 
@@ -946,7 +944,7 @@ Contract change type: breaking
 
 ## [1.0.0] - 2026-02-01
 
-**Release Title:** Phase 1 - Stable Documentation and Component Coverage
+**Release Title:** Stable Documentation and Component Coverage
 
 ### Added
 
@@ -983,7 +981,7 @@ Contract change type: breaking
 
 ## [0.2.1] - 2026-01-14
 
-**Release Title:** Phase 0 - Documentation Expansion and Text Hierarchy
+**Release Title:** Documentation Expansion and Text Hierarchy
 
 ### Added
 
@@ -1015,7 +1013,7 @@ Contract change type: breaking
 
 ## [0.2.0] - 2025-12-20
 
-**Release Title:** Phase 0 - Spacing System Standardization
+**Release Title:** Spacing System Standardization
 
 ### Added
 
@@ -1035,7 +1033,7 @@ Contract change type: breaking
 
 ## [0.1.0] - 2025-12-08
 
-**Release Title:** Phase 0 - Typography and Badge Foundations
+**Release Title:** Typography and Badge Foundations
 
 ### Added
 
@@ -1048,7 +1046,7 @@ Contract change type: breaking
 
 ## [0.0.4] - 2025-12-07
 
-**Release Title:** Phase 0 - Dark Mode and Token Validation
+**Release Title:** Dark Mode and Token Validation
 
 ### Added
 
@@ -1064,7 +1062,7 @@ Contract change type: breaking
 
 ## [0.0.3] - 2025-12-06
 
-**Release Title:** Phase 0 - Semantic Surfaces and Regression Protection
+**Release Title:** Semantic Surfaces and Regression Protection
 
 ### Added
 
@@ -1077,7 +1075,7 @@ Contract change type: breaking
 
 ## [0.0.2] - 2025-12-04
 
-**Release Title:** Phase 0 - Type Safety and Documentation Corrections
+**Release Title:** Type Safety and Documentation Corrections
 
 ### Changed
 
@@ -1091,7 +1089,7 @@ Contract change type: breaking
 
 ## [0.0.1] - 2025-11-21
 
-**Release Title:** Phase 0 - Initial Spectre Tokens Foundation
+**Release Title:** Initial Spectre Tokens Foundation
 
 ### Added
 
