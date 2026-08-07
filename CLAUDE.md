@@ -127,8 +127,8 @@ Current: `colors`, `space`, `layout`, `radii`, `typography`, `font`, `shadows`,
 `icons`, `border`, `accessibility`, `buttons`, `forms`, `link`, `surface`,
 `text`, `component`, `modes`
 
-Phase 4 (see `TODO.md`) is complete. No active planning focus is currently open;
-next priorities are tracked in `TODO.md` as they are identified.
+Phase 11 is active: the independent Footer semantic contract requested through
+downstream production integration. Scope and gates are tracked in `TODO.md`.
 
 Adding a new namespace is additive. Removing or renaming is breaking. The banned
 namespace is `borders` - always use `border` (singular).

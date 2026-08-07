@@ -31,11 +31,13 @@ this file does not restate delivered work.
 
 ## What's Next
 
-No active phase is currently open. New namespace/contract work here is
-demand-driven: it opens only when `spectre-ui` (or another downstream
-consumer) surfaces a concrete missing token requirement, per the
-`check:downstream` policy documented in `TOKEN_CONTRACT.md`. See
-[TODO.md](TODO.md) for the current work queue.
+### Phase 11 — Independent Footer Semantic Contract
+
+A downstream production integration exposed that Footer reuses Nav's semantic
+roles and cannot represent a visually distinct footer without a local parallel
+vocabulary. Phase 11 adds an independent `component.footer` contract for
+surface, text hierarchy, links, dividers, and chips without importing any
+consumer-specific brand values. See [TODO.md](TODO.md) for acceptance criteria.
 
 ---
 
