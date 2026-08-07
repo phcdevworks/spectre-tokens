@@ -26,18 +26,15 @@ this file does not restate delivered work.
 | 8 | Select/textarea invalid+success state roles; CSS generation coverage fix | 3.3.0 / 3.3.1 |
 | 9 | Manifest-driven CSS generation, exhaustive output parity, DTCG conformance hardening, live downstream compat check | 3.4.0–4.0.0 |
 | 10 | Utility-engine token foundation — `colors.palette`, Tailwind export removal | 4.0.0 |
+| 11 | Independent `component.footer` semantic contract — bg, text, heading, muted, link, linkHover, border, divider, chipBg in default/dark modes, decoupled from Nav | Unreleased |
 
 ---
 
 ## What's Next
 
-### Phase 11 — Independent Footer Semantic Contract
-
-A downstream production integration exposed that Footer reuses Nav's semantic
-roles and cannot represent a visually distinct footer without a local parallel
-vocabulary. Phase 11 adds an independent `component.footer` contract for
-surface, text hierarchy, links, dividers, and chips without importing any
-consumer-specific brand values. See [TODO.md](TODO.md) for acceptance criteria.
+No active phase is currently open. New namespace/contract work opens on
+demand, when a downstream consumer surfaces a concrete missing token
+requirement — see [TODO.md](TODO.md).
 
 ---
 

@@ -17,6 +17,13 @@ Contract change type: additive
   it now has an independent semantic contract. Requested by a downstream
   consumer through `spectre-ui`.
 
+  **Migration:** this is additive — no existing token path changed or was
+  removed, so no consumer is broken by upgrading. Consumers that were
+  manually reusing `component.nav.bg` / `component.nav.text` /
+  `component.nav.border` to style a footer should migrate those call sites
+  to the new `component.footer.*` paths so footer styling can evolve
+  independently of nav.
+
 ## [4.1.0] - 2026-08-05
 
 **Release Title:** Documentation and Dependency Maintenance

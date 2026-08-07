@@ -160,15 +160,15 @@ mode-aware styling.
 
 ### Semantic namespaces (prefer for all UI work)
 
-| Namespace   | What it expresses                                                                                                           |
-| ----------- | --------------------------------------------------------------------------------------------------------------------------- |
-| `surface`   | Background roles: page, card, input, overlay, subtle, hero (gradient, hero sections only), hover, selected, active, divider |
-| `text`      | Foreground roles: default, muted, subtle, meta, on-surface, on-page                                                         |
-| `component` | Role-specific tokens for icon boxes, badges, ratings, testimonials, pricing cards, nav, modal, toast, tooltip, dropdown     |
-| `buttons`   | Button state tokens: default, hover, active, disabled, CTA                                                                  |
-| `forms`     | Form state tokens: default, focused, error, disabled                                                                        |
-| `link`      | Inline link color roles: default, hover, active, visited                                                                    |
-| `modes`     | Mode-aware overrides under `modes.default` and `modes.dark`                                                                 |
+| Namespace   | What it expresses                                                                                                               |
+| ----------- | ------------------------------------------------------------------------------------------------------------------------------- |
+| `surface`   | Background roles: page, card, input, overlay, subtle, hero (gradient, hero sections only), hover, selected, active, divider     |
+| `text`      | Foreground roles: default, muted, subtle, meta, on-surface, on-page                                                             |
+| `component` | Role-specific tokens for icon boxes, badges, ratings, testimonials, pricing cards, nav, footer, modal, toast, tooltip, dropdown |
+| `buttons`   | Button state tokens: default, hover, active, disabled, CTA                                                                      |
+| `forms`     | Form state tokens: default, focused, error, disabled                                                                            |
+| `link`      | Inline link color roles: default, hover, active, visited                                                                        |
+| `modes`     | Mode-aware overrides under `modes.default` and `modes.dark`                                                                     |
 
 ```ts
 import tokens from '@phcdevworks/spectre-tokens'
@@ -306,8 +306,8 @@ The exported runtime token object is a flattened string-based tree generated
 from `tokens/`. Source-only wrapper fields such as `value` and `metadata` are
 internal generation details and are not part of the public package contract.
 
-See [TOKEN_REFERENCE.md](TOKEN_REFERENCE.md) for the exhaustive, generated
-list of every token path, resolved value, and usage note.
+See [TOKEN_REFERENCE.md](TOKEN_REFERENCE.md) for the exhaustive, generated list
+of every token path, resolved value, and usage note.
 
 The `layout` namespace includes section, stack, and container spacing tokens,
 plus fixed layout width tokens for common consumer shells:
