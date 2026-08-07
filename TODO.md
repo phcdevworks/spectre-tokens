@@ -23,9 +23,9 @@ vocabulary.
 
 ### P1 — Generated Contract and Validation
 
-- [ ] Update public types, CSS-variable generation, the contract manifest, and
+- [x] Update public types, CSS-variable generation, the contract manifest, and
       exhaustive CSS/DTCG parity coverage for every new footer leaf.
-- [ ] Run `npx vitest run tests/css-semantic-coverage.test.ts`, then the full
+- [x] Run `npx vitest run tests/css-semantic-coverage.test.ts`, then the full
       `npm run check` and downstream compatibility check.
 
 ### P2 — Documentation and Release
