@@ -6,6 +6,10 @@ reflects package releases published to npm.
 
 ## [Unreleased]
 
+## [4.2.0] - 2026-08-07
+
+**Release Title:** Footer Semantic Contract and Dependency Refresh
+
 Contract change type: additive
 
 ### Added
@@ -23,6 +27,11 @@ Contract change type: additive
   `component.nav.border` to style a footer should migrate those call sites
   to the new `component.footer.*` paths so footer styling can evolve
   independently of nav.
+
+### Changed
+
+- Updated `tsx` from 4.23.5 to 4.23.10 and refreshed compatible transitive
+  development dependencies in `package-lock.json`.
 
 ## [4.1.0] - 2026-08-05
 
@@ -1117,7 +1126,8 @@ Contract change type: breaking
 - Standardized documentation and contributing guidelines.
 
 [unreleased]:
-  https://github.com/phcdevworks/spectre-tokens/compare/v4.1.0...HEAD
+  https://github.com/phcdevworks/spectre-tokens/compare/v4.2.0...HEAD
+[4.2.0]: https://github.com/phcdevworks/spectre-tokens/compare/v4.1.0...v4.2.0
 [4.1.0]: https://github.com/phcdevworks/spectre-tokens/compare/v4.0.0...v4.1.0
 [4.0.0]: https://github.com/phcdevworks/spectre-tokens/compare/v3.5.0...v4.0.0
 [3.5.0]: https://github.com/phcdevworks/spectre-tokens/compare/v3.4.0...v3.5.0

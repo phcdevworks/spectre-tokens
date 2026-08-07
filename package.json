@@ -1,6 +1,6 @@
 {
   "name": "@phcdevworks/spectre-tokens",
-  "version": "4.1.0",
+  "version": "4.2.0",
   "description": "@phcdevworks/spectre-tokens is the design-token package of the Spectre system. It provides a complete, UI-ready token surface for downstream Spectre packages and compatible applications.",
   "keywords": [
     "phcdevworks",
@@ -110,7 +110,7 @@
     "style-dictionary": "^5.5.0",
     "ts-node": "^10.9.2",
     "tsup": "^8.5.1",
-    "tsx": "^4.23.5",
+    "tsx": "^4.23.10",
     "typescript": "npm:@typescript/typescript6@^6.0.2",
     "typescript-eslint": "^8.66.0",
     "vitest": "^4.1.10"
