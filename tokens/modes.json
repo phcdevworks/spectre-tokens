@@ -392,6 +392,56 @@
             "metadata": {}
           }
         },
+        "footer": {
+          "bg": {
+            "value": "{colors.neutral.900}",
+            "metadata": {
+              "pair": "modes.default.component.footer.text"
+            }
+          },
+          "text": {
+            "value": "{colors.neutral.50}",
+            "metadata": {
+              "pair": "modes.default.component.footer.bg"
+            }
+          },
+          "heading": {
+            "value": "{colors.white}",
+            "metadata": {
+              "pair": "modes.default.component.footer.bg"
+            }
+          },
+          "muted": {
+            "value": "{colors.neutral.400}",
+            "metadata": {
+              "pair": "modes.default.component.footer.bg"
+            }
+          },
+          "link": {
+            "value": "{colors.neutral.300}",
+            "metadata": {
+              "pair": "modes.default.component.footer.bg"
+            }
+          },
+          "linkHover": {
+            "value": "{colors.brand.400}",
+            "metadata": {
+              "pair": "modes.default.component.footer.bg"
+            }
+          },
+          "border": {
+            "value": "{colors.neutral.700}",
+            "metadata": {}
+          },
+          "divider": {
+            "value": "{colors.neutral.800}",
+            "metadata": {}
+          },
+          "chipBg": {
+            "value": "{colors.neutral.800}",
+            "metadata": {}
+          }
+        },
         "modal": {
           "bg": {
             "value": "{colors.white}",
@@ -1127,6 +1177,56 @@
           },
           "border": {
             "value": "{colors.neutral.700}",
+            "metadata": {}
+          }
+        },
+        "footer": {
+          "bg": {
+            "value": "{colors.black}",
+            "metadata": {
+              "pair": "modes.dark.component.footer.text"
+            }
+          },
+          "text": {
+            "value": "{colors.neutral.50}",
+            "metadata": {
+              "pair": "modes.dark.component.footer.bg"
+            }
+          },
+          "heading": {
+            "value": "{colors.white}",
+            "metadata": {
+              "pair": "modes.dark.component.footer.bg"
+            }
+          },
+          "muted": {
+            "value": "{colors.neutral.400}",
+            "metadata": {
+              "pair": "modes.dark.component.footer.bg"
+            }
+          },
+          "link": {
+            "value": "{colors.neutral.300}",
+            "metadata": {
+              "pair": "modes.dark.component.footer.bg"
+            }
+          },
+          "linkHover": {
+            "value": "{colors.brand.300}",
+            "metadata": {
+              "pair": "modes.dark.component.footer.bg"
+            }
+          },
+          "border": {
+            "value": "{colors.neutral.800}",
+            "metadata": {}
+          },
+          "divider": {
+            "value": "{colors.neutral.900}",
+            "metadata": {}
+          },
+          "chipBg": {
+            "value": "{colors.neutral.900}",
             "metadata": {}
           }
         },

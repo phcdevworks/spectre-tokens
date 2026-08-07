@@ -226,6 +226,44 @@
         "$type": "color"
       }
     },
+    "footer": {
+      "bg": {
+        "$value": "{colors.neutral.900}",
+        "$type": "color"
+      },
+      "text": {
+        "$value": "{colors.neutral.50}",
+        "$type": "color"
+      },
+      "heading": {
+        "$value": "{colors.white}",
+        "$type": "color"
+      },
+      "muted": {
+        "$value": "{colors.neutral.400}",
+        "$type": "color"
+      },
+      "link": {
+        "$value": "{colors.neutral.300}",
+        "$type": "color"
+      },
+      "linkHover": {
+        "$value": "{colors.brand.400}",
+        "$type": "color"
+      },
+      "border": {
+        "$value": "{colors.neutral.700}",
+        "$type": "color"
+      },
+      "divider": {
+        "$value": "{colors.neutral.800}",
+        "$type": "color"
+      },
+      "chipBg": {
+        "$value": "{colors.neutral.800}",
+        "$type": "color"
+      }
+    },
     "modal": {
       "bg": {
         "$value": "{colors.white}",
@@ -1201,6 +1239,44 @@
             "$type": "color"
           }
         },
+        "footer": {
+          "bg": {
+            "$value": "{colors.neutral.900}",
+            "$type": "color"
+          },
+          "text": {
+            "$value": "{colors.neutral.50}",
+            "$type": "color"
+          },
+          "heading": {
+            "$value": "{colors.white}",
+            "$type": "color"
+          },
+          "muted": {
+            "$value": "{colors.neutral.400}",
+            "$type": "color"
+          },
+          "link": {
+            "$value": "{colors.neutral.300}",
+            "$type": "color"
+          },
+          "linkHover": {
+            "$value": "{colors.brand.400}",
+            "$type": "color"
+          },
+          "border": {
+            "$value": "{colors.neutral.700}",
+            "$type": "color"
+          },
+          "divider": {
+            "$value": "{colors.neutral.800}",
+            "$type": "color"
+          },
+          "chipBg": {
+            "$value": "{colors.neutral.800}",
+            "$type": "color"
+          }
+        },
         "modal": {
           "bg": {
             "$value": "{colors.white}",
@@ -1811,6 +1887,44 @@
           },
           "border": {
             "$value": "{colors.neutral.700}",
+            "$type": "color"
+          }
+        },
+        "footer": {
+          "bg": {
+            "$value": "{colors.black}",
+            "$type": "color"
+          },
+          "text": {
+            "$value": "{colors.neutral.50}",
+            "$type": "color"
+          },
+          "heading": {
+            "$value": "{colors.white}",
+            "$type": "color"
+          },
+          "muted": {
+            "$value": "{colors.neutral.400}",
+            "$type": "color"
+          },
+          "link": {
+            "$value": "{colors.neutral.300}",
+            "$type": "color"
+          },
+          "linkHover": {
+            "$value": "{colors.brand.300}",
+            "$type": "color"
+          },
+          "border": {
+            "$value": "{colors.neutral.800}",
+            "$type": "color"
+          },
+          "divider": {
+            "$value": "{colors.neutral.900}",
+            "$type": "color"
+          },
+          "chipBg": {
+            "$value": "{colors.neutral.900}",
             "$type": "color"
           }
         },

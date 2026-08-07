@@ -6,7 +6,7 @@ contract authority; `tokens/` and `contract.manifest.json` remain the source
 of truth (see `TOKEN_CONTRACT.md`).
 
 Every leaf token path across all 23 public namespaces
-(1131 total), with its resolved source value and a usage note.
+(1158 total), with its resolved source value and a usage note.
 Values shown here are pre-CSS-resolution source values — `{path.to.token}`
 references are shown as-written, not resolved (see `src/css.ts` for
 resolved CSS output).
@@ -916,6 +916,15 @@ resolved CSS output).
 | `component.nav.linkHover` | `{colors.brand.600}` | component token. |
 | `component.nav.linkActive` | `{colors.brand.700}` | component token. |
 | `component.nav.border` | `{colors.neutral.200}` | component token. |
+| `component.footer.bg` | `{colors.neutral.900}` | Pairs with `component.footer.text` for contrast. |
+| `component.footer.text` | `{colors.neutral.50}` | Pairs with `component.footer.bg` for contrast. |
+| `component.footer.heading` | `{colors.white}` | Pairs with `component.footer.bg` for contrast. |
+| `component.footer.muted` | `{colors.neutral.400}` | Pairs with `component.footer.bg` for contrast. |
+| `component.footer.link` | `{colors.neutral.300}` | Pairs with `component.footer.bg` for contrast. |
+| `component.footer.linkHover` | `{colors.brand.400}` | Pairs with `component.footer.bg` for contrast. |
+| `component.footer.border` | `{colors.neutral.700}` | component token. |
+| `component.footer.divider` | `{colors.neutral.800}` | component token. |
+| `component.footer.chipBg` | `{colors.neutral.800}` | component token. |
 | `component.modal.bg` | `{colors.white}` | component token. |
 | `component.modal.shadow` | `0 20px 48px -12px {colors.black} / 0.20` | component token. |
 | `component.modal.border` | `{colors.neutral.200}` | component token. |
@@ -1060,6 +1069,15 @@ resolved CSS output).
 | `modes.default.component.nav.linkHover` | `{colors.brand.600}` | modes token. |
 | `modes.default.component.nav.linkActive` | `{colors.brand.700}` | modes token. |
 | `modes.default.component.nav.border` | `{colors.neutral.200}` | modes token. |
+| `modes.default.component.footer.bg` | `{colors.neutral.900}` | Pairs with `modes.default.component.footer.text` for contrast. |
+| `modes.default.component.footer.text` | `{colors.neutral.50}` | Pairs with `modes.default.component.footer.bg` for contrast. |
+| `modes.default.component.footer.heading` | `{colors.white}` | Pairs with `modes.default.component.footer.bg` for contrast. |
+| `modes.default.component.footer.muted` | `{colors.neutral.400}` | Pairs with `modes.default.component.footer.bg` for contrast. |
+| `modes.default.component.footer.link` | `{colors.neutral.300}` | Pairs with `modes.default.component.footer.bg` for contrast. |
+| `modes.default.component.footer.linkHover` | `{colors.brand.400}` | Pairs with `modes.default.component.footer.bg` for contrast. |
+| `modes.default.component.footer.border` | `{colors.neutral.700}` | modes token. |
+| `modes.default.component.footer.divider` | `{colors.neutral.800}` | modes token. |
+| `modes.default.component.footer.chipBg` | `{colors.neutral.800}` | modes token. |
 | `modes.default.component.modal.bg` | `{colors.white}` | modes token. |
 | `modes.default.component.modal.shadow` | `0 20px 48px -12px {colors.black} / 0.20` | modes token. |
 | `modes.default.component.modal.border` | `{colors.neutral.200}` | modes token. |
@@ -1194,6 +1212,15 @@ resolved CSS output).
 | `modes.dark.component.nav.linkHover` | `{colors.brand.400}` | modes token. |
 | `modes.dark.component.nav.linkActive` | `{colors.brand.300}` | modes token. |
 | `modes.dark.component.nav.border` | `{colors.neutral.700}` | modes token. |
+| `modes.dark.component.footer.bg` | `{colors.black}` | Pairs with `modes.dark.component.footer.text` for contrast. |
+| `modes.dark.component.footer.text` | `{colors.neutral.50}` | Pairs with `modes.dark.component.footer.bg` for contrast. |
+| `modes.dark.component.footer.heading` | `{colors.white}` | Pairs with `modes.dark.component.footer.bg` for contrast. |
+| `modes.dark.component.footer.muted` | `{colors.neutral.400}` | Pairs with `modes.dark.component.footer.bg` for contrast. |
+| `modes.dark.component.footer.link` | `{colors.neutral.300}` | Pairs with `modes.dark.component.footer.bg` for contrast. |
+| `modes.dark.component.footer.linkHover` | `{colors.brand.300}` | Pairs with `modes.dark.component.footer.bg` for contrast. |
+| `modes.dark.component.footer.border` | `{colors.neutral.800}` | modes token. |
+| `modes.dark.component.footer.divider` | `{colors.neutral.900}` | modes token. |
+| `modes.dark.component.footer.chipBg` | `{colors.neutral.900}` | modes token. |
 | `modes.dark.component.modal.bg` | `{colors.neutral.800}` | modes token. |
 | `modes.dark.component.modal.shadow` | `0 20px 48px -12px {colors.black} / 0.20` | modes token. |
 | `modes.dark.component.modal.border` | `{colors.neutral.700}` | modes token. |

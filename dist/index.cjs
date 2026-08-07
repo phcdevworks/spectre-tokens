@@ -99,6 +99,17 @@ var coreTokens = {
       "linkActive": "{colors.brand.700}",
       "border": "{colors.neutral.200}"
     },
+    "footer": {
+      "bg": "{colors.neutral.900}",
+      "text": "{colors.neutral.50}",
+      "heading": "{colors.white}",
+      "muted": "{colors.neutral.400}",
+      "link": "{colors.neutral.300}",
+      "linkHover": "{colors.brand.400}",
+      "border": "{colors.neutral.700}",
+      "divider": "{colors.neutral.800}",
+      "chipBg": "{colors.neutral.800}"
+    },
     "modal": {
       "bg": "{colors.white}",
       "shadow": "0 20px 48px -12px {colors.black} / 0.20",
@@ -406,6 +417,17 @@ var coreTokens = {
           "linkActive": "{colors.brand.700}",
           "border": "{colors.neutral.200}"
         },
+        "footer": {
+          "bg": "{colors.neutral.900}",
+          "text": "{colors.neutral.50}",
+          "heading": "{colors.white}",
+          "muted": "{colors.neutral.400}",
+          "link": "{colors.neutral.300}",
+          "linkHover": "{colors.brand.400}",
+          "border": "{colors.neutral.700}",
+          "divider": "{colors.neutral.800}",
+          "chipBg": "{colors.neutral.800}"
+        },
         "modal": {
           "bg": "{colors.white}",
           "shadow": "0 20px 48px -12px {colors.black} / 0.20",
@@ -599,6 +621,17 @@ var coreTokens = {
           "linkHover": "{colors.brand.400}",
           "linkActive": "{colors.brand.300}",
           "border": "{colors.neutral.700}"
+        },
+        "footer": {
+          "bg": "{colors.black}",
+          "text": "{colors.neutral.50}",
+          "heading": "{colors.white}",
+          "muted": "{colors.neutral.400}",
+          "link": "{colors.neutral.300}",
+          "linkHover": "{colors.brand.300}",
+          "border": "{colors.neutral.800}",
+          "divider": "{colors.neutral.900}",
+          "chipBg": "{colors.neutral.900}"
         },
         "modal": {
           "bg": "{colors.neutral.800}",

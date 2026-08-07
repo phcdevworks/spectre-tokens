@@ -70,6 +70,17 @@ interface SpectreGeneratedTokens {
             linkActive: string;
             border: string;
         };
+        footer: {
+            bg: string;
+            text: string;
+            heading: string;
+            muted: string;
+            link: string;
+            linkHover: string;
+            border: string;
+            divider: string;
+            chipBg: string;
+        };
         modal: {
             bg: string;
             shadow: string;
@@ -377,6 +388,17 @@ interface SpectreGeneratedTokens {
                     linkActive: string;
                     border: string;
                 };
+                footer: {
+                    bg: string;
+                    text: string;
+                    heading: string;
+                    muted: string;
+                    link: string;
+                    linkHover: string;
+                    border: string;
+                    divider: string;
+                    chipBg: string;
+                };
                 modal: {
                     bg: string;
                     shadow: string;
@@ -570,6 +592,17 @@ interface SpectreGeneratedTokens {
                     linkHover: string;
                     linkActive: string;
                     border: string;
+                };
+                footer: {
+                    bg: string;
+                    text: string;
+                    heading: string;
+                    muted: string;
+                    link: string;
+                    linkHover: string;
+                    border: string;
+                    divider: string;
+                    chipBg: string;
                 };
                 modal: {
                     bg: string;

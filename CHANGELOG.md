@@ -6,6 +6,17 @@ reflects package releases published to npm.
 
 ## [Unreleased]
 
+Contract change type: additive
+
+### Added
+
+- `component.footer` semantic token group (`bg`, `text`, `heading`, `muted`,
+  `link`, `linkHover`, `border`, `divider`, `chipBg`) in default and dark
+  modes, with contrast-pair metadata for every footer foreground/background
+  pair. Footer previously aliased Nav's background, text, and border roles;
+  it now has an independent semantic contract. Requested by a downstream
+  consumer through `spectre-ui`.
+
 ## [4.1.0] - 2026-08-05
 
 **Release Title:** Documentation and Dependency Maintenance

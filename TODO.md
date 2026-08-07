@@ -13,12 +13,12 @@ vocabulary.
 
 ### P0 — Contract
 
-- [ ] Add an independent `component.footer` group covering `bg`, `text`,
+- [x] Add an independent `component.footer` group covering `bg`, `text`,
       `heading`, `muted`, `link`, `linkHover`, `border`, `divider`, and
       `chipBg` in default and dark modes. Defaults may reference existing
       neutral/nav values, but the semantic paths must remain independent.
-- [ ] Add contrast-pair metadata for every footer foreground/background pair.
-- [ ] Do not copy consumer brand colors into global tokens and do not alter
+- [x] Add contrast-pair metadata for every footer foreground/background pair.
+- [x] Do not copy consumer brand colors into global tokens and do not alter
       protected success/warning/danger/CTA families.
 
 ### P1 — Generated Contract and Validation

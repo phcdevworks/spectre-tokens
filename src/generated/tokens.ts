@@ -284,6 +284,53 @@ export interface SpectreSourceTokens {
         value: string;
       };
     };
+    footer: {
+      bg: {
+        value: string;
+        metadata: {
+          pair: string;
+        };
+      };
+      text: {
+        value: string;
+        metadata: {
+          pair: string;
+        };
+      };
+      heading: {
+        value: string;
+        metadata: {
+          pair: string;
+        };
+      };
+      muted: {
+        value: string;
+        metadata: {
+          pair: string;
+        };
+      };
+      link: {
+        value: string;
+        metadata: {
+          pair: string;
+        };
+      };
+      linkHover: {
+        value: string;
+        metadata: {
+          pair: string;
+        };
+      };
+      border: {
+        value: string;
+      };
+      divider: {
+        value: string;
+      };
+      chipBg: {
+        value: string;
+      };
+    };
     modal: {
       bg: {
         value: string;
@@ -1354,6 +1401,59 @@ export interface SpectreSourceTokens {
             };
           };
         };
+        footer: {
+          bg: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+          text: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+          heading: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+          muted: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+          link: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+          linkHover: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+          border: {
+            value: string;
+            metadata: {
+            };
+          };
+          divider: {
+            value: string;
+            metadata: {
+            };
+          };
+          chipBg: {
+            value: string;
+            metadata: {
+            };
+          };
+        };
         modal: {
           bg: {
             value: string;
@@ -2139,6 +2239,59 @@ export interface SpectreSourceTokens {
             };
           };
           border: {
+            value: string;
+            metadata: {
+            };
+          };
+        };
+        footer: {
+          bg: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+          text: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+          heading: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+          muted: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+          link: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+          linkHover: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+          border: {
+            value: string;
+            metadata: {
+            };
+          };
+          divider: {
+            value: string;
+            metadata: {
+            };
+          };
+          chipBg: {
             value: string;
             metadata: {
             };
@@ -3583,6 +3736,17 @@ export interface SpectreGeneratedTokens {
       linkActive: string;
       border: string;
     };
+    footer: {
+      bg: string;
+      text: string;
+      heading: string;
+      muted: string;
+      link: string;
+      linkHover: string;
+      border: string;
+      divider: string;
+      chipBg: string;
+    };
     modal: {
       bg: string;
       shadow: string;
@@ -3890,6 +4054,17 @@ export interface SpectreGeneratedTokens {
           linkActive: string;
           border: string;
         };
+        footer: {
+          bg: string;
+          text: string;
+          heading: string;
+          muted: string;
+          link: string;
+          linkHover: string;
+          border: string;
+          divider: string;
+          chipBg: string;
+        };
         modal: {
           bg: string;
           shadow: string;
@@ -4083,6 +4258,17 @@ export interface SpectreGeneratedTokens {
           linkHover: string;
           linkActive: string;
           border: string;
+        };
+        footer: {
+          bg: string;
+          text: string;
+          heading: string;
+          muted: string;
+          link: string;
+          linkHover: string;
+          border: string;
+          divider: string;
+          chipBg: string;
         };
         modal: {
           bg: string;
@@ -5157,6 +5343,17 @@ export const coreTokens: SpectreGeneratedTokens = {
       "linkActive": "{colors.brand.700}",
       "border": "{colors.neutral.200}"
     },
+    "footer": {
+      "bg": "{colors.neutral.900}",
+      "text": "{colors.neutral.50}",
+      "heading": "{colors.white}",
+      "muted": "{colors.neutral.400}",
+      "link": "{colors.neutral.300}",
+      "linkHover": "{colors.brand.400}",
+      "border": "{colors.neutral.700}",
+      "divider": "{colors.neutral.800}",
+      "chipBg": "{colors.neutral.800}"
+    },
     "modal": {
       "bg": "{colors.white}",
       "shadow": "0 20px 48px -12px {colors.black} / 0.20",
@@ -5464,6 +5661,17 @@ export const coreTokens: SpectreGeneratedTokens = {
           "linkActive": "{colors.brand.700}",
           "border": "{colors.neutral.200}"
         },
+        "footer": {
+          "bg": "{colors.neutral.900}",
+          "text": "{colors.neutral.50}",
+          "heading": "{colors.white}",
+          "muted": "{colors.neutral.400}",
+          "link": "{colors.neutral.300}",
+          "linkHover": "{colors.brand.400}",
+          "border": "{colors.neutral.700}",
+          "divider": "{colors.neutral.800}",
+          "chipBg": "{colors.neutral.800}"
+        },
         "modal": {
           "bg": "{colors.white}",
           "shadow": "0 20px 48px -12px {colors.black} / 0.20",
@@ -5657,6 +5865,17 @@ export const coreTokens: SpectreGeneratedTokens = {
           "linkHover": "{colors.brand.400}",
           "linkActive": "{colors.brand.300}",
           "border": "{colors.neutral.700}"
+        },
+        "footer": {
+          "bg": "{colors.black}",
+          "text": "{colors.neutral.50}",
+          "heading": "{colors.white}",
+          "muted": "{colors.neutral.400}",
+          "link": "{colors.neutral.300}",
+          "linkHover": "{colors.brand.300}",
+          "border": "{colors.neutral.800}",
+          "divider": "{colors.neutral.900}",
+          "chipBg": "{colors.neutral.900}"
         },
         "modal": {
           "bg": "{colors.neutral.800}",

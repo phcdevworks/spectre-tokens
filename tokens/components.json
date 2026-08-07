@@ -280,6 +280,53 @@
         "value": "{colors.neutral.200}"
       }
     },
+    "footer": {
+      "bg": {
+        "value": "{colors.neutral.900}",
+        "metadata": {
+          "pair": "component.footer.text"
+        }
+      },
+      "text": {
+        "value": "{colors.neutral.50}",
+        "metadata": {
+          "pair": "component.footer.bg"
+        }
+      },
+      "heading": {
+        "value": "{colors.white}",
+        "metadata": {
+          "pair": "component.footer.bg"
+        }
+      },
+      "muted": {
+        "value": "{colors.neutral.400}",
+        "metadata": {
+          "pair": "component.footer.bg"
+        }
+      },
+      "link": {
+        "value": "{colors.neutral.300}",
+        "metadata": {
+          "pair": "component.footer.bg"
+        }
+      },
+      "linkHover": {
+        "value": "{colors.brand.400}",
+        "metadata": {
+          "pair": "component.footer.bg"
+        }
+      },
+      "border": {
+        "value": "{colors.neutral.700}"
+      },
+      "divider": {
+        "value": "{colors.neutral.800}"
+      },
+      "chipBg": {
+        "value": "{colors.neutral.800}"
+      }
+    },
     "modal": {
       "bg": {
         "value": "{colors.white}"
