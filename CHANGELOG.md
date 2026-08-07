@@ -6,6 +6,15 @@ reflects package releases published to npm.
 
 ## [Unreleased]
 
+Contract change type: additive
+
+### Added
+
+- `space.240` (15rem / 240px) primitive step, extending the space scale past
+  its previous ceiling (`space.96`, 6rem). Demand-driven: `spectre-ui`'s Grid
+  `fixedTracks` option needed a fixed-width step matching a confirmed
+  production mega-menu column width, and no existing step reached it.
+
 ## [4.2.0] - 2026-08-07
 
 **Release Title:** Footer Semantic Contract and Dependency Refresh

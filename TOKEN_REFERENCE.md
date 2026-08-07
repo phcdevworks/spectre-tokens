@@ -6,7 +6,7 @@ contract authority; `tokens/` and `contract.manifest.json` remain the source
 of truth (see `TOKEN_CONTRACT.md`).
 
 Every leaf token path across all 23 public namespaces
-(1158 total), with its resolved source value and a usage note.
+(1159 total), with its resolved source value and a usage note.
 Values shown here are pre-CSS-resolution source values — `{path.to.token}`
 references are shown as-written, not resolved (see `src/css.ts` for
 resolved CSS output).
@@ -405,6 +405,7 @@ resolved CSS output).
 | `space.72` | `4.5rem` | space token. |
 | `space.80` | `5rem` | space token. |
 | `space.96` | `6rem` | space token. |
+| `space.240` | `15rem` | space token. |
 
 ## layout
 

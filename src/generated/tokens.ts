@@ -3124,6 +3124,7 @@ export interface SpectreSourceTokens {
     '72': string;
     '80': string;
     '96': string;
+    '240': string;
   };
   radii: {
     none: string;
@@ -4827,6 +4828,7 @@ export interface SpectreGeneratedTokens {
     '72': string;
     '80': string;
     '96': string;
+    '240': string;
   };
   radii: {
     none: string;
@@ -6433,7 +6435,8 @@ export const coreTokens: SpectreGeneratedTokens = {
     "64": "4rem",
     "72": "4.5rem",
     "80": "5rem",
-    "96": "6rem"
+    "96": "6rem",
+    "240": "15rem"
   },
   "radii": {
     "none": "0",

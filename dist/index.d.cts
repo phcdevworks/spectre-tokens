@@ -1161,6 +1161,7 @@ interface SpectreGeneratedTokens {
         '72': string;
         '80': string;
         '96': string;
+        '240': string;
     };
     radii: {
         none: string;

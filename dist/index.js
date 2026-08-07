@@ -1161,7 +1161,8 @@ var coreTokens = {
     "64": "4rem",
     "72": "4.5rem",
     "80": "5rem",
-    "96": "6rem"
+    "96": "6rem",
+    "240": "15rem"
   },
   "radii": {
     "none": "0",
