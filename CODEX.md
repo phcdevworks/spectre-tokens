@@ -185,9 +185,9 @@ Use this checklist before cutting every release (tag + GitHub Release).
    `CHANGELOG.md [Unreleased]` classification.
 2. Bump `package.json` to the proposed version.
 3. Move `[Unreleased]` notes into a new versioned entry:
-   `## [<version>] - <YYYY-MM-DD>`, with a concise descriptive title line in
-   the format `**Release Title:** <short title>`. Do not include a roadmap
-   phase or version number in the title.
+   `## [<version>] - <YYYY-MM-DD>`, with a release title line in the format
+   `**Release Title:** <short title>`, where `<short title>` is a concise
+   summary of what shipped without a roadmap phase or version prefix.
 4. Add the new version's compare link at the bottom of `CHANGELOG.md` and
    update the `[Unreleased]` compare link range.
 5. Run `npm run check` — must pass clean on the release-ready state.
