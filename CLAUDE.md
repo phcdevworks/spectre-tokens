@@ -22,19 +22,24 @@ Claude Code remains the lead implementation authority for token authoring,
 source changes, and architecture. Resolve implementation conflicts by
 referencing this file and `contract.manifest.json`.
 
-## Commit Policy
+## Git Access — Denied
 
-See [AGENTS.md](AGENTS.md) for the full grant of authority. Claude Code
-applies it here: run `npm run check`, then stage, commit, tag, and push
-without per-action confirmation — including direct pushes to `main` and
-cutting release tags for this npm-published package.
+**Claude Code has zero git access in this repo, as part of a companywide
+policy.** Claude Code must not run `git commit`, `git push`, `git tag`, or
+any other git command — read-only or mutating — here. This supersedes the
+prior commit/push/tag grant described in this repo's `AGENTS.md`. OpenAI
+Codex now executes all git operations for this repo, including cutting
+release tags for this npm-published package; see `AGENTS.md` and `CODEX.md`.
+
+When work is ready, Claude Code stops short of any git command and hands off
+to Codex (or Bradley Potts) with a summary of files changed and validation
+performed (`npm run check`).
 
 ## Pull Request Creation
 
-Follow the shared PR requirements in [AGENTS.md](AGENTS.md). Claude Code may
-create commits and tags directly per the Commit Policy above; PR creation
-still follows that process where the repository's workflow calls for a PR
-rather than a direct push.
+Follow the shared PR requirements in [AGENTS.md](AGENTS.md). Claude Code does
+not create commits or tags; PR creation and any direct pushes are handled by
+Codex (or Bradley Potts) once Claude Code's handoff is validated.
 
 ## The One Rule That Overrides Everything
 

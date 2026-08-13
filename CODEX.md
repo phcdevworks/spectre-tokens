@@ -12,6 +12,12 @@ and push, including cutting the release itself once `CHANGELOG.md` shows a
 release-ready `[Unreleased]` section. npm publishing remains a separate,
 manual step owned by Bradley Potts (see "Release Mechanics" below).
 
+Codex is also responsible for executing git operations on Claude Code's
+behalf in this repo, now that Claude Code has zero git access: when Claude
+Code hands off validated work, Codex — not Claude Code — stages, commits,
+tags, and pushes it, in addition to Codex's own documentation and hygiene
+commits.
+
 ## Operating Principles
 
 1. Protect the token contract before optimizing implementation details.
