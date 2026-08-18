@@ -17,7 +17,7 @@ contracts for specific frameworks and runtimes.
 | Project team           | `project-design`                 |
 | Repository role        | Spectre L1 design-token contract |
 | Package/artifact       | `@phcdevworks/spectre-tokens`    |
-| Current version/status | 4.3.0                            |
+| Current version/status | 4.4.0                            |
 
 ## Standard Workflow
 
@@ -301,6 +301,7 @@ The generated token object includes these namespaces:
 - `text`
 - `component`
 - `modes`
+- `tracking`
 
 The exported runtime token object is a flattened string-based tree generated
 from `tokens/`. Source-only wrapper fields such as `value` and `metadata` are

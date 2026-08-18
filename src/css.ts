@@ -195,6 +195,13 @@ export const createCssVariableMap = (tokens: SpectreTokens, options: CssVariable
     assign(toVariableName(prefix, 'radius', key), value)
   })
 
+  const tracking = (baseTokens as unknown as Record<string, unknown>).tracking as Record<string, string> | undefined
+  if (tracking) {
+    Object.entries(tracking).forEach(([key, value]) => {
+      assign(toVariableName(prefix, 'tracking', key), value)
+    })
+  }
+
   const icons = (baseTokens as unknown as Record<string, unknown>).icons as Record<string, string> | undefined
   if (icons) {
     Object.entries(icons).forEach(([key, value]) => {

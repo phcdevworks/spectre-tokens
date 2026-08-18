@@ -4475,6 +4475,36 @@
       }
     }
   },
+  "tracking": {
+    "tightest": {
+      "$value": "-0.075em",
+      "$type": "string"
+    },
+    "tighter": {
+      "$value": "-0.05em",
+      "$type": "string"
+    },
+    "tight": {
+      "$value": "-0.025em",
+      "$type": "string"
+    },
+    "normal": {
+      "$value": "0em",
+      "$type": "dimension"
+    },
+    "wide": {
+      "$value": "0.025em",
+      "$type": "dimension"
+    },
+    "wider": {
+      "$value": "0.05em",
+      "$type": "dimension"
+    },
+    "widest": {
+      "$value": "0.1em",
+      "$type": "dimension"
+    }
+  },
   "surface": {
     "page": {
       "$value": "{colors.neutral.50}",

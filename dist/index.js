@@ -1358,6 +1358,15 @@ var coreTokens = {
       "dotted": "dotted"
     }
   },
+  "tracking": {
+    "tightest": "-0.075em",
+    "tighter": "-0.05em",
+    "tight": "-0.025em",
+    "normal": "0em",
+    "wide": "0.025em",
+    "wider": "0.05em",
+    "widest": "0.1em"
+  },
   "surface": {
     "page": "{colors.neutral.50}",
     "card": "{colors.white}",
@@ -1756,6 +1765,12 @@ var createCssVariableMap = (tokens2, options = {}) => {
   Object.entries(baseTokens.radii).forEach(([key, value]) => {
     assign(toVariableName(prefix, "radius", key), value);
   });
+  const tracking = baseTokens.tracking;
+  if (tracking) {
+    Object.entries(tracking).forEach(([key, value]) => {
+      assign(toVariableName(prefix, "tracking", key), value);
+    });
+  }
   const icons = baseTokens.icons;
   if (icons) {
     Object.entries(icons).forEach(([key, value]) => {

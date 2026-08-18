@@ -1357,6 +1357,15 @@ interface SpectreGeneratedTokens {
             dotted: string;
         };
     };
+    tracking: {
+        tightest: string;
+        tighter: string;
+        tight: string;
+        normal: string;
+        wide: string;
+        wider: string;
+        widest: string;
+    };
     surface: {
         page: string;
         card: string;

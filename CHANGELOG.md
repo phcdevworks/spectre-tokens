@@ -6,6 +6,31 @@ reflects package releases published to npm.
 
 ## [Unreleased]
 
+## [4.4.0] - 2026-08-18
+
+**Release Title:** Standalone Tracking Scale
+
+Contract change type: additive
+
+### Added
+
+- `tracking` primitive namespace (`tightest`/`tighter`/`tight`/`normal`/
+  `wide`/`wider`/`widest`, `-0.075em` through `0.1em`), generating
+  `--sp-tracking-*` CSS variables. Confirmed downstream need from a
+  production consumer (2026-08-15, tracked in `spectre-ui`'s `TODO.md`):
+  brand display type sets tight negative tracking (around `-0.07em`)
+  distinct per heading level, and the only existing letter-spacing tokens
+  are bundled per font-size step (`font.{step}.letterSpacing`,
+  `typography.heading.h{n}.letterSpacing`), with no standalone scale a
+  utility class or recipe option could point to independent of size. This
+  is a generic step scale, not the consumer's exact brand value — unblocks
+  `spectre-ui` adding standalone `sp-tracking-*` utilities.
+
+### Changed
+
+- Refreshed compatible transitive development dependencies in
+  `package-lock.json`.
+
 ## [4.3.0] - 2026-08-08
 
 **Release Title:** Space Scale Extension
@@ -1139,7 +1164,8 @@ Contract change type: breaking
 - Standardized documentation and contributing guidelines.
 
 [unreleased]:
-  https://github.com/phcdevworks/spectre-tokens/compare/v4.3.0...HEAD
+  https://github.com/phcdevworks/spectre-tokens/compare/v4.4.0...HEAD
+[4.4.0]: https://github.com/phcdevworks/spectre-tokens/compare/v4.3.0...v4.4.0
 [4.3.0]: https://github.com/phcdevworks/spectre-tokens/compare/v4.2.0...v4.3.0
 [4.2.0]: https://github.com/phcdevworks/spectre-tokens/compare/v4.1.0...v4.2.0
 [4.1.0]: https://github.com/phcdevworks/spectre-tokens/compare/v4.0.0...v4.1.0

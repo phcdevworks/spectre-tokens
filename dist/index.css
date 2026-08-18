@@ -571,6 +571,13 @@
   --sp-radius-3xl: 24px;
   --sp-radius-4xl: 32px;
   --sp-radius-pill: 999px;
+  --sp-tracking-tightest: -0.075em;
+  --sp-tracking-tighter: -0.05em;
+  --sp-tracking-tight: -0.025em;
+  --sp-tracking-normal: 0em;
+  --sp-tracking-wide: 0.025em;
+  --sp-tracking-wider: 0.05em;
+  --sp-tracking-widest: 0.1em;
   --sp-icon-xs: 12px;
   --sp-icon-sm: 16px;
   --sp-icon-md: 20px;

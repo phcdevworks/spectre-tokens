@@ -23,7 +23,8 @@
     "surface",
     "text",
     "component",
-    "modes"
+    "modes",
+    "tracking"
   ],
   "requiredOutputs": {
     "js": {
@@ -209,7 +210,7 @@
         "colors", "space", "layout", "radii", "typography", "font", "shadows",
         "breakpoints", "zIndex", "transitions", "animations", "opacity",
         "aspectRatios", "icons", "border", "accessibility", "buttons", "forms",
-        "link", "surface", "text", "component", "modes"
+        "link", "surface", "text", "component", "modes", "tracking"
       ]
     },
     "dtcg": {
@@ -217,7 +218,7 @@
         "colors", "space", "layout", "radii", "typography", "font", "shadows",
         "breakpoints", "zIndex", "transitions", "animations", "opacity",
         "aspectRatios", "icons", "border", "accessibility", "buttons", "forms",
-        "link", "surface", "text", "component"
+        "link", "surface", "text", "component", "tracking"
       ]
     },
     "css": {
@@ -226,6 +227,7 @@
         { "sourcePath": "colors", "prefixParts": ["color"], "blockStrategy": "cascade-only" },
         { "sourcePath": "space", "prefixParts": ["space"], "blockStrategy": "cascade-only" },
         { "sourcePath": "radii", "prefixParts": ["radius"], "blockStrategy": "cascade-only" },
+        { "sourcePath": "tracking", "prefixParts": ["tracking"], "blockStrategy": "cascade-only" },
         { "sourcePath": "shadows", "prefixParts": ["shadow"], "blockStrategy": "cascade-only" },
         { "sourcePath": "breakpoints", "prefixParts": ["breakpoint"], "blockStrategy": "cascade-only" },
         { "sourcePath": "zIndex", "prefixParts": ["z-index"], "blockStrategy": "cascade-only" },

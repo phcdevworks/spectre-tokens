@@ -86,6 +86,7 @@ The current public top-level namespaces are:
 - `text`
 - `component`
 - `modes`
+- `tracking`
 
 These namespaces are treated as public and stable unless intentionally changed
 through the contract process described in this document.
