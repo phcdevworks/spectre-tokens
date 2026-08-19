@@ -6,7 +6,7 @@ contract authority; `tokens/` and `contract.manifest.json` remain the source
 of truth (see `TOKEN_CONTRACT.md`).
 
 Every leaf token path across all 23 public namespaces
-(1159 total), with its resolved source value and a usage note.
+(1164 total), with its resolved source value and a usage note.
 Values shown here are pre-CSS-resolution source values — `{path.to.token}`
 references are shown as-written, not resolved (see `src/css.ts` for
 resolved CSS output).
@@ -579,6 +579,11 @@ resolved CSS output).
 | `shadows.lg` | `0 6px 16px -4px {colors.black} / 0.12` | shadows token. |
 | `shadows.xl` | `0 12px 24px -6px {colors.black} / 0.15` | shadows token. |
 | `shadows.2xl` | `0 20px 48px -12px {colors.black} / 0.20` | shadows token. |
+| `shadows.inset.sm` | `inset 0 1px 2px 0 {colors.black} / 0.06, inset 0 -1px 2px 0 {colors.black} / 0.06` | shadows token. |
+| `shadows.inset.md` | `inset 0 2px 6px -1px {colors.black} / 0.08, inset 0 -2px 6px -1px {colors.black} / 0.08` | shadows token. |
+| `shadows.inset.lg` | `inset 0 6px 16px -4px {colors.black} / 0.12, inset 0 -6px 16px -4px {colors.black} / 0.12` | shadows token. |
+| `shadows.inset.xl` | `inset 0 12px 24px -6px {colors.black} / 0.15, inset 0 -12px 24px -6px {colors.black} / 0.15` | shadows token. |
+| `shadows.inset.2xl` | `inset 0 20px 48px -12px {colors.black} / 0.20, inset 0 -20px 48px -12px {colors.black} / 0.20` | shadows token. |
 
 ## breakpoints
 

@@ -1181,6 +1181,13 @@ interface SpectreGeneratedTokens {
         lg: string;
         xl: string;
         '2xl': string;
+        inset: {
+            sm: string;
+            md: string;
+            lg: string;
+            xl: string;
+            '2xl': string;
+        };
     };
     breakpoints: {
         sm: string;

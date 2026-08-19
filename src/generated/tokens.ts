@@ -3144,6 +3144,13 @@ export interface SpectreSourceTokens {
     lg: string;
     xl: string;
     '2xl': string;
+    inset: {
+      sm: string;
+      md: string;
+      lg: string;
+      xl: string;
+      '2xl': string;
+    };
   };
   breakpoints: {
     sm: string;
@@ -4857,6 +4864,13 @@ export interface SpectreGeneratedTokens {
     lg: string;
     xl: string;
     '2xl': string;
+    inset: {
+      sm: string;
+      md: string;
+      lg: string;
+      xl: string;
+      '2xl': string;
+    };
   };
   breakpoints: {
     sm: string;
@@ -6473,7 +6487,14 @@ export const coreTokens: SpectreGeneratedTokens = {
     "md": "0 2px 6px -1px {colors.black} / 0.08",
     "lg": "0 6px 16px -4px {colors.black} / 0.12",
     "xl": "0 12px 24px -6px {colors.black} / 0.15",
-    "2xl": "0 20px 48px -12px {colors.black} / 0.20"
+    "2xl": "0 20px 48px -12px {colors.black} / 0.20",
+    "inset": {
+      "sm": "inset 0 1px 2px 0 {colors.black} / 0.06, inset 0 -1px 2px 0 {colors.black} / 0.06",
+      "md": "inset 0 2px 6px -1px {colors.black} / 0.08, inset 0 -2px 6px -1px {colors.black} / 0.08",
+      "lg": "inset 0 6px 16px -4px {colors.black} / 0.12, inset 0 -6px 16px -4px {colors.black} / 0.12",
+      "xl": "inset 0 12px 24px -6px {colors.black} / 0.15, inset 0 -12px 24px -6px {colors.black} / 0.15",
+      "2xl": "inset 0 20px 48px -12px {colors.black} / 0.20, inset 0 -20px 48px -12px {colors.black} / 0.20"
+    }
   },
   "breakpoints": {
     "sm": "640px",

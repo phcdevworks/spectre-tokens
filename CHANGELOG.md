@@ -6,6 +6,31 @@ reflects package releases published to npm.
 
 ## [Unreleased]
 
+## [4.5.0] - 2026-08-19
+
+**Release Title:** Inset Shadow Scale
+
+Contract change type: additive
+
+### Added
+
+- `shadows.inset` scale (`sm`/`md`/`lg`/`xl`/`2xl`), generating
+  `--sp-shadow-inset-*` CSS variables. Each step is a composed two-layer
+  `box-shadow` value — a top-edge and a bottom-edge `inset` shadow sharing
+  the corresponding outer `shadows.*` step's offset, blur, and negative
+  spread — for section bands that need to feather both edges without the
+  consumer hand-matching offset/blur/spread per edge. Requested by
+  `spectre-base`'s downstream child-theme integration (filed 2026-08-07,
+  re-audited 2026-08-19), tracked in this repo's `TODO.md` under
+  "Requested by Downstream". These values are left as DTCG `$type: "string"`
+  (see `TOKEN_CONTRACT.md` "Unsupported Source Shapes") since the leading
+  `inset` keyword doesn't fit the structured `shadow` `$type` parser.
+
+### Changed
+
+- Updated the test runner from 4.1.10 to 4.1.11 and refreshed compatible
+  transitive development dependencies in `package-lock.json`.
+
 ## [4.4.0] - 2026-08-18
 
 **Release Title:** Standalone Tracking Scale
@@ -1164,7 +1189,8 @@ Contract change type: breaking
 - Standardized documentation and contributing guidelines.
 
 [unreleased]:
-  https://github.com/phcdevworks/spectre-tokens/compare/v4.4.0...HEAD
+  https://github.com/phcdevworks/spectre-tokens/compare/v4.5.0...HEAD
+[4.5.0]: https://github.com/phcdevworks/spectre-tokens/compare/v4.4.0...v4.5.0
 [4.4.0]: https://github.com/phcdevworks/spectre-tokens/compare/v4.3.0...v4.4.0
 [4.3.0]: https://github.com/phcdevworks/spectre-tokens/compare/v4.2.0...v4.3.0
 [4.2.0]: https://github.com/phcdevworks/spectre-tokens/compare/v4.1.0...v4.2.0

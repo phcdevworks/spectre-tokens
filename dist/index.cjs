@@ -1209,7 +1209,14 @@ var coreTokens = {
     "md": "0 2px 6px -1px {colors.black} / 0.08",
     "lg": "0 6px 16px -4px {colors.black} / 0.12",
     "xl": "0 12px 24px -6px {colors.black} / 0.15",
-    "2xl": "0 20px 48px -12px {colors.black} / 0.20"
+    "2xl": "0 20px 48px -12px {colors.black} / 0.20",
+    "inset": {
+      "sm": "inset 0 1px 2px 0 {colors.black} / 0.06, inset 0 -1px 2px 0 {colors.black} / 0.06",
+      "md": "inset 0 2px 6px -1px {colors.black} / 0.08, inset 0 -2px 6px -1px {colors.black} / 0.08",
+      "lg": "inset 0 6px 16px -4px {colors.black} / 0.12, inset 0 -6px 16px -4px {colors.black} / 0.12",
+      "xl": "inset 0 12px 24px -6px {colors.black} / 0.15, inset 0 -12px 24px -6px {colors.black} / 0.15",
+      "2xl": "inset 0 20px 48px -12px {colors.black} / 0.20, inset 0 -20px 48px -12px {colors.black} / 0.20"
+    }
   },
   "breakpoints": {
     "sm": "640px",
@@ -1851,7 +1858,13 @@ var createCssVariableMap = (tokens2, options = {}) => {
     assignRole(["body"], body);
   }
   Object.entries(baseTokens.shadows).forEach(([key, value]) => {
-    assign(toVariableName(prefix, "shadow", key), value);
+    if (typeof value === "string") {
+      assign(toVariableName(prefix, "shadow", key), value);
+      return;
+    }
+    Object.entries(value).forEach(([nestedKey, nestedValue]) => {
+      assign(toVariableName(prefix, "shadow", key, nestedKey), nestedValue);
+    });
   });
   Object.entries(baseTokens.breakpoints).forEach(([key, value]) => {
     assign(toVariableName(prefix, "breakpoint", key), value);

@@ -3929,6 +3929,28 @@
         "spread": "-12px"
       },
       "$type": "shadow"
+    },
+    "inset": {
+      "sm": {
+        "$value": "inset 0 1px 2px 0 {colors.black} / 0.06, inset 0 -1px 2px 0 {colors.black} / 0.06",
+        "$type": "string"
+      },
+      "md": {
+        "$value": "inset 0 2px 6px -1px {colors.black} / 0.08, inset 0 -2px 6px -1px {colors.black} / 0.08",
+        "$type": "string"
+      },
+      "lg": {
+        "$value": "inset 0 6px 16px -4px {colors.black} / 0.12, inset 0 -6px 16px -4px {colors.black} / 0.12",
+        "$type": "string"
+      },
+      "xl": {
+        "$value": "inset 0 12px 24px -6px {colors.black} / 0.15, inset 0 -12px 24px -6px {colors.black} / 0.15",
+        "$type": "string"
+      },
+      "2xl": {
+        "$value": "inset 0 20px 48px -12px {colors.black} / 0.20, inset 0 -20px 48px -12px {colors.black} / 0.20",
+        "$type": "string"
+      }
     }
   },
   "breakpoints": {

@@ -263,7 +263,13 @@ export const createCssVariableMap = (tokens: SpectreTokens, options: CssVariable
   }
 
   Object.entries(baseTokens.shadows).forEach(([key, value]) => {
-    assign(toVariableName(prefix, 'shadow', key), value)
+    if (typeof value === 'string') {
+      assign(toVariableName(prefix, 'shadow', key), value)
+      return
+    }
+    Object.entries(value as Record<string, string>).forEach(([nestedKey, nestedValue]) => {
+      assign(toVariableName(prefix, 'shadow', key, nestedKey), nestedValue)
+    })
   })
 
   Object.entries(baseTokens.breakpoints).forEach(([key, value]) => {

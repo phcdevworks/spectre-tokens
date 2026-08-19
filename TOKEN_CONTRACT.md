@@ -424,6 +424,10 @@ The generator applies structural transforms so `$value` matches the shape DTCG's
   parseable offset/blur/spread/color layers) has no structural DTCG shadow
   representation and is left as `$type: "string"` rather than forced into a
   shadow shape it doesn't have.
+- **`shadows.inset.*`**: the leading CSS `inset` keyword makes each layer
+  fail the numeric-offset-first shadow-layer pattern above, so these values
+  are left as `$type: "string"` rather than forced into a shadow shape the
+  parser doesn't recognize.
 - **Gradient angle/direction**: the DTCG `gradient` `$type` represents color
   stops only — it has no field for CSS gradient geometry (angle, shape,
   repeating). `surface.hero`'s `135deg` direction is therefore dropped when
