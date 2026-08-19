@@ -197,10 +197,14 @@ Use this checklist before cutting every release (tag + GitHub Release).
 8. Create the git tag: `git tag v<version>` (e.g. `v4.1.0`), matching
    `package.json` exactly, then push the commit and tag.
 9. Publish the GitHub Release from that tag: `gh release create v<version>
-   --title "<short title>" --notes-file` (extract the new version's changelog
-   section, or pass `--notes` inline for a short release). The GitHub Release
-   title must match the changelog release title and must not include the
-   roadmap phase or version number.
+   --title "<short title>" --notes-file`. The notes file must contain the
+   full versioned `CHANGELOG.md` entry verbatim except for the version
+   heading and `Release Title` line, which GitHub already displays. Preserve
+   the `Contract change type:` line, section headings, and every bullet.
+   Never summarize, condense, paraphrase, add to, or omit the remaining
+   changelog content — `--notes` inline freeform text is never used, even for
+   a short release. The GitHub Release title must match the changelog
+   release title and must not include the roadmap phase or version number.
 10. `npm publish` is **not** run by Codex — that step, and any npm
     release-authority decision, stays with Bradley Potts.
 
