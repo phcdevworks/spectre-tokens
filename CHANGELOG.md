@@ -6,6 +6,33 @@ reflects package releases published to npm.
 
 ## [Unreleased]
 
+## [4.6.0] - 2026-08-29
+
+**Release Title:** Expanded Palette Ramps
+
+Contract change type: additive
+
+### Added
+
+- `colors.palette.integration-ink`, `colors.palette.integration-gunmetal`,
+  `colors.palette.integration-signal-blue`, and
+  `colors.palette.integration-icy-blue` — four colors for a downstream
+  integration, each expanded into a full `50`-`950` shade ramp (matching the
+  structural shape of every other `colors.palette.*` family) by holding the
+  supplied hex fixed at its nearest-matching lightness step and generating the
+  remaining steps in CIE LCH space with the `blue`/`slate` families'
+  lightness/chroma curves as the template.
+- `colors.palette.phcdevworks-raspberry-red`, `colors.palette.phcdevworks-deep-space-blue`,
+  and `colors.palette.phcdevworks-paper` — three PHCDevworks brand colors,
+  expanded into full `50`-`950` shade ramps using the same anchor-hold /
+  CIE LCH generation method, templated against the `rose`, `blue`, and
+  `stone` families respectively.
+
+### Changed
+
+- Refreshed compatible development dependencies and their transitive lockfile
+  entries.
+
 ## [4.5.0] - 2026-08-19
 
 **Release Title:** Inset Shadow Scale
@@ -1189,7 +1216,8 @@ Contract change type: breaking
 - Standardized documentation and contributing guidelines.
 
 [unreleased]:
-  https://github.com/phcdevworks/spectre-tokens/compare/v4.5.0...HEAD
+  https://github.com/phcdevworks/spectre-tokens/compare/v4.6.0...HEAD
+[4.6.0]: https://github.com/phcdevworks/spectre-tokens/compare/v4.5.0...v4.6.0
 [4.5.0]: https://github.com/phcdevworks/spectre-tokens/compare/v4.4.0...v4.5.0
 [4.4.0]: https://github.com/phcdevworks/spectre-tokens/compare/v4.3.0...v4.4.0
 [4.3.0]: https://github.com/phcdevworks/spectre-tokens/compare/v4.2.0...v4.3.0

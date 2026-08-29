@@ -1,6 +1,6 @@
 {
   "name": "@phcdevworks/spectre-tokens",
-  "version": "4.5.0",
+  "version": "4.6.0",
   "description": "@phcdevworks/spectre-tokens is the design-token package of the Spectre system. It provides a complete, UI-ready token surface for downstream Spectre packages and compatible applications.",
   "keywords": [
     "phcdevworks",
@@ -99,20 +99,20 @@
   },
   "devDependencies": {
     "@phcdevworks/spectre-manifest": "^1.1.0",
-    "@types/node": "^26.2.0",
-    "@typescript-eslint/eslint-plugin": "^8.67.0",
-    "@typescript-eslint/parser": "^8.67.0",
+    "@types/node": "^26.4.0",
+    "@typescript-eslint/eslint-plugin": "^8.68.0",
+    "@typescript-eslint/parser": "^8.68.0",
     "@typescript/native": "npm:typescript@^7.0.2",
-    "colord": "^2.9.3",
-    "eslint": "^10.8.1",
+    "colord": "^2.10.0",
+    "eslint": "^10.9.1",
     "jiti": "^2.7.0",
     "prettier": "^3.9.6",
-    "style-dictionary": "^5.5.1",
+    "style-dictionary": "^5.5.2",
     "ts-node": "^10.9.2",
     "tsup": "^8.5.1",
     "tsx": "^4.23.12",
     "typescript": "npm:@typescript/typescript6@^6.0.2",
-    "typescript-eslint": "^8.67.0",
+    "typescript-eslint": "^8.68.0",
     "vitest": "^4.1.11"
   },
   "overrides": {

@@ -6,7 +6,7 @@ contract authority; `tokens/` and `contract.manifest.json` remain the source
 of truth (see `TOKEN_CONTRACT.md`).
 
 Every leaf token path across all 23 public namespaces
-(1164 total), with its resolved source value and a usage note.
+(1241 total), with its resolved source value and a usage note.
 Values shown here are pre-CSS-resolution source values — `{path.to.token}`
 references are shown as-written, not resolved (see `src/css.ts` for
 resolved CSS output).
@@ -379,6 +379,83 @@ resolved CSS output).
 | `colors.palette.taupe.800` | `#2b2422` | Raw palette color — hue `taupe`, step `800`. |
 | `colors.palette.taupe.900` | `#1d1816` | Raw palette color — hue `taupe`, step `900`. |
 | `colors.palette.taupe.950` | `#0c0a09` | Raw palette color — hue `taupe`, step `950`. |
+| `colors.palette.integration-ink.50` | `#fafafb` | Raw palette color — hue `integration-ink`, step `50`. |
+| `colors.palette.integration-ink.100` | `#f5f5f6` | Raw palette color — hue `integration-ink`, step `100`. |
+| `colors.palette.integration-ink.200` | `#e7e8e9` | Raw palette color — hue `integration-ink`, step `200`. |
+| `colors.palette.integration-ink.300` | `#d3d4d6` | Raw palette color — hue `integration-ink`, step `300`. |
+| `colors.palette.integration-ink.400` | `#9ea0a3` | Raw palette color — hue `integration-ink`, step `400`. |
+| `colors.palette.integration-ink.500` | `#707376` | Raw palette color — hue `integration-ink`, step `500`. |
+| `colors.palette.integration-ink.600` | `#525457` | Raw palette color — hue `integration-ink`, step `600`. |
+| `colors.palette.integration-ink.700` | `#3e4143` | Raw palette color — hue `integration-ink`, step `700`. |
+| `colors.palette.integration-ink.800` | `#27292b` | Raw palette color — hue `integration-ink`, step `800`. |
+| `colors.palette.integration-ink.900` | `#16181a` | Raw palette color — hue `integration-ink`, step `900`. |
+| `colors.palette.integration-ink.950` | `#06080a` | Raw palette color — hue `integration-ink`, step `950`. |
+| `colors.palette.integration-gunmetal.50` | `#f0f0f1` | Raw palette color — hue `integration-gunmetal`, step `50`. |
+| `colors.palette.integration-gunmetal.100` | `#eaebec` | Raw palette color — hue `integration-gunmetal`, step `100`. |
+| `colors.palette.integration-gunmetal.200` | `#dddedf` | Raw palette color — hue `integration-gunmetal`, step `200`. |
+| `colors.palette.integration-gunmetal.300` | `#c8cbcd` | Raw palette color — hue `integration-gunmetal`, step `300`. |
+| `colors.palette.integration-gunmetal.400` | `#93979a` | Raw palette color — hue `integration-gunmetal`, step `400`. |
+| `colors.palette.integration-gunmetal.500` | `#666b6e` | Raw palette color — hue `integration-gunmetal`, step `500`. |
+| `colors.palette.integration-gunmetal.600` | `#484c50` | Raw palette color — hue `integration-gunmetal`, step `600`. |
+| `colors.palette.integration-gunmetal.700` | `#35393c` | Raw palette color — hue `integration-gunmetal`, step `700`. |
+| `colors.palette.integration-gunmetal.800` | `#1f2225` | Raw palette color — hue `integration-gunmetal`, step `800`. |
+| `colors.palette.integration-gunmetal.900` | `#0c1014` | Raw palette color — hue `integration-gunmetal`, step `900`. |
+| `colors.palette.integration-gunmetal.950` | `#000104` | Raw palette color — hue `integration-gunmetal`, step `950`. |
+| `colors.palette.integration-signal-blue.50` | `#ebf0f9` | Raw palette color — hue `integration-signal-blue`, step `50`. |
+| `colors.palette.integration-signal-blue.100` | `#d8e3f8` | Raw palette color — hue `integration-signal-blue`, step `100`. |
+| `colors.palette.integration-signal-blue.200` | `#bfd4f9` | Raw palette color — hue `integration-signal-blue`, step `200`. |
+| `colors.palette.integration-signal-blue.300` | `#95bdf9` | Raw palette color — hue `integration-signal-blue`, step `300`. |
+| `colors.palette.integration-signal-blue.400` | `#4a9df7` | Raw palette color — hue `integration-signal-blue`, step `400`. |
+| `colors.palette.integration-signal-blue.500` | `#0083f7` | Raw palette color — hue `integration-signal-blue`, step `500`. |
+| `colors.palette.integration-signal-blue.600` | `#006dfa` | Raw palette color — hue `integration-signal-blue`, step `600`. |
+| `colors.palette.integration-signal-blue.700` | `#005ce8` | Raw palette color — hue `integration-signal-blue`, step `700`. |
+| `colors.palette.integration-signal-blue.800` | `#004bb8` | Raw palette color — hue `integration-signal-blue`, step `800`. |
+| `colors.palette.integration-signal-blue.900` | `#003f8a` | Raw palette color — hue `integration-signal-blue`, step `900`. |
+| `colors.palette.integration-signal-blue.950` | `#002552` | Raw palette color — hue `integration-signal-blue`, step `950`. |
+| `colors.palette.integration-icy-blue.50` | `#e4f0fa` | Raw palette color — hue `integration-icy-blue`, step `50`. |
+| `colors.palette.integration-icy-blue.100` | `#cbe5fb` | Raw palette color — hue `integration-icy-blue`, step `100`. |
+| `colors.palette.integration-icy-blue.200` | `#a4d8ff` | Raw palette color — hue `integration-icy-blue`, step `200`. |
+| `colors.palette.integration-icy-blue.300` | `#59c4ff` | Raw palette color — hue `integration-icy-blue`, step `300`. |
+| `colors.palette.integration-icy-blue.400` | `#00a8ff` | Raw palette color — hue `integration-icy-blue`, step `400`. |
+| `colors.palette.integration-icy-blue.500` | `#0090ff` | Raw palette color — hue `integration-icy-blue`, step `500`. |
+| `colors.palette.integration-icy-blue.600` | `#007cff` | Raw palette color — hue `integration-icy-blue`, step `600`. |
+| `colors.palette.integration-icy-blue.700` | `#006aff` | Raw palette color — hue `integration-icy-blue`, step `700`. |
+| `colors.palette.integration-icy-blue.800` | `#0055ce` | Raw palette color — hue `integration-icy-blue`, step `800`. |
+| `colors.palette.integration-icy-blue.900` | `#004699` | Raw palette color — hue `integration-icy-blue`, step `900`. |
+| `colors.palette.integration-icy-blue.950` | `#002a5a` | Raw palette color — hue `integration-icy-blue`, step `950`. |
+| `colors.palette.phcdevworks-raspberry-red.50` | `#fff3f4` | Raw palette color — hue `phcdevworks-raspberry-red`, step `50`. |
+| `colors.palette.phcdevworks-raspberry-red.100` | `#ffe7e8` | Raw palette color — hue `phcdevworks-raspberry-red`, step `100`. |
+| `colors.palette.phcdevworks-raspberry-red.200` | `#ffcfd2` | Raw palette color — hue `phcdevworks-raspberry-red`, step `200`. |
+| `colors.palette.phcdevworks-raspberry-red.300` | `#fea5ae` | Raw palette color — hue `phcdevworks-raspberry-red`, step `300`. |
+| `colors.palette.phcdevworks-raspberry-red.400` | `#fd6982` | Raw palette color — hue `phcdevworks-raspberry-red`, step `400`. |
+| `colors.palette.phcdevworks-raspberry-red.500` | `#fe2b67` | Raw palette color — hue `phcdevworks-raspberry-red`, step `500`. |
+| `colors.palette.phcdevworks-raspberry-red.600` | `#ee005a` | Raw palette color — hue `phcdevworks-raspberry-red`, step `600`. |
+| `colors.palette.phcdevworks-raspberry-red.700` | `#c8054b` | Raw palette color — hue `phcdevworks-raspberry-red`, step `700`. |
+| `colors.palette.phcdevworks-raspberry-red.800` | `#a4113e` | Raw palette color — hue `phcdevworks-raspberry-red`, step `800`. |
+| `colors.palette.phcdevworks-raspberry-red.900` | `#8a1635` | Raw palette color — hue `phcdevworks-raspberry-red`, step `900`. |
+| `colors.palette.phcdevworks-raspberry-red.950` | `#4d081a` | Raw palette color — hue `phcdevworks-raspberry-red`, step `950`. |
+| `colors.palette.phcdevworks-deep-space-blue.50` | `#edf1f7` | Raw palette color — hue `phcdevworks-deep-space-blue`, step `50`. |
+| `colors.palette.phcdevworks-deep-space-blue.100` | `#dce5f1` | Raw palette color — hue `phcdevworks-deep-space-blue`, step `100`. |
+| `colors.palette.phcdevworks-deep-space-blue.200` | `#c4d5ec` | Raw palette color — hue `phcdevworks-deep-space-blue`, step `200`. |
+| `colors.palette.phcdevworks-deep-space-blue.300` | `#a1bee3` | Raw palette color — hue `phcdevworks-deep-space-blue`, step `300`. |
+| `colors.palette.phcdevworks-deep-space-blue.400` | `#6b9ed5` | Raw palette color — hue `phcdevworks-deep-space-blue`, step `400`. |
+| `colors.palette.phcdevworks-deep-space-blue.500` | `#2583ca` | Raw palette color — hue `phcdevworks-deep-space-blue`, step `500`. |
+| `colors.palette.phcdevworks-deep-space-blue.600` | `#006dc2` | Raw palette color — hue `phcdevworks-deep-space-blue`, step `600`. |
+| `colors.palette.phcdevworks-deep-space-blue.700` | `#005bb0` | Raw palette color — hue `phcdevworks-deep-space-blue`, step `700`. |
+| `colors.palette.phcdevworks-deep-space-blue.800` | `#004a8c` | Raw palette color — hue `phcdevworks-deep-space-blue`, step `800`. |
+| `colors.palette.phcdevworks-deep-space-blue.900` | `#003f6d` | Raw palette color — hue `phcdevworks-deep-space-blue`, step `900`. |
+| `colors.palette.phcdevworks-deep-space-blue.950` | `#012641` | Raw palette color — hue `phcdevworks-deep-space-blue`, step `950`. |
+| `colors.palette.phcdevworks-paper.50` | `#fcfaf7` | Raw palette color — hue `phcdevworks-paper`, step `50`. |
+| `colors.palette.phcdevworks-paper.100` | `#f7f5f2` | Raw palette color — hue `phcdevworks-paper`, step `100`. |
+| `colors.palette.phcdevworks-paper.200` | `#e9e5e0` | Raw palette color — hue `phcdevworks-paper`, step `200`. |
+| `colors.palette.phcdevworks-paper.300` | `#d9d3ca` | Raw palette color — hue `phcdevworks-paper`, step `300`. |
+| `colors.palette.phcdevworks-paper.400` | `#aca08b` | Raw palette color — hue `phcdevworks-paper`, step `400`. |
+| `colors.palette.phcdevworks-paper.500` | `#807056` | Raw palette color — hue `phcdevworks-paper`, step `500`. |
+| `colors.palette.phcdevworks-paper.600` | `#5e523d` | Raw palette color — hue `phcdevworks-paper`, step `600`. |
+| `colors.palette.phcdevworks-paper.700` | `#4a3f2d` | Raw palette color — hue `phcdevworks-paper`, step `700`. |
+| `colors.palette.phcdevworks-paper.800` | `#2b251b` | Raw palette color — hue `phcdevworks-paper`, step `800`. |
+| `colors.palette.phcdevworks-paper.900` | `#1f190e` | Raw palette color — hue `phcdevworks-paper`, step `900`. |
+| `colors.palette.phcdevworks-paper.950` | `#0e0a05` | Raw palette color — hue `phcdevworks-paper`, step `950`. |
 
 ## space
 

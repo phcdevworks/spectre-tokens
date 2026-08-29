@@ -3744,6 +3744,328 @@
           "$value": "#0c0a09",
           "$type": "color"
         }
+      },
+      "integration-ink": {
+        "50": {
+          "$value": "#fafafb",
+          "$type": "color"
+        },
+        "100": {
+          "$value": "#f5f5f6",
+          "$type": "color"
+        },
+        "200": {
+          "$value": "#e7e8e9",
+          "$type": "color"
+        },
+        "300": {
+          "$value": "#d3d4d6",
+          "$type": "color"
+        },
+        "400": {
+          "$value": "#9ea0a3",
+          "$type": "color"
+        },
+        "500": {
+          "$value": "#707376",
+          "$type": "color"
+        },
+        "600": {
+          "$value": "#525457",
+          "$type": "color"
+        },
+        "700": {
+          "$value": "#3e4143",
+          "$type": "color"
+        },
+        "800": {
+          "$value": "#27292b",
+          "$type": "color"
+        },
+        "900": {
+          "$value": "#16181a",
+          "$type": "color"
+        },
+        "950": {
+          "$value": "#06080a",
+          "$type": "color"
+        }
+      },
+      "integration-gunmetal": {
+        "50": {
+          "$value": "#f0f0f1",
+          "$type": "color"
+        },
+        "100": {
+          "$value": "#eaebec",
+          "$type": "color"
+        },
+        "200": {
+          "$value": "#dddedf",
+          "$type": "color"
+        },
+        "300": {
+          "$value": "#c8cbcd",
+          "$type": "color"
+        },
+        "400": {
+          "$value": "#93979a",
+          "$type": "color"
+        },
+        "500": {
+          "$value": "#666b6e",
+          "$type": "color"
+        },
+        "600": {
+          "$value": "#484c50",
+          "$type": "color"
+        },
+        "700": {
+          "$value": "#35393c",
+          "$type": "color"
+        },
+        "800": {
+          "$value": "#1f2225",
+          "$type": "color"
+        },
+        "900": {
+          "$value": "#0c1014",
+          "$type": "color"
+        },
+        "950": {
+          "$value": "#000104",
+          "$type": "color"
+        }
+      },
+      "integration-signal-blue": {
+        "50": {
+          "$value": "#ebf0f9",
+          "$type": "color"
+        },
+        "100": {
+          "$value": "#d8e3f8",
+          "$type": "color"
+        },
+        "200": {
+          "$value": "#bfd4f9",
+          "$type": "color"
+        },
+        "300": {
+          "$value": "#95bdf9",
+          "$type": "color"
+        },
+        "400": {
+          "$value": "#4a9df7",
+          "$type": "color"
+        },
+        "500": {
+          "$value": "#0083f7",
+          "$type": "color"
+        },
+        "600": {
+          "$value": "#006dfa",
+          "$type": "color"
+        },
+        "700": {
+          "$value": "#005ce8",
+          "$type": "color"
+        },
+        "800": {
+          "$value": "#004bb8",
+          "$type": "color"
+        },
+        "900": {
+          "$value": "#003f8a",
+          "$type": "color"
+        },
+        "950": {
+          "$value": "#002552",
+          "$type": "color"
+        }
+      },
+      "integration-icy-blue": {
+        "50": {
+          "$value": "#e4f0fa",
+          "$type": "color"
+        },
+        "100": {
+          "$value": "#cbe5fb",
+          "$type": "color"
+        },
+        "200": {
+          "$value": "#a4d8ff",
+          "$type": "color"
+        },
+        "300": {
+          "$value": "#59c4ff",
+          "$type": "color"
+        },
+        "400": {
+          "$value": "#00a8ff",
+          "$type": "color"
+        },
+        "500": {
+          "$value": "#0090ff",
+          "$type": "color"
+        },
+        "600": {
+          "$value": "#007cff",
+          "$type": "color"
+        },
+        "700": {
+          "$value": "#006aff",
+          "$type": "color"
+        },
+        "800": {
+          "$value": "#0055ce",
+          "$type": "color"
+        },
+        "900": {
+          "$value": "#004699",
+          "$type": "color"
+        },
+        "950": {
+          "$value": "#002a5a",
+          "$type": "color"
+        }
+      },
+      "phcdevworks-raspberry-red": {
+        "50": {
+          "$value": "#fff3f4",
+          "$type": "color"
+        },
+        "100": {
+          "$value": "#ffe7e8",
+          "$type": "color"
+        },
+        "200": {
+          "$value": "#ffcfd2",
+          "$type": "color"
+        },
+        "300": {
+          "$value": "#fea5ae",
+          "$type": "color"
+        },
+        "400": {
+          "$value": "#fd6982",
+          "$type": "color"
+        },
+        "500": {
+          "$value": "#fe2b67",
+          "$type": "color"
+        },
+        "600": {
+          "$value": "#ee005a",
+          "$type": "color"
+        },
+        "700": {
+          "$value": "#c8054b",
+          "$type": "color"
+        },
+        "800": {
+          "$value": "#a4113e",
+          "$type": "color"
+        },
+        "900": {
+          "$value": "#8a1635",
+          "$type": "color"
+        },
+        "950": {
+          "$value": "#4d081a",
+          "$type": "color"
+        }
+      },
+      "phcdevworks-deep-space-blue": {
+        "50": {
+          "$value": "#edf1f7",
+          "$type": "color"
+        },
+        "100": {
+          "$value": "#dce5f1",
+          "$type": "color"
+        },
+        "200": {
+          "$value": "#c4d5ec",
+          "$type": "color"
+        },
+        "300": {
+          "$value": "#a1bee3",
+          "$type": "color"
+        },
+        "400": {
+          "$value": "#6b9ed5",
+          "$type": "color"
+        },
+        "500": {
+          "$value": "#2583ca",
+          "$type": "color"
+        },
+        "600": {
+          "$value": "#006dc2",
+          "$type": "color"
+        },
+        "700": {
+          "$value": "#005bb0",
+          "$type": "color"
+        },
+        "800": {
+          "$value": "#004a8c",
+          "$type": "color"
+        },
+        "900": {
+          "$value": "#003f6d",
+          "$type": "color"
+        },
+        "950": {
+          "$value": "#012641",
+          "$type": "color"
+        }
+      },
+      "phcdevworks-paper": {
+        "50": {
+          "$value": "#fcfaf7",
+          "$type": "color"
+        },
+        "100": {
+          "$value": "#f7f5f2",
+          "$type": "color"
+        },
+        "200": {
+          "$value": "#e9e5e0",
+          "$type": "color"
+        },
+        "300": {
+          "$value": "#d9d3ca",
+          "$type": "color"
+        },
+        "400": {
+          "$value": "#aca08b",
+          "$type": "color"
+        },
+        "500": {
+          "$value": "#807056",
+          "$type": "color"
+        },
+        "600": {
+          "$value": "#5e523d",
+          "$type": "color"
+        },
+        "700": {
+          "$value": "#4a3f2d",
+          "$type": "color"
+        },
+        "800": {
+          "$value": "#2b251b",
+          "$type": "color"
+        },
+        "900": {
+          "$value": "#1f190e",
+          "$type": "color"
+        },
+        "950": {
+          "$value": "#0e0a05",
+          "$type": "color"
+        }
       }
     }
   },
