@@ -6,7 +6,7 @@ contract authority; `tokens/` and `contract.manifest.json` remain the source
 of truth (see `TOKEN_CONTRACT.md`).
 
 Every leaf token path across all 23 public namespaces
-(1241 total), with its resolved source value and a usage note.
+(1264 total), with its resolved source value and a usage note.
 Values shown here are pre-CSS-resolution source values — `{path.to.token}`
 references are shown as-written, not resolved (see `src/css.ts` for
 resolved CSS output).
@@ -502,6 +502,7 @@ resolved CSS output).
 | `layout.container.paddingInline.lg` | `2rem` | layout token. |
 | `layout.container.maxWidth` | `72rem` | layout token. |
 | `layout.container.maxWidthProse` | `65ch` | layout token. |
+| `layout.container.maxWidthWide` | `80rem` | layout token. |
 | `layout.sidebar.width` | `16rem` | layout token. |
 
 ## radii
@@ -882,6 +883,16 @@ resolved CSS output).
 | `buttons.accent.textDisabled` | `{colors.neutral.400}` | buttons token. |
 | `buttons.accent.focusRing` | `{colors.accent.500} / 0.4` | buttons token. |
 | `buttons.accent.focusVisible` | `{colors.accent.500} / 0.4` | buttons token. |
+| `buttons.inverse.bg` | `{colors.white} / 0.12` | buttons token. |
+| `buttons.inverse.bgHover` | `{colors.white} / 0.2` | buttons token. |
+| `buttons.inverse.bgActive` | `{colors.white} / 0.28` | buttons token. |
+| `buttons.inverse.bgDisabled` | `{colors.white} / 0.08` | buttons token. |
+| `buttons.inverse.text` | `{colors.white}` | Pairs with `surface.inverse` for contrast. |
+| `buttons.inverse.textDisabled` | `{colors.neutral.400}` | buttons token. |
+| `buttons.inverse.border` | `{colors.white} / 0.3` | buttons token. |
+| `buttons.inverse.borderDisabled` | `{colors.white} / 0.16` | buttons token. |
+| `buttons.inverse.focusRing` | `{colors.info.500} / 0.4` | buttons token. |
+| `buttons.inverse.focusVisible` | `{colors.info.500} / 0.4` | buttons token. |
 
 ## forms
 
@@ -914,6 +925,8 @@ resolved CSS output).
 | `link.hover` | `{colors.brand.700}` | link color on hover |
 | `link.active` | `{colors.brand.800}` | link color while pressed |
 | `link.visited` | `{colors.accent.700}` | link color after the destination has been visited |
+| `link.onInverse` | `{colors.neutral.300}` | default inline link color on surface.inverse, independent of page mode |
+| `link.onInverseHover` | `{colors.brand.300}` | link color on hover, on surface.inverse |
 
 ## surface
 
@@ -927,6 +940,7 @@ resolved CSS output).
 | `surface.selected` | `{colors.info.50}` | background for selected list items, rows, and menu entries |
 | `surface.active` | `{colors.neutral.200}` | background for pressed/active clickable rows, items, and menu entries |
 | `surface.divider` | `{colors.neutral.200}` | hairline color for <hr>, table borders, and section separators |
+| `surface.inverse` | `{colors.neutral.900}` | fixed dark background for content islands not owned by the page's own light/dark mode — photo-backed cards, brand-dark card bodies, utility bars |
 
 ## text
 
@@ -942,6 +956,8 @@ resolved CSS output).
 | `text.onSurface.subtle` | `{colors.neutral.500}` | subtle text on surfaces |
 | `text.onSurface.meta` | `{colors.neutral.500}` | meta text on surfaces |
 | `text.onSurface.brand` | `{colors.brand.600}` | text token. |
+| `text.onInverse.default` | `{colors.neutral.50}` | base text on surface.inverse, independent of page mode |
+| `text.onInverse.muted` | `{colors.neutral.300}` | muted text on surface.inverse |
 
 ## component
 
@@ -949,6 +965,9 @@ resolved CSS output).
 | ---- | ----- | ----- |
 | `component.card.text` | `{colors.neutral.900}` | Pairs with `surface.card` for contrast. |
 | `component.card.textMuted` | `{colors.neutral.600}` | Pairs with `surface.card` for contrast. |
+| `component.card.padding.sm` | `1.5rem` | component token. |
+| `component.card.padding.md` | `2rem` | component token. |
+| `component.card.padding.lg` | `2.5rem` | component token. |
 | `component.input.text` | `{colors.neutral.900}` | Pairs with `forms.default.bg` for contrast. |
 | `component.input.placeholder` | `{colors.neutral.500}` | Pairs with `forms.default.bg` for contrast. |
 | `component.button.textDefault` | `{colors.neutral.900}` | component token. |
@@ -968,6 +987,10 @@ resolved CSS output).
 | `component.badge.dangerBg` | `{colors.error.100}` | Pairs with `component.badge.dangerText` for contrast. |
 | `component.badge.dangerBgHover` | `{colors.error.200}` | Pairs with `component.badge.dangerText` for contrast. |
 | `component.badge.dangerText` | `{colors.error.800}` | component token. |
+| `component.badge.inverseBg` | `{colors.white} / 0.16` | component token. |
+| `component.badge.inverseBgHover` | `{colors.white} / 0.24` | component token. |
+| `component.badge.inverseText` | `{colors.white}` | Pairs with `surface.inverse` for contrast. |
+| `component.badge.inverseBorder` | `{colors.white} / 0.3` | component token. |
 | `component.iconBox.bg` | `{colors.white}` | Pairs with `component.iconBox.iconDefault` for contrast. |
 | `component.iconBox.border` | `{colors.neutral.200}` | component token. |
 | `component.iconBox.iconDefault` | `{colors.info.600}` | Pairs with `component.iconBox.bg` for contrast. |

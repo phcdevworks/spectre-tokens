@@ -8,6 +8,20 @@
       "textMuted": {
         "$value": "{colors.neutral.600}",
         "$type": "color"
+      },
+      "padding": {
+        "sm": {
+          "$value": "1.5rem",
+          "$type": "dimension"
+        },
+        "md": {
+          "$value": "2rem",
+          "$type": "dimension"
+        },
+        "lg": {
+          "$value": "2.5rem",
+          "$type": "dimension"
+        }
       }
     },
     "input": {
@@ -89,6 +103,22 @@
       },
       "dangerText": {
         "$value": "{colors.error.800}",
+        "$type": "color"
+      },
+      "inverseBg": {
+        "$value": "{colors.white} / 0.16",
+        "$type": "color"
+      },
+      "inverseBgHover": {
+        "$value": "{colors.white} / 0.24",
+        "$type": "color"
+      },
+      "inverseText": {
+        "$value": "{colors.white}",
+        "$type": "color"
+      },
+      "inverseBorder": {
+        "$value": "{colors.white} / 0.3",
         "$type": "color"
       }
     },
@@ -831,6 +861,48 @@
       },
       "focusVisible": {
         "$value": "{colors.accent.500} / 0.4",
+        "$type": "color"
+      }
+    },
+    "inverse": {
+      "bg": {
+        "$value": "{colors.white} / 0.12",
+        "$type": "color"
+      },
+      "bgHover": {
+        "$value": "{colors.white} / 0.2",
+        "$type": "color"
+      },
+      "bgActive": {
+        "$value": "{colors.white} / 0.28",
+        "$type": "color"
+      },
+      "bgDisabled": {
+        "$value": "{colors.white} / 0.08",
+        "$type": "color"
+      },
+      "text": {
+        "$value": "{colors.white}",
+        "$type": "color"
+      },
+      "textDisabled": {
+        "$value": "{colors.neutral.400}",
+        "$type": "color"
+      },
+      "border": {
+        "$value": "{colors.white} / 0.3",
+        "$type": "color"
+      },
+      "borderDisabled": {
+        "$value": "{colors.white} / 0.16",
+        "$type": "color"
+      },
+      "focusRing": {
+        "$value": "{colors.info.500} / 0.4",
+        "$type": "color"
+      },
+      "focusVisible": {
+        "$value": "{colors.info.500} / 0.4",
         "$type": "color"
       }
     }
@@ -4889,6 +4961,11 @@
       "$value": "{colors.neutral.200}",
       "$type": "color",
       "$description": "hairline color for <hr>, table borders, and section separators"
+    },
+    "inverse": {
+      "$value": "{colors.neutral.900}",
+      "$type": "color",
+      "$description": "fixed dark background for content islands not owned by the page's own light/dark mode — photo-backed cards, brand-dark card bodies, utility bars"
     }
   },
   "link": {
@@ -4911,6 +4988,16 @@
       "$value": "{colors.accent.700}",
       "$type": "color",
       "$description": "link color after the destination has been visited"
+    },
+    "onInverse": {
+      "$value": "{colors.neutral.300}",
+      "$type": "color",
+      "$description": "default inline link color on surface.inverse, independent of page mode"
+    },
+    "onInverseHover": {
+      "$value": "{colors.brand.300}",
+      "$type": "color",
+      "$description": "link color on hover, on surface.inverse"
     }
   },
   "text": {
@@ -4964,6 +5051,18 @@
       "brand": {
         "$value": "{colors.brand.600}",
         "$type": "color"
+      }
+    },
+    "onInverse": {
+      "default": {
+        "$value": "{colors.neutral.50}",
+        "$type": "color",
+        "$description": "base text on surface.inverse, independent of page mode"
+      },
+      "muted": {
+        "$value": "{colors.neutral.300}",
+        "$type": "color",
+        "$description": "muted text on surface.inverse"
       }
     }
   },
@@ -5036,6 +5135,10 @@
       "maxWidthProse": {
         "$value": "65ch",
         "$type": "string"
+      },
+      "maxWidthWide": {
+        "$value": "80rem",
+        "$type": "dimension"
       }
     },
     "sidebar": {

@@ -6,6 +6,82 @@ reflects package releases published to npm.
 
 ## [Unreleased]
 
+## [4.7.0] - 2026-08-30
+
+**Release Title:** Downstream Contract Completeness
+
+Contract change type: additive
+
+### Added
+
+- `layout.container.maxWidthWide` (`80rem`), generating
+  `--sp-layout-container-max-width-wide`. Adds a named wide step alongside
+  the existing `maxWidth` (`72rem`) default and `maxWidthProse` (`65ch`)
+  rather than moving the shared default, so no existing consumer's measure
+  changes. Resolves the `spectre-base` downstream request tracked in this
+  repo's `TODO.md` under "Requested by Downstream" (filed 2026-08-29): the
+  published `72rem` default was cropping a reusable multi-column archive
+  layout, forcing a local `--sp-layout-container-max-width` override that
+  this token now makes unnecessary.
+- `npm run audit:downstream` (`scripts/audit-downstream-redeclarations.ts`), a
+  read-only report of raw `--sp-*` redeclarations, hardcoded hex/px/rem
+  literals, and workaround-flavored comments across all four downstream
+  design-layer repos present on disk. Never mutates a sibling repo and is not
+  part of `npm run check`; a proactive audit run against all four repos found
+  one confirmed hit (the container max-width override above, already
+  tracked) and no other undiscovered gaps.
+- `component.card.padding` scale (`sm`: `1.5rem`, `md`: `2rem`, `lg`: `2.5rem`),
+  generating `--sp-component-card-padding-sm`/`-md`/`-lg`. Resolves the
+  `spectre-base` downstream request tracked in this repo's `TODO.md` under
+  "Requested by Downstream" (filed 2026-08-29): `sp-card`'s `padded` state was
+  boolean-only, resolving to one hardcoded `var(--sp-space-32)` value in
+  `spectre-ui` with no token-backed scale to opt into a smaller or larger pad,
+  unlike the sibling `layout.container.paddingInline` scale. `md` keeps the
+  existing `2rem` (`space.32`) value so no current card silently changes size.
+- `surface.inverse`, `text.onInverse.{default,muted}`,
+  `link.onInverse`/`onInverseHover`, `component.badge.inverse{Bg,BgHover,Text,Border}`,
+  and `buttons.inverse.*` — a semantic "on-dark" role set for content islands
+  not owned by the page's own light/dark mode (a photo-backed card, a
+  brand-dark card body, a utility bar), generating
+  `--sp-surface-inverse`, `--sp-text-on-inverse-*`,
+  `--sp-link-on-inverse`/`-hover`, `--sp-badge-inverse-*`, and
+  `--sp-button-inverse-*`. Fixed (non-mode-varying) values, following the
+  same "duplicated" pattern as the existing `link.*` namespace, since an
+  inverse surface stays dark regardless of the page's own mode.
+  Contrast-paired the same way existing roles are — `text.onInverse.default`,
+  `text.onInverse.muted`, `link.onInverse`, `component.badge.inverseText`,
+  and `buttons.inverse.text` each declare `metadata.pair: surface.inverse`
+  (the translucent `inverseBg`/`inverseBgHover`/`inverseBorder`/`bg`/`border`
+  fields follow the existing unpaired-translucent precedent set by
+  `surface.overlay`, since their real contrast depends on whatever sits
+  behind them). Resolves the `spectre-base` downstream request tracked in
+  this repo's `TODO.md` under "Requested by Downstream" (filed 2026-08-29):
+  one downstream theme was hand-painting this five separate times with a
+  contrast measurement taken by hand against a hardcoded background each
+  time.
+
+### Fixed
+
+- `generateCssVariables`'s `link.*` handling didn't kebab-case multi-word
+  keys the way every other semantic group does (`onPage` -> `on-page`), only
+  invisible until now because every existing `link.*` key was a single word.
+  Fixed so `link.onInverse`/`onInverseHover` above emit
+  `--sp-link-on-inverse`/`-on-inverse-hover` consistent with
+  `--sp-text-on-page-*`, rather than the unsplit
+  `--sp-link-oninverse`/`-oninversehover`. `scripts/check-output-parity.ts`
+  and `tests/css-semantic-coverage.test.ts` both carried the same
+  unsplit-key assumption for the `link` group and are corrected alongside.
+
+### Changed
+
+- Added a "Contract Expansion Policy" section to `TOKEN_CONTRACT.md`
+  consolidating the evidence-gated-but-proactive contract-expansion posture
+  (a filed downstream request or a proactive audit finding, either is
+  sufficient evidence) that was previously only stated loosely across
+  `ROADMAP.md`/`TODO.md`/`AGENTS.md`, and corrected `TOKEN_CONTRACT.md`'s
+  prior "demand-driven expansion policy" wording, which contradicted that
+  posture.
+
 ## [4.6.0] - 2026-08-29
 
 **Release Title:** Expanded Palette Ramps
@@ -1216,7 +1292,8 @@ Contract change type: breaking
 - Standardized documentation and contributing guidelines.
 
 [unreleased]:
-  https://github.com/phcdevworks/spectre-tokens/compare/v4.6.0...HEAD
+  https://github.com/phcdevworks/spectre-tokens/compare/v4.7.0...HEAD
+[4.7.0]: https://github.com/phcdevworks/spectre-tokens/compare/v4.6.0...v4.7.0
 [4.6.0]: https://github.com/phcdevworks/spectre-tokens/compare/v4.5.0...v4.6.0
 [4.5.0]: https://github.com/phcdevworks/spectre-tokens/compare/v4.4.0...v4.5.0
 [4.4.0]: https://github.com/phcdevworks/spectre-tokens/compare/v4.3.0...v4.4.0

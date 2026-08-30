@@ -30,7 +30,7 @@ describe('generateCssVariables — semantic namespace coverage', () => {
 
   it('emits a CSS variable for every key under tokens.link', () => {
     Object.keys(tokens.link).forEach((key) => {
-      expect(css).toContain(`--sp-link-${key}`)
+      expect(css).toContain(`--sp-link-${toKebabSegment(key)}`)
     })
   })
 

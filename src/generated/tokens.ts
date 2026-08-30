@@ -16,6 +16,11 @@ export interface SpectreSourceTokens {
           pair: string;
         };
       };
+      padding: {
+        sm: string;
+        md: string;
+        lg: string;
+      };
     };
     input: {
       text: {
@@ -119,6 +124,21 @@ export interface SpectreSourceTokens {
         };
       };
       dangerText: {
+        value: string;
+      };
+      inverseBg: {
+        value: string;
+      };
+      inverseBgHover: {
+        value: string;
+      };
+      inverseText: {
+        value: string;
+        metadata: {
+          pair: string;
+        };
+      };
+      inverseBorder: {
         value: string;
       };
     };
@@ -902,6 +922,41 @@ export interface SpectreSourceTokens {
         };
       };
       textDisabled: {
+        value: string;
+      };
+      focusRing: {
+        value: string;
+      };
+      focusVisible: {
+        value: string;
+      };
+    };
+    inverse: {
+      bg: {
+        value: string;
+      };
+      bgHover: {
+        value: string;
+      };
+      bgActive: {
+        value: string;
+      };
+      bgDisabled: {
+        value: string;
+      };
+      text: {
+        value: string;
+        metadata: {
+          pair: string;
+        };
+      };
+      textDisabled: {
+        value: string;
+      };
+      border: {
+        value: string;
+      };
+      borderDisabled: {
         value: string;
       };
       focusRing: {
@@ -3469,6 +3524,13 @@ export interface SpectreSourceTokens {
       value: string;
       description: string;
     };
+    inverse: {
+      value: string;
+      description: string;
+      metadata: {
+        pair: string;
+      };
+    };
   };
   link: {
     default: {
@@ -3487,6 +3549,17 @@ export interface SpectreSourceTokens {
       description: string;
     };
     visited: {
+      value: string;
+      description: string;
+    };
+    onInverse: {
+      value: string;
+      description: string;
+      metadata: {
+        pair: string;
+      };
+    };
+    onInverseHover: {
       value: string;
       description: string;
     };
@@ -3554,6 +3627,22 @@ export interface SpectreSourceTokens {
       };
       brand: string;
     };
+    onInverse: {
+      default: {
+        value: string;
+        description: string;
+        metadata: {
+          pair: string;
+        };
+      };
+      muted: {
+        value: string;
+        description: string;
+        metadata: {
+          pair: string;
+        };
+      };
+    };
   };
   layout: {
     section: {
@@ -3583,6 +3672,7 @@ export interface SpectreSourceTokens {
       };
       maxWidth: string;
       maxWidthProse: string;
+      maxWidthWide: string;
     };
     sidebar: {
       width: string;
@@ -3777,6 +3867,11 @@ export interface SpectreGeneratedTokens {
     card: {
       text: string;
       textMuted: string;
+      padding: {
+        sm: string;
+        md: string;
+        lg: string;
+      };
     };
     input: {
       text: string;
@@ -3802,6 +3897,10 @@ export interface SpectreGeneratedTokens {
       dangerBg: string;
       dangerBgHover: string;
       dangerText: string;
+      inverseBg: string;
+      inverseBgHover: string;
+      inverseText: string;
+      inverseBorder: string;
     };
     iconBox: {
       bg: string;
@@ -4026,6 +4125,18 @@ export interface SpectreGeneratedTokens {
       bgDisabled: string;
       text: string;
       textDisabled: string;
+      focusRing: string;
+      focusVisible: string;
+    };
+    inverse: {
+      bg: string;
+      bgHover: string;
+      bgActive: string;
+      bgDisabled: string;
+      text: string;
+      textDisabled: string;
+      border: string;
+      borderDisabled: string;
       focusRing: string;
       focusVisible: string;
     };
@@ -5247,12 +5358,15 @@ export interface SpectreGeneratedTokens {
     selected: string;
     active: string;
     divider: string;
+    inverse: string;
   };
   link: {
     default: string;
     hover: string;
     active: string;
     visited: string;
+    onInverse: string;
+    onInverseHover: string;
   };
   text: {
     onPage: {
@@ -5268,6 +5382,10 @@ export interface SpectreGeneratedTokens {
       subtle: string;
       meta: string;
       brand: string;
+    };
+    onInverse: {
+      default: string;
+      muted: string;
     };
   };
   layout: {
@@ -5298,6 +5416,7 @@ export interface SpectreGeneratedTokens {
       };
       maxWidth: string;
       maxWidthProse: string;
+      maxWidthWide: string;
     };
     sidebar: {
       width: string;
@@ -5491,7 +5610,12 @@ export const coreTokens: SpectreGeneratedTokens = {
   "component": {
     "card": {
       "text": "{colors.neutral.900}",
-      "textMuted": "{colors.neutral.600}"
+      "textMuted": "{colors.neutral.600}",
+      "padding": {
+        "sm": "1.5rem",
+        "md": "2rem",
+        "lg": "2.5rem"
+      }
     },
     "input": {
       "text": "{colors.neutral.900}",
@@ -5516,7 +5640,11 @@ export const coreTokens: SpectreGeneratedTokens = {
       "warningText": "{colors.warning.800}",
       "dangerBg": "{colors.error.100}",
       "dangerBgHover": "{colors.error.200}",
-      "dangerText": "{colors.error.800}"
+      "dangerText": "{colors.error.800}",
+      "inverseBg": "{colors.white} / 0.16",
+      "inverseBgHover": "{colors.white} / 0.24",
+      "inverseText": "{colors.white}",
+      "inverseBorder": "{colors.white} / 0.3"
     },
     "iconBox": {
       "bg": "{colors.white}",
@@ -5743,6 +5871,18 @@ export const coreTokens: SpectreGeneratedTokens = {
       "textDisabled": "{colors.neutral.400}",
       "focusRing": "{colors.accent.500} / 0.4",
       "focusVisible": "{colors.accent.500} / 0.4"
+    },
+    "inverse": {
+      "bg": "{colors.white} / 0.12",
+      "bgHover": "{colors.white} / 0.2",
+      "bgActive": "{colors.white} / 0.28",
+      "bgDisabled": "{colors.white} / 0.08",
+      "text": "{colors.white}",
+      "textDisabled": "{colors.neutral.400}",
+      "border": "{colors.white} / 0.3",
+      "borderDisabled": "{colors.white} / 0.16",
+      "focusRing": "{colors.info.500} / 0.4",
+      "focusVisible": "{colors.info.500} / 0.4"
     }
   },
   "forms": {
@@ -6961,13 +7101,16 @@ export const coreTokens: SpectreGeneratedTokens = {
     "hover": "{colors.neutral.100}",
     "selected": "{colors.info.50}",
     "active": "{colors.neutral.200}",
-    "divider": "{colors.neutral.200}"
+    "divider": "{colors.neutral.200}",
+    "inverse": "{colors.neutral.900}"
   },
   "link": {
     "default": "{colors.brand.600}",
     "hover": "{colors.brand.700}",
     "active": "{colors.brand.800}",
-    "visited": "{colors.accent.700}"
+    "visited": "{colors.accent.700}",
+    "onInverse": "{colors.neutral.300}",
+    "onInverseHover": "{colors.brand.300}"
   },
   "text": {
     "onPage": {
@@ -6983,6 +7126,10 @@ export const coreTokens: SpectreGeneratedTokens = {
       "subtle": "{colors.neutral.500}",
       "meta": "{colors.neutral.500}",
       "brand": "{colors.brand.600}"
+    },
+    "onInverse": {
+      "default": "{colors.neutral.50}",
+      "muted": "{colors.neutral.300}"
     }
   },
   "layout": {
@@ -7012,7 +7159,8 @@ export const coreTokens: SpectreGeneratedTokens = {
         "lg": "2rem"
       },
       "maxWidth": "72rem",
-      "maxWidthProse": "65ch"
+      "maxWidthProse": "65ch",
+      "maxWidthWide": "80rem"
     },
     "sidebar": {
       "width": "16rem"

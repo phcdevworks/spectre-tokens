@@ -234,6 +234,7 @@ export interface ComponentTokens<Value = string> {
   card: {
     text: Value;
     textMuted: Value;
+    padding: TokenScale;
   };
   input: {
     text: Value;
@@ -312,6 +313,7 @@ export interface LayoutTokens {
     paddingInline: TokenScale;
     maxWidth: string;
     maxWidthProse: string;
+    maxWidthWide: string;
   };
   sidebar: {
     width: string;

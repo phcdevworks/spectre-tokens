@@ -113,6 +113,7 @@ Changes to those files must be regenerated, validated, and classified in
 | `check:classification` | contract-authority changes have changelog entry                                                                                                                      |
 | `check:dist`           | dist artifacts are in sync with source                                                                                                                               |
 | `check:downstream`     | packs the tarball and runs spectre-ui/spectre-ui-astro/spectre-components's own `npm run check` against it (sibling repos on disk only; not part of `npm run check`) |
+| `audit:downstream`     | read-only report of raw `--sp-*` redeclarations, hardcoded visual values, and workaround comments across all four downstream repos (sibling repos on disk only; not part of `npm run check`; never mutates a sibling repo) |
 | `lint`                 | ESLint passes                                                                                                                                                        |
 
 ## Token Change Procedure

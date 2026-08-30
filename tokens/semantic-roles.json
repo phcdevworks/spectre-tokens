@@ -40,6 +40,13 @@
     "divider": {
       "value": "{colors.neutral.200}",
       "description": "hairline color for <hr>, table borders, and section separators"
+    },
+    "inverse": {
+      "value": "{colors.neutral.900}",
+      "description": "fixed dark background for content islands not owned by the page's own light/dark mode — photo-backed cards, brand-dark card bodies, utility bars",
+      "metadata": {
+        "pair": "text.onInverse.default"
+      }
     }
   },
   "link": {
@@ -61,6 +68,17 @@
     "visited": {
       "value": "{colors.accent.700}",
       "description": "link color after the destination has been visited"
+    },
+    "onInverse": {
+      "value": "{colors.neutral.300}",
+      "description": "default inline link color on surface.inverse, independent of page mode",
+      "metadata": {
+        "pair": "surface.inverse"
+      }
+    },
+    "onInverseHover": {
+      "value": "{colors.brand.300}",
+      "description": "link color on hover, on surface.inverse"
     }
   },
   "text": {
@@ -125,6 +143,22 @@
         }
       },
       "brand": "{colors.brand.600}"
+    },
+    "onInverse": {
+      "default": {
+        "value": "{colors.neutral.50}",
+        "description": "base text on surface.inverse, independent of page mode",
+        "metadata": {
+          "pair": "surface.inverse"
+        }
+      },
+      "muted": {
+        "value": "{colors.neutral.300}",
+        "description": "muted text on surface.inverse",
+        "metadata": {
+          "pair": "surface.inverse"
+        }
+      }
     }
   },
   "layout": {
@@ -154,7 +188,8 @@
         "lg": "2rem"
       },
       "maxWidth": "72rem",
-      "maxWidthProse": "65ch"
+      "maxWidthProse": "65ch",
+      "maxWidthWide": "80rem"
     },
     "sidebar": {
       "width": "16rem"

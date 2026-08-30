@@ -468,9 +468,25 @@ Rules:
 - A concrete failure surfaced here — a real downstream build/type/lint/test
   break caused by a token contract change — is the trigger for a token proposal
   (new namespace, new field, a fix). This check is not a license to
-  speculatively expand the token surface; only a demonstrated downstream gap
-  justifies a contract change, per this package's demand-driven expansion
-  policy.
+  speculatively expand the token surface; a contract change still needs
+  evidence of a real gap, either a filed downstream request or a proactive
+  audit finding (redeclared `--sp-*` variables, raw visual values, or
+  workaround comments in a downstream repo) — see "Contract Expansion Policy"
+  below.
+
+`npm run audit:downstream` (`scripts/audit-downstream-redeclarations.ts`) is
+the read-only counterpart to this check: for each of `spectre-ui`,
+`spectre-ui-astro`, `spectre-components`, and `spectre-base` present as a
+sibling repo on disk, it greps that repo's `src/` tree for raw (non-`var()`)
+`--sp-*` redeclarations, hardcoded hex/px/rem literals, and workaround-flavored
+comments, and prints a report — one finding per line, with no fixed
+allowlist. It never installs into, writes to, or otherwise mutates a sibling
+repo, is not part of `npm run check`, and does not make any consumer-specific
+file part of this package's public contract. Every finding needs a human
+read: most are legitimate consumer-owned geometry (an icon's `1em` box, a
+`transparent` outline background) with no action needed; a real hit is
+evidence for the "Contract Expansion Policy" gate above, filed under
+`TODO.md` "Requested by Downstream" like any other gap.
 
 ## Downstream Consumer Expectations
 
@@ -545,6 +561,33 @@ Before a contract-impacting change merges:
    `Contract change type: semantic change`, or `Contract change type: breaking`.
 8. Confirm the change does not expand this repo into downstream UI or adapter
    responsibilities.
+
+## Contract Expansion Policy
+
+This package ships a complete, UI-ready token surface — it does not wait
+passively for downstream demand to drive every addition. But it also does not
+speculatively expand the token surface on aesthetic grounds (e.g. adding a
+step just to make a scale look symmetrical). A contract addition requires
+evidence of a real gap, and that evidence may come from either source:
+
+- **A filed downstream request** — a consumer hits a concrete limitation and
+  records it under this repo's `TODO.md` "Requested by Downstream" section
+  with requester, date, reason, and a backlink to the consumer's own tracked
+  work.
+- **A proactive audit finding** — this repo (or the agent maintaining it)
+  inspects downstream design-layer repos for `--sp-*` redeclarations, raw
+  hardcoded visual values, or workaround/temporary comments, and confirms one
+  represents a genuine token-vocabulary gap rather than legitimate
+  consumer-owned geometry or a UI/component delivery gap that belongs in
+  `spectre-ui` instead.
+
+Both paths land the same way: filed under "Requested by Downstream" (or
+resolved directly, with the evidence noted in the changelog entry), then
+carried through source tokens, manifest authority, runtime/types, CSS, DTCG,
+docs, and a classified `[Unreleased]` changelog entry per "Change Types"
+above. Evidence-gating stays in force indefinitely — it is not a temporary
+posture that lapses once the current audit backlog (see `ROADMAP.md`,
+`TODO.md`) clears.
 
 ## Acceptable Changes
 

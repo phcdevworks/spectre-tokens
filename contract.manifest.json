@@ -63,6 +63,17 @@
         "component.badge.warningText",
         "component.badge.dangerBg",
         "component.badge.dangerText",
+        "component.badge.inverseBg",
+        "component.badge.inverseText",
+        "component.badge.inverseBorder",
+        "buttons.inverse.bg",
+        "buttons.inverse.text",
+        "buttons.inverse.border",
+        "surface.inverse",
+        "text.onInverse.default",
+        "text.onInverse.muted",
+        "link.onInverse",
+        "link.onInverseHover",
         "component.iconBox.bg",
         "component.iconBox.border",
         "component.iconBox.iconDefault",
@@ -129,10 +140,14 @@
         "component.label.text",
         "component.label.disabledText",
         "component.label.requiredIndicatorText",
+        "component.card.padding.sm",
+        "component.card.padding.md",
+        "component.card.padding.lg",
         "modes.default.surface.page",
         "modes.dark.surface.page",
         "layout.container.maxWidth",
         "layout.container.maxWidthProse",
+        "layout.container.maxWidthWide",
         "layout.sidebar.width"
       ],
       "requiredStringPaths": [
@@ -154,7 +169,10 @@
         "layout.stack.gap.lg",
         "layout.container.paddingInline.sm",
         "layout.container.paddingInline.md",
-        "layout.container.paddingInline.lg"
+        "layout.container.paddingInline.lg",
+        "component.card.padding.sm",
+        "component.card.padding.md",
+        "component.card.padding.lg"
       ],
       "bannedPaths": [
         "borders"

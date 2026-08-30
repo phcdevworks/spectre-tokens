@@ -9,6 +9,7 @@
   --sp-surface-selected: #f0f9ff;
   --sp-surface-active: #d9dfeb;
   --sp-surface-divider: #d9dfeb;
+  --sp-surface-inverse: #141b24;
   --sp-text-on-page-default: #141b24;
   --sp-text-on-page-muted: #4b576a;
   --sp-text-on-page-subtle: #657287;
@@ -19,6 +20,8 @@
   --sp-text-on-surface-subtle: #657287;
   --sp-text-on-surface-meta: #657287;
   --sp-text-on-surface-brand: #1f57db;
+  --sp-text-on-inverse-default: #f7f8fb;
+  --sp-text-on-inverse-muted: #b7c1d4;
   --sp-component-card-text: #141b24;
   --sp-component-card-text-muted: #4b576a;
   --sp-component-input-text: #141b24;
@@ -142,6 +145,13 @@
   --sp-badge-success-bg-hover: #bbf7d0;
   --sp-badge-warning-bg-hover: #ffe08a;
   --sp-badge-danger-bg-hover: #fecaca;
+  --sp-component-card-padding-sm: 1.5rem;
+  --sp-component-card-padding-md: 2rem;
+  --sp-component-card-padding-lg: 2.5rem;
+  --sp-badge-inverse-bg: rgba(255, 255, 255, 0.16);
+  --sp-badge-inverse-bg-hover: rgba(255, 255, 255, 0.24);
+  --sp-badge-inverse-text: #ffffff;
+  --sp-badge-inverse-border: rgba(255, 255, 255, 0.3);
   --sp-select-border-invalid: #ef4444;
   --sp-select-bg-invalid: #fef2f2;
   --sp-select-border-success: #22c55e;
@@ -154,6 +164,8 @@
   --sp-link-hover: #1946b4;
   --sp-link-active: #173b8f;
   --sp-link-visited: #5d28b8;
+  --sp-link-on-inverse: #b7c1d4;
+  --sp-link-on-inverse-hover: #8ab6ff;
   --sp-color-brand-50: #eef4ff;
   --sp-color-brand-100: #d9e7ff;
   --sp-color-brand-200: #b9d2ff;
@@ -631,6 +643,7 @@
   --sp-layout-container-padding-inline-lg: 2rem;
   --sp-layout-container-max-width: 72rem;
   --sp-layout-container-max-width-prose: 65ch;
+  --sp-layout-container-max-width-wide: 80rem;
   --sp-layout-sidebar-width: 16rem;
   --sp-border-width-none: 0;
   --sp-border-width-base: 1px;
@@ -860,6 +873,16 @@
   --sp-button-accent-textdisabled: #8a96ad;
   --sp-button-accent-focusring: rgba(133, 79, 247, 0.4);
   --sp-button-accent-focusvisible: rgba(133, 79, 247, 0.4);
+  --sp-button-inverse-bg: rgba(255, 255, 255, 0.12);
+  --sp-button-inverse-bghover: rgba(255, 255, 255, 0.2);
+  --sp-button-inverse-bgactive: rgba(255, 255, 255, 0.28);
+  --sp-button-inverse-bgdisabled: rgba(255, 255, 255, 0.08);
+  --sp-button-inverse-text: #ffffff;
+  --sp-button-inverse-textdisabled: #8a96ad;
+  --sp-button-inverse-border: rgba(255, 255, 255, 0.3);
+  --sp-button-inverse-borderdisabled: rgba(255, 255, 255, 0.16);
+  --sp-button-inverse-focusring: rgba(14, 165, 233, 0.4);
+  --sp-button-inverse-focusvisible: rgba(14, 165, 233, 0.4);
   --sp-form-default-bg: #ffffff;
   --sp-form-default-border: #b7c1d4;
   --sp-form-default-text: #141b24;
@@ -938,6 +961,7 @@
   --sp-surface-selected: #082f49;
   --sp-surface-active: #4b576a;
   --sp-surface-divider: #374253;
+  --sp-surface-inverse: #141b24;
   --sp-text-on-page-default: #f7f8fb;
   --sp-text-on-page-muted: #b7c1d4;
   --sp-text-on-page-subtle: #8a96ad;
@@ -948,6 +972,8 @@
   --sp-text-on-surface-subtle: #8a96ad;
   --sp-text-on-surface-meta: #8a96ad;
   --sp-text-on-surface-brand: #5a92ff;
+  --sp-text-on-inverse-default: #f7f8fb;
+  --sp-text-on-inverse-muted: #b7c1d4;
   --sp-component-card-text: #eef1f6;
   --sp-component-card-text-muted: #b7c1d4;
   --sp-component-input-text: #eef1f6;
@@ -1071,6 +1097,13 @@
   --sp-badge-success-bg-hover: #15803d;
   --sp-badge-warning-bg-hover: #8f5200;
   --sp-badge-danger-bg-hover: #b91c1c;
+  --sp-component-card-padding-sm: 1.5rem;
+  --sp-component-card-padding-md: 2rem;
+  --sp-component-card-padding-lg: 2.5rem;
+  --sp-badge-inverse-bg: rgba(255, 255, 255, 0.16);
+  --sp-badge-inverse-bg-hover: rgba(255, 255, 255, 0.24);
+  --sp-badge-inverse-text: #ffffff;
+  --sp-badge-inverse-border: rgba(255, 255, 255, 0.3);
   --sp-select-border-invalid: #ef4444;
   --sp-select-bg-invalid: #fef2f2;
   --sp-select-border-success: #22c55e;
@@ -1083,4 +1116,6 @@
   --sp-link-hover: #1946b4;
   --sp-link-active: #173b8f;
   --sp-link-visited: #5d28b8;
+  --sp-link-on-inverse: #b7c1d4;
+  --sp-link-on-inverse-hover: #8ab6ff;
 }

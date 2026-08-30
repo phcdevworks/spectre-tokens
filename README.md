@@ -17,7 +17,7 @@ contracts for specific frameworks and runtimes.
 | Project team           | `project-design`                 |
 | Repository role        | Spectre L1 design-token contract |
 | Package/artifact       | `@phcdevworks/spectre-tokens`    |
-| Current version/status | 4.6.0                            |
+| Current version/status | 4.7.0                            |
 
 ## Standard Workflow
 
@@ -312,8 +312,8 @@ of every token path, resolved value, and usage note.
 
 The `layout` namespace includes section, stack, and container spacing tokens,
 plus fixed layout width tokens for common consumer shells:
-`layout.container.maxWidth`, `layout.container.maxWidthProse`, and
-`layout.sidebar.width`.
+`layout.container.maxWidth`, `layout.container.maxWidthProse`,
+`layout.container.maxWidthWide`, and `layout.sidebar.width`.
 
 ## Public Contract Guarantees
 

@@ -171,6 +171,9 @@ export const createCssVariableMap = (tokens: SpectreTokens, options: CssVariable
     if (container?.maxWidthProse) {
       assign(toVariableName(prefix, 'layout', 'container', 'max-width-prose'), container.maxWidthProse)
     }
+    if (container?.maxWidthWide) {
+      assign(toVariableName(prefix, 'layout', 'container', 'max-width-wide'), container.maxWidthWide)
+    }
 
     const sidebar = layout.sidebar as Record<string, unknown> | undefined
     if (sidebar?.width) {
@@ -427,7 +430,7 @@ export const generateCssVariables = (tokens: SpectreTokens, options: CssVariable
   )
 
   Object.entries(linkTokens).forEach(([key, value]) => {
-    const varName = toVariableName(prefix, 'link', key)
+    const varName = toVariableName(prefix, 'link', kebabPathSegment(key))
     const resolved = pickSemantic(tokens, value)
     addBase(varName, resolved)
     addDark(varName, resolved)

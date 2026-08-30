@@ -3,7 +3,12 @@ var coreTokens = {
   "component": {
     "card": {
       "text": "{colors.neutral.900}",
-      "textMuted": "{colors.neutral.600}"
+      "textMuted": "{colors.neutral.600}",
+      "padding": {
+        "sm": "1.5rem",
+        "md": "2rem",
+        "lg": "2.5rem"
+      }
     },
     "input": {
       "text": "{colors.neutral.900}",
@@ -28,7 +33,11 @@ var coreTokens = {
       "warningText": "{colors.warning.800}",
       "dangerBg": "{colors.error.100}",
       "dangerBgHover": "{colors.error.200}",
-      "dangerText": "{colors.error.800}"
+      "dangerText": "{colors.error.800}",
+      "inverseBg": "{colors.white} / 0.16",
+      "inverseBgHover": "{colors.white} / 0.24",
+      "inverseText": "{colors.white}",
+      "inverseBorder": "{colors.white} / 0.3"
     },
     "iconBox": {
       "bg": "{colors.white}",
@@ -255,6 +264,18 @@ var coreTokens = {
       "textDisabled": "{colors.neutral.400}",
       "focusRing": "{colors.accent.500} / 0.4",
       "focusVisible": "{colors.accent.500} / 0.4"
+    },
+    "inverse": {
+      "bg": "{colors.white} / 0.12",
+      "bgHover": "{colors.white} / 0.2",
+      "bgActive": "{colors.white} / 0.28",
+      "bgDisabled": "{colors.white} / 0.08",
+      "text": "{colors.white}",
+      "textDisabled": "{colors.neutral.400}",
+      "border": "{colors.white} / 0.3",
+      "borderDisabled": "{colors.white} / 0.16",
+      "focusRing": "{colors.info.500} / 0.4",
+      "focusVisible": "{colors.info.500} / 0.4"
     }
   },
   "forms": {
@@ -1473,13 +1494,16 @@ var coreTokens = {
     "hover": "{colors.neutral.100}",
     "selected": "{colors.info.50}",
     "active": "{colors.neutral.200}",
-    "divider": "{colors.neutral.200}"
+    "divider": "{colors.neutral.200}",
+    "inverse": "{colors.neutral.900}"
   },
   "link": {
     "default": "{colors.brand.600}",
     "hover": "{colors.brand.700}",
     "active": "{colors.brand.800}",
-    "visited": "{colors.accent.700}"
+    "visited": "{colors.accent.700}",
+    "onInverse": "{colors.neutral.300}",
+    "onInverseHover": "{colors.brand.300}"
   },
   "text": {
     "onPage": {
@@ -1495,6 +1519,10 @@ var coreTokens = {
       "subtle": "{colors.neutral.500}",
       "meta": "{colors.neutral.500}",
       "brand": "{colors.brand.600}"
+    },
+    "onInverse": {
+      "default": "{colors.neutral.50}",
+      "muted": "{colors.neutral.300}"
     }
   },
   "layout": {
@@ -1524,7 +1552,8 @@ var coreTokens = {
         "lg": "2rem"
       },
       "maxWidth": "72rem",
-      "maxWidthProse": "65ch"
+      "maxWidthProse": "65ch",
+      "maxWidthWide": "80rem"
     },
     "sidebar": {
       "width": "16rem"
@@ -1844,6 +1873,9 @@ var createCssVariableMap = (tokens2, options = {}) => {
     if (container?.maxWidthProse) {
       assign(toVariableName(prefix, "layout", "container", "max-width-prose"), container.maxWidthProse);
     }
+    if (container?.maxWidthWide) {
+      assign(toVariableName(prefix, "layout", "container", "max-width-wide"), container.maxWidthWide);
+    }
     const sidebar = layout.sidebar;
     if (sidebar?.width) {
       assign(toVariableName(prefix, "layout", "sidebar", "width"), sidebar.width);
@@ -2052,7 +2084,7 @@ var generateCssVariables = (tokens2, options = {}) => {
     componentAliases
   );
   Object.entries(linkTokens).forEach(([key, value]) => {
-    const varName = toVariableName(prefix, "link", key);
+    const varName = toVariableName(prefix, "link", kebabPathSegment(key));
     const resolved = pickSemantic(tokens2, value);
     addBase(varName, resolved);
     addDark(varName, resolved);

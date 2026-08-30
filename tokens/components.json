@@ -12,6 +12,11 @@
         "metadata": {
           "pair": "surface.card"
         }
+      },
+      "padding": {
+        "sm": "1.5rem",
+        "md": "2rem",
+        "lg": "2.5rem"
       }
     },
     "input": {
@@ -117,6 +122,21 @@
       },
       "dangerText": {
         "value": "{colors.error.800}"
+      },
+      "inverseBg": {
+        "value": "{colors.white} / 0.16"
+      },
+      "inverseBgHover": {
+        "value": "{colors.white} / 0.24"
+      },
+      "inverseText": {
+        "value": "{colors.white}",
+        "metadata": {
+          "pair": "surface.inverse"
+        }
+      },
+      "inverseBorder": {
+        "value": "{colors.white} / 0.3"
       }
     },
     "iconBox": {
@@ -905,6 +925,41 @@
       },
       "focusVisible": {
         "value": "{colors.accent.500} / 0.4"
+      }
+    },
+    "inverse": {
+      "bg": {
+        "value": "{colors.white} / 0.12"
+      },
+      "bgHover": {
+        "value": "{colors.white} / 0.2"
+      },
+      "bgActive": {
+        "value": "{colors.white} / 0.28"
+      },
+      "bgDisabled": {
+        "value": "{colors.white} / 0.08"
+      },
+      "text": {
+        "value": "{colors.white}",
+        "metadata": {
+          "pair": "surface.inverse"
+        }
+      },
+      "textDisabled": {
+        "value": "{colors.neutral.400}"
+      },
+      "border": {
+        "value": "{colors.white} / 0.3"
+      },
+      "borderDisabled": {
+        "value": "{colors.white} / 0.16"
+      },
+      "focusRing": {
+        "value": "{colors.info.500} / 0.4"
+      },
+      "focusVisible": {
+        "value": "{colors.info.500} / 0.4"
       }
     }
   },

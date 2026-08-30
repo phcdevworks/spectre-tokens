@@ -168,7 +168,7 @@ const rootBlock = css.slice(0, darkBlockIndex);
 const darkBlock = css.slice(darkBlockIndex + darkBlockMarker.length);
 
 // Matches `formatKey` in src/css.ts, which createCssVariableMap uses for the
-// flat (non-mode-scoped) namespaces below: lowercased, non-alphanumeric runs
+// flat cascade-only namespaces below: lowercased, non-alphanumeric runs
 // collapsed to a hyphen, no camelCase splitting.
 const formatKeyLikeCss = (segment: string): string =>
   segment
@@ -176,9 +176,10 @@ const formatKeyLikeCss = (segment: string): string =>
     .replace(/^-+|-+$/g, '')
     .toLowerCase();
 
-// Matches `kebabPathSegment` in src/css.ts, used only by the mode-scoped
-// surface/text/component semantic walker: same as above but splits camelCase
-// boundaries first (`onPage` -> `on-page`).
+// Matches `kebabPathSegment` in src/css.ts, used by the mode-scoped
+// surface/text/component semantic walker and by the `link` group's loop:
+// same as above but splits camelCase boundaries first (`onPage` -> `on-page`,
+// `onInverse` -> `on-inverse`).
 const kebabPathSegmentLikeCss = (segment: string): string =>
   formatKeyLikeCss(segment.replace(/([a-z0-9])([A-Z])/g, '$1-$2'));
 
@@ -208,8 +209,11 @@ parity.css.groups.forEach(({ sourcePath, prefixParts, blockStrategy }) => {
   const node = getPathValue(tokens, sourcePath);
   if (node === undefined) fail(`Runtime tokens are missing declared CSS parity source path: ${sourcePath}`);
 
-  const isModeScoped = blockStrategy === 'mode-scoped';
-  const segmentFormatter = isModeScoped ? kebabPathSegmentLikeCss : formatKeyLikeCss;
+  // 'duplicated' currently has one member (`link`), whose generator
+  // (src/css.ts's `linkTokens` loop) kebab-splits camelCase keys the same way
+  // the mode-scoped semantic walker does (`onInverse` -> `on-inverse`).
+  const usesKebabSplitting = blockStrategy === 'mode-scoped' || blockStrategy === 'duplicated';
+  const segmentFormatter = usesKebabSplitting ? kebabPathSegmentLikeCss : formatKeyLikeCss;
 
   collectRuntimeLeafPaths(node).forEach((leafPath) => {
     const leafParts = leafPath.length > 0 ? leafPath.split('.').map(segmentFormatter) : [];

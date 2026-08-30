@@ -3,6 +3,11 @@ interface SpectreGeneratedTokens {
         card: {
             text: string;
             textMuted: string;
+            padding: {
+                sm: string;
+                md: string;
+                lg: string;
+            };
         };
         input: {
             text: string;
@@ -28,6 +33,10 @@ interface SpectreGeneratedTokens {
             dangerBg: string;
             dangerBgHover: string;
             dangerText: string;
+            inverseBg: string;
+            inverseBgHover: string;
+            inverseText: string;
+            inverseBorder: string;
         };
         iconBox: {
             bg: string;
@@ -252,6 +261,18 @@ interface SpectreGeneratedTokens {
             bgDisabled: string;
             text: string;
             textDisabled: string;
+            focusRing: string;
+            focusVisible: string;
+        };
+        inverse: {
+            bg: string;
+            bgHover: string;
+            bgActive: string;
+            bgDisabled: string;
+            text: string;
+            textDisabled: string;
+            border: string;
+            borderDisabled: string;
             focusRing: string;
             focusVisible: string;
         };
@@ -1473,12 +1494,15 @@ interface SpectreGeneratedTokens {
         selected: string;
         active: string;
         divider: string;
+        inverse: string;
     };
     link: {
         default: string;
         hover: string;
         active: string;
         visited: string;
+        onInverse: string;
+        onInverseHover: string;
     };
     text: {
         onPage: {
@@ -1494,6 +1518,10 @@ interface SpectreGeneratedTokens {
             subtle: string;
             meta: string;
             brand: string;
+        };
+        onInverse: {
+            default: string;
+            muted: string;
         };
     };
     layout: {
@@ -1524,6 +1552,7 @@ interface SpectreGeneratedTokens {
             };
             maxWidth: string;
             maxWidthProse: string;
+            maxWidthWide: string;
         };
         sidebar: {
             width: string;
@@ -1913,6 +1942,7 @@ interface ComponentTokens<Value = string> {
     card: {
         text: Value;
         textMuted: Value;
+        padding: TokenScale;
     };
     input: {
         text: Value;
@@ -1986,6 +2016,7 @@ interface LayoutTokens {
         paddingInline: TokenScale;
         maxWidth: string;
         maxWidthProse: string;
+        maxWidthWide: string;
     };
     sidebar: {
         width: string;
