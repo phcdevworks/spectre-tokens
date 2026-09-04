@@ -6,6 +6,36 @@ reflects package releases published to npm.
 
 ## [Unreleased]
 
+## [4.8.0] - 2026-09-05
+
+**Release Title:** Tooling and Validation Hardening
+
+Contract change type: additive
+
+This release adds validation safeguards and updates development tooling. The
+public token contract, token values, and generated package outputs are unchanged.
+
+### Changed
+
+- Upgrade Vitest from `4.1.11` to `5.0.0`, ESLint to `10.10.0`, the
+  TypeScript lint packages to `8.69.0`, and Node types to `26.4.1`; refresh
+  the dependency lockfile for reproducible installs.
+- Update the Node 22 CI job to `22.13.0` to meet lint-tool requirements.
+- Align agent guidance with the completed roadmap, the public `tracking`
+  namespace, actual regression-check guarantees, and standing git/release
+  authority.
+
+### Added
+
+- Regression cases proving CSS coverage rejects missing declarations even
+  when longer variable names or variable references remain.
+
+### Fixed
+
+- Require exact CSS custom-property declarations in semantic coverage checks
+  instead of accepting partial variable-name matches.
+- Fail test runs when no tests are discovered instead of silently succeeding.
+
 ## [4.7.0] - 2026-08-30
 
 **Release Title:** Downstream Contract Completeness
@@ -1292,7 +1322,8 @@ Contract change type: breaking
 - Standardized documentation and contributing guidelines.
 
 [unreleased]:
-  https://github.com/phcdevworks/spectre-tokens/compare/v4.7.0...HEAD
+  https://github.com/phcdevworks/spectre-tokens/compare/v4.8.0...HEAD
+[4.8.0]: https://github.com/phcdevworks/spectre-tokens/compare/v4.7.0...v4.8.0
 [4.7.0]: https://github.com/phcdevworks/spectre-tokens/compare/v4.6.0...v4.7.0
 [4.6.0]: https://github.com/phcdevworks/spectre-tokens/compare/v4.5.0...v4.6.0
 [4.5.0]: https://github.com/phcdevworks/spectre-tokens/compare/v4.4.0...v4.5.0
