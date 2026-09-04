@@ -9,13 +9,18 @@ const toKebabSegment = (segment: string): string =>
 // later group drops it (`--sp-select-bg`, not `--sp-component-select-bg`).
 const COMPONENT_PREFIX_GROUPS = new Set(['card', 'input'])
 
+const assertDeclaration = (css: string, parts: string[]): void => {
+  const name = `--sp-${parts.map(toKebabSegment).join('-')}`
+  expect(css).toMatch(new RegExp(`(?:^|[;{])\\s*${name}\\s*:`))
+}
+
 const assertCssCoverage = (
   css: string,
   varPrefixParts: string[],
   node: unknown
 ): void => {
   if (typeof node === 'string') {
-    expect(css).toContain(`--sp-${varPrefixParts.map(toKebabSegment).join('-')}`)
+    assertDeclaration(css, varPrefixParts)
     return
   }
   if (node && typeof node === 'object') {
@@ -30,13 +35,13 @@ describe('generateCssVariables — semantic namespace coverage', () => {
 
   it('emits a CSS variable for every key under tokens.link', () => {
     Object.keys(tokens.link).forEach((key) => {
-      expect(css).toContain(`--sp-link-${toKebabSegment(key)}`)
+      assertDeclaration(css, ['link', key])
     })
   })
 
   it('emits a CSS variable for every key under tokens.modes.default.surface', () => {
     Object.keys(tokens.modes.default.surface).forEach((key) => {
-      expect(css).toContain(`--sp-surface-${key}`)
+      assertDeclaration(css, ['surface', key])
     })
   })
 
@@ -47,5 +52,24 @@ describe('generateCssVariables — semantic namespace coverage', () => {
         : [group]
       assertCssCoverage(css, varPrefixParts, fields)
     })
+  })
+
+  it('rejects a missing declaration even when a longer variable name remains', () => {
+    const incompleteCss = css.replace(
+      /^\s*--sp-badge-neutral-bg:[^\n]*\n/gm,
+      ''
+    )
+    expect(incompleteCss).toContain('--sp-badge-neutral-bg-hover:')
+    expect(() =>
+      assertCssCoverage(incompleteCss, ['badge'], tokens.component.badge)
+    ).toThrow()
+  })
+
+  it('does not count a variable reference as a declaration', () => {
+    expect(() =>
+      assertCssCoverage(':root { color: var(--sp-link-default); }', ['link'], {
+        default: '#000000'
+      })
+    ).toThrow()
   })
 })

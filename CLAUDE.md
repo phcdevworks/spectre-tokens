@@ -102,7 +102,7 @@ Changes to those files must be regenerated, validated, and classified in
 | `check:structure`      | token tree shape                                                                                                                                                     |
 | `check:locked`         | protected color families unchanged                                                                                                                                   |
 | `check:contrast`       | WCAG AA contrast for all paired tokens                                                                                                                               |
-| `check:regression`     | token values unchanged vs baseline                                                                                                                                   |
+| `check:regression`     | required paths, flattened values, banned aliases, and space-linked layout values                                                                                                                                   |
 | `check:docs`           | README.md and TOKEN_CONTRACT.md aligned to manifest                                                                                                                  |
 | `check:exports`        | public runtime exports match declared contract                                                                                                                       |
 | `check:css`            | required CSS variables present                                                                                                                                       |
@@ -142,10 +142,11 @@ Changes to these require explicit approval from Bradley Potts.
 Current: `colors`, `space`, `layout`, `radii`, `typography`, `font`, `shadows`,
 `breakpoints`, `zIndex`, `transitions`, `animations`, `opacity`, `aspectRatios`,
 `icons`, `border`, `accessibility`, `buttons`, `forms`, `link`, `surface`,
-`text`, `component`, `modes`
+`text`, `component`, `modes`, `tracking`
 
-Phase 11 is active: the independent Footer semantic contract requested through
-downstream production integration. Scope and gates are tracked in `TODO.md`.
+Phases 1 through 12 are complete. Delivery history is tracked in `ROADMAP.md`;
+new downstream requests are tracked in `TODO.md`. Contract expansion follows
+the evidence requirements in `TOKEN_CONTRACT.md`.
 
 Adding a new namespace is additive. Removing or renaming is breaking. The banned
 namespace is `borders` - always use `border` (singular).

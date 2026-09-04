@@ -159,7 +159,9 @@ Use this checklist before cutting every release (tag + GitHub Release).
 - [ ] `npm run check` passes all gates clean.
 - [ ] `check:locked` passed - no unauthorized protected color changes.
 - [ ] `check:contrast` passed - all paired tokens meet WCAG AA.
-- [ ] `check:regression` passed - no unintentional token value drift.
+- [ ] `check:regression` passed - required paths, flattened values, banned aliases,
+  and space-linked layout values satisfy the manifest. This does not compare
+  all token values against a historical baseline.
 - [ ] `check:dist` passed - `dist/` artifacts are in sync with source.
 
 ### Contract Integrity

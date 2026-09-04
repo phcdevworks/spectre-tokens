@@ -8,11 +8,14 @@ operational playbook. Read `AGENTS.md` for shared agent boundaries.
 
 Codex is the release, documentation, production stabilization, repo hygiene,
 refactor review, and configuration standardization agent. Claude Code leads
-implementation. Bradley Potts owns all final release decisions.
+implementation. Codex commits and pushes directly to `main` and cuts
+release-ready versions under the standing authority in `AGENTS.md` and
+`CODEX.md`. npm publishing remains Bradley Potts's sole authority.
 
 ## Pull Request Creation
 
-When opening a PR, Codex must populate every section of the PR template
+Pull requests are prohibited unless Bradley Potts explicitly requests that
+exception. For an explicitly requested PR, populate every section of the PR template
 (`.github/pull_request_template.md`):
 
 - **Linked issue** — issue number (`#N`) or `N/A`.
@@ -66,7 +69,7 @@ npm run check:structure    # token tree shape
 npm run check:docs         # README and TOKEN_CONTRACT headings
 npm run check:locked       # protected color families unchanged
 npm run check:contrast     # WCAG AA contrast for all paired tokens
-npm run check:regression   # token values unchanged vs baseline
+npm run check:regression   # required paths, flattened values, banned aliases, space-linked layout values
 npm run check:exports      # public runtime exports match declared contract
 npm run check:css          # required CSS variables present
 npm run check:typography-refs # semantic typography references resolve
@@ -96,5 +99,6 @@ When guidance conflicts, resolve in this order:
 
 - Never hand-edit `src/generated/tokens.ts` or `dist/` — regenerate only.
 - Never modify locked color families without explicit Bradley Potts approval.
-- Never commit, tag, or publish unless Bradley explicitly requests it.
+- Commit and push directly to `main` using the configured human identity.
+- Cut releases according to `CODEX.md`; never run `npm publish`.
 - Never override Claude Code's implementation decisions.
