@@ -1,8 +1,8 @@
 # @phcdevworks/spectre-tokens
 
-`@phcdevworks/spectre-tokens` is the design-token package of the Spectre system.
-It provides a complete, UI-ready token surface for downstream Spectre packages
-and compatible applications.
+`@phcdevworks/spectre-tokens` is the design-token foundation of the Spectre
+system. It provides the shared visual values and semantic contracts used across
+Spectre packages and PHCDevworks applications.
 
 Maintained by [PHCDevworks](https://go.phcdev.co). It defines the visual
 language, semantic roles, and token contracts that downstream consumers can rely
