@@ -12,5 +12,12 @@ to check for new evidence.
 
 ## Requested by Downstream
 
-Nothing currently open. New requests land here with requester, date, reason,
-and a backlink to the requester's own tracked work.
+- [ ] **Card edge-accent tokens** — Requested by `spectre-ui` on 2026-09-18
+      to support optional thicker decorative rails on any card edge, with
+      multiple selectable semantic colors. Define a mode-aware
+      `component.card` color contract and a standard accent thickness; keep
+      edge position and rendering behavior downstream. Include runtime,
+      TypeScript, CSS, DTCG, manifest, documentation, and semantic-coverage
+      parity. Do not add `success`, `warning`, `danger`, or CTA/brand-action
+      choices without Bradley Potts's explicit approval. See
+      [spectre-ui/TODO.md](../spectre-ui/TODO.md#requested-by-downstream).
