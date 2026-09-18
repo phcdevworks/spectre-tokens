@@ -8,6 +8,16 @@ var coreTokens = {
         "sm": "1.5rem",
         "md": "2rem",
         "lg": "2.5rem"
+      },
+      "accent": {
+        "neutral": "{colors.neutral.600}",
+        "brand": "{colors.brand.600}",
+        "info": "{colors.info.600}",
+        "success": "{colors.success.600}",
+        "warning": "{colors.warning.600}",
+        "danger": "{colors.error.600}",
+        "cta": "{colors.brand.600}",
+        "thickness": "0.25rem"
       }
     },
     "input": {
@@ -37,7 +47,17 @@ var coreTokens = {
       "inverseBg": "{colors.white} / 0.16",
       "inverseBgHover": "{colors.white} / 0.24",
       "inverseText": "{colors.white}",
-      "inverseBorder": "{colors.white} / 0.3"
+      "inverseBorder": "{colors.white} / 0.3",
+      "accent": {
+        "neutral": "{colors.neutral.600}",
+        "brand": "{colors.brand.600}",
+        "info": "{colors.info.600}",
+        "success": "{colors.success.600}",
+        "warning": "{colors.warning.600}",
+        "danger": "{colors.error.600}",
+        "cta": "{colors.brand.600}",
+        "thickness": "0.25rem"
+      }
     },
     "iconBox": {
       "bg": "{colors.white}",
@@ -54,7 +74,17 @@ var coreTokens = {
       "text": "{colors.neutral.700}",
       "authorName": "{colors.neutral.900}",
       "authorTitle": "{colors.neutral.600}",
-      "quoteMark": "{colors.neutral.600}"
+      "quoteMark": "{colors.neutral.600}",
+      "accent": {
+        "neutral": "{colors.neutral.600}",
+        "brand": "{colors.brand.600}",
+        "info": "{colors.info.600}",
+        "success": "{colors.success.600}",
+        "warning": "{colors.warning.600}",
+        "danger": "{colors.error.600}",
+        "cta": "{colors.brand.600}",
+        "thickness": "0.25rem"
+      }
     },
     "pricingCard": {
       "bg": "{colors.white}",
@@ -65,7 +95,17 @@ var coreTokens = {
       "featuredBadgeBg": "{colors.warning.500}",
       "featuredBadgeText": "{colors.neutral.900}",
       "price": "{colors.neutral.900}",
-      "priceDescription": "{colors.neutral.600}"
+      "priceDescription": "{colors.neutral.600}",
+      "accent": {
+        "neutral": "{colors.neutral.600}",
+        "brand": "{colors.brand.600}",
+        "info": "{colors.info.600}",
+        "success": "{colors.success.600}",
+        "warning": "{colors.warning.600}",
+        "danger": "{colors.error.600}",
+        "cta": "{colors.brand.600}",
+        "thickness": "0.25rem"
+      }
     },
     "rating": {
       "starFilled": "{colors.warning.500}",
@@ -78,7 +118,17 @@ var coreTokens = {
       "link": "{colors.neutral.700}",
       "linkHover": "{colors.brand.600}",
       "linkActive": "{colors.brand.700}",
-      "border": "{colors.neutral.200}"
+      "border": "{colors.neutral.200}",
+      "accent": {
+        "neutral": "{colors.neutral.600}",
+        "brand": "{colors.brand.600}",
+        "info": "{colors.info.600}",
+        "success": "{colors.success.600}",
+        "warning": "{colors.warning.600}",
+        "danger": "{colors.error.600}",
+        "cta": "{colors.brand.600}",
+        "thickness": "0.25rem"
+      }
     },
     "footer": {
       "bg": "{colors.neutral.900}",
@@ -89,13 +139,33 @@ var coreTokens = {
       "linkHover": "{colors.brand.400}",
       "border": "{colors.neutral.700}",
       "divider": "{colors.neutral.800}",
-      "chipBg": "{colors.neutral.800}"
+      "chipBg": "{colors.neutral.800}",
+      "accent": {
+        "neutral": "{colors.neutral.600}",
+        "brand": "{colors.brand.600}",
+        "info": "{colors.info.600}",
+        "success": "{colors.success.600}",
+        "warning": "{colors.warning.600}",
+        "danger": "{colors.error.600}",
+        "cta": "{colors.brand.600}",
+        "thickness": "0.25rem"
+      }
     },
     "modal": {
       "bg": "{colors.white}",
       "shadow": "0 20px 48px -12px {colors.black} / 0.20",
       "border": "{colors.neutral.200}",
-      "overlay": "{colors.black} / 0.6"
+      "overlay": "{colors.black} / 0.6",
+      "accent": {
+        "neutral": "{colors.neutral.600}",
+        "brand": "{colors.brand.600}",
+        "info": "{colors.info.600}",
+        "success": "{colors.success.600}",
+        "warning": "{colors.warning.600}",
+        "danger": "{colors.error.600}",
+        "cta": "{colors.brand.600}",
+        "thickness": "0.25rem"
+      }
     },
     "toast": {
       "success": {
@@ -121,12 +191,32 @@ var coreTokens = {
         "text": "{colors.info.800}",
         "border": "{colors.info.200}",
         "icon": "{colors.info.600}"
+      },
+      "accent": {
+        "neutral": "{colors.neutral.600}",
+        "brand": "{colors.brand.600}",
+        "info": "{colors.info.600}",
+        "success": "{colors.success.600}",
+        "warning": "{colors.warning.600}",
+        "danger": "{colors.error.600}",
+        "cta": "{colors.brand.600}",
+        "thickness": "0.25rem"
       }
     },
     "tooltip": {
       "bg": "{colors.neutral.900}",
       "text": "{colors.white}",
-      "border": "{colors.neutral.700}"
+      "border": "{colors.neutral.700}",
+      "accent": {
+        "neutral": "{colors.neutral.600}",
+        "brand": "{colors.brand.600}",
+        "info": "{colors.info.600}",
+        "success": "{colors.success.600}",
+        "warning": "{colors.warning.600}",
+        "danger": "{colors.error.600}",
+        "cta": "{colors.brand.600}",
+        "thickness": "0.25rem"
+      }
     },
     "dropdown": {
       "bg": "{colors.white}",
@@ -136,6 +226,16 @@ var coreTokens = {
         "hover": "{colors.neutral.100}",
         "active": "{colors.info.50}",
         "text": "{colors.neutral.900}"
+      },
+      "accent": {
+        "neutral": "{colors.neutral.600}",
+        "brand": "{colors.brand.600}",
+        "info": "{colors.info.600}",
+        "success": "{colors.success.600}",
+        "warning": "{colors.warning.600}",
+        "danger": "{colors.error.600}",
+        "cta": "{colors.brand.600}",
+        "thickness": "0.25rem"
       }
     },
     "checkbox": {
@@ -345,7 +445,16 @@ var coreTokens = {
       "component": {
         "card": {
           "text": "{colors.neutral.900}",
-          "textMuted": "{colors.neutral.600}"
+          "textMuted": "{colors.neutral.600}",
+          "accent": {
+            "neutral": "{colors.neutral.600}",
+            "brand": "{colors.brand.600}",
+            "info": "{colors.info.600}",
+            "success": "{colors.success.600}",
+            "warning": "{colors.warning.600}",
+            "danger": "{colors.error.600}",
+            "cta": "{colors.brand.600}"
+          }
         },
         "input": {
           "text": "{colors.neutral.900}",
@@ -367,7 +476,16 @@ var coreTokens = {
           "warningBg": "{colors.warning.100}",
           "warningText": "{colors.warning.800}",
           "dangerBg": "{colors.error.100}",
-          "dangerText": "{colors.error.700}"
+          "dangerText": "{colors.error.700}",
+          "accent": {
+            "neutral": "{colors.neutral.600}",
+            "brand": "{colors.brand.600}",
+            "info": "{colors.info.600}",
+            "success": "{colors.success.600}",
+            "warning": "{colors.warning.600}",
+            "danger": "{colors.error.600}",
+            "cta": "{colors.brand.600}"
+          }
         },
         "iconBox": {
           "bg": "{colors.white}",
@@ -384,7 +502,16 @@ var coreTokens = {
           "text": "{colors.neutral.700}",
           "authorName": "{colors.neutral.900}",
           "authorTitle": "{colors.neutral.600}",
-          "quoteMark": "{colors.neutral.600}"
+          "quoteMark": "{colors.neutral.600}",
+          "accent": {
+            "neutral": "{colors.neutral.600}",
+            "brand": "{colors.brand.600}",
+            "info": "{colors.info.600}",
+            "success": "{colors.success.600}",
+            "warning": "{colors.warning.600}",
+            "danger": "{colors.error.600}",
+            "cta": "{colors.brand.600}"
+          }
         },
         "pricingCard": {
           "bg": "{colors.white}",
@@ -395,7 +522,16 @@ var coreTokens = {
           "featuredBadgeBg": "{colors.warning.500}",
           "featuredBadgeText": "{colors.neutral.900}",
           "price": "{colors.neutral.900}",
-          "priceDescription": "{colors.neutral.600}"
+          "priceDescription": "{colors.neutral.600}",
+          "accent": {
+            "neutral": "{colors.neutral.600}",
+            "brand": "{colors.brand.600}",
+            "info": "{colors.info.600}",
+            "success": "{colors.success.600}",
+            "warning": "{colors.warning.600}",
+            "danger": "{colors.error.600}",
+            "cta": "{colors.brand.600}"
+          }
         },
         "rating": {
           "starFilled": "{colors.warning.500}",
@@ -408,7 +544,16 @@ var coreTokens = {
           "link": "{colors.neutral.700}",
           "linkHover": "{colors.brand.600}",
           "linkActive": "{colors.brand.700}",
-          "border": "{colors.neutral.200}"
+          "border": "{colors.neutral.200}",
+          "accent": {
+            "neutral": "{colors.neutral.600}",
+            "brand": "{colors.brand.600}",
+            "info": "{colors.info.600}",
+            "success": "{colors.success.600}",
+            "warning": "{colors.warning.600}",
+            "danger": "{colors.error.600}",
+            "cta": "{colors.brand.600}"
+          }
         },
         "footer": {
           "bg": "{colors.neutral.900}",
@@ -419,13 +564,31 @@ var coreTokens = {
           "linkHover": "{colors.brand.400}",
           "border": "{colors.neutral.700}",
           "divider": "{colors.neutral.800}",
-          "chipBg": "{colors.neutral.800}"
+          "chipBg": "{colors.neutral.800}",
+          "accent": {
+            "neutral": "{colors.neutral.600}",
+            "brand": "{colors.brand.600}",
+            "info": "{colors.info.600}",
+            "success": "{colors.success.600}",
+            "warning": "{colors.warning.600}",
+            "danger": "{colors.error.600}",
+            "cta": "{colors.brand.600}"
+          }
         },
         "modal": {
           "bg": "{colors.white}",
           "shadow": "0 20px 48px -12px {colors.black} / 0.20",
           "border": "{colors.neutral.200}",
-          "overlay": "{colors.black} / 0.6"
+          "overlay": "{colors.black} / 0.6",
+          "accent": {
+            "neutral": "{colors.neutral.600}",
+            "brand": "{colors.brand.600}",
+            "info": "{colors.info.600}",
+            "success": "{colors.success.600}",
+            "warning": "{colors.warning.600}",
+            "danger": "{colors.error.600}",
+            "cta": "{colors.brand.600}"
+          }
         },
         "toast": {
           "success": {
@@ -451,12 +614,30 @@ var coreTokens = {
             "text": "{colors.info.800}",
             "border": "{colors.info.200}",
             "icon": "{colors.info.600}"
+          },
+          "accent": {
+            "neutral": "{colors.neutral.600}",
+            "brand": "{colors.brand.600}",
+            "info": "{colors.info.600}",
+            "success": "{colors.success.600}",
+            "warning": "{colors.warning.600}",
+            "danger": "{colors.error.600}",
+            "cta": "{colors.brand.600}"
           }
         },
         "tooltip": {
           "bg": "{colors.neutral.900}",
           "text": "{colors.white}",
-          "border": "{colors.neutral.700}"
+          "border": "{colors.neutral.700}",
+          "accent": {
+            "neutral": "{colors.neutral.600}",
+            "brand": "{colors.brand.600}",
+            "info": "{colors.info.600}",
+            "success": "{colors.success.600}",
+            "warning": "{colors.warning.600}",
+            "danger": "{colors.error.600}",
+            "cta": "{colors.brand.600}"
+          }
         },
         "dropdown": {
           "bg": "{colors.white}",
@@ -466,6 +647,15 @@ var coreTokens = {
             "hover": "{colors.neutral.100}",
             "active": "{colors.info.50}",
             "text": "{colors.neutral.900}"
+          },
+          "accent": {
+            "neutral": "{colors.neutral.600}",
+            "brand": "{colors.brand.600}",
+            "info": "{colors.info.600}",
+            "success": "{colors.success.600}",
+            "warning": "{colors.warning.600}",
+            "danger": "{colors.error.600}",
+            "cta": "{colors.brand.600}"
           }
         },
         "checkbox": {
@@ -547,7 +737,16 @@ var coreTokens = {
       "component": {
         "card": {
           "text": "{colors.neutral.100}",
-          "textMuted": "{colors.neutral.300}"
+          "textMuted": "{colors.neutral.300}",
+          "accent": {
+            "neutral": "{colors.neutral.400}",
+            "brand": "{colors.brand.400}",
+            "info": "{colors.info.400}",
+            "success": "{colors.success.400}",
+            "warning": "{colors.warning.400}",
+            "danger": "{colors.error.400}",
+            "cta": "{colors.brand.400}"
+          }
         },
         "input": {
           "text": "{colors.neutral.100}",
@@ -572,7 +771,16 @@ var coreTokens = {
           "warningText": "{colors.warning.100}",
           "dangerBg": "{colors.error.800}",
           "dangerBgHover": "{colors.error.700}",
-          "dangerText": "{colors.error.100}"
+          "dangerText": "{colors.error.100}",
+          "accent": {
+            "neutral": "{colors.neutral.400}",
+            "brand": "{colors.brand.400}",
+            "info": "{colors.info.400}",
+            "success": "{colors.success.400}",
+            "warning": "{colors.warning.400}",
+            "danger": "{colors.error.400}",
+            "cta": "{colors.brand.400}"
+          }
         },
         "iconBox": {
           "bg": "{colors.neutral.800}",
@@ -589,7 +797,16 @@ var coreTokens = {
           "text": "{colors.neutral.200}",
           "authorName": "{colors.neutral.100}",
           "authorTitle": "{colors.neutral.300}",
-          "quoteMark": "{colors.neutral.300}"
+          "quoteMark": "{colors.neutral.300}",
+          "accent": {
+            "neutral": "{colors.neutral.400}",
+            "brand": "{colors.brand.400}",
+            "info": "{colors.info.400}",
+            "success": "{colors.success.400}",
+            "warning": "{colors.warning.400}",
+            "danger": "{colors.error.400}",
+            "cta": "{colors.brand.400}"
+          }
         },
         "pricingCard": {
           "bg": "{colors.neutral.800}",
@@ -600,7 +817,16 @@ var coreTokens = {
           "featuredBadgeBg": "{colors.warning.500}",
           "featuredBadgeText": "{colors.neutral.900}",
           "price": "{colors.neutral.100}",
-          "priceDescription": "{colors.neutral.300}"
+          "priceDescription": "{colors.neutral.300}",
+          "accent": {
+            "neutral": "{colors.neutral.400}",
+            "brand": "{colors.brand.400}",
+            "info": "{colors.info.400}",
+            "success": "{colors.success.400}",
+            "warning": "{colors.warning.400}",
+            "danger": "{colors.error.400}",
+            "cta": "{colors.brand.400}"
+          }
         },
         "rating": {
           "starFilled": "{colors.warning.400}",
@@ -613,7 +839,16 @@ var coreTokens = {
           "link": "{colors.neutral.300}",
           "linkHover": "{colors.brand.400}",
           "linkActive": "{colors.brand.300}",
-          "border": "{colors.neutral.700}"
+          "border": "{colors.neutral.700}",
+          "accent": {
+            "neutral": "{colors.neutral.400}",
+            "brand": "{colors.brand.400}",
+            "info": "{colors.info.400}",
+            "success": "{colors.success.400}",
+            "warning": "{colors.warning.400}",
+            "danger": "{colors.error.400}",
+            "cta": "{colors.brand.400}"
+          }
         },
         "footer": {
           "bg": "{colors.black}",
@@ -624,13 +859,31 @@ var coreTokens = {
           "linkHover": "{colors.brand.300}",
           "border": "{colors.neutral.800}",
           "divider": "{colors.neutral.900}",
-          "chipBg": "{colors.neutral.900}"
+          "chipBg": "{colors.neutral.900}",
+          "accent": {
+            "neutral": "{colors.neutral.400}",
+            "brand": "{colors.brand.400}",
+            "info": "{colors.info.400}",
+            "success": "{colors.success.400}",
+            "warning": "{colors.warning.400}",
+            "danger": "{colors.error.400}",
+            "cta": "{colors.brand.400}"
+          }
         },
         "modal": {
           "bg": "{colors.neutral.800}",
           "shadow": "0 20px 48px -12px {colors.black} / 0.20",
           "border": "{colors.neutral.700}",
-          "overlay": "{colors.black} / 0.6"
+          "overlay": "{colors.black} / 0.6",
+          "accent": {
+            "neutral": "{colors.neutral.400}",
+            "brand": "{colors.brand.400}",
+            "info": "{colors.info.400}",
+            "success": "{colors.success.400}",
+            "warning": "{colors.warning.400}",
+            "danger": "{colors.error.400}",
+            "cta": "{colors.brand.400}"
+          }
         },
         "toast": {
           "success": {
@@ -656,12 +909,30 @@ var coreTokens = {
             "text": "{colors.info.100}",
             "border": "{colors.info.700}",
             "icon": "{colors.info.400}"
+          },
+          "accent": {
+            "neutral": "{colors.neutral.400}",
+            "brand": "{colors.brand.400}",
+            "info": "{colors.info.400}",
+            "success": "{colors.success.400}",
+            "warning": "{colors.warning.400}",
+            "danger": "{colors.error.400}",
+            "cta": "{colors.brand.400}"
           }
         },
         "tooltip": {
           "bg": "{colors.neutral.50}",
           "text": "{colors.neutral.900}",
-          "border": "{colors.neutral.300}"
+          "border": "{colors.neutral.300}",
+          "accent": {
+            "neutral": "{colors.neutral.400}",
+            "brand": "{colors.brand.400}",
+            "info": "{colors.info.400}",
+            "success": "{colors.success.400}",
+            "warning": "{colors.warning.400}",
+            "danger": "{colors.error.400}",
+            "cta": "{colors.brand.400}"
+          }
         },
         "dropdown": {
           "bg": "{colors.neutral.800}",
@@ -671,6 +942,15 @@ var coreTokens = {
             "hover": "{colors.neutral.700}",
             "active": "{colors.info.900}",
             "text": "{colors.neutral.100}"
+          },
+          "accent": {
+            "neutral": "{colors.neutral.400}",
+            "brand": "{colors.brand.400}",
+            "info": "{colors.info.400}",
+            "success": "{colors.success.400}",
+            "warning": "{colors.warning.400}",
+            "danger": "{colors.error.400}",
+            "cta": "{colors.brand.400}"
           }
         },
         "checkbox": {

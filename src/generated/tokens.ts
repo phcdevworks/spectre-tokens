@@ -21,6 +21,44 @@ export interface SpectreSourceTokens {
         md: string;
         lg: string;
       };
+      accent: {
+        neutral: {
+          value: string;
+          metadata: {
+          };
+        };
+        brand: {
+          value: string;
+          metadata: {
+          };
+        };
+        info: {
+          value: string;
+          metadata: {
+          };
+        };
+        success: {
+          value: string;
+          metadata: {
+          };
+        };
+        warning: {
+          value: string;
+          metadata: {
+          };
+        };
+        danger: {
+          value: string;
+          metadata: {
+          };
+        };
+        cta: {
+          value: string;
+          metadata: {
+          };
+        };
+        thickness: string;
+      };
     };
     input: {
       text: {
@@ -141,6 +179,44 @@ export interface SpectreSourceTokens {
       inverseBorder: {
         value: string;
       };
+      accent: {
+        neutral: {
+          value: string;
+          metadata: {
+          };
+        };
+        brand: {
+          value: string;
+          metadata: {
+          };
+        };
+        info: {
+          value: string;
+          metadata: {
+          };
+        };
+        success: {
+          value: string;
+          metadata: {
+          };
+        };
+        warning: {
+          value: string;
+          metadata: {
+          };
+        };
+        danger: {
+          value: string;
+          metadata: {
+          };
+        };
+        cta: {
+          value: string;
+          metadata: {
+          };
+        };
+        thickness: string;
+      };
     };
     iconBox: {
       bg: {
@@ -208,6 +284,44 @@ export interface SpectreSourceTokens {
           pair: string;
         };
       };
+      accent: {
+        neutral: {
+          value: string;
+          metadata: {
+          };
+        };
+        brand: {
+          value: string;
+          metadata: {
+          };
+        };
+        info: {
+          value: string;
+          metadata: {
+          };
+        };
+        success: {
+          value: string;
+          metadata: {
+          };
+        };
+        warning: {
+          value: string;
+          metadata: {
+          };
+        };
+        danger: {
+          value: string;
+          metadata: {
+          };
+        };
+        cta: {
+          value: string;
+          metadata: {
+          };
+        };
+        thickness: string;
+      };
     };
     pricingCard: {
       bg: {
@@ -263,6 +377,44 @@ export interface SpectreSourceTokens {
           pair: string;
         };
       };
+      accent: {
+        neutral: {
+          value: string;
+          metadata: {
+          };
+        };
+        brand: {
+          value: string;
+          metadata: {
+          };
+        };
+        info: {
+          value: string;
+          metadata: {
+          };
+        };
+        success: {
+          value: string;
+          metadata: {
+          };
+        };
+        warning: {
+          value: string;
+          metadata: {
+          };
+        };
+        danger: {
+          value: string;
+          metadata: {
+          };
+        };
+        cta: {
+          value: string;
+          metadata: {
+          };
+        };
+        thickness: string;
+      };
     };
     rating: {
       starFilled: {
@@ -302,6 +454,44 @@ export interface SpectreSourceTokens {
       };
       border: {
         value: string;
+      };
+      accent: {
+        neutral: {
+          value: string;
+          metadata: {
+          };
+        };
+        brand: {
+          value: string;
+          metadata: {
+          };
+        };
+        info: {
+          value: string;
+          metadata: {
+          };
+        };
+        success: {
+          value: string;
+          metadata: {
+          };
+        };
+        warning: {
+          value: string;
+          metadata: {
+          };
+        };
+        danger: {
+          value: string;
+          metadata: {
+          };
+        };
+        cta: {
+          value: string;
+          metadata: {
+          };
+        };
+        thickness: string;
       };
     };
     footer: {
@@ -350,6 +540,44 @@ export interface SpectreSourceTokens {
       chipBg: {
         value: string;
       };
+      accent: {
+        neutral: {
+          value: string;
+          metadata: {
+          };
+        };
+        brand: {
+          value: string;
+          metadata: {
+          };
+        };
+        info: {
+          value: string;
+          metadata: {
+          };
+        };
+        success: {
+          value: string;
+          metadata: {
+          };
+        };
+        warning: {
+          value: string;
+          metadata: {
+          };
+        };
+        danger: {
+          value: string;
+          metadata: {
+          };
+        };
+        cta: {
+          value: string;
+          metadata: {
+          };
+        };
+        thickness: string;
+      };
     };
     modal: {
       bg: {
@@ -363,6 +591,44 @@ export interface SpectreSourceTokens {
       };
       overlay: {
         value: string;
+      };
+      accent: {
+        neutral: {
+          value: string;
+          metadata: {
+          };
+        };
+        brand: {
+          value: string;
+          metadata: {
+          };
+        };
+        info: {
+          value: string;
+          metadata: {
+          };
+        };
+        success: {
+          value: string;
+          metadata: {
+          };
+        };
+        warning: {
+          value: string;
+          metadata: {
+          };
+        };
+        danger: {
+          value: string;
+          metadata: {
+          };
+        };
+        cta: {
+          value: string;
+          metadata: {
+          };
+        };
+        thickness: string;
       };
     };
     toast: {
@@ -446,6 +712,44 @@ export interface SpectreSourceTokens {
           value: string;
         };
       };
+      accent: {
+        neutral: {
+          value: string;
+          metadata: {
+          };
+        };
+        brand: {
+          value: string;
+          metadata: {
+          };
+        };
+        info: {
+          value: string;
+          metadata: {
+          };
+        };
+        success: {
+          value: string;
+          metadata: {
+          };
+        };
+        warning: {
+          value: string;
+          metadata: {
+          };
+        };
+        danger: {
+          value: string;
+          metadata: {
+          };
+        };
+        cta: {
+          value: string;
+          metadata: {
+          };
+        };
+        thickness: string;
+      };
     };
     tooltip: {
       bg: {
@@ -462,6 +766,44 @@ export interface SpectreSourceTokens {
       };
       border: {
         value: string;
+      };
+      accent: {
+        neutral: {
+          value: string;
+          metadata: {
+          };
+        };
+        brand: {
+          value: string;
+          metadata: {
+          };
+        };
+        info: {
+          value: string;
+          metadata: {
+          };
+        };
+        success: {
+          value: string;
+          metadata: {
+          };
+        };
+        warning: {
+          value: string;
+          metadata: {
+          };
+        };
+        danger: {
+          value: string;
+          metadata: {
+          };
+        };
+        cta: {
+          value: string;
+          metadata: {
+          };
+        };
+        thickness: string;
       };
     };
     dropdown: {
@@ -490,6 +832,44 @@ export interface SpectreSourceTokens {
             pair: string;
           };
         };
+      };
+      accent: {
+        neutral: {
+          value: string;
+          metadata: {
+          };
+        };
+        brand: {
+          value: string;
+          metadata: {
+          };
+        };
+        info: {
+          value: string;
+          metadata: {
+          };
+        };
+        success: {
+          value: string;
+          metadata: {
+          };
+        };
+        warning: {
+          value: string;
+          metadata: {
+          };
+        };
+        danger: {
+          value: string;
+          metadata: {
+          };
+        };
+        cta: {
+          value: string;
+          metadata: {
+          };
+        };
+        thickness: string;
       };
     };
     checkbox: {
@@ -1177,6 +1557,43 @@ export interface SpectreSourceTokens {
               pair: string;
             };
           };
+          accent: {
+            neutral: {
+              value: string;
+              metadata: {
+              };
+            };
+            brand: {
+              value: string;
+              metadata: {
+              };
+            };
+            info: {
+              value: string;
+              metadata: {
+              };
+            };
+            success: {
+              value: string;
+              metadata: {
+              };
+            };
+            warning: {
+              value: string;
+              metadata: {
+              };
+            };
+            danger: {
+              value: string;
+              metadata: {
+              };
+            };
+            cta: {
+              value: string;
+              metadata: {
+              };
+            };
+          };
         };
         input: {
           text: {
@@ -1270,6 +1687,43 @@ export interface SpectreSourceTokens {
             metadata: {
             };
           };
+          accent: {
+            neutral: {
+              value: string;
+              metadata: {
+              };
+            };
+            brand: {
+              value: string;
+              metadata: {
+              };
+            };
+            info: {
+              value: string;
+              metadata: {
+              };
+            };
+            success: {
+              value: string;
+              metadata: {
+              };
+            };
+            warning: {
+              value: string;
+              metadata: {
+              };
+            };
+            danger: {
+              value: string;
+              metadata: {
+              };
+            };
+            cta: {
+              value: string;
+              metadata: {
+              };
+            };
+          };
         };
         iconBox: {
           bg: {
@@ -1348,6 +1802,43 @@ export interface SpectreSourceTokens {
               pair: string;
             };
           };
+          accent: {
+            neutral: {
+              value: string;
+              metadata: {
+              };
+            };
+            brand: {
+              value: string;
+              metadata: {
+              };
+            };
+            info: {
+              value: string;
+              metadata: {
+              };
+            };
+            success: {
+              value: string;
+              metadata: {
+              };
+            };
+            warning: {
+              value: string;
+              metadata: {
+              };
+            };
+            danger: {
+              value: string;
+              metadata: {
+              };
+            };
+            cta: {
+              value: string;
+              metadata: {
+              };
+            };
+          };
         };
         pricingCard: {
           bg: {
@@ -1403,6 +1894,43 @@ export interface SpectreSourceTokens {
               pair: string;
             };
           };
+          accent: {
+            neutral: {
+              value: string;
+              metadata: {
+              };
+            };
+            brand: {
+              value: string;
+              metadata: {
+              };
+            };
+            info: {
+              value: string;
+              metadata: {
+              };
+            };
+            success: {
+              value: string;
+              metadata: {
+              };
+            };
+            warning: {
+              value: string;
+              metadata: {
+              };
+            };
+            danger: {
+              value: string;
+              metadata: {
+              };
+            };
+            cta: {
+              value: string;
+              metadata: {
+              };
+            };
+          };
         };
         rating: {
           starFilled: {
@@ -1453,6 +1981,43 @@ export interface SpectreSourceTokens {
           border: {
             value: string;
             metadata: {
+            };
+          };
+          accent: {
+            neutral: {
+              value: string;
+              metadata: {
+              };
+            };
+            brand: {
+              value: string;
+              metadata: {
+              };
+            };
+            info: {
+              value: string;
+              metadata: {
+              };
+            };
+            success: {
+              value: string;
+              metadata: {
+              };
+            };
+            warning: {
+              value: string;
+              metadata: {
+              };
+            };
+            danger: {
+              value: string;
+              metadata: {
+              };
+            };
+            cta: {
+              value: string;
+              metadata: {
+              };
             };
           };
         };
@@ -1508,6 +2073,43 @@ export interface SpectreSourceTokens {
             metadata: {
             };
           };
+          accent: {
+            neutral: {
+              value: string;
+              metadata: {
+              };
+            };
+            brand: {
+              value: string;
+              metadata: {
+              };
+            };
+            info: {
+              value: string;
+              metadata: {
+              };
+            };
+            success: {
+              value: string;
+              metadata: {
+              };
+            };
+            warning: {
+              value: string;
+              metadata: {
+              };
+            };
+            danger: {
+              value: string;
+              metadata: {
+              };
+            };
+            cta: {
+              value: string;
+              metadata: {
+              };
+            };
+          };
         };
         modal: {
           bg: {
@@ -1528,6 +2130,43 @@ export interface SpectreSourceTokens {
           overlay: {
             value: string;
             metadata: {
+            };
+          };
+          accent: {
+            neutral: {
+              value: string;
+              metadata: {
+              };
+            };
+            brand: {
+              value: string;
+              metadata: {
+              };
+            };
+            info: {
+              value: string;
+              metadata: {
+              };
+            };
+            success: {
+              value: string;
+              metadata: {
+              };
+            };
+            warning: {
+              value: string;
+              metadata: {
+              };
+            };
+            danger: {
+              value: string;
+              metadata: {
+              };
+            };
+            cta: {
+              value: string;
+              metadata: {
+              };
             };
           };
         };
@@ -1628,6 +2267,43 @@ export interface SpectreSourceTokens {
               };
             };
           };
+          accent: {
+            neutral: {
+              value: string;
+              metadata: {
+              };
+            };
+            brand: {
+              value: string;
+              metadata: {
+              };
+            };
+            info: {
+              value: string;
+              metadata: {
+              };
+            };
+            success: {
+              value: string;
+              metadata: {
+              };
+            };
+            warning: {
+              value: string;
+              metadata: {
+              };
+            };
+            danger: {
+              value: string;
+              metadata: {
+              };
+            };
+            cta: {
+              value: string;
+              metadata: {
+              };
+            };
+          };
         };
         tooltip: {
           bg: {
@@ -1645,6 +2321,43 @@ export interface SpectreSourceTokens {
           border: {
             value: string;
             metadata: {
+            };
+          };
+          accent: {
+            neutral: {
+              value: string;
+              metadata: {
+              };
+            };
+            brand: {
+              value: string;
+              metadata: {
+              };
+            };
+            info: {
+              value: string;
+              metadata: {
+              };
+            };
+            success: {
+              value: string;
+              metadata: {
+              };
+            };
+            warning: {
+              value: string;
+              metadata: {
+              };
+            };
+            danger: {
+              value: string;
+              metadata: {
+              };
+            };
+            cta: {
+              value: string;
+              metadata: {
+              };
             };
           };
         };
@@ -1680,6 +2393,43 @@ export interface SpectreSourceTokens {
               value: string;
               metadata: {
                 pair: string;
+              };
+            };
+          };
+          accent: {
+            neutral: {
+              value: string;
+              metadata: {
+              };
+            };
+            brand: {
+              value: string;
+              metadata: {
+              };
+            };
+            info: {
+              value: string;
+              metadata: {
+              };
+            };
+            success: {
+              value: string;
+              metadata: {
+              };
+            };
+            warning: {
+              value: string;
+              metadata: {
+              };
+            };
+            danger: {
+              value: string;
+              metadata: {
+              };
+            };
+            cta: {
+              value: string;
+              metadata: {
               };
             };
           };
@@ -2000,6 +2750,43 @@ export interface SpectreSourceTokens {
               pair: string;
             };
           };
+          accent: {
+            neutral: {
+              value: string;
+              metadata: {
+              };
+            };
+            brand: {
+              value: string;
+              metadata: {
+              };
+            };
+            info: {
+              value: string;
+              metadata: {
+              };
+            };
+            success: {
+              value: string;
+              metadata: {
+              };
+            };
+            warning: {
+              value: string;
+              metadata: {
+              };
+            };
+            danger: {
+              value: string;
+              metadata: {
+              };
+            };
+            cta: {
+              value: string;
+              metadata: {
+              };
+            };
+          };
         };
         input: {
           text: {
@@ -2111,6 +2898,43 @@ export interface SpectreSourceTokens {
             metadata: {
             };
           };
+          accent: {
+            neutral: {
+              value: string;
+              metadata: {
+              };
+            };
+            brand: {
+              value: string;
+              metadata: {
+              };
+            };
+            info: {
+              value: string;
+              metadata: {
+              };
+            };
+            success: {
+              value: string;
+              metadata: {
+              };
+            };
+            warning: {
+              value: string;
+              metadata: {
+              };
+            };
+            danger: {
+              value: string;
+              metadata: {
+              };
+            };
+            cta: {
+              value: string;
+              metadata: {
+              };
+            };
+          };
         };
         iconBox: {
           bg: {
@@ -2191,6 +3015,43 @@ export interface SpectreSourceTokens {
               pair: string;
             };
           };
+          accent: {
+            neutral: {
+              value: string;
+              metadata: {
+              };
+            };
+            brand: {
+              value: string;
+              metadata: {
+              };
+            };
+            info: {
+              value: string;
+              metadata: {
+              };
+            };
+            success: {
+              value: string;
+              metadata: {
+              };
+            };
+            warning: {
+              value: string;
+              metadata: {
+              };
+            };
+            danger: {
+              value: string;
+              metadata: {
+              };
+            };
+            cta: {
+              value: string;
+              metadata: {
+              };
+            };
+          };
         };
         pricingCard: {
           bg: {
@@ -2246,6 +3107,43 @@ export interface SpectreSourceTokens {
               pair: string;
             };
           };
+          accent: {
+            neutral: {
+              value: string;
+              metadata: {
+              };
+            };
+            brand: {
+              value: string;
+              metadata: {
+              };
+            };
+            info: {
+              value: string;
+              metadata: {
+              };
+            };
+            success: {
+              value: string;
+              metadata: {
+              };
+            };
+            warning: {
+              value: string;
+              metadata: {
+              };
+            };
+            danger: {
+              value: string;
+              metadata: {
+              };
+            };
+            cta: {
+              value: string;
+              metadata: {
+              };
+            };
+          };
         };
         rating: {
           starFilled: {
@@ -2296,6 +3194,43 @@ export interface SpectreSourceTokens {
           border: {
             value: string;
             metadata: {
+            };
+          };
+          accent: {
+            neutral: {
+              value: string;
+              metadata: {
+              };
+            };
+            brand: {
+              value: string;
+              metadata: {
+              };
+            };
+            info: {
+              value: string;
+              metadata: {
+              };
+            };
+            success: {
+              value: string;
+              metadata: {
+              };
+            };
+            warning: {
+              value: string;
+              metadata: {
+              };
+            };
+            danger: {
+              value: string;
+              metadata: {
+              };
+            };
+            cta: {
+              value: string;
+              metadata: {
+              };
             };
           };
         };
@@ -2351,6 +3286,43 @@ export interface SpectreSourceTokens {
             metadata: {
             };
           };
+          accent: {
+            neutral: {
+              value: string;
+              metadata: {
+              };
+            };
+            brand: {
+              value: string;
+              metadata: {
+              };
+            };
+            info: {
+              value: string;
+              metadata: {
+              };
+            };
+            success: {
+              value: string;
+              metadata: {
+              };
+            };
+            warning: {
+              value: string;
+              metadata: {
+              };
+            };
+            danger: {
+              value: string;
+              metadata: {
+              };
+            };
+            cta: {
+              value: string;
+              metadata: {
+              };
+            };
+          };
         };
         modal: {
           bg: {
@@ -2371,6 +3343,43 @@ export interface SpectreSourceTokens {
           overlay: {
             value: string;
             metadata: {
+            };
+          };
+          accent: {
+            neutral: {
+              value: string;
+              metadata: {
+              };
+            };
+            brand: {
+              value: string;
+              metadata: {
+              };
+            };
+            info: {
+              value: string;
+              metadata: {
+              };
+            };
+            success: {
+              value: string;
+              metadata: {
+              };
+            };
+            warning: {
+              value: string;
+              metadata: {
+              };
+            };
+            danger: {
+              value: string;
+              metadata: {
+              };
+            };
+            cta: {
+              value: string;
+              metadata: {
+              };
             };
           };
         };
@@ -2471,6 +3480,43 @@ export interface SpectreSourceTokens {
               };
             };
           };
+          accent: {
+            neutral: {
+              value: string;
+              metadata: {
+              };
+            };
+            brand: {
+              value: string;
+              metadata: {
+              };
+            };
+            info: {
+              value: string;
+              metadata: {
+              };
+            };
+            success: {
+              value: string;
+              metadata: {
+              };
+            };
+            warning: {
+              value: string;
+              metadata: {
+              };
+            };
+            danger: {
+              value: string;
+              metadata: {
+              };
+            };
+            cta: {
+              value: string;
+              metadata: {
+              };
+            };
+          };
         };
         tooltip: {
           bg: {
@@ -2488,6 +3534,43 @@ export interface SpectreSourceTokens {
           border: {
             value: string;
             metadata: {
+            };
+          };
+          accent: {
+            neutral: {
+              value: string;
+              metadata: {
+              };
+            };
+            brand: {
+              value: string;
+              metadata: {
+              };
+            };
+            info: {
+              value: string;
+              metadata: {
+              };
+            };
+            success: {
+              value: string;
+              metadata: {
+              };
+            };
+            warning: {
+              value: string;
+              metadata: {
+              };
+            };
+            danger: {
+              value: string;
+              metadata: {
+              };
+            };
+            cta: {
+              value: string;
+              metadata: {
+              };
             };
           };
         };
@@ -2523,6 +3606,43 @@ export interface SpectreSourceTokens {
               value: string;
               metadata: {
                 pair: string;
+              };
+            };
+          };
+          accent: {
+            neutral: {
+              value: string;
+              metadata: {
+              };
+            };
+            brand: {
+              value: string;
+              metadata: {
+              };
+            };
+            info: {
+              value: string;
+              metadata: {
+              };
+            };
+            success: {
+              value: string;
+              metadata: {
+              };
+            };
+            warning: {
+              value: string;
+              metadata: {
+              };
+            };
+            danger: {
+              value: string;
+              metadata: {
+              };
+            };
+            cta: {
+              value: string;
+              metadata: {
               };
             };
           };
@@ -3872,6 +4992,16 @@ export interface SpectreGeneratedTokens {
         md: string;
         lg: string;
       };
+      accent: {
+        neutral: string;
+        brand: string;
+        info: string;
+        success: string;
+        warning: string;
+        danger: string;
+        cta: string;
+        thickness: string;
+      };
     };
     input: {
       text: string;
@@ -3901,6 +5031,16 @@ export interface SpectreGeneratedTokens {
       inverseBgHover: string;
       inverseText: string;
       inverseBorder: string;
+      accent: {
+        neutral: string;
+        brand: string;
+        info: string;
+        success: string;
+        warning: string;
+        danger: string;
+        cta: string;
+        thickness: string;
+      };
     };
     iconBox: {
       bg: string;
@@ -3918,6 +5058,16 @@ export interface SpectreGeneratedTokens {
       authorName: string;
       authorTitle: string;
       quoteMark: string;
+      accent: {
+        neutral: string;
+        brand: string;
+        info: string;
+        success: string;
+        warning: string;
+        danger: string;
+        cta: string;
+        thickness: string;
+      };
     };
     pricingCard: {
       bg: string;
@@ -3929,6 +5079,16 @@ export interface SpectreGeneratedTokens {
       featuredBadgeText: string;
       price: string;
       priceDescription: string;
+      accent: {
+        neutral: string;
+        brand: string;
+        info: string;
+        success: string;
+        warning: string;
+        danger: string;
+        cta: string;
+        thickness: string;
+      };
     };
     rating: {
       starFilled: string;
@@ -3942,6 +5102,16 @@ export interface SpectreGeneratedTokens {
       linkHover: string;
       linkActive: string;
       border: string;
+      accent: {
+        neutral: string;
+        brand: string;
+        info: string;
+        success: string;
+        warning: string;
+        danger: string;
+        cta: string;
+        thickness: string;
+      };
     };
     footer: {
       bg: string;
@@ -3953,12 +5123,32 @@ export interface SpectreGeneratedTokens {
       border: string;
       divider: string;
       chipBg: string;
+      accent: {
+        neutral: string;
+        brand: string;
+        info: string;
+        success: string;
+        warning: string;
+        danger: string;
+        cta: string;
+        thickness: string;
+      };
     };
     modal: {
       bg: string;
       shadow: string;
       border: string;
       overlay: string;
+      accent: {
+        neutral: string;
+        brand: string;
+        info: string;
+        success: string;
+        warning: string;
+        danger: string;
+        cta: string;
+        thickness: string;
+      };
     };
     toast: {
       success: {
@@ -3985,11 +5175,31 @@ export interface SpectreGeneratedTokens {
         border: string;
         icon: string;
       };
+      accent: {
+        neutral: string;
+        brand: string;
+        info: string;
+        success: string;
+        warning: string;
+        danger: string;
+        cta: string;
+        thickness: string;
+      };
     };
     tooltip: {
       bg: string;
       text: string;
       border: string;
+      accent: {
+        neutral: string;
+        brand: string;
+        info: string;
+        success: string;
+        warning: string;
+        danger: string;
+        cta: string;
+        thickness: string;
+      };
     };
     dropdown: {
       bg: string;
@@ -3999,6 +5209,16 @@ export interface SpectreGeneratedTokens {
         hover: string;
         active: string;
         text: string;
+      };
+      accent: {
+        neutral: string;
+        brand: string;
+        info: string;
+        success: string;
+        warning: string;
+        danger: string;
+        cta: string;
+        thickness: string;
       };
     };
     checkbox: {
@@ -4209,6 +5429,15 @@ export interface SpectreGeneratedTokens {
         card: {
           text: string;
           textMuted: string;
+          accent: {
+            neutral: string;
+            brand: string;
+            info: string;
+            success: string;
+            warning: string;
+            danger: string;
+            cta: string;
+          };
         };
         input: {
           text: string;
@@ -4231,6 +5460,15 @@ export interface SpectreGeneratedTokens {
           warningText: string;
           dangerBg: string;
           dangerText: string;
+          accent: {
+            neutral: string;
+            brand: string;
+            info: string;
+            success: string;
+            warning: string;
+            danger: string;
+            cta: string;
+          };
         };
         iconBox: {
           bg: string;
@@ -4248,6 +5486,15 @@ export interface SpectreGeneratedTokens {
           authorName: string;
           authorTitle: string;
           quoteMark: string;
+          accent: {
+            neutral: string;
+            brand: string;
+            info: string;
+            success: string;
+            warning: string;
+            danger: string;
+            cta: string;
+          };
         };
         pricingCard: {
           bg: string;
@@ -4259,6 +5506,15 @@ export interface SpectreGeneratedTokens {
           featuredBadgeText: string;
           price: string;
           priceDescription: string;
+          accent: {
+            neutral: string;
+            brand: string;
+            info: string;
+            success: string;
+            warning: string;
+            danger: string;
+            cta: string;
+          };
         };
         rating: {
           starFilled: string;
@@ -4272,6 +5528,15 @@ export interface SpectreGeneratedTokens {
           linkHover: string;
           linkActive: string;
           border: string;
+          accent: {
+            neutral: string;
+            brand: string;
+            info: string;
+            success: string;
+            warning: string;
+            danger: string;
+            cta: string;
+          };
         };
         footer: {
           bg: string;
@@ -4283,12 +5548,30 @@ export interface SpectreGeneratedTokens {
           border: string;
           divider: string;
           chipBg: string;
+          accent: {
+            neutral: string;
+            brand: string;
+            info: string;
+            success: string;
+            warning: string;
+            danger: string;
+            cta: string;
+          };
         };
         modal: {
           bg: string;
           shadow: string;
           border: string;
           overlay: string;
+          accent: {
+            neutral: string;
+            brand: string;
+            info: string;
+            success: string;
+            warning: string;
+            danger: string;
+            cta: string;
+          };
         };
         toast: {
           success: {
@@ -4315,11 +5598,29 @@ export interface SpectreGeneratedTokens {
             border: string;
             icon: string;
           };
+          accent: {
+            neutral: string;
+            brand: string;
+            info: string;
+            success: string;
+            warning: string;
+            danger: string;
+            cta: string;
+          };
         };
         tooltip: {
           bg: string;
           text: string;
           border: string;
+          accent: {
+            neutral: string;
+            brand: string;
+            info: string;
+            success: string;
+            warning: string;
+            danger: string;
+            cta: string;
+          };
         };
         dropdown: {
           bg: string;
@@ -4329,6 +5630,15 @@ export interface SpectreGeneratedTokens {
             hover: string;
             active: string;
             text: string;
+          };
+          accent: {
+            neutral: string;
+            brand: string;
+            info: string;
+            success: string;
+            warning: string;
+            danger: string;
+            cta: string;
           };
         };
         checkbox: {
@@ -4411,6 +5721,15 @@ export interface SpectreGeneratedTokens {
         card: {
           text: string;
           textMuted: string;
+          accent: {
+            neutral: string;
+            brand: string;
+            info: string;
+            success: string;
+            warning: string;
+            danger: string;
+            cta: string;
+          };
         };
         input: {
           text: string;
@@ -4436,6 +5755,15 @@ export interface SpectreGeneratedTokens {
           dangerBg: string;
           dangerBgHover: string;
           dangerText: string;
+          accent: {
+            neutral: string;
+            brand: string;
+            info: string;
+            success: string;
+            warning: string;
+            danger: string;
+            cta: string;
+          };
         };
         iconBox: {
           bg: string;
@@ -4453,6 +5781,15 @@ export interface SpectreGeneratedTokens {
           authorName: string;
           authorTitle: string;
           quoteMark: string;
+          accent: {
+            neutral: string;
+            brand: string;
+            info: string;
+            success: string;
+            warning: string;
+            danger: string;
+            cta: string;
+          };
         };
         pricingCard: {
           bg: string;
@@ -4464,6 +5801,15 @@ export interface SpectreGeneratedTokens {
           featuredBadgeText: string;
           price: string;
           priceDescription: string;
+          accent: {
+            neutral: string;
+            brand: string;
+            info: string;
+            success: string;
+            warning: string;
+            danger: string;
+            cta: string;
+          };
         };
         rating: {
           starFilled: string;
@@ -4477,6 +5823,15 @@ export interface SpectreGeneratedTokens {
           linkHover: string;
           linkActive: string;
           border: string;
+          accent: {
+            neutral: string;
+            brand: string;
+            info: string;
+            success: string;
+            warning: string;
+            danger: string;
+            cta: string;
+          };
         };
         footer: {
           bg: string;
@@ -4488,12 +5843,30 @@ export interface SpectreGeneratedTokens {
           border: string;
           divider: string;
           chipBg: string;
+          accent: {
+            neutral: string;
+            brand: string;
+            info: string;
+            success: string;
+            warning: string;
+            danger: string;
+            cta: string;
+          };
         };
         modal: {
           bg: string;
           shadow: string;
           border: string;
           overlay: string;
+          accent: {
+            neutral: string;
+            brand: string;
+            info: string;
+            success: string;
+            warning: string;
+            danger: string;
+            cta: string;
+          };
         };
         toast: {
           success: {
@@ -4520,11 +5893,29 @@ export interface SpectreGeneratedTokens {
             border: string;
             icon: string;
           };
+          accent: {
+            neutral: string;
+            brand: string;
+            info: string;
+            success: string;
+            warning: string;
+            danger: string;
+            cta: string;
+          };
         };
         tooltip: {
           bg: string;
           text: string;
           border: string;
+          accent: {
+            neutral: string;
+            brand: string;
+            info: string;
+            success: string;
+            warning: string;
+            danger: string;
+            cta: string;
+          };
         };
         dropdown: {
           bg: string;
@@ -4534,6 +5925,15 @@ export interface SpectreGeneratedTokens {
             hover: string;
             active: string;
             text: string;
+          };
+          accent: {
+            neutral: string;
+            brand: string;
+            info: string;
+            success: string;
+            warning: string;
+            danger: string;
+            cta: string;
           };
         };
         checkbox: {
@@ -5615,6 +7015,16 @@ export const coreTokens: SpectreGeneratedTokens = {
         "sm": "1.5rem",
         "md": "2rem",
         "lg": "2.5rem"
+      },
+      "accent": {
+        "neutral": "{colors.neutral.600}",
+        "brand": "{colors.brand.600}",
+        "info": "{colors.info.600}",
+        "success": "{colors.success.600}",
+        "warning": "{colors.warning.600}",
+        "danger": "{colors.error.600}",
+        "cta": "{colors.brand.600}",
+        "thickness": "0.25rem"
       }
     },
     "input": {
@@ -5644,7 +7054,17 @@ export const coreTokens: SpectreGeneratedTokens = {
       "inverseBg": "{colors.white} / 0.16",
       "inverseBgHover": "{colors.white} / 0.24",
       "inverseText": "{colors.white}",
-      "inverseBorder": "{colors.white} / 0.3"
+      "inverseBorder": "{colors.white} / 0.3",
+      "accent": {
+        "neutral": "{colors.neutral.600}",
+        "brand": "{colors.brand.600}",
+        "info": "{colors.info.600}",
+        "success": "{colors.success.600}",
+        "warning": "{colors.warning.600}",
+        "danger": "{colors.error.600}",
+        "cta": "{colors.brand.600}",
+        "thickness": "0.25rem"
+      }
     },
     "iconBox": {
       "bg": "{colors.white}",
@@ -5661,7 +7081,17 @@ export const coreTokens: SpectreGeneratedTokens = {
       "text": "{colors.neutral.700}",
       "authorName": "{colors.neutral.900}",
       "authorTitle": "{colors.neutral.600}",
-      "quoteMark": "{colors.neutral.600}"
+      "quoteMark": "{colors.neutral.600}",
+      "accent": {
+        "neutral": "{colors.neutral.600}",
+        "brand": "{colors.brand.600}",
+        "info": "{colors.info.600}",
+        "success": "{colors.success.600}",
+        "warning": "{colors.warning.600}",
+        "danger": "{colors.error.600}",
+        "cta": "{colors.brand.600}",
+        "thickness": "0.25rem"
+      }
     },
     "pricingCard": {
       "bg": "{colors.white}",
@@ -5672,7 +7102,17 @@ export const coreTokens: SpectreGeneratedTokens = {
       "featuredBadgeBg": "{colors.warning.500}",
       "featuredBadgeText": "{colors.neutral.900}",
       "price": "{colors.neutral.900}",
-      "priceDescription": "{colors.neutral.600}"
+      "priceDescription": "{colors.neutral.600}",
+      "accent": {
+        "neutral": "{colors.neutral.600}",
+        "brand": "{colors.brand.600}",
+        "info": "{colors.info.600}",
+        "success": "{colors.success.600}",
+        "warning": "{colors.warning.600}",
+        "danger": "{colors.error.600}",
+        "cta": "{colors.brand.600}",
+        "thickness": "0.25rem"
+      }
     },
     "rating": {
       "starFilled": "{colors.warning.500}",
@@ -5685,7 +7125,17 @@ export const coreTokens: SpectreGeneratedTokens = {
       "link": "{colors.neutral.700}",
       "linkHover": "{colors.brand.600}",
       "linkActive": "{colors.brand.700}",
-      "border": "{colors.neutral.200}"
+      "border": "{colors.neutral.200}",
+      "accent": {
+        "neutral": "{colors.neutral.600}",
+        "brand": "{colors.brand.600}",
+        "info": "{colors.info.600}",
+        "success": "{colors.success.600}",
+        "warning": "{colors.warning.600}",
+        "danger": "{colors.error.600}",
+        "cta": "{colors.brand.600}",
+        "thickness": "0.25rem"
+      }
     },
     "footer": {
       "bg": "{colors.neutral.900}",
@@ -5696,13 +7146,33 @@ export const coreTokens: SpectreGeneratedTokens = {
       "linkHover": "{colors.brand.400}",
       "border": "{colors.neutral.700}",
       "divider": "{colors.neutral.800}",
-      "chipBg": "{colors.neutral.800}"
+      "chipBg": "{colors.neutral.800}",
+      "accent": {
+        "neutral": "{colors.neutral.600}",
+        "brand": "{colors.brand.600}",
+        "info": "{colors.info.600}",
+        "success": "{colors.success.600}",
+        "warning": "{colors.warning.600}",
+        "danger": "{colors.error.600}",
+        "cta": "{colors.brand.600}",
+        "thickness": "0.25rem"
+      }
     },
     "modal": {
       "bg": "{colors.white}",
       "shadow": "0 20px 48px -12px {colors.black} / 0.20",
       "border": "{colors.neutral.200}",
-      "overlay": "{colors.black} / 0.6"
+      "overlay": "{colors.black} / 0.6",
+      "accent": {
+        "neutral": "{colors.neutral.600}",
+        "brand": "{colors.brand.600}",
+        "info": "{colors.info.600}",
+        "success": "{colors.success.600}",
+        "warning": "{colors.warning.600}",
+        "danger": "{colors.error.600}",
+        "cta": "{colors.brand.600}",
+        "thickness": "0.25rem"
+      }
     },
     "toast": {
       "success": {
@@ -5728,12 +7198,32 @@ export const coreTokens: SpectreGeneratedTokens = {
         "text": "{colors.info.800}",
         "border": "{colors.info.200}",
         "icon": "{colors.info.600}"
+      },
+      "accent": {
+        "neutral": "{colors.neutral.600}",
+        "brand": "{colors.brand.600}",
+        "info": "{colors.info.600}",
+        "success": "{colors.success.600}",
+        "warning": "{colors.warning.600}",
+        "danger": "{colors.error.600}",
+        "cta": "{colors.brand.600}",
+        "thickness": "0.25rem"
       }
     },
     "tooltip": {
       "bg": "{colors.neutral.900}",
       "text": "{colors.white}",
-      "border": "{colors.neutral.700}"
+      "border": "{colors.neutral.700}",
+      "accent": {
+        "neutral": "{colors.neutral.600}",
+        "brand": "{colors.brand.600}",
+        "info": "{colors.info.600}",
+        "success": "{colors.success.600}",
+        "warning": "{colors.warning.600}",
+        "danger": "{colors.error.600}",
+        "cta": "{colors.brand.600}",
+        "thickness": "0.25rem"
+      }
     },
     "dropdown": {
       "bg": "{colors.white}",
@@ -5743,6 +7233,16 @@ export const coreTokens: SpectreGeneratedTokens = {
         "hover": "{colors.neutral.100}",
         "active": "{colors.info.50}",
         "text": "{colors.neutral.900}"
+      },
+      "accent": {
+        "neutral": "{colors.neutral.600}",
+        "brand": "{colors.brand.600}",
+        "info": "{colors.info.600}",
+        "success": "{colors.success.600}",
+        "warning": "{colors.warning.600}",
+        "danger": "{colors.error.600}",
+        "cta": "{colors.brand.600}",
+        "thickness": "0.25rem"
       }
     },
     "checkbox": {
@@ -5952,7 +7452,16 @@ export const coreTokens: SpectreGeneratedTokens = {
       "component": {
         "card": {
           "text": "{colors.neutral.900}",
-          "textMuted": "{colors.neutral.600}"
+          "textMuted": "{colors.neutral.600}",
+          "accent": {
+            "neutral": "{colors.neutral.600}",
+            "brand": "{colors.brand.600}",
+            "info": "{colors.info.600}",
+            "success": "{colors.success.600}",
+            "warning": "{colors.warning.600}",
+            "danger": "{colors.error.600}",
+            "cta": "{colors.brand.600}"
+          }
         },
         "input": {
           "text": "{colors.neutral.900}",
@@ -5974,7 +7483,16 @@ export const coreTokens: SpectreGeneratedTokens = {
           "warningBg": "{colors.warning.100}",
           "warningText": "{colors.warning.800}",
           "dangerBg": "{colors.error.100}",
-          "dangerText": "{colors.error.700}"
+          "dangerText": "{colors.error.700}",
+          "accent": {
+            "neutral": "{colors.neutral.600}",
+            "brand": "{colors.brand.600}",
+            "info": "{colors.info.600}",
+            "success": "{colors.success.600}",
+            "warning": "{colors.warning.600}",
+            "danger": "{colors.error.600}",
+            "cta": "{colors.brand.600}"
+          }
         },
         "iconBox": {
           "bg": "{colors.white}",
@@ -5991,7 +7509,16 @@ export const coreTokens: SpectreGeneratedTokens = {
           "text": "{colors.neutral.700}",
           "authorName": "{colors.neutral.900}",
           "authorTitle": "{colors.neutral.600}",
-          "quoteMark": "{colors.neutral.600}"
+          "quoteMark": "{colors.neutral.600}",
+          "accent": {
+            "neutral": "{colors.neutral.600}",
+            "brand": "{colors.brand.600}",
+            "info": "{colors.info.600}",
+            "success": "{colors.success.600}",
+            "warning": "{colors.warning.600}",
+            "danger": "{colors.error.600}",
+            "cta": "{colors.brand.600}"
+          }
         },
         "pricingCard": {
           "bg": "{colors.white}",
@@ -6002,7 +7529,16 @@ export const coreTokens: SpectreGeneratedTokens = {
           "featuredBadgeBg": "{colors.warning.500}",
           "featuredBadgeText": "{colors.neutral.900}",
           "price": "{colors.neutral.900}",
-          "priceDescription": "{colors.neutral.600}"
+          "priceDescription": "{colors.neutral.600}",
+          "accent": {
+            "neutral": "{colors.neutral.600}",
+            "brand": "{colors.brand.600}",
+            "info": "{colors.info.600}",
+            "success": "{colors.success.600}",
+            "warning": "{colors.warning.600}",
+            "danger": "{colors.error.600}",
+            "cta": "{colors.brand.600}"
+          }
         },
         "rating": {
           "starFilled": "{colors.warning.500}",
@@ -6015,7 +7551,16 @@ export const coreTokens: SpectreGeneratedTokens = {
           "link": "{colors.neutral.700}",
           "linkHover": "{colors.brand.600}",
           "linkActive": "{colors.brand.700}",
-          "border": "{colors.neutral.200}"
+          "border": "{colors.neutral.200}",
+          "accent": {
+            "neutral": "{colors.neutral.600}",
+            "brand": "{colors.brand.600}",
+            "info": "{colors.info.600}",
+            "success": "{colors.success.600}",
+            "warning": "{colors.warning.600}",
+            "danger": "{colors.error.600}",
+            "cta": "{colors.brand.600}"
+          }
         },
         "footer": {
           "bg": "{colors.neutral.900}",
@@ -6026,13 +7571,31 @@ export const coreTokens: SpectreGeneratedTokens = {
           "linkHover": "{colors.brand.400}",
           "border": "{colors.neutral.700}",
           "divider": "{colors.neutral.800}",
-          "chipBg": "{colors.neutral.800}"
+          "chipBg": "{colors.neutral.800}",
+          "accent": {
+            "neutral": "{colors.neutral.600}",
+            "brand": "{colors.brand.600}",
+            "info": "{colors.info.600}",
+            "success": "{colors.success.600}",
+            "warning": "{colors.warning.600}",
+            "danger": "{colors.error.600}",
+            "cta": "{colors.brand.600}"
+          }
         },
         "modal": {
           "bg": "{colors.white}",
           "shadow": "0 20px 48px -12px {colors.black} / 0.20",
           "border": "{colors.neutral.200}",
-          "overlay": "{colors.black} / 0.6"
+          "overlay": "{colors.black} / 0.6",
+          "accent": {
+            "neutral": "{colors.neutral.600}",
+            "brand": "{colors.brand.600}",
+            "info": "{colors.info.600}",
+            "success": "{colors.success.600}",
+            "warning": "{colors.warning.600}",
+            "danger": "{colors.error.600}",
+            "cta": "{colors.brand.600}"
+          }
         },
         "toast": {
           "success": {
@@ -6058,12 +7621,30 @@ export const coreTokens: SpectreGeneratedTokens = {
             "text": "{colors.info.800}",
             "border": "{colors.info.200}",
             "icon": "{colors.info.600}"
+          },
+          "accent": {
+            "neutral": "{colors.neutral.600}",
+            "brand": "{colors.brand.600}",
+            "info": "{colors.info.600}",
+            "success": "{colors.success.600}",
+            "warning": "{colors.warning.600}",
+            "danger": "{colors.error.600}",
+            "cta": "{colors.brand.600}"
           }
         },
         "tooltip": {
           "bg": "{colors.neutral.900}",
           "text": "{colors.white}",
-          "border": "{colors.neutral.700}"
+          "border": "{colors.neutral.700}",
+          "accent": {
+            "neutral": "{colors.neutral.600}",
+            "brand": "{colors.brand.600}",
+            "info": "{colors.info.600}",
+            "success": "{colors.success.600}",
+            "warning": "{colors.warning.600}",
+            "danger": "{colors.error.600}",
+            "cta": "{colors.brand.600}"
+          }
         },
         "dropdown": {
           "bg": "{colors.white}",
@@ -6073,6 +7654,15 @@ export const coreTokens: SpectreGeneratedTokens = {
             "hover": "{colors.neutral.100}",
             "active": "{colors.info.50}",
             "text": "{colors.neutral.900}"
+          },
+          "accent": {
+            "neutral": "{colors.neutral.600}",
+            "brand": "{colors.brand.600}",
+            "info": "{colors.info.600}",
+            "success": "{colors.success.600}",
+            "warning": "{colors.warning.600}",
+            "danger": "{colors.error.600}",
+            "cta": "{colors.brand.600}"
           }
         },
         "checkbox": {
@@ -6154,7 +7744,16 @@ export const coreTokens: SpectreGeneratedTokens = {
       "component": {
         "card": {
           "text": "{colors.neutral.100}",
-          "textMuted": "{colors.neutral.300}"
+          "textMuted": "{colors.neutral.300}",
+          "accent": {
+            "neutral": "{colors.neutral.400}",
+            "brand": "{colors.brand.400}",
+            "info": "{colors.info.400}",
+            "success": "{colors.success.400}",
+            "warning": "{colors.warning.400}",
+            "danger": "{colors.error.400}",
+            "cta": "{colors.brand.400}"
+          }
         },
         "input": {
           "text": "{colors.neutral.100}",
@@ -6179,7 +7778,16 @@ export const coreTokens: SpectreGeneratedTokens = {
           "warningText": "{colors.warning.100}",
           "dangerBg": "{colors.error.800}",
           "dangerBgHover": "{colors.error.700}",
-          "dangerText": "{colors.error.100}"
+          "dangerText": "{colors.error.100}",
+          "accent": {
+            "neutral": "{colors.neutral.400}",
+            "brand": "{colors.brand.400}",
+            "info": "{colors.info.400}",
+            "success": "{colors.success.400}",
+            "warning": "{colors.warning.400}",
+            "danger": "{colors.error.400}",
+            "cta": "{colors.brand.400}"
+          }
         },
         "iconBox": {
           "bg": "{colors.neutral.800}",
@@ -6196,7 +7804,16 @@ export const coreTokens: SpectreGeneratedTokens = {
           "text": "{colors.neutral.200}",
           "authorName": "{colors.neutral.100}",
           "authorTitle": "{colors.neutral.300}",
-          "quoteMark": "{colors.neutral.300}"
+          "quoteMark": "{colors.neutral.300}",
+          "accent": {
+            "neutral": "{colors.neutral.400}",
+            "brand": "{colors.brand.400}",
+            "info": "{colors.info.400}",
+            "success": "{colors.success.400}",
+            "warning": "{colors.warning.400}",
+            "danger": "{colors.error.400}",
+            "cta": "{colors.brand.400}"
+          }
         },
         "pricingCard": {
           "bg": "{colors.neutral.800}",
@@ -6207,7 +7824,16 @@ export const coreTokens: SpectreGeneratedTokens = {
           "featuredBadgeBg": "{colors.warning.500}",
           "featuredBadgeText": "{colors.neutral.900}",
           "price": "{colors.neutral.100}",
-          "priceDescription": "{colors.neutral.300}"
+          "priceDescription": "{colors.neutral.300}",
+          "accent": {
+            "neutral": "{colors.neutral.400}",
+            "brand": "{colors.brand.400}",
+            "info": "{colors.info.400}",
+            "success": "{colors.success.400}",
+            "warning": "{colors.warning.400}",
+            "danger": "{colors.error.400}",
+            "cta": "{colors.brand.400}"
+          }
         },
         "rating": {
           "starFilled": "{colors.warning.400}",
@@ -6220,7 +7846,16 @@ export const coreTokens: SpectreGeneratedTokens = {
           "link": "{colors.neutral.300}",
           "linkHover": "{colors.brand.400}",
           "linkActive": "{colors.brand.300}",
-          "border": "{colors.neutral.700}"
+          "border": "{colors.neutral.700}",
+          "accent": {
+            "neutral": "{colors.neutral.400}",
+            "brand": "{colors.brand.400}",
+            "info": "{colors.info.400}",
+            "success": "{colors.success.400}",
+            "warning": "{colors.warning.400}",
+            "danger": "{colors.error.400}",
+            "cta": "{colors.brand.400}"
+          }
         },
         "footer": {
           "bg": "{colors.black}",
@@ -6231,13 +7866,31 @@ export const coreTokens: SpectreGeneratedTokens = {
           "linkHover": "{colors.brand.300}",
           "border": "{colors.neutral.800}",
           "divider": "{colors.neutral.900}",
-          "chipBg": "{colors.neutral.900}"
+          "chipBg": "{colors.neutral.900}",
+          "accent": {
+            "neutral": "{colors.neutral.400}",
+            "brand": "{colors.brand.400}",
+            "info": "{colors.info.400}",
+            "success": "{colors.success.400}",
+            "warning": "{colors.warning.400}",
+            "danger": "{colors.error.400}",
+            "cta": "{colors.brand.400}"
+          }
         },
         "modal": {
           "bg": "{colors.neutral.800}",
           "shadow": "0 20px 48px -12px {colors.black} / 0.20",
           "border": "{colors.neutral.700}",
-          "overlay": "{colors.black} / 0.6"
+          "overlay": "{colors.black} / 0.6",
+          "accent": {
+            "neutral": "{colors.neutral.400}",
+            "brand": "{colors.brand.400}",
+            "info": "{colors.info.400}",
+            "success": "{colors.success.400}",
+            "warning": "{colors.warning.400}",
+            "danger": "{colors.error.400}",
+            "cta": "{colors.brand.400}"
+          }
         },
         "toast": {
           "success": {
@@ -6263,12 +7916,30 @@ export const coreTokens: SpectreGeneratedTokens = {
             "text": "{colors.info.100}",
             "border": "{colors.info.700}",
             "icon": "{colors.info.400}"
+          },
+          "accent": {
+            "neutral": "{colors.neutral.400}",
+            "brand": "{colors.brand.400}",
+            "info": "{colors.info.400}",
+            "success": "{colors.success.400}",
+            "warning": "{colors.warning.400}",
+            "danger": "{colors.error.400}",
+            "cta": "{colors.brand.400}"
           }
         },
         "tooltip": {
           "bg": "{colors.neutral.50}",
           "text": "{colors.neutral.900}",
-          "border": "{colors.neutral.300}"
+          "border": "{colors.neutral.300}",
+          "accent": {
+            "neutral": "{colors.neutral.400}",
+            "brand": "{colors.brand.400}",
+            "info": "{colors.info.400}",
+            "success": "{colors.success.400}",
+            "warning": "{colors.warning.400}",
+            "danger": "{colors.error.400}",
+            "cta": "{colors.brand.400}"
+          }
         },
         "dropdown": {
           "bg": "{colors.neutral.800}",
@@ -6278,6 +7949,15 @@ export const coreTokens: SpectreGeneratedTokens = {
             "hover": "{colors.neutral.700}",
             "active": "{colors.info.900}",
             "text": "{colors.neutral.100}"
+          },
+          "accent": {
+            "neutral": "{colors.neutral.400}",
+            "brand": "{colors.brand.400}",
+            "info": "{colors.info.400}",
+            "success": "{colors.success.400}",
+            "warning": "{colors.warning.400}",
+            "danger": "{colors.error.400}",
+            "cta": "{colors.brand.400}"
           }
         },
         "checkbox": {

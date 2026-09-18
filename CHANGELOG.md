@@ -6,10 +6,46 @@ reflects package releases published to npm.
 
 ## [Unreleased]
 
+Contract change type: additive
+
+### Added
+
+- Add a mode-aware `component.card.accent` color contract — `neutral`,
+  `brand`, `info`, `success`, `warning`, `danger`, and `cta` roles, each
+  referencing the matching palette/semantic family (locked `success`,
+  `warning`, `danger`, and CTA/brand-action families included by explicit
+  approval) — plus a standard `component.card.accent.thickness` (`0.25rem`,
+  matching the existing `space.4` primitive) for optional decorative card
+  edge rails. Requested by `spectre-ui` to support thicker accent rails on
+  any card edge; edge position and rendering remain downstream. Colors are
+  decorative-only (no `metadata.pair`) and shift from the `600` family shade
+  in light mode to the `400` shade in dark mode, matching the existing
+  `component.iconBox` precedent.
+- Extend the `component.card.accent` pattern to nine more component groups —
+  `badge`, `testimonial`, `pricingCard`, `nav`, `footer`, `modal`, `toast`,
+  `tooltip`, and `dropdown` — each gaining the same mode-aware `accent.*`
+  color contract (`neutral`, `brand`, `info`, `success`, `warning`, `danger`,
+  `cta`) plus the same standard `accent.thickness` (`0.25rem`, matching
+  `space.4`), for a total of 63 new color leaves and 9 new thickness leaves.
+  Requested by Bradley Potts on 2026-09-18, owner-directed, in response to
+  client feedback that the current UI reads as too plain (see `TODO.md`
+  "Requested by Downstream"). Colors remain decorative-only (no
+  `metadata.pair`) and follow the same `600` light / `400` dark shade
+  pattern as `component.card.accent`. Form-control groups (`input`,
+  `checkbox`, `radio`, `select`, `textarea`, `fieldset`, `label`) and
+  `button`/`rating`/`iconBox` are excluded, matching the owner-directed
+  scope. Edge position and rendering remain downstream in `spectre-ui`.
+- Export the shared `ComponentAccentTokens` and `ComponentFooterTokens`
+  interfaces and expose each new accent contract through the corresponding
+  hand-maintained component interfaces, keeping the exported TypeScript
+  contract aligned with generated runtime tokens.
+
 ### Changed
 
 - Standardized the package summary against the approved PHCDevworks product
   description.
+- Refresh development dependencies, including Node types, Prettier, and
+  Vitest, with the lockfile updated for reproducible installs.
 
 ## [4.8.0] - 2026-09-05
 

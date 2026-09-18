@@ -79,6 +79,17 @@ export interface FormStateTokens {
   ring?: string;
 }
 
+export interface ComponentAccentTokens<Value = string> {
+  neutral: Value;
+  brand: Value;
+  info: Value;
+  success: Value;
+  warning: Value;
+  danger: Value;
+  cta: Value;
+  thickness: Value;
+}
+
 export interface ComponentBadgeTokens<Value = string> {
   neutralBg: Value;
   neutralBgHover?: Value;
@@ -95,6 +106,7 @@ export interface ComponentBadgeTokens<Value = string> {
   dangerBg: Value;
   dangerBgHover?: Value;
   dangerText: Value;
+  accent: ComponentAccentTokens<Value>;
 }
 
 export interface ComponentIconBoxTokens<Value = string> {
@@ -114,6 +126,7 @@ export interface ComponentTestimonialTokens<Value = string> {
   authorName: Value;
   authorTitle: Value;
   quoteMark: Value;
+  accent: ComponentAccentTokens<Value>;
 }
 
 export interface ComponentPricingCardTokens<Value = string> {
@@ -126,6 +139,7 @@ export interface ComponentPricingCardTokens<Value = string> {
   featuredBadgeText: Value;
   price: Value;
   priceDescription: Value;
+  accent: ComponentAccentTokens<Value>;
 }
 
 export interface ComponentRatingTokens<Value = string> {
@@ -141,6 +155,20 @@ export interface ComponentNavTokens<Value = string> {
   linkHover: Value;
   linkActive: Value;
   border: Value;
+  accent: ComponentAccentTokens<Value>;
+}
+
+export interface ComponentFooterTokens<Value = string> {
+  bg: Value;
+  text: Value;
+  heading: Value;
+  muted: Value;
+  link: Value;
+  linkHover: Value;
+  border: Value;
+  divider: Value;
+  chipBg: Value;
+  accent: ComponentAccentTokens<Value>;
 }
 
 export interface ComponentModalTokens<Value = string> {
@@ -148,6 +176,7 @@ export interface ComponentModalTokens<Value = string> {
   shadow: Value;
   border: Value;
   overlay: Value;
+  accent: ComponentAccentTokens<Value>;
 }
 
 export interface ComponentToastVariantTokens<Value = string> {
@@ -162,12 +191,14 @@ export interface ComponentToastTokens<Value = string> {
   warning: ComponentToastVariantTokens<Value>;
   danger: ComponentToastVariantTokens<Value>;
   info: ComponentToastVariantTokens<Value>;
+  accent: ComponentAccentTokens<Value>;
 }
 
 export interface ComponentTooltipTokens<Value = string> {
   bg: Value;
   text: Value;
   border: Value;
+  accent: ComponentAccentTokens<Value>;
 }
 
 export interface ComponentDropdownTokens<Value = string> {
@@ -179,6 +210,7 @@ export interface ComponentDropdownTokens<Value = string> {
     active: Value;
     text: Value;
   };
+  accent: ComponentAccentTokens<Value>;
 }
 
 export interface ComponentSelectionControlTokens<Value = string> {
@@ -235,6 +267,7 @@ export interface ComponentTokens<Value = string> {
     text: Value;
     textMuted: Value;
     padding: TokenScale;
+    accent: ComponentAccentTokens<Value>;
   };
   input: {
     text: Value;
@@ -250,6 +283,7 @@ export interface ComponentTokens<Value = string> {
   pricingCard: ComponentPricingCardTokens<Value>;
   rating: ComponentRatingTokens<Value>;
   nav: ComponentNavTokens<Value>;
+  footer: ComponentFooterTokens<Value>;
   modal: ComponentModalTokens<Value>;
   toast: ComponentToastTokens<Value>;
   tooltip: ComponentTooltipTokens<Value>;
@@ -328,4 +362,3 @@ export interface CssVariableOptions {
   selector?: string;
   prefix?: string;
 }
-
