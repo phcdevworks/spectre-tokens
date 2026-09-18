@@ -6,6 +6,10 @@ reflects package releases published to npm.
 
 ## [Unreleased]
 
+## [4.9.0] - 2026-09-18
+
+**Release Title:** Component Accent Rail Contracts
+
 Contract change type: additive
 
 ### Added
@@ -1363,7 +1367,8 @@ Contract change type: breaking
 - Standardized documentation and contributing guidelines.
 
 [unreleased]:
-  https://github.com/phcdevworks/spectre-tokens/compare/v4.8.0...HEAD
+  https://github.com/phcdevworks/spectre-tokens/compare/v4.9.0...HEAD
+[4.9.0]: https://github.com/phcdevworks/spectre-tokens/compare/v4.8.0...v4.9.0
 [4.8.0]: https://github.com/phcdevworks/spectre-tokens/compare/v4.7.0...v4.8.0
 [4.7.0]: https://github.com/phcdevworks/spectre-tokens/compare/v4.6.0...v4.7.0
 [4.6.0]: https://github.com/phcdevworks/spectre-tokens/compare/v4.5.0...v4.6.0
