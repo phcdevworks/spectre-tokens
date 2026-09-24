@@ -33,13 +33,39 @@ this file does not restate delivered work.
 
 ---
 
+## Active Phase
+
+### Phase 15 — Downstream Component Readiness
+
+**Status:** Open — requested 2026-09-24; inventory audit complete,
+implementation pending.
+
+Prepare the L1 semantic contract for a broad downstream component inventory
+without importing component anatomy, layout behavior, or framework concerns. The
+evidence and leaf-level backlog are tracked in `TODO.md` under "Bootstrap-scale
+component inventory expansion."
+
+Delivery is split into four waves:
+
+1. Navigation foundation — `component.tabs`.
+2. Core components — accordion, breadcrumb, list group, offcanvas, carousel,
+   table, alert, pagination, stepper, popover, progress, and loading indicator.
+3. Forms and content — switch, range, file input, input group, display
+   typography, and lead typography.
+4. Existing-contract completion — dropdown state roles, neutral/default toast,
+   and evidence-based audits of modal, card, and nav.
+
+Each wave remains additive and evidence-gated. Protected semantic families
+retain their explicit human-approval requirement. A wave is delivered only after
+its source tokens, mode aliases, public types, CSS, DTCG, documentation, and
+tests agree and `npm run check` passes.
+
 ## What's Next
 
-Contract additions remain evidence-gated per `TOKEN_CONTRACT.md` "Contract
-Expansion Policy" — evidence may come from a filed downstream request
-(`TODO.md` "Requested by Downstream") or a proactive audit finding
-(`npm run audit:downstream`). No open phase is currently planned; the next
-one opens when either path surfaces a confirmed gap.
+Implement Phase 15 in the order recorded in `TODO.md`, beginning with the
+leaf-specified tabs contract. Continue using `npm run audit:downstream` between
+waves to catch real vocabulary gaps without moving downstream-owned component
+structure into this package.
 
 ---
 
