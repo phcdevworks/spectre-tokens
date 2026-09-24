@@ -6,6 +6,10 @@ reflects package releases published to npm.
 
 ## [Unreleased]
 
+## [4.10.0] - 2026-09-24
+
+**Release Title:** Tabs Token Contract
+
 Contract change type: additive
 
 ### Added
@@ -1383,7 +1387,8 @@ Contract change type: breaking
 - Standardized documentation and contributing guidelines.
 
 [unreleased]:
-  https://github.com/phcdevworks/spectre-tokens/compare/v4.9.0...HEAD
+  https://github.com/phcdevworks/spectre-tokens/compare/v4.10.0...HEAD
+[4.10.0]: https://github.com/phcdevworks/spectre-tokens/compare/v4.9.0...v4.10.0
 [4.9.0]: https://github.com/phcdevworks/spectre-tokens/compare/v4.8.0...v4.9.0
 [4.8.0]: https://github.com/phcdevworks/spectre-tokens/compare/v4.7.0...v4.8.0
 [4.7.0]: https://github.com/phcdevworks/spectre-tokens/compare/v4.6.0...v4.7.0
