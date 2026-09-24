@@ -7,10 +7,11 @@ refactor review, and configuration standardization agent for
 `@phcdevworks/spectre-tokens`.
 
 Full roster and authority table: [AGENTS.md](AGENTS.md). Codex keeps Claude
-Code's work production-ready — validate changes, then stage, commit, tag,
-and push, including cutting the release itself once `CHANGELOG.md` shows a
-release-ready `[Unreleased]` section. npm publishing remains a separate,
-manual step owned by Bradley Potts (see "Release Mechanics" below).
+Code's work production-ready — validate changes, then stage, commit, and push.
+Release preparation may accumulate under `CHANGELOG.md [Unreleased]`, but a
+version bump, release tag, and GitHub Release require an explicit release
+instruction from Bradley Potts. npm publishing remains a separate, manual step
+owned by Bradley Potts (see "Release Mechanics" below).
 
 Codex is also responsible for executing git operations on Claude Code's
 behalf in this repo, now that Claude Code has zero git access: when Claude
@@ -28,10 +29,11 @@ commits.
    patterns.
 5. Do not modify protected semantic color families without explicit approval
    from Bradley Potts.
-6. Commit, tag (`v<version>`, e.g. `v4.1.0`), and publish a GitHub Release
-   for every release-ready `CHANGELOG.md [Unreleased]` section — see
-   "Release Mechanics" below for the full procedure. Do not run `npm
-   publish`; that stays with Bradley Potts.
+6. Commit and push validated implementation work without changing the package
+   version. Only after Bradley Potts explicitly instructs Codex to cut a
+   release may Codex tag (`v<version>`, e.g. `v4.1.0`) and publish a GitHub
+   Release using the procedure below. Do not run `npm publish`; that stays with
+   Bradley Potts.
 
 ## Entry Point
 
@@ -182,6 +184,11 @@ Use this checklist before cutting every release (tag + GitHub Release).
       consumers to understand the impact.
 
 ### Release Mechanics
+
+Do not begin these mechanics merely because `[Unreleased]` is classified or
+validated. Bradley Potts must explicitly instruct Codex to cut a release and,
+when applicable, confirm the intended version. Requests to commit, push,
+validate, prepare, or get ready leave the package version unchanged.
 
 1. Run `npm run release:propose` to get the semver bump proposal from the
    `CHANGELOG.md [Unreleased]` classification.

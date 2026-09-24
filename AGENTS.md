@@ -44,12 +44,14 @@ Claude Code.
 and tag authority** in this repository, effective 2026-07-25 by explicit
 direction from Bradley Potts — see the Commit Policy section in each agent's
 own guide ([CODEX.md](CODEX.md), [COPILOT.md](COPILOT.md),
-[JULES.md](JULES.md)). **OpenAI Codex** additionally has release authority:
-Codex cuts releases autonomously — version bump, changelog versioning,
-`v<version>` git tag, and GitHub Release publish via `gh` — for every
-release-ready `CHANGELOG.md [Unreleased]` section, without waiting for
-per-release approval; see `CODEX.md` "Release Mechanics" for the full
-procedure. **OpenAI Codex additionally executes git operations on Claude
+[JULES.md](JULES.md)). **OpenAI Codex** additionally has release authority,
+but release execution is explicit-only: normal implementation commits
+accumulate under `CHANGELOG.md [Unreleased]`, and Codex must not bump the
+version, create or push a release tag, or publish a GitHub Release unless
+Bradley Potts explicitly instructs Codex to cut that release. A request to
+commit, push, validate, or "get ready" is not release authorization; see
+`CODEX.md` "Release Mechanics" for the full procedure once authorization is
+given. **OpenAI Codex additionally executes git operations on Claude
 Code's behalf**: when Claude Code hands off validated work, Codex is
 responsible for staging, committing, tagging, and pushing it, not only
 Codex's own documentation/hygiene/release commits. **npm publishing remains
