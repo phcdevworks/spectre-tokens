@@ -6,6 +6,10 @@ reflects package releases published to npm.
 
 ## [Unreleased]
 
+## [4.12.0] - 2026-09-24
+
+**Release Title:** Component Readiness Completion
+
 Contract change type: additive
 
 ### Added
@@ -1523,7 +1527,8 @@ Contract change type: breaking
 - Standardized documentation and contributing guidelines.
 
 [unreleased]:
-  https://github.com/phcdevworks/spectre-tokens/compare/v4.11.0...HEAD
+  https://github.com/phcdevworks/spectre-tokens/compare/v4.12.0...HEAD
+[4.12.0]: https://github.com/phcdevworks/spectre-tokens/compare/v4.11.0...v4.12.0
 [4.11.0]: https://github.com/phcdevworks/spectre-tokens/compare/v4.10.0...v4.11.0
 [4.10.0]: https://github.com/phcdevworks/spectre-tokens/compare/v4.9.0...v4.10.0
 [4.9.0]: https://github.com/phcdevworks/spectre-tokens/compare/v4.8.0...v4.9.0
