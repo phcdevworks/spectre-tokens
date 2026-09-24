@@ -872,6 +872,74 @@ export interface SpectreSourceTokens {
         thickness: string;
       };
     };
+    tabs: {
+      list: {
+        bg: {
+          value: string;
+          metadata: {
+            pair: string;
+          };
+        };
+        border: {
+          value: string;
+        };
+      };
+      item: {
+        text: {
+          value: string;
+          metadata: {
+            pair: string;
+          };
+        };
+        hover: {
+          bg: {
+            value: string;
+          };
+        };
+        active: {
+          text: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+          indicator: {
+            value: string;
+          };
+        };
+        focus: {
+          ringColor: {
+            value: string;
+          };
+        };
+        disabled: {
+          text: {
+            value: string;
+          };
+        };
+      };
+      pill: {
+        active: {
+          bg: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+          text: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+        };
+      };
+      panel: {
+        bg: {
+          value: string;
+        };
+      };
+    };
     checkbox: {
       bg: {
         value: string;
@@ -2434,6 +2502,86 @@ export interface SpectreSourceTokens {
             };
           };
         };
+        tabs: {
+          list: {
+            bg: {
+              value: string;
+              metadata: {
+                pair: string;
+              };
+            };
+            border: {
+              value: string;
+              metadata: {
+              };
+            };
+          };
+          item: {
+            text: {
+              value: string;
+              metadata: {
+                pair: string;
+              };
+            };
+            hover: {
+              bg: {
+                value: string;
+                metadata: {
+                };
+              };
+            };
+            active: {
+              text: {
+                value: string;
+                metadata: {
+                  pair: string;
+                };
+              };
+              indicator: {
+                value: string;
+                metadata: {
+                };
+              };
+            };
+            focus: {
+              ringColor: {
+                value: string;
+                metadata: {
+                };
+              };
+            };
+            disabled: {
+              text: {
+                value: string;
+                metadata: {
+                };
+              };
+            };
+          };
+          pill: {
+            active: {
+              bg: {
+                value: string;
+                metadata: {
+                  pair: string;
+                };
+              };
+              text: {
+                value: string;
+                metadata: {
+                  pair: string;
+                };
+              };
+            };
+          };
+          panel: {
+            bg: {
+              value: string;
+              metadata: {
+              };
+            };
+          };
+        };
         checkbox: {
           bg: {
             value: string;
@@ -3641,6 +3789,86 @@ export interface SpectreSourceTokens {
               };
             };
             cta: {
+              value: string;
+              metadata: {
+              };
+            };
+          };
+        };
+        tabs: {
+          list: {
+            bg: {
+              value: string;
+              metadata: {
+                pair: string;
+              };
+            };
+            border: {
+              value: string;
+              metadata: {
+              };
+            };
+          };
+          item: {
+            text: {
+              value: string;
+              metadata: {
+                pair: string;
+              };
+            };
+            hover: {
+              bg: {
+                value: string;
+                metadata: {
+                };
+              };
+            };
+            active: {
+              text: {
+                value: string;
+                metadata: {
+                  pair: string;
+                };
+              };
+              indicator: {
+                value: string;
+                metadata: {
+                };
+              };
+            };
+            focus: {
+              ringColor: {
+                value: string;
+                metadata: {
+                };
+              };
+            };
+            disabled: {
+              text: {
+                value: string;
+                metadata: {
+                };
+              };
+            };
+          };
+          pill: {
+            active: {
+              bg: {
+                value: string;
+                metadata: {
+                  pair: string;
+                };
+              };
+              text: {
+                value: string;
+                metadata: {
+                  pair: string;
+                };
+              };
+            };
+          };
+          panel: {
+            bg: {
               value: string;
               metadata: {
               };
@@ -5221,6 +5449,37 @@ export interface SpectreGeneratedTokens {
         thickness: string;
       };
     };
+    tabs: {
+      list: {
+        bg: string;
+        border: string;
+      };
+      item: {
+        text: string;
+        hover: {
+          bg: string;
+        };
+        active: {
+          text: string;
+          indicator: string;
+        };
+        focus: {
+          ringColor: string;
+        };
+        disabled: {
+          text: string;
+        };
+      };
+      pill: {
+        active: {
+          bg: string;
+          text: string;
+        };
+      };
+      panel: {
+        bg: string;
+      };
+    };
     checkbox: {
       bg: string;
       border: string;
@@ -5641,6 +5900,37 @@ export interface SpectreGeneratedTokens {
             cta: string;
           };
         };
+        tabs: {
+          list: {
+            bg: string;
+            border: string;
+          };
+          item: {
+            text: string;
+            hover: {
+              bg: string;
+            };
+            active: {
+              text: string;
+              indicator: string;
+            };
+            focus: {
+              ringColor: string;
+            };
+            disabled: {
+              text: string;
+            };
+          };
+          pill: {
+            active: {
+              bg: string;
+              text: string;
+            };
+          };
+          panel: {
+            bg: string;
+          };
+        };
         checkbox: {
           bg: string;
           border: string;
@@ -5934,6 +6224,37 @@ export interface SpectreGeneratedTokens {
             warning: string;
             danger: string;
             cta: string;
+          };
+        };
+        tabs: {
+          list: {
+            bg: string;
+            border: string;
+          };
+          item: {
+            text: string;
+            hover: {
+              bg: string;
+            };
+            active: {
+              text: string;
+              indicator: string;
+            };
+            focus: {
+              ringColor: string;
+            };
+            disabled: {
+              text: string;
+            };
+          };
+          pill: {
+            active: {
+              bg: string;
+              text: string;
+            };
+          };
+          panel: {
+            bg: string;
           };
         };
         checkbox: {
@@ -7245,6 +7566,37 @@ export const coreTokens: SpectreGeneratedTokens = {
         "thickness": "0.25rem"
       }
     },
+    "tabs": {
+      "list": {
+        "bg": "{colors.white}",
+        "border": "{colors.neutral.200}"
+      },
+      "item": {
+        "text": "{colors.neutral.600}",
+        "hover": {
+          "bg": "{colors.neutral.100}"
+        },
+        "active": {
+          "text": "{colors.neutral.900}",
+          "indicator": "{colors.brand.600}"
+        },
+        "focus": {
+          "ringColor": "{buttons.primary.focusRing}"
+        },
+        "disabled": {
+          "text": "{colors.neutral.400}"
+        }
+      },
+      "pill": {
+        "active": {
+          "bg": "{colors.brand.600}",
+          "text": "{colors.white}"
+        }
+      },
+      "panel": {
+        "bg": "{colors.white}"
+      }
+    },
     "checkbox": {
       "bg": "{colors.white}",
       "border": "{colors.neutral.300}",
@@ -7665,6 +8017,37 @@ export const coreTokens: SpectreGeneratedTokens = {
             "cta": "{colors.brand.600}"
           }
         },
+        "tabs": {
+          "list": {
+            "bg": "{colors.white}",
+            "border": "{colors.neutral.200}"
+          },
+          "item": {
+            "text": "{colors.neutral.600}",
+            "hover": {
+              "bg": "{colors.neutral.100}"
+            },
+            "active": {
+              "text": "{colors.neutral.900}",
+              "indicator": "{colors.brand.600}"
+            },
+            "focus": {
+              "ringColor": "{buttons.primary.focusRing}"
+            },
+            "disabled": {
+              "text": "{colors.neutral.400}"
+            }
+          },
+          "pill": {
+            "active": {
+              "bg": "{colors.brand.600}",
+              "text": "{colors.white}"
+            }
+          },
+          "panel": {
+            "bg": "{colors.white}"
+          }
+        },
         "checkbox": {
           "bg": "{colors.white}",
           "border": "{colors.neutral.300}",
@@ -7958,6 +8341,37 @@ export const coreTokens: SpectreGeneratedTokens = {
             "warning": "{colors.warning.400}",
             "danger": "{colors.error.400}",
             "cta": "{colors.brand.400}"
+          }
+        },
+        "tabs": {
+          "list": {
+            "bg": "{colors.neutral.800}",
+            "border": "{colors.neutral.700}"
+          },
+          "item": {
+            "text": "{colors.neutral.300}",
+            "hover": {
+              "bg": "{colors.neutral.700}"
+            },
+            "active": {
+              "text": "{colors.neutral.100}",
+              "indicator": "{colors.brand.400}"
+            },
+            "focus": {
+              "ringColor": "{buttons.primary.focusRing}"
+            },
+            "disabled": {
+              "text": "{colors.neutral.600}"
+            }
+          },
+          "pill": {
+            "active": {
+              "bg": "{colors.brand.600}",
+              "text": "{colors.white}"
+            }
+          },
+          "panel": {
+            "bg": "{colors.neutral.800}"
           }
         },
         "checkbox": {

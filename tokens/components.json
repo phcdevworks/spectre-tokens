@@ -798,6 +798,74 @@
         "thickness": "0.25rem"
       }
     },
+    "tabs": {
+      "list": {
+        "bg": {
+          "value": "{colors.white}",
+          "metadata": {
+            "pair": "component.tabs.item.text"
+          }
+        },
+        "border": {
+          "value": "{colors.neutral.200}"
+        }
+      },
+      "item": {
+        "text": {
+          "value": "{colors.neutral.600}",
+          "metadata": {
+            "pair": "component.tabs.list.bg"
+          }
+        },
+        "hover": {
+          "bg": {
+            "value": "{colors.neutral.100}"
+          }
+        },
+        "active": {
+          "text": {
+            "value": "{colors.neutral.900}",
+            "metadata": {
+              "pair": "component.tabs.list.bg"
+            }
+          },
+          "indicator": {
+            "value": "{colors.brand.600}"
+          }
+        },
+        "focus": {
+          "ringColor": {
+            "value": "{buttons.primary.focusRing}"
+          }
+        },
+        "disabled": {
+          "text": {
+            "value": "{colors.neutral.400}"
+          }
+        }
+      },
+      "pill": {
+        "active": {
+          "bg": {
+            "value": "{colors.brand.600}",
+            "metadata": {
+              "pair": "component.tabs.pill.active.text"
+            }
+          },
+          "text": {
+            "value": "{colors.white}",
+            "metadata": {
+              "pair": "component.tabs.pill.active.bg"
+            }
+          }
+        }
+      },
+      "panel": {
+        "bg": {
+          "value": "{colors.white}"
+        }
+      }
+    },
     "checkbox": {
       "bg": {
         "value": "{colors.white}"

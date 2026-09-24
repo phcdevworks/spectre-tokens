@@ -6,6 +6,22 @@ reflects package releases published to npm.
 
 ## [Unreleased]
 
+Contract change type: additive
+
+### Added
+
+- Add a mode-aware `component.tabs` color contract (Wave 1 of the
+  Bootstrap-scale component inventory expansion tracked in `TODO.md`) —
+  `list.bg`/`list.border`, `item.text`/`item.hover.bg`/`item.active.text`/
+  `item.active.indicator`/`item.focus.ringColor`/`item.disabled.text`,
+  `pill.active.bg`/`pill.active.text` for the filled segmented-control pills
+  variant, and `panel.bg`. `item.focus.ringColor` aliases the existing
+  `buttons.primary.focusRing` value rather than defining a new focus color;
+  `pill.active.bg` stays at the `600` brand shade in both modes (matching the
+  mode-invariant precedent set by `buttons.*` for solid-fill interactive
+  elements) rather than following the `600`→`400` accent-shift pattern used
+  elsewhere, since the `400` shade failed WCAG AA against white pill text.
+
 ## [4.9.0] - 2026-09-18
 
 **Release Title:** Component Accent Rail Contracts

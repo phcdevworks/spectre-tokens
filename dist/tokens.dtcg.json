@@ -774,6 +774,70 @@
         }
       }
     },
+    "tabs": {
+      "list": {
+        "bg": {
+          "$value": "{colors.white}",
+          "$type": "color"
+        },
+        "border": {
+          "$value": "{colors.neutral.200}",
+          "$type": "color"
+        }
+      },
+      "item": {
+        "text": {
+          "$value": "{colors.neutral.600}",
+          "$type": "color"
+        },
+        "hover": {
+          "bg": {
+            "$value": "{colors.neutral.100}",
+            "$type": "color"
+          }
+        },
+        "active": {
+          "text": {
+            "$value": "{colors.neutral.900}",
+            "$type": "color"
+          },
+          "indicator": {
+            "$value": "{colors.brand.600}",
+            "$type": "color"
+          }
+        },
+        "focus": {
+          "ringColor": {
+            "$value": "{buttons.primary.focusRing}",
+            "$type": "color"
+          }
+        },
+        "disabled": {
+          "text": {
+            "$value": "{colors.neutral.400}",
+            "$type": "color"
+          }
+        }
+      },
+      "pill": {
+        "active": {
+          "bg": {
+            "$value": "{colors.brand.600}",
+            "$type": "color"
+          },
+          "text": {
+            "$value": "{colors.white}",
+            "$type": "color"
+          }
+        }
+      },
+      "panel": {
+        "bg": {
+          "$value": "{colors.white}",
+          "$type": "color"
+        }
+      }
+    },
     "checkbox": {
       "bg": {
         "$value": "{colors.white}",
@@ -2129,6 +2193,70 @@
             }
           }
         },
+        "tabs": {
+          "list": {
+            "bg": {
+              "$value": "{colors.white}",
+              "$type": "color"
+            },
+            "border": {
+              "$value": "{colors.neutral.200}",
+              "$type": "color"
+            }
+          },
+          "item": {
+            "text": {
+              "$value": "{colors.neutral.600}",
+              "$type": "color"
+            },
+            "hover": {
+              "bg": {
+                "$value": "{colors.neutral.100}",
+                "$type": "color"
+              }
+            },
+            "active": {
+              "text": {
+                "$value": "{colors.neutral.900}",
+                "$type": "color"
+              },
+              "indicator": {
+                "$value": "{colors.brand.600}",
+                "$type": "color"
+              }
+            },
+            "focus": {
+              "ringColor": {
+                "$value": "{buttons.primary.focusRing}",
+                "$type": "color"
+              }
+            },
+            "disabled": {
+              "text": {
+                "$value": "{colors.neutral.400}",
+                "$type": "color"
+              }
+            }
+          },
+          "pill": {
+            "active": {
+              "bg": {
+                "$value": "{colors.brand.600}",
+                "$type": "color"
+              },
+              "text": {
+                "$value": "{colors.white}",
+                "$type": "color"
+              }
+            }
+          },
+          "panel": {
+            "bg": {
+              "$value": "{colors.white}",
+              "$type": "color"
+            }
+          }
+        },
         "checkbox": {
           "bg": {
             "$value": "{colors.white}",
@@ -3076,6 +3204,70 @@
             },
             "cta": {
               "$value": "{colors.brand.400}",
+              "$type": "color"
+            }
+          }
+        },
+        "tabs": {
+          "list": {
+            "bg": {
+              "$value": "{colors.neutral.800}",
+              "$type": "color"
+            },
+            "border": {
+              "$value": "{colors.neutral.700}",
+              "$type": "color"
+            }
+          },
+          "item": {
+            "text": {
+              "$value": "{colors.neutral.300}",
+              "$type": "color"
+            },
+            "hover": {
+              "bg": {
+                "$value": "{colors.neutral.700}",
+                "$type": "color"
+              }
+            },
+            "active": {
+              "text": {
+                "$value": "{colors.neutral.100}",
+                "$type": "color"
+              },
+              "indicator": {
+                "$value": "{colors.brand.400}",
+                "$type": "color"
+              }
+            },
+            "focus": {
+              "ringColor": {
+                "$value": "{buttons.primary.focusRing}",
+                "$type": "color"
+              }
+            },
+            "disabled": {
+              "text": {
+                "$value": "{colors.neutral.600}",
+                "$type": "color"
+              }
+            }
+          },
+          "pill": {
+            "active": {
+              "bg": {
+                "$value": "{colors.brand.600}",
+                "$type": "color"
+              },
+              "text": {
+                "$value": "{colors.white}",
+                "$type": "color"
+              }
+            }
+          },
+          "panel": {
+            "bg": {
+              "$value": "{colors.neutral.800}",
               "$type": "color"
             }
           }

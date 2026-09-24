@@ -20,43 +20,53 @@ check for new evidence.
   structure, behavior, and framework delivery remain downstream. Evidence = this
   request and audit.
 
-  **Wave 1 — navigation contract:**
-
-  - `component.tabs` — **next up, spec'd to leaf-path detail** (mirrors the
-    `component.dropdown` shape in `tokens/components.json`):
-    - `component.tabs.list.bg` → `{colors.white}` (dark: `{colors.neutral.900}`
-      via `modes.json`)
-    - `component.tabs.list.border` → `{colors.neutral.200}` (bottom rule under
-      the tab list)
-    - `component.tabs.item.text` → `{colors.neutral.600}`, `metadata.pair`:
-      `component.tabs.list.bg`
-    - `component.tabs.item.hover.bg` → `{colors.neutral.100}`
-    - `component.tabs.item.active.text` → `{colors.neutral.900}`,
-      `metadata.pair`: `component.tabs.list.bg`
-    - `component.tabs.item.active.indicator` → `{colors.brand.600}` (the
-      underline/accent bar under the active tab)
-    - `component.tabs.item.focus.ringColor` → alias the established interactive
-      focus-ring color (`{buttons.primary.focusRing}`); reuse
-      `accessibility.focusRing.width` / `offset` / `style` for geometry —
-      `accessibility.focusRing` is an object, not a color leaf
-    - `component.tabs.item.disabled.text` → `{colors.neutral.400}`
-    - `component.tabs.panel.bg` → alias `{component.tabs.list.bg}` unless a real
-      visual gap shows up building the component
-    - Padding/gap: check whether an existing `space.*` scale step covers tab
-      item padding and inter-item gap before adding anything new — this is a
-      layout-spacing question, not a color one, and `space` is already public.
-    - Every `text`/`bg` pair above needs `check:contrast` (WCAG AA) to pass
-      before this lands.
-
   **Wave 2 — core component contracts:**
 
   - `component.accordion` — panel background, header text, expanded/collapsed
     icon color, divider, item padding
-  - `component.breadcrumb` — item text, separator color, active/current item
-    text; separator glyph choice and RTL direction remain downstream
-  - `component.listGroup` — item background, hover/active/selected states,
-    divider, disabled text, and neutral/brand/status treatments where existing
-    semantic pairs cannot express the role
+  - `component.breadcrumb` — **spec'd to leaf-path detail** (evidence:
+    dedicated breadcrumbs examples audit, 2026-09-24 — a simple, complete
+    page with no advanced variants):
+    - `component.breadcrumb.item.text` → `{colors.neutral.600}` (linked,
+      non-current items)
+    - `component.breadcrumb.item.hover.text` → alias `{component.nav.linkHover}`
+    - `component.breadcrumb.item.active.text` → `{colors.neutral.900}`
+      (current/final item, unlinked)
+    - `component.breadcrumb.separator` → `{colors.neutral.400}`
+    - Separator glyph choice (`/`, `›`, dot, etc.), icon-in-item usage, and
+      RTL direction remain downstream anatomy — this wave only owns color.
+    - Every pair above needs `check:contrast` (WCAG AA) in default and dark
+      modes before this lands.
+  - `component.listGroup` — **spec'd to leaf-path detail** (evidence: dedicated
+    list-groups examples audit, 2026-09-24, plus the sidebar "list group
+    sidebar" variant already noted under Wave 1):
+    - `component.listGroup.bg` → `{colors.white}`, `metadata.pair`:
+      `component.listGroup.text`
+    - `component.listGroup.border` → `{colors.neutral.200}` (item borders;
+      the flush variant removes these downstream, no separate token)
+    - `component.listGroup.text` → `{colors.neutral.700}` (body/description
+      text within an item)
+    - `component.listGroup.heading` → `{colors.neutral.900}` (bold item
+      heading, e.g. "List group item heading")
+    - `component.listGroup.muted` → `{colors.neutral.500}` (support text,
+      timestamps like "3d"/"1w", secondary descriptions)
+    - `component.listGroup.item.hover.bg` → `{colors.neutral.50}`
+    - `component.listGroup.item.active.bg` → `{colors.brand.600}`,
+      `metadata.pair`: `component.listGroup.item.active.text`
+    - `component.listGroup.item.active.text` → `{colors.white}`,
+      `metadata.pair`: `component.listGroup.item.active.bg`
+    - `component.listGroup.item.selected.bg` → the checked-checkbox/
+      checked-radio row highlight; alias `{surface.selected}` rather than
+      forking a new value
+    - `component.listGroup.item.disabled.text` → `{colors.neutral.400}`
+    - Horizontal-vs-vertical arrangement and the flush (borderless) variant
+      are layout/CSS modifiers on the same token set, not separate token
+      families.
+    - Every `text`/`bg` pair above needs `check:contrast` (WCAG AA) in
+      default and dark modes before this lands.
+  - `component.listGroup` also needs neutral/brand/status accent treatments
+    where existing semantic pairs cannot express the role (mirroring the
+    `accent.*` block already present on `component.dropdown`/`component.nav`)
   - `component.offcanvas` — panel background, backdrop color/opacity, header
     border
   - `component.carousel` — indicator dot color (active/inactive), control icon
@@ -96,6 +106,25 @@ check for new evidence.
 
   **Wave 4 — complete existing component contracts:**
 
+  - Extend `buttons.*` (evidence: buttons example audit, 2026-09-24):
+    - `buttons.warning` — full `bg`/`bgHover`/`bgActive`/`bgDisabled`/`text`/
+      `textDisabled`/`focusRing`/`focusVisible` set, matching the shape
+      already used by `buttons.success`/`buttons.danger`. Closes the
+      asymmetry — every other status color already has a button variant.
+    - `buttons.link` — `text`/`textHover`/`textActive`/`textDisabled`/
+      `focusRing` only, `bg` always `transparent` at every state. Distinct
+      from `buttons.ghost`, which tints its background on hover/active;
+      `link` never gets a background at all — Bootstrap ships both as
+      separate variants and so should this contract.
+    - `buttons.light` — solid light-neutral button (`bg`: `{colors.neutral.100}`
+      family, dark text), distinct from `buttons.secondary`'s outlined
+      treatment.
+    - `buttons.dark` — solid dark-neutral button (`bg`: `{colors.neutral.900}`
+      family, white text) for use on a light page — distinct from
+      `buttons.inverse`, which is shaped for buttons already sitting on a
+      dark/inverse surface, not a solid-dark button on a light one.
+    - Every `bg`/`text` pair needs `check:contrast` (WCAG AA) in default and
+      dark modes before this lands.
   - Extend `component.dropdown` with header text, divider, disabled item text,
     and selected item text/background roles.
   - Add a neutral/default `component.toast` treatment alongside the existing
@@ -103,9 +132,96 @@ check for new evidence.
   - Audit `component.modal`, `component.card`, and `component.nav` against the
     examples for real semantic gaps; prefer `surface.*`, `text.*`, and
     `surface.divider` aliases where they already carry the right meaning.
+  - Extend `component.badge` (evidence: badges example audit, 2026-09-24):
+    every other semantic color (info/success/warning/danger) already has a
+    full `Bg`/`BgHover`/`Text` triad, but `brand` never got one despite being
+    the primary/CTA-equivalent color — add `component.badge.brandBg` /
+    `.brandBgHover` / `.brandText` to close that asymmetry. Also add
+    `component.badge.dotBorder` (alias `{component.card.bg}`/`{surface.card}`
+    default, needs a value per surface it sits on) for the notification-dot
+    badge overlaid on an avatar, so the dot has a visible ring separating it
+    from the photo underneath — this is new, nothing in the current contract
+    addresses an overlay-on-image case. Bootstrap's "light"/"dark" swatches
+    don't need their own new fields — they already map to existing
+    `neutralBg`/`inverseBg`.
+
+  **Wave 5 — datepicker/calendar contract (evidence: dropdowns examples audit,
+  2026-09-24):**
+
+  - `component.datepicker.panel.bg` → alias `{component.dropdown.bg}`
+  - `component.datepicker.panel.border` → alias `{component.dropdown.border}`
+  - `component.datepicker.header.text` → month/year label; alias
+    `{component.dropdown.item.text}` unless contrast demands otherwise
+  - `component.datepicker.weekday.text` → Sun–Sat column-header label,
+    `{colors.neutral.400}` (muted relative to day cells)
+  - `component.day.default.text` → `{colors.neutral.900}`
+  - `component.day.default.hover.bg` → alias `{component.dropdown.item.hover}`
+  - `component.day.selected.bg` → `{colors.brand.600}`, `metadata.pair`:
+    `component.day.selected.text`
+  - `component.day.selected.text` → `{colors.white}`, `metadata.pair`:
+    `component.day.selected.bg`
+  - `component.day.today.ringColor` → alias `{component.tabs.item.focus.ringColor}`
+    (reuse the one established focus/emphasis ring, don't fork a second)
+  - `component.day.outsideMonth.text` → `{colors.neutral.300}`
+  - `component.day.disabled.text` → alias `{component.dropdown.item.disabled}`
+    once Wave 4 lands that path
+  - Weekend-specific styling, range-selection (start/end/in-range) fills, and
+    the actual calendar-grid layout/keyboard nav are downstream anatomy — this
+    wave only owns the color/state contract, not the grid mechanics.
+  - Every `text`/`bg` pair above needs `check:contrast` (WCAG AA) in default
+    and dark modes before this lands.
+
+  **Wave 6 — long-form content/prose contract (evidence: blog example audit,
+  2026-09-24):** rendered post bodies use inline elements with no current
+  color contract — `component.testimonial.quoteMark` is a card-style pull
+  quote, not the same surface as an inline `<blockquote>` in body copy, and
+  there is no code/highlight contract at all despite `font.mono` already
+  existing for the family.
+
+  - `component.prose.blockquote.border` → the left rule color, alias
+    `{component.nav.accent.neutral}` unless that reads too strong at 1-2px
+  - `component.prose.blockquote.text` → `{colors.neutral.600}` (muted vs. body
+    text, matches typical blockquote emphasis)
+  - `component.prose.code.bg` / `component.prose.code.text` → inline `<code>`
+    chip; alias `{surface.subtle}` for `bg` (already-shipped recessed
+    background, one step below `surface.page` — do not fork a raw
+    `{colors.neutral.100}` value) and `{colors.neutral.900}` for `text`,
+    `metadata.pair` each other
+  - `component.prose.codeBlock.bg` / `.text` / `.border` → fenced code block;
+    reuse `component.prose.code.bg`/`.text` unless a real contrast gap shows
+    up at block scale
+  - `component.prose.mark.bg` / `.text` → `<mark>` highlighted text; alias
+    `{colors.warning.100}` / `{colors.warning.900}` rather than forking a new
+    highlight color, since warning is the closest existing "attention" pair
+  - `component.prose.hr` → alias `{surface.divider}`, do not fork
+  - Definition lists, abbreviations, citations, del/ins, sup/sub carry no
+    color of their own — they inherit body text color and need no new token
+  - Every new `text`/`bg` pair needs `check:contrast` (WCAG AA) in default and
+    dark modes before this lands.
+
+  **Wave 7 — external-auth button contract (evidence: modal examples audit,
+  2026-09-24):** authentication actions need a stable visual treatment without
+  recording external identities or importing externally controlled brand
+  palettes into the Spectre contract.
+
+  - `component.externalAuthButton.bg` / `.text` / `.border` / `.hoverBg` /
+    `.activeBg` / `.disabledBg` / `.disabledText` / `.focusRing` — a neutral,
+    mode-aware treatment built from existing Spectre semantic values.
+  - Provider identity and logo artwork remain downstream assets; provider names
+    and externally mandated brand colors must not appear in this repository's
+    token paths, tracked files, metadata, or release notes.
+  - Add new visual roles only when implementation proves the neutral contract
+    insufficient; do not front-load identity-specific variants.
+  - Every `bg`/`text` pair needs `check:contrast` (WCAG AA) in default and dark
+    modes before this lands.
 
   **Confirmed reuse / no new token family:**
 
+  - `component.modal` audited directly (2026-09-24): existing `bg`, `shadow`,
+    `border`, `overlay`, and `accent` fields already cover header/body/footer
+    regions, backdrop, and the header/footer divider (aliases
+    `component.modal.border`); title text and the close-button icon alias
+    `text.onSurface` / `component.modal.accent.neutral`. No new fields needed.
   - Button groups and close buttons compose the existing button and icon
     contracts.
   - Scrollspy reuses `component.nav` active-link roles; collapse behavior reuses
@@ -113,11 +229,26 @@ check for new evidence.
   - Floating-label positioning, dropdown direction, sticky/fixed placement,
     grid/masonry behavior, and RTL mechanics are downstream anatomy/layout.
   - Framework starters and integrations do not create token requirements.
-  - Headers, navbar placement variants, heroes/jumbotrons, feature sections,
-    sidebars, footers, album/pricing/product/cover/blog/dashboard/sign-in page
-    templates, and sticky-footers compose existing layout, surface, text, nav,
-    card, button, form, and typography contracts. Open a new token request only
-    if implementation demonstrates a semantic gap or local raw-value workaround.
+  - Album, pricing (including the featured-plan treatment, already covered by
+    the existing `component.pricingCard.featured*` roles), product, cover,
+    carousel (evidence for Wave 2's `component.carousel`), dashboard (evidence
+    for Wave 2's `component.table`), sign-in, sticky-footer, and navbar
+    container/collapse/alignment variants were individually audited
+    2026-09-24 and compose existing layout, surface, text, nav, card, button,
+    form, badge, and typography contracts with no further gap found.
+  - Checkout's radio-button-styled payment/shipping option cards are a
+    candidate `component.choiceCard` (selected-state border/bg on a card used
+    as a radio target) — flagged, not yet queued as its own wave, since it
+    likely composes `component.card` + `surface.selected` + an accent border;
+    confirm once `spectre-ui` actually builds a checkout-style form.
+  - Headers, navbar placement variants, and feature sections compose existing
+    layout, surface, text, nav, card, button, form, and typography contracts.
+    Open a new token request only if implementation demonstrates a semantic
+    gap or local raw-value workaround.
+  - Heroes/jumbotrons: use `surface.hero` for the gradient hero-section
+    background and `surface.subtle` for the faded/placeholder variant (see
+    Wave 0) — `surface.inverse` remains correct only for a plain solid-dark
+    section that isn't the gradient-hero pattern. No new token needed.
 
   **Delivery requirements:**
 

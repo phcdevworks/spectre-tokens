@@ -900,6 +900,80 @@
             }
           }
         },
+        "tabs": {
+          "list": {
+            "bg": {
+              "value": "{colors.white}",
+              "metadata": {
+                "pair": "modes.default.component.tabs.item.text"
+              }
+            },
+            "border": {
+              "value": "{colors.neutral.200}",
+              "metadata": {}
+            }
+          },
+          "item": {
+            "text": {
+              "value": "{colors.neutral.600}",
+              "metadata": {
+                "pair": "modes.default.component.tabs.list.bg"
+              }
+            },
+            "hover": {
+              "bg": {
+                "value": "{colors.neutral.100}",
+                "metadata": {}
+              }
+            },
+            "active": {
+              "text": {
+                "value": "{colors.neutral.900}",
+                "metadata": {
+                  "pair": "modes.default.component.tabs.list.bg"
+                }
+              },
+              "indicator": {
+                "value": "{colors.brand.600}",
+                "metadata": {}
+              }
+            },
+            "focus": {
+              "ringColor": {
+                "value": "{buttons.primary.focusRing}",
+                "metadata": {}
+              }
+            },
+            "disabled": {
+              "text": {
+                "value": "{colors.neutral.400}",
+                "metadata": {}
+              }
+            }
+          },
+          "pill": {
+            "active": {
+              "bg": {
+                "value": "{colors.brand.600}",
+                "metadata": {
+                  "pair": "modes.default.component.tabs.pill.active.text"
+                }
+              },
+              "text": {
+                "value": "{colors.white}",
+                "metadata": {
+                  "pair": "modes.default.component.tabs.pill.active.bg"
+                }
+              }
+            }
+          },
+          "panel": {
+            "bg": {
+              "value": "{colors.white}",
+              "metadata": {}
+            }
+          }
+        },
         "checkbox": {
           "bg": {
             "value": "{colors.white}",
@@ -1984,6 +2058,80 @@
             },
             "cta": {
               "value": "{colors.brand.400}",
+              "metadata": {}
+            }
+          }
+        },
+        "tabs": {
+          "list": {
+            "bg": {
+              "value": "{colors.neutral.800}",
+              "metadata": {
+                "pair": "modes.dark.component.tabs.item.text"
+              }
+            },
+            "border": {
+              "value": "{colors.neutral.700}",
+              "metadata": {}
+            }
+          },
+          "item": {
+            "text": {
+              "value": "{colors.neutral.300}",
+              "metadata": {
+                "pair": "modes.dark.component.tabs.list.bg"
+              }
+            },
+            "hover": {
+              "bg": {
+                "value": "{colors.neutral.700}",
+                "metadata": {}
+              }
+            },
+            "active": {
+              "text": {
+                "value": "{colors.neutral.100}",
+                "metadata": {
+                  "pair": "modes.dark.component.tabs.list.bg"
+                }
+              },
+              "indicator": {
+                "value": "{colors.brand.400}",
+                "metadata": {}
+              }
+            },
+            "focus": {
+              "ringColor": {
+                "value": "{buttons.primary.focusRing}",
+                "metadata": {}
+              }
+            },
+            "disabled": {
+              "text": {
+                "value": "{colors.neutral.600}",
+                "metadata": {}
+              }
+            }
+          },
+          "pill": {
+            "active": {
+              "bg": {
+                "value": "{colors.brand.600}",
+                "metadata": {
+                  "pair": "modes.dark.component.tabs.pill.active.text"
+                }
+              },
+              "text": {
+                "value": "{colors.white}",
+                "metadata": {
+                  "pair": "modes.dark.component.tabs.pill.active.bg"
+                }
+              }
+            }
+          },
+          "panel": {
+            "bg": {
+              "value": "{colors.neutral.800}",
               "metadata": {}
             }
           }

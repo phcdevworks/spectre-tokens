@@ -237,6 +237,37 @@ interface SpectreGeneratedTokens {
                 thickness: string;
             };
         };
+        tabs: {
+            list: {
+                bg: string;
+                border: string;
+            };
+            item: {
+                text: string;
+                hover: {
+                    bg: string;
+                };
+                active: {
+                    text: string;
+                    indicator: string;
+                };
+                focus: {
+                    ringColor: string;
+                };
+                disabled: {
+                    text: string;
+                };
+            };
+            pill: {
+                active: {
+                    bg: string;
+                    text: string;
+                };
+            };
+            panel: {
+                bg: string;
+            };
+        };
         checkbox: {
             bg: string;
             border: string;
@@ -657,6 +688,37 @@ interface SpectreGeneratedTokens {
                         cta: string;
                     };
                 };
+                tabs: {
+                    list: {
+                        bg: string;
+                        border: string;
+                    };
+                    item: {
+                        text: string;
+                        hover: {
+                            bg: string;
+                        };
+                        active: {
+                            text: string;
+                            indicator: string;
+                        };
+                        focus: {
+                            ringColor: string;
+                        };
+                        disabled: {
+                            text: string;
+                        };
+                    };
+                    pill: {
+                        active: {
+                            bg: string;
+                            text: string;
+                        };
+                    };
+                    panel: {
+                        bg: string;
+                    };
+                };
                 checkbox: {
                     bg: string;
                     border: string;
@@ -950,6 +1012,37 @@ interface SpectreGeneratedTokens {
                         warning: string;
                         danger: string;
                         cta: string;
+                    };
+                };
+                tabs: {
+                    list: {
+                        bg: string;
+                        border: string;
+                    };
+                    item: {
+                        text: string;
+                        hover: {
+                            bg: string;
+                        };
+                        active: {
+                            text: string;
+                            indicator: string;
+                        };
+                        focus: {
+                            ringColor: string;
+                        };
+                        disabled: {
+                            text: string;
+                        };
+                    };
+                    pill: {
+                        active: {
+                            bg: string;
+                            text: string;
+                        };
+                    };
+                    panel: {
+                        bg: string;
                     };
                 };
                 checkbox: {

@@ -6,7 +6,7 @@ contract authority; `tokens/` and `contract.manifest.json` remain the source
 of truth (see `TOKEN_CONTRACT.md`).
 
 Every leaf token path across all 23 public namespaces
-(1484 total), with its resolved source value and a usage note.
+(1517 total), with its resolved source value and a usage note.
 Values shown here are pre-CSS-resolution source values — `{path.to.token}`
 references are shown as-written, not resolved (see `src/css.ts` for
 resolved CSS output).
@@ -1140,6 +1140,17 @@ resolved CSS output).
 | `component.dropdown.accent.danger` | `{colors.error.600}` | component token. |
 | `component.dropdown.accent.cta` | `{colors.brand.600}` | component token. |
 | `component.dropdown.accent.thickness` | `0.25rem` | component token. |
+| `component.tabs.list.bg` | `{colors.white}` | Pairs with `component.tabs.item.text` for contrast. |
+| `component.tabs.list.border` | `{colors.neutral.200}` | component token. |
+| `component.tabs.item.text` | `{colors.neutral.600}` | Pairs with `component.tabs.list.bg` for contrast. |
+| `component.tabs.item.hover.bg` | `{colors.neutral.100}` | component token. |
+| `component.tabs.item.active.text` | `{colors.neutral.900}` | Pairs with `component.tabs.list.bg` for contrast. |
+| `component.tabs.item.active.indicator` | `{colors.brand.600}` | component token. |
+| `component.tabs.item.focus.ringColor` | `{buttons.primary.focusRing}` | component token. |
+| `component.tabs.item.disabled.text` | `{colors.neutral.400}` | component token. |
+| `component.tabs.pill.active.bg` | `{colors.brand.600}` | Pairs with `component.tabs.pill.active.text` for contrast. |
+| `component.tabs.pill.active.text` | `{colors.white}` | Pairs with `component.tabs.pill.active.bg` for contrast. |
+| `component.tabs.panel.bg` | `{colors.white}` | component token. |
 | `component.checkbox.bg` | `{colors.white}` | component token. |
 | `component.checkbox.border` | `{colors.neutral.300}` | component token. |
 | `component.checkbox.checkedBg` | `{colors.info.600}` | Pairs with `component.checkbox.text` for contrast. |
@@ -1363,6 +1374,17 @@ resolved CSS output).
 | `modes.default.component.dropdown.accent.warning` | `{colors.warning.600}` | modes token. |
 | `modes.default.component.dropdown.accent.danger` | `{colors.error.600}` | modes token. |
 | `modes.default.component.dropdown.accent.cta` | `{colors.brand.600}` | modes token. |
+| `modes.default.component.tabs.list.bg` | `{colors.white}` | Pairs with `modes.default.component.tabs.item.text` for contrast. |
+| `modes.default.component.tabs.list.border` | `{colors.neutral.200}` | modes token. |
+| `modes.default.component.tabs.item.text` | `{colors.neutral.600}` | Pairs with `modes.default.component.tabs.list.bg` for contrast. |
+| `modes.default.component.tabs.item.hover.bg` | `{colors.neutral.100}` | modes token. |
+| `modes.default.component.tabs.item.active.text` | `{colors.neutral.900}` | Pairs with `modes.default.component.tabs.list.bg` for contrast. |
+| `modes.default.component.tabs.item.active.indicator` | `{colors.brand.600}` | modes token. |
+| `modes.default.component.tabs.item.focus.ringColor` | `{buttons.primary.focusRing}` | modes token. |
+| `modes.default.component.tabs.item.disabled.text` | `{colors.neutral.400}` | modes token. |
+| `modes.default.component.tabs.pill.active.bg` | `{colors.brand.600}` | Pairs with `modes.default.component.tabs.pill.active.text` for contrast. |
+| `modes.default.component.tabs.pill.active.text` | `{colors.white}` | Pairs with `modes.default.component.tabs.pill.active.bg` for contrast. |
+| `modes.default.component.tabs.panel.bg` | `{colors.white}` | modes token. |
 | `modes.default.component.checkbox.bg` | `{colors.white}` | modes token. |
 | `modes.default.component.checkbox.border` | `{colors.neutral.300}` | modes token. |
 | `modes.default.component.checkbox.checkedBg` | `{colors.info.600}` | Pairs with `modes.default.component.checkbox.text` for contrast. |
@@ -1576,6 +1598,17 @@ resolved CSS output).
 | `modes.dark.component.dropdown.accent.warning` | `{colors.warning.400}` | modes token. |
 | `modes.dark.component.dropdown.accent.danger` | `{colors.error.400}` | modes token. |
 | `modes.dark.component.dropdown.accent.cta` | `{colors.brand.400}` | modes token. |
+| `modes.dark.component.tabs.list.bg` | `{colors.neutral.800}` | Pairs with `modes.dark.component.tabs.item.text` for contrast. |
+| `modes.dark.component.tabs.list.border` | `{colors.neutral.700}` | modes token. |
+| `modes.dark.component.tabs.item.text` | `{colors.neutral.300}` | Pairs with `modes.dark.component.tabs.list.bg` for contrast. |
+| `modes.dark.component.tabs.item.hover.bg` | `{colors.neutral.700}` | modes token. |
+| `modes.dark.component.tabs.item.active.text` | `{colors.neutral.100}` | Pairs with `modes.dark.component.tabs.list.bg` for contrast. |
+| `modes.dark.component.tabs.item.active.indicator` | `{colors.brand.400}` | modes token. |
+| `modes.dark.component.tabs.item.focus.ringColor` | `{buttons.primary.focusRing}` | modes token. |
+| `modes.dark.component.tabs.item.disabled.text` | `{colors.neutral.600}` | modes token. |
+| `modes.dark.component.tabs.pill.active.bg` | `{colors.brand.600}` | Pairs with `modes.dark.component.tabs.pill.active.text` for contrast. |
+| `modes.dark.component.tabs.pill.active.text` | `{colors.white}` | Pairs with `modes.dark.component.tabs.pill.active.bg` for contrast. |
+| `modes.dark.component.tabs.panel.bg` | `{colors.neutral.800}` | modes token. |
 | `modes.dark.component.checkbox.bg` | `{colors.neutral.800}` | modes token. |
 | `modes.dark.component.checkbox.border` | `{colors.neutral.600}` | modes token. |
 | `modes.dark.component.checkbox.checkedBg` | `{colors.info.600}` | Pairs with `modes.dark.component.checkbox.text` for contrast. |
