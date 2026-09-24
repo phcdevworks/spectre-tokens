@@ -1,6 +1,6 @@
 {
   "name": "@phcdevworks/spectre-tokens",
-  "version": "4.10.0",
+  "version": "4.11.0",
   "description": "@phcdevworks/spectre-tokens is the design-token foundation of the Spectre system. It provides the shared visual values and semantic contracts used across Spectre packages and PHCDevworks applications.",
   "keywords": [
     "phcdevworks",
