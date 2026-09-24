@@ -6,6 +6,10 @@ reflects package releases published to npm.
 
 ## [Unreleased]
 
+## [4.10.0] - 2026-09-24
+
+**Release Title:** Component Readiness Contracts
+
 Contract change type: additive
 
 ### Added
@@ -132,18 +136,6 @@ Contract change type: additive
   states only; the calendar grid layout, keyboard navigation, and
   range-selection fills remain downstream.
 
-### Changed
-
-- Refresh compatible transitive build dependencies in the lockfile.
-
-## [4.10.0] - 2026-09-24
-
-**Release Title:** Tabs Token Contract
-
-Contract change type: additive
-
-### Added
-
 - Add a mode-aware `component.tabs` color contract (Wave 1 of the
   Bootstrap-scale component inventory expansion tracked in `TODO.md`) —
   `list.bg`/`list.border`, `item.text`/`item.hover.bg`/`item.active.text`/
@@ -155,6 +147,10 @@ Contract change type: additive
   mode-invariant precedent set by `buttons.*` for solid-fill interactive
   elements) rather than following the `600`→`400` accent-shift pattern used
   elsewhere, since the `400` shade failed WCAG AA against white pill text.
+
+### Changed
+
+- Refresh compatible transitive build dependencies in the lockfile.
 
 ## [4.9.0] - 2026-09-18
 
