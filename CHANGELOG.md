@@ -6,10 +6,6 @@ reflects package releases published to npm.
 
 ## [Unreleased]
 
-## [4.12.0] - 2026-09-24
-
-**Release Title:** Component Readiness Completion
-
 Contract change type: additive
 
 ### Added
@@ -53,18 +49,6 @@ Contract change type: additive
   both modes, matching the mode-invariant filled-accent precedent already
   set by `component.tabs.pill.active.bg` and `component.day.selected.bg`.
   `focusRing` aliases `buttons.primary.focusRing`.
-
-### Changed
-
-- Refresh compatible transitive build dependencies in the lockfile.
-
-## [4.11.0] - 2026-09-24
-
-**Release Title:** Expanded Component Token Contracts
-
-Contract change type: additive
-
-### Added
 
 - Add twelve mode-aware `component.*` color contracts (Wave 2 of the
   Bootstrap-scale component inventory expansion tracked in `TODO.md`):
@@ -147,6 +131,10 @@ Contract change type: additive
   chaining through another component's field. This wave owns day-cell color
   states only; the calendar grid layout, keyboard navigation, and
   range-selection fills remain downstream.
+
+### Changed
+
+- Refresh compatible transitive build dependencies in the lockfile.
 
 ## [4.10.0] - 2026-09-24
 
@@ -1527,9 +1515,7 @@ Contract change type: breaking
 - Standardized documentation and contributing guidelines.
 
 [unreleased]:
-  https://github.com/phcdevworks/spectre-tokens/compare/v4.12.0...HEAD
-[4.12.0]: https://github.com/phcdevworks/spectre-tokens/compare/v4.11.0...v4.12.0
-[4.11.0]: https://github.com/phcdevworks/spectre-tokens/compare/v4.10.0...v4.11.0
+  https://github.com/phcdevworks/spectre-tokens/compare/v4.10.0...HEAD
 [4.10.0]: https://github.com/phcdevworks/spectre-tokens/compare/v4.9.0...v4.10.0
 [4.9.0]: https://github.com/phcdevworks/spectre-tokens/compare/v4.8.0...v4.9.0
 [4.8.0]: https://github.com/phcdevworks/spectre-tokens/compare/v4.7.0...v4.8.0
