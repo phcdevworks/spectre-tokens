@@ -30,42 +30,15 @@ this file does not restate delivered work.
 | 12 | Downstream contract-debt audit — additive `layout.container.maxWidthWide` (`80rem`); proactive `--sp-*` redeclaration/workaround audit across all four downstream repos (one confirmed hit, already tracked); `audit:downstream` script added; `TOKEN_CONTRACT.md` "Contract Expansion Policy" section settles the evidence-gated-but-proactive posture so it doesn't regress to downstream-request-only | 4.7.0 |
 | 13 | Card edge-accent contract, requested by `spectre-ui` — mode-aware `component.card.accent` color roles (`neutral`, `brand`, `info`, `success`, `warning`, `danger`, `cta`, the locked families included by explicit approval) plus a single standard `component.card.accent.thickness` (`0.25rem`); edge position and rendering stay downstream | 4.9.0 |
 | 14 | Accent-rail tokens beyond card, owner-directed by Bradley Potts in response to client feedback — the same mode-aware `accent.*` color-role + `accent.thickness` (`0.25rem`) contract extended to `badge`, `testimonial`, `pricingCard`, `nav`, `footer`, `modal`, `toast`, `tooltip`, and `dropdown` (63 new color leaves, 9 new thickness leaves); form-control groups and `button`/`rating`/`iconBox` excluded; edge position and rendering stay downstream | 4.9.0 |
+| 15 | Downstream component readiness — seven evidence-backed delivery waves covering navigation, core components, form/content roles, existing-contract completion, datepicker/day states, prose, provider-neutral external authentication, and choice-card states; every contract is mode-aware and emitted through runtime, TypeScript, CSS, and DTCG outputs | 4.10.0–4.12.0 |
 
 ---
 
-## Active Phase
-
-### Phase 15 — Downstream Component Readiness
-
-**Status:** Open — requested 2026-09-24; inventory audit complete,
-implementation pending.
-
-Prepare the L1 semantic contract for a broad downstream component inventory
-without importing component anatomy, layout behavior, or framework concerns. The
-evidence and leaf-level backlog are tracked in `TODO.md` under "Bootstrap-scale
-component inventory expansion."
-
-Delivery is split into four waves:
-
-1. Navigation foundation — `component.tabs`.
-2. Core components — accordion, breadcrumb, list group, offcanvas, carousel,
-   table, alert, pagination, stepper, popover, progress, and loading indicator.
-3. Forms and content — switch, range, file input, input group, display
-   typography, and lead typography.
-4. Existing-contract completion — dropdown state roles, neutral/default toast,
-   and evidence-based audits of modal, card, and nav.
-
-Each wave remains additive and evidence-gated. Protected semantic families
-retain their explicit human-approval requirement. A wave is delivered only after
-its source tokens, mode aliases, public types, CSS, DTCG, documentation, and
-tests agree and `npm run check` passes.
-
 ## What's Next
 
-Implement Phase 15 in the order recorded in `TODO.md`, beginning with the
-leaf-specified tabs contract. Continue using `npm run audit:downstream` between
-waves to catch real vocabulary gaps without moving downstream-owned component
-structure into this package.
+No open phase is currently planned. Continue using `npm run audit:downstream`
+to identify evidence-backed vocabulary gaps without moving downstream-owned
+component structure into this package.
 
 ---
 

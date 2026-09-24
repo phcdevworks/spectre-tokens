@@ -158,6 +158,48 @@
             }
           }
         },
+        "choiceCard": {
+          "bg": {
+            "value": "{colors.white}",
+            "metadata": {
+              "pair": "modes.default.component.choiceCard.text"
+            }
+          },
+          "text": {
+            "value": "{colors.neutral.900}",
+            "metadata": {
+              "pair": "modes.default.component.choiceCard.bg"
+            }
+          },
+          "border": {
+            "value": "{colors.neutral.300}",
+            "metadata": {}
+          },
+          "hoverBorder": {
+            "value": "{colors.neutral.400}",
+            "metadata": {}
+          },
+          "selectedBg": {
+            "value": "{colors.info.50}",
+            "metadata": {}
+          },
+          "selectedBorder": {
+            "value": "{colors.brand.600}",
+            "metadata": {}
+          },
+          "disabledBg": {
+            "value": "{colors.neutral.50}",
+            "metadata": {}
+          },
+          "disabledText": {
+            "value": "{colors.neutral.400}",
+            "metadata": {}
+          },
+          "focusRing": {
+            "value": "{buttons.primary.focusRing}",
+            "metadata": {}
+          }
+        },
         "input": {
           "text": {
             "value": "{colors.neutral.900}",
@@ -1879,6 +1921,106 @@
             }
           }
         },
+        "prose": {
+          "blockquote": {
+            "border": {
+              "value": "{colors.neutral.600}",
+              "metadata": {}
+            },
+            "text": {
+              "value": "{colors.neutral.600}",
+              "metadata": {}
+            }
+          },
+          "code": {
+            "bg": {
+              "value": "{colors.neutral.100}",
+              "metadata": {
+                "pair": "modes.default.component.prose.code.text"
+              }
+            },
+            "text": {
+              "value": "{colors.neutral.900}",
+              "metadata": {
+                "pair": "modes.default.component.prose.code.bg"
+              }
+            }
+          },
+          "codeBlock": {
+            "bg": {
+              "value": "{colors.neutral.100}",
+              "metadata": {
+                "pair": "modes.default.component.prose.codeBlock.text"
+              }
+            },
+            "text": {
+              "value": "{colors.neutral.900}",
+              "metadata": {
+                "pair": "modes.default.component.prose.codeBlock.bg"
+              }
+            },
+            "border": {
+              "value": "{colors.neutral.200}",
+              "metadata": {}
+            }
+          },
+          "mark": {
+            "bg": {
+              "value": "{colors.warning.100}",
+              "metadata": {
+                "pair": "modes.default.component.prose.mark.text"
+              }
+            },
+            "text": {
+              "value": "{colors.warning.900}",
+              "metadata": {
+                "pair": "modes.default.component.prose.mark.bg"
+              }
+            }
+          },
+          "hr": {
+            "value": "{colors.neutral.200}",
+            "metadata": {}
+          }
+        },
+        "externalAuthButton": {
+          "bg": {
+            "value": "{colors.white}",
+            "metadata": {
+              "pair": "modes.default.component.externalAuthButton.text"
+            }
+          },
+          "text": {
+            "value": "{colors.neutral.900}",
+            "metadata": {
+              "pair": "modes.default.component.externalAuthButton.bg"
+            }
+          },
+          "border": {
+            "value": "{colors.neutral.300}",
+            "metadata": {}
+          },
+          "hoverBg": {
+            "value": "{colors.neutral.50}",
+            "metadata": {}
+          },
+          "activeBg": {
+            "value": "{colors.neutral.100}",
+            "metadata": {}
+          },
+          "disabledBg": {
+            "value": "{colors.neutral.50}",
+            "metadata": {}
+          },
+          "disabledText": {
+            "value": "{colors.neutral.400}",
+            "metadata": {}
+          },
+          "focusRing": {
+            "value": "{buttons.primary.focusRing}",
+            "metadata": {}
+          }
+        },
         "checkbox": {
           "bg": {
             "value": "{colors.white}",
@@ -2201,6 +2343,48 @@
               "value": "{colors.brand.400}",
               "metadata": {}
             }
+          }
+        },
+        "choiceCard": {
+          "bg": {
+            "value": "{colors.neutral.800}",
+            "metadata": {
+              "pair": "modes.dark.component.choiceCard.text"
+            }
+          },
+          "text": {
+            "value": "{colors.neutral.100}",
+            "metadata": {
+              "pair": "modes.dark.component.choiceCard.bg"
+            }
+          },
+          "border": {
+            "value": "{colors.neutral.600}",
+            "metadata": {}
+          },
+          "hoverBorder": {
+            "value": "{colors.neutral.500}",
+            "metadata": {}
+          },
+          "selectedBg": {
+            "value": "{colors.info.900}",
+            "metadata": {}
+          },
+          "selectedBorder": {
+            "value": "{colors.brand.600}",
+            "metadata": {}
+          },
+          "disabledBg": {
+            "value": "{colors.neutral.900}",
+            "metadata": {}
+          },
+          "disabledText": {
+            "value": "{colors.neutral.600}",
+            "metadata": {}
+          },
+          "focusRing": {
+            "value": "{buttons.primary.focusRing}",
+            "metadata": {}
           }
         },
         "input": {
@@ -3944,6 +4128,106 @@
               "value": "{colors.neutral.600}",
               "metadata": {}
             }
+          }
+        },
+        "prose": {
+          "blockquote": {
+            "border": {
+              "value": "{colors.neutral.400}",
+              "metadata": {}
+            },
+            "text": {
+              "value": "{colors.neutral.300}",
+              "metadata": {}
+            }
+          },
+          "code": {
+            "bg": {
+              "value": "{colors.neutral.800}",
+              "metadata": {
+                "pair": "modes.dark.component.prose.code.text"
+              }
+            },
+            "text": {
+              "value": "{colors.neutral.50}",
+              "metadata": {
+                "pair": "modes.dark.component.prose.code.bg"
+              }
+            }
+          },
+          "codeBlock": {
+            "bg": {
+              "value": "{colors.neutral.800}",
+              "metadata": {
+                "pair": "modes.dark.component.prose.codeBlock.text"
+              }
+            },
+            "text": {
+              "value": "{colors.neutral.50}",
+              "metadata": {
+                "pair": "modes.dark.component.prose.codeBlock.bg"
+              }
+            },
+            "border": {
+              "value": "{colors.neutral.700}",
+              "metadata": {}
+            }
+          },
+          "mark": {
+            "bg": {
+              "value": "{colors.warning.900}",
+              "metadata": {
+                "pair": "modes.dark.component.prose.mark.text"
+              }
+            },
+            "text": {
+              "value": "{colors.warning.200}",
+              "metadata": {
+                "pair": "modes.dark.component.prose.mark.bg"
+              }
+            }
+          },
+          "hr": {
+            "value": "{colors.neutral.700}",
+            "metadata": {}
+          }
+        },
+        "externalAuthButton": {
+          "bg": {
+            "value": "{colors.neutral.800}",
+            "metadata": {
+              "pair": "modes.dark.component.externalAuthButton.text"
+            }
+          },
+          "text": {
+            "value": "{colors.neutral.50}",
+            "metadata": {
+              "pair": "modes.dark.component.externalAuthButton.bg"
+            }
+          },
+          "border": {
+            "value": "{colors.neutral.600}",
+            "metadata": {}
+          },
+          "hoverBg": {
+            "value": "{colors.neutral.700}",
+            "metadata": {}
+          },
+          "activeBg": {
+            "value": "{colors.neutral.600}",
+            "metadata": {}
+          },
+          "disabledBg": {
+            "value": "{colors.neutral.900}",
+            "metadata": {}
+          },
+          "disabledText": {
+            "value": "{colors.neutral.600}",
+            "metadata": {}
+          },
+          "focusRing": {
+            "value": "{buttons.primary.focusRing}",
+            "metadata": {}
           }
         },
         "checkbox": {

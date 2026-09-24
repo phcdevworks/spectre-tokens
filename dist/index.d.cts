@@ -19,6 +19,17 @@ interface SpectreGeneratedTokens {
                 thickness: string;
             };
         };
+        choiceCard: {
+            bg: string;
+            text: string;
+            border: string;
+            hoverBorder: string;
+            selectedBg: string;
+            selectedBorder: string;
+            disabledBg: string;
+            disabledText: string;
+            focusRing: string;
+        };
         input: {
             text: string;
             placeholder: string;
@@ -572,6 +583,36 @@ interface SpectreGeneratedTokens {
                 text: string;
             };
         };
+        prose: {
+            blockquote: {
+                border: string;
+                text: string;
+            };
+            code: {
+                bg: string;
+                text: string;
+            };
+            codeBlock: {
+                bg: string;
+                text: string;
+                border: string;
+            };
+            mark: {
+                bg: string;
+                text: string;
+            };
+            hr: string;
+        };
+        externalAuthButton: {
+            bg: string;
+            text: string;
+            border: string;
+            hoverBg: string;
+            activeBg: string;
+            disabledBg: string;
+            disabledText: string;
+            focusRing: string;
+        };
         checkbox: {
             bg: string;
             border: string;
@@ -831,6 +872,17 @@ interface SpectreGeneratedTokens {
                         danger: string;
                         cta: string;
                     };
+                };
+                choiceCard: {
+                    bg: string;
+                    text: string;
+                    border: string;
+                    hoverBorder: string;
+                    selectedBg: string;
+                    selectedBorder: string;
+                    disabledBg: string;
+                    disabledText: string;
+                    focusRing: string;
                 };
                 input: {
                     text: string;
@@ -1364,6 +1416,36 @@ interface SpectreGeneratedTokens {
                         text: string;
                     };
                 };
+                prose: {
+                    blockquote: {
+                        border: string;
+                        text: string;
+                    };
+                    code: {
+                        bg: string;
+                        text: string;
+                    };
+                    codeBlock: {
+                        bg: string;
+                        text: string;
+                        border: string;
+                    };
+                    mark: {
+                        bg: string;
+                        text: string;
+                    };
+                    hr: string;
+                };
+                externalAuthButton: {
+                    bg: string;
+                    text: string;
+                    border: string;
+                    hoverBg: string;
+                    activeBg: string;
+                    disabledBg: string;
+                    disabledText: string;
+                    focusRing: string;
+                };
                 checkbox: {
                     bg: string;
                     border: string;
@@ -1453,6 +1535,17 @@ interface SpectreGeneratedTokens {
                         danger: string;
                         cta: string;
                     };
+                };
+                choiceCard: {
+                    bg: string;
+                    text: string;
+                    border: string;
+                    hoverBorder: string;
+                    selectedBg: string;
+                    selectedBorder: string;
+                    disabledBg: string;
+                    disabledText: string;
+                    focusRing: string;
                 };
                 input: {
                     text: string;
@@ -1988,6 +2081,36 @@ interface SpectreGeneratedTokens {
                     disabled: {
                         text: string;
                     };
+                };
+                prose: {
+                    blockquote: {
+                        border: string;
+                        text: string;
+                    };
+                    code: {
+                        bg: string;
+                        text: string;
+                    };
+                    codeBlock: {
+                        bg: string;
+                        text: string;
+                        border: string;
+                    };
+                    mark: {
+                        bg: string;
+                        text: string;
+                    };
+                    hr: string;
+                };
+                externalAuthButton: {
+                    bg: string;
+                    text: string;
+                    border: string;
+                    hoverBg: string;
+                    activeBg: string;
+                    disabledBg: string;
+                    disabledText: string;
+                    focusRing: string;
                 };
                 checkbox: {
                     bg: string;

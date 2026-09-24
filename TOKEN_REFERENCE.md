@@ -6,7 +6,7 @@ contract authority; `tokens/` and `contract.manifest.json` remain the source
 of truth (see `TOKEN_CONTRACT.md`).
 
 Every leaf token path across all 23 public namespaces
-(2086 total), with its resolved source value and a usage note.
+(2167 total), with its resolved source value and a usage note.
 Values shown here are pre-CSS-resolution source values — `{path.to.token}`
 references are shown as-written, not resolved (see `src/css.ts` for
 resolved CSS output).
@@ -1045,6 +1045,15 @@ resolved CSS output).
 | `component.card.accent.danger` | `{colors.error.600}` | component token. |
 | `component.card.accent.cta` | `{colors.brand.600}` | component token. |
 | `component.card.accent.thickness` | `0.25rem` | component token. |
+| `component.choiceCard.bg` | `{colors.white}` | Pairs with `component.choiceCard.text` for contrast. |
+| `component.choiceCard.text` | `{colors.neutral.900}` | Pairs with `component.choiceCard.bg` for contrast. |
+| `component.choiceCard.border` | `{colors.neutral.300}` | component token. |
+| `component.choiceCard.hoverBorder` | `{colors.neutral.400}` | component token. |
+| `component.choiceCard.selectedBg` | `{colors.info.50}` | component token. |
+| `component.choiceCard.selectedBorder` | `{colors.brand.600}` | component token. |
+| `component.choiceCard.disabledBg` | `{colors.neutral.50}` | component token. |
+| `component.choiceCard.disabledText` | `{colors.neutral.400}` | component token. |
+| `component.choiceCard.focusRing` | `{buttons.primary.focusRing}` | component token. |
 | `component.input.text` | `{colors.neutral.900}` | Pairs with `forms.default.bg` for contrast. |
 | `component.input.placeholder` | `{colors.neutral.500}` | Pairs with `forms.default.bg` for contrast. |
 | `component.button.textDefault` | `{colors.neutral.900}` | component token. |
@@ -1390,6 +1399,24 @@ resolved CSS output).
 | `component.day.today.ringColor` | `{buttons.primary.focusRing}` | component token. |
 | `component.day.outsideMonth.text` | `{colors.neutral.300}` | component token. |
 | `component.day.disabled.text` | `{colors.neutral.400}` | component token. |
+| `component.prose.blockquote.border` | `{colors.neutral.600}` | component token. |
+| `component.prose.blockquote.text` | `{colors.neutral.600}` | component token. |
+| `component.prose.code.bg` | `{colors.neutral.100}` | Pairs with `component.prose.code.text` for contrast. |
+| `component.prose.code.text` | `{colors.neutral.900}` | Pairs with `component.prose.code.bg` for contrast. |
+| `component.prose.codeBlock.bg` | `{colors.neutral.100}` | Pairs with `component.prose.codeBlock.text` for contrast. |
+| `component.prose.codeBlock.text` | `{colors.neutral.900}` | Pairs with `component.prose.codeBlock.bg` for contrast. |
+| `component.prose.codeBlock.border` | `{colors.neutral.200}` | component token. |
+| `component.prose.mark.bg` | `{colors.warning.100}` | Pairs with `component.prose.mark.text` for contrast. |
+| `component.prose.mark.text` | `{colors.warning.900}` | Pairs with `component.prose.mark.bg` for contrast. |
+| `component.prose.hr` | `{colors.neutral.200}` | component token. |
+| `component.externalAuthButton.bg` | `{colors.white}` | Pairs with `component.externalAuthButton.text` for contrast. |
+| `component.externalAuthButton.text` | `{colors.neutral.900}` | Pairs with `component.externalAuthButton.bg` for contrast. |
+| `component.externalAuthButton.border` | `{colors.neutral.300}` | component token. |
+| `component.externalAuthButton.hoverBg` | `{colors.neutral.50}` | component token. |
+| `component.externalAuthButton.activeBg` | `{colors.neutral.100}` | component token. |
+| `component.externalAuthButton.disabledBg` | `{colors.neutral.50}` | component token. |
+| `component.externalAuthButton.disabledText` | `{colors.neutral.400}` | component token. |
+| `component.externalAuthButton.focusRing` | `{buttons.primary.focusRing}` | component token. |
 | `component.checkbox.bg` | `{colors.white}` | component token. |
 | `component.checkbox.border` | `{colors.neutral.300}` | component token. |
 | `component.checkbox.checkedBg` | `{colors.info.600}` | Pairs with `component.checkbox.text` for contrast. |
@@ -1465,6 +1492,15 @@ resolved CSS output).
 | `modes.default.component.card.accent.warning` | `{colors.warning.600}` | modes token. |
 | `modes.default.component.card.accent.danger` | `{colors.error.600}` | modes token. |
 | `modes.default.component.card.accent.cta` | `{colors.brand.600}` | modes token. |
+| `modes.default.component.choiceCard.bg` | `{colors.white}` | Pairs with `modes.default.component.choiceCard.text` for contrast. |
+| `modes.default.component.choiceCard.text` | `{colors.neutral.900}` | Pairs with `modes.default.component.choiceCard.bg` for contrast. |
+| `modes.default.component.choiceCard.border` | `{colors.neutral.300}` | modes token. |
+| `modes.default.component.choiceCard.hoverBorder` | `{colors.neutral.400}` | modes token. |
+| `modes.default.component.choiceCard.selectedBg` | `{colors.info.50}` | modes token. |
+| `modes.default.component.choiceCard.selectedBorder` | `{colors.brand.600}` | modes token. |
+| `modes.default.component.choiceCard.disabledBg` | `{colors.neutral.50}` | modes token. |
+| `modes.default.component.choiceCard.disabledText` | `{colors.neutral.400}` | modes token. |
+| `modes.default.component.choiceCard.focusRing` | `{buttons.primary.focusRing}` | modes token. |
 | `modes.default.component.input.text` | `{colors.neutral.900}` | Pairs with `modes.default.surface.input` for contrast. |
 | `modes.default.component.input.placeholder` | `{colors.neutral.500}` | Pairs with `modes.default.surface.input` for contrast. |
 | `modes.default.component.button.textDefault` | `{colors.neutral.900}` | modes token. |
@@ -1789,6 +1825,24 @@ resolved CSS output).
 | `modes.default.component.day.today.ringColor` | `{buttons.primary.focusRing}` | modes token. |
 | `modes.default.component.day.outsideMonth.text` | `{colors.neutral.300}` | modes token. |
 | `modes.default.component.day.disabled.text` | `{colors.neutral.400}` | modes token. |
+| `modes.default.component.prose.blockquote.border` | `{colors.neutral.600}` | modes token. |
+| `modes.default.component.prose.blockquote.text` | `{colors.neutral.600}` | modes token. |
+| `modes.default.component.prose.code.bg` | `{colors.neutral.100}` | Pairs with `modes.default.component.prose.code.text` for contrast. |
+| `modes.default.component.prose.code.text` | `{colors.neutral.900}` | Pairs with `modes.default.component.prose.code.bg` for contrast. |
+| `modes.default.component.prose.codeBlock.bg` | `{colors.neutral.100}` | Pairs with `modes.default.component.prose.codeBlock.text` for contrast. |
+| `modes.default.component.prose.codeBlock.text` | `{colors.neutral.900}` | Pairs with `modes.default.component.prose.codeBlock.bg` for contrast. |
+| `modes.default.component.prose.codeBlock.border` | `{colors.neutral.200}` | modes token. |
+| `modes.default.component.prose.mark.bg` | `{colors.warning.100}` | Pairs with `modes.default.component.prose.mark.text` for contrast. |
+| `modes.default.component.prose.mark.text` | `{colors.warning.900}` | Pairs with `modes.default.component.prose.mark.bg` for contrast. |
+| `modes.default.component.prose.hr` | `{colors.neutral.200}` | modes token. |
+| `modes.default.component.externalAuthButton.bg` | `{colors.white}` | Pairs with `modes.default.component.externalAuthButton.text` for contrast. |
+| `modes.default.component.externalAuthButton.text` | `{colors.neutral.900}` | Pairs with `modes.default.component.externalAuthButton.bg` for contrast. |
+| `modes.default.component.externalAuthButton.border` | `{colors.neutral.300}` | modes token. |
+| `modes.default.component.externalAuthButton.hoverBg` | `{colors.neutral.50}` | modes token. |
+| `modes.default.component.externalAuthButton.activeBg` | `{colors.neutral.100}` | modes token. |
+| `modes.default.component.externalAuthButton.disabledBg` | `{colors.neutral.50}` | modes token. |
+| `modes.default.component.externalAuthButton.disabledText` | `{colors.neutral.400}` | modes token. |
+| `modes.default.component.externalAuthButton.focusRing` | `{buttons.primary.focusRing}` | modes token. |
 | `modes.default.component.checkbox.bg` | `{colors.white}` | modes token. |
 | `modes.default.component.checkbox.border` | `{colors.neutral.300}` | modes token. |
 | `modes.default.component.checkbox.checkedBg` | `{colors.info.600}` | Pairs with `modes.default.component.checkbox.text` for contrast. |
@@ -1851,6 +1905,15 @@ resolved CSS output).
 | `modes.dark.component.card.accent.warning` | `{colors.warning.400}` | modes token. |
 | `modes.dark.component.card.accent.danger` | `{colors.error.400}` | modes token. |
 | `modes.dark.component.card.accent.cta` | `{colors.brand.400}` | modes token. |
+| `modes.dark.component.choiceCard.bg` | `{colors.neutral.800}` | Pairs with `modes.dark.component.choiceCard.text` for contrast. |
+| `modes.dark.component.choiceCard.text` | `{colors.neutral.100}` | Pairs with `modes.dark.component.choiceCard.bg` for contrast. |
+| `modes.dark.component.choiceCard.border` | `{colors.neutral.600}` | modes token. |
+| `modes.dark.component.choiceCard.hoverBorder` | `{colors.neutral.500}` | modes token. |
+| `modes.dark.component.choiceCard.selectedBg` | `{colors.info.900}` | modes token. |
+| `modes.dark.component.choiceCard.selectedBorder` | `{colors.brand.600}` | modes token. |
+| `modes.dark.component.choiceCard.disabledBg` | `{colors.neutral.900}` | modes token. |
+| `modes.dark.component.choiceCard.disabledText` | `{colors.neutral.600}` | modes token. |
+| `modes.dark.component.choiceCard.focusRing` | `{buttons.primary.focusRing}` | modes token. |
 | `modes.dark.component.input.text` | `{colors.neutral.100}` | Pairs with `modes.dark.surface.input` for contrast. |
 | `modes.dark.component.input.placeholder` | `{colors.neutral.300}` | Pairs with `modes.dark.surface.input` for contrast. |
 | `modes.dark.component.button.textDefault` | `{colors.neutral.100}` | modes token. |
@@ -2178,6 +2241,24 @@ resolved CSS output).
 | `modes.dark.component.day.today.ringColor` | `{buttons.primary.focusRing}` | modes token. |
 | `modes.dark.component.day.outsideMonth.text` | `{colors.neutral.600}` | modes token. |
 | `modes.dark.component.day.disabled.text` | `{colors.neutral.600}` | modes token. |
+| `modes.dark.component.prose.blockquote.border` | `{colors.neutral.400}` | modes token. |
+| `modes.dark.component.prose.blockquote.text` | `{colors.neutral.300}` | modes token. |
+| `modes.dark.component.prose.code.bg` | `{colors.neutral.800}` | Pairs with `modes.dark.component.prose.code.text` for contrast. |
+| `modes.dark.component.prose.code.text` | `{colors.neutral.50}` | Pairs with `modes.dark.component.prose.code.bg` for contrast. |
+| `modes.dark.component.prose.codeBlock.bg` | `{colors.neutral.800}` | Pairs with `modes.dark.component.prose.codeBlock.text` for contrast. |
+| `modes.dark.component.prose.codeBlock.text` | `{colors.neutral.50}` | Pairs with `modes.dark.component.prose.codeBlock.bg` for contrast. |
+| `modes.dark.component.prose.codeBlock.border` | `{colors.neutral.700}` | modes token. |
+| `modes.dark.component.prose.mark.bg` | `{colors.warning.900}` | Pairs with `modes.dark.component.prose.mark.text` for contrast. |
+| `modes.dark.component.prose.mark.text` | `{colors.warning.200}` | Pairs with `modes.dark.component.prose.mark.bg` for contrast. |
+| `modes.dark.component.prose.hr` | `{colors.neutral.700}` | modes token. |
+| `modes.dark.component.externalAuthButton.bg` | `{colors.neutral.800}` | Pairs with `modes.dark.component.externalAuthButton.text` for contrast. |
+| `modes.dark.component.externalAuthButton.text` | `{colors.neutral.50}` | Pairs with `modes.dark.component.externalAuthButton.bg` for contrast. |
+| `modes.dark.component.externalAuthButton.border` | `{colors.neutral.600}` | modes token. |
+| `modes.dark.component.externalAuthButton.hoverBg` | `{colors.neutral.700}` | modes token. |
+| `modes.dark.component.externalAuthButton.activeBg` | `{colors.neutral.600}` | modes token. |
+| `modes.dark.component.externalAuthButton.disabledBg` | `{colors.neutral.900}` | modes token. |
+| `modes.dark.component.externalAuthButton.disabledText` | `{colors.neutral.600}` | modes token. |
+| `modes.dark.component.externalAuthButton.focusRing` | `{buttons.primary.focusRing}` | modes token. |
 | `modes.dark.component.checkbox.bg` | `{colors.neutral.800}` | modes token. |
 | `modes.dark.component.checkbox.border` | `{colors.neutral.600}` | modes token. |
 | `modes.dark.component.checkbox.checkedBg` | `{colors.info.600}` | Pairs with `modes.dark.component.checkbox.text` for contrast. |

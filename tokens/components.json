@@ -50,6 +50,41 @@
         "thickness": "0.25rem"
       }
     },
+    "choiceCard": {
+      "bg": {
+        "value": "{colors.white}",
+        "metadata": {
+          "pair": "component.choiceCard.text"
+        }
+      },
+      "text": {
+        "value": "{colors.neutral.900}",
+        "metadata": {
+          "pair": "component.choiceCard.bg"
+        }
+      },
+      "border": {
+        "value": "{colors.neutral.300}"
+      },
+      "hoverBorder": {
+        "value": "{colors.neutral.400}"
+      },
+      "selectedBg": {
+        "value": "{colors.info.50}"
+      },
+      "selectedBorder": {
+        "value": "{colors.brand.600}"
+      },
+      "disabledBg": {
+        "value": "{colors.neutral.50}"
+      },
+      "disabledText": {
+        "value": "{colors.neutral.400}"
+      },
+      "focusRing": {
+        "value": "{buttons.primary.focusRing}"
+      }
+    },
     "input": {
       "text": {
         "value": "{colors.neutral.900}",
@@ -1683,6 +1718,96 @@
         "text": {
           "value": "{colors.neutral.400}"
         }
+      }
+    },
+    "prose": {
+      "blockquote": {
+        "border": {
+          "value": "{colors.neutral.600}"
+        },
+        "text": {
+          "value": "{colors.neutral.600}"
+        }
+      },
+      "code": {
+        "bg": {
+          "value": "{colors.neutral.100}",
+          "metadata": {
+            "pair": "component.prose.code.text"
+          }
+        },
+        "text": {
+          "value": "{colors.neutral.900}",
+          "metadata": {
+            "pair": "component.prose.code.bg"
+          }
+        }
+      },
+      "codeBlock": {
+        "bg": {
+          "value": "{colors.neutral.100}",
+          "metadata": {
+            "pair": "component.prose.codeBlock.text"
+          }
+        },
+        "text": {
+          "value": "{colors.neutral.900}",
+          "metadata": {
+            "pair": "component.prose.codeBlock.bg"
+          }
+        },
+        "border": {
+          "value": "{colors.neutral.200}"
+        }
+      },
+      "mark": {
+        "bg": {
+          "value": "{colors.warning.100}",
+          "metadata": {
+            "pair": "component.prose.mark.text"
+          }
+        },
+        "text": {
+          "value": "{colors.warning.900}",
+          "metadata": {
+            "pair": "component.prose.mark.bg"
+          }
+        }
+      },
+      "hr": {
+        "value": "{colors.neutral.200}"
+      }
+    },
+    "externalAuthButton": {
+      "bg": {
+        "value": "{colors.white}",
+        "metadata": {
+          "pair": "component.externalAuthButton.text"
+        }
+      },
+      "text": {
+        "value": "{colors.neutral.900}",
+        "metadata": {
+          "pair": "component.externalAuthButton.bg"
+        }
+      },
+      "border": {
+        "value": "{colors.neutral.300}"
+      },
+      "hoverBg": {
+        "value": "{colors.neutral.50}"
+      },
+      "activeBg": {
+        "value": "{colors.neutral.100}"
+      },
+      "disabledBg": {
+        "value": "{colors.neutral.50}"
+      },
+      "disabledText": {
+        "value": "{colors.neutral.400}"
+      },
+      "focusRing": {
+        "value": "{buttons.primary.focusRing}"
       }
     },
     "checkbox": {

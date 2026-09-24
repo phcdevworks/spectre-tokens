@@ -60,6 +60,41 @@ export interface SpectreSourceTokens {
         thickness: string;
       };
     };
+    choiceCard: {
+      bg: {
+        value: string;
+        metadata: {
+          pair: string;
+        };
+      };
+      text: {
+        value: string;
+        metadata: {
+          pair: string;
+        };
+      };
+      border: {
+        value: string;
+      };
+      hoverBorder: {
+        value: string;
+      };
+      selectedBg: {
+        value: string;
+      };
+      selectedBorder: {
+        value: string;
+      };
+      disabledBg: {
+        value: string;
+      };
+      disabledText: {
+        value: string;
+      };
+      focusRing: {
+        value: string;
+      };
+    };
     input: {
       text: {
         value: string;
@@ -1759,6 +1794,96 @@ export interface SpectreSourceTokens {
         };
       };
     };
+    prose: {
+      blockquote: {
+        border: {
+          value: string;
+        };
+        text: {
+          value: string;
+        };
+      };
+      code: {
+        bg: {
+          value: string;
+          metadata: {
+            pair: string;
+          };
+        };
+        text: {
+          value: string;
+          metadata: {
+            pair: string;
+          };
+        };
+      };
+      codeBlock: {
+        bg: {
+          value: string;
+          metadata: {
+            pair: string;
+          };
+        };
+        text: {
+          value: string;
+          metadata: {
+            pair: string;
+          };
+        };
+        border: {
+          value: string;
+        };
+      };
+      mark: {
+        bg: {
+          value: string;
+          metadata: {
+            pair: string;
+          };
+        };
+        text: {
+          value: string;
+          metadata: {
+            pair: string;
+          };
+        };
+      };
+      hr: {
+        value: string;
+      };
+    };
+    externalAuthButton: {
+      bg: {
+        value: string;
+        metadata: {
+          pair: string;
+        };
+      };
+      text: {
+        value: string;
+        metadata: {
+          pair: string;
+        };
+      };
+      border: {
+        value: string;
+      };
+      hoverBg: {
+        value: string;
+      };
+      activeBg: {
+        value: string;
+      };
+      disabledBg: {
+        value: string;
+      };
+      disabledText: {
+        value: string;
+      };
+      focusRing: {
+        value: string;
+      };
+    };
     checkbox: {
       bg: {
         value: string;
@@ -2616,6 +2741,55 @@ export interface SpectreSourceTokens {
               value: string;
               metadata: {
               };
+            };
+          };
+        };
+        choiceCard: {
+          bg: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+          text: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+          border: {
+            value: string;
+            metadata: {
+            };
+          };
+          hoverBorder: {
+            value: string;
+            metadata: {
+            };
+          };
+          selectedBg: {
+            value: string;
+            metadata: {
+            };
+          };
+          selectedBorder: {
+            value: string;
+            metadata: {
+            };
+          };
+          disabledBg: {
+            value: string;
+            metadata: {
+            };
+          };
+          disabledText: {
+            value: string;
+            metadata: {
+            };
+          };
+          focusRing: {
+            value: string;
+            metadata: {
             };
           };
         };
@@ -4550,6 +4724,116 @@ export interface SpectreSourceTokens {
             };
           };
         };
+        prose: {
+          blockquote: {
+            border: {
+              value: string;
+              metadata: {
+              };
+            };
+            text: {
+              value: string;
+              metadata: {
+              };
+            };
+          };
+          code: {
+            bg: {
+              value: string;
+              metadata: {
+                pair: string;
+              };
+            };
+            text: {
+              value: string;
+              metadata: {
+                pair: string;
+              };
+            };
+          };
+          codeBlock: {
+            bg: {
+              value: string;
+              metadata: {
+                pair: string;
+              };
+            };
+            text: {
+              value: string;
+              metadata: {
+                pair: string;
+              };
+            };
+            border: {
+              value: string;
+              metadata: {
+              };
+            };
+          };
+          mark: {
+            bg: {
+              value: string;
+              metadata: {
+                pair: string;
+              };
+            };
+            text: {
+              value: string;
+              metadata: {
+                pair: string;
+              };
+            };
+          };
+          hr: {
+            value: string;
+            metadata: {
+            };
+          };
+        };
+        externalAuthButton: {
+          bg: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+          text: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+          border: {
+            value: string;
+            metadata: {
+            };
+          };
+          hoverBg: {
+            value: string;
+            metadata: {
+            };
+          };
+          activeBg: {
+            value: string;
+            metadata: {
+            };
+          };
+          disabledBg: {
+            value: string;
+            metadata: {
+            };
+          };
+          disabledText: {
+            value: string;
+            metadata: {
+            };
+          };
+          focusRing: {
+            value: string;
+            metadata: {
+            };
+          };
+        };
         checkbox: {
           bg: {
             value: string;
@@ -4901,6 +5185,55 @@ export interface SpectreSourceTokens {
               value: string;
               metadata: {
               };
+            };
+          };
+        };
+        choiceCard: {
+          bg: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+          text: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+          border: {
+            value: string;
+            metadata: {
+            };
+          };
+          hoverBorder: {
+            value: string;
+            metadata: {
+            };
+          };
+          selectedBg: {
+            value: string;
+            metadata: {
+            };
+          };
+          selectedBorder: {
+            value: string;
+            metadata: {
+            };
+          };
+          disabledBg: {
+            value: string;
+            metadata: {
+            };
+          };
+          disabledText: {
+            value: string;
+            metadata: {
+            };
+          };
+          focusRing: {
+            value: string;
+            metadata: {
             };
           };
         };
@@ -6855,6 +7188,116 @@ export interface SpectreSourceTokens {
             };
           };
         };
+        prose: {
+          blockquote: {
+            border: {
+              value: string;
+              metadata: {
+              };
+            };
+            text: {
+              value: string;
+              metadata: {
+              };
+            };
+          };
+          code: {
+            bg: {
+              value: string;
+              metadata: {
+                pair: string;
+              };
+            };
+            text: {
+              value: string;
+              metadata: {
+                pair: string;
+              };
+            };
+          };
+          codeBlock: {
+            bg: {
+              value: string;
+              metadata: {
+                pair: string;
+              };
+            };
+            text: {
+              value: string;
+              metadata: {
+                pair: string;
+              };
+            };
+            border: {
+              value: string;
+              metadata: {
+              };
+            };
+          };
+          mark: {
+            bg: {
+              value: string;
+              metadata: {
+                pair: string;
+              };
+            };
+            text: {
+              value: string;
+              metadata: {
+                pair: string;
+              };
+            };
+          };
+          hr: {
+            value: string;
+            metadata: {
+            };
+          };
+        };
+        externalAuthButton: {
+          bg: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+          text: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+          border: {
+            value: string;
+            metadata: {
+            };
+          };
+          hoverBg: {
+            value: string;
+            metadata: {
+            };
+          };
+          activeBg: {
+            value: string;
+            metadata: {
+            };
+          };
+          disabledBg: {
+            value: string;
+            metadata: {
+            };
+          };
+          disabledText: {
+            value: string;
+            metadata: {
+            };
+          };
+          focusRing: {
+            value: string;
+            metadata: {
+            };
+          };
+        };
         checkbox: {
           bg: {
             value: string;
@@ -8262,6 +8705,17 @@ export interface SpectreGeneratedTokens {
         thickness: string;
       };
     };
+    choiceCard: {
+      bg: string;
+      text: string;
+      border: string;
+      hoverBorder: string;
+      selectedBg: string;
+      selectedBorder: string;
+      disabledBg: string;
+      disabledText: string;
+      focusRing: string;
+    };
     input: {
       text: string;
       placeholder: string;
@@ -8815,6 +9269,36 @@ export interface SpectreGeneratedTokens {
         text: string;
       };
     };
+    prose: {
+      blockquote: {
+        border: string;
+        text: string;
+      };
+      code: {
+        bg: string;
+        text: string;
+      };
+      codeBlock: {
+        bg: string;
+        text: string;
+        border: string;
+      };
+      mark: {
+        bg: string;
+        text: string;
+      };
+      hr: string;
+    };
+    externalAuthButton: {
+      bg: string;
+      text: string;
+      border: string;
+      hoverBg: string;
+      activeBg: string;
+      disabledBg: string;
+      disabledText: string;
+      focusRing: string;
+    };
     checkbox: {
       bg: string;
       border: string;
@@ -9074,6 +9558,17 @@ export interface SpectreGeneratedTokens {
             danger: string;
             cta: string;
           };
+        };
+        choiceCard: {
+          bg: string;
+          text: string;
+          border: string;
+          hoverBorder: string;
+          selectedBg: string;
+          selectedBorder: string;
+          disabledBg: string;
+          disabledText: string;
+          focusRing: string;
         };
         input: {
           text: string;
@@ -9607,6 +10102,36 @@ export interface SpectreGeneratedTokens {
             text: string;
           };
         };
+        prose: {
+          blockquote: {
+            border: string;
+            text: string;
+          };
+          code: {
+            bg: string;
+            text: string;
+          };
+          codeBlock: {
+            bg: string;
+            text: string;
+            border: string;
+          };
+          mark: {
+            bg: string;
+            text: string;
+          };
+          hr: string;
+        };
+        externalAuthButton: {
+          bg: string;
+          text: string;
+          border: string;
+          hoverBg: string;
+          activeBg: string;
+          disabledBg: string;
+          disabledText: string;
+          focusRing: string;
+        };
         checkbox: {
           bg: string;
           border: string;
@@ -9696,6 +10221,17 @@ export interface SpectreGeneratedTokens {
             danger: string;
             cta: string;
           };
+        };
+        choiceCard: {
+          bg: string;
+          text: string;
+          border: string;
+          hoverBorder: string;
+          selectedBg: string;
+          selectedBorder: string;
+          disabledBg: string;
+          disabledText: string;
+          focusRing: string;
         };
         input: {
           text: string;
@@ -10231,6 +10767,36 @@ export interface SpectreGeneratedTokens {
           disabled: {
             text: string;
           };
+        };
+        prose: {
+          blockquote: {
+            border: string;
+            text: string;
+          };
+          code: {
+            bg: string;
+            text: string;
+          };
+          codeBlock: {
+            bg: string;
+            text: string;
+            border: string;
+          };
+          mark: {
+            bg: string;
+            text: string;
+          };
+          hr: string;
+        };
+        externalAuthButton: {
+          bg: string;
+          text: string;
+          border: string;
+          hoverBg: string;
+          activeBg: string;
+          disabledBg: string;
+          disabledText: string;
+          focusRing: string;
         };
         checkbox: {
           bg: string;
@@ -11374,6 +11940,17 @@ export const coreTokens: SpectreGeneratedTokens = {
         "thickness": "0.25rem"
       }
     },
+    "choiceCard": {
+      "bg": "{colors.white}",
+      "text": "{colors.neutral.900}",
+      "border": "{colors.neutral.300}",
+      "hoverBorder": "{colors.neutral.400}",
+      "selectedBg": "{colors.info.50}",
+      "selectedBorder": "{colors.brand.600}",
+      "disabledBg": "{colors.neutral.50}",
+      "disabledText": "{colors.neutral.400}",
+      "focusRing": "{buttons.primary.focusRing}"
+    },
     "input": {
       "text": "{colors.neutral.900}",
       "placeholder": "{colors.neutral.500}"
@@ -11927,6 +12504,36 @@ export const coreTokens: SpectreGeneratedTokens = {
         "text": "{colors.neutral.400}"
       }
     },
+    "prose": {
+      "blockquote": {
+        "border": "{colors.neutral.600}",
+        "text": "{colors.neutral.600}"
+      },
+      "code": {
+        "bg": "{colors.neutral.100}",
+        "text": "{colors.neutral.900}"
+      },
+      "codeBlock": {
+        "bg": "{colors.neutral.100}",
+        "text": "{colors.neutral.900}",
+        "border": "{colors.neutral.200}"
+      },
+      "mark": {
+        "bg": "{colors.warning.100}",
+        "text": "{colors.warning.900}"
+      },
+      "hr": "{colors.neutral.200}"
+    },
+    "externalAuthButton": {
+      "bg": "{colors.white}",
+      "text": "{colors.neutral.900}",
+      "border": "{colors.neutral.300}",
+      "hoverBg": "{colors.neutral.50}",
+      "activeBg": "{colors.neutral.100}",
+      "disabledBg": "{colors.neutral.50}",
+      "disabledText": "{colors.neutral.400}",
+      "focusRing": "{buttons.primary.focusRing}"
+    },
     "checkbox": {
       "bg": "{colors.white}",
       "border": "{colors.neutral.300}",
@@ -12186,6 +12793,17 @@ export const coreTokens: SpectreGeneratedTokens = {
             "danger": "{colors.error.600}",
             "cta": "{colors.brand.600}"
           }
+        },
+        "choiceCard": {
+          "bg": "{colors.white}",
+          "text": "{colors.neutral.900}",
+          "border": "{colors.neutral.300}",
+          "hoverBorder": "{colors.neutral.400}",
+          "selectedBg": "{colors.info.50}",
+          "selectedBorder": "{colors.brand.600}",
+          "disabledBg": "{colors.neutral.50}",
+          "disabledText": "{colors.neutral.400}",
+          "focusRing": "{buttons.primary.focusRing}"
         },
         "input": {
           "text": "{colors.neutral.900}",
@@ -12719,6 +13337,36 @@ export const coreTokens: SpectreGeneratedTokens = {
             "text": "{colors.neutral.400}"
           }
         },
+        "prose": {
+          "blockquote": {
+            "border": "{colors.neutral.600}",
+            "text": "{colors.neutral.600}"
+          },
+          "code": {
+            "bg": "{colors.neutral.100}",
+            "text": "{colors.neutral.900}"
+          },
+          "codeBlock": {
+            "bg": "{colors.neutral.100}",
+            "text": "{colors.neutral.900}",
+            "border": "{colors.neutral.200}"
+          },
+          "mark": {
+            "bg": "{colors.warning.100}",
+            "text": "{colors.warning.900}"
+          },
+          "hr": "{colors.neutral.200}"
+        },
+        "externalAuthButton": {
+          "bg": "{colors.white}",
+          "text": "{colors.neutral.900}",
+          "border": "{colors.neutral.300}",
+          "hoverBg": "{colors.neutral.50}",
+          "activeBg": "{colors.neutral.100}",
+          "disabledBg": "{colors.neutral.50}",
+          "disabledText": "{colors.neutral.400}",
+          "focusRing": "{buttons.primary.focusRing}"
+        },
         "checkbox": {
           "bg": "{colors.white}",
           "border": "{colors.neutral.300}",
@@ -12808,6 +13456,17 @@ export const coreTokens: SpectreGeneratedTokens = {
             "danger": "{colors.error.400}",
             "cta": "{colors.brand.400}"
           }
+        },
+        "choiceCard": {
+          "bg": "{colors.neutral.800}",
+          "text": "{colors.neutral.100}",
+          "border": "{colors.neutral.600}",
+          "hoverBorder": "{colors.neutral.500}",
+          "selectedBg": "{colors.info.900}",
+          "selectedBorder": "{colors.brand.600}",
+          "disabledBg": "{colors.neutral.900}",
+          "disabledText": "{colors.neutral.600}",
+          "focusRing": "{buttons.primary.focusRing}"
         },
         "input": {
           "text": "{colors.neutral.100}",
@@ -13343,6 +14002,36 @@ export const coreTokens: SpectreGeneratedTokens = {
           "disabled": {
             "text": "{colors.neutral.600}"
           }
+        },
+        "prose": {
+          "blockquote": {
+            "border": "{colors.neutral.400}",
+            "text": "{colors.neutral.300}"
+          },
+          "code": {
+            "bg": "{colors.neutral.800}",
+            "text": "{colors.neutral.50}"
+          },
+          "codeBlock": {
+            "bg": "{colors.neutral.800}",
+            "text": "{colors.neutral.50}",
+            "border": "{colors.neutral.700}"
+          },
+          "mark": {
+            "bg": "{colors.warning.900}",
+            "text": "{colors.warning.200}"
+          },
+          "hr": "{colors.neutral.700}"
+        },
+        "externalAuthButton": {
+          "bg": "{colors.neutral.800}",
+          "text": "{colors.neutral.50}",
+          "border": "{colors.neutral.600}",
+          "hoverBg": "{colors.neutral.700}",
+          "activeBg": "{colors.neutral.600}",
+          "disabledBg": "{colors.neutral.900}",
+          "disabledText": "{colors.neutral.600}",
+          "focusRing": "{buttons.primary.focusRing}"
         },
         "checkbox": {
           "bg": "{colors.neutral.800}",

@@ -6,6 +6,54 @@ reflects package releases published to npm.
 
 ## [Unreleased]
 
+Contract change type: additive
+
+### Added
+
+- Add `component.prose` (Wave 6 of the Bootstrap-scale component inventory
+  expansion tracked in `TODO.md`), evidenced by the blog example's rendered
+  long-form content having no color contract of its own —
+  `component.testimonial.quoteMark` is a card-style pull quote, not the same
+  surface as an inline `<blockquote>` in body copy, and there was no code or
+  highlight contract at all despite `font.mono` already existing for the
+  family. `blockquote.border`/`.text`, `code.bg`/`.text`,
+  `codeBlock.bg`/`.text`/`.border`, `mark.bg`/`.text`, and `hr`. `code.bg`/
+  `codeBlock.bg` duplicate the literal values `surface.subtle` already uses
+  per mode (`neutral.100`/`neutral.800`) rather than cross-referencing it,
+  matching how every other component in this contract duplicates rather than
+  aliases a semantic-roles value; `hr` does the same against
+  `surface.divider`. `mark.bg`/`.text` alias the `warning` family rather than
+  forking a new highlight color, since warning is the closest existing
+  "attention" pair. Definition lists, abbreviations, citations, del/ins, and
+  sup/sub carry no color of their own and need no token — they inherit body
+  text color.
+- Add `component.externalAuthButton` (Wave 7, closing out the Bootstrap-scale
+  component inventory expansion tracked in `TODO.md`) — `bg`/`text`/`border`/
+  `hoverBg`/`activeBg`/`disabledBg`/`disabledText`/`focusRing`, a single
+  neutral, mode-aware treatment for third-party sign-in actions (e.g. a
+  sign-up modal's "Continue with..." buttons). This intentionally does not
+  encode any provider's identity or externally-mandated brand color —
+  provider names and brand palettes must not appear in this repository's
+  token paths, tracked files, metadata, or release notes; per-provider
+  logo/color treatment stays downstream. `focusRing` aliases the existing
+  `buttons.primary.focusRing` value rather than defining a new one.
+- Add `component.choiceCard` — `bg`/`text`/`border`/`hoverBorder`/
+  `selectedBg`/`selectedBorder`/`disabledBg`/`disabledText`/`focusRing`, for
+  a whole-card clickable radio target (e.g. a checkout payment/shipping
+  option picker), the last item flagged during the Bootstrap-scale component
+  inventory expansion tracked in `TODO.md`. `bg`/`text` duplicate the literal
+  values `surface.card` already uses per mode, and `selectedBg` duplicates
+  `surface.selected`, rather than cross-referencing either — consistent with
+  how every other component in this contract duplicates rather than aliases
+  a semantic-roles value. `selectedBorder` stays at the `brand.600` shade in
+  both modes, matching the mode-invariant filled-accent precedent already
+  set by `component.tabs.pill.active.bg` and `component.day.selected.bg`.
+  `focusRing` aliases `buttons.primary.focusRing`.
+
+### Changed
+
+- Refresh compatible transitive build dependencies in the lockfile.
+
 ## [4.11.0] - 2026-09-24
 
 **Release Title:** Expanded Component Token Contracts

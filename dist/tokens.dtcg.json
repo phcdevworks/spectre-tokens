@@ -58,6 +58,44 @@
         }
       }
     },
+    "choiceCard": {
+      "bg": {
+        "$value": "{colors.white}",
+        "$type": "color"
+      },
+      "text": {
+        "$value": "{colors.neutral.900}",
+        "$type": "color"
+      },
+      "border": {
+        "$value": "{colors.neutral.300}",
+        "$type": "color"
+      },
+      "hoverBorder": {
+        "$value": "{colors.neutral.400}",
+        "$type": "color"
+      },
+      "selectedBg": {
+        "$value": "{colors.info.50}",
+        "$type": "color"
+      },
+      "selectedBorder": {
+        "$value": "{colors.brand.600}",
+        "$type": "color"
+      },
+      "disabledBg": {
+        "$value": "{colors.neutral.50}",
+        "$type": "color"
+      },
+      "disabledText": {
+        "$value": "{colors.neutral.400}",
+        "$type": "color"
+      },
+      "focusRing": {
+        "$value": "{buttons.primary.focusRing}",
+        "$type": "color"
+      }
+    },
     "input": {
       "text": {
         "$value": "{colors.neutral.900}",
@@ -1652,6 +1690,90 @@
         }
       }
     },
+    "prose": {
+      "blockquote": {
+        "border": {
+          "$value": "{colors.neutral.600}",
+          "$type": "color"
+        },
+        "text": {
+          "$value": "{colors.neutral.600}",
+          "$type": "color"
+        }
+      },
+      "code": {
+        "bg": {
+          "$value": "{colors.neutral.100}",
+          "$type": "color"
+        },
+        "text": {
+          "$value": "{colors.neutral.900}",
+          "$type": "color"
+        }
+      },
+      "codeBlock": {
+        "bg": {
+          "$value": "{colors.neutral.100}",
+          "$type": "color"
+        },
+        "text": {
+          "$value": "{colors.neutral.900}",
+          "$type": "color"
+        },
+        "border": {
+          "$value": "{colors.neutral.200}",
+          "$type": "color"
+        }
+      },
+      "mark": {
+        "bg": {
+          "$value": "{colors.warning.100}",
+          "$type": "color"
+        },
+        "text": {
+          "$value": "{colors.warning.900}",
+          "$type": "color"
+        }
+      },
+      "hr": {
+        "$value": "{colors.neutral.200}",
+        "$type": "color"
+      }
+    },
+    "externalAuthButton": {
+      "bg": {
+        "$value": "{colors.white}",
+        "$type": "color"
+      },
+      "text": {
+        "$value": "{colors.neutral.900}",
+        "$type": "color"
+      },
+      "border": {
+        "$value": "{colors.neutral.300}",
+        "$type": "color"
+      },
+      "hoverBg": {
+        "$value": "{colors.neutral.50}",
+        "$type": "color"
+      },
+      "activeBg": {
+        "$value": "{colors.neutral.100}",
+        "$type": "color"
+      },
+      "disabledBg": {
+        "$value": "{colors.neutral.50}",
+        "$type": "color"
+      },
+      "disabledText": {
+        "$value": "{colors.neutral.400}",
+        "$type": "color"
+      },
+      "focusRing": {
+        "$value": "{buttons.primary.focusRing}",
+        "$type": "color"
+      }
+    },
     "checkbox": {
       "bg": {
         "$value": "{colors.white}",
@@ -2497,6 +2619,44 @@
               "$value": "{colors.brand.600}",
               "$type": "color"
             }
+          }
+        },
+        "choiceCard": {
+          "bg": {
+            "$value": "{colors.white}",
+            "$type": "color"
+          },
+          "text": {
+            "$value": "{colors.neutral.900}",
+            "$type": "color"
+          },
+          "border": {
+            "$value": "{colors.neutral.300}",
+            "$type": "color"
+          },
+          "hoverBorder": {
+            "$value": "{colors.neutral.400}",
+            "$type": "color"
+          },
+          "selectedBg": {
+            "$value": "{colors.info.50}",
+            "$type": "color"
+          },
+          "selectedBorder": {
+            "$value": "{colors.brand.600}",
+            "$type": "color"
+          },
+          "disabledBg": {
+            "$value": "{colors.neutral.50}",
+            "$type": "color"
+          },
+          "disabledText": {
+            "$value": "{colors.neutral.400}",
+            "$type": "color"
+          },
+          "focusRing": {
+            "$value": "{buttons.primary.focusRing}",
+            "$type": "color"
           }
         },
         "input": {
@@ -4009,6 +4169,90 @@
             }
           }
         },
+        "prose": {
+          "blockquote": {
+            "border": {
+              "$value": "{colors.neutral.600}",
+              "$type": "color"
+            },
+            "text": {
+              "$value": "{colors.neutral.600}",
+              "$type": "color"
+            }
+          },
+          "code": {
+            "bg": {
+              "$value": "{colors.neutral.100}",
+              "$type": "color"
+            },
+            "text": {
+              "$value": "{colors.neutral.900}",
+              "$type": "color"
+            }
+          },
+          "codeBlock": {
+            "bg": {
+              "$value": "{colors.neutral.100}",
+              "$type": "color"
+            },
+            "text": {
+              "$value": "{colors.neutral.900}",
+              "$type": "color"
+            },
+            "border": {
+              "$value": "{colors.neutral.200}",
+              "$type": "color"
+            }
+          },
+          "mark": {
+            "bg": {
+              "$value": "{colors.warning.100}",
+              "$type": "color"
+            },
+            "text": {
+              "$value": "{colors.warning.900}",
+              "$type": "color"
+            }
+          },
+          "hr": {
+            "$value": "{colors.neutral.200}",
+            "$type": "color"
+          }
+        },
+        "externalAuthButton": {
+          "bg": {
+            "$value": "{colors.white}",
+            "$type": "color"
+          },
+          "text": {
+            "$value": "{colors.neutral.900}",
+            "$type": "color"
+          },
+          "border": {
+            "$value": "{colors.neutral.300}",
+            "$type": "color"
+          },
+          "hoverBg": {
+            "$value": "{colors.neutral.50}",
+            "$type": "color"
+          },
+          "activeBg": {
+            "$value": "{colors.neutral.100}",
+            "$type": "color"
+          },
+          "disabledBg": {
+            "$value": "{colors.neutral.50}",
+            "$type": "color"
+          },
+          "disabledText": {
+            "$value": "{colors.neutral.400}",
+            "$type": "color"
+          },
+          "focusRing": {
+            "$value": "{buttons.primary.focusRing}",
+            "$type": "color"
+          }
+        },
         "checkbox": {
           "bg": {
             "$value": "{colors.white}",
@@ -4294,6 +4538,44 @@
               "$value": "{colors.brand.400}",
               "$type": "color"
             }
+          }
+        },
+        "choiceCard": {
+          "bg": {
+            "$value": "{colors.neutral.800}",
+            "$type": "color"
+          },
+          "text": {
+            "$value": "{colors.neutral.100}",
+            "$type": "color"
+          },
+          "border": {
+            "$value": "{colors.neutral.600}",
+            "$type": "color"
+          },
+          "hoverBorder": {
+            "$value": "{colors.neutral.500}",
+            "$type": "color"
+          },
+          "selectedBg": {
+            "$value": "{colors.info.900}",
+            "$type": "color"
+          },
+          "selectedBorder": {
+            "$value": "{colors.brand.600}",
+            "$type": "color"
+          },
+          "disabledBg": {
+            "$value": "{colors.neutral.900}",
+            "$type": "color"
+          },
+          "disabledText": {
+            "$value": "{colors.neutral.600}",
+            "$type": "color"
+          },
+          "focusRing": {
+            "$value": "{buttons.primary.focusRing}",
+            "$type": "color"
           }
         },
         "input": {
@@ -5816,6 +6098,90 @@
               "$value": "{colors.neutral.600}",
               "$type": "color"
             }
+          }
+        },
+        "prose": {
+          "blockquote": {
+            "border": {
+              "$value": "{colors.neutral.400}",
+              "$type": "color"
+            },
+            "text": {
+              "$value": "{colors.neutral.300}",
+              "$type": "color"
+            }
+          },
+          "code": {
+            "bg": {
+              "$value": "{colors.neutral.800}",
+              "$type": "color"
+            },
+            "text": {
+              "$value": "{colors.neutral.50}",
+              "$type": "color"
+            }
+          },
+          "codeBlock": {
+            "bg": {
+              "$value": "{colors.neutral.800}",
+              "$type": "color"
+            },
+            "text": {
+              "$value": "{colors.neutral.50}",
+              "$type": "color"
+            },
+            "border": {
+              "$value": "{colors.neutral.700}",
+              "$type": "color"
+            }
+          },
+          "mark": {
+            "bg": {
+              "$value": "{colors.warning.900}",
+              "$type": "color"
+            },
+            "text": {
+              "$value": "{colors.warning.200}",
+              "$type": "color"
+            }
+          },
+          "hr": {
+            "$value": "{colors.neutral.700}",
+            "$type": "color"
+          }
+        },
+        "externalAuthButton": {
+          "bg": {
+            "$value": "{colors.neutral.800}",
+            "$type": "color"
+          },
+          "text": {
+            "$value": "{colors.neutral.50}",
+            "$type": "color"
+          },
+          "border": {
+            "$value": "{colors.neutral.600}",
+            "$type": "color"
+          },
+          "hoverBg": {
+            "$value": "{colors.neutral.700}",
+            "$type": "color"
+          },
+          "activeBg": {
+            "$value": "{colors.neutral.600}",
+            "$type": "color"
+          },
+          "disabledBg": {
+            "$value": "{colors.neutral.900}",
+            "$type": "color"
+          },
+          "disabledText": {
+            "$value": "{colors.neutral.600}",
+            "$type": "color"
+          },
+          "focusRing": {
+            "$value": "{buttons.primary.focusRing}",
+            "$type": "color"
           }
         },
         "checkbox": {
