@@ -164,7 +164,7 @@ mode-aware styling.
 | ----------- | ------------------------------------------------------------------------------------------------------------------------------- |
 | `surface`   | Background roles: page, card, input, overlay, subtle, hero (gradient, hero sections only), hover, selected, active, divider     |
 | `text`      | Foreground roles: default, muted, subtle, meta, on-surface, on-page                                                             |
-| `component` | Role-specific tokens for icon boxes, badges, ratings, testimonials, pricing cards, nav, footer, modal, toast, tooltip, dropdown |
+| `component` | Role-specific tokens for navigation, overlays, feedback, data display, loading, forms, cards, badges, and content patterns     |
 | `buttons`   | Button state tokens: default, hover, active, disabled, CTA                                                                      |
 | `forms`     | Form state tokens: default, focused, error, disabled                                                                            |
 | `link`      | Inline link color roles: default, hover, active, visited                                                                        |

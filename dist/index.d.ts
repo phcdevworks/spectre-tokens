@@ -31,6 +31,9 @@ interface SpectreGeneratedTokens {
             neutralBg: string;
             neutralBgHover: string;
             neutralText: string;
+            brandBg: string;
+            brandBgHover: string;
+            brandText: string;
             infoBg: string;
             infoBgHover: string;
             infoText: string;
@@ -47,6 +50,7 @@ interface SpectreGeneratedTokens {
             inverseBgHover: string;
             inverseText: string;
             inverseBorder: string;
+            dotBorder: string;
             accent: {
                 neutral: string;
                 brand: string;
@@ -167,6 +171,12 @@ interface SpectreGeneratedTokens {
             };
         };
         toast: {
+            neutral: {
+                bg: string;
+                text: string;
+                border: string;
+                icon: string;
+            };
             success: {
                 bg: string;
                 text: string;
@@ -225,6 +235,9 @@ interface SpectreGeneratedTokens {
                 hover: string;
                 active: string;
                 text: string;
+                disabledText: string;
+                selectedBg: string;
+                selectedText: string;
             };
             accent: {
                 neutral: string;
@@ -236,6 +249,8 @@ interface SpectreGeneratedTokens {
                 cta: string;
                 thickness: string;
             };
+            header: string;
+            divider: string;
         };
         tabs: {
             list: {
@@ -266,6 +281,295 @@ interface SpectreGeneratedTokens {
             };
             panel: {
                 bg: string;
+            };
+        };
+        accordion: {
+            bg: string;
+            text: string;
+            border: string;
+            header: {
+                hoverBg: string;
+            };
+            icon: {
+                collapsed: string;
+                expanded: string;
+            };
+        };
+        breadcrumb: {
+            item: {
+                text: string;
+                hover: {
+                    text: string;
+                };
+                active: {
+                    text: string;
+                };
+            };
+            separator: string;
+        };
+        listGroup: {
+            bg: string;
+            border: string;
+            text: string;
+            heading: string;
+            muted: string;
+            item: {
+                hover: {
+                    bg: string;
+                };
+                active: {
+                    bg: string;
+                    text: string;
+                };
+                selected: {
+                    bg: string;
+                };
+                disabled: {
+                    text: string;
+                };
+            };
+            accent: {
+                neutral: string;
+                brand: string;
+                info: string;
+                success: string;
+                warning: string;
+                danger: string;
+                cta: string;
+                thickness: string;
+            };
+        };
+        offcanvas: {
+            bg: string;
+            text: string;
+            border: string;
+            overlay: string;
+        };
+        carousel: {
+            indicator: {
+                default: string;
+                active: string;
+            };
+            control: {
+                icon: string;
+                bg: string;
+            };
+            caption: {
+                bg: string;
+                text: string;
+            };
+        };
+        table: {
+            header: {
+                bg: string;
+                text: string;
+            };
+            text: string;
+            divider: string;
+            stripeBg: string;
+            hoverBg: string;
+            selectedBg: string;
+            row: {
+                neutral: {
+                    bg: string;
+                    text: string;
+                };
+                info: {
+                    bg: string;
+                    text: string;
+                };
+                success: {
+                    bg: string;
+                    text: string;
+                };
+                warning: {
+                    bg: string;
+                    text: string;
+                };
+                danger: {
+                    bg: string;
+                    text: string;
+                };
+            };
+        };
+        alert: {
+            neutral: {
+                bg: string;
+                text: string;
+                border: string;
+                icon: string;
+            };
+            brand: {
+                bg: string;
+                text: string;
+                border: string;
+                icon: string;
+            };
+            info: {
+                bg: string;
+                text: string;
+                border: string;
+                icon: string;
+            };
+            success: {
+                bg: string;
+                text: string;
+                border: string;
+                icon: string;
+            };
+            warning: {
+                bg: string;
+                text: string;
+                border: string;
+                icon: string;
+            };
+            danger: {
+                bg: string;
+                text: string;
+                border: string;
+                icon: string;
+            };
+        };
+        pagination: {
+            item: {
+                text: string;
+                hover: {
+                    bg: string;
+                };
+                active: {
+                    bg: string;
+                    text: string;
+                };
+                disabled: {
+                    text: string;
+                };
+            };
+        };
+        stepper: {
+            step: {
+                pending: {
+                    bg: string;
+                    text: string;
+                };
+                active: {
+                    bg: string;
+                    text: string;
+                };
+                done: {
+                    bg: string;
+                    text: string;
+                };
+            };
+            connector: string;
+            label: {
+                text: string;
+            };
+        };
+        popover: {
+            bg: string;
+            text: string;
+            muted: string;
+            border: string;
+            shadow: string;
+            arrow: string;
+        };
+        progress: {
+            track: {
+                bg: string;
+            };
+            indicator: {
+                neutral: string;
+                brand: string;
+                info: string;
+                success: string;
+                warning: string;
+                danger: string;
+            };
+            label: {
+                text: string;
+            };
+        };
+        loadingIndicator: {
+            default: string;
+            muted: string;
+            inverse: string;
+            brand: string;
+            info: string;
+            success: string;
+            warning: string;
+            danger: string;
+        };
+        switch: {
+            trackBg: string;
+            trackCheckedBg: string;
+            thumbBg: string;
+            trackDisabledBg: string;
+            thumbDisabledBg: string;
+            focusRing: string;
+        };
+        range: {
+            trackBg: string;
+            trackFilledBg: string;
+            thumbBg: string;
+            thumbBorder: string;
+            trackDisabledBg: string;
+            thumbDisabledBorder: string;
+            focusRing: string;
+        };
+        fileInput: {
+            bg: string;
+            border: string;
+            text: string;
+            actionBg: string;
+            actionText: string;
+            disabledBg: string;
+            disabledBorder: string;
+            disabledText: string;
+            focusBorder: string;
+            borderInvalid: string;
+            bgInvalid: string;
+            borderSuccess: string;
+            bgSuccess: string;
+        };
+        inputGroup: {
+            addonBg: string;
+            addonText: string;
+            addonBorder: string;
+            focusBorder: string;
+            disabledBg: string;
+            disabledText: string;
+        };
+        datepicker: {
+            panel: {
+                bg: string;
+                border: string;
+            };
+            header: {
+                text: string;
+            };
+            weekday: {
+                text: string;
+            };
+        };
+        day: {
+            default: {
+                text: string;
+                hover: {
+                    bg: string;
+                };
+            };
+            selected: {
+                bg: string;
+                text: string;
+            };
+            today: {
+                ringColor: string;
+            };
+            outsideMonth: {
+                text: string;
+            };
+            disabled: {
+                text: string;
             };
         };
         checkbox: {
@@ -366,6 +670,48 @@ interface SpectreGeneratedTokens {
             focusVisible: string;
         };
         success: {
+            bg: string;
+            bgHover: string;
+            bgActive: string;
+            bgDisabled: string;
+            text: string;
+            textDisabled: string;
+            focusRing: string;
+            focusVisible: string;
+        };
+        warning: {
+            bg: string;
+            bgHover: string;
+            bgActive: string;
+            bgDisabled: string;
+            text: string;
+            textDisabled: string;
+            focusRing: string;
+            focusVisible: string;
+        };
+        link: {
+            bg: string;
+            bgHover: string;
+            bgActive: string;
+            bgDisabled: string;
+            text: string;
+            textHover: string;
+            textActive: string;
+            textDisabled: string;
+            focusRing: string;
+            focusVisible: string;
+        };
+        light: {
+            bg: string;
+            bgHover: string;
+            bgActive: string;
+            bgDisabled: string;
+            text: string;
+            textDisabled: string;
+            focusRing: string;
+            focusVisible: string;
+        };
+        dark: {
             bg: string;
             bgHover: string;
             bgActive: string;
@@ -498,6 +844,9 @@ interface SpectreGeneratedTokens {
                     neutralBg: string;
                     neutralBgHover: string;
                     neutralText: string;
+                    brandBg: string;
+                    brandBgHover: string;
+                    brandText: string;
                     infoBg: string;
                     infoBgHover: string;
                     infoText: string;
@@ -621,6 +970,12 @@ interface SpectreGeneratedTokens {
                     };
                 };
                 toast: {
+                    neutral: {
+                        bg: string;
+                        text: string;
+                        border: string;
+                        icon: string;
+                    };
                     success: {
                         bg: string;
                         text: string;
@@ -677,6 +1032,9 @@ interface SpectreGeneratedTokens {
                         hover: string;
                         active: string;
                         text: string;
+                        disabledText: string;
+                        selectedBg: string;
+                        selectedText: string;
                     };
                     accent: {
                         neutral: string;
@@ -687,6 +1045,8 @@ interface SpectreGeneratedTokens {
                         danger: string;
                         cta: string;
                     };
+                    header: string;
+                    divider: string;
                 };
                 tabs: {
                     list: {
@@ -717,6 +1077,291 @@ interface SpectreGeneratedTokens {
                     };
                     panel: {
                         bg: string;
+                    };
+                };
+                accordion: {
+                    bg: string;
+                    text: string;
+                    border: string;
+                    header: {
+                        hoverBg: string;
+                    };
+                    icon: {
+                        collapsed: string;
+                        expanded: string;
+                    };
+                };
+                breadcrumb: {
+                    item: {
+                        text: string;
+                        hover: {
+                            text: string;
+                        };
+                        active: {
+                            text: string;
+                        };
+                    };
+                    separator: string;
+                };
+                listGroup: {
+                    bg: string;
+                    border: string;
+                    text: string;
+                    heading: string;
+                    muted: string;
+                    item: {
+                        hover: {
+                            bg: string;
+                        };
+                        active: {
+                            bg: string;
+                            text: string;
+                        };
+                        selected: {
+                            bg: string;
+                        };
+                        disabled: {
+                            text: string;
+                        };
+                    };
+                    accent: {
+                        neutral: string;
+                        brand: string;
+                        info: string;
+                        success: string;
+                        warning: string;
+                        danger: string;
+                        cta: string;
+                        thickness: string;
+                    };
+                };
+                offcanvas: {
+                    bg: string;
+                    text: string;
+                    border: string;
+                    overlay: string;
+                };
+                carousel: {
+                    indicator: {
+                        default: string;
+                        active: string;
+                    };
+                    control: {
+                        icon: string;
+                        bg: string;
+                    };
+                    caption: {
+                        bg: string;
+                        text: string;
+                    };
+                };
+                table: {
+                    header: {
+                        bg: string;
+                        text: string;
+                    };
+                    text: string;
+                    divider: string;
+                    stripeBg: string;
+                    hoverBg: string;
+                    selectedBg: string;
+                    row: {
+                        neutral: {
+                            bg: string;
+                            text: string;
+                        };
+                        info: {
+                            bg: string;
+                            text: string;
+                        };
+                        success: {
+                            bg: string;
+                            text: string;
+                        };
+                        warning: {
+                            bg: string;
+                            text: string;
+                        };
+                        danger: {
+                            bg: string;
+                            text: string;
+                        };
+                    };
+                };
+                alert: {
+                    neutral: {
+                        bg: string;
+                        text: string;
+                        border: string;
+                        icon: string;
+                    };
+                    brand: {
+                        bg: string;
+                        text: string;
+                        border: string;
+                        icon: string;
+                    };
+                    info: {
+                        bg: string;
+                        text: string;
+                        border: string;
+                        icon: string;
+                    };
+                    success: {
+                        bg: string;
+                        text: string;
+                        border: string;
+                        icon: string;
+                    };
+                    warning: {
+                        bg: string;
+                        text: string;
+                        border: string;
+                        icon: string;
+                    };
+                    danger: {
+                        bg: string;
+                        text: string;
+                        border: string;
+                        icon: string;
+                    };
+                };
+                pagination: {
+                    item: {
+                        text: string;
+                        hover: {
+                            bg: string;
+                        };
+                        active: {
+                            bg: string;
+                            text: string;
+                        };
+                        disabled: {
+                            text: string;
+                        };
+                    };
+                };
+                stepper: {
+                    step: {
+                        pending: {
+                            bg: string;
+                            text: string;
+                        };
+                        active: {
+                            bg: string;
+                            text: string;
+                        };
+                        done: {
+                            bg: string;
+                            text: string;
+                        };
+                    };
+                    connector: string;
+                    label: {
+                        text: string;
+                    };
+                };
+                popover: {
+                    bg: string;
+                    text: string;
+                    muted: string;
+                    border: string;
+                    shadow: string;
+                    arrow: string;
+                };
+                progress: {
+                    track: {
+                        bg: string;
+                    };
+                    indicator: {
+                        neutral: string;
+                        brand: string;
+                        info: string;
+                        success: string;
+                        warning: string;
+                        danger: string;
+                    };
+                    label: {
+                        text: string;
+                    };
+                };
+                loadingIndicator: {
+                    default: string;
+                    muted: string;
+                    inverse: string;
+                    brand: string;
+                    info: string;
+                    success: string;
+                    warning: string;
+                    danger: string;
+                };
+                switch: {
+                    trackBg: string;
+                    trackCheckedBg: string;
+                    thumbBg: string;
+                    trackDisabledBg: string;
+                    thumbDisabledBg: string;
+                    focusRing: string;
+                };
+                range: {
+                    trackBg: string;
+                    trackFilledBg: string;
+                    thumbBg: string;
+                    thumbBorder: string;
+                    trackDisabledBg: string;
+                    thumbDisabledBorder: string;
+                    focusRing: string;
+                };
+                fileInput: {
+                    bg: string;
+                    border: string;
+                    text: string;
+                    actionBg: string;
+                    actionText: string;
+                    disabledBg: string;
+                    disabledBorder: string;
+                    disabledText: string;
+                    focusBorder: string;
+                };
+                inputGroup: {
+                    addonBg: string;
+                    addonText: string;
+                    addonBorder: string;
+                    focusBorder: string;
+                    disabledBg: string;
+                    disabledText: string;
+                };
+                datepicker: {
+                    panel: {
+                        bg: string;
+                        border: string;
+                    };
+                    header: {
+                        text: string;
+                    };
+                    weekday: {
+                        text: string;
+                    };
+                };
+                day: {
+                    default: {
+                        text: string;
+                        hover: {
+                            bg: string;
+                        };
+                    };
+                    selected: {
+                        bg: string;
+                        text: string;
+                    };
+                    today: {
+                        ringColor: string;
+                    };
+                    outsideMonth: {
+                        text: string;
+                    };
+                    disabled: {
+                        text: string;
                     };
                 };
                 checkbox: {
@@ -821,6 +1466,9 @@ interface SpectreGeneratedTokens {
                     neutralBg: string;
                     neutralBgHover: string;
                     neutralText: string;
+                    brandBg: string;
+                    brandBgHover: string;
+                    brandText: string;
                     infoBg: string;
                     infoBgHover: string;
                     infoText: string;
@@ -947,6 +1595,12 @@ interface SpectreGeneratedTokens {
                     };
                 };
                 toast: {
+                    neutral: {
+                        bg: string;
+                        text: string;
+                        border: string;
+                        icon: string;
+                    };
                     success: {
                         bg: string;
                         text: string;
@@ -1003,6 +1657,9 @@ interface SpectreGeneratedTokens {
                         hover: string;
                         active: string;
                         text: string;
+                        disabledText: string;
+                        selectedBg: string;
+                        selectedText: string;
                     };
                     accent: {
                         neutral: string;
@@ -1013,6 +1670,8 @@ interface SpectreGeneratedTokens {
                         danger: string;
                         cta: string;
                     };
+                    header: string;
+                    divider: string;
                 };
                 tabs: {
                     list: {
@@ -1043,6 +1702,291 @@ interface SpectreGeneratedTokens {
                     };
                     panel: {
                         bg: string;
+                    };
+                };
+                accordion: {
+                    bg: string;
+                    text: string;
+                    border: string;
+                    header: {
+                        hoverBg: string;
+                    };
+                    icon: {
+                        collapsed: string;
+                        expanded: string;
+                    };
+                };
+                breadcrumb: {
+                    item: {
+                        text: string;
+                        hover: {
+                            text: string;
+                        };
+                        active: {
+                            text: string;
+                        };
+                    };
+                    separator: string;
+                };
+                listGroup: {
+                    bg: string;
+                    border: string;
+                    text: string;
+                    heading: string;
+                    muted: string;
+                    item: {
+                        hover: {
+                            bg: string;
+                        };
+                        active: {
+                            bg: string;
+                            text: string;
+                        };
+                        selected: {
+                            bg: string;
+                        };
+                        disabled: {
+                            text: string;
+                        };
+                    };
+                    accent: {
+                        neutral: string;
+                        brand: string;
+                        info: string;
+                        success: string;
+                        warning: string;
+                        danger: string;
+                        cta: string;
+                        thickness: string;
+                    };
+                };
+                offcanvas: {
+                    bg: string;
+                    text: string;
+                    border: string;
+                    overlay: string;
+                };
+                carousel: {
+                    indicator: {
+                        default: string;
+                        active: string;
+                    };
+                    control: {
+                        icon: string;
+                        bg: string;
+                    };
+                    caption: {
+                        bg: string;
+                        text: string;
+                    };
+                };
+                table: {
+                    header: {
+                        bg: string;
+                        text: string;
+                    };
+                    text: string;
+                    divider: string;
+                    stripeBg: string;
+                    hoverBg: string;
+                    selectedBg: string;
+                    row: {
+                        neutral: {
+                            bg: string;
+                            text: string;
+                        };
+                        info: {
+                            bg: string;
+                            text: string;
+                        };
+                        success: {
+                            bg: string;
+                            text: string;
+                        };
+                        warning: {
+                            bg: string;
+                            text: string;
+                        };
+                        danger: {
+                            bg: string;
+                            text: string;
+                        };
+                    };
+                };
+                alert: {
+                    neutral: {
+                        bg: string;
+                        text: string;
+                        border: string;
+                        icon: string;
+                    };
+                    brand: {
+                        bg: string;
+                        text: string;
+                        border: string;
+                        icon: string;
+                    };
+                    info: {
+                        bg: string;
+                        text: string;
+                        border: string;
+                        icon: string;
+                    };
+                    success: {
+                        bg: string;
+                        text: string;
+                        border: string;
+                        icon: string;
+                    };
+                    warning: {
+                        bg: string;
+                        text: string;
+                        border: string;
+                        icon: string;
+                    };
+                    danger: {
+                        bg: string;
+                        text: string;
+                        border: string;
+                        icon: string;
+                    };
+                };
+                pagination: {
+                    item: {
+                        text: string;
+                        hover: {
+                            bg: string;
+                        };
+                        active: {
+                            bg: string;
+                            text: string;
+                        };
+                        disabled: {
+                            text: string;
+                        };
+                    };
+                };
+                stepper: {
+                    step: {
+                        pending: {
+                            bg: string;
+                            text: string;
+                        };
+                        active: {
+                            bg: string;
+                            text: string;
+                        };
+                        done: {
+                            bg: string;
+                            text: string;
+                        };
+                    };
+                    connector: string;
+                    label: {
+                        text: string;
+                    };
+                };
+                popover: {
+                    bg: string;
+                    text: string;
+                    muted: string;
+                    border: string;
+                    shadow: string;
+                    arrow: string;
+                };
+                progress: {
+                    track: {
+                        bg: string;
+                    };
+                    indicator: {
+                        neutral: string;
+                        brand: string;
+                        info: string;
+                        success: string;
+                        warning: string;
+                        danger: string;
+                    };
+                    label: {
+                        text: string;
+                    };
+                };
+                loadingIndicator: {
+                    default: string;
+                    muted: string;
+                    inverse: string;
+                    brand: string;
+                    info: string;
+                    success: string;
+                    warning: string;
+                    danger: string;
+                };
+                switch: {
+                    trackBg: string;
+                    trackCheckedBg: string;
+                    thumbBg: string;
+                    trackDisabledBg: string;
+                    thumbDisabledBg: string;
+                    focusRing: string;
+                };
+                range: {
+                    trackBg: string;
+                    trackFilledBg: string;
+                    thumbBg: string;
+                    thumbBorder: string;
+                    trackDisabledBg: string;
+                    thumbDisabledBorder: string;
+                    focusRing: string;
+                };
+                fileInput: {
+                    bg: string;
+                    border: string;
+                    text: string;
+                    actionBg: string;
+                    actionText: string;
+                    disabledBg: string;
+                    disabledBorder: string;
+                    disabledText: string;
+                    focusBorder: string;
+                };
+                inputGroup: {
+                    addonBg: string;
+                    addonText: string;
+                    addonBorder: string;
+                    focusBorder: string;
+                    disabledBg: string;
+                    disabledText: string;
+                };
+                datepicker: {
+                    panel: {
+                        bg: string;
+                        border: string;
+                    };
+                    header: {
+                        text: string;
+                    };
+                    weekday: {
+                        text: string;
+                    };
+                };
+                day: {
+                    default: {
+                        text: string;
+                        hover: {
+                            bg: string;
+                        };
+                    };
+                    selected: {
+                        bg: string;
+                        text: string;
+                    };
+                    today: {
+                        ringColor: string;
+                    };
+                    outsideMonth: {
+                        text: string;
+                    };
+                    disabled: {
+                        text: string;
                     };
                 };
                 checkbox: {
@@ -2106,6 +3050,57 @@ interface SpectreGeneratedTokens {
             };
         };
         body: {
+            fontFamily: string;
+            fontSize: string;
+            lineHeight: string;
+            fontWeight: number;
+            letterSpacing: string;
+        };
+        display: {
+            '1': {
+                fontFamily: string;
+                fontSize: string;
+                lineHeight: string;
+                fontWeight: number;
+                letterSpacing: string;
+            };
+            '2': {
+                fontFamily: string;
+                fontSize: string;
+                lineHeight: string;
+                fontWeight: number;
+                letterSpacing: string;
+            };
+            '3': {
+                fontFamily: string;
+                fontSize: string;
+                lineHeight: string;
+                fontWeight: number;
+                letterSpacing: string;
+            };
+            '4': {
+                fontFamily: string;
+                fontSize: string;
+                lineHeight: string;
+                fontWeight: number;
+                letterSpacing: string;
+            };
+            '5': {
+                fontFamily: string;
+                fontSize: string;
+                lineHeight: string;
+                fontWeight: number;
+                letterSpacing: string;
+            };
+            '6': {
+                fontFamily: string;
+                fontSize: string;
+                lineHeight: string;
+                fontWeight: number;
+                letterSpacing: string;
+            };
+        };
+        lead: {
             fontFamily: string;
             fontSize: string;
             lineHeight: string;

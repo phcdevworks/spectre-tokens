@@ -6,6 +6,74 @@ reflects package releases published to npm.
 
 ## [Unreleased]
 
+Contract change type: additive
+
+### Added
+
+- Add twelve mode-aware `component.*` color contracts (Wave 2 of the
+  Bootstrap-scale component inventory expansion tracked in `TODO.md`):
+  `accordion`, `breadcrumb`, `listGroup` (including a full `accent.*` block
+  matching the existing card/badge/nav/etc. precedent), `offcanvas`, `carousel`,
+  `table` (including neutral/info/success/warning/danger contextual row
+  treatments), `alert` (neutral/brand/info/success/warning/danger, each with
+  bg/text/border/icon, mirroring the existing `component.toast` shape),
+  `pagination`, `stepper`, `popover`, `progress`, and `loadingIndicator`.
+  `carousel`'s indicator/control/caption colors are mode-invariant (same values
+  in both `modes.default` and `modes.dark`) since they render over photo content
+  rather than the page's own light/dark surface. `stepper.step.done.bg` uses
+  `success.700` rather than the `600` shade used elsewhere in this batch — `600`
+  failed WCAG AA against white step-label text at 3.29:1.
+- Add `component.switch`, `component.range`, `component.fileInput`, and
+  `component.inputGroup` (Wave 3 of the Bootstrap-scale component inventory
+  expansion tracked in `TODO.md`), following the flat field-naming convention
+  already used by the sibling form-control components (`checkbox`, `select`,
+  `textarea`) rather than the nested-state convention used by Waves 1–2.
+  `fileInput`'s `borderInvalid`/`bgInvalid`/`borderSuccess`/`bgSuccess` are
+  base-only (not mirrored into `modes.json`), matching the existing
+  `component.select`/`component.textarea` precedent for validation-state
+  colors. `focusBorder` on `fileInput`/`inputGroup` shifts `info.500` (light)
+  to `info.400` (dark), matching `component.select.focusBorder`'s existing
+  mode behavior; `switch`/`range`'s checked/filled accent colors stay at the
+  `600` shade in both modes, matching the mode-invariant precedent already
+  established for `component.tabs.pill.active.bg` and `buttons.*`.
+- Add `typography.display.{1-6}` and `typography.lead` (also Wave 3),
+  expressed entirely as references to the existing `typography.scale`/
+  `typography.families` contract — no new raw font values. `display.*` reuses
+  the same scale steps as `typography.heading.h1`–`h6` shifted one step
+  larger (`display.1` → `scale.6xl`, one step above `heading.h1`'s `scale.5xl`,
+  and so on), giving marketing/hero headings a size distinct from in-page
+  headings without inventing new scale values. `lead` reuses `scale.lg` at the
+  body's regular `400` weight, sitting between body copy and `heading.h6` in
+  size.
+- Extend four existing component/button contracts to close asymmetries found
+  auditing the buttons, dropdowns, and badges examples (Wave 4 of the
+  Bootstrap-scale component inventory expansion tracked in `TODO.md`):
+  - `buttons.warning`, `buttons.link`, `buttons.light`, and `buttons.dark` —
+    every other status color already had a full button variant; `warning` was
+    the one missing. `link` is distinct from the existing `buttons.ghost`
+    (which tints its background on hover/active — `link`'s `bg` stays
+    `transparent` at every state). `light`/`dark` are solid-fill variants
+    distinct from `buttons.secondary`'s outline treatment and
+    `buttons.inverse`'s on-dark-surface purpose. `buttons.warning.bg` uses the
+    `800` shade (darker than the `700` used by `buttons.success`/
+    `buttons.danger`) — `700` only reached 4.41:1 against white text, short of
+    the 4.5:1 WCAG AA floor.
+  - `component.dropdown` gains `header` (group-label text), `divider`,
+    `item.disabledText`, and `item.selectedBg`/`item.selectedText` (the
+    checked-item highlight, distinct from the existing keyboard-navigation
+    `item.active` state).
+  - `component.toast` gains a `neutral` variant alongside the existing
+    `success`/`warning`/`danger`/`info` roles.
+  - `component.badge` gains `brandBg`/`brandBgHover`/`brandText` (closing the
+    same asymmetry as `buttons.warning` — every other semantic color already
+    had a full tint triad) and `dotBorder`, for the notification-dot badge
+    overlaid on an avatar image, so the dot has a visible ring separating it
+    from the photo underneath.
+  - `component.modal`, `component.card`, and `component.nav` were audited
+    against the same examples and found to already compose cleanly from
+    existing `bg`/`border`/`overlay`/`accent`/`text.onSurface` fields — no new
+    fields added for those three.
+
 ## [4.10.0] - 2026-09-24
 
 **Release Title:** Tabs Token Contract
@@ -34,42 +102,41 @@ Contract change type: additive
 
 ### Added
 
-- Add a mode-aware `component.card.accent` color contract — `neutral`,
-  `brand`, `info`, `success`, `warning`, `danger`, and `cta` roles, each
-  referencing the matching palette/semantic family (locked `success`,
-  `warning`, `danger`, and CTA/brand-action families included by explicit
-  approval) — plus a standard `component.card.accent.thickness` (`0.25rem`,
-  matching the existing `space.4` primitive) for optional decorative card
-  edge rails. Requested by `spectre-ui` to support thicker accent rails on
-  any card edge; edge position and rendering remain downstream. Colors are
-  decorative-only (no `metadata.pair`) and shift from the `600` family shade
-  in light mode to the `400` shade in dark mode, matching the existing
-  `component.iconBox` precedent.
+- Add a mode-aware `component.card.accent` color contract — `neutral`, `brand`,
+  `info`, `success`, `warning`, `danger`, and `cta` roles, each referencing the
+  matching palette/semantic family (locked `success`, `warning`, `danger`, and
+  CTA/brand-action families included by explicit approval) — plus a standard
+  `component.card.accent.thickness` (`0.25rem`, matching the existing `space.4`
+  primitive) for optional decorative card edge rails. Requested by `spectre-ui`
+  to support thicker accent rails on any card edge; edge position and rendering
+  remain downstream. Colors are decorative-only (no `metadata.pair`) and shift
+  from the `600` family shade in light mode to the `400` shade in dark mode,
+  matching the existing `component.iconBox` precedent.
 - Extend the `component.card.accent` pattern to nine more component groups —
   `badge`, `testimonial`, `pricingCard`, `nav`, `footer`, `modal`, `toast`,
-  `tooltip`, and `dropdown` — each gaining the same mode-aware `accent.*`
-  color contract (`neutral`, `brand`, `info`, `success`, `warning`, `danger`,
-  `cta`) plus the same standard `accent.thickness` (`0.25rem`, matching
-  `space.4`), for a total of 63 new color leaves and 9 new thickness leaves.
-  Requested by Bradley Potts on 2026-09-18, owner-directed, in response to
-  client feedback that the current UI reads as too plain (see `TODO.md`
-  "Requested by Downstream"). Colors remain decorative-only (no
-  `metadata.pair`) and follow the same `600` light / `400` dark shade
-  pattern as `component.card.accent`. Form-control groups (`input`,
-  `checkbox`, `radio`, `select`, `textarea`, `fieldset`, `label`) and
-  `button`/`rating`/`iconBox` are excluded, matching the owner-directed
-  scope. Edge position and rendering remain downstream in `spectre-ui`.
+  `tooltip`, and `dropdown` — each gaining the same mode-aware `accent.*` color
+  contract (`neutral`, `brand`, `info`, `success`, `warning`, `danger`, `cta`)
+  plus the same standard `accent.thickness` (`0.25rem`, matching `space.4`), for
+  a total of 63 new color leaves and 9 new thickness leaves. Requested by
+  Bradley Potts on 2026-09-18, owner-directed, in response to client feedback
+  that the current UI reads as too plain (see `TODO.md` "Requested by
+  Downstream"). Colors remain decorative-only (no `metadata.pair`) and follow
+  the same `600` light / `400` dark shade pattern as `component.card.accent`.
+  Form-control groups (`input`, `checkbox`, `radio`, `select`, `textarea`,
+  `fieldset`, `label`) and `button`/`rating`/`iconBox` are excluded, matching
+  the owner-directed scope. Edge position and rendering remain downstream in
+  `spectre-ui`.
 - Export the shared `ComponentAccentTokens` and `ComponentFooterTokens`
   interfaces and expose each new accent contract through the corresponding
-  hand-maintained component interfaces, keeping the exported TypeScript
-  contract aligned with generated runtime tokens.
+  hand-maintained component interfaces, keeping the exported TypeScript contract
+  aligned with generated runtime tokens.
 
 ### Changed
 
 - Standardized the package summary against the approved PHCDevworks product
   description.
-- Refresh development dependencies, including Node types, Prettier, and
-  Vitest, with the lockfile updated for reproducible installs.
+- Refresh development dependencies, including Node types, Prettier, and Vitest,
+  with the lockfile updated for reproducible installs.
 
 ## [4.8.0] - 2026-09-05
 
@@ -78,13 +145,14 @@ Contract change type: additive
 Contract change type: additive
 
 This release adds validation safeguards and updates development tooling. The
-public token contract, token values, and generated package outputs are unchanged.
+public token contract, token values, and generated package outputs are
+unchanged.
 
 ### Changed
 
-- Upgrade Vitest from `4.1.11` to `5.0.0`, ESLint to `10.10.0`, the
-  TypeScript lint packages to `8.69.0`, and Node types to `26.4.1`; refresh
-  the dependency lockfile for reproducible installs.
+- Upgrade Vitest from `4.1.11` to `5.0.0`, ESLint to `10.10.0`, the TypeScript
+  lint packages to `8.69.0`, and Node types to `26.4.1`; refresh the dependency
+  lockfile for reproducible installs.
 - Update the Node 22 CI job to `22.13.0` to meet lint-tool requirements.
 - Align agent guidance with the completed roadmap, the public `tracking`
   namespace, actual regression-check guarantees, and standing git/release
@@ -92,8 +160,8 @@ public token contract, token values, and generated package outputs are unchanged
 
 ### Added
 
-- Regression cases proving CSS coverage rejects missing declarations even
-  when longer variable names or variable references remain.
+- Regression cases proving CSS coverage rejects missing declarations even when
+  longer variable names or variable references remain.
 
 ### Fixed
 
@@ -110,21 +178,21 @@ Contract change type: additive
 ### Added
 
 - `layout.container.maxWidthWide` (`80rem`), generating
-  `--sp-layout-container-max-width-wide`. Adds a named wide step alongside
-  the existing `maxWidth` (`72rem`) default and `maxWidthProse` (`65ch`)
-  rather than moving the shared default, so no existing consumer's measure
-  changes. Resolves the `spectre-base` downstream request tracked in this
-  repo's `TODO.md` under "Requested by Downstream" (filed 2026-08-29): the
-  published `72rem` default was cropping a reusable multi-column archive
-  layout, forcing a local `--sp-layout-container-max-width` override that
-  this token now makes unnecessary.
+  `--sp-layout-container-max-width-wide`. Adds a named wide step alongside the
+  existing `maxWidth` (`72rem`) default and `maxWidthProse` (`65ch`) rather than
+  moving the shared default, so no existing consumer's measure changes. Resolves
+  the `spectre-base` downstream request tracked in this repo's `TODO.md` under
+  "Requested by Downstream" (filed 2026-08-29): the published `72rem` default
+  was cropping a reusable multi-column archive layout, forcing a local
+  `--sp-layout-container-max-width` override that this token now makes
+  unnecessary.
 - `npm run audit:downstream` (`scripts/audit-downstream-redeclarations.ts`), a
   read-only report of raw `--sp-*` redeclarations, hardcoded hex/px/rem
   literals, and workaround-flavored comments across all four downstream
   design-layer repos present on disk. Never mutates a sibling repo and is not
   part of `npm run check`; a proactive audit run against all four repos found
-  one confirmed hit (the container max-width override above, already
-  tracked) and no other undiscovered gaps.
+  one confirmed hit (the container max-width override above, already tracked)
+  and no other undiscovered gaps.
 - `component.card.padding` scale (`sm`: `1.5rem`, `md`: `2rem`, `lg`: `2.5rem`),
   generating `--sp-component-card-padding-sm`/`-md`/`-lg`. Resolves the
   `spectre-base` downstream request tracked in this repo's `TODO.md` under
@@ -134,48 +202,46 @@ Contract change type: additive
   unlike the sibling `layout.container.paddingInline` scale. `md` keeps the
   existing `2rem` (`space.32`) value so no current card silently changes size.
 - `surface.inverse`, `text.onInverse.{default,muted}`,
-  `link.onInverse`/`onInverseHover`, `component.badge.inverse{Bg,BgHover,Text,Border}`,
-  and `buttons.inverse.*` — a semantic "on-dark" role set for content islands
-  not owned by the page's own light/dark mode (a photo-backed card, a
-  brand-dark card body, a utility bar), generating
-  `--sp-surface-inverse`, `--sp-text-on-inverse-*`,
+  `link.onInverse`/`onInverseHover`,
+  `component.badge.inverse{Bg,BgHover,Text,Border}`, and `buttons.inverse.*` — a
+  semantic "on-dark" role set for content islands not owned by the page's own
+  light/dark mode (a photo-backed card, a brand-dark card body, a utility bar),
+  generating `--sp-surface-inverse`, `--sp-text-on-inverse-*`,
   `--sp-link-on-inverse`/`-hover`, `--sp-badge-inverse-*`, and
-  `--sp-button-inverse-*`. Fixed (non-mode-varying) values, following the
-  same "duplicated" pattern as the existing `link.*` namespace, since an
-  inverse surface stays dark regardless of the page's own mode.
-  Contrast-paired the same way existing roles are — `text.onInverse.default`,
-  `text.onInverse.muted`, `link.onInverse`, `component.badge.inverseText`,
-  and `buttons.inverse.text` each declare `metadata.pair: surface.inverse`
-  (the translucent `inverseBg`/`inverseBgHover`/`inverseBorder`/`bg`/`border`
-  fields follow the existing unpaired-translucent precedent set by
-  `surface.overlay`, since their real contrast depends on whatever sits
-  behind them). Resolves the `spectre-base` downstream request tracked in
-  this repo's `TODO.md` under "Requested by Downstream" (filed 2026-08-29):
-  one downstream theme was hand-painting this five separate times with a
-  contrast measurement taken by hand against a hardcoded background each
-  time.
+  `--sp-button-inverse-*`. Fixed (non-mode-varying) values, following the same
+  "duplicated" pattern as the existing `link.*` namespace, since an inverse
+  surface stays dark regardless of the page's own mode. Contrast-paired the same
+  way existing roles are — `text.onInverse.default`, `text.onInverse.muted`,
+  `link.onInverse`, `component.badge.inverseText`, and `buttons.inverse.text`
+  each declare `metadata.pair: surface.inverse` (the translucent
+  `inverseBg`/`inverseBgHover`/`inverseBorder`/`bg`/`border` fields follow the
+  existing unpaired-translucent precedent set by `surface.overlay`, since their
+  real contrast depends on whatever sits behind them). Resolves the
+  `spectre-base` downstream request tracked in this repo's `TODO.md` under
+  "Requested by Downstream" (filed 2026-08-29): one downstream theme was
+  hand-painting this five separate times with a contrast measurement taken by
+  hand against a hardcoded background each time.
 
 ### Fixed
 
-- `generateCssVariables`'s `link.*` handling didn't kebab-case multi-word
-  keys the way every other semantic group does (`onPage` -> `on-page`), only
+- `generateCssVariables`'s `link.*` handling didn't kebab-case multi-word keys
+  the way every other semantic group does (`onPage` -> `on-page`), only
   invisible until now because every existing `link.*` key was a single word.
   Fixed so `link.onInverse`/`onInverseHover` above emit
   `--sp-link-on-inverse`/`-on-inverse-hover` consistent with
   `--sp-text-on-page-*`, rather than the unsplit
-  `--sp-link-oninverse`/`-oninversehover`. `scripts/check-output-parity.ts`
-  and `tests/css-semantic-coverage.test.ts` both carried the same
-  unsplit-key assumption for the `link` group and are corrected alongside.
+  `--sp-link-oninverse`/`-oninversehover`. `scripts/check-output-parity.ts` and
+  `tests/css-semantic-coverage.test.ts` both carried the same unsplit-key
+  assumption for the `link` group and are corrected alongside.
 
 ### Changed
 
 - Added a "Contract Expansion Policy" section to `TOKEN_CONTRACT.md`
-  consolidating the evidence-gated-but-proactive contract-expansion posture
-  (a filed downstream request or a proactive audit finding, either is
-  sufficient evidence) that was previously only stated loosely across
-  `ROADMAP.md`/`TODO.md`/`AGENTS.md`, and corrected `TOKEN_CONTRACT.md`'s
-  prior "demand-driven expansion policy" wording, which contradicted that
-  posture.
+  consolidating the evidence-gated-but-proactive contract-expansion posture (a
+  filed downstream request or a proactive audit finding, either is sufficient
+  evidence) that was previously only stated loosely across
+  `ROADMAP.md`/`TODO.md`/`AGENTS.md`, and corrected `TOKEN_CONTRACT.md`'s prior
+  "demand-driven expansion policy" wording, which contradicted that posture.
 
 ## [4.6.0] - 2026-08-29
 
@@ -193,11 +259,12 @@ Contract change type: additive
   supplied hex fixed at its nearest-matching lightness step and generating the
   remaining steps in CIE LCH space with the `blue`/`slate` families'
   lightness/chroma curves as the template.
-- `colors.palette.phcdevworks-raspberry-red`, `colors.palette.phcdevworks-deep-space-blue`,
-  and `colors.palette.phcdevworks-paper` — three PHCDevworks brand colors,
-  expanded into full `50`-`950` shade ramps using the same anchor-hold /
-  CIE LCH generation method, templated against the `rose`, `blue`, and
-  `stone` families respectively.
+- `colors.palette.phcdevworks-raspberry-red`,
+  `colors.palette.phcdevworks-deep-space-blue`, and
+  `colors.palette.phcdevworks-paper` — three PHCDevworks brand colors, expanded
+  into full `50`-`950` shade ramps using the same anchor-hold / CIE LCH
+  generation method, templated against the `rose`, `blue`, and `stone` families
+  respectively.
 
 ### Changed
 
@@ -214,15 +281,15 @@ Contract change type: additive
 
 - `shadows.inset` scale (`sm`/`md`/`lg`/`xl`/`2xl`), generating
   `--sp-shadow-inset-*` CSS variables. Each step is a composed two-layer
-  `box-shadow` value — a top-edge and a bottom-edge `inset` shadow sharing
-  the corresponding outer `shadows.*` step's offset, blur, and negative
-  spread — for section bands that need to feather both edges without the
-  consumer hand-matching offset/blur/spread per edge. Requested by
-  `spectre-base`'s downstream child-theme integration (filed 2026-08-07,
-  re-audited 2026-08-19), tracked in this repo's `TODO.md` under
-  "Requested by Downstream". These values are left as DTCG `$type: "string"`
-  (see `TOKEN_CONTRACT.md` "Unsupported Source Shapes") since the leading
-  `inset` keyword doesn't fit the structured `shadow` `$type` parser.
+  `box-shadow` value — a top-edge and a bottom-edge `inset` shadow sharing the
+  corresponding outer `shadows.*` step's offset, blur, and negative spread — for
+  section bands that need to feather both edges without the consumer
+  hand-matching offset/blur/spread per edge. Requested by `spectre-base`'s
+  downstream child-theme integration (filed 2026-08-07, re-audited 2026-08-19),
+  tracked in this repo's `TODO.md` under "Requested by Downstream". These values
+  are left as DTCG `$type: "string"` (see `TOKEN_CONTRACT.md` "Unsupported
+  Source Shapes") since the leading `inset` keyword doesn't fit the structured
+  `shadow` `$type` parser.
 
 ### Changed
 
@@ -239,15 +306,15 @@ Contract change type: additive
 
 - `tracking` primitive namespace (`tightest`/`tighter`/`tight`/`normal`/
   `wide`/`wider`/`widest`, `-0.075em` through `0.1em`), generating
-  `--sp-tracking-*` CSS variables. Confirmed downstream need from a
-  production consumer (2026-08-15, tracked in `spectre-ui`'s `TODO.md`):
-  brand display type sets tight negative tracking (around `-0.07em`)
-  distinct per heading level, and the only existing letter-spacing tokens
-  are bundled per font-size step (`font.{step}.letterSpacing`,
-  `typography.heading.h{n}.letterSpacing`), with no standalone scale a
-  utility class or recipe option could point to independent of size. This
-  is a generic step scale, not the consumer's exact brand value — unblocks
-  `spectre-ui` adding standalone `sp-tracking-*` utilities.
+  `--sp-tracking-*` CSS variables. Confirmed downstream need from a production
+  consumer (2026-08-15, tracked in `spectre-ui`'s `TODO.md`): brand display type
+  sets tight negative tracking (around `-0.07em`) distinct per heading level,
+  and the only existing letter-spacing tokens are bundled per font-size step
+  (`font.{step}.letterSpacing`, `typography.heading.h{n}.letterSpacing`), with
+  no standalone scale a utility class or recipe option could point to
+  independent of size. This is a generic step scale, not the consumer's exact
+  brand value — unblocks `spectre-ui` adding standalone `sp-tracking-*`
+  utilities.
 
 ### Changed
 
@@ -262,10 +329,10 @@ Contract change type: additive
 
 ### Added
 
-- `space.240` (15rem / 240px) primitive step, extending the space scale past
-  its previous ceiling (`space.96`, 6rem). Demand-driven: `spectre-ui`'s Grid
-  `fixedTracks` option needed a fixed-width step matching a confirmed
-  production mega-menu column width, and no existing step reached it.
+- `space.240` (15rem / 240px) primitive step, extending the space scale past its
+  previous ceiling (`space.96`, 6rem). Demand-driven: `spectre-ui`'s Grid
+  `fixedTracks` option needed a fixed-width step matching a confirmed production
+  mega-menu column width, and no existing step reached it.
 
 ## [4.2.0] - 2026-08-07
 
@@ -276,18 +343,17 @@ Contract change type: additive
 ### Added
 
 - `component.footer` semantic token group (`bg`, `text`, `heading`, `muted`,
-  `link`, `linkHover`, `border`, `divider`, `chipBg`) in default and dark
-  modes, with contrast-pair metadata for every footer foreground/background
-  pair. Footer previously aliased Nav's background, text, and border roles;
-  it now has an independent semantic contract. Requested by a downstream
-  consumer through `spectre-ui`.
+  `link`, `linkHover`, `border`, `divider`, `chipBg`) in default and dark modes,
+  with contrast-pair metadata for every footer foreground/background pair.
+  Footer previously aliased Nav's background, text, and border roles; it now has
+  an independent semantic contract. Requested by a downstream consumer through
+  `spectre-ui`.
 
   **Migration:** this is additive — no existing token path changed or was
-  removed, so no consumer is broken by upgrading. Consumers that were
-  manually reusing `component.nav.bg` / `component.nav.text` /
-  `component.nav.border` to style a footer should migrate those call sites
-  to the new `component.footer.*` paths so footer styling can evolve
-  independently of nav.
+  removed, so no consumer is broken by upgrading. Consumers that were manually
+  reusing `component.nav.bg` / `component.nav.text` / `component.nav.border` to
+  style a footer should migrate those call sites to the new `component.footer.*`
+  paths so footer styling can evolve independently of nav.
 
 ### Changed
 
@@ -302,16 +368,16 @@ Contract change type: additive
 
 ### Added
 
-- `TOKEN_REFERENCE.md`, a generated exhaustive per-leaf token reference
-  (path, resolved value, usage note) for every public namespace, linked from
-  README.md. Regenerated by `npm run build` (`scripts/build-token-reference.ts`)
-  and checked for drift by `check:dist`.
+- `TOKEN_REFERENCE.md`, a generated exhaustive per-leaf token reference (path,
+  resolved value, usage note) for every public namespace, linked from README.md.
+  Regenerated by `npm run build` (`scripts/build-token-reference.ts`) and
+  checked for drift by `check:dist`.
 
 ### Changed
 
-- Updated the TypeScript ESLint toolchain from 8.65.0 to 8.66.0 and `tsx`
-  from 4.23.4 to 4.23.5, including refreshed transitive development
-  dependencies in `package-lock.json`.
+- Updated the TypeScript ESLint toolchain from 8.65.0 to 8.66.0 and `tsx` from
+  4.23.4 to 4.23.5, including refreshed transitive development dependencies in
+  `package-lock.json`.
 
 ## [4.0.0] - 2026-07-25
 
