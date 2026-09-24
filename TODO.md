@@ -20,32 +20,6 @@ check for new evidence.
   structure, behavior, and framework delivery remain downstream. Evidence = this
   request and audit.
 
-  **Wave 5 — datepicker/calendar contract (evidence: dropdowns examples audit,
-  2026-09-24):**
-
-  - `component.datepicker.panel.bg` → alias `{component.dropdown.bg}`
-  - `component.datepicker.panel.border` → alias `{component.dropdown.border}`
-  - `component.datepicker.header.text` → month/year label; alias
-    `{component.dropdown.item.text}` unless contrast demands otherwise
-  - `component.datepicker.weekday.text` → Sun–Sat column-header label,
-    `{colors.neutral.400}` (muted relative to day cells)
-  - `component.day.default.text` → `{colors.neutral.900}`
-  - `component.day.default.hover.bg` → alias `{component.dropdown.item.hover}`
-  - `component.day.selected.bg` → `{colors.brand.600}`, `metadata.pair`:
-    `component.day.selected.text`
-  - `component.day.selected.text` → `{colors.white}`, `metadata.pair`:
-    `component.day.selected.bg`
-  - `component.day.today.ringColor` → alias `{component.tabs.item.focus.ringColor}`
-    (reuse the one established focus/emphasis ring, don't fork a second)
-  - `component.day.outsideMonth.text` → `{colors.neutral.300}`
-  - `component.day.disabled.text` → alias `{component.dropdown.item.disabled}`
-    once Wave 4 lands that path
-  - Weekend-specific styling, range-selection (start/end/in-range) fills, and
-    the actual calendar-grid layout/keyboard nav are downstream anatomy — this
-    wave only owns the color/state contract, not the grid mechanics.
-  - Every `text`/`bg` pair above needs `check:contrast` (WCAG AA) in default
-    and dark modes before this lands.
-
   **Wave 6 — long-form content/prose contract (evidence: blog example audit,
   2026-09-24):** rendered post bodies use inline elements with no current
   color contract — `component.testimonial.quoteMark` is a card-style pull

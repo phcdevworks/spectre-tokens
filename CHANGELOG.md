@@ -73,6 +73,24 @@ Contract change type: additive
     against the same examples and found to already compose cleanly from
     existing `bg`/`border`/`overlay`/`accent`/`text.onSurface` fields — no new
     fields added for those three.
+- Add `component.datepicker` and `component.day` (kept as two distinct
+  top-level component contracts rather than nesting `day` under
+  `datepicker`, since day-cell coloring may be reused by other calendar-ish
+  surfaces later) — Wave 5 of the Bootstrap-scale component inventory
+  expansion tracked in `TODO.md`, evidenced by the calendar-dropdown pattern
+  found auditing the dropdowns examples. `datepicker.panel`/`header`/
+  `weekday` reuse the same literal values as `component.dropdown`'s
+  `bg`/`border`/`item.text` (duplicated per mode rather than cross-referenced,
+  matching how every other component in this contract duplicates rather than
+  aliases a sibling component's mode-dependent value).
+  `day.selected.bg`/`day.selected.text` are mode-invariant (`brand.600`/
+  white), matching the filled-accent precedent set by
+  `component.tabs.pill.active.bg`. `day.today.ringColor` aliases
+  `buttons.primary.focusRing` directly — the same underlying value
+  `component.tabs.item.focus.ringColor` already aliases — rather than
+  chaining through another component's field. This wave owns day-cell color
+  states only; the calendar grid layout, keyboard navigation, and
+  range-selection fills remain downstream.
 
 ## [4.10.0] - 2026-09-24
 
