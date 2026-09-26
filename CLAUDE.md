@@ -114,6 +114,7 @@ Changes to those files must be regenerated, validated, and classified in
 | `check:dist`           | dist artifacts are in sync with source                                                                                                                               |
 | `check:downstream`     | packs the tarball and runs spectre-ui/spectre-ui-astro/spectre-components's own `npm run check` against it (sibling repos on disk only; not part of `npm run check`) |
 | `audit:downstream`     | read-only report of raw `--sp-*` redeclarations, hardcoded visual values, and workaround comments across all four downstream repos (sibling repos on disk only; not part of `npm run check`; never mutates a sibling repo) |
+| `audit:parity`         | read-only checklist of which published CSS variable families (see `DOWNSTREAM_PARITY.md`) a sibling repo consumes, with missing variables per family; defaults to `spectre-ui`, pass another repo name after `--` (not part of `npm run check`; never mutates a sibling repo) |
 | `lint`                 | ESLint passes                                                                                                                                                        |
 
 ## Token Change Procedure
@@ -144,9 +145,11 @@ Current: `colors`, `space`, `layout`, `radii`, `typography`, `font`, `shadows`,
 `icons`, `border`, `accessibility`, `buttons`, `forms`, `link`, `surface`,
 `text`, `component`, `modes`, `tracking`
 
-Phases 1 through 12 are complete. Delivery history is tracked in `ROADMAP.md`;
-new downstream requests are tracked in `TODO.md`. Contract expansion follows
-the evidence requirements in `TOKEN_CONTRACT.md`.
+Phases 1 through 15 are complete. Delivery history is tracked in `ROADMAP.md`;
+active work, both proactive and downstream-requested, is tracked in
+`TODO.md`. Contract expansion is proactive: add what the vocabulary needs
+without waiting for a downstream request or proving demand, per "Contract
+Expansion Policy" in `TOKEN_CONTRACT.md`.
 
 Adding a new namespace is additive. Removing or renaming is breaking. The banned
 namespace is `borders` - always use `border` (singular).

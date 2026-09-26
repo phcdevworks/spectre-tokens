@@ -31,14 +31,21 @@ this file does not restate delivered work.
 | 13 | Card edge-accent contract, requested by `spectre-ui` — mode-aware `component.card.accent` color roles (`neutral`, `brand`, `info`, `success`, `warning`, `danger`, `cta`, the locked families included by explicit approval) plus a single standard `component.card.accent.thickness` (`0.25rem`); edge position and rendering stay downstream | 4.9.0 |
 | 14 | Accent-rail tokens beyond card, owner-directed by Bradley Potts in response to client feedback — the same mode-aware `accent.*` color-role + `accent.thickness` (`0.25rem`) contract extended to `badge`, `testimonial`, `pricingCard`, `nav`, `footer`, `modal`, `toast`, `tooltip`, and `dropdown` (63 new color leaves, 9 new thickness leaves); form-control groups and `button`/`rating`/`iconBox` excluded; edge position and rendering stay downstream | 4.9.0 |
 | 15 | Downstream component readiness — seven evidence-backed delivery waves covering navigation, core components, form/content roles, existing-contract completion, datepicker/day states, prose, provider-neutral external authentication, and choice-card states; every contract is mode-aware and emitted through runtime, TypeScript, CSS, and DTCG outputs | 4.10.0 |
+| — | Fix, requested by `spectre-ui`: `forms.default.{bg,text,placeholder}` made mode-aware via `modes.*.forms`, redeclared in the dark CSS block, and parity-checked as a `mode-scoped` group | Unreleased |
+| — | Fix, requested by `spectre-ui`: `typography.display.{1-6}` and `typography.lead` emitted as `--sp-display-*`/`--sp-lead-*` CSS variables and validated by `check:typography-refs` | Unreleased |
+| — | Downstream parity checklist — generated `DOWNSTREAM_PARITY.md` (every published CSS variable grouped into recipe-sized families) and read-only `audit:parity` status report | Unreleased |
 
 ---
 
 ## What's Next
 
-No open phase is currently planned. Continue using `npm run audit:downstream`
-to identify evidence-backed vocabulary gaps without moving downstream-owned
-component structure into this package.
+**Phase 16 — Proactive Vocabulary Expansion** (owner-directed, 2026-09-26).
+This package leads rather than waiting for downstream requests. Planned
+waves, tracked in [TODO.md](TODO.md): data-visualization palette, high-contrast
+mode, control sizing and density, semantic elevation, selection/caret/scrollbar
+colors, skeleton loading, and `kbd`. Each wave is additive and mode-aware.
+Downstream repos pick each one up through `npm run audit:parity`, and
+`npm run audit:downstream` stays available as one more source of ideas.
 
 ---
 

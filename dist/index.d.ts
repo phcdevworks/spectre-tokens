@@ -859,6 +859,13 @@ interface SpectreGeneratedTokens {
                     brand: string;
                 };
             };
+            forms: {
+                default: {
+                    bg: string;
+                    text: string;
+                    placeholder: string;
+                };
+            };
             component: {
                 card: {
                     text: string;
@@ -1520,6 +1527,13 @@ interface SpectreGeneratedTokens {
                     subtle: string;
                     meta: string;
                     brand: string;
+                };
+            };
+            forms: {
+                default: {
+                    bg: string;
+                    text: string;
+                    placeholder: string;
                 };
             };
             component: {
@@ -3255,6 +3269,8 @@ interface TypographyTokens {
     scale: Record<string, TypographyScaleEntry>;
     heading: Record<string, TypographyHeadingEntry>;
     body: TypographyBodyEntry;
+    display: Record<string, TypographyRoleEntry>;
+    lead: TypographyRoleEntry;
 }
 interface TransitionTokens {
     duration: TokenScale;
@@ -3522,6 +3538,13 @@ interface SpectreModeTokens {
             subtle: SemanticTokenValue;
             meta: SemanticTokenValue;
             brand: SemanticTokenValue;
+        };
+    };
+    forms: {
+        default: {
+            bg: SemanticTokenValue;
+            text: SemanticTokenValue;
+            placeholder: SemanticTokenValue;
         };
     };
     component: ComponentTokens<SemanticTokenValue>;

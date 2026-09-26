@@ -34,6 +34,8 @@ export interface TypographyTokens {
   scale: Record<string, TypographyScaleEntry>;
   heading: Record<string, TypographyHeadingEntry>;
   body: TypographyBodyEntry;
+  display: Record<string, TypographyRoleEntry>;
+  lead: TypographyRoleEntry;
 }
 
 export interface TransitionTokens {
@@ -328,6 +330,13 @@ export interface SpectreModeTokens {
       subtle: SemanticTokenValue;
       meta: SemanticTokenValue;
       brand: SemanticTokenValue;
+    };
+  };
+  forms: {
+    default: {
+      bg: SemanticTokenValue;
+      text: SemanticTokenValue;
+      placeholder: SemanticTokenValue;
     };
   };
   component: ComponentTokens<SemanticTokenValue>;

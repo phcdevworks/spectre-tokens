@@ -888,6 +888,13 @@ var coreTokens = {
           "brand": "{colors.brand.600}"
         }
       },
+      "forms": {
+        "default": {
+          "bg": "{colors.white}",
+          "text": "{colors.neutral.900}",
+          "placeholder": "{colors.neutral.500}"
+        }
+      },
       "component": {
         "card": {
           "text": "{colors.neutral.900}",
@@ -1549,6 +1556,13 @@ var coreTokens = {
           "subtle": "{colors.neutral.400}",
           "meta": "{colors.neutral.400}",
           "brand": "{colors.brand.400}"
+        }
+      },
+      "forms": {
+        "default": {
+          "bg": "{colors.neutral.700}",
+          "text": "{colors.neutral.100}",
+          "placeholder": "{colors.neutral.300}"
         }
       },
       "component": {
@@ -3471,6 +3485,16 @@ var createCssVariableMap = (tokens2, options = {}) => {
   if (body) {
     assignRole(["body"], body);
   }
+  const display = baseTokens.typography?.display;
+  if (display) {
+    Object.entries(display).forEach(([level, entry]) => {
+      assignRole(["display", level], entry);
+    });
+  }
+  const lead = baseTokens.typography?.lead;
+  if (lead) {
+    assignRole(["lead"], lead);
+  }
   Object.entries(baseTokens.shadows).forEach(([key, value]) => {
     if (typeof value === "string") {
       assign(toVariableName(prefix, "shadow", key), value);
@@ -3536,7 +3560,6 @@ var generateCssVariables = (tokens2, options = {}) => {
   const selector = options.selector ?? DEFAULT_SELECTOR;
   const prefix = options.prefix ?? DEFAULT_PREFIX;
   const declarations = createCssVariableMap(tokens2, { ...options, prefix });
-  const mapLines = Object.entries(declarations).map(([name, value]) => `  ${name}: ${value};`);
   const defaultMode = tokens2.modes?.default ?? {};
   const darkMode = tokens2.modes?.dark ?? {};
   const surfaceAliases = tokens2.surface ?? {};
@@ -3546,8 +3569,11 @@ var generateCssVariables = (tokens2, options = {}) => {
   const componentVarParts = (group, kebabGroup, path) => LEGACY_COMPONENT_PREFIX_GROUPS.has(group) ? ["component", kebabGroup, ...path] : [kebabGroup, ...path];
   const baseLines = [];
   const darkLines = [];
+  const modeScopedNames = /* @__PURE__ */ new Set();
   const addBase = (name, value) => {
-    if (value !== void 0) baseLines.push(`  ${name}: ${value};`);
+    if (value === void 0) return;
+    modeScopedNames.add(name);
+    baseLines.push(`  ${name}: ${value};`);
   };
   const addDark = (name, value) => {
     if (value !== void 0) darkLines.push(`  ${name}: ${value};`);
@@ -3602,12 +3628,18 @@ var generateCssVariables = (tokens2, options = {}) => {
     },
     componentAliases
   );
+  walkSemanticGroup(
+    "forms",
+    (path) => ["form", ...path.map(kebabPathSegment)],
+    void 0
+  );
   Object.entries(linkTokens).forEach(([key, value]) => {
     const varName = toVariableName(prefix, "link", kebabPathSegment(key));
     const resolved = pickSemantic(tokens2, value);
     addBase(varName, resolved);
     addDark(varName, resolved);
   });
+  const mapLines = Object.entries(declarations).filter(([name]) => !modeScopedNames.has(name)).map(([name, value]) => `  ${name}: ${value};`);
   const rootBlock = `${selector} {
 ${[...baseLines, ...mapLines].join("\n")}
 }`;

@@ -359,17 +359,18 @@
         { "sourcePath": "link", "prefixParts": ["link"], "blockStrategy": "duplicated" },
         { "sourcePath": "modes.default.surface", "prefixParts": ["surface"], "blockStrategy": "mode-scoped" },
         { "sourcePath": "modes.default.text.onPage", "prefixParts": ["text", "on", "page"], "blockStrategy": "mode-scoped" },
-        { "sourcePath": "modes.default.text.onSurface", "prefixParts": ["text", "on", "surface"], "blockStrategy": "mode-scoped" }
+        { "sourcePath": "modes.default.text.onSurface", "prefixParts": ["text", "on", "surface"], "blockStrategy": "mode-scoped" },
+        { "sourcePath": "modes.default.forms", "prefixParts": ["form"], "blockStrategy": "mode-scoped" }
       ],
       "exceptions": [
         "typography and font describe the same font scale via two parallel key shapes (fontSize/lineHeight/fontWeight vs size/lineHeight/weight/letterSpacing); css.ts emits from whichever is populated. Covered by check:css requiredVariables, not a generic per-leaf walk.",
         "layout emits per-branch (section.padding, section.gap, stack.gap, container.paddingInline, container.maxWidth/maxWidthProse, sidebar.width) with no shared prefix across the namespace. Covered by check:css requiredVariables and manifest spaceLinkedLayoutPaths.",
         "accessibility fields (focusRing.width/offset/style, minTouchTarget, minTextSize, reducedMotion, forcedColors) each have an independent CSS variable name with no shared prefix. Covered by check:css requiredVariables.",
-        "buttons and forms nest by variant/state (buttons.primary.bg, forms.invalid.text) with irregular optional fields (border, shadow, focusRing only on some variants). Covered by check:css requiredVariables and existing button/form tests.",
+        "buttons and forms nest by variant/state (buttons.primary.bg, forms.invalid.text) with irregular optional fields (border, shadow, focusRing only on some variants). Covered by check:css requiredVariables and existing button/form tests. The mode-aware forms.default.{bg,text,placeholder} subset is additionally checked as the mode-scoped modes.default.forms group.",
         "animations splits into a flat set (fadeIn, fadeOut, ...) plus a nested reducedMotion sub-object emitted with an extra reduced-motion path segment. Covered by check:css requiredVariables.",
         "component is covered exhaustively by tests/css-semantic-coverage.test.ts, which already asserts full leaf coverage per component group.",
         "modes.dark.text is covered by the css-semantic-coverage test asserting tokens.modes.default.surface keys; dark-mode text/surface parity is asserted via requiredDarkModeVariables.",
-        "typography.heading.* and typography.body map camelCase role fields (fontFamily, fontSize, lineHeight, fontWeight, letterSpacing) to distinct CSS suffixes (family, size, line-height, weight, letter-spacing) rather than the generic per-leaf checker's default kebab-of-field-name suffix. Covered by check:typography-refs, which is part of npm run check and asserts: every role field is a {typography.*} reference (not a bare scale/family string) that resolves to a real leaf, and generated CSS emits the fully resolved literal for every role variable with no dangling {} references and no var(--sp-font-*) indirection. tests/typography-roles.test.ts duplicates this CSS coverage as a Vitest suite for local dev feedback; it is not part of npm run check and is not the enforced gate."
+        "typography.heading.*, typography.body, typography.display.*, and typography.lead map camelCase role fields (fontFamily, fontSize, lineHeight, fontWeight, letterSpacing) to distinct CSS suffixes (family, size, line-height, weight, letter-spacing) rather than the generic per-leaf checker's default kebab-of-field-name suffix. Covered by check:typography-refs, which is part of npm run check and asserts: every role field is a {typography.*} reference (not a bare scale/family string) that resolves to a real leaf, and generated CSS emits the fully resolved literal for every role variable with no dangling {} references and no var(--sp-font-*) indirection. tests/typography-roles.test.ts duplicates this CSS coverage as a Vitest suite for local dev feedback; it is not part of npm run check and is not the enforced gate."
       ]
     }
   },

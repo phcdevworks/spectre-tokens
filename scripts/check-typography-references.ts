@@ -57,6 +57,16 @@ if (body) {
   checkRole(body as Record<string, unknown>, 'typography.body');
 }
 
+const display = typography.typography?.display ?? {};
+Object.entries(display).forEach(([level, role]) => {
+  checkRole(role as Record<string, unknown>, `typography.display.${level}`);
+});
+
+const lead = typography.typography?.lead;
+if (lead) {
+  checkRole(lead as Record<string, unknown>, 'typography.lead');
+}
+
 const resolveReference = (value: string): string => {
   const match = value.match(REFERENCE_PATTERN);
   if (!match) return value;
@@ -83,14 +93,14 @@ const assertResolvedCss = (css: string, prefixParts: string[], entry: Record<str
 };
 
 const css = generateCssVariables(tokens);
-const roleLines = css.split('\n').filter((line) => /--sp-(heading|body)-/.test(line));
+const roleLines = css.split('\n').filter((line) => /--sp-(heading|body|display|lead)-/.test(line));
 
 roleLines.forEach((line) => {
   if (line.includes('{') || line.includes('}')) {
     errors.push(`Generated CSS leaks an unresolved token reference: ${line.trim()}`);
   }
   if (line.includes('var(--sp-font-')) {
-    errors.push(`Generated CSS derives a heading/body variable via var() indirection instead of a resolved literal: ${line.trim()}`);
+    errors.push(`Generated CSS derives a typography role variable via var() indirection instead of a resolved literal: ${line.trim()}`);
   }
 });
 
@@ -98,6 +108,10 @@ HEADING_LEVELS.forEach((level) => {
   assertResolvedCss(css, ['heading', level], tokens.typography.heading[level] as unknown as Record<string, unknown>);
 });
 assertResolvedCss(css, ['body'], tokens.typography.body as unknown as Record<string, unknown>);
+Object.entries(tokens.typography.display).forEach(([level, entry]) => {
+  assertResolvedCss(css, ['display', level], entry as unknown as Record<string, unknown>);
+});
+assertResolvedCss(css, ['lead'], tokens.typography.lead as unknown as Record<string, unknown>);
 
 if (errors.length > 0) {
   console.error('Typography reference check failed:');
@@ -105,4 +119,4 @@ if (errors.length > 0) {
   process.exit(1);
 }
 
-console.log('Typography reference check passed (heading, body roles validated; CSS output fully resolved).');
+console.log('Typography reference check passed (heading, body, display, lead roles validated; CSS output fully resolved).');

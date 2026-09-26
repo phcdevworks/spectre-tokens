@@ -8,9 +8,9 @@ operational playbook. Read `AGENTS.md` for shared agent boundaries.
 
 Codex is the release, documentation, production stabilization, repo hygiene,
 refactor review, and configuration standardization agent. Claude Code leads
-implementation. Codex commits and pushes directly to `main` and cuts
-release-ready versions under the standing authority in `AGENTS.md` and
-`CODEX.md`. npm publishing remains Bradley Potts's sole authority.
+implementation. Codex commits and pushes directly to `main`, and cuts a
+release only when Bradley Potts says to get this repo ready for release (see
+`AGENTS.md` and `CODEX.md`). npm publishing remains Bradley Potts's sole authority.
 
 ## Pull Request Creation
 

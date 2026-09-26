@@ -2580,6 +2580,22 @@
           }
         }
       },
+      "forms": {
+        "default": {
+          "bg": {
+            "$value": "{colors.white}",
+            "$type": "color"
+          },
+          "text": {
+            "$value": "{colors.neutral.900}",
+            "$type": "color"
+          },
+          "placeholder": {
+            "$value": "{colors.neutral.500}",
+            "$type": "color"
+          }
+        }
+      },
       "component": {
         "card": {
           "text": {
@@ -4495,6 +4511,22 @@
           },
           "brand": {
             "$value": "{colors.brand.400}",
+            "$type": "color"
+          }
+        }
+      },
+      "forms": {
+        "default": {
+          "bg": {
+            "$value": "{colors.neutral.700}",
+            "$type": "color"
+          },
+          "text": {
+            "$value": "{colors.neutral.100}",
+            "$type": "color"
+          },
+          "placeholder": {
+            "$value": "{colors.neutral.300}",
             "$type": "color"
           }
         }

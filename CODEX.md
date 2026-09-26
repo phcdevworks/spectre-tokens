@@ -8,10 +8,10 @@ refactor review, and configuration standardization agent for
 
 Full roster and authority table: [AGENTS.md](AGENTS.md). Codex keeps Claude
 Code's work production-ready — validate changes, then stage, commit, and push.
-Release preparation may accumulate under `CHANGELOG.md [Unreleased]`, but a
-version bump, release tag, and GitHub Release require an explicit release
-instruction from Bradley Potts. npm publishing remains a separate, manual step
-owned by Bradley Potts (see "Release Mechanics" below).
+A commit request means commit and push only. Codex cuts a release — version
+bump, `v<version>` tag, and GitHub Release — only when Bradley Potts says to
+get this repo ready for release. npm publishing remains a separate, manual
+step owned by Bradley Potts (see "Release Mechanics" below).
 
 Codex is also responsible for executing git operations on Claude Code's
 behalf in this repo, now that Claude Code has zero git access: when Claude
@@ -30,10 +30,9 @@ commits.
 5. Do not modify protected semantic color families without explicit approval
    from Bradley Potts.
 6. Commit and push validated implementation work without changing the package
-   version. Only after Bradley Potts explicitly instructs Codex to cut a
-   release may Codex tag (`v<version>`, e.g. `v4.1.0`) and publish a GitHub
-   Release using the procedure below. Do not run `npm publish`; that stays with
-   Bradley Potts.
+   version. Only when Bradley Potts says to get this repo ready for release,
+   tag (`v<version>`, e.g. `v4.1.0`) and publish a GitHub Release using the
+   procedure below. Do not run `npm publish`; that stays with Bradley Potts.
 
 ## Entry Point
 
@@ -97,7 +96,7 @@ Audit sequence:
    `contract.manifest.json` under `docContract`.
 3. `README.md` -> must include all required section markers declared in
    `contract.manifest.json` under `docContract`.
-4. `CLAUDE.md`, `CODEX.md`, `JULES.md`, `COPILOT.md` -> must stay internally
+4. `CLAUDE.md`, `CODEX.md`, `JULES.md`, `GROK.md`, `COPILOT.md` -> must stay internally
    consistent and agree with `AGENTS.md`'s authority hierarchy.
 5. `CHANGELOG.md` -> must have a classification line in `[Unreleased]` whenever
    a contract-authority file changed.
@@ -185,10 +184,16 @@ Use this checklist before cutting every release (tag + GitHub Release).
 
 ### Release Mechanics
 
-Do not begin these mechanics merely because `[Unreleased]` is classified or
-validated. Bradley Potts must explicitly instruct Codex to cut a release and,
-when applicable, confirm the intended version. Requests to commit, push,
-validate, prepare, or get ready leave the package version unchanged.
+Codex runs these mechanics only when Bradley Potts says to get this repo ready
+for release. A request to commit or push leaves the version, changelog
+headings, and tags untouched.
+
+**No skipped npm versions.** Before bumping, compare the latest `v<version>`
+tag against `npm view @phcdevworks/spectre-tokens version`. If the latest tag
+has not been published to npm yet, do not stack a new version on top of it:
+leave the new work under `[Unreleased]` and tell Bradley Potts the previous
+tag is awaiting `npm publish`. This keeps every tagged version publishable in
+order (4.6.0 was once tagged, never published, and skipped).
 
 1. Run `npm run release:propose` to get the semver bump proposal from the
    `CHANGELOG.md [Unreleased]` classification.

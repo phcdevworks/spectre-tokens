@@ -113,6 +113,25 @@
           }
         }
       },
+      "forms": {
+        "default": {
+          "bg": {
+            "value": "{colors.white}"
+          },
+          "text": {
+            "value": "{colors.neutral.900}",
+            "metadata": {
+              "pair": "modes.default.forms.default.bg"
+            }
+          },
+          "placeholder": {
+            "value": "{colors.neutral.500}",
+            "metadata": {
+              "pair": "modes.default.forms.default.bg"
+            }
+          }
+        }
+      },
       "component": {
         "card": {
           "text": {
@@ -2296,6 +2315,25 @@
             "value": "{colors.brand.400}",
             "metadata": {
               "pair": "modes.dark.surface.card"
+            }
+          }
+        }
+      },
+      "forms": {
+        "default": {
+          "bg": {
+            "value": "{colors.neutral.700}"
+          },
+          "text": {
+            "value": "{colors.neutral.100}",
+            "metadata": {
+              "pair": "modes.dark.forms.default.bg"
+            }
+          },
+          "placeholder": {
+            "value": "{colors.neutral.300}",
+            "metadata": {
+              "pair": "modes.dark.forms.default.bg"
             }
           }
         }

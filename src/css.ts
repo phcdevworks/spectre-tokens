@@ -265,6 +265,18 @@ export const createCssVariableMap = (tokens: SpectreTokens, options: CssVariable
     assignRole(['body'], body)
   }
 
+  const display = baseTokens.typography?.display
+  if (display) {
+    Object.entries(display).forEach(([level, entry]) => {
+      assignRole(['display', level], entry)
+    })
+  }
+
+  const lead = baseTokens.typography?.lead
+  if (lead) {
+    assignRole(['lead'], lead)
+  }
+
   Object.entries(baseTokens.shadows).forEach(([key, value]) => {
     if (typeof value === 'string') {
       assign(toVariableName(prefix, 'shadow', key), value)
@@ -341,7 +353,6 @@ export const generateCssVariables = (tokens: SpectreTokens, options: CssVariable
   const selector = options.selector ?? DEFAULT_SELECTOR
   const prefix = options.prefix ?? DEFAULT_PREFIX
   const declarations = createCssVariableMap(tokens, { ...options, prefix })
-  const mapLines = Object.entries(declarations).map(([name, value]) => `  ${name}: ${value};`)
 
   const defaultMode = tokens.modes?.default ?? {}
   const darkMode = tokens.modes?.dark ?? {}
@@ -359,7 +370,12 @@ export const generateCssVariables = (tokens: SpectreTokens, options: CssVariable
 
   const baseLines: string[] = []
   const darkLines: string[] = []
-  const addBase = (name: string, value?: string) => { if (value !== undefined) baseLines.push(`  ${name}: ${value};`) }
+  const modeScopedNames = new Set<string>()
+  const addBase = (name: string, value?: string) => {
+    if (value === undefined) return
+    modeScopedNames.add(name)
+    baseLines.push(`  ${name}: ${value};`)
+  }
   const addDark = (name: string, value?: string) => { if (value !== undefined) darkLines.push(`  ${name}: ${value};`) }
 
   // Recursively derives every leaf path under `tokens.modes.default.<namespace>`
@@ -369,7 +385,7 @@ export const generateCssVariables = (tokens: SpectreTokens, options: CssVariable
   // `tokens.<namespace>` alias — replacing what used to be a hand-maintained
   // per-component field list.
   const walkSemanticGroup = (
-    namespace: 'surface' | 'text' | 'component',
+    namespace: 'surface' | 'text' | 'component' | 'forms',
     varPartsFor: (path: string[]) => string[],
     aliasSrc: unknown
   ): void => {
@@ -429,6 +445,14 @@ export const generateCssVariables = (tokens: SpectreTokens, options: CssVariable
     componentAliases
   )
 
+  // only the mode-aware subset of `forms` lives under `modes.*.forms`; the
+  // rest (border, hover, focus, invalid, ...) stays cascade-only in :root
+  walkSemanticGroup(
+    'forms',
+    (path) => ['form', ...path.map(kebabPathSegment)],
+    undefined
+  )
+
   Object.entries(linkTokens).forEach(([key, value]) => {
     const varName = toVariableName(prefix, 'link', kebabPathSegment(key))
     const resolved = pickSemantic(tokens, value)
@@ -436,6 +460,9 @@ export const generateCssVariables = (tokens: SpectreTokens, options: CssVariable
     addDark(varName, resolved)
   })
 
+  const mapLines = Object.entries(declarations)
+    .filter(([name]) => !modeScopedNames.has(name))
+    .map(([name, value]) => `  ${name}: ${value};`)
   const rootBlock = `${selector} {\n${[...baseLines, ...mapLines].join('\n')}\n}`
   const darkBlock = `${selector}[data-spectre-theme="dark"] {\n${darkLines.join('\n')}\n}`
 

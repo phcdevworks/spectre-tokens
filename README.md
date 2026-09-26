@@ -17,7 +17,7 @@ contracts for specific frameworks and runtimes.
 | Project team           | `project-design`                 |
 | Repository role        | Spectre L1 design-token contract |
 | Package/artifact       | `@phcdevworks/spectre-tokens`    |
-| Current version/status | 4.10.0                           |
+| Current version/status | 4.11.0                           |
 
 ## Standard Workflow
 
@@ -30,18 +30,20 @@ contracts for specific frameworks and runtimes.
 
 ## Documentation Map
 
-| Guide           | Path                                     |
-| --------------- | ---------------------------------------- |
-| Agent rules     | [AGENTS.md](AGENTS.md)                   |
-| Claude Code     | [CLAUDE.md](CLAUDE.md)                   |
-| Codex           | [CODEX.md](CODEX.md)                     |
-| Copilot         | [COPILOT.md](COPILOT.md)                 |
-| Jules           | [JULES.md](JULES.md)                     |
-| Roadmap         | [ROADMAP.md](ROADMAP.md)                 |
-| Todo            | [TODO.md](TODO.md)                       |
-| Token reference | [TOKEN_REFERENCE.md](TOKEN_REFERENCE.md) |
-| Changelog       | [CHANGELOG.md](CHANGELOG.md)             |
-| Security        | [SECURITY.md](SECURITY.md)               |
+| Guide             | Path                                         |
+| ----------------- | -------------------------------------------- |
+| Agent rules       | [AGENTS.md](AGENTS.md)                       |
+| Claude Code       | [CLAUDE.md](CLAUDE.md)                       |
+| Codex             | [CODEX.md](CODEX.md)                         |
+| Copilot           | [COPILOT.md](COPILOT.md)                     |
+| Jules             | [JULES.md](JULES.md)                         |
+| Grok              | [GROK.md](GROK.md)                           |
+| Roadmap           | [ROADMAP.md](ROADMAP.md)                     |
+| Todo              | [TODO.md](TODO.md)                           |
+| Token reference   | [TOKEN_REFERENCE.md](TOKEN_REFERENCE.md)     |
+| Downstream parity | [DOWNSTREAM_PARITY.md](DOWNSTREAM_PARITY.md) |
+| Changelog         | [CHANGELOG.md](CHANGELOG.md)                 |
+| Security          | [SECURITY.md](SECURITY.md)                   |
 
 [![npm version](https://img.shields.io/npm/v/@phcdevworks/spectre-tokens)](https://www.npmjs.com/package/@phcdevworks/spectre-tokens)
 [![CI](https://github.com/phcdevworks/spectre-tokens/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/phcdevworks/spectre-tokens/actions/workflows/ci.yml)
@@ -262,17 +264,40 @@ body {
   font-weight: var(--sp-body-weight);
   letter-spacing: var(--sp-body-letter-spacing);
 }
+
+.hero-title {
+  font-size: var(--sp-display-1-size);
+  line-height: var(--sp-display-1-line-height);
+  font-weight: var(--sp-display-1-weight);
+}
+
+.intro {
+  font-size: var(--sp-lead-size);
+  line-height: var(--sp-lead-line-height);
+}
+
+input {
+  background: var(--sp-form-default-bg);
+  color: var(--sp-form-default-text);
+}
 ```
 
 The CSS entry point is intended for consumers that want the token contract as
 variables rather than reading values in JavaScript.
 
-`typography.heading.{h1..h6}` and `typography.body` are semantic role tokens —
-each a complete
+`typography.heading.{h1..h6}`, `typography.body`, `typography.display.{1..6}`,
+and `typography.lead` are semantic role tokens — each a complete
 `{ fontFamily, fontSize, lineHeight, fontWeight, letterSpacing }` object
 referencing `typography.scale.*` and `typography.families.*` — so downstream
-consumers get a heading/body contract instead of hand-picking a raw
-`typography.scale` step per heading level.
+consumers get a text-role contract instead of hand-picking a raw
+`typography.scale` step per heading level. Each role emits
+`--sp-<role>-{family,size,line-height,weight,letter-spacing}` (for example
+`--sp-heading-h1-size`, `--sp-display-1-size`, `--sp-lead-size`).
+
+`--sp-form-default-{bg,text,placeholder}` are redeclared in the
+`[data-spectre-theme="dark"]` block from `modes.dark.forms.default.*`, so they
+follow the active mode. Other `forms.*` variables, including
+`--sp-form-default-border`, are declared once in `:root`.
 
 ### Token model
 
@@ -310,6 +335,12 @@ internal generation details and are not part of the public package contract.
 See [TOKEN_REFERENCE.md](TOKEN_REFERENCE.md) for the exhaustive, generated list
 of every token path, resolved value, and usage note.
 
+Downstream packages building recipes on the CSS output should use
+[DOWNSTREAM_PARITY.md](DOWNSTREAM_PARITY.md), which groups every published
+`--sp-*` variable into the family a recipe or stylesheet consumes. Run
+`npm run audit:parity` (optionally `-- <sibling-repo>`) for a checklist of the
+families a checked-out downstream repo has not consumed yet.
+
 The `layout` namespace includes section, stack, and container spacing tokens,
 plus fixed layout width tokens for common consumer shells:
 `layout.container.maxWidth`, `layout.container.maxWidthProse`,
@@ -343,7 +374,11 @@ import tokens from '@phcdevworks/spectre-tokens'
 
 const darkPage = tokens.modes.dark.surface.page
 const darkText = tokens.modes.dark.text.onPage.default
+const darkInputBg = tokens.modes.dark.forms.default.bg
 ```
+
+Top-level `forms.default.{bg,text,placeholder}` hold the default (light)
+values; read `modes.dark.forms.default.*` for their dark equivalents.
 
 Guidance:
 

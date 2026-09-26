@@ -6,7 +6,7 @@ contract authority; `tokens/` and `contract.manifest.json` remain the source
 of truth (see `TOKEN_CONTRACT.md`).
 
 Every leaf token path across all 23 public namespaces
-(2167 total), with its resolved source value and a usage note.
+(2173 total), with its resolved source value and a usage note.
 Values shown here are pre-CSS-resolution source values — `{path.to.token}`
 references are shown as-written, not resolved (see `src/css.ts` for
 resolved CSS output).
@@ -1483,6 +1483,9 @@ resolved CSS output).
 | `modes.default.text.onSurface.subtle` | `{colors.neutral.500}` | Pairs with `modes.default.surface.card` for contrast. |
 | `modes.default.text.onSurface.meta` | `{colors.neutral.500}` | Pairs with `modes.default.surface.card` for contrast. |
 | `modes.default.text.onSurface.brand` | `{colors.brand.600}` | Pairs with `modes.default.surface.card` for contrast. |
+| `modes.default.forms.default.bg` | `{colors.white}` | modes token. |
+| `modes.default.forms.default.text` | `{colors.neutral.900}` | Pairs with `modes.default.forms.default.bg` for contrast. |
+| `modes.default.forms.default.placeholder` | `{colors.neutral.500}` | Pairs with `modes.default.forms.default.bg` for contrast. |
 | `modes.default.component.card.text` | `{colors.neutral.900}` | Pairs with `modes.default.surface.card` for contrast. |
 | `modes.default.component.card.textMuted` | `{colors.neutral.600}` | Pairs with `modes.default.surface.card` for contrast. |
 | `modes.default.component.card.accent.neutral` | `{colors.neutral.600}` | modes token. |
@@ -1896,6 +1899,9 @@ resolved CSS output).
 | `modes.dark.text.onSurface.subtle` | `{colors.neutral.400}` | Pairs with `modes.dark.surface.card` for contrast. |
 | `modes.dark.text.onSurface.meta` | `{colors.neutral.400}` | Pairs with `modes.dark.surface.card` for contrast. |
 | `modes.dark.text.onSurface.brand` | `{colors.brand.400}` | Pairs with `modes.dark.surface.card` for contrast. |
+| `modes.dark.forms.default.bg` | `{colors.neutral.700}` | modes token. |
+| `modes.dark.forms.default.text` | `{colors.neutral.100}` | Pairs with `modes.dark.forms.default.bg` for contrast. |
+| `modes.dark.forms.default.placeholder` | `{colors.neutral.300}` | Pairs with `modes.dark.forms.default.bg` for contrast. |
 | `modes.dark.component.card.text` | `{colors.neutral.100}` | Pairs with `modes.dark.surface.card` for contrast. |
 | `modes.dark.component.card.textMuted` | `{colors.neutral.300}` | Pairs with `modes.dark.surface.card` for contrast. |
 | `modes.dark.component.card.accent.neutral` | `{colors.neutral.400}` | modes token. |

@@ -2692,6 +2692,25 @@ export interface SpectreSourceTokens {
           };
         };
       };
+      forms: {
+        default: {
+          bg: {
+            value: string;
+          };
+          text: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+          placeholder: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+        };
+      };
       component: {
         card: {
           text: {
@@ -5129,6 +5148,25 @@ export interface SpectreSourceTokens {
             };
           };
           brand: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+        };
+      };
+      forms: {
+        default: {
+          bg: {
+            value: string;
+          };
+          text: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+          placeholder: {
             value: string;
             metadata: {
               pair: string;
@@ -9545,6 +9583,13 @@ export interface SpectreGeneratedTokens {
           brand: string;
         };
       };
+      forms: {
+        default: {
+          bg: string;
+          text: string;
+          placeholder: string;
+        };
+      };
       component: {
         card: {
           text: string;
@@ -10206,6 +10251,13 @@ export interface SpectreGeneratedTokens {
           subtle: string;
           meta: string;
           brand: string;
+        };
+      };
+      forms: {
+        default: {
+          bg: string;
+          text: string;
+          placeholder: string;
         };
       };
       component: {
@@ -12780,6 +12832,13 @@ export const coreTokens: SpectreGeneratedTokens = {
           "brand": "{colors.brand.600}"
         }
       },
+      "forms": {
+        "default": {
+          "bg": "{colors.white}",
+          "text": "{colors.neutral.900}",
+          "placeholder": "{colors.neutral.500}"
+        }
+      },
       "component": {
         "card": {
           "text": "{colors.neutral.900}",
@@ -13441,6 +13500,13 @@ export const coreTokens: SpectreGeneratedTokens = {
           "subtle": "{colors.neutral.400}",
           "meta": "{colors.neutral.400}",
           "brand": "{colors.brand.400}"
+        }
+      },
+      "forms": {
+        "default": {
+          "bg": "{colors.neutral.700}",
+          "text": "{colors.neutral.100}",
+          "placeholder": "{colors.neutral.300}"
         }
       },
       "component": {

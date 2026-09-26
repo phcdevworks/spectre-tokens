@@ -142,14 +142,15 @@ Use semantic tokens as the default interface for downstream UI:
 - `forms`
 - `link`
 - `modes`
-- `typography.heading`, `typography.body`
+- `typography.heading`, `typography.body`, `typography.display`,
+  `typography.lead`
 
 Use raw palette tokens from `colors` only when consumers need fixed color access
 and are intentionally opting out of semantic abstraction. The same rule applies
-to `typography.scale`: prefer `typography.heading.{h1..h6}` and
-`typography.body` for document/UI text roles, and reach for a raw
-`typography.scale` step only when a consumer needs a font size independent of
-any heading/body meaning.
+to `typography.scale`: prefer `typography.heading.{h1..h6}`,
+`typography.body`, `typography.display.{1..6}`, and `typography.lead` for
+document/UI text roles, and reach for a raw `typography.scale` step only when a
+consumer needs a font size independent of any text-role meaning.
 
 Rules:
 
@@ -158,7 +159,8 @@ Rules:
   for theme-aware UI behavior.
 - New downstream-facing token work should prefer semantic naming over direct
   palette references when the value represents UI meaning.
-- `typography.heading.{h1..h6}` and `typography.body` are each a complete role
+- `typography.heading.{h1..h6}`, `typography.body`,
+  `typography.display.{1..6}`, and `typography.lead` are each a complete role
   object (`fontFamily`, `fontSize`, `lineHeight`, `fontWeight`, `letterSpacing`)
   expressed as `{typography.scale.*}` / `{typography.families.*}` references,
   never bare scale-step or family-name strings — every field must independently
@@ -175,6 +177,10 @@ Current behavior:
 - semantic tokens are expected to map cleanly across modes
 - consumers should prefer semantic mode-aware tokens rather than branching on
   palette values manually
+- `modes.*` carries `surface`, `text`, `component`, and the
+  `forms.default.{bg,text,placeholder}` subset; top-level `forms.default.*`
+  holds the default-mode value, and every other `forms.*` state is
+  mode-invariant
 
 Rules:
 
@@ -466,13 +472,9 @@ Rules:
   always-available compatibility signal; this check is the pre-release
   confirmation against real consumers.
 - A concrete failure surfaced here — a real downstream build/type/lint/test
-  break caused by a token contract change — is the trigger for a token proposal
-  (new namespace, new field, a fix). This check is not a license to
-  speculatively expand the token surface; a contract change still needs
-  evidence of a real gap, either a filed downstream request or a proactive
-  audit finding (redeclared `--sp-*` variables, raw visual values, or
-  workaround comments in a downstream repo) — see "Contract Expansion Policy"
-  below.
+  break caused by a token contract change — needs a fix before release. This
+  check guards compatibility; it is not the source of new tokens. Additions
+  follow "Contract Expansion Policy" below.
 
 `npm run audit:downstream` (`scripts/audit-downstream-redeclarations.ts`) is
 the read-only counterpart to this check: for each of `spectre-ui`,
@@ -484,9 +486,9 @@ allowlist. It never installs into, writes to, or otherwise mutates a sibling
 repo, is not part of `npm run check`, and does not make any consumer-specific
 file part of this package's public contract. Every finding needs a human
 read: most are legitimate consumer-owned geometry (an icon's `1em` box, a
-`transparent` outline background) with no action needed; a real hit is
-evidence for the "Contract Expansion Policy" gate above, filed under
-`TODO.md` "Requested by Downstream" like any other gap.
+`transparent` outline background) with no action needed; a real hit is one
+more input to "Contract Expansion Policy" below, filed under `TODO.md`
+"Requested by Downstream" or fixed directly.
 
 ## Downstream Consumer Expectations
 
@@ -564,30 +566,34 @@ Before a contract-impacting change merges:
 
 ## Contract Expansion Policy
 
-This package ships a complete, UI-ready token surface — it does not wait
-passively for downstream demand to drive every addition. But it also does not
-speculatively expand the token surface on aesthetic grounds (e.g. adding a
-step just to make a scale look symmetrical). A contract addition requires
-evidence of a real gap, and that evidence may come from either source:
+This package leads the Spectre system. It is expected to grow the token
+surface ahead of downstream demand, per the companywide "Proactive
+Innovation" rule in the company `AGENTS.md`. There is no evidence gate: a
+contract addition needs sound design judgment and one line of intent, not
+proof that a consumer already asked for it.
 
-- **A filed downstream request** — a consumer hits a concrete limitation and
-  records it under this repo's `TODO.md` "Requested by Downstream" section
-  with requester, date, reason, and a backlink to the consumer's own tracked
-  work.
-- **A proactive audit finding** — this repo (or the agent maintaining it)
-  inspects downstream design-layer repos for `--sp-*` redeclarations, raw
-  hardcoded visual values, or workaround/temporary comments, and confirms one
-  represents a genuine token-vocabulary gap rather than legitimate
-  consumer-owned geometry or a UI/component delivery gap that belongs in
-  `spectre-ui` instead.
+Good reasons to add tokens, any one of which is enough:
 
-Both paths land the same way: filed under "Requested by Downstream" (or
-resolved directly, with the evidence noted in the changelog entry), then
-carried through source tokens, manifest authority, runtime/types, CSS, DTCG,
-docs, and a classified `[Unreleased]` changelog entry per "Change Types"
-above. Evidence-gating stays in force indefinitely — it is not a temporary
-posture that lapses once the current audit backlog (see `ROADMAP.md`,
-`TODO.md`) clears.
+- **Completing a vocabulary** — a missing state, mode, size step, or role in
+  a family that already exists (hover without active, light without dark).
+- **Covering an established pattern** — a component or role that mature
+  design systems routinely provide and Spectre does not yet.
+- **Setting up the roadmap** — tokens a planned `spectre-ui` recipe,
+  component, or theme will need.
+- **Input from downstream** — a request under `TODO.md` "Requested by
+  Downstream" or an `npm run audit:downstream` finding. Still welcome, never
+  required.
+
+Every addition lands the same way: source tokens, manifest authority,
+runtime/types, CSS, DTCG, docs, a passing `npm run check`, and a classified
+`[Unreleased]` changelog entry whose first line says what the addition is
+for. Once published, it appears in `DOWNSTREAM_PARITY.md`, and downstream
+repos pick it up as their own backlog through `npm run audit:parity`.
+
+What does not change: additions are additive by default, breaking changes
+are classified `breaking`, the protected families (`success`, `warning`,
+`danger`, CTA/brand) need Bradley Potts's approval, and this package defines
+token meaning, not component structure.
 
 ## Acceptable Changes
 

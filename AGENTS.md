@@ -30,6 +30,7 @@ skills, plugins, templates, or general-purpose workflows.
 | ChatGPT        | Strategy, coordination, prompt design, and external review        | Support only             |
 | GitHub Copilot | Development assistance                                            | [COPILOT.md](COPILOT.md) |
 | Google Jules   | Bounded automated maintenance                                     | [JULES.md](JULES.md)     |
+| xAI Grok       | Development assistance                                            | [GROK.md](GROK.md)       |
 
 **Claude Code has zero git access in this repository, effective 2026-08-13 by
 explicit direction from Bradley Potts.** Claude Code must not run any git
@@ -44,14 +45,12 @@ Claude Code.
 and tag authority** in this repository, effective 2026-07-25 by explicit
 direction from Bradley Potts — see the Commit Policy section in each agent's
 own guide ([CODEX.md](CODEX.md), [COPILOT.md](COPILOT.md),
-[JULES.md](JULES.md)). **OpenAI Codex** additionally has release authority,
-but release execution is explicit-only: normal implementation commits
-accumulate under `CHANGELOG.md [Unreleased]`, and Codex must not bump the
-version, create or push a release tag, or publish a GitHub Release unless
-Bradley Potts explicitly instructs Codex to cut that release. A request to
-commit, push, validate, or "get ready" is not release authorization; see
-`CODEX.md` "Release Mechanics" for the full procedure once authorization is
-given. **OpenAI Codex additionally executes git operations on Claude
+[JULES.md](JULES.md)). **OpenAI Codex** additionally has release authority on
+request, matching the companywide grant: a commit request commits and pushes
+only, and Codex bumps the version, tags, and publishes the GitHub Release only
+when Bradley Potts says to get this repo ready for release. It never stacks a
+new version on a tag that has not been published to npm yet — see `CODEX.md`
+"Release Mechanics." **OpenAI Codex additionally executes git operations on Claude
 Code's behalf**: when Claude Code hands off validated work, Codex is
 responsible for staging, committing, tagging, and pushing it, not only
 Codex's own documentation/hygiene/release commits. **npm publishing remains
@@ -62,17 +61,23 @@ scope of work as defined above — it does not expand what any agent is
 authorized to decide otherwise. ChatGPT has no repository access and is
 excluded.
 
+**xAI Grok (including Grok Bot, the same agent running automatically) has
+commit and push authority** here, effective 2026-09-26 by explicit direction
+from Bradley Potts — see [GROK.md](GROK.md) "Git Authority." Grok commits and
+pushes its own work only: it does not create or push tags, cut releases, merge
+pull requests, or publish packages.
+
 **A commit is not finished until it is pushed.** Every agent that still holds
-git authority under this roster — Codex, Copilot, Jules — must push
+git authority under this roster — Codex, Copilot, Jules, Grok — must push
 immediately after committing (`git push`, including any needed `-u`/tags) as
 part of the same action — never leave a commit sitting local only. This
 closes a recurring gap where an agent commits and stops short of pushing,
 leaving work stranded on the machine.
 
 **Commit authorship is human-only.** No agent with git authority under this
-roster — Codex, Copilot, or Jules — adds itself (or any other AI) as a
+roster — Codex, Copilot, Jules, or Grok — adds itself (or any other AI) as a
 commit author or co-author — no `Co-Authored-By: Claude`/`Codex`/
-`Copilot`/`Jules` trailer, no author-field changes, in this repository. The
+`Copilot`/`Jules`/`Grok` trailer, no author-field changes, in this repository. The
 git author/committer stays Bradley Potts (or the configured human git user)
 on every commit, regardless of which agent performed the work. Push and tag
 authority above does not extend to authorship attribution.
@@ -251,8 +256,9 @@ consumed by downstream Spectre packages and compatible applications.
 ## Working Boundaries
 
 - Token meaning — including proactive expansion of the semantic vocabulary —
-  belongs here. The package should ship a complete UI-ready token surface, not
-  wait for downstream demand to drive every addition.
+  belongs here. The package leads: it ships a complete UI-ready token surface
+  ahead of downstream demand, with no evidence gate (see `TOKEN_CONTRACT.md`
+  "Contract Expansion Policy").
 - Downstream UI packages define structure, composition, and component anatomy.
 - Adapter packages translate Spectre contracts for specific frameworks and
   runtimes.
