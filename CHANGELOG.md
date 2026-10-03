@@ -6,6 +6,152 @@ reflects package releases published to npm.
 
 ## [Unreleased]
 
+Contract change type: semantic change
+
+### Added
+
+- Element-scoped and system color modes (requested by `spectre-base`,
+  2026-09-27), so one section (header, footer, hero) can carry its own mode
+  and "follow the OS" works without JavaScript. Every mode block now matches
+  the attribute on the root and on any element:
+  `:root[data-spectre-theme="dark"], :root [data-spectre-theme="dark"]`, and
+  the same for `high-contrast`. A new `light` block restores default values
+  inside a dark or high-contrast ancestor. `data-spectre-theme="system"`
+  takes the light values, and the dark values inside
+  `@media (prefers-color-scheme: dark)`. A page with no attribute stays light
+  as before. `system` is opt-in, so existing sites don't switch to dark on
+  their own. Each mode block now declares the full set of mode-varying
+  variables, including the high-contrast-only button, link, and form-state
+  overrides, so a nested section fully resets. `--sp-elevation-*-surface`
+  (which reads `var(--sp-surface-*)`) is re-declared in each block so it
+  resolves in a scoped section. `check:css` enforces all of this.
+- Phase 16 proactive vocabulary expansion (owner-directed, 2026-09-26). Each
+  wave below is additive and covers runtime, TypeScript, CSS, DTCG, and docs.
+- High-contrast mode `modes.highContrast`, emitted under
+  `[data-spectre-theme="high-contrast"]`, so a site can offer a stronger
+  accessibility setting than AA. It starts from `default` (light), with
+  `surface.page` set to white and every text pair raised to WCAG AAA (7:1).
+  Borders, dividers, and tracks that were step 500 or lighter move to
+  `neutral.700` (or step 600 of their own hue), and `surface.divider` is
+  `neutral.700`. 98 leaves differ from `default`, including text and border
+  shades of the success, warning, and danger roles in alerts, toasts,
+  badges, and table rows. Their `default`/`dark` values are unchanged.
+  `check:contrast` now requires 7:1 for every text pair under
+  `modes.highContrast`. `SpectreModeName` gains `'highContrast'`.
+- High-contrast overrides for values that are not otherwise mode-aware, so
+  every button, link, and form-state text pair in high-contrast mode also
+  meets 7:1. `modes.highContrast.buttons`, `modes.highContrast.link`, and
+  `modes.highContrast.forms.{valid,invalid}` take effect only in the
+  `[data-spectre-theme="high-contrast"]` block; `:root`, `light`, and dark
+  keep the top-level `buttons.*`, `link.*`, and `forms.*` values. Changes: `primary`
+  bg `info.700`/`800`/`900` (was 5.93:1, now 7.56:1); `secondary` and `ghost`
+  text `info.800`; `link` button text `info.700`/`800`/`900`; inline links
+  `brand.700`/`800`/`900` (5.74 → 8.15:1). The locked colors were approved for
+  high-contrast mode only by Bradley Potts on 2026-10-03: `cta` bg
+  `brand.700`/`800`/`900` (6.09 → 8.15:1), `danger` `error.800`/`900`/`900`
+  (4.82 → 8.31:1), `success` `success.800`/`900`/`900` (5.01 → 7.13:1),
+  `warning` `warning.900` with hover/pressed `palette.amber.950` because the
+  warning scale ends at 900 (6.22 → 8.52:1), `forms.valid` text
+  `success.900` and border `success.700` (4.79 → 8.70:1), and `forms.invalid`
+  text `error.800` and border `error.700` (5.91 → 7.59:1). `check:css` fails
+  if any `modes.highContrast.buttons`/`link` override is missing from the
+  high-contrast block or from `:root`.
+- Data-visualization palette `component.chart` (mode-aware), so charts use
+  token colors instead of a library default. Eight categorical `series`
+  colors alternate light and dark as well as hue, and each meets 3:1 against
+  `chart.bg`. Seven-step `sequential` (brand) and `diverging` (red to blue
+  through neutral) ramps run toward higher contrast with the background in
+  each mode. `grid`, `axis` (3:1), and `label` (AA) roles complete the group.
+  Emitted as `--sp-chart-*`.
+- Control sizing and density `control.{sm,md,lg}` (`height` 32/40/48px,
+  `paddingInline` 12/16/20px, `iconSize` → `icons.sm/md/lg`) and
+  `control.compact.{sm,md,lg}` (24/32/40px, 8/12/16px,
+  `icons.xs/sm/md`), so buttons, inputs, and selects share one size scale.
+  Emitted as `--sp-control-*`. A
+  `[data-spectre-density="compact"]` block re-points the default sizes at
+  the compact values on any element carrying the attribute.
+- Semantic elevation `elevation.{flat,raised,overlay,modal}`, so consumers
+  pick one level instead of combining raw shadow and z-index steps. Each
+  level pairs a `shadow`, `surface`, and `zIndex` by reference (`raised` =
+  `shadows.md` + `surface.card` + `zIndex.base`; `modal` = `shadows.2xl` +
+  `surface.card` + `zIndex.modal`). `--sp-elevation-*` are `var()`
+  references, so the surface follows the active color mode.
+- Text selection, caret, and scrollbar colors: `component.selection.{bg,text}`
+  (AA pair), `component.caret.color`, and
+  `component.scrollbar.{track,thumb,thumbHover}`, per mode.
+- Skeleton loading colors `component.skeleton.{base,shimmer}`, per mode.
+- Keycap colors `component.prose.kbd.{bg,border,text}` (AA pair), per mode.
+- `metadata.minContrast` on a token marks a non-text pair (chart series and
+  axis) and sets its required ratio. `check:contrast` uses it in place of the
+  text-pair threshold.
+- `outputParity.css.groups` entries may set `"kebab": true` to kebab-split
+  camelCase keys in a cascade-only group. `check:parity` now covers `control`,
+  `elevation` (shadow and z-index cascade-only; the surface as `duplicated`,
+  since every mode block re-declares it), and the new mode-aware component
+  groups. It also requires
+  mode-scoped and duplicated variables in the high-contrast block and keeps
+  cascade-only variables out of it.
+- Light footer palette `component.footer.light.*` (requested by
+  `spectre-base`, 2026-09-27), so a footer can sit on a light surface with
+  token-backed colors. It covers `bg`, `text`, `heading`, `muted`, `link`,
+  `linkHover`, `border`, `divider`, `chipBg`, and `accent.*` (all but
+  `thickness`, which stays shared at `component.footer.accent.thickness`).
+  Values are set in `modes.default` (`neutral.100` surface) and `modes.dark`
+  (`neutral.200` surface: it stays light but less bright on a dark page),
+  with contrast `pair` metadata on every text role. Emitted as
+  `--sp-footer-light-*` in every mode block. The existing dark
+  `component.footer.*` values are unchanged.
+- Responsive layout steps `xl | 2xl | 3xl | 4xl` for
+  `layout.section.padding`, `layout.section.gap`, `layout.stack.gap`, and
+  `layout.container.paddingInline` (requested by `spectre-base`,
+  2026-10-01). Each step has a narrow-viewport base value and a wider value
+  under `layout.responsive.lg.*`, applied at the `lg` breakpoint (1024px):
+  section padding 64→96, 80→128, 96→160, 128→192px. Gaps and container
+  padding 40→48, 48→64, 64→96, 80→128px. In CSS, an
+  `@media (min-width: 1024px)` block after the mode blocks re-points
+  `--sp-layout-*-{xl..4xl}` at the new `--sp-layout-responsive-lg-*`
+  variables, so consumers keep using one variable name. Section padding stays
+  symmetric.
+- Hero padding pairs `layout.hero.paddingTop.{sm,md,lg}` (`2xl`, `3xl`,
+  `4xl`) and `layout.hero.paddingBottom.{sm,md,lg}` (`xl`, `2xl`, `3xl`),
+  referencing section padding steps rather than adding a parallel scale.
+  `--sp-layout-hero-padding-*` are emitted as `var()` references to the
+  section padding variables, so they follow the responsive override.
+- `space.128`, `space.160`, and `space.192` (`8rem`, `10rem`, `12rem`) to
+  back the new layout steps.
+- `check:structure` now fails on any layout spacing value off the 8px grid,
+  on a `layout.responsive.<breakpoint>` key that isn't a breakpoint, on a
+  responsive step smaller than its base value, and on a hero step that
+  doesn't reference a `layout.section.padding` step.
+
+### Changed
+
+- Layout spacing follows one 8px grid (owner-directed, 2026-10-03). 4px is
+  only for spacing inside a component, never between layout blocks.
+  `layout.stack.gap.md` was the one off-grid layout value (12px). The stack
+  gap scale is now `sm` 8px (unchanged), `md` 16px (was 12px), `lg` 24px
+  (was 16px), so `--sp-layout-stack-gap-md` and `--sp-layout-stack-gap-lg`
+  render larger. `lg` moved too so that `md` and `lg` stay different.
+- `sm | md | lg` stay fixed across viewports for dense layouts. Only
+  `xl`–`4xl` are responsive.
+- The dark block selector changed from `:root[data-spectre-theme="dark"]`
+  alone to that selector plus `:root [data-spectre-theme="dark"]` (the new
+  `high-contrast` and `light` blocks use the same pair). Same values at the
+  root. Tooling that
+  matches the exact block header (such as `spectre-ui`'s cross-bundle
+  selector test) needs updating. Each mode block now also repeats
+  mode-independent variables that another mode overrides (e.g. `buttons.*`
+  in the dark block), so `dist/index.css` grows from about 2,500 to about
+  4,000 lines.
+- `DOWNSTREAM_PARITY.md`'s "Dark mode" column is now "Varies by mode": it
+  marks a variable only when the dark or high-contrast block gives it a
+  different value (or a `var()` that re-resolves per mode), not merely when
+  the dark block declares it. Variables with one value in every mode, such as
+  `--sp-surface-overlay`, are no longer marked.
+- DTCG output types a whole-value alias to a shadow as `shadow` (was
+  `string`), and shadow and gradient detection now covers
+  `modes.highContrast.*` paths as it does `default` and `dark`.
+
 ## [4.11.0] - 2026-09-26
 
 **Release Title:** CSS Contract Coverage and Parity Tooling

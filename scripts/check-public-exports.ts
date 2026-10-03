@@ -61,7 +61,7 @@ manifest.requiredOutputs.js.rootTypeExports.forEach((typeName) => {
   }
 });
 
-if (!cssOutput.includes(':root {') || !cssOutput.includes(':root[data-spectre-theme="dark"] {')) {
+if (!cssOutput.includes(':root {') || !cssOutput.includes(':root[data-spectre-theme="dark"]')) {
   throw new Error('Built CSS output is missing the expected root or dark-mode block.');
 }
 

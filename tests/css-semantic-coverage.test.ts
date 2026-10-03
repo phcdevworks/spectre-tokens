@@ -65,6 +65,15 @@ describe('generateCssVariables — semantic namespace coverage', () => {
     ).toThrow()
   })
 
+  it('scopes every mode block to the attribute on the root and on any descendant', () => {
+    const scopedCss = generateCssVariables(tokens, { selector: '.app' })
+    ;['dark', 'high-contrast', 'light', 'system'].forEach((theme) => {
+      expect(scopedCss).toContain(`.app[data-spectre-theme="${theme}"]`)
+      expect(scopedCss).toContain(`.app [data-spectre-theme="${theme}"]`)
+    })
+    expect(scopedCss).toMatch(/@media \(prefers-color-scheme: dark\) \{\n {2}\.app\[data-spectre-theme="system"\]/)
+  })
+
   it('does not count a variable reference as a declaration', () => {
     expect(() =>
       assertCssCoverage(':root { color: var(--sp-link-default); }', ['link'], {

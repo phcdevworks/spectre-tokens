@@ -13,7 +13,7 @@ const totalVariables = families.reduce((sum, family) => sum + family.variables.l
 
 const code = (value: string): string => `\`${value}\``
 
-const darkModeCell = (family: CssFamily): string => {
+const modeCell = (family: CssFamily): string => {
   if (family.modeAware.size === 0) return 'no'
   if (family.modeAware.size === family.variables.length) return 'yes'
   return `${family.modeAware.size} of ${family.variables.length}`
@@ -28,7 +28,7 @@ const renderSection = (section: string): string => {
         .map((prefix) => code(family.variables.includes(`--sp-${prefix}`) ? `--sp-${prefix}` : `--sp-${prefix}-*`))
         .join(', '),
       String(family.variables.length),
-      darkModeCell(family),
+      modeCell(family),
       `${family.sources.map(code).join(', ')}${family.note ? ` — ${family.note}` : ''} |`
     ].join(' | ')
   )
@@ -37,7 +37,7 @@ const renderSection = (section: string): string => {
       `<details>`,
       `<summary><code>${family.id}</code> (${family.variables.length})</summary>`,
       '',
-      ...family.variables.map((name) => `- ${code(name)}${family.modeAware.has(name) ? ' (dark mode)' : ''}`),
+      ...family.variables.map((name) => `- ${code(name)}${family.modeAware.has(name) ? ' (varies by mode)' : ''}`),
       '',
       `</details>`
     ].join('\n')
@@ -46,7 +46,7 @@ const renderSection = (section: string): string => {
   return [
     `## ${section}`,
     '',
-    '| Family | Variables | Count | Dark mode | Source |',
+    '| Family | Variables | Count | Varies by mode | Source |',
     '| ------ | --------- | ----- | --------- | ------ |',
     ...rows,
     '',
@@ -73,8 +73,10 @@ const content = [
   'Which recipe consumes a family, and how, is decided downstream. This package',
   'defines what each token means, not how a component is built from it.',
   '',
-  '"Dark mode" means the variable is redeclared in the',
-  '`[data-spectre-theme="dark"]` block. The others are declared once in `:root`.',
+  '"Varies by mode" means the `dark` or `high-contrast` mode block gives the',
+  'variable a different value from `:root`, or a `var()` that re-resolves in',
+  'each mode. Every mode block declares the full mode-varying set, so a',
+  'section with its own `data-spectre-theme` resets all of them.',
   '',
   '## Checklist with live status',
   '',

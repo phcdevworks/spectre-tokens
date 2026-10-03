@@ -171,6 +171,20 @@ export interface ComponentFooterTokens<Value = string> {
   divider: Value;
   chipBg: Value;
   accent: ComponentAccentTokens<Value>;
+  light: ComponentFooterLightTokens<Value>;
+}
+
+export interface ComponentFooterLightTokens<Value = string> {
+  bg: Value;
+  text: Value;
+  heading: Value;
+  muted: Value;
+  link: Value;
+  linkHover: Value;
+  border: Value;
+  divider: Value;
+  chipBg: Value;
+  accent: Omit<ComponentAccentTokens<Value>, 'thickness'>;
 }
 
 export interface ComponentModalTokens<Value = string> {
@@ -299,7 +313,7 @@ export interface ComponentTokens<Value = string> {
   [key: string]: unknown;
 }
 
-export type SpectreModeName = 'default' | 'dark';
+export type SpectreModeName = 'default' | 'dark' | 'highContrast';
 
 export type SemanticTokenValue = string;
 
@@ -338,8 +352,14 @@ export interface SpectreModeTokens {
       text: SemanticTokenValue;
       placeholder: SemanticTokenValue;
     };
+    // high-contrast mode only; other modes inherit the top-level forms.*
+    valid?: Record<string, SemanticTokenValue>;
+    invalid?: Record<string, SemanticTokenValue>;
   };
   component: ComponentTokens<SemanticTokenValue>;
+  // high-contrast mode only; other modes use the top-level buttons.* and link.*
+  buttons?: Record<string, Record<string, SemanticTokenValue>>;
+  link?: Record<string, SemanticTokenValue>;
 }
 
 export type SpectreTokens = SpectreGeneratedTokens;
@@ -358,9 +378,58 @@ export interface LayoutTokens {
     maxWidthProse: string;
     maxWidthWide: string;
   };
+  hero: {
+    paddingTop: TokenScale;
+    paddingBottom: TokenScale;
+  };
   sidebar: {
     width: string;
   };
+  responsive: Record<
+    string,
+    {
+      section: {
+        padding: TokenScale;
+        gap: TokenScale;
+      };
+      stack: {
+        gap: TokenScale;
+      };
+      container: {
+        paddingInline: TokenScale;
+      };
+    }
+  >;
+}
+
+export interface ControlSizeTokens {
+  height: string;
+  paddingInline: string;
+  iconSize: string;
+}
+
+export interface ControlTokens {
+  sm: ControlSizeTokens;
+  md: ControlSizeTokens;
+  lg: ControlSizeTokens;
+  compact: {
+    sm: ControlSizeTokens;
+    md: ControlSizeTokens;
+    lg: ControlSizeTokens;
+  };
+}
+
+export interface ElevationLevelTokens {
+  shadow: string;
+  surface: string;
+  zIndex: string;
+}
+
+export interface ElevationTokens {
+  flat: ElevationLevelTokens;
+  raised: ElevationLevelTokens;
+  overlay: ElevationLevelTokens;
+  modal: ElevationLevelTokens;
 }
 
 export type Tokens = SpectreGeneratedTokens;

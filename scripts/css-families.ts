@@ -40,8 +40,16 @@ const STATIC_FAMILIES: FamilyDefinition[] = [
   { id: 'layout-container', section: 'Foundations', prefixes: ['layout-container'], sources: ['layout.container'] },
   { id: 'layout-section', section: 'Foundations', prefixes: ['layout-section'], sources: ['layout.section'] },
   { id: 'layout-stack', section: 'Foundations', prefixes: ['layout-stack'], sources: ['layout.stack'] },
+  { id: 'layout-hero', section: 'Foundations', prefixes: ['layout-hero'], sources: ['layout.hero'] },
+  {
+    id: 'layout-responsive',
+    section: 'Foundations',
+    prefixes: ['layout-responsive'],
+    sources: ['layout.responsive']
+  },
   { id: 'layout-sidebar', section: 'Foundations', prefixes: ['layout-sidebar'], sources: ['layout.sidebar'] },
   { id: 'radius', section: 'Foundations', prefixes: ['radius'], sources: ['radii'] },
+  { id: 'elevation', section: 'Foundations', prefixes: ['elevation'], sources: ['elevation'] },
   { id: 'border', section: 'Foundations', prefixes: ['border'], sources: ['border'] },
   { id: 'shadow', section: 'Foundations', prefixes: ['shadow'], sources: ['shadows'] },
   { id: 'opacity', section: 'Foundations', prefixes: ['opacity'], sources: ['opacity'] },
@@ -83,7 +91,8 @@ const STATIC_FAMILIES: FamilyDefinition[] = [
     prefixes: ['button'],
     sources: ['buttons', 'component.button', 'modes.*.component.button']
   },
-  { id: 'form', section: 'Controls', prefixes: ['form'], sources: ['forms', 'modes.*.forms'] }
+  { id: 'form', section: 'Controls', prefixes: ['form'], sources: ['forms', 'modes.*.forms'] },
+  { id: 'control', section: 'Controls', prefixes: ['control'], sources: ['control'] }
 ]
 
 const componentFamilies = (): FamilyDefinition[] =>
@@ -101,10 +110,21 @@ const declarations = (block: string): Map<string, string> =>
 
 export const collectCssFamilies = (): CssFamily[] => {
   const css = generateCssVariables(tokens)
-  const darkSelector = `${DEFAULT_SELECTOR}[data-spectre-theme="dark"] {`
-  const darkStart = css.indexOf(darkSelector)
+  const blockVars = (theme: string): Map<string, string> => {
+    const start = css.indexOf(`${DEFAULT_SELECTOR}[data-spectre-theme="${theme}"]`)
+    return declarations(css.slice(start, css.indexOf('\n}', start)))
+  }
+  const darkStart = css.indexOf(`${DEFAULT_SELECTOR}[data-spectre-theme="dark"]`)
   const rootVars = declarations(css.slice(0, darkStart))
-  const darkVars = declarations(css.slice(darkStart))
+  const modeVars = [blockVars('dark'), blockVars('high-contrast')]
+  // Every mode block repeats the full mode-varying set so a nested section can
+  // reset, so presence alone proves nothing: a variable varies by mode when a
+  // mode gives it a different value, or a var() that re-resolves per mode.
+  const variesByMode = (name: string, rootValue: string): boolean =>
+    modeVars.some((vars) => {
+      const value = vars.get(name)
+      return value !== undefined && (value !== rootValue || value.includes('var('))
+    })
 
   const families: CssFamily[] = [...STATIC_FAMILIES, ...componentFamilies()].map((definition) => ({
     ...definition,
@@ -129,7 +149,7 @@ export const collectCssFamilies = (): CssFamily[] => {
     }
     best.family.variables.push(name)
     best.family.values.set(name, value)
-    if (darkVars.has(name)) best.family.modeAware.add(name)
+    if (variesByMode(name, value)) best.family.modeAware.add(name)
   })
 
   if (unclassified.length > 0) {

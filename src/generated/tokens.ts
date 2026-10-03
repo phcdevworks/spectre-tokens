@@ -634,6 +634,90 @@ export interface SpectreSourceTokens {
         };
         thickness: string;
       };
+      light: {
+        bg: {
+          value: string;
+          metadata: {
+            pair: string;
+          };
+        };
+        text: {
+          value: string;
+          metadata: {
+            pair: string;
+          };
+        };
+        heading: {
+          value: string;
+          metadata: {
+            pair: string;
+          };
+        };
+        muted: {
+          value: string;
+          metadata: {
+            pair: string;
+          };
+        };
+        link: {
+          value: string;
+          metadata: {
+            pair: string;
+          };
+        };
+        linkHover: {
+          value: string;
+          metadata: {
+            pair: string;
+          };
+        };
+        border: {
+          value: string;
+        };
+        divider: {
+          value: string;
+        };
+        chipBg: {
+          value: string;
+        };
+        accent: {
+          neutral: {
+            value: string;
+            metadata: {
+            };
+          };
+          brand: {
+            value: string;
+            metadata: {
+            };
+          };
+          info: {
+            value: string;
+            metadata: {
+            };
+          };
+          success: {
+            value: string;
+            metadata: {
+            };
+          };
+          warning: {
+            value: string;
+            metadata: {
+            };
+          };
+          danger: {
+            value: string;
+            metadata: {
+            };
+          };
+          cta: {
+            value: string;
+            metadata: {
+            };
+          };
+        };
+      };
     };
     modal: {
       bg: {
@@ -1851,6 +1935,25 @@ export interface SpectreSourceTokens {
       hr: {
         value: string;
       };
+      kbd: {
+        bg: {
+          value: string;
+          metadata: {
+            pair: string;
+          };
+        };
+        border: {
+          value: string;
+          metadata: {
+          };
+        };
+        text: {
+          value: string;
+          metadata: {
+            pair: string;
+          };
+        };
+      };
     };
     externalAuthButton: {
       bg: {
@@ -2059,6 +2162,214 @@ export interface SpectreSourceTokens {
       };
       requiredIndicatorText: {
         value: string;
+      };
+    };
+    skeleton: {
+      base: {
+        value: string;
+        metadata: {
+        };
+      };
+      shimmer: {
+        value: string;
+        metadata: {
+        };
+      };
+    };
+    selection: {
+      bg: {
+        value: string;
+        metadata: {
+          pair: string;
+        };
+      };
+      text: {
+        value: string;
+        metadata: {
+          pair: string;
+        };
+      };
+    };
+    caret: {
+      color: {
+        value: string;
+        metadata: {
+        };
+      };
+    };
+    scrollbar: {
+      track: {
+        value: string;
+        metadata: {
+        };
+      };
+      thumb: {
+        value: string;
+        metadata: {
+        };
+      };
+      thumbHover: {
+        value: string;
+        metadata: {
+        };
+      };
+    };
+    chart: {
+      bg: {
+        value: string;
+        metadata: {
+          pair: string;
+        };
+      };
+      grid: {
+        value: string;
+        metadata: {
+        };
+      };
+      axis: {
+        value: string;
+        metadata: {
+          pair: string;
+          minContrast: number;
+        };
+      };
+      label: {
+        value: string;
+        metadata: {
+          pair: string;
+        };
+      };
+      series: {
+        '1': {
+          value: string;
+          metadata: {
+            pair: string;
+            minContrast: number;
+          };
+        };
+        '2': {
+          value: string;
+          metadata: {
+            pair: string;
+            minContrast: number;
+          };
+        };
+        '3': {
+          value: string;
+          metadata: {
+            pair: string;
+            minContrast: number;
+          };
+        };
+        '4': {
+          value: string;
+          metadata: {
+            pair: string;
+            minContrast: number;
+          };
+        };
+        '5': {
+          value: string;
+          metadata: {
+            pair: string;
+            minContrast: number;
+          };
+        };
+        '6': {
+          value: string;
+          metadata: {
+            pair: string;
+            minContrast: number;
+          };
+        };
+        '7': {
+          value: string;
+          metadata: {
+            pair: string;
+            minContrast: number;
+          };
+        };
+        '8': {
+          value: string;
+          metadata: {
+            pair: string;
+            minContrast: number;
+          };
+        };
+      };
+      sequential: {
+        '1': {
+          value: string;
+          metadata: {
+          };
+        };
+        '2': {
+          value: string;
+          metadata: {
+          };
+        };
+        '3': {
+          value: string;
+          metadata: {
+          };
+        };
+        '4': {
+          value: string;
+          metadata: {
+          };
+        };
+        '5': {
+          value: string;
+          metadata: {
+          };
+        };
+        '6': {
+          value: string;
+          metadata: {
+          };
+        };
+        '7': {
+          value: string;
+          metadata: {
+          };
+        };
+      };
+      diverging: {
+        '1': {
+          value: string;
+          metadata: {
+          };
+        };
+        '2': {
+          value: string;
+          metadata: {
+          };
+        };
+        '3': {
+          value: string;
+          metadata: {
+          };
+        };
+        '4': {
+          value: string;
+          metadata: {
+          };
+        };
+        '5': {
+          value: string;
+          metadata: {
+          };
+        };
+        '6': {
+          value: string;
+          metadata: {
+          };
+        };
+        '7': {
+          value: string;
+          metadata: {
+          };
+        };
       };
     };
   };
@@ -2575,6 +2886,40 @@ export interface SpectreSourceTokens {
       };
       text: {
         value: string;
+      };
+    };
+  };
+  control: {
+    sm: {
+      height: string;
+      paddingInline: string;
+      iconSize: string;
+    };
+    md: {
+      height: string;
+      paddingInline: string;
+      iconSize: string;
+    };
+    lg: {
+      height: string;
+      paddingInline: string;
+      iconSize: string;
+    };
+    compact: {
+      sm: {
+        height: string;
+        paddingInline: string;
+        iconSize: string;
+      };
+      md: {
+        height: string;
+        paddingInline: string;
+        iconSize: string;
+      };
+      lg: {
+        height: string;
+        paddingInline: string;
+        iconSize: string;
       };
     };
   };
@@ -3342,6 +3687,96 @@ export interface SpectreSourceTokens {
             cta: {
               value: string;
               metadata: {
+              };
+            };
+          };
+          light: {
+            bg: {
+              value: string;
+              metadata: {
+                pair: string;
+              };
+            };
+            text: {
+              value: string;
+              metadata: {
+                pair: string;
+              };
+            };
+            heading: {
+              value: string;
+              metadata: {
+                pair: string;
+              };
+            };
+            muted: {
+              value: string;
+              metadata: {
+                pair: string;
+              };
+            };
+            link: {
+              value: string;
+              metadata: {
+                pair: string;
+              };
+            };
+            linkHover: {
+              value: string;
+              metadata: {
+                pair: string;
+              };
+            };
+            border: {
+              value: string;
+              metadata: {
+              };
+            };
+            divider: {
+              value: string;
+              metadata: {
+              };
+            };
+            chipBg: {
+              value: string;
+              metadata: {
+              };
+            };
+            accent: {
+              neutral: {
+                value: string;
+                metadata: {
+                };
+              };
+              brand: {
+                value: string;
+                metadata: {
+                };
+              };
+              info: {
+                value: string;
+                metadata: {
+                };
+              };
+              success: {
+                value: string;
+                metadata: {
+                };
+              };
+              warning: {
+                value: string;
+                metadata: {
+                };
+              };
+              danger: {
+                value: string;
+                metadata: {
+                };
+              };
+              cta: {
+                value: string;
+                metadata: {
+                };
               };
             };
           };
@@ -4808,6 +5243,25 @@ export interface SpectreSourceTokens {
             metadata: {
             };
           };
+          kbd: {
+            bg: {
+              value: string;
+              metadata: {
+                pair: string;
+              };
+            };
+            border: {
+              value: string;
+              metadata: {
+              };
+            };
+            text: {
+              value: string;
+              metadata: {
+                pair: string;
+              };
+            };
+          };
         };
         externalAuthButton: {
           bg: {
@@ -5037,6 +5491,214 @@ export interface SpectreSourceTokens {
           requiredIndicatorText: {
             value: string;
             metadata: {
+            };
+          };
+        };
+        skeleton: {
+          base: {
+            value: string;
+            metadata: {
+            };
+          };
+          shimmer: {
+            value: string;
+            metadata: {
+            };
+          };
+        };
+        selection: {
+          bg: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+          text: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+        };
+        caret: {
+          color: {
+            value: string;
+            metadata: {
+            };
+          };
+        };
+        scrollbar: {
+          track: {
+            value: string;
+            metadata: {
+            };
+          };
+          thumb: {
+            value: string;
+            metadata: {
+            };
+          };
+          thumbHover: {
+            value: string;
+            metadata: {
+            };
+          };
+        };
+        chart: {
+          bg: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+          grid: {
+            value: string;
+            metadata: {
+            };
+          };
+          axis: {
+            value: string;
+            metadata: {
+              pair: string;
+              minContrast: number;
+            };
+          };
+          label: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+          series: {
+            '1': {
+              value: string;
+              metadata: {
+                pair: string;
+                minContrast: number;
+              };
+            };
+            '2': {
+              value: string;
+              metadata: {
+                pair: string;
+                minContrast: number;
+              };
+            };
+            '3': {
+              value: string;
+              metadata: {
+                pair: string;
+                minContrast: number;
+              };
+            };
+            '4': {
+              value: string;
+              metadata: {
+                pair: string;
+                minContrast: number;
+              };
+            };
+            '5': {
+              value: string;
+              metadata: {
+                pair: string;
+                minContrast: number;
+              };
+            };
+            '6': {
+              value: string;
+              metadata: {
+                pair: string;
+                minContrast: number;
+              };
+            };
+            '7': {
+              value: string;
+              metadata: {
+                pair: string;
+                minContrast: number;
+              };
+            };
+            '8': {
+              value: string;
+              metadata: {
+                pair: string;
+                minContrast: number;
+              };
+            };
+          };
+          sequential: {
+            '1': {
+              value: string;
+              metadata: {
+              };
+            };
+            '2': {
+              value: string;
+              metadata: {
+              };
+            };
+            '3': {
+              value: string;
+              metadata: {
+              };
+            };
+            '4': {
+              value: string;
+              metadata: {
+              };
+            };
+            '5': {
+              value: string;
+              metadata: {
+              };
+            };
+            '6': {
+              value: string;
+              metadata: {
+              };
+            };
+            '7': {
+              value: string;
+              metadata: {
+              };
+            };
+          };
+          diverging: {
+            '1': {
+              value: string;
+              metadata: {
+              };
+            };
+            '2': {
+              value: string;
+              metadata: {
+              };
+            };
+            '3': {
+              value: string;
+              metadata: {
+              };
+            };
+            '4': {
+              value: string;
+              metadata: {
+              };
+            };
+            '5': {
+              value: string;
+              metadata: {
+              };
+            };
+            '6': {
+              value: string;
+              metadata: {
+              };
+            };
+            '7': {
+              value: string;
+              metadata: {
+              };
             };
           };
         };
@@ -5828,6 +6490,96 @@ export interface SpectreSourceTokens {
               };
             };
           };
+          light: {
+            bg: {
+              value: string;
+              metadata: {
+                pair: string;
+              };
+            };
+            text: {
+              value: string;
+              metadata: {
+                pair: string;
+              };
+            };
+            heading: {
+              value: string;
+              metadata: {
+                pair: string;
+              };
+            };
+            muted: {
+              value: string;
+              metadata: {
+                pair: string;
+              };
+            };
+            link: {
+              value: string;
+              metadata: {
+                pair: string;
+              };
+            };
+            linkHover: {
+              value: string;
+              metadata: {
+                pair: string;
+              };
+            };
+            border: {
+              value: string;
+              metadata: {
+              };
+            };
+            divider: {
+              value: string;
+              metadata: {
+              };
+            };
+            chipBg: {
+              value: string;
+              metadata: {
+              };
+            };
+            accent: {
+              neutral: {
+                value: string;
+                metadata: {
+                };
+              };
+              brand: {
+                value: string;
+                metadata: {
+                };
+              };
+              info: {
+                value: string;
+                metadata: {
+                };
+              };
+              success: {
+                value: string;
+                metadata: {
+                };
+              };
+              warning: {
+                value: string;
+                metadata: {
+                };
+              };
+              danger: {
+                value: string;
+                metadata: {
+                };
+              };
+              cta: {
+                value: string;
+                metadata: {
+                };
+              };
+            };
+          };
         };
         modal: {
           bg: {
@@ -7291,6 +8043,25 @@ export interface SpectreSourceTokens {
             metadata: {
             };
           };
+          kbd: {
+            bg: {
+              value: string;
+              metadata: {
+                pair: string;
+              };
+            };
+            border: {
+              value: string;
+              metadata: {
+              };
+            };
+            text: {
+              value: string;
+              metadata: {
+                pair: string;
+              };
+            };
+          };
         };
         externalAuthButton: {
           bg: {
@@ -7522,6 +8293,3488 @@ export interface SpectreSourceTokens {
             metadata: {
             };
           };
+        };
+        skeleton: {
+          base: {
+            value: string;
+            metadata: {
+            };
+          };
+          shimmer: {
+            value: string;
+            metadata: {
+            };
+          };
+        };
+        selection: {
+          bg: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+          text: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+        };
+        caret: {
+          color: {
+            value: string;
+            metadata: {
+            };
+          };
+        };
+        scrollbar: {
+          track: {
+            value: string;
+            metadata: {
+            };
+          };
+          thumb: {
+            value: string;
+            metadata: {
+            };
+          };
+          thumbHover: {
+            value: string;
+            metadata: {
+            };
+          };
+        };
+        chart: {
+          bg: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+          grid: {
+            value: string;
+            metadata: {
+            };
+          };
+          axis: {
+            value: string;
+            metadata: {
+              pair: string;
+              minContrast: number;
+            };
+          };
+          label: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+          series: {
+            '1': {
+              value: string;
+              metadata: {
+                pair: string;
+                minContrast: number;
+              };
+            };
+            '2': {
+              value: string;
+              metadata: {
+                pair: string;
+                minContrast: number;
+              };
+            };
+            '3': {
+              value: string;
+              metadata: {
+                pair: string;
+                minContrast: number;
+              };
+            };
+            '4': {
+              value: string;
+              metadata: {
+                pair: string;
+                minContrast: number;
+              };
+            };
+            '5': {
+              value: string;
+              metadata: {
+                pair: string;
+                minContrast: number;
+              };
+            };
+            '6': {
+              value: string;
+              metadata: {
+                pair: string;
+                minContrast: number;
+              };
+            };
+            '7': {
+              value: string;
+              metadata: {
+                pair: string;
+                minContrast: number;
+              };
+            };
+            '8': {
+              value: string;
+              metadata: {
+                pair: string;
+                minContrast: number;
+              };
+            };
+          };
+          sequential: {
+            '1': {
+              value: string;
+              metadata: {
+              };
+            };
+            '2': {
+              value: string;
+              metadata: {
+              };
+            };
+            '3': {
+              value: string;
+              metadata: {
+              };
+            };
+            '4': {
+              value: string;
+              metadata: {
+              };
+            };
+            '5': {
+              value: string;
+              metadata: {
+              };
+            };
+            '6': {
+              value: string;
+              metadata: {
+              };
+            };
+            '7': {
+              value: string;
+              metadata: {
+              };
+            };
+          };
+          diverging: {
+            '1': {
+              value: string;
+              metadata: {
+              };
+            };
+            '2': {
+              value: string;
+              metadata: {
+              };
+            };
+            '3': {
+              value: string;
+              metadata: {
+              };
+            };
+            '4': {
+              value: string;
+              metadata: {
+              };
+            };
+            '5': {
+              value: string;
+              metadata: {
+              };
+            };
+            '6': {
+              value: string;
+              metadata: {
+              };
+            };
+            '7': {
+              value: string;
+              metadata: {
+              };
+            };
+          };
+        };
+      };
+    };
+    highContrast: {
+      surface: {
+        page: {
+          value: string;
+          metadata: {
+            pair: string;
+          };
+        };
+        card: {
+          value: string;
+          metadata: {
+            pair: string;
+          };
+        };
+        input: {
+          value: string;
+          metadata: {
+            pair: string;
+          };
+        };
+        overlay: {
+          value: string;
+        };
+        subtle: {
+          value: string;
+          description: string;
+          metadata: {
+            pair: string;
+          };
+        };
+        hero: {
+          value: string;
+          description: string;
+        };
+        hover: {
+          value: string;
+        };
+        selected: {
+          value: string;
+        };
+        active: {
+          value: string;
+        };
+        divider: {
+          value: string;
+        };
+      };
+      text: {
+        onPage: {
+          default: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+          muted: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+          subtle: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+          meta: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+          brand: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+        };
+        onSurface: {
+          default: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+          muted: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+          subtle: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+          meta: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+          brand: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+        };
+      };
+      forms: {
+        default: {
+          bg: {
+            value: string;
+          };
+          text: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+          placeholder: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+        };
+        valid: {
+          border: {
+            value: string;
+          };
+          bg: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+          text: {
+            value: string;
+          };
+        };
+        invalid: {
+          border: {
+            value: string;
+          };
+          bg: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+          text: {
+            value: string;
+          };
+        };
+      };
+      component: {
+        card: {
+          text: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+          textMuted: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+          accent: {
+            neutral: {
+              value: string;
+              metadata: {
+              };
+            };
+            brand: {
+              value: string;
+              metadata: {
+              };
+            };
+            info: {
+              value: string;
+              metadata: {
+              };
+            };
+            success: {
+              value: string;
+              metadata: {
+              };
+            };
+            warning: {
+              value: string;
+              metadata: {
+              };
+            };
+            danger: {
+              value: string;
+              metadata: {
+              };
+            };
+            cta: {
+              value: string;
+              metadata: {
+              };
+            };
+          };
+        };
+        choiceCard: {
+          bg: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+          text: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+          border: {
+            value: string;
+            metadata: {
+            };
+          };
+          hoverBorder: {
+            value: string;
+            metadata: {
+            };
+          };
+          selectedBg: {
+            value: string;
+            metadata: {
+            };
+          };
+          selectedBorder: {
+            value: string;
+            metadata: {
+            };
+          };
+          disabledBg: {
+            value: string;
+            metadata: {
+            };
+          };
+          disabledText: {
+            value: string;
+            metadata: {
+            };
+          };
+          focusRing: {
+            value: string;
+            metadata: {
+            };
+          };
+        };
+        input: {
+          text: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+          placeholder: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+        };
+        button: {
+          textDefault: {
+            value: string;
+          };
+          textOnPrimary: {
+            value: string;
+          };
+        };
+        badge: {
+          neutralBg: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+          neutralBgHover: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+          neutralText: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+          brandBg: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+          brandBgHover: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+          brandText: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+          infoBg: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+          infoBgHover: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+          infoText: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+          successBg: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+          successText: {
+            value: string;
+            metadata: {
+            };
+          };
+          warningBg: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+          warningText: {
+            value: string;
+            metadata: {
+            };
+          };
+          dangerBg: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+          dangerText: {
+            value: string;
+            metadata: {
+            };
+          };
+          accent: {
+            neutral: {
+              value: string;
+              metadata: {
+              };
+            };
+            brand: {
+              value: string;
+              metadata: {
+              };
+            };
+            info: {
+              value: string;
+              metadata: {
+              };
+            };
+            success: {
+              value: string;
+              metadata: {
+              };
+            };
+            warning: {
+              value: string;
+              metadata: {
+              };
+            };
+            danger: {
+              value: string;
+              metadata: {
+              };
+            };
+            cta: {
+              value: string;
+              metadata: {
+              };
+            };
+          };
+        };
+        iconBox: {
+          bg: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+          border: {
+            value: string;
+            metadata: {
+            };
+          };
+          iconDefault: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+          iconSuccess: {
+            value: string;
+            metadata: {
+            };
+          };
+          iconWarning: {
+            value: string;
+            metadata: {
+            };
+          };
+          iconDanger: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+        };
+        testimonial: {
+          bg: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+          bgHover: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+          border: {
+            value: string;
+            metadata: {
+            };
+          };
+          text: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+          authorName: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+          authorTitle: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+          quoteMark: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+          accent: {
+            neutral: {
+              value: string;
+              metadata: {
+              };
+            };
+            brand: {
+              value: string;
+              metadata: {
+              };
+            };
+            info: {
+              value: string;
+              metadata: {
+              };
+            };
+            success: {
+              value: string;
+              metadata: {
+              };
+            };
+            warning: {
+              value: string;
+              metadata: {
+              };
+            };
+            danger: {
+              value: string;
+              metadata: {
+              };
+            };
+            cta: {
+              value: string;
+              metadata: {
+              };
+            };
+          };
+        };
+        pricingCard: {
+          bg: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+          bgHover: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+          border: {
+            value: string;
+            metadata: {
+            };
+          };
+          featuredBg: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+          featuredText: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+          featuredBadgeBg: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+          featuredBadgeText: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+          price: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+          priceDescription: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+          accent: {
+            neutral: {
+              value: string;
+              metadata: {
+              };
+            };
+            brand: {
+              value: string;
+              metadata: {
+              };
+            };
+            info: {
+              value: string;
+              metadata: {
+              };
+            };
+            success: {
+              value: string;
+              metadata: {
+              };
+            };
+            warning: {
+              value: string;
+              metadata: {
+              };
+            };
+            danger: {
+              value: string;
+              metadata: {
+              };
+            };
+            cta: {
+              value: string;
+              metadata: {
+              };
+            };
+          };
+        };
+        rating: {
+          starFilled: {
+            value: string;
+            metadata: {
+            };
+          };
+          starEmpty: {
+            value: string;
+            metadata: {
+            };
+          };
+          text: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+        };
+        nav: {
+          bg: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+          text: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+          link: {
+            value: string;
+            metadata: {
+            };
+          };
+          linkHover: {
+            value: string;
+            metadata: {
+            };
+          };
+          linkActive: {
+            value: string;
+            metadata: {
+            };
+          };
+          border: {
+            value: string;
+            metadata: {
+            };
+          };
+          accent: {
+            neutral: {
+              value: string;
+              metadata: {
+              };
+            };
+            brand: {
+              value: string;
+              metadata: {
+              };
+            };
+            info: {
+              value: string;
+              metadata: {
+              };
+            };
+            success: {
+              value: string;
+              metadata: {
+              };
+            };
+            warning: {
+              value: string;
+              metadata: {
+              };
+            };
+            danger: {
+              value: string;
+              metadata: {
+              };
+            };
+            cta: {
+              value: string;
+              metadata: {
+              };
+            };
+          };
+        };
+        footer: {
+          bg: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+          text: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+          heading: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+          muted: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+          link: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+          linkHover: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+          border: {
+            value: string;
+            metadata: {
+            };
+          };
+          divider: {
+            value: string;
+            metadata: {
+            };
+          };
+          chipBg: {
+            value: string;
+            metadata: {
+            };
+          };
+          accent: {
+            neutral: {
+              value: string;
+              metadata: {
+              };
+            };
+            brand: {
+              value: string;
+              metadata: {
+              };
+            };
+            info: {
+              value: string;
+              metadata: {
+              };
+            };
+            success: {
+              value: string;
+              metadata: {
+              };
+            };
+            warning: {
+              value: string;
+              metadata: {
+              };
+            };
+            danger: {
+              value: string;
+              metadata: {
+              };
+            };
+            cta: {
+              value: string;
+              metadata: {
+              };
+            };
+          };
+          light: {
+            bg: {
+              value: string;
+              metadata: {
+                pair: string;
+              };
+            };
+            text: {
+              value: string;
+              metadata: {
+                pair: string;
+              };
+            };
+            heading: {
+              value: string;
+              metadata: {
+                pair: string;
+              };
+            };
+            muted: {
+              value: string;
+              metadata: {
+                pair: string;
+              };
+            };
+            link: {
+              value: string;
+              metadata: {
+                pair: string;
+              };
+            };
+            linkHover: {
+              value: string;
+              metadata: {
+                pair: string;
+              };
+            };
+            border: {
+              value: string;
+              metadata: {
+              };
+            };
+            divider: {
+              value: string;
+              metadata: {
+              };
+            };
+            chipBg: {
+              value: string;
+              metadata: {
+              };
+            };
+            accent: {
+              neutral: {
+                value: string;
+                metadata: {
+                };
+              };
+              brand: {
+                value: string;
+                metadata: {
+                };
+              };
+              info: {
+                value: string;
+                metadata: {
+                };
+              };
+              success: {
+                value: string;
+                metadata: {
+                };
+              };
+              warning: {
+                value: string;
+                metadata: {
+                };
+              };
+              danger: {
+                value: string;
+                metadata: {
+                };
+              };
+              cta: {
+                value: string;
+                metadata: {
+                };
+              };
+            };
+          };
+        };
+        modal: {
+          bg: {
+            value: string;
+            metadata: {
+            };
+          };
+          shadow: {
+            value: string;
+            metadata: {
+            };
+          };
+          border: {
+            value: string;
+            metadata: {
+            };
+          };
+          overlay: {
+            value: string;
+            metadata: {
+            };
+          };
+          accent: {
+            neutral: {
+              value: string;
+              metadata: {
+              };
+            };
+            brand: {
+              value: string;
+              metadata: {
+              };
+            };
+            info: {
+              value: string;
+              metadata: {
+              };
+            };
+            success: {
+              value: string;
+              metadata: {
+              };
+            };
+            warning: {
+              value: string;
+              metadata: {
+              };
+            };
+            danger: {
+              value: string;
+              metadata: {
+              };
+            };
+            cta: {
+              value: string;
+              metadata: {
+              };
+            };
+          };
+        };
+        toast: {
+          neutral: {
+            bg: {
+              value: string;
+              metadata: {
+                pair: string;
+              };
+            };
+            text: {
+              value: string;
+              metadata: {
+                pair: string;
+              };
+            };
+            border: {
+              value: string;
+              metadata: {
+              };
+            };
+            icon: {
+              value: string;
+              metadata: {
+              };
+            };
+          };
+          success: {
+            bg: {
+              value: string;
+              metadata: {
+                pair: string;
+              };
+            };
+            text: {
+              value: string;
+              metadata: {
+                pair: string;
+              };
+            };
+            border: {
+              value: string;
+              metadata: {
+              };
+            };
+            icon: {
+              value: string;
+              metadata: {
+              };
+            };
+          };
+          warning: {
+            bg: {
+              value: string;
+              metadata: {
+                pair: string;
+              };
+            };
+            text: {
+              value: string;
+              metadata: {
+                pair: string;
+              };
+            };
+            border: {
+              value: string;
+              metadata: {
+              };
+            };
+            icon: {
+              value: string;
+              metadata: {
+              };
+            };
+          };
+          danger: {
+            bg: {
+              value: string;
+              metadata: {
+                pair: string;
+              };
+            };
+            text: {
+              value: string;
+              metadata: {
+                pair: string;
+              };
+            };
+            border: {
+              value: string;
+              metadata: {
+              };
+            };
+            icon: {
+              value: string;
+              metadata: {
+              };
+            };
+          };
+          info: {
+            bg: {
+              value: string;
+              metadata: {
+                pair: string;
+              };
+            };
+            text: {
+              value: string;
+              metadata: {
+                pair: string;
+              };
+            };
+            border: {
+              value: string;
+              metadata: {
+              };
+            };
+            icon: {
+              value: string;
+              metadata: {
+              };
+            };
+          };
+          accent: {
+            neutral: {
+              value: string;
+              metadata: {
+              };
+            };
+            brand: {
+              value: string;
+              metadata: {
+              };
+            };
+            info: {
+              value: string;
+              metadata: {
+              };
+            };
+            success: {
+              value: string;
+              metadata: {
+              };
+            };
+            warning: {
+              value: string;
+              metadata: {
+              };
+            };
+            danger: {
+              value: string;
+              metadata: {
+              };
+            };
+            cta: {
+              value: string;
+              metadata: {
+              };
+            };
+          };
+        };
+        tooltip: {
+          bg: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+          text: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+          border: {
+            value: string;
+            metadata: {
+            };
+          };
+          accent: {
+            neutral: {
+              value: string;
+              metadata: {
+              };
+            };
+            brand: {
+              value: string;
+              metadata: {
+              };
+            };
+            info: {
+              value: string;
+              metadata: {
+              };
+            };
+            success: {
+              value: string;
+              metadata: {
+              };
+            };
+            warning: {
+              value: string;
+              metadata: {
+              };
+            };
+            danger: {
+              value: string;
+              metadata: {
+              };
+            };
+            cta: {
+              value: string;
+              metadata: {
+              };
+            };
+          };
+        };
+        dropdown: {
+          bg: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+          border: {
+            value: string;
+            metadata: {
+            };
+          };
+          item: {
+            default: {
+              value: string;
+              metadata: {
+              };
+            };
+            hover: {
+              value: string;
+              metadata: {
+              };
+            };
+            active: {
+              value: string;
+              metadata: {
+              };
+            };
+            text: {
+              value: string;
+              metadata: {
+                pair: string;
+              };
+            };
+            disabledText: {
+              value: string;
+              metadata: {
+              };
+            };
+            selectedBg: {
+              value: string;
+              metadata: {
+                pair: string;
+              };
+            };
+            selectedText: {
+              value: string;
+              metadata: {
+                pair: string;
+              };
+            };
+          };
+          accent: {
+            neutral: {
+              value: string;
+              metadata: {
+              };
+            };
+            brand: {
+              value: string;
+              metadata: {
+              };
+            };
+            info: {
+              value: string;
+              metadata: {
+              };
+            };
+            success: {
+              value: string;
+              metadata: {
+              };
+            };
+            warning: {
+              value: string;
+              metadata: {
+              };
+            };
+            danger: {
+              value: string;
+              metadata: {
+              };
+            };
+            cta: {
+              value: string;
+              metadata: {
+              };
+            };
+          };
+          header: {
+            value: string;
+            metadata: {
+            };
+          };
+          divider: {
+            value: string;
+            metadata: {
+            };
+          };
+        };
+        tabs: {
+          list: {
+            bg: {
+              value: string;
+              metadata: {
+                pair: string;
+              };
+            };
+            border: {
+              value: string;
+              metadata: {
+              };
+            };
+          };
+          item: {
+            text: {
+              value: string;
+              metadata: {
+                pair: string;
+              };
+            };
+            hover: {
+              bg: {
+                value: string;
+                metadata: {
+                };
+              };
+            };
+            active: {
+              text: {
+                value: string;
+                metadata: {
+                  pair: string;
+                };
+              };
+              indicator: {
+                value: string;
+                metadata: {
+                };
+              };
+            };
+            focus: {
+              ringColor: {
+                value: string;
+                metadata: {
+                };
+              };
+            };
+            disabled: {
+              text: {
+                value: string;
+                metadata: {
+                };
+              };
+            };
+          };
+          pill: {
+            active: {
+              bg: {
+                value: string;
+                metadata: {
+                  pair: string;
+                };
+              };
+              text: {
+                value: string;
+                metadata: {
+                  pair: string;
+                };
+              };
+            };
+          };
+          panel: {
+            bg: {
+              value: string;
+              metadata: {
+              };
+            };
+          };
+        };
+        accordion: {
+          bg: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+          text: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+          border: {
+            value: string;
+            metadata: {
+            };
+          };
+          header: {
+            hoverBg: {
+              value: string;
+              metadata: {
+              };
+            };
+          };
+          icon: {
+            collapsed: {
+              value: string;
+              metadata: {
+              };
+            };
+            expanded: {
+              value: string;
+              metadata: {
+              };
+            };
+          };
+        };
+        breadcrumb: {
+          item: {
+            text: {
+              value: string;
+              metadata: {
+              };
+            };
+            hover: {
+              text: {
+                value: string;
+                metadata: {
+                };
+              };
+            };
+            active: {
+              text: {
+                value: string;
+                metadata: {
+                };
+              };
+            };
+          };
+          separator: {
+            value: string;
+            metadata: {
+            };
+          };
+        };
+        listGroup: {
+          bg: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+          border: {
+            value: string;
+            metadata: {
+            };
+          };
+          text: {
+            value: string;
+            metadata: {
+            };
+          };
+          heading: {
+            value: string;
+            metadata: {
+            };
+          };
+          muted: {
+            value: string;
+            metadata: {
+            };
+          };
+          item: {
+            hover: {
+              bg: {
+                value: string;
+                metadata: {
+                };
+              };
+            };
+            active: {
+              bg: {
+                value: string;
+                metadata: {
+                  pair: string;
+                };
+              };
+              text: {
+                value: string;
+                metadata: {
+                  pair: string;
+                };
+              };
+            };
+            selected: {
+              bg: {
+                value: string;
+                metadata: {
+                };
+              };
+            };
+            disabled: {
+              text: {
+                value: string;
+                metadata: {
+                };
+              };
+            };
+          };
+          accent: {
+            neutral: {
+              value: string;
+              metadata: {
+              };
+            };
+            brand: {
+              value: string;
+              metadata: {
+              };
+            };
+            info: {
+              value: string;
+              metadata: {
+              };
+            };
+            success: {
+              value: string;
+              metadata: {
+              };
+            };
+            warning: {
+              value: string;
+              metadata: {
+              };
+            };
+            danger: {
+              value: string;
+              metadata: {
+              };
+            };
+            cta: {
+              value: string;
+              metadata: {
+              };
+            };
+            thickness: string;
+          };
+        };
+        offcanvas: {
+          bg: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+          text: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+          border: {
+            value: string;
+            metadata: {
+            };
+          };
+          overlay: {
+            value: string;
+            metadata: {
+            };
+          };
+        };
+        carousel: {
+          indicator: {
+            default: {
+              value: string;
+              metadata: {
+              };
+            };
+            active: {
+              value: string;
+              metadata: {
+              };
+            };
+          };
+          control: {
+            icon: {
+              value: string;
+              metadata: {
+              };
+            };
+            bg: {
+              value: string;
+              metadata: {
+              };
+            };
+          };
+          caption: {
+            bg: {
+              value: string;
+              metadata: {
+              };
+            };
+            text: {
+              value: string;
+              metadata: {
+                pair: string;
+              };
+            };
+          };
+        };
+        table: {
+          header: {
+            bg: {
+              value: string;
+              metadata: {
+                pair: string;
+              };
+            };
+            text: {
+              value: string;
+              metadata: {
+                pair: string;
+              };
+            };
+          };
+          text: {
+            value: string;
+            metadata: {
+            };
+          };
+          divider: {
+            value: string;
+            metadata: {
+            };
+          };
+          stripeBg: {
+            value: string;
+            metadata: {
+            };
+          };
+          hoverBg: {
+            value: string;
+            metadata: {
+            };
+          };
+          selectedBg: {
+            value: string;
+            metadata: {
+            };
+          };
+          row: {
+            neutral: {
+              bg: {
+                value: string;
+                metadata: {
+                  pair: string;
+                };
+              };
+              text: {
+                value: string;
+                metadata: {
+                  pair: string;
+                };
+              };
+            };
+            info: {
+              bg: {
+                value: string;
+                metadata: {
+                  pair: string;
+                };
+              };
+              text: {
+                value: string;
+                metadata: {
+                  pair: string;
+                };
+              };
+            };
+            success: {
+              bg: {
+                value: string;
+                metadata: {
+                  pair: string;
+                };
+              };
+              text: {
+                value: string;
+                metadata: {
+                  pair: string;
+                };
+              };
+            };
+            warning: {
+              bg: {
+                value: string;
+                metadata: {
+                  pair: string;
+                };
+              };
+              text: {
+                value: string;
+                metadata: {
+                  pair: string;
+                };
+              };
+            };
+            danger: {
+              bg: {
+                value: string;
+                metadata: {
+                  pair: string;
+                };
+              };
+              text: {
+                value: string;
+                metadata: {
+                  pair: string;
+                };
+              };
+            };
+          };
+        };
+        alert: {
+          neutral: {
+            bg: {
+              value: string;
+              metadata: {
+                pair: string;
+              };
+            };
+            text: {
+              value: string;
+              metadata: {
+                pair: string;
+              };
+            };
+            border: {
+              value: string;
+              metadata: {
+              };
+            };
+            icon: {
+              value: string;
+              metadata: {
+              };
+            };
+          };
+          brand: {
+            bg: {
+              value: string;
+              metadata: {
+                pair: string;
+              };
+            };
+            text: {
+              value: string;
+              metadata: {
+                pair: string;
+              };
+            };
+            border: {
+              value: string;
+              metadata: {
+              };
+            };
+            icon: {
+              value: string;
+              metadata: {
+              };
+            };
+          };
+          info: {
+            bg: {
+              value: string;
+              metadata: {
+                pair: string;
+              };
+            };
+            text: {
+              value: string;
+              metadata: {
+                pair: string;
+              };
+            };
+            border: {
+              value: string;
+              metadata: {
+              };
+            };
+            icon: {
+              value: string;
+              metadata: {
+              };
+            };
+          };
+          success: {
+            bg: {
+              value: string;
+              metadata: {
+                pair: string;
+              };
+            };
+            text: {
+              value: string;
+              metadata: {
+                pair: string;
+              };
+            };
+            border: {
+              value: string;
+              metadata: {
+              };
+            };
+            icon: {
+              value: string;
+              metadata: {
+              };
+            };
+          };
+          warning: {
+            bg: {
+              value: string;
+              metadata: {
+                pair: string;
+              };
+            };
+            text: {
+              value: string;
+              metadata: {
+                pair: string;
+              };
+            };
+            border: {
+              value: string;
+              metadata: {
+              };
+            };
+            icon: {
+              value: string;
+              metadata: {
+              };
+            };
+          };
+          danger: {
+            bg: {
+              value: string;
+              metadata: {
+                pair: string;
+              };
+            };
+            text: {
+              value: string;
+              metadata: {
+                pair: string;
+              };
+            };
+            border: {
+              value: string;
+              metadata: {
+              };
+            };
+            icon: {
+              value: string;
+              metadata: {
+              };
+            };
+          };
+        };
+        pagination: {
+          item: {
+            text: {
+              value: string;
+              metadata: {
+              };
+            };
+            hover: {
+              bg: {
+                value: string;
+                metadata: {
+                };
+              };
+            };
+            active: {
+              bg: {
+                value: string;
+                metadata: {
+                  pair: string;
+                };
+              };
+              text: {
+                value: string;
+                metadata: {
+                  pair: string;
+                };
+              };
+            };
+            disabled: {
+              text: {
+                value: string;
+                metadata: {
+                };
+              };
+            };
+          };
+        };
+        stepper: {
+          step: {
+            pending: {
+              bg: {
+                value: string;
+                metadata: {
+                  pair: string;
+                };
+              };
+              text: {
+                value: string;
+                metadata: {
+                  pair: string;
+                };
+              };
+            };
+            active: {
+              bg: {
+                value: string;
+                metadata: {
+                  pair: string;
+                };
+              };
+              text: {
+                value: string;
+                metadata: {
+                  pair: string;
+                };
+              };
+            };
+            done: {
+              bg: {
+                value: string;
+                metadata: {
+                  pair: string;
+                };
+              };
+              text: {
+                value: string;
+                metadata: {
+                  pair: string;
+                };
+              };
+            };
+          };
+          connector: {
+            value: string;
+            metadata: {
+            };
+          };
+          label: {
+            text: {
+              value: string;
+              metadata: {
+              };
+            };
+          };
+        };
+        popover: {
+          bg: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+          text: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+          muted: {
+            value: string;
+            metadata: {
+            };
+          };
+          border: {
+            value: string;
+            metadata: {
+            };
+          };
+          shadow: {
+            value: string;
+            metadata: {
+            };
+          };
+          arrow: {
+            value: string;
+            metadata: {
+            };
+          };
+        };
+        progress: {
+          track: {
+            bg: {
+              value: string;
+              metadata: {
+              };
+            };
+          };
+          indicator: {
+            neutral: {
+              value: string;
+              metadata: {
+              };
+            };
+            brand: {
+              value: string;
+              metadata: {
+              };
+            };
+            info: {
+              value: string;
+              metadata: {
+              };
+            };
+            success: {
+              value: string;
+              metadata: {
+              };
+            };
+            warning: {
+              value: string;
+              metadata: {
+              };
+            };
+            danger: {
+              value: string;
+              metadata: {
+              };
+            };
+          };
+          label: {
+            text: {
+              value: string;
+              metadata: {
+              };
+            };
+          };
+        };
+        loadingIndicator: {
+          default: {
+            value: string;
+            metadata: {
+            };
+          };
+          muted: {
+            value: string;
+            metadata: {
+            };
+          };
+          inverse: {
+            value: string;
+            metadata: {
+            };
+          };
+          brand: {
+            value: string;
+            metadata: {
+            };
+          };
+          info: {
+            value: string;
+            metadata: {
+            };
+          };
+          success: {
+            value: string;
+            metadata: {
+            };
+          };
+          warning: {
+            value: string;
+            metadata: {
+            };
+          };
+          danger: {
+            value: string;
+            metadata: {
+            };
+          };
+        };
+        switch: {
+          trackBg: {
+            value: string;
+            metadata: {
+            };
+          };
+          trackCheckedBg: {
+            value: string;
+            metadata: {
+            };
+          };
+          thumbBg: {
+            value: string;
+            metadata: {
+            };
+          };
+          trackDisabledBg: {
+            value: string;
+            metadata: {
+            };
+          };
+          thumbDisabledBg: {
+            value: string;
+            metadata: {
+            };
+          };
+          focusRing: {
+            value: string;
+            metadata: {
+            };
+          };
+        };
+        range: {
+          trackBg: {
+            value: string;
+            metadata: {
+            };
+          };
+          trackFilledBg: {
+            value: string;
+            metadata: {
+            };
+          };
+          thumbBg: {
+            value: string;
+            metadata: {
+            };
+          };
+          thumbBorder: {
+            value: string;
+            metadata: {
+            };
+          };
+          trackDisabledBg: {
+            value: string;
+            metadata: {
+            };
+          };
+          thumbDisabledBorder: {
+            value: string;
+            metadata: {
+            };
+          };
+          focusRing: {
+            value: string;
+            metadata: {
+            };
+          };
+        };
+        fileInput: {
+          bg: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+          border: {
+            value: string;
+            metadata: {
+            };
+          };
+          text: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+          actionBg: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+          actionText: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+          disabledBg: {
+            value: string;
+            metadata: {
+            };
+          };
+          disabledBorder: {
+            value: string;
+            metadata: {
+            };
+          };
+          disabledText: {
+            value: string;
+            metadata: {
+            };
+          };
+          focusBorder: {
+            value: string;
+            metadata: {
+            };
+          };
+        };
+        inputGroup: {
+          addonBg: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+          addonText: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+          addonBorder: {
+            value: string;
+            metadata: {
+            };
+          };
+          focusBorder: {
+            value: string;
+            metadata: {
+            };
+          };
+          disabledBg: {
+            value: string;
+            metadata: {
+            };
+          };
+          disabledText: {
+            value: string;
+            metadata: {
+            };
+          };
+        };
+        datepicker: {
+          panel: {
+            bg: {
+              value: string;
+              metadata: {
+              };
+            };
+            border: {
+              value: string;
+              metadata: {
+              };
+            };
+          };
+          header: {
+            text: {
+              value: string;
+              metadata: {
+              };
+            };
+          };
+          weekday: {
+            text: {
+              value: string;
+              metadata: {
+              };
+            };
+          };
+        };
+        day: {
+          default: {
+            text: {
+              value: string;
+              metadata: {
+              };
+            };
+            hover: {
+              bg: {
+                value: string;
+                metadata: {
+                };
+              };
+            };
+          };
+          selected: {
+            bg: {
+              value: string;
+              metadata: {
+                pair: string;
+              };
+            };
+            text: {
+              value: string;
+              metadata: {
+                pair: string;
+              };
+            };
+          };
+          today: {
+            ringColor: {
+              value: string;
+              metadata: {
+              };
+            };
+          };
+          outsideMonth: {
+            text: {
+              value: string;
+              metadata: {
+              };
+            };
+          };
+          disabled: {
+            text: {
+              value: string;
+              metadata: {
+              };
+            };
+          };
+        };
+        prose: {
+          blockquote: {
+            border: {
+              value: string;
+              metadata: {
+              };
+            };
+            text: {
+              value: string;
+              metadata: {
+              };
+            };
+          };
+          code: {
+            bg: {
+              value: string;
+              metadata: {
+                pair: string;
+              };
+            };
+            text: {
+              value: string;
+              metadata: {
+                pair: string;
+              };
+            };
+          };
+          codeBlock: {
+            bg: {
+              value: string;
+              metadata: {
+                pair: string;
+              };
+            };
+            text: {
+              value: string;
+              metadata: {
+                pair: string;
+              };
+            };
+            border: {
+              value: string;
+              metadata: {
+              };
+            };
+          };
+          mark: {
+            bg: {
+              value: string;
+              metadata: {
+                pair: string;
+              };
+            };
+            text: {
+              value: string;
+              metadata: {
+                pair: string;
+              };
+            };
+          };
+          hr: {
+            value: string;
+            metadata: {
+            };
+          };
+          kbd: {
+            bg: {
+              value: string;
+              metadata: {
+                pair: string;
+              };
+            };
+            border: {
+              value: string;
+              metadata: {
+              };
+            };
+            text: {
+              value: string;
+              metadata: {
+                pair: string;
+              };
+            };
+          };
+        };
+        externalAuthButton: {
+          bg: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+          text: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+          border: {
+            value: string;
+            metadata: {
+            };
+          };
+          hoverBg: {
+            value: string;
+            metadata: {
+            };
+          };
+          activeBg: {
+            value: string;
+            metadata: {
+            };
+          };
+          disabledBg: {
+            value: string;
+            metadata: {
+            };
+          };
+          disabledText: {
+            value: string;
+            metadata: {
+            };
+          };
+          focusRing: {
+            value: string;
+            metadata: {
+            };
+          };
+        };
+        checkbox: {
+          bg: {
+            value: string;
+            metadata: {
+            };
+          };
+          border: {
+            value: string;
+            metadata: {
+            };
+          };
+          checkedBg: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+          checkedBorder: {
+            value: string;
+            metadata: {
+            };
+          };
+          text: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+          disabledBg: {
+            value: string;
+            metadata: {
+            };
+          };
+          disabledBorder: {
+            value: string;
+            metadata: {
+            };
+          };
+        };
+        radio: {
+          bg: {
+            value: string;
+            metadata: {
+            };
+          };
+          border: {
+            value: string;
+            metadata: {
+            };
+          };
+          checkedBg: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+          checkedBorder: {
+            value: string;
+            metadata: {
+            };
+          };
+          text: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+          disabledBg: {
+            value: string;
+            metadata: {
+            };
+          };
+          disabledBorder: {
+            value: string;
+            metadata: {
+            };
+          };
+        };
+        select: {
+          bg: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+          border: {
+            value: string;
+            metadata: {
+            };
+          };
+          text: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+          placeholderText: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+          disabledBg: {
+            value: string;
+            metadata: {
+            };
+          };
+          disabledBorder: {
+            value: string;
+            metadata: {
+            };
+          };
+          focusBorder: {
+            value: string;
+            metadata: {
+            };
+          };
+        };
+        textarea: {
+          bg: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+          border: {
+            value: string;
+            metadata: {
+            };
+          };
+          text: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+          placeholder: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+          disabledBg: {
+            value: string;
+            metadata: {
+            };
+          };
+          disabledBorder: {
+            value: string;
+            metadata: {
+            };
+          };
+          focusBorder: {
+            value: string;
+            metadata: {
+            };
+          };
+        };
+        fieldset: {
+          border: {
+            value: string;
+            metadata: {
+            };
+          };
+          legendText: {
+            value: string;
+            metadata: {
+            };
+          };
+        };
+        label: {
+          text: {
+            value: string;
+            metadata: {
+            };
+          };
+          disabledText: {
+            value: string;
+            metadata: {
+            };
+          };
+          requiredIndicatorText: {
+            value: string;
+            metadata: {
+            };
+          };
+        };
+        skeleton: {
+          base: {
+            value: string;
+            metadata: {
+            };
+          };
+          shimmer: {
+            value: string;
+            metadata: {
+            };
+          };
+        };
+        selection: {
+          bg: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+          text: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+        };
+        caret: {
+          color: {
+            value: string;
+            metadata: {
+            };
+          };
+        };
+        scrollbar: {
+          track: {
+            value: string;
+            metadata: {
+            };
+          };
+          thumb: {
+            value: string;
+            metadata: {
+            };
+          };
+          thumbHover: {
+            value: string;
+            metadata: {
+            };
+          };
+        };
+        chart: {
+          bg: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+          grid: {
+            value: string;
+            metadata: {
+            };
+          };
+          axis: {
+            value: string;
+            metadata: {
+              pair: string;
+              minContrast: number;
+            };
+          };
+          label: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+          series: {
+            '1': {
+              value: string;
+              metadata: {
+                pair: string;
+                minContrast: number;
+              };
+            };
+            '2': {
+              value: string;
+              metadata: {
+                pair: string;
+                minContrast: number;
+              };
+            };
+            '3': {
+              value: string;
+              metadata: {
+                pair: string;
+                minContrast: number;
+              };
+            };
+            '4': {
+              value: string;
+              metadata: {
+                pair: string;
+                minContrast: number;
+              };
+            };
+            '5': {
+              value: string;
+              metadata: {
+                pair: string;
+                minContrast: number;
+              };
+            };
+            '6': {
+              value: string;
+              metadata: {
+                pair: string;
+                minContrast: number;
+              };
+            };
+            '7': {
+              value: string;
+              metadata: {
+                pair: string;
+                minContrast: number;
+              };
+            };
+            '8': {
+              value: string;
+              metadata: {
+                pair: string;
+                minContrast: number;
+              };
+            };
+          };
+          sequential: {
+            '1': {
+              value: string;
+              metadata: {
+              };
+            };
+            '2': {
+              value: string;
+              metadata: {
+              };
+            };
+            '3': {
+              value: string;
+              metadata: {
+              };
+            };
+            '4': {
+              value: string;
+              metadata: {
+              };
+            };
+            '5': {
+              value: string;
+              metadata: {
+              };
+            };
+            '6': {
+              value: string;
+              metadata: {
+              };
+            };
+            '7': {
+              value: string;
+              metadata: {
+              };
+            };
+          };
+          diverging: {
+            '1': {
+              value: string;
+              metadata: {
+              };
+            };
+            '2': {
+              value: string;
+              metadata: {
+              };
+            };
+            '3': {
+              value: string;
+              metadata: {
+              };
+            };
+            '4': {
+              value: string;
+              metadata: {
+              };
+            };
+            '5': {
+              value: string;
+              metadata: {
+              };
+            };
+            '6': {
+              value: string;
+              metadata: {
+              };
+            };
+            '7': {
+              value: string;
+              metadata: {
+              };
+            };
+          };
+        };
+      };
+      buttons: {
+        primary: {
+          bg: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+          bgHover: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+          bgActive: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+          bgDisabled: {
+            value: string;
+          };
+          text: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+          textDisabled: {
+            value: string;
+          };
+          focusRing: {
+            value: string;
+          };
+          focusVisible: {
+            value: string;
+          };
+        };
+        secondary: {
+          bg: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+          bgHover: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+          bgActive: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+          bgDisabled: {
+            value: string;
+          };
+          text: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+          textDisabled: {
+            value: string;
+          };
+          border: {
+            value: string;
+          };
+          borderDisabled: {
+            value: string;
+          };
+          focusRing: {
+            value: string;
+          };
+          focusVisible: {
+            value: string;
+          };
+        };
+        ghost: {
+          bg: {
+            value: string;
+          };
+          bgHover: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+          bgActive: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+          bgDisabled: {
+            value: string;
+          };
+          text: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+          textDisabled: {
+            value: string;
+          };
+          focusRing: {
+            value: string;
+          };
+          focusVisible: {
+            value: string;
+          };
+        };
+        danger: {
+          bg: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+          bgHover: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+          bgActive: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+          bgDisabled: {
+            value: string;
+          };
+          text: {
+            value: string;
+          };
+          textDisabled: {
+            value: string;
+          };
+          focusRing: {
+            value: string;
+          };
+          focusVisible: {
+            value: string;
+          };
+        };
+        success: {
+          bg: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+          bgHover: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+          bgActive: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+          bgDisabled: {
+            value: string;
+          };
+          text: {
+            value: string;
+          };
+          textDisabled: {
+            value: string;
+          };
+          focusRing: {
+            value: string;
+          };
+          focusVisible: {
+            value: string;
+          };
+        };
+        warning: {
+          bg: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+          bgHover: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+          bgActive: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+          bgDisabled: {
+            value: string;
+          };
+          text: {
+            value: string;
+          };
+          textDisabled: {
+            value: string;
+          };
+          focusRing: {
+            value: string;
+          };
+          focusVisible: {
+            value: string;
+          };
+        };
+        link: {
+          bg: {
+            value: string;
+          };
+          bgHover: {
+            value: string;
+          };
+          bgActive: {
+            value: string;
+          };
+          bgDisabled: {
+            value: string;
+          };
+          text: {
+            value: string;
+          };
+          textHover: {
+            value: string;
+          };
+          textActive: {
+            value: string;
+          };
+          textDisabled: {
+            value: string;
+          };
+          focusRing: {
+            value: string;
+          };
+          focusVisible: {
+            value: string;
+          };
+        };
+        light: {
+          bg: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+          bgHover: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+          bgActive: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+          bgDisabled: {
+            value: string;
+          };
+          text: {
+            value: string;
+          };
+          textDisabled: {
+            value: string;
+          };
+          focusRing: {
+            value: string;
+          };
+          focusVisible: {
+            value: string;
+          };
+        };
+        dark: {
+          bg: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+          bgHover: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+          bgActive: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+          bgDisabled: {
+            value: string;
+          };
+          text: {
+            value: string;
+          };
+          textDisabled: {
+            value: string;
+          };
+          focusRing: {
+            value: string;
+          };
+          focusVisible: {
+            value: string;
+          };
+        };
+        cta: {
+          bg: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+          bgHover: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+          bgActive: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+          bgDisabled: {
+            value: string;
+          };
+          text: {
+            value: string;
+          };
+          textDisabled: {
+            value: string;
+          };
+          shadow: {
+            value: string;
+          };
+          focusRing: {
+            value: string;
+          };
+        };
+        accent: {
+          bg: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+          bgHover: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+          bgActive: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+          bgDisabled: {
+            value: string;
+          };
+          text: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+          textDisabled: {
+            value: string;
+          };
+          focusRing: {
+            value: string;
+          };
+          focusVisible: {
+            value: string;
+          };
+        };
+        inverse: {
+          bg: {
+            value: string;
+          };
+          bgHover: {
+            value: string;
+          };
+          bgActive: {
+            value: string;
+          };
+          bgDisabled: {
+            value: string;
+          };
+          text: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+          textDisabled: {
+            value: string;
+          };
+          border: {
+            value: string;
+          };
+          borderDisabled: {
+            value: string;
+          };
+          focusRing: {
+            value: string;
+          };
+          focusVisible: {
+            value: string;
+          };
+        };
+      };
+      link: {
+        default: {
+          value: string;
+          description: string;
+          metadata: {
+            pair: string;
+          };
+        };
+        hover: {
+          value: string;
+          description: string;
+        };
+        active: {
+          value: string;
+          description: string;
+        };
+        visited: {
+          value: string;
+          description: string;
+        };
+        onInverse: {
+          value: string;
+          description: string;
+          metadata: {
+            pair: string;
+          };
+        };
+        onInverseHover: {
+          value: string;
+          description: string;
         };
       };
     };
@@ -8079,6 +12332,9 @@ export interface SpectreSourceTokens {
     '72': string;
     '80': string;
     '96': string;
+    '128': string;
+    '160': string;
+    '192': string;
     '240': string;
   };
   radii: {
@@ -8459,11 +12715,19 @@ export interface SpectreSourceTokens {
         sm: string;
         md: string;
         lg: string;
+        xl: string;
+        '2xl': string;
+        '3xl': string;
+        '4xl': string;
       };
       gap: {
         sm: string;
         md: string;
         lg: string;
+        xl: string;
+        '2xl': string;
+        '3xl': string;
+        '4xl': string;
       };
     };
     stack: {
@@ -8471,6 +12735,10 @@ export interface SpectreSourceTokens {
         sm: string;
         md: string;
         lg: string;
+        xl: string;
+        '2xl': string;
+        '3xl': string;
+        '4xl': string;
       };
     };
     container: {
@@ -8478,13 +12746,85 @@ export interface SpectreSourceTokens {
         sm: string;
         md: string;
         lg: string;
+        xl: string;
+        '2xl': string;
+        '3xl': string;
+        '4xl': string;
       };
       maxWidth: string;
       maxWidthProse: string;
       maxWidthWide: string;
     };
+    hero: {
+      paddingTop: {
+        sm: string;
+        md: string;
+        lg: string;
+      };
+      paddingBottom: {
+        sm: string;
+        md: string;
+        lg: string;
+      };
+    };
     sidebar: {
       width: string;
+    };
+    responsive: {
+      lg: {
+        section: {
+          padding: {
+            xl: string;
+            '2xl': string;
+            '3xl': string;
+            '4xl': string;
+          };
+          gap: {
+            xl: string;
+            '2xl': string;
+            '3xl': string;
+            '4xl': string;
+          };
+        };
+        stack: {
+          gap: {
+            xl: string;
+            '2xl': string;
+            '3xl': string;
+            '4xl': string;
+          };
+        };
+        container: {
+          paddingInline: {
+            xl: string;
+            '2xl': string;
+            '3xl': string;
+            '4xl': string;
+          };
+        };
+      };
+    };
+  };
+  elevation: {
+    flat: {
+      shadow: string;
+      surface: string;
+      zIndex: string;
+    };
+    raised: {
+      shadow: string;
+      surface: string;
+      zIndex: string;
+    };
+    overlay: {
+      shadow: string;
+      surface: string;
+      zIndex: string;
+    };
+    modal: {
+      shadow: string;
+      surface: string;
+      zIndex: string;
     };
   };
   font: {
@@ -8887,6 +13227,26 @@ export interface SpectreGeneratedTokens {
         danger: string;
         cta: string;
         thickness: string;
+      };
+      light: {
+        bg: string;
+        text: string;
+        heading: string;
+        muted: string;
+        link: string;
+        linkHover: string;
+        border: string;
+        divider: string;
+        chipBg: string;
+        accent: {
+          neutral: string;
+          brand: string;
+          info: string;
+          success: string;
+          warning: string;
+          danger: string;
+          cta: string;
+        };
       };
     };
     modal: {
@@ -9326,6 +13686,11 @@ export interface SpectreGeneratedTokens {
         text: string;
       };
       hr: string;
+      kbd: {
+        bg: string;
+        border: string;
+        text: string;
+      };
     };
     externalAuthButton: {
       bg: string;
@@ -9389,6 +13754,56 @@ export interface SpectreGeneratedTokens {
       text: string;
       disabledText: string;
       requiredIndicatorText: string;
+    };
+    skeleton: {
+      base: string;
+      shimmer: string;
+    };
+    selection: {
+      bg: string;
+      text: string;
+    };
+    caret: {
+      color: string;
+    };
+    scrollbar: {
+      track: string;
+      thumb: string;
+      thumbHover: string;
+    };
+    chart: {
+      bg: string;
+      grid: string;
+      axis: string;
+      label: string;
+      series: {
+        '1': string;
+        '2': string;
+        '3': string;
+        '4': string;
+        '5': string;
+        '6': string;
+        '7': string;
+        '8': string;
+      };
+      sequential: {
+        '1': string;
+        '2': string;
+        '3': string;
+        '4': string;
+        '5': string;
+        '6': string;
+        '7': string;
+      };
+      diverging: {
+        '1': string;
+        '2': string;
+        '3': string;
+        '4': string;
+        '5': string;
+        '6': string;
+        '7': string;
+      };
     };
   };
   buttons: {
@@ -9551,6 +13966,40 @@ export interface SpectreGeneratedTokens {
       bg: string;
       border: string;
       text: string;
+    };
+  };
+  control: {
+    sm: {
+      height: string;
+      paddingInline: string;
+      iconSize: string;
+    };
+    md: {
+      height: string;
+      paddingInline: string;
+      iconSize: string;
+    };
+    lg: {
+      height: string;
+      paddingInline: string;
+      iconSize: string;
+    };
+    compact: {
+      sm: {
+        height: string;
+        paddingInline: string;
+        iconSize: string;
+      };
+      md: {
+        height: string;
+        paddingInline: string;
+        iconSize: string;
+      };
+      lg: {
+        height: string;
+        paddingInline: string;
+        iconSize: string;
+      };
     };
   };
   modes: {
@@ -9735,6 +14184,26 @@ export interface SpectreGeneratedTokens {
             warning: string;
             danger: string;
             cta: string;
+          };
+          light: {
+            bg: string;
+            text: string;
+            heading: string;
+            muted: string;
+            link: string;
+            linkHover: string;
+            border: string;
+            divider: string;
+            chipBg: string;
+            accent: {
+              neutral: string;
+              brand: string;
+              info: string;
+              success: string;
+              warning: string;
+              danger: string;
+              cta: string;
+            };
           };
         };
         modal: {
@@ -10166,6 +14635,11 @@ export interface SpectreGeneratedTokens {
             text: string;
           };
           hr: string;
+          kbd: {
+            bg: string;
+            border: string;
+            text: string;
+          };
         };
         externalAuthButton: {
           bg: string;
@@ -10221,6 +14695,56 @@ export interface SpectreGeneratedTokens {
           text: string;
           disabledText: string;
           requiredIndicatorText: string;
+        };
+        skeleton: {
+          base: string;
+          shimmer: string;
+        };
+        selection: {
+          bg: string;
+          text: string;
+        };
+        caret: {
+          color: string;
+        };
+        scrollbar: {
+          track: string;
+          thumb: string;
+          thumbHover: string;
+        };
+        chart: {
+          bg: string;
+          grid: string;
+          axis: string;
+          label: string;
+          series: {
+            '1': string;
+            '2': string;
+            '3': string;
+            '4': string;
+            '5': string;
+            '6': string;
+            '7': string;
+            '8': string;
+          };
+          sequential: {
+            '1': string;
+            '2': string;
+            '3': string;
+            '4': string;
+            '5': string;
+            '6': string;
+            '7': string;
+          };
+          diverging: {
+            '1': string;
+            '2': string;
+            '3': string;
+            '4': string;
+            '5': string;
+            '6': string;
+            '7': string;
+          };
         };
       };
     };
@@ -10409,6 +14933,26 @@ export interface SpectreGeneratedTokens {
             danger: string;
             cta: string;
           };
+          light: {
+            bg: string;
+            text: string;
+            heading: string;
+            muted: string;
+            link: string;
+            linkHover: string;
+            border: string;
+            divider: string;
+            chipBg: string;
+            accent: {
+              neutral: string;
+              brand: string;
+              info: string;
+              success: string;
+              warning: string;
+              danger: string;
+              cta: string;
+            };
+          };
         };
         modal: {
           bg: string;
@@ -10839,6 +15383,11 @@ export interface SpectreGeneratedTokens {
             text: string;
           };
           hr: string;
+          kbd: {
+            bg: string;
+            border: string;
+            text: string;
+          };
         };
         externalAuthButton: {
           bg: string;
@@ -10895,6 +15444,947 @@ export interface SpectreGeneratedTokens {
           disabledText: string;
           requiredIndicatorText: string;
         };
+        skeleton: {
+          base: string;
+          shimmer: string;
+        };
+        selection: {
+          bg: string;
+          text: string;
+        };
+        caret: {
+          color: string;
+        };
+        scrollbar: {
+          track: string;
+          thumb: string;
+          thumbHover: string;
+        };
+        chart: {
+          bg: string;
+          grid: string;
+          axis: string;
+          label: string;
+          series: {
+            '1': string;
+            '2': string;
+            '3': string;
+            '4': string;
+            '5': string;
+            '6': string;
+            '7': string;
+            '8': string;
+          };
+          sequential: {
+            '1': string;
+            '2': string;
+            '3': string;
+            '4': string;
+            '5': string;
+            '6': string;
+            '7': string;
+          };
+          diverging: {
+            '1': string;
+            '2': string;
+            '3': string;
+            '4': string;
+            '5': string;
+            '6': string;
+            '7': string;
+          };
+        };
+      };
+    };
+    highContrast: {
+      surface: {
+        page: string;
+        card: string;
+        input: string;
+        overlay: string;
+        subtle: string;
+        hero: string;
+        hover: string;
+        selected: string;
+        active: string;
+        divider: string;
+      };
+      text: {
+        onPage: {
+          default: string;
+          muted: string;
+          subtle: string;
+          meta: string;
+          brand: string;
+        };
+        onSurface: {
+          default: string;
+          muted: string;
+          subtle: string;
+          meta: string;
+          brand: string;
+        };
+      };
+      forms: {
+        default: {
+          bg: string;
+          text: string;
+          placeholder: string;
+        };
+        valid: {
+          border: string;
+          bg: string;
+          text: string;
+        };
+        invalid: {
+          border: string;
+          bg: string;
+          text: string;
+        };
+      };
+      component: {
+        card: {
+          text: string;
+          textMuted: string;
+          accent: {
+            neutral: string;
+            brand: string;
+            info: string;
+            success: string;
+            warning: string;
+            danger: string;
+            cta: string;
+          };
+        };
+        choiceCard: {
+          bg: string;
+          text: string;
+          border: string;
+          hoverBorder: string;
+          selectedBg: string;
+          selectedBorder: string;
+          disabledBg: string;
+          disabledText: string;
+          focusRing: string;
+        };
+        input: {
+          text: string;
+          placeholder: string;
+        };
+        button: {
+          textDefault: string;
+          textOnPrimary: string;
+        };
+        badge: {
+          neutralBg: string;
+          neutralBgHover: string;
+          neutralText: string;
+          brandBg: string;
+          brandBgHover: string;
+          brandText: string;
+          infoBg: string;
+          infoBgHover: string;
+          infoText: string;
+          successBg: string;
+          successText: string;
+          warningBg: string;
+          warningText: string;
+          dangerBg: string;
+          dangerText: string;
+          accent: {
+            neutral: string;
+            brand: string;
+            info: string;
+            success: string;
+            warning: string;
+            danger: string;
+            cta: string;
+          };
+        };
+        iconBox: {
+          bg: string;
+          border: string;
+          iconDefault: string;
+          iconSuccess: string;
+          iconWarning: string;
+          iconDanger: string;
+        };
+        testimonial: {
+          bg: string;
+          bgHover: string;
+          border: string;
+          text: string;
+          authorName: string;
+          authorTitle: string;
+          quoteMark: string;
+          accent: {
+            neutral: string;
+            brand: string;
+            info: string;
+            success: string;
+            warning: string;
+            danger: string;
+            cta: string;
+          };
+        };
+        pricingCard: {
+          bg: string;
+          bgHover: string;
+          border: string;
+          featuredBg: string;
+          featuredText: string;
+          featuredBadgeBg: string;
+          featuredBadgeText: string;
+          price: string;
+          priceDescription: string;
+          accent: {
+            neutral: string;
+            brand: string;
+            info: string;
+            success: string;
+            warning: string;
+            danger: string;
+            cta: string;
+          };
+        };
+        rating: {
+          starFilled: string;
+          starEmpty: string;
+          text: string;
+        };
+        nav: {
+          bg: string;
+          text: string;
+          link: string;
+          linkHover: string;
+          linkActive: string;
+          border: string;
+          accent: {
+            neutral: string;
+            brand: string;
+            info: string;
+            success: string;
+            warning: string;
+            danger: string;
+            cta: string;
+          };
+        };
+        footer: {
+          bg: string;
+          text: string;
+          heading: string;
+          muted: string;
+          link: string;
+          linkHover: string;
+          border: string;
+          divider: string;
+          chipBg: string;
+          accent: {
+            neutral: string;
+            brand: string;
+            info: string;
+            success: string;
+            warning: string;
+            danger: string;
+            cta: string;
+          };
+          light: {
+            bg: string;
+            text: string;
+            heading: string;
+            muted: string;
+            link: string;
+            linkHover: string;
+            border: string;
+            divider: string;
+            chipBg: string;
+            accent: {
+              neutral: string;
+              brand: string;
+              info: string;
+              success: string;
+              warning: string;
+              danger: string;
+              cta: string;
+            };
+          };
+        };
+        modal: {
+          bg: string;
+          shadow: string;
+          border: string;
+          overlay: string;
+          accent: {
+            neutral: string;
+            brand: string;
+            info: string;
+            success: string;
+            warning: string;
+            danger: string;
+            cta: string;
+          };
+        };
+        toast: {
+          neutral: {
+            bg: string;
+            text: string;
+            border: string;
+            icon: string;
+          };
+          success: {
+            bg: string;
+            text: string;
+            border: string;
+            icon: string;
+          };
+          warning: {
+            bg: string;
+            text: string;
+            border: string;
+            icon: string;
+          };
+          danger: {
+            bg: string;
+            text: string;
+            border: string;
+            icon: string;
+          };
+          info: {
+            bg: string;
+            text: string;
+            border: string;
+            icon: string;
+          };
+          accent: {
+            neutral: string;
+            brand: string;
+            info: string;
+            success: string;
+            warning: string;
+            danger: string;
+            cta: string;
+          };
+        };
+        tooltip: {
+          bg: string;
+          text: string;
+          border: string;
+          accent: {
+            neutral: string;
+            brand: string;
+            info: string;
+            success: string;
+            warning: string;
+            danger: string;
+            cta: string;
+          };
+        };
+        dropdown: {
+          bg: string;
+          border: string;
+          item: {
+            default: string;
+            hover: string;
+            active: string;
+            text: string;
+            disabledText: string;
+            selectedBg: string;
+            selectedText: string;
+          };
+          accent: {
+            neutral: string;
+            brand: string;
+            info: string;
+            success: string;
+            warning: string;
+            danger: string;
+            cta: string;
+          };
+          header: string;
+          divider: string;
+        };
+        tabs: {
+          list: {
+            bg: string;
+            border: string;
+          };
+          item: {
+            text: string;
+            hover: {
+              bg: string;
+            };
+            active: {
+              text: string;
+              indicator: string;
+            };
+            focus: {
+              ringColor: string;
+            };
+            disabled: {
+              text: string;
+            };
+          };
+          pill: {
+            active: {
+              bg: string;
+              text: string;
+            };
+          };
+          panel: {
+            bg: string;
+          };
+        };
+        accordion: {
+          bg: string;
+          text: string;
+          border: string;
+          header: {
+            hoverBg: string;
+          };
+          icon: {
+            collapsed: string;
+            expanded: string;
+          };
+        };
+        breadcrumb: {
+          item: {
+            text: string;
+            hover: {
+              text: string;
+            };
+            active: {
+              text: string;
+            };
+          };
+          separator: string;
+        };
+        listGroup: {
+          bg: string;
+          border: string;
+          text: string;
+          heading: string;
+          muted: string;
+          item: {
+            hover: {
+              bg: string;
+            };
+            active: {
+              bg: string;
+              text: string;
+            };
+            selected: {
+              bg: string;
+            };
+            disabled: {
+              text: string;
+            };
+          };
+          accent: {
+            neutral: string;
+            brand: string;
+            info: string;
+            success: string;
+            warning: string;
+            danger: string;
+            cta: string;
+            thickness: string;
+          };
+        };
+        offcanvas: {
+          bg: string;
+          text: string;
+          border: string;
+          overlay: string;
+        };
+        carousel: {
+          indicator: {
+            default: string;
+            active: string;
+          };
+          control: {
+            icon: string;
+            bg: string;
+          };
+          caption: {
+            bg: string;
+            text: string;
+          };
+        };
+        table: {
+          header: {
+            bg: string;
+            text: string;
+          };
+          text: string;
+          divider: string;
+          stripeBg: string;
+          hoverBg: string;
+          selectedBg: string;
+          row: {
+            neutral: {
+              bg: string;
+              text: string;
+            };
+            info: {
+              bg: string;
+              text: string;
+            };
+            success: {
+              bg: string;
+              text: string;
+            };
+            warning: {
+              bg: string;
+              text: string;
+            };
+            danger: {
+              bg: string;
+              text: string;
+            };
+          };
+        };
+        alert: {
+          neutral: {
+            bg: string;
+            text: string;
+            border: string;
+            icon: string;
+          };
+          brand: {
+            bg: string;
+            text: string;
+            border: string;
+            icon: string;
+          };
+          info: {
+            bg: string;
+            text: string;
+            border: string;
+            icon: string;
+          };
+          success: {
+            bg: string;
+            text: string;
+            border: string;
+            icon: string;
+          };
+          warning: {
+            bg: string;
+            text: string;
+            border: string;
+            icon: string;
+          };
+          danger: {
+            bg: string;
+            text: string;
+            border: string;
+            icon: string;
+          };
+        };
+        pagination: {
+          item: {
+            text: string;
+            hover: {
+              bg: string;
+            };
+            active: {
+              bg: string;
+              text: string;
+            };
+            disabled: {
+              text: string;
+            };
+          };
+        };
+        stepper: {
+          step: {
+            pending: {
+              bg: string;
+              text: string;
+            };
+            active: {
+              bg: string;
+              text: string;
+            };
+            done: {
+              bg: string;
+              text: string;
+            };
+          };
+          connector: string;
+          label: {
+            text: string;
+          };
+        };
+        popover: {
+          bg: string;
+          text: string;
+          muted: string;
+          border: string;
+          shadow: string;
+          arrow: string;
+        };
+        progress: {
+          track: {
+            bg: string;
+          };
+          indicator: {
+            neutral: string;
+            brand: string;
+            info: string;
+            success: string;
+            warning: string;
+            danger: string;
+          };
+          label: {
+            text: string;
+          };
+        };
+        loadingIndicator: {
+          default: string;
+          muted: string;
+          inverse: string;
+          brand: string;
+          info: string;
+          success: string;
+          warning: string;
+          danger: string;
+        };
+        switch: {
+          trackBg: string;
+          trackCheckedBg: string;
+          thumbBg: string;
+          trackDisabledBg: string;
+          thumbDisabledBg: string;
+          focusRing: string;
+        };
+        range: {
+          trackBg: string;
+          trackFilledBg: string;
+          thumbBg: string;
+          thumbBorder: string;
+          trackDisabledBg: string;
+          thumbDisabledBorder: string;
+          focusRing: string;
+        };
+        fileInput: {
+          bg: string;
+          border: string;
+          text: string;
+          actionBg: string;
+          actionText: string;
+          disabledBg: string;
+          disabledBorder: string;
+          disabledText: string;
+          focusBorder: string;
+        };
+        inputGroup: {
+          addonBg: string;
+          addonText: string;
+          addonBorder: string;
+          focusBorder: string;
+          disabledBg: string;
+          disabledText: string;
+        };
+        datepicker: {
+          panel: {
+            bg: string;
+            border: string;
+          };
+          header: {
+            text: string;
+          };
+          weekday: {
+            text: string;
+          };
+        };
+        day: {
+          default: {
+            text: string;
+            hover: {
+              bg: string;
+            };
+          };
+          selected: {
+            bg: string;
+            text: string;
+          };
+          today: {
+            ringColor: string;
+          };
+          outsideMonth: {
+            text: string;
+          };
+          disabled: {
+            text: string;
+          };
+        };
+        prose: {
+          blockquote: {
+            border: string;
+            text: string;
+          };
+          code: {
+            bg: string;
+            text: string;
+          };
+          codeBlock: {
+            bg: string;
+            text: string;
+            border: string;
+          };
+          mark: {
+            bg: string;
+            text: string;
+          };
+          hr: string;
+          kbd: {
+            bg: string;
+            border: string;
+            text: string;
+          };
+        };
+        externalAuthButton: {
+          bg: string;
+          text: string;
+          border: string;
+          hoverBg: string;
+          activeBg: string;
+          disabledBg: string;
+          disabledText: string;
+          focusRing: string;
+        };
+        checkbox: {
+          bg: string;
+          border: string;
+          checkedBg: string;
+          checkedBorder: string;
+          text: string;
+          disabledBg: string;
+          disabledBorder: string;
+        };
+        radio: {
+          bg: string;
+          border: string;
+          checkedBg: string;
+          checkedBorder: string;
+          text: string;
+          disabledBg: string;
+          disabledBorder: string;
+        };
+        select: {
+          bg: string;
+          border: string;
+          text: string;
+          placeholderText: string;
+          disabledBg: string;
+          disabledBorder: string;
+          focusBorder: string;
+        };
+        textarea: {
+          bg: string;
+          border: string;
+          text: string;
+          placeholder: string;
+          disabledBg: string;
+          disabledBorder: string;
+          focusBorder: string;
+        };
+        fieldset: {
+          border: string;
+          legendText: string;
+        };
+        label: {
+          text: string;
+          disabledText: string;
+          requiredIndicatorText: string;
+        };
+        skeleton: {
+          base: string;
+          shimmer: string;
+        };
+        selection: {
+          bg: string;
+          text: string;
+        };
+        caret: {
+          color: string;
+        };
+        scrollbar: {
+          track: string;
+          thumb: string;
+          thumbHover: string;
+        };
+        chart: {
+          bg: string;
+          grid: string;
+          axis: string;
+          label: string;
+          series: {
+            '1': string;
+            '2': string;
+            '3': string;
+            '4': string;
+            '5': string;
+            '6': string;
+            '7': string;
+            '8': string;
+          };
+          sequential: {
+            '1': string;
+            '2': string;
+            '3': string;
+            '4': string;
+            '5': string;
+            '6': string;
+            '7': string;
+          };
+          diverging: {
+            '1': string;
+            '2': string;
+            '3': string;
+            '4': string;
+            '5': string;
+            '6': string;
+            '7': string;
+          };
+        };
+      };
+      buttons: {
+        primary: {
+          bg: string;
+          bgHover: string;
+          bgActive: string;
+          bgDisabled: string;
+          text: string;
+          textDisabled: string;
+          focusRing: string;
+          focusVisible: string;
+        };
+        secondary: {
+          bg: string;
+          bgHover: string;
+          bgActive: string;
+          bgDisabled: string;
+          text: string;
+          textDisabled: string;
+          border: string;
+          borderDisabled: string;
+          focusRing: string;
+          focusVisible: string;
+        };
+        ghost: {
+          bg: string;
+          bgHover: string;
+          bgActive: string;
+          bgDisabled: string;
+          text: string;
+          textDisabled: string;
+          focusRing: string;
+          focusVisible: string;
+        };
+        danger: {
+          bg: string;
+          bgHover: string;
+          bgActive: string;
+          bgDisabled: string;
+          text: string;
+          textDisabled: string;
+          focusRing: string;
+          focusVisible: string;
+        };
+        success: {
+          bg: string;
+          bgHover: string;
+          bgActive: string;
+          bgDisabled: string;
+          text: string;
+          textDisabled: string;
+          focusRing: string;
+          focusVisible: string;
+        };
+        warning: {
+          bg: string;
+          bgHover: string;
+          bgActive: string;
+          bgDisabled: string;
+          text: string;
+          textDisabled: string;
+          focusRing: string;
+          focusVisible: string;
+        };
+        link: {
+          bg: string;
+          bgHover: string;
+          bgActive: string;
+          bgDisabled: string;
+          text: string;
+          textHover: string;
+          textActive: string;
+          textDisabled: string;
+          focusRing: string;
+          focusVisible: string;
+        };
+        light: {
+          bg: string;
+          bgHover: string;
+          bgActive: string;
+          bgDisabled: string;
+          text: string;
+          textDisabled: string;
+          focusRing: string;
+          focusVisible: string;
+        };
+        dark: {
+          bg: string;
+          bgHover: string;
+          bgActive: string;
+          bgDisabled: string;
+          text: string;
+          textDisabled: string;
+          focusRing: string;
+          focusVisible: string;
+        };
+        cta: {
+          bg: string;
+          bgHover: string;
+          bgActive: string;
+          bgDisabled: string;
+          text: string;
+          textDisabled: string;
+          shadow: string;
+          focusRing: string;
+        };
+        accent: {
+          bg: string;
+          bgHover: string;
+          bgActive: string;
+          bgDisabled: string;
+          text: string;
+          textDisabled: string;
+          focusRing: string;
+          focusVisible: string;
+        };
+        inverse: {
+          bg: string;
+          bgHover: string;
+          bgActive: string;
+          bgDisabled: string;
+          text: string;
+          textDisabled: string;
+          border: string;
+          borderDisabled: string;
+          focusRing: string;
+          focusVisible: string;
+        };
+      };
+      link: {
+        default: string;
+        hover: string;
+        active: string;
+        visited: string;
+        onInverse: string;
+        onInverseHover: string;
       };
     };
   };
@@ -11451,6 +16941,9 @@ export interface SpectreGeneratedTokens {
     '72': string;
     '80': string;
     '96': string;
+    '128': string;
+    '160': string;
+    '192': string;
     '240': string;
   };
   radii: {
@@ -11708,11 +17201,19 @@ export interface SpectreGeneratedTokens {
         sm: string;
         md: string;
         lg: string;
+        xl: string;
+        '2xl': string;
+        '3xl': string;
+        '4xl': string;
       };
       gap: {
         sm: string;
         md: string;
         lg: string;
+        xl: string;
+        '2xl': string;
+        '3xl': string;
+        '4xl': string;
       };
     };
     stack: {
@@ -11720,6 +17221,10 @@ export interface SpectreGeneratedTokens {
         sm: string;
         md: string;
         lg: string;
+        xl: string;
+        '2xl': string;
+        '3xl': string;
+        '4xl': string;
       };
     };
     container: {
@@ -11727,13 +17232,85 @@ export interface SpectreGeneratedTokens {
         sm: string;
         md: string;
         lg: string;
+        xl: string;
+        '2xl': string;
+        '3xl': string;
+        '4xl': string;
       };
       maxWidth: string;
       maxWidthProse: string;
       maxWidthWide: string;
     };
+    hero: {
+      paddingTop: {
+        sm: string;
+        md: string;
+        lg: string;
+      };
+      paddingBottom: {
+        sm: string;
+        md: string;
+        lg: string;
+      };
+    };
     sidebar: {
       width: string;
+    };
+    responsive: {
+      lg: {
+        section: {
+          padding: {
+            xl: string;
+            '2xl': string;
+            '3xl': string;
+            '4xl': string;
+          };
+          gap: {
+            xl: string;
+            '2xl': string;
+            '3xl': string;
+            '4xl': string;
+          };
+        };
+        stack: {
+          gap: {
+            xl: string;
+            '2xl': string;
+            '3xl': string;
+            '4xl': string;
+          };
+        };
+        container: {
+          paddingInline: {
+            xl: string;
+            '2xl': string;
+            '3xl': string;
+            '4xl': string;
+          };
+        };
+      };
+    };
+  };
+  elevation: {
+    flat: {
+      shadow: string;
+      surface: string;
+      zIndex: string;
+    };
+    raised: {
+      shadow: string;
+      surface: string;
+      zIndex: string;
+    };
+    overlay: {
+      shadow: string;
+      surface: string;
+      zIndex: string;
+    };
+    modal: {
+      shadow: string;
+      surface: string;
+      zIndex: string;
     };
   };
   font: {
@@ -12136,6 +17713,26 @@ export const coreTokens: SpectreGeneratedTokens = {
         "danger": "{colors.error.600}",
         "cta": "{colors.brand.600}",
         "thickness": "0.25rem"
+      },
+      "light": {
+        "bg": "{colors.neutral.100}",
+        "text": "{colors.neutral.700}",
+        "heading": "{colors.neutral.900}",
+        "muted": "{colors.neutral.600}",
+        "link": "{colors.neutral.700}",
+        "linkHover": "{colors.brand.700}",
+        "border": "{colors.neutral.200}",
+        "divider": "{colors.neutral.200}",
+        "chipBg": "{colors.neutral.200}",
+        "accent": {
+          "neutral": "{colors.neutral.600}",
+          "brand": "{colors.brand.600}",
+          "info": "{colors.info.600}",
+          "success": "{colors.success.600}",
+          "warning": "{colors.warning.600}",
+          "danger": "{colors.error.600}",
+          "cta": "{colors.brand.600}"
+        }
       }
     },
     "modal": {
@@ -12574,7 +18171,12 @@ export const coreTokens: SpectreGeneratedTokens = {
         "bg": "{colors.warning.100}",
         "text": "{colors.warning.900}"
       },
-      "hr": "{colors.neutral.200}"
+      "hr": "{colors.neutral.200}",
+      "kbd": {
+        "bg": "{colors.neutral.100}",
+        "border": "{colors.neutral.300}",
+        "text": "{colors.neutral.900}"
+      }
     },
     "externalAuthButton": {
       "bg": "{colors.white}",
@@ -12638,6 +18240,56 @@ export const coreTokens: SpectreGeneratedTokens = {
       "text": "{colors.neutral.900}",
       "disabledText": "{colors.neutral.400}",
       "requiredIndicatorText": "{colors.error.600}"
+    },
+    "skeleton": {
+      "base": "{colors.neutral.200}",
+      "shimmer": "{colors.neutral.100}"
+    },
+    "selection": {
+      "bg": "{colors.brand.100}",
+      "text": "{colors.neutral.900}"
+    },
+    "caret": {
+      "color": "{colors.brand.600}"
+    },
+    "scrollbar": {
+      "track": "{colors.neutral.100}",
+      "thumb": "{colors.neutral.400}",
+      "thumbHover": "{colors.neutral.500}"
+    },
+    "chart": {
+      "bg": "{colors.white}",
+      "grid": "{colors.neutral.200}",
+      "axis": "{colors.neutral.500}",
+      "label": "{colors.neutral.600}",
+      "series": {
+        "1": "{colors.brand.600}",
+        "2": "{colors.palette.amber.600}",
+        "3": "{colors.palette.violet.800}",
+        "4": "{colors.palette.cyan.600}",
+        "5": "{colors.palette.pink.600}",
+        "6": "{colors.palette.emerald.800}",
+        "7": "{colors.palette.lime.700}",
+        "8": "{colors.palette.orange.800}"
+      },
+      "sequential": {
+        "1": "{colors.brand.100}",
+        "2": "{colors.brand.200}",
+        "3": "{colors.brand.300}",
+        "4": "{colors.brand.400}",
+        "5": "{colors.brand.600}",
+        "6": "{colors.brand.800}",
+        "7": "{colors.brand.900}"
+      },
+      "diverging": {
+        "1": "{colors.palette.red.700}",
+        "2": "{colors.palette.red.400}",
+        "3": "{colors.palette.red.200}",
+        "4": "{colors.neutral.200}",
+        "5": "{colors.palette.blue.200}",
+        "6": "{colors.palette.blue.400}",
+        "7": "{colors.palette.blue.700}"
+      }
     }
   },
   "buttons": {
@@ -12800,6 +18452,40 @@ export const coreTokens: SpectreGeneratedTokens = {
       "bg": "{colors.neutral.50}",
       "border": "{colors.neutral.200}",
       "text": "{colors.neutral.400}"
+    }
+  },
+  "control": {
+    "sm": {
+      "height": "2rem",
+      "paddingInline": "0.75rem",
+      "iconSize": "{icons.sm}"
+    },
+    "md": {
+      "height": "2.5rem",
+      "paddingInline": "1rem",
+      "iconSize": "{icons.md}"
+    },
+    "lg": {
+      "height": "3rem",
+      "paddingInline": "1.25rem",
+      "iconSize": "{icons.lg}"
+    },
+    "compact": {
+      "sm": {
+        "height": "1.5rem",
+        "paddingInline": "0.5rem",
+        "iconSize": "{icons.xs}"
+      },
+      "md": {
+        "height": "2rem",
+        "paddingInline": "0.75rem",
+        "iconSize": "{icons.sm}"
+      },
+      "lg": {
+        "height": "2.5rem",
+        "paddingInline": "1rem",
+        "iconSize": "{icons.md}"
+      }
     }
   },
   "modes": {
@@ -12984,6 +18670,26 @@ export const coreTokens: SpectreGeneratedTokens = {
             "warning": "{colors.warning.600}",
             "danger": "{colors.error.600}",
             "cta": "{colors.brand.600}"
+          },
+          "light": {
+            "bg": "{colors.neutral.100}",
+            "text": "{colors.neutral.700}",
+            "heading": "{colors.neutral.900}",
+            "muted": "{colors.neutral.600}",
+            "link": "{colors.neutral.700}",
+            "linkHover": "{colors.brand.700}",
+            "border": "{colors.neutral.200}",
+            "divider": "{colors.neutral.200}",
+            "chipBg": "{colors.neutral.200}",
+            "accent": {
+              "neutral": "{colors.neutral.600}",
+              "brand": "{colors.brand.600}",
+              "info": "{colors.info.600}",
+              "success": "{colors.success.600}",
+              "warning": "{colors.warning.600}",
+              "danger": "{colors.error.600}",
+              "cta": "{colors.brand.600}"
+            }
           }
         },
         "modal": {
@@ -13414,7 +19120,12 @@ export const coreTokens: SpectreGeneratedTokens = {
             "bg": "{colors.warning.100}",
             "text": "{colors.warning.900}"
           },
-          "hr": "{colors.neutral.200}"
+          "hr": "{colors.neutral.200}",
+          "kbd": {
+            "bg": "{colors.neutral.100}",
+            "border": "{colors.neutral.300}",
+            "text": "{colors.neutral.900}"
+          }
         },
         "externalAuthButton": {
           "bg": "{colors.white}",
@@ -13470,6 +19181,56 @@ export const coreTokens: SpectreGeneratedTokens = {
           "text": "{colors.neutral.900}",
           "disabledText": "{colors.neutral.400}",
           "requiredIndicatorText": "{colors.error.600}"
+        },
+        "skeleton": {
+          "base": "{colors.neutral.200}",
+          "shimmer": "{colors.neutral.100}"
+        },
+        "selection": {
+          "bg": "{colors.brand.100}",
+          "text": "{colors.neutral.900}"
+        },
+        "caret": {
+          "color": "{colors.brand.600}"
+        },
+        "scrollbar": {
+          "track": "{colors.neutral.100}",
+          "thumb": "{colors.neutral.400}",
+          "thumbHover": "{colors.neutral.500}"
+        },
+        "chart": {
+          "bg": "{colors.white}",
+          "grid": "{colors.neutral.200}",
+          "axis": "{colors.neutral.500}",
+          "label": "{colors.neutral.600}",
+          "series": {
+            "1": "{colors.brand.600}",
+            "2": "{colors.palette.amber.600}",
+            "3": "{colors.palette.violet.800}",
+            "4": "{colors.palette.cyan.600}",
+            "5": "{colors.palette.pink.600}",
+            "6": "{colors.palette.emerald.800}",
+            "7": "{colors.palette.lime.700}",
+            "8": "{colors.palette.orange.800}"
+          },
+          "sequential": {
+            "1": "{colors.brand.100}",
+            "2": "{colors.brand.200}",
+            "3": "{colors.brand.300}",
+            "4": "{colors.brand.400}",
+            "5": "{colors.brand.600}",
+            "6": "{colors.brand.800}",
+            "7": "{colors.brand.900}"
+          },
+          "diverging": {
+            "1": "{colors.palette.red.700}",
+            "2": "{colors.palette.red.400}",
+            "3": "{colors.palette.red.200}",
+            "4": "{colors.neutral.200}",
+            "5": "{colors.palette.blue.200}",
+            "6": "{colors.palette.blue.400}",
+            "7": "{colors.palette.blue.700}"
+          }
         }
       }
     },
@@ -13657,6 +19418,26 @@ export const coreTokens: SpectreGeneratedTokens = {
             "warning": "{colors.warning.400}",
             "danger": "{colors.error.400}",
             "cta": "{colors.brand.400}"
+          },
+          "light": {
+            "bg": "{colors.neutral.200}",
+            "text": "{colors.neutral.800}",
+            "heading": "{colors.neutral.900}",
+            "muted": "{colors.neutral.600}",
+            "link": "{colors.neutral.700}",
+            "linkHover": "{colors.brand.700}",
+            "border": "{colors.neutral.300}",
+            "divider": "{colors.neutral.300}",
+            "chipBg": "{colors.neutral.300}",
+            "accent": {
+              "neutral": "{colors.neutral.600}",
+              "brand": "{colors.brand.600}",
+              "info": "{colors.info.600}",
+              "success": "{colors.success.600}",
+              "warning": "{colors.warning.600}",
+              "danger": "{colors.error.600}",
+              "cta": "{colors.brand.600}"
+            }
           }
         },
         "modal": {
@@ -14087,7 +19868,12 @@ export const coreTokens: SpectreGeneratedTokens = {
             "bg": "{colors.warning.900}",
             "text": "{colors.warning.200}"
           },
-          "hr": "{colors.neutral.700}"
+          "hr": "{colors.neutral.700}",
+          "kbd": {
+            "bg": "{colors.neutral.800}",
+            "border": "{colors.neutral.600}",
+            "text": "{colors.neutral.50}"
+          }
         },
         "externalAuthButton": {
           "bg": "{colors.neutral.800}",
@@ -14143,7 +19929,948 @@ export const coreTokens: SpectreGeneratedTokens = {
           "text": "{colors.neutral.50}",
           "disabledText": "{colors.neutral.600}",
           "requiredIndicatorText": "{colors.error.400}"
+        },
+        "skeleton": {
+          "base": "{colors.neutral.700}",
+          "shimmer": "{colors.neutral.600}"
+        },
+        "selection": {
+          "bg": "{colors.brand.800}",
+          "text": "{colors.white}"
+        },
+        "caret": {
+          "color": "{colors.brand.400}"
+        },
+        "scrollbar": {
+          "track": "{colors.neutral.900}",
+          "thumb": "{colors.neutral.600}",
+          "thumbHover": "{colors.neutral.500}"
+        },
+        "chart": {
+          "bg": "{colors.neutral.800}",
+          "grid": "{colors.neutral.700}",
+          "axis": "{colors.neutral.400}",
+          "label": "{colors.neutral.300}",
+          "series": {
+            "1": "{colors.brand.400}",
+            "2": "{colors.palette.amber.300}",
+            "3": "{colors.palette.violet.400}",
+            "4": "{colors.palette.cyan.300}",
+            "5": "{colors.palette.pink.300}",
+            "6": "{colors.palette.teal.400}",
+            "7": "{colors.palette.lime.300}",
+            "8": "{colors.palette.orange.400}"
+          },
+          "sequential": {
+            "1": "{colors.brand.900}",
+            "2": "{colors.brand.800}",
+            "3": "{colors.brand.700}",
+            "4": "{colors.brand.500}",
+            "5": "{colors.brand.400}",
+            "6": "{colors.brand.300}",
+            "7": "{colors.brand.100}"
+          },
+          "diverging": {
+            "1": "{colors.palette.red.300}",
+            "2": "{colors.palette.red.500}",
+            "3": "{colors.palette.red.800}",
+            "4": "{colors.neutral.600}",
+            "5": "{colors.palette.blue.800}",
+            "6": "{colors.palette.blue.500}",
+            "7": "{colors.palette.blue.300}"
+          }
         }
+      }
+    },
+    "highContrast": {
+      "surface": {
+        "page": "{colors.white}",
+        "card": "{colors.white}",
+        "input": "{colors.white}",
+        "overlay": "{colors.black} / 0.6",
+        "subtle": "{colors.neutral.50}",
+        "hero": "linear-gradient(135deg, {colors.indigo.500} 0%, {colors.violet.600} 100%)",
+        "hover": "{colors.neutral.100}",
+        "selected": "{colors.info.50}",
+        "active": "{colors.neutral.200}",
+        "divider": "{colors.neutral.700}"
+      },
+      "text": {
+        "onPage": {
+          "default": "{colors.neutral.900}",
+          "muted": "{colors.neutral.600}",
+          "subtle": "{colors.neutral.600}",
+          "meta": "{colors.neutral.600}",
+          "brand": "{colors.brand.700}"
+        },
+        "onSurface": {
+          "default": "{colors.neutral.900}",
+          "muted": "{colors.neutral.600}",
+          "subtle": "{colors.neutral.600}",
+          "meta": "{colors.neutral.600}",
+          "brand": "{colors.brand.700}"
+        }
+      },
+      "forms": {
+        "default": {
+          "bg": "{colors.white}",
+          "text": "{colors.neutral.900}",
+          "placeholder": "{colors.neutral.600}"
+        },
+        "valid": {
+          "border": "{colors.success.700}",
+          "bg": "{colors.success.50}",
+          "text": "{colors.success.900}"
+        },
+        "invalid": {
+          "border": "{colors.error.700}",
+          "bg": "{colors.error.50}",
+          "text": "{colors.error.800}"
+        }
+      },
+      "component": {
+        "card": {
+          "text": "{colors.neutral.900}",
+          "textMuted": "{colors.neutral.600}",
+          "accent": {
+            "neutral": "{colors.neutral.600}",
+            "brand": "{colors.brand.600}",
+            "info": "{colors.info.600}",
+            "success": "{colors.success.600}",
+            "warning": "{colors.warning.600}",
+            "danger": "{colors.error.600}",
+            "cta": "{colors.brand.600}"
+          }
+        },
+        "choiceCard": {
+          "bg": "{colors.white}",
+          "text": "{colors.neutral.900}",
+          "border": "{colors.neutral.700}",
+          "hoverBorder": "{colors.neutral.700}",
+          "selectedBg": "{colors.info.50}",
+          "selectedBorder": "{colors.brand.600}",
+          "disabledBg": "{colors.neutral.50}",
+          "disabledText": "{colors.neutral.400}",
+          "focusRing": "{buttons.primary.focusRing}"
+        },
+        "input": {
+          "text": "{colors.neutral.900}",
+          "placeholder": "{colors.neutral.600}"
+        },
+        "button": {
+          "textDefault": "{colors.neutral.900}",
+          "textOnPrimary": "{colors.white}"
+        },
+        "badge": {
+          "neutralBg": "{colors.neutral.100}",
+          "neutralBgHover": "{colors.neutral.200}",
+          "neutralText": "{colors.neutral.700}",
+          "brandBg": "{colors.brand.100}",
+          "brandBgHover": "{colors.brand.200}",
+          "brandText": "{colors.brand.900}",
+          "infoBg": "{colors.info.100}",
+          "infoBgHover": "{colors.info.200}",
+          "infoText": "{colors.info.800}",
+          "successBg": "{colors.success.100}",
+          "successText": "{colors.success.900}",
+          "warningBg": "{colors.warning.100}",
+          "warningText": "{colors.warning.900}",
+          "dangerBg": "{colors.error.100}",
+          "dangerText": "{colors.error.900}",
+          "accent": {
+            "neutral": "{colors.neutral.600}",
+            "brand": "{colors.brand.600}",
+            "info": "{colors.info.600}",
+            "success": "{colors.success.600}",
+            "warning": "{colors.warning.600}",
+            "danger": "{colors.error.600}",
+            "cta": "{colors.brand.600}"
+          }
+        },
+        "iconBox": {
+          "bg": "{colors.white}",
+          "border": "{colors.neutral.700}",
+          "iconDefault": "{colors.info.700}",
+          "iconSuccess": "{colors.success.600}",
+          "iconWarning": "{colors.warning.600}",
+          "iconDanger": "{colors.error.800}"
+        },
+        "testimonial": {
+          "bg": "{colors.white}",
+          "bgHover": "{colors.neutral.50}",
+          "border": "{colors.neutral.700}",
+          "text": "{colors.neutral.700}",
+          "authorName": "{colors.neutral.900}",
+          "authorTitle": "{colors.neutral.700}",
+          "quoteMark": "{colors.neutral.700}",
+          "accent": {
+            "neutral": "{colors.neutral.600}",
+            "brand": "{colors.brand.600}",
+            "info": "{colors.info.600}",
+            "success": "{colors.success.600}",
+            "warning": "{colors.warning.600}",
+            "danger": "{colors.error.600}",
+            "cta": "{colors.brand.600}"
+          }
+        },
+        "pricingCard": {
+          "bg": "{colors.white}",
+          "bgHover": "{colors.neutral.50}",
+          "border": "{colors.neutral.700}",
+          "featuredBg": "{colors.info.700}",
+          "featuredText": "{colors.white}",
+          "featuredBadgeBg": "{colors.warning.500}",
+          "featuredBadgeText": "{colors.neutral.900}",
+          "price": "{colors.neutral.900}",
+          "priceDescription": "{colors.neutral.700}",
+          "accent": {
+            "neutral": "{colors.neutral.600}",
+            "brand": "{colors.brand.600}",
+            "info": "{colors.info.600}",
+            "success": "{colors.success.600}",
+            "warning": "{colors.warning.600}",
+            "danger": "{colors.error.600}",
+            "cta": "{colors.brand.600}"
+          }
+        },
+        "rating": {
+          "starFilled": "{colors.warning.500}",
+          "starEmpty": "{colors.neutral.200}",
+          "text": "{colors.neutral.600}"
+        },
+        "nav": {
+          "bg": "{colors.white}",
+          "text": "{colors.neutral.900}",
+          "link": "{colors.neutral.700}",
+          "linkHover": "{colors.brand.600}",
+          "linkActive": "{colors.brand.700}",
+          "border": "{colors.neutral.700}",
+          "accent": {
+            "neutral": "{colors.neutral.600}",
+            "brand": "{colors.brand.600}",
+            "info": "{colors.info.600}",
+            "success": "{colors.success.600}",
+            "warning": "{colors.warning.600}",
+            "danger": "{colors.error.600}",
+            "cta": "{colors.brand.600}"
+          }
+        },
+        "footer": {
+          "bg": "{colors.neutral.900}",
+          "text": "{colors.neutral.50}",
+          "heading": "{colors.white}",
+          "muted": "{colors.neutral.300}",
+          "link": "{colors.neutral.300}",
+          "linkHover": "{colors.brand.300}",
+          "border": "{colors.neutral.700}",
+          "divider": "{colors.neutral.800}",
+          "chipBg": "{colors.neutral.800}",
+          "accent": {
+            "neutral": "{colors.neutral.600}",
+            "brand": "{colors.brand.600}",
+            "info": "{colors.info.600}",
+            "success": "{colors.success.600}",
+            "warning": "{colors.warning.600}",
+            "danger": "{colors.error.600}",
+            "cta": "{colors.brand.600}"
+          },
+          "light": {
+            "bg": "{colors.neutral.100}",
+            "text": "{colors.neutral.700}",
+            "heading": "{colors.neutral.900}",
+            "muted": "{colors.neutral.700}",
+            "link": "{colors.neutral.700}",
+            "linkHover": "{colors.brand.700}",
+            "border": "{colors.neutral.700}",
+            "divider": "{colors.neutral.700}",
+            "chipBg": "{colors.neutral.200}",
+            "accent": {
+              "neutral": "{colors.neutral.600}",
+              "brand": "{colors.brand.600}",
+              "info": "{colors.info.600}",
+              "success": "{colors.success.600}",
+              "warning": "{colors.warning.600}",
+              "danger": "{colors.error.600}",
+              "cta": "{colors.brand.600}"
+            }
+          }
+        },
+        "modal": {
+          "bg": "{colors.white}",
+          "shadow": "0 20px 48px -12px {colors.black} / 0.20",
+          "border": "{colors.neutral.700}",
+          "overlay": "{colors.black} / 0.6",
+          "accent": {
+            "neutral": "{colors.neutral.600}",
+            "brand": "{colors.brand.600}",
+            "info": "{colors.info.600}",
+            "success": "{colors.success.600}",
+            "warning": "{colors.warning.600}",
+            "danger": "{colors.error.600}",
+            "cta": "{colors.brand.600}"
+          }
+        },
+        "toast": {
+          "neutral": {
+            "bg": "{colors.neutral.50}",
+            "text": "{colors.neutral.800}",
+            "border": "{colors.neutral.700}",
+            "icon": "{colors.neutral.600}"
+          },
+          "success": {
+            "bg": "{colors.success.50}",
+            "text": "{colors.success.900}",
+            "border": "{colors.success.600}",
+            "icon": "{colors.success.600}"
+          },
+          "warning": {
+            "bg": "{colors.warning.50}",
+            "text": "{colors.warning.900}",
+            "border": "{colors.warning.600}",
+            "icon": "{colors.warning.600}"
+          },
+          "danger": {
+            "bg": "{colors.error.50}",
+            "text": "{colors.error.800}",
+            "border": "{colors.error.600}",
+            "icon": "{colors.error.600}"
+          },
+          "info": {
+            "bg": "{colors.info.50}",
+            "text": "{colors.info.800}",
+            "border": "{colors.info.600}",
+            "icon": "{colors.info.600}"
+          },
+          "accent": {
+            "neutral": "{colors.neutral.600}",
+            "brand": "{colors.brand.600}",
+            "info": "{colors.info.600}",
+            "success": "{colors.success.600}",
+            "warning": "{colors.warning.600}",
+            "danger": "{colors.error.600}",
+            "cta": "{colors.brand.600}"
+          }
+        },
+        "tooltip": {
+          "bg": "{colors.neutral.900}",
+          "text": "{colors.white}",
+          "border": "{colors.neutral.700}",
+          "accent": {
+            "neutral": "{colors.neutral.600}",
+            "brand": "{colors.brand.600}",
+            "info": "{colors.info.600}",
+            "success": "{colors.success.600}",
+            "warning": "{colors.warning.600}",
+            "danger": "{colors.error.600}",
+            "cta": "{colors.brand.600}"
+          }
+        },
+        "dropdown": {
+          "bg": "{colors.white}",
+          "border": "{colors.neutral.700}",
+          "item": {
+            "default": "transparent",
+            "hover": "{colors.neutral.100}",
+            "active": "{colors.info.50}",
+            "text": "{colors.neutral.900}",
+            "disabledText": "{colors.neutral.400}",
+            "selectedBg": "{colors.info.100}",
+            "selectedText": "{colors.info.800}"
+          },
+          "accent": {
+            "neutral": "{colors.neutral.600}",
+            "brand": "{colors.brand.600}",
+            "info": "{colors.info.600}",
+            "success": "{colors.success.600}",
+            "warning": "{colors.warning.600}",
+            "danger": "{colors.error.600}",
+            "cta": "{colors.brand.600}"
+          },
+          "header": "{colors.neutral.500}",
+          "divider": "{colors.neutral.700}"
+        },
+        "tabs": {
+          "list": {
+            "bg": "{colors.white}",
+            "border": "{colors.neutral.700}"
+          },
+          "item": {
+            "text": "{colors.neutral.600}",
+            "hover": {
+              "bg": "{colors.neutral.100}"
+            },
+            "active": {
+              "text": "{colors.neutral.900}",
+              "indicator": "{colors.brand.600}"
+            },
+            "focus": {
+              "ringColor": "{buttons.primary.focusRing}"
+            },
+            "disabled": {
+              "text": "{colors.neutral.400}"
+            }
+          },
+          "pill": {
+            "active": {
+              "bg": "{colors.brand.700}",
+              "text": "{colors.white}"
+            }
+          },
+          "panel": {
+            "bg": "{colors.white}"
+          }
+        },
+        "accordion": {
+          "bg": "{colors.white}",
+          "text": "{colors.neutral.900}",
+          "border": "{colors.neutral.700}",
+          "header": {
+            "hoverBg": "{colors.neutral.50}"
+          },
+          "icon": {
+            "collapsed": "{colors.neutral.500}",
+            "expanded": "{colors.neutral.900}"
+          }
+        },
+        "breadcrumb": {
+          "item": {
+            "text": "{colors.neutral.600}",
+            "hover": {
+              "text": "{colors.brand.600}"
+            },
+            "active": {
+              "text": "{colors.neutral.900}"
+            }
+          },
+          "separator": "{colors.neutral.400}"
+        },
+        "listGroup": {
+          "bg": "{colors.white}",
+          "border": "{colors.neutral.700}",
+          "text": "{colors.neutral.700}",
+          "heading": "{colors.neutral.900}",
+          "muted": "{colors.neutral.500}",
+          "item": {
+            "hover": {
+              "bg": "{colors.neutral.50}"
+            },
+            "active": {
+              "bg": "{colors.brand.700}",
+              "text": "{colors.white}"
+            },
+            "selected": {
+              "bg": "{colors.info.50}"
+            },
+            "disabled": {
+              "text": "{colors.neutral.400}"
+            }
+          },
+          "accent": {
+            "neutral": "{colors.neutral.600}",
+            "brand": "{colors.brand.600}",
+            "info": "{colors.info.600}",
+            "success": "{colors.success.600}",
+            "warning": "{colors.warning.600}",
+            "danger": "{colors.error.600}",
+            "cta": "{colors.brand.600}",
+            "thickness": "0.25rem"
+          }
+        },
+        "offcanvas": {
+          "bg": "{colors.white}",
+          "text": "{colors.neutral.900}",
+          "border": "{colors.neutral.700}",
+          "overlay": "{colors.black} / 0.6"
+        },
+        "carousel": {
+          "indicator": {
+            "default": "{colors.white} / 0.5",
+            "active": "{colors.white}"
+          },
+          "control": {
+            "icon": "{colors.white}",
+            "bg": "{colors.black} / 0.3"
+          },
+          "caption": {
+            "bg": "{colors.black} / 0.4",
+            "text": "{colors.white}"
+          }
+        },
+        "table": {
+          "header": {
+            "bg": "{colors.neutral.50}",
+            "text": "{colors.neutral.700}"
+          },
+          "text": "{colors.neutral.900}",
+          "divider": "{colors.neutral.700}",
+          "stripeBg": "{colors.neutral.50}",
+          "hoverBg": "{colors.neutral.100}",
+          "selectedBg": "{colors.info.50}",
+          "row": {
+            "neutral": {
+              "bg": "{colors.neutral.100}",
+              "text": "{colors.neutral.700}"
+            },
+            "info": {
+              "bg": "{colors.info.100}",
+              "text": "{colors.info.800}"
+            },
+            "success": {
+              "bg": "{colors.success.100}",
+              "text": "{colors.success.900}"
+            },
+            "warning": {
+              "bg": "{colors.warning.100}",
+              "text": "{colors.warning.900}"
+            },
+            "danger": {
+              "bg": "{colors.error.100}",
+              "text": "{colors.error.900}"
+            }
+          }
+        },
+        "alert": {
+          "neutral": {
+            "bg": "{colors.neutral.100}",
+            "text": "{colors.neutral.700}",
+            "border": "{colors.neutral.700}",
+            "icon": "{colors.neutral.600}"
+          },
+          "brand": {
+            "bg": "{colors.brand.50}",
+            "text": "{colors.brand.700}",
+            "border": "{colors.brand.600}",
+            "icon": "{colors.brand.600}"
+          },
+          "info": {
+            "bg": "{colors.info.50}",
+            "text": "{colors.info.700}",
+            "border": "{colors.info.600}",
+            "icon": "{colors.info.600}"
+          },
+          "success": {
+            "bg": "{colors.success.50}",
+            "text": "{colors.success.900}",
+            "border": "{colors.success.600}",
+            "icon": "{colors.success.600}"
+          },
+          "warning": {
+            "bg": "{colors.warning.50}",
+            "text": "{colors.warning.900}",
+            "border": "{colors.warning.600}",
+            "icon": "{colors.warning.600}"
+          },
+          "danger": {
+            "bg": "{colors.error.50}",
+            "text": "{colors.error.800}",
+            "border": "{colors.error.600}",
+            "icon": "{colors.error.600}"
+          }
+        },
+        "pagination": {
+          "item": {
+            "text": "{colors.neutral.700}",
+            "hover": {
+              "bg": "{colors.neutral.100}"
+            },
+            "active": {
+              "bg": "{colors.brand.700}",
+              "text": "{colors.white}"
+            },
+            "disabled": {
+              "text": "{colors.neutral.400}"
+            }
+          }
+        },
+        "stepper": {
+          "step": {
+            "pending": {
+              "bg": "{colors.neutral.200}",
+              "text": "{colors.neutral.700}"
+            },
+            "active": {
+              "bg": "{colors.brand.700}",
+              "text": "{colors.white}"
+            },
+            "done": {
+              "bg": "{colors.success.800}",
+              "text": "{colors.white}"
+            }
+          },
+          "connector": "{colors.neutral.200}",
+          "label": {
+            "text": "{colors.neutral.700}"
+          }
+        },
+        "popover": {
+          "bg": "{colors.white}",
+          "text": "{colors.neutral.900}",
+          "muted": "{colors.neutral.600}",
+          "border": "{colors.neutral.700}",
+          "shadow": "0 12px 32px -8px {colors.black} / 0.18",
+          "arrow": "{colors.white}"
+        },
+        "progress": {
+          "track": {
+            "bg": "{colors.neutral.200}"
+          },
+          "indicator": {
+            "neutral": "{colors.neutral.600}",
+            "brand": "{colors.brand.600}",
+            "info": "{colors.info.600}",
+            "success": "{colors.success.600}",
+            "warning": "{colors.warning.600}",
+            "danger": "{colors.error.600}"
+          },
+          "label": {
+            "text": "{colors.neutral.700}"
+          }
+        },
+        "loadingIndicator": {
+          "default": "{colors.neutral.600}",
+          "muted": "{colors.neutral.400}",
+          "inverse": "{colors.white}",
+          "brand": "{colors.brand.600}",
+          "info": "{colors.info.600}",
+          "success": "{colors.success.600}",
+          "warning": "{colors.warning.600}",
+          "danger": "{colors.error.600}"
+        },
+        "switch": {
+          "trackBg": "{colors.neutral.300}",
+          "trackCheckedBg": "{colors.info.600}",
+          "thumbBg": "{colors.white}",
+          "trackDisabledBg": "{colors.neutral.100}",
+          "thumbDisabledBg": "{colors.neutral.200}",
+          "focusRing": "{buttons.primary.focusRing}"
+        },
+        "range": {
+          "trackBg": "{colors.neutral.200}",
+          "trackFilledBg": "{colors.info.600}",
+          "thumbBg": "{colors.white}",
+          "thumbBorder": "{colors.info.600}",
+          "trackDisabledBg": "{colors.neutral.100}",
+          "thumbDisabledBorder": "{colors.neutral.700}",
+          "focusRing": "{buttons.primary.focusRing}"
+        },
+        "fileInput": {
+          "bg": "{colors.white}",
+          "border": "{colors.neutral.700}",
+          "text": "{colors.neutral.900}",
+          "actionBg": "{colors.neutral.100}",
+          "actionText": "{colors.neutral.700}",
+          "disabledBg": "{colors.neutral.50}",
+          "disabledBorder": "{colors.neutral.700}",
+          "disabledText": "{colors.neutral.400}",
+          "focusBorder": "{colors.info.600}"
+        },
+        "inputGroup": {
+          "addonBg": "{colors.neutral.100}",
+          "addonText": "{colors.neutral.700}",
+          "addonBorder": "{colors.neutral.700}",
+          "focusBorder": "{colors.info.600}",
+          "disabledBg": "{colors.neutral.50}",
+          "disabledText": "{colors.neutral.400}"
+        },
+        "datepicker": {
+          "panel": {
+            "bg": "{colors.white}",
+            "border": "{colors.neutral.700}"
+          },
+          "header": {
+            "text": "{colors.neutral.900}"
+          },
+          "weekday": {
+            "text": "{colors.neutral.400}"
+          }
+        },
+        "day": {
+          "default": {
+            "text": "{colors.neutral.900}",
+            "hover": {
+              "bg": "{colors.neutral.100}"
+            }
+          },
+          "selected": {
+            "bg": "{colors.brand.700}",
+            "text": "{colors.white}"
+          },
+          "today": {
+            "ringColor": "{buttons.primary.focusRing}"
+          },
+          "outsideMonth": {
+            "text": "{colors.neutral.300}"
+          },
+          "disabled": {
+            "text": "{colors.neutral.400}"
+          }
+        },
+        "prose": {
+          "blockquote": {
+            "border": "{colors.neutral.600}",
+            "text": "{colors.neutral.600}"
+          },
+          "code": {
+            "bg": "{colors.neutral.100}",
+            "text": "{colors.neutral.900}"
+          },
+          "codeBlock": {
+            "bg": "{colors.neutral.100}",
+            "text": "{colors.neutral.900}",
+            "border": "{colors.neutral.700}"
+          },
+          "mark": {
+            "bg": "{colors.warning.100}",
+            "text": "{colors.warning.900}"
+          },
+          "hr": "{colors.neutral.700}",
+          "kbd": {
+            "bg": "{colors.neutral.100}",
+            "border": "{colors.neutral.700}",
+            "text": "{colors.neutral.900}"
+          }
+        },
+        "externalAuthButton": {
+          "bg": "{colors.white}",
+          "text": "{colors.neutral.900}",
+          "border": "{colors.neutral.700}",
+          "hoverBg": "{colors.neutral.50}",
+          "activeBg": "{colors.neutral.100}",
+          "disabledBg": "{colors.neutral.50}",
+          "disabledText": "{colors.neutral.400}",
+          "focusRing": "{buttons.primary.focusRing}"
+        },
+        "checkbox": {
+          "bg": "{colors.white}",
+          "border": "{colors.neutral.700}",
+          "checkedBg": "{colors.info.700}",
+          "checkedBorder": "{colors.info.600}",
+          "text": "{colors.white}",
+          "disabledBg": "{colors.neutral.50}",
+          "disabledBorder": "{colors.neutral.700}"
+        },
+        "radio": {
+          "bg": "{colors.white}",
+          "border": "{colors.neutral.700}",
+          "checkedBg": "{colors.info.700}",
+          "checkedBorder": "{colors.info.600}",
+          "text": "{colors.white}",
+          "disabledBg": "{colors.neutral.50}",
+          "disabledBorder": "{colors.neutral.700}"
+        },
+        "select": {
+          "bg": "{colors.white}",
+          "border": "{colors.neutral.700}",
+          "text": "{colors.neutral.900}",
+          "placeholderText": "{colors.neutral.600}",
+          "disabledBg": "{colors.neutral.50}",
+          "disabledBorder": "{colors.neutral.700}",
+          "focusBorder": "{colors.info.600}"
+        },
+        "textarea": {
+          "bg": "{colors.white}",
+          "border": "{colors.neutral.700}",
+          "text": "{colors.neutral.900}",
+          "placeholder": "{colors.neutral.600}",
+          "disabledBg": "{colors.neutral.50}",
+          "disabledBorder": "{colors.neutral.700}",
+          "focusBorder": "{colors.info.600}"
+        },
+        "fieldset": {
+          "border": "{colors.neutral.700}",
+          "legendText": "{colors.neutral.900}"
+        },
+        "label": {
+          "text": "{colors.neutral.900}",
+          "disabledText": "{colors.neutral.400}",
+          "requiredIndicatorText": "{colors.error.600}"
+        },
+        "skeleton": {
+          "base": "{colors.neutral.200}",
+          "shimmer": "{colors.neutral.100}"
+        },
+        "selection": {
+          "bg": "{colors.brand.100}",
+          "text": "{colors.neutral.900}"
+        },
+        "caret": {
+          "color": "{colors.brand.600}"
+        },
+        "scrollbar": {
+          "track": "{colors.neutral.700}",
+          "thumb": "{colors.neutral.400}",
+          "thumbHover": "{colors.neutral.500}"
+        },
+        "chart": {
+          "bg": "{colors.white}",
+          "grid": "{colors.neutral.200}",
+          "axis": "{colors.neutral.500}",
+          "label": "{colors.neutral.600}",
+          "series": {
+            "1": "{colors.brand.600}",
+            "2": "{colors.palette.amber.600}",
+            "3": "{colors.palette.violet.800}",
+            "4": "{colors.palette.cyan.600}",
+            "5": "{colors.palette.pink.600}",
+            "6": "{colors.palette.emerald.800}",
+            "7": "{colors.palette.lime.700}",
+            "8": "{colors.palette.orange.800}"
+          },
+          "sequential": {
+            "1": "{colors.brand.100}",
+            "2": "{colors.brand.200}",
+            "3": "{colors.brand.300}",
+            "4": "{colors.brand.400}",
+            "5": "{colors.brand.600}",
+            "6": "{colors.brand.800}",
+            "7": "{colors.brand.900}"
+          },
+          "diverging": {
+            "1": "{colors.palette.red.700}",
+            "2": "{colors.palette.red.400}",
+            "3": "{colors.palette.red.200}",
+            "4": "{colors.neutral.200}",
+            "5": "{colors.palette.blue.200}",
+            "6": "{colors.palette.blue.400}",
+            "7": "{colors.palette.blue.700}"
+          }
+        }
+      },
+      "buttons": {
+        "primary": {
+          "bg": "{colors.info.700}",
+          "bgHover": "{colors.info.800}",
+          "bgActive": "{colors.info.900}",
+          "bgDisabled": "{colors.neutral.200}",
+          "text": "{colors.white}",
+          "textDisabled": "{colors.neutral.400}",
+          "focusRing": "{colors.info.500} / 0.4",
+          "focusVisible": "{colors.info.500} / 0.4"
+        },
+        "secondary": {
+          "bg": "{colors.white}",
+          "bgHover": "{colors.neutral.50}",
+          "bgActive": "{colors.neutral.100}",
+          "bgDisabled": "{colors.neutral.50}",
+          "text": "{colors.info.800}",
+          "textDisabled": "{colors.neutral.400}",
+          "border": "{colors.info.800}",
+          "borderDisabled": "{colors.neutral.200}",
+          "focusRing": "{colors.info.500} / 0.4",
+          "focusVisible": "{colors.info.500} / 0.4"
+        },
+        "ghost": {
+          "bg": "transparent",
+          "bgHover": "{colors.info.50}",
+          "bgActive": "{colors.info.100}",
+          "bgDisabled": "transparent",
+          "text": "{colors.info.800}",
+          "textDisabled": "{colors.neutral.400}",
+          "focusRing": "{colors.info.500} / 0.4",
+          "focusVisible": "{colors.info.500} / 0.4"
+        },
+        "danger": {
+          "bg": "{colors.error.800}",
+          "bgHover": "{colors.error.900}",
+          "bgActive": "{colors.error.900}",
+          "bgDisabled": "{colors.error.200}",
+          "text": "{colors.white}",
+          "textDisabled": "{colors.neutral.400}",
+          "focusRing": "{colors.error.500} / 0.4",
+          "focusVisible": "{colors.error.500} / 0.4"
+        },
+        "success": {
+          "bg": "{colors.success.800}",
+          "bgHover": "{colors.success.900}",
+          "bgActive": "{colors.success.900}",
+          "bgDisabled": "{colors.success.200}",
+          "text": "{colors.white}",
+          "textDisabled": "{colors.neutral.400}",
+          "focusRing": "{colors.success.500} / 0.4",
+          "focusVisible": "{colors.success.500} / 0.4"
+        },
+        "warning": {
+          "bg": "{colors.warning.900}",
+          "bgHover": "{colors.palette.amber.950}",
+          "bgActive": "{colors.palette.amber.950}",
+          "bgDisabled": "{colors.warning.200}",
+          "text": "{colors.white}",
+          "textDisabled": "{colors.neutral.400}",
+          "focusRing": "{colors.warning.500} / 0.4",
+          "focusVisible": "{colors.warning.500} / 0.4"
+        },
+        "link": {
+          "bg": "transparent",
+          "bgHover": "transparent",
+          "bgActive": "transparent",
+          "bgDisabled": "transparent",
+          "text": "{colors.info.700}",
+          "textHover": "{colors.info.800}",
+          "textActive": "{colors.info.900}",
+          "textDisabled": "{colors.neutral.400}",
+          "focusRing": "{colors.info.500} / 0.4",
+          "focusVisible": "{colors.info.500} / 0.4"
+        },
+        "light": {
+          "bg": "{colors.neutral.100}",
+          "bgHover": "{colors.neutral.200}",
+          "bgActive": "{colors.neutral.300}",
+          "bgDisabled": "{colors.neutral.50}",
+          "text": "{colors.neutral.900}",
+          "textDisabled": "{colors.neutral.400}",
+          "focusRing": "{colors.neutral.400} / 0.4",
+          "focusVisible": "{colors.neutral.400} / 0.4"
+        },
+        "dark": {
+          "bg": "{colors.neutral.900}",
+          "bgHover": "{colors.neutral.800}",
+          "bgActive": "{colors.neutral.700}",
+          "bgDisabled": "{colors.neutral.200}",
+          "text": "{colors.white}",
+          "textDisabled": "{colors.neutral.400}",
+          "focusRing": "{colors.neutral.500} / 0.4",
+          "focusVisible": "{colors.neutral.500} / 0.4"
+        },
+        "cta": {
+          "bg": "{colors.brand.700}",
+          "bgHover": "{colors.brand.800}",
+          "bgActive": "{colors.brand.900}",
+          "bgDisabled": "{colors.brand.200}",
+          "text": "{colors.white}",
+          "textDisabled": "{colors.neutral.400}",
+          "shadow": "0 4px 14px 0 {colors.brand.500} / 0.39",
+          "focusRing": "{colors.brand.500} / 0.4"
+        },
+        "accent": {
+          "bg": "{colors.accent.700}",
+          "bgHover": "{colors.accent.800}",
+          "bgActive": "{colors.accent.900}",
+          "bgDisabled": "{colors.accent.200}",
+          "text": "{colors.white}",
+          "textDisabled": "{colors.neutral.400}",
+          "focusRing": "{colors.accent.500} / 0.4",
+          "focusVisible": "{colors.accent.500} / 0.4"
+        },
+        "inverse": {
+          "bg": "{colors.white} / 0.12",
+          "bgHover": "{colors.white} / 0.2",
+          "bgActive": "{colors.white} / 0.28",
+          "bgDisabled": "{colors.white} / 0.08",
+          "text": "{colors.white}",
+          "textDisabled": "{colors.neutral.400}",
+          "border": "{colors.white} / 0.3",
+          "borderDisabled": "{colors.white} / 0.16",
+          "focusRing": "{colors.info.500} / 0.4",
+          "focusVisible": "{colors.info.500} / 0.4"
+        }
+      },
+      "link": {
+        "default": "{colors.brand.700}",
+        "hover": "{colors.brand.800}",
+        "active": "{colors.brand.900}",
+        "visited": "{colors.accent.700}",
+        "onInverse": "{colors.neutral.300}",
+        "onInverseHover": "{colors.brand.300}"
       }
     }
   },
@@ -14700,6 +21427,9 @@ export const coreTokens: SpectreGeneratedTokens = {
     "72": "4.5rem",
     "80": "5rem",
     "96": "6rem",
+    "128": "8rem",
+    "160": "10rem",
+    "192": "12rem",
     "240": "15rem"
   },
   "radii": {
@@ -14956,33 +21686,117 @@ export const coreTokens: SpectreGeneratedTokens = {
       "padding": {
         "sm": "1.5rem",
         "md": "2rem",
-        "lg": "3rem"
+        "lg": "3rem",
+        "xl": "4rem",
+        "2xl": "5rem",
+        "3xl": "6rem",
+        "4xl": "8rem"
       },
       "gap": {
         "sm": "1rem",
         "md": "1.5rem",
-        "lg": "2rem"
+        "lg": "2rem",
+        "xl": "2.5rem",
+        "2xl": "3rem",
+        "3xl": "4rem",
+        "4xl": "5rem"
       }
     },
     "stack": {
       "gap": {
         "sm": "0.5rem",
-        "md": "0.75rem",
-        "lg": "1rem"
+        "md": "1rem",
+        "lg": "1.5rem",
+        "xl": "2.5rem",
+        "2xl": "3rem",
+        "3xl": "4rem",
+        "4xl": "5rem"
       }
     },
     "container": {
       "paddingInline": {
         "sm": "1rem",
         "md": "1.5rem",
-        "lg": "2rem"
+        "lg": "2rem",
+        "xl": "2.5rem",
+        "2xl": "3rem",
+        "3xl": "4rem",
+        "4xl": "5rem"
       },
       "maxWidth": "72rem",
       "maxWidthProse": "65ch",
       "maxWidthWide": "80rem"
     },
+    "hero": {
+      "paddingTop": {
+        "sm": "{layout.section.padding.2xl}",
+        "md": "{layout.section.padding.3xl}",
+        "lg": "{layout.section.padding.4xl}"
+      },
+      "paddingBottom": {
+        "sm": "{layout.section.padding.xl}",
+        "md": "{layout.section.padding.2xl}",
+        "lg": "{layout.section.padding.3xl}"
+      }
+    },
     "sidebar": {
       "width": "16rem"
+    },
+    "responsive": {
+      "lg": {
+        "section": {
+          "padding": {
+            "xl": "6rem",
+            "2xl": "8rem",
+            "3xl": "10rem",
+            "4xl": "12rem"
+          },
+          "gap": {
+            "xl": "3rem",
+            "2xl": "4rem",
+            "3xl": "6rem",
+            "4xl": "8rem"
+          }
+        },
+        "stack": {
+          "gap": {
+            "xl": "3rem",
+            "2xl": "4rem",
+            "3xl": "6rem",
+            "4xl": "8rem"
+          }
+        },
+        "container": {
+          "paddingInline": {
+            "xl": "3rem",
+            "2xl": "4rem",
+            "3xl": "6rem",
+            "4xl": "8rem"
+          }
+        }
+      }
+    }
+  },
+  "elevation": {
+    "flat": {
+      "shadow": "{shadows.none}",
+      "surface": "{surface.page}",
+      "zIndex": "{zIndex.base}"
+    },
+    "raised": {
+      "shadow": "{shadows.md}",
+      "surface": "{surface.card}",
+      "zIndex": "{zIndex.base}"
+    },
+    "overlay": {
+      "shadow": "{shadows.lg}",
+      "surface": "{surface.card}",
+      "zIndex": "{zIndex.dropdown}"
+    },
+    "modal": {
+      "shadow": "{shadows.2xl}",
+      "surface": "{surface.card}",
+      "zIndex": "{zIndex.modal}"
     }
   },
   "font": {

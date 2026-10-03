@@ -587,6 +587,83 @@
           "metadata": {}
         },
         "thickness": "0.25rem"
+      },
+      "light": {
+        "bg": {
+          "value": "{colors.neutral.100}",
+          "metadata": {
+            "pair": "component.footer.light.text"
+          }
+        },
+        "text": {
+          "value": "{colors.neutral.700}",
+          "metadata": {
+            "pair": "component.footer.light.bg"
+          }
+        },
+        "heading": {
+          "value": "{colors.neutral.900}",
+          "metadata": {
+            "pair": "component.footer.light.bg"
+          }
+        },
+        "muted": {
+          "value": "{colors.neutral.600}",
+          "metadata": {
+            "pair": "component.footer.light.bg"
+          }
+        },
+        "link": {
+          "value": "{colors.neutral.700}",
+          "metadata": {
+            "pair": "component.footer.light.bg"
+          }
+        },
+        "linkHover": {
+          "value": "{colors.brand.700}",
+          "metadata": {
+            "pair": "component.footer.light.bg"
+          }
+        },
+        "border": {
+          "value": "{colors.neutral.200}"
+        },
+        "divider": {
+          "value": "{colors.neutral.200}"
+        },
+        "chipBg": {
+          "value": "{colors.neutral.200}"
+        },
+        "accent": {
+          "neutral": {
+            "value": "{colors.neutral.600}",
+            "metadata": {}
+          },
+          "brand": {
+            "value": "{colors.brand.600}",
+            "metadata": {}
+          },
+          "info": {
+            "value": "{colors.info.600}",
+            "metadata": {}
+          },
+          "success": {
+            "value": "{colors.success.600}",
+            "metadata": {}
+          },
+          "warning": {
+            "value": "{colors.warning.600}",
+            "metadata": {}
+          },
+          "danger": {
+            "value": "{colors.error.600}",
+            "metadata": {}
+          },
+          "cta": {
+            "value": "{colors.brand.600}",
+            "metadata": {}
+          }
+        }
       }
     },
     "modal": {
@@ -1776,6 +1853,24 @@
       },
       "hr": {
         "value": "{colors.neutral.200}"
+      },
+      "kbd": {
+        "bg": {
+          "value": "{colors.neutral.100}",
+          "metadata": {
+            "pair": "component.prose.kbd.text"
+          }
+        },
+        "border": {
+          "value": "{colors.neutral.300}",
+          "metadata": {}
+        },
+        "text": {
+          "value": "{colors.neutral.900}",
+          "metadata": {
+            "pair": "component.prose.kbd.bg"
+          }
+        }
       }
     },
     "externalAuthButton": {
@@ -1985,6 +2080,193 @@
       },
       "requiredIndicatorText": {
         "value": "{colors.error.600}"
+      }
+    },
+    "skeleton": {
+      "base": {
+        "value": "{colors.neutral.200}",
+        "metadata": {}
+      },
+      "shimmer": {
+        "value": "{colors.neutral.100}",
+        "metadata": {}
+      }
+    },
+    "selection": {
+      "bg": {
+        "value": "{colors.brand.100}",
+        "metadata": {
+          "pair": "component.selection.text"
+        }
+      },
+      "text": {
+        "value": "{colors.neutral.900}",
+        "metadata": {
+          "pair": "component.selection.bg"
+        }
+      }
+    },
+    "caret": {
+      "color": {
+        "value": "{colors.brand.600}",
+        "metadata": {}
+      }
+    },
+    "scrollbar": {
+      "track": {
+        "value": "{colors.neutral.100}",
+        "metadata": {}
+      },
+      "thumb": {
+        "value": "{colors.neutral.400}",
+        "metadata": {}
+      },
+      "thumbHover": {
+        "value": "{colors.neutral.500}",
+        "metadata": {}
+      }
+    },
+    "chart": {
+      "bg": {
+        "value": "{colors.white}",
+        "metadata": {
+          "pair": "component.chart.label"
+        }
+      },
+      "grid": {
+        "value": "{colors.neutral.200}",
+        "metadata": {}
+      },
+      "axis": {
+        "value": "{colors.neutral.500}",
+        "metadata": {
+          "pair": "component.chart.bg",
+          "minContrast": 3
+        }
+      },
+      "label": {
+        "value": "{colors.neutral.600}",
+        "metadata": {
+          "pair": "component.chart.bg"
+        }
+      },
+      "series": {
+        "1": {
+          "value": "{colors.brand.600}",
+          "metadata": {
+            "pair": "component.chart.bg",
+            "minContrast": 3
+          }
+        },
+        "2": {
+          "value": "{colors.palette.amber.600}",
+          "metadata": {
+            "pair": "component.chart.bg",
+            "minContrast": 3
+          }
+        },
+        "3": {
+          "value": "{colors.palette.violet.800}",
+          "metadata": {
+            "pair": "component.chart.bg",
+            "minContrast": 3
+          }
+        },
+        "4": {
+          "value": "{colors.palette.cyan.600}",
+          "metadata": {
+            "pair": "component.chart.bg",
+            "minContrast": 3
+          }
+        },
+        "5": {
+          "value": "{colors.palette.pink.600}",
+          "metadata": {
+            "pair": "component.chart.bg",
+            "minContrast": 3
+          }
+        },
+        "6": {
+          "value": "{colors.palette.emerald.800}",
+          "metadata": {
+            "pair": "component.chart.bg",
+            "minContrast": 3
+          }
+        },
+        "7": {
+          "value": "{colors.palette.lime.700}",
+          "metadata": {
+            "pair": "component.chart.bg",
+            "minContrast": 3
+          }
+        },
+        "8": {
+          "value": "{colors.palette.orange.800}",
+          "metadata": {
+            "pair": "component.chart.bg",
+            "minContrast": 3
+          }
+        }
+      },
+      "sequential": {
+        "1": {
+          "value": "{colors.brand.100}",
+          "metadata": {}
+        },
+        "2": {
+          "value": "{colors.brand.200}",
+          "metadata": {}
+        },
+        "3": {
+          "value": "{colors.brand.300}",
+          "metadata": {}
+        },
+        "4": {
+          "value": "{colors.brand.400}",
+          "metadata": {}
+        },
+        "5": {
+          "value": "{colors.brand.600}",
+          "metadata": {}
+        },
+        "6": {
+          "value": "{colors.brand.800}",
+          "metadata": {}
+        },
+        "7": {
+          "value": "{colors.brand.900}",
+          "metadata": {}
+        }
+      },
+      "diverging": {
+        "1": {
+          "value": "{colors.palette.red.700}",
+          "metadata": {}
+        },
+        "2": {
+          "value": "{colors.palette.red.400}",
+          "metadata": {}
+        },
+        "3": {
+          "value": "{colors.palette.red.200}",
+          "metadata": {}
+        },
+        "4": {
+          "value": "{colors.neutral.200}",
+          "metadata": {}
+        },
+        "5": {
+          "value": "{colors.palette.blue.200}",
+          "metadata": {}
+        },
+        "6": {
+          "value": "{colors.palette.blue.400}",
+          "metadata": {}
+        },
+        "7": {
+          "value": "{colors.palette.blue.700}",
+          "metadata": {}
+        }
       }
     }
   },
@@ -2501,6 +2783,40 @@
       },
       "text": {
         "value": "{colors.neutral.400}"
+      }
+    }
+  },
+  "control": {
+    "sm": {
+      "height": "2rem",
+      "paddingInline": "0.75rem",
+      "iconSize": "{icons.sm}"
+    },
+    "md": {
+      "height": "2.5rem",
+      "paddingInline": "1rem",
+      "iconSize": "{icons.md}"
+    },
+    "lg": {
+      "height": "3rem",
+      "paddingInline": "1.25rem",
+      "iconSize": "{icons.lg}"
+    },
+    "compact": {
+      "sm": {
+        "height": "1.5rem",
+        "paddingInline": "0.5rem",
+        "iconSize": "{icons.xs}"
+      },
+      "md": {
+        "height": "2rem",
+        "paddingInline": "0.75rem",
+        "iconSize": "{icons.sm}"
+      },
+      "lg": {
+        "height": "2.5rem",
+        "paddingInline": "1rem",
+        "iconSize": "{icons.md}"
       }
     }
   }

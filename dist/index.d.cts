@@ -164,6 +164,26 @@ interface SpectreGeneratedTokens {
                 cta: string;
                 thickness: string;
             };
+            light: {
+                bg: string;
+                text: string;
+                heading: string;
+                muted: string;
+                link: string;
+                linkHover: string;
+                border: string;
+                divider: string;
+                chipBg: string;
+                accent: {
+                    neutral: string;
+                    brand: string;
+                    info: string;
+                    success: string;
+                    warning: string;
+                    danger: string;
+                    cta: string;
+                };
+            };
         };
         modal: {
             bg: string;
@@ -602,6 +622,11 @@ interface SpectreGeneratedTokens {
                 text: string;
             };
             hr: string;
+            kbd: {
+                bg: string;
+                border: string;
+                text: string;
+            };
         };
         externalAuthButton: {
             bg: string;
@@ -665,6 +690,56 @@ interface SpectreGeneratedTokens {
             text: string;
             disabledText: string;
             requiredIndicatorText: string;
+        };
+        skeleton: {
+            base: string;
+            shimmer: string;
+        };
+        selection: {
+            bg: string;
+            text: string;
+        };
+        caret: {
+            color: string;
+        };
+        scrollbar: {
+            track: string;
+            thumb: string;
+            thumbHover: string;
+        };
+        chart: {
+            bg: string;
+            grid: string;
+            axis: string;
+            label: string;
+            series: {
+                '1': string;
+                '2': string;
+                '3': string;
+                '4': string;
+                '5': string;
+                '6': string;
+                '7': string;
+                '8': string;
+            };
+            sequential: {
+                '1': string;
+                '2': string;
+                '3': string;
+                '4': string;
+                '5': string;
+                '6': string;
+                '7': string;
+            };
+            diverging: {
+                '1': string;
+                '2': string;
+                '3': string;
+                '4': string;
+                '5': string;
+                '6': string;
+                '7': string;
+            };
         };
     };
     buttons: {
@@ -827,6 +902,40 @@ interface SpectreGeneratedTokens {
             bg: string;
             border: string;
             text: string;
+        };
+    };
+    control: {
+        sm: {
+            height: string;
+            paddingInline: string;
+            iconSize: string;
+        };
+        md: {
+            height: string;
+            paddingInline: string;
+            iconSize: string;
+        };
+        lg: {
+            height: string;
+            paddingInline: string;
+            iconSize: string;
+        };
+        compact: {
+            sm: {
+                height: string;
+                paddingInline: string;
+                iconSize: string;
+            };
+            md: {
+                height: string;
+                paddingInline: string;
+                iconSize: string;
+            };
+            lg: {
+                height: string;
+                paddingInline: string;
+                iconSize: string;
+            };
         };
     };
     modes: {
@@ -1011,6 +1120,26 @@ interface SpectreGeneratedTokens {
                         warning: string;
                         danger: string;
                         cta: string;
+                    };
+                    light: {
+                        bg: string;
+                        text: string;
+                        heading: string;
+                        muted: string;
+                        link: string;
+                        linkHover: string;
+                        border: string;
+                        divider: string;
+                        chipBg: string;
+                        accent: {
+                            neutral: string;
+                            brand: string;
+                            info: string;
+                            success: string;
+                            warning: string;
+                            danger: string;
+                            cta: string;
+                        };
                     };
                 };
                 modal: {
@@ -1442,6 +1571,11 @@ interface SpectreGeneratedTokens {
                         text: string;
                     };
                     hr: string;
+                    kbd: {
+                        bg: string;
+                        border: string;
+                        text: string;
+                    };
                 };
                 externalAuthButton: {
                     bg: string;
@@ -1497,6 +1631,56 @@ interface SpectreGeneratedTokens {
                     text: string;
                     disabledText: string;
                     requiredIndicatorText: string;
+                };
+                skeleton: {
+                    base: string;
+                    shimmer: string;
+                };
+                selection: {
+                    bg: string;
+                    text: string;
+                };
+                caret: {
+                    color: string;
+                };
+                scrollbar: {
+                    track: string;
+                    thumb: string;
+                    thumbHover: string;
+                };
+                chart: {
+                    bg: string;
+                    grid: string;
+                    axis: string;
+                    label: string;
+                    series: {
+                        '1': string;
+                        '2': string;
+                        '3': string;
+                        '4': string;
+                        '5': string;
+                        '6': string;
+                        '7': string;
+                        '8': string;
+                    };
+                    sequential: {
+                        '1': string;
+                        '2': string;
+                        '3': string;
+                        '4': string;
+                        '5': string;
+                        '6': string;
+                        '7': string;
+                    };
+                    diverging: {
+                        '1': string;
+                        '2': string;
+                        '3': string;
+                        '4': string;
+                        '5': string;
+                        '6': string;
+                        '7': string;
+                    };
                 };
             };
         };
@@ -1685,6 +1869,26 @@ interface SpectreGeneratedTokens {
                         danger: string;
                         cta: string;
                     };
+                    light: {
+                        bg: string;
+                        text: string;
+                        heading: string;
+                        muted: string;
+                        link: string;
+                        linkHover: string;
+                        border: string;
+                        divider: string;
+                        chipBg: string;
+                        accent: {
+                            neutral: string;
+                            brand: string;
+                            info: string;
+                            success: string;
+                            warning: string;
+                            danger: string;
+                            cta: string;
+                        };
+                    };
                 };
                 modal: {
                     bg: string;
@@ -2115,6 +2319,11 @@ interface SpectreGeneratedTokens {
                         text: string;
                     };
                     hr: string;
+                    kbd: {
+                        bg: string;
+                        border: string;
+                        text: string;
+                    };
                 };
                 externalAuthButton: {
                     bg: string;
@@ -2171,6 +2380,947 @@ interface SpectreGeneratedTokens {
                     disabledText: string;
                     requiredIndicatorText: string;
                 };
+                skeleton: {
+                    base: string;
+                    shimmer: string;
+                };
+                selection: {
+                    bg: string;
+                    text: string;
+                };
+                caret: {
+                    color: string;
+                };
+                scrollbar: {
+                    track: string;
+                    thumb: string;
+                    thumbHover: string;
+                };
+                chart: {
+                    bg: string;
+                    grid: string;
+                    axis: string;
+                    label: string;
+                    series: {
+                        '1': string;
+                        '2': string;
+                        '3': string;
+                        '4': string;
+                        '5': string;
+                        '6': string;
+                        '7': string;
+                        '8': string;
+                    };
+                    sequential: {
+                        '1': string;
+                        '2': string;
+                        '3': string;
+                        '4': string;
+                        '5': string;
+                        '6': string;
+                        '7': string;
+                    };
+                    diverging: {
+                        '1': string;
+                        '2': string;
+                        '3': string;
+                        '4': string;
+                        '5': string;
+                        '6': string;
+                        '7': string;
+                    };
+                };
+            };
+        };
+        highContrast: {
+            surface: {
+                page: string;
+                card: string;
+                input: string;
+                overlay: string;
+                subtle: string;
+                hero: string;
+                hover: string;
+                selected: string;
+                active: string;
+                divider: string;
+            };
+            text: {
+                onPage: {
+                    default: string;
+                    muted: string;
+                    subtle: string;
+                    meta: string;
+                    brand: string;
+                };
+                onSurface: {
+                    default: string;
+                    muted: string;
+                    subtle: string;
+                    meta: string;
+                    brand: string;
+                };
+            };
+            forms: {
+                default: {
+                    bg: string;
+                    text: string;
+                    placeholder: string;
+                };
+                valid: {
+                    border: string;
+                    bg: string;
+                    text: string;
+                };
+                invalid: {
+                    border: string;
+                    bg: string;
+                    text: string;
+                };
+            };
+            component: {
+                card: {
+                    text: string;
+                    textMuted: string;
+                    accent: {
+                        neutral: string;
+                        brand: string;
+                        info: string;
+                        success: string;
+                        warning: string;
+                        danger: string;
+                        cta: string;
+                    };
+                };
+                choiceCard: {
+                    bg: string;
+                    text: string;
+                    border: string;
+                    hoverBorder: string;
+                    selectedBg: string;
+                    selectedBorder: string;
+                    disabledBg: string;
+                    disabledText: string;
+                    focusRing: string;
+                };
+                input: {
+                    text: string;
+                    placeholder: string;
+                };
+                button: {
+                    textDefault: string;
+                    textOnPrimary: string;
+                };
+                badge: {
+                    neutralBg: string;
+                    neutralBgHover: string;
+                    neutralText: string;
+                    brandBg: string;
+                    brandBgHover: string;
+                    brandText: string;
+                    infoBg: string;
+                    infoBgHover: string;
+                    infoText: string;
+                    successBg: string;
+                    successText: string;
+                    warningBg: string;
+                    warningText: string;
+                    dangerBg: string;
+                    dangerText: string;
+                    accent: {
+                        neutral: string;
+                        brand: string;
+                        info: string;
+                        success: string;
+                        warning: string;
+                        danger: string;
+                        cta: string;
+                    };
+                };
+                iconBox: {
+                    bg: string;
+                    border: string;
+                    iconDefault: string;
+                    iconSuccess: string;
+                    iconWarning: string;
+                    iconDanger: string;
+                };
+                testimonial: {
+                    bg: string;
+                    bgHover: string;
+                    border: string;
+                    text: string;
+                    authorName: string;
+                    authorTitle: string;
+                    quoteMark: string;
+                    accent: {
+                        neutral: string;
+                        brand: string;
+                        info: string;
+                        success: string;
+                        warning: string;
+                        danger: string;
+                        cta: string;
+                    };
+                };
+                pricingCard: {
+                    bg: string;
+                    bgHover: string;
+                    border: string;
+                    featuredBg: string;
+                    featuredText: string;
+                    featuredBadgeBg: string;
+                    featuredBadgeText: string;
+                    price: string;
+                    priceDescription: string;
+                    accent: {
+                        neutral: string;
+                        brand: string;
+                        info: string;
+                        success: string;
+                        warning: string;
+                        danger: string;
+                        cta: string;
+                    };
+                };
+                rating: {
+                    starFilled: string;
+                    starEmpty: string;
+                    text: string;
+                };
+                nav: {
+                    bg: string;
+                    text: string;
+                    link: string;
+                    linkHover: string;
+                    linkActive: string;
+                    border: string;
+                    accent: {
+                        neutral: string;
+                        brand: string;
+                        info: string;
+                        success: string;
+                        warning: string;
+                        danger: string;
+                        cta: string;
+                    };
+                };
+                footer: {
+                    bg: string;
+                    text: string;
+                    heading: string;
+                    muted: string;
+                    link: string;
+                    linkHover: string;
+                    border: string;
+                    divider: string;
+                    chipBg: string;
+                    accent: {
+                        neutral: string;
+                        brand: string;
+                        info: string;
+                        success: string;
+                        warning: string;
+                        danger: string;
+                        cta: string;
+                    };
+                    light: {
+                        bg: string;
+                        text: string;
+                        heading: string;
+                        muted: string;
+                        link: string;
+                        linkHover: string;
+                        border: string;
+                        divider: string;
+                        chipBg: string;
+                        accent: {
+                            neutral: string;
+                            brand: string;
+                            info: string;
+                            success: string;
+                            warning: string;
+                            danger: string;
+                            cta: string;
+                        };
+                    };
+                };
+                modal: {
+                    bg: string;
+                    shadow: string;
+                    border: string;
+                    overlay: string;
+                    accent: {
+                        neutral: string;
+                        brand: string;
+                        info: string;
+                        success: string;
+                        warning: string;
+                        danger: string;
+                        cta: string;
+                    };
+                };
+                toast: {
+                    neutral: {
+                        bg: string;
+                        text: string;
+                        border: string;
+                        icon: string;
+                    };
+                    success: {
+                        bg: string;
+                        text: string;
+                        border: string;
+                        icon: string;
+                    };
+                    warning: {
+                        bg: string;
+                        text: string;
+                        border: string;
+                        icon: string;
+                    };
+                    danger: {
+                        bg: string;
+                        text: string;
+                        border: string;
+                        icon: string;
+                    };
+                    info: {
+                        bg: string;
+                        text: string;
+                        border: string;
+                        icon: string;
+                    };
+                    accent: {
+                        neutral: string;
+                        brand: string;
+                        info: string;
+                        success: string;
+                        warning: string;
+                        danger: string;
+                        cta: string;
+                    };
+                };
+                tooltip: {
+                    bg: string;
+                    text: string;
+                    border: string;
+                    accent: {
+                        neutral: string;
+                        brand: string;
+                        info: string;
+                        success: string;
+                        warning: string;
+                        danger: string;
+                        cta: string;
+                    };
+                };
+                dropdown: {
+                    bg: string;
+                    border: string;
+                    item: {
+                        default: string;
+                        hover: string;
+                        active: string;
+                        text: string;
+                        disabledText: string;
+                        selectedBg: string;
+                        selectedText: string;
+                    };
+                    accent: {
+                        neutral: string;
+                        brand: string;
+                        info: string;
+                        success: string;
+                        warning: string;
+                        danger: string;
+                        cta: string;
+                    };
+                    header: string;
+                    divider: string;
+                };
+                tabs: {
+                    list: {
+                        bg: string;
+                        border: string;
+                    };
+                    item: {
+                        text: string;
+                        hover: {
+                            bg: string;
+                        };
+                        active: {
+                            text: string;
+                            indicator: string;
+                        };
+                        focus: {
+                            ringColor: string;
+                        };
+                        disabled: {
+                            text: string;
+                        };
+                    };
+                    pill: {
+                        active: {
+                            bg: string;
+                            text: string;
+                        };
+                    };
+                    panel: {
+                        bg: string;
+                    };
+                };
+                accordion: {
+                    bg: string;
+                    text: string;
+                    border: string;
+                    header: {
+                        hoverBg: string;
+                    };
+                    icon: {
+                        collapsed: string;
+                        expanded: string;
+                    };
+                };
+                breadcrumb: {
+                    item: {
+                        text: string;
+                        hover: {
+                            text: string;
+                        };
+                        active: {
+                            text: string;
+                        };
+                    };
+                    separator: string;
+                };
+                listGroup: {
+                    bg: string;
+                    border: string;
+                    text: string;
+                    heading: string;
+                    muted: string;
+                    item: {
+                        hover: {
+                            bg: string;
+                        };
+                        active: {
+                            bg: string;
+                            text: string;
+                        };
+                        selected: {
+                            bg: string;
+                        };
+                        disabled: {
+                            text: string;
+                        };
+                    };
+                    accent: {
+                        neutral: string;
+                        brand: string;
+                        info: string;
+                        success: string;
+                        warning: string;
+                        danger: string;
+                        cta: string;
+                        thickness: string;
+                    };
+                };
+                offcanvas: {
+                    bg: string;
+                    text: string;
+                    border: string;
+                    overlay: string;
+                };
+                carousel: {
+                    indicator: {
+                        default: string;
+                        active: string;
+                    };
+                    control: {
+                        icon: string;
+                        bg: string;
+                    };
+                    caption: {
+                        bg: string;
+                        text: string;
+                    };
+                };
+                table: {
+                    header: {
+                        bg: string;
+                        text: string;
+                    };
+                    text: string;
+                    divider: string;
+                    stripeBg: string;
+                    hoverBg: string;
+                    selectedBg: string;
+                    row: {
+                        neutral: {
+                            bg: string;
+                            text: string;
+                        };
+                        info: {
+                            bg: string;
+                            text: string;
+                        };
+                        success: {
+                            bg: string;
+                            text: string;
+                        };
+                        warning: {
+                            bg: string;
+                            text: string;
+                        };
+                        danger: {
+                            bg: string;
+                            text: string;
+                        };
+                    };
+                };
+                alert: {
+                    neutral: {
+                        bg: string;
+                        text: string;
+                        border: string;
+                        icon: string;
+                    };
+                    brand: {
+                        bg: string;
+                        text: string;
+                        border: string;
+                        icon: string;
+                    };
+                    info: {
+                        bg: string;
+                        text: string;
+                        border: string;
+                        icon: string;
+                    };
+                    success: {
+                        bg: string;
+                        text: string;
+                        border: string;
+                        icon: string;
+                    };
+                    warning: {
+                        bg: string;
+                        text: string;
+                        border: string;
+                        icon: string;
+                    };
+                    danger: {
+                        bg: string;
+                        text: string;
+                        border: string;
+                        icon: string;
+                    };
+                };
+                pagination: {
+                    item: {
+                        text: string;
+                        hover: {
+                            bg: string;
+                        };
+                        active: {
+                            bg: string;
+                            text: string;
+                        };
+                        disabled: {
+                            text: string;
+                        };
+                    };
+                };
+                stepper: {
+                    step: {
+                        pending: {
+                            bg: string;
+                            text: string;
+                        };
+                        active: {
+                            bg: string;
+                            text: string;
+                        };
+                        done: {
+                            bg: string;
+                            text: string;
+                        };
+                    };
+                    connector: string;
+                    label: {
+                        text: string;
+                    };
+                };
+                popover: {
+                    bg: string;
+                    text: string;
+                    muted: string;
+                    border: string;
+                    shadow: string;
+                    arrow: string;
+                };
+                progress: {
+                    track: {
+                        bg: string;
+                    };
+                    indicator: {
+                        neutral: string;
+                        brand: string;
+                        info: string;
+                        success: string;
+                        warning: string;
+                        danger: string;
+                    };
+                    label: {
+                        text: string;
+                    };
+                };
+                loadingIndicator: {
+                    default: string;
+                    muted: string;
+                    inverse: string;
+                    brand: string;
+                    info: string;
+                    success: string;
+                    warning: string;
+                    danger: string;
+                };
+                switch: {
+                    trackBg: string;
+                    trackCheckedBg: string;
+                    thumbBg: string;
+                    trackDisabledBg: string;
+                    thumbDisabledBg: string;
+                    focusRing: string;
+                };
+                range: {
+                    trackBg: string;
+                    trackFilledBg: string;
+                    thumbBg: string;
+                    thumbBorder: string;
+                    trackDisabledBg: string;
+                    thumbDisabledBorder: string;
+                    focusRing: string;
+                };
+                fileInput: {
+                    bg: string;
+                    border: string;
+                    text: string;
+                    actionBg: string;
+                    actionText: string;
+                    disabledBg: string;
+                    disabledBorder: string;
+                    disabledText: string;
+                    focusBorder: string;
+                };
+                inputGroup: {
+                    addonBg: string;
+                    addonText: string;
+                    addonBorder: string;
+                    focusBorder: string;
+                    disabledBg: string;
+                    disabledText: string;
+                };
+                datepicker: {
+                    panel: {
+                        bg: string;
+                        border: string;
+                    };
+                    header: {
+                        text: string;
+                    };
+                    weekday: {
+                        text: string;
+                    };
+                };
+                day: {
+                    default: {
+                        text: string;
+                        hover: {
+                            bg: string;
+                        };
+                    };
+                    selected: {
+                        bg: string;
+                        text: string;
+                    };
+                    today: {
+                        ringColor: string;
+                    };
+                    outsideMonth: {
+                        text: string;
+                    };
+                    disabled: {
+                        text: string;
+                    };
+                };
+                prose: {
+                    blockquote: {
+                        border: string;
+                        text: string;
+                    };
+                    code: {
+                        bg: string;
+                        text: string;
+                    };
+                    codeBlock: {
+                        bg: string;
+                        text: string;
+                        border: string;
+                    };
+                    mark: {
+                        bg: string;
+                        text: string;
+                    };
+                    hr: string;
+                    kbd: {
+                        bg: string;
+                        border: string;
+                        text: string;
+                    };
+                };
+                externalAuthButton: {
+                    bg: string;
+                    text: string;
+                    border: string;
+                    hoverBg: string;
+                    activeBg: string;
+                    disabledBg: string;
+                    disabledText: string;
+                    focusRing: string;
+                };
+                checkbox: {
+                    bg: string;
+                    border: string;
+                    checkedBg: string;
+                    checkedBorder: string;
+                    text: string;
+                    disabledBg: string;
+                    disabledBorder: string;
+                };
+                radio: {
+                    bg: string;
+                    border: string;
+                    checkedBg: string;
+                    checkedBorder: string;
+                    text: string;
+                    disabledBg: string;
+                    disabledBorder: string;
+                };
+                select: {
+                    bg: string;
+                    border: string;
+                    text: string;
+                    placeholderText: string;
+                    disabledBg: string;
+                    disabledBorder: string;
+                    focusBorder: string;
+                };
+                textarea: {
+                    bg: string;
+                    border: string;
+                    text: string;
+                    placeholder: string;
+                    disabledBg: string;
+                    disabledBorder: string;
+                    focusBorder: string;
+                };
+                fieldset: {
+                    border: string;
+                    legendText: string;
+                };
+                label: {
+                    text: string;
+                    disabledText: string;
+                    requiredIndicatorText: string;
+                };
+                skeleton: {
+                    base: string;
+                    shimmer: string;
+                };
+                selection: {
+                    bg: string;
+                    text: string;
+                };
+                caret: {
+                    color: string;
+                };
+                scrollbar: {
+                    track: string;
+                    thumb: string;
+                    thumbHover: string;
+                };
+                chart: {
+                    bg: string;
+                    grid: string;
+                    axis: string;
+                    label: string;
+                    series: {
+                        '1': string;
+                        '2': string;
+                        '3': string;
+                        '4': string;
+                        '5': string;
+                        '6': string;
+                        '7': string;
+                        '8': string;
+                    };
+                    sequential: {
+                        '1': string;
+                        '2': string;
+                        '3': string;
+                        '4': string;
+                        '5': string;
+                        '6': string;
+                        '7': string;
+                    };
+                    diverging: {
+                        '1': string;
+                        '2': string;
+                        '3': string;
+                        '4': string;
+                        '5': string;
+                        '6': string;
+                        '7': string;
+                    };
+                };
+            };
+            buttons: {
+                primary: {
+                    bg: string;
+                    bgHover: string;
+                    bgActive: string;
+                    bgDisabled: string;
+                    text: string;
+                    textDisabled: string;
+                    focusRing: string;
+                    focusVisible: string;
+                };
+                secondary: {
+                    bg: string;
+                    bgHover: string;
+                    bgActive: string;
+                    bgDisabled: string;
+                    text: string;
+                    textDisabled: string;
+                    border: string;
+                    borderDisabled: string;
+                    focusRing: string;
+                    focusVisible: string;
+                };
+                ghost: {
+                    bg: string;
+                    bgHover: string;
+                    bgActive: string;
+                    bgDisabled: string;
+                    text: string;
+                    textDisabled: string;
+                    focusRing: string;
+                    focusVisible: string;
+                };
+                danger: {
+                    bg: string;
+                    bgHover: string;
+                    bgActive: string;
+                    bgDisabled: string;
+                    text: string;
+                    textDisabled: string;
+                    focusRing: string;
+                    focusVisible: string;
+                };
+                success: {
+                    bg: string;
+                    bgHover: string;
+                    bgActive: string;
+                    bgDisabled: string;
+                    text: string;
+                    textDisabled: string;
+                    focusRing: string;
+                    focusVisible: string;
+                };
+                warning: {
+                    bg: string;
+                    bgHover: string;
+                    bgActive: string;
+                    bgDisabled: string;
+                    text: string;
+                    textDisabled: string;
+                    focusRing: string;
+                    focusVisible: string;
+                };
+                link: {
+                    bg: string;
+                    bgHover: string;
+                    bgActive: string;
+                    bgDisabled: string;
+                    text: string;
+                    textHover: string;
+                    textActive: string;
+                    textDisabled: string;
+                    focusRing: string;
+                    focusVisible: string;
+                };
+                light: {
+                    bg: string;
+                    bgHover: string;
+                    bgActive: string;
+                    bgDisabled: string;
+                    text: string;
+                    textDisabled: string;
+                    focusRing: string;
+                    focusVisible: string;
+                };
+                dark: {
+                    bg: string;
+                    bgHover: string;
+                    bgActive: string;
+                    bgDisabled: string;
+                    text: string;
+                    textDisabled: string;
+                    focusRing: string;
+                    focusVisible: string;
+                };
+                cta: {
+                    bg: string;
+                    bgHover: string;
+                    bgActive: string;
+                    bgDisabled: string;
+                    text: string;
+                    textDisabled: string;
+                    shadow: string;
+                    focusRing: string;
+                };
+                accent: {
+                    bg: string;
+                    bgHover: string;
+                    bgActive: string;
+                    bgDisabled: string;
+                    text: string;
+                    textDisabled: string;
+                    focusRing: string;
+                    focusVisible: string;
+                };
+                inverse: {
+                    bg: string;
+                    bgHover: string;
+                    bgActive: string;
+                    bgDisabled: string;
+                    text: string;
+                    textDisabled: string;
+                    border: string;
+                    borderDisabled: string;
+                    focusRing: string;
+                    focusVisible: string;
+                };
+            };
+            link: {
+                default: string;
+                hover: string;
+                active: string;
+                visited: string;
+                onInverse: string;
+                onInverseHover: string;
             };
         };
     };
@@ -2727,6 +3877,9 @@ interface SpectreGeneratedTokens {
         '72': string;
         '80': string;
         '96': string;
+        '128': string;
+        '160': string;
+        '192': string;
         '240': string;
     };
     radii: {
@@ -2984,11 +4137,19 @@ interface SpectreGeneratedTokens {
                 sm: string;
                 md: string;
                 lg: string;
+                xl: string;
+                '2xl': string;
+                '3xl': string;
+                '4xl': string;
             };
             gap: {
                 sm: string;
                 md: string;
                 lg: string;
+                xl: string;
+                '2xl': string;
+                '3xl': string;
+                '4xl': string;
             };
         };
         stack: {
@@ -2996,6 +4157,10 @@ interface SpectreGeneratedTokens {
                 sm: string;
                 md: string;
                 lg: string;
+                xl: string;
+                '2xl': string;
+                '3xl': string;
+                '4xl': string;
             };
         };
         container: {
@@ -3003,13 +4168,85 @@ interface SpectreGeneratedTokens {
                 sm: string;
                 md: string;
                 lg: string;
+                xl: string;
+                '2xl': string;
+                '3xl': string;
+                '4xl': string;
             };
             maxWidth: string;
             maxWidthProse: string;
             maxWidthWide: string;
         };
+        hero: {
+            paddingTop: {
+                sm: string;
+                md: string;
+                lg: string;
+            };
+            paddingBottom: {
+                sm: string;
+                md: string;
+                lg: string;
+            };
+        };
         sidebar: {
             width: string;
+        };
+        responsive: {
+            lg: {
+                section: {
+                    padding: {
+                        xl: string;
+                        '2xl': string;
+                        '3xl': string;
+                        '4xl': string;
+                    };
+                    gap: {
+                        xl: string;
+                        '2xl': string;
+                        '3xl': string;
+                        '4xl': string;
+                    };
+                };
+                stack: {
+                    gap: {
+                        xl: string;
+                        '2xl': string;
+                        '3xl': string;
+                        '4xl': string;
+                    };
+                };
+                container: {
+                    paddingInline: {
+                        xl: string;
+                        '2xl': string;
+                        '3xl': string;
+                        '4xl': string;
+                    };
+                };
+            };
+        };
+    };
+    elevation: {
+        flat: {
+            shadow: string;
+            surface: string;
+            zIndex: string;
+        };
+        raised: {
+            shadow: string;
+            surface: string;
+            zIndex: string;
+        };
+        overlay: {
+            shadow: string;
+            surface: string;
+            zIndex: string;
+        };
+        modal: {
+            shadow: string;
+            surface: string;
+            zIndex: string;
         };
     };
     font: {
@@ -3393,6 +4630,19 @@ interface ComponentFooterTokens<Value = string> {
     divider: Value;
     chipBg: Value;
     accent: ComponentAccentTokens<Value>;
+    light: ComponentFooterLightTokens<Value>;
+}
+interface ComponentFooterLightTokens<Value = string> {
+    bg: Value;
+    text: Value;
+    heading: Value;
+    muted: Value;
+    link: Value;
+    linkHover: Value;
+    border: Value;
+    divider: Value;
+    chipBg: Value;
+    accent: Omit<ComponentAccentTokens<Value>, 'thickness'>;
 }
 interface ComponentModalTokens<Value = string> {
     bg: Value;
@@ -3509,7 +4759,7 @@ interface ComponentTokens<Value = string> {
     label: ComponentLabelTokens<Value>;
     [key: string]: unknown;
 }
-type SpectreModeName = 'default' | 'dark';
+type SpectreModeName = 'default' | 'dark' | 'highContrast';
 type SemanticTokenValue = string;
 interface SpectreModeTokens {
     surface: {
@@ -3546,8 +4796,12 @@ interface SpectreModeTokens {
             text: SemanticTokenValue;
             placeholder: SemanticTokenValue;
         };
+        valid?: Record<string, SemanticTokenValue>;
+        invalid?: Record<string, SemanticTokenValue>;
     };
     component: ComponentTokens<SemanticTokenValue>;
+    buttons?: Record<string, Record<string, SemanticTokenValue>>;
+    link?: Record<string, SemanticTokenValue>;
 }
 type SpectreTokens = SpectreGeneratedTokens;
 interface LayoutTokens {
@@ -3564,9 +4818,51 @@ interface LayoutTokens {
         maxWidthProse: string;
         maxWidthWide: string;
     };
+    hero: {
+        paddingTop: TokenScale;
+        paddingBottom: TokenScale;
+    };
     sidebar: {
         width: string;
     };
+    responsive: Record<string, {
+        section: {
+            padding: TokenScale;
+            gap: TokenScale;
+        };
+        stack: {
+            gap: TokenScale;
+        };
+        container: {
+            paddingInline: TokenScale;
+        };
+    }>;
+}
+interface ControlSizeTokens {
+    height: string;
+    paddingInline: string;
+    iconSize: string;
+}
+interface ControlTokens {
+    sm: ControlSizeTokens;
+    md: ControlSizeTokens;
+    lg: ControlSizeTokens;
+    compact: {
+        sm: ControlSizeTokens;
+        md: ControlSizeTokens;
+        lg: ControlSizeTokens;
+    };
+}
+interface ElevationLevelTokens {
+    shadow: string;
+    surface: string;
+    zIndex: string;
+}
+interface ElevationTokens {
+    flat: ElevationLevelTokens;
+    raised: ElevationLevelTokens;
+    overlay: ElevationLevelTokens;
+    modal: ElevationLevelTokens;
 }
 type Tokens = SpectreGeneratedTokens;
 interface CssVariableOptions {
@@ -3578,4 +4874,4 @@ declare const generateCssVariables: (tokens: SpectreTokens, options?: CssVariabl
 
 declare const tokens: SpectreTokens;
 
-export { type AccessibilityTokens, type AnimationEntry, type ButtonStateTokens, type ColorScale, type ComponentAccentTokens, type ComponentBadgeTokens, type ComponentFooterTokens, type ComponentIconBoxTokens, type ComponentPricingCardTokens, type ComponentRatingTokens, type ComponentTestimonialTokens, type ComponentTokens, type FormStateTokens, type LayoutTokens, type SpectreModeName, type SpectreModeTokens, type SpectreTokens, type TokenScale, type Tokens, type TransitionTokens, type TypographyTokens, tokens as default, generateCssVariables, tokens };
+export { type AccessibilityTokens, type AnimationEntry, type ButtonStateTokens, type ColorScale, type ComponentAccentTokens, type ComponentBadgeTokens, type ComponentFooterTokens, type ComponentIconBoxTokens, type ComponentPricingCardTokens, type ComponentRatingTokens, type ComponentTestimonialTokens, type ComponentTokens, type ControlSizeTokens, type ControlTokens, type ElevationLevelTokens, type ElevationTokens, type FormStateTokens, type LayoutTokens, type SpectreModeName, type SpectreModeTokens, type SpectreTokens, type TokenScale, type Tokens, type TransitionTokens, type TypographyTokens, tokens as default, generateCssVariables, tokens };

@@ -12,6 +12,14 @@ export function computeContrast(bg: string, text: string): number {
   return colord(bg).contrast(text)
 }
 
+// `metadata.minContrast` marks a non-text pair (chart series, axis lines),
+// which WCAG holds to 3:1 in every mode; text pairs need AA (4.5:1), or AAA
+// (7:1) in high-contrast mode
+export function requiredContrast(path: string, minContrast?: number): number {
+  if (minContrast !== undefined) return minContrast
+  return path.startsWith('modes.highContrast.') ? 7 : 4.5
+}
+
 function resolveToken(pathStr: string, allTokens: SpectreSourceTokens): string {
   if (!pathStr || typeof pathStr !== 'string' || !pathStr.includes('{')) {
     if (typeof pathStr === 'string' && pathStr.includes(' / ')) {
@@ -63,7 +71,7 @@ if (process.argv[1] !== undefined && fileURLToPath(import.meta.url) === process.
 
       try {
         if (value && typeof value === 'object') {
-          const valObj = value as { value?: unknown; metadata?: { pair?: string } };
+          const valObj = value as { value?: unknown; metadata?: { pair?: string; minContrast?: number } };
 
           if (typeof valObj.value === 'string' && valObj.metadata?.pair) {
             const bgValue = resolveToken(valObj.value, tokens);
@@ -72,8 +80,9 @@ if (process.argv[1] !== undefined && fileURLToPath(import.meta.url) === process.
 
             const contrast = computeContrast(bgValue, textValue);
 
-            if (contrast < 4.5) {
-              failures.push(`${fullPath} vs ${pairPath}: ${contrast.toFixed(2)}:1 (need 4.5:1)`);
+            const required = requiredContrast(fullPath, valObj.metadata.minContrast);
+            if (contrast < required) {
+              failures.push(`${fullPath} vs ${pairPath}: ${contrast.toFixed(2)}:1 (need ${required}:1)`);
             }
           } else {
             checkTokensRecursively(value as Record<string, unknown>, fullPath);
@@ -93,6 +102,6 @@ if (process.argv[1] !== undefined && fileURLToPath(import.meta.url) === process.
     failures.forEach(f => console.error(` [FAIL] ${f}`));
     process.exit(1);
   } else {
-    console.log('Contrast check passed. All pairs meet WCAG AA (4.5:1).');
+    console.log('Contrast check passed. Text pairs meet WCAG AA (4.5:1), high-contrast mode text pairs meet AAA (7:1), and non-text pairs meet their minContrast.');
   }
 }

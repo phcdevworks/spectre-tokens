@@ -192,6 +192,26 @@ var coreTokens = {
         "danger": "{colors.error.600}",
         "cta": "{colors.brand.600}",
         "thickness": "0.25rem"
+      },
+      "light": {
+        "bg": "{colors.neutral.100}",
+        "text": "{colors.neutral.700}",
+        "heading": "{colors.neutral.900}",
+        "muted": "{colors.neutral.600}",
+        "link": "{colors.neutral.700}",
+        "linkHover": "{colors.brand.700}",
+        "border": "{colors.neutral.200}",
+        "divider": "{colors.neutral.200}",
+        "chipBg": "{colors.neutral.200}",
+        "accent": {
+          "neutral": "{colors.neutral.600}",
+          "brand": "{colors.brand.600}",
+          "info": "{colors.info.600}",
+          "success": "{colors.success.600}",
+          "warning": "{colors.warning.600}",
+          "danger": "{colors.error.600}",
+          "cta": "{colors.brand.600}"
+        }
       }
     },
     "modal": {
@@ -630,7 +650,12 @@ var coreTokens = {
         "bg": "{colors.warning.100}",
         "text": "{colors.warning.900}"
       },
-      "hr": "{colors.neutral.200}"
+      "hr": "{colors.neutral.200}",
+      "kbd": {
+        "bg": "{colors.neutral.100}",
+        "border": "{colors.neutral.300}",
+        "text": "{colors.neutral.900}"
+      }
     },
     "externalAuthButton": {
       "bg": "{colors.white}",
@@ -694,6 +719,56 @@ var coreTokens = {
       "text": "{colors.neutral.900}",
       "disabledText": "{colors.neutral.400}",
       "requiredIndicatorText": "{colors.error.600}"
+    },
+    "skeleton": {
+      "base": "{colors.neutral.200}",
+      "shimmer": "{colors.neutral.100}"
+    },
+    "selection": {
+      "bg": "{colors.brand.100}",
+      "text": "{colors.neutral.900}"
+    },
+    "caret": {
+      "color": "{colors.brand.600}"
+    },
+    "scrollbar": {
+      "track": "{colors.neutral.100}",
+      "thumb": "{colors.neutral.400}",
+      "thumbHover": "{colors.neutral.500}"
+    },
+    "chart": {
+      "bg": "{colors.white}",
+      "grid": "{colors.neutral.200}",
+      "axis": "{colors.neutral.500}",
+      "label": "{colors.neutral.600}",
+      "series": {
+        "1": "{colors.brand.600}",
+        "2": "{colors.palette.amber.600}",
+        "3": "{colors.palette.violet.800}",
+        "4": "{colors.palette.cyan.600}",
+        "5": "{colors.palette.pink.600}",
+        "6": "{colors.palette.emerald.800}",
+        "7": "{colors.palette.lime.700}",
+        "8": "{colors.palette.orange.800}"
+      },
+      "sequential": {
+        "1": "{colors.brand.100}",
+        "2": "{colors.brand.200}",
+        "3": "{colors.brand.300}",
+        "4": "{colors.brand.400}",
+        "5": "{colors.brand.600}",
+        "6": "{colors.brand.800}",
+        "7": "{colors.brand.900}"
+      },
+      "diverging": {
+        "1": "{colors.palette.red.700}",
+        "2": "{colors.palette.red.400}",
+        "3": "{colors.palette.red.200}",
+        "4": "{colors.neutral.200}",
+        "5": "{colors.palette.blue.200}",
+        "6": "{colors.palette.blue.400}",
+        "7": "{colors.palette.blue.700}"
+      }
     }
   },
   "buttons": {
@@ -856,6 +931,40 @@ var coreTokens = {
       "bg": "{colors.neutral.50}",
       "border": "{colors.neutral.200}",
       "text": "{colors.neutral.400}"
+    }
+  },
+  "control": {
+    "sm": {
+      "height": "2rem",
+      "paddingInline": "0.75rem",
+      "iconSize": "{icons.sm}"
+    },
+    "md": {
+      "height": "2.5rem",
+      "paddingInline": "1rem",
+      "iconSize": "{icons.md}"
+    },
+    "lg": {
+      "height": "3rem",
+      "paddingInline": "1.25rem",
+      "iconSize": "{icons.lg}"
+    },
+    "compact": {
+      "sm": {
+        "height": "1.5rem",
+        "paddingInline": "0.5rem",
+        "iconSize": "{icons.xs}"
+      },
+      "md": {
+        "height": "2rem",
+        "paddingInline": "0.75rem",
+        "iconSize": "{icons.sm}"
+      },
+      "lg": {
+        "height": "2.5rem",
+        "paddingInline": "1rem",
+        "iconSize": "{icons.md}"
+      }
     }
   },
   "modes": {
@@ -1040,6 +1149,26 @@ var coreTokens = {
             "warning": "{colors.warning.600}",
             "danger": "{colors.error.600}",
             "cta": "{colors.brand.600}"
+          },
+          "light": {
+            "bg": "{colors.neutral.100}",
+            "text": "{colors.neutral.700}",
+            "heading": "{colors.neutral.900}",
+            "muted": "{colors.neutral.600}",
+            "link": "{colors.neutral.700}",
+            "linkHover": "{colors.brand.700}",
+            "border": "{colors.neutral.200}",
+            "divider": "{colors.neutral.200}",
+            "chipBg": "{colors.neutral.200}",
+            "accent": {
+              "neutral": "{colors.neutral.600}",
+              "brand": "{colors.brand.600}",
+              "info": "{colors.info.600}",
+              "success": "{colors.success.600}",
+              "warning": "{colors.warning.600}",
+              "danger": "{colors.error.600}",
+              "cta": "{colors.brand.600}"
+            }
           }
         },
         "modal": {
@@ -1470,7 +1599,12 @@ var coreTokens = {
             "bg": "{colors.warning.100}",
             "text": "{colors.warning.900}"
           },
-          "hr": "{colors.neutral.200}"
+          "hr": "{colors.neutral.200}",
+          "kbd": {
+            "bg": "{colors.neutral.100}",
+            "border": "{colors.neutral.300}",
+            "text": "{colors.neutral.900}"
+          }
         },
         "externalAuthButton": {
           "bg": "{colors.white}",
@@ -1526,6 +1660,56 @@ var coreTokens = {
           "text": "{colors.neutral.900}",
           "disabledText": "{colors.neutral.400}",
           "requiredIndicatorText": "{colors.error.600}"
+        },
+        "skeleton": {
+          "base": "{colors.neutral.200}",
+          "shimmer": "{colors.neutral.100}"
+        },
+        "selection": {
+          "bg": "{colors.brand.100}",
+          "text": "{colors.neutral.900}"
+        },
+        "caret": {
+          "color": "{colors.brand.600}"
+        },
+        "scrollbar": {
+          "track": "{colors.neutral.100}",
+          "thumb": "{colors.neutral.400}",
+          "thumbHover": "{colors.neutral.500}"
+        },
+        "chart": {
+          "bg": "{colors.white}",
+          "grid": "{colors.neutral.200}",
+          "axis": "{colors.neutral.500}",
+          "label": "{colors.neutral.600}",
+          "series": {
+            "1": "{colors.brand.600}",
+            "2": "{colors.palette.amber.600}",
+            "3": "{colors.palette.violet.800}",
+            "4": "{colors.palette.cyan.600}",
+            "5": "{colors.palette.pink.600}",
+            "6": "{colors.palette.emerald.800}",
+            "7": "{colors.palette.lime.700}",
+            "8": "{colors.palette.orange.800}"
+          },
+          "sequential": {
+            "1": "{colors.brand.100}",
+            "2": "{colors.brand.200}",
+            "3": "{colors.brand.300}",
+            "4": "{colors.brand.400}",
+            "5": "{colors.brand.600}",
+            "6": "{colors.brand.800}",
+            "7": "{colors.brand.900}"
+          },
+          "diverging": {
+            "1": "{colors.palette.red.700}",
+            "2": "{colors.palette.red.400}",
+            "3": "{colors.palette.red.200}",
+            "4": "{colors.neutral.200}",
+            "5": "{colors.palette.blue.200}",
+            "6": "{colors.palette.blue.400}",
+            "7": "{colors.palette.blue.700}"
+          }
         }
       }
     },
@@ -1713,6 +1897,26 @@ var coreTokens = {
             "warning": "{colors.warning.400}",
             "danger": "{colors.error.400}",
             "cta": "{colors.brand.400}"
+          },
+          "light": {
+            "bg": "{colors.neutral.200}",
+            "text": "{colors.neutral.800}",
+            "heading": "{colors.neutral.900}",
+            "muted": "{colors.neutral.600}",
+            "link": "{colors.neutral.700}",
+            "linkHover": "{colors.brand.700}",
+            "border": "{colors.neutral.300}",
+            "divider": "{colors.neutral.300}",
+            "chipBg": "{colors.neutral.300}",
+            "accent": {
+              "neutral": "{colors.neutral.600}",
+              "brand": "{colors.brand.600}",
+              "info": "{colors.info.600}",
+              "success": "{colors.success.600}",
+              "warning": "{colors.warning.600}",
+              "danger": "{colors.error.600}",
+              "cta": "{colors.brand.600}"
+            }
           }
         },
         "modal": {
@@ -2143,7 +2347,12 @@ var coreTokens = {
             "bg": "{colors.warning.900}",
             "text": "{colors.warning.200}"
           },
-          "hr": "{colors.neutral.700}"
+          "hr": "{colors.neutral.700}",
+          "kbd": {
+            "bg": "{colors.neutral.800}",
+            "border": "{colors.neutral.600}",
+            "text": "{colors.neutral.50}"
+          }
         },
         "externalAuthButton": {
           "bg": "{colors.neutral.800}",
@@ -2199,7 +2408,948 @@ var coreTokens = {
           "text": "{colors.neutral.50}",
           "disabledText": "{colors.neutral.600}",
           "requiredIndicatorText": "{colors.error.400}"
+        },
+        "skeleton": {
+          "base": "{colors.neutral.700}",
+          "shimmer": "{colors.neutral.600}"
+        },
+        "selection": {
+          "bg": "{colors.brand.800}",
+          "text": "{colors.white}"
+        },
+        "caret": {
+          "color": "{colors.brand.400}"
+        },
+        "scrollbar": {
+          "track": "{colors.neutral.900}",
+          "thumb": "{colors.neutral.600}",
+          "thumbHover": "{colors.neutral.500}"
+        },
+        "chart": {
+          "bg": "{colors.neutral.800}",
+          "grid": "{colors.neutral.700}",
+          "axis": "{colors.neutral.400}",
+          "label": "{colors.neutral.300}",
+          "series": {
+            "1": "{colors.brand.400}",
+            "2": "{colors.palette.amber.300}",
+            "3": "{colors.palette.violet.400}",
+            "4": "{colors.palette.cyan.300}",
+            "5": "{colors.palette.pink.300}",
+            "6": "{colors.palette.teal.400}",
+            "7": "{colors.palette.lime.300}",
+            "8": "{colors.palette.orange.400}"
+          },
+          "sequential": {
+            "1": "{colors.brand.900}",
+            "2": "{colors.brand.800}",
+            "3": "{colors.brand.700}",
+            "4": "{colors.brand.500}",
+            "5": "{colors.brand.400}",
+            "6": "{colors.brand.300}",
+            "7": "{colors.brand.100}"
+          },
+          "diverging": {
+            "1": "{colors.palette.red.300}",
+            "2": "{colors.palette.red.500}",
+            "3": "{colors.palette.red.800}",
+            "4": "{colors.neutral.600}",
+            "5": "{colors.palette.blue.800}",
+            "6": "{colors.palette.blue.500}",
+            "7": "{colors.palette.blue.300}"
+          }
         }
+      }
+    },
+    "highContrast": {
+      "surface": {
+        "page": "{colors.white}",
+        "card": "{colors.white}",
+        "input": "{colors.white}",
+        "overlay": "{colors.black} / 0.6",
+        "subtle": "{colors.neutral.50}",
+        "hero": "linear-gradient(135deg, {colors.indigo.500} 0%, {colors.violet.600} 100%)",
+        "hover": "{colors.neutral.100}",
+        "selected": "{colors.info.50}",
+        "active": "{colors.neutral.200}",
+        "divider": "{colors.neutral.700}"
+      },
+      "text": {
+        "onPage": {
+          "default": "{colors.neutral.900}",
+          "muted": "{colors.neutral.600}",
+          "subtle": "{colors.neutral.600}",
+          "meta": "{colors.neutral.600}",
+          "brand": "{colors.brand.700}"
+        },
+        "onSurface": {
+          "default": "{colors.neutral.900}",
+          "muted": "{colors.neutral.600}",
+          "subtle": "{colors.neutral.600}",
+          "meta": "{colors.neutral.600}",
+          "brand": "{colors.brand.700}"
+        }
+      },
+      "forms": {
+        "default": {
+          "bg": "{colors.white}",
+          "text": "{colors.neutral.900}",
+          "placeholder": "{colors.neutral.600}"
+        },
+        "valid": {
+          "border": "{colors.success.700}",
+          "bg": "{colors.success.50}",
+          "text": "{colors.success.900}"
+        },
+        "invalid": {
+          "border": "{colors.error.700}",
+          "bg": "{colors.error.50}",
+          "text": "{colors.error.800}"
+        }
+      },
+      "component": {
+        "card": {
+          "text": "{colors.neutral.900}",
+          "textMuted": "{colors.neutral.600}",
+          "accent": {
+            "neutral": "{colors.neutral.600}",
+            "brand": "{colors.brand.600}",
+            "info": "{colors.info.600}",
+            "success": "{colors.success.600}",
+            "warning": "{colors.warning.600}",
+            "danger": "{colors.error.600}",
+            "cta": "{colors.brand.600}"
+          }
+        },
+        "choiceCard": {
+          "bg": "{colors.white}",
+          "text": "{colors.neutral.900}",
+          "border": "{colors.neutral.700}",
+          "hoverBorder": "{colors.neutral.700}",
+          "selectedBg": "{colors.info.50}",
+          "selectedBorder": "{colors.brand.600}",
+          "disabledBg": "{colors.neutral.50}",
+          "disabledText": "{colors.neutral.400}",
+          "focusRing": "{buttons.primary.focusRing}"
+        },
+        "input": {
+          "text": "{colors.neutral.900}",
+          "placeholder": "{colors.neutral.600}"
+        },
+        "button": {
+          "textDefault": "{colors.neutral.900}",
+          "textOnPrimary": "{colors.white}"
+        },
+        "badge": {
+          "neutralBg": "{colors.neutral.100}",
+          "neutralBgHover": "{colors.neutral.200}",
+          "neutralText": "{colors.neutral.700}",
+          "brandBg": "{colors.brand.100}",
+          "brandBgHover": "{colors.brand.200}",
+          "brandText": "{colors.brand.900}",
+          "infoBg": "{colors.info.100}",
+          "infoBgHover": "{colors.info.200}",
+          "infoText": "{colors.info.800}",
+          "successBg": "{colors.success.100}",
+          "successText": "{colors.success.900}",
+          "warningBg": "{colors.warning.100}",
+          "warningText": "{colors.warning.900}",
+          "dangerBg": "{colors.error.100}",
+          "dangerText": "{colors.error.900}",
+          "accent": {
+            "neutral": "{colors.neutral.600}",
+            "brand": "{colors.brand.600}",
+            "info": "{colors.info.600}",
+            "success": "{colors.success.600}",
+            "warning": "{colors.warning.600}",
+            "danger": "{colors.error.600}",
+            "cta": "{colors.brand.600}"
+          }
+        },
+        "iconBox": {
+          "bg": "{colors.white}",
+          "border": "{colors.neutral.700}",
+          "iconDefault": "{colors.info.700}",
+          "iconSuccess": "{colors.success.600}",
+          "iconWarning": "{colors.warning.600}",
+          "iconDanger": "{colors.error.800}"
+        },
+        "testimonial": {
+          "bg": "{colors.white}",
+          "bgHover": "{colors.neutral.50}",
+          "border": "{colors.neutral.700}",
+          "text": "{colors.neutral.700}",
+          "authorName": "{colors.neutral.900}",
+          "authorTitle": "{colors.neutral.700}",
+          "quoteMark": "{colors.neutral.700}",
+          "accent": {
+            "neutral": "{colors.neutral.600}",
+            "brand": "{colors.brand.600}",
+            "info": "{colors.info.600}",
+            "success": "{colors.success.600}",
+            "warning": "{colors.warning.600}",
+            "danger": "{colors.error.600}",
+            "cta": "{colors.brand.600}"
+          }
+        },
+        "pricingCard": {
+          "bg": "{colors.white}",
+          "bgHover": "{colors.neutral.50}",
+          "border": "{colors.neutral.700}",
+          "featuredBg": "{colors.info.700}",
+          "featuredText": "{colors.white}",
+          "featuredBadgeBg": "{colors.warning.500}",
+          "featuredBadgeText": "{colors.neutral.900}",
+          "price": "{colors.neutral.900}",
+          "priceDescription": "{colors.neutral.700}",
+          "accent": {
+            "neutral": "{colors.neutral.600}",
+            "brand": "{colors.brand.600}",
+            "info": "{colors.info.600}",
+            "success": "{colors.success.600}",
+            "warning": "{colors.warning.600}",
+            "danger": "{colors.error.600}",
+            "cta": "{colors.brand.600}"
+          }
+        },
+        "rating": {
+          "starFilled": "{colors.warning.500}",
+          "starEmpty": "{colors.neutral.200}",
+          "text": "{colors.neutral.600}"
+        },
+        "nav": {
+          "bg": "{colors.white}",
+          "text": "{colors.neutral.900}",
+          "link": "{colors.neutral.700}",
+          "linkHover": "{colors.brand.600}",
+          "linkActive": "{colors.brand.700}",
+          "border": "{colors.neutral.700}",
+          "accent": {
+            "neutral": "{colors.neutral.600}",
+            "brand": "{colors.brand.600}",
+            "info": "{colors.info.600}",
+            "success": "{colors.success.600}",
+            "warning": "{colors.warning.600}",
+            "danger": "{colors.error.600}",
+            "cta": "{colors.brand.600}"
+          }
+        },
+        "footer": {
+          "bg": "{colors.neutral.900}",
+          "text": "{colors.neutral.50}",
+          "heading": "{colors.white}",
+          "muted": "{colors.neutral.300}",
+          "link": "{colors.neutral.300}",
+          "linkHover": "{colors.brand.300}",
+          "border": "{colors.neutral.700}",
+          "divider": "{colors.neutral.800}",
+          "chipBg": "{colors.neutral.800}",
+          "accent": {
+            "neutral": "{colors.neutral.600}",
+            "brand": "{colors.brand.600}",
+            "info": "{colors.info.600}",
+            "success": "{colors.success.600}",
+            "warning": "{colors.warning.600}",
+            "danger": "{colors.error.600}",
+            "cta": "{colors.brand.600}"
+          },
+          "light": {
+            "bg": "{colors.neutral.100}",
+            "text": "{colors.neutral.700}",
+            "heading": "{colors.neutral.900}",
+            "muted": "{colors.neutral.700}",
+            "link": "{colors.neutral.700}",
+            "linkHover": "{colors.brand.700}",
+            "border": "{colors.neutral.700}",
+            "divider": "{colors.neutral.700}",
+            "chipBg": "{colors.neutral.200}",
+            "accent": {
+              "neutral": "{colors.neutral.600}",
+              "brand": "{colors.brand.600}",
+              "info": "{colors.info.600}",
+              "success": "{colors.success.600}",
+              "warning": "{colors.warning.600}",
+              "danger": "{colors.error.600}",
+              "cta": "{colors.brand.600}"
+            }
+          }
+        },
+        "modal": {
+          "bg": "{colors.white}",
+          "shadow": "0 20px 48px -12px {colors.black} / 0.20",
+          "border": "{colors.neutral.700}",
+          "overlay": "{colors.black} / 0.6",
+          "accent": {
+            "neutral": "{colors.neutral.600}",
+            "brand": "{colors.brand.600}",
+            "info": "{colors.info.600}",
+            "success": "{colors.success.600}",
+            "warning": "{colors.warning.600}",
+            "danger": "{colors.error.600}",
+            "cta": "{colors.brand.600}"
+          }
+        },
+        "toast": {
+          "neutral": {
+            "bg": "{colors.neutral.50}",
+            "text": "{colors.neutral.800}",
+            "border": "{colors.neutral.700}",
+            "icon": "{colors.neutral.600}"
+          },
+          "success": {
+            "bg": "{colors.success.50}",
+            "text": "{colors.success.900}",
+            "border": "{colors.success.600}",
+            "icon": "{colors.success.600}"
+          },
+          "warning": {
+            "bg": "{colors.warning.50}",
+            "text": "{colors.warning.900}",
+            "border": "{colors.warning.600}",
+            "icon": "{colors.warning.600}"
+          },
+          "danger": {
+            "bg": "{colors.error.50}",
+            "text": "{colors.error.800}",
+            "border": "{colors.error.600}",
+            "icon": "{colors.error.600}"
+          },
+          "info": {
+            "bg": "{colors.info.50}",
+            "text": "{colors.info.800}",
+            "border": "{colors.info.600}",
+            "icon": "{colors.info.600}"
+          },
+          "accent": {
+            "neutral": "{colors.neutral.600}",
+            "brand": "{colors.brand.600}",
+            "info": "{colors.info.600}",
+            "success": "{colors.success.600}",
+            "warning": "{colors.warning.600}",
+            "danger": "{colors.error.600}",
+            "cta": "{colors.brand.600}"
+          }
+        },
+        "tooltip": {
+          "bg": "{colors.neutral.900}",
+          "text": "{colors.white}",
+          "border": "{colors.neutral.700}",
+          "accent": {
+            "neutral": "{colors.neutral.600}",
+            "brand": "{colors.brand.600}",
+            "info": "{colors.info.600}",
+            "success": "{colors.success.600}",
+            "warning": "{colors.warning.600}",
+            "danger": "{colors.error.600}",
+            "cta": "{colors.brand.600}"
+          }
+        },
+        "dropdown": {
+          "bg": "{colors.white}",
+          "border": "{colors.neutral.700}",
+          "item": {
+            "default": "transparent",
+            "hover": "{colors.neutral.100}",
+            "active": "{colors.info.50}",
+            "text": "{colors.neutral.900}",
+            "disabledText": "{colors.neutral.400}",
+            "selectedBg": "{colors.info.100}",
+            "selectedText": "{colors.info.800}"
+          },
+          "accent": {
+            "neutral": "{colors.neutral.600}",
+            "brand": "{colors.brand.600}",
+            "info": "{colors.info.600}",
+            "success": "{colors.success.600}",
+            "warning": "{colors.warning.600}",
+            "danger": "{colors.error.600}",
+            "cta": "{colors.brand.600}"
+          },
+          "header": "{colors.neutral.500}",
+          "divider": "{colors.neutral.700}"
+        },
+        "tabs": {
+          "list": {
+            "bg": "{colors.white}",
+            "border": "{colors.neutral.700}"
+          },
+          "item": {
+            "text": "{colors.neutral.600}",
+            "hover": {
+              "bg": "{colors.neutral.100}"
+            },
+            "active": {
+              "text": "{colors.neutral.900}",
+              "indicator": "{colors.brand.600}"
+            },
+            "focus": {
+              "ringColor": "{buttons.primary.focusRing}"
+            },
+            "disabled": {
+              "text": "{colors.neutral.400}"
+            }
+          },
+          "pill": {
+            "active": {
+              "bg": "{colors.brand.700}",
+              "text": "{colors.white}"
+            }
+          },
+          "panel": {
+            "bg": "{colors.white}"
+          }
+        },
+        "accordion": {
+          "bg": "{colors.white}",
+          "text": "{colors.neutral.900}",
+          "border": "{colors.neutral.700}",
+          "header": {
+            "hoverBg": "{colors.neutral.50}"
+          },
+          "icon": {
+            "collapsed": "{colors.neutral.500}",
+            "expanded": "{colors.neutral.900}"
+          }
+        },
+        "breadcrumb": {
+          "item": {
+            "text": "{colors.neutral.600}",
+            "hover": {
+              "text": "{colors.brand.600}"
+            },
+            "active": {
+              "text": "{colors.neutral.900}"
+            }
+          },
+          "separator": "{colors.neutral.400}"
+        },
+        "listGroup": {
+          "bg": "{colors.white}",
+          "border": "{colors.neutral.700}",
+          "text": "{colors.neutral.700}",
+          "heading": "{colors.neutral.900}",
+          "muted": "{colors.neutral.500}",
+          "item": {
+            "hover": {
+              "bg": "{colors.neutral.50}"
+            },
+            "active": {
+              "bg": "{colors.brand.700}",
+              "text": "{colors.white}"
+            },
+            "selected": {
+              "bg": "{colors.info.50}"
+            },
+            "disabled": {
+              "text": "{colors.neutral.400}"
+            }
+          },
+          "accent": {
+            "neutral": "{colors.neutral.600}",
+            "brand": "{colors.brand.600}",
+            "info": "{colors.info.600}",
+            "success": "{colors.success.600}",
+            "warning": "{colors.warning.600}",
+            "danger": "{colors.error.600}",
+            "cta": "{colors.brand.600}",
+            "thickness": "0.25rem"
+          }
+        },
+        "offcanvas": {
+          "bg": "{colors.white}",
+          "text": "{colors.neutral.900}",
+          "border": "{colors.neutral.700}",
+          "overlay": "{colors.black} / 0.6"
+        },
+        "carousel": {
+          "indicator": {
+            "default": "{colors.white} / 0.5",
+            "active": "{colors.white}"
+          },
+          "control": {
+            "icon": "{colors.white}",
+            "bg": "{colors.black} / 0.3"
+          },
+          "caption": {
+            "bg": "{colors.black} / 0.4",
+            "text": "{colors.white}"
+          }
+        },
+        "table": {
+          "header": {
+            "bg": "{colors.neutral.50}",
+            "text": "{colors.neutral.700}"
+          },
+          "text": "{colors.neutral.900}",
+          "divider": "{colors.neutral.700}",
+          "stripeBg": "{colors.neutral.50}",
+          "hoverBg": "{colors.neutral.100}",
+          "selectedBg": "{colors.info.50}",
+          "row": {
+            "neutral": {
+              "bg": "{colors.neutral.100}",
+              "text": "{colors.neutral.700}"
+            },
+            "info": {
+              "bg": "{colors.info.100}",
+              "text": "{colors.info.800}"
+            },
+            "success": {
+              "bg": "{colors.success.100}",
+              "text": "{colors.success.900}"
+            },
+            "warning": {
+              "bg": "{colors.warning.100}",
+              "text": "{colors.warning.900}"
+            },
+            "danger": {
+              "bg": "{colors.error.100}",
+              "text": "{colors.error.900}"
+            }
+          }
+        },
+        "alert": {
+          "neutral": {
+            "bg": "{colors.neutral.100}",
+            "text": "{colors.neutral.700}",
+            "border": "{colors.neutral.700}",
+            "icon": "{colors.neutral.600}"
+          },
+          "brand": {
+            "bg": "{colors.brand.50}",
+            "text": "{colors.brand.700}",
+            "border": "{colors.brand.600}",
+            "icon": "{colors.brand.600}"
+          },
+          "info": {
+            "bg": "{colors.info.50}",
+            "text": "{colors.info.700}",
+            "border": "{colors.info.600}",
+            "icon": "{colors.info.600}"
+          },
+          "success": {
+            "bg": "{colors.success.50}",
+            "text": "{colors.success.900}",
+            "border": "{colors.success.600}",
+            "icon": "{colors.success.600}"
+          },
+          "warning": {
+            "bg": "{colors.warning.50}",
+            "text": "{colors.warning.900}",
+            "border": "{colors.warning.600}",
+            "icon": "{colors.warning.600}"
+          },
+          "danger": {
+            "bg": "{colors.error.50}",
+            "text": "{colors.error.800}",
+            "border": "{colors.error.600}",
+            "icon": "{colors.error.600}"
+          }
+        },
+        "pagination": {
+          "item": {
+            "text": "{colors.neutral.700}",
+            "hover": {
+              "bg": "{colors.neutral.100}"
+            },
+            "active": {
+              "bg": "{colors.brand.700}",
+              "text": "{colors.white}"
+            },
+            "disabled": {
+              "text": "{colors.neutral.400}"
+            }
+          }
+        },
+        "stepper": {
+          "step": {
+            "pending": {
+              "bg": "{colors.neutral.200}",
+              "text": "{colors.neutral.700}"
+            },
+            "active": {
+              "bg": "{colors.brand.700}",
+              "text": "{colors.white}"
+            },
+            "done": {
+              "bg": "{colors.success.800}",
+              "text": "{colors.white}"
+            }
+          },
+          "connector": "{colors.neutral.200}",
+          "label": {
+            "text": "{colors.neutral.700}"
+          }
+        },
+        "popover": {
+          "bg": "{colors.white}",
+          "text": "{colors.neutral.900}",
+          "muted": "{colors.neutral.600}",
+          "border": "{colors.neutral.700}",
+          "shadow": "0 12px 32px -8px {colors.black} / 0.18",
+          "arrow": "{colors.white}"
+        },
+        "progress": {
+          "track": {
+            "bg": "{colors.neutral.200}"
+          },
+          "indicator": {
+            "neutral": "{colors.neutral.600}",
+            "brand": "{colors.brand.600}",
+            "info": "{colors.info.600}",
+            "success": "{colors.success.600}",
+            "warning": "{colors.warning.600}",
+            "danger": "{colors.error.600}"
+          },
+          "label": {
+            "text": "{colors.neutral.700}"
+          }
+        },
+        "loadingIndicator": {
+          "default": "{colors.neutral.600}",
+          "muted": "{colors.neutral.400}",
+          "inverse": "{colors.white}",
+          "brand": "{colors.brand.600}",
+          "info": "{colors.info.600}",
+          "success": "{colors.success.600}",
+          "warning": "{colors.warning.600}",
+          "danger": "{colors.error.600}"
+        },
+        "switch": {
+          "trackBg": "{colors.neutral.300}",
+          "trackCheckedBg": "{colors.info.600}",
+          "thumbBg": "{colors.white}",
+          "trackDisabledBg": "{colors.neutral.100}",
+          "thumbDisabledBg": "{colors.neutral.200}",
+          "focusRing": "{buttons.primary.focusRing}"
+        },
+        "range": {
+          "trackBg": "{colors.neutral.200}",
+          "trackFilledBg": "{colors.info.600}",
+          "thumbBg": "{colors.white}",
+          "thumbBorder": "{colors.info.600}",
+          "trackDisabledBg": "{colors.neutral.100}",
+          "thumbDisabledBorder": "{colors.neutral.700}",
+          "focusRing": "{buttons.primary.focusRing}"
+        },
+        "fileInput": {
+          "bg": "{colors.white}",
+          "border": "{colors.neutral.700}",
+          "text": "{colors.neutral.900}",
+          "actionBg": "{colors.neutral.100}",
+          "actionText": "{colors.neutral.700}",
+          "disabledBg": "{colors.neutral.50}",
+          "disabledBorder": "{colors.neutral.700}",
+          "disabledText": "{colors.neutral.400}",
+          "focusBorder": "{colors.info.600}"
+        },
+        "inputGroup": {
+          "addonBg": "{colors.neutral.100}",
+          "addonText": "{colors.neutral.700}",
+          "addonBorder": "{colors.neutral.700}",
+          "focusBorder": "{colors.info.600}",
+          "disabledBg": "{colors.neutral.50}",
+          "disabledText": "{colors.neutral.400}"
+        },
+        "datepicker": {
+          "panel": {
+            "bg": "{colors.white}",
+            "border": "{colors.neutral.700}"
+          },
+          "header": {
+            "text": "{colors.neutral.900}"
+          },
+          "weekday": {
+            "text": "{colors.neutral.400}"
+          }
+        },
+        "day": {
+          "default": {
+            "text": "{colors.neutral.900}",
+            "hover": {
+              "bg": "{colors.neutral.100}"
+            }
+          },
+          "selected": {
+            "bg": "{colors.brand.700}",
+            "text": "{colors.white}"
+          },
+          "today": {
+            "ringColor": "{buttons.primary.focusRing}"
+          },
+          "outsideMonth": {
+            "text": "{colors.neutral.300}"
+          },
+          "disabled": {
+            "text": "{colors.neutral.400}"
+          }
+        },
+        "prose": {
+          "blockquote": {
+            "border": "{colors.neutral.600}",
+            "text": "{colors.neutral.600}"
+          },
+          "code": {
+            "bg": "{colors.neutral.100}",
+            "text": "{colors.neutral.900}"
+          },
+          "codeBlock": {
+            "bg": "{colors.neutral.100}",
+            "text": "{colors.neutral.900}",
+            "border": "{colors.neutral.700}"
+          },
+          "mark": {
+            "bg": "{colors.warning.100}",
+            "text": "{colors.warning.900}"
+          },
+          "hr": "{colors.neutral.700}",
+          "kbd": {
+            "bg": "{colors.neutral.100}",
+            "border": "{colors.neutral.700}",
+            "text": "{colors.neutral.900}"
+          }
+        },
+        "externalAuthButton": {
+          "bg": "{colors.white}",
+          "text": "{colors.neutral.900}",
+          "border": "{colors.neutral.700}",
+          "hoverBg": "{colors.neutral.50}",
+          "activeBg": "{colors.neutral.100}",
+          "disabledBg": "{colors.neutral.50}",
+          "disabledText": "{colors.neutral.400}",
+          "focusRing": "{buttons.primary.focusRing}"
+        },
+        "checkbox": {
+          "bg": "{colors.white}",
+          "border": "{colors.neutral.700}",
+          "checkedBg": "{colors.info.700}",
+          "checkedBorder": "{colors.info.600}",
+          "text": "{colors.white}",
+          "disabledBg": "{colors.neutral.50}",
+          "disabledBorder": "{colors.neutral.700}"
+        },
+        "radio": {
+          "bg": "{colors.white}",
+          "border": "{colors.neutral.700}",
+          "checkedBg": "{colors.info.700}",
+          "checkedBorder": "{colors.info.600}",
+          "text": "{colors.white}",
+          "disabledBg": "{colors.neutral.50}",
+          "disabledBorder": "{colors.neutral.700}"
+        },
+        "select": {
+          "bg": "{colors.white}",
+          "border": "{colors.neutral.700}",
+          "text": "{colors.neutral.900}",
+          "placeholderText": "{colors.neutral.600}",
+          "disabledBg": "{colors.neutral.50}",
+          "disabledBorder": "{colors.neutral.700}",
+          "focusBorder": "{colors.info.600}"
+        },
+        "textarea": {
+          "bg": "{colors.white}",
+          "border": "{colors.neutral.700}",
+          "text": "{colors.neutral.900}",
+          "placeholder": "{colors.neutral.600}",
+          "disabledBg": "{colors.neutral.50}",
+          "disabledBorder": "{colors.neutral.700}",
+          "focusBorder": "{colors.info.600}"
+        },
+        "fieldset": {
+          "border": "{colors.neutral.700}",
+          "legendText": "{colors.neutral.900}"
+        },
+        "label": {
+          "text": "{colors.neutral.900}",
+          "disabledText": "{colors.neutral.400}",
+          "requiredIndicatorText": "{colors.error.600}"
+        },
+        "skeleton": {
+          "base": "{colors.neutral.200}",
+          "shimmer": "{colors.neutral.100}"
+        },
+        "selection": {
+          "bg": "{colors.brand.100}",
+          "text": "{colors.neutral.900}"
+        },
+        "caret": {
+          "color": "{colors.brand.600}"
+        },
+        "scrollbar": {
+          "track": "{colors.neutral.700}",
+          "thumb": "{colors.neutral.400}",
+          "thumbHover": "{colors.neutral.500}"
+        },
+        "chart": {
+          "bg": "{colors.white}",
+          "grid": "{colors.neutral.200}",
+          "axis": "{colors.neutral.500}",
+          "label": "{colors.neutral.600}",
+          "series": {
+            "1": "{colors.brand.600}",
+            "2": "{colors.palette.amber.600}",
+            "3": "{colors.palette.violet.800}",
+            "4": "{colors.palette.cyan.600}",
+            "5": "{colors.palette.pink.600}",
+            "6": "{colors.palette.emerald.800}",
+            "7": "{colors.palette.lime.700}",
+            "8": "{colors.palette.orange.800}"
+          },
+          "sequential": {
+            "1": "{colors.brand.100}",
+            "2": "{colors.brand.200}",
+            "3": "{colors.brand.300}",
+            "4": "{colors.brand.400}",
+            "5": "{colors.brand.600}",
+            "6": "{colors.brand.800}",
+            "7": "{colors.brand.900}"
+          },
+          "diverging": {
+            "1": "{colors.palette.red.700}",
+            "2": "{colors.palette.red.400}",
+            "3": "{colors.palette.red.200}",
+            "4": "{colors.neutral.200}",
+            "5": "{colors.palette.blue.200}",
+            "6": "{colors.palette.blue.400}",
+            "7": "{colors.palette.blue.700}"
+          }
+        }
+      },
+      "buttons": {
+        "primary": {
+          "bg": "{colors.info.700}",
+          "bgHover": "{colors.info.800}",
+          "bgActive": "{colors.info.900}",
+          "bgDisabled": "{colors.neutral.200}",
+          "text": "{colors.white}",
+          "textDisabled": "{colors.neutral.400}",
+          "focusRing": "{colors.info.500} / 0.4",
+          "focusVisible": "{colors.info.500} / 0.4"
+        },
+        "secondary": {
+          "bg": "{colors.white}",
+          "bgHover": "{colors.neutral.50}",
+          "bgActive": "{colors.neutral.100}",
+          "bgDisabled": "{colors.neutral.50}",
+          "text": "{colors.info.800}",
+          "textDisabled": "{colors.neutral.400}",
+          "border": "{colors.info.800}",
+          "borderDisabled": "{colors.neutral.200}",
+          "focusRing": "{colors.info.500} / 0.4",
+          "focusVisible": "{colors.info.500} / 0.4"
+        },
+        "ghost": {
+          "bg": "transparent",
+          "bgHover": "{colors.info.50}",
+          "bgActive": "{colors.info.100}",
+          "bgDisabled": "transparent",
+          "text": "{colors.info.800}",
+          "textDisabled": "{colors.neutral.400}",
+          "focusRing": "{colors.info.500} / 0.4",
+          "focusVisible": "{colors.info.500} / 0.4"
+        },
+        "danger": {
+          "bg": "{colors.error.800}",
+          "bgHover": "{colors.error.900}",
+          "bgActive": "{colors.error.900}",
+          "bgDisabled": "{colors.error.200}",
+          "text": "{colors.white}",
+          "textDisabled": "{colors.neutral.400}",
+          "focusRing": "{colors.error.500} / 0.4",
+          "focusVisible": "{colors.error.500} / 0.4"
+        },
+        "success": {
+          "bg": "{colors.success.800}",
+          "bgHover": "{colors.success.900}",
+          "bgActive": "{colors.success.900}",
+          "bgDisabled": "{colors.success.200}",
+          "text": "{colors.white}",
+          "textDisabled": "{colors.neutral.400}",
+          "focusRing": "{colors.success.500} / 0.4",
+          "focusVisible": "{colors.success.500} / 0.4"
+        },
+        "warning": {
+          "bg": "{colors.warning.900}",
+          "bgHover": "{colors.palette.amber.950}",
+          "bgActive": "{colors.palette.amber.950}",
+          "bgDisabled": "{colors.warning.200}",
+          "text": "{colors.white}",
+          "textDisabled": "{colors.neutral.400}",
+          "focusRing": "{colors.warning.500} / 0.4",
+          "focusVisible": "{colors.warning.500} / 0.4"
+        },
+        "link": {
+          "bg": "transparent",
+          "bgHover": "transparent",
+          "bgActive": "transparent",
+          "bgDisabled": "transparent",
+          "text": "{colors.info.700}",
+          "textHover": "{colors.info.800}",
+          "textActive": "{colors.info.900}",
+          "textDisabled": "{colors.neutral.400}",
+          "focusRing": "{colors.info.500} / 0.4",
+          "focusVisible": "{colors.info.500} / 0.4"
+        },
+        "light": {
+          "bg": "{colors.neutral.100}",
+          "bgHover": "{colors.neutral.200}",
+          "bgActive": "{colors.neutral.300}",
+          "bgDisabled": "{colors.neutral.50}",
+          "text": "{colors.neutral.900}",
+          "textDisabled": "{colors.neutral.400}",
+          "focusRing": "{colors.neutral.400} / 0.4",
+          "focusVisible": "{colors.neutral.400} / 0.4"
+        },
+        "dark": {
+          "bg": "{colors.neutral.900}",
+          "bgHover": "{colors.neutral.800}",
+          "bgActive": "{colors.neutral.700}",
+          "bgDisabled": "{colors.neutral.200}",
+          "text": "{colors.white}",
+          "textDisabled": "{colors.neutral.400}",
+          "focusRing": "{colors.neutral.500} / 0.4",
+          "focusVisible": "{colors.neutral.500} / 0.4"
+        },
+        "cta": {
+          "bg": "{colors.brand.700}",
+          "bgHover": "{colors.brand.800}",
+          "bgActive": "{colors.brand.900}",
+          "bgDisabled": "{colors.brand.200}",
+          "text": "{colors.white}",
+          "textDisabled": "{colors.neutral.400}",
+          "shadow": "0 4px 14px 0 {colors.brand.500} / 0.39",
+          "focusRing": "{colors.brand.500} / 0.4"
+        },
+        "accent": {
+          "bg": "{colors.accent.700}",
+          "bgHover": "{colors.accent.800}",
+          "bgActive": "{colors.accent.900}",
+          "bgDisabled": "{colors.accent.200}",
+          "text": "{colors.white}",
+          "textDisabled": "{colors.neutral.400}",
+          "focusRing": "{colors.accent.500} / 0.4",
+          "focusVisible": "{colors.accent.500} / 0.4"
+        },
+        "inverse": {
+          "bg": "{colors.white} / 0.12",
+          "bgHover": "{colors.white} / 0.2",
+          "bgActive": "{colors.white} / 0.28",
+          "bgDisabled": "{colors.white} / 0.08",
+          "text": "{colors.white}",
+          "textDisabled": "{colors.neutral.400}",
+          "border": "{colors.white} / 0.3",
+          "borderDisabled": "{colors.white} / 0.16",
+          "focusRing": "{colors.info.500} / 0.4",
+          "focusVisible": "{colors.info.500} / 0.4"
+        }
+      },
+      "link": {
+        "default": "{colors.brand.700}",
+        "hover": "{colors.brand.800}",
+        "active": "{colors.brand.900}",
+        "visited": "{colors.accent.700}",
+        "onInverse": "{colors.neutral.300}",
+        "onInverseHover": "{colors.brand.300}"
       }
     }
   },
@@ -2756,6 +3906,9 @@ var coreTokens = {
     "72": "4.5rem",
     "80": "5rem",
     "96": "6rem",
+    "128": "8rem",
+    "160": "10rem",
+    "192": "12rem",
     "240": "15rem"
   },
   "radii": {
@@ -3012,33 +4165,117 @@ var coreTokens = {
       "padding": {
         "sm": "1.5rem",
         "md": "2rem",
-        "lg": "3rem"
+        "lg": "3rem",
+        "xl": "4rem",
+        "2xl": "5rem",
+        "3xl": "6rem",
+        "4xl": "8rem"
       },
       "gap": {
         "sm": "1rem",
         "md": "1.5rem",
-        "lg": "2rem"
+        "lg": "2rem",
+        "xl": "2.5rem",
+        "2xl": "3rem",
+        "3xl": "4rem",
+        "4xl": "5rem"
       }
     },
     "stack": {
       "gap": {
         "sm": "0.5rem",
-        "md": "0.75rem",
-        "lg": "1rem"
+        "md": "1rem",
+        "lg": "1.5rem",
+        "xl": "2.5rem",
+        "2xl": "3rem",
+        "3xl": "4rem",
+        "4xl": "5rem"
       }
     },
     "container": {
       "paddingInline": {
         "sm": "1rem",
         "md": "1.5rem",
-        "lg": "2rem"
+        "lg": "2rem",
+        "xl": "2.5rem",
+        "2xl": "3rem",
+        "3xl": "4rem",
+        "4xl": "5rem"
       },
       "maxWidth": "72rem",
       "maxWidthProse": "65ch",
       "maxWidthWide": "80rem"
     },
+    "hero": {
+      "paddingTop": {
+        "sm": "{layout.section.padding.2xl}",
+        "md": "{layout.section.padding.3xl}",
+        "lg": "{layout.section.padding.4xl}"
+      },
+      "paddingBottom": {
+        "sm": "{layout.section.padding.xl}",
+        "md": "{layout.section.padding.2xl}",
+        "lg": "{layout.section.padding.3xl}"
+      }
+    },
     "sidebar": {
       "width": "16rem"
+    },
+    "responsive": {
+      "lg": {
+        "section": {
+          "padding": {
+            "xl": "6rem",
+            "2xl": "8rem",
+            "3xl": "10rem",
+            "4xl": "12rem"
+          },
+          "gap": {
+            "xl": "3rem",
+            "2xl": "4rem",
+            "3xl": "6rem",
+            "4xl": "8rem"
+          }
+        },
+        "stack": {
+          "gap": {
+            "xl": "3rem",
+            "2xl": "4rem",
+            "3xl": "6rem",
+            "4xl": "8rem"
+          }
+        },
+        "container": {
+          "paddingInline": {
+            "xl": "3rem",
+            "2xl": "4rem",
+            "3xl": "6rem",
+            "4xl": "8rem"
+          }
+        }
+      }
+    }
+  },
+  "elevation": {
+    "flat": {
+      "shadow": "{shadows.none}",
+      "surface": "{surface.page}",
+      "zIndex": "{zIndex.base}"
+    },
+    "raised": {
+      "shadow": "{shadows.md}",
+      "surface": "{surface.card}",
+      "zIndex": "{zIndex.base}"
+    },
+    "overlay": {
+      "shadow": "{shadows.lg}",
+      "surface": "{surface.card}",
+      "zIndex": "{zIndex.dropdown}"
+    },
+    "modal": {
+      "shadow": "{shadows.2xl}",
+      "surface": "{surface.card}",
+      "zIndex": "{zIndex.modal}"
     }
   },
   "font": {
@@ -3286,6 +4523,22 @@ var toVariableName = (prefix, ...parts) => {
   return `--${prefix}-${filtered.join("-")}`;
 };
 var isPlainObject = (value) => typeof value === "object" && value !== null && !Array.isArray(value);
+var kebabCase = (segment) => formatKey(segment.replace(/([a-z0-9])([A-Z])/g, "$1-$2"));
+var LAYOUT_SCALES = [
+  { path: ["section", "padding"], varParts: ["section", "padding"] },
+  { path: ["section", "gap"], varParts: ["section", "gap"] },
+  { path: ["stack", "gap"], varParts: ["stack", "gap"] },
+  { path: ["container", "paddingInline"], varParts: ["container", "padding-inline"] }
+];
+var layoutScale = (node, [group, scale]) => {
+  const groupNode = isPlainObject(node) ? node[group] : void 0;
+  const scaleNode = isPlainObject(groupNode) ? groupNode[scale] : void 0;
+  return isPlainObject(scaleNode) ? scaleNode : {};
+};
+var layoutResponsive = (layout) => {
+  const responsive = isPlainObject(layout) ? layout.responsive : void 0;
+  return isPlainObject(responsive) ? responsive : {};
+};
 var resolveTokenReference = (tokens2, reference) => {
   const path = reference.slice(1, -1).split(".");
   let current = tokens2;
@@ -3379,26 +4632,30 @@ var createCssVariableMap = (tokens2, options = {}) => {
   }
   if (baseTokens.layout) {
     const layout = baseTokens.layout;
-    if (layout.section?.padding) {
-      Object.entries(layout.section.padding).forEach(([key, value]) => {
-        assign(toVariableName(prefix, "layout", "section", "padding", key), value);
+    LAYOUT_SCALES.forEach(({ path, varParts }) => {
+      Object.entries(layoutScale(layout, path)).forEach(([key, value]) => {
+        assign(toVariableName(prefix, "layout", ...varParts, key), value);
+      });
+    });
+    const hero = layout.hero;
+    if (hero) {
+      Object.entries(hero).forEach(([edge, steps]) => {
+        Object.entries(steps).forEach(([key, value]) => {
+          const step = value.match(/^\{layout\.section\.padding\.([^}]+)\}$/)?.[1];
+          assign(
+            toVariableName(prefix, "layout", "hero", kebabCase(edge), key),
+            step ? `var(${toVariableName(prefix, "layout", "section", "padding", step)})` : value
+          );
+        });
       });
     }
-    if (layout.section?.gap) {
-      Object.entries(layout.section.gap).forEach(([key, value]) => {
-        assign(toVariableName(prefix, "layout", "section", "gap", key), value);
+    Object.entries(layoutResponsive(layout)).forEach(([breakpoint, scales]) => {
+      LAYOUT_SCALES.forEach(({ path, varParts }) => {
+        Object.entries(layoutScale(scales, path)).forEach(([key, value]) => {
+          assign(toVariableName(prefix, "layout", "responsive", breakpoint, ...varParts, key), value);
+        });
       });
-    }
-    if (layout.stack?.gap) {
-      Object.entries(layout.stack.gap).forEach(([key, value]) => {
-        assign(toVariableName(prefix, "layout", "stack", "gap", key), value);
-      });
-    }
-    if (layout.container?.paddingInline) {
-      Object.entries(layout.container.paddingInline).forEach(([key, value]) => {
-        assign(toVariableName(prefix, "layout", "container", "padding-inline", key), value);
-      });
-    }
+    });
     const container = layout.container;
     if (container?.maxWidth) {
       assign(toVariableName(prefix, "layout", "container", "max-width"), container.maxWidth);
@@ -3413,6 +4670,33 @@ var createCssVariableMap = (tokens2, options = {}) => {
     if (sidebar?.width) {
       assign(toVariableName(prefix, "layout", "sidebar", "width"), sidebar.width);
     }
+  }
+  const control = baseTokens.control;
+  if (isPlainObject(control)) {
+    const assignControlSizes = (sizes, parts) => {
+      Object.entries(sizes).forEach(([size, fields]) => {
+        if (size === "compact" || !isPlainObject(fields)) return;
+        Object.entries(fields).forEach(([field, value]) => {
+          assign(toVariableName(prefix, "control", ...parts, size, kebabCase(field)), value);
+        });
+      });
+    };
+    assignControlSizes(control, []);
+    if (isPlainObject(control.compact)) assignControlSizes(control.compact, ["compact"]);
+  }
+  const elevation = baseTokens.elevation;
+  if (isPlainObject(elevation)) {
+    const elevationVarParts = { shadows: ["shadow"], surface: ["surface"], zIndex: ["z-index"] };
+    Object.entries(elevation).forEach(([level, fields]) => {
+      Object.entries(fields).forEach(([field, value]) => {
+        const [namespace, ...rest] = value.match(/^\{([^}]+)\}$/)?.[1]?.split(".") ?? [];
+        const varParts = namespace ? elevationVarParts[namespace] : void 0;
+        assign(
+          toVariableName(prefix, "elevation", level, kebabCase(field)),
+          varParts ? `var(${toVariableName(prefix, ...varParts, ...rest.map(kebabCase))})` : value
+        );
+      });
+    });
   }
   const border = baseTokens.border;
   if (border?.width) {
@@ -3562,6 +4846,7 @@ var generateCssVariables = (tokens2, options = {}) => {
   const declarations = createCssVariableMap(tokens2, { ...options, prefix });
   const defaultMode = tokens2.modes?.default ?? {};
   const darkMode = tokens2.modes?.dark ?? {};
+  const highContrastMode = tokens2.modes?.highContrast ?? {};
   const surfaceAliases = tokens2.surface ?? {};
   const textAliases = tokens2.text ?? {};
   const componentAliases = tokens2.component ?? {};
@@ -3569,6 +4854,7 @@ var generateCssVariables = (tokens2, options = {}) => {
   const componentVarParts = (group, kebabGroup, path) => LEGACY_COMPONENT_PREFIX_GROUPS.has(group) ? ["component", kebabGroup, ...path] : [kebabGroup, ...path];
   const baseLines = [];
   const darkLines = [];
+  const highContrastLines = [];
   const modeScopedNames = /* @__PURE__ */ new Set();
   const addBase = (name, value) => {
     if (value === void 0) return;
@@ -3578,9 +4864,13 @@ var generateCssVariables = (tokens2, options = {}) => {
   const addDark = (name, value) => {
     if (value !== void 0) darkLines.push(`  ${name}: ${value};`);
   };
+  const addHighContrast = (name, value) => {
+    if (value !== void 0) highContrastLines.push(`  ${name}: ${value};`);
+  };
   const walkSemanticGroup = (namespace, varPartsFor, aliasSrc) => {
     const defaultNode = defaultMode[namespace];
     const darkNode = darkMode[namespace];
+    const highContrastNode = highContrastMode[namespace];
     const paths = /* @__PURE__ */ new Set();
     const collectPaths = (node, path) => {
       if (node === void 0) return;
@@ -3595,6 +4885,7 @@ var generateCssVariables = (tokens2, options = {}) => {
     };
     collectPaths(defaultNode, []);
     collectPaths(darkNode, []);
+    collectPaths(highContrastNode, []);
     collectPaths(aliasSrc, []);
     paths.forEach((joinedPath) => {
       const path = joinedPath.split(".");
@@ -3602,8 +4893,10 @@ var generateCssVariables = (tokens2, options = {}) => {
       const aliasCandidate = getPath(aliasSrc, path);
       const baseValue = pickSemantic(tokens2, getPath(defaultNode, path), aliasCandidate);
       const darkValue = pickSemantic(tokens2, getPath(darkNode, path), getPath(defaultNode, path), aliasCandidate);
+      const highContrastValue = pickSemantic(tokens2, getPath(highContrastNode, path), getPath(defaultNode, path), aliasCandidate);
       addBase(varName, baseValue);
       addDark(varName, darkValue);
+      addHighContrast(varName, highContrastValue);
     });
   };
   const kebabPathSegment = (segment) => formatKey(segment.replace(/([a-z0-9])([A-Z])/g, "$1-$2"));
@@ -3633,22 +4926,95 @@ var generateCssVariables = (tokens2, options = {}) => {
     (path) => ["form", ...path.map(kebabPathSegment)],
     void 0
   );
+  const highContrastLink = getPath(highContrastMode, ["link"]);
   Object.entries(linkTokens).forEach(([key, value]) => {
     const varName = toVariableName(prefix, "link", kebabPathSegment(key));
     const resolved = pickSemantic(tokens2, value);
     addBase(varName, resolved);
     addDark(varName, resolved);
+    addHighContrast(varName, pickSemantic(tokens2, getPath(highContrastLink, [key]), value));
   });
+  const highContrastButtons = getPath(highContrastMode, ["buttons"]);
+  if (isPlainObject(highContrastButtons)) {
+    Object.entries(highContrastButtons).forEach(([variant, states]) => {
+      Object.entries(states).forEach(([state, value]) => {
+        addHighContrast(toVariableName(prefix, "button", variant, state), pickSemantic(tokens2, value));
+      });
+    });
+  }
   const mapLines = Object.entries(declarations).filter(([name]) => !modeScopedNames.has(name)).map(([name, value]) => `  ${name}: ${value};`);
   const rootBlock = `${selector} {
 ${[...baseLines, ...mapLines].join("\n")}
 }`;
-  const darkBlock = `${selector}[data-spectre-theme="dark"] {
-${darkLines.join("\n")}
+  const toEntries = (lines) => new Map(
+    lines.map((line) => {
+      const separator = line.indexOf(":");
+      return [line.slice(0, separator).trim(), line.slice(separator + 1).trim().replace(/;$/, "")];
+    })
+  );
+  const baseEntries = toEntries(baseLines);
+  const darkEntries = toEntries(darkLines);
+  const highContrastEntries = toEntries(highContrastLines);
+  const rootValues = new Map([...Object.entries(declarations), ...baseEntries]);
+  const modeVarying = [.../* @__PURE__ */ new Set([...baseEntries.keys(), ...darkEntries.keys(), ...highContrastEntries.keys()])];
+  const modeVaryingSet = new Set(modeVarying);
+  const dependentLines = [...rootValues].filter(
+    ([name, value]) => !modeVaryingSet.has(name) && Array.from(value.matchAll(/var\((--[a-z0-9-]+)/g)).some((match) => modeVaryingSet.has(match[1]))
+  ).map(([name, value]) => `${name}: ${value};`);
+  const modeLines = (entries) => [
+    ...modeVarying.flatMap((name) => {
+      const value = entries.get(name) ?? rootValues.get(name);
+      return value === void 0 ? [] : [`${name}: ${value};`];
+    }),
+    ...dependentLines
+  ];
+  const themeSelectors = (theme) => [
+    `${selector}[data-spectre-theme="${theme}"]`,
+    `${selector} [data-spectre-theme="${theme}"]`
+  ];
+  const modeBlock = (selectors, lines, indent = "") => `${indent}${selectors.join(`,
+${indent}`)} {
+${lines.map((line) => `${indent}  ${line}`).join("\n")}
+${indent}}`;
+  const darkBlock = modeBlock(themeSelectors("dark"), modeLines(darkEntries));
+  const highContrastBlock = modeBlock(themeSelectors("high-contrast"), modeLines(highContrastEntries));
+  const lightBlock = modeBlock([...themeSelectors("light"), ...themeSelectors("system")], modeLines(baseEntries));
+  const systemDarkBlock = `@media (prefers-color-scheme: dark) {
+${modeBlock(themeSelectors("system"), modeLines(darkEntries), "  ")}
 }`;
-  return `${rootBlock}
-${darkBlock}
-`;
+  const control = tokens2.control;
+  const compact = isPlainObject(control) && isPlainObject(control.compact) ? control.compact : {};
+  const densityLines = Object.entries(compact).flatMap(
+    ([size, fields]) => Object.keys(fields).map((field) => {
+      const name = toVariableName(prefix, "control", size, kebabCase(field));
+      return `  ${name}: var(${toVariableName(prefix, "control", "compact", size, kebabCase(field))});`;
+    })
+  );
+  const densityBlocks = densityLines.length > 0 ? [`[data-spectre-density="compact"] {
+${densityLines.join("\n")}
+}`] : [];
+  const breakpoints = tokens2.breakpoints;
+  const responsiveBlocks = Object.entries(layoutResponsive(tokens2.layout)).map(([breakpoint, scales]) => {
+    const minWidth = breakpoints[breakpoint];
+    if (minWidth === void 0) {
+      throw new Error(`layout.responsive.${breakpoint} does not name a breakpoints entry`);
+    }
+    const lines = LAYOUT_SCALES.flatMap(
+      ({ path, varParts }) => Object.keys(layoutScale(scales, path)).map((key) => {
+        const name = toVariableName(prefix, "layout", ...varParts, key);
+        const source = toVariableName(prefix, "layout", "responsive", breakpoint, ...varParts, key);
+        return `    ${name}: var(${source});`;
+      })
+    );
+    return `@media (min-width: ${resolveValue(tokens2, minWidth)}) {
+  ${selector} {
+${lines.join("\n")}
+  }
+}`;
+  });
+  return [rootBlock, darkBlock, highContrastBlock, lightBlock, systemDarkBlock, ...densityBlocks, ...responsiveBlocks].join(
+    "\n"
+  ) + "\n";
 };
 
 // src/index.ts

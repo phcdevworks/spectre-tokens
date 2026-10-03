@@ -87,6 +87,8 @@ The current public top-level namespaces are:
 - `component`
 - `modes`
 - `tracking`
+- `control`
+- `elevation`
 
 These namespaces are treated as public and stable unless intentionally changed
 through the contract process described in this document.
@@ -523,9 +525,19 @@ Rules:
   scope. Doing so risks silently overriding or being overridden by Spectre token
   values.
 - If a consumer needs to extend the variable set, use a distinct prefix.
-- The dark-mode override block targets `[data-spectre-theme="dark"]`. Consumers
-  must not apply this attribute to elements that are not intended to receive the
-  full Spectre dark token set.
+- Mode blocks target `[data-spectre-theme="dark"]`, `"high-contrast"`,
+  `"light"`, and `"system"`, on the root and on any descendant element. Each
+  block declares every mode-varying variable, so the attribute switches the
+  full mode for that subtree. Consumers must not apply the attribute to
+  elements that are not intended to receive the full token set for that mode.
+  `system` takes the light values, and the dark values under
+  `@media (prefers-color-scheme: dark)`. With no attribute, the page is light.
+- High-contrast mode is the `high-contrast` attribute value. Every text pair
+  it renders must meet 7:1, including the `modes.highContrast.buttons`,
+  `.link`, and `.forms.{valid,invalid}` overrides, and `check:contrast`
+  enforces it.
+- `[data-spectre-density="compact"]` re-points `--sp-control-{sm,md,lg}-*` at
+  the `--sp-control-compact-*` values on whatever element carries it.
 
 ### Semantic Token Meaning
 

@@ -12,7 +12,7 @@ const NAMESPACES = [
   'colors', 'space', 'layout', 'radii', 'typography', 'font', 'shadows',
   'breakpoints', 'zIndex', 'transitions', 'animations', 'opacity',
   'aspectRatios', 'icons', 'border', 'accessibility', 'buttons', 'forms',
-  'link', 'surface', 'text', 'component', 'modes'
+  'link', 'surface', 'text', 'component', 'modes', 'control', 'elevation'
 ]
 
 function formatValue(value: unknown): string {

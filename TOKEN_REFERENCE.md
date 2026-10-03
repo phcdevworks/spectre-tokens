@@ -5,8 +5,8 @@ Do not hand-edit — regenerate instead. This file is a derived artifact, not
 contract authority; `tokens/` and `contract.manifest.json` remain the source
 of truth (see `TOKEN_CONTRACT.md`).
 
-Every leaf token path across all 23 public namespaces
-(2173 total), with its resolved source value and a usage note.
+Every leaf token path across all 25 public namespaces
+(2986 total), with its resolved source value and a usage note.
 Values shown here are pre-CSS-resolution source values — `{path.to.token}`
 references are shown as-written, not resolved (see `src/css.ts` for
 resolved CSS output).
@@ -482,6 +482,9 @@ resolved CSS output).
 | `space.72` | `4.5rem` | space token. |
 | `space.80` | `5rem` | space token. |
 | `space.96` | `6rem` | space token. |
+| `space.128` | `8rem` | space token. |
+| `space.160` | `10rem` | space token. |
+| `space.192` | `12rem` | space token. |
 | `space.240` | `15rem` | space token. |
 
 ## layout
@@ -491,19 +494,57 @@ resolved CSS output).
 | `layout.section.padding.sm` | `1.5rem` | layout token. |
 | `layout.section.padding.md` | `2rem` | layout token. |
 | `layout.section.padding.lg` | `3rem` | layout token. |
+| `layout.section.padding.xl` | `4rem` | layout token. |
+| `layout.section.padding.2xl` | `5rem` | layout token. |
+| `layout.section.padding.3xl` | `6rem` | layout token. |
+| `layout.section.padding.4xl` | `8rem` | layout token. |
 | `layout.section.gap.sm` | `1rem` | layout token. |
 | `layout.section.gap.md` | `1.5rem` | layout token. |
 | `layout.section.gap.lg` | `2rem` | layout token. |
+| `layout.section.gap.xl` | `2.5rem` | layout token. |
+| `layout.section.gap.2xl` | `3rem` | layout token. |
+| `layout.section.gap.3xl` | `4rem` | layout token. |
+| `layout.section.gap.4xl` | `5rem` | layout token. |
 | `layout.stack.gap.sm` | `0.5rem` | layout token. |
-| `layout.stack.gap.md` | `0.75rem` | layout token. |
-| `layout.stack.gap.lg` | `1rem` | layout token. |
+| `layout.stack.gap.md` | `1rem` | layout token. |
+| `layout.stack.gap.lg` | `1.5rem` | layout token. |
+| `layout.stack.gap.xl` | `2.5rem` | layout token. |
+| `layout.stack.gap.2xl` | `3rem` | layout token. |
+| `layout.stack.gap.3xl` | `4rem` | layout token. |
+| `layout.stack.gap.4xl` | `5rem` | layout token. |
 | `layout.container.paddingInline.sm` | `1rem` | layout token. |
 | `layout.container.paddingInline.md` | `1.5rem` | layout token. |
 | `layout.container.paddingInline.lg` | `2rem` | layout token. |
+| `layout.container.paddingInline.xl` | `2.5rem` | layout token. |
+| `layout.container.paddingInline.2xl` | `3rem` | layout token. |
+| `layout.container.paddingInline.3xl` | `4rem` | layout token. |
+| `layout.container.paddingInline.4xl` | `5rem` | layout token. |
 | `layout.container.maxWidth` | `72rem` | layout token. |
 | `layout.container.maxWidthProse` | `65ch` | layout token. |
 | `layout.container.maxWidthWide` | `80rem` | layout token. |
+| `layout.hero.paddingTop.sm` | `{layout.section.padding.2xl}` | layout token. |
+| `layout.hero.paddingTop.md` | `{layout.section.padding.3xl}` | layout token. |
+| `layout.hero.paddingTop.lg` | `{layout.section.padding.4xl}` | layout token. |
+| `layout.hero.paddingBottom.sm` | `{layout.section.padding.xl}` | layout token. |
+| `layout.hero.paddingBottom.md` | `{layout.section.padding.2xl}` | layout token. |
+| `layout.hero.paddingBottom.lg` | `{layout.section.padding.3xl}` | layout token. |
 | `layout.sidebar.width` | `16rem` | layout token. |
+| `layout.responsive.lg.section.padding.xl` | `6rem` | layout token. |
+| `layout.responsive.lg.section.padding.2xl` | `8rem` | layout token. |
+| `layout.responsive.lg.section.padding.3xl` | `10rem` | layout token. |
+| `layout.responsive.lg.section.padding.4xl` | `12rem` | layout token. |
+| `layout.responsive.lg.section.gap.xl` | `3rem` | layout token. |
+| `layout.responsive.lg.section.gap.2xl` | `4rem` | layout token. |
+| `layout.responsive.lg.section.gap.3xl` | `6rem` | layout token. |
+| `layout.responsive.lg.section.gap.4xl` | `8rem` | layout token. |
+| `layout.responsive.lg.stack.gap.xl` | `3rem` | layout token. |
+| `layout.responsive.lg.stack.gap.2xl` | `4rem` | layout token. |
+| `layout.responsive.lg.stack.gap.3xl` | `6rem` | layout token. |
+| `layout.responsive.lg.stack.gap.4xl` | `8rem` | layout token. |
+| `layout.responsive.lg.container.paddingInline.xl` | `3rem` | layout token. |
+| `layout.responsive.lg.container.paddingInline.2xl` | `4rem` | layout token. |
+| `layout.responsive.lg.container.paddingInline.3xl` | `6rem` | layout token. |
+| `layout.responsive.lg.container.paddingInline.4xl` | `8rem` | layout token. |
 
 ## radii
 
@@ -1161,6 +1202,22 @@ resolved CSS output).
 | `component.footer.accent.danger` | `{colors.error.600}` | component token. |
 | `component.footer.accent.cta` | `{colors.brand.600}` | component token. |
 | `component.footer.accent.thickness` | `0.25rem` | component token. |
+| `component.footer.light.bg` | `{colors.neutral.100}` | Pairs with `component.footer.light.text` for contrast. |
+| `component.footer.light.text` | `{colors.neutral.700}` | Pairs with `component.footer.light.bg` for contrast. |
+| `component.footer.light.heading` | `{colors.neutral.900}` | Pairs with `component.footer.light.bg` for contrast. |
+| `component.footer.light.muted` | `{colors.neutral.600}` | Pairs with `component.footer.light.bg` for contrast. |
+| `component.footer.light.link` | `{colors.neutral.700}` | Pairs with `component.footer.light.bg` for contrast. |
+| `component.footer.light.linkHover` | `{colors.brand.700}` | Pairs with `component.footer.light.bg` for contrast. |
+| `component.footer.light.border` | `{colors.neutral.200}` | component token. |
+| `component.footer.light.divider` | `{colors.neutral.200}` | component token. |
+| `component.footer.light.chipBg` | `{colors.neutral.200}` | component token. |
+| `component.footer.light.accent.neutral` | `{colors.neutral.600}` | component token. |
+| `component.footer.light.accent.brand` | `{colors.brand.600}` | component token. |
+| `component.footer.light.accent.info` | `{colors.info.600}` | component token. |
+| `component.footer.light.accent.success` | `{colors.success.600}` | component token. |
+| `component.footer.light.accent.warning` | `{colors.warning.600}` | component token. |
+| `component.footer.light.accent.danger` | `{colors.error.600}` | component token. |
+| `component.footer.light.accent.cta` | `{colors.brand.600}` | component token. |
 | `component.modal.bg` | `{colors.white}` | component token. |
 | `component.modal.shadow` | `0 20px 48px -12px {colors.black} / 0.20` | component token. |
 | `component.modal.border` | `{colors.neutral.200}` | component token. |
@@ -1409,6 +1466,9 @@ resolved CSS output).
 | `component.prose.mark.bg` | `{colors.warning.100}` | Pairs with `component.prose.mark.text` for contrast. |
 | `component.prose.mark.text` | `{colors.warning.900}` | Pairs with `component.prose.mark.bg` for contrast. |
 | `component.prose.hr` | `{colors.neutral.200}` | component token. |
+| `component.prose.kbd.bg` | `{colors.neutral.100}` | Pairs with `component.prose.kbd.text` for contrast. |
+| `component.prose.kbd.border` | `{colors.neutral.300}` | component token. |
+| `component.prose.kbd.text` | `{colors.neutral.900}` | Pairs with `component.prose.kbd.bg` for contrast. |
 | `component.externalAuthButton.bg` | `{colors.white}` | Pairs with `component.externalAuthButton.text` for contrast. |
 | `component.externalAuthButton.text` | `{colors.neutral.900}` | Pairs with `component.externalAuthButton.bg` for contrast. |
 | `component.externalAuthButton.border` | `{colors.neutral.300}` | component token. |
@@ -1458,6 +1518,40 @@ resolved CSS output).
 | `component.label.text` | `{colors.neutral.900}` | component token. |
 | `component.label.disabledText` | `{colors.neutral.400}` | component token. |
 | `component.label.requiredIndicatorText` | `{colors.error.600}` | component token. |
+| `component.skeleton.base` | `{colors.neutral.200}` | component token. |
+| `component.skeleton.shimmer` | `{colors.neutral.100}` | component token. |
+| `component.selection.bg` | `{colors.brand.100}` | Pairs with `component.selection.text` for contrast. |
+| `component.selection.text` | `{colors.neutral.900}` | Pairs with `component.selection.bg` for contrast. |
+| `component.caret.color` | `{colors.brand.600}` | component token. |
+| `component.scrollbar.track` | `{colors.neutral.100}` | component token. |
+| `component.scrollbar.thumb` | `{colors.neutral.400}` | component token. |
+| `component.scrollbar.thumbHover` | `{colors.neutral.500}` | component token. |
+| `component.chart.bg` | `{colors.white}` | Pairs with `component.chart.label` for contrast. |
+| `component.chart.grid` | `{colors.neutral.200}` | component token. |
+| `component.chart.axis` | `{colors.neutral.500}` | Pairs with `component.chart.bg` for contrast. |
+| `component.chart.label` | `{colors.neutral.600}` | Pairs with `component.chart.bg` for contrast. |
+| `component.chart.series.1` | `{colors.brand.600}` | Pairs with `component.chart.bg` for contrast. |
+| `component.chart.series.2` | `{colors.palette.amber.600}` | Pairs with `component.chart.bg` for contrast. |
+| `component.chart.series.3` | `{colors.palette.violet.800}` | Pairs with `component.chart.bg` for contrast. |
+| `component.chart.series.4` | `{colors.palette.cyan.600}` | Pairs with `component.chart.bg` for contrast. |
+| `component.chart.series.5` | `{colors.palette.pink.600}` | Pairs with `component.chart.bg` for contrast. |
+| `component.chart.series.6` | `{colors.palette.emerald.800}` | Pairs with `component.chart.bg` for contrast. |
+| `component.chart.series.7` | `{colors.palette.lime.700}` | Pairs with `component.chart.bg` for contrast. |
+| `component.chart.series.8` | `{colors.palette.orange.800}` | Pairs with `component.chart.bg` for contrast. |
+| `component.chart.sequential.1` | `{colors.brand.100}` | component token. |
+| `component.chart.sequential.2` | `{colors.brand.200}` | component token. |
+| `component.chart.sequential.3` | `{colors.brand.300}` | component token. |
+| `component.chart.sequential.4` | `{colors.brand.400}` | component token. |
+| `component.chart.sequential.5` | `{colors.brand.600}` | component token. |
+| `component.chart.sequential.6` | `{colors.brand.800}` | component token. |
+| `component.chart.sequential.7` | `{colors.brand.900}` | component token. |
+| `component.chart.diverging.1` | `{colors.palette.red.700}` | component token. |
+| `component.chart.diverging.2` | `{colors.palette.red.400}` | component token. |
+| `component.chart.diverging.3` | `{colors.palette.red.200}` | component token. |
+| `component.chart.diverging.4` | `{colors.neutral.200}` | component token. |
+| `component.chart.diverging.5` | `{colors.palette.blue.200}` | component token. |
+| `component.chart.diverging.6` | `{colors.palette.blue.400}` | component token. |
+| `component.chart.diverging.7` | `{colors.palette.blue.700}` | component token. |
 
 ## modes
 
@@ -1598,6 +1692,22 @@ resolved CSS output).
 | `modes.default.component.footer.accent.warning` | `{colors.warning.600}` | modes token. |
 | `modes.default.component.footer.accent.danger` | `{colors.error.600}` | modes token. |
 | `modes.default.component.footer.accent.cta` | `{colors.brand.600}` | modes token. |
+| `modes.default.component.footer.light.bg` | `{colors.neutral.100}` | Pairs with `modes.default.component.footer.light.text` for contrast. |
+| `modes.default.component.footer.light.text` | `{colors.neutral.700}` | Pairs with `modes.default.component.footer.light.bg` for contrast. |
+| `modes.default.component.footer.light.heading` | `{colors.neutral.900}` | Pairs with `modes.default.component.footer.light.bg` for contrast. |
+| `modes.default.component.footer.light.muted` | `{colors.neutral.600}` | Pairs with `modes.default.component.footer.light.bg` for contrast. |
+| `modes.default.component.footer.light.link` | `{colors.neutral.700}` | Pairs with `modes.default.component.footer.light.bg` for contrast. |
+| `modes.default.component.footer.light.linkHover` | `{colors.brand.700}` | Pairs with `modes.default.component.footer.light.bg` for contrast. |
+| `modes.default.component.footer.light.border` | `{colors.neutral.200}` | modes token. |
+| `modes.default.component.footer.light.divider` | `{colors.neutral.200}` | modes token. |
+| `modes.default.component.footer.light.chipBg` | `{colors.neutral.200}` | modes token. |
+| `modes.default.component.footer.light.accent.neutral` | `{colors.neutral.600}` | modes token. |
+| `modes.default.component.footer.light.accent.brand` | `{colors.brand.600}` | modes token. |
+| `modes.default.component.footer.light.accent.info` | `{colors.info.600}` | modes token. |
+| `modes.default.component.footer.light.accent.success` | `{colors.success.600}` | modes token. |
+| `modes.default.component.footer.light.accent.warning` | `{colors.warning.600}` | modes token. |
+| `modes.default.component.footer.light.accent.danger` | `{colors.error.600}` | modes token. |
+| `modes.default.component.footer.light.accent.cta` | `{colors.brand.600}` | modes token. |
 | `modes.default.component.modal.bg` | `{colors.white}` | modes token. |
 | `modes.default.component.modal.shadow` | `0 20px 48px -12px {colors.black} / 0.20` | modes token. |
 | `modes.default.component.modal.border` | `{colors.neutral.200}` | modes token. |
@@ -1838,6 +1948,9 @@ resolved CSS output).
 | `modes.default.component.prose.mark.bg` | `{colors.warning.100}` | Pairs with `modes.default.component.prose.mark.text` for contrast. |
 | `modes.default.component.prose.mark.text` | `{colors.warning.900}` | Pairs with `modes.default.component.prose.mark.bg` for contrast. |
 | `modes.default.component.prose.hr` | `{colors.neutral.200}` | modes token. |
+| `modes.default.component.prose.kbd.bg` | `{colors.neutral.100}` | Pairs with `modes.default.component.prose.kbd.text` for contrast. |
+| `modes.default.component.prose.kbd.border` | `{colors.neutral.300}` | modes token. |
+| `modes.default.component.prose.kbd.text` | `{colors.neutral.900}` | Pairs with `modes.default.component.prose.kbd.bg` for contrast. |
 | `modes.default.component.externalAuthButton.bg` | `{colors.white}` | Pairs with `modes.default.component.externalAuthButton.text` for contrast. |
 | `modes.default.component.externalAuthButton.text` | `{colors.neutral.900}` | Pairs with `modes.default.component.externalAuthButton.bg` for contrast. |
 | `modes.default.component.externalAuthButton.border` | `{colors.neutral.300}` | modes token. |
@@ -1879,6 +1992,40 @@ resolved CSS output).
 | `modes.default.component.label.text` | `{colors.neutral.900}` | modes token. |
 | `modes.default.component.label.disabledText` | `{colors.neutral.400}` | modes token. |
 | `modes.default.component.label.requiredIndicatorText` | `{colors.error.600}` | modes token. |
+| `modes.default.component.skeleton.base` | `{colors.neutral.200}` | modes token. |
+| `modes.default.component.skeleton.shimmer` | `{colors.neutral.100}` | modes token. |
+| `modes.default.component.selection.bg` | `{colors.brand.100}` | Pairs with `modes.default.component.selection.text` for contrast. |
+| `modes.default.component.selection.text` | `{colors.neutral.900}` | Pairs with `modes.default.component.selection.bg` for contrast. |
+| `modes.default.component.caret.color` | `{colors.brand.600}` | modes token. |
+| `modes.default.component.scrollbar.track` | `{colors.neutral.100}` | modes token. |
+| `modes.default.component.scrollbar.thumb` | `{colors.neutral.400}` | modes token. |
+| `modes.default.component.scrollbar.thumbHover` | `{colors.neutral.500}` | modes token. |
+| `modes.default.component.chart.bg` | `{colors.white}` | Pairs with `modes.default.component.chart.label` for contrast. |
+| `modes.default.component.chart.grid` | `{colors.neutral.200}` | modes token. |
+| `modes.default.component.chart.axis` | `{colors.neutral.500}` | Pairs with `modes.default.component.chart.bg` for contrast. |
+| `modes.default.component.chart.label` | `{colors.neutral.600}` | Pairs with `modes.default.component.chart.bg` for contrast. |
+| `modes.default.component.chart.series.1` | `{colors.brand.600}` | Pairs with `modes.default.component.chart.bg` for contrast. |
+| `modes.default.component.chart.series.2` | `{colors.palette.amber.600}` | Pairs with `modes.default.component.chart.bg` for contrast. |
+| `modes.default.component.chart.series.3` | `{colors.palette.violet.800}` | Pairs with `modes.default.component.chart.bg` for contrast. |
+| `modes.default.component.chart.series.4` | `{colors.palette.cyan.600}` | Pairs with `modes.default.component.chart.bg` for contrast. |
+| `modes.default.component.chart.series.5` | `{colors.palette.pink.600}` | Pairs with `modes.default.component.chart.bg` for contrast. |
+| `modes.default.component.chart.series.6` | `{colors.palette.emerald.800}` | Pairs with `modes.default.component.chart.bg` for contrast. |
+| `modes.default.component.chart.series.7` | `{colors.palette.lime.700}` | Pairs with `modes.default.component.chart.bg` for contrast. |
+| `modes.default.component.chart.series.8` | `{colors.palette.orange.800}` | Pairs with `modes.default.component.chart.bg` for contrast. |
+| `modes.default.component.chart.sequential.1` | `{colors.brand.100}` | modes token. |
+| `modes.default.component.chart.sequential.2` | `{colors.brand.200}` | modes token. |
+| `modes.default.component.chart.sequential.3` | `{colors.brand.300}` | modes token. |
+| `modes.default.component.chart.sequential.4` | `{colors.brand.400}` | modes token. |
+| `modes.default.component.chart.sequential.5` | `{colors.brand.600}` | modes token. |
+| `modes.default.component.chart.sequential.6` | `{colors.brand.800}` | modes token. |
+| `modes.default.component.chart.sequential.7` | `{colors.brand.900}` | modes token. |
+| `modes.default.component.chart.diverging.1` | `{colors.palette.red.700}` | modes token. |
+| `modes.default.component.chart.diverging.2` | `{colors.palette.red.400}` | modes token. |
+| `modes.default.component.chart.diverging.3` | `{colors.palette.red.200}` | modes token. |
+| `modes.default.component.chart.diverging.4` | `{colors.neutral.200}` | modes token. |
+| `modes.default.component.chart.diverging.5` | `{colors.palette.blue.200}` | modes token. |
+| `modes.default.component.chart.diverging.6` | `{colors.palette.blue.400}` | modes token. |
+| `modes.default.component.chart.diverging.7` | `{colors.palette.blue.700}` | modes token. |
 | `modes.dark.surface.page` | `{colors.neutral.900}` | Pairs with `modes.dark.text.onPage.default` for contrast. |
 | `modes.dark.surface.card` | `{colors.neutral.800}` | Pairs with `modes.dark.text.onSurface.default` for contrast. |
 | `modes.dark.surface.input` | `{colors.neutral.700}` | Pairs with `modes.dark.text.onSurface.default` for contrast. |
@@ -2017,6 +2164,22 @@ resolved CSS output).
 | `modes.dark.component.footer.accent.warning` | `{colors.warning.400}` | modes token. |
 | `modes.dark.component.footer.accent.danger` | `{colors.error.400}` | modes token. |
 | `modes.dark.component.footer.accent.cta` | `{colors.brand.400}` | modes token. |
+| `modes.dark.component.footer.light.bg` | `{colors.neutral.200}` | Pairs with `modes.dark.component.footer.light.text` for contrast. |
+| `modes.dark.component.footer.light.text` | `{colors.neutral.800}` | Pairs with `modes.dark.component.footer.light.bg` for contrast. |
+| `modes.dark.component.footer.light.heading` | `{colors.neutral.900}` | Pairs with `modes.dark.component.footer.light.bg` for contrast. |
+| `modes.dark.component.footer.light.muted` | `{colors.neutral.600}` | Pairs with `modes.dark.component.footer.light.bg` for contrast. |
+| `modes.dark.component.footer.light.link` | `{colors.neutral.700}` | Pairs with `modes.dark.component.footer.light.bg` for contrast. |
+| `modes.dark.component.footer.light.linkHover` | `{colors.brand.700}` | Pairs with `modes.dark.component.footer.light.bg` for contrast. |
+| `modes.dark.component.footer.light.border` | `{colors.neutral.300}` | modes token. |
+| `modes.dark.component.footer.light.divider` | `{colors.neutral.300}` | modes token. |
+| `modes.dark.component.footer.light.chipBg` | `{colors.neutral.300}` | modes token. |
+| `modes.dark.component.footer.light.accent.neutral` | `{colors.neutral.600}` | modes token. |
+| `modes.dark.component.footer.light.accent.brand` | `{colors.brand.600}` | modes token. |
+| `modes.dark.component.footer.light.accent.info` | `{colors.info.600}` | modes token. |
+| `modes.dark.component.footer.light.accent.success` | `{colors.success.600}` | modes token. |
+| `modes.dark.component.footer.light.accent.warning` | `{colors.warning.600}` | modes token. |
+| `modes.dark.component.footer.light.accent.danger` | `{colors.error.600}` | modes token. |
+| `modes.dark.component.footer.light.accent.cta` | `{colors.brand.600}` | modes token. |
 | `modes.dark.component.modal.bg` | `{colors.neutral.800}` | modes token. |
 | `modes.dark.component.modal.shadow` | `0 20px 48px -12px {colors.black} / 0.20` | modes token. |
 | `modes.dark.component.modal.border` | `{colors.neutral.700}` | modes token. |
@@ -2257,6 +2420,9 @@ resolved CSS output).
 | `modes.dark.component.prose.mark.bg` | `{colors.warning.900}` | Pairs with `modes.dark.component.prose.mark.text` for contrast. |
 | `modes.dark.component.prose.mark.text` | `{colors.warning.200}` | Pairs with `modes.dark.component.prose.mark.bg` for contrast. |
 | `modes.dark.component.prose.hr` | `{colors.neutral.700}` | modes token. |
+| `modes.dark.component.prose.kbd.bg` | `{colors.neutral.800}` | Pairs with `modes.dark.component.prose.kbd.text` for contrast. |
+| `modes.dark.component.prose.kbd.border` | `{colors.neutral.600}` | modes token. |
+| `modes.dark.component.prose.kbd.text` | `{colors.neutral.50}` | Pairs with `modes.dark.component.prose.kbd.bg` for contrast. |
 | `modes.dark.component.externalAuthButton.bg` | `{colors.neutral.800}` | Pairs with `modes.dark.component.externalAuthButton.text` for contrast. |
 | `modes.dark.component.externalAuthButton.text` | `{colors.neutral.50}` | Pairs with `modes.dark.component.externalAuthButton.bg` for contrast. |
 | `modes.dark.component.externalAuthButton.border` | `{colors.neutral.600}` | modes token. |
@@ -2298,3 +2464,660 @@ resolved CSS output).
 | `modes.dark.component.label.text` | `{colors.neutral.50}` | modes token. |
 | `modes.dark.component.label.disabledText` | `{colors.neutral.600}` | modes token. |
 | `modes.dark.component.label.requiredIndicatorText` | `{colors.error.400}` | modes token. |
+| `modes.dark.component.skeleton.base` | `{colors.neutral.700}` | modes token. |
+| `modes.dark.component.skeleton.shimmer` | `{colors.neutral.600}` | modes token. |
+| `modes.dark.component.selection.bg` | `{colors.brand.800}` | Pairs with `modes.dark.component.selection.text` for contrast. |
+| `modes.dark.component.selection.text` | `{colors.white}` | Pairs with `modes.dark.component.selection.bg` for contrast. |
+| `modes.dark.component.caret.color` | `{colors.brand.400}` | modes token. |
+| `modes.dark.component.scrollbar.track` | `{colors.neutral.900}` | modes token. |
+| `modes.dark.component.scrollbar.thumb` | `{colors.neutral.600}` | modes token. |
+| `modes.dark.component.scrollbar.thumbHover` | `{colors.neutral.500}` | modes token. |
+| `modes.dark.component.chart.bg` | `{colors.neutral.800}` | Pairs with `modes.dark.component.chart.label` for contrast. |
+| `modes.dark.component.chart.grid` | `{colors.neutral.700}` | modes token. |
+| `modes.dark.component.chart.axis` | `{colors.neutral.400}` | Pairs with `modes.dark.component.chart.bg` for contrast. |
+| `modes.dark.component.chart.label` | `{colors.neutral.300}` | Pairs with `modes.dark.component.chart.bg` for contrast. |
+| `modes.dark.component.chart.series.1` | `{colors.brand.400}` | Pairs with `modes.dark.component.chart.bg` for contrast. |
+| `modes.dark.component.chart.series.2` | `{colors.palette.amber.300}` | Pairs with `modes.dark.component.chart.bg` for contrast. |
+| `modes.dark.component.chart.series.3` | `{colors.palette.violet.400}` | Pairs with `modes.dark.component.chart.bg` for contrast. |
+| `modes.dark.component.chart.series.4` | `{colors.palette.cyan.300}` | Pairs with `modes.dark.component.chart.bg` for contrast. |
+| `modes.dark.component.chart.series.5` | `{colors.palette.pink.300}` | Pairs with `modes.dark.component.chart.bg` for contrast. |
+| `modes.dark.component.chart.series.6` | `{colors.palette.teal.400}` | Pairs with `modes.dark.component.chart.bg` for contrast. |
+| `modes.dark.component.chart.series.7` | `{colors.palette.lime.300}` | Pairs with `modes.dark.component.chart.bg` for contrast. |
+| `modes.dark.component.chart.series.8` | `{colors.palette.orange.400}` | Pairs with `modes.dark.component.chart.bg` for contrast. |
+| `modes.dark.component.chart.sequential.1` | `{colors.brand.900}` | modes token. |
+| `modes.dark.component.chart.sequential.2` | `{colors.brand.800}` | modes token. |
+| `modes.dark.component.chart.sequential.3` | `{colors.brand.700}` | modes token. |
+| `modes.dark.component.chart.sequential.4` | `{colors.brand.500}` | modes token. |
+| `modes.dark.component.chart.sequential.5` | `{colors.brand.400}` | modes token. |
+| `modes.dark.component.chart.sequential.6` | `{colors.brand.300}` | modes token. |
+| `modes.dark.component.chart.sequential.7` | `{colors.brand.100}` | modes token. |
+| `modes.dark.component.chart.diverging.1` | `{colors.palette.red.300}` | modes token. |
+| `modes.dark.component.chart.diverging.2` | `{colors.palette.red.500}` | modes token. |
+| `modes.dark.component.chart.diverging.3` | `{colors.palette.red.800}` | modes token. |
+| `modes.dark.component.chart.diverging.4` | `{colors.neutral.600}` | modes token. |
+| `modes.dark.component.chart.diverging.5` | `{colors.palette.blue.800}` | modes token. |
+| `modes.dark.component.chart.diverging.6` | `{colors.palette.blue.500}` | modes token. |
+| `modes.dark.component.chart.diverging.7` | `{colors.palette.blue.300}` | modes token. |
+| `modes.highContrast.surface.page` | `{colors.white}` | Pairs with `modes.highContrast.text.onPage.default` for contrast. |
+| `modes.highContrast.surface.card` | `{colors.white}` | Pairs with `modes.highContrast.text.onSurface.default` for contrast. |
+| `modes.highContrast.surface.input` | `{colors.white}` | Pairs with `modes.highContrast.text.onSurface.default` for contrast. |
+| `modes.highContrast.surface.overlay` | `{colors.black} / 0.6` | modes token. |
+| `modes.highContrast.surface.subtle` | `{colors.neutral.50}` | slightly recessed background for zebra rows, section bands, and inset panels — one step below surface.page |
+| `modes.highContrast.surface.hero` | `linear-gradient(135deg, {colors.indigo.500} 0%, {colors.violet.600} 100%)` | full-bleed gradient background for hero and marketing sections only — not a general surface; pair with light text tokens explicitly |
+| `modes.highContrast.surface.hover` | `{colors.neutral.100}` | modes token. |
+| `modes.highContrast.surface.selected` | `{colors.info.50}` | modes token. |
+| `modes.highContrast.surface.active` | `{colors.neutral.200}` | modes token. |
+| `modes.highContrast.surface.divider` | `{colors.neutral.700}` | modes token. |
+| `modes.highContrast.text.onPage.default` | `{colors.neutral.900}` | Pairs with `modes.highContrast.surface.page` for contrast. |
+| `modes.highContrast.text.onPage.muted` | `{colors.neutral.600}` | Pairs with `modes.highContrast.surface.page` for contrast. |
+| `modes.highContrast.text.onPage.subtle` | `{colors.neutral.600}` | Pairs with `modes.highContrast.surface.page` for contrast. |
+| `modes.highContrast.text.onPage.meta` | `{colors.neutral.600}` | Pairs with `modes.highContrast.surface.page` for contrast. |
+| `modes.highContrast.text.onPage.brand` | `{colors.brand.700}` | Pairs with `modes.highContrast.surface.page` for contrast. |
+| `modes.highContrast.text.onSurface.default` | `{colors.neutral.900}` | Pairs with `modes.highContrast.surface.card` for contrast. |
+| `modes.highContrast.text.onSurface.muted` | `{colors.neutral.600}` | Pairs with `modes.highContrast.surface.card` for contrast. |
+| `modes.highContrast.text.onSurface.subtle` | `{colors.neutral.600}` | Pairs with `modes.highContrast.surface.card` for contrast. |
+| `modes.highContrast.text.onSurface.meta` | `{colors.neutral.600}` | Pairs with `modes.highContrast.surface.card` for contrast. |
+| `modes.highContrast.text.onSurface.brand` | `{colors.brand.700}` | Pairs with `modes.highContrast.surface.card` for contrast. |
+| `modes.highContrast.forms.default.bg` | `{colors.white}` | modes token. |
+| `modes.highContrast.forms.default.text` | `{colors.neutral.900}` | Pairs with `modes.highContrast.forms.default.bg` for contrast. |
+| `modes.highContrast.forms.default.placeholder` | `{colors.neutral.600}` | Pairs with `modes.highContrast.forms.default.bg` for contrast. |
+| `modes.highContrast.forms.valid.border` | `{colors.success.700}` | modes token. |
+| `modes.highContrast.forms.valid.bg` | `{colors.success.50}` | Pairs with `modes.highContrast.forms.valid.text` for contrast. |
+| `modes.highContrast.forms.valid.text` | `{colors.success.900}` | modes token. |
+| `modes.highContrast.forms.invalid.border` | `{colors.error.700}` | modes token. |
+| `modes.highContrast.forms.invalid.bg` | `{colors.error.50}` | Pairs with `modes.highContrast.forms.invalid.text` for contrast. |
+| `modes.highContrast.forms.invalid.text` | `{colors.error.800}` | modes token. |
+| `modes.highContrast.component.card.text` | `{colors.neutral.900}` | Pairs with `modes.highContrast.surface.card` for contrast. |
+| `modes.highContrast.component.card.textMuted` | `{colors.neutral.600}` | Pairs with `modes.highContrast.surface.card` for contrast. |
+| `modes.highContrast.component.card.accent.neutral` | `{colors.neutral.600}` | modes token. |
+| `modes.highContrast.component.card.accent.brand` | `{colors.brand.600}` | modes token. |
+| `modes.highContrast.component.card.accent.info` | `{colors.info.600}` | modes token. |
+| `modes.highContrast.component.card.accent.success` | `{colors.success.600}` | modes token. |
+| `modes.highContrast.component.card.accent.warning` | `{colors.warning.600}` | modes token. |
+| `modes.highContrast.component.card.accent.danger` | `{colors.error.600}` | modes token. |
+| `modes.highContrast.component.card.accent.cta` | `{colors.brand.600}` | modes token. |
+| `modes.highContrast.component.choiceCard.bg` | `{colors.white}` | Pairs with `modes.highContrast.component.choiceCard.text` for contrast. |
+| `modes.highContrast.component.choiceCard.text` | `{colors.neutral.900}` | Pairs with `modes.highContrast.component.choiceCard.bg` for contrast. |
+| `modes.highContrast.component.choiceCard.border` | `{colors.neutral.700}` | modes token. |
+| `modes.highContrast.component.choiceCard.hoverBorder` | `{colors.neutral.700}` | modes token. |
+| `modes.highContrast.component.choiceCard.selectedBg` | `{colors.info.50}` | modes token. |
+| `modes.highContrast.component.choiceCard.selectedBorder` | `{colors.brand.600}` | modes token. |
+| `modes.highContrast.component.choiceCard.disabledBg` | `{colors.neutral.50}` | modes token. |
+| `modes.highContrast.component.choiceCard.disabledText` | `{colors.neutral.400}` | modes token. |
+| `modes.highContrast.component.choiceCard.focusRing` | `{buttons.primary.focusRing}` | modes token. |
+| `modes.highContrast.component.input.text` | `{colors.neutral.900}` | Pairs with `modes.highContrast.surface.input` for contrast. |
+| `modes.highContrast.component.input.placeholder` | `{colors.neutral.600}` | Pairs with `modes.highContrast.surface.input` for contrast. |
+| `modes.highContrast.component.button.textDefault` | `{colors.neutral.900}` | modes token. |
+| `modes.highContrast.component.button.textOnPrimary` | `{colors.white}` | modes token. |
+| `modes.highContrast.component.badge.neutralBg` | `{colors.neutral.100}` | Pairs with `modes.highContrast.component.badge.neutralText` for contrast. |
+| `modes.highContrast.component.badge.neutralBgHover` | `{colors.neutral.200}` | Pairs with `modes.highContrast.component.badge.neutralText` for contrast. |
+| `modes.highContrast.component.badge.neutralText` | `{colors.neutral.700}` | Pairs with `modes.highContrast.component.badge.neutralBgHover` for contrast. |
+| `modes.highContrast.component.badge.brandBg` | `{colors.brand.100}` | Pairs with `modes.highContrast.component.badge.brandText` for contrast. |
+| `modes.highContrast.component.badge.brandBgHover` | `{colors.brand.200}` | Pairs with `modes.highContrast.component.badge.brandText` for contrast. |
+| `modes.highContrast.component.badge.brandText` | `{colors.brand.900}` | Pairs with `modes.highContrast.component.badge.brandBgHover` for contrast. |
+| `modes.highContrast.component.badge.infoBg` | `{colors.info.100}` | Pairs with `modes.highContrast.component.badge.infoText` for contrast. |
+| `modes.highContrast.component.badge.infoBgHover` | `{colors.info.200}` | Pairs with `modes.highContrast.component.badge.infoText` for contrast. |
+| `modes.highContrast.component.badge.infoText` | `{colors.info.800}` | Pairs with `modes.highContrast.component.badge.infoBgHover` for contrast. |
+| `modes.highContrast.component.badge.successBg` | `{colors.success.100}` | Pairs with `modes.highContrast.component.badge.successText` for contrast. |
+| `modes.highContrast.component.badge.successText` | `{colors.success.900}` | modes token. |
+| `modes.highContrast.component.badge.warningBg` | `{colors.warning.100}` | Pairs with `modes.highContrast.component.badge.warningText` for contrast. |
+| `modes.highContrast.component.badge.warningText` | `{colors.warning.900}` | modes token. |
+| `modes.highContrast.component.badge.dangerBg` | `{colors.error.100}` | Pairs with `modes.highContrast.component.badge.dangerText` for contrast. |
+| `modes.highContrast.component.badge.dangerText` | `{colors.error.900}` | modes token. |
+| `modes.highContrast.component.badge.accent.neutral` | `{colors.neutral.600}` | modes token. |
+| `modes.highContrast.component.badge.accent.brand` | `{colors.brand.600}` | modes token. |
+| `modes.highContrast.component.badge.accent.info` | `{colors.info.600}` | modes token. |
+| `modes.highContrast.component.badge.accent.success` | `{colors.success.600}` | modes token. |
+| `modes.highContrast.component.badge.accent.warning` | `{colors.warning.600}` | modes token. |
+| `modes.highContrast.component.badge.accent.danger` | `{colors.error.600}` | modes token. |
+| `modes.highContrast.component.badge.accent.cta` | `{colors.brand.600}` | modes token. |
+| `modes.highContrast.component.iconBox.bg` | `{colors.white}` | Pairs with `modes.highContrast.component.iconBox.iconDefault` for contrast. |
+| `modes.highContrast.component.iconBox.border` | `{colors.neutral.700}` | modes token. |
+| `modes.highContrast.component.iconBox.iconDefault` | `{colors.info.700}` | Pairs with `modes.highContrast.component.iconBox.bg` for contrast. |
+| `modes.highContrast.component.iconBox.iconSuccess` | `{colors.success.600}` | modes token. |
+| `modes.highContrast.component.iconBox.iconWarning` | `{colors.warning.600}` | modes token. |
+| `modes.highContrast.component.iconBox.iconDanger` | `{colors.error.800}` | Pairs with `modes.highContrast.component.iconBox.bg` for contrast. |
+| `modes.highContrast.component.testimonial.bg` | `{colors.white}` | Pairs with `modes.highContrast.component.testimonial.text` for contrast. |
+| `modes.highContrast.component.testimonial.bgHover` | `{colors.neutral.50}` | Pairs with `modes.highContrast.component.testimonial.text` for contrast. |
+| `modes.highContrast.component.testimonial.border` | `{colors.neutral.700}` | modes token. |
+| `modes.highContrast.component.testimonial.text` | `{colors.neutral.700}` | Pairs with `modes.highContrast.component.testimonial.bgHover` for contrast. |
+| `modes.highContrast.component.testimonial.authorName` | `{colors.neutral.900}` | Pairs with `modes.highContrast.component.testimonial.bgHover` for contrast. |
+| `modes.highContrast.component.testimonial.authorTitle` | `{colors.neutral.700}` | Pairs with `modes.highContrast.component.testimonial.bgHover` for contrast. |
+| `modes.highContrast.component.testimonial.quoteMark` | `{colors.neutral.700}` | Pairs with `modes.highContrast.component.testimonial.bgHover` for contrast. |
+| `modes.highContrast.component.testimonial.accent.neutral` | `{colors.neutral.600}` | modes token. |
+| `modes.highContrast.component.testimonial.accent.brand` | `{colors.brand.600}` | modes token. |
+| `modes.highContrast.component.testimonial.accent.info` | `{colors.info.600}` | modes token. |
+| `modes.highContrast.component.testimonial.accent.success` | `{colors.success.600}` | modes token. |
+| `modes.highContrast.component.testimonial.accent.warning` | `{colors.warning.600}` | modes token. |
+| `modes.highContrast.component.testimonial.accent.danger` | `{colors.error.600}` | modes token. |
+| `modes.highContrast.component.testimonial.accent.cta` | `{colors.brand.600}` | modes token. |
+| `modes.highContrast.component.pricingCard.bg` | `{colors.white}` | Pairs with `modes.highContrast.component.pricingCard.price` for contrast. |
+| `modes.highContrast.component.pricingCard.bgHover` | `{colors.neutral.50}` | Pairs with `modes.highContrast.component.pricingCard.price` for contrast. |
+| `modes.highContrast.component.pricingCard.border` | `{colors.neutral.700}` | modes token. |
+| `modes.highContrast.component.pricingCard.featuredBg` | `{colors.info.700}` | Pairs with `modes.highContrast.component.pricingCard.featuredText` for contrast. |
+| `modes.highContrast.component.pricingCard.featuredText` | `{colors.white}` | Pairs with `modes.highContrast.component.pricingCard.featuredBg` for contrast. |
+| `modes.highContrast.component.pricingCard.featuredBadgeBg` | `{colors.warning.500}` | Pairs with `modes.highContrast.component.pricingCard.featuredBadgeText` for contrast. |
+| `modes.highContrast.component.pricingCard.featuredBadgeText` | `{colors.neutral.900}` | Pairs with `modes.highContrast.component.pricingCard.featuredBadgeBg` for contrast. |
+| `modes.highContrast.component.pricingCard.price` | `{colors.neutral.900}` | Pairs with `modes.highContrast.component.pricingCard.bgHover` for contrast. |
+| `modes.highContrast.component.pricingCard.priceDescription` | `{colors.neutral.700}` | Pairs with `modes.highContrast.component.pricingCard.bgHover` for contrast. |
+| `modes.highContrast.component.pricingCard.accent.neutral` | `{colors.neutral.600}` | modes token. |
+| `modes.highContrast.component.pricingCard.accent.brand` | `{colors.brand.600}` | modes token. |
+| `modes.highContrast.component.pricingCard.accent.info` | `{colors.info.600}` | modes token. |
+| `modes.highContrast.component.pricingCard.accent.success` | `{colors.success.600}` | modes token. |
+| `modes.highContrast.component.pricingCard.accent.warning` | `{colors.warning.600}` | modes token. |
+| `modes.highContrast.component.pricingCard.accent.danger` | `{colors.error.600}` | modes token. |
+| `modes.highContrast.component.pricingCard.accent.cta` | `{colors.brand.600}` | modes token. |
+| `modes.highContrast.component.rating.starFilled` | `{colors.warning.500}` | modes token. |
+| `modes.highContrast.component.rating.starEmpty` | `{colors.neutral.200}` | modes token. |
+| `modes.highContrast.component.rating.text` | `{colors.neutral.600}` | Pairs with `modes.highContrast.surface.card` for contrast. |
+| `modes.highContrast.component.nav.bg` | `{colors.white}` | Pairs with `modes.highContrast.component.nav.text` for contrast. |
+| `modes.highContrast.component.nav.text` | `{colors.neutral.900}` | Pairs with `modes.highContrast.component.nav.bg` for contrast. |
+| `modes.highContrast.component.nav.link` | `{colors.neutral.700}` | modes token. |
+| `modes.highContrast.component.nav.linkHover` | `{colors.brand.600}` | modes token. |
+| `modes.highContrast.component.nav.linkActive` | `{colors.brand.700}` | modes token. |
+| `modes.highContrast.component.nav.border` | `{colors.neutral.700}` | modes token. |
+| `modes.highContrast.component.nav.accent.neutral` | `{colors.neutral.600}` | modes token. |
+| `modes.highContrast.component.nav.accent.brand` | `{colors.brand.600}` | modes token. |
+| `modes.highContrast.component.nav.accent.info` | `{colors.info.600}` | modes token. |
+| `modes.highContrast.component.nav.accent.success` | `{colors.success.600}` | modes token. |
+| `modes.highContrast.component.nav.accent.warning` | `{colors.warning.600}` | modes token. |
+| `modes.highContrast.component.nav.accent.danger` | `{colors.error.600}` | modes token. |
+| `modes.highContrast.component.nav.accent.cta` | `{colors.brand.600}` | modes token. |
+| `modes.highContrast.component.footer.bg` | `{colors.neutral.900}` | Pairs with `modes.highContrast.component.footer.text` for contrast. |
+| `modes.highContrast.component.footer.text` | `{colors.neutral.50}` | Pairs with `modes.highContrast.component.footer.bg` for contrast. |
+| `modes.highContrast.component.footer.heading` | `{colors.white}` | Pairs with `modes.highContrast.component.footer.bg` for contrast. |
+| `modes.highContrast.component.footer.muted` | `{colors.neutral.300}` | Pairs with `modes.highContrast.component.footer.bg` for contrast. |
+| `modes.highContrast.component.footer.link` | `{colors.neutral.300}` | Pairs with `modes.highContrast.component.footer.bg` for contrast. |
+| `modes.highContrast.component.footer.linkHover` | `{colors.brand.300}` | Pairs with `modes.highContrast.component.footer.bg` for contrast. |
+| `modes.highContrast.component.footer.border` | `{colors.neutral.700}` | modes token. |
+| `modes.highContrast.component.footer.divider` | `{colors.neutral.800}` | modes token. |
+| `modes.highContrast.component.footer.chipBg` | `{colors.neutral.800}` | modes token. |
+| `modes.highContrast.component.footer.accent.neutral` | `{colors.neutral.600}` | modes token. |
+| `modes.highContrast.component.footer.accent.brand` | `{colors.brand.600}` | modes token. |
+| `modes.highContrast.component.footer.accent.info` | `{colors.info.600}` | modes token. |
+| `modes.highContrast.component.footer.accent.success` | `{colors.success.600}` | modes token. |
+| `modes.highContrast.component.footer.accent.warning` | `{colors.warning.600}` | modes token. |
+| `modes.highContrast.component.footer.accent.danger` | `{colors.error.600}` | modes token. |
+| `modes.highContrast.component.footer.accent.cta` | `{colors.brand.600}` | modes token. |
+| `modes.highContrast.component.footer.light.bg` | `{colors.neutral.100}` | Pairs with `modes.highContrast.component.footer.light.text` for contrast. |
+| `modes.highContrast.component.footer.light.text` | `{colors.neutral.700}` | Pairs with `modes.highContrast.component.footer.light.bg` for contrast. |
+| `modes.highContrast.component.footer.light.heading` | `{colors.neutral.900}` | Pairs with `modes.highContrast.component.footer.light.bg` for contrast. |
+| `modes.highContrast.component.footer.light.muted` | `{colors.neutral.700}` | Pairs with `modes.highContrast.component.footer.light.bg` for contrast. |
+| `modes.highContrast.component.footer.light.link` | `{colors.neutral.700}` | Pairs with `modes.highContrast.component.footer.light.bg` for contrast. |
+| `modes.highContrast.component.footer.light.linkHover` | `{colors.brand.700}` | Pairs with `modes.highContrast.component.footer.light.bg` for contrast. |
+| `modes.highContrast.component.footer.light.border` | `{colors.neutral.700}` | modes token. |
+| `modes.highContrast.component.footer.light.divider` | `{colors.neutral.700}` | modes token. |
+| `modes.highContrast.component.footer.light.chipBg` | `{colors.neutral.200}` | modes token. |
+| `modes.highContrast.component.footer.light.accent.neutral` | `{colors.neutral.600}` | modes token. |
+| `modes.highContrast.component.footer.light.accent.brand` | `{colors.brand.600}` | modes token. |
+| `modes.highContrast.component.footer.light.accent.info` | `{colors.info.600}` | modes token. |
+| `modes.highContrast.component.footer.light.accent.success` | `{colors.success.600}` | modes token. |
+| `modes.highContrast.component.footer.light.accent.warning` | `{colors.warning.600}` | modes token. |
+| `modes.highContrast.component.footer.light.accent.danger` | `{colors.error.600}` | modes token. |
+| `modes.highContrast.component.footer.light.accent.cta` | `{colors.brand.600}` | modes token. |
+| `modes.highContrast.component.modal.bg` | `{colors.white}` | modes token. |
+| `modes.highContrast.component.modal.shadow` | `0 20px 48px -12px {colors.black} / 0.20` | modes token. |
+| `modes.highContrast.component.modal.border` | `{colors.neutral.700}` | modes token. |
+| `modes.highContrast.component.modal.overlay` | `{colors.black} / 0.6` | modes token. |
+| `modes.highContrast.component.modal.accent.neutral` | `{colors.neutral.600}` | modes token. |
+| `modes.highContrast.component.modal.accent.brand` | `{colors.brand.600}` | modes token. |
+| `modes.highContrast.component.modal.accent.info` | `{colors.info.600}` | modes token. |
+| `modes.highContrast.component.modal.accent.success` | `{colors.success.600}` | modes token. |
+| `modes.highContrast.component.modal.accent.warning` | `{colors.warning.600}` | modes token. |
+| `modes.highContrast.component.modal.accent.danger` | `{colors.error.600}` | modes token. |
+| `modes.highContrast.component.modal.accent.cta` | `{colors.brand.600}` | modes token. |
+| `modes.highContrast.component.toast.neutral.bg` | `{colors.neutral.50}` | Pairs with `modes.highContrast.component.toast.neutral.text` for contrast. |
+| `modes.highContrast.component.toast.neutral.text` | `{colors.neutral.800}` | Pairs with `modes.highContrast.component.toast.neutral.bg` for contrast. |
+| `modes.highContrast.component.toast.neutral.border` | `{colors.neutral.700}` | modes token. |
+| `modes.highContrast.component.toast.neutral.icon` | `{colors.neutral.600}` | modes token. |
+| `modes.highContrast.component.toast.success.bg` | `{colors.success.50}` | Pairs with `modes.highContrast.component.toast.success.text` for contrast. |
+| `modes.highContrast.component.toast.success.text` | `{colors.success.900}` | Pairs with `modes.highContrast.component.toast.success.bg` for contrast. |
+| `modes.highContrast.component.toast.success.border` | `{colors.success.600}` | modes token. |
+| `modes.highContrast.component.toast.success.icon` | `{colors.success.600}` | modes token. |
+| `modes.highContrast.component.toast.warning.bg` | `{colors.warning.50}` | Pairs with `modes.highContrast.component.toast.warning.text` for contrast. |
+| `modes.highContrast.component.toast.warning.text` | `{colors.warning.900}` | Pairs with `modes.highContrast.component.toast.warning.bg` for contrast. |
+| `modes.highContrast.component.toast.warning.border` | `{colors.warning.600}` | modes token. |
+| `modes.highContrast.component.toast.warning.icon` | `{colors.warning.600}` | modes token. |
+| `modes.highContrast.component.toast.danger.bg` | `{colors.error.50}` | Pairs with `modes.highContrast.component.toast.danger.text` for contrast. |
+| `modes.highContrast.component.toast.danger.text` | `{colors.error.800}` | Pairs with `modes.highContrast.component.toast.danger.bg` for contrast. |
+| `modes.highContrast.component.toast.danger.border` | `{colors.error.600}` | modes token. |
+| `modes.highContrast.component.toast.danger.icon` | `{colors.error.600}` | modes token. |
+| `modes.highContrast.component.toast.info.bg` | `{colors.info.50}` | Pairs with `modes.highContrast.component.toast.info.text` for contrast. |
+| `modes.highContrast.component.toast.info.text` | `{colors.info.800}` | Pairs with `modes.highContrast.component.toast.info.bg` for contrast. |
+| `modes.highContrast.component.toast.info.border` | `{colors.info.600}` | modes token. |
+| `modes.highContrast.component.toast.info.icon` | `{colors.info.600}` | modes token. |
+| `modes.highContrast.component.toast.accent.neutral` | `{colors.neutral.600}` | modes token. |
+| `modes.highContrast.component.toast.accent.brand` | `{colors.brand.600}` | modes token. |
+| `modes.highContrast.component.toast.accent.info` | `{colors.info.600}` | modes token. |
+| `modes.highContrast.component.toast.accent.success` | `{colors.success.600}` | modes token. |
+| `modes.highContrast.component.toast.accent.warning` | `{colors.warning.600}` | modes token. |
+| `modes.highContrast.component.toast.accent.danger` | `{colors.error.600}` | modes token. |
+| `modes.highContrast.component.toast.accent.cta` | `{colors.brand.600}` | modes token. |
+| `modes.highContrast.component.tooltip.bg` | `{colors.neutral.900}` | Pairs with `modes.highContrast.component.tooltip.text` for contrast. |
+| `modes.highContrast.component.tooltip.text` | `{colors.white}` | Pairs with `modes.highContrast.component.tooltip.bg` for contrast. |
+| `modes.highContrast.component.tooltip.border` | `{colors.neutral.700}` | modes token. |
+| `modes.highContrast.component.tooltip.accent.neutral` | `{colors.neutral.600}` | modes token. |
+| `modes.highContrast.component.tooltip.accent.brand` | `{colors.brand.600}` | modes token. |
+| `modes.highContrast.component.tooltip.accent.info` | `{colors.info.600}` | modes token. |
+| `modes.highContrast.component.tooltip.accent.success` | `{colors.success.600}` | modes token. |
+| `modes.highContrast.component.tooltip.accent.warning` | `{colors.warning.600}` | modes token. |
+| `modes.highContrast.component.tooltip.accent.danger` | `{colors.error.600}` | modes token. |
+| `modes.highContrast.component.tooltip.accent.cta` | `{colors.brand.600}` | modes token. |
+| `modes.highContrast.component.dropdown.bg` | `{colors.white}` | Pairs with `modes.highContrast.component.dropdown.item.text` for contrast. |
+| `modes.highContrast.component.dropdown.border` | `{colors.neutral.700}` | modes token. |
+| `modes.highContrast.component.dropdown.item.default` | `transparent` | modes token. |
+| `modes.highContrast.component.dropdown.item.hover` | `{colors.neutral.100}` | modes token. |
+| `modes.highContrast.component.dropdown.item.active` | `{colors.info.50}` | modes token. |
+| `modes.highContrast.component.dropdown.item.text` | `{colors.neutral.900}` | Pairs with `modes.highContrast.component.dropdown.bg` for contrast. |
+| `modes.highContrast.component.dropdown.item.disabledText` | `{colors.neutral.400}` | modes token. |
+| `modes.highContrast.component.dropdown.item.selectedBg` | `{colors.info.100}` | Pairs with `modes.highContrast.component.dropdown.item.selectedText` for contrast. |
+| `modes.highContrast.component.dropdown.item.selectedText` | `{colors.info.800}` | Pairs with `modes.highContrast.component.dropdown.item.selectedBg` for contrast. |
+| `modes.highContrast.component.dropdown.accent.neutral` | `{colors.neutral.600}` | modes token. |
+| `modes.highContrast.component.dropdown.accent.brand` | `{colors.brand.600}` | modes token. |
+| `modes.highContrast.component.dropdown.accent.info` | `{colors.info.600}` | modes token. |
+| `modes.highContrast.component.dropdown.accent.success` | `{colors.success.600}` | modes token. |
+| `modes.highContrast.component.dropdown.accent.warning` | `{colors.warning.600}` | modes token. |
+| `modes.highContrast.component.dropdown.accent.danger` | `{colors.error.600}` | modes token. |
+| `modes.highContrast.component.dropdown.accent.cta` | `{colors.brand.600}` | modes token. |
+| `modes.highContrast.component.dropdown.header` | `{colors.neutral.500}` | modes token. |
+| `modes.highContrast.component.dropdown.divider` | `{colors.neutral.700}` | modes token. |
+| `modes.highContrast.component.tabs.list.bg` | `{colors.white}` | Pairs with `modes.highContrast.component.tabs.item.text` for contrast. |
+| `modes.highContrast.component.tabs.list.border` | `{colors.neutral.700}` | modes token. |
+| `modes.highContrast.component.tabs.item.text` | `{colors.neutral.600}` | Pairs with `modes.highContrast.component.tabs.list.bg` for contrast. |
+| `modes.highContrast.component.tabs.item.hover.bg` | `{colors.neutral.100}` | modes token. |
+| `modes.highContrast.component.tabs.item.active.text` | `{colors.neutral.900}` | Pairs with `modes.highContrast.component.tabs.list.bg` for contrast. |
+| `modes.highContrast.component.tabs.item.active.indicator` | `{colors.brand.600}` | modes token. |
+| `modes.highContrast.component.tabs.item.focus.ringColor` | `{buttons.primary.focusRing}` | modes token. |
+| `modes.highContrast.component.tabs.item.disabled.text` | `{colors.neutral.400}` | modes token. |
+| `modes.highContrast.component.tabs.pill.active.bg` | `{colors.brand.700}` | Pairs with `modes.highContrast.component.tabs.pill.active.text` for contrast. |
+| `modes.highContrast.component.tabs.pill.active.text` | `{colors.white}` | Pairs with `modes.highContrast.component.tabs.pill.active.bg` for contrast. |
+| `modes.highContrast.component.tabs.panel.bg` | `{colors.white}` | modes token. |
+| `modes.highContrast.component.accordion.bg` | `{colors.white}` | Pairs with `modes.highContrast.component.accordion.text` for contrast. |
+| `modes.highContrast.component.accordion.text` | `{colors.neutral.900}` | Pairs with `modes.highContrast.component.accordion.bg` for contrast. |
+| `modes.highContrast.component.accordion.border` | `{colors.neutral.700}` | modes token. |
+| `modes.highContrast.component.accordion.header.hoverBg` | `{colors.neutral.50}` | modes token. |
+| `modes.highContrast.component.accordion.icon.collapsed` | `{colors.neutral.500}` | modes token. |
+| `modes.highContrast.component.accordion.icon.expanded` | `{colors.neutral.900}` | modes token. |
+| `modes.highContrast.component.breadcrumb.item.text` | `{colors.neutral.600}` | modes token. |
+| `modes.highContrast.component.breadcrumb.item.hover.text` | `{colors.brand.600}` | modes token. |
+| `modes.highContrast.component.breadcrumb.item.active.text` | `{colors.neutral.900}` | modes token. |
+| `modes.highContrast.component.breadcrumb.separator` | `{colors.neutral.400}` | modes token. |
+| `modes.highContrast.component.listGroup.bg` | `{colors.white}` | Pairs with `modes.highContrast.component.listGroup.text` for contrast. |
+| `modes.highContrast.component.listGroup.border` | `{colors.neutral.700}` | modes token. |
+| `modes.highContrast.component.listGroup.text` | `{colors.neutral.700}` | modes token. |
+| `modes.highContrast.component.listGroup.heading` | `{colors.neutral.900}` | modes token. |
+| `modes.highContrast.component.listGroup.muted` | `{colors.neutral.500}` | modes token. |
+| `modes.highContrast.component.listGroup.item.hover.bg` | `{colors.neutral.50}` | modes token. |
+| `modes.highContrast.component.listGroup.item.active.bg` | `{colors.brand.700}` | Pairs with `modes.highContrast.component.listGroup.item.active.text` for contrast. |
+| `modes.highContrast.component.listGroup.item.active.text` | `{colors.white}` | Pairs with `modes.highContrast.component.listGroup.item.active.bg` for contrast. |
+| `modes.highContrast.component.listGroup.item.selected.bg` | `{colors.info.50}` | modes token. |
+| `modes.highContrast.component.listGroup.item.disabled.text` | `{colors.neutral.400}` | modes token. |
+| `modes.highContrast.component.listGroup.accent.neutral` | `{colors.neutral.600}` | modes token. |
+| `modes.highContrast.component.listGroup.accent.brand` | `{colors.brand.600}` | modes token. |
+| `modes.highContrast.component.listGroup.accent.info` | `{colors.info.600}` | modes token. |
+| `modes.highContrast.component.listGroup.accent.success` | `{colors.success.600}` | modes token. |
+| `modes.highContrast.component.listGroup.accent.warning` | `{colors.warning.600}` | modes token. |
+| `modes.highContrast.component.listGroup.accent.danger` | `{colors.error.600}` | modes token. |
+| `modes.highContrast.component.listGroup.accent.cta` | `{colors.brand.600}` | modes token. |
+| `modes.highContrast.component.listGroup.accent.thickness` | `0.25rem` | modes token. |
+| `modes.highContrast.component.offcanvas.bg` | `{colors.white}` | Pairs with `modes.highContrast.component.offcanvas.text` for contrast. |
+| `modes.highContrast.component.offcanvas.text` | `{colors.neutral.900}` | Pairs with `modes.highContrast.component.offcanvas.bg` for contrast. |
+| `modes.highContrast.component.offcanvas.border` | `{colors.neutral.700}` | modes token. |
+| `modes.highContrast.component.offcanvas.overlay` | `{colors.black} / 0.6` | modes token. |
+| `modes.highContrast.component.carousel.indicator.default` | `{colors.white} / 0.5` | modes token. |
+| `modes.highContrast.component.carousel.indicator.active` | `{colors.white}` | modes token. |
+| `modes.highContrast.component.carousel.control.icon` | `{colors.white}` | modes token. |
+| `modes.highContrast.component.carousel.control.bg` | `{colors.black} / 0.3` | modes token. |
+| `modes.highContrast.component.carousel.caption.bg` | `{colors.black} / 0.4` | modes token. |
+| `modes.highContrast.component.carousel.caption.text` | `{colors.white}` | Pairs with `modes.highContrast.component.carousel.caption.bg` for contrast. |
+| `modes.highContrast.component.table.header.bg` | `{colors.neutral.50}` | Pairs with `modes.highContrast.component.table.header.text` for contrast. |
+| `modes.highContrast.component.table.header.text` | `{colors.neutral.700}` | Pairs with `modes.highContrast.component.table.header.bg` for contrast. |
+| `modes.highContrast.component.table.text` | `{colors.neutral.900}` | modes token. |
+| `modes.highContrast.component.table.divider` | `{colors.neutral.700}` | modes token. |
+| `modes.highContrast.component.table.stripeBg` | `{colors.neutral.50}` | modes token. |
+| `modes.highContrast.component.table.hoverBg` | `{colors.neutral.100}` | modes token. |
+| `modes.highContrast.component.table.selectedBg` | `{colors.info.50}` | modes token. |
+| `modes.highContrast.component.table.row.neutral.bg` | `{colors.neutral.100}` | Pairs with `modes.highContrast.component.table.row.neutral.text` for contrast. |
+| `modes.highContrast.component.table.row.neutral.text` | `{colors.neutral.700}` | Pairs with `modes.highContrast.component.table.row.neutral.bg` for contrast. |
+| `modes.highContrast.component.table.row.info.bg` | `{colors.info.100}` | Pairs with `modes.highContrast.component.table.row.info.text` for contrast. |
+| `modes.highContrast.component.table.row.info.text` | `{colors.info.800}` | Pairs with `modes.highContrast.component.table.row.info.bg` for contrast. |
+| `modes.highContrast.component.table.row.success.bg` | `{colors.success.100}` | Pairs with `modes.highContrast.component.table.row.success.text` for contrast. |
+| `modes.highContrast.component.table.row.success.text` | `{colors.success.900}` | Pairs with `modes.highContrast.component.table.row.success.bg` for contrast. |
+| `modes.highContrast.component.table.row.warning.bg` | `{colors.warning.100}` | Pairs with `modes.highContrast.component.table.row.warning.text` for contrast. |
+| `modes.highContrast.component.table.row.warning.text` | `{colors.warning.900}` | Pairs with `modes.highContrast.component.table.row.warning.bg` for contrast. |
+| `modes.highContrast.component.table.row.danger.bg` | `{colors.error.100}` | Pairs with `modes.highContrast.component.table.row.danger.text` for contrast. |
+| `modes.highContrast.component.table.row.danger.text` | `{colors.error.900}` | Pairs with `modes.highContrast.component.table.row.danger.bg` for contrast. |
+| `modes.highContrast.component.alert.neutral.bg` | `{colors.neutral.100}` | Pairs with `modes.highContrast.component.alert.neutral.text` for contrast. |
+| `modes.highContrast.component.alert.neutral.text` | `{colors.neutral.700}` | Pairs with `modes.highContrast.component.alert.neutral.bg` for contrast. |
+| `modes.highContrast.component.alert.neutral.border` | `{colors.neutral.700}` | modes token. |
+| `modes.highContrast.component.alert.neutral.icon` | `{colors.neutral.600}` | modes token. |
+| `modes.highContrast.component.alert.brand.bg` | `{colors.brand.50}` | Pairs with `modes.highContrast.component.alert.brand.text` for contrast. |
+| `modes.highContrast.component.alert.brand.text` | `{colors.brand.700}` | Pairs with `modes.highContrast.component.alert.brand.bg` for contrast. |
+| `modes.highContrast.component.alert.brand.border` | `{colors.brand.600}` | modes token. |
+| `modes.highContrast.component.alert.brand.icon` | `{colors.brand.600}` | modes token. |
+| `modes.highContrast.component.alert.info.bg` | `{colors.info.50}` | Pairs with `modes.highContrast.component.alert.info.text` for contrast. |
+| `modes.highContrast.component.alert.info.text` | `{colors.info.700}` | Pairs with `modes.highContrast.component.alert.info.bg` for contrast. |
+| `modes.highContrast.component.alert.info.border` | `{colors.info.600}` | modes token. |
+| `modes.highContrast.component.alert.info.icon` | `{colors.info.600}` | modes token. |
+| `modes.highContrast.component.alert.success.bg` | `{colors.success.50}` | Pairs with `modes.highContrast.component.alert.success.text` for contrast. |
+| `modes.highContrast.component.alert.success.text` | `{colors.success.900}` | Pairs with `modes.highContrast.component.alert.success.bg` for contrast. |
+| `modes.highContrast.component.alert.success.border` | `{colors.success.600}` | modes token. |
+| `modes.highContrast.component.alert.success.icon` | `{colors.success.600}` | modes token. |
+| `modes.highContrast.component.alert.warning.bg` | `{colors.warning.50}` | Pairs with `modes.highContrast.component.alert.warning.text` for contrast. |
+| `modes.highContrast.component.alert.warning.text` | `{colors.warning.900}` | Pairs with `modes.highContrast.component.alert.warning.bg` for contrast. |
+| `modes.highContrast.component.alert.warning.border` | `{colors.warning.600}` | modes token. |
+| `modes.highContrast.component.alert.warning.icon` | `{colors.warning.600}` | modes token. |
+| `modes.highContrast.component.alert.danger.bg` | `{colors.error.50}` | Pairs with `modes.highContrast.component.alert.danger.text` for contrast. |
+| `modes.highContrast.component.alert.danger.text` | `{colors.error.800}` | Pairs with `modes.highContrast.component.alert.danger.bg` for contrast. |
+| `modes.highContrast.component.alert.danger.border` | `{colors.error.600}` | modes token. |
+| `modes.highContrast.component.alert.danger.icon` | `{colors.error.600}` | modes token. |
+| `modes.highContrast.component.pagination.item.text` | `{colors.neutral.700}` | modes token. |
+| `modes.highContrast.component.pagination.item.hover.bg` | `{colors.neutral.100}` | modes token. |
+| `modes.highContrast.component.pagination.item.active.bg` | `{colors.brand.700}` | Pairs with `modes.highContrast.component.pagination.item.active.text` for contrast. |
+| `modes.highContrast.component.pagination.item.active.text` | `{colors.white}` | Pairs with `modes.highContrast.component.pagination.item.active.bg` for contrast. |
+| `modes.highContrast.component.pagination.item.disabled.text` | `{colors.neutral.400}` | modes token. |
+| `modes.highContrast.component.stepper.step.pending.bg` | `{colors.neutral.200}` | Pairs with `modes.highContrast.component.stepper.step.pending.text` for contrast. |
+| `modes.highContrast.component.stepper.step.pending.text` | `{colors.neutral.700}` | Pairs with `modes.highContrast.component.stepper.step.pending.bg` for contrast. |
+| `modes.highContrast.component.stepper.step.active.bg` | `{colors.brand.700}` | Pairs with `modes.highContrast.component.stepper.step.active.text` for contrast. |
+| `modes.highContrast.component.stepper.step.active.text` | `{colors.white}` | Pairs with `modes.highContrast.component.stepper.step.active.bg` for contrast. |
+| `modes.highContrast.component.stepper.step.done.bg` | `{colors.success.800}` | Pairs with `modes.highContrast.component.stepper.step.done.text` for contrast. |
+| `modes.highContrast.component.stepper.step.done.text` | `{colors.white}` | Pairs with `modes.highContrast.component.stepper.step.done.bg` for contrast. |
+| `modes.highContrast.component.stepper.connector` | `{colors.neutral.200}` | modes token. |
+| `modes.highContrast.component.stepper.label.text` | `{colors.neutral.700}` | modes token. |
+| `modes.highContrast.component.popover.bg` | `{colors.white}` | Pairs with `modes.highContrast.component.popover.text` for contrast. |
+| `modes.highContrast.component.popover.text` | `{colors.neutral.900}` | Pairs with `modes.highContrast.component.popover.bg` for contrast. |
+| `modes.highContrast.component.popover.muted` | `{colors.neutral.600}` | modes token. |
+| `modes.highContrast.component.popover.border` | `{colors.neutral.700}` | modes token. |
+| `modes.highContrast.component.popover.shadow` | `0 12px 32px -8px {colors.black} / 0.18` | modes token. |
+| `modes.highContrast.component.popover.arrow` | `{colors.white}` | modes token. |
+| `modes.highContrast.component.progress.track.bg` | `{colors.neutral.200}` | modes token. |
+| `modes.highContrast.component.progress.indicator.neutral` | `{colors.neutral.600}` | modes token. |
+| `modes.highContrast.component.progress.indicator.brand` | `{colors.brand.600}` | modes token. |
+| `modes.highContrast.component.progress.indicator.info` | `{colors.info.600}` | modes token. |
+| `modes.highContrast.component.progress.indicator.success` | `{colors.success.600}` | modes token. |
+| `modes.highContrast.component.progress.indicator.warning` | `{colors.warning.600}` | modes token. |
+| `modes.highContrast.component.progress.indicator.danger` | `{colors.error.600}` | modes token. |
+| `modes.highContrast.component.progress.label.text` | `{colors.neutral.700}` | modes token. |
+| `modes.highContrast.component.loadingIndicator.default` | `{colors.neutral.600}` | modes token. |
+| `modes.highContrast.component.loadingIndicator.muted` | `{colors.neutral.400}` | modes token. |
+| `modes.highContrast.component.loadingIndicator.inverse` | `{colors.white}` | modes token. |
+| `modes.highContrast.component.loadingIndicator.brand` | `{colors.brand.600}` | modes token. |
+| `modes.highContrast.component.loadingIndicator.info` | `{colors.info.600}` | modes token. |
+| `modes.highContrast.component.loadingIndicator.success` | `{colors.success.600}` | modes token. |
+| `modes.highContrast.component.loadingIndicator.warning` | `{colors.warning.600}` | modes token. |
+| `modes.highContrast.component.loadingIndicator.danger` | `{colors.error.600}` | modes token. |
+| `modes.highContrast.component.switch.trackBg` | `{colors.neutral.300}` | modes token. |
+| `modes.highContrast.component.switch.trackCheckedBg` | `{colors.info.600}` | modes token. |
+| `modes.highContrast.component.switch.thumbBg` | `{colors.white}` | modes token. |
+| `modes.highContrast.component.switch.trackDisabledBg` | `{colors.neutral.100}` | modes token. |
+| `modes.highContrast.component.switch.thumbDisabledBg` | `{colors.neutral.200}` | modes token. |
+| `modes.highContrast.component.switch.focusRing` | `{buttons.primary.focusRing}` | modes token. |
+| `modes.highContrast.component.range.trackBg` | `{colors.neutral.200}` | modes token. |
+| `modes.highContrast.component.range.trackFilledBg` | `{colors.info.600}` | modes token. |
+| `modes.highContrast.component.range.thumbBg` | `{colors.white}` | modes token. |
+| `modes.highContrast.component.range.thumbBorder` | `{colors.info.600}` | modes token. |
+| `modes.highContrast.component.range.trackDisabledBg` | `{colors.neutral.100}` | modes token. |
+| `modes.highContrast.component.range.thumbDisabledBorder` | `{colors.neutral.700}` | modes token. |
+| `modes.highContrast.component.range.focusRing` | `{buttons.primary.focusRing}` | modes token. |
+| `modes.highContrast.component.fileInput.bg` | `{colors.white}` | Pairs with `modes.highContrast.component.fileInput.text` for contrast. |
+| `modes.highContrast.component.fileInput.border` | `{colors.neutral.700}` | modes token. |
+| `modes.highContrast.component.fileInput.text` | `{colors.neutral.900}` | Pairs with `modes.highContrast.component.fileInput.bg` for contrast. |
+| `modes.highContrast.component.fileInput.actionBg` | `{colors.neutral.100}` | Pairs with `modes.highContrast.component.fileInput.actionText` for contrast. |
+| `modes.highContrast.component.fileInput.actionText` | `{colors.neutral.700}` | Pairs with `modes.highContrast.component.fileInput.actionBg` for contrast. |
+| `modes.highContrast.component.fileInput.disabledBg` | `{colors.neutral.50}` | modes token. |
+| `modes.highContrast.component.fileInput.disabledBorder` | `{colors.neutral.700}` | modes token. |
+| `modes.highContrast.component.fileInput.disabledText` | `{colors.neutral.400}` | modes token. |
+| `modes.highContrast.component.fileInput.focusBorder` | `{colors.info.600}` | modes token. |
+| `modes.highContrast.component.inputGroup.addonBg` | `{colors.neutral.100}` | Pairs with `modes.highContrast.component.inputGroup.addonText` for contrast. |
+| `modes.highContrast.component.inputGroup.addonText` | `{colors.neutral.700}` | Pairs with `modes.highContrast.component.inputGroup.addonBg` for contrast. |
+| `modes.highContrast.component.inputGroup.addonBorder` | `{colors.neutral.700}` | modes token. |
+| `modes.highContrast.component.inputGroup.focusBorder` | `{colors.info.600}` | modes token. |
+| `modes.highContrast.component.inputGroup.disabledBg` | `{colors.neutral.50}` | modes token. |
+| `modes.highContrast.component.inputGroup.disabledText` | `{colors.neutral.400}` | modes token. |
+| `modes.highContrast.component.datepicker.panel.bg` | `{colors.white}` | modes token. |
+| `modes.highContrast.component.datepicker.panel.border` | `{colors.neutral.700}` | modes token. |
+| `modes.highContrast.component.datepicker.header.text` | `{colors.neutral.900}` | modes token. |
+| `modes.highContrast.component.datepicker.weekday.text` | `{colors.neutral.400}` | modes token. |
+| `modes.highContrast.component.day.default.text` | `{colors.neutral.900}` | modes token. |
+| `modes.highContrast.component.day.default.hover.bg` | `{colors.neutral.100}` | modes token. |
+| `modes.highContrast.component.day.selected.bg` | `{colors.brand.700}` | Pairs with `modes.highContrast.component.day.selected.text` for contrast. |
+| `modes.highContrast.component.day.selected.text` | `{colors.white}` | Pairs with `modes.highContrast.component.day.selected.bg` for contrast. |
+| `modes.highContrast.component.day.today.ringColor` | `{buttons.primary.focusRing}` | modes token. |
+| `modes.highContrast.component.day.outsideMonth.text` | `{colors.neutral.300}` | modes token. |
+| `modes.highContrast.component.day.disabled.text` | `{colors.neutral.400}` | modes token. |
+| `modes.highContrast.component.prose.blockquote.border` | `{colors.neutral.600}` | modes token. |
+| `modes.highContrast.component.prose.blockquote.text` | `{colors.neutral.600}` | modes token. |
+| `modes.highContrast.component.prose.code.bg` | `{colors.neutral.100}` | Pairs with `modes.highContrast.component.prose.code.text` for contrast. |
+| `modes.highContrast.component.prose.code.text` | `{colors.neutral.900}` | Pairs with `modes.highContrast.component.prose.code.bg` for contrast. |
+| `modes.highContrast.component.prose.codeBlock.bg` | `{colors.neutral.100}` | Pairs with `modes.highContrast.component.prose.codeBlock.text` for contrast. |
+| `modes.highContrast.component.prose.codeBlock.text` | `{colors.neutral.900}` | Pairs with `modes.highContrast.component.prose.codeBlock.bg` for contrast. |
+| `modes.highContrast.component.prose.codeBlock.border` | `{colors.neutral.700}` | modes token. |
+| `modes.highContrast.component.prose.mark.bg` | `{colors.warning.100}` | Pairs with `modes.highContrast.component.prose.mark.text` for contrast. |
+| `modes.highContrast.component.prose.mark.text` | `{colors.warning.900}` | Pairs with `modes.highContrast.component.prose.mark.bg` for contrast. |
+| `modes.highContrast.component.prose.hr` | `{colors.neutral.700}` | modes token. |
+| `modes.highContrast.component.prose.kbd.bg` | `{colors.neutral.100}` | Pairs with `modes.highContrast.component.prose.kbd.text` for contrast. |
+| `modes.highContrast.component.prose.kbd.border` | `{colors.neutral.700}` | modes token. |
+| `modes.highContrast.component.prose.kbd.text` | `{colors.neutral.900}` | Pairs with `modes.highContrast.component.prose.kbd.bg` for contrast. |
+| `modes.highContrast.component.externalAuthButton.bg` | `{colors.white}` | Pairs with `modes.highContrast.component.externalAuthButton.text` for contrast. |
+| `modes.highContrast.component.externalAuthButton.text` | `{colors.neutral.900}` | Pairs with `modes.highContrast.component.externalAuthButton.bg` for contrast. |
+| `modes.highContrast.component.externalAuthButton.border` | `{colors.neutral.700}` | modes token. |
+| `modes.highContrast.component.externalAuthButton.hoverBg` | `{colors.neutral.50}` | modes token. |
+| `modes.highContrast.component.externalAuthButton.activeBg` | `{colors.neutral.100}` | modes token. |
+| `modes.highContrast.component.externalAuthButton.disabledBg` | `{colors.neutral.50}` | modes token. |
+| `modes.highContrast.component.externalAuthButton.disabledText` | `{colors.neutral.400}` | modes token. |
+| `modes.highContrast.component.externalAuthButton.focusRing` | `{buttons.primary.focusRing}` | modes token. |
+| `modes.highContrast.component.checkbox.bg` | `{colors.white}` | modes token. |
+| `modes.highContrast.component.checkbox.border` | `{colors.neutral.700}` | modes token. |
+| `modes.highContrast.component.checkbox.checkedBg` | `{colors.info.700}` | Pairs with `modes.highContrast.component.checkbox.text` for contrast. |
+| `modes.highContrast.component.checkbox.checkedBorder` | `{colors.info.600}` | modes token. |
+| `modes.highContrast.component.checkbox.text` | `{colors.white}` | Pairs with `modes.highContrast.component.checkbox.checkedBg` for contrast. |
+| `modes.highContrast.component.checkbox.disabledBg` | `{colors.neutral.50}` | modes token. |
+| `modes.highContrast.component.checkbox.disabledBorder` | `{colors.neutral.700}` | modes token. |
+| `modes.highContrast.component.radio.bg` | `{colors.white}` | modes token. |
+| `modes.highContrast.component.radio.border` | `{colors.neutral.700}` | modes token. |
+| `modes.highContrast.component.radio.checkedBg` | `{colors.info.700}` | Pairs with `modes.highContrast.component.radio.text` for contrast. |
+| `modes.highContrast.component.radio.checkedBorder` | `{colors.info.600}` | modes token. |
+| `modes.highContrast.component.radio.text` | `{colors.white}` | Pairs with `modes.highContrast.component.radio.checkedBg` for contrast. |
+| `modes.highContrast.component.radio.disabledBg` | `{colors.neutral.50}` | modes token. |
+| `modes.highContrast.component.radio.disabledBorder` | `{colors.neutral.700}` | modes token. |
+| `modes.highContrast.component.select.bg` | `{colors.white}` | Pairs with `modes.highContrast.component.select.text` for contrast. |
+| `modes.highContrast.component.select.border` | `{colors.neutral.700}` | modes token. |
+| `modes.highContrast.component.select.text` | `{colors.neutral.900}` | Pairs with `modes.highContrast.component.select.bg` for contrast. |
+| `modes.highContrast.component.select.placeholderText` | `{colors.neutral.600}` | Pairs with `modes.highContrast.component.select.bg` for contrast. |
+| `modes.highContrast.component.select.disabledBg` | `{colors.neutral.50}` | modes token. |
+| `modes.highContrast.component.select.disabledBorder` | `{colors.neutral.700}` | modes token. |
+| `modes.highContrast.component.select.focusBorder` | `{colors.info.600}` | modes token. |
+| `modes.highContrast.component.textarea.bg` | `{colors.white}` | Pairs with `modes.highContrast.component.textarea.text` for contrast. |
+| `modes.highContrast.component.textarea.border` | `{colors.neutral.700}` | modes token. |
+| `modes.highContrast.component.textarea.text` | `{colors.neutral.900}` | Pairs with `modes.highContrast.component.textarea.bg` for contrast. |
+| `modes.highContrast.component.textarea.placeholder` | `{colors.neutral.600}` | Pairs with `modes.highContrast.component.textarea.bg` for contrast. |
+| `modes.highContrast.component.textarea.disabledBg` | `{colors.neutral.50}` | modes token. |
+| `modes.highContrast.component.textarea.disabledBorder` | `{colors.neutral.700}` | modes token. |
+| `modes.highContrast.component.textarea.focusBorder` | `{colors.info.600}` | modes token. |
+| `modes.highContrast.component.fieldset.border` | `{colors.neutral.700}` | modes token. |
+| `modes.highContrast.component.fieldset.legendText` | `{colors.neutral.900}` | modes token. |
+| `modes.highContrast.component.label.text` | `{colors.neutral.900}` | modes token. |
+| `modes.highContrast.component.label.disabledText` | `{colors.neutral.400}` | modes token. |
+| `modes.highContrast.component.label.requiredIndicatorText` | `{colors.error.600}` | modes token. |
+| `modes.highContrast.component.skeleton.base` | `{colors.neutral.200}` | modes token. |
+| `modes.highContrast.component.skeleton.shimmer` | `{colors.neutral.100}` | modes token. |
+| `modes.highContrast.component.selection.bg` | `{colors.brand.100}` | Pairs with `modes.highContrast.component.selection.text` for contrast. |
+| `modes.highContrast.component.selection.text` | `{colors.neutral.900}` | Pairs with `modes.highContrast.component.selection.bg` for contrast. |
+| `modes.highContrast.component.caret.color` | `{colors.brand.600}` | modes token. |
+| `modes.highContrast.component.scrollbar.track` | `{colors.neutral.700}` | modes token. |
+| `modes.highContrast.component.scrollbar.thumb` | `{colors.neutral.400}` | modes token. |
+| `modes.highContrast.component.scrollbar.thumbHover` | `{colors.neutral.500}` | modes token. |
+| `modes.highContrast.component.chart.bg` | `{colors.white}` | Pairs with `modes.highContrast.component.chart.label` for contrast. |
+| `modes.highContrast.component.chart.grid` | `{colors.neutral.200}` | modes token. |
+| `modes.highContrast.component.chart.axis` | `{colors.neutral.500}` | Pairs with `modes.highContrast.component.chart.bg` for contrast. |
+| `modes.highContrast.component.chart.label` | `{colors.neutral.600}` | Pairs with `modes.highContrast.component.chart.bg` for contrast. |
+| `modes.highContrast.component.chart.series.1` | `{colors.brand.600}` | Pairs with `modes.highContrast.component.chart.bg` for contrast. |
+| `modes.highContrast.component.chart.series.2` | `{colors.palette.amber.600}` | Pairs with `modes.highContrast.component.chart.bg` for contrast. |
+| `modes.highContrast.component.chart.series.3` | `{colors.palette.violet.800}` | Pairs with `modes.highContrast.component.chart.bg` for contrast. |
+| `modes.highContrast.component.chart.series.4` | `{colors.palette.cyan.600}` | Pairs with `modes.highContrast.component.chart.bg` for contrast. |
+| `modes.highContrast.component.chart.series.5` | `{colors.palette.pink.600}` | Pairs with `modes.highContrast.component.chart.bg` for contrast. |
+| `modes.highContrast.component.chart.series.6` | `{colors.palette.emerald.800}` | Pairs with `modes.highContrast.component.chart.bg` for contrast. |
+| `modes.highContrast.component.chart.series.7` | `{colors.palette.lime.700}` | Pairs with `modes.highContrast.component.chart.bg` for contrast. |
+| `modes.highContrast.component.chart.series.8` | `{colors.palette.orange.800}` | Pairs with `modes.highContrast.component.chart.bg` for contrast. |
+| `modes.highContrast.component.chart.sequential.1` | `{colors.brand.100}` | modes token. |
+| `modes.highContrast.component.chart.sequential.2` | `{colors.brand.200}` | modes token. |
+| `modes.highContrast.component.chart.sequential.3` | `{colors.brand.300}` | modes token. |
+| `modes.highContrast.component.chart.sequential.4` | `{colors.brand.400}` | modes token. |
+| `modes.highContrast.component.chart.sequential.5` | `{colors.brand.600}` | modes token. |
+| `modes.highContrast.component.chart.sequential.6` | `{colors.brand.800}` | modes token. |
+| `modes.highContrast.component.chart.sequential.7` | `{colors.brand.900}` | modes token. |
+| `modes.highContrast.component.chart.diverging.1` | `{colors.palette.red.700}` | modes token. |
+| `modes.highContrast.component.chart.diverging.2` | `{colors.palette.red.400}` | modes token. |
+| `modes.highContrast.component.chart.diverging.3` | `{colors.palette.red.200}` | modes token. |
+| `modes.highContrast.component.chart.diverging.4` | `{colors.neutral.200}` | modes token. |
+| `modes.highContrast.component.chart.diverging.5` | `{colors.palette.blue.200}` | modes token. |
+| `modes.highContrast.component.chart.diverging.6` | `{colors.palette.blue.400}` | modes token. |
+| `modes.highContrast.component.chart.diverging.7` | `{colors.palette.blue.700}` | modes token. |
+| `modes.highContrast.buttons.primary.bg` | `{colors.info.700}` | Pairs with `modes.highContrast.buttons.primary.text` for contrast. |
+| `modes.highContrast.buttons.primary.bgHover` | `{colors.info.800}` | Pairs with `modes.highContrast.buttons.primary.text` for contrast. |
+| `modes.highContrast.buttons.primary.bgActive` | `{colors.info.900}` | Pairs with `modes.highContrast.buttons.primary.text` for contrast. |
+| `modes.highContrast.buttons.primary.bgDisabled` | `{colors.neutral.200}` | modes token. |
+| `modes.highContrast.buttons.primary.text` | `{colors.white}` | Pairs with `modes.highContrast.buttons.primary.bg` for contrast. |
+| `modes.highContrast.buttons.primary.textDisabled` | `{colors.neutral.400}` | modes token. |
+| `modes.highContrast.buttons.primary.focusRing` | `{colors.info.500} / 0.4` | modes token. |
+| `modes.highContrast.buttons.primary.focusVisible` | `{colors.info.500} / 0.4` | modes token. |
+| `modes.highContrast.buttons.secondary.bg` | `{colors.white}` | Pairs with `modes.highContrast.buttons.secondary.text` for contrast. |
+| `modes.highContrast.buttons.secondary.bgHover` | `{colors.neutral.50}` | Pairs with `modes.highContrast.buttons.secondary.text` for contrast. |
+| `modes.highContrast.buttons.secondary.bgActive` | `{colors.neutral.100}` | Pairs with `modes.highContrast.buttons.secondary.text` for contrast. |
+| `modes.highContrast.buttons.secondary.bgDisabled` | `{colors.neutral.50}` | modes token. |
+| `modes.highContrast.buttons.secondary.text` | `{colors.info.800}` | Pairs with `modes.highContrast.buttons.secondary.bg` for contrast. |
+| `modes.highContrast.buttons.secondary.textDisabled` | `{colors.neutral.400}` | modes token. |
+| `modes.highContrast.buttons.secondary.border` | `{colors.info.800}` | modes token. |
+| `modes.highContrast.buttons.secondary.borderDisabled` | `{colors.neutral.200}` | modes token. |
+| `modes.highContrast.buttons.secondary.focusRing` | `{colors.info.500} / 0.4` | modes token. |
+| `modes.highContrast.buttons.secondary.focusVisible` | `{colors.info.500} / 0.4` | modes token. |
+| `modes.highContrast.buttons.ghost.bg` | `transparent` | modes token. |
+| `modes.highContrast.buttons.ghost.bgHover` | `{colors.info.50}` | Pairs with `modes.highContrast.buttons.ghost.text` for contrast. |
+| `modes.highContrast.buttons.ghost.bgActive` | `{colors.info.100}` | Pairs with `modes.highContrast.buttons.ghost.text` for contrast. |
+| `modes.highContrast.buttons.ghost.bgDisabled` | `transparent` | modes token. |
+| `modes.highContrast.buttons.ghost.text` | `{colors.info.800}` | Pairs with `modes.highContrast.buttons.ghost.bgHover` for contrast. |
+| `modes.highContrast.buttons.ghost.textDisabled` | `{colors.neutral.400}` | modes token. |
+| `modes.highContrast.buttons.ghost.focusRing` | `{colors.info.500} / 0.4` | modes token. |
+| `modes.highContrast.buttons.ghost.focusVisible` | `{colors.info.500} / 0.4` | modes token. |
+| `modes.highContrast.buttons.danger.bg` | `{colors.error.800}` | Pairs with `modes.highContrast.buttons.danger.text` for contrast. |
+| `modes.highContrast.buttons.danger.bgHover` | `{colors.error.900}` | Pairs with `modes.highContrast.buttons.danger.text` for contrast. |
+| `modes.highContrast.buttons.danger.bgActive` | `{colors.error.900}` | Pairs with `modes.highContrast.buttons.danger.text` for contrast. |
+| `modes.highContrast.buttons.danger.bgDisabled` | `{colors.error.200}` | modes token. |
+| `modes.highContrast.buttons.danger.text` | `{colors.white}` | modes token. |
+| `modes.highContrast.buttons.danger.textDisabled` | `{colors.neutral.400}` | modes token. |
+| `modes.highContrast.buttons.danger.focusRing` | `{colors.error.500} / 0.4` | modes token. |
+| `modes.highContrast.buttons.danger.focusVisible` | `{colors.error.500} / 0.4` | modes token. |
+| `modes.highContrast.buttons.success.bg` | `{colors.success.800}` | Pairs with `modes.highContrast.buttons.success.text` for contrast. |
+| `modes.highContrast.buttons.success.bgHover` | `{colors.success.900}` | Pairs with `modes.highContrast.buttons.success.text` for contrast. |
+| `modes.highContrast.buttons.success.bgActive` | `{colors.success.900}` | Pairs with `modes.highContrast.buttons.success.text` for contrast. |
+| `modes.highContrast.buttons.success.bgDisabled` | `{colors.success.200}` | modes token. |
+| `modes.highContrast.buttons.success.text` | `{colors.white}` | modes token. |
+| `modes.highContrast.buttons.success.textDisabled` | `{colors.neutral.400}` | modes token. |
+| `modes.highContrast.buttons.success.focusRing` | `{colors.success.500} / 0.4` | modes token. |
+| `modes.highContrast.buttons.success.focusVisible` | `{colors.success.500} / 0.4` | modes token. |
+| `modes.highContrast.buttons.warning.bg` | `{colors.warning.900}` | Pairs with `modes.highContrast.buttons.warning.text` for contrast. |
+| `modes.highContrast.buttons.warning.bgHover` | `{colors.palette.amber.950}` | Pairs with `modes.highContrast.buttons.warning.text` for contrast. |
+| `modes.highContrast.buttons.warning.bgActive` | `{colors.palette.amber.950}` | Pairs with `modes.highContrast.buttons.warning.text` for contrast. |
+| `modes.highContrast.buttons.warning.bgDisabled` | `{colors.warning.200}` | modes token. |
+| `modes.highContrast.buttons.warning.text` | `{colors.white}` | modes token. |
+| `modes.highContrast.buttons.warning.textDisabled` | `{colors.neutral.400}` | modes token. |
+| `modes.highContrast.buttons.warning.focusRing` | `{colors.warning.500} / 0.4` | modes token. |
+| `modes.highContrast.buttons.warning.focusVisible` | `{colors.warning.500} / 0.4` | modes token. |
+| `modes.highContrast.buttons.link.bg` | `transparent` | modes token. |
+| `modes.highContrast.buttons.link.bgHover` | `transparent` | modes token. |
+| `modes.highContrast.buttons.link.bgActive` | `transparent` | modes token. |
+| `modes.highContrast.buttons.link.bgDisabled` | `transparent` | modes token. |
+| `modes.highContrast.buttons.link.text` | `{colors.info.700}` | modes token. |
+| `modes.highContrast.buttons.link.textHover` | `{colors.info.800}` | modes token. |
+| `modes.highContrast.buttons.link.textActive` | `{colors.info.900}` | modes token. |
+| `modes.highContrast.buttons.link.textDisabled` | `{colors.neutral.400}` | modes token. |
+| `modes.highContrast.buttons.link.focusRing` | `{colors.info.500} / 0.4` | modes token. |
+| `modes.highContrast.buttons.link.focusVisible` | `{colors.info.500} / 0.4` | modes token. |
+| `modes.highContrast.buttons.light.bg` | `{colors.neutral.100}` | Pairs with `modes.highContrast.buttons.light.text` for contrast. |
+| `modes.highContrast.buttons.light.bgHover` | `{colors.neutral.200}` | Pairs with `modes.highContrast.buttons.light.text` for contrast. |
+| `modes.highContrast.buttons.light.bgActive` | `{colors.neutral.300}` | Pairs with `modes.highContrast.buttons.light.text` for contrast. |
+| `modes.highContrast.buttons.light.bgDisabled` | `{colors.neutral.50}` | modes token. |
+| `modes.highContrast.buttons.light.text` | `{colors.neutral.900}` | modes token. |
+| `modes.highContrast.buttons.light.textDisabled` | `{colors.neutral.400}` | modes token. |
+| `modes.highContrast.buttons.light.focusRing` | `{colors.neutral.400} / 0.4` | modes token. |
+| `modes.highContrast.buttons.light.focusVisible` | `{colors.neutral.400} / 0.4` | modes token. |
+| `modes.highContrast.buttons.dark.bg` | `{colors.neutral.900}` | Pairs with `modes.highContrast.buttons.dark.text` for contrast. |
+| `modes.highContrast.buttons.dark.bgHover` | `{colors.neutral.800}` | Pairs with `modes.highContrast.buttons.dark.text` for contrast. |
+| `modes.highContrast.buttons.dark.bgActive` | `{colors.neutral.700}` | Pairs with `modes.highContrast.buttons.dark.text` for contrast. |
+| `modes.highContrast.buttons.dark.bgDisabled` | `{colors.neutral.200}` | modes token. |
+| `modes.highContrast.buttons.dark.text` | `{colors.white}` | modes token. |
+| `modes.highContrast.buttons.dark.textDisabled` | `{colors.neutral.400}` | modes token. |
+| `modes.highContrast.buttons.dark.focusRing` | `{colors.neutral.500} / 0.4` | modes token. |
+| `modes.highContrast.buttons.dark.focusVisible` | `{colors.neutral.500} / 0.4` | modes token. |
+| `modes.highContrast.buttons.cta.bg` | `{colors.brand.700}` | Pairs with `modes.highContrast.buttons.cta.text` for contrast. |
+| `modes.highContrast.buttons.cta.bgHover` | `{colors.brand.800}` | Pairs with `modes.highContrast.buttons.cta.text` for contrast. |
+| `modes.highContrast.buttons.cta.bgActive` | `{colors.brand.900}` | Pairs with `modes.highContrast.buttons.cta.text` for contrast. |
+| `modes.highContrast.buttons.cta.bgDisabled` | `{colors.brand.200}` | modes token. |
+| `modes.highContrast.buttons.cta.text` | `{colors.white}` | modes token. |
+| `modes.highContrast.buttons.cta.textDisabled` | `{colors.neutral.400}` | modes token. |
+| `modes.highContrast.buttons.cta.shadow` | `0 4px 14px 0 {colors.brand.500} / 0.39` | modes token. |
+| `modes.highContrast.buttons.cta.focusRing` | `{colors.brand.500} / 0.4` | modes token. |
+| `modes.highContrast.buttons.accent.bg` | `{colors.accent.700}` | Pairs with `modes.highContrast.buttons.accent.text` for contrast. |
+| `modes.highContrast.buttons.accent.bgHover` | `{colors.accent.800}` | Pairs with `modes.highContrast.buttons.accent.text` for contrast. |
+| `modes.highContrast.buttons.accent.bgActive` | `{colors.accent.900}` | Pairs with `modes.highContrast.buttons.accent.text` for contrast. |
+| `modes.highContrast.buttons.accent.bgDisabled` | `{colors.accent.200}` | modes token. |
+| `modes.highContrast.buttons.accent.text` | `{colors.white}` | Pairs with `modes.highContrast.buttons.accent.bg` for contrast. |
+| `modes.highContrast.buttons.accent.textDisabled` | `{colors.neutral.400}` | modes token. |
+| `modes.highContrast.buttons.accent.focusRing` | `{colors.accent.500} / 0.4` | modes token. |
+| `modes.highContrast.buttons.accent.focusVisible` | `{colors.accent.500} / 0.4` | modes token. |
+| `modes.highContrast.buttons.inverse.bg` | `{colors.white} / 0.12` | modes token. |
+| `modes.highContrast.buttons.inverse.bgHover` | `{colors.white} / 0.2` | modes token. |
+| `modes.highContrast.buttons.inverse.bgActive` | `{colors.white} / 0.28` | modes token. |
+| `modes.highContrast.buttons.inverse.bgDisabled` | `{colors.white} / 0.08` | modes token. |
+| `modes.highContrast.buttons.inverse.text` | `{colors.white}` | Pairs with `surface.inverse` for contrast. |
+| `modes.highContrast.buttons.inverse.textDisabled` | `{colors.neutral.400}` | modes token. |
+| `modes.highContrast.buttons.inverse.border` | `{colors.white} / 0.3` | modes token. |
+| `modes.highContrast.buttons.inverse.borderDisabled` | `{colors.white} / 0.16` | modes token. |
+| `modes.highContrast.buttons.inverse.focusRing` | `{colors.info.500} / 0.4` | modes token. |
+| `modes.highContrast.buttons.inverse.focusVisible` | `{colors.info.500} / 0.4` | modes token. |
+| `modes.highContrast.link.default` | `{colors.brand.700}` | default inline link color |
+| `modes.highContrast.link.hover` | `{colors.brand.800}` | link color on hover |
+| `modes.highContrast.link.active` | `{colors.brand.900}` | link color while pressed |
+| `modes.highContrast.link.visited` | `{colors.accent.700}` | link color after the destination has been visited |
+| `modes.highContrast.link.onInverse` | `{colors.neutral.300}` | default inline link color on surface.inverse, independent of page mode |
+| `modes.highContrast.link.onInverseHover` | `{colors.brand.300}` | link color on hover, on surface.inverse |
+
+## control
+
+| Path | Value | Usage |
+| ---- | ----- | ----- |
+| `control.sm.height` | `2rem` | control token. |
+| `control.sm.paddingInline` | `0.75rem` | control token. |
+| `control.sm.iconSize` | `{icons.sm}` | control token. |
+| `control.md.height` | `2.5rem` | control token. |
+| `control.md.paddingInline` | `1rem` | control token. |
+| `control.md.iconSize` | `{icons.md}` | control token. |
+| `control.lg.height` | `3rem` | control token. |
+| `control.lg.paddingInline` | `1.25rem` | control token. |
+| `control.lg.iconSize` | `{icons.lg}` | control token. |
+| `control.compact.sm.height` | `1.5rem` | control token. |
+| `control.compact.sm.paddingInline` | `0.5rem` | control token. |
+| `control.compact.sm.iconSize` | `{icons.xs}` | control token. |
+| `control.compact.md.height` | `2rem` | control token. |
+| `control.compact.md.paddingInline` | `0.75rem` | control token. |
+| `control.compact.md.iconSize` | `{icons.sm}` | control token. |
+| `control.compact.lg.height` | `2.5rem` | control token. |
+| `control.compact.lg.paddingInline` | `1rem` | control token. |
+| `control.compact.lg.iconSize` | `{icons.md}` | control token. |
+
+## elevation
+
+| Path | Value | Usage |
+| ---- | ----- | ----- |
+| `elevation.flat.shadow` | `{shadows.none}` | elevation token. |
+| `elevation.flat.surface` | `{surface.page}` | elevation token. |
+| `elevation.flat.zIndex` | `{zIndex.base}` | elevation token. |
+| `elevation.raised.shadow` | `{shadows.md}` | elevation token. |
+| `elevation.raised.surface` | `{surface.card}` | elevation token. |
+| `elevation.raised.zIndex` | `{zIndex.base}` | elevation token. |
+| `elevation.overlay.shadow` | `{shadows.lg}` | elevation token. |
+| `elevation.overlay.surface` | `{surface.card}` | elevation token. |
+| `elevation.overlay.zIndex` | `{zIndex.dropdown}` | elevation token. |
+| `elevation.modal.shadow` | `{shadows.2xl}` | elevation token. |
+| `elevation.modal.surface` | `{surface.card}` | elevation token. |
+| `elevation.modal.zIndex` | `{zIndex.modal}` | elevation token. |

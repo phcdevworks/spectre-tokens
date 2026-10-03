@@ -80,7 +80,8 @@ describe('inferTypeWithAliasResolution — whole-value alias target typing', () 
       duration: { base: '200ms' },
       easing: { out: 'cubic-bezier(0, 0, 0.2, 1)', linear: 'linear' }
     },
-    colors: { brand: { 500: '#336df4' } }
+    colors: { brand: { 500: '#336df4' } },
+    shadows: { none: 'none', md: '0 2px 6px -1px {colors.black} / 0.08' }
   }
 
   it('resolves a duration alias to the duration type of its target', () => {
@@ -104,6 +105,14 @@ describe('inferTypeWithAliasResolution — whole-value alias target typing', () 
     // so it must not attempt alias-target resolution and instead fall back to
     // the ordinary color-prefix heuristic.
     expect(inferTypeWithAliasResolution('surface.overlay', '{colors.black} / 0.6', merged)).toBe('color')
+  })
+
+  it('resolves a shadow alias to the shadow type of its target', () => {
+    expect(inferTypeWithAliasResolution('elevation.raised.shadow', '{shadows.md}', merged)).toBe('shadow')
+  })
+
+  it('keeps an alias to the unparsable shadows.none as a string', () => {
+    expect(inferTypeWithAliasResolution('elevation.flat.shadow', '{shadows.none}', merged)).toBe('string')
   })
 
   it('falls back to string when the alias target cannot be resolved', () => {
@@ -161,6 +170,7 @@ describe('isShadowPath', () => {
   it('matches mode-scoped duplicates of a shadow leaf path', () => {
     expect(isShadowPath('modes.default.component.modal.shadow')).toBe(true)
     expect(isShadowPath('modes.dark.component.modal.shadow')).toBe(true)
+    expect(isShadowPath('modes.highContrast.component.modal.shadow')).toBe(true)
   })
 
   it('does not match composite alpha-color paths that are not shadows', () => {
@@ -200,6 +210,7 @@ describe('isGradientPath', () => {
   it('matches mode-scoped duplicates of the gradient leaf path', () => {
     expect(isGradientPath('modes.default.surface.hero')).toBe(true)
     expect(isGradientPath('modes.dark.surface.hero')).toBe(true)
+    expect(isGradientPath('modes.highContrast.surface.hero')).toBe(true)
   })
 
   it('does not match other surface paths', () => {

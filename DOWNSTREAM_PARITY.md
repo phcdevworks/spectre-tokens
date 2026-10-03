@@ -5,8 +5,8 @@ Generated from the published CSS output by `npm run build`
 This file is a derived artifact, not contract authority; `tokens/` and
 `contract.manifest.json` remain the source of truth.
 
-Every CSS custom property in `dist/index.css` (1307 total) belongs
-to exactly one of 69 families. A family is the unit a downstream
+Every CSS custom property in `dist/index.css` (1431 total) belongs
+to exactly one of 78 families. A family is the unit a downstream
 recipe or stylesheet consumes: each one needs a consumer in `spectre-ui`
 before its `tests/token-parity.test.ts` passes. The build fails if a new
 variable does not fit an existing family, so a token group cannot ship
@@ -15,8 +15,10 @@ without appearing here.
 Which recipe consumes a family, and how, is decided downstream. This package
 defines what each token means, not how a component is built from it.
 
-"Dark mode" means the variable is redeclared in the
-`[data-spectre-theme="dark"]` block. The others are declared once in `:root`.
+"Varies by mode" means the `dark` or `high-contrast` mode block gives the
+variable a different value from `:root`, or a `var()` that re-resolves in
+each mode. Every mode block declares the full mode-varying set, so a
+section with its own `data-spectre-theme` resets all of them.
 
 ## Checklist with live status
 
@@ -37,15 +39,18 @@ copy.
 
 ## Foundations
 
-| Family | Variables | Count | Dark mode | Source |
+| Family | Variables | Count | Varies by mode | Source |
 | ------ | --------- | ----- | --------- | ------ |
 | `color` | `--sp-color-*` | 441 | no | `colors` |
-| `space` | `--sp-space-*` | 22 | no | `space` |
-| `layout-container` | `--sp-layout-container-*` | 6 | no | `layout.container` |
-| `layout-section` | `--sp-layout-section-*` | 6 | no | `layout.section` |
-| `layout-stack` | `--sp-layout-stack-*` | 3 | no | `layout.stack` |
+| `space` | `--sp-space-*` | 25 | no | `space` |
+| `layout-container` | `--sp-layout-container-*` | 10 | no | `layout.container` |
+| `layout-section` | `--sp-layout-section-*` | 14 | no | `layout.section` |
+| `layout-stack` | `--sp-layout-stack-*` | 7 | no | `layout.stack` |
+| `layout-hero` | `--sp-layout-hero-*` | 6 | no | `layout.hero` |
+| `layout-responsive` | `--sp-layout-responsive-*` | 16 | no | `layout.responsive` |
 | `layout-sidebar` | `--sp-layout-sidebar-*` | 1 | no | `layout.sidebar` |
 | `radius` | `--sp-radius-*` | 9 | no | `radii` |
+| `elevation` | `--sp-elevation-*` | 12 | 4 of 12 | `elevation` |
 | `border` | `--sp-border-*` | 7 | no | `border` |
 | `shadow` | `--sp-shadow-*` | 11 | no | `shadows` |
 | `opacity` | `--sp-opacity-*` | 7 | no | `opacity` |
@@ -506,7 +511,7 @@ copy.
 
 </details>
 <details>
-<summary><code>space</code> (22)</summary>
+<summary><code>space</code> (25)</summary>
 
 - `--sp-space-0`
 - `--sp-space-1`
@@ -529,37 +534,88 @@ copy.
 - `--sp-space-72`
 - `--sp-space-80`
 - `--sp-space-96`
+- `--sp-space-128`
+- `--sp-space-160`
+- `--sp-space-192`
 - `--sp-space-240`
 
 </details>
 <details>
-<summary><code>layout-container</code> (6)</summary>
+<summary><code>layout-container</code> (10)</summary>
 
 - `--sp-layout-container-padding-inline-sm`
 - `--sp-layout-container-padding-inline-md`
 - `--sp-layout-container-padding-inline-lg`
+- `--sp-layout-container-padding-inline-xl`
+- `--sp-layout-container-padding-inline-2xl`
+- `--sp-layout-container-padding-inline-3xl`
+- `--sp-layout-container-padding-inline-4xl`
 - `--sp-layout-container-max-width`
 - `--sp-layout-container-max-width-prose`
 - `--sp-layout-container-max-width-wide`
 
 </details>
 <details>
-<summary><code>layout-section</code> (6)</summary>
+<summary><code>layout-section</code> (14)</summary>
 
 - `--sp-layout-section-padding-sm`
 - `--sp-layout-section-padding-md`
 - `--sp-layout-section-padding-lg`
+- `--sp-layout-section-padding-xl`
+- `--sp-layout-section-padding-2xl`
+- `--sp-layout-section-padding-3xl`
+- `--sp-layout-section-padding-4xl`
 - `--sp-layout-section-gap-sm`
 - `--sp-layout-section-gap-md`
 - `--sp-layout-section-gap-lg`
+- `--sp-layout-section-gap-xl`
+- `--sp-layout-section-gap-2xl`
+- `--sp-layout-section-gap-3xl`
+- `--sp-layout-section-gap-4xl`
 
 </details>
 <details>
-<summary><code>layout-stack</code> (3)</summary>
+<summary><code>layout-stack</code> (7)</summary>
 
 - `--sp-layout-stack-gap-sm`
 - `--sp-layout-stack-gap-md`
 - `--sp-layout-stack-gap-lg`
+- `--sp-layout-stack-gap-xl`
+- `--sp-layout-stack-gap-2xl`
+- `--sp-layout-stack-gap-3xl`
+- `--sp-layout-stack-gap-4xl`
+
+</details>
+<details>
+<summary><code>layout-hero</code> (6)</summary>
+
+- `--sp-layout-hero-padding-top-sm`
+- `--sp-layout-hero-padding-top-md`
+- `--sp-layout-hero-padding-top-lg`
+- `--sp-layout-hero-padding-bottom-sm`
+- `--sp-layout-hero-padding-bottom-md`
+- `--sp-layout-hero-padding-bottom-lg`
+
+</details>
+<details>
+<summary><code>layout-responsive</code> (16)</summary>
+
+- `--sp-layout-responsive-lg-section-padding-xl`
+- `--sp-layout-responsive-lg-section-padding-2xl`
+- `--sp-layout-responsive-lg-section-padding-3xl`
+- `--sp-layout-responsive-lg-section-padding-4xl`
+- `--sp-layout-responsive-lg-section-gap-xl`
+- `--sp-layout-responsive-lg-section-gap-2xl`
+- `--sp-layout-responsive-lg-section-gap-3xl`
+- `--sp-layout-responsive-lg-section-gap-4xl`
+- `--sp-layout-responsive-lg-stack-gap-xl`
+- `--sp-layout-responsive-lg-stack-gap-2xl`
+- `--sp-layout-responsive-lg-stack-gap-3xl`
+- `--sp-layout-responsive-lg-stack-gap-4xl`
+- `--sp-layout-responsive-lg-container-padding-inline-xl`
+- `--sp-layout-responsive-lg-container-padding-inline-2xl`
+- `--sp-layout-responsive-lg-container-padding-inline-3xl`
+- `--sp-layout-responsive-lg-container-padding-inline-4xl`
 
 </details>
 <details>
@@ -580,6 +636,23 @@ copy.
 - `--sp-radius-3xl`
 - `--sp-radius-4xl`
 - `--sp-radius-pill`
+
+</details>
+<details>
+<summary><code>elevation</code> (12)</summary>
+
+- `--sp-elevation-flat-shadow`
+- `--sp-elevation-flat-surface` (varies by mode)
+- `--sp-elevation-flat-z-index`
+- `--sp-elevation-raised-shadow`
+- `--sp-elevation-raised-surface` (varies by mode)
+- `--sp-elevation-raised-z-index`
+- `--sp-elevation-overlay-shadow`
+- `--sp-elevation-overlay-surface` (varies by mode)
+- `--sp-elevation-overlay-z-index`
+- `--sp-elevation-modal-shadow`
+- `--sp-elevation-modal-surface` (varies by mode)
+- `--sp-elevation-modal-z-index`
 
 </details>
 <details>
@@ -819,60 +892,60 @@ copy.
 
 ## Semantic roles
 
-| Family | Variables | Count | Dark mode | Source |
+| Family | Variables | Count | Varies by mode | Source |
 | ------ | --------- | ----- | --------- | ------ |
-| `surface` | `--sp-surface-*` | 11 | yes | `surface`, `modes.*.surface` |
-| `text` | `--sp-text-*` | 12 | yes | `text`, `modes.*.text` |
-| `link` | `--sp-link-*` | 6 | yes | `link` |
+| `surface` | `--sp-surface-*` | 11 | 9 of 11 | `surface`, `modes.*.surface` |
+| `text` | `--sp-text-*` | 12 | 10 of 12 | `text`, `modes.*.text` |
+| `link` | `--sp-link-*` | 6 | 3 of 6 | `link` |
 
 <details>
 <summary><code>surface</code> (11)</summary>
 
-- `--sp-surface-page` (dark mode)
-- `--sp-surface-card` (dark mode)
-- `--sp-surface-input` (dark mode)
-- `--sp-surface-overlay` (dark mode)
-- `--sp-surface-subtle` (dark mode)
-- `--sp-surface-hero` (dark mode)
-- `--sp-surface-hover` (dark mode)
-- `--sp-surface-selected` (dark mode)
-- `--sp-surface-active` (dark mode)
-- `--sp-surface-divider` (dark mode)
-- `--sp-surface-inverse` (dark mode)
+- `--sp-surface-page` (varies by mode)
+- `--sp-surface-card` (varies by mode)
+- `--sp-surface-input` (varies by mode)
+- `--sp-surface-overlay`
+- `--sp-surface-subtle` (varies by mode)
+- `--sp-surface-hero` (varies by mode)
+- `--sp-surface-hover` (varies by mode)
+- `--sp-surface-selected` (varies by mode)
+- `--sp-surface-active` (varies by mode)
+- `--sp-surface-divider` (varies by mode)
+- `--sp-surface-inverse`
 
 </details>
 <details>
 <summary><code>text</code> (12)</summary>
 
-- `--sp-text-on-page-default` (dark mode)
-- `--sp-text-on-page-muted` (dark mode)
-- `--sp-text-on-page-subtle` (dark mode)
-- `--sp-text-on-page-meta` (dark mode)
-- `--sp-text-on-page-brand` (dark mode)
-- `--sp-text-on-surface-default` (dark mode)
-- `--sp-text-on-surface-muted` (dark mode)
-- `--sp-text-on-surface-subtle` (dark mode)
-- `--sp-text-on-surface-meta` (dark mode)
-- `--sp-text-on-surface-brand` (dark mode)
-- `--sp-text-on-inverse-default` (dark mode)
-- `--sp-text-on-inverse-muted` (dark mode)
+- `--sp-text-on-page-default` (varies by mode)
+- `--sp-text-on-page-muted` (varies by mode)
+- `--sp-text-on-page-subtle` (varies by mode)
+- `--sp-text-on-page-meta` (varies by mode)
+- `--sp-text-on-page-brand` (varies by mode)
+- `--sp-text-on-surface-default` (varies by mode)
+- `--sp-text-on-surface-muted` (varies by mode)
+- `--sp-text-on-surface-subtle` (varies by mode)
+- `--sp-text-on-surface-meta` (varies by mode)
+- `--sp-text-on-surface-brand` (varies by mode)
+- `--sp-text-on-inverse-default`
+- `--sp-text-on-inverse-muted`
 
 </details>
 <details>
 <summary><code>link</code> (6)</summary>
 
-- `--sp-link-default` (dark mode)
-- `--sp-link-hover` (dark mode)
-- `--sp-link-active` (dark mode)
-- `--sp-link-visited` (dark mode)
-- `--sp-link-on-inverse` (dark mode)
-- `--sp-link-on-inverse-hover` (dark mode)
+- `--sp-link-default` (varies by mode)
+- `--sp-link-hover` (varies by mode)
+- `--sp-link-active` (varies by mode)
+- `--sp-link-visited`
+- `--sp-link-on-inverse`
+- `--sp-link-on-inverse-hover`
 
 </details>
 
 ## Typography roles
 
-| Family | Variables | Count | Dark mode | Source |
+| Family | Variables | Count | Varies by mode | Source |
 | ------ | --------- | ----- | --------- | ------ |
 | `heading` | `--sp-heading-*` | 30 | no | `typography.heading` |
 | `body` | `--sp-body-*` | 5 | no | `typography.body` |
@@ -972,19 +1045,20 @@ copy.
 
 ## Controls
 
-| Family | Variables | Count | Dark mode | Source |
+| Family | Variables | Count | Varies by mode | Source |
 | ------ | --------- | ----- | --------- | ------ |
-| `button` | `--sp-button-*` | 104 | 2 of 104 | `buttons`, `component.button`, `modes.*.component.button` |
-| `form` | `--sp-form-*` | 18 | 3 of 18 | `forms`, `modes.*.forms` |
+| `button` | `--sp-button-*` | 104 | 21 of 104 | `buttons`, `component.button`, `modes.*.component.button` |
+| `form` | `--sp-form-*` | 18 | 7 of 18 | `forms`, `modes.*.forms` |
+| `control` | `--sp-control-*` | 18 | no | `control` |
 
 <details>
 <summary><code>button</code> (104)</summary>
 
-- `--sp-button-text-default` (dark mode)
-- `--sp-button-text-on-primary` (dark mode)
-- `--sp-button-primary-bg`
-- `--sp-button-primary-bghover`
-- `--sp-button-primary-bgactive`
+- `--sp-button-text-default` (varies by mode)
+- `--sp-button-text-on-primary`
+- `--sp-button-primary-bg` (varies by mode)
+- `--sp-button-primary-bghover` (varies by mode)
+- `--sp-button-primary-bgactive` (varies by mode)
 - `--sp-button-primary-bgdisabled`
 - `--sp-button-primary-text`
 - `--sp-button-primary-textdisabled`
@@ -994,9 +1068,9 @@ copy.
 - `--sp-button-secondary-bghover`
 - `--sp-button-secondary-bgactive`
 - `--sp-button-secondary-bgdisabled`
-- `--sp-button-secondary-text`
+- `--sp-button-secondary-text` (varies by mode)
 - `--sp-button-secondary-textdisabled`
-- `--sp-button-secondary-border`
+- `--sp-button-secondary-border` (varies by mode)
 - `--sp-button-secondary-borderdisabled`
 - `--sp-button-secondary-focusring`
 - `--sp-button-secondary-focusvisible`
@@ -1004,29 +1078,29 @@ copy.
 - `--sp-button-ghost-bghover`
 - `--sp-button-ghost-bgactive`
 - `--sp-button-ghost-bgdisabled`
-- `--sp-button-ghost-text`
+- `--sp-button-ghost-text` (varies by mode)
 - `--sp-button-ghost-textdisabled`
 - `--sp-button-ghost-focusring`
 - `--sp-button-ghost-focusvisible`
-- `--sp-button-danger-bg`
-- `--sp-button-danger-bghover`
-- `--sp-button-danger-bgactive`
+- `--sp-button-danger-bg` (varies by mode)
+- `--sp-button-danger-bghover` (varies by mode)
+- `--sp-button-danger-bgactive` (varies by mode)
 - `--sp-button-danger-bgdisabled`
 - `--sp-button-danger-text`
 - `--sp-button-danger-textdisabled`
 - `--sp-button-danger-focusring`
 - `--sp-button-danger-focusvisible`
-- `--sp-button-success-bg`
-- `--sp-button-success-bghover`
+- `--sp-button-success-bg` (varies by mode)
+- `--sp-button-success-bghover` (varies by mode)
 - `--sp-button-success-bgactive`
 - `--sp-button-success-bgdisabled`
 - `--sp-button-success-text`
 - `--sp-button-success-textdisabled`
 - `--sp-button-success-focusring`
 - `--sp-button-success-focusvisible`
-- `--sp-button-warning-bg`
-- `--sp-button-warning-bghover`
-- `--sp-button-warning-bgactive`
+- `--sp-button-warning-bg` (varies by mode)
+- `--sp-button-warning-bghover` (varies by mode)
+- `--sp-button-warning-bgactive` (varies by mode)
 - `--sp-button-warning-bgdisabled`
 - `--sp-button-warning-text`
 - `--sp-button-warning-textdisabled`
@@ -1036,9 +1110,9 @@ copy.
 - `--sp-button-link-bghover`
 - `--sp-button-link-bgactive`
 - `--sp-button-link-bgdisabled`
-- `--sp-button-link-text`
-- `--sp-button-link-texthover`
-- `--sp-button-link-textactive`
+- `--sp-button-link-text` (varies by mode)
+- `--sp-button-link-texthover` (varies by mode)
+- `--sp-button-link-textactive` (varies by mode)
 - `--sp-button-link-textdisabled`
 - `--sp-button-link-focusring`
 - `--sp-button-link-focusvisible`
@@ -1058,9 +1132,9 @@ copy.
 - `--sp-button-dark-textdisabled`
 - `--sp-button-dark-focusring`
 - `--sp-button-dark-focusvisible`
-- `--sp-button-cta-bg`
-- `--sp-button-cta-bghover`
-- `--sp-button-cta-bgactive`
+- `--sp-button-cta-bg` (varies by mode)
+- `--sp-button-cta-bghover` (varies by mode)
+- `--sp-button-cta-bgactive` (varies by mode)
 - `--sp-button-cta-bgdisabled`
 - `--sp-button-cta-text`
 - `--sp-button-cta-textdisabled`
@@ -1089,699 +1163,805 @@ copy.
 <details>
 <summary><code>form</code> (18)</summary>
 
-- `--sp-form-default-bg` (dark mode)
-- `--sp-form-default-text` (dark mode)
-- `--sp-form-default-placeholder` (dark mode)
+- `--sp-form-default-bg` (varies by mode)
+- `--sp-form-default-text` (varies by mode)
+- `--sp-form-default-placeholder` (varies by mode)
 - `--sp-form-default-border`
 - `--sp-form-hover-border`
 - `--sp-form-focus-border`
 - `--sp-form-focus-ring`
 - `--sp-form-focusvisible-border`
 - `--sp-form-focusvisible-ring`
-- `--sp-form-valid-border`
+- `--sp-form-valid-border` (varies by mode)
 - `--sp-form-valid-bg`
-- `--sp-form-valid-text`
-- `--sp-form-invalid-border`
+- `--sp-form-valid-text` (varies by mode)
+- `--sp-form-invalid-border` (varies by mode)
 - `--sp-form-invalid-bg`
-- `--sp-form-invalid-text`
+- `--sp-form-invalid-text` (varies by mode)
 - `--sp-form-disabled-bg`
 - `--sp-form-disabled-border`
 - `--sp-form-disabled-text`
 
 </details>
+<details>
+<summary><code>control</code> (18)</summary>
+
+- `--sp-control-sm-height`
+- `--sp-control-sm-padding-inline`
+- `--sp-control-sm-icon-size`
+- `--sp-control-md-height`
+- `--sp-control-md-padding-inline`
+- `--sp-control-md-icon-size`
+- `--sp-control-lg-height`
+- `--sp-control-lg-padding-inline`
+- `--sp-control-lg-icon-size`
+- `--sp-control-compact-sm-height`
+- `--sp-control-compact-sm-padding-inline`
+- `--sp-control-compact-sm-icon-size`
+- `--sp-control-compact-md-height`
+- `--sp-control-compact-md-padding-inline`
+- `--sp-control-compact-md-icon-size`
+- `--sp-control-compact-lg-height`
+- `--sp-control-compact-lg-padding-inline`
+- `--sp-control-compact-lg-icon-size`
+
+</details>
 
 ## Components
 
-| Family | Variables | Count | Dark mode | Source |
+| Family | Variables | Count | Varies by mode | Source |
 | ------ | --------- | ----- | --------- | ------ |
-| `card` | `--sp-component-card-*` | 13 | yes | `component.card`, `modes.*.component.card` |
-| `choice-card` | `--sp-choice-card-*` | 9 | yes | `component.choiceCard`, `modes.*.component.choiceCard` |
+| `card` | `--sp-component-card-*` | 13 | 9 of 13 | `component.card`, `modes.*.component.card` |
+| `choice-card` | `--sp-choice-card-*` | 9 | 7 of 9 | `component.choiceCard`, `modes.*.component.choiceCard` |
 | `input` | `--sp-component-input-*` | 2 | yes | `component.input`, `modes.*.component.input` |
-| `badge` | `--sp-badge-*` | 31 | yes | `component.badge`, `modes.*.component.badge` |
+| `badge` | `--sp-badge-*` | 31 | 25 of 31 | `component.badge`, `modes.*.component.badge` |
 | `icon-box` | `--sp-icon-box-*` | 6 | yes | `component.iconBox`, `modes.*.component.iconBox` |
-| `testimonial` | `--sp-testimonial-*` | 15 | yes | `component.testimonial`, `modes.*.component.testimonial` |
-| `pricing-card` | `--sp-pricing-card-*` | 17 | yes | `component.pricingCard`, `modes.*.component.pricingCard` |
+| `testimonial` | `--sp-testimonial-*` | 15 | 14 of 15 | `component.testimonial`, `modes.*.component.testimonial` |
+| `pricing-card` | `--sp-pricing-card-*` | 17 | 13 of 17 | `component.pricingCard`, `modes.*.component.pricingCard` |
 | `rating` | `--sp-rating-*` | 3 | yes | `component.rating`, `modes.*.component.rating` |
-| `nav` | `--sp-nav-*` | 14 | yes | `component.nav`, `modes.*.component.nav` |
-| `footer` | `--sp-footer-*` | 17 | yes | `component.footer`, `modes.*.component.footer` |
-| `modal` | `--sp-modal-*` | 12 | yes | `component.modal`, `modes.*.component.modal` |
-| `toast` | `--sp-toast-*` | 28 | yes | `component.toast`, `modes.*.component.toast` |
-| `tooltip` | `--sp-tooltip-*` | 11 | yes | `component.tooltip`, `modes.*.component.tooltip` |
-| `dropdown` | `--sp-dropdown-*` | 19 | yes | `component.dropdown`, `modes.*.component.dropdown` |
-| `tabs` | `--sp-tabs-*` | 11 | yes | `component.tabs`, `modes.*.component.tabs` |
+| `nav` | `--sp-nav-*` | 14 | 13 of 14 | `component.nav`, `modes.*.component.nav` |
+| `footer` | `--sp-footer-*` | 33 | 19 of 33 | `component.footer`, `modes.*.component.footer` |
+| `modal` | `--sp-modal-*` | 12 | 9 of 12 | `component.modal`, `modes.*.component.modal` |
+| `toast` | `--sp-toast-*` | 28 | 27 of 28 | `component.toast`, `modes.*.component.toast` |
+| `tooltip` | `--sp-tooltip-*` | 11 | 10 of 11 | `component.tooltip`, `modes.*.component.tooltip` |
+| `dropdown` | `--sp-dropdown-*` | 19 | 16 of 19 | `component.dropdown`, `modes.*.component.dropdown` |
+| `tabs` | `--sp-tabs-*` | 11 | 9 of 11 | `component.tabs`, `modes.*.component.tabs` |
 | `accordion` | `--sp-accordion-*` | 6 | yes | `component.accordion`, `modes.*.component.accordion` |
 | `breadcrumb` | `--sp-breadcrumb-*` | 4 | yes | `component.breadcrumb`, `modes.*.component.breadcrumb` |
-| `list-group` | `--sp-list-group-*` | 18 | yes | `component.listGroup`, `modes.*.component.listGroup` |
-| `offcanvas` | `--sp-offcanvas-*` | 4 | yes | `component.offcanvas`, `modes.*.component.offcanvas` |
-| `carousel` | `--sp-carousel-*` | 6 | yes | `component.carousel`, `modes.*.component.carousel` |
+| `list-group` | `--sp-list-group-*` | 18 | 16 of 18 | `component.listGroup`, `modes.*.component.listGroup` |
+| `offcanvas` | `--sp-offcanvas-*` | 4 | 3 of 4 | `component.offcanvas`, `modes.*.component.offcanvas` |
+| `carousel` | `--sp-carousel-*` | 6 | no | `component.carousel`, `modes.*.component.carousel` |
 | `table` | `--sp-table-*` | 17 | yes | `component.table`, `modes.*.component.table` |
 | `alert` | `--sp-alert-*` | 24 | yes | `component.alert`, `modes.*.component.alert` |
-| `pagination` | `--sp-pagination-*` | 5 | yes | `component.pagination`, `modes.*.component.pagination` |
-| `stepper` | `--sp-stepper-*` | 8 | yes | `component.stepper`, `modes.*.component.stepper` |
+| `pagination` | `--sp-pagination-*` | 5 | 4 of 5 | `component.pagination`, `modes.*.component.pagination` |
+| `stepper` | `--sp-stepper-*` | 8 | 6 of 8 | `component.stepper`, `modes.*.component.stepper` |
 | `popover` | `--sp-popover-*` | 6 | yes | `component.popover`, `modes.*.component.popover` |
 | `progress` | `--sp-progress-*` | 8 | yes | `component.progress`, `modes.*.component.progress` |
-| `loading-indicator` | `--sp-loading-indicator-*` | 8 | yes | `component.loadingIndicator`, `modes.*.component.loadingIndicator` |
-| `switch` | `--sp-switch-*` | 6 | yes | `component.switch`, `modes.*.component.switch` |
-| `range` | `--sp-range-*` | 7 | yes | `component.range`, `modes.*.component.range` |
-| `file-input` | `--sp-file-input-*` | 13 | yes | `component.fileInput`, `modes.*.component.fileInput` |
+| `loading-indicator` | `--sp-loading-indicator-*` | 8 | 7 of 8 | `component.loadingIndicator`, `modes.*.component.loadingIndicator` |
+| `switch` | `--sp-switch-*` | 6 | 3 of 6 | `component.switch`, `modes.*.component.switch` |
+| `range` | `--sp-range-*` | 7 | 3 of 7 | `component.range`, `modes.*.component.range` |
+| `file-input` | `--sp-file-input-*` | 13 | 9 of 13 | `component.fileInput`, `modes.*.component.fileInput` |
 | `input-group` | `--sp-input-group-*` | 6 | yes | `component.inputGroup`, `modes.*.component.inputGroup` |
 | `datepicker` | `--sp-datepicker-*` | 4 | yes | `component.datepicker`, `modes.*.component.datepicker` |
-| `day` | `--sp-day-*` | 7 | yes | `component.day`, `modes.*.component.day` |
-| `prose` | `--sp-prose-*` | 10 | yes | `component.prose`, `modes.*.component.prose` |
-| `external-auth-button` | `--sp-external-auth-button-*` | 8 | yes | `component.externalAuthButton`, `modes.*.component.externalAuthButton` |
-| `checkbox` | `--sp-checkbox-*` | 7 | yes | `component.checkbox`, `modes.*.component.checkbox` |
-| `radio` | `--sp-radio-*` | 7 | yes | `component.radio`, `modes.*.component.radio` |
-| `select` | `--sp-select-*` | 11 | yes | `component.select`, `modes.*.component.select` |
-| `textarea` | `--sp-textarea-*` | 11 | yes | `component.textarea`, `modes.*.component.textarea` |
+| `day` | `--sp-day-*` | 7 | 5 of 7 | `component.day`, `modes.*.component.day` |
+| `prose` | `--sp-prose-*` | 13 | yes | `component.prose`, `modes.*.component.prose` |
+| `external-auth-button` | `--sp-external-auth-button-*` | 8 | 7 of 8 | `component.externalAuthButton`, `modes.*.component.externalAuthButton` |
+| `checkbox` | `--sp-checkbox-*` | 7 | 5 of 7 | `component.checkbox`, `modes.*.component.checkbox` |
+| `radio` | `--sp-radio-*` | 7 | 5 of 7 | `component.radio`, `modes.*.component.radio` |
+| `select` | `--sp-select-*` | 11 | 7 of 11 | `component.select`, `modes.*.component.select` |
+| `textarea` | `--sp-textarea-*` | 11 | 7 of 11 | `component.textarea`, `modes.*.component.textarea` |
 | `fieldset` | `--sp-fieldset-*` | 2 | yes | `component.fieldset`, `modes.*.component.fieldset` |
 | `label` | `--sp-label-*` | 3 | yes | `component.label`, `modes.*.component.label` |
+| `skeleton` | `--sp-skeleton-*` | 2 | yes | `component.skeleton`, `modes.*.component.skeleton` |
+| `selection` | `--sp-selection-*` | 2 | yes | `component.selection`, `modes.*.component.selection` |
+| `caret` | `--sp-caret-*` | 1 | yes | `component.caret`, `modes.*.component.caret` |
+| `scrollbar` | `--sp-scrollbar-*` | 3 | 2 of 3 | `component.scrollbar`, `modes.*.component.scrollbar` |
+| `chart` | `--sp-chart-*` | 26 | yes | `component.chart`, `modes.*.component.chart` |
 
 <details>
 <summary><code>card</code> (13)</summary>
 
-- `--sp-component-card-text` (dark mode)
-- `--sp-component-card-text-muted` (dark mode)
-- `--sp-component-card-accent-neutral` (dark mode)
-- `--sp-component-card-accent-brand` (dark mode)
-- `--sp-component-card-accent-info` (dark mode)
-- `--sp-component-card-accent-success` (dark mode)
-- `--sp-component-card-accent-warning` (dark mode)
-- `--sp-component-card-accent-danger` (dark mode)
-- `--sp-component-card-accent-cta` (dark mode)
-- `--sp-component-card-padding-sm` (dark mode)
-- `--sp-component-card-padding-md` (dark mode)
-- `--sp-component-card-padding-lg` (dark mode)
-- `--sp-component-card-accent-thickness` (dark mode)
+- `--sp-component-card-text` (varies by mode)
+- `--sp-component-card-text-muted` (varies by mode)
+- `--sp-component-card-accent-neutral` (varies by mode)
+- `--sp-component-card-accent-brand` (varies by mode)
+- `--sp-component-card-accent-info` (varies by mode)
+- `--sp-component-card-accent-success` (varies by mode)
+- `--sp-component-card-accent-warning` (varies by mode)
+- `--sp-component-card-accent-danger` (varies by mode)
+- `--sp-component-card-accent-cta` (varies by mode)
+- `--sp-component-card-padding-sm`
+- `--sp-component-card-padding-md`
+- `--sp-component-card-padding-lg`
+- `--sp-component-card-accent-thickness`
 
 </details>
 <details>
 <summary><code>choice-card</code> (9)</summary>
 
-- `--sp-choice-card-bg` (dark mode)
-- `--sp-choice-card-text` (dark mode)
-- `--sp-choice-card-border` (dark mode)
-- `--sp-choice-card-hover-border` (dark mode)
-- `--sp-choice-card-selected-bg` (dark mode)
-- `--sp-choice-card-selected-border` (dark mode)
-- `--sp-choice-card-disabled-bg` (dark mode)
-- `--sp-choice-card-disabled-text` (dark mode)
-- `--sp-choice-card-focus-ring` (dark mode)
+- `--sp-choice-card-bg` (varies by mode)
+- `--sp-choice-card-text` (varies by mode)
+- `--sp-choice-card-border` (varies by mode)
+- `--sp-choice-card-hover-border` (varies by mode)
+- `--sp-choice-card-selected-bg` (varies by mode)
+- `--sp-choice-card-selected-border`
+- `--sp-choice-card-disabled-bg` (varies by mode)
+- `--sp-choice-card-disabled-text` (varies by mode)
+- `--sp-choice-card-focus-ring`
 
 </details>
 <details>
 <summary><code>input</code> (2)</summary>
 
-- `--sp-component-input-text` (dark mode)
-- `--sp-component-input-placeholder` (dark mode)
+- `--sp-component-input-text` (varies by mode)
+- `--sp-component-input-placeholder` (varies by mode)
 
 </details>
 <details>
 <summary><code>badge</code> (31)</summary>
 
-- `--sp-badge-neutral-bg` (dark mode)
-- `--sp-badge-neutral-bg-hover` (dark mode)
-- `--sp-badge-neutral-text` (dark mode)
-- `--sp-badge-brand-bg` (dark mode)
-- `--sp-badge-brand-bg-hover` (dark mode)
-- `--sp-badge-brand-text` (dark mode)
-- `--sp-badge-info-bg` (dark mode)
-- `--sp-badge-info-bg-hover` (dark mode)
-- `--sp-badge-info-text` (dark mode)
-- `--sp-badge-success-bg` (dark mode)
-- `--sp-badge-success-text` (dark mode)
-- `--sp-badge-warning-bg` (dark mode)
-- `--sp-badge-warning-text` (dark mode)
-- `--sp-badge-danger-bg` (dark mode)
-- `--sp-badge-danger-text` (dark mode)
-- `--sp-badge-accent-neutral` (dark mode)
-- `--sp-badge-accent-brand` (dark mode)
-- `--sp-badge-accent-info` (dark mode)
-- `--sp-badge-accent-success` (dark mode)
-- `--sp-badge-accent-warning` (dark mode)
-- `--sp-badge-accent-danger` (dark mode)
-- `--sp-badge-accent-cta` (dark mode)
-- `--sp-badge-success-bg-hover` (dark mode)
-- `--sp-badge-warning-bg-hover` (dark mode)
-- `--sp-badge-danger-bg-hover` (dark mode)
-- `--sp-badge-inverse-bg` (dark mode)
-- `--sp-badge-inverse-bg-hover` (dark mode)
-- `--sp-badge-inverse-text` (dark mode)
-- `--sp-badge-inverse-border` (dark mode)
-- `--sp-badge-dot-border` (dark mode)
-- `--sp-badge-accent-thickness` (dark mode)
+- `--sp-badge-neutral-bg` (varies by mode)
+- `--sp-badge-neutral-bg-hover` (varies by mode)
+- `--sp-badge-neutral-text` (varies by mode)
+- `--sp-badge-brand-bg` (varies by mode)
+- `--sp-badge-brand-bg-hover` (varies by mode)
+- `--sp-badge-brand-text` (varies by mode)
+- `--sp-badge-info-bg` (varies by mode)
+- `--sp-badge-info-bg-hover` (varies by mode)
+- `--sp-badge-info-text` (varies by mode)
+- `--sp-badge-success-bg` (varies by mode)
+- `--sp-badge-success-text` (varies by mode)
+- `--sp-badge-warning-bg` (varies by mode)
+- `--sp-badge-warning-text` (varies by mode)
+- `--sp-badge-danger-bg` (varies by mode)
+- `--sp-badge-danger-text` (varies by mode)
+- `--sp-badge-accent-neutral` (varies by mode)
+- `--sp-badge-accent-brand` (varies by mode)
+- `--sp-badge-accent-info` (varies by mode)
+- `--sp-badge-accent-success` (varies by mode)
+- `--sp-badge-accent-warning` (varies by mode)
+- `--sp-badge-accent-danger` (varies by mode)
+- `--sp-badge-accent-cta` (varies by mode)
+- `--sp-badge-success-bg-hover` (varies by mode)
+- `--sp-badge-warning-bg-hover` (varies by mode)
+- `--sp-badge-danger-bg-hover` (varies by mode)
+- `--sp-badge-inverse-bg`
+- `--sp-badge-inverse-bg-hover`
+- `--sp-badge-inverse-text`
+- `--sp-badge-inverse-border`
+- `--sp-badge-dot-border`
+- `--sp-badge-accent-thickness`
 
 </details>
 <details>
 <summary><code>icon-box</code> (6)</summary>
 
-- `--sp-icon-box-bg` (dark mode)
-- `--sp-icon-box-border` (dark mode)
-- `--sp-icon-box-icon-default` (dark mode)
-- `--sp-icon-box-icon-success` (dark mode)
-- `--sp-icon-box-icon-warning` (dark mode)
-- `--sp-icon-box-icon-danger` (dark mode)
+- `--sp-icon-box-bg` (varies by mode)
+- `--sp-icon-box-border` (varies by mode)
+- `--sp-icon-box-icon-default` (varies by mode)
+- `--sp-icon-box-icon-success` (varies by mode)
+- `--sp-icon-box-icon-warning` (varies by mode)
+- `--sp-icon-box-icon-danger` (varies by mode)
 
 </details>
 <details>
 <summary><code>testimonial</code> (15)</summary>
 
-- `--sp-testimonial-bg` (dark mode)
-- `--sp-testimonial-bg-hover` (dark mode)
-- `--sp-testimonial-border` (dark mode)
-- `--sp-testimonial-text` (dark mode)
-- `--sp-testimonial-author-name` (dark mode)
-- `--sp-testimonial-author-title` (dark mode)
-- `--sp-testimonial-quote-mark` (dark mode)
-- `--sp-testimonial-accent-neutral` (dark mode)
-- `--sp-testimonial-accent-brand` (dark mode)
-- `--sp-testimonial-accent-info` (dark mode)
-- `--sp-testimonial-accent-success` (dark mode)
-- `--sp-testimonial-accent-warning` (dark mode)
-- `--sp-testimonial-accent-danger` (dark mode)
-- `--sp-testimonial-accent-cta` (dark mode)
-- `--sp-testimonial-accent-thickness` (dark mode)
+- `--sp-testimonial-bg` (varies by mode)
+- `--sp-testimonial-bg-hover` (varies by mode)
+- `--sp-testimonial-border` (varies by mode)
+- `--sp-testimonial-text` (varies by mode)
+- `--sp-testimonial-author-name` (varies by mode)
+- `--sp-testimonial-author-title` (varies by mode)
+- `--sp-testimonial-quote-mark` (varies by mode)
+- `--sp-testimonial-accent-neutral` (varies by mode)
+- `--sp-testimonial-accent-brand` (varies by mode)
+- `--sp-testimonial-accent-info` (varies by mode)
+- `--sp-testimonial-accent-success` (varies by mode)
+- `--sp-testimonial-accent-warning` (varies by mode)
+- `--sp-testimonial-accent-danger` (varies by mode)
+- `--sp-testimonial-accent-cta` (varies by mode)
+- `--sp-testimonial-accent-thickness`
 
 </details>
 <details>
 <summary><code>pricing-card</code> (17)</summary>
 
-- `--sp-pricing-card-bg` (dark mode)
-- `--sp-pricing-card-bg-hover` (dark mode)
-- `--sp-pricing-card-border` (dark mode)
-- `--sp-pricing-card-featured-bg` (dark mode)
-- `--sp-pricing-card-featured-text` (dark mode)
-- `--sp-pricing-card-featured-badge-bg` (dark mode)
-- `--sp-pricing-card-featured-badge-text` (dark mode)
-- `--sp-pricing-card-price` (dark mode)
-- `--sp-pricing-card-price-description` (dark mode)
-- `--sp-pricing-card-accent-neutral` (dark mode)
-- `--sp-pricing-card-accent-brand` (dark mode)
-- `--sp-pricing-card-accent-info` (dark mode)
-- `--sp-pricing-card-accent-success` (dark mode)
-- `--sp-pricing-card-accent-warning` (dark mode)
-- `--sp-pricing-card-accent-danger` (dark mode)
-- `--sp-pricing-card-accent-cta` (dark mode)
-- `--sp-pricing-card-accent-thickness` (dark mode)
+- `--sp-pricing-card-bg` (varies by mode)
+- `--sp-pricing-card-bg-hover` (varies by mode)
+- `--sp-pricing-card-border` (varies by mode)
+- `--sp-pricing-card-featured-bg` (varies by mode)
+- `--sp-pricing-card-featured-text`
+- `--sp-pricing-card-featured-badge-bg`
+- `--sp-pricing-card-featured-badge-text`
+- `--sp-pricing-card-price` (varies by mode)
+- `--sp-pricing-card-price-description` (varies by mode)
+- `--sp-pricing-card-accent-neutral` (varies by mode)
+- `--sp-pricing-card-accent-brand` (varies by mode)
+- `--sp-pricing-card-accent-info` (varies by mode)
+- `--sp-pricing-card-accent-success` (varies by mode)
+- `--sp-pricing-card-accent-warning` (varies by mode)
+- `--sp-pricing-card-accent-danger` (varies by mode)
+- `--sp-pricing-card-accent-cta` (varies by mode)
+- `--sp-pricing-card-accent-thickness`
 
 </details>
 <details>
 <summary><code>rating</code> (3)</summary>
 
-- `--sp-rating-star-filled` (dark mode)
-- `--sp-rating-star-empty` (dark mode)
-- `--sp-rating-text` (dark mode)
+- `--sp-rating-star-filled` (varies by mode)
+- `--sp-rating-star-empty` (varies by mode)
+- `--sp-rating-text` (varies by mode)
 
 </details>
 <details>
 <summary><code>nav</code> (14)</summary>
 
-- `--sp-nav-bg` (dark mode)
-- `--sp-nav-text` (dark mode)
-- `--sp-nav-link` (dark mode)
-- `--sp-nav-link-hover` (dark mode)
-- `--sp-nav-link-active` (dark mode)
-- `--sp-nav-border` (dark mode)
-- `--sp-nav-accent-neutral` (dark mode)
-- `--sp-nav-accent-brand` (dark mode)
-- `--sp-nav-accent-info` (dark mode)
-- `--sp-nav-accent-success` (dark mode)
-- `--sp-nav-accent-warning` (dark mode)
-- `--sp-nav-accent-danger` (dark mode)
-- `--sp-nav-accent-cta` (dark mode)
-- `--sp-nav-accent-thickness` (dark mode)
+- `--sp-nav-bg` (varies by mode)
+- `--sp-nav-text` (varies by mode)
+- `--sp-nav-link` (varies by mode)
+- `--sp-nav-link-hover` (varies by mode)
+- `--sp-nav-link-active` (varies by mode)
+- `--sp-nav-border` (varies by mode)
+- `--sp-nav-accent-neutral` (varies by mode)
+- `--sp-nav-accent-brand` (varies by mode)
+- `--sp-nav-accent-info` (varies by mode)
+- `--sp-nav-accent-success` (varies by mode)
+- `--sp-nav-accent-warning` (varies by mode)
+- `--sp-nav-accent-danger` (varies by mode)
+- `--sp-nav-accent-cta` (varies by mode)
+- `--sp-nav-accent-thickness`
 
 </details>
 <details>
-<summary><code>footer</code> (17)</summary>
+<summary><code>footer</code> (33)</summary>
 
-- `--sp-footer-bg` (dark mode)
-- `--sp-footer-text` (dark mode)
-- `--sp-footer-heading` (dark mode)
-- `--sp-footer-muted` (dark mode)
-- `--sp-footer-link` (dark mode)
-- `--sp-footer-link-hover` (dark mode)
-- `--sp-footer-border` (dark mode)
-- `--sp-footer-divider` (dark mode)
-- `--sp-footer-chip-bg` (dark mode)
-- `--sp-footer-accent-neutral` (dark mode)
-- `--sp-footer-accent-brand` (dark mode)
-- `--sp-footer-accent-info` (dark mode)
-- `--sp-footer-accent-success` (dark mode)
-- `--sp-footer-accent-warning` (dark mode)
-- `--sp-footer-accent-danger` (dark mode)
-- `--sp-footer-accent-cta` (dark mode)
-- `--sp-footer-accent-thickness` (dark mode)
+- `--sp-footer-bg` (varies by mode)
+- `--sp-footer-text`
+- `--sp-footer-heading`
+- `--sp-footer-muted` (varies by mode)
+- `--sp-footer-link`
+- `--sp-footer-link-hover` (varies by mode)
+- `--sp-footer-border` (varies by mode)
+- `--sp-footer-divider` (varies by mode)
+- `--sp-footer-chip-bg` (varies by mode)
+- `--sp-footer-accent-neutral` (varies by mode)
+- `--sp-footer-accent-brand` (varies by mode)
+- `--sp-footer-accent-info` (varies by mode)
+- `--sp-footer-accent-success` (varies by mode)
+- `--sp-footer-accent-warning` (varies by mode)
+- `--sp-footer-accent-danger` (varies by mode)
+- `--sp-footer-accent-cta` (varies by mode)
+- `--sp-footer-light-bg` (varies by mode)
+- `--sp-footer-light-text` (varies by mode)
+- `--sp-footer-light-heading`
+- `--sp-footer-light-muted` (varies by mode)
+- `--sp-footer-light-link`
+- `--sp-footer-light-link-hover`
+- `--sp-footer-light-border` (varies by mode)
+- `--sp-footer-light-divider` (varies by mode)
+- `--sp-footer-light-chip-bg` (varies by mode)
+- `--sp-footer-light-accent-neutral`
+- `--sp-footer-light-accent-brand`
+- `--sp-footer-light-accent-info`
+- `--sp-footer-light-accent-success`
+- `--sp-footer-light-accent-warning`
+- `--sp-footer-light-accent-danger`
+- `--sp-footer-light-accent-cta`
+- `--sp-footer-accent-thickness`
 
 </details>
 <details>
 <summary><code>modal</code> (12)</summary>
 
-- `--sp-modal-bg` (dark mode)
-- `--sp-modal-shadow` (dark mode)
-- `--sp-modal-border` (dark mode)
-- `--sp-modal-overlay` (dark mode)
-- `--sp-modal-accent-neutral` (dark mode)
-- `--sp-modal-accent-brand` (dark mode)
-- `--sp-modal-accent-info` (dark mode)
-- `--sp-modal-accent-success` (dark mode)
-- `--sp-modal-accent-warning` (dark mode)
-- `--sp-modal-accent-danger` (dark mode)
-- `--sp-modal-accent-cta` (dark mode)
-- `--sp-modal-accent-thickness` (dark mode)
+- `--sp-modal-bg` (varies by mode)
+- `--sp-modal-shadow`
+- `--sp-modal-border` (varies by mode)
+- `--sp-modal-overlay`
+- `--sp-modal-accent-neutral` (varies by mode)
+- `--sp-modal-accent-brand` (varies by mode)
+- `--sp-modal-accent-info` (varies by mode)
+- `--sp-modal-accent-success` (varies by mode)
+- `--sp-modal-accent-warning` (varies by mode)
+- `--sp-modal-accent-danger` (varies by mode)
+- `--sp-modal-accent-cta` (varies by mode)
+- `--sp-modal-accent-thickness`
 
 </details>
 <details>
 <summary><code>toast</code> (28)</summary>
 
-- `--sp-toast-neutral-bg` (dark mode)
-- `--sp-toast-neutral-text` (dark mode)
-- `--sp-toast-neutral-border` (dark mode)
-- `--sp-toast-neutral-icon` (dark mode)
-- `--sp-toast-success-bg` (dark mode)
-- `--sp-toast-success-text` (dark mode)
-- `--sp-toast-success-border` (dark mode)
-- `--sp-toast-success-icon` (dark mode)
-- `--sp-toast-warning-bg` (dark mode)
-- `--sp-toast-warning-text` (dark mode)
-- `--sp-toast-warning-border` (dark mode)
-- `--sp-toast-warning-icon` (dark mode)
-- `--sp-toast-danger-bg` (dark mode)
-- `--sp-toast-danger-text` (dark mode)
-- `--sp-toast-danger-border` (dark mode)
-- `--sp-toast-danger-icon` (dark mode)
-- `--sp-toast-info-bg` (dark mode)
-- `--sp-toast-info-text` (dark mode)
-- `--sp-toast-info-border` (dark mode)
-- `--sp-toast-info-icon` (dark mode)
-- `--sp-toast-accent-neutral` (dark mode)
-- `--sp-toast-accent-brand` (dark mode)
-- `--sp-toast-accent-info` (dark mode)
-- `--sp-toast-accent-success` (dark mode)
-- `--sp-toast-accent-warning` (dark mode)
-- `--sp-toast-accent-danger` (dark mode)
-- `--sp-toast-accent-cta` (dark mode)
-- `--sp-toast-accent-thickness` (dark mode)
+- `--sp-toast-neutral-bg` (varies by mode)
+- `--sp-toast-neutral-text` (varies by mode)
+- `--sp-toast-neutral-border` (varies by mode)
+- `--sp-toast-neutral-icon` (varies by mode)
+- `--sp-toast-success-bg` (varies by mode)
+- `--sp-toast-success-text` (varies by mode)
+- `--sp-toast-success-border` (varies by mode)
+- `--sp-toast-success-icon` (varies by mode)
+- `--sp-toast-warning-bg` (varies by mode)
+- `--sp-toast-warning-text` (varies by mode)
+- `--sp-toast-warning-border` (varies by mode)
+- `--sp-toast-warning-icon` (varies by mode)
+- `--sp-toast-danger-bg` (varies by mode)
+- `--sp-toast-danger-text` (varies by mode)
+- `--sp-toast-danger-border` (varies by mode)
+- `--sp-toast-danger-icon` (varies by mode)
+- `--sp-toast-info-bg` (varies by mode)
+- `--sp-toast-info-text` (varies by mode)
+- `--sp-toast-info-border` (varies by mode)
+- `--sp-toast-info-icon` (varies by mode)
+- `--sp-toast-accent-neutral` (varies by mode)
+- `--sp-toast-accent-brand` (varies by mode)
+- `--sp-toast-accent-info` (varies by mode)
+- `--sp-toast-accent-success` (varies by mode)
+- `--sp-toast-accent-warning` (varies by mode)
+- `--sp-toast-accent-danger` (varies by mode)
+- `--sp-toast-accent-cta` (varies by mode)
+- `--sp-toast-accent-thickness`
 
 </details>
 <details>
 <summary><code>tooltip</code> (11)</summary>
 
-- `--sp-tooltip-bg` (dark mode)
-- `--sp-tooltip-text` (dark mode)
-- `--sp-tooltip-border` (dark mode)
-- `--sp-tooltip-accent-neutral` (dark mode)
-- `--sp-tooltip-accent-brand` (dark mode)
-- `--sp-tooltip-accent-info` (dark mode)
-- `--sp-tooltip-accent-success` (dark mode)
-- `--sp-tooltip-accent-warning` (dark mode)
-- `--sp-tooltip-accent-danger` (dark mode)
-- `--sp-tooltip-accent-cta` (dark mode)
-- `--sp-tooltip-accent-thickness` (dark mode)
+- `--sp-tooltip-bg` (varies by mode)
+- `--sp-tooltip-text` (varies by mode)
+- `--sp-tooltip-border` (varies by mode)
+- `--sp-tooltip-accent-neutral` (varies by mode)
+- `--sp-tooltip-accent-brand` (varies by mode)
+- `--sp-tooltip-accent-info` (varies by mode)
+- `--sp-tooltip-accent-success` (varies by mode)
+- `--sp-tooltip-accent-warning` (varies by mode)
+- `--sp-tooltip-accent-danger` (varies by mode)
+- `--sp-tooltip-accent-cta` (varies by mode)
+- `--sp-tooltip-accent-thickness`
 
 </details>
 <details>
 <summary><code>dropdown</code> (19)</summary>
 
-- `--sp-dropdown-bg` (dark mode)
-- `--sp-dropdown-border` (dark mode)
-- `--sp-dropdown-item-default` (dark mode)
-- `--sp-dropdown-item-hover` (dark mode)
-- `--sp-dropdown-item-active` (dark mode)
-- `--sp-dropdown-item-text` (dark mode)
-- `--sp-dropdown-item-disabled-text` (dark mode)
-- `--sp-dropdown-item-selected-bg` (dark mode)
-- `--sp-dropdown-item-selected-text` (dark mode)
-- `--sp-dropdown-accent-neutral` (dark mode)
-- `--sp-dropdown-accent-brand` (dark mode)
-- `--sp-dropdown-accent-info` (dark mode)
-- `--sp-dropdown-accent-success` (dark mode)
-- `--sp-dropdown-accent-warning` (dark mode)
-- `--sp-dropdown-accent-danger` (dark mode)
-- `--sp-dropdown-accent-cta` (dark mode)
-- `--sp-dropdown-header` (dark mode)
-- `--sp-dropdown-divider` (dark mode)
-- `--sp-dropdown-accent-thickness` (dark mode)
+- `--sp-dropdown-bg` (varies by mode)
+- `--sp-dropdown-border` (varies by mode)
+- `--sp-dropdown-item-default`
+- `--sp-dropdown-item-hover` (varies by mode)
+- `--sp-dropdown-item-active` (varies by mode)
+- `--sp-dropdown-item-text` (varies by mode)
+- `--sp-dropdown-item-disabled-text` (varies by mode)
+- `--sp-dropdown-item-selected-bg` (varies by mode)
+- `--sp-dropdown-item-selected-text` (varies by mode)
+- `--sp-dropdown-accent-neutral` (varies by mode)
+- `--sp-dropdown-accent-brand` (varies by mode)
+- `--sp-dropdown-accent-info` (varies by mode)
+- `--sp-dropdown-accent-success` (varies by mode)
+- `--sp-dropdown-accent-warning` (varies by mode)
+- `--sp-dropdown-accent-danger` (varies by mode)
+- `--sp-dropdown-accent-cta` (varies by mode)
+- `--sp-dropdown-header`
+- `--sp-dropdown-divider` (varies by mode)
+- `--sp-dropdown-accent-thickness`
 
 </details>
 <details>
 <summary><code>tabs</code> (11)</summary>
 
-- `--sp-tabs-list-bg` (dark mode)
-- `--sp-tabs-list-border` (dark mode)
-- `--sp-tabs-item-text` (dark mode)
-- `--sp-tabs-item-hover-bg` (dark mode)
-- `--sp-tabs-item-active-text` (dark mode)
-- `--sp-tabs-item-active-indicator` (dark mode)
-- `--sp-tabs-item-focus-ring-color` (dark mode)
-- `--sp-tabs-item-disabled-text` (dark mode)
-- `--sp-tabs-pill-active-bg` (dark mode)
-- `--sp-tabs-pill-active-text` (dark mode)
-- `--sp-tabs-panel-bg` (dark mode)
+- `--sp-tabs-list-bg` (varies by mode)
+- `--sp-tabs-list-border` (varies by mode)
+- `--sp-tabs-item-text` (varies by mode)
+- `--sp-tabs-item-hover-bg` (varies by mode)
+- `--sp-tabs-item-active-text` (varies by mode)
+- `--sp-tabs-item-active-indicator` (varies by mode)
+- `--sp-tabs-item-focus-ring-color`
+- `--sp-tabs-item-disabled-text` (varies by mode)
+- `--sp-tabs-pill-active-bg` (varies by mode)
+- `--sp-tabs-pill-active-text`
+- `--sp-tabs-panel-bg` (varies by mode)
 
 </details>
 <details>
 <summary><code>accordion</code> (6)</summary>
 
-- `--sp-accordion-bg` (dark mode)
-- `--sp-accordion-text` (dark mode)
-- `--sp-accordion-border` (dark mode)
-- `--sp-accordion-header-hover-bg` (dark mode)
-- `--sp-accordion-icon-collapsed` (dark mode)
-- `--sp-accordion-icon-expanded` (dark mode)
+- `--sp-accordion-bg` (varies by mode)
+- `--sp-accordion-text` (varies by mode)
+- `--sp-accordion-border` (varies by mode)
+- `--sp-accordion-header-hover-bg` (varies by mode)
+- `--sp-accordion-icon-collapsed` (varies by mode)
+- `--sp-accordion-icon-expanded` (varies by mode)
 
 </details>
 <details>
 <summary><code>breadcrumb</code> (4)</summary>
 
-- `--sp-breadcrumb-item-text` (dark mode)
-- `--sp-breadcrumb-item-hover-text` (dark mode)
-- `--sp-breadcrumb-item-active-text` (dark mode)
-- `--sp-breadcrumb-separator` (dark mode)
+- `--sp-breadcrumb-item-text` (varies by mode)
+- `--sp-breadcrumb-item-hover-text` (varies by mode)
+- `--sp-breadcrumb-item-active-text` (varies by mode)
+- `--sp-breadcrumb-separator` (varies by mode)
 
 </details>
 <details>
 <summary><code>list-group</code> (18)</summary>
 
-- `--sp-list-group-bg` (dark mode)
-- `--sp-list-group-border` (dark mode)
-- `--sp-list-group-text` (dark mode)
-- `--sp-list-group-heading` (dark mode)
-- `--sp-list-group-muted` (dark mode)
-- `--sp-list-group-item-hover-bg` (dark mode)
-- `--sp-list-group-item-active-bg` (dark mode)
-- `--sp-list-group-item-active-text` (dark mode)
-- `--sp-list-group-item-selected-bg` (dark mode)
-- `--sp-list-group-item-disabled-text` (dark mode)
-- `--sp-list-group-accent-neutral` (dark mode)
-- `--sp-list-group-accent-brand` (dark mode)
-- `--sp-list-group-accent-info` (dark mode)
-- `--sp-list-group-accent-success` (dark mode)
-- `--sp-list-group-accent-warning` (dark mode)
-- `--sp-list-group-accent-danger` (dark mode)
-- `--sp-list-group-accent-cta` (dark mode)
-- `--sp-list-group-accent-thickness` (dark mode)
+- `--sp-list-group-bg` (varies by mode)
+- `--sp-list-group-border` (varies by mode)
+- `--sp-list-group-text` (varies by mode)
+- `--sp-list-group-heading` (varies by mode)
+- `--sp-list-group-muted` (varies by mode)
+- `--sp-list-group-item-hover-bg` (varies by mode)
+- `--sp-list-group-item-active-bg` (varies by mode)
+- `--sp-list-group-item-active-text`
+- `--sp-list-group-item-selected-bg` (varies by mode)
+- `--sp-list-group-item-disabled-text` (varies by mode)
+- `--sp-list-group-accent-neutral` (varies by mode)
+- `--sp-list-group-accent-brand` (varies by mode)
+- `--sp-list-group-accent-info` (varies by mode)
+- `--sp-list-group-accent-success` (varies by mode)
+- `--sp-list-group-accent-warning` (varies by mode)
+- `--sp-list-group-accent-danger` (varies by mode)
+- `--sp-list-group-accent-cta` (varies by mode)
+- `--sp-list-group-accent-thickness`
 
 </details>
 <details>
 <summary><code>offcanvas</code> (4)</summary>
 
-- `--sp-offcanvas-bg` (dark mode)
-- `--sp-offcanvas-text` (dark mode)
-- `--sp-offcanvas-border` (dark mode)
-- `--sp-offcanvas-overlay` (dark mode)
+- `--sp-offcanvas-bg` (varies by mode)
+- `--sp-offcanvas-text` (varies by mode)
+- `--sp-offcanvas-border` (varies by mode)
+- `--sp-offcanvas-overlay`
 
 </details>
 <details>
 <summary><code>carousel</code> (6)</summary>
 
-- `--sp-carousel-indicator-default` (dark mode)
-- `--sp-carousel-indicator-active` (dark mode)
-- `--sp-carousel-control-icon` (dark mode)
-- `--sp-carousel-control-bg` (dark mode)
-- `--sp-carousel-caption-bg` (dark mode)
-- `--sp-carousel-caption-text` (dark mode)
+- `--sp-carousel-indicator-default`
+- `--sp-carousel-indicator-active`
+- `--sp-carousel-control-icon`
+- `--sp-carousel-control-bg`
+- `--sp-carousel-caption-bg`
+- `--sp-carousel-caption-text`
 
 </details>
 <details>
 <summary><code>table</code> (17)</summary>
 
-- `--sp-table-header-bg` (dark mode)
-- `--sp-table-header-text` (dark mode)
-- `--sp-table-text` (dark mode)
-- `--sp-table-divider` (dark mode)
-- `--sp-table-stripe-bg` (dark mode)
-- `--sp-table-hover-bg` (dark mode)
-- `--sp-table-selected-bg` (dark mode)
-- `--sp-table-row-neutral-bg` (dark mode)
-- `--sp-table-row-neutral-text` (dark mode)
-- `--sp-table-row-info-bg` (dark mode)
-- `--sp-table-row-info-text` (dark mode)
-- `--sp-table-row-success-bg` (dark mode)
-- `--sp-table-row-success-text` (dark mode)
-- `--sp-table-row-warning-bg` (dark mode)
-- `--sp-table-row-warning-text` (dark mode)
-- `--sp-table-row-danger-bg` (dark mode)
-- `--sp-table-row-danger-text` (dark mode)
+- `--sp-table-header-bg` (varies by mode)
+- `--sp-table-header-text` (varies by mode)
+- `--sp-table-text` (varies by mode)
+- `--sp-table-divider` (varies by mode)
+- `--sp-table-stripe-bg` (varies by mode)
+- `--sp-table-hover-bg` (varies by mode)
+- `--sp-table-selected-bg` (varies by mode)
+- `--sp-table-row-neutral-bg` (varies by mode)
+- `--sp-table-row-neutral-text` (varies by mode)
+- `--sp-table-row-info-bg` (varies by mode)
+- `--sp-table-row-info-text` (varies by mode)
+- `--sp-table-row-success-bg` (varies by mode)
+- `--sp-table-row-success-text` (varies by mode)
+- `--sp-table-row-warning-bg` (varies by mode)
+- `--sp-table-row-warning-text` (varies by mode)
+- `--sp-table-row-danger-bg` (varies by mode)
+- `--sp-table-row-danger-text` (varies by mode)
 
 </details>
 <details>
 <summary><code>alert</code> (24)</summary>
 
-- `--sp-alert-neutral-bg` (dark mode)
-- `--sp-alert-neutral-text` (dark mode)
-- `--sp-alert-neutral-border` (dark mode)
-- `--sp-alert-neutral-icon` (dark mode)
-- `--sp-alert-brand-bg` (dark mode)
-- `--sp-alert-brand-text` (dark mode)
-- `--sp-alert-brand-border` (dark mode)
-- `--sp-alert-brand-icon` (dark mode)
-- `--sp-alert-info-bg` (dark mode)
-- `--sp-alert-info-text` (dark mode)
-- `--sp-alert-info-border` (dark mode)
-- `--sp-alert-info-icon` (dark mode)
-- `--sp-alert-success-bg` (dark mode)
-- `--sp-alert-success-text` (dark mode)
-- `--sp-alert-success-border` (dark mode)
-- `--sp-alert-success-icon` (dark mode)
-- `--sp-alert-warning-bg` (dark mode)
-- `--sp-alert-warning-text` (dark mode)
-- `--sp-alert-warning-border` (dark mode)
-- `--sp-alert-warning-icon` (dark mode)
-- `--sp-alert-danger-bg` (dark mode)
-- `--sp-alert-danger-text` (dark mode)
-- `--sp-alert-danger-border` (dark mode)
-- `--sp-alert-danger-icon` (dark mode)
+- `--sp-alert-neutral-bg` (varies by mode)
+- `--sp-alert-neutral-text` (varies by mode)
+- `--sp-alert-neutral-border` (varies by mode)
+- `--sp-alert-neutral-icon` (varies by mode)
+- `--sp-alert-brand-bg` (varies by mode)
+- `--sp-alert-brand-text` (varies by mode)
+- `--sp-alert-brand-border` (varies by mode)
+- `--sp-alert-brand-icon` (varies by mode)
+- `--sp-alert-info-bg` (varies by mode)
+- `--sp-alert-info-text` (varies by mode)
+- `--sp-alert-info-border` (varies by mode)
+- `--sp-alert-info-icon` (varies by mode)
+- `--sp-alert-success-bg` (varies by mode)
+- `--sp-alert-success-text` (varies by mode)
+- `--sp-alert-success-border` (varies by mode)
+- `--sp-alert-success-icon` (varies by mode)
+- `--sp-alert-warning-bg` (varies by mode)
+- `--sp-alert-warning-text` (varies by mode)
+- `--sp-alert-warning-border` (varies by mode)
+- `--sp-alert-warning-icon` (varies by mode)
+- `--sp-alert-danger-bg` (varies by mode)
+- `--sp-alert-danger-text` (varies by mode)
+- `--sp-alert-danger-border` (varies by mode)
+- `--sp-alert-danger-icon` (varies by mode)
 
 </details>
 <details>
 <summary><code>pagination</code> (5)</summary>
 
-- `--sp-pagination-item-text` (dark mode)
-- `--sp-pagination-item-hover-bg` (dark mode)
-- `--sp-pagination-item-active-bg` (dark mode)
-- `--sp-pagination-item-active-text` (dark mode)
-- `--sp-pagination-item-disabled-text` (dark mode)
+- `--sp-pagination-item-text` (varies by mode)
+- `--sp-pagination-item-hover-bg` (varies by mode)
+- `--sp-pagination-item-active-bg` (varies by mode)
+- `--sp-pagination-item-active-text`
+- `--sp-pagination-item-disabled-text` (varies by mode)
 
 </details>
 <details>
 <summary><code>stepper</code> (8)</summary>
 
-- `--sp-stepper-step-pending-bg` (dark mode)
-- `--sp-stepper-step-pending-text` (dark mode)
-- `--sp-stepper-step-active-bg` (dark mode)
-- `--sp-stepper-step-active-text` (dark mode)
-- `--sp-stepper-step-done-bg` (dark mode)
-- `--sp-stepper-step-done-text` (dark mode)
-- `--sp-stepper-connector` (dark mode)
-- `--sp-stepper-label-text` (dark mode)
+- `--sp-stepper-step-pending-bg` (varies by mode)
+- `--sp-stepper-step-pending-text` (varies by mode)
+- `--sp-stepper-step-active-bg` (varies by mode)
+- `--sp-stepper-step-active-text`
+- `--sp-stepper-step-done-bg` (varies by mode)
+- `--sp-stepper-step-done-text`
+- `--sp-stepper-connector` (varies by mode)
+- `--sp-stepper-label-text` (varies by mode)
 
 </details>
 <details>
 <summary><code>popover</code> (6)</summary>
 
-- `--sp-popover-bg` (dark mode)
-- `--sp-popover-text` (dark mode)
-- `--sp-popover-muted` (dark mode)
-- `--sp-popover-border` (dark mode)
-- `--sp-popover-shadow` (dark mode)
-- `--sp-popover-arrow` (dark mode)
+- `--sp-popover-bg` (varies by mode)
+- `--sp-popover-text` (varies by mode)
+- `--sp-popover-muted` (varies by mode)
+- `--sp-popover-border` (varies by mode)
+- `--sp-popover-shadow` (varies by mode)
+- `--sp-popover-arrow` (varies by mode)
 
 </details>
 <details>
 <summary><code>progress</code> (8)</summary>
 
-- `--sp-progress-track-bg` (dark mode)
-- `--sp-progress-indicator-neutral` (dark mode)
-- `--sp-progress-indicator-brand` (dark mode)
-- `--sp-progress-indicator-info` (dark mode)
-- `--sp-progress-indicator-success` (dark mode)
-- `--sp-progress-indicator-warning` (dark mode)
-- `--sp-progress-indicator-danger` (dark mode)
-- `--sp-progress-label-text` (dark mode)
+- `--sp-progress-track-bg` (varies by mode)
+- `--sp-progress-indicator-neutral` (varies by mode)
+- `--sp-progress-indicator-brand` (varies by mode)
+- `--sp-progress-indicator-info` (varies by mode)
+- `--sp-progress-indicator-success` (varies by mode)
+- `--sp-progress-indicator-warning` (varies by mode)
+- `--sp-progress-indicator-danger` (varies by mode)
+- `--sp-progress-label-text` (varies by mode)
 
 </details>
 <details>
 <summary><code>loading-indicator</code> (8)</summary>
 
-- `--sp-loading-indicator-default` (dark mode)
-- `--sp-loading-indicator-muted` (dark mode)
-- `--sp-loading-indicator-inverse` (dark mode)
-- `--sp-loading-indicator-brand` (dark mode)
-- `--sp-loading-indicator-info` (dark mode)
-- `--sp-loading-indicator-success` (dark mode)
-- `--sp-loading-indicator-warning` (dark mode)
-- `--sp-loading-indicator-danger` (dark mode)
+- `--sp-loading-indicator-default` (varies by mode)
+- `--sp-loading-indicator-muted` (varies by mode)
+- `--sp-loading-indicator-inverse`
+- `--sp-loading-indicator-brand` (varies by mode)
+- `--sp-loading-indicator-info` (varies by mode)
+- `--sp-loading-indicator-success` (varies by mode)
+- `--sp-loading-indicator-warning` (varies by mode)
+- `--sp-loading-indicator-danger` (varies by mode)
 
 </details>
 <details>
 <summary><code>switch</code> (6)</summary>
 
-- `--sp-switch-track-bg` (dark mode)
-- `--sp-switch-track-checked-bg` (dark mode)
-- `--sp-switch-thumb-bg` (dark mode)
-- `--sp-switch-track-disabled-bg` (dark mode)
-- `--sp-switch-thumb-disabled-bg` (dark mode)
-- `--sp-switch-focus-ring` (dark mode)
+- `--sp-switch-track-bg` (varies by mode)
+- `--sp-switch-track-checked-bg`
+- `--sp-switch-thumb-bg`
+- `--sp-switch-track-disabled-bg` (varies by mode)
+- `--sp-switch-thumb-disabled-bg` (varies by mode)
+- `--sp-switch-focus-ring`
 
 </details>
 <details>
 <summary><code>range</code> (7)</summary>
 
-- `--sp-range-track-bg` (dark mode)
-- `--sp-range-track-filled-bg` (dark mode)
-- `--sp-range-thumb-bg` (dark mode)
-- `--sp-range-thumb-border` (dark mode)
-- `--sp-range-track-disabled-bg` (dark mode)
-- `--sp-range-thumb-disabled-border` (dark mode)
-- `--sp-range-focus-ring` (dark mode)
+- `--sp-range-track-bg` (varies by mode)
+- `--sp-range-track-filled-bg`
+- `--sp-range-thumb-bg`
+- `--sp-range-thumb-border`
+- `--sp-range-track-disabled-bg` (varies by mode)
+- `--sp-range-thumb-disabled-border` (varies by mode)
+- `--sp-range-focus-ring`
 
 </details>
 <details>
 <summary><code>file-input</code> (13)</summary>
 
-- `--sp-file-input-bg` (dark mode)
-- `--sp-file-input-border` (dark mode)
-- `--sp-file-input-text` (dark mode)
-- `--sp-file-input-action-bg` (dark mode)
-- `--sp-file-input-action-text` (dark mode)
-- `--sp-file-input-disabled-bg` (dark mode)
-- `--sp-file-input-disabled-border` (dark mode)
-- `--sp-file-input-disabled-text` (dark mode)
-- `--sp-file-input-focus-border` (dark mode)
-- `--sp-file-input-border-invalid` (dark mode)
-- `--sp-file-input-bg-invalid` (dark mode)
-- `--sp-file-input-border-success` (dark mode)
-- `--sp-file-input-bg-success` (dark mode)
+- `--sp-file-input-bg` (varies by mode)
+- `--sp-file-input-border` (varies by mode)
+- `--sp-file-input-text` (varies by mode)
+- `--sp-file-input-action-bg` (varies by mode)
+- `--sp-file-input-action-text` (varies by mode)
+- `--sp-file-input-disabled-bg` (varies by mode)
+- `--sp-file-input-disabled-border` (varies by mode)
+- `--sp-file-input-disabled-text` (varies by mode)
+- `--sp-file-input-focus-border` (varies by mode)
+- `--sp-file-input-border-invalid`
+- `--sp-file-input-bg-invalid`
+- `--sp-file-input-border-success`
+- `--sp-file-input-bg-success`
 
 </details>
 <details>
 <summary><code>input-group</code> (6)</summary>
 
-- `--sp-input-group-addon-bg` (dark mode)
-- `--sp-input-group-addon-text` (dark mode)
-- `--sp-input-group-addon-border` (dark mode)
-- `--sp-input-group-focus-border` (dark mode)
-- `--sp-input-group-disabled-bg` (dark mode)
-- `--sp-input-group-disabled-text` (dark mode)
+- `--sp-input-group-addon-bg` (varies by mode)
+- `--sp-input-group-addon-text` (varies by mode)
+- `--sp-input-group-addon-border` (varies by mode)
+- `--sp-input-group-focus-border` (varies by mode)
+- `--sp-input-group-disabled-bg` (varies by mode)
+- `--sp-input-group-disabled-text` (varies by mode)
 
 </details>
 <details>
 <summary><code>datepicker</code> (4)</summary>
 
-- `--sp-datepicker-panel-bg` (dark mode)
-- `--sp-datepicker-panel-border` (dark mode)
-- `--sp-datepicker-header-text` (dark mode)
-- `--sp-datepicker-weekday-text` (dark mode)
+- `--sp-datepicker-panel-bg` (varies by mode)
+- `--sp-datepicker-panel-border` (varies by mode)
+- `--sp-datepicker-header-text` (varies by mode)
+- `--sp-datepicker-weekday-text` (varies by mode)
 
 </details>
 <details>
 <summary><code>day</code> (7)</summary>
 
-- `--sp-day-default-text` (dark mode)
-- `--sp-day-default-hover-bg` (dark mode)
-- `--sp-day-selected-bg` (dark mode)
-- `--sp-day-selected-text` (dark mode)
-- `--sp-day-today-ring-color` (dark mode)
-- `--sp-day-outside-month-text` (dark mode)
-- `--sp-day-disabled-text` (dark mode)
+- `--sp-day-default-text` (varies by mode)
+- `--sp-day-default-hover-bg` (varies by mode)
+- `--sp-day-selected-bg` (varies by mode)
+- `--sp-day-selected-text`
+- `--sp-day-today-ring-color`
+- `--sp-day-outside-month-text` (varies by mode)
+- `--sp-day-disabled-text` (varies by mode)
 
 </details>
 <details>
-<summary><code>prose</code> (10)</summary>
+<summary><code>prose</code> (13)</summary>
 
-- `--sp-prose-blockquote-border` (dark mode)
-- `--sp-prose-blockquote-text` (dark mode)
-- `--sp-prose-code-bg` (dark mode)
-- `--sp-prose-code-text` (dark mode)
-- `--sp-prose-code-block-bg` (dark mode)
-- `--sp-prose-code-block-text` (dark mode)
-- `--sp-prose-code-block-border` (dark mode)
-- `--sp-prose-mark-bg` (dark mode)
-- `--sp-prose-mark-text` (dark mode)
-- `--sp-prose-hr` (dark mode)
+- `--sp-prose-blockquote-border` (varies by mode)
+- `--sp-prose-blockquote-text` (varies by mode)
+- `--sp-prose-code-bg` (varies by mode)
+- `--sp-prose-code-text` (varies by mode)
+- `--sp-prose-code-block-bg` (varies by mode)
+- `--sp-prose-code-block-text` (varies by mode)
+- `--sp-prose-code-block-border` (varies by mode)
+- `--sp-prose-mark-bg` (varies by mode)
+- `--sp-prose-mark-text` (varies by mode)
+- `--sp-prose-hr` (varies by mode)
+- `--sp-prose-kbd-bg` (varies by mode)
+- `--sp-prose-kbd-border` (varies by mode)
+- `--sp-prose-kbd-text` (varies by mode)
 
 </details>
 <details>
 <summary><code>external-auth-button</code> (8)</summary>
 
-- `--sp-external-auth-button-bg` (dark mode)
-- `--sp-external-auth-button-text` (dark mode)
-- `--sp-external-auth-button-border` (dark mode)
-- `--sp-external-auth-button-hover-bg` (dark mode)
-- `--sp-external-auth-button-active-bg` (dark mode)
-- `--sp-external-auth-button-disabled-bg` (dark mode)
-- `--sp-external-auth-button-disabled-text` (dark mode)
-- `--sp-external-auth-button-focus-ring` (dark mode)
+- `--sp-external-auth-button-bg` (varies by mode)
+- `--sp-external-auth-button-text` (varies by mode)
+- `--sp-external-auth-button-border` (varies by mode)
+- `--sp-external-auth-button-hover-bg` (varies by mode)
+- `--sp-external-auth-button-active-bg` (varies by mode)
+- `--sp-external-auth-button-disabled-bg` (varies by mode)
+- `--sp-external-auth-button-disabled-text` (varies by mode)
+- `--sp-external-auth-button-focus-ring`
 
 </details>
 <details>
 <summary><code>checkbox</code> (7)</summary>
 
-- `--sp-checkbox-bg` (dark mode)
-- `--sp-checkbox-border` (dark mode)
-- `--sp-checkbox-checked-bg` (dark mode)
-- `--sp-checkbox-checked-border` (dark mode)
-- `--sp-checkbox-text` (dark mode)
-- `--sp-checkbox-disabled-bg` (dark mode)
-- `--sp-checkbox-disabled-border` (dark mode)
+- `--sp-checkbox-bg` (varies by mode)
+- `--sp-checkbox-border` (varies by mode)
+- `--sp-checkbox-checked-bg` (varies by mode)
+- `--sp-checkbox-checked-border`
+- `--sp-checkbox-text`
+- `--sp-checkbox-disabled-bg` (varies by mode)
+- `--sp-checkbox-disabled-border` (varies by mode)
 
 </details>
 <details>
 <summary><code>radio</code> (7)</summary>
 
-- `--sp-radio-bg` (dark mode)
-- `--sp-radio-border` (dark mode)
-- `--sp-radio-checked-bg` (dark mode)
-- `--sp-radio-checked-border` (dark mode)
-- `--sp-radio-text` (dark mode)
-- `--sp-radio-disabled-bg` (dark mode)
-- `--sp-radio-disabled-border` (dark mode)
+- `--sp-radio-bg` (varies by mode)
+- `--sp-radio-border` (varies by mode)
+- `--sp-radio-checked-bg` (varies by mode)
+- `--sp-radio-checked-border`
+- `--sp-radio-text`
+- `--sp-radio-disabled-bg` (varies by mode)
+- `--sp-radio-disabled-border` (varies by mode)
 
 </details>
 <details>
 <summary><code>select</code> (11)</summary>
 
-- `--sp-select-bg` (dark mode)
-- `--sp-select-border` (dark mode)
-- `--sp-select-text` (dark mode)
-- `--sp-select-placeholder-text` (dark mode)
-- `--sp-select-disabled-bg` (dark mode)
-- `--sp-select-disabled-border` (dark mode)
-- `--sp-select-focus-border` (dark mode)
-- `--sp-select-border-invalid` (dark mode)
-- `--sp-select-bg-invalid` (dark mode)
-- `--sp-select-border-success` (dark mode)
-- `--sp-select-bg-success` (dark mode)
+- `--sp-select-bg` (varies by mode)
+- `--sp-select-border` (varies by mode)
+- `--sp-select-text` (varies by mode)
+- `--sp-select-placeholder-text` (varies by mode)
+- `--sp-select-disabled-bg` (varies by mode)
+- `--sp-select-disabled-border` (varies by mode)
+- `--sp-select-focus-border` (varies by mode)
+- `--sp-select-border-invalid`
+- `--sp-select-bg-invalid`
+- `--sp-select-border-success`
+- `--sp-select-bg-success`
 
 </details>
 <details>
 <summary><code>textarea</code> (11)</summary>
 
-- `--sp-textarea-bg` (dark mode)
-- `--sp-textarea-border` (dark mode)
-- `--sp-textarea-text` (dark mode)
-- `--sp-textarea-placeholder` (dark mode)
-- `--sp-textarea-disabled-bg` (dark mode)
-- `--sp-textarea-disabled-border` (dark mode)
-- `--sp-textarea-focus-border` (dark mode)
-- `--sp-textarea-border-invalid` (dark mode)
-- `--sp-textarea-bg-invalid` (dark mode)
-- `--sp-textarea-border-success` (dark mode)
-- `--sp-textarea-bg-success` (dark mode)
+- `--sp-textarea-bg` (varies by mode)
+- `--sp-textarea-border` (varies by mode)
+- `--sp-textarea-text` (varies by mode)
+- `--sp-textarea-placeholder` (varies by mode)
+- `--sp-textarea-disabled-bg` (varies by mode)
+- `--sp-textarea-disabled-border` (varies by mode)
+- `--sp-textarea-focus-border` (varies by mode)
+- `--sp-textarea-border-invalid`
+- `--sp-textarea-bg-invalid`
+- `--sp-textarea-border-success`
+- `--sp-textarea-bg-success`
 
 </details>
 <details>
 <summary><code>fieldset</code> (2)</summary>
 
-- `--sp-fieldset-border` (dark mode)
-- `--sp-fieldset-legend-text` (dark mode)
+- `--sp-fieldset-border` (varies by mode)
+- `--sp-fieldset-legend-text` (varies by mode)
 
 </details>
 <details>
 <summary><code>label</code> (3)</summary>
 
-- `--sp-label-text` (dark mode)
-- `--sp-label-disabled-text` (dark mode)
-- `--sp-label-required-indicator-text` (dark mode)
+- `--sp-label-text` (varies by mode)
+- `--sp-label-disabled-text` (varies by mode)
+- `--sp-label-required-indicator-text` (varies by mode)
+
+</details>
+<details>
+<summary><code>skeleton</code> (2)</summary>
+
+- `--sp-skeleton-base` (varies by mode)
+- `--sp-skeleton-shimmer` (varies by mode)
+
+</details>
+<details>
+<summary><code>selection</code> (2)</summary>
+
+- `--sp-selection-bg` (varies by mode)
+- `--sp-selection-text` (varies by mode)
+
+</details>
+<details>
+<summary><code>caret</code> (1)</summary>
+
+- `--sp-caret-color` (varies by mode)
+
+</details>
+<details>
+<summary><code>scrollbar</code> (3)</summary>
+
+- `--sp-scrollbar-track` (varies by mode)
+- `--sp-scrollbar-thumb` (varies by mode)
+- `--sp-scrollbar-thumb-hover`
+
+</details>
+<details>
+<summary><code>chart</code> (26)</summary>
+
+- `--sp-chart-bg` (varies by mode)
+- `--sp-chart-grid` (varies by mode)
+- `--sp-chart-axis` (varies by mode)
+- `--sp-chart-label` (varies by mode)
+- `--sp-chart-series-1` (varies by mode)
+- `--sp-chart-series-2` (varies by mode)
+- `--sp-chart-series-3` (varies by mode)
+- `--sp-chart-series-4` (varies by mode)
+- `--sp-chart-series-5` (varies by mode)
+- `--sp-chart-series-6` (varies by mode)
+- `--sp-chart-series-7` (varies by mode)
+- `--sp-chart-series-8` (varies by mode)
+- `--sp-chart-sequential-1` (varies by mode)
+- `--sp-chart-sequential-2` (varies by mode)
+- `--sp-chart-sequential-3` (varies by mode)
+- `--sp-chart-sequential-4` (varies by mode)
+- `--sp-chart-sequential-5` (varies by mode)
+- `--sp-chart-sequential-6` (varies by mode)
+- `--sp-chart-sequential-7` (varies by mode)
+- `--sp-chart-diverging-1` (varies by mode)
+- `--sp-chart-diverging-2` (varies by mode)
+- `--sp-chart-diverging-3` (varies by mode)
+- `--sp-chart-diverging-4` (varies by mode)
+- `--sp-chart-diverging-5` (varies by mode)
+- `--sp-chart-diverging-6` (varies by mode)
+- `--sp-chart-diverging-7` (varies by mode)
 
 </details>

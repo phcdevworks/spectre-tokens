@@ -16,6 +16,9 @@ export interface CssParityGroup {
   sourcePath: string;
   prefixParts: string[];
   blockStrategy: CssBlockStrategy;
+  // kebab-split camelCase leaf keys (`paddingInline` -> `padding-inline`)
+  // for a cascade-only group; mode-scoped and duplicated groups always do
+  kebab?: boolean;
 }
 
 export interface OutputParity {

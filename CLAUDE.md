@@ -99,13 +99,13 @@ Changes to those files must be regenerated, validated, and classified in
 | Script                 | What it validates                                                                                                                                                    |
 | ---------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `check:manifest`       | public namespaces and required outputs vs contract.manifest.json                                                                                                     |
-| `check:structure`      | token tree shape                                                                                                                                                     |
+| `check:structure`      | token tree shape; layout spacing on the 8px grid, responsive steps never shrinking, hero padding referencing section padding                                        |
 | `check:locked`         | protected color families unchanged                                                                                                                                   |
-| `check:contrast`       | WCAG AA contrast for all paired tokens                                                                                                                               |
+| `check:contrast`       | paired tokens meet WCAG AA (4.5:1), AAA (7:1) under `modes.highContrast`, or their `metadata.minContrast` for non-text pairs                                         |
 | `check:regression`     | required paths, flattened values, banned aliases, and space-linked layout values                                                                                                                                   |
 | `check:docs`           | README.md and TOKEN_CONTRACT.md aligned to manifest                                                                                                                  |
 | `check:exports`        | public runtime exports match declared contract                                                                                                                       |
-| `check:css`            | required CSS variables present                                                                                                                                       |
+| `check:css`            | required CSS variables present; every mode block (dark, high-contrast, light/system, system dark) scoped to root and descendants with the same full variable set   |
 | `check:parity`         | exhaustive JS/TS/CSS/DTCG leaf-path coverage per contract.manifest.json outputParity                                                                                 |
 | `check:dtcg`           | every DTCG $value matches its declared $type structural shape                                                                                                        |
 | `check:dtcg-roundtrip` | a real DTCG consumer (Style Dictionary) builds dist/tokens.dtcg.json successfully                                                                                    |
@@ -143,9 +143,9 @@ Changes to these require explicit approval from Bradley Potts.
 Current: `colors`, `space`, `layout`, `radii`, `typography`, `font`, `shadows`,
 `breakpoints`, `zIndex`, `transitions`, `animations`, `opacity`, `aspectRatios`,
 `icons`, `border`, `accessibility`, `buttons`, `forms`, `link`, `surface`,
-`text`, `component`, `modes`, `tracking`
+`text`, `component`, `modes`, `tracking`, `control`, `elevation`
 
-Phases 1 through 15 are complete. Delivery history is tracked in `ROADMAP.md`;
+Phases 1 through 16 are complete. Delivery history is tracked in `ROADMAP.md`;
 active work, both proactive and downstream-requested, is tracked in
 `TODO.md`. Contract expansion is proactive: add what the vocabulary needs
 without waiting for a downstream request or proving demand, per "Contract

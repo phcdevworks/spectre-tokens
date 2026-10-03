@@ -161,11 +161,18 @@ parity.dtcg.namespaces.forEach((namespace) => {
 // ─── CSS: declarative per-group prefix coverage ──────────────────────────────
 
 const css = generateCssVariables(tokens);
-const darkBlockMarker = ':root[data-spectre-theme="dark"] {';
+const darkBlockMarker = ':root[data-spectre-theme="dark"]';
 const darkBlockIndex = css.indexOf(darkBlockMarker);
 if (darkBlockIndex === -1) fail('Generated CSS is missing the dark-mode block.');
 const rootBlock = css.slice(0, darkBlockIndex);
-const darkBlock = css.slice(darkBlockIndex + darkBlockMarker.length);
+const blockBody = (marker: string): string | undefined => {
+  const start = css.indexOf(marker);
+  if (start === -1) return undefined;
+  return css.slice(start + marker.length, css.indexOf('\n}', start));
+};
+const darkBlock = blockBody(darkBlockMarker) ?? '';
+const highContrastBlock = blockBody(':root[data-spectre-theme="high-contrast"]');
+if (highContrastBlock === undefined) fail('Generated CSS is missing the high-contrast block.');
 
 // Matches `formatKey` in src/css.ts, which createCssVariableMap uses for the
 // flat cascade-only namespaces below: lowercased, non-alphanumeric runs
@@ -205,14 +212,15 @@ const extractDeclaredValue = (block: string, varName: string): string | undefine
 //   - 'duplicated': explicitly redeclared in both blocks with the same value
 //     in each, no modes.* backing (e.g. link). Checked for presence and
 //     value equality in both blocks.
-parity.css.groups.forEach(({ sourcePath, prefixParts, blockStrategy }) => {
+// The high-contrast block follows the dark block's rule for every strategy.
+parity.css.groups.forEach(({ sourcePath, prefixParts, blockStrategy, kebab }) => {
   const node = getPathValue(tokens, sourcePath);
   if (node === undefined) fail(`Runtime tokens are missing declared CSS parity source path: ${sourcePath}`);
 
   // 'duplicated' currently has one member (`link`), whose generator
   // (src/css.ts's `linkTokens` loop) kebab-splits camelCase keys the same way
   // the mode-scoped semantic walker does (`onInverse` -> `on-inverse`).
-  const usesKebabSplitting = blockStrategy === 'mode-scoped' || blockStrategy === 'duplicated';
+  const usesKebabSplitting = blockStrategy === 'mode-scoped' || blockStrategy === 'duplicated' || kebab === true;
   const segmentFormatter = usesKebabSplitting ? kebabPathSegmentLikeCss : formatKeyLikeCss;
 
   collectRuntimeLeafPaths(node).forEach((leafPath) => {
@@ -226,6 +234,7 @@ parity.css.groups.forEach(({ sourcePath, prefixParts, blockStrategy }) => {
     }
 
     const darkValue = extractDeclaredValue(darkBlock, varName);
+    const highContrastValue = extractDeclaredValue(highContrastBlock ?? '', varName);
 
     if (blockStrategy === 'cascade-only') {
       if (darkValue !== undefined) {
@@ -233,11 +242,17 @@ parity.css.groups.forEach(({ sourcePath, prefixParts, blockStrategy }) => {
           `${describedPath} is declared 'cascade-only' (reaches dark mode via CSS inheritance) but ${varName} is explicitly redeclared in the dark-mode block (default="${rootValue}", dark="${darkValue}"). Either the token has legitimately gone mode-aware (move it to a mode-scoped or duplicated group) or generateCssVariables regressed.`
         );
       }
+      if (highContrastValue !== undefined) {
+        fail(`${describedPath} is declared 'cascade-only' but ${varName} is redeclared in the high-contrast block.`);
+      }
       return;
     }
 
     if (darkValue === undefined) {
       fail(`Generated CSS is missing variable in the dark-mode block for ${describedPath}: ${varName}`);
+    }
+    if (highContrastValue === undefined) {
+      fail(`Generated CSS is missing variable in the high-contrast block for ${describedPath}: ${varName}`);
     }
 
     if (blockStrategy === 'duplicated' && darkValue !== rootValue) {

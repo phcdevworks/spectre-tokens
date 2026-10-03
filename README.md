@@ -297,7 +297,47 @@ consumers get a text-role contract instead of hand-picking a raw
 `--sp-form-default-{bg,text,placeholder}` are redeclared in the
 `[data-spectre-theme="dark"]` block from `modes.dark.forms.default.*`, so they
 follow the active mode. Other `forms.*` variables, including
-`--sp-form-default-border`, are declared once in `:root`.
+`--sp-form-default-border`, keep their `:root` value in every mode, except
+that high-contrast mode overrides `forms.valid.*` and `forms.invalid.*`.
+
+Color modes apply wherever the attribute is set, not only on the root.
+`data-spectre-theme="dark"`, `"high-contrast"`, or `"light"` on any element
+switches every mode variable for that element and its descendants, so a
+section can differ from the page (`light` restores default values inside a
+dark ancestor). `data-spectre-theme="system"` follows the visitor's OS setting
+through `prefers-color-scheme`, with no script. A page with no attribute is
+light.
+
+`modes.highContrast` is a third mode alongside `default` and `dark`. It is
+light-based, and every text pair in it meets WCAG AAA (7:1). Borders and
+dividers are darkened too. Set `data-spectre-theme="high-contrast"` on the
+root, or on a section, to apply it. Buttons, links, and the valid/invalid form states don't
+change between light and dark, but high-contrast mode overrides them
+(`modes.highContrast.buttons`, `.link`, and `.forms.{valid,invalid}`), so
+those also meet 7:1.
+
+`control.{sm,md,lg}` gives the shared height, inline padding, and icon size
+for buttons, inputs, and selects (`--sp-control-md-height`,
+`--sp-control-md-padding-inline`, `--sp-control-md-icon-size`), and
+`control.compact.*` is the denser set. Any element with
+`data-spectre-density="compact"` swaps the default sizes for the compact
+ones inside it. Every height except `lg` is below
+`accessibility.minTouchTarget` (44px), so on touch layouts give smaller
+controls a 44px hit area (for example with padding or a pseudo-element)
+rather than shrinking it to the visible height.
+
+`elevation.{flat,raised,overlay,modal}` pairs a shadow with its surface and
+z-index, so consumers pick one level instead of combining raw steps. The
+`--sp-elevation-*` variables are `var()` references to the shadow, surface,
+and z-index variables, so the surface follows the active color mode.
+
+`component.chart` is the data-visualization palette: eight categorical
+`series` colors that differ in lightness as well as hue and meet 3:1 against
+`chart.bg`, seven-step `sequential` and `diverging` ramps, and `grid`,
+`axis`, and `label` roles. `component.selection`, `component.caret`,
+`component.scrollbar`, `component.skeleton`, and `component.prose.kbd` cover
+text selection, caret, scrollbar, skeleton-loading, and keycap colors. All of
+them are set for every mode.
 
 ### Token model
 
@@ -327,6 +367,8 @@ The generated token object includes these namespaces:
 - `component`
 - `modes`
 - `tracking`
+- `control`
+- `elevation`
 
 The exported runtime token object is a flattened string-based tree generated
 from `tokens/`. Source-only wrapper fields such as `value` and `metadata` are
@@ -345,6 +387,17 @@ The `layout` namespace includes section, stack, and container spacing tokens,
 plus fixed layout width tokens for common consumer shells:
 `layout.container.maxWidth`, `layout.container.maxWidthProse`,
 `layout.container.maxWidthWide`, and `layout.sidebar.width`.
+
+Layout spacing sits on one 8px grid; `check:structure` fails on any off-grid
+step. Section padding, section gap, stack gap, and container inline padding
+run `sm | md | lg | xl | 2xl | 3xl | 4xl`. `sm`–`lg` are fixed. `xl`–`4xl`
+are responsive: the base value applies on narrow viewports and
+`layout.responsive.lg.*` takes over at the `lg` breakpoint. In CSS, the
+`@media (min-width: 1024px)` block re-points `--sp-layout-*-{xl..4xl}` at
+`--sp-layout-responsive-lg-*`, so consumers keep using one variable name.
+`layout.hero.paddingTop` and `layout.hero.paddingBottom` (`sm | md | lg`)
+reference section padding steps, and their CSS variables are `var()`
+references that follow the responsive override.
 
 ## Public Contract Guarantees
 
@@ -544,7 +597,7 @@ treated as downstream UI primitives.
 | ---------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- |
 | `check:regression` fails     | A token value changed vs the recorded baseline                                | Revert the unintended change, or update the baseline if the change was intentional                    |
 | `check:locked` fails         | A protected color family was modified                                         | Revert unless Bradley Potts has explicitly approved the change                                        |
-| `check:contrast` fails       | A text/background token pair does not meet WCAG AA                            | Adjust the token value or the `metadata.pair` reference in the source JSON                            |
+| `check:contrast` fails       | A token pair is below WCAG AA, AAA in high-contrast mode, or its `minContrast` | Adjust the token value or the `metadata.pair` reference in the source JSON                            |
 | `check:dist` fails           | Generated dist is out of sync                                                 | Run `npm run build` then re-run `npm run check`                                                       |
 | `check:manifest` fails       | A namespace exists in outputs but is not declared in `contract.manifest.json` | Add the namespace to the manifest or remove it from the source                                        |
 | `check:docs` fails           | README or TOKEN_CONTRACT.md has drifted from the manifest                     | Update the doc to match the current contract                                                          |

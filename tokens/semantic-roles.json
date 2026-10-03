@@ -43,7 +43,7 @@
     },
     "inverse": {
       "value": "{colors.neutral.900}",
-      "description": "fixed dark background for content islands not owned by the page's own light/dark mode — photo-backed cards, brand-dark card bodies, utility bars",
+      "description": "fixed dark background for content islands not owned by the page's own light/dark mode \u2014 photo-backed cards, brand-dark card bodies, utility bars",
       "metadata": {
         "pair": "text.onInverse.default"
       }
@@ -166,33 +166,117 @@
       "padding": {
         "sm": "1.5rem",
         "md": "2rem",
-        "lg": "3rem"
+        "lg": "3rem",
+        "xl": "4rem",
+        "2xl": "5rem",
+        "3xl": "6rem",
+        "4xl": "8rem"
       },
       "gap": {
         "sm": "1rem",
         "md": "1.5rem",
-        "lg": "2rem"
+        "lg": "2rem",
+        "xl": "2.5rem",
+        "2xl": "3rem",
+        "3xl": "4rem",
+        "4xl": "5rem"
       }
     },
     "stack": {
       "gap": {
         "sm": "0.5rem",
-        "md": "0.75rem",
-        "lg": "1rem"
+        "md": "1rem",
+        "lg": "1.5rem",
+        "xl": "2.5rem",
+        "2xl": "3rem",
+        "3xl": "4rem",
+        "4xl": "5rem"
       }
     },
     "container": {
       "paddingInline": {
         "sm": "1rem",
         "md": "1.5rem",
-        "lg": "2rem"
+        "lg": "2rem",
+        "xl": "2.5rem",
+        "2xl": "3rem",
+        "3xl": "4rem",
+        "4xl": "5rem"
       },
       "maxWidth": "72rem",
       "maxWidthProse": "65ch",
       "maxWidthWide": "80rem"
     },
+    "hero": {
+      "paddingTop": {
+        "sm": "{layout.section.padding.2xl}",
+        "md": "{layout.section.padding.3xl}",
+        "lg": "{layout.section.padding.4xl}"
+      },
+      "paddingBottom": {
+        "sm": "{layout.section.padding.xl}",
+        "md": "{layout.section.padding.2xl}",
+        "lg": "{layout.section.padding.3xl}"
+      }
+    },
     "sidebar": {
       "width": "16rem"
+    },
+    "responsive": {
+      "lg": {
+        "section": {
+          "padding": {
+            "xl": "6rem",
+            "2xl": "8rem",
+            "3xl": "10rem",
+            "4xl": "12rem"
+          },
+          "gap": {
+            "xl": "3rem",
+            "2xl": "4rem",
+            "3xl": "6rem",
+            "4xl": "8rem"
+          }
+        },
+        "stack": {
+          "gap": {
+            "xl": "3rem",
+            "2xl": "4rem",
+            "3xl": "6rem",
+            "4xl": "8rem"
+          }
+        },
+        "container": {
+          "paddingInline": {
+            "xl": "3rem",
+            "2xl": "4rem",
+            "3xl": "6rem",
+            "4xl": "8rem"
+          }
+        }
+      }
+    }
+  },
+  "elevation": {
+    "flat": {
+      "shadow": "{shadows.none}",
+      "surface": "{surface.page}",
+      "zIndex": "{zIndex.base}"
+    },
+    "raised": {
+      "shadow": "{shadows.md}",
+      "surface": "{surface.card}",
+      "zIndex": "{zIndex.base}"
+    },
+    "overlay": {
+      "shadow": "{shadows.lg}",
+      "surface": "{surface.card}",
+      "zIndex": "{zIndex.dropdown}"
+    },
+    "modal": {
+      "shadow": "{shadows.2xl}",
+      "surface": "{surface.card}",
+      "zIndex": "{zIndex.modal}"
     }
   }
 }

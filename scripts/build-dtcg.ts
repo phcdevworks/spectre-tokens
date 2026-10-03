@@ -20,7 +20,7 @@ const SHADOW_PATH_PREFIXES = ['shadows.']
 const SHADOW_LEAF_PATHS = new Set(['component.modal.shadow', 'buttons.cta.shadow'])
 
 export function isShadowPath(keyPath: string): boolean {
-  const withoutModePrefix = keyPath.replace(/^modes\.(default|dark)\./, '')
+  const withoutModePrefix = keyPath.replace(/^modes\.(default|dark|highContrast)\./, '')
   if (SHADOW_LEAF_PATHS.has(withoutModePrefix)) return true
   return SHADOW_PATH_PREFIXES.some((prefix) => withoutModePrefix.startsWith(prefix))
 }
@@ -28,7 +28,7 @@ export function isShadowPath(keyPath: string): boolean {
 const GRADIENT_LEAF_PATHS = new Set(['surface.hero'])
 
 export function isGradientPath(keyPath: string): boolean {
-  const withoutModePrefix = keyPath.replace(/^modes\.(default|dark)\./, '')
+  const withoutModePrefix = keyPath.replace(/^modes\.(default|dark|highContrast)\./, '')
   return GRADIENT_LEAF_PATHS.has(withoutModePrefix)
 }
 
@@ -170,7 +170,12 @@ export function inferTypeWithAliasResolution(keyPath: string, value: unknown, me
     const wholeMatch = value.match(WHOLE_ALIAS_PATTERN)
     if (wholeMatch) {
       const resolved = resolveSourceValue(merged, wholeMatch[1])
-      if (resolved !== undefined) return inferType(wholeMatch[1], resolved)
+      if (resolved !== undefined) {
+        if (isShadowPath(wholeMatch[1]) && typeof resolved === 'string' && resolved !== 'none' && parseShadowValue(resolved)) {
+          return 'shadow'
+        }
+        return inferType(wholeMatch[1], resolved)
+      }
     }
   }
   return inferType(keyPath, value)

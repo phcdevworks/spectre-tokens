@@ -30,6 +30,28 @@ const toVariableName = (prefix: string, ...parts: string[]): string => {
 const isPlainObject = (value: unknown): value is Record<string, unknown> =>
   typeof value === 'object' && value !== null && !Array.isArray(value)
 
+const kebabCase = (segment: string): string =>
+  formatKey(segment.replace(/([a-z0-9])([A-Z])/g, '$1-$2'))
+
+// spacing scales that `layout.responsive.<breakpoint>` may override
+const LAYOUT_SCALES: Array<{ path: [string, string]; varParts: string[] }> = [
+  { path: ['section', 'padding'], varParts: ['section', 'padding'] },
+  { path: ['section', 'gap'], varParts: ['section', 'gap'] },
+  { path: ['stack', 'gap'], varParts: ['stack', 'gap'] },
+  { path: ['container', 'paddingInline'], varParts: ['container', 'padding-inline'] }
+]
+
+const layoutScale = (node: unknown, [group, scale]: [string, string]): Record<string, string> => {
+  const groupNode = isPlainObject(node) ? node[group] : undefined
+  const scaleNode = isPlainObject(groupNode) ? groupNode[scale] : undefined
+  return isPlainObject(scaleNode) ? (scaleNode as Record<string, string>) : {}
+}
+
+const layoutResponsive = (layout: unknown): Record<string, unknown> => {
+  const responsive = isPlainObject(layout) ? layout.responsive : undefined
+  return isPlainObject(responsive) ? responsive : {}
+}
+
 const resolveTokenReference = (tokens: SpectreTokens, reference: string): string => {
   const path = reference.slice(1, -1).split('.')
   let current: unknown = tokens
@@ -140,29 +162,34 @@ export const createCssVariableMap = (tokens: SpectreTokens, options: CssVariable
   if (baseTokens.layout) {
     const layout = baseTokens.layout as unknown as Record<string, Record<string, Record<string, string>>>
 
-    if (layout.section?.padding) {
-      Object.entries(layout.section.padding).forEach(([key, value]) => {
-        assign(toVariableName(prefix, 'layout', 'section', 'padding', key), value)
+    LAYOUT_SCALES.forEach(({ path, varParts }) => {
+      Object.entries(layoutScale(layout, path)).forEach(([key, value]) => {
+        assign(toVariableName(prefix, 'layout', ...varParts, key), value)
+      })
+    })
+
+    // hero steps alias section padding steps; emitting var() instead of the
+    // resolved literal keeps them following the responsive @media override
+    const hero = layout.hero
+    if (hero) {
+      Object.entries(hero).forEach(([edge, steps]) => {
+        Object.entries(steps).forEach(([key, value]) => {
+          const step = value.match(/^\{layout\.section\.padding\.([^}]+)\}$/)?.[1]
+          assign(
+            toVariableName(prefix, 'layout', 'hero', kebabCase(edge), key),
+            step ? `var(${toVariableName(prefix, 'layout', 'section', 'padding', step)})` : value
+          )
+        })
       })
     }
 
-    if (layout.section?.gap) {
-      Object.entries(layout.section.gap).forEach(([key, value]) => {
-        assign(toVariableName(prefix, 'layout', 'section', 'gap', key), value)
+    Object.entries(layoutResponsive(layout)).forEach(([breakpoint, scales]) => {
+      LAYOUT_SCALES.forEach(({ path, varParts }) => {
+        Object.entries(layoutScale(scales, path)).forEach(([key, value]) => {
+          assign(toVariableName(prefix, 'layout', 'responsive', breakpoint, ...varParts, key), value)
+        })
       })
-    }
-
-    if (layout.stack?.gap) {
-      Object.entries(layout.stack.gap).forEach(([key, value]) => {
-        assign(toVariableName(prefix, 'layout', 'stack', 'gap', key), value)
-      })
-    }
-
-    if (layout.container?.paddingInline) {
-      Object.entries(layout.container.paddingInline).forEach(([key, value]) => {
-        assign(toVariableName(prefix, 'layout', 'container', 'padding-inline', key), value)
-      })
-    }
+    })
 
     const container = layout.container as Record<string, unknown> | undefined
     if (container?.maxWidth) {
@@ -179,6 +206,37 @@ export const createCssVariableMap = (tokens: SpectreTokens, options: CssVariable
     if (sidebar?.width) {
       assign(toVariableName(prefix, 'layout', 'sidebar', 'width'), sidebar.width)
     }
+  }
+
+  const control = (baseTokens as unknown as Record<string, unknown>).control
+  if (isPlainObject(control)) {
+    const assignControlSizes = (sizes: Record<string, unknown>, parts: string[]) => {
+      Object.entries(sizes).forEach(([size, fields]) => {
+        if (size === 'compact' || !isPlainObject(fields)) return
+        Object.entries(fields).forEach(([field, value]) => {
+          assign(toVariableName(prefix, 'control', ...parts, size, kebabCase(field)), value)
+        })
+      })
+    }
+    assignControlSizes(control, [])
+    if (isPlainObject(control.compact)) assignControlSizes(control.compact, ['compact'])
+  }
+
+  // elevation levels point at the shadow, surface, and z-index variables they
+  // pair, so the surface keeps following the active color mode
+  const elevation = (baseTokens as unknown as Record<string, unknown>).elevation
+  if (isPlainObject(elevation)) {
+    const elevationVarParts: Record<string, string[]> = { shadows: ['shadow'], surface: ['surface'], zIndex: ['z-index'] }
+    Object.entries(elevation).forEach(([level, fields]) => {
+      Object.entries(fields as Record<string, string>).forEach(([field, value]) => {
+        const [namespace, ...rest] = value.match(/^\{([^}]+)\}$/)?.[1]?.split('.') ?? []
+        const varParts = namespace ? elevationVarParts[namespace] : undefined
+        assign(
+          toVariableName(prefix, 'elevation', level, kebabCase(field)),
+          varParts ? `var(${toVariableName(prefix, ...varParts, ...rest.map(kebabCase))})` : value
+        )
+      })
+    })
   }
 
   const border = (baseTokens as unknown as Record<string, unknown>).border as Record<string, Record<string, string>> | undefined
@@ -356,6 +414,7 @@ export const generateCssVariables = (tokens: SpectreTokens, options: CssVariable
 
   const defaultMode = tokens.modes?.default ?? {}
   const darkMode = tokens.modes?.dark ?? {}
+  const highContrastMode = (tokens.modes as Record<string, unknown> | undefined)?.highContrast ?? {}
   const surfaceAliases = tokens.surface ?? {}
   const textAliases = tokens.text ?? {}
   const componentAliases = tokens.component ?? {}
@@ -370,6 +429,7 @@ export const generateCssVariables = (tokens: SpectreTokens, options: CssVariable
 
   const baseLines: string[] = []
   const darkLines: string[] = []
+  const highContrastLines: string[] = []
   const modeScopedNames = new Set<string>()
   const addBase = (name: string, value?: string) => {
     if (value === undefined) return
@@ -377,11 +437,14 @@ export const generateCssVariables = (tokens: SpectreTokens, options: CssVariable
     baseLines.push(`  ${name}: ${value};`)
   }
   const addDark = (name: string, value?: string) => { if (value !== undefined) darkLines.push(`  ${name}: ${value};`) }
+  const addHighContrast = (name: string, value?: string) => {
+    if (value !== undefined) highContrastLines.push(`  ${name}: ${value};`)
+  }
 
-  // Recursively derives every leaf path under `tokens.modes.default.<namespace>`
-  // and `tokens.modes.dark.<namespace>`, unioned so a leaf present in only one
-  // mode is still emitted. Each leaf resolves its base/dark CSS value from the
-  // matching mode node, falling back to the opposite mode then the top-level
+  // Recursively derives every leaf path under `tokens.modes.<mode>.<namespace>`
+  // for default, dark, and highContrast, unioned so a leaf present in only one
+  // mode is still emitted. Each leaf resolves its CSS value per mode from the
+  // matching mode node, falling back to the default mode then the top-level
   // `tokens.<namespace>` alias — replacing what used to be a hand-maintained
   // per-component field list.
   const walkSemanticGroup = (
@@ -391,6 +454,7 @@ export const generateCssVariables = (tokens: SpectreTokens, options: CssVariable
   ): void => {
     const defaultNode = (defaultMode as Record<string, unknown>)[namespace]
     const darkNode = (darkMode as Record<string, unknown>)[namespace]
+    const highContrastNode = (highContrastMode as Record<string, unknown>)[namespace]
     const paths = new Set<string>()
     const collectPaths = (node: unknown, path: string[]): void => {
       if (node === undefined) return
@@ -405,6 +469,7 @@ export const generateCssVariables = (tokens: SpectreTokens, options: CssVariable
     }
     collectPaths(defaultNode, [])
     collectPaths(darkNode, [])
+    collectPaths(highContrastNode, [])
     collectPaths(aliasSrc, [])
 
     paths.forEach((joinedPath) => {
@@ -413,8 +478,10 @@ export const generateCssVariables = (tokens: SpectreTokens, options: CssVariable
       const aliasCandidate = getPath(aliasSrc, path)
       const baseValue = pickSemantic(tokens, getPath(defaultNode, path), aliasCandidate)
       const darkValue = pickSemantic(tokens, getPath(darkNode, path), getPath(defaultNode, path), aliasCandidate)
+      const highContrastValue = pickSemantic(tokens, getPath(highContrastNode, path), getPath(defaultNode, path), aliasCandidate)
       addBase(varName, baseValue)
       addDark(varName, darkValue)
+      addHighContrast(varName, highContrastValue)
     })
   }
 
@@ -445,26 +512,121 @@ export const generateCssVariables = (tokens: SpectreTokens, options: CssVariable
     componentAliases
   )
 
-  // only the mode-aware subset of `forms` lives under `modes.*.forms`; the
-  // rest (border, hover, focus, invalid, ...) stays cascade-only in :root
+  // only the mode-aware subset of `forms` lives under `modes.*.forms`
+  // (default.* in every mode, valid/invalid in highContrast only); the rest
+  // (border, hover, focus, ...) stays cascade-only in :root
   walkSemanticGroup(
     'forms',
     (path) => ['form', ...path.map(kebabPathSegment)],
     undefined
   )
 
+  const highContrastLink = getPath(highContrastMode, ['link'])
   Object.entries(linkTokens).forEach(([key, value]) => {
     const varName = toVariableName(prefix, 'link', kebabPathSegment(key))
     const resolved = pickSemantic(tokens, value)
     addBase(varName, resolved)
     addDark(varName, resolved)
+    addHighContrast(varName, pickSemantic(tokens, getPath(highContrastLink, [key]), value))
   })
+
+  // `buttons` stays cascade-only in :root and dark; high-contrast mode alone
+  // overrides it, to lift every button text pair to 7:1
+  const highContrastButtons = getPath(highContrastMode, ['buttons'])
+  if (isPlainObject(highContrastButtons)) {
+    Object.entries(highContrastButtons).forEach(([variant, states]) => {
+      Object.entries(states as Record<string, unknown>).forEach(([state, value]) => {
+        addHighContrast(toVariableName(prefix, 'button', variant, state), pickSemantic(tokens, value))
+      })
+    })
+  }
 
   const mapLines = Object.entries(declarations)
     .filter(([name]) => !modeScopedNames.has(name))
     .map(([name, value]) => `  ${name}: ${value};`)
   const rootBlock = `${selector} {\n${[...baseLines, ...mapLines].join('\n')}\n}`
-  const darkBlock = `${selector}[data-spectre-theme="dark"] {\n${darkLines.join('\n')}\n}`
 
-  return `${rootBlock}\n${darkBlock}\n`
+  const toEntries = (lines: string[]): Map<string, string> =>
+    new Map(
+      lines.map((line) => {
+        const separator = line.indexOf(':')
+        return [line.slice(0, separator).trim(), line.slice(separator + 1).trim().replace(/;$/, '')]
+      })
+    )
+  const baseEntries = toEntries(baseLines)
+  const darkEntries = toEntries(darkLines)
+  const highContrastEntries = toEntries(highContrastLines)
+  const rootValues = new Map([...Object.entries(declarations), ...baseEntries])
+
+  // A mode block can apply to any element, not just the root, so each one
+  // declares every variable that varies by mode — a light section nested in a
+  // dark or high-contrast page must reset all of them, including the
+  // high-contrast-only button/link/form overrides.
+  const modeVarying = [...new Set([...baseEntries.keys(), ...darkEntries.keys(), ...highContrastEntries.keys()])]
+  const modeVaryingSet = new Set(modeVarying)
+  // A var() in a custom property resolves on the element that declares it, so
+  // :root values that read a mode-varying variable (the elevation surfaces)
+  // are re-declared in each mode block to re-resolve inside a scoped section.
+  const dependentLines = [...rootValues]
+    .filter(
+      ([name, value]) =>
+        !modeVaryingSet.has(name) &&
+        Array.from(value.matchAll(/var\((--[a-z0-9-]+)/g)).some((match) => modeVaryingSet.has(match[1]!))
+    )
+    .map(([name, value]) => `${name}: ${value};`)
+  const modeLines = (entries: Map<string, string>): string[] => [
+    ...modeVarying.flatMap((name) => {
+      const value = entries.get(name) ?? rootValues.get(name)
+      return value === undefined ? [] : [`${name}: ${value};`]
+    }),
+    ...dependentLines
+  ]
+
+  const themeSelectors = (theme: string): string[] => [
+    `${selector}[data-spectre-theme="${theme}"]`,
+    `${selector} [data-spectre-theme="${theme}"]`
+  ]
+  const modeBlock = (selectors: string[], lines: string[], indent = ''): string =>
+    `${indent}${selectors.join(`,\n${indent}`)} {\n${lines.map((line) => `${indent}  ${line}`).join('\n')}\n${indent}}`
+
+  const darkBlock = modeBlock(themeSelectors('dark'), modeLines(darkEntries))
+  const highContrastBlock = modeBlock(themeSelectors('high-contrast'), modeLines(highContrastEntries))
+  // `light` restores the default values inside a dark or high-contrast
+  // ancestor; `system` takes them too, until the media query below applies
+  const lightBlock = modeBlock([...themeSelectors('light'), ...themeSelectors('system')], modeLines(baseEntries))
+  const systemDarkBlock = `@media (prefers-color-scheme: dark) {\n${modeBlock(themeSelectors('system'), modeLines(darkEntries), '  ')}\n}`
+
+  // compact density swaps every default control size for its compact
+  // counterpart on any element carrying the attribute, not only the root
+  const control = (tokens as unknown as Record<string, unknown>).control
+  const compact = isPlainObject(control) && isPlainObject(control.compact) ? control.compact : {}
+  const densityLines = Object.entries(compact).flatMap(([size, fields]) =>
+    Object.keys(fields as Record<string, unknown>).map((field) => {
+      const name = toVariableName(prefix, 'control', size, kebabCase(field))
+      return `  ${name}: var(${toVariableName(prefix, 'control', 'compact', size, kebabCase(field))});`
+    })
+  )
+  const densityBlocks = densityLines.length > 0 ? [`[data-spectre-density="compact"] {\n${densityLines.join('\n')}\n}`] : []
+
+  const breakpoints = tokens.breakpoints as unknown as Record<string, string>
+  const responsiveBlocks = Object.entries(layoutResponsive(tokens.layout)).map(([breakpoint, scales]) => {
+    const minWidth = breakpoints[breakpoint]
+    if (minWidth === undefined) {
+      throw new Error(`layout.responsive.${breakpoint} does not name a breakpoints entry`)
+    }
+    const lines = LAYOUT_SCALES.flatMap(({ path, varParts }) =>
+      Object.keys(layoutScale(scales, path)).map((key) => {
+        const name = toVariableName(prefix, 'layout', ...varParts, key)
+        const source = toVariableName(prefix, 'layout', 'responsive', breakpoint, ...varParts, key)
+        return `    ${name}: var(${source});`
+      })
+    )
+    return `@media (min-width: ${resolveValue(tokens, minWidth)}) {\n  ${selector} {\n${lines.join('\n')}\n  }\n}`
+  })
+
+  return (
+    [rootBlock, darkBlock, highContrastBlock, lightBlock, systemDarkBlock, ...densityBlocks, ...responsiveBlocks].join(
+      '\n'
+    ) + '\n'
+  )
 }

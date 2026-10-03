@@ -115,7 +115,7 @@ manifest.requiredOutputs.js.bannedPaths.forEach((path) => {
 });
 
 const generatedCss = generateCssVariables(tokens);
-if (!generatedCss.includes(':root {') || !generatedCss.includes(':root[data-spectre-theme="dark"] {')) {
+if (!generatedCss.includes(':root {') || !generatedCss.includes(':root[data-spectre-theme="dark"]')) {
   throw new Error('Generated CSS is missing the expected root or dark-mode block.');
 }
 
@@ -125,7 +125,7 @@ manifest.requiredOutputs.css.requiredVariables.forEach((variableName) => {
   }
 });
 
-const generatedDarkBlock = generatedCss.split(':root[data-spectre-theme="dark"] {')[1] ?? '';
+const generatedDarkBlock = (generatedCss.split(':root[data-spectre-theme="dark"]')[1] ?? '').split('\n}')[0] ?? '';
 manifest.requiredOutputs.css.requiredDarkModeVariables.forEach((variableName) => {
   if (!generatedDarkBlock.includes(`${variableName}:`)) {
     throw new Error(`Generated dark-mode CSS is missing manifest variable: ${variableName}`);
