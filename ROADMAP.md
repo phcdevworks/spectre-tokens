@@ -32,25 +32,25 @@ this file does not restate delivered work.
 | 14 | Accent-rail tokens beyond card, owner-directed by Bradley Potts in response to client feedback — the same mode-aware `accent.*` color-role + `accent.thickness` (`0.25rem`) contract extended to `badge`, `testimonial`, `pricingCard`, `nav`, `footer`, `modal`, `toast`, `tooltip`, and `dropdown` (63 new color leaves, 9 new thickness leaves); form-control groups and `button`/`rating`/`iconBox` excluded; edge position and rendering stay downstream | 4.9.0 |
 | 15 | Downstream component readiness — seven evidence-backed delivery waves covering navigation, core components, form/content roles, existing-contract completion, datepicker/day states, prose, provider-neutral external authentication, and choice-card states; every contract is mode-aware and emitted through runtime, TypeScript, CSS, and DTCG outputs | 4.10.0 |
 | 16 | CSS contract coverage and parity tooling — mode-aware `forms.default.{bg,text,placeholder}` (requested by `spectre-ui`), `--sp-display-*`/`--sp-lead-*` CSS variables for the typography display/lead roles (requested by `spectre-ui`), generated `DOWNSTREAM_PARITY.md` checklist, and read-only `audit:parity` report | 4.11.0 |
-| — | Element-scoped and system color modes, requested by `spectre-base` — `dark`, `high-contrast`, and a new `light` mode block apply on any element carrying `data-spectre-theme`, each declaring the full mode variable set; `data-spectre-theme="system"` follows `prefers-color-scheme` without a script | Unreleased |
-| 16 (vocabulary) | Proactive vocabulary expansion, owner-directed — `modes.highContrast` under `[data-spectre-theme="high-contrast"]` with every text pair at AAA (7:1); mode-aware `component.chart` data-viz palette (8 categorical series at 3:1, sequential and diverging ramps, grid/axis/label); `control` sizing with `compact` density and a `[data-spectre-density="compact"]` block; `elevation` levels pairing shadow, surface, and z-index; selection, caret, scrollbar, skeleton, and `kbd` colors; high-contrast overrides for buttons, links, and form states (locked colors owner-approved) so every text pair in the mode meets 7:1 | Unreleased |
-| — | Downstream layout and footer requests from `spectre-base` — one 8px layout grid enforced by `check:structure` (`layout.stack.gap` now 8/16/24px), responsive `xl`–`4xl` section padding, section/stack gap, and container padding steps with `layout.responsive.lg.*` values and an `@media (min-width: 1024px)` CSS block, `layout.hero.paddingTop`/`paddingBottom` pairs referencing section padding, `space.128`/`160`/`192`, and a mode-aware `component.footer.light.*` palette | Unreleased |
-| — | Child-theme roles requested by `spectre-base` — mode-aware `text.onPage.accent`/`text.onSurface.accent`, a named `leading` scale (`none` through `loose`), a `buttons.accentOutline` variant with high-contrast override, mode-aware `component.stepper.tone.{brand,accent}.{active,done}` roles, a mode-aware `component.quote` group (text, attribution, accent-coloured mark, plain edge, accent rail), an `accent` tone in every component accent rail, and `text.onInverse.{brand,accent}` | Unreleased |
-| 17 | Complete HTML element coverage, owner-directed ("HTML 7") — `element-coverage.json` maps all 115 HTML Living Standard elements and 14 pseudo-elements to token roles, enforced by `check:elements`; new `fontWeight` and `textDecoration` namespaces, link underline colours, `<del>`/`<ins>` edit marks, `component.meter`, list markers, figure/table captions, table footer, description lists, `component.code.syntax` highlighting, `layout.prose.flow` spacing, select option roles, and `::spelling-error`/`::grammar-error` proofing roles | Unreleased |
+| — | Element-scoped and system color modes, requested by `spectre-base` — `dark`, `high-contrast`, and a new `light` mode block apply on any element carrying `data-spectre-theme`, each declaring the full mode variable set; `data-spectre-theme="system"` follows `prefers-color-scheme` without a script | 4.12.0 |
+| 16 (vocabulary) | Proactive vocabulary expansion, owner-directed — `modes.highContrast` under `[data-spectre-theme="high-contrast"]` with every text pair at AAA (7:1); mode-aware `component.chart` data-viz palette (8 categorical series at 3:1, sequential and diverging ramps, grid/axis/label); `control` sizing with `compact` density and a `[data-spectre-density="compact"]` block; `elevation` levels pairing shadow, surface, and z-index; selection, caret, scrollbar, skeleton, and `kbd` colors; high-contrast overrides for buttons, links, and form states (locked colors owner-approved) so every text pair in the mode meets 7:1 | 4.12.0 |
+| — | Downstream layout and footer requests from `spectre-base` — one 8px layout grid enforced by `check:structure` (`layout.stack.gap` now 8/16/24px), responsive `xl`–`4xl` section padding, section/stack gap, and container padding steps with `layout.responsive.lg.*` values and an `@media (min-width: 1024px)` CSS block, `layout.hero.paddingTop`/`paddingBottom` pairs referencing section padding, `space.128`/`160`/`192`, and a mode-aware `component.footer.light.*` palette | 4.12.0 |
+| — | Child-theme roles requested by `spectre-base` — mode-aware `text.onPage.accent`/`text.onSurface.accent`, a named `leading` scale (`none` through `loose`), a `buttons.accentOutline` variant with high-contrast override, mode-aware `component.stepper.tone.{brand,accent}.{active,done}` roles, a mode-aware `component.quote` group (text, attribution, accent-coloured mark, plain edge, accent rail), an `accent` tone in every component accent rail, and `text.onInverse.{brand,accent}` | 4.13.0 |
+| 17 | Complete HTML element coverage, owner-directed ("HTML 7") — `element-coverage.json` maps all 115 HTML Living Standard elements and 14 pseudo-elements to token roles, enforced by `check:elements`; new `fontWeight` and `textDecoration` namespaces, link underline colours, `<del>`/`<ins>` edit marks, `component.meter`, list markers, figure/table captions, table footer, description lists, `component.code.syntax` highlighting, `layout.prose.flow` spacing, select option roles, and `::spelling-error`/`::grammar-error` proofing roles | 4.13.0 |
 
 ---
 
 ## What's Next
 
-Phase 16 has shipped (see the table above), and so has every downstream
-request.
+Phases 1 through 17 have shipped (see the table above), including every
+downstream request. Phase 17 completed the current "HTML 7" coverage goal:
+every standard element and styleable pseudo-element in the canonical list is
+mapped, and `npm run check:elements` keeps that true. New gaps go in
+[TODO.md](TODO.md) as the list grows.
 
-**Phase 17 — Complete HTML Element Coverage** (owner-directed, 2026-10-11)
-has shipped its first wave (see the table above). The goal is for Spectre
-to be an unofficial "HTML 7", where every standard HTML element and
-styleable pseudo-element has a token contract. `npm run check:elements`
-keeps that true. Every element and pseudo-element in the canonical list is now mapped. New
-gaps go in [TODO.md](TODO.md) as the list grows.
+There is no active delivery phase. Add the next phase here when new work is
+planned; do not use `Unreleased` for work already included in a versioned
+changelog entry and release tag.
 
 Contract expansion stays proactive. Downstream repos pick up new families through
 `npm run audit:parity`, and `npm run audit:downstream` stays available as one
