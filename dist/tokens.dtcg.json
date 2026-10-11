@@ -1318,6 +1318,22 @@
             "$type": "color"
           }
         }
+      },
+      "caption": {
+        "text": {
+          "$value": "{colors.neutral.600}",
+          "$type": "color"
+        }
+      },
+      "footer": {
+        "bg": {
+          "$value": "{colors.neutral.50}",
+          "$type": "color"
+        },
+        "text": {
+          "$value": "{colors.neutral.900}",
+          "$type": "color"
+        }
       }
     },
     "alert": {
@@ -1914,6 +1930,52 @@
           "$value": "{colors.neutral.900}",
           "$type": "color"
         }
+      },
+      "del": {
+        "bg": {
+          "$value": "{colors.error.100}",
+          "$type": "color"
+        },
+        "text": {
+          "$value": "{colors.error.800}",
+          "$type": "color"
+        }
+      },
+      "ins": {
+        "bg": {
+          "$value": "{colors.success.100}",
+          "$type": "color"
+        },
+        "text": {
+          "$value": "{colors.success.800}",
+          "$type": "color"
+        }
+      },
+      "marker": {
+        "$value": "{colors.neutral.600}",
+        "$type": "color"
+      },
+      "markerAccent": {
+        "$value": "{colors.accent.600}",
+        "$type": "color"
+      },
+      "figcaption": {
+        "text": {
+          "$value": "{colors.neutral.600}",
+          "$type": "color"
+        }
+      },
+      "dt": {
+        "text": {
+          "$value": "{colors.neutral.900}",
+          "$type": "color"
+        }
+      },
+      "dd": {
+        "text": {
+          "$value": "{colors.neutral.700}",
+          "$type": "color"
+        }
       }
     },
     "externalAuthButton": {
@@ -2054,6 +2116,30 @@
       "bgSuccess": {
         "$value": "{colors.success.50}",
         "$type": "color"
+      },
+      "option": {
+        "hoverBg": {
+          "$value": "{colors.neutral.100}",
+          "$type": "color"
+        },
+        "selectedBg": {
+          "$value": "{colors.info.50}",
+          "$type": "color"
+        },
+        "selectedText": {
+          "$value": "{colors.info.800}",
+          "$type": "color"
+        },
+        "disabledText": {
+          "$value": "{colors.neutral.400}",
+          "$type": "color"
+        }
+      },
+      "optgroup": {
+        "labelText": {
+          "$value": "{colors.neutral.600}",
+          "$type": "color"
+        }
       }
     },
     "textarea": {
@@ -2338,6 +2424,86 @@
           "$value": "0.25rem",
           "$type": "dimension"
         }
+      }
+    },
+    "meter": {
+      "track": {
+        "$value": "{colors.neutral.200}",
+        "$type": "color"
+      },
+      "fill": {
+        "optimum": {
+          "$value": "{colors.success.700}",
+          "$type": "color"
+        },
+        "suboptimum": {
+          "$value": "{colors.warning.700}",
+          "$type": "color"
+        },
+        "critical": {
+          "$value": "{colors.error.600}",
+          "$type": "color"
+        }
+      }
+    },
+    "code": {
+      "syntax": {
+        "keyword": {
+          "$value": "{colors.accent.700}",
+          "$type": "color"
+        },
+        "string": {
+          "$value": "{colors.success.800}",
+          "$type": "color"
+        },
+        "number": {
+          "$value": "{colors.warning.800}",
+          "$type": "color"
+        },
+        "comment": {
+          "$value": "{colors.neutral.600}",
+          "$type": "color"
+        },
+        "function": {
+          "$value": "{colors.brand.700}",
+          "$type": "color"
+        },
+        "variable": {
+          "$value": "{colors.error.700}",
+          "$type": "color"
+        },
+        "type": {
+          "$value": "{colors.info.700}",
+          "$type": "color"
+        },
+        "operator": {
+          "$value": "{colors.neutral.700}",
+          "$type": "color"
+        },
+        "punctuation": {
+          "$value": "{colors.neutral.600}",
+          "$type": "color"
+        },
+        "tag": {
+          "$value": "{colors.palette.pink.700}",
+          "$type": "color"
+        },
+        "attribute": {
+          "$value": "{colors.palette.teal.800}",
+          "$type": "color"
+        }
+      }
+    },
+    "proofing": {
+      "spelling": {
+        "$value": "{colors.error.600}",
+        "$type": "color",
+        "$description": "underline colour for ::spelling-error"
+      },
+      "grammar": {
+        "$value": "{colors.info.600}",
+        "$type": "color",
+        "$description": "underline colour for ::grammar-error"
       }
     }
   },
@@ -4357,6 +4523,22 @@
                 "$type": "color"
               }
             }
+          },
+          "caption": {
+            "text": {
+              "$value": "{colors.neutral.600}",
+              "$type": "color"
+            }
+          },
+          "footer": {
+            "bg": {
+              "$value": "{colors.neutral.50}",
+              "$type": "color"
+            },
+            "text": {
+              "$value": "{colors.neutral.900}",
+              "$type": "color"
+            }
           }
         },
         "alert": {
@@ -4937,6 +5119,52 @@
               "$value": "{colors.neutral.900}",
               "$type": "color"
             }
+          },
+          "del": {
+            "bg": {
+              "$value": "{colors.error.100}",
+              "$type": "color"
+            },
+            "text": {
+              "$value": "{colors.error.800}",
+              "$type": "color"
+            }
+          },
+          "ins": {
+            "bg": {
+              "$value": "{colors.success.100}",
+              "$type": "color"
+            },
+            "text": {
+              "$value": "{colors.success.800}",
+              "$type": "color"
+            }
+          },
+          "marker": {
+            "$value": "{colors.neutral.600}",
+            "$type": "color"
+          },
+          "markerAccent": {
+            "$value": "{colors.accent.600}",
+            "$type": "color"
+          },
+          "figcaption": {
+            "text": {
+              "$value": "{colors.neutral.600}",
+              "$type": "color"
+            }
+          },
+          "dt": {
+            "text": {
+              "$value": "{colors.neutral.900}",
+              "$type": "color"
+            }
+          },
+          "dd": {
+            "text": {
+              "$value": "{colors.neutral.700}",
+              "$type": "color"
+            }
           }
         },
         "externalAuthButton": {
@@ -5061,6 +5289,30 @@
           "focusBorder": {
             "$value": "{colors.info.500}",
             "$type": "color"
+          },
+          "option": {
+            "hoverBg": {
+              "$value": "{colors.neutral.100}",
+              "$type": "color"
+            },
+            "selectedBg": {
+              "$value": "{colors.info.50}",
+              "$type": "color"
+            },
+            "selectedText": {
+              "$value": "{colors.info.800}",
+              "$type": "color"
+            },
+            "disabledText": {
+              "$value": "{colors.neutral.400}",
+              "$type": "color"
+            }
+          },
+          "optgroup": {
+            "labelText": {
+              "$value": "{colors.neutral.600}",
+              "$type": "color"
+            }
           }
         },
         "textarea": {
@@ -5323,6 +5575,84 @@
               "$value": "{colors.accent.600}",
               "$type": "color"
             }
+          }
+        },
+        "meter": {
+          "track": {
+            "$value": "{colors.neutral.200}",
+            "$type": "color"
+          },
+          "fill": {
+            "optimum": {
+              "$value": "{colors.success.700}",
+              "$type": "color"
+            },
+            "suboptimum": {
+              "$value": "{colors.warning.700}",
+              "$type": "color"
+            },
+            "critical": {
+              "$value": "{colors.error.600}",
+              "$type": "color"
+            }
+          }
+        },
+        "code": {
+          "syntax": {
+            "keyword": {
+              "$value": "{colors.accent.700}",
+              "$type": "color"
+            },
+            "string": {
+              "$value": "{colors.success.800}",
+              "$type": "color"
+            },
+            "number": {
+              "$value": "{colors.warning.800}",
+              "$type": "color"
+            },
+            "comment": {
+              "$value": "{colors.neutral.600}",
+              "$type": "color"
+            },
+            "function": {
+              "$value": "{colors.brand.700}",
+              "$type": "color"
+            },
+            "variable": {
+              "$value": "{colors.error.700}",
+              "$type": "color"
+            },
+            "type": {
+              "$value": "{colors.info.700}",
+              "$type": "color"
+            },
+            "operator": {
+              "$value": "{colors.neutral.700}",
+              "$type": "color"
+            },
+            "punctuation": {
+              "$value": "{colors.neutral.600}",
+              "$type": "color"
+            },
+            "tag": {
+              "$value": "{colors.palette.pink.700}",
+              "$type": "color"
+            },
+            "attribute": {
+              "$value": "{colors.palette.teal.800}",
+              "$type": "color"
+            }
+          }
+        },
+        "proofing": {
+          "spelling": {
+            "$value": "{colors.error.600}",
+            "$type": "color"
+          },
+          "grammar": {
+            "$value": "{colors.info.600}",
+            "$type": "color"
           }
         }
       }
@@ -6696,6 +7026,22 @@
                 "$type": "color"
               }
             }
+          },
+          "caption": {
+            "text": {
+              "$value": "{colors.neutral.300}",
+              "$type": "color"
+            }
+          },
+          "footer": {
+            "bg": {
+              "$value": "{colors.neutral.800}",
+              "$type": "color"
+            },
+            "text": {
+              "$value": "{colors.neutral.100}",
+              "$type": "color"
+            }
           }
         },
         "alert": {
@@ -7276,6 +7622,52 @@
               "$value": "{colors.neutral.50}",
               "$type": "color"
             }
+          },
+          "del": {
+            "bg": {
+              "$value": "{colors.error.900}",
+              "$type": "color"
+            },
+            "text": {
+              "$value": "{colors.error.200}",
+              "$type": "color"
+            }
+          },
+          "ins": {
+            "bg": {
+              "$value": "{colors.success.900}",
+              "$type": "color"
+            },
+            "text": {
+              "$value": "{colors.success.200}",
+              "$type": "color"
+            }
+          },
+          "marker": {
+            "$value": "{colors.neutral.400}",
+            "$type": "color"
+          },
+          "markerAccent": {
+            "$value": "{colors.accent.400}",
+            "$type": "color"
+          },
+          "figcaption": {
+            "text": {
+              "$value": "{colors.neutral.300}",
+              "$type": "color"
+            }
+          },
+          "dt": {
+            "text": {
+              "$value": "{colors.neutral.50}",
+              "$type": "color"
+            }
+          },
+          "dd": {
+            "text": {
+              "$value": "{colors.neutral.300}",
+              "$type": "color"
+            }
           }
         },
         "externalAuthButton": {
@@ -7400,6 +7792,30 @@
           "focusBorder": {
             "$value": "{colors.info.400}",
             "$type": "color"
+          },
+          "option": {
+            "hoverBg": {
+              "$value": "{colors.neutral.700}",
+              "$type": "color"
+            },
+            "selectedBg": {
+              "$value": "{colors.info.900}",
+              "$type": "color"
+            },
+            "selectedText": {
+              "$value": "{colors.info.100}",
+              "$type": "color"
+            },
+            "disabledText": {
+              "$value": "{colors.neutral.500}",
+              "$type": "color"
+            }
+          },
+          "optgroup": {
+            "labelText": {
+              "$value": "{colors.neutral.300}",
+              "$type": "color"
+            }
           }
         },
         "textarea": {
@@ -7662,6 +8078,84 @@
               "$value": "{colors.accent.400}",
               "$type": "color"
             }
+          }
+        },
+        "meter": {
+          "track": {
+            "$value": "{colors.neutral.700}",
+            "$type": "color"
+          },
+          "fill": {
+            "optimum": {
+              "$value": "{colors.success.400}",
+              "$type": "color"
+            },
+            "suboptimum": {
+              "$value": "{colors.warning.400}",
+              "$type": "color"
+            },
+            "critical": {
+              "$value": "{colors.error.400}",
+              "$type": "color"
+            }
+          }
+        },
+        "code": {
+          "syntax": {
+            "keyword": {
+              "$value": "{colors.accent.300}",
+              "$type": "color"
+            },
+            "string": {
+              "$value": "{colors.success.300}",
+              "$type": "color"
+            },
+            "number": {
+              "$value": "{colors.warning.300}",
+              "$type": "color"
+            },
+            "comment": {
+              "$value": "{colors.neutral.400}",
+              "$type": "color"
+            },
+            "function": {
+              "$value": "{colors.brand.300}",
+              "$type": "color"
+            },
+            "variable": {
+              "$value": "{colors.error.300}",
+              "$type": "color"
+            },
+            "type": {
+              "$value": "{colors.info.300}",
+              "$type": "color"
+            },
+            "operator": {
+              "$value": "{colors.neutral.200}",
+              "$type": "color"
+            },
+            "punctuation": {
+              "$value": "{colors.neutral.300}",
+              "$type": "color"
+            },
+            "tag": {
+              "$value": "{colors.palette.pink.300}",
+              "$type": "color"
+            },
+            "attribute": {
+              "$value": "{colors.palette.teal.300}",
+              "$type": "color"
+            }
+          }
+        },
+        "proofing": {
+          "spelling": {
+            "$value": "{colors.error.400}",
+            "$type": "color"
+          },
+          "grammar": {
+            "$value": "{colors.info.400}",
+            "$type": "color"
           }
         }
       }
@@ -9051,6 +9545,22 @@
                 "$type": "color"
               }
             }
+          },
+          "caption": {
+            "text": {
+              "$value": "{colors.neutral.700}",
+              "$type": "color"
+            }
+          },
+          "footer": {
+            "bg": {
+              "$value": "{colors.neutral.50}",
+              "$type": "color"
+            },
+            "text": {
+              "$value": "{colors.neutral.900}",
+              "$type": "color"
+            }
           }
         },
         "alert": {
@@ -9631,6 +10141,52 @@
               "$value": "{colors.neutral.900}",
               "$type": "color"
             }
+          },
+          "del": {
+            "bg": {
+              "$value": "{colors.error.100}",
+              "$type": "color"
+            },
+            "text": {
+              "$value": "{colors.error.900}",
+              "$type": "color"
+            }
+          },
+          "ins": {
+            "bg": {
+              "$value": "{colors.success.100}",
+              "$type": "color"
+            },
+            "text": {
+              "$value": "{colors.success.900}",
+              "$type": "color"
+            }
+          },
+          "marker": {
+            "$value": "{colors.neutral.700}",
+            "$type": "color"
+          },
+          "markerAccent": {
+            "$value": "{colors.accent.700}",
+            "$type": "color"
+          },
+          "figcaption": {
+            "text": {
+              "$value": "{colors.neutral.700}",
+              "$type": "color"
+            }
+          },
+          "dt": {
+            "text": {
+              "$value": "{colors.neutral.900}",
+              "$type": "color"
+            }
+          },
+          "dd": {
+            "text": {
+              "$value": "{colors.neutral.700}",
+              "$type": "color"
+            }
           }
         },
         "externalAuthButton": {
@@ -9755,6 +10311,30 @@
           "focusBorder": {
             "$value": "{colors.info.600}",
             "$type": "color"
+          },
+          "option": {
+            "hoverBg": {
+              "$value": "{colors.neutral.100}",
+              "$type": "color"
+            },
+            "selectedBg": {
+              "$value": "{colors.info.50}",
+              "$type": "color"
+            },
+            "selectedText": {
+              "$value": "{colors.info.900}",
+              "$type": "color"
+            },
+            "disabledText": {
+              "$value": "{colors.neutral.500}",
+              "$type": "color"
+            }
+          },
+          "optgroup": {
+            "labelText": {
+              "$value": "{colors.neutral.700}",
+              "$type": "color"
+            }
           }
         },
         "textarea": {
@@ -10017,6 +10597,84 @@
               "$value": "{colors.accent.600}",
               "$type": "color"
             }
+          }
+        },
+        "meter": {
+          "track": {
+            "$value": "{colors.neutral.200}",
+            "$type": "color"
+          },
+          "fill": {
+            "optimum": {
+              "$value": "{colors.success.800}",
+              "$type": "color"
+            },
+            "suboptimum": {
+              "$value": "{colors.warning.800}",
+              "$type": "color"
+            },
+            "critical": {
+              "$value": "{colors.error.700}",
+              "$type": "color"
+            }
+          }
+        },
+        "code": {
+          "syntax": {
+            "keyword": {
+              "$value": "{colors.accent.800}",
+              "$type": "color"
+            },
+            "string": {
+              "$value": "{colors.success.900}",
+              "$type": "color"
+            },
+            "number": {
+              "$value": "{colors.warning.900}",
+              "$type": "color"
+            },
+            "comment": {
+              "$value": "{colors.neutral.700}",
+              "$type": "color"
+            },
+            "function": {
+              "$value": "{colors.brand.800}",
+              "$type": "color"
+            },
+            "variable": {
+              "$value": "{colors.error.800}",
+              "$type": "color"
+            },
+            "type": {
+              "$value": "{colors.info.800}",
+              "$type": "color"
+            },
+            "operator": {
+              "$value": "{colors.neutral.800}",
+              "$type": "color"
+            },
+            "punctuation": {
+              "$value": "{colors.neutral.700}",
+              "$type": "color"
+            },
+            "tag": {
+              "$value": "{colors.palette.pink.900}",
+              "$type": "color"
+            },
+            "attribute": {
+              "$value": "{colors.palette.teal.900}",
+              "$type": "color"
+            }
+          }
+        },
+        "proofing": {
+          "spelling": {
+            "$value": "{colors.error.700}",
+            "$type": "color"
+          },
+          "grammar": {
+            "$value": "{colors.info.700}",
+            "$type": "color"
           }
         }
       },
@@ -10532,6 +11190,16 @@
           "$value": "{colors.brand.300}",
           "$type": "color",
           "$description": "link color on hover, on surface.inverse"
+        },
+        "underline": {
+          "$value": "{colors.brand.700}",
+          "$type": "color",
+          "$description": "underline colour for inline links; the link text keeps link.default"
+        },
+        "underlineHover": {
+          "$value": "{colors.brand.800}",
+          "$type": "color",
+          "$description": "underline colour for inline links on hover"
         }
       }
     }
@@ -13208,6 +13876,62 @@
       "$type": "string"
     }
   },
+  "textDecoration": {
+    "thickness": {
+      "thin": {
+        "$value": "1px",
+        "$type": "dimension"
+      },
+      "base": {
+        "$value": "2px",
+        "$type": "dimension"
+      },
+      "thick": {
+        "$value": "3px",
+        "$type": "dimension"
+      }
+    },
+    "offset": {
+      "sm": {
+        "$value": "0.125em",
+        "$type": "dimension"
+      },
+      "md": {
+        "$value": "0.2em",
+        "$type": "dimension"
+      },
+      "lg": {
+        "$value": "0.3em",
+        "$type": "dimension"
+      }
+    }
+  },
+  "fontWeight": {
+    "normal": {
+      "$value": 400,
+      "$type": "number"
+    },
+    "medium": {
+      "$value": 500,
+      "$type": "number"
+    },
+    "semibold": {
+      "$value": 600,
+      "$type": "number"
+    },
+    "bold": {
+      "$value": 700,
+      "$type": "number"
+    },
+    "extrabold": {
+      "$value": 800,
+      "$type": "number"
+    },
+    "black": {
+      "$value": 900,
+      "$type": "number"
+    }
+  },
   "surface": {
     "page": {
       "$value": "{colors.neutral.50}",
@@ -13285,6 +14009,16 @@
       "$value": "{colors.brand.300}",
       "$type": "color",
       "$description": "link color on hover, on surface.inverse"
+    },
+    "underline": {
+      "$value": "{colors.brand.600} / 0.4",
+      "$type": "color",
+      "$description": "underline colour for inline links; the link text keeps link.default"
+    },
+    "underlineHover": {
+      "$value": "{colors.brand.700}",
+      "$type": "color",
+      "$description": "underline colour for inline links on hover"
     }
   },
   "text": {
@@ -13546,6 +14280,42 @@
       "width": {
         "$value": "16rem",
         "$type": "dimension"
+      }
+    },
+    "prose": {
+      "flow": {
+        "listItem": {
+          "$value": "0.5rem",
+          "$type": "dimension"
+        },
+        "headingAfter": {
+          "$value": "1rem",
+          "$type": "dimension"
+        },
+        "paragraph": {
+          "$value": "1.5rem",
+          "$type": "dimension"
+        },
+        "list": {
+          "$value": "1.5rem",
+          "$type": "dimension"
+        },
+        "blockquote": {
+          "$value": "2rem",
+          "$type": "dimension"
+        },
+        "figure": {
+          "$value": "2rem",
+          "$type": "dimension"
+        },
+        "heading": {
+          "$value": "2.5rem",
+          "$type": "dimension"
+        },
+        "hr": {
+          "$value": "3rem",
+          "$type": "dimension"
+        }
       }
     },
     "responsive": {

@@ -17,7 +17,7 @@ contracts for specific frameworks and runtimes.
 | Project team           | `project-design`                 |
 | Repository role        | Spectre L1 design-token contract |
 | Package/artifact       | `@phcdevworks/spectre-tokens`    |
-| Current version/status | 4.12.0                           |
+| Current version/status | 4.13.0                           |
 
 ## Standard Workflow
 
@@ -368,6 +368,8 @@ The generated token object includes these namespaces:
 - `modes`
 - `tracking`
 - `leading`
+- `textDecoration`
+- `fontWeight`
 - `control`
 - `elevation`
 

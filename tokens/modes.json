@@ -1548,6 +1548,28 @@
                 }
               }
             }
+          },
+          "caption": {
+            "text": {
+              "value": "{colors.neutral.600}",
+              "metadata": {
+                "pair": "modes.default.surface.page"
+              }
+            }
+          },
+          "footer": {
+            "bg": {
+              "value": "{colors.neutral.50}",
+              "metadata": {
+                "pair": "modes.default.component.table.footer.text"
+              }
+            },
+            "text": {
+              "value": "{colors.neutral.900}",
+              "metadata": {
+                "pair": "modes.default.component.table.footer.bg"
+              }
+            }
           }
         },
         "alert": {
@@ -2220,6 +2242,70 @@
                 "pair": "modes.default.component.prose.kbd.bg"
               }
             }
+          },
+          "del": {
+            "bg": {
+              "value": "{colors.error.100}",
+              "metadata": {
+                "pair": "modes.default.component.prose.del.text"
+              }
+            },
+            "text": {
+              "value": "{colors.error.800}",
+              "metadata": {
+                "pair": "modes.default.component.prose.del.bg"
+              }
+            }
+          },
+          "ins": {
+            "bg": {
+              "value": "{colors.success.100}",
+              "metadata": {
+                "pair": "modes.default.component.prose.ins.text"
+              }
+            },
+            "text": {
+              "value": "{colors.success.800}",
+              "metadata": {
+                "pair": "modes.default.component.prose.ins.bg"
+              }
+            }
+          },
+          "marker": {
+            "value": "{colors.neutral.600}",
+            "metadata": {
+              "pair": "modes.default.surface.page"
+            }
+          },
+          "markerAccent": {
+            "value": "{colors.accent.600}",
+            "metadata": {
+              "pair": "modes.default.surface.page"
+            }
+          },
+          "figcaption": {
+            "text": {
+              "value": "{colors.neutral.600}",
+              "metadata": {
+                "pair": "modes.default.surface.page"
+              }
+            }
+          },
+          "dt": {
+            "text": {
+              "value": "{colors.neutral.900}",
+              "metadata": {
+                "pair": "modes.default.surface.page"
+              }
+            }
+          },
+          "dd": {
+            "text": {
+              "value": "{colors.neutral.700}",
+              "metadata": {
+                "pair": "modes.default.surface.page"
+              }
+            }
           }
         },
         "externalAuthButton": {
@@ -2362,6 +2448,36 @@
           "focusBorder": {
             "value": "{colors.info.500}",
             "metadata": {}
+          },
+          "option": {
+            "hoverBg": {
+              "value": "{colors.neutral.100}",
+              "metadata": {}
+            },
+            "selectedBg": {
+              "value": "{colors.info.50}",
+              "metadata": {
+                "pair": "modes.default.component.select.option.selectedText"
+              }
+            },
+            "selectedText": {
+              "value": "{colors.info.800}",
+              "metadata": {
+                "pair": "modes.default.component.select.option.selectedBg"
+              }
+            },
+            "disabledText": {
+              "value": "{colors.neutral.400}",
+              "metadata": {}
+            }
+          },
+          "optgroup": {
+            "labelText": {
+              "value": "{colors.neutral.600}",
+              "metadata": {
+                "pair": "modes.default.component.select.bg"
+              }
+            }
           }
         },
         "textarea": {
@@ -2672,6 +2788,121 @@
             "accent": {
               "value": "{colors.accent.600}",
               "metadata": {}
+            }
+          }
+        },
+        "meter": {
+          "track": {
+            "value": "{colors.neutral.200}",
+            "metadata": {}
+          },
+          "fill": {
+            "optimum": {
+              "value": "{colors.success.700}",
+              "metadata": {
+                "pair": "modes.default.component.meter.track",
+                "minContrast": 3
+              }
+            },
+            "suboptimum": {
+              "value": "{colors.warning.700}",
+              "metadata": {
+                "pair": "modes.default.component.meter.track",
+                "minContrast": 3
+              }
+            },
+            "critical": {
+              "value": "{colors.error.600}",
+              "metadata": {
+                "pair": "modes.default.component.meter.track",
+                "minContrast": 3
+              }
+            }
+          }
+        },
+        "code": {
+          "syntax": {
+            "keyword": {
+              "value": "{colors.accent.700}",
+              "metadata": {
+                "pair": "modes.default.component.prose.codeBlock.bg"
+              }
+            },
+            "string": {
+              "value": "{colors.success.800}",
+              "metadata": {
+                "pair": "modes.default.component.prose.codeBlock.bg"
+              }
+            },
+            "number": {
+              "value": "{colors.warning.800}",
+              "metadata": {
+                "pair": "modes.default.component.prose.codeBlock.bg"
+              }
+            },
+            "comment": {
+              "value": "{colors.neutral.600}",
+              "metadata": {
+                "pair": "modes.default.component.prose.codeBlock.bg"
+              }
+            },
+            "function": {
+              "value": "{colors.brand.700}",
+              "metadata": {
+                "pair": "modes.default.component.prose.codeBlock.bg"
+              }
+            },
+            "variable": {
+              "value": "{colors.error.700}",
+              "metadata": {
+                "pair": "modes.default.component.prose.codeBlock.bg"
+              }
+            },
+            "type": {
+              "value": "{colors.info.700}",
+              "metadata": {
+                "pair": "modes.default.component.prose.codeBlock.bg"
+              }
+            },
+            "operator": {
+              "value": "{colors.neutral.700}",
+              "metadata": {
+                "pair": "modes.default.component.prose.codeBlock.bg"
+              }
+            },
+            "punctuation": {
+              "value": "{colors.neutral.600}",
+              "metadata": {
+                "pair": "modes.default.component.prose.codeBlock.bg"
+              }
+            },
+            "tag": {
+              "value": "{colors.palette.pink.700}",
+              "metadata": {
+                "pair": "modes.default.component.prose.codeBlock.bg"
+              }
+            },
+            "attribute": {
+              "value": "{colors.palette.teal.800}",
+              "metadata": {
+                "pair": "modes.default.component.prose.codeBlock.bg"
+              }
+            }
+          }
+        },
+        "proofing": {
+          "spelling": {
+            "value": "{colors.error.600}",
+            "metadata": {
+              "pair": "modes.default.surface.page",
+              "minContrast": 3
+            }
+          },
+          "grammar": {
+            "value": "{colors.info.600}",
+            "metadata": {
+              "pair": "modes.default.surface.page",
+              "minContrast": 3
             }
           }
         }
@@ -4247,6 +4478,28 @@
                 }
               }
             }
+          },
+          "caption": {
+            "text": {
+              "value": "{colors.neutral.300}",
+              "metadata": {
+                "pair": "modes.dark.surface.page"
+              }
+            }
+          },
+          "footer": {
+            "bg": {
+              "value": "{colors.neutral.800}",
+              "metadata": {
+                "pair": "modes.dark.component.table.footer.text"
+              }
+            },
+            "text": {
+              "value": "{colors.neutral.100}",
+              "metadata": {
+                "pair": "modes.dark.component.table.footer.bg"
+              }
+            }
           }
         },
         "alert": {
@@ -4919,6 +5172,70 @@
                 "pair": "modes.dark.component.prose.kbd.bg"
               }
             }
+          },
+          "del": {
+            "bg": {
+              "value": "{colors.error.900}",
+              "metadata": {
+                "pair": "modes.dark.component.prose.del.text"
+              }
+            },
+            "text": {
+              "value": "{colors.error.200}",
+              "metadata": {
+                "pair": "modes.dark.component.prose.del.bg"
+              }
+            }
+          },
+          "ins": {
+            "bg": {
+              "value": "{colors.success.900}",
+              "metadata": {
+                "pair": "modes.dark.component.prose.ins.text"
+              }
+            },
+            "text": {
+              "value": "{colors.success.200}",
+              "metadata": {
+                "pair": "modes.dark.component.prose.ins.bg"
+              }
+            }
+          },
+          "marker": {
+            "value": "{colors.neutral.400}",
+            "metadata": {
+              "pair": "modes.dark.surface.page"
+            }
+          },
+          "markerAccent": {
+            "value": "{colors.accent.400}",
+            "metadata": {
+              "pair": "modes.dark.surface.page"
+            }
+          },
+          "figcaption": {
+            "text": {
+              "value": "{colors.neutral.300}",
+              "metadata": {
+                "pair": "modes.dark.surface.page"
+              }
+            }
+          },
+          "dt": {
+            "text": {
+              "value": "{colors.neutral.50}",
+              "metadata": {
+                "pair": "modes.dark.surface.page"
+              }
+            }
+          },
+          "dd": {
+            "text": {
+              "value": "{colors.neutral.300}",
+              "metadata": {
+                "pair": "modes.dark.surface.page"
+              }
+            }
           }
         },
         "externalAuthButton": {
@@ -5061,6 +5378,36 @@
           "focusBorder": {
             "value": "{colors.info.400}",
             "metadata": {}
+          },
+          "option": {
+            "hoverBg": {
+              "value": "{colors.neutral.700}",
+              "metadata": {}
+            },
+            "selectedBg": {
+              "value": "{colors.info.900}",
+              "metadata": {
+                "pair": "modes.dark.component.select.option.selectedText"
+              }
+            },
+            "selectedText": {
+              "value": "{colors.info.100}",
+              "metadata": {
+                "pair": "modes.dark.component.select.option.selectedBg"
+              }
+            },
+            "disabledText": {
+              "value": "{colors.neutral.500}",
+              "metadata": {}
+            }
+          },
+          "optgroup": {
+            "labelText": {
+              "value": "{colors.neutral.300}",
+              "metadata": {
+                "pair": "modes.dark.component.select.bg"
+              }
+            }
           }
         },
         "textarea": {
@@ -5371,6 +5718,121 @@
             "accent": {
               "value": "{colors.accent.400}",
               "metadata": {}
+            }
+          }
+        },
+        "meter": {
+          "track": {
+            "value": "{colors.neutral.700}",
+            "metadata": {}
+          },
+          "fill": {
+            "optimum": {
+              "value": "{colors.success.400}",
+              "metadata": {
+                "pair": "modes.dark.component.meter.track",
+                "minContrast": 3
+              }
+            },
+            "suboptimum": {
+              "value": "{colors.warning.400}",
+              "metadata": {
+                "pair": "modes.dark.component.meter.track",
+                "minContrast": 3
+              }
+            },
+            "critical": {
+              "value": "{colors.error.400}",
+              "metadata": {
+                "pair": "modes.dark.component.meter.track",
+                "minContrast": 3
+              }
+            }
+          }
+        },
+        "code": {
+          "syntax": {
+            "keyword": {
+              "value": "{colors.accent.300}",
+              "metadata": {
+                "pair": "modes.dark.component.prose.codeBlock.bg"
+              }
+            },
+            "string": {
+              "value": "{colors.success.300}",
+              "metadata": {
+                "pair": "modes.dark.component.prose.codeBlock.bg"
+              }
+            },
+            "number": {
+              "value": "{colors.warning.300}",
+              "metadata": {
+                "pair": "modes.dark.component.prose.codeBlock.bg"
+              }
+            },
+            "comment": {
+              "value": "{colors.neutral.400}",
+              "metadata": {
+                "pair": "modes.dark.component.prose.codeBlock.bg"
+              }
+            },
+            "function": {
+              "value": "{colors.brand.300}",
+              "metadata": {
+                "pair": "modes.dark.component.prose.codeBlock.bg"
+              }
+            },
+            "variable": {
+              "value": "{colors.error.300}",
+              "metadata": {
+                "pair": "modes.dark.component.prose.codeBlock.bg"
+              }
+            },
+            "type": {
+              "value": "{colors.info.300}",
+              "metadata": {
+                "pair": "modes.dark.component.prose.codeBlock.bg"
+              }
+            },
+            "operator": {
+              "value": "{colors.neutral.200}",
+              "metadata": {
+                "pair": "modes.dark.component.prose.codeBlock.bg"
+              }
+            },
+            "punctuation": {
+              "value": "{colors.neutral.300}",
+              "metadata": {
+                "pair": "modes.dark.component.prose.codeBlock.bg"
+              }
+            },
+            "tag": {
+              "value": "{colors.palette.pink.300}",
+              "metadata": {
+                "pair": "modes.dark.component.prose.codeBlock.bg"
+              }
+            },
+            "attribute": {
+              "value": "{colors.palette.teal.300}",
+              "metadata": {
+                "pair": "modes.dark.component.prose.codeBlock.bg"
+              }
+            }
+          }
+        },
+        "proofing": {
+          "spelling": {
+            "value": "{colors.error.400}",
+            "metadata": {
+              "pair": "modes.dark.surface.page",
+              "minContrast": 3
+            }
+          },
+          "grammar": {
+            "value": "{colors.info.400}",
+            "metadata": {
+              "pair": "modes.dark.surface.page",
+              "minContrast": 3
             }
           }
         }
@@ -6952,6 +7414,28 @@
                 }
               }
             }
+          },
+          "caption": {
+            "text": {
+              "value": "{colors.neutral.700}",
+              "metadata": {
+                "pair": "modes.highContrast.surface.page"
+              }
+            }
+          },
+          "footer": {
+            "bg": {
+              "value": "{colors.neutral.50}",
+              "metadata": {
+                "pair": "modes.highContrast.component.table.footer.text"
+              }
+            },
+            "text": {
+              "value": "{colors.neutral.900}",
+              "metadata": {
+                "pair": "modes.highContrast.component.table.footer.bg"
+              }
+            }
           }
         },
         "alert": {
@@ -7624,6 +8108,70 @@
                 "pair": "modes.highContrast.component.prose.kbd.bg"
               }
             }
+          },
+          "del": {
+            "bg": {
+              "value": "{colors.error.100}",
+              "metadata": {
+                "pair": "modes.highContrast.component.prose.del.text"
+              }
+            },
+            "text": {
+              "value": "{colors.error.900}",
+              "metadata": {
+                "pair": "modes.highContrast.component.prose.del.bg"
+              }
+            }
+          },
+          "ins": {
+            "bg": {
+              "value": "{colors.success.100}",
+              "metadata": {
+                "pair": "modes.highContrast.component.prose.ins.text"
+              }
+            },
+            "text": {
+              "value": "{colors.success.900}",
+              "metadata": {
+                "pair": "modes.highContrast.component.prose.ins.bg"
+              }
+            }
+          },
+          "marker": {
+            "value": "{colors.neutral.700}",
+            "metadata": {
+              "pair": "modes.highContrast.surface.page"
+            }
+          },
+          "markerAccent": {
+            "value": "{colors.accent.700}",
+            "metadata": {
+              "pair": "modes.highContrast.surface.page"
+            }
+          },
+          "figcaption": {
+            "text": {
+              "value": "{colors.neutral.700}",
+              "metadata": {
+                "pair": "modes.highContrast.surface.page"
+              }
+            }
+          },
+          "dt": {
+            "text": {
+              "value": "{colors.neutral.900}",
+              "metadata": {
+                "pair": "modes.highContrast.surface.page"
+              }
+            }
+          },
+          "dd": {
+            "text": {
+              "value": "{colors.neutral.700}",
+              "metadata": {
+                "pair": "modes.highContrast.surface.page"
+              }
+            }
           }
         },
         "externalAuthButton": {
@@ -7766,6 +8314,36 @@
           "focusBorder": {
             "value": "{colors.info.600}",
             "metadata": {}
+          },
+          "option": {
+            "hoverBg": {
+              "value": "{colors.neutral.100}",
+              "metadata": {}
+            },
+            "selectedBg": {
+              "value": "{colors.info.50}",
+              "metadata": {
+                "pair": "modes.highContrast.component.select.option.selectedText"
+              }
+            },
+            "selectedText": {
+              "value": "{colors.info.900}",
+              "metadata": {
+                "pair": "modes.highContrast.component.select.option.selectedBg"
+              }
+            },
+            "disabledText": {
+              "value": "{colors.neutral.500}",
+              "metadata": {}
+            }
+          },
+          "optgroup": {
+            "labelText": {
+              "value": "{colors.neutral.700}",
+              "metadata": {
+                "pair": "modes.highContrast.component.select.bg"
+              }
+            }
           }
         },
         "textarea": {
@@ -8076,6 +8654,121 @@
             "accent": {
               "value": "{colors.accent.600}",
               "metadata": {}
+            }
+          }
+        },
+        "meter": {
+          "track": {
+            "value": "{colors.neutral.200}",
+            "metadata": {}
+          },
+          "fill": {
+            "optimum": {
+              "value": "{colors.success.800}",
+              "metadata": {
+                "pair": "modes.highContrast.component.meter.track",
+                "minContrast": 3
+              }
+            },
+            "suboptimum": {
+              "value": "{colors.warning.800}",
+              "metadata": {
+                "pair": "modes.highContrast.component.meter.track",
+                "minContrast": 3
+              }
+            },
+            "critical": {
+              "value": "{colors.error.700}",
+              "metadata": {
+                "pair": "modes.highContrast.component.meter.track",
+                "minContrast": 3
+              }
+            }
+          }
+        },
+        "code": {
+          "syntax": {
+            "keyword": {
+              "value": "{colors.accent.800}",
+              "metadata": {
+                "pair": "modes.highContrast.component.prose.codeBlock.bg"
+              }
+            },
+            "string": {
+              "value": "{colors.success.900}",
+              "metadata": {
+                "pair": "modes.highContrast.component.prose.codeBlock.bg"
+              }
+            },
+            "number": {
+              "value": "{colors.warning.900}",
+              "metadata": {
+                "pair": "modes.highContrast.component.prose.codeBlock.bg"
+              }
+            },
+            "comment": {
+              "value": "{colors.neutral.700}",
+              "metadata": {
+                "pair": "modes.highContrast.component.prose.codeBlock.bg"
+              }
+            },
+            "function": {
+              "value": "{colors.brand.800}",
+              "metadata": {
+                "pair": "modes.highContrast.component.prose.codeBlock.bg"
+              }
+            },
+            "variable": {
+              "value": "{colors.error.800}",
+              "metadata": {
+                "pair": "modes.highContrast.component.prose.codeBlock.bg"
+              }
+            },
+            "type": {
+              "value": "{colors.info.800}",
+              "metadata": {
+                "pair": "modes.highContrast.component.prose.codeBlock.bg"
+              }
+            },
+            "operator": {
+              "value": "{colors.neutral.800}",
+              "metadata": {
+                "pair": "modes.highContrast.component.prose.codeBlock.bg"
+              }
+            },
+            "punctuation": {
+              "value": "{colors.neutral.700}",
+              "metadata": {
+                "pair": "modes.highContrast.component.prose.codeBlock.bg"
+              }
+            },
+            "tag": {
+              "value": "{colors.palette.pink.900}",
+              "metadata": {
+                "pair": "modes.highContrast.component.prose.codeBlock.bg"
+              }
+            },
+            "attribute": {
+              "value": "{colors.palette.teal.900}",
+              "metadata": {
+                "pair": "modes.highContrast.component.prose.codeBlock.bg"
+              }
+            }
+          }
+        },
+        "proofing": {
+          "spelling": {
+            "value": "{colors.error.700}",
+            "metadata": {
+              "pair": "modes.highContrast.surface.page",
+              "minContrast": 3
+            }
+          },
+          "grammar": {
+            "value": "{colors.info.700}",
+            "metadata": {
+              "pair": "modes.highContrast.surface.page",
+              "minContrast": 3
             }
           }
         }
@@ -8588,6 +9281,14 @@
         "onInverseHover": {
           "value": "{colors.brand.300}",
           "description": "link color on hover, on surface.inverse"
+        },
+        "underline": {
+          "value": "{colors.brand.700}",
+          "description": "underline colour for inline links; the link text keeps link.default"
+        },
+        "underlineHover": {
+          "value": "{colors.brand.800}",
+          "description": "underline colour for inline links on hover"
         }
       }
     }

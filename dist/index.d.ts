@@ -434,6 +434,13 @@ interface SpectreGeneratedTokens {
                     text: string;
                 };
             };
+            caption: {
+                text: string;
+            };
+            footer: {
+                bg: string;
+                text: string;
+            };
         };
         alert: {
             neutral: {
@@ -661,6 +668,25 @@ interface SpectreGeneratedTokens {
                 border: string;
                 text: string;
             };
+            del: {
+                bg: string;
+                text: string;
+            };
+            ins: {
+                bg: string;
+                text: string;
+            };
+            marker: string;
+            markerAccent: string;
+            figcaption: {
+                text: string;
+            };
+            dt: {
+                text: string;
+            };
+            dd: {
+                text: string;
+            };
         };
         externalAuthButton: {
             bg: string;
@@ -702,6 +728,15 @@ interface SpectreGeneratedTokens {
             bgInvalid: string;
             borderSuccess: string;
             bgSuccess: string;
+            option: {
+                hoverBg: string;
+                selectedBg: string;
+                selectedText: string;
+                disabledText: string;
+            };
+            optgroup: {
+                labelText: string;
+            };
         };
         textarea: {
             bg: string;
@@ -792,6 +827,33 @@ interface SpectreGeneratedTokens {
                 accent: string;
                 thickness: string;
             };
+        };
+        meter: {
+            track: string;
+            fill: {
+                optimum: string;
+                suboptimum: string;
+                critical: string;
+            };
+        };
+        code: {
+            syntax: {
+                keyword: string;
+                string: string;
+                number: string;
+                comment: string;
+                function: string;
+                variable: string;
+                type: string;
+                operator: string;
+                punctuation: string;
+                tag: string;
+                attribute: string;
+            };
+        };
+        proofing: {
+            spelling: string;
+            grammar: string;
         };
     };
     buttons: {
@@ -1453,6 +1515,13 @@ interface SpectreGeneratedTokens {
                             text: string;
                         };
                     };
+                    caption: {
+                        text: string;
+                    };
+                    footer: {
+                        bg: string;
+                        text: string;
+                    };
                 };
                 alert: {
                     neutral: {
@@ -1676,6 +1745,25 @@ interface SpectreGeneratedTokens {
                         border: string;
                         text: string;
                     };
+                    del: {
+                        bg: string;
+                        text: string;
+                    };
+                    ins: {
+                        bg: string;
+                        text: string;
+                    };
+                    marker: string;
+                    markerAccent: string;
+                    figcaption: {
+                        text: string;
+                    };
+                    dt: {
+                        text: string;
+                    };
+                    dd: {
+                        text: string;
+                    };
                 };
                 externalAuthButton: {
                     bg: string;
@@ -1713,6 +1801,15 @@ interface SpectreGeneratedTokens {
                     disabledBg: string;
                     disabledBorder: string;
                     focusBorder: string;
+                    option: {
+                        hoverBg: string;
+                        selectedBg: string;
+                        selectedText: string;
+                        disabledText: string;
+                    };
+                    optgroup: {
+                        labelText: string;
+                    };
                 };
                 textarea: {
                     bg: string;
@@ -1798,6 +1895,33 @@ interface SpectreGeneratedTokens {
                         cta: string;
                         accent: string;
                     };
+                };
+                meter: {
+                    track: string;
+                    fill: {
+                        optimum: string;
+                        suboptimum: string;
+                        critical: string;
+                    };
+                };
+                code: {
+                    syntax: {
+                        keyword: string;
+                        string: string;
+                        number: string;
+                        comment: string;
+                        function: string;
+                        variable: string;
+                        type: string;
+                        operator: string;
+                        punctuation: string;
+                        tag: string;
+                        attribute: string;
+                    };
+                };
+                proofing: {
+                    spelling: string;
+                    grammar: string;
                 };
             };
         };
@@ -2254,6 +2378,13 @@ interface SpectreGeneratedTokens {
                             text: string;
                         };
                     };
+                    caption: {
+                        text: string;
+                    };
+                    footer: {
+                        bg: string;
+                        text: string;
+                    };
                 };
                 alert: {
                     neutral: {
@@ -2477,6 +2608,25 @@ interface SpectreGeneratedTokens {
                         border: string;
                         text: string;
                     };
+                    del: {
+                        bg: string;
+                        text: string;
+                    };
+                    ins: {
+                        bg: string;
+                        text: string;
+                    };
+                    marker: string;
+                    markerAccent: string;
+                    figcaption: {
+                        text: string;
+                    };
+                    dt: {
+                        text: string;
+                    };
+                    dd: {
+                        text: string;
+                    };
                 };
                 externalAuthButton: {
                     bg: string;
@@ -2514,6 +2664,15 @@ interface SpectreGeneratedTokens {
                     disabledBg: string;
                     disabledBorder: string;
                     focusBorder: string;
+                    option: {
+                        hoverBg: string;
+                        selectedBg: string;
+                        selectedText: string;
+                        disabledText: string;
+                    };
+                    optgroup: {
+                        labelText: string;
+                    };
                 };
                 textarea: {
                     bg: string;
@@ -2599,6 +2758,33 @@ interface SpectreGeneratedTokens {
                         cta: string;
                         accent: string;
                     };
+                };
+                meter: {
+                    track: string;
+                    fill: {
+                        optimum: string;
+                        suboptimum: string;
+                        critical: string;
+                    };
+                };
+                code: {
+                    syntax: {
+                        keyword: string;
+                        string: string;
+                        number: string;
+                        comment: string;
+                        function: string;
+                        variable: string;
+                        type: string;
+                        operator: string;
+                        punctuation: string;
+                        tag: string;
+                        attribute: string;
+                    };
+                };
+                proofing: {
+                    spelling: string;
+                    grammar: string;
                 };
             };
         };
@@ -3062,6 +3248,13 @@ interface SpectreGeneratedTokens {
                             text: string;
                         };
                     };
+                    caption: {
+                        text: string;
+                    };
+                    footer: {
+                        bg: string;
+                        text: string;
+                    };
                 };
                 alert: {
                     neutral: {
@@ -3285,6 +3478,25 @@ interface SpectreGeneratedTokens {
                         border: string;
                         text: string;
                     };
+                    del: {
+                        bg: string;
+                        text: string;
+                    };
+                    ins: {
+                        bg: string;
+                        text: string;
+                    };
+                    marker: string;
+                    markerAccent: string;
+                    figcaption: {
+                        text: string;
+                    };
+                    dt: {
+                        text: string;
+                    };
+                    dd: {
+                        text: string;
+                    };
                 };
                 externalAuthButton: {
                     bg: string;
@@ -3322,6 +3534,15 @@ interface SpectreGeneratedTokens {
                     disabledBg: string;
                     disabledBorder: string;
                     focusBorder: string;
+                    option: {
+                        hoverBg: string;
+                        selectedBg: string;
+                        selectedText: string;
+                        disabledText: string;
+                    };
+                    optgroup: {
+                        labelText: string;
+                    };
                 };
                 textarea: {
                     bg: string;
@@ -3407,6 +3628,33 @@ interface SpectreGeneratedTokens {
                         cta: string;
                         accent: string;
                     };
+                };
+                meter: {
+                    track: string;
+                    fill: {
+                        optimum: string;
+                        suboptimum: string;
+                        critical: string;
+                    };
+                };
+                code: {
+                    syntax: {
+                        keyword: string;
+                        string: string;
+                        number: string;
+                        comment: string;
+                        function: string;
+                        variable: string;
+                        type: string;
+                        operator: string;
+                        punctuation: string;
+                        tag: string;
+                        attribute: string;
+                    };
+                };
+                proofing: {
+                    spelling: string;
+                    grammar: string;
                 };
             };
             buttons: {
@@ -3556,6 +3804,8 @@ interface SpectreGeneratedTokens {
                 visited: string;
                 onInverse: string;
                 onInverseHover: string;
+                underline: string;
+                underlineHover: string;
             };
         };
     };
@@ -4335,6 +4585,26 @@ interface SpectreGeneratedTokens {
         relaxed: string;
         loose: string;
     };
+    textDecoration: {
+        thickness: {
+            thin: string;
+            base: string;
+            thick: string;
+        };
+        offset: {
+            sm: string;
+            md: string;
+            lg: string;
+        };
+    };
+    fontWeight: {
+        normal: number;
+        medium: number;
+        semibold: number;
+        bold: number;
+        extrabold: number;
+        black: number;
+    };
     surface: {
         page: string;
         card: string;
@@ -4353,6 +4623,8 @@ interface SpectreGeneratedTokens {
         visited: string;
         onInverse: string;
         onInverseHover: string;
+        underline: string;
+        underlineHover: string;
     };
     text: {
         onPage: {
@@ -4438,6 +4710,18 @@ interface SpectreGeneratedTokens {
         };
         sidebar: {
             width: string;
+        };
+        prose: {
+            flow: {
+                listItem: string;
+                headingAfter: string;
+                paragraph: string;
+                list: string;
+                blockquote: string;
+                figure: string;
+                heading: string;
+                hr: string;
+            };
         };
         responsive: {
             lg: {
@@ -5081,6 +5365,9 @@ interface LayoutTokens {
     };
     sidebar: {
         width: string;
+    };
+    prose: {
+        flow: TokenScale;
     };
     responsive: Record<string, {
         section: {

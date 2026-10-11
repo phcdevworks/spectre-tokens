@@ -5,8 +5,8 @@ Do not hand-edit — regenerate instead. This file is a derived artifact, not
 contract authority; `tokens/` and `contract.manifest.json` remain the source
 of truth (see `TOKEN_CONTRACT.md`).
 
-Every leaf token path across all 25 public namespaces
-(3149 total), with its resolved source value and a usage note.
+Every leaf token path across all 29 public namespaces
+(3322 total), with its resolved source value and a usage note.
 Values shown here are pre-CSS-resolution source values — `{path.to.token}`
 references are shown as-written, not resolved (see `src/css.ts` for
 resolved CSS output).
@@ -529,6 +529,14 @@ resolved CSS output).
 | `layout.hero.paddingBottom.md` | `{layout.section.padding.2xl}` | layout token. |
 | `layout.hero.paddingBottom.lg` | `{layout.section.padding.3xl}` | layout token. |
 | `layout.sidebar.width` | `16rem` | layout token. |
+| `layout.prose.flow.listItem` | `0.5rem` | layout token. |
+| `layout.prose.flow.headingAfter` | `1rem` | layout token. |
+| `layout.prose.flow.paragraph` | `1.5rem` | layout token. |
+| `layout.prose.flow.list` | `1.5rem` | layout token. |
+| `layout.prose.flow.blockquote` | `2rem` | layout token. |
+| `layout.prose.flow.figure` | `2rem` | layout token. |
+| `layout.prose.flow.heading` | `2.5rem` | layout token. |
+| `layout.prose.flow.hr` | `3rem` | layout token. |
 | `layout.responsive.lg.section.padding.xl` | `6rem` | layout token. |
 | `layout.responsive.lg.section.padding.2xl` | `8rem` | layout token. |
 | `layout.responsive.lg.section.padding.3xl` | `10rem` | layout token. |
@@ -1047,6 +1055,8 @@ resolved CSS output).
 | `link.visited` | `{colors.accent.700}` | link color after the destination has been visited |
 | `link.onInverse` | `{colors.neutral.300}` | default inline link color on surface.inverse, independent of page mode |
 | `link.onInverseHover` | `{colors.brand.300}` | link color on hover, on surface.inverse |
+| `link.underline` | `{colors.brand.600} / 0.4` | underline colour for inline links; the link text keeps link.default |
+| `link.underlineHover` | `{colors.brand.700}` | underline colour for inline links on hover |
 
 ## surface
 
@@ -1380,6 +1390,9 @@ resolved CSS output).
 | `component.table.row.warning.text` | `{colors.warning.800}` | Pairs with `component.table.row.warning.bg` for contrast. |
 | `component.table.row.danger.bg` | `{colors.error.100}` | Pairs with `component.table.row.danger.text` for contrast. |
 | `component.table.row.danger.text` | `{colors.error.800}` | Pairs with `component.table.row.danger.bg` for contrast. |
+| `component.table.caption.text` | `{colors.neutral.600}` | Pairs with `surface.page` for contrast. |
+| `component.table.footer.bg` | `{colors.neutral.50}` | Pairs with `component.table.footer.text` for contrast. |
+| `component.table.footer.text` | `{colors.neutral.900}` | Pairs with `component.table.footer.bg` for contrast. |
 | `component.alert.neutral.bg` | `{colors.neutral.100}` | Pairs with `component.alert.neutral.text` for contrast. |
 | `component.alert.neutral.text` | `{colors.neutral.700}` | Pairs with `component.alert.neutral.bg` for contrast. |
 | `component.alert.neutral.border` | `{colors.neutral.300}` | component token. |
@@ -1503,6 +1516,15 @@ resolved CSS output).
 | `component.prose.kbd.bg` | `{colors.neutral.100}` | Pairs with `component.prose.kbd.text` for contrast. |
 | `component.prose.kbd.border` | `{colors.neutral.300}` | component token. |
 | `component.prose.kbd.text` | `{colors.neutral.900}` | Pairs with `component.prose.kbd.bg` for contrast. |
+| `component.prose.del.bg` | `{colors.error.100}` | Pairs with `component.prose.del.text` for contrast. |
+| `component.prose.del.text` | `{colors.error.800}` | Pairs with `component.prose.del.bg` for contrast. |
+| `component.prose.ins.bg` | `{colors.success.100}` | Pairs with `component.prose.ins.text` for contrast. |
+| `component.prose.ins.text` | `{colors.success.800}` | Pairs with `component.prose.ins.bg` for contrast. |
+| `component.prose.marker` | `{colors.neutral.600}` | Pairs with `surface.page` for contrast. |
+| `component.prose.markerAccent` | `{colors.accent.600}` | Pairs with `surface.page` for contrast. |
+| `component.prose.figcaption.text` | `{colors.neutral.600}` | Pairs with `surface.page` for contrast. |
+| `component.prose.dt.text` | `{colors.neutral.900}` | Pairs with `surface.page` for contrast. |
+| `component.prose.dd.text` | `{colors.neutral.700}` | Pairs with `surface.page` for contrast. |
 | `component.externalAuthButton.bg` | `{colors.white}` | Pairs with `component.externalAuthButton.text` for contrast. |
 | `component.externalAuthButton.text` | `{colors.neutral.900}` | Pairs with `component.externalAuthButton.bg` for contrast. |
 | `component.externalAuthButton.border` | `{colors.neutral.300}` | component token. |
@@ -1536,6 +1558,11 @@ resolved CSS output).
 | `component.select.bgInvalid` | `{colors.error.50}` | Pairs with `component.select.text` for contrast. |
 | `component.select.borderSuccess` | `{colors.success.500}` | component token. |
 | `component.select.bgSuccess` | `{colors.success.50}` | Pairs with `component.select.text` for contrast. |
+| `component.select.option.hoverBg` | `{colors.neutral.100}` | component token. |
+| `component.select.option.selectedBg` | `{colors.info.50}` | Pairs with `component.select.option.selectedText` for contrast. |
+| `component.select.option.selectedText` | `{colors.info.800}` | Pairs with `component.select.option.selectedBg` for contrast. |
+| `component.select.option.disabledText` | `{colors.neutral.400}` | component token. |
+| `component.select.optgroup.labelText` | `{colors.neutral.600}` | Pairs with `component.select.bg` for contrast. |
 | `component.textarea.bg` | `{colors.white}` | Pairs with `component.textarea.text` for contrast. |
 | `component.textarea.border` | `{colors.neutral.300}` | component token. |
 | `component.textarea.text` | `{colors.neutral.900}` | Pairs with `component.textarea.bg` for contrast. |
@@ -1600,6 +1627,23 @@ resolved CSS output).
 | `component.quote.accent.cta` | `{colors.brand.600}` | component token. |
 | `component.quote.accent.accent` | `{colors.accent.600}` | component token. |
 | `component.quote.accent.thickness` | `0.25rem` | component token. |
+| `component.meter.track` | `{colors.neutral.200}` | component token. |
+| `component.meter.fill.optimum` | `{colors.success.700}` | Pairs with `component.meter.track` for contrast. |
+| `component.meter.fill.suboptimum` | `{colors.warning.700}` | Pairs with `component.meter.track` for contrast. |
+| `component.meter.fill.critical` | `{colors.error.600}` | Pairs with `component.meter.track` for contrast. |
+| `component.code.syntax.keyword` | `{colors.accent.700}` | Pairs with `component.prose.codeBlock.bg` for contrast. |
+| `component.code.syntax.string` | `{colors.success.800}` | Pairs with `component.prose.codeBlock.bg` for contrast. |
+| `component.code.syntax.number` | `{colors.warning.800}` | Pairs with `component.prose.codeBlock.bg` for contrast. |
+| `component.code.syntax.comment` | `{colors.neutral.600}` | Pairs with `component.prose.codeBlock.bg` for contrast. |
+| `component.code.syntax.function` | `{colors.brand.700}` | Pairs with `component.prose.codeBlock.bg` for contrast. |
+| `component.code.syntax.variable` | `{colors.error.700}` | Pairs with `component.prose.codeBlock.bg` for contrast. |
+| `component.code.syntax.type` | `{colors.info.700}` | Pairs with `component.prose.codeBlock.bg` for contrast. |
+| `component.code.syntax.operator` | `{colors.neutral.700}` | Pairs with `component.prose.codeBlock.bg` for contrast. |
+| `component.code.syntax.punctuation` | `{colors.neutral.600}` | Pairs with `component.prose.codeBlock.bg` for contrast. |
+| `component.code.syntax.tag` | `{colors.palette.pink.700}` | Pairs with `component.prose.codeBlock.bg` for contrast. |
+| `component.code.syntax.attribute` | `{colors.palette.teal.800}` | Pairs with `component.prose.codeBlock.bg` for contrast. |
+| `component.proofing.spelling` | `{colors.error.600}` | underline colour for ::spelling-error |
+| `component.proofing.grammar` | `{colors.info.600}` | underline colour for ::grammar-error |
 
 ## modes
 
@@ -1902,6 +1946,9 @@ resolved CSS output).
 | `modes.default.component.table.row.warning.text` | `{colors.warning.800}` | Pairs with `modes.default.component.table.row.warning.bg` for contrast. |
 | `modes.default.component.table.row.danger.bg` | `{colors.error.100}` | Pairs with `modes.default.component.table.row.danger.text` for contrast. |
 | `modes.default.component.table.row.danger.text` | `{colors.error.800}` | Pairs with `modes.default.component.table.row.danger.bg` for contrast. |
+| `modes.default.component.table.caption.text` | `{colors.neutral.600}` | Pairs with `modes.default.surface.page` for contrast. |
+| `modes.default.component.table.footer.bg` | `{colors.neutral.50}` | Pairs with `modes.default.component.table.footer.text` for contrast. |
+| `modes.default.component.table.footer.text` | `{colors.neutral.900}` | Pairs with `modes.default.component.table.footer.bg` for contrast. |
 | `modes.default.component.alert.neutral.bg` | `{colors.neutral.100}` | Pairs with `modes.default.component.alert.neutral.text` for contrast. |
 | `modes.default.component.alert.neutral.text` | `{colors.neutral.700}` | Pairs with `modes.default.component.alert.neutral.bg` for contrast. |
 | `modes.default.component.alert.neutral.border` | `{colors.neutral.300}` | modes token. |
@@ -2021,6 +2068,15 @@ resolved CSS output).
 | `modes.default.component.prose.kbd.bg` | `{colors.neutral.100}` | Pairs with `modes.default.component.prose.kbd.text` for contrast. |
 | `modes.default.component.prose.kbd.border` | `{colors.neutral.300}` | modes token. |
 | `modes.default.component.prose.kbd.text` | `{colors.neutral.900}` | Pairs with `modes.default.component.prose.kbd.bg` for contrast. |
+| `modes.default.component.prose.del.bg` | `{colors.error.100}` | Pairs with `modes.default.component.prose.del.text` for contrast. |
+| `modes.default.component.prose.del.text` | `{colors.error.800}` | Pairs with `modes.default.component.prose.del.bg` for contrast. |
+| `modes.default.component.prose.ins.bg` | `{colors.success.100}` | Pairs with `modes.default.component.prose.ins.text` for contrast. |
+| `modes.default.component.prose.ins.text` | `{colors.success.800}` | Pairs with `modes.default.component.prose.ins.bg` for contrast. |
+| `modes.default.component.prose.marker` | `{colors.neutral.600}` | Pairs with `modes.default.surface.page` for contrast. |
+| `modes.default.component.prose.markerAccent` | `{colors.accent.600}` | Pairs with `modes.default.surface.page` for contrast. |
+| `modes.default.component.prose.figcaption.text` | `{colors.neutral.600}` | Pairs with `modes.default.surface.page` for contrast. |
+| `modes.default.component.prose.dt.text` | `{colors.neutral.900}` | Pairs with `modes.default.surface.page` for contrast. |
+| `modes.default.component.prose.dd.text` | `{colors.neutral.700}` | Pairs with `modes.default.surface.page` for contrast. |
 | `modes.default.component.externalAuthButton.bg` | `{colors.white}` | Pairs with `modes.default.component.externalAuthButton.text` for contrast. |
 | `modes.default.component.externalAuthButton.text` | `{colors.neutral.900}` | Pairs with `modes.default.component.externalAuthButton.bg` for contrast. |
 | `modes.default.component.externalAuthButton.border` | `{colors.neutral.300}` | modes token. |
@@ -2050,6 +2106,11 @@ resolved CSS output).
 | `modes.default.component.select.disabledBg` | `{colors.neutral.50}` | modes token. |
 | `modes.default.component.select.disabledBorder` | `{colors.neutral.200}` | modes token. |
 | `modes.default.component.select.focusBorder` | `{colors.info.500}` | modes token. |
+| `modes.default.component.select.option.hoverBg` | `{colors.neutral.100}` | modes token. |
+| `modes.default.component.select.option.selectedBg` | `{colors.info.50}` | Pairs with `modes.default.component.select.option.selectedText` for contrast. |
+| `modes.default.component.select.option.selectedText` | `{colors.info.800}` | Pairs with `modes.default.component.select.option.selectedBg` for contrast. |
+| `modes.default.component.select.option.disabledText` | `{colors.neutral.400}` | modes token. |
+| `modes.default.component.select.optgroup.labelText` | `{colors.neutral.600}` | Pairs with `modes.default.component.select.bg` for contrast. |
 | `modes.default.component.textarea.bg` | `{colors.white}` | Pairs with `modes.default.component.textarea.text` for contrast. |
 | `modes.default.component.textarea.border` | `{colors.neutral.300}` | modes token. |
 | `modes.default.component.textarea.text` | `{colors.neutral.900}` | Pairs with `modes.default.component.textarea.bg` for contrast. |
@@ -2109,6 +2170,23 @@ resolved CSS output).
 | `modes.default.component.quote.accent.danger` | `{colors.error.600}` | modes token. |
 | `modes.default.component.quote.accent.cta` | `{colors.brand.600}` | modes token. |
 | `modes.default.component.quote.accent.accent` | `{colors.accent.600}` | modes token. |
+| `modes.default.component.meter.track` | `{colors.neutral.200}` | modes token. |
+| `modes.default.component.meter.fill.optimum` | `{colors.success.700}` | Pairs with `modes.default.component.meter.track` for contrast. |
+| `modes.default.component.meter.fill.suboptimum` | `{colors.warning.700}` | Pairs with `modes.default.component.meter.track` for contrast. |
+| `modes.default.component.meter.fill.critical` | `{colors.error.600}` | Pairs with `modes.default.component.meter.track` for contrast. |
+| `modes.default.component.code.syntax.keyword` | `{colors.accent.700}` | Pairs with `modes.default.component.prose.codeBlock.bg` for contrast. |
+| `modes.default.component.code.syntax.string` | `{colors.success.800}` | Pairs with `modes.default.component.prose.codeBlock.bg` for contrast. |
+| `modes.default.component.code.syntax.number` | `{colors.warning.800}` | Pairs with `modes.default.component.prose.codeBlock.bg` for contrast. |
+| `modes.default.component.code.syntax.comment` | `{colors.neutral.600}` | Pairs with `modes.default.component.prose.codeBlock.bg` for contrast. |
+| `modes.default.component.code.syntax.function` | `{colors.brand.700}` | Pairs with `modes.default.component.prose.codeBlock.bg` for contrast. |
+| `modes.default.component.code.syntax.variable` | `{colors.error.700}` | Pairs with `modes.default.component.prose.codeBlock.bg` for contrast. |
+| `modes.default.component.code.syntax.type` | `{colors.info.700}` | Pairs with `modes.default.component.prose.codeBlock.bg` for contrast. |
+| `modes.default.component.code.syntax.operator` | `{colors.neutral.700}` | Pairs with `modes.default.component.prose.codeBlock.bg` for contrast. |
+| `modes.default.component.code.syntax.punctuation` | `{colors.neutral.600}` | Pairs with `modes.default.component.prose.codeBlock.bg` for contrast. |
+| `modes.default.component.code.syntax.tag` | `{colors.palette.pink.700}` | Pairs with `modes.default.component.prose.codeBlock.bg` for contrast. |
+| `modes.default.component.code.syntax.attribute` | `{colors.palette.teal.800}` | Pairs with `modes.default.component.prose.codeBlock.bg` for contrast. |
+| `modes.default.component.proofing.spelling` | `{colors.error.600}` | Pairs with `modes.default.surface.page` for contrast. |
+| `modes.default.component.proofing.grammar` | `{colors.info.600}` | Pairs with `modes.default.surface.page` for contrast. |
 | `modes.dark.surface.page` | `{colors.neutral.900}` | Pairs with `modes.dark.text.onPage.default` for contrast. |
 | `modes.dark.surface.card` | `{colors.neutral.800}` | Pairs with `modes.dark.text.onSurface.default` for contrast. |
 | `modes.dark.surface.input` | `{colors.neutral.700}` | Pairs with `modes.dark.text.onSurface.default` for contrast. |
@@ -2409,6 +2487,9 @@ resolved CSS output).
 | `modes.dark.component.table.row.warning.text` | `{colors.warning.200}` | Pairs with `modes.dark.component.table.row.warning.bg` for contrast. |
 | `modes.dark.component.table.row.danger.bg` | `{colors.error.900}` | Pairs with `modes.dark.component.table.row.danger.text` for contrast. |
 | `modes.dark.component.table.row.danger.text` | `{colors.error.200}` | Pairs with `modes.dark.component.table.row.danger.bg` for contrast. |
+| `modes.dark.component.table.caption.text` | `{colors.neutral.300}` | Pairs with `modes.dark.surface.page` for contrast. |
+| `modes.dark.component.table.footer.bg` | `{colors.neutral.800}` | Pairs with `modes.dark.component.table.footer.text` for contrast. |
+| `modes.dark.component.table.footer.text` | `{colors.neutral.100}` | Pairs with `modes.dark.component.table.footer.bg` for contrast. |
 | `modes.dark.component.alert.neutral.bg` | `{colors.neutral.800}` | Pairs with `modes.dark.component.alert.neutral.text` for contrast. |
 | `modes.dark.component.alert.neutral.text` | `{colors.neutral.100}` | Pairs with `modes.dark.component.alert.neutral.bg` for contrast. |
 | `modes.dark.component.alert.neutral.border` | `{colors.neutral.600}` | modes token. |
@@ -2528,6 +2609,15 @@ resolved CSS output).
 | `modes.dark.component.prose.kbd.bg` | `{colors.neutral.800}` | Pairs with `modes.dark.component.prose.kbd.text` for contrast. |
 | `modes.dark.component.prose.kbd.border` | `{colors.neutral.600}` | modes token. |
 | `modes.dark.component.prose.kbd.text` | `{colors.neutral.50}` | Pairs with `modes.dark.component.prose.kbd.bg` for contrast. |
+| `modes.dark.component.prose.del.bg` | `{colors.error.900}` | Pairs with `modes.dark.component.prose.del.text` for contrast. |
+| `modes.dark.component.prose.del.text` | `{colors.error.200}` | Pairs with `modes.dark.component.prose.del.bg` for contrast. |
+| `modes.dark.component.prose.ins.bg` | `{colors.success.900}` | Pairs with `modes.dark.component.prose.ins.text` for contrast. |
+| `modes.dark.component.prose.ins.text` | `{colors.success.200}` | Pairs with `modes.dark.component.prose.ins.bg` for contrast. |
+| `modes.dark.component.prose.marker` | `{colors.neutral.400}` | Pairs with `modes.dark.surface.page` for contrast. |
+| `modes.dark.component.prose.markerAccent` | `{colors.accent.400}` | Pairs with `modes.dark.surface.page` for contrast. |
+| `modes.dark.component.prose.figcaption.text` | `{colors.neutral.300}` | Pairs with `modes.dark.surface.page` for contrast. |
+| `modes.dark.component.prose.dt.text` | `{colors.neutral.50}` | Pairs with `modes.dark.surface.page` for contrast. |
+| `modes.dark.component.prose.dd.text` | `{colors.neutral.300}` | Pairs with `modes.dark.surface.page` for contrast. |
 | `modes.dark.component.externalAuthButton.bg` | `{colors.neutral.800}` | Pairs with `modes.dark.component.externalAuthButton.text` for contrast. |
 | `modes.dark.component.externalAuthButton.text` | `{colors.neutral.50}` | Pairs with `modes.dark.component.externalAuthButton.bg` for contrast. |
 | `modes.dark.component.externalAuthButton.border` | `{colors.neutral.600}` | modes token. |
@@ -2557,6 +2647,11 @@ resolved CSS output).
 | `modes.dark.component.select.disabledBg` | `{colors.neutral.900}` | modes token. |
 | `modes.dark.component.select.disabledBorder` | `{colors.neutral.700}` | modes token. |
 | `modes.dark.component.select.focusBorder` | `{colors.info.400}` | modes token. |
+| `modes.dark.component.select.option.hoverBg` | `{colors.neutral.700}` | modes token. |
+| `modes.dark.component.select.option.selectedBg` | `{colors.info.900}` | Pairs with `modes.dark.component.select.option.selectedText` for contrast. |
+| `modes.dark.component.select.option.selectedText` | `{colors.info.100}` | Pairs with `modes.dark.component.select.option.selectedBg` for contrast. |
+| `modes.dark.component.select.option.disabledText` | `{colors.neutral.500}` | modes token. |
+| `modes.dark.component.select.optgroup.labelText` | `{colors.neutral.300}` | Pairs with `modes.dark.component.select.bg` for contrast. |
 | `modes.dark.component.textarea.bg` | `{colors.neutral.800}` | Pairs with `modes.dark.component.textarea.text` for contrast. |
 | `modes.dark.component.textarea.border` | `{colors.neutral.600}` | modes token. |
 | `modes.dark.component.textarea.text` | `{colors.neutral.50}` | Pairs with `modes.dark.component.textarea.bg` for contrast. |
@@ -2616,6 +2711,23 @@ resolved CSS output).
 | `modes.dark.component.quote.accent.danger` | `{colors.error.400}` | modes token. |
 | `modes.dark.component.quote.accent.cta` | `{colors.brand.400}` | modes token. |
 | `modes.dark.component.quote.accent.accent` | `{colors.accent.400}` | modes token. |
+| `modes.dark.component.meter.track` | `{colors.neutral.700}` | modes token. |
+| `modes.dark.component.meter.fill.optimum` | `{colors.success.400}` | Pairs with `modes.dark.component.meter.track` for contrast. |
+| `modes.dark.component.meter.fill.suboptimum` | `{colors.warning.400}` | Pairs with `modes.dark.component.meter.track` for contrast. |
+| `modes.dark.component.meter.fill.critical` | `{colors.error.400}` | Pairs with `modes.dark.component.meter.track` for contrast. |
+| `modes.dark.component.code.syntax.keyword` | `{colors.accent.300}` | Pairs with `modes.dark.component.prose.codeBlock.bg` for contrast. |
+| `modes.dark.component.code.syntax.string` | `{colors.success.300}` | Pairs with `modes.dark.component.prose.codeBlock.bg` for contrast. |
+| `modes.dark.component.code.syntax.number` | `{colors.warning.300}` | Pairs with `modes.dark.component.prose.codeBlock.bg` for contrast. |
+| `modes.dark.component.code.syntax.comment` | `{colors.neutral.400}` | Pairs with `modes.dark.component.prose.codeBlock.bg` for contrast. |
+| `modes.dark.component.code.syntax.function` | `{colors.brand.300}` | Pairs with `modes.dark.component.prose.codeBlock.bg` for contrast. |
+| `modes.dark.component.code.syntax.variable` | `{colors.error.300}` | Pairs with `modes.dark.component.prose.codeBlock.bg` for contrast. |
+| `modes.dark.component.code.syntax.type` | `{colors.info.300}` | Pairs with `modes.dark.component.prose.codeBlock.bg` for contrast. |
+| `modes.dark.component.code.syntax.operator` | `{colors.neutral.200}` | Pairs with `modes.dark.component.prose.codeBlock.bg` for contrast. |
+| `modes.dark.component.code.syntax.punctuation` | `{colors.neutral.300}` | Pairs with `modes.dark.component.prose.codeBlock.bg` for contrast. |
+| `modes.dark.component.code.syntax.tag` | `{colors.palette.pink.300}` | Pairs with `modes.dark.component.prose.codeBlock.bg` for contrast. |
+| `modes.dark.component.code.syntax.attribute` | `{colors.palette.teal.300}` | Pairs with `modes.dark.component.prose.codeBlock.bg` for contrast. |
+| `modes.dark.component.proofing.spelling` | `{colors.error.400}` | Pairs with `modes.dark.surface.page` for contrast. |
+| `modes.dark.component.proofing.grammar` | `{colors.info.400}` | Pairs with `modes.dark.surface.page` for contrast. |
 | `modes.highContrast.surface.page` | `{colors.white}` | Pairs with `modes.highContrast.text.onPage.default` for contrast. |
 | `modes.highContrast.surface.card` | `{colors.white}` | Pairs with `modes.highContrast.text.onSurface.default` for contrast. |
 | `modes.highContrast.surface.input` | `{colors.white}` | Pairs with `modes.highContrast.text.onSurface.default` for contrast. |
@@ -2919,6 +3031,9 @@ resolved CSS output).
 | `modes.highContrast.component.table.row.warning.text` | `{colors.warning.900}` | Pairs with `modes.highContrast.component.table.row.warning.bg` for contrast. |
 | `modes.highContrast.component.table.row.danger.bg` | `{colors.error.100}` | Pairs with `modes.highContrast.component.table.row.danger.text` for contrast. |
 | `modes.highContrast.component.table.row.danger.text` | `{colors.error.900}` | Pairs with `modes.highContrast.component.table.row.danger.bg` for contrast. |
+| `modes.highContrast.component.table.caption.text` | `{colors.neutral.700}` | Pairs with `modes.highContrast.surface.page` for contrast. |
+| `modes.highContrast.component.table.footer.bg` | `{colors.neutral.50}` | Pairs with `modes.highContrast.component.table.footer.text` for contrast. |
+| `modes.highContrast.component.table.footer.text` | `{colors.neutral.900}` | Pairs with `modes.highContrast.component.table.footer.bg` for contrast. |
 | `modes.highContrast.component.alert.neutral.bg` | `{colors.neutral.100}` | Pairs with `modes.highContrast.component.alert.neutral.text` for contrast. |
 | `modes.highContrast.component.alert.neutral.text` | `{colors.neutral.700}` | Pairs with `modes.highContrast.component.alert.neutral.bg` for contrast. |
 | `modes.highContrast.component.alert.neutral.border` | `{colors.neutral.700}` | modes token. |
@@ -3038,6 +3153,15 @@ resolved CSS output).
 | `modes.highContrast.component.prose.kbd.bg` | `{colors.neutral.100}` | Pairs with `modes.highContrast.component.prose.kbd.text` for contrast. |
 | `modes.highContrast.component.prose.kbd.border` | `{colors.neutral.700}` | modes token. |
 | `modes.highContrast.component.prose.kbd.text` | `{colors.neutral.900}` | Pairs with `modes.highContrast.component.prose.kbd.bg` for contrast. |
+| `modes.highContrast.component.prose.del.bg` | `{colors.error.100}` | Pairs with `modes.highContrast.component.prose.del.text` for contrast. |
+| `modes.highContrast.component.prose.del.text` | `{colors.error.900}` | Pairs with `modes.highContrast.component.prose.del.bg` for contrast. |
+| `modes.highContrast.component.prose.ins.bg` | `{colors.success.100}` | Pairs with `modes.highContrast.component.prose.ins.text` for contrast. |
+| `modes.highContrast.component.prose.ins.text` | `{colors.success.900}` | Pairs with `modes.highContrast.component.prose.ins.bg` for contrast. |
+| `modes.highContrast.component.prose.marker` | `{colors.neutral.700}` | Pairs with `modes.highContrast.surface.page` for contrast. |
+| `modes.highContrast.component.prose.markerAccent` | `{colors.accent.700}` | Pairs with `modes.highContrast.surface.page` for contrast. |
+| `modes.highContrast.component.prose.figcaption.text` | `{colors.neutral.700}` | Pairs with `modes.highContrast.surface.page` for contrast. |
+| `modes.highContrast.component.prose.dt.text` | `{colors.neutral.900}` | Pairs with `modes.highContrast.surface.page` for contrast. |
+| `modes.highContrast.component.prose.dd.text` | `{colors.neutral.700}` | Pairs with `modes.highContrast.surface.page` for contrast. |
 | `modes.highContrast.component.externalAuthButton.bg` | `{colors.white}` | Pairs with `modes.highContrast.component.externalAuthButton.text` for contrast. |
 | `modes.highContrast.component.externalAuthButton.text` | `{colors.neutral.900}` | Pairs with `modes.highContrast.component.externalAuthButton.bg` for contrast. |
 | `modes.highContrast.component.externalAuthButton.border` | `{colors.neutral.700}` | modes token. |
@@ -3067,6 +3191,11 @@ resolved CSS output).
 | `modes.highContrast.component.select.disabledBg` | `{colors.neutral.50}` | modes token. |
 | `modes.highContrast.component.select.disabledBorder` | `{colors.neutral.700}` | modes token. |
 | `modes.highContrast.component.select.focusBorder` | `{colors.info.600}` | modes token. |
+| `modes.highContrast.component.select.option.hoverBg` | `{colors.neutral.100}` | modes token. |
+| `modes.highContrast.component.select.option.selectedBg` | `{colors.info.50}` | Pairs with `modes.highContrast.component.select.option.selectedText` for contrast. |
+| `modes.highContrast.component.select.option.selectedText` | `{colors.info.900}` | Pairs with `modes.highContrast.component.select.option.selectedBg` for contrast. |
+| `modes.highContrast.component.select.option.disabledText` | `{colors.neutral.500}` | modes token. |
+| `modes.highContrast.component.select.optgroup.labelText` | `{colors.neutral.700}` | Pairs with `modes.highContrast.component.select.bg` for contrast. |
 | `modes.highContrast.component.textarea.bg` | `{colors.white}` | Pairs with `modes.highContrast.component.textarea.text` for contrast. |
 | `modes.highContrast.component.textarea.border` | `{colors.neutral.700}` | modes token. |
 | `modes.highContrast.component.textarea.text` | `{colors.neutral.900}` | Pairs with `modes.highContrast.component.textarea.bg` for contrast. |
@@ -3126,6 +3255,23 @@ resolved CSS output).
 | `modes.highContrast.component.quote.accent.danger` | `{colors.error.600}` | modes token. |
 | `modes.highContrast.component.quote.accent.cta` | `{colors.brand.600}` | modes token. |
 | `modes.highContrast.component.quote.accent.accent` | `{colors.accent.600}` | modes token. |
+| `modes.highContrast.component.meter.track` | `{colors.neutral.200}` | modes token. |
+| `modes.highContrast.component.meter.fill.optimum` | `{colors.success.800}` | Pairs with `modes.highContrast.component.meter.track` for contrast. |
+| `modes.highContrast.component.meter.fill.suboptimum` | `{colors.warning.800}` | Pairs with `modes.highContrast.component.meter.track` for contrast. |
+| `modes.highContrast.component.meter.fill.critical` | `{colors.error.700}` | Pairs with `modes.highContrast.component.meter.track` for contrast. |
+| `modes.highContrast.component.code.syntax.keyword` | `{colors.accent.800}` | Pairs with `modes.highContrast.component.prose.codeBlock.bg` for contrast. |
+| `modes.highContrast.component.code.syntax.string` | `{colors.success.900}` | Pairs with `modes.highContrast.component.prose.codeBlock.bg` for contrast. |
+| `modes.highContrast.component.code.syntax.number` | `{colors.warning.900}` | Pairs with `modes.highContrast.component.prose.codeBlock.bg` for contrast. |
+| `modes.highContrast.component.code.syntax.comment` | `{colors.neutral.700}` | Pairs with `modes.highContrast.component.prose.codeBlock.bg` for contrast. |
+| `modes.highContrast.component.code.syntax.function` | `{colors.brand.800}` | Pairs with `modes.highContrast.component.prose.codeBlock.bg` for contrast. |
+| `modes.highContrast.component.code.syntax.variable` | `{colors.error.800}` | Pairs with `modes.highContrast.component.prose.codeBlock.bg` for contrast. |
+| `modes.highContrast.component.code.syntax.type` | `{colors.info.800}` | Pairs with `modes.highContrast.component.prose.codeBlock.bg` for contrast. |
+| `modes.highContrast.component.code.syntax.operator` | `{colors.neutral.800}` | Pairs with `modes.highContrast.component.prose.codeBlock.bg` for contrast. |
+| `modes.highContrast.component.code.syntax.punctuation` | `{colors.neutral.700}` | Pairs with `modes.highContrast.component.prose.codeBlock.bg` for contrast. |
+| `modes.highContrast.component.code.syntax.tag` | `{colors.palette.pink.900}` | Pairs with `modes.highContrast.component.prose.codeBlock.bg` for contrast. |
+| `modes.highContrast.component.code.syntax.attribute` | `{colors.palette.teal.900}` | Pairs with `modes.highContrast.component.prose.codeBlock.bg` for contrast. |
+| `modes.highContrast.component.proofing.spelling` | `{colors.error.700}` | Pairs with `modes.highContrast.surface.page` for contrast. |
+| `modes.highContrast.component.proofing.grammar` | `{colors.info.700}` | Pairs with `modes.highContrast.surface.page` for contrast. |
 | `modes.highContrast.buttons.primary.bg` | `{colors.info.700}` | Pairs with `modes.highContrast.buttons.primary.text` for contrast. |
 | `modes.highContrast.buttons.primary.bgHover` | `{colors.info.800}` | Pairs with `modes.highContrast.buttons.primary.text` for contrast. |
 | `modes.highContrast.buttons.primary.bgActive` | `{colors.info.900}` | Pairs with `modes.highContrast.buttons.primary.text` for contrast. |
@@ -3244,6 +3390,8 @@ resolved CSS output).
 | `modes.highContrast.link.visited` | `{colors.accent.700}` | link color after the destination has been visited |
 | `modes.highContrast.link.onInverse` | `{colors.neutral.300}` | default inline link color on surface.inverse, independent of page mode |
 | `modes.highContrast.link.onInverseHover` | `{colors.brand.300}` | link color on hover, on surface.inverse |
+| `modes.highContrast.link.underline` | `{colors.brand.700}` | underline colour for inline links; the link text keeps link.default |
+| `modes.highContrast.link.underlineHover` | `{colors.brand.800}` | underline colour for inline links on hover |
 
 ## control
 
@@ -3284,3 +3432,186 @@ resolved CSS output).
 | `elevation.modal.shadow` | `{shadows.2xl}` | elevation token. |
 | `elevation.modal.surface` | `{surface.card}` | elevation token. |
 | `elevation.modal.zIndex` | `{zIndex.modal}` | elevation token. |
+
+## tracking
+
+| Path | Value | Usage |
+| ---- | ----- | ----- |
+| `tracking.tightest` | `-0.075em` | tracking token. |
+| `tracking.tighter` | `-0.05em` | tracking token. |
+| `tracking.tight` | `-0.025em` | tracking token. |
+| `tracking.normal` | `0em` | tracking token. |
+| `tracking.wide` | `0.025em` | tracking token. |
+| `tracking.wider` | `0.05em` | tracking token. |
+| `tracking.widest` | `0.1em` | tracking token. |
+
+## leading
+
+| Path | Value | Usage |
+| ---- | ----- | ----- |
+| `leading.none` | `1` | leading token. |
+| `leading.tight` | `1.25` | leading token. |
+| `leading.snug` | `1.375` | leading token. |
+| `leading.normal` | `1.5` | leading token. |
+| `leading.relaxed` | `1.625` | leading token. |
+| `leading.loose` | `2` | leading token. |
+
+## textDecoration
+
+| Path | Value | Usage |
+| ---- | ----- | ----- |
+| `textDecoration.thickness.thin` | `1px` | textDecoration token. |
+| `textDecoration.thickness.base` | `2px` | textDecoration token. |
+| `textDecoration.thickness.thick` | `3px` | textDecoration token. |
+| `textDecoration.offset.sm` | `0.125em` | textDecoration token. |
+| `textDecoration.offset.md` | `0.2em` | textDecoration token. |
+| `textDecoration.offset.lg` | `0.3em` | textDecoration token. |
+
+## fontWeight
+
+| Path | Value | Usage |
+| ---- | ----- | ----- |
+| `fontWeight.normal` | `400` | fontWeight token. |
+| `fontWeight.medium` | `500` | fontWeight token. |
+| `fontWeight.semibold` | `600` | fontWeight token. |
+| `fontWeight.bold` | `700` | fontWeight token. |
+| `fontWeight.extrabold` | `800` | fontWeight token. |
+| `fontWeight.black` | `900` | fontWeight token. |
+
+## HTML element coverage
+
+Generated from `element-coverage.json` and validated by `npm run check:elements`.
+Every standard HTML element and styleable pseudo-element maps to the token
+roles that style it, or is marked as having no visual styling of its own.
+
+| Element | Token roles | Note |
+| ------- | ----------- | ---- |
+| `<a>` | `link.default`, `link.hover`, `link.active`, `link.visited`, `link.underline`, `link.underlineHover`, `textDecoration.thickness.thin`, `textDecoration.offset.md`, `accessibility.focusRing` |  |
+| `<abbr>` | `text.onPage.muted`, `textDecoration.thickness.thin`, `textDecoration.offset.sm` | dotted underline in the muted text colour |
+| `<address>` | `typography.body`, `text.onPage.default` |  |
+| `<area>` | No visual styling | image-map hotspot; renders no box |
+| `<article>` | `layout.stack.gap`, `layout.prose.flow` |  |
+| `<aside>` | `surface.card`, `text.onSurface.default`, `layout.stack.gap` |  |
+| `<audio>` | `radii.md`, `buttons.primary.bg` | native controls take the primary action colour through accent-color |
+| `<b>` | `fontWeight.bold` |  |
+| `<base>` | No visual styling | document metadata |
+| `<bdi>` | No visual styling | bidirectional isolation only |
+| `<bdo>` | No visual styling | bidirectional override only |
+| `<blockquote>` | `component.quote`, `component.prose.blockquote`, `layout.prose.flow.blockquote` |  |
+| `<body>` | `surface.page`, `text.onPage.default`, `typography.body`, `typography.families.sans` |  |
+| `<br>` | No visual styling | line break; renders no box |
+| `<button>` | `buttons.primary`, `control.md`, `radii.md`, `accessibility.focusRing`, `accessibility.minTouchTarget` |  |
+| `<canvas>` | `component.chart`, `aspectRatios` |  |
+| `<caption>` | `component.table.caption.text`, `font.sm` |  |
+| `<cite>` | `component.quote.attributionName`, `text.onPage.muted` |  |
+| `<code>` | `component.prose.code`, `typography.families.mono`, `radii.sm` |  |
+| `<col>` | No visual styling | column styling comes from the table roles |
+| `<colgroup>` | No visual styling | column styling comes from the table roles |
+| `<data>` | No visual styling | machine-readable value; inherits text |
+| `<datalist>` | No visual styling | suggestion list drawn by the browser |
+| `<dd>` | `component.prose.dd.text`, `layout.prose.flow.listItem` |  |
+| `<del>` | `component.prose.del.bg`, `component.prose.del.text` |  |
+| `<details>` | `component.accordion` |  |
+| `<dfn>` | `text.onPage.default`, `fontWeight.semibold` |  |
+| `<dialog>` | `component.modal`, `surface.overlay`, `elevation.modal` |  |
+| `<div>` | No visual styling | generic container |
+| `<dl>` | `layout.prose.flow.list` |  |
+| `<dt>` | `component.prose.dt.text`, `fontWeight.semibold` |  |
+| `<em>` | No visual styling | italic from the browser default |
+| `<embed>` | `aspectRatios.video`, `radii.md` |  |
+| `<fieldset>` | `component.fieldset.border`, `radii.md` |  |
+| `<figcaption>` | `component.prose.figcaption.text`, `font.sm`, `leading.snug` |  |
+| `<figure>` | `layout.prose.flow.figure` |  |
+| `<footer>` | `component.footer` |  |
+| `<form>` | `layout.stack.gap` |  |
+| `<h1>` | `typography.heading.h1`, `text.onPage.default`, `layout.prose.flow.heading`, `layout.prose.flow.headingAfter` |  |
+| `<h2>` | `typography.heading.h2`, `text.onPage.default`, `layout.prose.flow.heading`, `layout.prose.flow.headingAfter` |  |
+| `<h3>` | `typography.heading.h3`, `text.onPage.default`, `layout.prose.flow.heading`, `layout.prose.flow.headingAfter` |  |
+| `<h4>` | `typography.heading.h4`, `text.onPage.default`, `layout.prose.flow.heading`, `layout.prose.flow.headingAfter` |  |
+| `<h5>` | `typography.heading.h5`, `text.onPage.default`, `layout.prose.flow.heading`, `layout.prose.flow.headingAfter` |  |
+| `<h6>` | `typography.heading.h6`, `text.onPage.default`, `layout.prose.flow.heading`, `layout.prose.flow.headingAfter` |  |
+| `<head>` | No visual styling | document metadata |
+| `<header>` | `component.nav`, `layout.container` |  |
+| `<hgroup>` | `typography.heading`, `text.onPage.muted` | subheading lines take the muted text colour |
+| `<hr>` | `component.prose.hr`, `border.width`, `layout.prose.flow.hr` |  |
+| `<html>` | `surface.page`, `component.scrollbar`, `component.caret` |  |
+| `<i>` | No visual styling | italic from the browser default |
+| `<iframe>` | `aspectRatios.video`, `radii.md`, `border.width` |  |
+| `<img>` | `radii.md`, `aspectRatios`, `component.skeleton` |  |
+| `<input>` | `forms.default`, `forms.focus`, `forms.invalid`, `forms.disabled`, `control.md`, `component.caret`, `component.checkbox`, `component.radio`, `component.range`, `component.fileInput`, `component.datepicker` |  |
+| `<ins>` | `component.prose.ins.bg`, `component.prose.ins.text` |  |
+| `<kbd>` | `component.prose.kbd`, `typography.families.mono`, `radii.sm` |  |
+| `<label>` | `component.label` |  |
+| `<legend>` | `component.fieldset.legendText`, `fontWeight.semibold` |  |
+| `<li>` | `layout.prose.flow.listItem`, `component.prose.marker` |  |
+| `<link>` | No visual styling | document metadata |
+| `<main>` | `layout.container`, `layout.section.padding` |  |
+| `<map>` | No visual styling | image-map container; renders no box |
+| `<mark>` | `component.prose.mark` |  |
+| `<math>` | `typography.families.serif`, `text.onPage.default` |  |
+| `<menu>` | `layout.prose.flow.list`, `component.prose.marker` |  |
+| `<meta>` | No visual styling | document metadata |
+| `<meter>` | `component.meter`, `radii.pill` |  |
+| `<nav>` | `component.nav` |  |
+| `<noscript>` | No visual styling | fallback content; inherits its context |
+| `<object>` | `aspectRatios.video`, `radii.md` |  |
+| `<ol>` | `layout.prose.flow.list`, `component.prose.marker` |  |
+| `<optgroup>` | `component.select.optgroup.labelText`, `fontWeight.semibold` |  |
+| `<option>` | `component.select.option` |  |
+| `<output>` | `text.onPage.default`, `fontWeight.medium` |  |
+| `<p>` | `typography.body`, `text.onPage.default`, `layout.prose.flow.paragraph`, `layout.container.maxWidthProse` |  |
+| `<picture>` | `radii.md`, `aspectRatios` |  |
+| `<pre>` | `component.prose.codeBlock`, `component.code.syntax`, `typography.families.mono`, `radii.md` |  |
+| `<progress>` | `component.progress`, `radii.pill` |  |
+| `<q>` | `component.quote.mark` |  |
+| `<rp>` | No visual styling | ruby fallback parentheses; hidden where ruby is supported |
+| `<rt>` | `font.xs`, `text.onPage.muted` |  |
+| `<ruby>` | No visual styling | ruby container; inherits text |
+| `<s>` | `component.prose.del.text` | strike-through without the deletion background |
+| `<samp>` | `component.prose.code`, `typography.families.mono` |  |
+| `<script>` | No visual styling | not rendered |
+| `<search>` | `layout.stack.gap` |  |
+| `<section>` | `layout.section.padding`, `layout.section.gap` |  |
+| `<select>` | `component.select`, `control.md`, `radii.md` |  |
+| `<selectedcontent>` | `component.select.text` |  |
+| `<slot>` | No visual styling | shadow DOM insertion point; renders no box |
+| `<small>` | `font.sm`, `text.onPage.muted` |  |
+| `<source>` | No visual styling | media source; not rendered |
+| `<span>` | No visual styling | generic inline container |
+| `<strong>` | `fontWeight.bold` |  |
+| `<style>` | No visual styling | not rendered |
+| `<sub>` | `font.xs` |  |
+| `<summary>` | `component.accordion.header`, `component.accordion.icon`, `accessibility.focusRing` |  |
+| `<sup>` | `font.xs` |  |
+| `<svg>` | `icons`, `component.chart` |  |
+| `<table>` | `component.table.text`, `component.table.divider`, `component.table.stripeBg`, `component.table.hoverBg` |  |
+| `<tbody>` | `component.table.stripeBg`, `component.table.hoverBg`, `component.table.selectedBg` |  |
+| `<td>` | `component.table.text`, `component.table.divider`, `component.table.row` |  |
+| `<template>` | No visual styling | not rendered |
+| `<textarea>` | `component.textarea`, `forms.focus`, `component.caret`, `radii.md` |  |
+| `<tfoot>` | `component.table.footer.bg`, `component.table.footer.text` |  |
+| `<th>` | `component.table.header.bg`, `component.table.header.text`, `fontWeight.semibold` |  |
+| `<thead>` | `component.table.header.bg` |  |
+| `<time>` | No visual styling | machine-readable date; inherits text |
+| `<title>` | No visual styling | document metadata |
+| `<tr>` | `component.table.hoverBg`, `component.table.selectedBg`, `component.table.row` |  |
+| `<track>` | No visual styling | caption track; styled through ::cue |
+| `<u>` | `textDecoration.thickness.thin`, `textDecoration.offset.sm` | wavy or solid underline in the current text colour |
+| `<ul>` | `layout.prose.flow.list`, `component.prose.marker` |  |
+| `<var>` | `component.prose.code.text`, `typography.families.mono` | italic from the browser default |
+| `<video>` | `aspectRatios.video`, `radii.md`, `component.skeleton` |  |
+| `<wbr>` | No visual styling | line-break opportunity; renders no box |
+| `::after` | No visual styling | generated content takes the roles of the element it decorates |
+| `::backdrop` | `surface.overlay` |  |
+| `::before` | No visual styling | generated content takes the roles of the element it decorates |
+| `::cue` | `surface.inverse`, `text.onInverse.default`, `font.md` |  |
+| `::details-content` | `component.accordion` |  |
+| `::file-selector-button` | `component.fileInput.actionBg`, `component.fileInput.actionText` |  |
+| `::first-letter` | `typography.display`, `text.onPage.accent` | drop cap |
+| `::first-line` | No visual styling | inherits the paragraph roles |
+| `::marker` | `component.prose.marker`, `component.prose.markerAccent` |  |
+| `::placeholder` | `forms.default.placeholder` |  |
+| `::selection` | `component.selection` |  |
+| `::spelling-error` | `component.proofing.spelling`, `textDecoration.thickness.thin` | wavy underline |
+| `::grammar-error` | `component.proofing.grammar`, `textDecoration.thickness.thin` | wavy underline |
+| `::target-text` | `component.prose.mark` |  |

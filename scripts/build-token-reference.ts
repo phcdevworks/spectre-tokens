@@ -1,9 +1,10 @@
-import { writeFileSync } from 'node:fs'
+import { readFileSync, writeFileSync } from 'node:fs'
 import { dirname, resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
 
 import { collectLeafDetails, loadMergedTokens } from './token-utils.js'
 import type { TokenLeafDetail } from './token-utils.js'
+import type { CoverageEntry, ElementCoverage } from './element-coverage.js'
 
 const here = dirname(fileURLToPath(import.meta.url))
 const outPath = resolve(here, '../TOKEN_REFERENCE.md')
@@ -12,7 +13,8 @@ const NAMESPACES = [
   'colors', 'space', 'layout', 'radii', 'typography', 'font', 'shadows',
   'breakpoints', 'zIndex', 'transitions', 'animations', 'opacity',
   'aspectRatios', 'icons', 'border', 'accessibility', 'buttons', 'forms',
-  'link', 'surface', 'text', 'component', 'modes', 'control', 'elevation'
+  'link', 'surface', 'text', 'component', 'modes', 'control', 'elevation',
+  'tracking', 'leading', 'textDecoration', 'fontWeight'
 ]
 
 function formatValue(value: unknown): string {
@@ -62,6 +64,32 @@ const totalLeaves = NAMESPACES.reduce(
   0
 )
 
+const coverage = JSON.parse(
+  readFileSync(resolve(here, '../element-coverage.json'), 'utf8')
+) as ElementCoverage
+
+const coverageRows = (entries: Record<string, CoverageEntry>, wrap: (name: string) => string): string =>
+  Object.entries(entries)
+    .map(([name, entry]) => {
+      const roles = 'styling' in entry ? 'No visual styling' : entry.tokens.map((path) => `\`${path}\``).join(', ')
+      return `| ${wrap(name)} | ${roles} | ${entry.note ?? ''} |`
+    })
+    .join('\n')
+
+const coverageSection = [
+  '## HTML element coverage',
+  '',
+  'Generated from `element-coverage.json` and validated by `npm run check:elements`.',
+  'Every standard HTML element and styleable pseudo-element maps to the token',
+  'roles that style it, or is marked as having no visual styling of its own.',
+  '',
+  '| Element | Token roles | Note |',
+  '| ------- | ----------- | ---- |',
+  coverageRows(coverage.elements, (name) => `\`<${name}>\``),
+  coverageRows(coverage.pseudoElements, (name) => `\`${name}\``),
+  ''
+].join('\n')
+
 const content = [
   '# Token Reference',
   '',
@@ -76,7 +104,8 @@ const content = [
   'references are shown as-written, not resolved (see `src/css.ts` for',
   'resolved CSS output).',
   '',
-  sections
+  sections,
+  coverageSection
 ].join('\n')
 
 writeFileSync(outPath, content.trimEnd() + '\n', 'utf8')

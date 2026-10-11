@@ -5,8 +5,8 @@ Generated from the published CSS output by `npm run build`
 This file is a derived artifact, not contract authority; `tokens/` and
 `contract.manifest.json` remain the source of truth.
 
-Every CSS custom property in `dist/index.css` (1485 total) belongs
-to exactly one of 80 families. A family is the unit a downstream
+Every CSS custom property in `dist/index.css` (1541 total) belongs
+to exactly one of 86 families. A family is the unit a downstream
 recipe or stylesheet consumes: each one needs a consumer in `spectre-ui`
 before its `tests/token-parity.test.ts` passes. The build fails if a new
 variable does not fit an existing family, so a token group cannot ship
@@ -47,6 +47,7 @@ copy.
 | `layout-section` | `--sp-layout-section-*` | 14 | no | `layout.section` |
 | `layout-stack` | `--sp-layout-stack-*` | 7 | no | `layout.stack` |
 | `layout-hero` | `--sp-layout-hero-*` | 6 | no | `layout.hero` |
+| `layout-prose` | `--sp-layout-prose-*` | 8 | no | `layout.prose` |
 | `layout-responsive` | `--sp-layout-responsive-*` | 16 | no | `layout.responsive` |
 | `layout-sidebar` | `--sp-layout-sidebar-*` | 1 | no | `layout.sidebar` |
 | `radius` | `--sp-radius-*` | 9 | no | `radii` |
@@ -59,6 +60,8 @@ copy.
 | `motion` | `--sp-duration-*`, `--sp-easing-*`, `--sp-animation-*` | 64 | no | `transitions`, `animations` |
 | `tracking` | `--sp-tracking-*` | 7 | no | `tracking` |
 | `leading` | `--sp-leading-*` | 6 | no | `leading` |
+| `font-weight` | `--sp-font-weight-*` | 6 | no | `fontWeight` |
+| `text-decoration` | `--sp-text-decoration-*` | 6 | no | `textDecoration` |
 | `icon` | `--sp-icon-*` | 7 | no | `icons` |
 | `aspect-ratio` | `--sp-aspect-ratio-*` | 7 | no | `aspectRatios` |
 | `font-family` | `--sp-font-family-*` | 3 | no | `typography.families` |
@@ -599,6 +602,19 @@ copy.
 
 </details>
 <details>
+<summary><code>layout-prose</code> (8)</summary>
+
+- `--sp-layout-prose-flow-list-item`
+- `--sp-layout-prose-flow-heading-after`
+- `--sp-layout-prose-flow-paragraph`
+- `--sp-layout-prose-flow-list`
+- `--sp-layout-prose-flow-blockquote`
+- `--sp-layout-prose-flow-figure`
+- `--sp-layout-prose-flow-heading`
+- `--sp-layout-prose-flow-hr`
+
+</details>
+<details>
 <summary><code>layout-responsive</code> (16)</summary>
 
 - `--sp-layout-responsive-lg-section-padding-xl`
@@ -813,6 +829,28 @@ copy.
 
 </details>
 <details>
+<summary><code>font-weight</code> (6)</summary>
+
+- `--sp-font-weight-normal`
+- `--sp-font-weight-medium`
+- `--sp-font-weight-semibold`
+- `--sp-font-weight-bold`
+- `--sp-font-weight-extrabold`
+- `--sp-font-weight-black`
+
+</details>
+<details>
+<summary><code>text-decoration</code> (6)</summary>
+
+- `--sp-text-decoration-thickness-thin`
+- `--sp-text-decoration-thickness-base`
+- `--sp-text-decoration-thickness-thick`
+- `--sp-text-decoration-offset-sm`
+- `--sp-text-decoration-offset-md`
+- `--sp-text-decoration-offset-lg`
+
+</details>
+<details>
 <summary><code>icon</code> (7)</summary>
 
 - `--sp-icon-xs`
@@ -908,7 +946,7 @@ copy.
 | ------ | --------- | ----- | --------- | ------ |
 | `surface` | `--sp-surface-*` | 11 | 9 of 11 | `surface`, `modes.*.surface` |
 | `text` | `--sp-text-*` | 16 | 12 of 16 | `text`, `modes.*.text` |
-| `link` | `--sp-link-*` | 6 | 3 of 6 | `link` |
+| `link` | `--sp-link-*` | 8 | 5 of 8 | `link` |
 
 <details>
 <summary><code>surface</code> (11)</summary>
@@ -948,7 +986,7 @@ copy.
 
 </details>
 <details>
-<summary><code>link</code> (6)</summary>
+<summary><code>link</code> (8)</summary>
 
 - `--sp-link-default` (varies by mode)
 - `--sp-link-hover` (varies by mode)
@@ -956,6 +994,8 @@ copy.
 - `--sp-link-visited`
 - `--sp-link-on-inverse`
 - `--sp-link-on-inverse-hover`
+- `--sp-link-underline` (varies by mode)
+- `--sp-link-underline-hover` (varies by mode)
 
 </details>
 
@@ -1257,7 +1297,7 @@ copy.
 | `list-group` | `--sp-list-group-*` | 19 | 17 of 19 | `component.listGroup`, `modes.*.component.listGroup` |
 | `offcanvas` | `--sp-offcanvas-*` | 4 | 3 of 4 | `component.offcanvas`, `modes.*.component.offcanvas` |
 | `carousel` | `--sp-carousel-*` | 6 | no | `component.carousel`, `modes.*.component.carousel` |
-| `table` | `--sp-table-*` | 17 | yes | `component.table`, `modes.*.component.table` |
+| `table` | `--sp-table-*` | 20 | yes | `component.table`, `modes.*.component.table` |
 | `alert` | `--sp-alert-*` | 24 | yes | `component.alert`, `modes.*.component.alert` |
 | `pagination` | `--sp-pagination-*` | 5 | 4 of 5 | `component.pagination`, `modes.*.component.pagination` |
 | `stepper` | `--sp-stepper-*` | 16 | 10 of 16 | `component.stepper`, `modes.*.component.stepper` |
@@ -1270,11 +1310,11 @@ copy.
 | `input-group` | `--sp-input-group-*` | 6 | yes | `component.inputGroup`, `modes.*.component.inputGroup` |
 | `datepicker` | `--sp-datepicker-*` | 4 | yes | `component.datepicker`, `modes.*.component.datepicker` |
 | `day` | `--sp-day-*` | 7 | 5 of 7 | `component.day`, `modes.*.component.day` |
-| `prose` | `--sp-prose-*` | 13 | yes | `component.prose`, `modes.*.component.prose` |
+| `prose` | `--sp-prose-*` | 22 | yes | `component.prose`, `modes.*.component.prose` |
 | `external-auth-button` | `--sp-external-auth-button-*` | 8 | 7 of 8 | `component.externalAuthButton`, `modes.*.component.externalAuthButton` |
 | `checkbox` | `--sp-checkbox-*` | 7 | 5 of 7 | `component.checkbox`, `modes.*.component.checkbox` |
 | `radio` | `--sp-radio-*` | 7 | 5 of 7 | `component.radio`, `modes.*.component.radio` |
-| `select` | `--sp-select-*` | 11 | 7 of 11 | `component.select`, `modes.*.component.select` |
+| `select` | `--sp-select-*` | 16 | 12 of 16 | `component.select`, `modes.*.component.select` |
 | `textarea` | `--sp-textarea-*` | 11 | 7 of 11 | `component.textarea`, `modes.*.component.textarea` |
 | `fieldset` | `--sp-fieldset-*` | 2 | yes | `component.fieldset`, `modes.*.component.fieldset` |
 | `label` | `--sp-label-*` | 3 | yes | `component.label`, `modes.*.component.label` |
@@ -1284,6 +1324,9 @@ copy.
 | `scrollbar` | `--sp-scrollbar-*` | 3 | 2 of 3 | `component.scrollbar`, `modes.*.component.scrollbar` |
 | `chart` | `--sp-chart-*` | 26 | yes | `component.chart`, `modes.*.component.chart` |
 | `quote` | `--sp-quote-*` | 14 | 13 of 14 | `component.quote`, `modes.*.component.quote` |
+| `meter` | `--sp-meter-*` | 4 | yes | `component.meter`, `modes.*.component.meter` |
+| `code` | `--sp-code-*` | 11 | yes | `component.code`, `modes.*.component.code` |
+| `proofing` | `--sp-proofing-*` | 2 | yes | `component.proofing`, `modes.*.component.proofing` |
 
 <details>
 <summary><code>card</code> (14)</summary>
@@ -1660,7 +1703,7 @@ copy.
 
 </details>
 <details>
-<summary><code>table</code> (17)</summary>
+<summary><code>table</code> (20)</summary>
 
 - `--sp-table-header-bg` (varies by mode)
 - `--sp-table-header-text` (varies by mode)
@@ -1679,6 +1722,9 @@ copy.
 - `--sp-table-row-warning-text` (varies by mode)
 - `--sp-table-row-danger-bg` (varies by mode)
 - `--sp-table-row-danger-text` (varies by mode)
+- `--sp-table-caption-text` (varies by mode)
+- `--sp-table-footer-bg` (varies by mode)
+- `--sp-table-footer-text` (varies by mode)
 
 </details>
 <details>
@@ -1852,7 +1898,7 @@ copy.
 
 </details>
 <details>
-<summary><code>prose</code> (13)</summary>
+<summary><code>prose</code> (22)</summary>
 
 - `--sp-prose-blockquote-border` (varies by mode)
 - `--sp-prose-blockquote-text` (varies by mode)
@@ -1867,6 +1913,15 @@ copy.
 - `--sp-prose-kbd-bg` (varies by mode)
 - `--sp-prose-kbd-border` (varies by mode)
 - `--sp-prose-kbd-text` (varies by mode)
+- `--sp-prose-del-bg` (varies by mode)
+- `--sp-prose-del-text` (varies by mode)
+- `--sp-prose-ins-bg` (varies by mode)
+- `--sp-prose-ins-text` (varies by mode)
+- `--sp-prose-marker` (varies by mode)
+- `--sp-prose-marker-accent` (varies by mode)
+- `--sp-prose-figcaption-text` (varies by mode)
+- `--sp-prose-dt-text` (varies by mode)
+- `--sp-prose-dd-text` (varies by mode)
 
 </details>
 <details>
@@ -1907,7 +1962,7 @@ copy.
 
 </details>
 <details>
-<summary><code>select</code> (11)</summary>
+<summary><code>select</code> (16)</summary>
 
 - `--sp-select-bg` (varies by mode)
 - `--sp-select-border` (varies by mode)
@@ -1916,6 +1971,11 @@ copy.
 - `--sp-select-disabled-bg` (varies by mode)
 - `--sp-select-disabled-border` (varies by mode)
 - `--sp-select-focus-border` (varies by mode)
+- `--sp-select-option-hover-bg` (varies by mode)
+- `--sp-select-option-selected-bg` (varies by mode)
+- `--sp-select-option-selected-text` (varies by mode)
+- `--sp-select-option-disabled-text` (varies by mode)
+- `--sp-select-optgroup-label-text` (varies by mode)
 - `--sp-select-border-invalid`
 - `--sp-select-bg-invalid`
 - `--sp-select-border-success`
@@ -2029,5 +2089,37 @@ copy.
 - `--sp-quote-accent-cta` (varies by mode)
 - `--sp-quote-accent-accent` (varies by mode)
 - `--sp-quote-accent-thickness`
+
+</details>
+<details>
+<summary><code>meter</code> (4)</summary>
+
+- `--sp-meter-track` (varies by mode)
+- `--sp-meter-fill-optimum` (varies by mode)
+- `--sp-meter-fill-suboptimum` (varies by mode)
+- `--sp-meter-fill-critical` (varies by mode)
+
+</details>
+<details>
+<summary><code>code</code> (11)</summary>
+
+- `--sp-code-syntax-keyword` (varies by mode)
+- `--sp-code-syntax-string` (varies by mode)
+- `--sp-code-syntax-number` (varies by mode)
+- `--sp-code-syntax-comment` (varies by mode)
+- `--sp-code-syntax-function` (varies by mode)
+- `--sp-code-syntax-variable` (varies by mode)
+- `--sp-code-syntax-type` (varies by mode)
+- `--sp-code-syntax-operator` (varies by mode)
+- `--sp-code-syntax-punctuation` (varies by mode)
+- `--sp-code-syntax-tag` (varies by mode)
+- `--sp-code-syntax-attribute` (varies by mode)
+
+</details>
+<details>
+<summary><code>proofing</code> (2)</summary>
+
+- `--sp-proofing-spelling` (varies by mode)
+- `--sp-proofing-grammar` (varies by mode)
 
 </details>

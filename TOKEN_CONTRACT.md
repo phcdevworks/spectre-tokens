@@ -88,6 +88,8 @@ The current public top-level namespaces are:
 - `modes`
 - `tracking`
 - `leading`
+- `textDecoration`
+- `fontWeight`
 - `control`
 - `elevation`
 

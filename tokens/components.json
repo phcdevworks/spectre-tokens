@@ -1362,6 +1362,28 @@
             }
           }
         }
+      },
+      "caption": {
+        "text": {
+          "value": "{colors.neutral.600}",
+          "metadata": {
+            "pair": "surface.page"
+          }
+        }
+      },
+      "footer": {
+        "bg": {
+          "value": "{colors.neutral.50}",
+          "metadata": {
+            "pair": "component.table.footer.text"
+          }
+        },
+        "text": {
+          "value": "{colors.neutral.900}",
+          "metadata": {
+            "pair": "component.table.footer.bg"
+          }
+        }
       }
     },
     "alert": {
@@ -1980,6 +2002,70 @@
             "pair": "component.prose.kbd.bg"
           }
         }
+      },
+      "del": {
+        "bg": {
+          "value": "{colors.error.100}",
+          "metadata": {
+            "pair": "component.prose.del.text"
+          }
+        },
+        "text": {
+          "value": "{colors.error.800}",
+          "metadata": {
+            "pair": "component.prose.del.bg"
+          }
+        }
+      },
+      "ins": {
+        "bg": {
+          "value": "{colors.success.100}",
+          "metadata": {
+            "pair": "component.prose.ins.text"
+          }
+        },
+        "text": {
+          "value": "{colors.success.800}",
+          "metadata": {
+            "pair": "component.prose.ins.bg"
+          }
+        }
+      },
+      "marker": {
+        "value": "{colors.neutral.600}",
+        "metadata": {
+          "pair": "surface.page"
+        }
+      },
+      "markerAccent": {
+        "value": "{colors.accent.600}",
+        "metadata": {
+          "pair": "surface.page"
+        }
+      },
+      "figcaption": {
+        "text": {
+          "value": "{colors.neutral.600}",
+          "metadata": {
+            "pair": "surface.page"
+          }
+        }
+      },
+      "dt": {
+        "text": {
+          "value": "{colors.neutral.900}",
+          "metadata": {
+            "pair": "surface.page"
+          }
+        }
+      },
+      "dd": {
+        "text": {
+          "value": "{colors.neutral.700}",
+          "metadata": {
+            "pair": "surface.page"
+          }
+        }
       }
     },
     "externalAuthButton": {
@@ -2119,6 +2205,36 @@
         "value": "{colors.success.50}",
         "metadata": {
           "pair": "component.select.text"
+        }
+      },
+      "option": {
+        "hoverBg": {
+          "value": "{colors.neutral.100}",
+          "metadata": {}
+        },
+        "selectedBg": {
+          "value": "{colors.info.50}",
+          "metadata": {
+            "pair": "component.select.option.selectedText"
+          }
+        },
+        "selectedText": {
+          "value": "{colors.info.800}",
+          "metadata": {
+            "pair": "component.select.option.selectedBg"
+          }
+        },
+        "disabledText": {
+          "value": "{colors.neutral.400}",
+          "metadata": {}
+        }
+      },
+      "optgroup": {
+        "labelText": {
+          "value": "{colors.neutral.600}",
+          "metadata": {
+            "pair": "component.select.bg"
+          }
         }
       }
     },
@@ -2442,6 +2558,123 @@
           "metadata": {}
         },
         "thickness": "0.25rem"
+      }
+    },
+    "meter": {
+      "track": {
+        "value": "{colors.neutral.200}",
+        "metadata": {}
+      },
+      "fill": {
+        "optimum": {
+          "value": "{colors.success.700}",
+          "metadata": {
+            "pair": "component.meter.track",
+            "minContrast": 3
+          }
+        },
+        "suboptimum": {
+          "value": "{colors.warning.700}",
+          "metadata": {
+            "pair": "component.meter.track",
+            "minContrast": 3
+          }
+        },
+        "critical": {
+          "value": "{colors.error.600}",
+          "metadata": {
+            "pair": "component.meter.track",
+            "minContrast": 3
+          }
+        }
+      }
+    },
+    "code": {
+      "syntax": {
+        "keyword": {
+          "value": "{colors.accent.700}",
+          "metadata": {
+            "pair": "component.prose.codeBlock.bg"
+          }
+        },
+        "string": {
+          "value": "{colors.success.800}",
+          "metadata": {
+            "pair": "component.prose.codeBlock.bg"
+          }
+        },
+        "number": {
+          "value": "{colors.warning.800}",
+          "metadata": {
+            "pair": "component.prose.codeBlock.bg"
+          }
+        },
+        "comment": {
+          "value": "{colors.neutral.600}",
+          "metadata": {
+            "pair": "component.prose.codeBlock.bg"
+          }
+        },
+        "function": {
+          "value": "{colors.brand.700}",
+          "metadata": {
+            "pair": "component.prose.codeBlock.bg"
+          }
+        },
+        "variable": {
+          "value": "{colors.error.700}",
+          "metadata": {
+            "pair": "component.prose.codeBlock.bg"
+          }
+        },
+        "type": {
+          "value": "{colors.info.700}",
+          "metadata": {
+            "pair": "component.prose.codeBlock.bg"
+          }
+        },
+        "operator": {
+          "value": "{colors.neutral.700}",
+          "metadata": {
+            "pair": "component.prose.codeBlock.bg"
+          }
+        },
+        "punctuation": {
+          "value": "{colors.neutral.600}",
+          "metadata": {
+            "pair": "component.prose.codeBlock.bg"
+          }
+        },
+        "tag": {
+          "value": "{colors.palette.pink.700}",
+          "metadata": {
+            "pair": "component.prose.codeBlock.bg"
+          }
+        },
+        "attribute": {
+          "value": "{colors.palette.teal.800}",
+          "metadata": {
+            "pair": "component.prose.codeBlock.bg"
+          }
+        }
+      }
+    },
+    "proofing": {
+      "spelling": {
+        "value": "{colors.error.600}",
+        "description": "underline colour for ::spelling-error",
+        "metadata": {
+          "pair": "surface.page",
+          "minContrast": 3
+        }
+      },
+      "grammar": {
+        "value": "{colors.info.600}",
+        "description": "underline colour for ::grammar-error",
+        "metadata": {
+          "pair": "surface.page",
+          "minContrast": 3
+        }
       }
     }
   },

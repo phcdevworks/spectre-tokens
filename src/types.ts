@@ -396,6 +396,9 @@ export interface LayoutTokens {
   sidebar: {
     width: string;
   };
+  prose: {
+    flow: TokenScale;
+  };
   responsive: Record<
     string,
     {

@@ -38,7 +38,8 @@ const LAYOUT_SCALES: Array<{ path: [string, string]; varParts: string[] }> = [
   { path: ['section', 'padding'], varParts: ['section', 'padding'] },
   { path: ['section', 'gap'], varParts: ['section', 'gap'] },
   { path: ['stack', 'gap'], varParts: ['stack', 'gap'] },
-  { path: ['container', 'paddingInline'], varParts: ['container', 'padding-inline'] }
+  { path: ['container', 'paddingInline'], varParts: ['container', 'padding-inline'] },
+  { path: ['prose', 'flow'], varParts: ['prose', 'flow'] }
 ]
 
 const layoutScale = (node: unknown, [group, scale]: [string, string]): Record<string, string> => {
@@ -164,7 +165,7 @@ export const createCssVariableMap = (tokens: SpectreTokens, options: CssVariable
 
     LAYOUT_SCALES.forEach(({ path, varParts }) => {
       Object.entries(layoutScale(layout, path)).forEach(([key, value]) => {
-        assign(toVariableName(prefix, 'layout', ...varParts, key), value)
+        assign(toVariableName(prefix, 'layout', ...varParts, kebabCase(key)), value)
       })
     })
 
@@ -186,7 +187,7 @@ export const createCssVariableMap = (tokens: SpectreTokens, options: CssVariable
     Object.entries(layoutResponsive(layout)).forEach(([breakpoint, scales]) => {
       LAYOUT_SCALES.forEach(({ path, varParts }) => {
         Object.entries(layoutScale(scales, path)).forEach(([key, value]) => {
-          assign(toVariableName(prefix, 'layout', 'responsive', breakpoint, ...varParts, key), value)
+          assign(toVariableName(prefix, 'layout', 'responsive', breakpoint, ...varParts, kebabCase(key)), value)
         })
       })
     })
@@ -267,6 +268,24 @@ export const createCssVariableMap = (tokens: SpectreTokens, options: CssVariable
   if (leading) {
     Object.entries(leading).forEach(([key, value]) => {
       assign(toVariableName(prefix, 'leading', key), value)
+    })
+  }
+
+  const fontWeight = (baseTokens as unknown as Record<string, unknown>).fontWeight as Record<string, number> | undefined
+  if (fontWeight) {
+    Object.entries(fontWeight).forEach(([key, value]) => {
+      assign(toVariableName(prefix, 'font-weight', key), value)
+    })
+  }
+
+  const textDecoration = (baseTokens as unknown as Record<string, unknown>).textDecoration as
+    | Record<string, Record<string, string>>
+    | undefined
+  if (textDecoration) {
+    Object.entries(textDecoration).forEach(([group, scale]) => {
+      Object.entries(scale).forEach(([key, value]) => {
+        assign(toVariableName(prefix, 'text-decoration', group, key), value)
+      })
     })
   }
 
@@ -623,8 +642,8 @@ export const generateCssVariables = (tokens: SpectreTokens, options: CssVariable
     }
     const lines = LAYOUT_SCALES.flatMap(({ path, varParts }) =>
       Object.keys(layoutScale(scales, path)).map((key) => {
-        const name = toVariableName(prefix, 'layout', ...varParts, key)
-        const source = toVariableName(prefix, 'layout', 'responsive', breakpoint, ...varParts, key)
+        const name = toVariableName(prefix, 'layout', ...varParts, kebabCase(key))
+        const source = toVariableName(prefix, 'layout', 'responsive', breakpoint, ...varParts, kebabCase(key))
         return `    ${name}: var(${source});`
       })
     )

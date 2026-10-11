@@ -26,6 +26,8 @@
     "modes",
     "tracking",
     "leading",
+    "textDecoration",
+    "fontWeight",
     "control",
     "elevation"
   ],
@@ -326,7 +328,15 @@
         "component.modal.accent.thickness",
         "component.toast.accent.thickness",
         "component.tooltip.accent.thickness",
-        "component.dropdown.accent.thickness"
+        "component.dropdown.accent.thickness",
+        "layout.prose.flow.listItem",
+        "layout.prose.flow.headingAfter",
+        "layout.prose.flow.paragraph",
+        "layout.prose.flow.list",
+        "layout.prose.flow.blockquote",
+        "layout.prose.flow.figure",
+        "layout.prose.flow.heading",
+        "layout.prose.flow.hr"
       ],
       "bannedPaths": [
         "borders"
@@ -359,7 +369,20 @@
         "--sp-button-primary-bg",
         "--sp-form-default-border",
         "--sp-animation-fadein-duration",
-        "--sp-focus-ring-width"
+        "--sp-focus-ring-width",
+        "--sp-leading-normal",
+        "--sp-text-decoration-thickness-base",
+        "--sp-font-weight-bold",
+        "--sp-text-decoration-offset-md",
+        "--sp-layout-prose-flow-paragraph",
+        "--sp-link-underline",
+        "--sp-prose-del-bg",
+        "--sp-prose-ins-bg",
+        "--sp-prose-marker",
+        "--sp-meter-fill-optimum",
+        "--sp-code-syntax-keyword",
+        "--sp-table-caption-text",
+        "--sp-select-option-selected-bg"
       ],
       "requiredDarkModeVariables": [
         "--sp-surface-page",
@@ -374,7 +397,10 @@
         "--sp-checkbox-bg",
         "--sp-select-bg",
         "--sp-chart-series-1",
-        "--sp-selection-bg"
+        "--sp-selection-bg",
+        "--sp-prose-del-bg",
+        "--sp-meter-fill-optimum",
+        "--sp-code-syntax-keyword"
       ]
     },
     "design": {
@@ -398,7 +424,7 @@
         "colors", "space", "layout", "radii", "typography", "font", "shadows",
         "breakpoints", "zIndex", "transitions", "animations", "opacity",
         "aspectRatios", "icons", "border", "accessibility", "buttons", "forms",
-        "link", "surface", "text", "component", "modes", "tracking", "leading",
+        "link", "surface", "text", "component", "modes", "tracking", "leading", "textDecoration", "fontWeight",
         "control", "elevation"
       ]
     },
@@ -407,7 +433,7 @@
         "colors", "space", "layout", "radii", "typography", "font", "shadows",
         "breakpoints", "zIndex", "transitions", "animations", "opacity",
         "aspectRatios", "icons", "border", "accessibility", "buttons", "forms",
-        "link", "surface", "text", "component", "tracking", "leading",
+        "link", "surface", "text", "component", "tracking", "leading", "textDecoration", "fontWeight",
         "control", "elevation"
       ]
     },
@@ -419,6 +445,8 @@
         { "sourcePath": "radii", "prefixParts": ["radius"], "blockStrategy": "cascade-only" },
         { "sourcePath": "tracking", "prefixParts": ["tracking"], "blockStrategy": "cascade-only" },
         { "sourcePath": "leading", "prefixParts": ["leading"], "blockStrategy": "cascade-only" },
+        { "sourcePath": "textDecoration", "prefixParts": ["text-decoration"], "blockStrategy": "cascade-only" },
+        { "sourcePath": "fontWeight", "prefixParts": ["font-weight"], "blockStrategy": "cascade-only" },
         { "sourcePath": "shadows", "prefixParts": ["shadow"], "blockStrategy": "cascade-only" },
         { "sourcePath": "breakpoints", "prefixParts": ["breakpoint"], "blockStrategy": "cascade-only" },
         { "sourcePath": "zIndex", "prefixParts": ["z-index"], "blockStrategy": "cascade-only" },
@@ -456,7 +484,7 @@
       ],
       "exceptions": [
         "typography and font describe the same font scale via two parallel key shapes (fontSize/lineHeight/fontWeight vs size/lineHeight/weight/letterSpacing); css.ts emits from whichever is populated. Covered by check:css requiredVariables, not a generic per-leaf walk.",
-        "layout emits per-branch (section.padding, section.gap, stack.gap, container.paddingInline, container.maxWidth/maxWidthProse, hero.paddingTop/paddingBottom, sidebar.width, responsive.<breakpoint>.*) with no shared prefix across the namespace. hero steps emit var() references to section padding steps, and each responsive.<breakpoint> scale is re-pointed at its --sp-layout-responsive-<breakpoint>-* variable inside an @media (min-width) block after the dark-mode block. Covered by check:css requiredVariables, manifest spaceLinkedLayoutPaths, and check:structure's 8px-grid and hero-reference assertions.",
+        "layout emits per-branch (section.padding, section.gap, stack.gap, container.paddingInline, container.maxWidth/maxWidthProse, hero.paddingTop/paddingBottom, sidebar.width, prose.flow, responsive.<breakpoint>.*) with no shared prefix across the namespace. hero steps emit var() references to section padding steps, and each responsive.<breakpoint> scale is re-pointed at its --sp-layout-responsive-<breakpoint>-* variable inside an @media (min-width) block after the dark-mode block. Covered by check:css requiredVariables, manifest spaceLinkedLayoutPaths, and check:structure's 8px-grid and hero-reference assertions.",
         "accessibility fields (focusRing.width/offset/style, minTouchTarget, minTextSize, reducedMotion, forcedColors) each have an independent CSS variable name with no shared prefix. Covered by check:css requiredVariables.",
         "buttons and forms nest by variant/state (buttons.primary.bg, forms.invalid.text) with irregular optional fields (border, shadow, focusRing only on some variants). Covered by check:css requiredVariables and existing button/form tests. The mode-aware forms.default.{bg,text,placeholder} subset is additionally checked as the mode-scoped modes.default.forms group.",
         "animations splits into a flat set (fadeIn, fadeOut, ...) plus a nested reducedMotion sub-object emitted with an extra reduced-motion path segment. Covered by check:css requiredVariables.",

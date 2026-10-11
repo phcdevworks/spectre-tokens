@@ -107,7 +107,8 @@ const layoutScaleNodes: Array<[string, unknown]> = [
   ['layout.section.padding', getPathValue(tokens, 'layout.section.padding')],
   ['layout.section.gap', getPathValue(tokens, 'layout.section.gap')],
   ['layout.stack.gap', getPathValue(tokens, 'layout.stack.gap')],
-  ['layout.container.paddingInline', getPathValue(tokens, 'layout.container.paddingInline')]
+  ['layout.container.paddingInline', getPathValue(tokens, 'layout.container.paddingInline')],
+  ['layout.prose.flow', getPathValue(tokens, 'layout.prose.flow')]
 ];
 Object.entries((layout.responsive ?? {}) as Record<string, Record<string, Record<string, unknown>>>).forEach(
   ([breakpoint, scales]) => {

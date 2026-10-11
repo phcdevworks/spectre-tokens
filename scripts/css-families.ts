@@ -41,6 +41,7 @@ const STATIC_FAMILIES: FamilyDefinition[] = [
   { id: 'layout-section', section: 'Foundations', prefixes: ['layout-section'], sources: ['layout.section'] },
   { id: 'layout-stack', section: 'Foundations', prefixes: ['layout-stack'], sources: ['layout.stack'] },
   { id: 'layout-hero', section: 'Foundations', prefixes: ['layout-hero'], sources: ['layout.hero'] },
+  { id: 'layout-prose', section: 'Foundations', prefixes: ['layout-prose'], sources: ['layout.prose'] },
   {
     id: 'layout-responsive',
     section: 'Foundations',
@@ -69,6 +70,8 @@ const STATIC_FAMILIES: FamilyDefinition[] = [
   },
   { id: 'tracking', section: 'Foundations', prefixes: ['tracking'], sources: ['tracking'] },
   { id: 'leading', section: 'Foundations', prefixes: ['leading'], sources: ['leading'] },
+  { id: 'font-weight', section: 'Foundations', prefixes: ['font-weight'], sources: ['fontWeight'] },
+  { id: 'text-decoration', section: 'Foundations', prefixes: ['text-decoration'], sources: ['textDecoration'] },
   { id: 'icon', section: 'Foundations', prefixes: ['icon'], sources: ['icons'] },
   { id: 'aspect-ratio', section: 'Foundations', prefixes: ['aspect-ratio'], sources: ['aspectRatios'] },
   { id: 'font-family', section: 'Foundations', prefixes: ['font-family'], sources: ['typography.families'] },

@@ -6,11 +6,79 @@ reflects package releases published to npm.
 
 ## [Unreleased]
 
+## [4.13.0] - 2026-10-11
+
+**Release Title:** Complete Element and Accent Vocabulary
+
 Contract change type: additive
 
 ### Added
 
-- These four roles were requested by `spectre-base` (2026-10-11) after an
+- Phase 17, complete HTML element coverage (owner-directed, 2026-10-11).
+  The goal is an unofficial "HTML 7", where every standard HTML element has
+  a token contract. Every addition below is additive. Colour roles are
+  mode-aware (`default`, `dark`, `highContrast`) and pass the contrast gate:
+  AA for text, AAA in high-contrast mode, and 3:1 for non-text fills.
+- Element coverage map `element-coverage.json`. It maps all 115 elements in
+  the HTML Living Standard's element index, and 14 styleable
+  pseudo-elements, to the token roles that style them. Elements with no
+  visual styling of their own (`<div>`, `<meta>`, `<template>`, …) are
+  marked as such, with a reason. The new `npm run check:elements` step,
+  part of `npm run check`, fails when an element is unmapped, when a mapping
+  names a token path that does not exist, or when the map lists an element
+  outside the canonical list in `scripts/element-coverage.ts`.
+  `TOKEN_REFERENCE.md` gains a generated "HTML element coverage" table, and
+  now also lists the `tracking`, `leading`, `textDecoration`, and
+  `fontWeight` namespaces.
+- Named font weights `fontWeight.{normal,medium,semibold,bold,extrabold,black}`
+  (400–900), emitted as `--sp-font-weight-*`, for `<strong>`, `<b>`, `<th>`,
+  `<dt>`, and `<legend>`. Until now a weight was only available through a
+  size preset (`--sp-font-md-weight`).
+- Text decoration `textDecoration.thickness.{thin,base,thick}` (1/2/3px)
+  and `textDecoration.offset.{sm,md,lg}` (0.125/0.2/0.3em), emitted as
+  `--sp-text-decoration-*`, plus `link.underline` (`brand.600` at 40%) and
+  `link.underlineHover` (`brand.700`), emitted as `--sp-link-underline*`.
+  High-contrast mode uses `brand.700`/`brand.800` underlines. Covers `<a>`,
+  `<abbr>`, and `<u>`, and gives `spectre-ui` a real underline offset in
+  place of `--sp-space-2`.
+- Edit marks `component.prose.del.{bg,text}` (error palette) and
+  `component.prose.ins.{bg,text}` (success palette), emitted as
+  `--sp-prose-del-*` / `--sp-prose-ins-*`. `<s>` uses `del.text` without
+  the background.
+- `<meter>` roles `component.meter.track` and
+  `component.meter.fill.{optimum,suboptimum,critical}` (success / warning /
+  error), emitted as `--sp-meter-*`. Each fill meets 3:1 against the track.
+- List markers `component.prose.marker` (muted) and
+  `component.prose.markerAccent` (accent), emitted as `--sp-prose-marker`
+  and `--sp-prose-marker-accent`.
+- `component.prose.figcaption.text`, `component.prose.dt.text`, and
+  `component.prose.dd.text`, emitted as `--sp-prose-figcaption-text`,
+  `--sp-prose-dt-text`, and `--sp-prose-dd-text`.
+- Table caption and footer `component.table.caption.text` and
+  `component.table.footer.{bg,text}`, emitted as `--sp-table-caption-*` and
+  `--sp-table-footer-*`.
+- Syntax highlighting `component.code.syntax.{keyword,string,number,
+  comment,function,variable,type,operator,punctuation,tag,attribute}`,
+  emitted as `--sp-code-syntax-*`. Every colour, `comment` included, meets
+  AA on the code-block background, and AAA in high-contrast mode.
+- Prose flow spacing `layout.prose.flow.{listItem,headingAfter,paragraph,
+  list,blockquote,figure,heading,hr}` (8–48px), emitted as
+  `--sp-layout-prose-flow-*`. Every step is a `space` value on the 8px grid,
+  which `check:structure` and `check:regression` enforce. Layout scale keys
+  in camelCase are now kebab-cased in CSS (`list-item`, `heading-after`).
+  Every existing key is already lowercase, so no published variable
+  changes.
+- Proofing marks `component.proofing.{spelling,grammar}` (danger / info:
+  `error.600`/`info.600` light, `400` dark, `700` high contrast), emitted as
+  `--sp-proofing-spelling` and `--sp-proofing-grammar`, for the
+  `::spelling-error` and `::grammar-error` underlines. Each meets 3:1
+  against the page. Both pseudo-elements join the coverage map, which now
+  covers 14.
+- Select options `component.select.option.{hoverBg,selectedBg,selectedText,
+  disabledText}` and `component.select.optgroup.labelText`, emitted as
+  `--sp-select-option-*` / `--sp-select-optgroup-*`, for custom listboxes
+  and `appearance: base-select`.
+- The following roles were requested by `spectre-base` (2026-10-11) after an
   audit of a child theme that overrides component internals. Each is
   additive and covers runtime, TypeScript, CSS, DTCG, and docs.
 - Accent text role `text.onPage.accent` and `text.onSurface.accent`
@@ -1767,7 +1835,8 @@ Contract change type: breaking
 - Standardized documentation and contributing guidelines.
 
 [unreleased]:
-  https://github.com/phcdevworks/spectre-tokens/compare/v4.12.0...HEAD
+  https://github.com/phcdevworks/spectre-tokens/compare/v4.13.0...HEAD
+[4.13.0]: https://github.com/phcdevworks/spectre-tokens/compare/v4.12.0...v4.13.0
 [4.12.0]: https://github.com/phcdevworks/spectre-tokens/compare/v4.11.0...v4.12.0
 [4.11.0]: https://github.com/phcdevworks/spectre-tokens/compare/v4.10.0...v4.11.0
 [4.10.0]: https://github.com/phcdevworks/spectre-tokens/compare/v4.9.0...v4.10.0

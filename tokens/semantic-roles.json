@@ -79,6 +79,14 @@
     "onInverseHover": {
       "value": "{colors.brand.300}",
       "description": "link color on hover, on surface.inverse"
+    },
+    "underline": {
+      "value": "{colors.brand.600} / 0.4",
+      "description": "underline colour for inline links; the link text keeps link.default"
+    },
+    "underlineHover": {
+      "value": "{colors.brand.700}",
+      "description": "underline colour for inline links on hover"
     }
   },
   "text": {
@@ -249,6 +257,18 @@
     },
     "sidebar": {
       "width": "16rem"
+    },
+    "prose": {
+      "flow": {
+        "listItem": "0.5rem",
+        "headingAfter": "1rem",
+        "paragraph": "1.5rem",
+        "list": "1.5rem",
+        "blockquote": "2rem",
+        "figure": "2rem",
+        "heading": "2.5rem",
+        "hr": "3rem"
+      }
     },
     "responsive": {
       "lg": {

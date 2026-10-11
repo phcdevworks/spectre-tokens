@@ -36,6 +36,7 @@ this file does not restate delivered work.
 | 16 (vocabulary) | Proactive vocabulary expansion, owner-directed — `modes.highContrast` under `[data-spectre-theme="high-contrast"]` with every text pair at AAA (7:1); mode-aware `component.chart` data-viz palette (8 categorical series at 3:1, sequential and diverging ramps, grid/axis/label); `control` sizing with `compact` density and a `[data-spectre-density="compact"]` block; `elevation` levels pairing shadow, surface, and z-index; selection, caret, scrollbar, skeleton, and `kbd` colors; high-contrast overrides for buttons, links, and form states (locked colors owner-approved) so every text pair in the mode meets 7:1 | Unreleased |
 | — | Downstream layout and footer requests from `spectre-base` — one 8px layout grid enforced by `check:structure` (`layout.stack.gap` now 8/16/24px), responsive `xl`–`4xl` section padding, section/stack gap, and container padding steps with `layout.responsive.lg.*` values and an `@media (min-width: 1024px)` CSS block, `layout.hero.paddingTop`/`paddingBottom` pairs referencing section padding, `space.128`/`160`/`192`, and a mode-aware `component.footer.light.*` palette | Unreleased |
 | — | Child-theme roles requested by `spectre-base` — mode-aware `text.onPage.accent`/`text.onSurface.accent`, a named `leading` scale (`none` through `loose`), a `buttons.accentOutline` variant with high-contrast override, mode-aware `component.stepper.tone.{brand,accent}.{active,done}` roles, a mode-aware `component.quote` group (text, attribution, accent-coloured mark, plain edge, accent rail), an `accent` tone in every component accent rail, and `text.onInverse.{brand,accent}` | Unreleased |
+| 17 | Complete HTML element coverage, owner-directed ("HTML 7") — `element-coverage.json` maps all 115 HTML Living Standard elements and 14 pseudo-elements to token roles, enforced by `check:elements`; new `fontWeight` and `textDecoration` namespaces, link underline colours, `<del>`/`<ins>` edit marks, `component.meter`, list markers, figure/table captions, table footer, description lists, `component.code.syntax` highlighting, `layout.prose.flow` spacing, select option roles, and `::spelling-error`/`::grammar-error` proofing roles | Unreleased |
 
 ---
 
@@ -44,16 +45,12 @@ this file does not restate delivered work.
 Phase 16 has shipped (see the table above), and so has every downstream
 request.
 
-**Phase 17 — Complete HTML Element Coverage** (owner-directed, 2026-10-11).
-The goal is for Spectre to be an unofficial "HTML 7": every standard HTML
-element and styleable pseudo-element has a token contract, so plain semantic
-markup looks finished with no local values. The phase starts with a
-machine-readable element coverage map and a `check:elements` gate. It then
-fills the gaps that map exposes today: edit marks (`del`/`ins`/`s`),
-`meter`, list markers, figure and table captions, table footers,
-description lists, text decoration and link underlines, syntax
-highlighting, prose flow spacing, and select options. The detail is in
-[TODO.md](TODO.md).
+**Phase 17 — Complete HTML Element Coverage** (owner-directed, 2026-10-11)
+has shipped its first wave (see the table above). The goal is for Spectre
+to be an unofficial "HTML 7", where every standard HTML element and
+styleable pseudo-element has a token contract. `npm run check:elements`
+keeps that true. Every element and pseudo-element in the canonical list is now mapped. New
+gaps go in [TODO.md](TODO.md) as the list grows.
 
 Contract expansion stays proactive. Downstream repos pick up new families through
 `npm run audit:parity`, and `npm run audit:downstream` stays available as one

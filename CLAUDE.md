@@ -69,7 +69,7 @@ npm run check         # full validation gate - must pass before any commit
 `npm run check` runs build -> manifest -> structure -> locked-color -> contrast
 -> regression -> docs -> exports -> css -> typography references -> parity ->
 DTCG conformance -> DTCG round-trip -> consumer -> integration -> ecosystem ->
-classification -> deprecation -> dist -> lint. All must pass.
+classification -> deprecation -> elements -> dist -> lint. All must pass.
 
 ## File Structure
 
@@ -111,6 +111,7 @@ Changes to those files must be regenerated, validated, and classified in
 | `check:dtcg-roundtrip` | a real DTCG consumer (Style Dictionary) builds dist/tokens.dtcg.json successfully                                                                                    |
 | `check:consumer`       | downstream smoke fixture passes                                                                                                                                      |
 | `check:classification` | contract-authority changes have changelog entry                                                                                                                      |
+| `check:elements`       | every HTML element and pseudo-element in `scripts/element-coverage.ts` is mapped in `element-coverage.json` to token paths that exist (or marked "no visual styling") |
 | `check:dist`           | dist artifacts are in sync with source                                                                                                                               |
 | `check:downstream`     | packs the tarball and runs spectre-ui/spectre-ui-astro/spectre-components's own `npm run check` against it (sibling repos on disk only; not part of `npm run check`) |
 | `audit:downstream`     | read-only report of raw `--sp-*` redeclarations, hardcoded visual values, and workaround comments across all four downstream repos (sibling repos on disk only; not part of `npm run check`; never mutates a sibling repo) |
@@ -143,7 +144,7 @@ Changes to these require explicit approval from Bradley Potts.
 Current: `colors`, `space`, `layout`, `radii`, `typography`, `font`, `shadows`,
 `breakpoints`, `zIndex`, `transitions`, `animations`, `opacity`, `aspectRatios`,
 `icons`, `border`, `accessibility`, `buttons`, `forms`, `link`, `surface`,
-`text`, `component`, `modes`, `tracking`, `leading`, `control`, `elevation`
+`text`, `component`, `modes`, `tracking`, `leading`, `textDecoration`, `fontWeight`, `control`, `elevation`
 
 Phases 1 through 16 are complete. Delivery history is tracked in `ROADMAP.md`;
 active work, both proactive and downstream-requested, is tracked in
