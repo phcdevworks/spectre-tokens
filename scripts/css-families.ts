@@ -68,6 +68,7 @@ const STATIC_FAMILIES: FamilyDefinition[] = [
     sources: ['transitions', 'animations']
   },
   { id: 'tracking', section: 'Foundations', prefixes: ['tracking'], sources: ['tracking'] },
+  { id: 'leading', section: 'Foundations', prefixes: ['leading'], sources: ['leading'] },
   { id: 'icon', section: 'Foundations', prefixes: ['icon'], sources: ['icons'] },
   { id: 'aspect-ratio', section: 'Foundations', prefixes: ['aspect-ratio'], sources: ['aspectRatios'] },
   { id: 'font-family', section: 'Foundations', prefixes: ['font-family'], sources: ['typography.families'] },

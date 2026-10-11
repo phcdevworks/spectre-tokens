@@ -87,6 +87,7 @@ The current public top-level namespaces are:
 - `component`
 - `modes`
 - `tracking`
+- `leading`
 - `control`
 - `elevation`
 

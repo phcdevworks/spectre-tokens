@@ -13,6 +13,7 @@ export type {
   ComponentFooterTokens,
   ComponentIconBoxTokens,
   ComponentPricingCardTokens,
+  ComponentQuoteTokens,
   ComponentRatingTokens,
   ComponentTestimonialTokens,
   ComponentTokens,

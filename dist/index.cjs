@@ -45,6 +45,7 @@ var coreTokens = {
         "warning": "{colors.warning.600}",
         "danger": "{colors.error.600}",
         "cta": "{colors.brand.600}",
+        "accent": "{colors.accent.600}",
         "thickness": "0.25rem"
       }
     },
@@ -99,6 +100,7 @@ var coreTokens = {
         "warning": "{colors.warning.600}",
         "danger": "{colors.error.600}",
         "cta": "{colors.brand.600}",
+        "accent": "{colors.accent.600}",
         "thickness": "0.25rem"
       }
     },
@@ -126,6 +128,7 @@ var coreTokens = {
         "warning": "{colors.warning.600}",
         "danger": "{colors.error.600}",
         "cta": "{colors.brand.600}",
+        "accent": "{colors.accent.600}",
         "thickness": "0.25rem"
       }
     },
@@ -147,6 +150,7 @@ var coreTokens = {
         "warning": "{colors.warning.600}",
         "danger": "{colors.error.600}",
         "cta": "{colors.brand.600}",
+        "accent": "{colors.accent.600}",
         "thickness": "0.25rem"
       }
     },
@@ -170,6 +174,7 @@ var coreTokens = {
         "warning": "{colors.warning.600}",
         "danger": "{colors.error.600}",
         "cta": "{colors.brand.600}",
+        "accent": "{colors.accent.600}",
         "thickness": "0.25rem"
       }
     },
@@ -191,6 +196,7 @@ var coreTokens = {
         "warning": "{colors.warning.600}",
         "danger": "{colors.error.600}",
         "cta": "{colors.brand.600}",
+        "accent": "{colors.accent.600}",
         "thickness": "0.25rem"
       },
       "light": {
@@ -210,7 +216,8 @@ var coreTokens = {
           "success": "{colors.success.600}",
           "warning": "{colors.warning.600}",
           "danger": "{colors.error.600}",
-          "cta": "{colors.brand.600}"
+          "cta": "{colors.brand.600}",
+          "accent": "{colors.accent.600}"
         }
       }
     },
@@ -227,6 +234,7 @@ var coreTokens = {
         "warning": "{colors.warning.600}",
         "danger": "{colors.error.600}",
         "cta": "{colors.brand.600}",
+        "accent": "{colors.accent.600}",
         "thickness": "0.25rem"
       }
     },
@@ -269,6 +277,7 @@ var coreTokens = {
         "warning": "{colors.warning.600}",
         "danger": "{colors.error.600}",
         "cta": "{colors.brand.600}",
+        "accent": "{colors.accent.600}",
         "thickness": "0.25rem"
       }
     },
@@ -284,6 +293,7 @@ var coreTokens = {
         "warning": "{colors.warning.600}",
         "danger": "{colors.error.600}",
         "cta": "{colors.brand.600}",
+        "accent": "{colors.accent.600}",
         "thickness": "0.25rem"
       }
     },
@@ -307,6 +317,7 @@ var coreTokens = {
         "warning": "{colors.warning.600}",
         "danger": "{colors.error.600}",
         "cta": "{colors.brand.600}",
+        "accent": "{colors.accent.600}",
         "thickness": "0.25rem"
       },
       "header": "{colors.neutral.500}",
@@ -396,6 +407,7 @@ var coreTokens = {
         "warning": "{colors.warning.600}",
         "danger": "{colors.error.600}",
         "cta": "{colors.brand.600}",
+        "accent": "{colors.accent.600}",
         "thickness": "0.25rem"
       }
     },
@@ -518,6 +530,28 @@ var coreTokens = {
         "done": {
           "bg": "{colors.success.700}",
           "text": "{colors.white}"
+        }
+      },
+      "tone": {
+        "brand": {
+          "active": {
+            "bg": "{colors.brand.600}",
+            "text": "{colors.white}"
+          },
+          "done": {
+            "bg": "{colors.success.700}",
+            "text": "{colors.white}"
+          }
+        },
+        "accent": {
+          "active": {
+            "bg": "{colors.accent.600}",
+            "text": "{colors.white}"
+          },
+          "done": {
+            "bg": "{colors.accent.800}",
+            "text": "{colors.white}"
+          }
         }
       },
       "connector": "{colors.neutral.200}",
@@ -769,6 +803,24 @@ var coreTokens = {
         "6": "{colors.palette.blue.400}",
         "7": "{colors.palette.blue.700}"
       }
+    },
+    "quote": {
+      "text": "{colors.neutral.700}",
+      "attributionName": "{colors.neutral.900}",
+      "attributionRole": "{colors.neutral.600}",
+      "mark": "{colors.accent.600}",
+      "border": "{colors.neutral.300}",
+      "accent": {
+        "neutral": "{colors.neutral.600}",
+        "brand": "{colors.brand.600}",
+        "info": "{colors.info.600}",
+        "success": "{colors.success.600}",
+        "warning": "{colors.warning.600}",
+        "danger": "{colors.error.600}",
+        "cta": "{colors.brand.600}",
+        "accent": "{colors.accent.600}",
+        "thickness": "0.25rem"
+      }
     }
   },
   "buttons": {
@@ -886,6 +938,18 @@ var coreTokens = {
       "focusRing": "{colors.accent.500} / 0.4",
       "focusVisible": "{colors.accent.500} / 0.4"
     },
+    "accentOutline": {
+      "bg": "{colors.white}",
+      "bgHover": "{colors.accent.50}",
+      "bgActive": "{colors.accent.100}",
+      "bgDisabled": "{colors.neutral.50}",
+      "text": "{colors.accent.700}",
+      "textDisabled": "{colors.neutral.400}",
+      "border": "{colors.accent.700}",
+      "borderDisabled": "{colors.neutral.200}",
+      "focusRing": "{colors.accent.500} / 0.4",
+      "focusVisible": "{colors.accent.500} / 0.4"
+    },
     "inverse": {
       "bg": "{colors.white} / 0.12",
       "bgHover": "{colors.white} / 0.2",
@@ -987,14 +1051,16 @@ var coreTokens = {
           "muted": "{colors.neutral.600}",
           "subtle": "{colors.neutral.500}",
           "meta": "{colors.neutral.500}",
-          "brand": "{colors.brand.600}"
+          "brand": "{colors.brand.600}",
+          "accent": "{colors.accent.600}"
         },
         "onSurface": {
           "default": "{colors.neutral.900}",
           "muted": "{colors.neutral.600}",
           "subtle": "{colors.neutral.500}",
           "meta": "{colors.neutral.500}",
-          "brand": "{colors.brand.600}"
+          "brand": "{colors.brand.600}",
+          "accent": "{colors.accent.600}"
         }
       },
       "forms": {
@@ -1015,7 +1081,8 @@ var coreTokens = {
             "success": "{colors.success.600}",
             "warning": "{colors.warning.600}",
             "danger": "{colors.error.600}",
-            "cta": "{colors.brand.600}"
+            "cta": "{colors.brand.600}",
+            "accent": "{colors.accent.600}"
           }
         },
         "choiceCard": {
@@ -1060,7 +1127,8 @@ var coreTokens = {
             "success": "{colors.success.600}",
             "warning": "{colors.warning.600}",
             "danger": "{colors.error.600}",
-            "cta": "{colors.brand.600}"
+            "cta": "{colors.brand.600}",
+            "accent": "{colors.accent.600}"
           }
         },
         "iconBox": {
@@ -1086,7 +1154,8 @@ var coreTokens = {
             "success": "{colors.success.600}",
             "warning": "{colors.warning.600}",
             "danger": "{colors.error.600}",
-            "cta": "{colors.brand.600}"
+            "cta": "{colors.brand.600}",
+            "accent": "{colors.accent.600}"
           }
         },
         "pricingCard": {
@@ -1106,7 +1175,8 @@ var coreTokens = {
             "success": "{colors.success.600}",
             "warning": "{colors.warning.600}",
             "danger": "{colors.error.600}",
-            "cta": "{colors.brand.600}"
+            "cta": "{colors.brand.600}",
+            "accent": "{colors.accent.600}"
           }
         },
         "rating": {
@@ -1128,7 +1198,8 @@ var coreTokens = {
             "success": "{colors.success.600}",
             "warning": "{colors.warning.600}",
             "danger": "{colors.error.600}",
-            "cta": "{colors.brand.600}"
+            "cta": "{colors.brand.600}",
+            "accent": "{colors.accent.600}"
           }
         },
         "footer": {
@@ -1148,7 +1219,8 @@ var coreTokens = {
             "success": "{colors.success.600}",
             "warning": "{colors.warning.600}",
             "danger": "{colors.error.600}",
-            "cta": "{colors.brand.600}"
+            "cta": "{colors.brand.600}",
+            "accent": "{colors.accent.600}"
           },
           "light": {
             "bg": "{colors.neutral.100}",
@@ -1167,7 +1239,8 @@ var coreTokens = {
               "success": "{colors.success.600}",
               "warning": "{colors.warning.600}",
               "danger": "{colors.error.600}",
-              "cta": "{colors.brand.600}"
+              "cta": "{colors.brand.600}",
+              "accent": "{colors.accent.600}"
             }
           }
         },
@@ -1183,7 +1256,8 @@ var coreTokens = {
             "success": "{colors.success.600}",
             "warning": "{colors.warning.600}",
             "danger": "{colors.error.600}",
-            "cta": "{colors.brand.600}"
+            "cta": "{colors.brand.600}",
+            "accent": "{colors.accent.600}"
           }
         },
         "toast": {
@@ -1224,7 +1298,8 @@ var coreTokens = {
             "success": "{colors.success.600}",
             "warning": "{colors.warning.600}",
             "danger": "{colors.error.600}",
-            "cta": "{colors.brand.600}"
+            "cta": "{colors.brand.600}",
+            "accent": "{colors.accent.600}"
           }
         },
         "tooltip": {
@@ -1238,7 +1313,8 @@ var coreTokens = {
             "success": "{colors.success.600}",
             "warning": "{colors.warning.600}",
             "danger": "{colors.error.600}",
-            "cta": "{colors.brand.600}"
+            "cta": "{colors.brand.600}",
+            "accent": "{colors.accent.600}"
           }
         },
         "dropdown": {
@@ -1260,7 +1336,8 @@ var coreTokens = {
             "success": "{colors.success.600}",
             "warning": "{colors.warning.600}",
             "danger": "{colors.error.600}",
-            "cta": "{colors.brand.600}"
+            "cta": "{colors.brand.600}",
+            "accent": "{colors.accent.600}"
           },
           "header": "{colors.neutral.500}",
           "divider": "{colors.neutral.200}"
@@ -1349,6 +1426,7 @@ var coreTokens = {
             "warning": "{colors.warning.600}",
             "danger": "{colors.error.600}",
             "cta": "{colors.brand.600}",
+            "accent": "{colors.accent.600}",
             "thickness": "0.25rem"
           }
         },
@@ -1471,6 +1549,28 @@ var coreTokens = {
             "done": {
               "bg": "{colors.success.700}",
               "text": "{colors.white}"
+            }
+          },
+          "tone": {
+            "brand": {
+              "active": {
+                "bg": "{colors.brand.600}",
+                "text": "{colors.white}"
+              },
+              "done": {
+                "bg": "{colors.success.700}",
+                "text": "{colors.white}"
+              }
+            },
+            "accent": {
+              "active": {
+                "bg": "{colors.accent.600}",
+                "text": "{colors.white}"
+              },
+              "done": {
+                "bg": "{colors.accent.800}",
+                "text": "{colors.white}"
+              }
             }
           },
           "connector": "{colors.neutral.200}",
@@ -1710,6 +1810,23 @@ var coreTokens = {
             "6": "{colors.palette.blue.400}",
             "7": "{colors.palette.blue.700}"
           }
+        },
+        "quote": {
+          "text": "{colors.neutral.700}",
+          "attributionName": "{colors.neutral.900}",
+          "attributionRole": "{colors.neutral.600}",
+          "mark": "{colors.accent.600}",
+          "border": "{colors.neutral.300}",
+          "accent": {
+            "neutral": "{colors.neutral.600}",
+            "brand": "{colors.brand.600}",
+            "info": "{colors.info.600}",
+            "success": "{colors.success.600}",
+            "warning": "{colors.warning.600}",
+            "danger": "{colors.error.600}",
+            "cta": "{colors.brand.600}",
+            "accent": "{colors.accent.600}"
+          }
         }
       }
     },
@@ -1732,14 +1849,16 @@ var coreTokens = {
           "muted": "{colors.neutral.300}",
           "subtle": "{colors.neutral.400}",
           "meta": "{colors.neutral.400}",
-          "brand": "{colors.brand.400}"
+          "brand": "{colors.brand.400}",
+          "accent": "{colors.accent.400}"
         },
         "onSurface": {
           "default": "{colors.neutral.100}",
           "muted": "{colors.neutral.300}",
           "subtle": "{colors.neutral.400}",
           "meta": "{colors.neutral.400}",
-          "brand": "{colors.brand.400}"
+          "brand": "{colors.brand.400}",
+          "accent": "{colors.accent.400}"
         }
       },
       "forms": {
@@ -1760,7 +1879,8 @@ var coreTokens = {
             "success": "{colors.success.400}",
             "warning": "{colors.warning.400}",
             "danger": "{colors.error.400}",
-            "cta": "{colors.brand.400}"
+            "cta": "{colors.brand.400}",
+            "accent": "{colors.accent.400}"
           }
         },
         "choiceCard": {
@@ -1808,7 +1928,8 @@ var coreTokens = {
             "success": "{colors.success.400}",
             "warning": "{colors.warning.400}",
             "danger": "{colors.error.400}",
-            "cta": "{colors.brand.400}"
+            "cta": "{colors.brand.400}",
+            "accent": "{colors.accent.400}"
           }
         },
         "iconBox": {
@@ -1834,7 +1955,8 @@ var coreTokens = {
             "success": "{colors.success.400}",
             "warning": "{colors.warning.400}",
             "danger": "{colors.error.400}",
-            "cta": "{colors.brand.400}"
+            "cta": "{colors.brand.400}",
+            "accent": "{colors.accent.400}"
           }
         },
         "pricingCard": {
@@ -1854,7 +1976,8 @@ var coreTokens = {
             "success": "{colors.success.400}",
             "warning": "{colors.warning.400}",
             "danger": "{colors.error.400}",
-            "cta": "{colors.brand.400}"
+            "cta": "{colors.brand.400}",
+            "accent": "{colors.accent.400}"
           }
         },
         "rating": {
@@ -1876,7 +1999,8 @@ var coreTokens = {
             "success": "{colors.success.400}",
             "warning": "{colors.warning.400}",
             "danger": "{colors.error.400}",
-            "cta": "{colors.brand.400}"
+            "cta": "{colors.brand.400}",
+            "accent": "{colors.accent.400}"
           }
         },
         "footer": {
@@ -1896,7 +2020,8 @@ var coreTokens = {
             "success": "{colors.success.400}",
             "warning": "{colors.warning.400}",
             "danger": "{colors.error.400}",
-            "cta": "{colors.brand.400}"
+            "cta": "{colors.brand.400}",
+            "accent": "{colors.accent.400}"
           },
           "light": {
             "bg": "{colors.neutral.200}",
@@ -1915,7 +2040,8 @@ var coreTokens = {
               "success": "{colors.success.600}",
               "warning": "{colors.warning.600}",
               "danger": "{colors.error.600}",
-              "cta": "{colors.brand.600}"
+              "cta": "{colors.brand.600}",
+              "accent": "{colors.accent.600}"
             }
           }
         },
@@ -1931,7 +2057,8 @@ var coreTokens = {
             "success": "{colors.success.400}",
             "warning": "{colors.warning.400}",
             "danger": "{colors.error.400}",
-            "cta": "{colors.brand.400}"
+            "cta": "{colors.brand.400}",
+            "accent": "{colors.accent.400}"
           }
         },
         "toast": {
@@ -1972,7 +2099,8 @@ var coreTokens = {
             "success": "{colors.success.400}",
             "warning": "{colors.warning.400}",
             "danger": "{colors.error.400}",
-            "cta": "{colors.brand.400}"
+            "cta": "{colors.brand.400}",
+            "accent": "{colors.accent.400}"
           }
         },
         "tooltip": {
@@ -1986,7 +2114,8 @@ var coreTokens = {
             "success": "{colors.success.400}",
             "warning": "{colors.warning.400}",
             "danger": "{colors.error.400}",
-            "cta": "{colors.brand.400}"
+            "cta": "{colors.brand.400}",
+            "accent": "{colors.accent.400}"
           }
         },
         "dropdown": {
@@ -2008,7 +2137,8 @@ var coreTokens = {
             "success": "{colors.success.400}",
             "warning": "{colors.warning.400}",
             "danger": "{colors.error.400}",
-            "cta": "{colors.brand.400}"
+            "cta": "{colors.brand.400}",
+            "accent": "{colors.accent.400}"
           },
           "header": "{colors.neutral.500}",
           "divider": "{colors.neutral.700}"
@@ -2097,6 +2227,7 @@ var coreTokens = {
             "warning": "{colors.warning.400}",
             "danger": "{colors.error.400}",
             "cta": "{colors.brand.400}",
+            "accent": "{colors.accent.400}",
             "thickness": "0.25rem"
           }
         },
@@ -2219,6 +2350,28 @@ var coreTokens = {
             "done": {
               "bg": "{colors.success.700}",
               "text": "{colors.white}"
+            }
+          },
+          "tone": {
+            "brand": {
+              "active": {
+                "bg": "{colors.brand.600}",
+                "text": "{colors.white}"
+              },
+              "done": {
+                "bg": "{colors.success.700}",
+                "text": "{colors.white}"
+              }
+            },
+            "accent": {
+              "active": {
+                "bg": "{colors.accent.600}",
+                "text": "{colors.white}"
+              },
+              "done": {
+                "bg": "{colors.accent.800}",
+                "text": "{colors.white}"
+              }
             }
           },
           "connector": "{colors.neutral.700}",
@@ -2458,6 +2611,23 @@ var coreTokens = {
             "6": "{colors.palette.blue.500}",
             "7": "{colors.palette.blue.300}"
           }
+        },
+        "quote": {
+          "text": "{colors.neutral.200}",
+          "attributionName": "{colors.neutral.100}",
+          "attributionRole": "{colors.neutral.300}",
+          "mark": "{colors.accent.400}",
+          "border": "{colors.neutral.600}",
+          "accent": {
+            "neutral": "{colors.neutral.400}",
+            "brand": "{colors.brand.400}",
+            "info": "{colors.info.400}",
+            "success": "{colors.success.400}",
+            "warning": "{colors.warning.400}",
+            "danger": "{colors.error.400}",
+            "cta": "{colors.brand.400}",
+            "accent": "{colors.accent.400}"
+          }
         }
       }
     },
@@ -2480,14 +2650,16 @@ var coreTokens = {
           "muted": "{colors.neutral.600}",
           "subtle": "{colors.neutral.600}",
           "meta": "{colors.neutral.600}",
-          "brand": "{colors.brand.700}"
+          "brand": "{colors.brand.700}",
+          "accent": "{colors.accent.700}"
         },
         "onSurface": {
           "default": "{colors.neutral.900}",
           "muted": "{colors.neutral.600}",
           "subtle": "{colors.neutral.600}",
           "meta": "{colors.neutral.600}",
-          "brand": "{colors.brand.700}"
+          "brand": "{colors.brand.700}",
+          "accent": "{colors.accent.700}"
         }
       },
       "forms": {
@@ -2518,7 +2690,8 @@ var coreTokens = {
             "success": "{colors.success.600}",
             "warning": "{colors.warning.600}",
             "danger": "{colors.error.600}",
-            "cta": "{colors.brand.600}"
+            "cta": "{colors.brand.600}",
+            "accent": "{colors.accent.600}"
           }
         },
         "choiceCard": {
@@ -2563,7 +2736,8 @@ var coreTokens = {
             "success": "{colors.success.600}",
             "warning": "{colors.warning.600}",
             "danger": "{colors.error.600}",
-            "cta": "{colors.brand.600}"
+            "cta": "{colors.brand.600}",
+            "accent": "{colors.accent.600}"
           }
         },
         "iconBox": {
@@ -2589,7 +2763,8 @@ var coreTokens = {
             "success": "{colors.success.600}",
             "warning": "{colors.warning.600}",
             "danger": "{colors.error.600}",
-            "cta": "{colors.brand.600}"
+            "cta": "{colors.brand.600}",
+            "accent": "{colors.accent.600}"
           }
         },
         "pricingCard": {
@@ -2609,7 +2784,8 @@ var coreTokens = {
             "success": "{colors.success.600}",
             "warning": "{colors.warning.600}",
             "danger": "{colors.error.600}",
-            "cta": "{colors.brand.600}"
+            "cta": "{colors.brand.600}",
+            "accent": "{colors.accent.600}"
           }
         },
         "rating": {
@@ -2631,7 +2807,8 @@ var coreTokens = {
             "success": "{colors.success.600}",
             "warning": "{colors.warning.600}",
             "danger": "{colors.error.600}",
-            "cta": "{colors.brand.600}"
+            "cta": "{colors.brand.600}",
+            "accent": "{colors.accent.600}"
           }
         },
         "footer": {
@@ -2651,7 +2828,8 @@ var coreTokens = {
             "success": "{colors.success.600}",
             "warning": "{colors.warning.600}",
             "danger": "{colors.error.600}",
-            "cta": "{colors.brand.600}"
+            "cta": "{colors.brand.600}",
+            "accent": "{colors.accent.600}"
           },
           "light": {
             "bg": "{colors.neutral.100}",
@@ -2670,7 +2848,8 @@ var coreTokens = {
               "success": "{colors.success.600}",
               "warning": "{colors.warning.600}",
               "danger": "{colors.error.600}",
-              "cta": "{colors.brand.600}"
+              "cta": "{colors.brand.600}",
+              "accent": "{colors.accent.600}"
             }
           }
         },
@@ -2686,7 +2865,8 @@ var coreTokens = {
             "success": "{colors.success.600}",
             "warning": "{colors.warning.600}",
             "danger": "{colors.error.600}",
-            "cta": "{colors.brand.600}"
+            "cta": "{colors.brand.600}",
+            "accent": "{colors.accent.600}"
           }
         },
         "toast": {
@@ -2727,7 +2907,8 @@ var coreTokens = {
             "success": "{colors.success.600}",
             "warning": "{colors.warning.600}",
             "danger": "{colors.error.600}",
-            "cta": "{colors.brand.600}"
+            "cta": "{colors.brand.600}",
+            "accent": "{colors.accent.600}"
           }
         },
         "tooltip": {
@@ -2741,7 +2922,8 @@ var coreTokens = {
             "success": "{colors.success.600}",
             "warning": "{colors.warning.600}",
             "danger": "{colors.error.600}",
-            "cta": "{colors.brand.600}"
+            "cta": "{colors.brand.600}",
+            "accent": "{colors.accent.600}"
           }
         },
         "dropdown": {
@@ -2763,7 +2945,8 @@ var coreTokens = {
             "success": "{colors.success.600}",
             "warning": "{colors.warning.600}",
             "danger": "{colors.error.600}",
-            "cta": "{colors.brand.600}"
+            "cta": "{colors.brand.600}",
+            "accent": "{colors.accent.600}"
           },
           "header": "{colors.neutral.500}",
           "divider": "{colors.neutral.700}"
@@ -2852,6 +3035,7 @@ var coreTokens = {
             "warning": "{colors.warning.600}",
             "danger": "{colors.error.600}",
             "cta": "{colors.brand.600}",
+            "accent": "{colors.accent.600}",
             "thickness": "0.25rem"
           }
         },
@@ -2974,6 +3158,28 @@ var coreTokens = {
             "done": {
               "bg": "{colors.success.800}",
               "text": "{colors.white}"
+            }
+          },
+          "tone": {
+            "brand": {
+              "active": {
+                "bg": "{colors.brand.700}",
+                "text": "{colors.white}"
+              },
+              "done": {
+                "bg": "{colors.success.800}",
+                "text": "{colors.white}"
+              }
+            },
+            "accent": {
+              "active": {
+                "bg": "{colors.accent.700}",
+                "text": "{colors.white}"
+              },
+              "done": {
+                "bg": "{colors.accent.900}",
+                "text": "{colors.white}"
+              }
             }
           },
           "connector": "{colors.neutral.200}",
@@ -3213,6 +3419,23 @@ var coreTokens = {
             "6": "{colors.palette.blue.400}",
             "7": "{colors.palette.blue.700}"
           }
+        },
+        "quote": {
+          "text": "{colors.neutral.900}",
+          "attributionName": "{colors.neutral.900}",
+          "attributionRole": "{colors.neutral.700}",
+          "mark": "{colors.accent.700}",
+          "border": "{colors.neutral.700}",
+          "accent": {
+            "neutral": "{colors.neutral.600}",
+            "brand": "{colors.brand.600}",
+            "info": "{colors.info.600}",
+            "success": "{colors.success.600}",
+            "warning": "{colors.warning.600}",
+            "danger": "{colors.error.600}",
+            "cta": "{colors.brand.600}",
+            "accent": "{colors.accent.600}"
+          }
         }
       },
       "buttons": {
@@ -3327,6 +3550,18 @@ var coreTokens = {
           "bgDisabled": "{colors.accent.200}",
           "text": "{colors.white}",
           "textDisabled": "{colors.neutral.400}",
+          "focusRing": "{colors.accent.500} / 0.4",
+          "focusVisible": "{colors.accent.500} / 0.4"
+        },
+        "accentOutline": {
+          "bg": "{colors.white}",
+          "bgHover": "{colors.accent.50}",
+          "bgActive": "{colors.accent.100}",
+          "bgDisabled": "{colors.neutral.50}",
+          "text": "{colors.accent.800}",
+          "textDisabled": "{colors.neutral.400}",
+          "border": "{colors.accent.800}",
+          "borderDisabled": "{colors.neutral.200}",
           "focusRing": "{colors.accent.500} / 0.4",
           "focusVisible": "{colors.accent.500} / 0.4"
         },
@@ -4121,6 +4356,14 @@ var coreTokens = {
     "wider": "0.05em",
     "widest": "0.1em"
   },
+  "leading": {
+    "none": "1",
+    "tight": "1.25",
+    "snug": "1.375",
+    "normal": "1.5",
+    "relaxed": "1.625",
+    "loose": "2"
+  },
   "surface": {
     "page": "{colors.neutral.50}",
     "card": "{colors.white}",
@@ -4146,18 +4389,22 @@ var coreTokens = {
       "muted": "{colors.neutral.600}",
       "subtle": "{colors.neutral.500}",
       "meta": "{colors.neutral.500}",
-      "brand": "{colors.brand.600}"
+      "brand": "{colors.brand.600}",
+      "accent": "{colors.accent.600}"
     },
     "onSurface": {
       "default": "{colors.neutral.900}",
       "muted": "{colors.neutral.600}",
       "subtle": "{colors.neutral.500}",
       "meta": "{colors.neutral.500}",
-      "brand": "{colors.brand.600}"
+      "brand": "{colors.brand.600}",
+      "accent": "{colors.accent.600}"
     },
     "onInverse": {
       "default": "{colors.neutral.50}",
-      "muted": "{colors.neutral.300}"
+      "muted": "{colors.neutral.300}",
+      "brand": "{colors.brand.300}",
+      "accent": "{colors.accent.300}"
     }
   },
   "layout": {
@@ -4716,6 +4963,12 @@ var createCssVariableMap = (tokens2, options = {}) => {
   if (tracking) {
     Object.entries(tracking).forEach(([key, value]) => {
       assign(toVariableName(prefix, "tracking", key), value);
+    });
+  }
+  const leading = baseTokens.leading;
+  if (leading) {
+    Object.entries(leading).forEach(([key, value]) => {
+      assign(toVariableName(prefix, "leading", key), value);
     });
   }
   const icons = baseTokens.icons;

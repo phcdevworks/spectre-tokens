@@ -263,6 +263,13 @@ export const createCssVariableMap = (tokens: SpectreTokens, options: CssVariable
     })
   }
 
+  const leading = (baseTokens as unknown as Record<string, unknown>).leading as Record<string, string> | undefined
+  if (leading) {
+    Object.entries(leading).forEach(([key, value]) => {
+      assign(toVariableName(prefix, 'leading', key), value)
+    })
+  }
+
   const icons = (baseTokens as unknown as Record<string, unknown>).icons as Record<string, string> | undefined
   if (icons) {
     Object.entries(icons).forEach(([key, value]) => {

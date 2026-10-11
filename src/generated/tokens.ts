@@ -57,6 +57,11 @@ export interface SpectreSourceTokens {
           metadata: {
           };
         };
+        accent: {
+          value: string;
+          metadata: {
+          };
+        };
         thickness: string;
       };
     };
@@ -271,6 +276,11 @@ export interface SpectreSourceTokens {
           metadata: {
           };
         };
+        accent: {
+          value: string;
+          metadata: {
+          };
+        };
         thickness: string;
       };
     };
@@ -376,6 +386,11 @@ export interface SpectreSourceTokens {
           metadata: {
           };
         };
+        accent: {
+          value: string;
+          metadata: {
+          };
+        };
         thickness: string;
       };
     };
@@ -469,6 +484,11 @@ export interface SpectreSourceTokens {
           metadata: {
           };
         };
+        accent: {
+          value: string;
+          metadata: {
+          };
+        };
         thickness: string;
       };
     };
@@ -543,6 +563,11 @@ export interface SpectreSourceTokens {
           };
         };
         cta: {
+          value: string;
+          metadata: {
+          };
+        };
+        accent: {
           value: string;
           metadata: {
           };
@@ -632,6 +657,11 @@ export interface SpectreSourceTokens {
           metadata: {
           };
         };
+        accent: {
+          value: string;
+          metadata: {
+          };
+        };
         thickness: string;
       };
       light: {
@@ -716,6 +746,11 @@ export interface SpectreSourceTokens {
             metadata: {
             };
           };
+          accent: {
+            value: string;
+            metadata: {
+            };
+          };
         };
       };
     };
@@ -764,6 +799,11 @@ export interface SpectreSourceTokens {
           };
         };
         cta: {
+          value: string;
+          metadata: {
+          };
+        };
+        accent: {
           value: string;
           metadata: {
           };
@@ -908,6 +948,11 @@ export interface SpectreSourceTokens {
           metadata: {
           };
         };
+        accent: {
+          value: string;
+          metadata: {
+          };
+        };
         thickness: string;
       };
     };
@@ -959,6 +1004,11 @@ export interface SpectreSourceTokens {
           };
         };
         cta: {
+          value: string;
+          metadata: {
+          };
+        };
+        accent: {
           value: string;
           metadata: {
           };
@@ -1040,6 +1090,11 @@ export interface SpectreSourceTokens {
           };
         };
         cta: {
+          value: string;
+          metadata: {
+          };
+        };
+        accent: {
           value: string;
           metadata: {
           };
@@ -1241,6 +1296,9 @@ export interface SpectreSourceTokens {
           value: string;
         };
         cta: {
+          value: string;
+        };
+        accent: {
           value: string;
         };
         thickness: string;
@@ -1592,6 +1650,68 @@ export interface SpectreSourceTokens {
             value: string;
             metadata: {
               pair: string;
+            };
+          };
+        };
+      };
+      tone: {
+        brand: {
+          active: {
+            bg: {
+              value: string;
+              metadata: {
+                pair: string;
+              };
+            };
+            text: {
+              value: string;
+              metadata: {
+                pair: string;
+              };
+            };
+          };
+          done: {
+            bg: {
+              value: string;
+              metadata: {
+                pair: string;
+              };
+            };
+            text: {
+              value: string;
+              metadata: {
+                pair: string;
+              };
+            };
+          };
+        };
+        accent: {
+          active: {
+            bg: {
+              value: string;
+              metadata: {
+                pair: string;
+              };
+            };
+            text: {
+              value: string;
+              metadata: {
+                pair: string;
+              };
+            };
+          };
+          done: {
+            bg: {
+              value: string;
+              metadata: {
+                pair: string;
+              };
+            };
+            text: {
+              value: string;
+              metadata: {
+                pair: string;
+              };
             };
           };
         };
@@ -2372,6 +2492,80 @@ export interface SpectreSourceTokens {
         };
       };
     };
+    quote: {
+      text: {
+        value: string;
+        metadata: {
+          pair: string;
+        };
+      };
+      attributionName: {
+        value: string;
+        metadata: {
+          pair: string;
+        };
+      };
+      attributionRole: {
+        value: string;
+        metadata: {
+          pair: string;
+        };
+      };
+      mark: {
+        value: string;
+        description: string;
+        metadata: {
+          pair: string;
+        };
+      };
+      border: {
+        value: string;
+        description: string;
+      };
+      accent: {
+        neutral: {
+          value: string;
+          metadata: {
+          };
+        };
+        brand: {
+          value: string;
+          metadata: {
+          };
+        };
+        info: {
+          value: string;
+          metadata: {
+          };
+        };
+        success: {
+          value: string;
+          metadata: {
+          };
+        };
+        warning: {
+          value: string;
+          metadata: {
+          };
+        };
+        danger: {
+          value: string;
+          metadata: {
+          };
+        };
+        cta: {
+          value: string;
+          metadata: {
+          };
+        };
+        accent: {
+          value: string;
+          metadata: {
+          };
+        };
+        thickness: string;
+      };
+    };
   };
   buttons: {
     primary: {
@@ -2771,6 +2965,50 @@ export interface SpectreSourceTokens {
         value: string;
       };
     };
+    accentOutline: {
+      bg: {
+        value: string;
+        metadata: {
+          pair: string;
+        };
+      };
+      bgHover: {
+        value: string;
+        metadata: {
+          pair: string;
+        };
+      };
+      bgActive: {
+        value: string;
+        metadata: {
+          pair: string;
+        };
+      };
+      bgDisabled: {
+        value: string;
+      };
+      text: {
+        value: string;
+        metadata: {
+          pair: string;
+        };
+      };
+      textDisabled: {
+        value: string;
+      };
+      border: {
+        value: string;
+      };
+      borderDisabled: {
+        value: string;
+      };
+      focusRing: {
+        value: string;
+      };
+      focusVisible: {
+        value: string;
+      };
+    };
     inverse: {
       bg: {
         value: string;
@@ -3003,6 +3241,12 @@ export interface SpectreSourceTokens {
               pair: string;
             };
           };
+          accent: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
         };
         onSurface: {
           default: {
@@ -3030,6 +3274,12 @@ export interface SpectreSourceTokens {
             };
           };
           brand: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+          accent: {
             value: string;
             metadata: {
               pair: string;
@@ -3102,6 +3352,11 @@ export interface SpectreSourceTokens {
               };
             };
             cta: {
+              value: string;
+              metadata: {
+              };
+            };
+            accent: {
               value: string;
               metadata: {
               };
@@ -3303,6 +3558,11 @@ export interface SpectreSourceTokens {
               metadata: {
               };
             };
+            accent: {
+              value: string;
+              metadata: {
+              };
+            };
           };
         };
         iconBox: {
@@ -3418,6 +3678,11 @@ export interface SpectreSourceTokens {
               metadata: {
               };
             };
+            accent: {
+              value: string;
+              metadata: {
+              };
+            };
           };
         };
         pricingCard: {
@@ -3510,6 +3775,11 @@ export interface SpectreSourceTokens {
               metadata: {
               };
             };
+            accent: {
+              value: string;
+              metadata: {
+              };
+            };
           };
         };
         rating: {
@@ -3595,6 +3865,11 @@ export interface SpectreSourceTokens {
               };
             };
             cta: {
+              value: string;
+              metadata: {
+              };
+            };
+            accent: {
               value: string;
               metadata: {
               };
@@ -3689,6 +3964,11 @@ export interface SpectreSourceTokens {
               metadata: {
               };
             };
+            accent: {
+              value: string;
+              metadata: {
+              };
+            };
           };
           light: {
             bg: {
@@ -3778,6 +4058,11 @@ export interface SpectreSourceTokens {
                 metadata: {
                 };
               };
+              accent: {
+                value: string;
+                metadata: {
+                };
+              };
             };
           };
         };
@@ -3834,6 +4119,11 @@ export interface SpectreSourceTokens {
               };
             };
             cta: {
+              value: string;
+              metadata: {
+              };
+            };
+            accent: {
               value: string;
               metadata: {
               };
@@ -3997,6 +4287,11 @@ export interface SpectreSourceTokens {
               metadata: {
               };
             };
+            accent: {
+              value: string;
+              metadata: {
+              };
+            };
           };
         };
         tooltip: {
@@ -4049,6 +4344,11 @@ export interface SpectreSourceTokens {
               };
             };
             cta: {
+              value: string;
+              metadata: {
+              };
+            };
+            accent: {
               value: string;
               metadata: {
               };
@@ -4139,6 +4439,11 @@ export interface SpectreSourceTokens {
               };
             };
             cta: {
+              value: string;
+              metadata: {
+              };
+            };
+            accent: {
               value: string;
               metadata: {
               };
@@ -4397,6 +4702,11 @@ export interface SpectreSourceTokens {
               };
             };
             cta: {
+              value: string;
+              metadata: {
+              };
+            };
+            accent: {
               value: string;
               metadata: {
               };
@@ -4804,6 +5114,68 @@ export interface SpectreSourceTokens {
                 value: string;
                 metadata: {
                   pair: string;
+                };
+              };
+            };
+          };
+          tone: {
+            brand: {
+              active: {
+                bg: {
+                  value: string;
+                  metadata: {
+                    pair: string;
+                  };
+                };
+                text: {
+                  value: string;
+                  metadata: {
+                    pair: string;
+                  };
+                };
+              };
+              done: {
+                bg: {
+                  value: string;
+                  metadata: {
+                    pair: string;
+                  };
+                };
+                text: {
+                  value: string;
+                  metadata: {
+                    pair: string;
+                  };
+                };
+              };
+            };
+            accent: {
+              active: {
+                bg: {
+                  value: string;
+                  metadata: {
+                    pair: string;
+                  };
+                };
+                text: {
+                  value: string;
+                  metadata: {
+                    pair: string;
+                  };
+                };
+              };
+              done: {
+                bg: {
+                  value: string;
+                  metadata: {
+                    pair: string;
+                  };
+                };
+                text: {
+                  value: string;
+                  metadata: {
+                    pair: string;
+                  };
                 };
               };
             };
@@ -5702,6 +6074,79 @@ export interface SpectreSourceTokens {
             };
           };
         };
+        quote: {
+          text: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+          attributionName: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+          attributionRole: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+          mark: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+          border: {
+            value: string;
+            metadata: {
+            };
+          };
+          accent: {
+            neutral: {
+              value: string;
+              metadata: {
+              };
+            };
+            brand: {
+              value: string;
+              metadata: {
+              };
+            };
+            info: {
+              value: string;
+              metadata: {
+              };
+            };
+            success: {
+              value: string;
+              metadata: {
+              };
+            };
+            warning: {
+              value: string;
+              metadata: {
+              };
+            };
+            danger: {
+              value: string;
+              metadata: {
+              };
+            };
+            cta: {
+              value: string;
+              metadata: {
+              };
+            };
+            accent: {
+              value: string;
+              metadata: {
+              };
+            };
+          };
+        };
       };
     };
     dark: {
@@ -5783,6 +6228,12 @@ export interface SpectreSourceTokens {
               pair: string;
             };
           };
+          accent: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
         };
         onSurface: {
           default: {
@@ -5810,6 +6261,12 @@ export interface SpectreSourceTokens {
             };
           };
           brand: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+          accent: {
             value: string;
             metadata: {
               pair: string;
@@ -5882,6 +6339,11 @@ export interface SpectreSourceTokens {
               };
             };
             cta: {
+              value: string;
+              metadata: {
+              };
+            };
+            accent: {
               value: string;
               metadata: {
               };
@@ -6101,6 +6563,11 @@ export interface SpectreSourceTokens {
               metadata: {
               };
             };
+            accent: {
+              value: string;
+              metadata: {
+              };
+            };
           };
         };
         iconBox: {
@@ -6218,6 +6685,11 @@ export interface SpectreSourceTokens {
               metadata: {
               };
             };
+            accent: {
+              value: string;
+              metadata: {
+              };
+            };
           };
         };
         pricingCard: {
@@ -6310,6 +6782,11 @@ export interface SpectreSourceTokens {
               metadata: {
               };
             };
+            accent: {
+              value: string;
+              metadata: {
+              };
+            };
           };
         };
         rating: {
@@ -6395,6 +6872,11 @@ export interface SpectreSourceTokens {
               };
             };
             cta: {
+              value: string;
+              metadata: {
+              };
+            };
+            accent: {
               value: string;
               metadata: {
               };
@@ -6489,6 +6971,11 @@ export interface SpectreSourceTokens {
               metadata: {
               };
             };
+            accent: {
+              value: string;
+              metadata: {
+              };
+            };
           };
           light: {
             bg: {
@@ -6578,6 +7065,11 @@ export interface SpectreSourceTokens {
                 metadata: {
                 };
               };
+              accent: {
+                value: string;
+                metadata: {
+                };
+              };
             };
           };
         };
@@ -6634,6 +7126,11 @@ export interface SpectreSourceTokens {
               };
             };
             cta: {
+              value: string;
+              metadata: {
+              };
+            };
+            accent: {
               value: string;
               metadata: {
               };
@@ -6797,6 +7294,11 @@ export interface SpectreSourceTokens {
               metadata: {
               };
             };
+            accent: {
+              value: string;
+              metadata: {
+              };
+            };
           };
         };
         tooltip: {
@@ -6849,6 +7351,11 @@ export interface SpectreSourceTokens {
               };
             };
             cta: {
+              value: string;
+              metadata: {
+              };
+            };
+            accent: {
               value: string;
               metadata: {
               };
@@ -6939,6 +7446,11 @@ export interface SpectreSourceTokens {
               };
             };
             cta: {
+              value: string;
+              metadata: {
+              };
+            };
+            accent: {
               value: string;
               metadata: {
               };
@@ -7197,6 +7709,11 @@ export interface SpectreSourceTokens {
               };
             };
             cta: {
+              value: string;
+              metadata: {
+              };
+            };
+            accent: {
               value: string;
               metadata: {
               };
@@ -7604,6 +8121,68 @@ export interface SpectreSourceTokens {
                 value: string;
                 metadata: {
                   pair: string;
+                };
+              };
+            };
+          };
+          tone: {
+            brand: {
+              active: {
+                bg: {
+                  value: string;
+                  metadata: {
+                    pair: string;
+                  };
+                };
+                text: {
+                  value: string;
+                  metadata: {
+                    pair: string;
+                  };
+                };
+              };
+              done: {
+                bg: {
+                  value: string;
+                  metadata: {
+                    pair: string;
+                  };
+                };
+                text: {
+                  value: string;
+                  metadata: {
+                    pair: string;
+                  };
+                };
+              };
+            };
+            accent: {
+              active: {
+                bg: {
+                  value: string;
+                  metadata: {
+                    pair: string;
+                  };
+                };
+                text: {
+                  value: string;
+                  metadata: {
+                    pair: string;
+                  };
+                };
+              };
+              done: {
+                bg: {
+                  value: string;
+                  metadata: {
+                    pair: string;
+                  };
+                };
+                text: {
+                  value: string;
+                  metadata: {
+                    pair: string;
+                  };
                 };
               };
             };
@@ -8502,6 +9081,79 @@ export interface SpectreSourceTokens {
             };
           };
         };
+        quote: {
+          text: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+          attributionName: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+          attributionRole: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+          mark: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+          border: {
+            value: string;
+            metadata: {
+            };
+          };
+          accent: {
+            neutral: {
+              value: string;
+              metadata: {
+              };
+            };
+            brand: {
+              value: string;
+              metadata: {
+              };
+            };
+            info: {
+              value: string;
+              metadata: {
+              };
+            };
+            success: {
+              value: string;
+              metadata: {
+              };
+            };
+            warning: {
+              value: string;
+              metadata: {
+              };
+            };
+            danger: {
+              value: string;
+              metadata: {
+              };
+            };
+            cta: {
+              value: string;
+              metadata: {
+              };
+            };
+            accent: {
+              value: string;
+              metadata: {
+              };
+            };
+          };
+        };
       };
     };
     highContrast: {
@@ -8583,6 +9235,12 @@ export interface SpectreSourceTokens {
               pair: string;
             };
           };
+          accent: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
         };
         onSurface: {
           default: {
@@ -8610,6 +9268,12 @@ export interface SpectreSourceTokens {
             };
           };
           brand: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+          accent: {
             value: string;
             metadata: {
               pair: string;
@@ -8710,6 +9374,11 @@ export interface SpectreSourceTokens {
               };
             };
             cta: {
+              value: string;
+              metadata: {
+              };
+            };
+            accent: {
               value: string;
               metadata: {
               };
@@ -8911,6 +9580,11 @@ export interface SpectreSourceTokens {
               metadata: {
               };
             };
+            accent: {
+              value: string;
+              metadata: {
+              };
+            };
           };
         };
         iconBox: {
@@ -9026,6 +9700,11 @@ export interface SpectreSourceTokens {
               metadata: {
               };
             };
+            accent: {
+              value: string;
+              metadata: {
+              };
+            };
           };
         };
         pricingCard: {
@@ -9118,6 +9797,11 @@ export interface SpectreSourceTokens {
               metadata: {
               };
             };
+            accent: {
+              value: string;
+              metadata: {
+              };
+            };
           };
         };
         rating: {
@@ -9203,6 +9887,11 @@ export interface SpectreSourceTokens {
               };
             };
             cta: {
+              value: string;
+              metadata: {
+              };
+            };
+            accent: {
               value: string;
               metadata: {
               };
@@ -9297,6 +9986,11 @@ export interface SpectreSourceTokens {
               metadata: {
               };
             };
+            accent: {
+              value: string;
+              metadata: {
+              };
+            };
           };
           light: {
             bg: {
@@ -9386,6 +10080,11 @@ export interface SpectreSourceTokens {
                 metadata: {
                 };
               };
+              accent: {
+                value: string;
+                metadata: {
+                };
+              };
             };
           };
         };
@@ -9442,6 +10141,11 @@ export interface SpectreSourceTokens {
               };
             };
             cta: {
+              value: string;
+              metadata: {
+              };
+            };
+            accent: {
               value: string;
               metadata: {
               };
@@ -9605,6 +10309,11 @@ export interface SpectreSourceTokens {
               metadata: {
               };
             };
+            accent: {
+              value: string;
+              metadata: {
+              };
+            };
           };
         };
         tooltip: {
@@ -9657,6 +10366,11 @@ export interface SpectreSourceTokens {
               };
             };
             cta: {
+              value: string;
+              metadata: {
+              };
+            };
+            accent: {
               value: string;
               metadata: {
               };
@@ -9747,6 +10461,11 @@ export interface SpectreSourceTokens {
               };
             };
             cta: {
+              value: string;
+              metadata: {
+              };
+            };
+            accent: {
               value: string;
               metadata: {
               };
@@ -10005,6 +10724,11 @@ export interface SpectreSourceTokens {
               };
             };
             cta: {
+              value: string;
+              metadata: {
+              };
+            };
+            accent: {
               value: string;
               metadata: {
               };
@@ -10412,6 +11136,68 @@ export interface SpectreSourceTokens {
                 value: string;
                 metadata: {
                   pair: string;
+                };
+              };
+            };
+          };
+          tone: {
+            brand: {
+              active: {
+                bg: {
+                  value: string;
+                  metadata: {
+                    pair: string;
+                  };
+                };
+                text: {
+                  value: string;
+                  metadata: {
+                    pair: string;
+                  };
+                };
+              };
+              done: {
+                bg: {
+                  value: string;
+                  metadata: {
+                    pair: string;
+                  };
+                };
+                text: {
+                  value: string;
+                  metadata: {
+                    pair: string;
+                  };
+                };
+              };
+            };
+            accent: {
+              active: {
+                bg: {
+                  value: string;
+                  metadata: {
+                    pair: string;
+                  };
+                };
+                text: {
+                  value: string;
+                  metadata: {
+                    pair: string;
+                  };
+                };
+              };
+              done: {
+                bg: {
+                  value: string;
+                  metadata: {
+                    pair: string;
+                  };
+                };
+                text: {
+                  value: string;
+                  metadata: {
+                    pair: string;
+                  };
                 };
               };
             };
@@ -11304,6 +12090,79 @@ export interface SpectreSourceTokens {
               };
             };
             '7': {
+              value: string;
+              metadata: {
+              };
+            };
+          };
+        };
+        quote: {
+          text: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+          attributionName: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+          attributionRole: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+          mark: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+          border: {
+            value: string;
+            metadata: {
+            };
+          };
+          accent: {
+            neutral: {
+              value: string;
+              metadata: {
+              };
+            };
+            brand: {
+              value: string;
+              metadata: {
+              };
+            };
+            info: {
+              value: string;
+              metadata: {
+              };
+            };
+            success: {
+              value: string;
+              metadata: {
+              };
+            };
+            warning: {
+              value: string;
+              metadata: {
+              };
+            };
+            danger: {
+              value: string;
+              metadata: {
+              };
+            };
+            cta: {
+              value: string;
+              metadata: {
+              };
+            };
+            accent: {
               value: string;
               metadata: {
               };
@@ -11700,6 +12559,50 @@ export interface SpectreSourceTokens {
             };
           };
           textDisabled: {
+            value: string;
+          };
+          focusRing: {
+            value: string;
+          };
+          focusVisible: {
+            value: string;
+          };
+        };
+        accentOutline: {
+          bg: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+          bgHover: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+          bgActive: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+          bgDisabled: {
+            value: string;
+          };
+          text: {
+            value: string;
+            metadata: {
+              pair: string;
+            };
+          };
+          textDisabled: {
+            value: string;
+          };
+          border: {
+            value: string;
+          };
+          borderDisabled: {
             value: string;
           };
           focusRing: {
@@ -12547,6 +13450,14 @@ export interface SpectreSourceTokens {
     wider: string;
     widest: string;
   };
+  leading: {
+    none: string;
+    tight: string;
+    snug: string;
+    normal: string;
+    relaxed: string;
+    loose: string;
+  };
   surface: {
     page: {
       value: string;
@@ -12660,6 +13571,13 @@ export interface SpectreSourceTokens {
         };
       };
       brand: string;
+      accent: {
+        value: string;
+        description: string;
+        metadata: {
+          pair: string;
+        };
+      };
     };
     onSurface: {
       default: {
@@ -12691,6 +13609,13 @@ export interface SpectreSourceTokens {
         };
       };
       brand: string;
+      accent: {
+        value: string;
+        description: string;
+        metadata: {
+          pair: string;
+        };
+      };
     };
     onInverse: {
       default: {
@@ -12701,6 +13626,20 @@ export interface SpectreSourceTokens {
         };
       };
       muted: {
+        value: string;
+        description: string;
+        metadata: {
+          pair: string;
+        };
+      };
+      brand: {
+        value: string;
+        description: string;
+        metadata: {
+          pair: string;
+        };
+      };
+      accent: {
         value: string;
         description: string;
         metadata: {
@@ -13080,6 +14019,7 @@ export interface SpectreGeneratedTokens {
         warning: string;
         danger: string;
         cta: string;
+        accent: string;
         thickness: string;
       };
     };
@@ -13134,6 +14074,7 @@ export interface SpectreGeneratedTokens {
         warning: string;
         danger: string;
         cta: string;
+        accent: string;
         thickness: string;
       };
     };
@@ -13161,6 +14102,7 @@ export interface SpectreGeneratedTokens {
         warning: string;
         danger: string;
         cta: string;
+        accent: string;
         thickness: string;
       };
     };
@@ -13182,6 +14124,7 @@ export interface SpectreGeneratedTokens {
         warning: string;
         danger: string;
         cta: string;
+        accent: string;
         thickness: string;
       };
     };
@@ -13205,6 +14148,7 @@ export interface SpectreGeneratedTokens {
         warning: string;
         danger: string;
         cta: string;
+        accent: string;
         thickness: string;
       };
     };
@@ -13226,6 +14170,7 @@ export interface SpectreGeneratedTokens {
         warning: string;
         danger: string;
         cta: string;
+        accent: string;
         thickness: string;
       };
       light: {
@@ -13246,6 +14191,7 @@ export interface SpectreGeneratedTokens {
           warning: string;
           danger: string;
           cta: string;
+          accent: string;
         };
       };
     };
@@ -13262,6 +14208,7 @@ export interface SpectreGeneratedTokens {
         warning: string;
         danger: string;
         cta: string;
+        accent: string;
         thickness: string;
       };
     };
@@ -13304,6 +14251,7 @@ export interface SpectreGeneratedTokens {
         warning: string;
         danger: string;
         cta: string;
+        accent: string;
         thickness: string;
       };
     };
@@ -13319,6 +14267,7 @@ export interface SpectreGeneratedTokens {
         warning: string;
         danger: string;
         cta: string;
+        accent: string;
         thickness: string;
       };
     };
@@ -13342,6 +14291,7 @@ export interface SpectreGeneratedTokens {
         warning: string;
         danger: string;
         cta: string;
+        accent: string;
         thickness: string;
       };
       header: string;
@@ -13431,6 +14381,7 @@ export interface SpectreGeneratedTokens {
         warning: string;
         danger: string;
         cta: string;
+        accent: string;
         thickness: string;
       };
     };
@@ -13553,6 +14504,28 @@ export interface SpectreGeneratedTokens {
         done: {
           bg: string;
           text: string;
+        };
+      };
+      tone: {
+        brand: {
+          active: {
+            bg: string;
+            text: string;
+          };
+          done: {
+            bg: string;
+            text: string;
+          };
+        };
+        accent: {
+          active: {
+            bg: string;
+            text: string;
+          };
+          done: {
+            bg: string;
+            text: string;
+          };
         };
       };
       connector: string;
@@ -13805,6 +14778,24 @@ export interface SpectreGeneratedTokens {
         '7': string;
       };
     };
+    quote: {
+      text: string;
+      attributionName: string;
+      attributionRole: string;
+      mark: string;
+      border: string;
+      accent: {
+        neutral: string;
+        brand: string;
+        info: string;
+        success: string;
+        warning: string;
+        danger: string;
+        cta: string;
+        accent: string;
+        thickness: string;
+      };
+    };
   };
   buttons: {
     primary: {
@@ -13921,6 +14912,18 @@ export interface SpectreGeneratedTokens {
       focusRing: string;
       focusVisible: string;
     };
+    accentOutline: {
+      bg: string;
+      bgHover: string;
+      bgActive: string;
+      bgDisabled: string;
+      text: string;
+      textDisabled: string;
+      border: string;
+      borderDisabled: string;
+      focusRing: string;
+      focusVisible: string;
+    };
     inverse: {
       bg: string;
       bgHover: string;
@@ -14023,6 +15026,7 @@ export interface SpectreGeneratedTokens {
           subtle: string;
           meta: string;
           brand: string;
+          accent: string;
         };
         onSurface: {
           default: string;
@@ -14030,6 +15034,7 @@ export interface SpectreGeneratedTokens {
           subtle: string;
           meta: string;
           brand: string;
+          accent: string;
         };
       };
       forms: {
@@ -14051,6 +15056,7 @@ export interface SpectreGeneratedTokens {
             warning: string;
             danger: string;
             cta: string;
+            accent: string;
           };
         };
         choiceCard: {
@@ -14096,6 +15102,7 @@ export interface SpectreGeneratedTokens {
             warning: string;
             danger: string;
             cta: string;
+            accent: string;
           };
         };
         iconBox: {
@@ -14122,6 +15129,7 @@ export interface SpectreGeneratedTokens {
             warning: string;
             danger: string;
             cta: string;
+            accent: string;
           };
         };
         pricingCard: {
@@ -14142,6 +15150,7 @@ export interface SpectreGeneratedTokens {
             warning: string;
             danger: string;
             cta: string;
+            accent: string;
           };
         };
         rating: {
@@ -14164,6 +15173,7 @@ export interface SpectreGeneratedTokens {
             warning: string;
             danger: string;
             cta: string;
+            accent: string;
           };
         };
         footer: {
@@ -14184,6 +15194,7 @@ export interface SpectreGeneratedTokens {
             warning: string;
             danger: string;
             cta: string;
+            accent: string;
           };
           light: {
             bg: string;
@@ -14203,6 +15214,7 @@ export interface SpectreGeneratedTokens {
               warning: string;
               danger: string;
               cta: string;
+              accent: string;
             };
           };
         };
@@ -14219,6 +15231,7 @@ export interface SpectreGeneratedTokens {
             warning: string;
             danger: string;
             cta: string;
+            accent: string;
           };
         };
         toast: {
@@ -14260,6 +15273,7 @@ export interface SpectreGeneratedTokens {
             warning: string;
             danger: string;
             cta: string;
+            accent: string;
           };
         };
         tooltip: {
@@ -14274,6 +15288,7 @@ export interface SpectreGeneratedTokens {
             warning: string;
             danger: string;
             cta: string;
+            accent: string;
           };
         };
         dropdown: {
@@ -14296,6 +15311,7 @@ export interface SpectreGeneratedTokens {
             warning: string;
             danger: string;
             cta: string;
+            accent: string;
           };
           header: string;
           divider: string;
@@ -14384,6 +15400,7 @@ export interface SpectreGeneratedTokens {
             warning: string;
             danger: string;
             cta: string;
+            accent: string;
             thickness: string;
           };
         };
@@ -14506,6 +15523,28 @@ export interface SpectreGeneratedTokens {
             done: {
               bg: string;
               text: string;
+            };
+          };
+          tone: {
+            brand: {
+              active: {
+                bg: string;
+                text: string;
+              };
+              done: {
+                bg: string;
+                text: string;
+              };
+            };
+            accent: {
+              active: {
+                bg: string;
+                text: string;
+              };
+              done: {
+                bg: string;
+                text: string;
+              };
             };
           };
           connector: string;
@@ -14746,6 +15785,23 @@ export interface SpectreGeneratedTokens {
             '7': string;
           };
         };
+        quote: {
+          text: string;
+          attributionName: string;
+          attributionRole: string;
+          mark: string;
+          border: string;
+          accent: {
+            neutral: string;
+            brand: string;
+            info: string;
+            success: string;
+            warning: string;
+            danger: string;
+            cta: string;
+            accent: string;
+          };
+        };
       };
     };
     dark: {
@@ -14768,6 +15824,7 @@ export interface SpectreGeneratedTokens {
           subtle: string;
           meta: string;
           brand: string;
+          accent: string;
         };
         onSurface: {
           default: string;
@@ -14775,6 +15832,7 @@ export interface SpectreGeneratedTokens {
           subtle: string;
           meta: string;
           brand: string;
+          accent: string;
         };
       };
       forms: {
@@ -14796,6 +15854,7 @@ export interface SpectreGeneratedTokens {
             warning: string;
             danger: string;
             cta: string;
+            accent: string;
           };
         };
         choiceCard: {
@@ -14844,6 +15903,7 @@ export interface SpectreGeneratedTokens {
             warning: string;
             danger: string;
             cta: string;
+            accent: string;
           };
         };
         iconBox: {
@@ -14870,6 +15930,7 @@ export interface SpectreGeneratedTokens {
             warning: string;
             danger: string;
             cta: string;
+            accent: string;
           };
         };
         pricingCard: {
@@ -14890,6 +15951,7 @@ export interface SpectreGeneratedTokens {
             warning: string;
             danger: string;
             cta: string;
+            accent: string;
           };
         };
         rating: {
@@ -14912,6 +15974,7 @@ export interface SpectreGeneratedTokens {
             warning: string;
             danger: string;
             cta: string;
+            accent: string;
           };
         };
         footer: {
@@ -14932,6 +15995,7 @@ export interface SpectreGeneratedTokens {
             warning: string;
             danger: string;
             cta: string;
+            accent: string;
           };
           light: {
             bg: string;
@@ -14951,6 +16015,7 @@ export interface SpectreGeneratedTokens {
               warning: string;
               danger: string;
               cta: string;
+              accent: string;
             };
           };
         };
@@ -14967,6 +16032,7 @@ export interface SpectreGeneratedTokens {
             warning: string;
             danger: string;
             cta: string;
+            accent: string;
           };
         };
         toast: {
@@ -15008,6 +16074,7 @@ export interface SpectreGeneratedTokens {
             warning: string;
             danger: string;
             cta: string;
+            accent: string;
           };
         };
         tooltip: {
@@ -15022,6 +16089,7 @@ export interface SpectreGeneratedTokens {
             warning: string;
             danger: string;
             cta: string;
+            accent: string;
           };
         };
         dropdown: {
@@ -15044,6 +16112,7 @@ export interface SpectreGeneratedTokens {
             warning: string;
             danger: string;
             cta: string;
+            accent: string;
           };
           header: string;
           divider: string;
@@ -15132,6 +16201,7 @@ export interface SpectreGeneratedTokens {
             warning: string;
             danger: string;
             cta: string;
+            accent: string;
             thickness: string;
           };
         };
@@ -15254,6 +16324,28 @@ export interface SpectreGeneratedTokens {
             done: {
               bg: string;
               text: string;
+            };
+          };
+          tone: {
+            brand: {
+              active: {
+                bg: string;
+                text: string;
+              };
+              done: {
+                bg: string;
+                text: string;
+              };
+            };
+            accent: {
+              active: {
+                bg: string;
+                text: string;
+              };
+              done: {
+                bg: string;
+                text: string;
+              };
             };
           };
           connector: string;
@@ -15494,6 +16586,23 @@ export interface SpectreGeneratedTokens {
             '7': string;
           };
         };
+        quote: {
+          text: string;
+          attributionName: string;
+          attributionRole: string;
+          mark: string;
+          border: string;
+          accent: {
+            neutral: string;
+            brand: string;
+            info: string;
+            success: string;
+            warning: string;
+            danger: string;
+            cta: string;
+            accent: string;
+          };
+        };
       };
     };
     highContrast: {
@@ -15516,6 +16625,7 @@ export interface SpectreGeneratedTokens {
           subtle: string;
           meta: string;
           brand: string;
+          accent: string;
         };
         onSurface: {
           default: string;
@@ -15523,6 +16633,7 @@ export interface SpectreGeneratedTokens {
           subtle: string;
           meta: string;
           brand: string;
+          accent: string;
         };
       };
       forms: {
@@ -15554,6 +16665,7 @@ export interface SpectreGeneratedTokens {
             warning: string;
             danger: string;
             cta: string;
+            accent: string;
           };
         };
         choiceCard: {
@@ -15599,6 +16711,7 @@ export interface SpectreGeneratedTokens {
             warning: string;
             danger: string;
             cta: string;
+            accent: string;
           };
         };
         iconBox: {
@@ -15625,6 +16738,7 @@ export interface SpectreGeneratedTokens {
             warning: string;
             danger: string;
             cta: string;
+            accent: string;
           };
         };
         pricingCard: {
@@ -15645,6 +16759,7 @@ export interface SpectreGeneratedTokens {
             warning: string;
             danger: string;
             cta: string;
+            accent: string;
           };
         };
         rating: {
@@ -15667,6 +16782,7 @@ export interface SpectreGeneratedTokens {
             warning: string;
             danger: string;
             cta: string;
+            accent: string;
           };
         };
         footer: {
@@ -15687,6 +16803,7 @@ export interface SpectreGeneratedTokens {
             warning: string;
             danger: string;
             cta: string;
+            accent: string;
           };
           light: {
             bg: string;
@@ -15706,6 +16823,7 @@ export interface SpectreGeneratedTokens {
               warning: string;
               danger: string;
               cta: string;
+              accent: string;
             };
           };
         };
@@ -15722,6 +16840,7 @@ export interface SpectreGeneratedTokens {
             warning: string;
             danger: string;
             cta: string;
+            accent: string;
           };
         };
         toast: {
@@ -15763,6 +16882,7 @@ export interface SpectreGeneratedTokens {
             warning: string;
             danger: string;
             cta: string;
+            accent: string;
           };
         };
         tooltip: {
@@ -15777,6 +16897,7 @@ export interface SpectreGeneratedTokens {
             warning: string;
             danger: string;
             cta: string;
+            accent: string;
           };
         };
         dropdown: {
@@ -15799,6 +16920,7 @@ export interface SpectreGeneratedTokens {
             warning: string;
             danger: string;
             cta: string;
+            accent: string;
           };
           header: string;
           divider: string;
@@ -15887,6 +17009,7 @@ export interface SpectreGeneratedTokens {
             warning: string;
             danger: string;
             cta: string;
+            accent: string;
             thickness: string;
           };
         };
@@ -16009,6 +17132,28 @@ export interface SpectreGeneratedTokens {
             done: {
               bg: string;
               text: string;
+            };
+          };
+          tone: {
+            brand: {
+              active: {
+                bg: string;
+                text: string;
+              };
+              done: {
+                bg: string;
+                text: string;
+              };
+            };
+            accent: {
+              active: {
+                bg: string;
+                text: string;
+              };
+              done: {
+                bg: string;
+                text: string;
+              };
             };
           };
           connector: string;
@@ -16247,6 +17392,23 @@ export interface SpectreGeneratedTokens {
             '5': string;
             '6': string;
             '7': string;
+          };
+        };
+        quote: {
+          text: string;
+          attributionName: string;
+          attributionRole: string;
+          mark: string;
+          border: string;
+          accent: {
+            neutral: string;
+            brand: string;
+            info: string;
+            success: string;
+            warning: string;
+            danger: string;
+            cta: string;
+            accent: string;
           };
         };
       };
@@ -16362,6 +17524,18 @@ export interface SpectreGeneratedTokens {
           bgDisabled: string;
           text: string;
           textDisabled: string;
+          focusRing: string;
+          focusVisible: string;
+        };
+        accentOutline: {
+          bg: string;
+          bgHover: string;
+          bgActive: string;
+          bgDisabled: string;
+          text: string;
+          textDisabled: string;
+          border: string;
+          borderDisabled: string;
           focusRing: string;
           focusVisible: string;
         };
@@ -17156,6 +18330,14 @@ export interface SpectreGeneratedTokens {
     wider: string;
     widest: string;
   };
+  leading: {
+    none: string;
+    tight: string;
+    snug: string;
+    normal: string;
+    relaxed: string;
+    loose: string;
+  };
   surface: {
     page: string;
     card: string;
@@ -17182,6 +18364,7 @@ export interface SpectreGeneratedTokens {
       subtle: string;
       meta: string;
       brand: string;
+      accent: string;
     };
     onSurface: {
       default: string;
@@ -17189,10 +18372,13 @@ export interface SpectreGeneratedTokens {
       subtle: string;
       meta: string;
       brand: string;
+      accent: string;
     };
     onInverse: {
       default: string;
       muted: string;
+      brand: string;
+      accent: string;
     };
   };
   layout: {
@@ -17566,6 +18752,7 @@ export const coreTokens: SpectreGeneratedTokens = {
         "warning": "{colors.warning.600}",
         "danger": "{colors.error.600}",
         "cta": "{colors.brand.600}",
+        "accent": "{colors.accent.600}",
         "thickness": "0.25rem"
       }
     },
@@ -17620,6 +18807,7 @@ export const coreTokens: SpectreGeneratedTokens = {
         "warning": "{colors.warning.600}",
         "danger": "{colors.error.600}",
         "cta": "{colors.brand.600}",
+        "accent": "{colors.accent.600}",
         "thickness": "0.25rem"
       }
     },
@@ -17647,6 +18835,7 @@ export const coreTokens: SpectreGeneratedTokens = {
         "warning": "{colors.warning.600}",
         "danger": "{colors.error.600}",
         "cta": "{colors.brand.600}",
+        "accent": "{colors.accent.600}",
         "thickness": "0.25rem"
       }
     },
@@ -17668,6 +18857,7 @@ export const coreTokens: SpectreGeneratedTokens = {
         "warning": "{colors.warning.600}",
         "danger": "{colors.error.600}",
         "cta": "{colors.brand.600}",
+        "accent": "{colors.accent.600}",
         "thickness": "0.25rem"
       }
     },
@@ -17691,6 +18881,7 @@ export const coreTokens: SpectreGeneratedTokens = {
         "warning": "{colors.warning.600}",
         "danger": "{colors.error.600}",
         "cta": "{colors.brand.600}",
+        "accent": "{colors.accent.600}",
         "thickness": "0.25rem"
       }
     },
@@ -17712,6 +18903,7 @@ export const coreTokens: SpectreGeneratedTokens = {
         "warning": "{colors.warning.600}",
         "danger": "{colors.error.600}",
         "cta": "{colors.brand.600}",
+        "accent": "{colors.accent.600}",
         "thickness": "0.25rem"
       },
       "light": {
@@ -17731,7 +18923,8 @@ export const coreTokens: SpectreGeneratedTokens = {
           "success": "{colors.success.600}",
           "warning": "{colors.warning.600}",
           "danger": "{colors.error.600}",
-          "cta": "{colors.brand.600}"
+          "cta": "{colors.brand.600}",
+          "accent": "{colors.accent.600}"
         }
       }
     },
@@ -17748,6 +18941,7 @@ export const coreTokens: SpectreGeneratedTokens = {
         "warning": "{colors.warning.600}",
         "danger": "{colors.error.600}",
         "cta": "{colors.brand.600}",
+        "accent": "{colors.accent.600}",
         "thickness": "0.25rem"
       }
     },
@@ -17790,6 +18984,7 @@ export const coreTokens: SpectreGeneratedTokens = {
         "warning": "{colors.warning.600}",
         "danger": "{colors.error.600}",
         "cta": "{colors.brand.600}",
+        "accent": "{colors.accent.600}",
         "thickness": "0.25rem"
       }
     },
@@ -17805,6 +19000,7 @@ export const coreTokens: SpectreGeneratedTokens = {
         "warning": "{colors.warning.600}",
         "danger": "{colors.error.600}",
         "cta": "{colors.brand.600}",
+        "accent": "{colors.accent.600}",
         "thickness": "0.25rem"
       }
     },
@@ -17828,6 +19024,7 @@ export const coreTokens: SpectreGeneratedTokens = {
         "warning": "{colors.warning.600}",
         "danger": "{colors.error.600}",
         "cta": "{colors.brand.600}",
+        "accent": "{colors.accent.600}",
         "thickness": "0.25rem"
       },
       "header": "{colors.neutral.500}",
@@ -17917,6 +19114,7 @@ export const coreTokens: SpectreGeneratedTokens = {
         "warning": "{colors.warning.600}",
         "danger": "{colors.error.600}",
         "cta": "{colors.brand.600}",
+        "accent": "{colors.accent.600}",
         "thickness": "0.25rem"
       }
     },
@@ -18039,6 +19237,28 @@ export const coreTokens: SpectreGeneratedTokens = {
         "done": {
           "bg": "{colors.success.700}",
           "text": "{colors.white}"
+        }
+      },
+      "tone": {
+        "brand": {
+          "active": {
+            "bg": "{colors.brand.600}",
+            "text": "{colors.white}"
+          },
+          "done": {
+            "bg": "{colors.success.700}",
+            "text": "{colors.white}"
+          }
+        },
+        "accent": {
+          "active": {
+            "bg": "{colors.accent.600}",
+            "text": "{colors.white}"
+          },
+          "done": {
+            "bg": "{colors.accent.800}",
+            "text": "{colors.white}"
+          }
         }
       },
       "connector": "{colors.neutral.200}",
@@ -18290,6 +19510,24 @@ export const coreTokens: SpectreGeneratedTokens = {
         "6": "{colors.palette.blue.400}",
         "7": "{colors.palette.blue.700}"
       }
+    },
+    "quote": {
+      "text": "{colors.neutral.700}",
+      "attributionName": "{colors.neutral.900}",
+      "attributionRole": "{colors.neutral.600}",
+      "mark": "{colors.accent.600}",
+      "border": "{colors.neutral.300}",
+      "accent": {
+        "neutral": "{colors.neutral.600}",
+        "brand": "{colors.brand.600}",
+        "info": "{colors.info.600}",
+        "success": "{colors.success.600}",
+        "warning": "{colors.warning.600}",
+        "danger": "{colors.error.600}",
+        "cta": "{colors.brand.600}",
+        "accent": "{colors.accent.600}",
+        "thickness": "0.25rem"
+      }
     }
   },
   "buttons": {
@@ -18407,6 +19645,18 @@ export const coreTokens: SpectreGeneratedTokens = {
       "focusRing": "{colors.accent.500} / 0.4",
       "focusVisible": "{colors.accent.500} / 0.4"
     },
+    "accentOutline": {
+      "bg": "{colors.white}",
+      "bgHover": "{colors.accent.50}",
+      "bgActive": "{colors.accent.100}",
+      "bgDisabled": "{colors.neutral.50}",
+      "text": "{colors.accent.700}",
+      "textDisabled": "{colors.neutral.400}",
+      "border": "{colors.accent.700}",
+      "borderDisabled": "{colors.neutral.200}",
+      "focusRing": "{colors.accent.500} / 0.4",
+      "focusVisible": "{colors.accent.500} / 0.4"
+    },
     "inverse": {
       "bg": "{colors.white} / 0.12",
       "bgHover": "{colors.white} / 0.2",
@@ -18508,14 +19758,16 @@ export const coreTokens: SpectreGeneratedTokens = {
           "muted": "{colors.neutral.600}",
           "subtle": "{colors.neutral.500}",
           "meta": "{colors.neutral.500}",
-          "brand": "{colors.brand.600}"
+          "brand": "{colors.brand.600}",
+          "accent": "{colors.accent.600}"
         },
         "onSurface": {
           "default": "{colors.neutral.900}",
           "muted": "{colors.neutral.600}",
           "subtle": "{colors.neutral.500}",
           "meta": "{colors.neutral.500}",
-          "brand": "{colors.brand.600}"
+          "brand": "{colors.brand.600}",
+          "accent": "{colors.accent.600}"
         }
       },
       "forms": {
@@ -18536,7 +19788,8 @@ export const coreTokens: SpectreGeneratedTokens = {
             "success": "{colors.success.600}",
             "warning": "{colors.warning.600}",
             "danger": "{colors.error.600}",
-            "cta": "{colors.brand.600}"
+            "cta": "{colors.brand.600}",
+            "accent": "{colors.accent.600}"
           }
         },
         "choiceCard": {
@@ -18581,7 +19834,8 @@ export const coreTokens: SpectreGeneratedTokens = {
             "success": "{colors.success.600}",
             "warning": "{colors.warning.600}",
             "danger": "{colors.error.600}",
-            "cta": "{colors.brand.600}"
+            "cta": "{colors.brand.600}",
+            "accent": "{colors.accent.600}"
           }
         },
         "iconBox": {
@@ -18607,7 +19861,8 @@ export const coreTokens: SpectreGeneratedTokens = {
             "success": "{colors.success.600}",
             "warning": "{colors.warning.600}",
             "danger": "{colors.error.600}",
-            "cta": "{colors.brand.600}"
+            "cta": "{colors.brand.600}",
+            "accent": "{colors.accent.600}"
           }
         },
         "pricingCard": {
@@ -18627,7 +19882,8 @@ export const coreTokens: SpectreGeneratedTokens = {
             "success": "{colors.success.600}",
             "warning": "{colors.warning.600}",
             "danger": "{colors.error.600}",
-            "cta": "{colors.brand.600}"
+            "cta": "{colors.brand.600}",
+            "accent": "{colors.accent.600}"
           }
         },
         "rating": {
@@ -18649,7 +19905,8 @@ export const coreTokens: SpectreGeneratedTokens = {
             "success": "{colors.success.600}",
             "warning": "{colors.warning.600}",
             "danger": "{colors.error.600}",
-            "cta": "{colors.brand.600}"
+            "cta": "{colors.brand.600}",
+            "accent": "{colors.accent.600}"
           }
         },
         "footer": {
@@ -18669,7 +19926,8 @@ export const coreTokens: SpectreGeneratedTokens = {
             "success": "{colors.success.600}",
             "warning": "{colors.warning.600}",
             "danger": "{colors.error.600}",
-            "cta": "{colors.brand.600}"
+            "cta": "{colors.brand.600}",
+            "accent": "{colors.accent.600}"
           },
           "light": {
             "bg": "{colors.neutral.100}",
@@ -18688,7 +19946,8 @@ export const coreTokens: SpectreGeneratedTokens = {
               "success": "{colors.success.600}",
               "warning": "{colors.warning.600}",
               "danger": "{colors.error.600}",
-              "cta": "{colors.brand.600}"
+              "cta": "{colors.brand.600}",
+              "accent": "{colors.accent.600}"
             }
           }
         },
@@ -18704,7 +19963,8 @@ export const coreTokens: SpectreGeneratedTokens = {
             "success": "{colors.success.600}",
             "warning": "{colors.warning.600}",
             "danger": "{colors.error.600}",
-            "cta": "{colors.brand.600}"
+            "cta": "{colors.brand.600}",
+            "accent": "{colors.accent.600}"
           }
         },
         "toast": {
@@ -18745,7 +20005,8 @@ export const coreTokens: SpectreGeneratedTokens = {
             "success": "{colors.success.600}",
             "warning": "{colors.warning.600}",
             "danger": "{colors.error.600}",
-            "cta": "{colors.brand.600}"
+            "cta": "{colors.brand.600}",
+            "accent": "{colors.accent.600}"
           }
         },
         "tooltip": {
@@ -18759,7 +20020,8 @@ export const coreTokens: SpectreGeneratedTokens = {
             "success": "{colors.success.600}",
             "warning": "{colors.warning.600}",
             "danger": "{colors.error.600}",
-            "cta": "{colors.brand.600}"
+            "cta": "{colors.brand.600}",
+            "accent": "{colors.accent.600}"
           }
         },
         "dropdown": {
@@ -18781,7 +20043,8 @@ export const coreTokens: SpectreGeneratedTokens = {
             "success": "{colors.success.600}",
             "warning": "{colors.warning.600}",
             "danger": "{colors.error.600}",
-            "cta": "{colors.brand.600}"
+            "cta": "{colors.brand.600}",
+            "accent": "{colors.accent.600}"
           },
           "header": "{colors.neutral.500}",
           "divider": "{colors.neutral.200}"
@@ -18870,6 +20133,7 @@ export const coreTokens: SpectreGeneratedTokens = {
             "warning": "{colors.warning.600}",
             "danger": "{colors.error.600}",
             "cta": "{colors.brand.600}",
+            "accent": "{colors.accent.600}",
             "thickness": "0.25rem"
           }
         },
@@ -18992,6 +20256,28 @@ export const coreTokens: SpectreGeneratedTokens = {
             "done": {
               "bg": "{colors.success.700}",
               "text": "{colors.white}"
+            }
+          },
+          "tone": {
+            "brand": {
+              "active": {
+                "bg": "{colors.brand.600}",
+                "text": "{colors.white}"
+              },
+              "done": {
+                "bg": "{colors.success.700}",
+                "text": "{colors.white}"
+              }
+            },
+            "accent": {
+              "active": {
+                "bg": "{colors.accent.600}",
+                "text": "{colors.white}"
+              },
+              "done": {
+                "bg": "{colors.accent.800}",
+                "text": "{colors.white}"
+              }
             }
           },
           "connector": "{colors.neutral.200}",
@@ -19231,6 +20517,23 @@ export const coreTokens: SpectreGeneratedTokens = {
             "6": "{colors.palette.blue.400}",
             "7": "{colors.palette.blue.700}"
           }
+        },
+        "quote": {
+          "text": "{colors.neutral.700}",
+          "attributionName": "{colors.neutral.900}",
+          "attributionRole": "{colors.neutral.600}",
+          "mark": "{colors.accent.600}",
+          "border": "{colors.neutral.300}",
+          "accent": {
+            "neutral": "{colors.neutral.600}",
+            "brand": "{colors.brand.600}",
+            "info": "{colors.info.600}",
+            "success": "{colors.success.600}",
+            "warning": "{colors.warning.600}",
+            "danger": "{colors.error.600}",
+            "cta": "{colors.brand.600}",
+            "accent": "{colors.accent.600}"
+          }
         }
       }
     },
@@ -19253,14 +20556,16 @@ export const coreTokens: SpectreGeneratedTokens = {
           "muted": "{colors.neutral.300}",
           "subtle": "{colors.neutral.400}",
           "meta": "{colors.neutral.400}",
-          "brand": "{colors.brand.400}"
+          "brand": "{colors.brand.400}",
+          "accent": "{colors.accent.400}"
         },
         "onSurface": {
           "default": "{colors.neutral.100}",
           "muted": "{colors.neutral.300}",
           "subtle": "{colors.neutral.400}",
           "meta": "{colors.neutral.400}",
-          "brand": "{colors.brand.400}"
+          "brand": "{colors.brand.400}",
+          "accent": "{colors.accent.400}"
         }
       },
       "forms": {
@@ -19281,7 +20586,8 @@ export const coreTokens: SpectreGeneratedTokens = {
             "success": "{colors.success.400}",
             "warning": "{colors.warning.400}",
             "danger": "{colors.error.400}",
-            "cta": "{colors.brand.400}"
+            "cta": "{colors.brand.400}",
+            "accent": "{colors.accent.400}"
           }
         },
         "choiceCard": {
@@ -19329,7 +20635,8 @@ export const coreTokens: SpectreGeneratedTokens = {
             "success": "{colors.success.400}",
             "warning": "{colors.warning.400}",
             "danger": "{colors.error.400}",
-            "cta": "{colors.brand.400}"
+            "cta": "{colors.brand.400}",
+            "accent": "{colors.accent.400}"
           }
         },
         "iconBox": {
@@ -19355,7 +20662,8 @@ export const coreTokens: SpectreGeneratedTokens = {
             "success": "{colors.success.400}",
             "warning": "{colors.warning.400}",
             "danger": "{colors.error.400}",
-            "cta": "{colors.brand.400}"
+            "cta": "{colors.brand.400}",
+            "accent": "{colors.accent.400}"
           }
         },
         "pricingCard": {
@@ -19375,7 +20683,8 @@ export const coreTokens: SpectreGeneratedTokens = {
             "success": "{colors.success.400}",
             "warning": "{colors.warning.400}",
             "danger": "{colors.error.400}",
-            "cta": "{colors.brand.400}"
+            "cta": "{colors.brand.400}",
+            "accent": "{colors.accent.400}"
           }
         },
         "rating": {
@@ -19397,7 +20706,8 @@ export const coreTokens: SpectreGeneratedTokens = {
             "success": "{colors.success.400}",
             "warning": "{colors.warning.400}",
             "danger": "{colors.error.400}",
-            "cta": "{colors.brand.400}"
+            "cta": "{colors.brand.400}",
+            "accent": "{colors.accent.400}"
           }
         },
         "footer": {
@@ -19417,7 +20727,8 @@ export const coreTokens: SpectreGeneratedTokens = {
             "success": "{colors.success.400}",
             "warning": "{colors.warning.400}",
             "danger": "{colors.error.400}",
-            "cta": "{colors.brand.400}"
+            "cta": "{colors.brand.400}",
+            "accent": "{colors.accent.400}"
           },
           "light": {
             "bg": "{colors.neutral.200}",
@@ -19436,7 +20747,8 @@ export const coreTokens: SpectreGeneratedTokens = {
               "success": "{colors.success.600}",
               "warning": "{colors.warning.600}",
               "danger": "{colors.error.600}",
-              "cta": "{colors.brand.600}"
+              "cta": "{colors.brand.600}",
+              "accent": "{colors.accent.600}"
             }
           }
         },
@@ -19452,7 +20764,8 @@ export const coreTokens: SpectreGeneratedTokens = {
             "success": "{colors.success.400}",
             "warning": "{colors.warning.400}",
             "danger": "{colors.error.400}",
-            "cta": "{colors.brand.400}"
+            "cta": "{colors.brand.400}",
+            "accent": "{colors.accent.400}"
           }
         },
         "toast": {
@@ -19493,7 +20806,8 @@ export const coreTokens: SpectreGeneratedTokens = {
             "success": "{colors.success.400}",
             "warning": "{colors.warning.400}",
             "danger": "{colors.error.400}",
-            "cta": "{colors.brand.400}"
+            "cta": "{colors.brand.400}",
+            "accent": "{colors.accent.400}"
           }
         },
         "tooltip": {
@@ -19507,7 +20821,8 @@ export const coreTokens: SpectreGeneratedTokens = {
             "success": "{colors.success.400}",
             "warning": "{colors.warning.400}",
             "danger": "{colors.error.400}",
-            "cta": "{colors.brand.400}"
+            "cta": "{colors.brand.400}",
+            "accent": "{colors.accent.400}"
           }
         },
         "dropdown": {
@@ -19529,7 +20844,8 @@ export const coreTokens: SpectreGeneratedTokens = {
             "success": "{colors.success.400}",
             "warning": "{colors.warning.400}",
             "danger": "{colors.error.400}",
-            "cta": "{colors.brand.400}"
+            "cta": "{colors.brand.400}",
+            "accent": "{colors.accent.400}"
           },
           "header": "{colors.neutral.500}",
           "divider": "{colors.neutral.700}"
@@ -19618,6 +20934,7 @@ export const coreTokens: SpectreGeneratedTokens = {
             "warning": "{colors.warning.400}",
             "danger": "{colors.error.400}",
             "cta": "{colors.brand.400}",
+            "accent": "{colors.accent.400}",
             "thickness": "0.25rem"
           }
         },
@@ -19740,6 +21057,28 @@ export const coreTokens: SpectreGeneratedTokens = {
             "done": {
               "bg": "{colors.success.700}",
               "text": "{colors.white}"
+            }
+          },
+          "tone": {
+            "brand": {
+              "active": {
+                "bg": "{colors.brand.600}",
+                "text": "{colors.white}"
+              },
+              "done": {
+                "bg": "{colors.success.700}",
+                "text": "{colors.white}"
+              }
+            },
+            "accent": {
+              "active": {
+                "bg": "{colors.accent.600}",
+                "text": "{colors.white}"
+              },
+              "done": {
+                "bg": "{colors.accent.800}",
+                "text": "{colors.white}"
+              }
             }
           },
           "connector": "{colors.neutral.700}",
@@ -19979,6 +21318,23 @@ export const coreTokens: SpectreGeneratedTokens = {
             "6": "{colors.palette.blue.500}",
             "7": "{colors.palette.blue.300}"
           }
+        },
+        "quote": {
+          "text": "{colors.neutral.200}",
+          "attributionName": "{colors.neutral.100}",
+          "attributionRole": "{colors.neutral.300}",
+          "mark": "{colors.accent.400}",
+          "border": "{colors.neutral.600}",
+          "accent": {
+            "neutral": "{colors.neutral.400}",
+            "brand": "{colors.brand.400}",
+            "info": "{colors.info.400}",
+            "success": "{colors.success.400}",
+            "warning": "{colors.warning.400}",
+            "danger": "{colors.error.400}",
+            "cta": "{colors.brand.400}",
+            "accent": "{colors.accent.400}"
+          }
         }
       }
     },
@@ -20001,14 +21357,16 @@ export const coreTokens: SpectreGeneratedTokens = {
           "muted": "{colors.neutral.600}",
           "subtle": "{colors.neutral.600}",
           "meta": "{colors.neutral.600}",
-          "brand": "{colors.brand.700}"
+          "brand": "{colors.brand.700}",
+          "accent": "{colors.accent.700}"
         },
         "onSurface": {
           "default": "{colors.neutral.900}",
           "muted": "{colors.neutral.600}",
           "subtle": "{colors.neutral.600}",
           "meta": "{colors.neutral.600}",
-          "brand": "{colors.brand.700}"
+          "brand": "{colors.brand.700}",
+          "accent": "{colors.accent.700}"
         }
       },
       "forms": {
@@ -20039,7 +21397,8 @@ export const coreTokens: SpectreGeneratedTokens = {
             "success": "{colors.success.600}",
             "warning": "{colors.warning.600}",
             "danger": "{colors.error.600}",
-            "cta": "{colors.brand.600}"
+            "cta": "{colors.brand.600}",
+            "accent": "{colors.accent.600}"
           }
         },
         "choiceCard": {
@@ -20084,7 +21443,8 @@ export const coreTokens: SpectreGeneratedTokens = {
             "success": "{colors.success.600}",
             "warning": "{colors.warning.600}",
             "danger": "{colors.error.600}",
-            "cta": "{colors.brand.600}"
+            "cta": "{colors.brand.600}",
+            "accent": "{colors.accent.600}"
           }
         },
         "iconBox": {
@@ -20110,7 +21470,8 @@ export const coreTokens: SpectreGeneratedTokens = {
             "success": "{colors.success.600}",
             "warning": "{colors.warning.600}",
             "danger": "{colors.error.600}",
-            "cta": "{colors.brand.600}"
+            "cta": "{colors.brand.600}",
+            "accent": "{colors.accent.600}"
           }
         },
         "pricingCard": {
@@ -20130,7 +21491,8 @@ export const coreTokens: SpectreGeneratedTokens = {
             "success": "{colors.success.600}",
             "warning": "{colors.warning.600}",
             "danger": "{colors.error.600}",
-            "cta": "{colors.brand.600}"
+            "cta": "{colors.brand.600}",
+            "accent": "{colors.accent.600}"
           }
         },
         "rating": {
@@ -20152,7 +21514,8 @@ export const coreTokens: SpectreGeneratedTokens = {
             "success": "{colors.success.600}",
             "warning": "{colors.warning.600}",
             "danger": "{colors.error.600}",
-            "cta": "{colors.brand.600}"
+            "cta": "{colors.brand.600}",
+            "accent": "{colors.accent.600}"
           }
         },
         "footer": {
@@ -20172,7 +21535,8 @@ export const coreTokens: SpectreGeneratedTokens = {
             "success": "{colors.success.600}",
             "warning": "{colors.warning.600}",
             "danger": "{colors.error.600}",
-            "cta": "{colors.brand.600}"
+            "cta": "{colors.brand.600}",
+            "accent": "{colors.accent.600}"
           },
           "light": {
             "bg": "{colors.neutral.100}",
@@ -20191,7 +21555,8 @@ export const coreTokens: SpectreGeneratedTokens = {
               "success": "{colors.success.600}",
               "warning": "{colors.warning.600}",
               "danger": "{colors.error.600}",
-              "cta": "{colors.brand.600}"
+              "cta": "{colors.brand.600}",
+              "accent": "{colors.accent.600}"
             }
           }
         },
@@ -20207,7 +21572,8 @@ export const coreTokens: SpectreGeneratedTokens = {
             "success": "{colors.success.600}",
             "warning": "{colors.warning.600}",
             "danger": "{colors.error.600}",
-            "cta": "{colors.brand.600}"
+            "cta": "{colors.brand.600}",
+            "accent": "{colors.accent.600}"
           }
         },
         "toast": {
@@ -20248,7 +21614,8 @@ export const coreTokens: SpectreGeneratedTokens = {
             "success": "{colors.success.600}",
             "warning": "{colors.warning.600}",
             "danger": "{colors.error.600}",
-            "cta": "{colors.brand.600}"
+            "cta": "{colors.brand.600}",
+            "accent": "{colors.accent.600}"
           }
         },
         "tooltip": {
@@ -20262,7 +21629,8 @@ export const coreTokens: SpectreGeneratedTokens = {
             "success": "{colors.success.600}",
             "warning": "{colors.warning.600}",
             "danger": "{colors.error.600}",
-            "cta": "{colors.brand.600}"
+            "cta": "{colors.brand.600}",
+            "accent": "{colors.accent.600}"
           }
         },
         "dropdown": {
@@ -20284,7 +21652,8 @@ export const coreTokens: SpectreGeneratedTokens = {
             "success": "{colors.success.600}",
             "warning": "{colors.warning.600}",
             "danger": "{colors.error.600}",
-            "cta": "{colors.brand.600}"
+            "cta": "{colors.brand.600}",
+            "accent": "{colors.accent.600}"
           },
           "header": "{colors.neutral.500}",
           "divider": "{colors.neutral.700}"
@@ -20373,6 +21742,7 @@ export const coreTokens: SpectreGeneratedTokens = {
             "warning": "{colors.warning.600}",
             "danger": "{colors.error.600}",
             "cta": "{colors.brand.600}",
+            "accent": "{colors.accent.600}",
             "thickness": "0.25rem"
           }
         },
@@ -20495,6 +21865,28 @@ export const coreTokens: SpectreGeneratedTokens = {
             "done": {
               "bg": "{colors.success.800}",
               "text": "{colors.white}"
+            }
+          },
+          "tone": {
+            "brand": {
+              "active": {
+                "bg": "{colors.brand.700}",
+                "text": "{colors.white}"
+              },
+              "done": {
+                "bg": "{colors.success.800}",
+                "text": "{colors.white}"
+              }
+            },
+            "accent": {
+              "active": {
+                "bg": "{colors.accent.700}",
+                "text": "{colors.white}"
+              },
+              "done": {
+                "bg": "{colors.accent.900}",
+                "text": "{colors.white}"
+              }
             }
           },
           "connector": "{colors.neutral.200}",
@@ -20734,6 +22126,23 @@ export const coreTokens: SpectreGeneratedTokens = {
             "6": "{colors.palette.blue.400}",
             "7": "{colors.palette.blue.700}"
           }
+        },
+        "quote": {
+          "text": "{colors.neutral.900}",
+          "attributionName": "{colors.neutral.900}",
+          "attributionRole": "{colors.neutral.700}",
+          "mark": "{colors.accent.700}",
+          "border": "{colors.neutral.700}",
+          "accent": {
+            "neutral": "{colors.neutral.600}",
+            "brand": "{colors.brand.600}",
+            "info": "{colors.info.600}",
+            "success": "{colors.success.600}",
+            "warning": "{colors.warning.600}",
+            "danger": "{colors.error.600}",
+            "cta": "{colors.brand.600}",
+            "accent": "{colors.accent.600}"
+          }
         }
       },
       "buttons": {
@@ -20848,6 +22257,18 @@ export const coreTokens: SpectreGeneratedTokens = {
           "bgDisabled": "{colors.accent.200}",
           "text": "{colors.white}",
           "textDisabled": "{colors.neutral.400}",
+          "focusRing": "{colors.accent.500} / 0.4",
+          "focusVisible": "{colors.accent.500} / 0.4"
+        },
+        "accentOutline": {
+          "bg": "{colors.white}",
+          "bgHover": "{colors.accent.50}",
+          "bgActive": "{colors.accent.100}",
+          "bgDisabled": "{colors.neutral.50}",
+          "text": "{colors.accent.800}",
+          "textDisabled": "{colors.neutral.400}",
+          "border": "{colors.accent.800}",
+          "borderDisabled": "{colors.neutral.200}",
           "focusRing": "{colors.accent.500} / 0.4",
           "focusVisible": "{colors.accent.500} / 0.4"
         },
@@ -21642,6 +23063,14 @@ export const coreTokens: SpectreGeneratedTokens = {
     "wider": "0.05em",
     "widest": "0.1em"
   },
+  "leading": {
+    "none": "1",
+    "tight": "1.25",
+    "snug": "1.375",
+    "normal": "1.5",
+    "relaxed": "1.625",
+    "loose": "2"
+  },
   "surface": {
     "page": "{colors.neutral.50}",
     "card": "{colors.white}",
@@ -21667,18 +23096,22 @@ export const coreTokens: SpectreGeneratedTokens = {
       "muted": "{colors.neutral.600}",
       "subtle": "{colors.neutral.500}",
       "meta": "{colors.neutral.500}",
-      "brand": "{colors.brand.600}"
+      "brand": "{colors.brand.600}",
+      "accent": "{colors.accent.600}"
     },
     "onSurface": {
       "default": "{colors.neutral.900}",
       "muted": "{colors.neutral.600}",
       "subtle": "{colors.neutral.500}",
       "meta": "{colors.neutral.500}",
-      "brand": "{colors.brand.600}"
+      "brand": "{colors.brand.600}",
+      "accent": "{colors.accent.600}"
     },
     "onInverse": {
       "default": "{colors.neutral.50}",
-      "muted": "{colors.neutral.300}"
+      "muted": "{colors.neutral.300}",
+      "brand": "{colors.brand.300}",
+      "accent": "{colors.accent.300}"
     }
   },
   "layout": {

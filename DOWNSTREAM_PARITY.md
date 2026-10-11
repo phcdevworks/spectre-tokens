@@ -5,8 +5,8 @@ Generated from the published CSS output by `npm run build`
 This file is a derived artifact, not contract authority; `tokens/` and
 `contract.manifest.json` remain the source of truth.
 
-Every CSS custom property in `dist/index.css` (1431 total) belongs
-to exactly one of 78 families. A family is the unit a downstream
+Every CSS custom property in `dist/index.css` (1485 total) belongs
+to exactly one of 80 families. A family is the unit a downstream
 recipe or stylesheet consumes: each one needs a consumer in `spectre-ui`
 before its `tests/token-parity.test.ts` passes. The build fails if a new
 variable does not fit an existing family, so a token group cannot ship
@@ -58,6 +58,7 @@ copy.
 | `breakpoint` | `--sp-breakpoint-*` | 5 | no | `breakpoints` — CSS does not allow `var()` in `@media` queries; consume these by value. |
 | `motion` | `--sp-duration-*`, `--sp-easing-*`, `--sp-animation-*` | 64 | no | `transitions`, `animations` |
 | `tracking` | `--sp-tracking-*` | 7 | no | `tracking` |
+| `leading` | `--sp-leading-*` | 6 | no | `leading` |
 | `icon` | `--sp-icon-*` | 7 | no | `icons` |
 | `aspect-ratio` | `--sp-aspect-ratio-*` | 7 | no | `aspectRatios` |
 | `font-family` | `--sp-font-family-*` | 3 | no | `typography.families` |
@@ -801,6 +802,17 @@ copy.
 
 </details>
 <details>
+<summary><code>leading</code> (6)</summary>
+
+- `--sp-leading-none`
+- `--sp-leading-tight`
+- `--sp-leading-snug`
+- `--sp-leading-normal`
+- `--sp-leading-relaxed`
+- `--sp-leading-loose`
+
+</details>
+<details>
 <summary><code>icon</code> (7)</summary>
 
 - `--sp-icon-xs`
@@ -895,7 +907,7 @@ copy.
 | Family | Variables | Count | Varies by mode | Source |
 | ------ | --------- | ----- | --------- | ------ |
 | `surface` | `--sp-surface-*` | 11 | 9 of 11 | `surface`, `modes.*.surface` |
-| `text` | `--sp-text-*` | 12 | 10 of 12 | `text`, `modes.*.text` |
+| `text` | `--sp-text-*` | 16 | 12 of 16 | `text`, `modes.*.text` |
 | `link` | `--sp-link-*` | 6 | 3 of 6 | `link` |
 
 <details>
@@ -915,20 +927,24 @@ copy.
 
 </details>
 <details>
-<summary><code>text</code> (12)</summary>
+<summary><code>text</code> (16)</summary>
 
 - `--sp-text-on-page-default` (varies by mode)
 - `--sp-text-on-page-muted` (varies by mode)
 - `--sp-text-on-page-subtle` (varies by mode)
 - `--sp-text-on-page-meta` (varies by mode)
 - `--sp-text-on-page-brand` (varies by mode)
+- `--sp-text-on-page-accent` (varies by mode)
 - `--sp-text-on-surface-default` (varies by mode)
 - `--sp-text-on-surface-muted` (varies by mode)
 - `--sp-text-on-surface-subtle` (varies by mode)
 - `--sp-text-on-surface-meta` (varies by mode)
 - `--sp-text-on-surface-brand` (varies by mode)
+- `--sp-text-on-surface-accent` (varies by mode)
 - `--sp-text-on-inverse-default`
 - `--sp-text-on-inverse-muted`
+- `--sp-text-on-inverse-brand`
+- `--sp-text-on-inverse-accent`
 
 </details>
 <details>
@@ -1047,12 +1063,12 @@ copy.
 
 | Family | Variables | Count | Varies by mode | Source |
 | ------ | --------- | ----- | --------- | ------ |
-| `button` | `--sp-button-*` | 104 | 21 of 104 | `buttons`, `component.button`, `modes.*.component.button` |
+| `button` | `--sp-button-*` | 114 | 23 of 114 | `buttons`, `component.button`, `modes.*.component.button` |
 | `form` | `--sp-form-*` | 18 | 7 of 18 | `forms`, `modes.*.forms` |
 | `control` | `--sp-control-*` | 18 | no | `control` |
 
 <details>
-<summary><code>button</code> (104)</summary>
+<summary><code>button</code> (114)</summary>
 
 - `--sp-button-text-default` (varies by mode)
 - `--sp-button-text-on-primary`
@@ -1148,6 +1164,16 @@ copy.
 - `--sp-button-accent-textdisabled`
 - `--sp-button-accent-focusring`
 - `--sp-button-accent-focusvisible`
+- `--sp-button-accentoutline-bg`
+- `--sp-button-accentoutline-bghover`
+- `--sp-button-accentoutline-bgactive`
+- `--sp-button-accentoutline-bgdisabled`
+- `--sp-button-accentoutline-text` (varies by mode)
+- `--sp-button-accentoutline-textdisabled`
+- `--sp-button-accentoutline-border` (varies by mode)
+- `--sp-button-accentoutline-borderdisabled`
+- `--sp-button-accentoutline-focusring`
+- `--sp-button-accentoutline-focusvisible`
 - `--sp-button-inverse-bg`
 - `--sp-button-inverse-bghover`
 - `--sp-button-inverse-bgactive`
@@ -1211,30 +1237,30 @@ copy.
 
 | Family | Variables | Count | Varies by mode | Source |
 | ------ | --------- | ----- | --------- | ------ |
-| `card` | `--sp-component-card-*` | 13 | 9 of 13 | `component.card`, `modes.*.component.card` |
+| `card` | `--sp-component-card-*` | 14 | 10 of 14 | `component.card`, `modes.*.component.card` |
 | `choice-card` | `--sp-choice-card-*` | 9 | 7 of 9 | `component.choiceCard`, `modes.*.component.choiceCard` |
 | `input` | `--sp-component-input-*` | 2 | yes | `component.input`, `modes.*.component.input` |
-| `badge` | `--sp-badge-*` | 31 | 25 of 31 | `component.badge`, `modes.*.component.badge` |
+| `badge` | `--sp-badge-*` | 32 | 26 of 32 | `component.badge`, `modes.*.component.badge` |
 | `icon-box` | `--sp-icon-box-*` | 6 | yes | `component.iconBox`, `modes.*.component.iconBox` |
-| `testimonial` | `--sp-testimonial-*` | 15 | 14 of 15 | `component.testimonial`, `modes.*.component.testimonial` |
-| `pricing-card` | `--sp-pricing-card-*` | 17 | 13 of 17 | `component.pricingCard`, `modes.*.component.pricingCard` |
+| `testimonial` | `--sp-testimonial-*` | 16 | 15 of 16 | `component.testimonial`, `modes.*.component.testimonial` |
+| `pricing-card` | `--sp-pricing-card-*` | 18 | 14 of 18 | `component.pricingCard`, `modes.*.component.pricingCard` |
 | `rating` | `--sp-rating-*` | 3 | yes | `component.rating`, `modes.*.component.rating` |
-| `nav` | `--sp-nav-*` | 14 | 13 of 14 | `component.nav`, `modes.*.component.nav` |
-| `footer` | `--sp-footer-*` | 33 | 19 of 33 | `component.footer`, `modes.*.component.footer` |
-| `modal` | `--sp-modal-*` | 12 | 9 of 12 | `component.modal`, `modes.*.component.modal` |
-| `toast` | `--sp-toast-*` | 28 | 27 of 28 | `component.toast`, `modes.*.component.toast` |
-| `tooltip` | `--sp-tooltip-*` | 11 | 10 of 11 | `component.tooltip`, `modes.*.component.tooltip` |
-| `dropdown` | `--sp-dropdown-*` | 19 | 16 of 19 | `component.dropdown`, `modes.*.component.dropdown` |
+| `nav` | `--sp-nav-*` | 15 | 14 of 15 | `component.nav`, `modes.*.component.nav` |
+| `footer` | `--sp-footer-*` | 35 | 20 of 35 | `component.footer`, `modes.*.component.footer` |
+| `modal` | `--sp-modal-*` | 13 | 10 of 13 | `component.modal`, `modes.*.component.modal` |
+| `toast` | `--sp-toast-*` | 29 | 28 of 29 | `component.toast`, `modes.*.component.toast` |
+| `tooltip` | `--sp-tooltip-*` | 12 | 11 of 12 | `component.tooltip`, `modes.*.component.tooltip` |
+| `dropdown` | `--sp-dropdown-*` | 20 | 17 of 20 | `component.dropdown`, `modes.*.component.dropdown` |
 | `tabs` | `--sp-tabs-*` | 11 | 9 of 11 | `component.tabs`, `modes.*.component.tabs` |
 | `accordion` | `--sp-accordion-*` | 6 | yes | `component.accordion`, `modes.*.component.accordion` |
 | `breadcrumb` | `--sp-breadcrumb-*` | 4 | yes | `component.breadcrumb`, `modes.*.component.breadcrumb` |
-| `list-group` | `--sp-list-group-*` | 18 | 16 of 18 | `component.listGroup`, `modes.*.component.listGroup` |
+| `list-group` | `--sp-list-group-*` | 19 | 17 of 19 | `component.listGroup`, `modes.*.component.listGroup` |
 | `offcanvas` | `--sp-offcanvas-*` | 4 | 3 of 4 | `component.offcanvas`, `modes.*.component.offcanvas` |
 | `carousel` | `--sp-carousel-*` | 6 | no | `component.carousel`, `modes.*.component.carousel` |
 | `table` | `--sp-table-*` | 17 | yes | `component.table`, `modes.*.component.table` |
 | `alert` | `--sp-alert-*` | 24 | yes | `component.alert`, `modes.*.component.alert` |
 | `pagination` | `--sp-pagination-*` | 5 | 4 of 5 | `component.pagination`, `modes.*.component.pagination` |
-| `stepper` | `--sp-stepper-*` | 8 | 6 of 8 | `component.stepper`, `modes.*.component.stepper` |
+| `stepper` | `--sp-stepper-*` | 16 | 10 of 16 | `component.stepper`, `modes.*.component.stepper` |
 | `popover` | `--sp-popover-*` | 6 | yes | `component.popover`, `modes.*.component.popover` |
 | `progress` | `--sp-progress-*` | 8 | yes | `component.progress`, `modes.*.component.progress` |
 | `loading-indicator` | `--sp-loading-indicator-*` | 8 | 7 of 8 | `component.loadingIndicator`, `modes.*.component.loadingIndicator` |
@@ -1257,9 +1283,10 @@ copy.
 | `caret` | `--sp-caret-*` | 1 | yes | `component.caret`, `modes.*.component.caret` |
 | `scrollbar` | `--sp-scrollbar-*` | 3 | 2 of 3 | `component.scrollbar`, `modes.*.component.scrollbar` |
 | `chart` | `--sp-chart-*` | 26 | yes | `component.chart`, `modes.*.component.chart` |
+| `quote` | `--sp-quote-*` | 14 | 13 of 14 | `component.quote`, `modes.*.component.quote` |
 
 <details>
-<summary><code>card</code> (13)</summary>
+<summary><code>card</code> (14)</summary>
 
 - `--sp-component-card-text` (varies by mode)
 - `--sp-component-card-text-muted` (varies by mode)
@@ -1270,6 +1297,7 @@ copy.
 - `--sp-component-card-accent-warning` (varies by mode)
 - `--sp-component-card-accent-danger` (varies by mode)
 - `--sp-component-card-accent-cta` (varies by mode)
+- `--sp-component-card-accent-accent` (varies by mode)
 - `--sp-component-card-padding-sm`
 - `--sp-component-card-padding-md`
 - `--sp-component-card-padding-lg`
@@ -1298,7 +1326,7 @@ copy.
 
 </details>
 <details>
-<summary><code>badge</code> (31)</summary>
+<summary><code>badge</code> (32)</summary>
 
 - `--sp-badge-neutral-bg` (varies by mode)
 - `--sp-badge-neutral-bg-hover` (varies by mode)
@@ -1322,6 +1350,7 @@ copy.
 - `--sp-badge-accent-warning` (varies by mode)
 - `--sp-badge-accent-danger` (varies by mode)
 - `--sp-badge-accent-cta` (varies by mode)
+- `--sp-badge-accent-accent` (varies by mode)
 - `--sp-badge-success-bg-hover` (varies by mode)
 - `--sp-badge-warning-bg-hover` (varies by mode)
 - `--sp-badge-danger-bg-hover` (varies by mode)
@@ -1345,7 +1374,7 @@ copy.
 
 </details>
 <details>
-<summary><code>testimonial</code> (15)</summary>
+<summary><code>testimonial</code> (16)</summary>
 
 - `--sp-testimonial-bg` (varies by mode)
 - `--sp-testimonial-bg-hover` (varies by mode)
@@ -1361,11 +1390,12 @@ copy.
 - `--sp-testimonial-accent-warning` (varies by mode)
 - `--sp-testimonial-accent-danger` (varies by mode)
 - `--sp-testimonial-accent-cta` (varies by mode)
+- `--sp-testimonial-accent-accent` (varies by mode)
 - `--sp-testimonial-accent-thickness`
 
 </details>
 <details>
-<summary><code>pricing-card</code> (17)</summary>
+<summary><code>pricing-card</code> (18)</summary>
 
 - `--sp-pricing-card-bg` (varies by mode)
 - `--sp-pricing-card-bg-hover` (varies by mode)
@@ -1383,6 +1413,7 @@ copy.
 - `--sp-pricing-card-accent-warning` (varies by mode)
 - `--sp-pricing-card-accent-danger` (varies by mode)
 - `--sp-pricing-card-accent-cta` (varies by mode)
+- `--sp-pricing-card-accent-accent` (varies by mode)
 - `--sp-pricing-card-accent-thickness`
 
 </details>
@@ -1395,7 +1426,7 @@ copy.
 
 </details>
 <details>
-<summary><code>nav</code> (14)</summary>
+<summary><code>nav</code> (15)</summary>
 
 - `--sp-nav-bg` (varies by mode)
 - `--sp-nav-text` (varies by mode)
@@ -1410,11 +1441,12 @@ copy.
 - `--sp-nav-accent-warning` (varies by mode)
 - `--sp-nav-accent-danger` (varies by mode)
 - `--sp-nav-accent-cta` (varies by mode)
+- `--sp-nav-accent-accent` (varies by mode)
 - `--sp-nav-accent-thickness`
 
 </details>
 <details>
-<summary><code>footer</code> (33)</summary>
+<summary><code>footer</code> (35)</summary>
 
 - `--sp-footer-bg` (varies by mode)
 - `--sp-footer-text`
@@ -1432,6 +1464,7 @@ copy.
 - `--sp-footer-accent-warning` (varies by mode)
 - `--sp-footer-accent-danger` (varies by mode)
 - `--sp-footer-accent-cta` (varies by mode)
+- `--sp-footer-accent-accent` (varies by mode)
 - `--sp-footer-light-bg` (varies by mode)
 - `--sp-footer-light-text` (varies by mode)
 - `--sp-footer-light-heading`
@@ -1448,11 +1481,12 @@ copy.
 - `--sp-footer-light-accent-warning`
 - `--sp-footer-light-accent-danger`
 - `--sp-footer-light-accent-cta`
+- `--sp-footer-light-accent-accent`
 - `--sp-footer-accent-thickness`
 
 </details>
 <details>
-<summary><code>modal</code> (12)</summary>
+<summary><code>modal</code> (13)</summary>
 
 - `--sp-modal-bg` (varies by mode)
 - `--sp-modal-shadow`
@@ -1465,11 +1499,12 @@ copy.
 - `--sp-modal-accent-warning` (varies by mode)
 - `--sp-modal-accent-danger` (varies by mode)
 - `--sp-modal-accent-cta` (varies by mode)
+- `--sp-modal-accent-accent` (varies by mode)
 - `--sp-modal-accent-thickness`
 
 </details>
 <details>
-<summary><code>toast</code> (28)</summary>
+<summary><code>toast</code> (29)</summary>
 
 - `--sp-toast-neutral-bg` (varies by mode)
 - `--sp-toast-neutral-text` (varies by mode)
@@ -1498,11 +1533,12 @@ copy.
 - `--sp-toast-accent-warning` (varies by mode)
 - `--sp-toast-accent-danger` (varies by mode)
 - `--sp-toast-accent-cta` (varies by mode)
+- `--sp-toast-accent-accent` (varies by mode)
 - `--sp-toast-accent-thickness`
 
 </details>
 <details>
-<summary><code>tooltip</code> (11)</summary>
+<summary><code>tooltip</code> (12)</summary>
 
 - `--sp-tooltip-bg` (varies by mode)
 - `--sp-tooltip-text` (varies by mode)
@@ -1514,11 +1550,12 @@ copy.
 - `--sp-tooltip-accent-warning` (varies by mode)
 - `--sp-tooltip-accent-danger` (varies by mode)
 - `--sp-tooltip-accent-cta` (varies by mode)
+- `--sp-tooltip-accent-accent` (varies by mode)
 - `--sp-tooltip-accent-thickness`
 
 </details>
 <details>
-<summary><code>dropdown</code> (19)</summary>
+<summary><code>dropdown</code> (20)</summary>
 
 - `--sp-dropdown-bg` (varies by mode)
 - `--sp-dropdown-border` (varies by mode)
@@ -1536,6 +1573,7 @@ copy.
 - `--sp-dropdown-accent-warning` (varies by mode)
 - `--sp-dropdown-accent-danger` (varies by mode)
 - `--sp-dropdown-accent-cta` (varies by mode)
+- `--sp-dropdown-accent-accent` (varies by mode)
 - `--sp-dropdown-header`
 - `--sp-dropdown-divider` (varies by mode)
 - `--sp-dropdown-accent-thickness`
@@ -1578,7 +1616,7 @@ copy.
 
 </details>
 <details>
-<summary><code>list-group</code> (18)</summary>
+<summary><code>list-group</code> (19)</summary>
 
 - `--sp-list-group-bg` (varies by mode)
 - `--sp-list-group-border` (varies by mode)
@@ -1597,6 +1635,7 @@ copy.
 - `--sp-list-group-accent-warning` (varies by mode)
 - `--sp-list-group-accent-danger` (varies by mode)
 - `--sp-list-group-accent-cta` (varies by mode)
+- `--sp-list-group-accent-accent` (varies by mode)
 - `--sp-list-group-accent-thickness`
 
 </details>
@@ -1682,7 +1721,7 @@ copy.
 
 </details>
 <details>
-<summary><code>stepper</code> (8)</summary>
+<summary><code>stepper</code> (16)</summary>
 
 - `--sp-stepper-step-pending-bg` (varies by mode)
 - `--sp-stepper-step-pending-text` (varies by mode)
@@ -1690,6 +1729,14 @@ copy.
 - `--sp-stepper-step-active-text`
 - `--sp-stepper-step-done-bg` (varies by mode)
 - `--sp-stepper-step-done-text`
+- `--sp-stepper-tone-brand-active-bg` (varies by mode)
+- `--sp-stepper-tone-brand-active-text`
+- `--sp-stepper-tone-brand-done-bg` (varies by mode)
+- `--sp-stepper-tone-brand-done-text`
+- `--sp-stepper-tone-accent-active-bg` (varies by mode)
+- `--sp-stepper-tone-accent-active-text`
+- `--sp-stepper-tone-accent-done-bg` (varies by mode)
+- `--sp-stepper-tone-accent-done-text`
 - `--sp-stepper-connector` (varies by mode)
 - `--sp-stepper-label-text` (varies by mode)
 
@@ -1963,5 +2010,24 @@ copy.
 - `--sp-chart-diverging-5` (varies by mode)
 - `--sp-chart-diverging-6` (varies by mode)
 - `--sp-chart-diverging-7` (varies by mode)
+
+</details>
+<details>
+<summary><code>quote</code> (14)</summary>
+
+- `--sp-quote-text` (varies by mode)
+- `--sp-quote-attribution-name` (varies by mode)
+- `--sp-quote-attribution-role` (varies by mode)
+- `--sp-quote-mark` (varies by mode)
+- `--sp-quote-border` (varies by mode)
+- `--sp-quote-accent-neutral` (varies by mode)
+- `--sp-quote-accent-brand` (varies by mode)
+- `--sp-quote-accent-info` (varies by mode)
+- `--sp-quote-accent-success` (varies by mode)
+- `--sp-quote-accent-warning` (varies by mode)
+- `--sp-quote-accent-danger` (varies by mode)
+- `--sp-quote-accent-cta` (varies by mode)
+- `--sp-quote-accent-accent` (varies by mode)
+- `--sp-quote-accent-thickness`
 
 </details>

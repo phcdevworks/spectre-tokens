@@ -89,6 +89,7 @@ export interface ComponentAccentTokens<Value = string> {
   warning: Value;
   danger: Value;
   cta: Value;
+  accent: Value;
   thickness: Value;
 }
 
@@ -128,6 +129,15 @@ export interface ComponentTestimonialTokens<Value = string> {
   authorName: Value;
   authorTitle: Value;
   quoteMark: Value;
+  accent: ComponentAccentTokens<Value>;
+}
+
+export interface ComponentQuoteTokens<Value = string> {
+  text: Value;
+  attributionName: Value;
+  attributionRole: Value;
+  mark: Value;
+  border: Value;
   accent: ComponentAccentTokens<Value>;
 }
 
@@ -296,6 +306,7 @@ export interface ComponentTokens<Value = string> {
   badge: ComponentBadgeTokens<Value>;
   iconBox: ComponentIconBoxTokens<Value>;
   testimonial: ComponentTestimonialTokens<Value>;
+  quote: ComponentQuoteTokens<Value>;
   pricingCard: ComponentPricingCardTokens<Value>;
   rating: ComponentRatingTokens<Value>;
   nav: ComponentNavTokens<Value>;

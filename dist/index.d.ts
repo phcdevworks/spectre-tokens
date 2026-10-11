@@ -16,6 +16,7 @@ interface SpectreGeneratedTokens {
                 warning: string;
                 danger: string;
                 cta: string;
+                accent: string;
                 thickness: string;
             };
         };
@@ -70,6 +71,7 @@ interface SpectreGeneratedTokens {
                 warning: string;
                 danger: string;
                 cta: string;
+                accent: string;
                 thickness: string;
             };
         };
@@ -97,6 +99,7 @@ interface SpectreGeneratedTokens {
                 warning: string;
                 danger: string;
                 cta: string;
+                accent: string;
                 thickness: string;
             };
         };
@@ -118,6 +121,7 @@ interface SpectreGeneratedTokens {
                 warning: string;
                 danger: string;
                 cta: string;
+                accent: string;
                 thickness: string;
             };
         };
@@ -141,6 +145,7 @@ interface SpectreGeneratedTokens {
                 warning: string;
                 danger: string;
                 cta: string;
+                accent: string;
                 thickness: string;
             };
         };
@@ -162,6 +167,7 @@ interface SpectreGeneratedTokens {
                 warning: string;
                 danger: string;
                 cta: string;
+                accent: string;
                 thickness: string;
             };
             light: {
@@ -182,6 +188,7 @@ interface SpectreGeneratedTokens {
                     warning: string;
                     danger: string;
                     cta: string;
+                    accent: string;
                 };
             };
         };
@@ -198,6 +205,7 @@ interface SpectreGeneratedTokens {
                 warning: string;
                 danger: string;
                 cta: string;
+                accent: string;
                 thickness: string;
             };
         };
@@ -240,6 +248,7 @@ interface SpectreGeneratedTokens {
                 warning: string;
                 danger: string;
                 cta: string;
+                accent: string;
                 thickness: string;
             };
         };
@@ -255,6 +264,7 @@ interface SpectreGeneratedTokens {
                 warning: string;
                 danger: string;
                 cta: string;
+                accent: string;
                 thickness: string;
             };
         };
@@ -278,6 +288,7 @@ interface SpectreGeneratedTokens {
                 warning: string;
                 danger: string;
                 cta: string;
+                accent: string;
                 thickness: string;
             };
             header: string;
@@ -367,6 +378,7 @@ interface SpectreGeneratedTokens {
                 warning: string;
                 danger: string;
                 cta: string;
+                accent: string;
                 thickness: string;
             };
         };
@@ -489,6 +501,28 @@ interface SpectreGeneratedTokens {
                 done: {
                     bg: string;
                     text: string;
+                };
+            };
+            tone: {
+                brand: {
+                    active: {
+                        bg: string;
+                        text: string;
+                    };
+                    done: {
+                        bg: string;
+                        text: string;
+                    };
+                };
+                accent: {
+                    active: {
+                        bg: string;
+                        text: string;
+                    };
+                    done: {
+                        bg: string;
+                        text: string;
+                    };
                 };
             };
             connector: string;
@@ -741,6 +775,24 @@ interface SpectreGeneratedTokens {
                 '7': string;
             };
         };
+        quote: {
+            text: string;
+            attributionName: string;
+            attributionRole: string;
+            mark: string;
+            border: string;
+            accent: {
+                neutral: string;
+                brand: string;
+                info: string;
+                success: string;
+                warning: string;
+                danger: string;
+                cta: string;
+                accent: string;
+                thickness: string;
+            };
+        };
     };
     buttons: {
         primary: {
@@ -857,6 +909,18 @@ interface SpectreGeneratedTokens {
             focusRing: string;
             focusVisible: string;
         };
+        accentOutline: {
+            bg: string;
+            bgHover: string;
+            bgActive: string;
+            bgDisabled: string;
+            text: string;
+            textDisabled: string;
+            border: string;
+            borderDisabled: string;
+            focusRing: string;
+            focusVisible: string;
+        };
         inverse: {
             bg: string;
             bgHover: string;
@@ -959,6 +1023,7 @@ interface SpectreGeneratedTokens {
                     subtle: string;
                     meta: string;
                     brand: string;
+                    accent: string;
                 };
                 onSurface: {
                     default: string;
@@ -966,6 +1031,7 @@ interface SpectreGeneratedTokens {
                     subtle: string;
                     meta: string;
                     brand: string;
+                    accent: string;
                 };
             };
             forms: {
@@ -987,6 +1053,7 @@ interface SpectreGeneratedTokens {
                         warning: string;
                         danger: string;
                         cta: string;
+                        accent: string;
                     };
                 };
                 choiceCard: {
@@ -1032,6 +1099,7 @@ interface SpectreGeneratedTokens {
                         warning: string;
                         danger: string;
                         cta: string;
+                        accent: string;
                     };
                 };
                 iconBox: {
@@ -1058,6 +1126,7 @@ interface SpectreGeneratedTokens {
                         warning: string;
                         danger: string;
                         cta: string;
+                        accent: string;
                     };
                 };
                 pricingCard: {
@@ -1078,6 +1147,7 @@ interface SpectreGeneratedTokens {
                         warning: string;
                         danger: string;
                         cta: string;
+                        accent: string;
                     };
                 };
                 rating: {
@@ -1100,6 +1170,7 @@ interface SpectreGeneratedTokens {
                         warning: string;
                         danger: string;
                         cta: string;
+                        accent: string;
                     };
                 };
                 footer: {
@@ -1120,6 +1191,7 @@ interface SpectreGeneratedTokens {
                         warning: string;
                         danger: string;
                         cta: string;
+                        accent: string;
                     };
                     light: {
                         bg: string;
@@ -1139,6 +1211,7 @@ interface SpectreGeneratedTokens {
                             warning: string;
                             danger: string;
                             cta: string;
+                            accent: string;
                         };
                     };
                 };
@@ -1155,6 +1228,7 @@ interface SpectreGeneratedTokens {
                         warning: string;
                         danger: string;
                         cta: string;
+                        accent: string;
                     };
                 };
                 toast: {
@@ -1196,6 +1270,7 @@ interface SpectreGeneratedTokens {
                         warning: string;
                         danger: string;
                         cta: string;
+                        accent: string;
                     };
                 };
                 tooltip: {
@@ -1210,6 +1285,7 @@ interface SpectreGeneratedTokens {
                         warning: string;
                         danger: string;
                         cta: string;
+                        accent: string;
                     };
                 };
                 dropdown: {
@@ -1232,6 +1308,7 @@ interface SpectreGeneratedTokens {
                         warning: string;
                         danger: string;
                         cta: string;
+                        accent: string;
                     };
                     header: string;
                     divider: string;
@@ -1320,6 +1397,7 @@ interface SpectreGeneratedTokens {
                         warning: string;
                         danger: string;
                         cta: string;
+                        accent: string;
                         thickness: string;
                     };
                 };
@@ -1442,6 +1520,28 @@ interface SpectreGeneratedTokens {
                         done: {
                             bg: string;
                             text: string;
+                        };
+                    };
+                    tone: {
+                        brand: {
+                            active: {
+                                bg: string;
+                                text: string;
+                            };
+                            done: {
+                                bg: string;
+                                text: string;
+                            };
+                        };
+                        accent: {
+                            active: {
+                                bg: string;
+                                text: string;
+                            };
+                            done: {
+                                bg: string;
+                                text: string;
+                            };
                         };
                     };
                     connector: string;
@@ -1682,6 +1782,23 @@ interface SpectreGeneratedTokens {
                         '7': string;
                     };
                 };
+                quote: {
+                    text: string;
+                    attributionName: string;
+                    attributionRole: string;
+                    mark: string;
+                    border: string;
+                    accent: {
+                        neutral: string;
+                        brand: string;
+                        info: string;
+                        success: string;
+                        warning: string;
+                        danger: string;
+                        cta: string;
+                        accent: string;
+                    };
+                };
             };
         };
         dark: {
@@ -1704,6 +1821,7 @@ interface SpectreGeneratedTokens {
                     subtle: string;
                     meta: string;
                     brand: string;
+                    accent: string;
                 };
                 onSurface: {
                     default: string;
@@ -1711,6 +1829,7 @@ interface SpectreGeneratedTokens {
                     subtle: string;
                     meta: string;
                     brand: string;
+                    accent: string;
                 };
             };
             forms: {
@@ -1732,6 +1851,7 @@ interface SpectreGeneratedTokens {
                         warning: string;
                         danger: string;
                         cta: string;
+                        accent: string;
                     };
                 };
                 choiceCard: {
@@ -1780,6 +1900,7 @@ interface SpectreGeneratedTokens {
                         warning: string;
                         danger: string;
                         cta: string;
+                        accent: string;
                     };
                 };
                 iconBox: {
@@ -1806,6 +1927,7 @@ interface SpectreGeneratedTokens {
                         warning: string;
                         danger: string;
                         cta: string;
+                        accent: string;
                     };
                 };
                 pricingCard: {
@@ -1826,6 +1948,7 @@ interface SpectreGeneratedTokens {
                         warning: string;
                         danger: string;
                         cta: string;
+                        accent: string;
                     };
                 };
                 rating: {
@@ -1848,6 +1971,7 @@ interface SpectreGeneratedTokens {
                         warning: string;
                         danger: string;
                         cta: string;
+                        accent: string;
                     };
                 };
                 footer: {
@@ -1868,6 +1992,7 @@ interface SpectreGeneratedTokens {
                         warning: string;
                         danger: string;
                         cta: string;
+                        accent: string;
                     };
                     light: {
                         bg: string;
@@ -1887,6 +2012,7 @@ interface SpectreGeneratedTokens {
                             warning: string;
                             danger: string;
                             cta: string;
+                            accent: string;
                         };
                     };
                 };
@@ -1903,6 +2029,7 @@ interface SpectreGeneratedTokens {
                         warning: string;
                         danger: string;
                         cta: string;
+                        accent: string;
                     };
                 };
                 toast: {
@@ -1944,6 +2071,7 @@ interface SpectreGeneratedTokens {
                         warning: string;
                         danger: string;
                         cta: string;
+                        accent: string;
                     };
                 };
                 tooltip: {
@@ -1958,6 +2086,7 @@ interface SpectreGeneratedTokens {
                         warning: string;
                         danger: string;
                         cta: string;
+                        accent: string;
                     };
                 };
                 dropdown: {
@@ -1980,6 +2109,7 @@ interface SpectreGeneratedTokens {
                         warning: string;
                         danger: string;
                         cta: string;
+                        accent: string;
                     };
                     header: string;
                     divider: string;
@@ -2068,6 +2198,7 @@ interface SpectreGeneratedTokens {
                         warning: string;
                         danger: string;
                         cta: string;
+                        accent: string;
                         thickness: string;
                     };
                 };
@@ -2190,6 +2321,28 @@ interface SpectreGeneratedTokens {
                         done: {
                             bg: string;
                             text: string;
+                        };
+                    };
+                    tone: {
+                        brand: {
+                            active: {
+                                bg: string;
+                                text: string;
+                            };
+                            done: {
+                                bg: string;
+                                text: string;
+                            };
+                        };
+                        accent: {
+                            active: {
+                                bg: string;
+                                text: string;
+                            };
+                            done: {
+                                bg: string;
+                                text: string;
+                            };
                         };
                     };
                     connector: string;
@@ -2430,6 +2583,23 @@ interface SpectreGeneratedTokens {
                         '7': string;
                     };
                 };
+                quote: {
+                    text: string;
+                    attributionName: string;
+                    attributionRole: string;
+                    mark: string;
+                    border: string;
+                    accent: {
+                        neutral: string;
+                        brand: string;
+                        info: string;
+                        success: string;
+                        warning: string;
+                        danger: string;
+                        cta: string;
+                        accent: string;
+                    };
+                };
             };
         };
         highContrast: {
@@ -2452,6 +2622,7 @@ interface SpectreGeneratedTokens {
                     subtle: string;
                     meta: string;
                     brand: string;
+                    accent: string;
                 };
                 onSurface: {
                     default: string;
@@ -2459,6 +2630,7 @@ interface SpectreGeneratedTokens {
                     subtle: string;
                     meta: string;
                     brand: string;
+                    accent: string;
                 };
             };
             forms: {
@@ -2490,6 +2662,7 @@ interface SpectreGeneratedTokens {
                         warning: string;
                         danger: string;
                         cta: string;
+                        accent: string;
                     };
                 };
                 choiceCard: {
@@ -2535,6 +2708,7 @@ interface SpectreGeneratedTokens {
                         warning: string;
                         danger: string;
                         cta: string;
+                        accent: string;
                     };
                 };
                 iconBox: {
@@ -2561,6 +2735,7 @@ interface SpectreGeneratedTokens {
                         warning: string;
                         danger: string;
                         cta: string;
+                        accent: string;
                     };
                 };
                 pricingCard: {
@@ -2581,6 +2756,7 @@ interface SpectreGeneratedTokens {
                         warning: string;
                         danger: string;
                         cta: string;
+                        accent: string;
                     };
                 };
                 rating: {
@@ -2603,6 +2779,7 @@ interface SpectreGeneratedTokens {
                         warning: string;
                         danger: string;
                         cta: string;
+                        accent: string;
                     };
                 };
                 footer: {
@@ -2623,6 +2800,7 @@ interface SpectreGeneratedTokens {
                         warning: string;
                         danger: string;
                         cta: string;
+                        accent: string;
                     };
                     light: {
                         bg: string;
@@ -2642,6 +2820,7 @@ interface SpectreGeneratedTokens {
                             warning: string;
                             danger: string;
                             cta: string;
+                            accent: string;
                         };
                     };
                 };
@@ -2658,6 +2837,7 @@ interface SpectreGeneratedTokens {
                         warning: string;
                         danger: string;
                         cta: string;
+                        accent: string;
                     };
                 };
                 toast: {
@@ -2699,6 +2879,7 @@ interface SpectreGeneratedTokens {
                         warning: string;
                         danger: string;
                         cta: string;
+                        accent: string;
                     };
                 };
                 tooltip: {
@@ -2713,6 +2894,7 @@ interface SpectreGeneratedTokens {
                         warning: string;
                         danger: string;
                         cta: string;
+                        accent: string;
                     };
                 };
                 dropdown: {
@@ -2735,6 +2917,7 @@ interface SpectreGeneratedTokens {
                         warning: string;
                         danger: string;
                         cta: string;
+                        accent: string;
                     };
                     header: string;
                     divider: string;
@@ -2823,6 +3006,7 @@ interface SpectreGeneratedTokens {
                         warning: string;
                         danger: string;
                         cta: string;
+                        accent: string;
                         thickness: string;
                     };
                 };
@@ -2945,6 +3129,28 @@ interface SpectreGeneratedTokens {
                         done: {
                             bg: string;
                             text: string;
+                        };
+                    };
+                    tone: {
+                        brand: {
+                            active: {
+                                bg: string;
+                                text: string;
+                            };
+                            done: {
+                                bg: string;
+                                text: string;
+                            };
+                        };
+                        accent: {
+                            active: {
+                                bg: string;
+                                text: string;
+                            };
+                            done: {
+                                bg: string;
+                                text: string;
+                            };
                         };
                     };
                     connector: string;
@@ -3183,6 +3389,23 @@ interface SpectreGeneratedTokens {
                         '5': string;
                         '6': string;
                         '7': string;
+                    };
+                };
+                quote: {
+                    text: string;
+                    attributionName: string;
+                    attributionRole: string;
+                    mark: string;
+                    border: string;
+                    accent: {
+                        neutral: string;
+                        brand: string;
+                        info: string;
+                        success: string;
+                        warning: string;
+                        danger: string;
+                        cta: string;
+                        accent: string;
                     };
                 };
             };
@@ -3298,6 +3521,18 @@ interface SpectreGeneratedTokens {
                     bgDisabled: string;
                     text: string;
                     textDisabled: string;
+                    focusRing: string;
+                    focusVisible: string;
+                };
+                accentOutline: {
+                    bg: string;
+                    bgHover: string;
+                    bgActive: string;
+                    bgDisabled: string;
+                    text: string;
+                    textDisabled: string;
+                    border: string;
+                    borderDisabled: string;
                     focusRing: string;
                     focusVisible: string;
                 };
@@ -4092,6 +4327,14 @@ interface SpectreGeneratedTokens {
         wider: string;
         widest: string;
     };
+    leading: {
+        none: string;
+        tight: string;
+        snug: string;
+        normal: string;
+        relaxed: string;
+        loose: string;
+    };
     surface: {
         page: string;
         card: string;
@@ -4118,6 +4361,7 @@ interface SpectreGeneratedTokens {
             subtle: string;
             meta: string;
             brand: string;
+            accent: string;
         };
         onSurface: {
             default: string;
@@ -4125,10 +4369,13 @@ interface SpectreGeneratedTokens {
             subtle: string;
             meta: string;
             brand: string;
+            accent: string;
         };
         onInverse: {
             default: string;
             muted: string;
+            brand: string;
+            accent: string;
         };
     };
     layout: {
@@ -4555,6 +4802,7 @@ interface ComponentAccentTokens<Value = string> {
     warning: Value;
     danger: Value;
     cta: Value;
+    accent: Value;
     thickness: Value;
 }
 interface ComponentBadgeTokens<Value = string> {
@@ -4591,6 +4839,14 @@ interface ComponentTestimonialTokens<Value = string> {
     authorName: Value;
     authorTitle: Value;
     quoteMark: Value;
+    accent: ComponentAccentTokens<Value>;
+}
+interface ComponentQuoteTokens<Value = string> {
+    text: Value;
+    attributionName: Value;
+    attributionRole: Value;
+    mark: Value;
+    border: Value;
     accent: ComponentAccentTokens<Value>;
 }
 interface ComponentPricingCardTokens<Value = string> {
@@ -4743,6 +4999,7 @@ interface ComponentTokens<Value = string> {
     badge: ComponentBadgeTokens<Value>;
     iconBox: ComponentIconBoxTokens<Value>;
     testimonial: ComponentTestimonialTokens<Value>;
+    quote: ComponentQuoteTokens<Value>;
     pricingCard: ComponentPricingCardTokens<Value>;
     rating: ComponentRatingTokens<Value>;
     nav: ComponentNavTokens<Value>;
@@ -4874,4 +5131,4 @@ declare const generateCssVariables: (tokens: SpectreTokens, options?: CssVariabl
 
 declare const tokens: SpectreTokens;
 
-export { type AccessibilityTokens, type AnimationEntry, type ButtonStateTokens, type ColorScale, type ComponentAccentTokens, type ComponentBadgeTokens, type ComponentFooterTokens, type ComponentIconBoxTokens, type ComponentPricingCardTokens, type ComponentRatingTokens, type ComponentTestimonialTokens, type ComponentTokens, type ControlSizeTokens, type ControlTokens, type ElevationLevelTokens, type ElevationTokens, type FormStateTokens, type LayoutTokens, type SpectreModeName, type SpectreModeTokens, type SpectreTokens, type TokenScale, type Tokens, type TransitionTokens, type TypographyTokens, tokens as default, generateCssVariables, tokens };
+export { type AccessibilityTokens, type AnimationEntry, type ButtonStateTokens, type ColorScale, type ComponentAccentTokens, type ComponentBadgeTokens, type ComponentFooterTokens, type ComponentIconBoxTokens, type ComponentPricingCardTokens, type ComponentQuoteTokens, type ComponentRatingTokens, type ComponentTestimonialTokens, type ComponentTokens, type ControlSizeTokens, type ControlTokens, type ElevationLevelTokens, type ElevationTokens, type FormStateTokens, type LayoutTokens, type SpectreModeName, type SpectreModeTokens, type SpectreTokens, type TokenScale, type Tokens, type TransitionTokens, type TypographyTokens, tokens as default, generateCssVariables, tokens };

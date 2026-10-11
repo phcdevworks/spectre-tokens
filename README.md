@@ -367,6 +367,7 @@ The generated token object includes these namespaces:
 - `component`
 - `modes`
 - `tracking`
+- `leading`
 - `control`
 - `elevation`
 

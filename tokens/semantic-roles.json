@@ -111,7 +111,14 @@
           "pair": "surface.page"
         }
       },
-      "brand": "{colors.brand.600}"
+      "brand": "{colors.brand.600}",
+      "accent": {
+        "value": "{colors.accent.600}",
+        "description": "accent-coloured text for eyebrows, stat units, and quote marks",
+        "metadata": {
+          "pair": "surface.page"
+        }
+      }
     },
     "onSurface": {
       "default": {
@@ -142,7 +149,14 @@
           "pair": "surface.card"
         }
       },
-      "brand": "{colors.brand.600}"
+      "brand": "{colors.brand.600}",
+      "accent": {
+        "value": "{colors.accent.600}",
+        "description": "accent-coloured text for eyebrows, stat units, and quote marks",
+        "metadata": {
+          "pair": "surface.card"
+        }
+      }
     },
     "onInverse": {
       "default": {
@@ -155,6 +169,20 @@
       "muted": {
         "value": "{colors.neutral.300}",
         "description": "muted text on surface.inverse",
+        "metadata": {
+          "pair": "surface.inverse"
+        }
+      },
+      "brand": {
+        "value": "{colors.brand.300}",
+        "description": "brand-coloured text on surface.inverse, independent of page mode",
+        "metadata": {
+          "pair": "surface.inverse"
+        }
+      },
+      "accent": {
+        "value": "{colors.accent.300}",
+        "description": "accent-coloured text on surface.inverse (eyebrows, stat units, quote marks), independent of page mode",
         "metadata": {
           "pair": "surface.inverse"
         }

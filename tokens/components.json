@@ -47,6 +47,10 @@
           "value": "{colors.brand.600}",
           "metadata": {}
         },
+        "accent": {
+          "value": "{colors.accent.600}",
+          "metadata": {}
+        },
         "thickness": "0.25rem"
       }
     },
@@ -254,6 +258,10 @@
           "value": "{colors.brand.600}",
           "metadata": {}
         },
+        "accent": {
+          "value": "{colors.accent.600}",
+          "metadata": {}
+        },
         "thickness": "0.25rem"
       }
     },
@@ -352,6 +360,10 @@
           "value": "{colors.brand.600}",
           "metadata": {}
         },
+        "accent": {
+          "value": "{colors.accent.600}",
+          "metadata": {}
+        },
         "thickness": "0.25rem"
       }
     },
@@ -437,6 +449,10 @@
           "value": "{colors.brand.600}",
           "metadata": {}
         },
+        "accent": {
+          "value": "{colors.accent.600}",
+          "metadata": {}
+        },
         "thickness": "0.25rem"
       }
     },
@@ -506,6 +522,10 @@
         },
         "cta": {
           "value": "{colors.brand.600}",
+          "metadata": {}
+        },
+        "accent": {
+          "value": "{colors.accent.600}",
           "metadata": {}
         },
         "thickness": "0.25rem"
@@ -586,6 +606,10 @@
           "value": "{colors.brand.600}",
           "metadata": {}
         },
+        "accent": {
+          "value": "{colors.accent.600}",
+          "metadata": {}
+        },
         "thickness": "0.25rem"
       },
       "light": {
@@ -662,6 +686,10 @@
           "cta": {
             "value": "{colors.brand.600}",
             "metadata": {}
+          },
+          "accent": {
+            "value": "{colors.accent.600}",
+            "metadata": {}
           }
         }
       }
@@ -706,6 +734,10 @@
         },
         "cta": {
           "value": "{colors.brand.600}",
+          "metadata": {}
+        },
+        "accent": {
+          "value": "{colors.accent.600}",
           "metadata": {}
         },
         "thickness": "0.25rem"
@@ -841,6 +873,10 @@
           "value": "{colors.brand.600}",
           "metadata": {}
         },
+        "accent": {
+          "value": "{colors.accent.600}",
+          "metadata": {}
+        },
         "thickness": "0.25rem"
       }
     },
@@ -887,6 +923,10 @@
         },
         "cta": {
           "value": "{colors.brand.600}",
+          "metadata": {}
+        },
+        "accent": {
+          "value": "{colors.accent.600}",
           "metadata": {}
         },
         "thickness": "0.25rem"
@@ -961,6 +1001,10 @@
         },
         "cta": {
           "value": "{colors.brand.600}",
+          "metadata": {}
+        },
+        "accent": {
+          "value": "{colors.accent.600}",
           "metadata": {}
         },
         "thickness": "0.25rem"
@@ -1161,6 +1205,9 @@
         },
         "cta": {
           "value": "{colors.brand.600}"
+        },
+        "accent": {
+          "value": "{colors.accent.600}"
         },
         "thickness": "0.25rem"
       }
@@ -1511,6 +1558,68 @@
             "value": "{colors.white}",
             "metadata": {
               "pair": "component.stepper.step.done.bg"
+            }
+          }
+        }
+      },
+      "tone": {
+        "brand": {
+          "active": {
+            "bg": {
+              "value": "{colors.brand.600}",
+              "metadata": {
+                "pair": "component.stepper.tone.brand.active.text"
+              }
+            },
+            "text": {
+              "value": "{colors.white}",
+              "metadata": {
+                "pair": "component.stepper.tone.brand.active.bg"
+              }
+            }
+          },
+          "done": {
+            "bg": {
+              "value": "{colors.success.700}",
+              "metadata": {
+                "pair": "component.stepper.tone.brand.done.text"
+              }
+            },
+            "text": {
+              "value": "{colors.white}",
+              "metadata": {
+                "pair": "component.stepper.tone.brand.done.bg"
+              }
+            }
+          }
+        },
+        "accent": {
+          "active": {
+            "bg": {
+              "value": "{colors.accent.600}",
+              "metadata": {
+                "pair": "component.stepper.tone.accent.active.text"
+              }
+            },
+            "text": {
+              "value": "{colors.white}",
+              "metadata": {
+                "pair": "component.stepper.tone.accent.active.bg"
+              }
+            }
+          },
+          "done": {
+            "bg": {
+              "value": "{colors.accent.800}",
+              "metadata": {
+                "pair": "component.stepper.tone.accent.done.text"
+              }
+            },
+            "text": {
+              "value": "{colors.white}",
+              "metadata": {
+                "pair": "component.stepper.tone.accent.done.bg"
+              }
             }
           }
         }
@@ -2268,6 +2377,72 @@
           "metadata": {}
         }
       }
+    },
+    "quote": {
+      "text": {
+        "value": "{colors.neutral.700}",
+        "metadata": {
+          "pair": "surface.page"
+        }
+      },
+      "attributionName": {
+        "value": "{colors.neutral.900}",
+        "metadata": {
+          "pair": "surface.page"
+        }
+      },
+      "attributionRole": {
+        "value": "{colors.neutral.600}",
+        "metadata": {
+          "pair": "surface.page"
+        }
+      },
+      "mark": {
+        "value": "{colors.accent.600}",
+        "description": "decorative quote mark; accent-coloured by default so a child theme re-points one role",
+        "metadata": {
+          "pair": "surface.page"
+        }
+      },
+      "border": {
+        "value": "{colors.neutral.300}",
+        "description": "plain leading edge for the unaccented quote"
+      },
+      "accent": {
+        "neutral": {
+          "value": "{colors.neutral.600}",
+          "metadata": {}
+        },
+        "brand": {
+          "value": "{colors.brand.600}",
+          "metadata": {}
+        },
+        "info": {
+          "value": "{colors.info.600}",
+          "metadata": {}
+        },
+        "success": {
+          "value": "{colors.success.600}",
+          "metadata": {}
+        },
+        "warning": {
+          "value": "{colors.warning.600}",
+          "metadata": {}
+        },
+        "danger": {
+          "value": "{colors.error.600}",
+          "metadata": {}
+        },
+        "cta": {
+          "value": "{colors.brand.600}",
+          "metadata": {}
+        },
+        "accent": {
+          "value": "{colors.accent.600}",
+          "metadata": {}
+        },
+        "thickness": "0.25rem"
+      }
     }
   },
   "buttons": {
@@ -2660,6 +2835,50 @@
       },
       "textDisabled": {
         "value": "{colors.neutral.400}"
+      },
+      "focusRing": {
+        "value": "{colors.accent.500} / 0.4"
+      },
+      "focusVisible": {
+        "value": "{colors.accent.500} / 0.4"
+      }
+    },
+    "accentOutline": {
+      "bg": {
+        "value": "{colors.white}",
+        "metadata": {
+          "pair": "buttons.accentOutline.text"
+        }
+      },
+      "bgHover": {
+        "value": "{colors.accent.50}",
+        "metadata": {
+          "pair": "buttons.accentOutline.text"
+        }
+      },
+      "bgActive": {
+        "value": "{colors.accent.100}",
+        "metadata": {
+          "pair": "buttons.accentOutline.text"
+        }
+      },
+      "bgDisabled": {
+        "value": "{colors.neutral.50}"
+      },
+      "text": {
+        "value": "{colors.accent.700}",
+        "metadata": {
+          "pair": "buttons.accentOutline.bg"
+        }
+      },
+      "textDisabled": {
+        "value": "{colors.neutral.400}"
+      },
+      "border": {
+        "value": "{colors.accent.700}"
+      },
+      "borderDisabled": {
+        "value": "{colors.neutral.200}"
       },
       "focusRing": {
         "value": "{colors.accent.500} / 0.4"

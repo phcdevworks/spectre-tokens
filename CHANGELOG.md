@@ -6,6 +6,59 @@ reflects package releases published to npm.
 
 ## [Unreleased]
 
+Contract change type: additive
+
+### Added
+
+- These four roles were requested by `spectre-base` (2026-10-11) after an
+  audit of a child theme that overrides component internals. Each is
+  additive and covers runtime, TypeScript, CSS, DTCG, and docs.
+- Accent text role `text.onPage.accent` and `text.onSurface.accent`
+  (mode-aware: `accent.600` light, `accent.400` dark, `accent.700`
+  high-contrast), emitted as `--sp-text-on-page-accent` and
+  `--sp-text-on-surface-accent`. Use it for eyebrows, stat units, and quote
+  marks, so a child theme can re-point one role instead of redeclaring
+  palette steps. Every pair meets AA, and AAA in high-contrast mode.
+- Named leading scale `leading.{none,tight,snug,normal,relaxed,loose}`
+  (`1` / `1.25` / `1.375` / `1.5` / `1.625` / `2`, unitless), emitted as
+  `--sp-leading-*`. `spectre-ui` can expose it as a text option alongside
+  the per-preset `--sp-font-*-line-height` values. It works the same way as
+  `tracking`.
+- Accent outline button variant `buttons.accentOutline` (`bg`, `bgHover`,
+  `bgActive`, `bgDisabled`, `text`, `textDisabled`, `border`,
+  `borderDisabled`, `focusRing`, `focusVisible`), emitted as
+  `--sp-button-accentoutline-*`. It has the same shape as `secondary`: white
+  background, `accent.50`/`accent.100` hover and active backgrounds, and
+  `accent.700` text and border. The high-contrast override uses
+  `accent.800` text and border, so every text pair meets 7:1.
+- Stepper tone roles `component.stepper.tone.{brand,accent}.{active,done}.{bg,text}`
+  (mode-aware), emitted as `--sp-stepper-tone-*`. `brand` repeats today's
+  `step.active`/`step.done` values (`brand.600` / `success.700`; high
+  contrast `brand.700` / `success.800`). `accent` uses `accent.600` /
+  `accent.800` (high contrast `accent.700` / `accent.900`).
+  `component.stepper.step.*` is unchanged and remains the default.
+- Quote contract for accent blockquotes and pull quotes (covers the
+  `spectre-ui` quote recipe and `spectre-base` core quote block styles).
+  The new mode-aware `component.quote` group has `text`, `attributionName`,
+  `attributionRole`, `mark`, `border`, and an `accent` rail (every tone plus
+  `thickness`). It is emitted as `--sp-quote-*`. `mark` is accent-coloured
+  by default (`accent.600` light, `accent.400` dark, `accent.700` high
+  contrast), so a child theme re-points one role. Every text pair meets AA
+  against the page, and AAA in high-contrast mode. The type is exported as
+  `ComponentQuoteTokens`.
+- `accent` tone in every component accent rail (`card`, `badge`,
+  `testimonial`, `pricingCard`, `nav`, `footer`, `footer.light`, `modal`,
+  `toast`, `tooltip`, `dropdown`, `listGroup`, and the new `quote`),
+  mode-aware (`accent.600` light, `accent.400` dark), emitted as
+  `--sp-<group>-accent-accent` (`--sp-component-card-accent-accent` for
+  `card`, which keeps its older prefix). Until now no rail could take the accent
+  palette, so an accent-coloured leading edge needed a local value.
+  `ComponentAccentTokens` gains `accent`.
+- Inverse text roles `text.onInverse.brand` (`brand.300`) and
+  `text.onInverse.accent` (`accent.300`), emitted as
+  `--sp-text-on-inverse-brand` and `--sp-text-on-inverse-accent`, so an
+  inverse quote, stat, or eyebrow keeps its accent on `surface.inverse`.
+
 ## [4.12.0] - 2026-10-03
 
 **Release Title:** Adaptive Modes and Responsive Foundations
