@@ -6,6 +6,16 @@ reflects package releases published to npm.
 
 ## [Unreleased]
 
+### Fixed
+
+- Buildkite CI now runs in a pinned `node:24` container. It used the
+  agent's own Node 20.18.3, which is below the build tooling's minimum
+  (tsup 9 needs `^22.18.0 || ^24.11.0`), so `npm run build` failed loading
+  tsup before any check ran. The step also marks the checkout as a git
+  safe directory, because `check:dist` and `check:classification` call git.
+  The GitHub Actions minimum matrix entry moves from Node 22.13.0 to
+  22.18.0 for the same reason. No package contents changed.
+
 ## [4.14.0] - 2026-10-15
 
 **Release Title:** Typography Scale and Readability Refinements
