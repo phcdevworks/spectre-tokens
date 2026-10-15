@@ -410,7 +410,7 @@ var coreTokens = {
       },
       "text": "{colors.neutral.900}",
       "divider": "{colors.neutral.200}",
-      "stripeBg": "{colors.neutral.50}",
+      "stripeBg": "{colors.black} / 0.05",
       "hoverBg": "{colors.neutral.100}",
       "selectedBg": "{colors.info.50}",
       "row": {
@@ -1491,7 +1491,7 @@ var coreTokens = {
           },
           "text": "{colors.neutral.900}",
           "divider": "{colors.neutral.200}",
-          "stripeBg": "{colors.neutral.50}",
+          "stripeBg": "{colors.black} / 0.05",
           "hoverBg": "{colors.neutral.100}",
           "selectedBg": "{colors.info.50}",
           "row": {
@@ -2354,7 +2354,7 @@ var coreTokens = {
           },
           "text": "{colors.neutral.100}",
           "divider": "{colors.neutral.700}",
-          "stripeBg": "{colors.neutral.800}",
+          "stripeBg": "{colors.white} / 0.06",
           "hoverBg": "{colors.neutral.700}",
           "selectedBg": "{colors.info.900}",
           "row": {
@@ -2787,6 +2787,14 @@ var coreTokens = {
           "spelling": "{colors.error.400}",
           "grammar": "{colors.info.400}"
         }
+      },
+      "link": {
+        "default": "{colors.brand.400}",
+        "hover": "{colors.brand.300}",
+        "active": "{colors.brand.200}",
+        "visited": "{colors.accent.300}",
+        "underline": "{colors.brand.400} / 0.4",
+        "underlineHover": "{colors.brand.300}"
       }
     },
     "highContrast": {
@@ -4606,6 +4614,21 @@ var coreTokens = {
     "extrabold": 800,
     "black": 900
   },
+  "fontSize": {
+    "12": "0.75rem",
+    "14": "0.875rem",
+    "16": "1rem",
+    "18": "1.125rem",
+    "20": "1.25rem",
+    "24": "1.5rem",
+    "30": "1.875rem",
+    "36": "2.25rem",
+    "48": "3rem",
+    "60": "3.75rem",
+    "72": "4.5rem",
+    "96": "6rem",
+    "128": "8rem"
+  },
   "surface": {
     "page": "{colors.neutral.50}",
     "card": "{colors.white}",
@@ -4801,44 +4824,62 @@ var coreTokens = {
       "letterSpacing": "0em"
     },
     "lg": {
+      "size": "1.125rem",
+      "lineHeight": "1.875rem",
+      "weight": 500,
+      "letterSpacing": "0em"
+    },
+    "xl": {
       "size": "1.25rem",
       "lineHeight": "2rem",
       "weight": 600,
       "letterSpacing": "0em"
     },
-    "xl": {
+    "2xl": {
       "size": "1.5rem",
       "lineHeight": "2.125rem",
       "weight": 600,
       "letterSpacing": "0em"
     },
-    "2xl": {
+    "3xl": {
       "size": "1.875rem",
       "lineHeight": "2.5rem",
       "weight": 700,
       "letterSpacing": "0em"
     },
-    "3xl": {
+    "4xl": {
       "size": "2.25rem",
       "lineHeight": "2.75rem",
       "weight": 700,
       "letterSpacing": "0em"
     },
-    "4xl": {
+    "5xl": {
       "size": "3rem",
       "lineHeight": "3.5rem",
       "weight": 800,
       "letterSpacing": "0em"
     },
-    "5xl": {
+    "6xl": {
       "size": "3.75rem",
       "lineHeight": "4.25rem",
       "weight": 800,
       "letterSpacing": "0em"
     },
-    "6xl": {
+    "7xl": {
       "size": "4.5rem",
       "lineHeight": "5rem",
+      "weight": 900,
+      "letterSpacing": "0em"
+    },
+    "8xl": {
+      "size": "6rem",
+      "lineHeight": "6.5rem",
+      "weight": 900,
+      "letterSpacing": "0em"
+    },
+    "9xl": {
+      "size": "8rem",
+      "lineHeight": "8.5rem",
       "weight": 900,
       "letterSpacing": "0em"
     }
@@ -4869,44 +4910,62 @@ var coreTokens = {
         "letterSpacing": "0em"
       },
       "lg": {
+        "fontSize": "1.125rem",
+        "lineHeight": "1.875rem",
+        "fontWeight": 500,
+        "letterSpacing": "0em"
+      },
+      "xl": {
         "fontSize": "1.25rem",
         "lineHeight": "2rem",
         "fontWeight": 600,
         "letterSpacing": "0em"
       },
-      "xl": {
+      "2xl": {
         "fontSize": "1.5rem",
         "lineHeight": "2.125rem",
         "fontWeight": 600,
         "letterSpacing": "0em"
       },
-      "2xl": {
+      "3xl": {
         "fontSize": "1.875rem",
         "lineHeight": "2.5rem",
         "fontWeight": 700,
         "letterSpacing": "0em"
       },
-      "3xl": {
+      "4xl": {
         "fontSize": "2.25rem",
         "lineHeight": "2.75rem",
         "fontWeight": 700,
         "letterSpacing": "0em"
       },
-      "4xl": {
+      "5xl": {
         "fontSize": "3rem",
         "lineHeight": "3.5rem",
         "fontWeight": 800,
         "letterSpacing": "0em"
       },
-      "5xl": {
+      "6xl": {
         "fontSize": "3.75rem",
         "lineHeight": "4.25rem",
         "fontWeight": 800,
         "letterSpacing": "0em"
       },
-      "6xl": {
+      "7xl": {
         "fontSize": "4.5rem",
         "lineHeight": "5rem",
+        "fontWeight": 900,
+        "letterSpacing": "0em"
+      },
+      "8xl": {
+        "fontSize": "6rem",
+        "lineHeight": "6.5rem",
+        "fontWeight": 900,
+        "letterSpacing": "0em"
+      },
+      "9xl": {
+        "fontSize": "8rem",
+        "lineHeight": "8.5rem",
         "fontWeight": 900,
         "letterSpacing": "0em"
       }
@@ -4914,45 +4973,45 @@ var coreTokens = {
     "heading": {
       "h1": {
         "fontFamily": "{typography.families.sans}",
-        "fontSize": "{typography.scale.5xl.fontSize}",
-        "lineHeight": "{typography.scale.5xl.lineHeight}",
+        "fontSize": "{typography.scale.6xl.fontSize}",
+        "lineHeight": "{typography.scale.6xl.lineHeight}",
         "fontWeight": 800,
-        "letterSpacing": "{typography.scale.5xl.letterSpacing}"
+        "letterSpacing": "{typography.scale.6xl.letterSpacing}"
       },
       "h2": {
+        "fontFamily": "{typography.families.sans}",
+        "fontSize": "{typography.scale.5xl.fontSize}",
+        "lineHeight": "{typography.scale.5xl.lineHeight}",
+        "fontWeight": 700,
+        "letterSpacing": "{typography.scale.5xl.letterSpacing}"
+      },
+      "h3": {
         "fontFamily": "{typography.families.sans}",
         "fontSize": "{typography.scale.4xl.fontSize}",
         "lineHeight": "{typography.scale.4xl.lineHeight}",
         "fontWeight": 700,
         "letterSpacing": "{typography.scale.4xl.letterSpacing}"
       },
-      "h3": {
+      "h4": {
         "fontFamily": "{typography.families.sans}",
         "fontSize": "{typography.scale.3xl.fontSize}",
         "lineHeight": "{typography.scale.3xl.lineHeight}",
-        "fontWeight": 700,
+        "fontWeight": 600,
         "letterSpacing": "{typography.scale.3xl.letterSpacing}"
       },
-      "h4": {
+      "h5": {
         "fontFamily": "{typography.families.sans}",
         "fontSize": "{typography.scale.2xl.fontSize}",
         "lineHeight": "{typography.scale.2xl.lineHeight}",
         "fontWeight": 600,
         "letterSpacing": "{typography.scale.2xl.letterSpacing}"
       },
-      "h5": {
+      "h6": {
         "fontFamily": "{typography.families.sans}",
         "fontSize": "{typography.scale.xl.fontSize}",
         "lineHeight": "{typography.scale.xl.lineHeight}",
         "fontWeight": 600,
         "letterSpacing": "{typography.scale.xl.letterSpacing}"
-      },
-      "h6": {
-        "fontFamily": "{typography.families.sans}",
-        "fontSize": "{typography.scale.lg.fontSize}",
-        "lineHeight": "{typography.scale.lg.lineHeight}",
-        "fontWeight": 600,
-        "letterSpacing": "{typography.scale.lg.letterSpacing}"
       }
     },
     "body": {
@@ -4965,53 +5024,53 @@ var coreTokens = {
     "display": {
       "1": {
         "fontFamily": "{typography.families.sans}",
+        "fontSize": "{typography.scale.7xl.fontSize}",
+        "lineHeight": "{typography.scale.7xl.lineHeight}",
+        "fontWeight": 800,
+        "letterSpacing": "{typography.scale.7xl.letterSpacing}"
+      },
+      "2": {
+        "fontFamily": "{typography.families.sans}",
         "fontSize": "{typography.scale.6xl.fontSize}",
         "lineHeight": "{typography.scale.6xl.lineHeight}",
         "fontWeight": 800,
         "letterSpacing": "{typography.scale.6xl.letterSpacing}"
       },
-      "2": {
+      "3": {
         "fontFamily": "{typography.families.sans}",
         "fontSize": "{typography.scale.5xl.fontSize}",
         "lineHeight": "{typography.scale.5xl.lineHeight}",
-        "fontWeight": 800,
+        "fontWeight": 700,
         "letterSpacing": "{typography.scale.5xl.letterSpacing}"
       },
-      "3": {
+      "4": {
         "fontFamily": "{typography.families.sans}",
         "fontSize": "{typography.scale.4xl.fontSize}",
         "lineHeight": "{typography.scale.4xl.lineHeight}",
         "fontWeight": 700,
         "letterSpacing": "{typography.scale.4xl.letterSpacing}"
       },
-      "4": {
+      "5": {
         "fontFamily": "{typography.families.sans}",
         "fontSize": "{typography.scale.3xl.fontSize}",
         "lineHeight": "{typography.scale.3xl.lineHeight}",
-        "fontWeight": 700,
+        "fontWeight": 600,
         "letterSpacing": "{typography.scale.3xl.letterSpacing}"
       },
-      "5": {
+      "6": {
         "fontFamily": "{typography.families.sans}",
         "fontSize": "{typography.scale.2xl.fontSize}",
         "lineHeight": "{typography.scale.2xl.lineHeight}",
         "fontWeight": 600,
         "letterSpacing": "{typography.scale.2xl.letterSpacing}"
-      },
-      "6": {
-        "fontFamily": "{typography.families.sans}",
-        "fontSize": "{typography.scale.xl.fontSize}",
-        "lineHeight": "{typography.scale.xl.lineHeight}",
-        "fontWeight": 600,
-        "letterSpacing": "{typography.scale.xl.letterSpacing}"
       }
     },
     "lead": {
       "fontFamily": "{typography.families.sans}",
-      "fontSize": "{typography.scale.lg.fontSize}",
-      "lineHeight": "{typography.scale.lg.lineHeight}",
+      "fontSize": "{typography.scale.xl.fontSize}",
+      "lineHeight": "{typography.scale.xl.lineHeight}",
       "fontWeight": 400,
-      "letterSpacing": "{typography.scale.lg.letterSpacing}"
+      "letterSpacing": "{typography.scale.xl.letterSpacing}"
     }
   }
 };
@@ -5234,6 +5293,12 @@ var createCssVariableMap = (tokens2, options = {}) => {
       assign(toVariableName(prefix, "font-weight", key), value);
     });
   }
+  const fontSize = baseTokens.fontSize;
+  if (fontSize) {
+    Object.entries(fontSize).forEach(([key, value]) => {
+      assign(toVariableName(prefix, "font-size", key), value);
+    });
+  }
   const textDecoration = baseTokens.textDecoration;
   if (textDecoration) {
     Object.entries(textDecoration).forEach(([group, scale]) => {
@@ -5450,12 +5515,12 @@ var generateCssVariables = (tokens2, options = {}) => {
     (path) => ["form", ...path.map(kebabPathSegment)],
     void 0
   );
+  const darkLink = getPath(darkMode, ["link"]);
   const highContrastLink = getPath(highContrastMode, ["link"]);
   Object.entries(linkTokens).forEach(([key, value]) => {
     const varName = toVariableName(prefix, "link", kebabPathSegment(key));
-    const resolved = pickSemantic(tokens2, value);
-    addBase(varName, resolved);
-    addDark(varName, resolved);
+    addBase(varName, pickSemantic(tokens2, value));
+    addDark(varName, pickSemantic(tokens2, getPath(darkLink, [key]), value));
     addHighContrast(varName, pickSemantic(tokens2, getPath(highContrastLink, [key]), value));
   });
   const highContrastButtons = getPath(highContrastMode, ["buttons"]);

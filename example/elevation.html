@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Elevation & Controls - Spectre Tokens</title>
+    <link rel="stylesheet" href="../dist/index.css" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: var(--sp-font-family-sans);
+        padding: var(--sp-space-32);
+        background: var(--sp-surface-page);
+        color: var(--sp-text-on-page-default);
+      }
+
+      .container {
+        max-width: var(--sp-layout-container-max-width);
+        margin: 0 auto;
+      }
+
+      .header {
+        margin-bottom: var(--sp-space-32);
+      }
+
+      .back-link {
+        color: var(--sp-text-on-page-brand);
+        text-decoration: none;
+        margin-bottom: var(--sp-space-16);
+        display: inline-block;
+      }
+
+      h1 {
+        font-size: var(--sp-font-4xl-size);
+        margin-bottom: var(--sp-space-8);
+        color: var(--sp-text-on-page-default);
+      }
+
+      .subtitle {
+        font-size: var(--sp-font-lg-size);
+        color: var(--sp-text-on-page-muted);
+      }
+
+      .section {
+        background: var(--sp-surface-card);
+        color: var(--sp-text-on-surface-default);
+        border-radius: var(--sp-radius-lg);
+        padding: var(--sp-space-32);
+        margin-bottom: var(--sp-space-32);
+        box-shadow: var(--sp-shadow-sm);
+      }
+
+      h2 {
+        font-size: var(--sp-font-xl-size);
+        margin-bottom: var(--sp-space-16);
+      }
+
+      h3 {
+        font-size: var(--sp-font-lg-size);
+        margin-bottom: var(--sp-space-12);
+      }
+
+      .note {
+        font-size: var(--sp-font-sm-size);
+        color: var(--sp-text-on-surface-muted);
+        margin-bottom: var(--sp-space-24);
+        max-width: var(--sp-layout-container-max-width-prose);
+      }
+
+      .meta {
+        font-family: var(--sp-font-family-mono);
+        font-size: var(--sp-font-xs-size);
+        color: var(--sp-text-on-surface-muted);
+        overflow-wrap: anywhere;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(var(--sp-space-192), 1fr));
+        gap: var(--sp-space-24);
+      }
+
+      .grid-wide {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(var(--sp-space-240), 1fr));
+        gap: var(--sp-space-24);
+      }
+
+      .level { border-radius: var(--sp-radius-lg); padding: var(--sp-space-24); min-height: var(--sp-space-128); display: grid; align-content: space-between; gap: var(--sp-space-8); color: var(--sp-text-on-surface-default); }
+      .stage { background: var(--sp-surface-subtle); border-radius: var(--sp-radius-lg); padding: var(--sp-space-32); }
+      .controls { display: flex; flex-wrap: wrap; align-items: center; gap: var(--sp-space-12); margin-bottom: var(--sp-space-16); }
+      .control { display: inline-flex; align-items: center; gap: var(--sp-space-8); background: var(--sp-button-primary-bg); color: var(--sp-button-primary-text); border: none; border-radius: var(--sp-radius-md); font: inherit; font-weight: var(--sp-font-weight-semibold); }
+      .control-icon { display: inline-block; background: currentColor; border-radius: var(--sp-radius-pill); opacity: var(--sp-opacity-hover); }
+      .control-input { background: var(--sp-form-default-bg); color: var(--sp-form-default-text); border: var(--sp-border-width-base) solid var(--sp-form-default-border); border-radius: var(--sp-radius-md); font: inherit; }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="header">
+        <a href="examples.html" class="back-link">← Back to Examples</a>
+        <h1>🪜 Elevation & Controls</h1>
+        <p class="subtitle">Elevation levels, control sizing, and compact density</p>
+      </div>
+
+      <div class="section">
+        <h2>Elevation Levels</h2>
+        <p class="note">Each level pairs a shadow with a surface and a z-index, so you pick one level instead of combining three tokens. The surface follows the active colour mode.</p>
+        <div class="stage">
+          <div class="grid">
+            <div class="level" style="background: var(--sp-elevation-flat-surface); box-shadow: var(--sp-elevation-flat-shadow)">
+              <strong>flat</strong>
+              <span class="meta">--sp-elevation-flat-{shadow,surface,z-index}</span>
+            </div>
+            <div class="level" style="background: var(--sp-elevation-raised-surface); box-shadow: var(--sp-elevation-raised-shadow)">
+              <strong>raised</strong>
+              <span class="meta">--sp-elevation-raised-{shadow,surface,z-index}</span>
+            </div>
+            <div class="level" style="background: var(--sp-elevation-overlay-surface); box-shadow: var(--sp-elevation-overlay-shadow)">
+              <strong>overlay</strong>
+              <span class="meta">--sp-elevation-overlay-{shadow,surface,z-index}</span>
+            </div>
+            <div class="level" style="background: var(--sp-elevation-modal-surface); box-shadow: var(--sp-elevation-modal-shadow)">
+              <strong>modal</strong>
+              <span class="meta">--sp-elevation-modal-{shadow,surface,z-index}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="section">
+        <h2>Control Sizes</h2>
+        <p class="note">Buttons, inputs, and selects share height, inline padding, and icon size per size. Only <code>lg</code> (48px) reaches the 44px minimum touch target, so give smaller controls a larger hit area on touch layouts.</p>
+          <div class="controls">
+            <button class="control" type="button" style="height: var(--sp-control-sm-height); padding-inline: var(--sp-control-sm-padding-inline)"><span class="control-icon" style="width: var(--sp-control-sm-icon-size); height: var(--sp-control-sm-icon-size)"></span>Button sm</button>
+            <input class="control-input" style="height: var(--sp-control-sm-height); padding-inline: var(--sp-control-sm-padding-inline)" placeholder="Input sm" />
+          </div>
+          <div class="controls">
+            <button class="control" type="button" style="height: var(--sp-control-md-height); padding-inline: var(--sp-control-md-padding-inline)"><span class="control-icon" style="width: var(--sp-control-md-icon-size); height: var(--sp-control-md-icon-size)"></span>Button md</button>
+            <input class="control-input" style="height: var(--sp-control-md-height); padding-inline: var(--sp-control-md-padding-inline)" placeholder="Input md" />
+          </div>
+          <div class="controls">
+            <button class="control" type="button" style="height: var(--sp-control-lg-height); padding-inline: var(--sp-control-lg-padding-inline)"><span class="control-icon" style="width: var(--sp-control-lg-icon-size); height: var(--sp-control-lg-icon-size)"></span>Button lg</button>
+            <input class="control-input" style="height: var(--sp-control-lg-height); padding-inline: var(--sp-control-lg-padding-inline)" placeholder="Input lg" />
+          </div>
+      </div>
+      <div class="section">
+        <h2>Compact Density</h2>
+        <p class="note">Inside <code>data-spectre-density="compact"</code>, the same variables switch to the denser set. The markup and CSS below are identical to the section above.</p>
+        <div data-spectre-density="compact">
+          <div class="controls">
+            <button class="control" type="button" style="height: var(--sp-control-sm-height); padding-inline: var(--sp-control-sm-padding-inline)"><span class="control-icon" style="width: var(--sp-control-sm-icon-size); height: var(--sp-control-sm-icon-size)"></span>Button sm</button>
+            <input class="control-input" style="height: var(--sp-control-sm-height); padding-inline: var(--sp-control-sm-padding-inline)" placeholder="Input sm" />
+          </div>
+          <div class="controls">
+            <button class="control" type="button" style="height: var(--sp-control-md-height); padding-inline: var(--sp-control-md-padding-inline)"><span class="control-icon" style="width: var(--sp-control-md-icon-size); height: var(--sp-control-md-icon-size)"></span>Button md</button>
+            <input class="control-input" style="height: var(--sp-control-md-height); padding-inline: var(--sp-control-md-padding-inline)" placeholder="Input md" />
+          </div>
+          <div class="controls">
+            <button class="control" type="button" style="height: var(--sp-control-lg-height); padding-inline: var(--sp-control-lg-padding-inline)"><span class="control-icon" style="width: var(--sp-control-lg-icon-size); height: var(--sp-control-lg-icon-size)"></span>Button lg</button>
+            <input class="control-input" style="height: var(--sp-control-lg-height); padding-inline: var(--sp-control-lg-padding-inline)" placeholder="Input lg" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -278,6 +278,13 @@ export const createCssVariableMap = (tokens: SpectreTokens, options: CssVariable
     })
   }
 
+  const fontSize = (baseTokens as unknown as Record<string, unknown>).fontSize as Record<string, string> | undefined
+  if (fontSize) {
+    Object.entries(fontSize).forEach(([key, value]) => {
+      assign(toVariableName(prefix, 'font-size', key), value)
+    })
+  }
+
   const textDecoration = (baseTokens as unknown as Record<string, unknown>).textDecoration as
     | Record<string, Record<string, string>>
     | undefined
@@ -547,12 +554,12 @@ export const generateCssVariables = (tokens: SpectreTokens, options: CssVariable
     undefined
   )
 
+  const darkLink = getPath(darkMode, ['link'])
   const highContrastLink = getPath(highContrastMode, ['link'])
   Object.entries(linkTokens).forEach(([key, value]) => {
     const varName = toVariableName(prefix, 'link', kebabPathSegment(key))
-    const resolved = pickSemantic(tokens, value)
-    addBase(varName, resolved)
-    addDark(varName, resolved)
+    addBase(varName, pickSemantic(tokens, value))
+    addDark(varName, pickSemantic(tokens, getPath(darkLink, [key]), value))
     addHighContrast(varName, pickSemantic(tokens, getPath(highContrastLink, [key]), value))
   })
 

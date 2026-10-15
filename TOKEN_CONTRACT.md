@@ -90,6 +90,7 @@ The current public top-level namespaces are:
 - `leading`
 - `textDecoration`
 - `fontWeight`
+- `fontSize`
 - `control`
 - `elevation`
 
@@ -125,6 +126,9 @@ This package currently guarantees these public output surfaces:
   resolved value, usage note) for every public token. Like CSS and DTCG
   output, it is a derived artifact, not contract authority — `tokens/*.json`
   remains the source of truth.
+- `DOWNSTREAM_PARITY.md`, a generated list of every `--sp-*` variable grouped
+  by the family a downstream recipe consumes. It is also derived, not
+  authority.
 
 All of those outputs must remain aligned with `contract.manifest.json`.
 
@@ -178,12 +182,24 @@ This package currently exposes mode-aware semantic values under `modes`.
 
 Current behavior:
 
-- `modes.default` and `modes.dark` are part of the public contract
+- `modes.default`, `modes.dark`, and `modes.highContrast` are part of the
+  public contract. `modes.highContrast` is light-based, and every text pair in
+  it meets WCAG AAA (7:1); it also overrides `buttons` and
+  `forms.{valid,invalid}`, which are otherwise mode-invariant
+- `link` is mode-aware: `modes.dark.link` and `modes.highContrast.link`
+  override the top-level (default-mode) values, and each link text colour is
+  paired with the mode's surface for `check:contrast`
+- in CSS, `data-spectre-theme="dark" | "high-contrast" | "light"` applies on
+  any element and its descendants, and each mode block declares the full mode
+  variable set. `light` restores `modes.default` values inside a dark
+  ancestor, and `data-spectre-theme="system"` follows `prefers-color-scheme`
+  without a script. `check:css` enforces the full set in every block
 - semantic tokens are expected to map cleanly across modes
 - consumers should prefer semantic mode-aware tokens rather than branching on
   palette values manually
-- `modes.*` carries `surface`, `text`, `component`, and the
-  `forms.default.{bg,text,placeholder}` subset; top-level `forms.default.*`
+- `modes.*` carries `surface`, `text`, `component`, `link` (dark and
+  high-contrast), and the `forms.default.{bg,text,placeholder}` subset;
+  top-level `forms.default.*`
   holds the default-mode value, and every other `forms.*` state is
   mode-invariant
 
@@ -197,8 +213,75 @@ Rules:
 
 Assumption:
 
-- The current stable mode names are `default` and `dark` because those are the
-  names exported and validated today
+- The current stable mode names are `default`, `dark`, and `highContrast`
+  because those are the names exported and validated today. `light` and
+  `system` are CSS attribute values, not token modes
+
+## Contract Surfaces
+
+These rules apply to specific token families beyond the general rules above.
+
+### Type scales
+
+- `typography.scale.*` and `font.*` use the same thirteen steps, `xs` through
+  `9xl`, and their sizes match Tailwind's scale (12, 14, 16, 18, 20, 24, 30,
+  36, 48, 60, 72, 96, 128px). `md` is Tailwind's `base`. Changing a step's
+  size is a semantic change, and removing or renaming a step is breaking.
+- Each step pairs a size with a line height, weight, and letter-spacing.
+  Text roles (`typography.heading`, `body`, `display`, `lead`) reference
+  steps, so when the scale moves, the roles are re-pointed to keep their
+  rendered size unless the change is meant to resize them.
+- `fontSize.<px>` keys name the size in pixels and their values are the rem
+  equivalent at a 16px root, so `fontSize.18` is always `1.125rem`. Adding a
+  key is additive; changing a value is breaking, because the key would no
+  longer describe it.
+- `fontWeight`, `leading`, `tracking`, and `textDecoration` are named scales
+  that are not mode-aware. They are emitted once in `:root`.
+
+### Accent rails
+
+- An accent rail is `component.<name>.accent` with exactly these keys: the
+  tones `neutral`, `brand`, `info`, `success`, `warning`, `danger`, `cta`,
+  `accent`, and `thickness`. The components are `card`, `badge`,
+  `testimonial`, `pricingCard`, `nav`, `footer`, `modal`, `toast`,
+  `tooltip`, `dropdown`, `listGroup`, and `quote`. `footer.light.accent`
+  carries the tone colours only and uses `footer.accent.thickness`.
+- Every rail has the same tone set and a single shared thickness (`0.25rem`),
+  so a consumer can switch the component without switching the tone name.
+  Adding a rail to another component is additive. Adding a tone to every
+  rail is additive. Removing a tone, or giving one rail a different tone set,
+  is breaking.
+- Tone colours are mode-aware. `success`, `warning`, `danger`, and `cta`
+  belong to the protected families above.
+- Rail position (which edge) and rendering stay downstream.
+
+### Layout
+
+- Layout spacing (`layout.section.*`, `layout.stack.gap`,
+  `layout.container.paddingInline`) sits on an 8px grid, and responsive
+  steps never shrink at a wider breakpoint. `layout.hero.*` must reference
+  section padding steps. `check:structure` enforces all three.
+- The `xl`–`4xl` steps are responsive: `layout.responsive.lg.*` holds their
+  values from the `lg` breakpoint up, and CSS re-points
+  `--sp-layout-*-{xl..4xl}` inside `@media (min-width: 1024px)`, so the
+  variable name stays the same.
+
+### Data visualisation
+
+- `component.chart.series.{1..8}` must each meet 3:1 against
+  `component.chart.bg` in every mode, and should differ in lightness as well
+  as hue. `sequential` and `diverging` are seven-step ramps. `check:contrast`
+  enforces the 3:1 pairs through `metadata.minContrast`.
+
+### HTML element coverage
+
+- [`element-coverage.json`](element-coverage.json) maps every element and
+  pseudo-element in the canonical list (`scripts/element-coverage.ts`) to
+  token paths that exist, or marks it as having no visual styling, with a
+  reason. `check:elements` enforces this.
+- Removing or renaming a token path that the map uses is breaking, the same
+  as for any public path. The map itself is documentation and is not a
+  public export.
 
 ## Change Types
 

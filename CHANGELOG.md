@@ -6,6 +6,72 @@ reflects package releases published to npm.
 
 ## [Unreleased]
 
+Contract change type: semantic change
+
+### Changed
+
+- The font scale now matches Tailwind's sizes. Before, it jumped straight
+  from `md` (16px) to `lg` (20px), and every step above `md` sat one step
+  larger than Tailwind's. `typography.scale.*` and `font.*` (`--sp-font-*`)
+  are now: `xs` 12, `sm` 14, `md` 16, `lg` 18, `xl` 20, `2xl` 24, `3xl` 30,
+  `4xl` 36, `5xl` 48, `6xl` 60, `7xl` 72, `8xl` 96, `9xl` 128 (px). Each
+  size keeps its existing line height, weight, and letter-spacing. The new
+  18px `lg` uses a 30px line height and weight 500. `md` keeps its name
+  instead of being renamed to Tailwind's `base`.
+- Headings, display text, and the lead paragraph now point one step up, so
+  they render at exactly the same size as before. For example, `heading.h6`
+  moves from `lg` to `xl`, still 20px. `body` is unchanged.
+- Downstream impact: any direct use of `--sp-font-lg-*` through
+  `--sp-font-6xl-*` now renders one step smaller. For example,
+  `--sp-font-lg-size` goes from 20px to 18px. To keep a previous size,
+  switch to the next step up.
+
+### Added
+
+- Numeric font-size scale `fontSize.{12,14,16,18,20,24,30,36,48,60,72,96,128}`,
+  emitted as `--sp-font-size-<px>` (for example `--sp-font-size-18:
+  1.125rem`). These are plain sizes for when you need an exact size without
+  a preset's line height and weight. Pair them with `leading.*` for line
+  height and `fontWeight.*` for weight.
+- `font.7xl`, `font.8xl`, `font.9xl` (72/96/128px) and their
+  `typography.scale` entries.
+- Documentation for everything shipped in Phases 10–17 that had no
+  explanation. README gains sections on the type scales (presets, plain
+  sizes, weight, leading, tracking, text decoration), accent rails, accent
+  and inverse roles, the footer, the extended palette, and HTML element
+  coverage. TOKEN_CONTRACT.md gains a "Contract Surfaces" section with rules
+  for type scales, accent rails, layout, data visualisation, and element
+  coverage. Its modes section now covers `highContrast`, element-scoped
+  modes, and `system`, which were missing. No token values changed.
+- Six new example pages: colour modes, layout, elevation and controls, data
+  visualisation, accents, and HTML elements. The typography page now shows
+  all 13 preset steps, the text roles, and the new scales. Every example
+  page now uses tokens only; hardcoded px, rem, and font-weight values were
+  replaced.
+
+### Fixed
+
+- Links are now readable in dark mode. `link.*` had no dark-mode value, so
+  `--sp-link-default` stayed `brand.600` on dark backgrounds: 2.84:1 on the
+  dark page and 2.34:1 on a dark card, below the 4.5:1 text minimum. The new
+  `modes.dark.link` sets `default` to `brand.400` (4.75:1 on the dark card),
+  `hover` to `brand.300`, `active` to `brand.200`, `visited` to
+  `accent.300`, and the underline colours to match, so links get lighter on
+  hover in dark mode. Each is paired with `modes.dark.surface.card`, so
+  `check:contrast` now enforces 4.5:1. `link.onInverse*` is unchanged. The
+  dark values apply under `data-spectre-theme="dark"` and under `system`
+  when the OS is dark. `link` moves from the `duplicated` to the
+  `mode-scoped` CSS parity group, because its light and dark values now
+  differ. Approved by Bradley Potts, 2026-10-15.
+- Striped tables now show their stripes on both the page background and
+  cards (reported by `spectre-base`, 2026-10-11). `component.table.stripeBg`
+  (`--sp-table-stripe-bg`) was an opaque colour that matched the page
+  background in light mode (`neutral.50`) and the card background in dark
+  mode (`neutral.800`). It is now a translucent overlay, `colors.black` at
+  5% in light mode and `colors.white` at 6% in dark mode, so it darkens or
+  lightens whatever surface the table sits on. High-contrast mode is
+  unchanged (`neutral.50` on a white page and card).
+
 ## [4.13.0] - 2026-10-11
 
 **Release Title:** Complete Element and Accent Vocabulary

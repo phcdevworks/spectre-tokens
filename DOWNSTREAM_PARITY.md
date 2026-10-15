@@ -5,8 +5,8 @@ Generated from the published CSS output by `npm run build`
 This file is a derived artifact, not contract authority; `tokens/` and
 `contract.manifest.json` remain the source of truth.
 
-Every CSS custom property in `dist/index.css` (1541 total) belongs
-to exactly one of 86 families. A family is the unit a downstream
+Every CSS custom property in `dist/index.css` (1566 total) belongs
+to exactly one of 87 families. A family is the unit a downstream
 recipe or stylesheet consumes: each one needs a consumer in `spectre-ui`
 before its `tests/token-parity.test.ts` passes. The build fails if a new
 variable does not fit an existing family, so a token group cannot ship
@@ -61,11 +61,12 @@ copy.
 | `tracking` | `--sp-tracking-*` | 7 | no | `tracking` |
 | `leading` | `--sp-leading-*` | 6 | no | `leading` |
 | `font-weight` | `--sp-font-weight-*` | 6 | no | `fontWeight` |
+| `font-size` | `--sp-font-size-*` | 13 | no | `fontSize` |
 | `text-decoration` | `--sp-text-decoration-*` | 6 | no | `textDecoration` |
 | `icon` | `--sp-icon-*` | 7 | no | `icons` |
 | `aspect-ratio` | `--sp-aspect-ratio-*` | 7 | no | `aspectRatios` |
 | `font-family` | `--sp-font-family-*` | 3 | no | `typography.families` |
-| `font-scale` | `--sp-font-*` | 40 | no | `font`, `typography.scale` |
+| `font-scale` | `--sp-font-*` | 52 | no | `font`, `typography.scale` |
 | `accessibility` | `--sp-focus-ring-*`, `--sp-min-touch-target`, `--sp-min-text-size`, `--sp-reduced-motion`, `--sp-forced-colors` | 7 | no | `accessibility` |
 
 <details>
@@ -840,6 +841,24 @@ copy.
 
 </details>
 <details>
+<summary><code>font-size</code> (13)</summary>
+
+- `--sp-font-size-12`
+- `--sp-font-size-14`
+- `--sp-font-size-16`
+- `--sp-font-size-18`
+- `--sp-font-size-20`
+- `--sp-font-size-24`
+- `--sp-font-size-30`
+- `--sp-font-size-36`
+- `--sp-font-size-48`
+- `--sp-font-size-60`
+- `--sp-font-size-72`
+- `--sp-font-size-96`
+- `--sp-font-size-128`
+
+</details>
+<details>
 <summary><code>text-decoration</code> (6)</summary>
 
 - `--sp-text-decoration-thickness-thin`
@@ -883,7 +902,7 @@ copy.
 
 </details>
 <details>
-<summary><code>font-scale</code> (40)</summary>
+<summary><code>font-scale</code> (52)</summary>
 
 - `--sp-font-xs-size`
 - `--sp-font-xs-line-height`
@@ -915,6 +934,15 @@ copy.
 - `--sp-font-6xl-size`
 - `--sp-font-6xl-line-height`
 - `--sp-font-6xl-weight`
+- `--sp-font-7xl-size`
+- `--sp-font-7xl-line-height`
+- `--sp-font-7xl-weight`
+- `--sp-font-8xl-size`
+- `--sp-font-8xl-line-height`
+- `--sp-font-8xl-weight`
+- `--sp-font-9xl-size`
+- `--sp-font-9xl-line-height`
+- `--sp-font-9xl-weight`
 - `--sp-font-xs-letter-spacing`
 - `--sp-font-sm-letter-spacing`
 - `--sp-font-md-letter-spacing`
@@ -925,6 +953,9 @@ copy.
 - `--sp-font-4xl-letter-spacing`
 - `--sp-font-5xl-letter-spacing`
 - `--sp-font-6xl-letter-spacing`
+- `--sp-font-7xl-letter-spacing`
+- `--sp-font-8xl-letter-spacing`
+- `--sp-font-9xl-letter-spacing`
 
 </details>
 <details>
@@ -946,7 +977,7 @@ copy.
 | ------ | --------- | ----- | --------- | ------ |
 | `surface` | `--sp-surface-*` | 11 | 9 of 11 | `surface`, `modes.*.surface` |
 | `text` | `--sp-text-*` | 16 | 12 of 16 | `text`, `modes.*.text` |
-| `link` | `--sp-link-*` | 8 | 5 of 8 | `link` |
+| `link` | `--sp-link-*` | 8 | 6 of 8 | `link` |
 
 <details>
 <summary><code>surface</code> (11)</summary>
@@ -991,7 +1022,7 @@ copy.
 - `--sp-link-default` (varies by mode)
 - `--sp-link-hover` (varies by mode)
 - `--sp-link-active` (varies by mode)
-- `--sp-link-visited`
+- `--sp-link-visited` (varies by mode)
 - `--sp-link-on-inverse`
 - `--sp-link-on-inverse-hover`
 - `--sp-link-underline` (varies by mode)

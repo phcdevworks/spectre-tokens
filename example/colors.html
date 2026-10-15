@@ -19,7 +19,7 @@
       }
 
       .container {
-        max-width: 1400px;
+        max-width: var(--sp-layout-container-max-width-wide);
         margin: 0 auto;
       }
 
@@ -41,7 +41,7 @@
       }
 
       .subtitle {
-        font-size: 1.125rem;
+        font-size: var(--sp-font-lg-size);
         color: var(--sp-text-on-page-muted);
       }
 
@@ -61,7 +61,7 @@
 
       .color-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(var(--sp-space-128), 1fr));
         gap: var(--sp-space-16);
       }
 
@@ -70,7 +70,7 @@
       }
 
       .color-box {
-        height: 80px;
+        height: var(--sp-space-80);
         border-radius: var(--sp-radius-lg);
         margin-bottom: var(--sp-space-8);
         border: var(--sp-border-width-base) var(--sp-border-style-solid) var(--sp-color-neutral-200);
@@ -78,7 +78,7 @@
 
       .color-label {
         font-size: var(--sp-font-sm-size);
-        font-weight: 600;
+        font-weight: var(--sp-font-weight-semibold);
         color: var(--sp-text-on-page-default);
         margin-bottom: var(--sp-space-4);
       }
@@ -168,7 +168,7 @@
 
       .surface-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(var(--sp-space-192), 1fr));
         gap: var(--sp-space-16);
       }
 
@@ -186,7 +186,7 @@
 
       .text-role-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(var(--sp-space-240), 1fr));
         gap: var(--sp-space-24);
       }
 
@@ -201,7 +201,7 @@
       .text-muted { color: var(--sp-text-on-page-muted); }
       .text-subtle { color: var(--sp-text-on-page-subtle); }
       .text-meta { color: var(--sp-text-on-page-meta); }
-      .text-brand { color: var(--sp-text-on-page-brand); font-weight: 600; }
+      .text-brand { color: var(--sp-text-on-page-brand); font-weight: var(--sp-font-weight-semibold); }
     </style>
   </head>
 

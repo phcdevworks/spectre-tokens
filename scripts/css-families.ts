@@ -71,6 +71,7 @@ const STATIC_FAMILIES: FamilyDefinition[] = [
   { id: 'tracking', section: 'Foundations', prefixes: ['tracking'], sources: ['tracking'] },
   { id: 'leading', section: 'Foundations', prefixes: ['leading'], sources: ['leading'] },
   { id: 'font-weight', section: 'Foundations', prefixes: ['font-weight'], sources: ['fontWeight'] },
+  { id: 'font-size', section: 'Foundations', prefixes: ['font-size'], sources: ['fontSize'] },
   { id: 'text-decoration', section: 'Foundations', prefixes: ['text-decoration'], sources: ['textDecoration'] },
   { id: 'icon', section: 'Foundations', prefixes: ['icon'], sources: ['icons'] },
   { id: 'aspect-ratio', section: 'Foundations', prefixes: ['aspect-ratio'], sources: ['aspectRatios'] },

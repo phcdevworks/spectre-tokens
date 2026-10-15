@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Data Visualisation - Spectre Tokens</title>
+    <link rel="stylesheet" href="../dist/index.css" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: var(--sp-font-family-sans);
+        padding: var(--sp-space-32);
+        background: var(--sp-surface-page);
+        color: var(--sp-text-on-page-default);
+      }
+
+      .container {
+        max-width: var(--sp-layout-container-max-width);
+        margin: 0 auto;
+      }
+
+      .header {
+        margin-bottom: var(--sp-space-32);
+      }
+
+      .back-link {
+        color: var(--sp-text-on-page-brand);
+        text-decoration: none;
+        margin-bottom: var(--sp-space-16);
+        display: inline-block;
+      }
+
+      h1 {
+        font-size: var(--sp-font-4xl-size);
+        margin-bottom: var(--sp-space-8);
+        color: var(--sp-text-on-page-default);
+      }
+
+      .subtitle {
+        font-size: var(--sp-font-lg-size);
+        color: var(--sp-text-on-page-muted);
+      }
+
+      .section {
+        background: var(--sp-surface-card);
+        color: var(--sp-text-on-surface-default);
+        border-radius: var(--sp-radius-lg);
+        padding: var(--sp-space-32);
+        margin-bottom: var(--sp-space-32);
+        box-shadow: var(--sp-shadow-sm);
+      }
+
+      h2 {
+        font-size: var(--sp-font-xl-size);
+        margin-bottom: var(--sp-space-16);
+      }
+
+      h3 {
+        font-size: var(--sp-font-lg-size);
+        margin-bottom: var(--sp-space-12);
+      }
+
+      .note {
+        font-size: var(--sp-font-sm-size);
+        color: var(--sp-text-on-surface-muted);
+        margin-bottom: var(--sp-space-24);
+        max-width: var(--sp-layout-container-max-width-prose);
+      }
+
+      .meta {
+        font-family: var(--sp-font-family-mono);
+        font-size: var(--sp-font-xs-size);
+        color: var(--sp-text-on-surface-muted);
+        overflow-wrap: anywhere;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(var(--sp-space-192), 1fr));
+        gap: var(--sp-space-24);
+      }
+
+      .grid-wide {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(var(--sp-space-240), 1fr));
+        gap: var(--sp-space-24);
+      }
+
+      .chart-panel { background: var(--sp-chart-bg); border-radius: var(--sp-radius-lg); padding: var(--sp-space-24); color: var(--sp-chart-label); border: var(--sp-border-width-base) solid var(--sp-chart-grid); }
+      .chart-panel h3 { color: var(--sp-chart-label); }
+      .chart {
+        display: flex; align-items: flex-end; gap: var(--sp-space-8);
+        height: var(--sp-space-192);
+        border-bottom: var(--sp-border-width-thick) solid var(--sp-chart-axis);
+        border-left: var(--sp-border-width-thick) solid var(--sp-chart-axis);
+        background-image: linear-gradient(to top, var(--sp-chart-grid) var(--sp-border-width-base), transparent var(--sp-border-width-base));
+        background-size: 100% 25%;
+        padding-inline: var(--sp-space-8);
+      }
+      .chart-bar { flex: 1; border-radius: var(--sp-radius-sm) var(--sp-radius-sm) 0 0; }
+      .chart-labels { display: flex; gap: var(--sp-space-8); padding-inline: var(--sp-space-8); font-size: var(--sp-font-xs-size); color: var(--sp-chart-label); margin-top: var(--sp-space-4); }
+      .chart-labels span { flex: 1; text-align: center; }
+      .ramp { display: flex; height: var(--sp-space-40); border-radius: var(--sp-radius-md); overflow: hidden; margin-bottom: var(--sp-space-8); }
+      .ramp span { flex: 1; }
+      .swatch { height: var(--sp-space-48); border-radius: var(--sp-radius-md); margin-bottom: var(--sp-space-8); }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="header">
+        <a href="examples.html" class="back-link">← Back to Examples</a>
+        <h1>📊 Data Visualisation</h1>
+        <p class="subtitle">Chart series, sequential and diverging ramps, grid, axis, and labels</p>
+      </div>
+
+      <div class="section">
+        <h2>Categorical Series</h2>
+        <p class="note">Eight series colours that differ in lightness as well as hue, so they stay distinguishable for colour-blind readers. Each meets 3:1 against <code>--sp-chart-bg</code> in every mode.</p>
+        <div class="grid">
+          <div><div class="swatch" style="background: var(--sp-chart-series-1)"></div><span class="meta">--sp-chart-series-1</span></div>
+          <div><div class="swatch" style="background: var(--sp-chart-series-2)"></div><span class="meta">--sp-chart-series-2</span></div>
+          <div><div class="swatch" style="background: var(--sp-chart-series-3)"></div><span class="meta">--sp-chart-series-3</span></div>
+          <div><div class="swatch" style="background: var(--sp-chart-series-4)"></div><span class="meta">--sp-chart-series-4</span></div>
+          <div><div class="swatch" style="background: var(--sp-chart-series-5)"></div><span class="meta">--sp-chart-series-5</span></div>
+          <div><div class="swatch" style="background: var(--sp-chart-series-6)"></div><span class="meta">--sp-chart-series-6</span></div>
+          <div><div class="swatch" style="background: var(--sp-chart-series-7)"></div><span class="meta">--sp-chart-series-7</span></div>
+          <div><div class="swatch" style="background: var(--sp-chart-series-8)"></div><span class="meta">--sp-chart-series-8</span></div>
+        </div>
+      </div>
+      <div class="section">
+        <h2>A Chart in Each Mode</h2>
+        <p class="note">Bars, grid lines, axis, labels, and background all come from <code>--sp-chart-*</code>.</p>
+        <div class="grid-wide">
+          <div class="chart-panel">
+            <h3>Light</h3>
+            <div class="chart">
+              <div class="chart-bar" style="height: 62%; background: var(--sp-chart-series-1)" title="--sp-chart-series-1"></div>
+              <div class="chart-bar" style="height: 85%; background: var(--sp-chart-series-2)" title="--sp-chart-series-2"></div>
+              <div class="chart-bar" style="height: 48%; background: var(--sp-chart-series-3)" title="--sp-chart-series-3"></div>
+              <div class="chart-bar" style="height: 74%; background: var(--sp-chart-series-4)" title="--sp-chart-series-4"></div>
+              <div class="chart-bar" style="height: 92%; background: var(--sp-chart-series-5)" title="--sp-chart-series-5"></div>
+              <div class="chart-bar" style="height: 38%; background: var(--sp-chart-series-6)" title="--sp-chart-series-6"></div>
+              <div class="chart-bar" style="height: 66%; background: var(--sp-chart-series-7)" title="--sp-chart-series-7"></div>
+              <div class="chart-bar" style="height: 55%; background: var(--sp-chart-series-8)" title="--sp-chart-series-8"></div>
+            </div>
+            <div class="chart-labels"><span>S1</span><span>S2</span><span>S3</span><span>S4</span><span>S5</span><span>S6</span><span>S7</span><span>S8</span></div>
+          </div>
+          <div class="chart-panel" data-spectre-theme="dark">
+            <h3>Dark</h3>
+            <div class="chart">
+              <div class="chart-bar" style="height: 62%; background: var(--sp-chart-series-1)" title="--sp-chart-series-1"></div>
+              <div class="chart-bar" style="height: 85%; background: var(--sp-chart-series-2)" title="--sp-chart-series-2"></div>
+              <div class="chart-bar" style="height: 48%; background: var(--sp-chart-series-3)" title="--sp-chart-series-3"></div>
+              <div class="chart-bar" style="height: 74%; background: var(--sp-chart-series-4)" title="--sp-chart-series-4"></div>
+              <div class="chart-bar" style="height: 92%; background: var(--sp-chart-series-5)" title="--sp-chart-series-5"></div>
+              <div class="chart-bar" style="height: 38%; background: var(--sp-chart-series-6)" title="--sp-chart-series-6"></div>
+              <div class="chart-bar" style="height: 66%; background: var(--sp-chart-series-7)" title="--sp-chart-series-7"></div>
+              <div class="chart-bar" style="height: 55%; background: var(--sp-chart-series-8)" title="--sp-chart-series-8"></div>
+            </div>
+            <div class="chart-labels"><span>S1</span><span>S2</span><span>S3</span><span>S4</span><span>S5</span><span>S6</span><span>S7</span><span>S8</span></div>
+          </div>
+          <div class="chart-panel" data-spectre-theme="high-contrast">
+            <h3>High contrast</h3>
+            <div class="chart">
+              <div class="chart-bar" style="height: 62%; background: var(--sp-chart-series-1)" title="--sp-chart-series-1"></div>
+              <div class="chart-bar" style="height: 85%; background: var(--sp-chart-series-2)" title="--sp-chart-series-2"></div>
+              <div class="chart-bar" style="height: 48%; background: var(--sp-chart-series-3)" title="--sp-chart-series-3"></div>
+              <div class="chart-bar" style="height: 74%; background: var(--sp-chart-series-4)" title="--sp-chart-series-4"></div>
+              <div class="chart-bar" style="height: 92%; background: var(--sp-chart-series-5)" title="--sp-chart-series-5"></div>
+              <div class="chart-bar" style="height: 38%; background: var(--sp-chart-series-6)" title="--sp-chart-series-6"></div>
+              <div class="chart-bar" style="height: 66%; background: var(--sp-chart-series-7)" title="--sp-chart-series-7"></div>
+              <div class="chart-bar" style="height: 55%; background: var(--sp-chart-series-8)" title="--sp-chart-series-8"></div>
+            </div>
+            <div class="chart-labels"><span>S1</span><span>S2</span><span>S3</span><span>S4</span><span>S5</span><span>S6</span><span>S7</span><span>S8</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="section">
+        <h2>Ramps</h2>
+        <p class="note">Sequential ramps show amount (low to high). Diverging ramps show distance from a midpoint in two directions.</p>
+        <h3>Sequential</h3>
+        <div class="ramp">
+          <span style="background: var(--sp-chart-sequential-1)" title="--sp-chart-sequential-1"></span>
+          <span style="background: var(--sp-chart-sequential-2)" title="--sp-chart-sequential-2"></span>
+          <span style="background: var(--sp-chart-sequential-3)" title="--sp-chart-sequential-3"></span>
+          <span style="background: var(--sp-chart-sequential-4)" title="--sp-chart-sequential-4"></span>
+          <span style="background: var(--sp-chart-sequential-5)" title="--sp-chart-sequential-5"></span>
+          <span style="background: var(--sp-chart-sequential-6)" title="--sp-chart-sequential-6"></span>
+          <span style="background: var(--sp-chart-sequential-7)" title="--sp-chart-sequential-7"></span>
+        </div>
+        <p class="meta">--sp-chart-sequential-{1…7}</p>
+        <h3 style="margin-top: var(--sp-space-24)">Diverging</h3>
+        <div class="ramp">
+          <span style="background: var(--sp-chart-diverging-1)" title="--sp-chart-diverging-1"></span>
+          <span style="background: var(--sp-chart-diverging-2)" title="--sp-chart-diverging-2"></span>
+          <span style="background: var(--sp-chart-diverging-3)" title="--sp-chart-diverging-3"></span>
+          <span style="background: var(--sp-chart-diverging-4)" title="--sp-chart-diverging-4"></span>
+          <span style="background: var(--sp-chart-diverging-5)" title="--sp-chart-diverging-5"></span>
+          <span style="background: var(--sp-chart-diverging-6)" title="--sp-chart-diverging-6"></span>
+          <span style="background: var(--sp-chart-diverging-7)" title="--sp-chart-diverging-7"></span>
+        </div>
+        <p class="meta">--sp-chart-diverging-{1…7}</p>
+      </div>
+    </div>
+  </body>
+</html>

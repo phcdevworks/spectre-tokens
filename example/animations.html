@@ -19,7 +19,7 @@
       }
 
       .container {
-        max-width: 1200px;
+        max-width: var(--sp-layout-container-max-width);
         margin: 0 auto;
       }
 
@@ -41,7 +41,7 @@
       }
 
       .subtitle {
-        font-size: 1.125rem;
+        font-size: var(--sp-font-lg-size);
         color: var(--sp-text-on-page-muted);
       }
 
@@ -61,7 +61,7 @@
 
       .animation-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(var(--sp-space-240), 1fr));
         gap: var(--sp-space-32);
       }
 
@@ -73,8 +73,8 @@
       }
 
       .animation-box {
-        width: 100px;
-        height: 100px;
+        width: var(--sp-space-96);
+        height: var(--sp-space-96);
         background: linear-gradient(135deg, var(--sp-color-info-500), var(--sp-color-info-600));
         border-radius: var(--sp-radius-lg);
         margin: 0 auto var(--sp-space-16);
@@ -82,7 +82,7 @@
 
       .animation-label {
         font-size: var(--sp-font-md-size);
-        font-weight: 600;
+        font-weight: var(--sp-font-weight-semibold);
         color: var(--sp-color-neutral-900);
         margin-bottom: var(--sp-space-4);
       }
@@ -105,12 +105,12 @@
       }
 
       @keyframes slide-up {
-        from { transform: translateY(20px); opacity: 0; }
+        from { transform: translateY(var(--sp-space-20)); opacity: 0; }
         to { transform: translateY(0); opacity: 1; }
       }
 
       @keyframes slide-down {
-        from { transform: translateY(-20px); opacity: 0; }
+        from { transform: translateY(calc(-1 * var(--sp-space-20))); opacity: 0; }
         to { transform: translateY(0); opacity: 1; }
       }
 
@@ -121,13 +121,13 @@
 
       @keyframes bounce {
         0%, 100% { transform: translateY(0); }
-        50% { transform: translateY(-10px); }
+        50% { transform: translateY(calc(-1 * var(--sp-space-10))); }
       }
 
       @keyframes shake {
         0%, 100% { transform: translateX(0); }
-        25% { transform: translateX(-10px); }
-        75% { transform: translateX(10px); }
+        25% { transform: translateX(calc(-1 * var(--sp-space-10))); }
+        75% { transform: translateX(var(--sp-space-10)); }
       }
 
       @keyframes pulse {
@@ -170,10 +170,10 @@
         background: var(--sp-button-primary-bg);
         color: var(--sp-color-white);
         border: none;
-        border-radius: 6px;
+        border-radius: var(--sp-radius-lg);
         cursor: pointer;
         font-size: var(--sp-font-sm-size);
-        font-weight: 600;
+        font-weight: var(--sp-font-weight-semibold);
       }
 
       .trigger-btn:hover {
@@ -191,16 +191,16 @@
       }
 
       .duration-bar {
-        height: 8px;
+        height: var(--sp-space-8);
         background: linear-gradient(90deg, var(--sp-color-info-500), var(--sp-color-info-600));
         border-radius: var(--sp-radius-md);
         transition: width var(--sp-duration-moderate) var(--sp-easing-out);
       }
 
       .duration-label {
-        min-width: 120px;
+        min-width: var(--sp-space-128);
         font-size: var(--sp-font-sm-size);
-        font-weight: 600;
+        font-weight: var(--sp-font-weight-semibold);
         color: var(--sp-color-neutral-900);
       }
 
@@ -208,7 +208,7 @@
         font-size: var(--sp-font-xs-size);
         font-family: monospace;
         color: var(--sp-color-neutral-500);
-        min-width: 80px;
+        min-width: var(--sp-space-80);
       }
 
       .easing-block {
@@ -218,7 +218,7 @@
       }
 
       .easing-title {
-        font-weight: 600;
+        font-weight: var(--sp-font-weight-semibold);
         color: var(--sp-color-neutral-900);
         margin-bottom: var(--sp-space-8);
       }
@@ -325,32 +325,32 @@
         <h2>Duration Tokens</h2>
         <div class="duration-demo">
           <div class="duration-label">Instant</div>
-          <div class="duration-bar" style="width: 75px"></div>
+          <div class="duration-bar" style="width: 11%"></div>
           <div class="duration-value">--sp-duration-instant (75ms)</div>
         </div>
         <div class="duration-demo">
           <div class="duration-label">Fast</div>
-          <div class="duration-bar" style="width: 150px"></div>
+          <div class="duration-bar" style="width: 21%"></div>
           <div class="duration-value">--sp-duration-fast (150ms)</div>
         </div>
         <div class="duration-demo">
           <div class="duration-label">Base</div>
-          <div class="duration-bar" style="width: 200px"></div>
+          <div class="duration-bar" style="width: 29%"></div>
           <div class="duration-value">--sp-duration-base (200ms)</div>
         </div>
         <div class="duration-demo">
           <div class="duration-label">Moderate</div>
-          <div class="duration-bar" style="width: 300px"></div>
+          <div class="duration-bar" style="width: 43%"></div>
           <div class="duration-value">--sp-duration-moderate (300ms)</div>
         </div>
         <div class="duration-demo">
           <div class="duration-label">Slow</div>
-          <div class="duration-bar" style="width: 400px"></div>
+          <div class="duration-bar" style="width: 71%"></div>
           <div class="duration-value">--sp-duration-slow (500ms)</div>
         </div>
         <div class="duration-demo">
           <div class="duration-label">Slower</div>
-          <div class="duration-bar" style="width: 500px"></div>
+          <div class="duration-bar" style="width: 100%"></div>
           <div class="duration-value">--sp-duration-slower (700ms)</div>
         </div>
       </div>

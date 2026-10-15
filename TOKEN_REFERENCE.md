@@ -5,8 +5,8 @@ Do not hand-edit — regenerate instead. This file is a derived artifact, not
 contract authority; `tokens/` and `contract.manifest.json` remain the source
 of truth (see `TOKEN_CONTRACT.md`).
 
-Every leaf token path across all 29 public namespaces
-(3322 total), with its resolved source value and a usage note.
+Every leaf token path across all 30 public namespaces
+(3365 total), with its resolved source value and a usage note.
 Values shown here are pre-CSS-resolution source values — `{path.to.token}`
 references are shown as-written, not resolved (see `src/css.ts` for
 resolved CSS output).
@@ -587,104 +587,116 @@ resolved CSS output).
 | `typography.scale.md.lineHeight` | `1.75rem` | typography token. |
 | `typography.scale.md.fontWeight` | `500` | typography token. |
 | `typography.scale.md.letterSpacing` | `0em` | typography token. |
-| `typography.scale.lg.fontSize` | `1.25rem` | typography token. |
-| `typography.scale.lg.lineHeight` | `2rem` | typography token. |
-| `typography.scale.lg.fontWeight` | `600` | typography token. |
+| `typography.scale.lg.fontSize` | `1.125rem` | typography token. |
+| `typography.scale.lg.lineHeight` | `1.875rem` | typography token. |
+| `typography.scale.lg.fontWeight` | `500` | typography token. |
 | `typography.scale.lg.letterSpacing` | `0em` | typography token. |
-| `typography.scale.xl.fontSize` | `1.5rem` | typography token. |
-| `typography.scale.xl.lineHeight` | `2.125rem` | typography token. |
+| `typography.scale.xl.fontSize` | `1.25rem` | typography token. |
+| `typography.scale.xl.lineHeight` | `2rem` | typography token. |
 | `typography.scale.xl.fontWeight` | `600` | typography token. |
 | `typography.scale.xl.letterSpacing` | `0em` | typography token. |
-| `typography.scale.2xl.fontSize` | `1.875rem` | typography token. |
-| `typography.scale.2xl.lineHeight` | `2.5rem` | typography token. |
-| `typography.scale.2xl.fontWeight` | `700` | typography token. |
+| `typography.scale.2xl.fontSize` | `1.5rem` | typography token. |
+| `typography.scale.2xl.lineHeight` | `2.125rem` | typography token. |
+| `typography.scale.2xl.fontWeight` | `600` | typography token. |
 | `typography.scale.2xl.letterSpacing` | `0em` | typography token. |
-| `typography.scale.3xl.fontSize` | `2.25rem` | typography token. |
-| `typography.scale.3xl.lineHeight` | `2.75rem` | typography token. |
+| `typography.scale.3xl.fontSize` | `1.875rem` | typography token. |
+| `typography.scale.3xl.lineHeight` | `2.5rem` | typography token. |
 | `typography.scale.3xl.fontWeight` | `700` | typography token. |
 | `typography.scale.3xl.letterSpacing` | `0em` | typography token. |
-| `typography.scale.4xl.fontSize` | `3rem` | typography token. |
-| `typography.scale.4xl.lineHeight` | `3.5rem` | typography token. |
-| `typography.scale.4xl.fontWeight` | `800` | typography token. |
+| `typography.scale.4xl.fontSize` | `2.25rem` | typography token. |
+| `typography.scale.4xl.lineHeight` | `2.75rem` | typography token. |
+| `typography.scale.4xl.fontWeight` | `700` | typography token. |
 | `typography.scale.4xl.letterSpacing` | `0em` | typography token. |
-| `typography.scale.5xl.fontSize` | `3.75rem` | typography token. |
-| `typography.scale.5xl.lineHeight` | `4.25rem` | typography token. |
+| `typography.scale.5xl.fontSize` | `3rem` | typography token. |
+| `typography.scale.5xl.lineHeight` | `3.5rem` | typography token. |
 | `typography.scale.5xl.fontWeight` | `800` | typography token. |
 | `typography.scale.5xl.letterSpacing` | `0em` | typography token. |
-| `typography.scale.6xl.fontSize` | `4.5rem` | typography token. |
-| `typography.scale.6xl.lineHeight` | `5rem` | typography token. |
-| `typography.scale.6xl.fontWeight` | `900` | typography token. |
+| `typography.scale.6xl.fontSize` | `3.75rem` | typography token. |
+| `typography.scale.6xl.lineHeight` | `4.25rem` | typography token. |
+| `typography.scale.6xl.fontWeight` | `800` | typography token. |
 | `typography.scale.6xl.letterSpacing` | `0em` | typography token. |
+| `typography.scale.7xl.fontSize` | `4.5rem` | typography token. |
+| `typography.scale.7xl.lineHeight` | `5rem` | typography token. |
+| `typography.scale.7xl.fontWeight` | `900` | typography token. |
+| `typography.scale.7xl.letterSpacing` | `0em` | typography token. |
+| `typography.scale.8xl.fontSize` | `6rem` | typography token. |
+| `typography.scale.8xl.lineHeight` | `6.5rem` | typography token. |
+| `typography.scale.8xl.fontWeight` | `900` | typography token. |
+| `typography.scale.8xl.letterSpacing` | `0em` | typography token. |
+| `typography.scale.9xl.fontSize` | `8rem` | typography token. |
+| `typography.scale.9xl.lineHeight` | `8.5rem` | typography token. |
+| `typography.scale.9xl.fontWeight` | `900` | typography token. |
+| `typography.scale.9xl.letterSpacing` | `0em` | typography token. |
 | `typography.heading.h1.fontFamily` | `{typography.families.sans}` | typography token. |
-| `typography.heading.h1.fontSize` | `{typography.scale.5xl.fontSize}` | typography token. |
-| `typography.heading.h1.lineHeight` | `{typography.scale.5xl.lineHeight}` | typography token. |
+| `typography.heading.h1.fontSize` | `{typography.scale.6xl.fontSize}` | typography token. |
+| `typography.heading.h1.lineHeight` | `{typography.scale.6xl.lineHeight}` | typography token. |
 | `typography.heading.h1.fontWeight` | `800` | typography token. |
-| `typography.heading.h1.letterSpacing` | `{typography.scale.5xl.letterSpacing}` | typography token. |
+| `typography.heading.h1.letterSpacing` | `{typography.scale.6xl.letterSpacing}` | typography token. |
 | `typography.heading.h2.fontFamily` | `{typography.families.sans}` | typography token. |
-| `typography.heading.h2.fontSize` | `{typography.scale.4xl.fontSize}` | typography token. |
-| `typography.heading.h2.lineHeight` | `{typography.scale.4xl.lineHeight}` | typography token. |
+| `typography.heading.h2.fontSize` | `{typography.scale.5xl.fontSize}` | typography token. |
+| `typography.heading.h2.lineHeight` | `{typography.scale.5xl.lineHeight}` | typography token. |
 | `typography.heading.h2.fontWeight` | `700` | typography token. |
-| `typography.heading.h2.letterSpacing` | `{typography.scale.4xl.letterSpacing}` | typography token. |
+| `typography.heading.h2.letterSpacing` | `{typography.scale.5xl.letterSpacing}` | typography token. |
 | `typography.heading.h3.fontFamily` | `{typography.families.sans}` | typography token. |
-| `typography.heading.h3.fontSize` | `{typography.scale.3xl.fontSize}` | typography token. |
-| `typography.heading.h3.lineHeight` | `{typography.scale.3xl.lineHeight}` | typography token. |
+| `typography.heading.h3.fontSize` | `{typography.scale.4xl.fontSize}` | typography token. |
+| `typography.heading.h3.lineHeight` | `{typography.scale.4xl.lineHeight}` | typography token. |
 | `typography.heading.h3.fontWeight` | `700` | typography token. |
-| `typography.heading.h3.letterSpacing` | `{typography.scale.3xl.letterSpacing}` | typography token. |
+| `typography.heading.h3.letterSpacing` | `{typography.scale.4xl.letterSpacing}` | typography token. |
 | `typography.heading.h4.fontFamily` | `{typography.families.sans}` | typography token. |
-| `typography.heading.h4.fontSize` | `{typography.scale.2xl.fontSize}` | typography token. |
-| `typography.heading.h4.lineHeight` | `{typography.scale.2xl.lineHeight}` | typography token. |
+| `typography.heading.h4.fontSize` | `{typography.scale.3xl.fontSize}` | typography token. |
+| `typography.heading.h4.lineHeight` | `{typography.scale.3xl.lineHeight}` | typography token. |
 | `typography.heading.h4.fontWeight` | `600` | typography token. |
-| `typography.heading.h4.letterSpacing` | `{typography.scale.2xl.letterSpacing}` | typography token. |
+| `typography.heading.h4.letterSpacing` | `{typography.scale.3xl.letterSpacing}` | typography token. |
 | `typography.heading.h5.fontFamily` | `{typography.families.sans}` | typography token. |
-| `typography.heading.h5.fontSize` | `{typography.scale.xl.fontSize}` | typography token. |
-| `typography.heading.h5.lineHeight` | `{typography.scale.xl.lineHeight}` | typography token. |
+| `typography.heading.h5.fontSize` | `{typography.scale.2xl.fontSize}` | typography token. |
+| `typography.heading.h5.lineHeight` | `{typography.scale.2xl.lineHeight}` | typography token. |
 | `typography.heading.h5.fontWeight` | `600` | typography token. |
-| `typography.heading.h5.letterSpacing` | `{typography.scale.xl.letterSpacing}` | typography token. |
+| `typography.heading.h5.letterSpacing` | `{typography.scale.2xl.letterSpacing}` | typography token. |
 | `typography.heading.h6.fontFamily` | `{typography.families.sans}` | typography token. |
-| `typography.heading.h6.fontSize` | `{typography.scale.lg.fontSize}` | typography token. |
-| `typography.heading.h6.lineHeight` | `{typography.scale.lg.lineHeight}` | typography token. |
+| `typography.heading.h6.fontSize` | `{typography.scale.xl.fontSize}` | typography token. |
+| `typography.heading.h6.lineHeight` | `{typography.scale.xl.lineHeight}` | typography token. |
 | `typography.heading.h6.fontWeight` | `600` | typography token. |
-| `typography.heading.h6.letterSpacing` | `{typography.scale.lg.letterSpacing}` | typography token. |
+| `typography.heading.h6.letterSpacing` | `{typography.scale.xl.letterSpacing}` | typography token. |
 | `typography.body.fontFamily` | `{typography.families.sans}` | typography token. |
 | `typography.body.fontSize` | `{typography.scale.md.fontSize}` | typography token. |
 | `typography.body.lineHeight` | `{typography.scale.md.lineHeight}` | typography token. |
 | `typography.body.fontWeight` | `400` | typography token. |
 | `typography.body.letterSpacing` | `{typography.scale.md.letterSpacing}` | typography token. |
 | `typography.display.1.fontFamily` | `{typography.families.sans}` | typography token. |
-| `typography.display.1.fontSize` | `{typography.scale.6xl.fontSize}` | typography token. |
-| `typography.display.1.lineHeight` | `{typography.scale.6xl.lineHeight}` | typography token. |
+| `typography.display.1.fontSize` | `{typography.scale.7xl.fontSize}` | typography token. |
+| `typography.display.1.lineHeight` | `{typography.scale.7xl.lineHeight}` | typography token. |
 | `typography.display.1.fontWeight` | `800` | typography token. |
-| `typography.display.1.letterSpacing` | `{typography.scale.6xl.letterSpacing}` | typography token. |
+| `typography.display.1.letterSpacing` | `{typography.scale.7xl.letterSpacing}` | typography token. |
 | `typography.display.2.fontFamily` | `{typography.families.sans}` | typography token. |
-| `typography.display.2.fontSize` | `{typography.scale.5xl.fontSize}` | typography token. |
-| `typography.display.2.lineHeight` | `{typography.scale.5xl.lineHeight}` | typography token. |
+| `typography.display.2.fontSize` | `{typography.scale.6xl.fontSize}` | typography token. |
+| `typography.display.2.lineHeight` | `{typography.scale.6xl.lineHeight}` | typography token. |
 | `typography.display.2.fontWeight` | `800` | typography token. |
-| `typography.display.2.letterSpacing` | `{typography.scale.5xl.letterSpacing}` | typography token. |
+| `typography.display.2.letterSpacing` | `{typography.scale.6xl.letterSpacing}` | typography token. |
 | `typography.display.3.fontFamily` | `{typography.families.sans}` | typography token. |
-| `typography.display.3.fontSize` | `{typography.scale.4xl.fontSize}` | typography token. |
-| `typography.display.3.lineHeight` | `{typography.scale.4xl.lineHeight}` | typography token. |
+| `typography.display.3.fontSize` | `{typography.scale.5xl.fontSize}` | typography token. |
+| `typography.display.3.lineHeight` | `{typography.scale.5xl.lineHeight}` | typography token. |
 | `typography.display.3.fontWeight` | `700` | typography token. |
-| `typography.display.3.letterSpacing` | `{typography.scale.4xl.letterSpacing}` | typography token. |
+| `typography.display.3.letterSpacing` | `{typography.scale.5xl.letterSpacing}` | typography token. |
 | `typography.display.4.fontFamily` | `{typography.families.sans}` | typography token. |
-| `typography.display.4.fontSize` | `{typography.scale.3xl.fontSize}` | typography token. |
-| `typography.display.4.lineHeight` | `{typography.scale.3xl.lineHeight}` | typography token. |
+| `typography.display.4.fontSize` | `{typography.scale.4xl.fontSize}` | typography token. |
+| `typography.display.4.lineHeight` | `{typography.scale.4xl.lineHeight}` | typography token. |
 | `typography.display.4.fontWeight` | `700` | typography token. |
-| `typography.display.4.letterSpacing` | `{typography.scale.3xl.letterSpacing}` | typography token. |
+| `typography.display.4.letterSpacing` | `{typography.scale.4xl.letterSpacing}` | typography token. |
 | `typography.display.5.fontFamily` | `{typography.families.sans}` | typography token. |
-| `typography.display.5.fontSize` | `{typography.scale.2xl.fontSize}` | typography token. |
-| `typography.display.5.lineHeight` | `{typography.scale.2xl.lineHeight}` | typography token. |
+| `typography.display.5.fontSize` | `{typography.scale.3xl.fontSize}` | typography token. |
+| `typography.display.5.lineHeight` | `{typography.scale.3xl.lineHeight}` | typography token. |
 | `typography.display.5.fontWeight` | `600` | typography token. |
-| `typography.display.5.letterSpacing` | `{typography.scale.2xl.letterSpacing}` | typography token. |
+| `typography.display.5.letterSpacing` | `{typography.scale.3xl.letterSpacing}` | typography token. |
 | `typography.display.6.fontFamily` | `{typography.families.sans}` | typography token. |
-| `typography.display.6.fontSize` | `{typography.scale.xl.fontSize}` | typography token. |
-| `typography.display.6.lineHeight` | `{typography.scale.xl.lineHeight}` | typography token. |
+| `typography.display.6.fontSize` | `{typography.scale.2xl.fontSize}` | typography token. |
+| `typography.display.6.lineHeight` | `{typography.scale.2xl.lineHeight}` | typography token. |
 | `typography.display.6.fontWeight` | `600` | typography token. |
-| `typography.display.6.letterSpacing` | `{typography.scale.xl.letterSpacing}` | typography token. |
+| `typography.display.6.letterSpacing` | `{typography.scale.2xl.letterSpacing}` | typography token. |
 | `typography.lead.fontFamily` | `{typography.families.sans}` | typography token. |
-| `typography.lead.fontSize` | `{typography.scale.lg.fontSize}` | typography token. |
-| `typography.lead.lineHeight` | `{typography.scale.lg.lineHeight}` | typography token. |
+| `typography.lead.fontSize` | `{typography.scale.xl.fontSize}` | typography token. |
+| `typography.lead.lineHeight` | `{typography.scale.xl.lineHeight}` | typography token. |
 | `typography.lead.fontWeight` | `400` | typography token. |
-| `typography.lead.letterSpacing` | `{typography.scale.lg.letterSpacing}` | typography token. |
+| `typography.lead.letterSpacing` | `{typography.scale.xl.letterSpacing}` | typography token. |
 
 ## font
 
@@ -730,6 +742,18 @@ resolved CSS output).
 | `font.6xl.lineHeight` | `{typography.scale.6xl.lineHeight}` | font token. |
 | `font.6xl.weight` | `{typography.scale.6xl.fontWeight}` | font token. |
 | `font.6xl.letterSpacing` | `{typography.scale.6xl.letterSpacing}` | font token. |
+| `font.7xl.size` | `{typography.scale.7xl.fontSize}` | font token. |
+| `font.7xl.lineHeight` | `{typography.scale.7xl.lineHeight}` | font token. |
+| `font.7xl.weight` | `{typography.scale.7xl.fontWeight}` | font token. |
+| `font.7xl.letterSpacing` | `{typography.scale.7xl.letterSpacing}` | font token. |
+| `font.8xl.size` | `{typography.scale.8xl.fontSize}` | font token. |
+| `font.8xl.lineHeight` | `{typography.scale.8xl.lineHeight}` | font token. |
+| `font.8xl.weight` | `{typography.scale.8xl.fontWeight}` | font token. |
+| `font.8xl.letterSpacing` | `{typography.scale.8xl.letterSpacing}` | font token. |
+| `font.9xl.size` | `{typography.scale.9xl.fontSize}` | font token. |
+| `font.9xl.lineHeight` | `{typography.scale.9xl.lineHeight}` | font token. |
+| `font.9xl.weight` | `{typography.scale.9xl.fontWeight}` | font token. |
+| `font.9xl.letterSpacing` | `{typography.scale.9xl.letterSpacing}` | font token. |
 
 ## shadows
 
@@ -1377,7 +1401,7 @@ resolved CSS output).
 | `component.table.header.text` | `{colors.neutral.700}` | Pairs with `component.table.header.bg` for contrast. |
 | `component.table.text` | `{colors.neutral.900}` | component token. |
 | `component.table.divider` | `{colors.neutral.200}` | component token. |
-| `component.table.stripeBg` | `{colors.neutral.50}` | component token. |
+| `component.table.stripeBg` | `{colors.black} / 0.05` | component token. |
 | `component.table.hoverBg` | `{colors.neutral.100}` | component token. |
 | `component.table.selectedBg` | `{colors.info.50}` | component token. |
 | `component.table.row.neutral.bg` | `{colors.neutral.100}` | Pairs with `component.table.row.neutral.text` for contrast. |
@@ -1933,7 +1957,7 @@ resolved CSS output).
 | `modes.default.component.table.header.text` | `{colors.neutral.700}` | Pairs with `modes.default.component.table.header.bg` for contrast. |
 | `modes.default.component.table.text` | `{colors.neutral.900}` | modes token. |
 | `modes.default.component.table.divider` | `{colors.neutral.200}` | modes token. |
-| `modes.default.component.table.stripeBg` | `{colors.neutral.50}` | modes token. |
+| `modes.default.component.table.stripeBg` | `{colors.black} / 0.05` | modes token. |
 | `modes.default.component.table.hoverBg` | `{colors.neutral.100}` | modes token. |
 | `modes.default.component.table.selectedBg` | `{colors.info.50}` | modes token. |
 | `modes.default.component.table.row.neutral.bg` | `{colors.neutral.100}` | Pairs with `modes.default.component.table.row.neutral.text` for contrast. |
@@ -2474,7 +2498,7 @@ resolved CSS output).
 | `modes.dark.component.table.header.text` | `{colors.neutral.100}` | Pairs with `modes.dark.component.table.header.bg` for contrast. |
 | `modes.dark.component.table.text` | `{colors.neutral.100}` | modes token. |
 | `modes.dark.component.table.divider` | `{colors.neutral.700}` | modes token. |
-| `modes.dark.component.table.stripeBg` | `{colors.neutral.800}` | modes token. |
+| `modes.dark.component.table.stripeBg` | `{colors.white} / 0.06` | modes token. |
 | `modes.dark.component.table.hoverBg` | `{colors.neutral.700}` | modes token. |
 | `modes.dark.component.table.selectedBg` | `{colors.info.900}` | modes token. |
 | `modes.dark.component.table.row.neutral.bg` | `{colors.neutral.700}` | Pairs with `modes.dark.component.table.row.neutral.text` for contrast. |
@@ -2728,6 +2752,12 @@ resolved CSS output).
 | `modes.dark.component.code.syntax.attribute` | `{colors.palette.teal.300}` | Pairs with `modes.dark.component.prose.codeBlock.bg` for contrast. |
 | `modes.dark.component.proofing.spelling` | `{colors.error.400}` | Pairs with `modes.dark.surface.page` for contrast. |
 | `modes.dark.component.proofing.grammar` | `{colors.info.400}` | Pairs with `modes.dark.surface.page` for contrast. |
+| `modes.dark.link.default` | `{colors.brand.400}` | default inline link color |
+| `modes.dark.link.hover` | `{colors.brand.300}` | link color on hover |
+| `modes.dark.link.active` | `{colors.brand.200}` | link color while pressed |
+| `modes.dark.link.visited` | `{colors.accent.300}` | link color after the destination has been visited |
+| `modes.dark.link.underline` | `{colors.brand.400} / 0.4` | underline colour for inline links; the link text keeps link.default |
+| `modes.dark.link.underlineHover` | `{colors.brand.300}` | underline colour for inline links on hover |
 | `modes.highContrast.surface.page` | `{colors.white}` | Pairs with `modes.highContrast.text.onPage.default` for contrast. |
 | `modes.highContrast.surface.card` | `{colors.white}` | Pairs with `modes.highContrast.text.onSurface.default` for contrast. |
 | `modes.highContrast.surface.input` | `{colors.white}` | Pairs with `modes.highContrast.text.onSurface.default` for contrast. |
@@ -3477,6 +3507,24 @@ resolved CSS output).
 | `fontWeight.bold` | `700` | fontWeight token. |
 | `fontWeight.extrabold` | `800` | fontWeight token. |
 | `fontWeight.black` | `900` | fontWeight token. |
+
+## fontSize
+
+| Path | Value | Usage |
+| ---- | ----- | ----- |
+| `fontSize.12` | `0.75rem` | fontSize token. |
+| `fontSize.14` | `0.875rem` | fontSize token. |
+| `fontSize.16` | `1rem` | fontSize token. |
+| `fontSize.18` | `1.125rem` | fontSize token. |
+| `fontSize.20` | `1.25rem` | fontSize token. |
+| `fontSize.24` | `1.5rem` | fontSize token. |
+| `fontSize.30` | `1.875rem` | fontSize token. |
+| `fontSize.36` | `2.25rem` | fontSize token. |
+| `fontSize.48` | `3rem` | fontSize token. |
+| `fontSize.60` | `3.75rem` | fontSize token. |
+| `fontSize.72` | `4.5rem` | fontSize token. |
+| `fontSize.96` | `6rem` | fontSize token. |
+| `fontSize.128` | `8rem` | fontSize token. |
 
 ## HTML element coverage
 

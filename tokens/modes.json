@@ -1466,7 +1466,7 @@
             "metadata": {}
           },
           "stripeBg": {
-            "value": "{colors.neutral.50}",
+            "value": "{colors.black} / 0.05",
             "metadata": {}
           },
           "hoverBg": {
@@ -4396,7 +4396,7 @@
             "metadata": {}
           },
           "stripeBg": {
-            "value": "{colors.neutral.800}",
+            "value": "{colors.white} / 0.06",
             "metadata": {}
           },
           "hoverBg": {
@@ -5835,6 +5835,44 @@
               "minContrast": 3
             }
           }
+        }
+      },
+      "link": {
+        "default": {
+          "value": "{colors.brand.400}",
+          "description": "default inline link color",
+          "metadata": {
+            "pair": "modes.dark.surface.card"
+          }
+        },
+        "hover": {
+          "value": "{colors.brand.300}",
+          "description": "link color on hover",
+          "metadata": {
+            "pair": "modes.dark.surface.card"
+          }
+        },
+        "active": {
+          "value": "{colors.brand.200}",
+          "description": "link color while pressed",
+          "metadata": {
+            "pair": "modes.dark.surface.card"
+          }
+        },
+        "visited": {
+          "value": "{colors.accent.300}",
+          "description": "link color after the destination has been visited",
+          "metadata": {
+            "pair": "modes.dark.surface.card"
+          }
+        },
+        "underline": {
+          "value": "{colors.brand.400} / 0.4",
+          "description": "underline colour for inline links; the link text keeps link.default"
+        },
+        "underlineHover": {
+          "value": "{colors.brand.300}",
+          "description": "underline colour for inline links on hover"
         }
       }
     },

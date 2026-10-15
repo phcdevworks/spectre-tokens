@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Layout - Spectre Tokens</title>
+    <link rel="stylesheet" href="../dist/index.css" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: var(--sp-font-family-sans);
+        padding: var(--sp-space-32);
+        background: var(--sp-surface-page);
+        color: var(--sp-text-on-page-default);
+      }
+
+      .container {
+        max-width: var(--sp-layout-container-max-width);
+        margin: 0 auto;
+      }
+
+      .header {
+        margin-bottom: var(--sp-space-32);
+      }
+
+      .back-link {
+        color: var(--sp-text-on-page-brand);
+        text-decoration: none;
+        margin-bottom: var(--sp-space-16);
+        display: inline-block;
+      }
+
+      h1 {
+        font-size: var(--sp-font-4xl-size);
+        margin-bottom: var(--sp-space-8);
+        color: var(--sp-text-on-page-default);
+      }
+
+      .subtitle {
+        font-size: var(--sp-font-lg-size);
+        color: var(--sp-text-on-page-muted);
+      }
+
+      .section {
+        background: var(--sp-surface-card);
+        color: var(--sp-text-on-surface-default);
+        border-radius: var(--sp-radius-lg);
+        padding: var(--sp-space-32);
+        margin-bottom: var(--sp-space-32);
+        box-shadow: var(--sp-shadow-sm);
+      }
+
+      h2 {
+        font-size: var(--sp-font-xl-size);
+        margin-bottom: var(--sp-space-16);
+      }
+
+      h3 {
+        font-size: var(--sp-font-lg-size);
+        margin-bottom: var(--sp-space-12);
+      }
+
+      .note {
+        font-size: var(--sp-font-sm-size);
+        color: var(--sp-text-on-surface-muted);
+        margin-bottom: var(--sp-space-24);
+        max-width: var(--sp-layout-container-max-width-prose);
+      }
+
+      .meta {
+        font-family: var(--sp-font-family-mono);
+        font-size: var(--sp-font-xs-size);
+        color: var(--sp-text-on-surface-muted);
+        overflow-wrap: anywhere;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(var(--sp-space-192), 1fr));
+        gap: var(--sp-space-24);
+      }
+
+      .grid-wide {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(var(--sp-space-240), 1fr));
+        gap: var(--sp-space-24);
+      }
+
+      .bar-row { display: flex; align-items: center; gap: var(--sp-space-16); margin-bottom: var(--sp-space-8); }
+      .bar { display: inline-block; height: var(--sp-space-16); background: var(--sp-color-brand-500); border-radius: var(--sp-radius-sm); flex-shrink: 0; }
+      .width-demo { background: var(--sp-surface-subtle); border: var(--sp-border-width-base) dashed var(--sp-surface-divider); border-radius: var(--sp-radius-md); padding: var(--sp-space-12); margin-bottom: var(--sp-space-12); }
+      .hero-demo { background: var(--sp-surface-hero); color: var(--sp-text-on-inverse-default); border-radius: var(--sp-radius-lg); text-align: center; margin-bottom: var(--sp-space-16); }
+      .flow > * + * { margin-top: var(--sp-layout-prose-flow-paragraph); }
+      .flow > h3 { margin-top: var(--sp-layout-prose-flow-heading); }
+      .flow > h3 + * { margin-top: var(--sp-layout-prose-flow-heading-after); }
+      .flow li + li { margin-top: var(--sp-layout-prose-flow-list-item); }
+      .flow > blockquote { margin-top: var(--sp-layout-prose-flow-blockquote); border-inline-start: var(--sp-component-card-accent-thickness) solid var(--sp-prose-blockquote-border); padding-inline-start: var(--sp-space-16); color: var(--sp-prose-blockquote-text); }
+      .flow > hr { margin-block: var(--sp-layout-prose-flow-hr); border: none; border-top: var(--sp-border-width-base) solid var(--sp-prose-hr); }
+      .flow ul { padding-inline-start: var(--sp-space-24); }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="header">
+        <a href="examples.html" class="back-link">← Back to Examples</a>
+        <h1>📐 Layout</h1>
+        <p class="subtitle">Containers, section and stack spacing, hero padding, and article flow</p>
+      </div>
+
+      <div class="section">
+        <h2>Container Widths</h2>
+        <p class="note">Bars are capped at each max width, so on a narrow window they all fill the space.</p>
+        <div class="width-demo" style="max-width: var(--sp-layout-container-max-width)"><span class="meta">--sp-layout-container-max-width</span></div>
+        <div class="width-demo" style="max-width: var(--sp-layout-container-max-width-prose)"><span class="meta">--sp-layout-container-max-width-prose</span></div>
+        <div class="width-demo" style="max-width: var(--sp-layout-container-max-width-wide)"><span class="meta">--sp-layout-container-max-width-wide</span></div>
+        <div class="width-demo" style="max-width: var(--sp-layout-sidebar-width)"><span class="meta">--sp-layout-sidebar-width</span></div>
+      </div>
+      <div class="section">
+        <h2>Section Padding</h2>
+        <p class="note">All layout spacing sits on an 8px grid. <code>xl</code> to <code>4xl</code> are responsive: they grow at the <code>lg</code> breakpoint (1024px). Resize the window to see it. The variable name stays the same.</p>
+            <div class="bar-row"><span class="bar" style="width: var(--sp-layout-section-padding-sm)"></span><span class="meta">--sp-layout-section-padding-sm</span></div>
+            <div class="bar-row"><span class="bar" style="width: var(--sp-layout-section-padding-md)"></span><span class="meta">--sp-layout-section-padding-md</span></div>
+            <div class="bar-row"><span class="bar" style="width: var(--sp-layout-section-padding-lg)"></span><span class="meta">--sp-layout-section-padding-lg</span></div>
+            <div class="bar-row"><span class="bar" style="width: var(--sp-layout-section-padding-xl)"></span><span class="meta">--sp-layout-section-padding-xl</span></div>
+            <div class="bar-row"><span class="bar" style="width: var(--sp-layout-section-padding-2xl)"></span><span class="meta">--sp-layout-section-padding-2xl</span></div>
+            <div class="bar-row"><span class="bar" style="width: var(--sp-layout-section-padding-3xl)"></span><span class="meta">--sp-layout-section-padding-3xl</span></div>
+            <div class="bar-row"><span class="bar" style="width: var(--sp-layout-section-padding-4xl)"></span><span class="meta">--sp-layout-section-padding-4xl</span></div>
+      </div>
+      <div class="section">
+        <h2>Section Gap</h2>
+            <div class="bar-row"><span class="bar" style="width: var(--sp-layout-section-gap-sm)"></span><span class="meta">--sp-layout-section-gap-sm</span></div>
+            <div class="bar-row"><span class="bar" style="width: var(--sp-layout-section-gap-md)"></span><span class="meta">--sp-layout-section-gap-md</span></div>
+            <div class="bar-row"><span class="bar" style="width: var(--sp-layout-section-gap-lg)"></span><span class="meta">--sp-layout-section-gap-lg</span></div>
+            <div class="bar-row"><span class="bar" style="width: var(--sp-layout-section-gap-xl)"></span><span class="meta">--sp-layout-section-gap-xl</span></div>
+            <div class="bar-row"><span class="bar" style="width: var(--sp-layout-section-gap-2xl)"></span><span class="meta">--sp-layout-section-gap-2xl</span></div>
+            <div class="bar-row"><span class="bar" style="width: var(--sp-layout-section-gap-3xl)"></span><span class="meta">--sp-layout-section-gap-3xl</span></div>
+            <div class="bar-row"><span class="bar" style="width: var(--sp-layout-section-gap-4xl)"></span><span class="meta">--sp-layout-section-gap-4xl</span></div>
+      </div>
+      <div class="section">
+        <h2>Stack Gap</h2>
+            <div class="bar-row"><span class="bar" style="width: var(--sp-layout-stack-gap-sm)"></span><span class="meta">--sp-layout-stack-gap-sm</span></div>
+            <div class="bar-row"><span class="bar" style="width: var(--sp-layout-stack-gap-md)"></span><span class="meta">--sp-layout-stack-gap-md</span></div>
+            <div class="bar-row"><span class="bar" style="width: var(--sp-layout-stack-gap-lg)"></span><span class="meta">--sp-layout-stack-gap-lg</span></div>
+            <div class="bar-row"><span class="bar" style="width: var(--sp-layout-stack-gap-xl)"></span><span class="meta">--sp-layout-stack-gap-xl</span></div>
+            <div class="bar-row"><span class="bar" style="width: var(--sp-layout-stack-gap-2xl)"></span><span class="meta">--sp-layout-stack-gap-2xl</span></div>
+            <div class="bar-row"><span class="bar" style="width: var(--sp-layout-stack-gap-3xl)"></span><span class="meta">--sp-layout-stack-gap-3xl</span></div>
+            <div class="bar-row"><span class="bar" style="width: var(--sp-layout-stack-gap-4xl)"></span><span class="meta">--sp-layout-stack-gap-4xl</span></div>
+      </div>
+      <div class="section">
+        <h2>Container Inline Padding</h2>
+            <div class="bar-row"><span class="bar" style="width: var(--sp-layout-container-padding-inline-sm)"></span><span class="meta">--sp-layout-container-padding-inline-sm</span></div>
+            <div class="bar-row"><span class="bar" style="width: var(--sp-layout-container-padding-inline-md)"></span><span class="meta">--sp-layout-container-padding-inline-md</span></div>
+            <div class="bar-row"><span class="bar" style="width: var(--sp-layout-container-padding-inline-lg)"></span><span class="meta">--sp-layout-container-padding-inline-lg</span></div>
+            <div class="bar-row"><span class="bar" style="width: var(--sp-layout-container-padding-inline-xl)"></span><span class="meta">--sp-layout-container-padding-inline-xl</span></div>
+            <div class="bar-row"><span class="bar" style="width: var(--sp-layout-container-padding-inline-2xl)"></span><span class="meta">--sp-layout-container-padding-inline-2xl</span></div>
+            <div class="bar-row"><span class="bar" style="width: var(--sp-layout-container-padding-inline-3xl)"></span><span class="meta">--sp-layout-container-padding-inline-3xl</span></div>
+            <div class="bar-row"><span class="bar" style="width: var(--sp-layout-container-padding-inline-4xl)"></span><span class="meta">--sp-layout-container-padding-inline-4xl</span></div>
+      </div>
+      <div class="section">
+        <h2>Hero Padding</h2>
+        <p class="note">Hero padding references section padding steps, so it follows the responsive values too.</p>
+        <div class="hero-demo" style="padding-top: var(--sp-layout-hero-padding-top-sm); padding-bottom: var(--sp-layout-hero-padding-bottom-sm)">
+          <span class="meta" style="color: var(--sp-text-on-inverse-muted)">--sp-layout-hero-padding-top-sm / --sp-layout-hero-padding-bottom-sm</span>
+        </div>
+        <div class="hero-demo" style="padding-top: var(--sp-layout-hero-padding-top-md); padding-bottom: var(--sp-layout-hero-padding-bottom-md)">
+          <span class="meta" style="color: var(--sp-text-on-inverse-muted)">--sp-layout-hero-padding-top-md / --sp-layout-hero-padding-bottom-md</span>
+        </div>
+        <div class="hero-demo" style="padding-top: var(--sp-layout-hero-padding-top-lg); padding-bottom: var(--sp-layout-hero-padding-bottom-lg)">
+          <span class="meta" style="color: var(--sp-text-on-inverse-muted)">--sp-layout-hero-padding-top-lg / --sp-layout-hero-padding-bottom-lg</span>
+        </div>
+      </div>
+      <div class="section">
+        <h2>Article Flow</h2>
+        <p class="note">Spacing between blocks in long-form content, from <code>--sp-layout-prose-flow-*</code>.</p>
+        <div class="flow" style="max-width: var(--sp-layout-container-max-width-prose)">
+          <p>A paragraph is followed by <code>--sp-layout-prose-flow-paragraph</code> of space.</p>
+          <p>Each paragraph after the first gets the same gap.</p>
+          <h3>A heading gets more space above</h3>
+          <p>…and less space below, from <code>--sp-layout-prose-flow-heading-after</code>.</p>
+          <ul>
+            <li>List items use <code>--sp-layout-prose-flow-list-item</code></li>
+            <li>so they stay close together</li>
+          </ul>
+          <blockquote>A quote gets <code>--sp-layout-prose-flow-blockquote</code> above it.</blockquote>
+          <hr />
+          <p>A rule uses <code>--sp-layout-prose-flow-hr</code> above and below.</p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

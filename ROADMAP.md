@@ -48,6 +48,24 @@ every standard element and styleable pseudo-element in the canonical list is
 mapped, and `npm run check:elements` keeps that true. New gaps go in
 [TODO.md](TODO.md) as the list grows.
 
+The table stripe fix reported by `spectre-base` on 2026-10-11 is done and
+waiting in `CHANGELOG.md [Unreleased]`. `component.table.stripeBg` is now a
+translucent overlay, so stripes show on both the page and cards in light and
+dark mode. It ships in the next release.
+
+The font scale now matches Tailwind's sizes and is also waiting in
+`[Unreleased]`. A new 18px `lg` closes the 16→20px gap, `xl` through `6xl`
+each move down one step, and `7xl`–`9xl` are new. There is also a new numeric
+`fontSize` scale (`--sp-font-size-<px>`). Headings, display text, and the lead
+paragraph keep their sizes. Direct `--sp-font-*` uses in `spectre-ui` and
+`spectre-base` need a review after release; that is tracked in their
+`TODO.md`.
+
+Dark-mode link contrast is fixed and waiting in `[Unreleased]`. Links stayed
+`brand.600` on dark backgrounds (2.34:1 on a dark card). The new
+`modes.dark.link` lightens them to at least 4.75:1, and `check:contrast` now
+enforces it.
+
 There is no active delivery phase. Add the next phase here when new work is
 planned; do not use `Unreleased` for work already included in a versioned
 changelog entry and release tag.

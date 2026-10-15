@@ -14,7 +14,7 @@ const NAMESPACES = [
   'breakpoints', 'zIndex', 'transitions', 'animations', 'opacity',
   'aspectRatios', 'icons', 'border', 'accessibility', 'buttons', 'forms',
   'link', 'surface', 'text', 'component', 'modes', 'control', 'elevation',
-  'tracking', 'leading', 'textDecoration', 'fontWeight'
+  'tracking', 'leading', 'textDecoration', 'fontWeight', 'fontSize'
 ]
 
 function formatValue(value: unknown): string {

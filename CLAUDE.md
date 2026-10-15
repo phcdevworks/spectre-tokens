@@ -144,9 +144,9 @@ Changes to these require explicit approval from Bradley Potts.
 Current: `colors`, `space`, `layout`, `radii`, `typography`, `font`, `shadows`,
 `breakpoints`, `zIndex`, `transitions`, `animations`, `opacity`, `aspectRatios`,
 `icons`, `border`, `accessibility`, `buttons`, `forms`, `link`, `surface`,
-`text`, `component`, `modes`, `tracking`, `leading`, `textDecoration`, `fontWeight`, `control`, `elevation`
+`text`, `component`, `modes`, `tracking`, `leading`, `textDecoration`, `fontWeight`, `fontSize`, `control`, `elevation`
 
-Phases 1 through 16 are complete. Delivery history is tracked in `ROADMAP.md`;
+Phases 1 through 17 are complete. Delivery history is tracked in `ROADMAP.md`;
 active work, both proactive and downstream-requested, is tracked in
 `TODO.md`. Contract expansion is proactive: add what the vocabulary needs
 without waiting for a downstream request or proving demand, per "Contract

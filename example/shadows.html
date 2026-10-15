@@ -19,7 +19,7 @@
       }
 
       .container {
-        max-width: 1200px;
+        max-width: var(--sp-layout-container-max-width);
         margin: 0 auto;
       }
 
@@ -41,7 +41,7 @@
       }
 
       .subtitle {
-        font-size: 1.125rem;
+        font-size: var(--sp-font-lg-size);
         color: var(--sp-text-on-page-muted);
       }
 
@@ -61,8 +61,8 @@
 
       .shadow-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-        gap: 3rem;
+        grid-template-columns: repeat(auto-fill, minmax(var(--sp-space-240), 1fr));
+        gap: var(--sp-space-48);
         padding: var(--sp-space-32);
       }
 
@@ -71,15 +71,15 @@
       }
 
       .shadow-box {
-        width: 200px;
-        height: 150px;
+        width: var(--sp-space-192);
+        height: var(--sp-space-160);
         background: var(--sp-surface-card);
         border-radius: var(--sp-radius-lg);
         margin: 0 auto var(--sp-space-16);
         display: flex;
         align-items: center;
         justify-content: center;
-        font-weight: 600;
+        font-weight: var(--sp-font-weight-semibold);
         color: var(--sp-color-neutral-500);
       }
 
@@ -94,7 +94,7 @@
 
       .shadow-label {
         font-size: var(--sp-font-md-size);
-        font-weight: 600;
+        font-weight: var(--sp-font-weight-semibold);
         color: var(--sp-color-neutral-900);
         margin-bottom: var(--sp-space-4);
       }
@@ -108,9 +108,9 @@
 
       .elevation-demo {
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-        gap: 3rem;
-        padding: 3rem;
+        grid-template-columns: repeat(auto-fill, minmax(var(--sp-space-192), 1fr));
+        gap: var(--sp-space-48);
+        padding: var(--sp-space-48);
         background: linear-gradient(135deg, var(--sp-surface-page) 0%, var(--sp-color-neutral-200) 100%);
         border-radius: var(--sp-radius-lg);
       }
@@ -124,7 +124,7 @@
 
       .card-title {
         font-size: var(--sp-font-md-size);
-        font-weight: 600;
+        font-weight: var(--sp-font-weight-semibold);
         color: var(--sp-color-neutral-900);
         margin-bottom: var(--sp-space-8);
       }
@@ -136,7 +136,7 @@
       }
 
       .card-demo:hover {
-        transform: translateY(-4px);
+        transform: translateY(calc(-1 * var(--sp-space-4)));
       }
 
       .elevation-1 { box-shadow: var(--sp-shadow-sm); }

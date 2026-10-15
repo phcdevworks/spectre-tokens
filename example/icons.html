@@ -19,7 +19,7 @@
       }
 
       .container {
-        max-width: 1200px;
+        max-width: var(--sp-layout-container-max-width);
         margin: 0 auto;
       }
 
@@ -41,7 +41,7 @@
       }
 
       .subtitle {
-        font-size: 1.125rem;
+        font-size: var(--sp-font-lg-size);
         color: var(--sp-text-on-page-muted);
       }
 
@@ -61,7 +61,7 @@
 
       .icon-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(var(--sp-space-192), 1fr));
         gap: var(--sp-space-32);
         padding: var(--sp-space-32);
         background: var(--sp-surface-page);
@@ -82,24 +82,24 @@
         border-radius: var(--sp-radius-lg);
         border: var(--sp-border-width-base) var(--sp-border-style-solid) var(--sp-color-neutral-200);
         margin-bottom: var(--sp-space-12);
-        min-height: 120px;
+        min-height: var(--sp-space-128);
       }
 
       .icon-svg {
         fill: var(--sp-icon-box-icon-default);
       }
 
-      .icon-xs { width: 12px; height: 12px; }
-      .icon-sm { width: 16px; height: 16px; }
-      .icon-md { width: 20px; height: 20px; }
-      .icon-lg { width: 24px; height: 24px; }
-      .icon-xl { width: 32px; height: 32px; }
-      .icon-2xl { width: 40px; height: 40px; }
-      .icon-3xl { width: 48px; height: 48px; }
+      .icon-xs { width: var(--sp-icon-xs); height: var(--sp-icon-xs); }
+      .icon-sm { width: var(--sp-icon-sm); height: var(--sp-icon-sm); }
+      .icon-md { width: var(--sp-icon-md); height: var(--sp-icon-md); }
+      .icon-lg { width: var(--sp-icon-lg); height: var(--sp-icon-lg); }
+      .icon-xl { width: var(--sp-icon-xl); height: var(--sp-icon-xl); }
+      .icon-2xl { width: var(--sp-icon-2xl); height: var(--sp-icon-2xl); }
+      .icon-3xl { width: var(--sp-icon-3xl); height: var(--sp-icon-3xl); }
 
       .icon-label {
         font-size: var(--sp-font-md-size);
-        font-weight: 600;
+        font-weight: var(--sp-font-weight-semibold);
         color: var(--sp-color-neutral-900);
         margin-bottom: var(--sp-space-4);
       }
@@ -124,7 +124,7 @@
 
       .usage-title {
         font-size: var(--sp-font-md-size);
-        font-weight: 600;
+        font-weight: var(--sp-font-weight-semibold);
         color: var(--sp-color-neutral-900);
         margin-bottom: var(--sp-space-16);
         display: flex;

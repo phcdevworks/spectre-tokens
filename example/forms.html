@@ -19,7 +19,7 @@
       }
 
       .container {
-        max-width: 1200px;
+        max-width: var(--sp-layout-container-max-width);
         margin: 0 auto;
       }
 
@@ -41,7 +41,7 @@
       }
 
       .subtitle {
-        font-size: 1.125rem;
+        font-size: var(--sp-font-lg-size);
         color: var(--sp-text-on-page-muted);
       }
 
@@ -66,7 +66,7 @@
       .form-label {
         display: block;
         font-size: var(--sp-font-sm-size);
-        font-weight: 600;
+        font-weight: var(--sp-font-weight-semibold);
         color: var(--sp-color-neutral-900);
         margin-bottom: var(--sp-space-8);
       }
@@ -74,7 +74,7 @@
       .form-input {
         width: 100%;
         padding: var(--sp-space-10) var(--sp-space-14);
-        border-radius: 6px;
+        border-radius: var(--sp-radius-lg);
         font-size: var(--sp-font-sm-size);
         font-family: var(--sp-font-family-sans);
         transition: all var(--sp-duration-base) var(--sp-easing-inout);
@@ -137,7 +137,7 @@
       }
 
       .textarea {
-        min-height: 100px;
+        min-height: var(--sp-space-96);
         resize: vertical;
       }
 
@@ -145,9 +145,9 @@
         appearance: none;
         background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3E%3Cpath fill='%2364748b' d='M4.7 5.3a1 1 0 011.4 0L8 7.2l1.9-1.9a1 1 0 111.4 1.4l-2.6 2.6a1 1 0 01-1.4 0L4.7 6.7a1 1 0 010-1.4z'/%3E%3C/svg%3E");
         background-repeat: no-repeat;
-        background-position: right 0.75rem center;
-        background-size: 16px;
-        padding-right: 2.5rem;
+        background-position: right var(--sp-space-12) center;
+        background-size: var(--sp-icon-sm);
+        padding-right: var(--sp-space-40);
       }
 
       .checkbox-wrapper {
@@ -157,8 +157,8 @@
       }
 
       .checkbox {
-        width: 18px;
-        height: 18px;
+        width: var(--sp-icon-sm);
+        height: var(--sp-icon-sm);
         border: var(--sp-border-width-base) var(--sp-border-style-solid) var(--sp-form-default-border);
         border-radius: var(--sp-radius-md);
         cursor: pointer;
@@ -166,8 +166,8 @@
       }
 
       .radio {
-        width: 18px;
-        height: 18px;
+        width: var(--sp-icon-sm);
+        height: var(--sp-icon-sm);
         border: var(--sp-border-width-base) var(--sp-border-style-solid) var(--sp-form-default-border);
         cursor: pointer;
         accent-color: var(--sp-button-primary-bg);

@@ -19,7 +19,7 @@
       }
 
       .container {
-        max-width: 1200px;
+        max-width: var(--sp-layout-container-max-width);
         margin: 0 auto;
       }
 
@@ -30,14 +30,14 @@
       }
 
       p {
-        font-size: 1.125rem;
+        font-size: var(--sp-font-lg-size);
         color: var(--sp-text-on-page-muted);
         margin-bottom: var(--sp-space-32);
       }
 
       .examples-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(var(--sp-space-240), 1fr));
         gap: var(--sp-space-24);
         margin-top: var(--sp-space-32);
       }
@@ -55,7 +55,7 @@
 
       .example-card:hover {
         box-shadow: var(--sp-shadow-md);
-        transform: translateY(-2px);
+        transform: translateY(calc(-1 * var(--sp-space-2)));
       }
 
       .example-card h2 {
@@ -156,6 +156,42 @@
           <div class="icon">🖼️</div>
           <h2>Aspect Ratios</h2>
           <p>Consistent aspect ratios for images and media</p>
+        </a>
+
+        <a href="modes.html" class="example-card">
+          <div class="icon">🌗</div>
+          <h2>Colour Modes</h2>
+          <p>Light, dark, high-contrast, and system modes, scoped to any element</p>
+        </a>
+
+        <a href="layout.html" class="example-card">
+          <div class="icon">📐</div>
+          <h2>Layout</h2>
+          <p>Containers, responsive section and stack spacing, hero, article flow</p>
+        </a>
+
+        <a href="elevation.html" class="example-card">
+          <div class="icon">🪜</div>
+          <h2>Elevation & Controls</h2>
+          <p>Elevation levels, control sizing, and compact density</p>
+        </a>
+
+        <a href="data-viz.html" class="example-card">
+          <div class="icon">📊</div>
+          <h2>Data Visualisation</h2>
+          <p>Chart series, ramps, grid, axis, and labels in every mode</p>
+        </a>
+
+        <a href="accents.html" class="example-card">
+          <div class="icon">🎗️</div>
+          <h2>Accents</h2>
+          <p>Accent rails, accent roles, quotes, steppers, and footers</p>
+        </a>
+
+        <a href="elements.html" class="example-card">
+          <div class="icon">🧱</div>
+          <h2>HTML Elements</h2>
+          <p>Plain semantic HTML styled from tokens alone</p>
         </a>
       </div>
     </div>

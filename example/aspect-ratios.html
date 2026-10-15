@@ -19,7 +19,7 @@
       }
 
       .container {
-        max-width: 1200px;
+        max-width: var(--sp-layout-container-max-width);
         margin: 0 auto;
       }
 
@@ -41,7 +41,7 @@
       }
 
       .subtitle {
-        font-size: 1.125rem;
+        font-size: var(--sp-font-lg-size);
         color: var(--sp-text-on-page-muted);
       }
 
@@ -77,7 +77,7 @@
         align-items: center;
         justify-content: center;
         color: var(--sp-color-white);
-        font-weight: 600;
+        font-weight: var(--sp-font-weight-semibold);
         font-size: var(--sp-font-lg-size);
         position: relative;
         overflow: hidden;
@@ -94,15 +94,15 @@
         background:
           linear-gradient(
             to right,
-            rgba(255, 255, 255, 0.1) 1px,
-            transparent 1px
+            color-mix(in srgb, var(--sp-color-white) 10%, transparent) var(--sp-border-width-base),
+            transparent var(--sp-border-width-base)
           ),
           linear-gradient(
             to bottom,
-            rgba(255, 255, 255, 0.1) 1px,
-            transparent 1px
+            color-mix(in srgb, var(--sp-color-white) 10%, transparent) var(--sp-border-width-base),
+            transparent var(--sp-border-width-base)
           );
-        background-size: 40px 40px;
+        background-size: var(--sp-space-40) var(--sp-space-40);
       }
 
       .ratio-content {
@@ -126,7 +126,7 @@
 
       .ratio-label {
         font-size: var(--sp-font-md-size);
-        font-weight: 600;
+        font-weight: var(--sp-font-weight-semibold);
         color: var(--sp-color-neutral-900);
       }
 
@@ -157,7 +157,7 @@
 
       .usage-title {
         font-size: var(--sp-font-md-size);
-        font-weight: 600;
+        font-weight: var(--sp-font-weight-semibold);
         color: var(--sp-color-neutral-900);
         margin-bottom: var(--sp-space-8);
       }

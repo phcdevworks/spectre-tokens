@@ -2787,6 +2787,14 @@ interface SpectreGeneratedTokens {
                     grammar: string;
                 };
             };
+            link: {
+                default: string;
+                hover: string;
+                active: string;
+                visited: string;
+                underline: string;
+                underlineHover: string;
+            };
         };
         highContrast: {
             surface: {
@@ -4605,6 +4613,21 @@ interface SpectreGeneratedTokens {
         extrabold: number;
         black: number;
     };
+    fontSize: {
+        '12': string;
+        '14': string;
+        '16': string;
+        '18': string;
+        '20': string;
+        '24': string;
+        '30': string;
+        '36': string;
+        '48': string;
+        '60': string;
+        '72': string;
+        '96': string;
+        '128': string;
+    };
     surface: {
         page: string;
         card: string;
@@ -4841,6 +4864,24 @@ interface SpectreGeneratedTokens {
             weight: number;
             letterSpacing: string;
         };
+        '7xl': {
+            size: string;
+            lineHeight: string;
+            weight: number;
+            letterSpacing: string;
+        };
+        '8xl': {
+            size: string;
+            lineHeight: string;
+            weight: number;
+            letterSpacing: string;
+        };
+        '9xl': {
+            size: string;
+            lineHeight: string;
+            weight: number;
+            letterSpacing: string;
+        };
     };
     typography: {
         families: {
@@ -4904,6 +4945,24 @@ interface SpectreGeneratedTokens {
                 letterSpacing: string;
             };
             '6xl': {
+                fontSize: string;
+                lineHeight: string;
+                fontWeight: number;
+                letterSpacing: string;
+            };
+            '7xl': {
+                fontSize: string;
+                lineHeight: string;
+                fontWeight: number;
+                letterSpacing: string;
+            };
+            '8xl': {
+                fontSize: string;
+                lineHeight: string;
+                fontWeight: number;
+                letterSpacing: string;
+            };
+            '9xl': {
                 fontSize: string;
                 lineHeight: string;
                 fontWeight: number;
@@ -5418,4 +5477,5 @@ declare const generateCssVariables: (tokens: SpectreTokens, options?: CssVariabl
 
 declare const tokens: SpectreTokens;
 
-export { type AccessibilityTokens, type AnimationEntry, type ButtonStateTokens, type ColorScale, type ComponentAccentTokens, type ComponentBadgeTokens, type ComponentFooterTokens, type ComponentIconBoxTokens, type ComponentPricingCardTokens, type ComponentQuoteTokens, type ComponentRatingTokens, type ComponentTestimonialTokens, type ComponentTokens, type ControlSizeTokens, type ControlTokens, type ElevationLevelTokens, type ElevationTokens, type FormStateTokens, type LayoutTokens, type SpectreModeName, type SpectreModeTokens, type SpectreTokens, type TokenScale, type Tokens, type TransitionTokens, type TypographyTokens, tokens as default, generateCssVariables, tokens };
+export { tokens as default, generateCssVariables, tokens };
+export type { AccessibilityTokens, AnimationEntry, ButtonStateTokens, ColorScale, ComponentAccentTokens, ComponentBadgeTokens, ComponentFooterTokens, ComponentIconBoxTokens, ComponentPricingCardTokens, ComponentQuoteTokens, ComponentRatingTokens, ComponentTestimonialTokens, ComponentTokens, ControlSizeTokens, ControlTokens, ElevationLevelTokens, ElevationTokens, FormStateTokens, LayoutTokens, SpectreModeName, SpectreModeTokens, SpectreTokens, TokenScale, Tokens, TransitionTokens, TypographyTokens };

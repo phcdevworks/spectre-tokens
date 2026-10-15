@@ -19,7 +19,7 @@
       }
 
       .container {
-        max-width: 1200px;
+        max-width: var(--sp-layout-container-max-width);
         margin: 0 auto;
       }
 
@@ -41,7 +41,7 @@
       }
 
       .subtitle {
-        font-size: 1.125rem;
+        font-size: var(--sp-font-lg-size);
         color: var(--sp-text-on-page-muted);
       }
 
@@ -72,7 +72,7 @@
 
       .spacing-visual {
         background: linear-gradient(135deg, var(--sp-color-info-500), var(--sp-color-info-600));
-        height: 40px;
+        height: var(--sp-space-40);
       }
 
       .spacing-info {
@@ -81,7 +81,7 @@
 
       .spacing-label {
         font-size: var(--sp-font-md-size);
-        font-weight: 600;
+        font-weight: var(--sp-font-weight-semibold);
         color: var(--sp-color-neutral-900);
       }
 
@@ -101,7 +101,7 @@
 
       .layout-label {
         font-size: var(--sp-font-sm-size);
-        font-weight: 600;
+        font-weight: var(--sp-font-weight-semibold);
         color: var(--sp-color-neutral-900);
         margin-bottom: var(--sp-space-16);
       }
@@ -134,7 +134,7 @@
         border-radius: var(--sp-radius-md);
         text-align: center;
         color: var(--sp-color-neutral-900);
-        font-weight: 500;
+        font-weight: var(--sp-font-weight-medium);
       }
     </style>
   </head>
@@ -153,7 +153,7 @@
         <h2>Spacing Scale</h2>
         <div class="spacing-grid">
           <div class="spacing-example">
-            <div class="spacing-visual" style="width: 0rem"></div>
+            <div class="spacing-visual" style="width: var(--sp-space-0)"></div>
             <div class="spacing-info">
               <div class="spacing-label">0</div>
               <div class="spacing-value">0rem (0px)</div>
@@ -258,7 +258,7 @@
         <div class="layout-example">
           <div class="layout-label">Small (--sp-space-24 / 1.5rem / 24px)</div>
           <div class="section-padding-sm">
-            <div style="background: var(--sp-surface-card); padding: 1rem; border-radius: var(--sp-radius-md)">
+            <div style="background: var(--sp-surface-card); padding: var(--sp-space-16); border-radius: var(--sp-radius-md)">
               Content Area
             </div>
           </div>
@@ -266,7 +266,7 @@
         <div class="layout-example">
           <div class="layout-label">Medium (--sp-space-32 / 2rem / 32px)</div>
           <div class="section-padding-md">
-            <div style="background: var(--sp-surface-card); padding: 1rem; border-radius: var(--sp-radius-md)">
+            <div style="background: var(--sp-surface-card); padding: var(--sp-space-16); border-radius: var(--sp-radius-md)">
               Content Area
             </div>
           </div>
@@ -274,7 +274,7 @@
         <div class="layout-example">
           <div class="layout-label">Large (--sp-space-48 / 3rem / 48px)</div>
           <div class="section-padding-lg">
-            <div style="background: var(--sp-surface-card); padding: 1rem; border-radius: var(--sp-radius-md)">
+            <div style="background: var(--sp-surface-card); padding: var(--sp-space-16); border-radius: var(--sp-radius-md)">
               Content Area
             </div>
           </div>

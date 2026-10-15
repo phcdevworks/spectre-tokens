@@ -19,7 +19,7 @@
       }
 
       .container {
-        max-width: 1200px;
+        max-width: var(--sp-layout-container-max-width);
         margin: 0 auto;
       }
 
@@ -41,7 +41,7 @@
       }
 
       .subtitle {
-        font-size: 1.125rem;
+        font-size: var(--sp-font-lg-size);
         color: var(--sp-text-on-page-muted);
       }
 
@@ -80,65 +80,113 @@
       }
 
       /* Typography Scale */
+      .type-9xl {
+        font-size: var(--sp-font-9xl-size);
+        line-height: var(--sp-font-9xl-line-height);
+        font-weight: var(--sp-font-9xl-weight);
+        letter-spacing: var(--sp-font-9xl-letter-spacing);
+      }
+
+      .type-8xl {
+        font-size: var(--sp-font-8xl-size);
+        line-height: var(--sp-font-8xl-line-height);
+        font-weight: var(--sp-font-8xl-weight);
+        letter-spacing: var(--sp-font-8xl-letter-spacing);
+      }
+
+      .type-7xl {
+        font-size: var(--sp-font-7xl-size);
+        line-height: var(--sp-font-7xl-line-height);
+        font-weight: var(--sp-font-7xl-weight);
+        letter-spacing: var(--sp-font-7xl-letter-spacing);
+      }
+
       .type-6xl {
         font-size: var(--sp-font-6xl-size);
         line-height: var(--sp-font-6xl-line-height);
         font-weight: var(--sp-font-6xl-weight);
+        letter-spacing: var(--sp-font-6xl-letter-spacing);
       }
 
       .type-5xl {
         font-size: var(--sp-font-5xl-size);
         line-height: var(--sp-font-5xl-line-height);
         font-weight: var(--sp-font-5xl-weight);
+        letter-spacing: var(--sp-font-5xl-letter-spacing);
       }
 
       .type-4xl {
         font-size: var(--sp-font-4xl-size);
         line-height: var(--sp-font-4xl-line-height);
         font-weight: var(--sp-font-4xl-weight);
+        letter-spacing: var(--sp-font-4xl-letter-spacing);
       }
 
       .type-3xl {
         font-size: var(--sp-font-3xl-size);
         line-height: var(--sp-font-3xl-line-height);
         font-weight: var(--sp-font-3xl-weight);
+        letter-spacing: var(--sp-font-3xl-letter-spacing);
       }
 
       .type-2xl {
         font-size: var(--sp-font-2xl-size);
         line-height: var(--sp-font-2xl-line-height);
         font-weight: var(--sp-font-2xl-weight);
+        letter-spacing: var(--sp-font-2xl-letter-spacing);
       }
 
       .type-xl {
         font-size: var(--sp-font-xl-size);
         line-height: var(--sp-font-xl-line-height);
         font-weight: var(--sp-font-xl-weight);
+        letter-spacing: var(--sp-font-xl-letter-spacing);
       }
 
       .type-lg {
         font-size: var(--sp-font-lg-size);
         line-height: var(--sp-font-lg-line-height);
         font-weight: var(--sp-font-lg-weight);
+        letter-spacing: var(--sp-font-lg-letter-spacing);
       }
 
       .type-md {
         font-size: var(--sp-font-md-size);
         line-height: var(--sp-font-md-line-height);
         font-weight: var(--sp-font-md-weight);
+        letter-spacing: var(--sp-font-md-letter-spacing);
       }
 
       .type-sm {
         font-size: var(--sp-font-sm-size);
         line-height: var(--sp-font-sm-line-height);
         font-weight: var(--sp-font-sm-weight);
+        letter-spacing: var(--sp-font-sm-letter-spacing);
       }
 
       .type-xs {
         font-size: var(--sp-font-xs-size);
         line-height: var(--sp-font-xs-line-height);
         font-weight: var(--sp-font-xs-weight);
-        letter-spacing: 0.02em;
+        letter-spacing: var(--sp-font-xs-letter-spacing);
+      }
+
+      .type-overflow {
+        overflow-wrap: anywhere;
+      }
+
+      .sample-row {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: baseline;
+        gap: var(--sp-space-24);
+      }
+
+      .role-accent { color: var(--sp-text-on-page-accent); }
+      .underline-demo {
+        color: var(--sp-link-default);
+        text-decoration-line: underline;
+        text-decoration-color: var(--sp-link-underline);
       }
 
       .font-families {
@@ -173,45 +221,58 @@
 
       <div class="section">
         <h2>Type Scale</h2>
+        <p class="type-meta">Size presets match Tailwind's scale. <code>md</code> is Tailwind's <code>base</code>.</p>
         <div class="type-example">
-          <div class="type-sample type-6xl">Heading 6XL</div>
-          <div class="type-meta">6xl: --sp-font-6xl-size / --sp-font-6xl-line-height / --sp-font-6xl-weight</div>
+          <div class="type-sample type-overflow type-9xl">Display 9XL</div>
+          <div class="type-meta">9xl (128px): --sp-font-9xl-size / -line-height / -weight / -letter-spacing</div>
         </div>
         <div class="type-example">
-          <div class="type-sample type-5xl">Heading 5XL</div>
-          <div class="type-meta">5xl: --sp-font-5xl-size / --sp-font-5xl-line-height / --sp-font-5xl-weight</div>
+          <div class="type-sample type-overflow type-8xl">Display 8XL</div>
+          <div class="type-meta">8xl (96px): --sp-font-8xl-size / -line-height / -weight / -letter-spacing</div>
         </div>
         <div class="type-example">
-          <div class="type-sample type-4xl">Heading 4XL</div>
-          <div class="type-meta">4xl: --sp-font-4xl-size / --sp-font-4xl-line-height / --sp-font-4xl-weight</div>
+          <div class="type-sample type-overflow type-7xl">Display 7XL</div>
+          <div class="type-meta">7xl (72px): --sp-font-7xl-size / -line-height / -weight / -letter-spacing</div>
         </div>
         <div class="type-example">
-          <div class="type-sample type-3xl">Heading 3XL</div>
-          <div class="type-meta">3xl: --sp-font-3xl-size / --sp-font-3xl-line-height / --sp-font-3xl-weight</div>
+          <div class="type-sample type-overflow type-6xl">Heading 6XL</div>
+          <div class="type-meta">6xl (60px): --sp-font-6xl-size / -line-height / -weight / -letter-spacing</div>
         </div>
         <div class="type-example">
-          <div class="type-sample type-2xl">Heading 2XL</div>
-          <div class="type-meta">2xl: --sp-font-2xl-size / --sp-font-2xl-line-height / --sp-font-2xl-weight</div>
+          <div class="type-sample type-overflow type-5xl">Heading 5XL</div>
+          <div class="type-meta">5xl (48px): --sp-font-5xl-size / -line-height / -weight / -letter-spacing</div>
         </div>
         <div class="type-example">
-          <div class="type-sample type-xl">Heading XL</div>
-          <div class="type-meta">xl: --sp-font-xl-size / --sp-font-xl-line-height / --sp-font-xl-weight</div>
+          <div class="type-sample type-overflow type-4xl">Heading 4XL</div>
+          <div class="type-meta">4xl (36px): --sp-font-4xl-size / -line-height / -weight / -letter-spacing</div>
         </div>
         <div class="type-example">
-          <div class="type-sample type-lg">Heading Large</div>
-          <div class="type-meta">lg: --sp-font-lg-size / --sp-font-lg-line-height / --sp-font-lg-weight</div>
+          <div class="type-sample type-overflow type-3xl">Heading 3XL</div>
+          <div class="type-meta">3xl (30px): --sp-font-3xl-size / -line-height / -weight / -letter-spacing</div>
         </div>
         <div class="type-example">
-          <div class="type-sample type-md">Body Medium</div>
-          <div class="type-meta">md: --sp-font-md-size / --sp-font-md-line-height / --sp-font-md-weight</div>
+          <div class="type-sample type-overflow type-2xl">Heading 2XL</div>
+          <div class="type-meta">2xl (24px): --sp-font-2xl-size / -line-height / -weight / -letter-spacing</div>
         </div>
         <div class="type-example">
-          <div class="type-sample type-sm">Body Small</div>
-          <div class="type-meta">sm: --sp-font-sm-size / --sp-font-sm-line-height / --sp-font-sm-weight</div>
+          <div class="type-sample type-overflow type-xl">Heading XL</div>
+          <div class="type-meta">xl (20px): --sp-font-xl-size / -line-height / -weight / -letter-spacing</div>
         </div>
         <div class="type-example">
-          <div class="type-sample type-xs">Caption/Label</div>
-          <div class="type-meta">xs: --sp-font-xs-size / --sp-font-xs-line-height / --sp-font-xs-weight</div>
+          <div class="type-sample type-overflow type-lg">Large text</div>
+          <div class="type-meta">lg (18px): --sp-font-lg-size / -line-height / -weight / -letter-spacing</div>
+        </div>
+        <div class="type-example">
+          <div class="type-sample type-overflow type-md">Body Medium</div>
+          <div class="type-meta">md (16px): --sp-font-md-size / -line-height / -weight / -letter-spacing</div>
+        </div>
+        <div class="type-example">
+          <div class="type-sample type-overflow type-sm">Body Small</div>
+          <div class="type-meta">sm (14px): --sp-font-sm-size / -line-height / -weight / -letter-spacing</div>
+        </div>
+        <div class="type-example">
+          <div class="type-sample type-overflow type-xs">Caption/Label</div>
+          <div class="type-meta">xs (12px): --sp-font-xs-size / -line-height / -weight / -letter-spacing</div>
         </div>
       </div>
 
@@ -221,12 +282,12 @@
           <div class="font-family-example">
             <div
               class="type-sample type-2xl font-sans"
-              style="margin-bottom: 0.5rem"
+              style="margin-bottom: var(--sp-space-8)"
             >
               Sans Serif Font Family
             </div>
             <div class="type-meta">--sp-font-family-sans</div>
-            <p class="font-sans" style="margin-top: 1rem; color: var(--sp-text-on-page-subtle)">
+            <p class="font-sans" style="margin-top: var(--sp-space-16); color: var(--sp-text-on-page-subtle)">
               The quick brown fox jumps over the lazy dog. This is the default
               sans-serif font stack used throughout the design system for
               optimal readability and native appearance across all platforms.
@@ -236,12 +297,12 @@
           <div class="font-family-example">
             <div
               class="type-sample type-2xl font-serif"
-              style="margin-bottom: 0.5rem"
+              style="margin-bottom: var(--sp-space-8)"
             >
               Serif Font Family
             </div>
             <div class="type-meta">--sp-font-family-serif</div>
-            <p class="font-serif" style="margin-top: 1rem; color: var(--sp-text-on-page-subtle)">
+            <p class="font-serif" style="margin-top: var(--sp-space-16); color: var(--sp-text-on-page-subtle)">
               The quick brown fox jumps over the lazy dog. Serif fonts are ideal
               for long-form content, editorial design, and creating a more
               traditional, formal appearance.
@@ -251,12 +312,12 @@
           <div class="font-family-example">
             <div
               class="type-sample type-2xl font-mono"
-              style="margin-bottom: 0.5rem"
+              style="margin-bottom: var(--sp-space-8)"
             >
               Monospace Font Family
             </div>
             <div class="type-meta">--sp-font-family-mono</div>
-            <p class="font-mono" style="margin-top: 1rem; color: var(--sp-text-on-page-subtle)">
+            <p class="font-mono" style="margin-top: var(--sp-space-16); color: var(--sp-text-on-page-subtle)">
               The quick brown fox jumps over the lazy dog. Monospace fonts are
               perfect for code blocks, technical documentation, and any content
               where character alignment matters.
@@ -268,8 +329,8 @@
       <div class="section">
         <h2>Semantic Text Roles</h2>
         <div class="type-example">
-          <div class="type-sample type-xl role-brand" style="font-weight: 700">
-            Brand Accent Text
+          <div class="type-sample type-xl role-brand" style="font-weight: var(--sp-font-weight-bold)">
+            Brand Text
           </div>
           <div class="type-meta">--sp-text-on-page-brand</div>
         </div>
@@ -286,6 +347,196 @@
         <div class="type-example">
           <div class="type-sample type-xs role-meta">Metadata and Captions</div>
           <div class="type-meta">--sp-text-on-page-meta</div>
+        </div>
+        <div class="type-example">
+          <div class="type-sample type-xl role-accent" style="font-weight: var(--sp-font-weight-bold)">Accent Text</div>
+          <div class="type-meta">--sp-text-on-page-accent</div>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>Text Roles</h2>
+        <p class="type-meta">Headings, display text, lead, and body. Use these before reaching for a preset.</p>
+        <div class="type-example">
+          <div class="type-sample" style="font-family: var(--sp-heading-h1-family); font-size: var(--sp-heading-h1-size); line-height: var(--sp-heading-h1-line-height); font-weight: var(--sp-heading-h1-weight); letter-spacing: var(--sp-heading-h1-letter-spacing)">Heading 1</div>
+          <div class="type-meta">--sp-heading-h1-{family,size,line-height,weight,letter-spacing}</div>
+        </div>
+        <div class="type-example">
+          <div class="type-sample" style="font-family: var(--sp-heading-h2-family); font-size: var(--sp-heading-h2-size); line-height: var(--sp-heading-h2-line-height); font-weight: var(--sp-heading-h2-weight); letter-spacing: var(--sp-heading-h2-letter-spacing)">Heading 2</div>
+          <div class="type-meta">--sp-heading-h2-{family,size,line-height,weight,letter-spacing}</div>
+        </div>
+        <div class="type-example">
+          <div class="type-sample" style="font-family: var(--sp-heading-h3-family); font-size: var(--sp-heading-h3-size); line-height: var(--sp-heading-h3-line-height); font-weight: var(--sp-heading-h3-weight); letter-spacing: var(--sp-heading-h3-letter-spacing)">Heading 3</div>
+          <div class="type-meta">--sp-heading-h3-{family,size,line-height,weight,letter-spacing}</div>
+        </div>
+        <div class="type-example">
+          <div class="type-sample" style="font-family: var(--sp-heading-h4-family); font-size: var(--sp-heading-h4-size); line-height: var(--sp-heading-h4-line-height); font-weight: var(--sp-heading-h4-weight); letter-spacing: var(--sp-heading-h4-letter-spacing)">Heading 4</div>
+          <div class="type-meta">--sp-heading-h4-{family,size,line-height,weight,letter-spacing}</div>
+        </div>
+        <div class="type-example">
+          <div class="type-sample" style="font-family: var(--sp-heading-h5-family); font-size: var(--sp-heading-h5-size); line-height: var(--sp-heading-h5-line-height); font-weight: var(--sp-heading-h5-weight); letter-spacing: var(--sp-heading-h5-letter-spacing)">Heading 5</div>
+          <div class="type-meta">--sp-heading-h5-{family,size,line-height,weight,letter-spacing}</div>
+        </div>
+        <div class="type-example">
+          <div class="type-sample" style="font-family: var(--sp-heading-h6-family); font-size: var(--sp-heading-h6-size); line-height: var(--sp-heading-h6-line-height); font-weight: var(--sp-heading-h6-weight); letter-spacing: var(--sp-heading-h6-letter-spacing)">Heading 6</div>
+          <div class="type-meta">--sp-heading-h6-{family,size,line-height,weight,letter-spacing}</div>
+        </div>
+        <div class="type-example">
+          <div class="type-sample" style="font-family: var(--sp-display-1-family); font-size: var(--sp-display-1-size); line-height: var(--sp-display-1-line-height); font-weight: var(--sp-display-1-weight); letter-spacing: var(--sp-display-1-letter-spacing)">Display 1</div>
+          <div class="type-meta">--sp-display-1-{family,size,line-height,weight,letter-spacing}</div>
+        </div>
+        <div class="type-example">
+          <div class="type-sample" style="font-family: var(--sp-display-2-family); font-size: var(--sp-display-2-size); line-height: var(--sp-display-2-line-height); font-weight: var(--sp-display-2-weight); letter-spacing: var(--sp-display-2-letter-spacing)">Display 2</div>
+          <div class="type-meta">--sp-display-2-{family,size,line-height,weight,letter-spacing}</div>
+        </div>
+        <div class="type-example">
+          <div class="type-sample" style="font-family: var(--sp-display-3-family); font-size: var(--sp-display-3-size); line-height: var(--sp-display-3-line-height); font-weight: var(--sp-display-3-weight); letter-spacing: var(--sp-display-3-letter-spacing)">Display 3</div>
+          <div class="type-meta">--sp-display-3-{family,size,line-height,weight,letter-spacing}</div>
+        </div>
+        <div class="type-example">
+          <div class="type-sample" style="font-family: var(--sp-display-4-family); font-size: var(--sp-display-4-size); line-height: var(--sp-display-4-line-height); font-weight: var(--sp-display-4-weight); letter-spacing: var(--sp-display-4-letter-spacing)">Display 4</div>
+          <div class="type-meta">--sp-display-4-{family,size,line-height,weight,letter-spacing}</div>
+        </div>
+        <div class="type-example">
+          <div class="type-sample" style="font-family: var(--sp-display-5-family); font-size: var(--sp-display-5-size); line-height: var(--sp-display-5-line-height); font-weight: var(--sp-display-5-weight); letter-spacing: var(--sp-display-5-letter-spacing)">Display 5</div>
+          <div class="type-meta">--sp-display-5-{family,size,line-height,weight,letter-spacing}</div>
+        </div>
+        <div class="type-example">
+          <div class="type-sample" style="font-family: var(--sp-display-6-family); font-size: var(--sp-display-6-size); line-height: var(--sp-display-6-line-height); font-weight: var(--sp-display-6-weight); letter-spacing: var(--sp-display-6-letter-spacing)">Display 6</div>
+          <div class="type-meta">--sp-display-6-{family,size,line-height,weight,letter-spacing}</div>
+        </div>
+        <div class="type-example">
+          <div class="type-sample" style="font-family: var(--sp-lead-family); font-size: var(--sp-lead-size); line-height: var(--sp-lead-line-height); font-weight: var(--sp-lead-weight); letter-spacing: var(--sp-lead-letter-spacing)">Lead paragraph introduces the page.</div>
+          <div class="type-meta">--sp-lead-{family,size,line-height,weight,letter-spacing}</div>
+        </div>
+        <div class="type-example">
+          <div class="type-sample" style="font-family: var(--sp-body-family); font-size: var(--sp-body-size); line-height: var(--sp-body-line-height); font-weight: var(--sp-body-weight); letter-spacing: var(--sp-body-letter-spacing)">Body text is the default for running copy.</div>
+          <div class="type-meta">--sp-body-{family,size,line-height,weight,letter-spacing}</div>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>Plain Font Sizes</h2>
+        <p class="type-meta">--sp-font-size-{12…128}: a size only, named by its pixel value. Pair with leading and font-weight.</p>
+        <div class="type-example sample-row type-overflow">
+          <span style="font-size: var(--sp-font-size-12); line-height: var(--sp-leading-none)">Aa</span>
+          <span style="font-size: var(--sp-font-size-14); line-height: var(--sp-leading-none)">Aa</span>
+          <span style="font-size: var(--sp-font-size-16); line-height: var(--sp-leading-none)">Aa</span>
+          <span style="font-size: var(--sp-font-size-18); line-height: var(--sp-leading-none)">Aa</span>
+          <span style="font-size: var(--sp-font-size-20); line-height: var(--sp-leading-none)">Aa</span>
+          <span style="font-size: var(--sp-font-size-24); line-height: var(--sp-leading-none)">Aa</span>
+          <span style="font-size: var(--sp-font-size-30); line-height: var(--sp-leading-none)">Aa</span>
+          <span style="font-size: var(--sp-font-size-36); line-height: var(--sp-leading-none)">Aa</span>
+          <span style="font-size: var(--sp-font-size-48); line-height: var(--sp-leading-none)">Aa</span>
+          <span style="font-size: var(--sp-font-size-60); line-height: var(--sp-leading-none)">Aa</span>
+          <span style="font-size: var(--sp-font-size-72); line-height: var(--sp-leading-none)">Aa</span>
+          <span style="font-size: var(--sp-font-size-96); line-height: var(--sp-leading-none)">Aa</span>
+          <span style="font-size: var(--sp-font-size-128); line-height: var(--sp-leading-none)">Aa</span>
+        </div>
+        <div class="type-meta">--sp-font-size-12 · --sp-font-size-14 · --sp-font-size-16 · --sp-font-size-18 · --sp-font-size-20 · --sp-font-size-24 · --sp-font-size-30 · --sp-font-size-36 · --sp-font-size-48 · --sp-font-size-60 · --sp-font-size-72 · --sp-font-size-96 · --sp-font-size-128</div>
+      </div>
+
+      <div class="section">
+        <h2>Font Weights</h2>
+        <div class="type-example">
+          <div class="type-sample type-xl" style="font-weight: var(--sp-font-weight-normal)">The quick brown fox</div>
+          <div class="type-meta">--sp-font-weight-normal</div>
+        </div>
+        <div class="type-example">
+          <div class="type-sample type-xl" style="font-weight: var(--sp-font-weight-medium)">The quick brown fox</div>
+          <div class="type-meta">--sp-font-weight-medium</div>
+        </div>
+        <div class="type-example">
+          <div class="type-sample type-xl" style="font-weight: var(--sp-font-weight-semibold)">The quick brown fox</div>
+          <div class="type-meta">--sp-font-weight-semibold</div>
+        </div>
+        <div class="type-example">
+          <div class="type-sample type-xl" style="font-weight: var(--sp-font-weight-bold)">The quick brown fox</div>
+          <div class="type-meta">--sp-font-weight-bold</div>
+        </div>
+        <div class="type-example">
+          <div class="type-sample type-xl" style="font-weight: var(--sp-font-weight-extrabold)">The quick brown fox</div>
+          <div class="type-meta">--sp-font-weight-extrabold</div>
+        </div>
+        <div class="type-example">
+          <div class="type-sample type-xl" style="font-weight: var(--sp-font-weight-black)">The quick brown fox</div>
+          <div class="type-meta">--sp-font-weight-black</div>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>Line Height (Leading)</h2>
+        <div class="type-example">
+          <p class="type-sample" style="line-height: var(--sp-leading-none); max-width: var(--sp-layout-container-max-width-prose)">The quick brown fox jumps over the lazy dog. Line height controls the space between lines of a paragraph, so this sentence wraps to show it.</p>
+          <div class="type-meta">--sp-leading-none</div>
+        </div>
+        <div class="type-example">
+          <p class="type-sample" style="line-height: var(--sp-leading-tight); max-width: var(--sp-layout-container-max-width-prose)">The quick brown fox jumps over the lazy dog. Line height controls the space between lines of a paragraph, so this sentence wraps to show it.</p>
+          <div class="type-meta">--sp-leading-tight</div>
+        </div>
+        <div class="type-example">
+          <p class="type-sample" style="line-height: var(--sp-leading-snug); max-width: var(--sp-layout-container-max-width-prose)">The quick brown fox jumps over the lazy dog. Line height controls the space between lines of a paragraph, so this sentence wraps to show it.</p>
+          <div class="type-meta">--sp-leading-snug</div>
+        </div>
+        <div class="type-example">
+          <p class="type-sample" style="line-height: var(--sp-leading-normal); max-width: var(--sp-layout-container-max-width-prose)">The quick brown fox jumps over the lazy dog. Line height controls the space between lines of a paragraph, so this sentence wraps to show it.</p>
+          <div class="type-meta">--sp-leading-normal</div>
+        </div>
+        <div class="type-example">
+          <p class="type-sample" style="line-height: var(--sp-leading-relaxed); max-width: var(--sp-layout-container-max-width-prose)">The quick brown fox jumps over the lazy dog. Line height controls the space between lines of a paragraph, so this sentence wraps to show it.</p>
+          <div class="type-meta">--sp-leading-relaxed</div>
+        </div>
+        <div class="type-example">
+          <p class="type-sample" style="line-height: var(--sp-leading-loose); max-width: var(--sp-layout-container-max-width-prose)">The quick brown fox jumps over the lazy dog. Line height controls the space between lines of a paragraph, so this sentence wraps to show it.</p>
+          <div class="type-meta">--sp-leading-loose</div>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>Letter Spacing (Tracking)</h2>
+        <div class="type-example">
+          <div class="type-sample type-lg" style="letter-spacing: var(--sp-tracking-tightest)">SPECTRE Design Tokens</div>
+          <div class="type-meta">--sp-tracking-tightest</div>
+        </div>
+        <div class="type-example">
+          <div class="type-sample type-lg" style="letter-spacing: var(--sp-tracking-tighter)">SPECTRE Design Tokens</div>
+          <div class="type-meta">--sp-tracking-tighter</div>
+        </div>
+        <div class="type-example">
+          <div class="type-sample type-lg" style="letter-spacing: var(--sp-tracking-tight)">SPECTRE Design Tokens</div>
+          <div class="type-meta">--sp-tracking-tight</div>
+        </div>
+        <div class="type-example">
+          <div class="type-sample type-lg" style="letter-spacing: var(--sp-tracking-normal)">SPECTRE Design Tokens</div>
+          <div class="type-meta">--sp-tracking-normal</div>
+        </div>
+        <div class="type-example">
+          <div class="type-sample type-lg" style="letter-spacing: var(--sp-tracking-wide)">SPECTRE Design Tokens</div>
+          <div class="type-meta">--sp-tracking-wide</div>
+        </div>
+        <div class="type-example">
+          <div class="type-sample type-lg" style="letter-spacing: var(--sp-tracking-wider)">SPECTRE Design Tokens</div>
+          <div class="type-meta">--sp-tracking-wider</div>
+        </div>
+        <div class="type-example">
+          <div class="type-sample type-lg" style="letter-spacing: var(--sp-tracking-widest)">SPECTRE Design Tokens</div>
+          <div class="type-meta">--sp-tracking-widest</div>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>Text Decoration</h2>
+        <div class="type-example">
+          <div class="type-sample type-lg underline-demo" style="text-decoration-thickness: var(--sp-text-decoration-thickness-thin); text-underline-offset: var(--sp-text-decoration-offset-sm)">Underlined link text</div>
+          <div class="type-meta">--sp-text-decoration-thickness-thin · --sp-text-decoration-offset-sm · --sp-link-underline</div>
+        </div>
+        <div class="type-example">
+          <div class="type-sample type-lg underline-demo" style="text-decoration-thickness: var(--sp-text-decoration-thickness-base); text-underline-offset: var(--sp-text-decoration-offset-md)">Underlined link text</div>
+          <div class="type-meta">--sp-text-decoration-thickness-base · --sp-text-decoration-offset-md · --sp-link-underline</div>
+        </div>
+        <div class="type-example">
+          <div class="type-sample type-lg underline-demo" style="text-decoration-thickness: var(--sp-text-decoration-thickness-thick); text-underline-offset: var(--sp-text-decoration-offset-lg)">Underlined link text</div>
+          <div class="type-meta">--sp-text-decoration-thickness-thick · --sp-text-decoration-offset-lg · --sp-link-underline</div>
         </div>
       </div>
     </div>

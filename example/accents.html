@@ -1,0 +1,328 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Accents - Spectre Tokens</title>
+    <link rel="stylesheet" href="../dist/index.css" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: var(--sp-font-family-sans);
+        padding: var(--sp-space-32);
+        background: var(--sp-surface-page);
+        color: var(--sp-text-on-page-default);
+      }
+
+      .container {
+        max-width: var(--sp-layout-container-max-width);
+        margin: 0 auto;
+      }
+
+      .header {
+        margin-bottom: var(--sp-space-32);
+      }
+
+      .back-link {
+        color: var(--sp-text-on-page-brand);
+        text-decoration: none;
+        margin-bottom: var(--sp-space-16);
+        display: inline-block;
+      }
+
+      h1 {
+        font-size: var(--sp-font-4xl-size);
+        margin-bottom: var(--sp-space-8);
+        color: var(--sp-text-on-page-default);
+      }
+
+      .subtitle {
+        font-size: var(--sp-font-lg-size);
+        color: var(--sp-text-on-page-muted);
+      }
+
+      .section {
+        background: var(--sp-surface-card);
+        color: var(--sp-text-on-surface-default);
+        border-radius: var(--sp-radius-lg);
+        padding: var(--sp-space-32);
+        margin-bottom: var(--sp-space-32);
+        box-shadow: var(--sp-shadow-sm);
+      }
+
+      h2 {
+        font-size: var(--sp-font-xl-size);
+        margin-bottom: var(--sp-space-16);
+      }
+
+      h3 {
+        font-size: var(--sp-font-lg-size);
+        margin-bottom: var(--sp-space-12);
+      }
+
+      .note {
+        font-size: var(--sp-font-sm-size);
+        color: var(--sp-text-on-surface-muted);
+        margin-bottom: var(--sp-space-24);
+        max-width: var(--sp-layout-container-max-width-prose);
+      }
+
+      .meta {
+        font-family: var(--sp-font-family-mono);
+        font-size: var(--sp-font-xs-size);
+        color: var(--sp-text-on-surface-muted);
+        overflow-wrap: anywhere;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(var(--sp-space-192), 1fr));
+        gap: var(--sp-space-24);
+      }
+
+      .grid-wide {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(var(--sp-space-240), 1fr));
+        gap: var(--sp-space-24);
+      }
+
+      .rail { background: var(--sp-surface-card); border: var(--sp-border-width-base) solid var(--sp-surface-divider); border-radius: var(--sp-radius-md); padding: var(--sp-space-12) var(--sp-space-16); }
+      .rail strong { display: block; font-size: var(--sp-font-sm-size); }
+      .rail-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(var(--sp-space-160), 1fr)); gap: var(--sp-space-12); }
+      .row { display: flex; flex-wrap: wrap; gap: var(--sp-space-12); align-items: center; margin-bottom: var(--sp-space-16); }
+      .btn { border-radius: var(--sp-radius-md); padding: var(--sp-space-8) var(--sp-space-16); font: inherit; font-weight: var(--sp-font-weight-semibold); }
+      .inverse { background: var(--sp-surface-inverse); border-radius: var(--sp-radius-lg); padding: var(--sp-space-24); display: grid; gap: var(--sp-space-8); }
+      .step { display: inline-grid; place-items: center; width: var(--sp-space-32); height: var(--sp-space-32); border-radius: var(--sp-radius-pill); font-weight: var(--sp-font-weight-bold); font-size: var(--sp-font-sm-size); }
+      .connector { display: inline-block; width: var(--sp-space-32); height: var(--sp-border-width-thick); background: var(--sp-stepper-connector); }
+      .quote { position: relative; border-inline-start: var(--sp-quote-accent-thickness) solid var(--sp-quote-accent-accent); padding: var(--sp-space-8) var(--sp-space-24); color: var(--sp-quote-text); }
+      .quote-mark { color: var(--sp-quote-mark); font-size: var(--sp-font-size-48); line-height: var(--sp-leading-none); font-family: var(--sp-font-family-serif); }
+      .quote p { font-size: var(--sp-font-lg-size); line-height: var(--sp-font-lg-line-height); margin-bottom: var(--sp-space-12); }
+      .quote-name { color: var(--sp-quote-attribution-name); font-weight: var(--sp-font-weight-semibold); }
+      .quote-role { color: var(--sp-quote-attribution-role); font-size: var(--sp-font-sm-size); }
+      .footer { border-radius: var(--sp-radius-lg); padding: var(--sp-space-24); display: grid; gap: var(--sp-space-8); }
+      .footer-chip { display: inline-block; padding: var(--sp-space-2) var(--sp-space-8); border-radius: var(--sp-radius-pill); font-size: var(--sp-font-xs-size); }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="header">
+        <a href="examples.html" class="back-link">← Back to Examples</a>
+        <h1>🎗️ Accents</h1>
+        <p class="subtitle">Accent rails, the accent colour roles, quotes, steppers, and footers</p>
+      </div>
+
+      <div class="section">
+        <h2>Accent Rails</h2>
+        <p class="note">Every rail has the same eight tones and one shared thickness (<code>0.25rem</code>), so switching the component never means switching the tone name. Where the rail sits is up to the component.</p>
+        <h3>card</h3>
+        <div class="rail-grid" style="margin-bottom: var(--sp-space-24)">
+          <div class="rail" style="border-inline-start: var(--sp-component-card-accent-thickness) solid var(--sp-component-card-accent-neutral)"><strong>neutral</strong><span class="meta">--sp-component-card-accent-neutral</span></div>
+          <div class="rail" style="border-inline-start: var(--sp-component-card-accent-thickness) solid var(--sp-component-card-accent-brand)"><strong>brand</strong><span class="meta">--sp-component-card-accent-brand</span></div>
+          <div class="rail" style="border-inline-start: var(--sp-component-card-accent-thickness) solid var(--sp-component-card-accent-info)"><strong>info</strong><span class="meta">--sp-component-card-accent-info</span></div>
+          <div class="rail" style="border-inline-start: var(--sp-component-card-accent-thickness) solid var(--sp-component-card-accent-success)"><strong>success</strong><span class="meta">--sp-component-card-accent-success</span></div>
+          <div class="rail" style="border-inline-start: var(--sp-component-card-accent-thickness) solid var(--sp-component-card-accent-warning)"><strong>warning</strong><span class="meta">--sp-component-card-accent-warning</span></div>
+          <div class="rail" style="border-inline-start: var(--sp-component-card-accent-thickness) solid var(--sp-component-card-accent-danger)"><strong>danger</strong><span class="meta">--sp-component-card-accent-danger</span></div>
+          <div class="rail" style="border-inline-start: var(--sp-component-card-accent-thickness) solid var(--sp-component-card-accent-cta)"><strong>cta</strong><span class="meta">--sp-component-card-accent-cta</span></div>
+          <div class="rail" style="border-inline-start: var(--sp-component-card-accent-thickness) solid var(--sp-component-card-accent-accent)"><strong>accent</strong><span class="meta">--sp-component-card-accent-accent</span></div>
+        </div>
+        <h3>badge</h3>
+        <div class="rail-grid" style="margin-bottom: var(--sp-space-24)">
+          <div class="rail" style="border-inline-start: var(--sp-badge-accent-thickness) solid var(--sp-badge-accent-neutral)"><strong>neutral</strong><span class="meta">--sp-badge-accent-neutral</span></div>
+          <div class="rail" style="border-inline-start: var(--sp-badge-accent-thickness) solid var(--sp-badge-accent-brand)"><strong>brand</strong><span class="meta">--sp-badge-accent-brand</span></div>
+          <div class="rail" style="border-inline-start: var(--sp-badge-accent-thickness) solid var(--sp-badge-accent-info)"><strong>info</strong><span class="meta">--sp-badge-accent-info</span></div>
+          <div class="rail" style="border-inline-start: var(--sp-badge-accent-thickness) solid var(--sp-badge-accent-success)"><strong>success</strong><span class="meta">--sp-badge-accent-success</span></div>
+          <div class="rail" style="border-inline-start: var(--sp-badge-accent-thickness) solid var(--sp-badge-accent-warning)"><strong>warning</strong><span class="meta">--sp-badge-accent-warning</span></div>
+          <div class="rail" style="border-inline-start: var(--sp-badge-accent-thickness) solid var(--sp-badge-accent-danger)"><strong>danger</strong><span class="meta">--sp-badge-accent-danger</span></div>
+          <div class="rail" style="border-inline-start: var(--sp-badge-accent-thickness) solid var(--sp-badge-accent-cta)"><strong>cta</strong><span class="meta">--sp-badge-accent-cta</span></div>
+          <div class="rail" style="border-inline-start: var(--sp-badge-accent-thickness) solid var(--sp-badge-accent-accent)"><strong>accent</strong><span class="meta">--sp-badge-accent-accent</span></div>
+        </div>
+        <h3>testimonial</h3>
+        <div class="rail-grid" style="margin-bottom: var(--sp-space-24)">
+          <div class="rail" style="border-inline-start: var(--sp-testimonial-accent-thickness) solid var(--sp-testimonial-accent-neutral)"><strong>neutral</strong><span class="meta">--sp-testimonial-accent-neutral</span></div>
+          <div class="rail" style="border-inline-start: var(--sp-testimonial-accent-thickness) solid var(--sp-testimonial-accent-brand)"><strong>brand</strong><span class="meta">--sp-testimonial-accent-brand</span></div>
+          <div class="rail" style="border-inline-start: var(--sp-testimonial-accent-thickness) solid var(--sp-testimonial-accent-info)"><strong>info</strong><span class="meta">--sp-testimonial-accent-info</span></div>
+          <div class="rail" style="border-inline-start: var(--sp-testimonial-accent-thickness) solid var(--sp-testimonial-accent-success)"><strong>success</strong><span class="meta">--sp-testimonial-accent-success</span></div>
+          <div class="rail" style="border-inline-start: var(--sp-testimonial-accent-thickness) solid var(--sp-testimonial-accent-warning)"><strong>warning</strong><span class="meta">--sp-testimonial-accent-warning</span></div>
+          <div class="rail" style="border-inline-start: var(--sp-testimonial-accent-thickness) solid var(--sp-testimonial-accent-danger)"><strong>danger</strong><span class="meta">--sp-testimonial-accent-danger</span></div>
+          <div class="rail" style="border-inline-start: var(--sp-testimonial-accent-thickness) solid var(--sp-testimonial-accent-cta)"><strong>cta</strong><span class="meta">--sp-testimonial-accent-cta</span></div>
+          <div class="rail" style="border-inline-start: var(--sp-testimonial-accent-thickness) solid var(--sp-testimonial-accent-accent)"><strong>accent</strong><span class="meta">--sp-testimonial-accent-accent</span></div>
+        </div>
+        <h3>pricingCard</h3>
+        <div class="rail-grid" style="margin-bottom: var(--sp-space-24)">
+          <div class="rail" style="border-inline-start: var(--sp-pricing-card-accent-thickness) solid var(--sp-pricing-card-accent-neutral)"><strong>neutral</strong><span class="meta">--sp-pricing-card-accent-neutral</span></div>
+          <div class="rail" style="border-inline-start: var(--sp-pricing-card-accent-thickness) solid var(--sp-pricing-card-accent-brand)"><strong>brand</strong><span class="meta">--sp-pricing-card-accent-brand</span></div>
+          <div class="rail" style="border-inline-start: var(--sp-pricing-card-accent-thickness) solid var(--sp-pricing-card-accent-info)"><strong>info</strong><span class="meta">--sp-pricing-card-accent-info</span></div>
+          <div class="rail" style="border-inline-start: var(--sp-pricing-card-accent-thickness) solid var(--sp-pricing-card-accent-success)"><strong>success</strong><span class="meta">--sp-pricing-card-accent-success</span></div>
+          <div class="rail" style="border-inline-start: var(--sp-pricing-card-accent-thickness) solid var(--sp-pricing-card-accent-warning)"><strong>warning</strong><span class="meta">--sp-pricing-card-accent-warning</span></div>
+          <div class="rail" style="border-inline-start: var(--sp-pricing-card-accent-thickness) solid var(--sp-pricing-card-accent-danger)"><strong>danger</strong><span class="meta">--sp-pricing-card-accent-danger</span></div>
+          <div class="rail" style="border-inline-start: var(--sp-pricing-card-accent-thickness) solid var(--sp-pricing-card-accent-cta)"><strong>cta</strong><span class="meta">--sp-pricing-card-accent-cta</span></div>
+          <div class="rail" style="border-inline-start: var(--sp-pricing-card-accent-thickness) solid var(--sp-pricing-card-accent-accent)"><strong>accent</strong><span class="meta">--sp-pricing-card-accent-accent</span></div>
+        </div>
+        <h3>nav</h3>
+        <div class="rail-grid" style="margin-bottom: var(--sp-space-24)">
+          <div class="rail" style="border-inline-start: var(--sp-nav-accent-thickness) solid var(--sp-nav-accent-neutral)"><strong>neutral</strong><span class="meta">--sp-nav-accent-neutral</span></div>
+          <div class="rail" style="border-inline-start: var(--sp-nav-accent-thickness) solid var(--sp-nav-accent-brand)"><strong>brand</strong><span class="meta">--sp-nav-accent-brand</span></div>
+          <div class="rail" style="border-inline-start: var(--sp-nav-accent-thickness) solid var(--sp-nav-accent-info)"><strong>info</strong><span class="meta">--sp-nav-accent-info</span></div>
+          <div class="rail" style="border-inline-start: var(--sp-nav-accent-thickness) solid var(--sp-nav-accent-success)"><strong>success</strong><span class="meta">--sp-nav-accent-success</span></div>
+          <div class="rail" style="border-inline-start: var(--sp-nav-accent-thickness) solid var(--sp-nav-accent-warning)"><strong>warning</strong><span class="meta">--sp-nav-accent-warning</span></div>
+          <div class="rail" style="border-inline-start: var(--sp-nav-accent-thickness) solid var(--sp-nav-accent-danger)"><strong>danger</strong><span class="meta">--sp-nav-accent-danger</span></div>
+          <div class="rail" style="border-inline-start: var(--sp-nav-accent-thickness) solid var(--sp-nav-accent-cta)"><strong>cta</strong><span class="meta">--sp-nav-accent-cta</span></div>
+          <div class="rail" style="border-inline-start: var(--sp-nav-accent-thickness) solid var(--sp-nav-accent-accent)"><strong>accent</strong><span class="meta">--sp-nav-accent-accent</span></div>
+        </div>
+        <h3>footer</h3>
+        <div class="rail-grid" style="margin-bottom: var(--sp-space-24)">
+          <div class="rail" style="border-inline-start: var(--sp-footer-accent-thickness) solid var(--sp-footer-accent-neutral)"><strong>neutral</strong><span class="meta">--sp-footer-accent-neutral</span></div>
+          <div class="rail" style="border-inline-start: var(--sp-footer-accent-thickness) solid var(--sp-footer-accent-brand)"><strong>brand</strong><span class="meta">--sp-footer-accent-brand</span></div>
+          <div class="rail" style="border-inline-start: var(--sp-footer-accent-thickness) solid var(--sp-footer-accent-info)"><strong>info</strong><span class="meta">--sp-footer-accent-info</span></div>
+          <div class="rail" style="border-inline-start: var(--sp-footer-accent-thickness) solid var(--sp-footer-accent-success)"><strong>success</strong><span class="meta">--sp-footer-accent-success</span></div>
+          <div class="rail" style="border-inline-start: var(--sp-footer-accent-thickness) solid var(--sp-footer-accent-warning)"><strong>warning</strong><span class="meta">--sp-footer-accent-warning</span></div>
+          <div class="rail" style="border-inline-start: var(--sp-footer-accent-thickness) solid var(--sp-footer-accent-danger)"><strong>danger</strong><span class="meta">--sp-footer-accent-danger</span></div>
+          <div class="rail" style="border-inline-start: var(--sp-footer-accent-thickness) solid var(--sp-footer-accent-cta)"><strong>cta</strong><span class="meta">--sp-footer-accent-cta</span></div>
+          <div class="rail" style="border-inline-start: var(--sp-footer-accent-thickness) solid var(--sp-footer-accent-accent)"><strong>accent</strong><span class="meta">--sp-footer-accent-accent</span></div>
+        </div>
+        <h3>modal</h3>
+        <div class="rail-grid" style="margin-bottom: var(--sp-space-24)">
+          <div class="rail" style="border-inline-start: var(--sp-modal-accent-thickness) solid var(--sp-modal-accent-neutral)"><strong>neutral</strong><span class="meta">--sp-modal-accent-neutral</span></div>
+          <div class="rail" style="border-inline-start: var(--sp-modal-accent-thickness) solid var(--sp-modal-accent-brand)"><strong>brand</strong><span class="meta">--sp-modal-accent-brand</span></div>
+          <div class="rail" style="border-inline-start: var(--sp-modal-accent-thickness) solid var(--sp-modal-accent-info)"><strong>info</strong><span class="meta">--sp-modal-accent-info</span></div>
+          <div class="rail" style="border-inline-start: var(--sp-modal-accent-thickness) solid var(--sp-modal-accent-success)"><strong>success</strong><span class="meta">--sp-modal-accent-success</span></div>
+          <div class="rail" style="border-inline-start: var(--sp-modal-accent-thickness) solid var(--sp-modal-accent-warning)"><strong>warning</strong><span class="meta">--sp-modal-accent-warning</span></div>
+          <div class="rail" style="border-inline-start: var(--sp-modal-accent-thickness) solid var(--sp-modal-accent-danger)"><strong>danger</strong><span class="meta">--sp-modal-accent-danger</span></div>
+          <div class="rail" style="border-inline-start: var(--sp-modal-accent-thickness) solid var(--sp-modal-accent-cta)"><strong>cta</strong><span class="meta">--sp-modal-accent-cta</span></div>
+          <div class="rail" style="border-inline-start: var(--sp-modal-accent-thickness) solid var(--sp-modal-accent-accent)"><strong>accent</strong><span class="meta">--sp-modal-accent-accent</span></div>
+        </div>
+        <h3>toast</h3>
+        <div class="rail-grid" style="margin-bottom: var(--sp-space-24)">
+          <div class="rail" style="border-inline-start: var(--sp-toast-accent-thickness) solid var(--sp-toast-accent-neutral)"><strong>neutral</strong><span class="meta">--sp-toast-accent-neutral</span></div>
+          <div class="rail" style="border-inline-start: var(--sp-toast-accent-thickness) solid var(--sp-toast-accent-brand)"><strong>brand</strong><span class="meta">--sp-toast-accent-brand</span></div>
+          <div class="rail" style="border-inline-start: var(--sp-toast-accent-thickness) solid var(--sp-toast-accent-info)"><strong>info</strong><span class="meta">--sp-toast-accent-info</span></div>
+          <div class="rail" style="border-inline-start: var(--sp-toast-accent-thickness) solid var(--sp-toast-accent-success)"><strong>success</strong><span class="meta">--sp-toast-accent-success</span></div>
+          <div class="rail" style="border-inline-start: var(--sp-toast-accent-thickness) solid var(--sp-toast-accent-warning)"><strong>warning</strong><span class="meta">--sp-toast-accent-warning</span></div>
+          <div class="rail" style="border-inline-start: var(--sp-toast-accent-thickness) solid var(--sp-toast-accent-danger)"><strong>danger</strong><span class="meta">--sp-toast-accent-danger</span></div>
+          <div class="rail" style="border-inline-start: var(--sp-toast-accent-thickness) solid var(--sp-toast-accent-cta)"><strong>cta</strong><span class="meta">--sp-toast-accent-cta</span></div>
+          <div class="rail" style="border-inline-start: var(--sp-toast-accent-thickness) solid var(--sp-toast-accent-accent)"><strong>accent</strong><span class="meta">--sp-toast-accent-accent</span></div>
+        </div>
+        <h3>tooltip</h3>
+        <div class="rail-grid" style="margin-bottom: var(--sp-space-24)">
+          <div class="rail" style="border-inline-start: var(--sp-tooltip-accent-thickness) solid var(--sp-tooltip-accent-neutral)"><strong>neutral</strong><span class="meta">--sp-tooltip-accent-neutral</span></div>
+          <div class="rail" style="border-inline-start: var(--sp-tooltip-accent-thickness) solid var(--sp-tooltip-accent-brand)"><strong>brand</strong><span class="meta">--sp-tooltip-accent-brand</span></div>
+          <div class="rail" style="border-inline-start: var(--sp-tooltip-accent-thickness) solid var(--sp-tooltip-accent-info)"><strong>info</strong><span class="meta">--sp-tooltip-accent-info</span></div>
+          <div class="rail" style="border-inline-start: var(--sp-tooltip-accent-thickness) solid var(--sp-tooltip-accent-success)"><strong>success</strong><span class="meta">--sp-tooltip-accent-success</span></div>
+          <div class="rail" style="border-inline-start: var(--sp-tooltip-accent-thickness) solid var(--sp-tooltip-accent-warning)"><strong>warning</strong><span class="meta">--sp-tooltip-accent-warning</span></div>
+          <div class="rail" style="border-inline-start: var(--sp-tooltip-accent-thickness) solid var(--sp-tooltip-accent-danger)"><strong>danger</strong><span class="meta">--sp-tooltip-accent-danger</span></div>
+          <div class="rail" style="border-inline-start: var(--sp-tooltip-accent-thickness) solid var(--sp-tooltip-accent-cta)"><strong>cta</strong><span class="meta">--sp-tooltip-accent-cta</span></div>
+          <div class="rail" style="border-inline-start: var(--sp-tooltip-accent-thickness) solid var(--sp-tooltip-accent-accent)"><strong>accent</strong><span class="meta">--sp-tooltip-accent-accent</span></div>
+        </div>
+        <h3>dropdown</h3>
+        <div class="rail-grid" style="margin-bottom: var(--sp-space-24)">
+          <div class="rail" style="border-inline-start: var(--sp-dropdown-accent-thickness) solid var(--sp-dropdown-accent-neutral)"><strong>neutral</strong><span class="meta">--sp-dropdown-accent-neutral</span></div>
+          <div class="rail" style="border-inline-start: var(--sp-dropdown-accent-thickness) solid var(--sp-dropdown-accent-brand)"><strong>brand</strong><span class="meta">--sp-dropdown-accent-brand</span></div>
+          <div class="rail" style="border-inline-start: var(--sp-dropdown-accent-thickness) solid var(--sp-dropdown-accent-info)"><strong>info</strong><span class="meta">--sp-dropdown-accent-info</span></div>
+          <div class="rail" style="border-inline-start: var(--sp-dropdown-accent-thickness) solid var(--sp-dropdown-accent-success)"><strong>success</strong><span class="meta">--sp-dropdown-accent-success</span></div>
+          <div class="rail" style="border-inline-start: var(--sp-dropdown-accent-thickness) solid var(--sp-dropdown-accent-warning)"><strong>warning</strong><span class="meta">--sp-dropdown-accent-warning</span></div>
+          <div class="rail" style="border-inline-start: var(--sp-dropdown-accent-thickness) solid var(--sp-dropdown-accent-danger)"><strong>danger</strong><span class="meta">--sp-dropdown-accent-danger</span></div>
+          <div class="rail" style="border-inline-start: var(--sp-dropdown-accent-thickness) solid var(--sp-dropdown-accent-cta)"><strong>cta</strong><span class="meta">--sp-dropdown-accent-cta</span></div>
+          <div class="rail" style="border-inline-start: var(--sp-dropdown-accent-thickness) solid var(--sp-dropdown-accent-accent)"><strong>accent</strong><span class="meta">--sp-dropdown-accent-accent</span></div>
+        </div>
+        <h3>listGroup</h3>
+        <div class="rail-grid" style="margin-bottom: var(--sp-space-24)">
+          <div class="rail" style="border-inline-start: var(--sp-list-group-accent-thickness) solid var(--sp-list-group-accent-neutral)"><strong>neutral</strong><span class="meta">--sp-list-group-accent-neutral</span></div>
+          <div class="rail" style="border-inline-start: var(--sp-list-group-accent-thickness) solid var(--sp-list-group-accent-brand)"><strong>brand</strong><span class="meta">--sp-list-group-accent-brand</span></div>
+          <div class="rail" style="border-inline-start: var(--sp-list-group-accent-thickness) solid var(--sp-list-group-accent-info)"><strong>info</strong><span class="meta">--sp-list-group-accent-info</span></div>
+          <div class="rail" style="border-inline-start: var(--sp-list-group-accent-thickness) solid var(--sp-list-group-accent-success)"><strong>success</strong><span class="meta">--sp-list-group-accent-success</span></div>
+          <div class="rail" style="border-inline-start: var(--sp-list-group-accent-thickness) solid var(--sp-list-group-accent-warning)"><strong>warning</strong><span class="meta">--sp-list-group-accent-warning</span></div>
+          <div class="rail" style="border-inline-start: var(--sp-list-group-accent-thickness) solid var(--sp-list-group-accent-danger)"><strong>danger</strong><span class="meta">--sp-list-group-accent-danger</span></div>
+          <div class="rail" style="border-inline-start: var(--sp-list-group-accent-thickness) solid var(--sp-list-group-accent-cta)"><strong>cta</strong><span class="meta">--sp-list-group-accent-cta</span></div>
+          <div class="rail" style="border-inline-start: var(--sp-list-group-accent-thickness) solid var(--sp-list-group-accent-accent)"><strong>accent</strong><span class="meta">--sp-list-group-accent-accent</span></div>
+        </div>
+        <h3>quote</h3>
+        <div class="rail-grid" style="margin-bottom: var(--sp-space-24)">
+          <div class="rail" style="border-inline-start: var(--sp-quote-accent-thickness) solid var(--sp-quote-accent-neutral)"><strong>neutral</strong><span class="meta">--sp-quote-accent-neutral</span></div>
+          <div class="rail" style="border-inline-start: var(--sp-quote-accent-thickness) solid var(--sp-quote-accent-brand)"><strong>brand</strong><span class="meta">--sp-quote-accent-brand</span></div>
+          <div class="rail" style="border-inline-start: var(--sp-quote-accent-thickness) solid var(--sp-quote-accent-info)"><strong>info</strong><span class="meta">--sp-quote-accent-info</span></div>
+          <div class="rail" style="border-inline-start: var(--sp-quote-accent-thickness) solid var(--sp-quote-accent-success)"><strong>success</strong><span class="meta">--sp-quote-accent-success</span></div>
+          <div class="rail" style="border-inline-start: var(--sp-quote-accent-thickness) solid var(--sp-quote-accent-warning)"><strong>warning</strong><span class="meta">--sp-quote-accent-warning</span></div>
+          <div class="rail" style="border-inline-start: var(--sp-quote-accent-thickness) solid var(--sp-quote-accent-danger)"><strong>danger</strong><span class="meta">--sp-quote-accent-danger</span></div>
+          <div class="rail" style="border-inline-start: var(--sp-quote-accent-thickness) solid var(--sp-quote-accent-cta)"><strong>cta</strong><span class="meta">--sp-quote-accent-cta</span></div>
+          <div class="rail" style="border-inline-start: var(--sp-quote-accent-thickness) solid var(--sp-quote-accent-accent)"><strong>accent</strong><span class="meta">--sp-quote-accent-accent</span></div>
+        </div>
+      </div>
+      <div class="section">
+        <h2>Accent Colour Roles</h2>
+        <p class="note">The second brand colour has its own text, button, and inverse roles, so you never reach for the raw palette.</p>
+        <p style="color: var(--sp-text-on-surface-accent); font-weight: var(--sp-font-weight-semibold); margin-bottom: var(--sp-space-16)">Accent text on a card <span class="meta">--sp-text-on-surface-accent</span></p>
+        <div class="row">
+          <button class="btn" type="button" style="background: var(--sp-button-accent-bg); color: var(--sp-button-accent-text); border: none">Accent</button>
+          <button class="btn" type="button" style="background: var(--sp-button-accentoutline-bg); color: var(--sp-button-accentoutline-text); border: var(--sp-border-width-thick) solid var(--sp-button-accentoutline-border)">Accent outline</button>
+          <span class="meta">--sp-button-accent-* · --sp-button-accentoutline-*</span>
+        </div>
+        <div class="inverse">
+          <span style="color: var(--sp-text-on-inverse-default)">Default text on inverse <span class="meta" style="color: var(--sp-text-on-inverse-muted)">--sp-text-on-inverse-default</span></span>
+          <span style="color: var(--sp-text-on-inverse-muted)">Muted text on inverse</span>
+          <span style="color: var(--sp-text-on-inverse-brand)">Brand text on inverse</span>
+          <span style="color: var(--sp-text-on-inverse-accent)">Accent text on inverse</span>
+          <a href="#" style="color: var(--sp-link-on-inverse)">Link on inverse</a>
+        </div>
+      </div>
+      <div class="section">
+        <h2>Stepper Tones</h2>
+        <p class="note"><code>--sp-stepper-tone-{brand,accent}-{active,done}-*</code> colour a stepper in either brand colour.</p>
+        <div class="row">
+          <span class="step" style="background: var(--sp-stepper-tone-brand-done-bg); color: var(--sp-stepper-tone-brand-done-text)">✓</span>
+          <span class="connector"></span>
+          <span class="step" style="background: var(--sp-stepper-tone-brand-active-bg); color: var(--sp-stepper-tone-brand-active-text)">2</span>
+          <span class="connector"></span>
+          <span class="step" style="background: var(--sp-stepper-step-pending-bg); color: var(--sp-stepper-step-pending-text)">3</span>
+          <span class="meta">brand</span>
+        </div>
+        <div class="row">
+          <span class="step" style="background: var(--sp-stepper-tone-accent-done-bg); color: var(--sp-stepper-tone-accent-done-text)">✓</span>
+          <span class="connector"></span>
+          <span class="step" style="background: var(--sp-stepper-tone-accent-active-bg); color: var(--sp-stepper-tone-accent-active-text)">2</span>
+          <span class="connector"></span>
+          <span class="step" style="background: var(--sp-stepper-step-pending-bg); color: var(--sp-stepper-step-pending-text)">3</span>
+          <span class="meta">accent</span>
+        </div>
+      </div>
+      <div class="section">
+        <h2>Quote</h2>
+        <p class="note"><code>--sp-quote-*</code> covers the text, attribution, an accent-coloured mark, and a rail.</p>
+        <figure class="quote">
+          <div class="quote-mark" aria-hidden="true">“</div>
+          <p>Spectre let us ship a consistent design without arguing about hex codes.</p>
+          <figcaption><span class="quote-name">Alex Rivera</span> · <span class="quote-role">Design lead</span></figcaption>
+        </figure>
+      </div>
+      <div class="section">
+        <h2>Footer</h2>
+        <p class="note"><code>--sp-footer-*</code> is a dark footer. <code>--sp-footer-light-*</code> has the same roles for a light one.</p>
+        <div class="grid-wide">
+          <div class="footer" style="background: var(--sp-footer-bg); color: var(--sp-footer-text); border-top: var(--sp-footer-accent-thickness) solid var(--sp-footer-accent-brand)">
+            <strong style="color: var(--sp-footer-heading)">Footer heading</strong>
+            <span>Footer text</span>
+            <span style="color: var(--sp-footer-muted)">Muted footer text</span>
+            <a href="#" style="color: var(--sp-footer-link)">Footer link</a>
+            <hr style="border: none; border-top: var(--sp-border-width-base) solid var(--sp-footer-divider)" />
+            <span><span class="footer-chip" style="background: var(--sp-footer-chip-bg)">Chip</span></span>
+            <span class="meta" style="color: var(--sp-footer-muted)">--sp-footer-*</span>
+          </div>
+          <div class="footer" style="background: var(--sp-footer-light-bg); color: var(--sp-footer-light-text); border-top: var(--sp-footer-accent-thickness) solid var(--sp-footer-light-accent-brand)">
+            <strong style="color: var(--sp-footer-light-heading)">Footer heading</strong>
+            <span>Footer text</span>
+            <span style="color: var(--sp-footer-light-muted)">Muted footer text</span>
+            <a href="#" style="color: var(--sp-footer-light-link)">Footer link</a>
+            <hr style="border: none; border-top: var(--sp-border-width-base) solid var(--sp-footer-light-divider)" />
+            <span><span class="footer-chip" style="background: var(--sp-footer-light-chip-bg)">Chip</span></span>
+            <span class="meta" style="color: var(--sp-footer-light-muted)">--sp-footer-light-*</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

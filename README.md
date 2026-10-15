@@ -166,11 +166,11 @@ mode-aware styling.
 | ----------- | ------------------------------------------------------------------------------------------------------------------------------- |
 | `surface`   | Background roles: page, card, input, overlay, subtle, hero (gradient, hero sections only), hover, selected, active, divider     |
 | `text`      | Foreground roles: default, muted, subtle, meta, on-surface, on-page                                                             |
-| `component` | Role-specific tokens for navigation, overlays, feedback, data display, loading, forms, cards, badges, and content patterns     |
+| `component` | Role-specific tokens for navigation, overlays, feedback, data display, loading, forms, cards, badges, and content patterns      |
 | `buttons`   | Button state tokens: default, hover, active, disabled, CTA                                                                      |
 | `forms`     | Form state tokens: default, focused, error, disabled                                                                            |
 | `link`      | Inline link color roles: default, hover, active, visited                                                                        |
-| `modes`     | Mode-aware overrides under `modes.default` and `modes.dark`                                                                     |
+| `modes`     | Mode-aware overrides under `modes.default`, `modes.dark`, and `modes.highContrast` (plus a CSS-only `light` and `system` mode)  |
 
 ```ts
 import tokens from '@phcdevworks/spectre-tokens'
@@ -311,10 +311,16 @@ light.
 `modes.highContrast` is a third mode alongside `default` and `dark`. It is
 light-based, and every text pair in it meets WCAG AAA (7:1). Borders and
 dividers are darkened too. Set `data-spectre-theme="high-contrast"` on the
-root, or on a section, to apply it. Buttons, links, and the valid/invalid form states don't
-change between light and dark, but high-contrast mode overrides them
-(`modes.highContrast.buttons`, `.link`, and `.forms.{valid,invalid}`), so
-those also meet 7:1.
+root, or on a section, to apply it. Buttons and the valid/invalid form
+states don't change between light and dark, but high-contrast mode overrides
+them (`modes.highContrast.buttons` and `.forms.{valid,invalid}`), so those
+also meet 7:1.
+
+Links change in every mode. `modes.dark.link` lightens `default`, `hover`,
+`active`, `visited`, and the underline colours so they meet 4.5:1 on dark
+pages and cards, and `modes.highContrast.link` raises them to 7:1.
+`link.onInverse` and `link.onInverseHover` are for `surface.inverse`, so they
+keep the same value in every mode.
 
 `control.{sm,md,lg}` gives the shared height, inline padding, and icon size
 for buttons, inputs, and selects (`--sp-control-md-height`,
@@ -338,6 +344,135 @@ and z-index variables, so the surface follows the active color mode.
 `component.scrollbar`, `component.skeleton`, and `component.prose.kbd` cover
 text selection, caret, scrollbar, skeleton-loading, and keycap colors. All of
 them are set for every mode.
+
+### Type scales
+
+There are three ways to set text size, from most to least opinionated:
+
+1. **Text roles** (`--sp-heading-h1-*`, `--sp-display-1-*`, `--sp-body-*`,
+   `--sp-lead-*`): size, line height, weight, and letter-spacing for a
+   specific job. Use these first.
+2. **Size presets** `font.{xs…9xl}` (`--sp-font-lg-size`,
+   `--sp-font-lg-line-height`, `--sp-font-lg-weight`,
+   `--sp-font-lg-letter-spacing`): a size together with the line height and
+   weight that suit it. The sizes match Tailwind's scale:
+
+   | Step | xs | sm | md | lg | xl | 2xl | 3xl | 4xl | 5xl | 6xl | 7xl | 8xl | 9xl |
+   | ---- | -- | -- | -- | -- | -- | --- | --- | --- | --- | --- | --- | --- | --- |
+   | px   | 12 | 14 | 16 | 18 | 20 | 24  | 30  | 36  | 48  | 60  | 72  | 96  | 128 |
+
+   `md` is Tailwind's `base`.
+3. **Plain sizes** `fontSize.{12…128}` (`--sp-font-size-18`): one size with
+   no line height or weight attached. Pair them with the scales below.
+
+```css
+.price {
+  font-size: var(--sp-font-size-18);
+  line-height: var(--sp-leading-snug);
+  font-weight: var(--sp-font-weight-semibold);
+  letter-spacing: var(--sp-tracking-tight);
+}
+
+a {
+  text-decoration-color: var(--sp-link-underline);
+  text-decoration-thickness: var(--sp-text-decoration-thickness-thin);
+  text-underline-offset: var(--sp-text-decoration-offset-md);
+}
+```
+
+| Scale | Steps | CSS variable |
+| --- | --- | --- |
+| `fontWeight` | `normal` 400, `medium` 500, `semibold` 600, `bold` 700, `extrabold` 800, `black` 900 | `--sp-font-weight-*` |
+| `leading` (line height, unitless) | `none` 1, `tight` 1.25, `snug` 1.375, `normal` 1.5, `relaxed` 1.625, `loose` 2 | `--sp-leading-*` |
+| `tracking` (letter-spacing) | `tightest` −0.075em through `widest` 0.1em | `--sp-tracking-*` |
+| `textDecoration` | `thickness.{thin,base,thick}` (1/2/3px), `offset.{sm,md,lg}` (0.125/0.2/0.3em) | `--sp-text-decoration-*` |
+
+### Accent rails
+
+A rail is the coloured edge on a card, badge, quote, and similar components.
+Each component that has one carries the same contract under
+`component.<name>.accent`: one colour per tone (`neutral`, `brand`, `info`,
+`success`, `warning`, `danger`, `cta`, `accent`) plus a single `thickness`
+(`0.25rem`). The components are `card`, `badge`, `testimonial`,
+`pricingCard`, `nav`, `footer`, `modal`, `toast`, `tooltip`, `dropdown`,
+`listGroup`, and `quote`. `footer.light` has its own tone colours and uses
+`footer`'s thickness. Every rail colour is mode-aware.
+
+```css
+.card--brand {
+  border-inline-start: var(--sp-component-card-accent-thickness) solid
+    var(--sp-component-card-accent-brand);
+}
+
+.toast--danger {
+  border-inline-start: var(--sp-toast-accent-thickness) solid
+    var(--sp-toast-accent-danger);
+}
+```
+
+`card` and `input` keep a legacy `component-` segment in their variable
+names. Every other component uses its own name, such as `--sp-badge-accent-*`
+or `--sp-quote-accent-*`. Which edge the rail sits on, and how it's drawn, is
+up to the downstream component.
+
+### Accent and inverse roles
+
+`colors.accent` is the second brand colour. It has its own semantic roles, so
+consumers never reach for the raw palette:
+
+- `text.onPage.accent` and `text.onSurface.accent` (`--sp-text-on-page-accent`)
+  are accent text that passes contrast on the page or a card.
+- `text.onInverse.{default,muted,brand,accent}` is text on dark (inverse)
+  backgrounds, such as a dark hero or footer.
+- `buttons.accent` and `buttons.accentOutline` are filled and outlined accent
+  buttons. Button variables join camelCase names without hyphens, for example
+  `--sp-button-accentoutline-bghover`.
+- `component.stepper.tone.{brand,accent}.{active,done}` colours a stepper in
+  either brand colour.
+- `component.quote` covers a quote's text, attribution name and role, an
+  accent-coloured quotation mark, a plain border, and an accent rail
+  (`--sp-quote-*`).
+
+### Footer
+
+`component.footer` is its own contract, separate from navigation: `bg`,
+`text`, `heading`, `muted`, `link`, `linkHover`, `border`, `divider`,
+`chipBg`, and an accent rail (`--sp-footer-*`). It is dark by default.
+`component.footer.light` (`--sp-footer-light-*`) has the same roles for a
+light footer.
+
+### Extended palette
+
+`colors.palette` holds the full extended colour ramps (`red` through `stone`,
+`slate`, `zinc`, the `mauve`/`olive`/`mist`/`taupe` neutrals, and the named
+brand and integration colours), emitted as `--sp-color-palette-<name>-<step>`.
+Like `colors`, it is raw palette: use it for data visualisation or a brand
+colour that has no semantic role, not for normal UI.
+
+### HTML element coverage
+
+Spectre aims to style every standard HTML element from tokens alone.
+[`element-coverage.json`](element-coverage.json) maps all 115 elements in the
+HTML Living Standard's element index, and 14 styleable pseudo-elements, to
+the token paths that style them. Elements with no visual styling of their own
+(`<div>`, `<meta>`, `<template>`, …) are marked as such, with a reason. The
+`check:elements` step of `npm run check` fails if an element is unmapped or
+mapped to a path that doesn't exist. [TOKEN_REFERENCE.md](TOKEN_REFERENCE.md)
+has the generated table.
+
+Element roles include:
+
+| Element | Variables |
+| --- | --- |
+| `<del>`, `<ins>`, `<mark>`, `<kbd>`, `<code>`, `<pre>`, `<blockquote>`, `<hr>` | `--sp-prose-*` |
+| `<dt>`, `<dd>` | `--sp-prose-dt-text`, `--sp-prose-dd-text` |
+| `<figcaption>`, `<caption>`, `<tfoot>` | `--sp-prose-figcaption-text`, `--sp-table-caption-text`, `--sp-table-footer-*` |
+| `<meter>` | `--sp-meter-track`, `--sp-meter-fill-{optimum,suboptimum,critical}` |
+| `<option>`, `<optgroup>` | `--sp-select-option-*`, `--sp-select-optgroup-label-text` |
+| `::marker` | `--sp-prose-marker`, `--sp-prose-marker-accent` |
+| `::selection`, `::spelling-error`, `::grammar-error` | `--sp-selection-*`, `--sp-proofing-{spelling,grammar}` |
+| Code highlighting | `--sp-code-syntax-{keyword,string,comment,function,…}` |
+| Article spacing | `--sp-layout-prose-flow-{paragraph,heading,list,…}` |
 
 ### Token model
 
@@ -370,6 +505,7 @@ The generated token object includes these namespaces:
 - `leading`
 - `textDecoration`
 - `fontWeight`
+- `fontSize`
 - `control`
 - `elevation`
 
@@ -384,7 +520,10 @@ Downstream packages building recipes on the CSS output should use
 [DOWNSTREAM_PARITY.md](DOWNSTREAM_PARITY.md), which groups every published
 `--sp-*` variable into the family a recipe or stylesheet consumes. Run
 `npm run audit:parity` (optionally `-- <sibling-repo>`) for a checklist of the
-families a checked-out downstream repo has not consumed yet.
+families a checked-out downstream repo has not consumed yet, and
+`npm run audit:downstream` for a read-only report of raw `--sp-*`
+redeclarations, hardcoded visual values, and workaround comments across the
+downstream repos.
 
 The `layout` namespace includes section, stack, and container spacing tokens,
 plus fixed layout width tokens for common consumer shells:

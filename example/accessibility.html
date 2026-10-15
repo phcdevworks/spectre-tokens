@@ -19,7 +19,7 @@
       }
 
       .container {
-        max-width: 1200px;
+        max-width: var(--sp-layout-container-max-width);
         margin: 0 auto;
       }
 
@@ -41,7 +41,7 @@
       }
 
       .subtitle {
-        font-size: 1.125rem;
+        font-size: var(--sp-font-lg-size);
         color: var(--sp-text-on-page-muted);
       }
 
@@ -77,9 +77,9 @@
         background: var(--sp-button-primary-bg);
         color: var(--sp-color-white);
         border: none;
-        border-radius: 6px;
+        border-radius: var(--sp-radius-lg);
         font-size: var(--sp-font-sm-size);
-        font-weight: 600;
+        font-weight: var(--sp-font-weight-semibold);
         cursor: pointer;
       }
 
@@ -91,7 +91,7 @@
       .focus-input {
         padding: var(--sp-space-10) var(--sp-space-14);
         border: var(--sp-border-width-base) var(--sp-border-style-solid) var(--sp-form-default-border);
-        border-radius: 6px;
+        border-radius: var(--sp-radius-lg);
         font-size: var(--sp-font-sm-size);
       }
 
@@ -105,13 +105,13 @@
         margin-top: var(--sp-space-16);
         padding: var(--sp-space-16);
         background: var(--sp-surface-card);
-        border-radius: 6px;
+        border-radius: var(--sp-radius-lg);
         border: var(--sp-border-width-base) var(--sp-border-style-solid) var(--sp-color-neutral-200);
       }
 
       .token-label {
         font-size: var(--sp-font-sm-size);
-        font-weight: 600;
+        font-weight: var(--sp-font-weight-semibold);
         color: var(--sp-color-neutral-900);
         margin-bottom: var(--sp-space-8);
       }
@@ -126,7 +126,7 @@
       /* Touch Target Examples */
       .touch-target-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(var(--sp-space-192), 1fr));
         gap: var(--sp-space-32);
       }
 
@@ -138,9 +138,9 @@
         background: var(--sp-button-primary-bg);
         color: var(--sp-color-white);
         border: none;
-        border-radius: 6px;
+        border-radius: var(--sp-radius-lg);
         font-size: var(--sp-font-sm-size);
-        font-weight: 600;
+        font-weight: var(--sp-font-weight-semibold);
         cursor: pointer;
         display: inline-flex;
         align-items: center;
@@ -148,8 +148,8 @@
       }
 
       .touch-btn-small {
-        min-width: 32px;
-        min-height: 32px;
+        min-width: var(--sp-control-sm-height);
+        min-height: var(--sp-control-sm-height);
         padding: var(--sp-space-8);
       }
 
@@ -162,7 +162,7 @@
       .touch-label {
         margin-top: var(--sp-space-16);
         font-size: var(--sp-font-sm-size);
-        font-weight: 600;
+        font-weight: var(--sp-font-weight-semibold);
         color: var(--sp-color-neutral-900);
       }
 
@@ -177,7 +177,7 @@
         padding: var(--sp-space-4) var(--sp-space-12);
         border-radius: var(--sp-radius-pill);
         font-size: var(--sp-font-xs-size);
-        font-weight: 600;
+        font-weight: var(--sp-font-weight-semibold);
         margin-top: var(--sp-space-8);
       }
 
@@ -200,7 +200,7 @@
         margin-bottom: var(--sp-space-16);
       }
 
-      .text-too-small { font-size: 12px; }
+      .text-too-small { font-size: var(--sp-font-size-12); }
       .text-proper { font-size: var(--sp-min-text-size); }
     </style>
   </head>
@@ -325,7 +325,7 @@
             >
               <div>
                 <div
-                  style="font-size: var(--sp-font-lg-size); font-weight: 600; color: var(--sp-color-neutral-900)"
+                  style="font-size: var(--sp-font-lg-size); font-weight: var(--sp-font-weight-semibold); color: var(--sp-color-neutral-900)"
                 >
                   Primary Text on Light Background
                 </div>
@@ -342,12 +342,12 @@
               </div>
               <div style="text-align: right">
                 <div
-                  style="font-size: var(--sp-font-xl-size); font-weight: 700; color: var(--sp-form-valid-text)"
+                  style="font-size: var(--sp-font-xl-size); font-weight: var(--sp-font-weight-bold); color: var(--sp-form-valid-text)"
                 >
                   19.07:1
                 </div>
                 <div
-                  style="font-size: var(--sp-font-xs-size); color: var(--sp-form-valid-text); font-weight: 600"
+                  style="font-size: var(--sp-font-xs-size); color: var(--sp-form-valid-text); font-weight: var(--sp-font-weight-semibold)"
                 >
                   AAA ✓✓✓
                 </div>
@@ -378,7 +378,7 @@
             >
               <div>
                 <div
-                  style="font-size: var(--sp-font-lg-size); font-weight: 600; color: var(--sp-color-neutral-500)"
+                  style="font-size: var(--sp-font-lg-size); font-weight: var(--sp-font-weight-semibold); color: var(--sp-color-neutral-500)"
                 >
                   Muted Text on Light Background
                 </div>
@@ -395,12 +395,12 @@
               </div>
               <div style="text-align: right">
                 <div
-                  style="font-size: var(--sp-font-xl-size); font-weight: 700; color: var(--sp-form-valid-text)"
+                  style="font-size: var(--sp-font-xl-size); font-weight: var(--sp-font-weight-bold); color: var(--sp-form-valid-text)"
                 >
                   7.51:1
                 </div>
                 <div
-                  style="font-size: var(--sp-font-xs-size); color: var(--sp-form-valid-text); font-weight: 600"
+                  style="font-size: var(--sp-font-xs-size); color: var(--sp-form-valid-text); font-weight: var(--sp-font-weight-semibold)"
                 >
                   AAA ✓✓✓
                 </div>
@@ -430,7 +430,7 @@
             >
               <div>
                 <div
-                  style="font-size: var(--sp-font-lg-size); font-weight: 600; color: var(--sp-color-neutral-400)"
+                  style="font-size: var(--sp-font-lg-size); font-weight: var(--sp-font-weight-semibold); color: var(--sp-color-neutral-400)"
                 >
                   Subtle Text on Light Background
                 </div>
@@ -447,12 +447,12 @@
               </div>
               <div style="text-align: right">
                 <div
-                  style="font-size: var(--sp-font-xl-size); font-weight: 700; color: var(--sp-color-success-600)"
+                  style="font-size: var(--sp-font-xl-size); font-weight: var(--sp-font-weight-bold); color: var(--sp-color-success-600)"
                 >
                   4.55:1
                 </div>
                 <div
-                  style="font-size: var(--sp-font-xs-size); color: var(--sp-color-success-600); font-weight: 600"
+                  style="font-size: var(--sp-font-xs-size); color: var(--sp-color-success-600); font-weight: var(--sp-font-weight-semibold)"
                 >
                   AA ✓✓
                 </div>
@@ -482,7 +482,7 @@
             >
               <div>
                 <div
-                  style="font-size: var(--sp-font-lg-size); font-weight: 600; color: var(--sp-color-white)"
+                  style="font-size: var(--sp-font-lg-size); font-weight: var(--sp-font-weight-semibold); color: var(--sp-color-white)"
                 >
                   White Text on Primary Button
                 </div>
@@ -499,12 +499,12 @@
               </div>
               <div style="text-align: right">
                 <div
-                  style="font-size: var(--sp-font-xl-size); font-weight: 700; color: var(--sp-color-success-100)"
+                  style="font-size: var(--sp-font-xl-size); font-weight: var(--sp-font-weight-bold); color: var(--sp-color-success-100)"
                 >
                   5.92:1
                 </div>
                 <div
-                  style="font-size: var(--sp-font-xs-size); color: var(--sp-color-success-100); font-weight: 600"
+                  style="font-size: var(--sp-font-xs-size); color: var(--sp-color-success-100); font-weight: var(--sp-font-weight-semibold)"
                 >
                   AA ✓✓
                 </div>
@@ -534,7 +534,7 @@
             >
               <div>
                 <div
-                  style="font-size: var(--sp-font-lg-size); font-weight: 600; color: var(--sp-surface-page)"
+                  style="font-size: var(--sp-font-lg-size); font-weight: var(--sp-font-weight-semibold); color: var(--sp-surface-page)"
                 >
                   Light Text on Dark Background
                 </div>
@@ -551,12 +551,12 @@
               </div>
               <div style="text-align: right">
                 <div
-                  style="font-size: var(--sp-font-xl-size); font-weight: 700; color: var(--sp-color-success-100)"
+                  style="font-size: var(--sp-font-xl-size); font-weight: var(--sp-font-weight-bold); color: var(--sp-color-success-100)"
                 >
                   18.23:1
                 </div>
                 <div
-                  style="font-size: var(--sp-font-xs-size); color: var(--sp-color-success-100); font-weight: 600"
+                  style="font-size: var(--sp-font-xs-size); color: var(--sp-color-success-100); font-weight: var(--sp-font-weight-semibold)"
                 >
                   AAA ✓✓✓
                 </div>
@@ -586,7 +586,7 @@
             >
               <div>
                 <div
-                  style="font-size: var(--sp-font-lg-size); font-weight: 600; color: var(--sp-form-invalid-text)"
+                  style="font-size: var(--sp-font-lg-size); font-weight: var(--sp-font-weight-semibold); color: var(--sp-form-invalid-text)"
                 >
                   Error Text on Error Background
                 </div>
@@ -603,12 +603,12 @@
               </div>
               <div style="text-align: right">
                 <div
-                  style="font-size: var(--sp-font-xl-size); font-weight: 700; color: var(--sp-form-valid-text)"
+                  style="font-size: var(--sp-font-xl-size); font-weight: var(--sp-font-weight-bold); color: var(--sp-form-valid-text)"
                 >
                   6.29:1
                 </div>
                 <div
-                  style="font-size: var(--sp-font-xs-size); color: var(--sp-form-valid-text); font-weight: 600"
+                  style="font-size: var(--sp-font-xs-size); color: var(--sp-form-valid-text); font-weight: var(--sp-font-weight-semibold)"
                 >
                   AA ✓✓
                 </div>
@@ -638,7 +638,7 @@
             >
               <div>
                 <div
-                  style="font-size: var(--sp-font-lg-size); font-weight: 600; color: var(--sp-form-valid-text)"
+                  style="font-size: var(--sp-font-lg-size); font-weight: var(--sp-font-weight-semibold); color: var(--sp-form-valid-text)"
                 >
                   Success Text on Success Background
                 </div>
@@ -655,12 +655,12 @@
               </div>
               <div style="text-align: right">
                 <div
-                  style="font-size: var(--sp-font-xl-size); font-weight: 700; color: var(--sp-form-valid-text)"
+                  style="font-size: var(--sp-font-xl-size); font-weight: var(--sp-font-weight-bold); color: var(--sp-form-valid-text)"
                 >
                   7.15:1
                 </div>
                 <div
-                  style="font-size: var(--sp-font-xs-size); color: var(--sp-form-valid-text); font-weight: 600"
+                  style="font-size: var(--sp-font-xs-size); color: var(--sp-form-valid-text); font-weight: var(--sp-font-weight-semibold)"
                 >
                   AAA ✓✓✓
                 </div>
@@ -681,7 +681,7 @@
             border: var(--sp-border-width-base) var(--sp-border-style-solid) var(--sp-color-info-200);
           "
         >
-          <div style="font-weight: 600; color: var(--sp-button-primary-bghover); margin-bottom: var(--sp-space-8)">
+          <div style="font-weight: var(--sp-font-weight-semibold); color: var(--sp-button-primary-bghover); margin-bottom: var(--sp-space-8)">
             📊 WCAG Contrast Standards
           </div>
           <div style="font-size: var(--sp-font-sm-size); color: var(--sp-button-primary-bgactive); line-height: 1.6">
@@ -706,7 +706,7 @@
             "
           >
             <div
-              style="font-weight: 600; color: var(--sp-form-valid-text); margin-bottom: var(--sp-space-8)"
+              style="font-weight: var(--sp-font-weight-semibold); color: var(--sp-form-valid-text); margin-bottom: var(--sp-space-8)"
             >
               ✓ Color Contrast
             </div>
@@ -726,7 +726,7 @@
             "
           >
             <div
-              style="font-weight: 600; color: var(--sp-form-valid-text); margin-bottom: var(--sp-space-8)"
+              style="font-weight: var(--sp-font-weight-semibold); color: var(--sp-form-valid-text); margin-bottom: var(--sp-space-8)"
             >
               ✓ Focus Indicators
             </div>
@@ -745,7 +745,7 @@
             "
           >
             <div
-              style="font-weight: 600; color: var(--sp-form-valid-text); margin-bottom: var(--sp-space-8)"
+              style="font-weight: var(--sp-font-weight-semibold); color: var(--sp-form-valid-text); margin-bottom: var(--sp-space-8)"
             >
               ✓ Touch Targets
             </div>
@@ -765,7 +765,7 @@
             "
           >
             <div
-              style="font-weight: 600; color: var(--sp-form-valid-text); margin-bottom: var(--sp-space-8)"
+              style="font-weight: var(--sp-font-weight-semibold); color: var(--sp-form-valid-text); margin-bottom: var(--sp-space-8)"
             >
               ✓ Readable Text
             </div>
@@ -786,15 +786,15 @@
           <div style="display: flex; align-items: center; gap: var(--sp-space-16)">
             <div
               style="
-                width: 100px;
-                height: 60px;
+                width: var(--sp-space-96);
+                height: var(--sp-space-64);
                 background: var(--sp-button-primary-bg);
                 opacity: var(--sp-opacity-disabled);
-                border-radius: 6px;
+                border-radius: var(--sp-radius-lg);
               "
             ></div>
             <div>
-              <div style="font-weight: 600; color: var(--sp-color-neutral-900)">Disabled</div>
+              <div style="font-weight: var(--sp-font-weight-semibold); color: var(--sp-color-neutral-900)">Disabled</div>
               <div style="font-size: var(--sp-font-sm-size); color: var(--sp-color-neutral-500)">
                 --sp-opacity-disabled (0.38)
               </div>
@@ -803,15 +803,15 @@
           <div style="display: flex; align-items: center; gap: var(--sp-space-16)">
             <div
               style="
-                width: 100px;
-                height: 60px;
+                width: var(--sp-space-96);
+                height: var(--sp-space-64);
                 background: var(--sp-button-primary-bg);
                 opacity: var(--sp-opacity-hover);
-                border-radius: 6px;
+                border-radius: var(--sp-radius-lg);
               "
             ></div>
             <div>
-              <div style="font-weight: 600; color: var(--sp-color-neutral-900)">Hover</div>
+              <div style="font-weight: var(--sp-font-weight-semibold); color: var(--sp-color-neutral-900)">Hover</div>
               <div style="font-size: var(--sp-font-sm-size); color: var(--sp-color-neutral-500)">
                 --sp-opacity-hover (0.92)
               </div>
@@ -820,15 +820,15 @@
           <div style="display: flex; align-items: center; gap: var(--sp-space-16)">
             <div
               style="
-                width: 100px;
-                height: 60px;
+                width: var(--sp-space-96);
+                height: var(--sp-space-64);
                 background: var(--sp-button-primary-bg);
                 opacity: var(--sp-opacity-active);
-                border-radius: 6px;
+                border-radius: var(--sp-radius-lg);
               "
             ></div>
             <div>
-              <div style="font-weight: 600; color: var(--sp-color-neutral-900)">Active</div>
+              <div style="font-weight: var(--sp-font-weight-semibold); color: var(--sp-color-neutral-900)">Active</div>
               <div style="font-size: var(--sp-font-sm-size); color: var(--sp-color-neutral-500)">
                 --sp-opacity-active (0.84)
               </div>
@@ -837,15 +837,15 @@
           <div style="display: flex; align-items: center; gap: var(--sp-space-16)">
             <div
               style="
-                width: 100px;
-                height: 60px;
+                width: var(--sp-space-96);
+                height: var(--sp-space-64);
                 background: var(--sp-button-primary-bg);
                 opacity: var(--sp-opacity-focus);
-                border-radius: 6px;
+                border-radius: var(--sp-radius-lg);
               "
             ></div>
             <div>
-              <div style="font-weight: 600; color: var(--sp-color-neutral-900)">Focus</div>
+              <div style="font-weight: var(--sp-font-weight-semibold); color: var(--sp-color-neutral-900)">Focus</div>
               <div style="font-size: var(--sp-font-sm-size); color: var(--sp-color-neutral-500)">
                 --sp-opacity-focus (1.0 full)
               </div>

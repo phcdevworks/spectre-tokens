@@ -28,6 +28,7 @@
     "leading",
     "textDecoration",
     "fontWeight",
+    "fontSize",
     "control",
     "elevation"
   ],
@@ -424,7 +425,7 @@
         "colors", "space", "layout", "radii", "typography", "font", "shadows",
         "breakpoints", "zIndex", "transitions", "animations", "opacity",
         "aspectRatios", "icons", "border", "accessibility", "buttons", "forms",
-        "link", "surface", "text", "component", "modes", "tracking", "leading", "textDecoration", "fontWeight",
+        "link", "surface", "text", "component", "modes", "tracking", "leading", "textDecoration", "fontWeight", "fontSize",
         "control", "elevation"
       ]
     },
@@ -433,7 +434,7 @@
         "colors", "space", "layout", "radii", "typography", "font", "shadows",
         "breakpoints", "zIndex", "transitions", "animations", "opacity",
         "aspectRatios", "icons", "border", "accessibility", "buttons", "forms",
-        "link", "surface", "text", "component", "tracking", "leading", "textDecoration", "fontWeight",
+        "link", "surface", "text", "component", "tracking", "leading", "textDecoration", "fontWeight", "fontSize",
         "control", "elevation"
       ]
     },
@@ -447,6 +448,7 @@
         { "sourcePath": "leading", "prefixParts": ["leading"], "blockStrategy": "cascade-only" },
         { "sourcePath": "textDecoration", "prefixParts": ["text-decoration"], "blockStrategy": "cascade-only" },
         { "sourcePath": "fontWeight", "prefixParts": ["font-weight"], "blockStrategy": "cascade-only" },
+        { "sourcePath": "fontSize", "prefixParts": ["font-size"], "blockStrategy": "cascade-only" },
         { "sourcePath": "shadows", "prefixParts": ["shadow"], "blockStrategy": "cascade-only" },
         { "sourcePath": "breakpoints", "prefixParts": ["breakpoint"], "blockStrategy": "cascade-only" },
         { "sourcePath": "zIndex", "prefixParts": ["z-index"], "blockStrategy": "cascade-only" },
@@ -457,7 +459,7 @@
         { "sourcePath": "border.style", "prefixParts": ["border", "style"], "blockStrategy": "cascade-only" },
         { "sourcePath": "transitions.duration", "prefixParts": ["duration"], "blockStrategy": "cascade-only" },
         { "sourcePath": "transitions.easing", "prefixParts": ["easing"], "blockStrategy": "cascade-only" },
-        { "sourcePath": "link", "prefixParts": ["link"], "blockStrategy": "duplicated" },
+        { "sourcePath": "link", "prefixParts": ["link"], "blockStrategy": "mode-scoped" },
         { "sourcePath": "modes.default.surface", "prefixParts": ["surface"], "blockStrategy": "mode-scoped" },
         { "sourcePath": "modes.default.text.onPage", "prefixParts": ["text", "on", "page"], "blockStrategy": "mode-scoped" },
         { "sourcePath": "modes.default.text.onSurface", "prefixParts": ["text", "on", "surface"], "blockStrategy": "mode-scoped" },

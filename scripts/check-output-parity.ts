@@ -210,16 +210,16 @@ const extractDeclaredValue = (block: string, varName: string): string | undefine
 //     duplicating css.ts's private resolver, which is exactly the
 //     drift-prone duplication Phase 9 P0 removed.
 //   - 'duplicated': explicitly redeclared in both blocks with the same value
-//     in each, no modes.* backing (e.g. link). Checked for presence and
-//     value equality in both blocks.
+//     in each, no modes.* backing (e.g. elevation.*.surface). Checked for
+//     presence and value equality in both blocks.
 // The high-contrast block follows the dark block's rule for every strategy.
 parity.css.groups.forEach(({ sourcePath, prefixParts, blockStrategy, kebab }) => {
   const node = getPathValue(tokens, sourcePath);
   if (node === undefined) fail(`Runtime tokens are missing declared CSS parity source path: ${sourcePath}`);
 
-  // 'duplicated' currently has one member (`link`), whose generator
-  // (src/css.ts's `linkTokens` loop) kebab-splits camelCase keys the same way
-  // the mode-scoped semantic walker does (`onInverse` -> `on-inverse`).
+  // `link` (src/css.ts's `linkTokens` loop) kebab-splits camelCase keys the
+  // same way the mode-scoped semantic walker does (`onInverse` ->
+  // `on-inverse`).
   const usesKebabSplitting = blockStrategy === 'mode-scoped' || blockStrategy === 'duplicated' || kebab === true;
   const segmentFormatter = usesKebabSplitting ? kebabPathSegmentLikeCss : formatKeyLikeCss;
 

@@ -19,7 +19,7 @@
       }
 
       .container {
-        max-width: 1200px;
+        max-width: var(--sp-layout-container-max-width);
         margin: 0 auto;
       }
 
@@ -41,7 +41,7 @@
       }
 
       .subtitle {
-        font-size: 1.125rem;
+        font-size: var(--sp-font-lg-size);
         color: var(--sp-text-on-page-muted);
       }
 
@@ -73,17 +73,17 @@
 
       .button-label {
         font-size: var(--sp-font-sm-size);
-        font-weight: 600;
+        font-weight: var(--sp-font-weight-semibold);
         color: var(--sp-text-on-page-default);
-        min-width: 120px;
+        min-width: var(--sp-space-128);
       }
 
       .btn {
         padding: var(--sp-space-10) var(--sp-space-20);
-        border-radius: 6px;
+        border-radius: var(--sp-radius-lg);
         border: none;
         font-size: var(--sp-font-sm-size);
-        font-weight: 600;
+        font-weight: var(--sp-font-weight-semibold);
         cursor: pointer;
         transition: all var(--sp-duration-base) var(--sp-easing-inout);
         font-family: var(--sp-font-family-sans);
@@ -311,7 +311,7 @@
         font-size: var(--sp-font-xs-size);
         color: var(--sp-text-on-page-subtle);
         text-transform: uppercase;
-        letter-spacing: 0.05em;
+        letter-spacing: var(--sp-tracking-wider);
       }
     </style>
   </head>
