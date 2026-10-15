@@ -6,6 +6,10 @@ reflects package releases published to npm.
 
 ## [Unreleased]
 
+## [4.14.0] - 2026-10-15
+
+**Release Title:** Typography Scale and Readability Refinements
+
 Contract change type: semantic change
 
 ### Changed
@@ -1901,7 +1905,8 @@ Contract change type: breaking
 - Standardized documentation and contributing guidelines.
 
 [unreleased]:
-  https://github.com/phcdevworks/spectre-tokens/compare/v4.13.0...HEAD
+  https://github.com/phcdevworks/spectre-tokens/compare/v4.14.0...HEAD
+[4.14.0]: https://github.com/phcdevworks/spectre-tokens/compare/v4.13.0...v4.14.0
 [4.13.0]: https://github.com/phcdevworks/spectre-tokens/compare/v4.12.0...v4.13.0
 [4.12.0]: https://github.com/phcdevworks/spectre-tokens/compare/v4.11.0...v4.12.0
 [4.11.0]: https://github.com/phcdevworks/spectre-tokens/compare/v4.10.0...v4.11.0
