@@ -584,6 +584,14 @@
   --sp-link-on-inverse-hover: #8ab6ff;
   --sp-link-underline: rgba(31, 87, 219, 0.4);
   --sp-link-underline-hover: #1946b4;
+  --sp-action-bg: var(--sp-action-700);
+  --sp-action-bg-hover: var(--sp-action-800);
+  --sp-action-bg-active: var(--sp-action-900);
+  --sp-action-text: #ffffff;
+  --sp-action-focus-ring: color-mix(in srgb, var(--sp-action-500) 40%, transparent);
+  --sp-action-on-page: var(--sp-action-700);
+  --sp-action-on-surface: var(--sp-action-700);
+  --sp-action-rail: var(--sp-action-700);
   --sp-color-brand-50: #eef4ff;
   --sp-color-brand-100: #d9e7ff;
   --sp-color-brand-200: #b9d2ff;
@@ -1025,6 +1033,16 @@
   --sp-color-palette-phcdevworks-paper-800: #2b251b;
   --sp-color-palette-phcdevworks-paper-900: #1f190e;
   --sp-color-palette-phcdevworks-paper-950: #0e0a05;
+  --sp-action-50: #eef4ff;
+  --sp-action-100: #d9e7ff;
+  --sp-action-200: #b9d2ff;
+  --sp-action-300: #8ab6ff;
+  --sp-action-400: #5a92ff;
+  --sp-action-500: #336df4;
+  --sp-action-600: #1f57db;
+  --sp-action-700: #1946b4;
+  --sp-action-800: #173b8f;
+  --sp-action-900: #16336f;
   --sp-space-0: 0rem;
   --sp-space-1: 0.0625rem;
   --sp-space-2: 0.125rem;
@@ -1266,28 +1284,28 @@
   --sp-font-8xl-letter-spacing: 0em;
   --sp-font-9xl-letter-spacing: 0em;
   --sp-heading-h1-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
-  --sp-heading-h1-size: 3.75rem;
-  --sp-heading-h1-line-height: 4.25rem;
+  --sp-heading-h1-size: 2.25rem;
+  --sp-heading-h1-line-height: 2.75rem;
   --sp-heading-h1-weight: 800;
   --sp-heading-h1-letter-spacing: 0em;
   --sp-heading-h2-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
-  --sp-heading-h2-size: 3rem;
-  --sp-heading-h2-line-height: 3.5rem;
+  --sp-heading-h2-size: 1.875rem;
+  --sp-heading-h2-line-height: 2.5rem;
   --sp-heading-h2-weight: 700;
   --sp-heading-h2-letter-spacing: 0em;
   --sp-heading-h3-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
-  --sp-heading-h3-size: 2.25rem;
-  --sp-heading-h3-line-height: 2.75rem;
+  --sp-heading-h3-size: 1.5rem;
+  --sp-heading-h3-line-height: 2.125rem;
   --sp-heading-h3-weight: 700;
   --sp-heading-h3-letter-spacing: 0em;
   --sp-heading-h4-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
-  --sp-heading-h4-size: 1.875rem;
-  --sp-heading-h4-line-height: 2.5rem;
+  --sp-heading-h4-size: 1.25rem;
+  --sp-heading-h4-line-height: 2rem;
   --sp-heading-h4-weight: 600;
   --sp-heading-h4-letter-spacing: 0em;
   --sp-heading-h5-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
-  --sp-heading-h5-size: 1.5rem;
-  --sp-heading-h5-line-height: 2.125rem;
+  --sp-heading-h5-size: 1.25rem;
+  --sp-heading-h5-line-height: 2rem;
   --sp-heading-h5-weight: 600;
   --sp-heading-h5-letter-spacing: 0em;
   --sp-heading-h6-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
@@ -1301,18 +1319,18 @@
   --sp-body-weight: 400;
   --sp-body-letter-spacing: 0em;
   --sp-display-1-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
-  --sp-display-1-size: 4.5rem;
-  --sp-display-1-line-height: 5rem;
+  --sp-display-1-size: 2.25rem;
+  --sp-display-1-line-height: 2.75rem;
   --sp-display-1-weight: 800;
   --sp-display-1-letter-spacing: 0em;
   --sp-display-2-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
-  --sp-display-2-size: 3.75rem;
-  --sp-display-2-line-height: 4.25rem;
+  --sp-display-2-size: 2.25rem;
+  --sp-display-2-line-height: 2.75rem;
   --sp-display-2-weight: 800;
   --sp-display-2-letter-spacing: 0em;
   --sp-display-3-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
-  --sp-display-3-size: 3rem;
-  --sp-display-3-line-height: 3.5rem;
+  --sp-display-3-size: 2.25rem;
+  --sp-display-3-line-height: 2.75rem;
   --sp-display-3-weight: 700;
   --sp-display-3-letter-spacing: 0em;
   --sp-display-4-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
@@ -1335,6 +1353,22 @@
   --sp-lead-line-height: 2rem;
   --sp-lead-weight: 400;
   --sp-lead-letter-spacing: 0em;
+  --sp-typography-responsive-md-heading-h1-size: 3.75rem;
+  --sp-typography-responsive-md-heading-h1-line-height: 4.25rem;
+  --sp-typography-responsive-md-heading-h2-size: 3rem;
+  --sp-typography-responsive-md-heading-h2-line-height: 3.5rem;
+  --sp-typography-responsive-md-heading-h3-size: 2.25rem;
+  --sp-typography-responsive-md-heading-h3-line-height: 2.75rem;
+  --sp-typography-responsive-md-heading-h4-size: 1.875rem;
+  --sp-typography-responsive-md-heading-h4-line-height: 2.5rem;
+  --sp-typography-responsive-md-heading-h5-size: 1.5rem;
+  --sp-typography-responsive-md-heading-h5-line-height: 2.125rem;
+  --sp-typography-responsive-md-display-1-size: 4.5rem;
+  --sp-typography-responsive-md-display-1-line-height: 5rem;
+  --sp-typography-responsive-md-display-2-size: 3.75rem;
+  --sp-typography-responsive-md-display-2-line-height: 4.25rem;
+  --sp-typography-responsive-md-display-3-size: 3rem;
+  --sp-typography-responsive-md-display-3-line-height: 3.5rem;
   --sp-shadow-none: none;
   --sp-shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.06);
   --sp-shadow-md: 0 2px 6px -1px rgba(0, 0, 0, 0.08);
@@ -2153,6 +2187,14 @@
   --sp-link-on-inverse-hover: #8ab6ff;
   --sp-link-underline: rgba(90, 146, 255, 0.4);
   --sp-link-underline-hover: #8ab6ff;
+  --sp-action-bg: var(--sp-action-700);
+  --sp-action-bg-hover: var(--sp-action-800);
+  --sp-action-bg-active: var(--sp-action-900);
+  --sp-action-text: #ffffff;
+  --sp-action-focus-ring: color-mix(in srgb, var(--sp-action-500) 40%, transparent);
+  --sp-action-on-page: var(--sp-action-400);
+  --sp-action-on-surface: var(--sp-action-400);
+  --sp-action-rail: var(--sp-action-400);
   --sp-form-valid-border: #22c55e;
   --sp-form-valid-bg: #f0fdf4;
   --sp-form-valid-text: #15803d;
@@ -2863,6 +2905,14 @@
   --sp-link-on-inverse-hover: #8ab6ff;
   --sp-link-underline: #1946b4;
   --sp-link-underline-hover: #173b8f;
+  --sp-action-bg: var(--sp-action-800);
+  --sp-action-bg-hover: var(--sp-action-900);
+  --sp-action-bg-active: var(--sp-action-900);
+  --sp-action-text: #ffffff;
+  --sp-action-focus-ring: color-mix(in srgb, var(--sp-action-500) 40%, transparent);
+  --sp-action-on-page: var(--sp-action-900);
+  --sp-action-on-surface: var(--sp-action-900);
+  --sp-action-rail: var(--sp-action-900);
   --sp-form-valid-border: #15803d;
   --sp-form-valid-bg: #f0fdf4;
   --sp-form-valid-text: #14532d;
@@ -3575,6 +3625,14 @@
   --sp-link-on-inverse-hover: #8ab6ff;
   --sp-link-underline: rgba(31, 87, 219, 0.4);
   --sp-link-underline-hover: #1946b4;
+  --sp-action-bg: var(--sp-action-700);
+  --sp-action-bg-hover: var(--sp-action-800);
+  --sp-action-bg-active: var(--sp-action-900);
+  --sp-action-text: #ffffff;
+  --sp-action-focus-ring: color-mix(in srgb, var(--sp-action-500) 40%, transparent);
+  --sp-action-on-page: var(--sp-action-700);
+  --sp-action-on-surface: var(--sp-action-700);
+  --sp-action-rail: var(--sp-action-700);
   --sp-form-valid-border: #22c55e;
   --sp-form-valid-bg: #f0fdf4;
   --sp-form-valid-text: #15803d;
@@ -4286,6 +4344,14 @@
     --sp-link-on-inverse-hover: #8ab6ff;
     --sp-link-underline: rgba(90, 146, 255, 0.4);
     --sp-link-underline-hover: #8ab6ff;
+    --sp-action-bg: var(--sp-action-700);
+    --sp-action-bg-hover: var(--sp-action-800);
+    --sp-action-bg-active: var(--sp-action-900);
+    --sp-action-text: #ffffff;
+    --sp-action-focus-ring: color-mix(in srgb, var(--sp-action-500) 40%, transparent);
+    --sp-action-on-page: var(--sp-action-400);
+    --sp-action-on-surface: var(--sp-action-400);
+    --sp-action-rail: var(--sp-action-400);
     --sp-form-valid-border: #22c55e;
     --sp-form-valid-bg: #f0fdf4;
     --sp-form-valid-text: #15803d;
@@ -4410,6 +4476,414 @@
     --sp-elevation-modal-surface: var(--sp-surface-card);
   }
 }
+:root[data-spectre-action="brand"] {
+  --sp-action-50: #eef4ff;
+  --sp-action-100: #d9e7ff;
+  --sp-action-200: #b9d2ff;
+  --sp-action-300: #8ab6ff;
+  --sp-action-400: #5a92ff;
+  --sp-action-500: #336df4;
+  --sp-action-600: #1f57db;
+  --sp-action-700: #1946b4;
+  --sp-action-800: #173b8f;
+  --sp-action-900: #16336f;
+}
+:root[data-spectre-action="accent"] {
+  --sp-action-50: #f6f2ff;
+  --sp-action-100: #eee5ff;
+  --sp-action-200: #ddccff;
+  --sp-action-300: #c3a7ff;
+  --sp-action-400: #a279ff;
+  --sp-action-500: #854ff7;
+  --sp-action-600: #7135dd;
+  --sp-action-700: #5d28b8;
+  --sp-action-800: #4d2393;
+  --sp-action-900: #401f75;
+}
+:root[data-spectre-action="info"] {
+  --sp-action-50: #f0f9ff;
+  --sp-action-100: #e0f2fe;
+  --sp-action-200: #bae6fd;
+  --sp-action-300: #7dd3fc;
+  --sp-action-400: #38bdf8;
+  --sp-action-500: #0ea5e9;
+  --sp-action-600: #0369a1;
+  --sp-action-700: #075985;
+  --sp-action-800: #0c4a6e;
+  --sp-action-900: #082f49;
+}
+:root[data-spectre-action="red"] {
+  --sp-action-50: #fef2f2;
+  --sp-action-100: #ffe2e2;
+  --sp-action-200: #ffc9c9;
+  --sp-action-300: #ffa2a2;
+  --sp-action-400: #ff6467;
+  --sp-action-500: #fb2c36;
+  --sp-action-600: #e7000b;
+  --sp-action-700: #c10007;
+  --sp-action-800: #9f0712;
+  --sp-action-900: #82181a;
+}
+:root[data-spectre-action="orange"] {
+  --sp-action-50: #fff7ed;
+  --sp-action-100: #ffedd4;
+  --sp-action-200: #ffd6a7;
+  --sp-action-300: #ffb86a;
+  --sp-action-400: #ff8904;
+  --sp-action-500: #ff6900;
+  --sp-action-600: #f54900;
+  --sp-action-700: #ca3500;
+  --sp-action-800: #9f2d00;
+  --sp-action-900: #7e2a0c;
+}
+:root[data-spectre-action="amber"] {
+  --sp-action-50: #fffbeb;
+  --sp-action-100: #fef3c6;
+  --sp-action-200: #fee685;
+  --sp-action-300: #ffd230;
+  --sp-action-400: #ffb900;
+  --sp-action-500: #fe9a00;
+  --sp-action-600: #e17100;
+  --sp-action-700: #bb4d00;
+  --sp-action-800: #973c00;
+  --sp-action-900: #7b3306;
+}
+:root[data-spectre-action="lime"] {
+  --sp-action-50: #f7fee7;
+  --sp-action-100: #ecfcca;
+  --sp-action-200: #d8f999;
+  --sp-action-300: #bbf451;
+  --sp-action-400: #9ae600;
+  --sp-action-500: #7ccf00;
+  --sp-action-600: #5ea500;
+  --sp-action-700: #497d00;
+  --sp-action-800: #3c6300;
+  --sp-action-900: #35530e;
+}
+:root[data-spectre-action="green"] {
+  --sp-action-50: #f0fdf4;
+  --sp-action-100: #dcfce7;
+  --sp-action-200: #b9f8cf;
+  --sp-action-300: #7bf1a8;
+  --sp-action-400: #05df72;
+  --sp-action-500: #00c950;
+  --sp-action-600: #00a63e;
+  --sp-action-700: #008236;
+  --sp-action-800: #016630;
+  --sp-action-900: #0d542b;
+}
+:root[data-spectre-action="emerald"] {
+  --sp-action-50: #ecfdf5;
+  --sp-action-100: #d0fae5;
+  --sp-action-200: #a4f4cf;
+  --sp-action-300: #5ee9b5;
+  --sp-action-400: #00d492;
+  --sp-action-500: #00bc7d;
+  --sp-action-600: #009966;
+  --sp-action-700: #007a55;
+  --sp-action-800: #006045;
+  --sp-action-900: #004f3b;
+}
+:root[data-spectre-action="teal"] {
+  --sp-action-50: #f0fdfa;
+  --sp-action-100: #cbfbf1;
+  --sp-action-200: #96f7e4;
+  --sp-action-300: #46ecd5;
+  --sp-action-400: #00d5be;
+  --sp-action-500: #00bba7;
+  --sp-action-600: #009689;
+  --sp-action-700: #00786f;
+  --sp-action-800: #005f5a;
+  --sp-action-900: #0b4f4a;
+}
+:root[data-spectre-action="cyan"] {
+  --sp-action-50: #ecfeff;
+  --sp-action-100: #cefafe;
+  --sp-action-200: #a2f4fd;
+  --sp-action-300: #53eafd;
+  --sp-action-400: #00d3f2;
+  --sp-action-500: #00b8db;
+  --sp-action-600: #0092b8;
+  --sp-action-700: #007595;
+  --sp-action-800: #005f78;
+  --sp-action-900: #104e64;
+}
+:root[data-spectre-action="sky"] {
+  --sp-action-50: #f0f9ff;
+  --sp-action-100: #dff2fe;
+  --sp-action-200: #b8e6fe;
+  --sp-action-300: #74d4ff;
+  --sp-action-400: #00bcff;
+  --sp-action-500: #00a6f4;
+  --sp-action-600: #0084d1;
+  --sp-action-700: #0069a8;
+  --sp-action-800: #00598a;
+  --sp-action-900: #024a70;
+}
+:root[data-spectre-action="blue"] {
+  --sp-action-50: #eff6ff;
+  --sp-action-100: #dbeafe;
+  --sp-action-200: #bedbff;
+  --sp-action-300: #8ec5ff;
+  --sp-action-400: #51a2ff;
+  --sp-action-500: #2b7fff;
+  --sp-action-600: #155dfc;
+  --sp-action-700: #1447e6;
+  --sp-action-800: #193cb8;
+  --sp-action-900: #1c398e;
+}
+:root[data-spectre-action="indigo"] {
+  --sp-action-50: #eef2ff;
+  --sp-action-100: #e0e7ff;
+  --sp-action-200: #c6d2ff;
+  --sp-action-300: #a3b3ff;
+  --sp-action-400: #7c86ff;
+  --sp-action-500: #615fff;
+  --sp-action-600: #4f39f6;
+  --sp-action-700: #432dd7;
+  --sp-action-800: #372aac;
+  --sp-action-900: #312c85;
+}
+:root[data-spectre-action="violet"] {
+  --sp-action-50: #f5f3ff;
+  --sp-action-100: #ede9fe;
+  --sp-action-200: #ddd6ff;
+  --sp-action-300: #c4b4ff;
+  --sp-action-400: #a684ff;
+  --sp-action-500: #8e51ff;
+  --sp-action-600: #7f22fe;
+  --sp-action-700: #7008e7;
+  --sp-action-800: #5d0ec0;
+  --sp-action-900: #4d179a;
+}
+:root[data-spectre-action="purple"] {
+  --sp-action-50: #faf5ff;
+  --sp-action-100: #f3e8ff;
+  --sp-action-200: #e9d4ff;
+  --sp-action-300: #dab2ff;
+  --sp-action-400: #c27aff;
+  --sp-action-500: #ad46ff;
+  --sp-action-600: #9810fa;
+  --sp-action-700: #8200db;
+  --sp-action-800: #6e11b0;
+  --sp-action-900: #59168b;
+}
+:root[data-spectre-action="fuchsia"] {
+  --sp-action-50: #fdf4ff;
+  --sp-action-100: #fae8ff;
+  --sp-action-200: #f6cfff;
+  --sp-action-300: #f4a8ff;
+  --sp-action-400: #ed6aff;
+  --sp-action-500: #e12afb;
+  --sp-action-600: #c800de;
+  --sp-action-700: #a800b7;
+  --sp-action-800: #8a0194;
+  --sp-action-900: #721378;
+}
+:root[data-spectre-action="pink"] {
+  --sp-action-50: #fdf2f8;
+  --sp-action-100: #fce7f3;
+  --sp-action-200: #fccee8;
+  --sp-action-300: #fda5d5;
+  --sp-action-400: #fb64b6;
+  --sp-action-500: #f6339a;
+  --sp-action-600: #e60076;
+  --sp-action-700: #c6005c;
+  --sp-action-800: #a3004c;
+  --sp-action-900: #861043;
+}
+:root[data-spectre-action="rose"] {
+  --sp-action-50: #fff1f2;
+  --sp-action-100: #ffe4e6;
+  --sp-action-200: #ffccd3;
+  --sp-action-300: #ffa1ad;
+  --sp-action-400: #ff637e;
+  --sp-action-500: #ff2056;
+  --sp-action-600: #ec003f;
+  --sp-action-700: #c70036;
+  --sp-action-800: #a50036;
+  --sp-action-900: #8b0836;
+}
+:root[data-spectre-action="slate"] {
+  --sp-action-50: #f8fafc;
+  --sp-action-100: #f1f5f9;
+  --sp-action-200: #e2e8f0;
+  --sp-action-300: #cad5e2;
+  --sp-action-400: #90a1b9;
+  --sp-action-500: #62748e;
+  --sp-action-600: #45556c;
+  --sp-action-700: #314158;
+  --sp-action-800: #1d293d;
+  --sp-action-900: #0f172b;
+}
+:root[data-spectre-action="gray"] {
+  --sp-action-50: #f9fafb;
+  --sp-action-100: #f3f4f6;
+  --sp-action-200: #e5e7eb;
+  --sp-action-300: #d1d5dc;
+  --sp-action-400: #99a1af;
+  --sp-action-500: #6a7282;
+  --sp-action-600: #4a5565;
+  --sp-action-700: #364153;
+  --sp-action-800: #1e2939;
+  --sp-action-900: #101828;
+}
+:root[data-spectre-action="zinc"] {
+  --sp-action-50: #fafafa;
+  --sp-action-100: #f4f4f5;
+  --sp-action-200: #e4e4e7;
+  --sp-action-300: #d4d4d8;
+  --sp-action-400: #9f9fa9;
+  --sp-action-500: #71717b;
+  --sp-action-600: #52525c;
+  --sp-action-700: #3f3f46;
+  --sp-action-800: #27272a;
+  --sp-action-900: #18181b;
+}
+:root[data-spectre-action="neutral"] {
+  --sp-action-50: #fafafa;
+  --sp-action-100: #f5f5f5;
+  --sp-action-200: #e5e5e5;
+  --sp-action-300: #d4d4d4;
+  --sp-action-400: #a1a1a1;
+  --sp-action-500: #737373;
+  --sp-action-600: #525252;
+  --sp-action-700: #404040;
+  --sp-action-800: #262626;
+  --sp-action-900: #171717;
+}
+:root[data-spectre-action="stone"] {
+  --sp-action-50: #fafaf9;
+  --sp-action-100: #f5f5f4;
+  --sp-action-200: #e7e5e4;
+  --sp-action-300: #d6d3d1;
+  --sp-action-400: #a6a09b;
+  --sp-action-500: #79716b;
+  --sp-action-600: #57534d;
+  --sp-action-700: #44403b;
+  --sp-action-800: #292524;
+  --sp-action-900: #1c1917;
+}
+:root[data-spectre-action="mauve"] {
+  --sp-action-50: #fafafa;
+  --sp-action-100: #f3f1f3;
+  --sp-action-200: #e7e4e7;
+  --sp-action-300: #d7d0d7;
+  --sp-action-400: #a89ea9;
+  --sp-action-500: #79697b;
+  --sp-action-600: #594c5b;
+  --sp-action-700: #463947;
+  --sp-action-800: #2a212c;
+  --sp-action-900: #1d161e;
+}
+:root[data-spectre-action="olive"] {
+  --sp-action-50: #fbfbf9;
+  --sp-action-100: #f4f4f0;
+  --sp-action-200: #e8e8e3;
+  --sp-action-300: #d8d8d0;
+  --sp-action-400: #abab9c;
+  --sp-action-500: #7c7c67;
+  --sp-action-600: #5b5b4b;
+  --sp-action-700: #474739;
+  --sp-action-800: #2b2b22;
+  --sp-action-900: #1d1d16;
+}
+:root[data-spectre-action="mist"] {
+  --sp-action-50: #f9fbfb;
+  --sp-action-100: #f1f3f3;
+  --sp-action-200: #e3e7e8;
+  --sp-action-300: #d0d6d8;
+  --sp-action-400: #9ca8ab;
+  --sp-action-500: #67787c;
+  --sp-action-600: #4b585b;
+  --sp-action-700: #394447;
+  --sp-action-800: #22292b;
+  --sp-action-900: #161b1d;
+}
+:root[data-spectre-action="taupe"] {
+  --sp-action-50: #fbfaf9;
+  --sp-action-100: #f3f1f1;
+  --sp-action-200: #e8e4e3;
+  --sp-action-300: #d8d2d0;
+  --sp-action-400: #aba09c;
+  --sp-action-500: #7c6d67;
+  --sp-action-600: #5b4f4b;
+  --sp-action-700: #473c39;
+  --sp-action-800: #2b2422;
+  --sp-action-900: #1d1816;
+}
+:root[data-spectre-action="integration-ink"] {
+  --sp-action-50: #fafafb;
+  --sp-action-100: #f5f5f6;
+  --sp-action-200: #e7e8e9;
+  --sp-action-300: #d3d4d6;
+  --sp-action-400: #9ea0a3;
+  --sp-action-500: #707376;
+  --sp-action-600: #525457;
+  --sp-action-700: #3e4143;
+  --sp-action-800: #27292b;
+  --sp-action-900: #16181a;
+}
+:root[data-spectre-action="integration-gunmetal"] {
+  --sp-action-50: #f0f0f1;
+  --sp-action-100: #eaebec;
+  --sp-action-200: #dddedf;
+  --sp-action-300: #c8cbcd;
+  --sp-action-400: #93979a;
+  --sp-action-500: #666b6e;
+  --sp-action-600: #484c50;
+  --sp-action-700: #35393c;
+  --sp-action-800: #1f2225;
+  --sp-action-900: #0c1014;
+}
+:root[data-spectre-action="integration-signal-blue"] {
+  --sp-action-50: #ebf0f9;
+  --sp-action-100: #d8e3f8;
+  --sp-action-200: #bfd4f9;
+  --sp-action-300: #95bdf9;
+  --sp-action-400: #4a9df7;
+  --sp-action-500: #0083f7;
+  --sp-action-600: #006dfa;
+  --sp-action-700: #005ce8;
+  --sp-action-800: #004bb8;
+  --sp-action-900: #003f8a;
+}
+:root[data-spectre-action="phcdevworks-raspberry-red"] {
+  --sp-action-50: #fff3f4;
+  --sp-action-100: #ffe7e8;
+  --sp-action-200: #ffcfd2;
+  --sp-action-300: #fea5ae;
+  --sp-action-400: #fd6982;
+  --sp-action-500: #fe2b67;
+  --sp-action-600: #ee005a;
+  --sp-action-700: #c8054b;
+  --sp-action-800: #a4113e;
+  --sp-action-900: #8a1635;
+}
+:root[data-spectre-action="phcdevworks-deep-space-blue"] {
+  --sp-action-50: #edf1f7;
+  --sp-action-100: #dce5f1;
+  --sp-action-200: #c4d5ec;
+  --sp-action-300: #a1bee3;
+  --sp-action-400: #6b9ed5;
+  --sp-action-500: #2583ca;
+  --sp-action-600: #006dc2;
+  --sp-action-700: #005bb0;
+  --sp-action-800: #004a8c;
+  --sp-action-900: #003f6d;
+}
+:root[data-spectre-action="phcdevworks-paper"] {
+  --sp-action-50: #fcfaf7;
+  --sp-action-100: #f7f5f2;
+  --sp-action-200: #e9e5e0;
+  --sp-action-300: #d9d3ca;
+  --sp-action-400: #aca08b;
+  --sp-action-500: #807056;
+  --sp-action-600: #5e523d;
+  --sp-action-700: #4a3f2d;
+  --sp-action-800: #2b251b;
+  --sp-action-900: #1f190e;
+}
 [data-spectre-density="compact"] {
   --sp-control-sm-height: var(--sp-control-compact-sm-height);
   --sp-control-sm-padding-inline: var(--sp-control-compact-sm-padding-inline);
@@ -4420,6 +4894,26 @@
   --sp-control-lg-height: var(--sp-control-compact-lg-height);
   --sp-control-lg-padding-inline: var(--sp-control-compact-lg-padding-inline);
   --sp-control-lg-icon-size: var(--sp-control-compact-lg-icon-size);
+}
+@media (min-width: 768px) {
+  :root {
+    --sp-heading-h1-size: var(--sp-typography-responsive-md-heading-h1-size);
+    --sp-heading-h1-line-height: var(--sp-typography-responsive-md-heading-h1-line-height);
+    --sp-heading-h2-size: var(--sp-typography-responsive-md-heading-h2-size);
+    --sp-heading-h2-line-height: var(--sp-typography-responsive-md-heading-h2-line-height);
+    --sp-heading-h3-size: var(--sp-typography-responsive-md-heading-h3-size);
+    --sp-heading-h3-line-height: var(--sp-typography-responsive-md-heading-h3-line-height);
+    --sp-heading-h4-size: var(--sp-typography-responsive-md-heading-h4-size);
+    --sp-heading-h4-line-height: var(--sp-typography-responsive-md-heading-h4-line-height);
+    --sp-heading-h5-size: var(--sp-typography-responsive-md-heading-h5-size);
+    --sp-heading-h5-line-height: var(--sp-typography-responsive-md-heading-h5-line-height);
+    --sp-display-1-size: var(--sp-typography-responsive-md-display-1-size);
+    --sp-display-1-line-height: var(--sp-typography-responsive-md-display-1-line-height);
+    --sp-display-2-size: var(--sp-typography-responsive-md-display-2-size);
+    --sp-display-2-line-height: var(--sp-typography-responsive-md-display-2-line-height);
+    --sp-display-3-size: var(--sp-typography-responsive-md-display-3-size);
+    --sp-display-3-line-height: var(--sp-typography-responsive-md-display-3-line-height);
+  }
 }
 @media (min-width: 1024px) {
   :root {

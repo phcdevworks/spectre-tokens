@@ -6,6 +6,46 @@ reflects package releases published to npm.
 
 ## [Unreleased]
 
+Contract change type: semantic change
+
+### Changed
+
+- Headings and display text are now mobile first. Below 768px,
+  `heading.h1` is 36px (was 60px), `h2` 30px (48), `h3` 24px (36), `h4`
+  20px (30), `h5` 20px (24), and `display.1`–`3` are 36px (72/60/48). From
+  the `md` breakpoint (768px) up they render at their previous sizes, so
+  desktop is unchanged. `h6` and `display.4`–`6` do not change. Each size
+  keeps its scale step's line height; weights do not change. Requested by
+  spectre-base, whose child theme carried its own ramp below 768px and can
+  now drop it.
+- Downstream impact: anything reading `--sp-heading-*` or `--sp-display-*`
+  gets the smaller sizes on narrow screens with no change. The JS and DTCG
+  values of `typography.heading.*` and `typography.display.*` are now the
+  narrow-screen sizes; the wide sizes are in `typography.responsive.md.*`.
+
+### Added
+
+- `typography.responsive.md.{heading,display}.<level>.{fontSize,lineHeight}`,
+  emitted as `--sp-typography-responsive-md-*`. Inside
+  `@media (min-width: 768px)`, the role variables are re-pointed at them,
+  the same way `layout.responsive.lg` works for spacing.
+  `check:typography-refs` now checks that each one references a scale step,
+  emits a resolved value, is re-pointed in CSS, and never shrinks the role.
+- `action`, a theme-selectable action colour role: `bg`, `bgHover`,
+  `bgActive`, `text`, `focusRing`, `onPage`, `onSurface`, and `rail`
+  (`--sp-action-*`). It defaults to `brand` 700/800/900 with white text, 700
+  for text and rails, 400 for text and rails in dark mode, and 800/900/900
+  fills with 900 text in high-contrast mode. A theme sets its own colour with
+  `data-spectre-action="<family>"` on `<html>`, which swaps the
+  `--sp-action-{50..900}` ramp behind the roles, so hover and active shades
+  follow and no `--sp-*` is declared. The selectable families are `brand`,
+  `accent`, `info`, and every `colors.palette` family except `yellow` and
+  `integration-icy-blue`, which miss a contrast minimum. `check:contrast`
+  re-runs every action pair for every selectable family. `brand` and
+  `buttons.cta` values are unchanged. Requested by spectre-base; spectre-ui
+  still needs the button variant, stat-unit tone, and quote-rail tone that
+  use it.
+
 ### Fixed
 
 - Buildkite CI now runs in a pinned `node:24` container. It used the

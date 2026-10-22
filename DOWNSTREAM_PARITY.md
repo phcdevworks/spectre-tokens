@@ -5,8 +5,8 @@ Generated from the published CSS output by `npm run build`
 This file is a derived artifact, not contract authority; `tokens/` and
 `contract.manifest.json` remain the source of truth.
 
-Every CSS custom property in `dist/index.css` (1566 total) belongs
-to exactly one of 87 families. A family is the unit a downstream
+Every CSS custom property in `dist/index.css` (1600 total) belongs
+to exactly one of 89 families. A family is the unit a downstream
 recipe or stylesheet consumes: each one needs a consumer in `spectre-ui`
 before its `tests/token-parity.test.ts` passes. The build fails if a new
 variable does not fit an existing family, so a token group cannot ship
@@ -978,6 +978,7 @@ copy.
 | `surface` | `--sp-surface-*` | 11 | 9 of 11 | `surface`, `modes.*.surface` |
 | `text` | `--sp-text-*` | 16 | 12 of 16 | `text`, `modes.*.text` |
 | `link` | `--sp-link-*` | 8 | 6 of 8 | `link` |
+| `action` | `--sp-action-*` | 18 | 7 of 18 | `action`, `modes.*.action` — A theme picks the family with `data-spectre-action="<family>"` on the root element; never redeclare these. |
 
 <details>
 <summary><code>surface</code> (11)</summary>
@@ -1029,6 +1030,29 @@ copy.
 - `--sp-link-underline-hover` (varies by mode)
 
 </details>
+<details>
+<summary><code>action</code> (18)</summary>
+
+- `--sp-action-bg` (varies by mode)
+- `--sp-action-bg-hover` (varies by mode)
+- `--sp-action-bg-active` (varies by mode)
+- `--sp-action-text`
+- `--sp-action-focus-ring` (varies by mode)
+- `--sp-action-on-page` (varies by mode)
+- `--sp-action-on-surface` (varies by mode)
+- `--sp-action-rail` (varies by mode)
+- `--sp-action-50`
+- `--sp-action-100`
+- `--sp-action-200`
+- `--sp-action-300`
+- `--sp-action-400`
+- `--sp-action-500`
+- `--sp-action-600`
+- `--sp-action-700`
+- `--sp-action-800`
+- `--sp-action-900`
+
+</details>
 
 ## Typography roles
 
@@ -1038,6 +1062,7 @@ copy.
 | `body` | `--sp-body-*` | 5 | no | `typography.body` |
 | `display` | `--sp-display-*` | 30 | no | `typography.display` |
 | `lead` | `--sp-lead-*` | 5 | no | `typography.lead` |
+| `typography-responsive` | `--sp-typography-responsive-*` | 16 | no | `typography.responsive` — Wide-screen role sizes; the heading and display variables already switch to them, so consume those instead. |
 
 <details>
 <summary><code>heading</code> (30)</summary>
@@ -1127,6 +1152,27 @@ copy.
 - `--sp-lead-line-height`
 - `--sp-lead-weight`
 - `--sp-lead-letter-spacing`
+
+</details>
+<details>
+<summary><code>typography-responsive</code> (16)</summary>
+
+- `--sp-typography-responsive-md-heading-h1-size`
+- `--sp-typography-responsive-md-heading-h1-line-height`
+- `--sp-typography-responsive-md-heading-h2-size`
+- `--sp-typography-responsive-md-heading-h2-line-height`
+- `--sp-typography-responsive-md-heading-h3-size`
+- `--sp-typography-responsive-md-heading-h3-line-height`
+- `--sp-typography-responsive-md-heading-h4-size`
+- `--sp-typography-responsive-md-heading-h4-line-height`
+- `--sp-typography-responsive-md-heading-h5-size`
+- `--sp-typography-responsive-md-heading-h5-line-height`
+- `--sp-typography-responsive-md-display-1-size`
+- `--sp-typography-responsive-md-display-1-line-height`
+- `--sp-typography-responsive-md-display-2-size`
+- `--sp-typography-responsive-md-display-2-line-height`
+- `--sp-typography-responsive-md-display-3-size`
+- `--sp-typography-responsive-md-display-3-line-height`
 
 </details>
 

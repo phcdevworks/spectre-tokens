@@ -30,7 +30,8 @@
     "fontWeight",
     "fontSize",
     "control",
-    "elevation"
+    "elevation",
+    "action"
   ],
   "requiredOutputs": {
     "js": {
@@ -248,6 +249,18 @@
         "text.onPage.accent",
         "text.onSurface.accent",
         "text.onInverse.accent",
+        "action.bg",
+        "action.bgHover",
+        "action.bgActive",
+        "action.text",
+        "action.focusRing",
+        "action.onPage",
+        "action.onSurface",
+        "action.rail",
+        "modes.dark.action.onPage",
+        "modes.highContrast.action.bg",
+        "typography.responsive.md.heading.h1.fontSize",
+        "typography.responsive.md.display.1.fontSize",
         "modes.default.surface.page",
         "modes.dark.surface.page",
         "layout.container.maxWidth",
@@ -383,7 +396,14 @@
         "--sp-meter-fill-optimum",
         "--sp-code-syntax-keyword",
         "--sp-table-caption-text",
-        "--sp-select-option-selected-bg"
+        "--sp-select-option-selected-bg",
+        "--sp-action-700",
+        "--sp-action-bg",
+        "--sp-action-bg-hover",
+        "--sp-action-on-page",
+        "--sp-action-rail",
+        "--sp-typography-responsive-md-heading-h1-size",
+        "--sp-typography-responsive-md-display-1-size"
       ],
       "requiredDarkModeVariables": [
         "--sp-surface-page",
@@ -401,7 +421,9 @@
         "--sp-selection-bg",
         "--sp-prose-del-bg",
         "--sp-meter-fill-optimum",
-        "--sp-code-syntax-keyword"
+        "--sp-code-syntax-keyword",
+        "--sp-action-on-page",
+        "--sp-action-rail"
       ]
     },
     "design": {
@@ -426,7 +448,7 @@
         "breakpoints", "zIndex", "transitions", "animations", "opacity",
         "aspectRatios", "icons", "border", "accessibility", "buttons", "forms",
         "link", "surface", "text", "component", "modes", "tracking", "leading", "textDecoration", "fontWeight", "fontSize",
-        "control", "elevation"
+        "control", "elevation", "action"
       ]
     },
     "dtcg": {
@@ -435,7 +457,7 @@
         "breakpoints", "zIndex", "transitions", "animations", "opacity",
         "aspectRatios", "icons", "border", "accessibility", "buttons", "forms",
         "link", "surface", "text", "component", "tracking", "leading", "textDecoration", "fontWeight", "fontSize",
-        "control", "elevation"
+        "control", "elevation", "action"
       ]
     },
     "css": {
@@ -460,6 +482,7 @@
         { "sourcePath": "transitions.duration", "prefixParts": ["duration"], "blockStrategy": "cascade-only" },
         { "sourcePath": "transitions.easing", "prefixParts": ["easing"], "blockStrategy": "cascade-only" },
         { "sourcePath": "link", "prefixParts": ["link"], "blockStrategy": "mode-scoped" },
+        { "sourcePath": "action", "prefixParts": ["action"], "blockStrategy": "mode-scoped" },
         { "sourcePath": "modes.default.surface", "prefixParts": ["surface"], "blockStrategy": "mode-scoped" },
         { "sourcePath": "modes.default.text.onPage", "prefixParts": ["text", "on", "page"], "blockStrategy": "mode-scoped" },
         { "sourcePath": "modes.default.text.onSurface", "prefixParts": ["text", "on", "surface"], "blockStrategy": "mode-scoped" },
@@ -485,7 +508,7 @@
         { "sourcePath": "elevation.modal.surface", "prefixParts": ["elevation", "modal", "surface"], "blockStrategy": "duplicated" }
       ],
       "exceptions": [
-        "typography and font describe the same font scale via two parallel key shapes (fontSize/lineHeight/fontWeight vs size/lineHeight/weight/letterSpacing); css.ts emits from whichever is populated. Covered by check:css requiredVariables, not a generic per-leaf walk.",
+        "typography and font describe the same font scale via two parallel key shapes (fontSize/lineHeight/fontWeight vs size/lineHeight/weight/letterSpacing); css.ts emits from whichever is populated. Covered by check:css requiredVariables, not a generic per-leaf walk. typography.responsive.<breakpoint>.{heading,display}.<level>.{fontSize,lineHeight} emit --sp-typography-responsive-<breakpoint>-<role>-<level>-<field> literals, and each one re-points its role variable inside the @media (min-width) block for that breakpoint. Covered by check:css requiredVariables, check:typography-refs, and check:structure's never-shrinks assertion.",
         "layout emits per-branch (section.padding, section.gap, stack.gap, container.paddingInline, container.maxWidth/maxWidthProse, hero.paddingTop/paddingBottom, sidebar.width, prose.flow, responsive.<breakpoint>.*) with no shared prefix across the namespace. hero steps emit var() references to section padding steps, and each responsive.<breakpoint> scale is re-pointed at its --sp-layout-responsive-<breakpoint>-* variable inside an @media (min-width) block after the dark-mode block. Covered by check:css requiredVariables, manifest spaceLinkedLayoutPaths, and check:structure's 8px-grid and hero-reference assertions.",
         "accessibility fields (focusRing.width/offset/style, minTouchTarget, minTextSize, reducedMotion, forcedColors) each have an independent CSS variable name with no shared prefix. Covered by check:css requiredVariables.",
         "buttons and forms nest by variant/state (buttons.primary.bg, forms.invalid.text) with irregular optional fields (border, shadow, focusRing only on some variants). Covered by check:css requiredVariables and existing button/form tests. The mode-aware forms.default.{bg,text,placeholder} subset is additionally checked as the mode-scoped modes.default.forms group.",

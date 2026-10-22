@@ -1927,6 +1927,11 @@ var coreTokens = {
       }
     },
     "dark": {
+      "action": {
+        "onPage": "{colors.brand.400}",
+        "onSurface": "{colors.brand.400}",
+        "rail": "{colors.brand.400}"
+      },
       "surface": {
         "page": "{colors.neutral.900}",
         "card": "{colors.neutral.800}",
@@ -2798,6 +2803,15 @@ var coreTokens = {
       }
     },
     "highContrast": {
+      "action": {
+        "bg": "{colors.brand.800}",
+        "bgHover": "{colors.brand.900}",
+        "bgActive": "{colors.brand.900}",
+        "text": "{colors.white}",
+        "onPage": "{colors.brand.900}",
+        "onSurface": "{colors.brand.900}",
+        "rail": "{colors.brand.900}"
+      },
       "surface": {
         "page": "{colors.white}",
         "card": "{colors.white}",
@@ -4650,6 +4664,16 @@ var coreTokens = {
     "underline": "{colors.brand.600} / 0.4",
     "underlineHover": "{colors.brand.700}"
   },
+  "action": {
+    "bg": "{colors.brand.700}",
+    "bgHover": "{colors.brand.800}",
+    "bgActive": "{colors.brand.900}",
+    "text": "{colors.white}",
+    "focusRing": "{colors.brand.500} / 0.4",
+    "onPage": "{colors.brand.700}",
+    "onSurface": "{colors.brand.700}",
+    "rail": "{colors.brand.700}"
+  },
   "text": {
     "onPage": {
       "default": "{colors.neutral.900}",
@@ -4973,38 +4997,38 @@ var coreTokens = {
     "heading": {
       "h1": {
         "fontFamily": "{typography.families.sans}",
-        "fontSize": "{typography.scale.6xl.fontSize}",
-        "lineHeight": "{typography.scale.6xl.lineHeight}",
+        "fontSize": "{typography.scale.4xl.fontSize}",
+        "lineHeight": "{typography.scale.4xl.lineHeight}",
         "fontWeight": 800,
-        "letterSpacing": "{typography.scale.6xl.letterSpacing}"
+        "letterSpacing": "{typography.scale.4xl.letterSpacing}"
       },
       "h2": {
         "fontFamily": "{typography.families.sans}",
-        "fontSize": "{typography.scale.5xl.fontSize}",
-        "lineHeight": "{typography.scale.5xl.lineHeight}",
+        "fontSize": "{typography.scale.3xl.fontSize}",
+        "lineHeight": "{typography.scale.3xl.lineHeight}",
         "fontWeight": 700,
-        "letterSpacing": "{typography.scale.5xl.letterSpacing}"
+        "letterSpacing": "{typography.scale.3xl.letterSpacing}"
       },
       "h3": {
         "fontFamily": "{typography.families.sans}",
-        "fontSize": "{typography.scale.4xl.fontSize}",
-        "lineHeight": "{typography.scale.4xl.lineHeight}",
+        "fontSize": "{typography.scale.2xl.fontSize}",
+        "lineHeight": "{typography.scale.2xl.lineHeight}",
         "fontWeight": 700,
-        "letterSpacing": "{typography.scale.4xl.letterSpacing}"
+        "letterSpacing": "{typography.scale.2xl.letterSpacing}"
       },
       "h4": {
         "fontFamily": "{typography.families.sans}",
-        "fontSize": "{typography.scale.3xl.fontSize}",
-        "lineHeight": "{typography.scale.3xl.lineHeight}",
+        "fontSize": "{typography.scale.xl.fontSize}",
+        "lineHeight": "{typography.scale.xl.lineHeight}",
         "fontWeight": 600,
-        "letterSpacing": "{typography.scale.3xl.letterSpacing}"
+        "letterSpacing": "{typography.scale.xl.letterSpacing}"
       },
       "h5": {
         "fontFamily": "{typography.families.sans}",
-        "fontSize": "{typography.scale.2xl.fontSize}",
-        "lineHeight": "{typography.scale.2xl.lineHeight}",
+        "fontSize": "{typography.scale.xl.fontSize}",
+        "lineHeight": "{typography.scale.xl.lineHeight}",
         "fontWeight": 600,
-        "letterSpacing": "{typography.scale.2xl.letterSpacing}"
+        "letterSpacing": "{typography.scale.xl.letterSpacing}"
       },
       "h6": {
         "fontFamily": "{typography.families.sans}",
@@ -5024,24 +5048,24 @@ var coreTokens = {
     "display": {
       "1": {
         "fontFamily": "{typography.families.sans}",
-        "fontSize": "{typography.scale.7xl.fontSize}",
-        "lineHeight": "{typography.scale.7xl.lineHeight}",
+        "fontSize": "{typography.scale.4xl.fontSize}",
+        "lineHeight": "{typography.scale.4xl.lineHeight}",
         "fontWeight": 800,
-        "letterSpacing": "{typography.scale.7xl.letterSpacing}"
+        "letterSpacing": "{typography.scale.4xl.letterSpacing}"
       },
       "2": {
         "fontFamily": "{typography.families.sans}",
-        "fontSize": "{typography.scale.6xl.fontSize}",
-        "lineHeight": "{typography.scale.6xl.lineHeight}",
+        "fontSize": "{typography.scale.4xl.fontSize}",
+        "lineHeight": "{typography.scale.4xl.lineHeight}",
         "fontWeight": 800,
-        "letterSpacing": "{typography.scale.6xl.letterSpacing}"
+        "letterSpacing": "{typography.scale.4xl.letterSpacing}"
       },
       "3": {
         "fontFamily": "{typography.families.sans}",
-        "fontSize": "{typography.scale.5xl.fontSize}",
-        "lineHeight": "{typography.scale.5xl.lineHeight}",
+        "fontSize": "{typography.scale.4xl.fontSize}",
+        "lineHeight": "{typography.scale.4xl.lineHeight}",
         "fontWeight": 700,
-        "letterSpacing": "{typography.scale.5xl.letterSpacing}"
+        "letterSpacing": "{typography.scale.4xl.letterSpacing}"
       },
       "4": {
         "fontFamily": "{typography.families.sans}",
@@ -5071,6 +5095,46 @@ var coreTokens = {
       "lineHeight": "{typography.scale.xl.lineHeight}",
       "fontWeight": 400,
       "letterSpacing": "{typography.scale.xl.letterSpacing}"
+    },
+    "responsive": {
+      "md": {
+        "heading": {
+          "h1": {
+            "fontSize": "{typography.scale.6xl.fontSize}",
+            "lineHeight": "{typography.scale.6xl.lineHeight}"
+          },
+          "h2": {
+            "fontSize": "{typography.scale.5xl.fontSize}",
+            "lineHeight": "{typography.scale.5xl.lineHeight}"
+          },
+          "h3": {
+            "fontSize": "{typography.scale.4xl.fontSize}",
+            "lineHeight": "{typography.scale.4xl.lineHeight}"
+          },
+          "h4": {
+            "fontSize": "{typography.scale.3xl.fontSize}",
+            "lineHeight": "{typography.scale.3xl.lineHeight}"
+          },
+          "h5": {
+            "fontSize": "{typography.scale.2xl.fontSize}",
+            "lineHeight": "{typography.scale.2xl.lineHeight}"
+          }
+        },
+        "display": {
+          "1": {
+            "fontSize": "{typography.scale.7xl.fontSize}",
+            "lineHeight": "{typography.scale.7xl.lineHeight}"
+          },
+          "2": {
+            "fontSize": "{typography.scale.6xl.fontSize}",
+            "lineHeight": "{typography.scale.6xl.lineHeight}"
+          },
+          "3": {
+            "fontSize": "{typography.scale.5xl.fontSize}",
+            "lineHeight": "{typography.scale.5xl.lineHeight}"
+          }
+        }
+      }
     }
   }
 };
@@ -5102,6 +5166,42 @@ var layoutResponsive = (layout) => {
   const responsive = isPlainObject(layout) ? layout.responsive : void 0;
   return isPlainObject(responsive) ? responsive : {};
 };
+var ROLE_FIELD_SUFFIXES = {
+  fontFamily: "family",
+  fontSize: "size",
+  lineHeight: "line-height",
+  fontWeight: "weight",
+  letterSpacing: "letter-spacing"
+};
+var typographyResponsive = (typography) => {
+  const responsive = isPlainObject(typography) ? typography.responsive : void 0;
+  if (!isPlainObject(responsive)) return [];
+  return Object.entries(responsive).flatMap(
+    ([breakpoint, groups]) => Object.entries(groups).flatMap(([group, node]) => {
+      const roles = Object.keys(node).some((key) => key in ROLE_FIELD_SUFFIXES) ? [[[group], node]] : Object.entries(node).map(([level, fields]) => [[group, level], fields]);
+      return roles.flatMap(
+        ([roleParts, fields]) => Object.entries(fields).map(([field, value]) => {
+          const suffix = ROLE_FIELD_SUFFIXES[field];
+          if (suffix === void 0) {
+            throw new Error(`typography.responsive.${breakpoint}.${roleParts.join(".")}.${field} is not a typography role field`);
+          }
+          return { breakpoint, roleParts: [...roleParts], suffix, value };
+        })
+      );
+    })
+  );
+};
+var ACTION_SYSTEM_FAMILIES = ["brand", "accent", "info"];
+var ACTION_EXCLUDED_PALETTE_FAMILIES = /* @__PURE__ */ new Set(["yellow", "integration-icy-blue"]);
+var actionFamilies = (tokens2) => {
+  const colors = tokens2.colors;
+  const palette = isPlainObject(colors.palette) ? colors.palette : {};
+  return Object.fromEntries([
+    ...ACTION_SYSTEM_FAMILIES.map((name) => [name, colors[name]]),
+    ...Object.entries(palette).filter(([name]) => !ACTION_EXCLUDED_PALETTE_FAMILIES.has(name))
+  ]);
+};
+var actionSteps = (tokens2) => Object.keys(tokens2.colors.brand);
 var resolveTokenReference = (tokens2, reference) => {
   const path = reference.slice(1, -1).split(".");
   let current = tokens2;
@@ -5187,6 +5287,9 @@ var createCssVariableMap = (tokens2, options = {}) => {
   };
   Object.entries(baseTokens.colors).forEach(([group, scale]) => {
     assignColorGroup([group], scale);
+  });
+  actionSteps(tokens2).forEach((step) => {
+    assign(toVariableName(prefix, "action", step), baseTokens.colors.brand[step]);
   });
   if (baseTokens.space) {
     Object.entries(baseTokens.space).forEach(([key, value]) => {
@@ -5342,11 +5445,9 @@ var createCssVariableMap = (tokens2, options = {}) => {
     assign(toVariableName(prefix, "font", key, "letter-spacing"), scaleEntry.letterSpacing);
   });
   const assignRole = (rolePrefixParts, entry) => {
-    assign(toVariableName(prefix, ...rolePrefixParts, "family"), entry.fontFamily);
-    assign(toVariableName(prefix, ...rolePrefixParts, "size"), entry.fontSize);
-    assign(toVariableName(prefix, ...rolePrefixParts, "line-height"), entry.lineHeight);
-    assign(toVariableName(prefix, ...rolePrefixParts, "weight"), entry.fontWeight);
-    assign(toVariableName(prefix, ...rolePrefixParts, "letter-spacing"), entry.letterSpacing);
+    Object.entries(ROLE_FIELD_SUFFIXES).forEach(([field, suffix]) => {
+      assign(toVariableName(prefix, ...rolePrefixParts, suffix), entry[field]);
+    });
   };
   const heading = baseTokens.typography?.heading;
   if (heading) {
@@ -5368,6 +5469,9 @@ var createCssVariableMap = (tokens2, options = {}) => {
   if (lead) {
     assignRole(["lead"], lead);
   }
+  typographyResponsive(baseTokens.typography).forEach(({ breakpoint, roleParts, suffix, value }) => {
+    assign(toVariableName(prefix, "typography", "responsive", breakpoint, ...roleParts, suffix), value);
+  });
   Object.entries(baseTokens.shadows).forEach(([key, value]) => {
     if (typeof value === "string") {
       assign(toVariableName(prefix, "shadow", key), value);
@@ -5523,6 +5627,20 @@ var generateCssVariables = (tokens2, options = {}) => {
     addDark(varName, pickSemantic(tokens2, getPath(darkLink, [key]), value));
     addHighContrast(varName, pickSemantic(tokens2, getPath(highContrastLink, [key]), value));
   });
+  const actionValue = (value) => {
+    const match = typeof value === "string" ? value.match(/^\{colors\.brand\.([^}]+)\}(?:\s*\/\s*([0-9.]+))?$/) : null;
+    if (!match) return pickSemantic(tokens2, value);
+    const ramp = `var(${toVariableName(prefix, "action", match[1])})`;
+    return match[2] === void 0 ? ramp : `color-mix(in srgb, ${ramp} ${Math.round(Number(match[2]) * 1e3) / 10}%, transparent)`;
+  };
+  const darkAction = getPath(darkMode, ["action"]);
+  const highContrastAction = getPath(highContrastMode, ["action"]);
+  Object.entries(tokens2.action ?? {}).forEach(([key, value]) => {
+    const varName = toVariableName(prefix, "action", kebabPathSegment(key));
+    addBase(varName, actionValue(value));
+    addDark(varName, actionValue(getPath(darkAction, [key]) ?? value));
+    addHighContrast(varName, actionValue(getPath(highContrastAction, [key]) ?? value));
+  });
   const highContrastButtons = getPath(highContrastMode, ["buttons"]);
   if (isPlainObject(highContrastButtons)) {
     Object.entries(highContrastButtons).forEach(([variant, states]) => {
@@ -5571,6 +5689,16 @@ ${indent}}`;
   const systemDarkBlock = `@media (prefers-color-scheme: dark) {
 ${modeBlock(themeSelectors("system"), modeLines(darkEntries), "  ")}
 }`;
+  const steps = actionSteps(tokens2);
+  const actionBlocks = Object.entries(actionFamilies(tokens2)).map(([name, scale]) => {
+    const lines = steps.map((step) => {
+      if (scale[step] === void 0) throw new Error(`Action family "${name}" has no ${step} step`);
+      return `  ${toVariableName(prefix, "action", step)}: ${resolveValue(tokens2, scale[step])};`;
+    });
+    return `${selector}[data-spectre-action="${name}"] {
+${lines.join("\n")}
+}`;
+  });
   const control = tokens2.control;
   const compact = isPlainObject(control) && isPlainObject(control.compact) ? control.compact : {};
   const densityLines = Object.entries(compact).flatMap(
@@ -5583,27 +5711,50 @@ ${modeBlock(themeSelectors("system"), modeLines(darkEntries), "  ")}
 ${densityLines.join("\n")}
 }`] : [];
   const breakpoints = tokens2.breakpoints;
-  const responsiveBlocks = Object.entries(layoutResponsive(tokens2.layout)).map(([breakpoint, scales]) => {
-    const minWidth = breakpoints[breakpoint];
-    if (minWidth === void 0) {
-      throw new Error(`layout.responsive.${breakpoint} does not name a breakpoints entry`);
+  const responsiveLines = /* @__PURE__ */ new Map();
+  const addResponsive = (namespace, breakpoint, name, source) => {
+    if (breakpoints[breakpoint] === void 0) {
+      throw new Error(`${namespace}.responsive.${breakpoint} does not name a breakpoints entry`);
     }
-    const lines = LAYOUT_SCALES.flatMap(
-      ({ path, varParts }) => Object.keys(layoutScale(scales, path)).map((key) => {
-        const name = toVariableName(prefix, "layout", ...varParts, kebabCase(key));
-        const source = toVariableName(prefix, "layout", "responsive", breakpoint, ...varParts, kebabCase(key));
-        return `    ${name}: var(${source});`;
-      })
-    );
-    return `@media (min-width: ${resolveValue(tokens2, minWidth)}) {
-  ${selector} {
-${lines.join("\n")}
-  }
-}`;
+    responsiveLines.set(breakpoint, [...responsiveLines.get(breakpoint) ?? [], `    ${name}: var(${source});`]);
+  };
+  Object.entries(layoutResponsive(tokens2.layout)).forEach(([breakpoint, scales]) => {
+    LAYOUT_SCALES.forEach(({ path, varParts }) => {
+      Object.keys(layoutScale(scales, path)).forEach((key) => {
+        addResponsive(
+          "layout",
+          breakpoint,
+          toVariableName(prefix, "layout", ...varParts, kebabCase(key)),
+          toVariableName(prefix, "layout", "responsive", breakpoint, ...varParts, kebabCase(key))
+        );
+      });
+    });
   });
-  return [rootBlock, darkBlock, highContrastBlock, lightBlock, systemDarkBlock, ...densityBlocks, ...responsiveBlocks].join(
-    "\n"
-  ) + "\n";
+  typographyResponsive(tokens2.typography).forEach(({ breakpoint, roleParts, suffix }) => {
+    addResponsive(
+      "typography",
+      breakpoint,
+      toVariableName(prefix, ...roleParts, suffix),
+      toVariableName(prefix, "typography", "responsive", breakpoint, ...roleParts, suffix)
+    );
+  });
+  const responsiveBlocks = Object.keys(breakpoints).filter((breakpoint) => responsiveLines.has(breakpoint)).map(
+    (breakpoint) => `@media (min-width: ${resolveValue(tokens2, breakpoints[breakpoint])}) {
+  ${selector} {
+${responsiveLines.get(breakpoint).join("\n")}
+  }
+}`
+  );
+  return [
+    rootBlock,
+    darkBlock,
+    highContrastBlock,
+    lightBlock,
+    systemDarkBlock,
+    ...actionBlocks,
+    ...densityBlocks,
+    ...responsiveBlocks
+  ].join("\n") + "\n";
 };
 
 // src/index.ts

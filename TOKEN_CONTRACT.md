@@ -93,6 +93,7 @@ The current public top-level namespaces are:
 - `fontSize`
 - `control`
 - `elevation`
+- `action`
 
 These namespaces are treated as public and stable unless intentionally changed
 through the contract process described in this document.
@@ -197,8 +198,8 @@ Current behavior:
 - semantic tokens are expected to map cleanly across modes
 - consumers should prefer semantic mode-aware tokens rather than branching on
   palette values manually
-- `modes.*` carries `surface`, `text`, `component`, `link` (dark and
-  high-contrast), and the `forms.default.{bg,text,placeholder}` subset;
+- `modes.*` carries `surface`, `text`, `component`, `link` and `action` (dark
+  and high-contrast), and the `forms.default.{bg,text,placeholder}` subset;
   top-level `forms.default.*`
   holds the default-mode value, and every other `forms.*` state is
   mode-invariant
@@ -237,6 +238,29 @@ These rules apply to specific token families beyond the general rules above.
   longer describe it.
 - `fontWeight`, `leading`, `tracking`, and `textDecoration` are named scales
   that are not mode-aware. They are emitted once in `:root`.
+- Headings and display roles are mobile first. A role's own value is its
+  narrow-screen size, and `typography.responsive.<breakpoint>.{heading,display}.<level>`
+  overrides `fontSize`, `lineHeight`, or `letterSpacing` from that breakpoint
+  up. Each override is a `{typography.scale.*}` reference and never shrinks
+  the role. CSS re-points the role variable inside
+  `@media (min-width: <breakpoint>)`, so the variable name stays the same.
+  `check:typography-refs` enforces all of this. Changing a responsive size is
+  a semantic change.
+
+### Action colour
+
+- `action` is the theme-selectable action role: `bg`, `bgHover`, `bgActive`,
+  `text`, `focusRing`, `onPage`, `onSurface`, and `rail`. Its source values
+  reference `colors.brand` steps. In CSS each brand step becomes a
+  `var(--sp-action-<step>)` reference to a ramp declared in `:root`, and
+  `:root[data-spectre-action="<family>"]` swaps the ramp to that family.
+- The selectable families are `brand`, `accent`, `info`, and every
+  `colors.palette` family not excluded in `src/css.ts`. `check:contrast`
+  re-runs every `action` and `modes.*.action` pair for each family, so a
+  family is selectable only if it holds AA (AAA in high contrast, 3:1 for the
+  rail). Adding a family is additive; removing one is breaking.
+- `action` is new and separate from the protected `buttons.cta` and `brand`
+  values, which it does not change.
 
 ### Accent rails
 

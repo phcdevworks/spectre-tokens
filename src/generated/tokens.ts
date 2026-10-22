@@ -6620,6 +6620,30 @@ export interface SpectreSourceTokens {
       };
     };
     dark: {
+      action: {
+        onPage: {
+          value: string;
+          description: string;
+          metadata: {
+            pair: string;
+          };
+        };
+        onSurface: {
+          value: string;
+          description: string;
+          metadata: {
+            pair: string;
+          };
+        };
+        rail: {
+          value: string;
+          description: string;
+          metadata: {
+            pair: string;
+            minContrast: number;
+          };
+        };
+      };
       surface: {
         page: {
           value: string;
@@ -9899,6 +9923,53 @@ export interface SpectreSourceTokens {
       };
     };
     highContrast: {
+      action: {
+        bg: {
+          value: string;
+          description: string;
+          metadata: {
+            pair: string;
+          };
+        };
+        bgHover: {
+          value: string;
+          metadata: {
+            pair: string;
+          };
+        };
+        bgActive: {
+          value: string;
+          description: string;
+          metadata: {
+            pair: string;
+          };
+        };
+        text: {
+          value: string;
+          metadata: {
+            pair: string;
+          };
+        };
+        onPage: {
+          value: string;
+          metadata: {
+            pair: string;
+          };
+        };
+        onSurface: {
+          value: string;
+          metadata: {
+            pair: string;
+          };
+        };
+        rail: {
+          value: string;
+          metadata: {
+            pair: string;
+            minContrast: number;
+          };
+        };
+      };
       surface: {
         page: {
           value: string;
@@ -14567,6 +14638,62 @@ export interface SpectreSourceTokens {
       description: string;
     };
   };
+  action: {
+    bg: {
+      value: string;
+      description: string;
+      metadata: {
+        pair: string;
+      };
+    };
+    bgHover: {
+      value: string;
+      description: string;
+      metadata: {
+        pair: string;
+      };
+    };
+    bgActive: {
+      value: string;
+      description: string;
+      metadata: {
+        pair: string;
+      };
+    };
+    text: {
+      value: string;
+      description: string;
+      metadata: {
+        pair: string;
+      };
+    };
+    focusRing: {
+      value: string;
+      description: string;
+    };
+    onPage: {
+      value: string;
+      description: string;
+      metadata: {
+        pair: string;
+      };
+    };
+    onSurface: {
+      value: string;
+      description: string;
+      metadata: {
+        pair: string;
+      };
+    };
+    rail: {
+      value: string;
+      description: string;
+      metadata: {
+        pair: string;
+        minContrast: number;
+      };
+    };
+  };
   text: {
     onPage: {
       default: {
@@ -15072,6 +15199,46 @@ export interface SpectreSourceTokens {
       lineHeight: string;
       fontWeight: number;
       letterSpacing: string;
+    };
+    responsive: {
+      md: {
+        heading: {
+          h1: {
+            fontSize: string;
+            lineHeight: string;
+          };
+          h2: {
+            fontSize: string;
+            lineHeight: string;
+          };
+          h3: {
+            fontSize: string;
+            lineHeight: string;
+          };
+          h4: {
+            fontSize: string;
+            lineHeight: string;
+          };
+          h5: {
+            fontSize: string;
+            lineHeight: string;
+          };
+        };
+        display: {
+          '1': {
+            fontSize: string;
+            lineHeight: string;
+          };
+          '2': {
+            fontSize: string;
+            lineHeight: string;
+          };
+          '3': {
+            fontSize: string;
+            lineHeight: string;
+          };
+        };
+      };
     };
   };
 }
@@ -17004,6 +17171,11 @@ export interface SpectreGeneratedTokens {
       };
     };
     dark: {
+      action: {
+        onPage: string;
+        onSurface: string;
+        rail: string;
+      };
       surface: {
         page: string;
         card: string;
@@ -17875,6 +18047,15 @@ export interface SpectreGeneratedTokens {
       };
     };
     highContrast: {
+      action: {
+        bg: string;
+        bgHover: string;
+        bgActive: string;
+        text: string;
+        onPage: string;
+        onSurface: string;
+        rail: string;
+      };
       surface: {
         page: string;
         card: string;
@@ -19727,6 +19908,16 @@ export interface SpectreGeneratedTokens {
     underline: string;
     underlineHover: string;
   };
+  action: {
+    bg: string;
+    bgHover: string;
+    bgActive: string;
+    text: string;
+    focusRing: string;
+    onPage: string;
+    onSurface: string;
+    rail: string;
+  };
   text: {
     onPage: {
       default: string;
@@ -20148,6 +20339,46 @@ export interface SpectreGeneratedTokens {
       lineHeight: string;
       fontWeight: number;
       letterSpacing: string;
+    };
+    responsive: {
+      md: {
+        heading: {
+          h1: {
+            fontSize: string;
+            lineHeight: string;
+          };
+          h2: {
+            fontSize: string;
+            lineHeight: string;
+          };
+          h3: {
+            fontSize: string;
+            lineHeight: string;
+          };
+          h4: {
+            fontSize: string;
+            lineHeight: string;
+          };
+          h5: {
+            fontSize: string;
+            lineHeight: string;
+          };
+        };
+        display: {
+          '1': {
+            fontSize: string;
+            lineHeight: string;
+          };
+          '2': {
+            fontSize: string;
+            lineHeight: string;
+          };
+          '3': {
+            fontSize: string;
+            lineHeight: string;
+          };
+        };
+      };
     };
   };
 }
@@ -22080,6 +22311,11 @@ export const coreTokens: SpectreGeneratedTokens = {
       }
     },
     "dark": {
+      "action": {
+        "onPage": "{colors.brand.400}",
+        "onSurface": "{colors.brand.400}",
+        "rail": "{colors.brand.400}"
+      },
       "surface": {
         "page": "{colors.neutral.900}",
         "card": "{colors.neutral.800}",
@@ -22951,6 +23187,15 @@ export const coreTokens: SpectreGeneratedTokens = {
       }
     },
     "highContrast": {
+      "action": {
+        "bg": "{colors.brand.800}",
+        "bgHover": "{colors.brand.900}",
+        "bgActive": "{colors.brand.900}",
+        "text": "{colors.white}",
+        "onPage": "{colors.brand.900}",
+        "onSurface": "{colors.brand.900}",
+        "rail": "{colors.brand.900}"
+      },
       "surface": {
         "page": "{colors.white}",
         "card": "{colors.white}",
@@ -24803,6 +25048,16 @@ export const coreTokens: SpectreGeneratedTokens = {
     "underline": "{colors.brand.600} / 0.4",
     "underlineHover": "{colors.brand.700}"
   },
+  "action": {
+    "bg": "{colors.brand.700}",
+    "bgHover": "{colors.brand.800}",
+    "bgActive": "{colors.brand.900}",
+    "text": "{colors.white}",
+    "focusRing": "{colors.brand.500} / 0.4",
+    "onPage": "{colors.brand.700}",
+    "onSurface": "{colors.brand.700}",
+    "rail": "{colors.brand.700}"
+  },
   "text": {
     "onPage": {
       "default": "{colors.neutral.900}",
@@ -25126,38 +25381,38 @@ export const coreTokens: SpectreGeneratedTokens = {
     "heading": {
       "h1": {
         "fontFamily": "{typography.families.sans}",
-        "fontSize": "{typography.scale.6xl.fontSize}",
-        "lineHeight": "{typography.scale.6xl.lineHeight}",
+        "fontSize": "{typography.scale.4xl.fontSize}",
+        "lineHeight": "{typography.scale.4xl.lineHeight}",
         "fontWeight": 800,
-        "letterSpacing": "{typography.scale.6xl.letterSpacing}"
+        "letterSpacing": "{typography.scale.4xl.letterSpacing}"
       },
       "h2": {
         "fontFamily": "{typography.families.sans}",
-        "fontSize": "{typography.scale.5xl.fontSize}",
-        "lineHeight": "{typography.scale.5xl.lineHeight}",
+        "fontSize": "{typography.scale.3xl.fontSize}",
+        "lineHeight": "{typography.scale.3xl.lineHeight}",
         "fontWeight": 700,
-        "letterSpacing": "{typography.scale.5xl.letterSpacing}"
+        "letterSpacing": "{typography.scale.3xl.letterSpacing}"
       },
       "h3": {
         "fontFamily": "{typography.families.sans}",
-        "fontSize": "{typography.scale.4xl.fontSize}",
-        "lineHeight": "{typography.scale.4xl.lineHeight}",
+        "fontSize": "{typography.scale.2xl.fontSize}",
+        "lineHeight": "{typography.scale.2xl.lineHeight}",
         "fontWeight": 700,
-        "letterSpacing": "{typography.scale.4xl.letterSpacing}"
+        "letterSpacing": "{typography.scale.2xl.letterSpacing}"
       },
       "h4": {
         "fontFamily": "{typography.families.sans}",
-        "fontSize": "{typography.scale.3xl.fontSize}",
-        "lineHeight": "{typography.scale.3xl.lineHeight}",
+        "fontSize": "{typography.scale.xl.fontSize}",
+        "lineHeight": "{typography.scale.xl.lineHeight}",
         "fontWeight": 600,
-        "letterSpacing": "{typography.scale.3xl.letterSpacing}"
+        "letterSpacing": "{typography.scale.xl.letterSpacing}"
       },
       "h5": {
         "fontFamily": "{typography.families.sans}",
-        "fontSize": "{typography.scale.2xl.fontSize}",
-        "lineHeight": "{typography.scale.2xl.lineHeight}",
+        "fontSize": "{typography.scale.xl.fontSize}",
+        "lineHeight": "{typography.scale.xl.lineHeight}",
         "fontWeight": 600,
-        "letterSpacing": "{typography.scale.2xl.letterSpacing}"
+        "letterSpacing": "{typography.scale.xl.letterSpacing}"
       },
       "h6": {
         "fontFamily": "{typography.families.sans}",
@@ -25177,24 +25432,24 @@ export const coreTokens: SpectreGeneratedTokens = {
     "display": {
       "1": {
         "fontFamily": "{typography.families.sans}",
-        "fontSize": "{typography.scale.7xl.fontSize}",
-        "lineHeight": "{typography.scale.7xl.lineHeight}",
+        "fontSize": "{typography.scale.4xl.fontSize}",
+        "lineHeight": "{typography.scale.4xl.lineHeight}",
         "fontWeight": 800,
-        "letterSpacing": "{typography.scale.7xl.letterSpacing}"
+        "letterSpacing": "{typography.scale.4xl.letterSpacing}"
       },
       "2": {
         "fontFamily": "{typography.families.sans}",
-        "fontSize": "{typography.scale.6xl.fontSize}",
-        "lineHeight": "{typography.scale.6xl.lineHeight}",
+        "fontSize": "{typography.scale.4xl.fontSize}",
+        "lineHeight": "{typography.scale.4xl.lineHeight}",
         "fontWeight": 800,
-        "letterSpacing": "{typography.scale.6xl.letterSpacing}"
+        "letterSpacing": "{typography.scale.4xl.letterSpacing}"
       },
       "3": {
         "fontFamily": "{typography.families.sans}",
-        "fontSize": "{typography.scale.5xl.fontSize}",
-        "lineHeight": "{typography.scale.5xl.lineHeight}",
+        "fontSize": "{typography.scale.4xl.fontSize}",
+        "lineHeight": "{typography.scale.4xl.lineHeight}",
         "fontWeight": 700,
-        "letterSpacing": "{typography.scale.5xl.letterSpacing}"
+        "letterSpacing": "{typography.scale.4xl.letterSpacing}"
       },
       "4": {
         "fontFamily": "{typography.families.sans}",
@@ -25224,6 +25479,46 @@ export const coreTokens: SpectreGeneratedTokens = {
       "lineHeight": "{typography.scale.xl.lineHeight}",
       "fontWeight": 400,
       "letterSpacing": "{typography.scale.xl.letterSpacing}"
+    },
+    "responsive": {
+      "md": {
+        "heading": {
+          "h1": {
+            "fontSize": "{typography.scale.6xl.fontSize}",
+            "lineHeight": "{typography.scale.6xl.lineHeight}"
+          },
+          "h2": {
+            "fontSize": "{typography.scale.5xl.fontSize}",
+            "lineHeight": "{typography.scale.5xl.lineHeight}"
+          },
+          "h3": {
+            "fontSize": "{typography.scale.4xl.fontSize}",
+            "lineHeight": "{typography.scale.4xl.lineHeight}"
+          },
+          "h4": {
+            "fontSize": "{typography.scale.3xl.fontSize}",
+            "lineHeight": "{typography.scale.3xl.lineHeight}"
+          },
+          "h5": {
+            "fontSize": "{typography.scale.2xl.fontSize}",
+            "lineHeight": "{typography.scale.2xl.lineHeight}"
+          }
+        },
+        "display": {
+          "1": {
+            "fontSize": "{typography.scale.7xl.fontSize}",
+            "lineHeight": "{typography.scale.7xl.lineHeight}"
+          },
+          "2": {
+            "fontSize": "{typography.scale.6xl.fontSize}",
+            "lineHeight": "{typography.scale.6xl.lineHeight}"
+          },
+          "3": {
+            "fontSize": "{typography.scale.5xl.fontSize}",
+            "lineHeight": "{typography.scale.5xl.lineHeight}"
+          }
+        }
+      }
     }
   }
 } as const;

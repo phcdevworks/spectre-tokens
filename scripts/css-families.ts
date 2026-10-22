@@ -86,10 +86,24 @@ const STATIC_FAMILIES: FamilyDefinition[] = [
   { id: 'surface', section: 'Semantic roles', prefixes: ['surface'], sources: ['surface', 'modes.*.surface'] },
   { id: 'text', section: 'Semantic roles', prefixes: ['text'], sources: ['text', 'modes.*.text'] },
   { id: 'link', section: 'Semantic roles', prefixes: ['link'], sources: ['link'] },
+  {
+    id: 'action',
+    section: 'Semantic roles',
+    prefixes: ['action'],
+    sources: ['action', 'modes.*.action'],
+    note: 'A theme picks the family with `data-spectre-action="<family>"` on the root element; never redeclare these.'
+  },
   { id: 'heading', section: 'Typography roles', prefixes: ['heading'], sources: ['typography.heading'] },
   { id: 'body', section: 'Typography roles', prefixes: ['body'], sources: ['typography.body'] },
   { id: 'display', section: 'Typography roles', prefixes: ['display'], sources: ['typography.display'] },
   { id: 'lead', section: 'Typography roles', prefixes: ['lead'], sources: ['typography.lead'] },
+  {
+    id: 'typography-responsive',
+    section: 'Typography roles',
+    prefixes: ['typography-responsive'],
+    sources: ['typography.responsive'],
+    note: 'Wide-screen role sizes; the heading and display variables already switch to them, so consume those instead.'
+  },
   {
     id: 'button',
     section: 'Controls',

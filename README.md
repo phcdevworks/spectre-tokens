@@ -351,7 +351,8 @@ There are three ways to set text size, from most to least opinionated:
 
 1. **Text roles** (`--sp-heading-h1-*`, `--sp-display-1-*`, `--sp-body-*`,
    `--sp-lead-*`): size, line height, weight, and letter-spacing for a
-   specific job. Use these first.
+   specific job. Use these first. Large headings and display text resize
+   with the viewport (see [Responsive text roles](#responsive-text-roles)).
 2. **Size presets** `font.{xs…9xl}` (`--sp-font-lg-size`,
    `--sp-font-lg-line-height`, `--sp-font-lg-weight`,
    `--sp-font-lg-letter-spacing`): a size together with the line height and
@@ -386,6 +387,61 @@ a {
 | `leading` (line height, unitless) | `none` 1, `tight` 1.25, `snug` 1.375, `normal` 1.5, `relaxed` 1.625, `loose` 2 | `--sp-leading-*` |
 | `tracking` (letter-spacing) | `tightest` −0.075em through `widest` 0.1em | `--sp-tracking-*` |
 | `textDecoration` | `thickness.{thin,base,thick}` (1/2/3px), `offset.{sm,md,lg}` (0.125/0.2/0.3em) | `--sp-text-decoration-*` |
+
+### Responsive text roles
+
+Headings `h1`–`h5` and display `1`–`3` are mobile first. The role's own
+value is the phone size, and `typography.responsive.md.*` holds the size from
+the `md` breakpoint (768px) up. In CSS, `@media (min-width: 768px)` re-points
+`--sp-heading-*-size`/`-line-height` and `--sp-display-*-size`/`-line-height`
+at `--sp-typography-responsive-md-*`, so consumers keep using one variable
+and need no breakpoint of their own.
+
+| Role | Below 768px | 768px and up |
+| --- | --- | --- |
+| `display.1` | 36px | 72px |
+| `display.2` | 36px | 60px |
+| `display.3` | 36px | 48px |
+| `display.4`–`6` | 36 / 30 / 24px | same |
+| `heading.h1` | 36px | 60px |
+| `heading.h2` | 30px | 48px |
+| `heading.h3` | 24px | 36px |
+| `heading.h4` | 20px | 30px |
+| `heading.h5` | 20px | 24px |
+| `heading.h6` | 20px | same |
+
+Weights and families do not change. Each size keeps the line height of its
+scale step.
+
+### Action colour
+
+`action` is the theme's own action colour: the one a site uses for its main
+buttons, stat units, and quote rules. It defaults to `brand`.
+
+| Token | CSS variable | Default (light) |
+| --- | --- | --- |
+| `action.bg`, `bgHover`, `bgActive` | `--sp-action-bg`, `-bg-hover`, `-bg-active` | `brand` 700, 800, 900 |
+| `action.text` | `--sp-action-text` | white |
+| `action.focusRing` | `--sp-action-focus-ring` | `brand` 500 at 40% |
+| `action.onPage`, `onSurface` | `--sp-action-on-page`, `-on-surface` | `brand` 700 |
+| `action.rail` | `--sp-action-rail` | `brand` 700 |
+
+A theme sets the colour with an attribute on the root element, not by
+declaring `--sp-*`:
+
+```html
+<html data-spectre-action="emerald">
+```
+
+The value is `brand`, `accent`, `info`, or any `colors.palette` family except
+`yellow` and `integration-icy-blue`, which miss a contrast minimum. Hover and
+active shades come from the same family. In dark mode the text and rail
+roles move to step 400, and high-contrast mode uses 800/900/900 fills and
+900 text. `check:contrast` checks every selectable family against every pair.
+
+The attribute works on `<html>` only. The role variables are resolved on the
+root, so putting it on a nested element has no effect. Colour modes still
+apply anywhere, and they pick up the root's family.
 
 ### Accent rails
 
@@ -508,6 +564,7 @@ The generated token object includes these namespaces:
 - `fontSize`
 - `control`
 - `elevation`
+- `action`
 
 The exported runtime token object is a flattened string-based tree generated
 from `tokens/`. Source-only wrapper fields such as `value` and `metadata` are

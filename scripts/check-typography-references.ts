@@ -113,6 +113,51 @@ Object.entries(tokens.typography.display).forEach(([level, entry]) => {
 });
 assertResolvedCss(css, ['lead'], tokens.typography.lead as unknown as Record<string, unknown>);
 
+const ROLE_FIELD_SUFFIXES: Record<string, string> = { fontSize: 'size', lineHeight: 'line-height', letterSpacing: 'letter-spacing' };
+const SCALE_REFERENCE_PATTERN = /^\{(typography\.scale\.([^.}]+)\.[^}]+)\}$/;
+const scalePx = (step: string): number => parseFloat(String(resolvePath(typography, `typography.scale.${step}.fontSize`))) * 16;
+
+const responsive = (typography.typography?.responsive ?? {}) as Record<string, Record<string, Record<string, Record<string, unknown>>>>;
+Object.entries(responsive).forEach(([breakpoint, groups]) => {
+  Object.entries(groups).forEach(([group, levels]) => {
+    Object.entries(levels).forEach(([level, fields]) => {
+      const rolePath = `typography.${group}.${level}`;
+      const role = resolvePath(typography, rolePath) as Record<string, unknown> | undefined;
+      if (!role) {
+        errors.push(`typography.responsive.${breakpoint}.${group}.${level} overrides a role that does not exist: ${rolePath}`);
+        return;
+      }
+      Object.entries(fields).forEach(([field, value]) => {
+        const path = `typography.responsive.${breakpoint}.${group}.${level}.${field}`;
+        const suffix = ROLE_FIELD_SUFFIXES[field];
+        if (suffix === undefined) {
+          errors.push(`${path} is not a responsive role field (allowed: ${Object.keys(ROLE_FIELD_SUFFIXES).join(', ')})`);
+          return;
+        }
+        const match = typeof value === 'string' ? value.match(SCALE_REFERENCE_PATTERN) : null;
+        if (!match || resolvePath(typography, match[1]!) === undefined) {
+          errors.push(`${path} must be a "{typography.scale.<step>.*}" reference that resolves, got: ${JSON.stringify(value)}`);
+          return;
+        }
+        const varName = `--sp-typography-responsive-${breakpoint}-${group}-${level}-${suffix}`;
+        const expected = resolveReference(value as string).replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+        if (!new RegExp(`${varName}:\\s*${expected};`).test(css)) {
+          errors.push(`Generated CSS is missing expected resolved declaration: ${varName}: ${resolveReference(value as string)};`);
+        }
+        if (!css.includes(`--sp-${group}-${level}-${suffix}: var(${varName});`)) {
+          errors.push(`Generated CSS does not re-point --sp-${group}-${level}-${suffix} at ${varName} inside its @media block`);
+        }
+        if (field === 'fontSize') {
+          const baseStep = String(role.fontSize).match(SCALE_REFERENCE_PATTERN)?.[2];
+          if (baseStep && scalePx(match[2]!) < scalePx(baseStep)) {
+            errors.push(`${path} shrinks at a wider breakpoint: ${match[2]} < ${rolePath}.fontSize ${baseStep}`);
+          }
+        }
+      });
+    });
+  });
+});
+
 if (errors.length > 0) {
   console.error('Typography reference check failed:');
   errors.forEach((error) => console.error(`  - ${error}`));

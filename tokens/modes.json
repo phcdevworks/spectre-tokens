@@ -2909,6 +2909,30 @@
       }
     },
     "dark": {
+      "action": {
+        "onPage": {
+          "value": "{colors.brand.400}",
+          "description": "action-coloured text on the dark page",
+          "metadata": {
+            "pair": "modes.dark.surface.page"
+          }
+        },
+        "onSurface": {
+          "value": "{colors.brand.400}",
+          "description": "action-coloured text on dark surface containers",
+          "metadata": {
+            "pair": "modes.dark.surface.card"
+          }
+        },
+        "rail": {
+          "value": "{colors.brand.400}",
+          "description": "action-coloured accent rail on the dark page",
+          "metadata": {
+            "pair": "modes.dark.surface.page",
+            "minContrast": 3
+          }
+        }
+      },
       "surface": {
         "page": {
           "value": "{colors.neutral.900}",
@@ -5877,6 +5901,53 @@
       }
     },
     "highContrast": {
+      "action": {
+        "bg": {
+          "value": "{colors.brand.800}",
+          "description": "action fill lifted one step so its text holds 7:1",
+          "metadata": {
+            "pair": "modes.highContrast.action.text"
+          }
+        },
+        "bgHover": {
+          "value": "{colors.brand.900}",
+          "metadata": {
+            "pair": "modes.highContrast.action.text"
+          }
+        },
+        "bgActive": {
+          "value": "{colors.brand.900}",
+          "description": "same as bgHover: 900 is the darkest step every action family shares",
+          "metadata": {
+            "pair": "modes.highContrast.action.text"
+          }
+        },
+        "text": {
+          "value": "{colors.white}",
+          "metadata": {
+            "pair": "modes.highContrast.action.bg"
+          }
+        },
+        "onPage": {
+          "value": "{colors.brand.900}",
+          "metadata": {
+            "pair": "modes.highContrast.surface.page"
+          }
+        },
+        "onSurface": {
+          "value": "{colors.brand.900}",
+          "metadata": {
+            "pair": "modes.highContrast.surface.card"
+          }
+        },
+        "rail": {
+          "value": "{colors.brand.900}",
+          "metadata": {
+            "pair": "modes.highContrast.surface.page",
+            "minContrast": 3
+          }
+        }
+      },
       "surface": {
         "page": {
           "value": "{colors.white}",

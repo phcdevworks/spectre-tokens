@@ -89,6 +89,62 @@
       "description": "underline colour for inline links on hover"
     }
   },
+  "action": {
+    "bg": {
+      "value": "{colors.brand.700}",
+      "description": "solid fill for the theme's own action colour (buttons, chips); a theme picks the palette family with data-spectre-action on the root element",
+      "metadata": {
+        "pair": "action.text"
+      }
+    },
+    "bgHover": {
+      "value": "{colors.brand.800}",
+      "description": "action fill on hover, one step darker in the same family",
+      "metadata": {
+        "pair": "action.text"
+      }
+    },
+    "bgActive": {
+      "value": "{colors.brand.900}",
+      "description": "action fill while pressed, two steps darker in the same family",
+      "metadata": {
+        "pair": "action.text"
+      }
+    },
+    "text": {
+      "value": "{colors.white}",
+      "description": "text and icons on action.bg, action.bgHover, and action.bgActive",
+      "metadata": {
+        "pair": "action.bg"
+      }
+    },
+    "focusRing": {
+      "value": "{colors.brand.500} / 0.4",
+      "description": "focus ring around an action-filled control"
+    },
+    "onPage": {
+      "value": "{colors.brand.700}",
+      "description": "action-coloured text on the page background: stat units, eyebrows, quote marks",
+      "metadata": {
+        "pair": "surface.page"
+      }
+    },
+    "onSurface": {
+      "value": "{colors.brand.700}",
+      "description": "action-coloured text on surface containers",
+      "metadata": {
+        "pair": "surface.card"
+      }
+    },
+    "rail": {
+      "value": "{colors.brand.700}",
+      "description": "action-coloured accent rail or quote rule; a non-text pair held to 3:1",
+      "metadata": {
+        "pair": "surface.page",
+        "minContrast": 3
+      }
+    }
+  },
   "text": {
     "onPage": {
       "default": {

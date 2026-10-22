@@ -1926,6 +1926,11 @@ interface SpectreGeneratedTokens {
             };
         };
         dark: {
+            action: {
+                onPage: string;
+                onSurface: string;
+                rail: string;
+            };
             surface: {
                 page: string;
                 card: string;
@@ -2797,6 +2802,15 @@ interface SpectreGeneratedTokens {
             };
         };
         highContrast: {
+            action: {
+                bg: string;
+                bgHover: string;
+                bgActive: string;
+                text: string;
+                onPage: string;
+                onSurface: string;
+                rail: string;
+            };
             surface: {
                 page: string;
                 card: string;
@@ -4649,6 +4663,16 @@ interface SpectreGeneratedTokens {
         underline: string;
         underlineHover: string;
     };
+    action: {
+        bg: string;
+        bgHover: string;
+        bgActive: string;
+        text: string;
+        focusRing: string;
+        onPage: string;
+        onSurface: string;
+        rail: string;
+    };
     text: {
         onPage: {
             default: string;
@@ -5071,6 +5095,46 @@ interface SpectreGeneratedTokens {
             fontWeight: number;
             letterSpacing: string;
         };
+        responsive: {
+            md: {
+                heading: {
+                    h1: {
+                        fontSize: string;
+                        lineHeight: string;
+                    };
+                    h2: {
+                        fontSize: string;
+                        lineHeight: string;
+                    };
+                    h3: {
+                        fontSize: string;
+                        lineHeight: string;
+                    };
+                    h4: {
+                        fontSize: string;
+                        lineHeight: string;
+                    };
+                    h5: {
+                        fontSize: string;
+                        lineHeight: string;
+                    };
+                };
+                display: {
+                    '1': {
+                        fontSize: string;
+                        lineHeight: string;
+                    };
+                    '2': {
+                        fontSize: string;
+                        lineHeight: string;
+                    };
+                    '3': {
+                        fontSize: string;
+                        lineHeight: string;
+                    };
+                };
+            };
+        };
     };
 }
 
@@ -5098,6 +5162,10 @@ interface TypographyTokens {
     body: TypographyBodyEntry;
     display: Record<string, TypographyRoleEntry>;
     lead: TypographyRoleEntry;
+    responsive: Record<string, {
+        heading?: Record<string, Partial<TypographyRoleEntry>>;
+        display?: Record<string, Partial<TypographyRoleEntry>>;
+    }>;
 }
 interface TransitionTokens {
     duration: TokenScale;
@@ -5400,6 +5468,7 @@ interface SpectreModeTokens {
         invalid?: Record<string, SemanticTokenValue>;
     };
     component: ComponentTokens<SemanticTokenValue>;
+    action?: Record<string, SemanticTokenValue>;
     buttons?: Record<string, Record<string, SemanticTokenValue>>;
     link?: Record<string, SemanticTokenValue>;
 }

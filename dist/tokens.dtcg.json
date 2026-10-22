@@ -5658,6 +5658,23 @@
       }
     },
     "dark": {
+      "action": {
+        "onPage": {
+          "$value": "{colors.brand.400}",
+          "$type": "color",
+          "$description": "action-coloured text on the dark page"
+        },
+        "onSurface": {
+          "$value": "{colors.brand.400}",
+          "$type": "color",
+          "$description": "action-coloured text on dark surface containers"
+        },
+        "rail": {
+          "$value": "{colors.brand.400}",
+          "$type": "color",
+          "$description": "action-coloured accent rail on the dark page"
+        }
+      },
       "surface": {
         "page": {
           "$value": "{colors.neutral.900}",
@@ -8193,6 +8210,38 @@
       }
     },
     "highContrast": {
+      "action": {
+        "bg": {
+          "$value": "{colors.brand.800}",
+          "$type": "color",
+          "$description": "action fill lifted one step so its text holds 7:1"
+        },
+        "bgHover": {
+          "$value": "{colors.brand.900}",
+          "$type": "color"
+        },
+        "bgActive": {
+          "$value": "{colors.brand.900}",
+          "$type": "color",
+          "$description": "same as bgHover: 900 is the darkest step every action family shares"
+        },
+        "text": {
+          "$value": "{colors.white}",
+          "$type": "color"
+        },
+        "onPage": {
+          "$value": "{colors.brand.900}",
+          "$type": "color"
+        },
+        "onSurface": {
+          "$value": "{colors.brand.900}",
+          "$type": "color"
+        },
+        "rail": {
+          "$value": "{colors.brand.900}",
+          "$type": "color"
+        }
+      },
       "surface": {
         "page": {
           "$value": "{colors.white}",
@@ -14107,6 +14156,48 @@
       "$description": "underline colour for inline links on hover"
     }
   },
+  "action": {
+    "bg": {
+      "$value": "{colors.brand.700}",
+      "$type": "color",
+      "$description": "solid fill for the theme's own action colour (buttons, chips); a theme picks the palette family with data-spectre-action on the root element"
+    },
+    "bgHover": {
+      "$value": "{colors.brand.800}",
+      "$type": "color",
+      "$description": "action fill on hover, one step darker in the same family"
+    },
+    "bgActive": {
+      "$value": "{colors.brand.900}",
+      "$type": "color",
+      "$description": "action fill while pressed, two steps darker in the same family"
+    },
+    "text": {
+      "$value": "{colors.white}",
+      "$type": "color",
+      "$description": "text and icons on action.bg, action.bgHover, and action.bgActive"
+    },
+    "focusRing": {
+      "$value": "{colors.brand.500} / 0.4",
+      "$type": "color",
+      "$description": "focus ring around an action-filled control"
+    },
+    "onPage": {
+      "$value": "{colors.brand.700}",
+      "$type": "color",
+      "$description": "action-coloured text on the page background: stat units, eyebrows, quote marks"
+    },
+    "onSurface": {
+      "$value": "{colors.brand.700}",
+      "$type": "color",
+      "$description": "action-coloured text on surface containers"
+    },
+    "rail": {
+      "$value": "{colors.brand.700}",
+      "$type": "color",
+      "$description": "action-coloured accent rail or quote rule; a non-text pair held to 3:1"
+    }
+  },
   "text": {
     "onPage": {
       "default": {
@@ -15057,50 +15148,6 @@
           "$type": "fontFamily"
         },
         "fontSize": {
-          "$value": "{typography.scale.6xl.fontSize}",
-          "$type": "dimension"
-        },
-        "lineHeight": {
-          "$value": "{typography.scale.6xl.lineHeight}",
-          "$type": "dimension"
-        },
-        "fontWeight": {
-          "$value": 800,
-          "$type": "fontWeight"
-        },
-        "letterSpacing": {
-          "$value": "{typography.scale.6xl.letterSpacing}",
-          "$type": "dimension"
-        }
-      },
-      "h2": {
-        "fontFamily": {
-          "$value": "{typography.families.sans}",
-          "$type": "fontFamily"
-        },
-        "fontSize": {
-          "$value": "{typography.scale.5xl.fontSize}",
-          "$type": "dimension"
-        },
-        "lineHeight": {
-          "$value": "{typography.scale.5xl.lineHeight}",
-          "$type": "dimension"
-        },
-        "fontWeight": {
-          "$value": 700,
-          "$type": "fontWeight"
-        },
-        "letterSpacing": {
-          "$value": "{typography.scale.5xl.letterSpacing}",
-          "$type": "dimension"
-        }
-      },
-      "h3": {
-        "fontFamily": {
-          "$value": "{typography.families.sans}",
-          "$type": "fontFamily"
-        },
-        "fontSize": {
           "$value": "{typography.scale.4xl.fontSize}",
           "$type": "dimension"
         },
@@ -15109,7 +15156,7 @@
           "$type": "dimension"
         },
         "fontWeight": {
-          "$value": 700,
+          "$value": 800,
           "$type": "fontWeight"
         },
         "letterSpacing": {
@@ -15117,7 +15164,7 @@
           "$type": "dimension"
         }
       },
-      "h4": {
+      "h2": {
         "fontFamily": {
           "$value": "{typography.families.sans}",
           "$type": "fontFamily"
@@ -15131,7 +15178,7 @@
           "$type": "dimension"
         },
         "fontWeight": {
-          "$value": 600,
+          "$value": 700,
           "$type": "fontWeight"
         },
         "letterSpacing": {
@@ -15139,7 +15186,7 @@
           "$type": "dimension"
         }
       },
-      "h5": {
+      "h3": {
         "fontFamily": {
           "$value": "{typography.families.sans}",
           "$type": "fontFamily"
@@ -15153,11 +15200,55 @@
           "$type": "dimension"
         },
         "fontWeight": {
-          "$value": 600,
+          "$value": 700,
           "$type": "fontWeight"
         },
         "letterSpacing": {
           "$value": "{typography.scale.2xl.letterSpacing}",
+          "$type": "dimension"
+        }
+      },
+      "h4": {
+        "fontFamily": {
+          "$value": "{typography.families.sans}",
+          "$type": "fontFamily"
+        },
+        "fontSize": {
+          "$value": "{typography.scale.xl.fontSize}",
+          "$type": "dimension"
+        },
+        "lineHeight": {
+          "$value": "{typography.scale.xl.lineHeight}",
+          "$type": "dimension"
+        },
+        "fontWeight": {
+          "$value": 600,
+          "$type": "fontWeight"
+        },
+        "letterSpacing": {
+          "$value": "{typography.scale.xl.letterSpacing}",
+          "$type": "dimension"
+        }
+      },
+      "h5": {
+        "fontFamily": {
+          "$value": "{typography.families.sans}",
+          "$type": "fontFamily"
+        },
+        "fontSize": {
+          "$value": "{typography.scale.xl.fontSize}",
+          "$type": "dimension"
+        },
+        "lineHeight": {
+          "$value": "{typography.scale.xl.lineHeight}",
+          "$type": "dimension"
+        },
+        "fontWeight": {
+          "$value": 600,
+          "$type": "fontWeight"
+        },
+        "letterSpacing": {
+          "$value": "{typography.scale.xl.letterSpacing}",
           "$type": "dimension"
         }
       },
@@ -15213,11 +15304,11 @@
           "$type": "fontFamily"
         },
         "fontSize": {
-          "$value": "{typography.scale.7xl.fontSize}",
+          "$value": "{typography.scale.4xl.fontSize}",
           "$type": "dimension"
         },
         "lineHeight": {
-          "$value": "{typography.scale.7xl.lineHeight}",
+          "$value": "{typography.scale.4xl.lineHeight}",
           "$type": "dimension"
         },
         "fontWeight": {
@@ -15225,7 +15316,7 @@
           "$type": "fontWeight"
         },
         "letterSpacing": {
-          "$value": "{typography.scale.7xl.letterSpacing}",
+          "$value": "{typography.scale.4xl.letterSpacing}",
           "$type": "dimension"
         }
       },
@@ -15235,11 +15326,11 @@
           "$type": "fontFamily"
         },
         "fontSize": {
-          "$value": "{typography.scale.6xl.fontSize}",
+          "$value": "{typography.scale.4xl.fontSize}",
           "$type": "dimension"
         },
         "lineHeight": {
-          "$value": "{typography.scale.6xl.lineHeight}",
+          "$value": "{typography.scale.4xl.lineHeight}",
           "$type": "dimension"
         },
         "fontWeight": {
@@ -15247,7 +15338,7 @@
           "$type": "fontWeight"
         },
         "letterSpacing": {
-          "$value": "{typography.scale.6xl.letterSpacing}",
+          "$value": "{typography.scale.4xl.letterSpacing}",
           "$type": "dimension"
         }
       },
@@ -15257,11 +15348,11 @@
           "$type": "fontFamily"
         },
         "fontSize": {
-          "$value": "{typography.scale.5xl.fontSize}",
+          "$value": "{typography.scale.4xl.fontSize}",
           "$type": "dimension"
         },
         "lineHeight": {
-          "$value": "{typography.scale.5xl.lineHeight}",
+          "$value": "{typography.scale.4xl.lineHeight}",
           "$type": "dimension"
         },
         "fontWeight": {
@@ -15269,7 +15360,7 @@
           "$type": "fontWeight"
         },
         "letterSpacing": {
-          "$value": "{typography.scale.5xl.letterSpacing}",
+          "$value": "{typography.scale.4xl.letterSpacing}",
           "$type": "dimension"
         }
       },
@@ -15360,6 +15451,94 @@
       "letterSpacing": {
         "$value": "{typography.scale.xl.letterSpacing}",
         "$type": "dimension"
+      }
+    },
+    "responsive": {
+      "md": {
+        "heading": {
+          "h1": {
+            "fontSize": {
+              "$value": "{typography.scale.6xl.fontSize}",
+              "$type": "dimension"
+            },
+            "lineHeight": {
+              "$value": "{typography.scale.6xl.lineHeight}",
+              "$type": "dimension"
+            }
+          },
+          "h2": {
+            "fontSize": {
+              "$value": "{typography.scale.5xl.fontSize}",
+              "$type": "dimension"
+            },
+            "lineHeight": {
+              "$value": "{typography.scale.5xl.lineHeight}",
+              "$type": "dimension"
+            }
+          },
+          "h3": {
+            "fontSize": {
+              "$value": "{typography.scale.4xl.fontSize}",
+              "$type": "dimension"
+            },
+            "lineHeight": {
+              "$value": "{typography.scale.4xl.lineHeight}",
+              "$type": "dimension"
+            }
+          },
+          "h4": {
+            "fontSize": {
+              "$value": "{typography.scale.3xl.fontSize}",
+              "$type": "dimension"
+            },
+            "lineHeight": {
+              "$value": "{typography.scale.3xl.lineHeight}",
+              "$type": "dimension"
+            }
+          },
+          "h5": {
+            "fontSize": {
+              "$value": "{typography.scale.2xl.fontSize}",
+              "$type": "dimension"
+            },
+            "lineHeight": {
+              "$value": "{typography.scale.2xl.lineHeight}",
+              "$type": "dimension"
+            }
+          }
+        },
+        "display": {
+          "1": {
+            "fontSize": {
+              "$value": "{typography.scale.7xl.fontSize}",
+              "$type": "dimension"
+            },
+            "lineHeight": {
+              "$value": "{typography.scale.7xl.lineHeight}",
+              "$type": "dimension"
+            }
+          },
+          "2": {
+            "fontSize": {
+              "$value": "{typography.scale.6xl.fontSize}",
+              "$type": "dimension"
+            },
+            "lineHeight": {
+              "$value": "{typography.scale.6xl.lineHeight}",
+              "$type": "dimension"
+            }
+          },
+          "3": {
+            "fontSize": {
+              "$value": "{typography.scale.5xl.fontSize}",
+              "$type": "dimension"
+            },
+            "lineHeight": {
+              "$value": "{typography.scale.5xl.lineHeight}",
+              "$type": "dimension"
+            }
+          }
+        }
       }
     }
   }

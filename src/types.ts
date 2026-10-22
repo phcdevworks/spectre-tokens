@@ -36,6 +36,15 @@ export interface TypographyTokens {
   body: TypographyBodyEntry;
   display: Record<string, TypographyRoleEntry>;
   lead: TypographyRoleEntry;
+  // per-breakpoint overrides of heading/display role fields, applied inside
+  // an @media (min-width) block
+  responsive: Record<
+    string,
+    {
+      heading?: Record<string, Partial<TypographyRoleEntry>>;
+      display?: Record<string, Partial<TypographyRoleEntry>>;
+    }
+  >;
 }
 
 export interface TransitionTokens {
@@ -368,6 +377,8 @@ export interface SpectreModeTokens {
     invalid?: Record<string, SemanticTokenValue>;
   };
   component: ComponentTokens<SemanticTokenValue>;
+  // dark and high-contrast only; the default mode uses the top-level action.*
+  action?: Record<string, SemanticTokenValue>;
   // high-contrast mode only; other modes use the top-level buttons.* and link.*
   buttons?: Record<string, Record<string, SemanticTokenValue>>;
   link?: Record<string, SemanticTokenValue>;

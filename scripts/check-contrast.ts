@@ -1,7 +1,9 @@
 import { colord, extend } from 'colord';
 import a11yPlugin from 'colord/plugins/a11y';
 import { fileURLToPath } from 'node:url';
+import { actionFamilies } from '../src/css';
 import type { SpectreSourceTokens } from '../src/generated/tokens';
+import type { SpectreTokens } from '../src/types';
 import { loadMergedTokens } from './token-utils';
 
 extend([a11yPlugin]);
@@ -63,7 +65,11 @@ if (process.argv[1] !== undefined && fileURLToPath(import.meta.url) === process.
   const tokens = loadMergedTokens() as SpectreSourceTokens;
   const failures: string[] = [];
 
-  function checkTokensRecursively(obj: Record<string, unknown> | SpectreSourceTokens, currentPath: string) {
+  function checkTokensRecursively(
+    obj: Record<string, unknown> | SpectreSourceTokens,
+    currentPath: string,
+    source: SpectreSourceTokens = tokens
+  ) {
     for (const [key, value] of Object.entries(obj as Record<string, unknown>)) {
       if (key === 'metadata' || key === 'value') continue;
 
@@ -74,9 +80,9 @@ if (process.argv[1] !== undefined && fileURLToPath(import.meta.url) === process.
           const valObj = value as { value?: unknown; metadata?: { pair?: string; minContrast?: number } };
 
           if (typeof valObj.value === 'string' && valObj.metadata?.pair) {
-            const bgValue = resolveToken(valObj.value, tokens);
+            const bgValue = resolveToken(valObj.value, source);
             const pairPath = valObj.metadata.pair;
-            const textValue = resolveToken(`{${pairPath}}`, tokens);
+            const textValue = resolveToken(`{${pairPath}}`, source);
 
             const contrast = computeContrast(bgValue, textValue);
 
@@ -85,7 +91,7 @@ if (process.argv[1] !== undefined && fileURLToPath(import.meta.url) === process.
               failures.push(`${fullPath} vs ${pairPath}: ${contrast.toFixed(2)}:1 (need ${required}:1)`);
             }
           } else {
-            checkTokensRecursively(value as Record<string, unknown>, fullPath);
+            checkTokensRecursively(value as Record<string, unknown>, fullPath, source);
           }
         }
       } catch (err: unknown) {
@@ -96,6 +102,25 @@ if (process.argv[1] !== undefined && fileURLToPath(import.meta.url) === process.
   }
 
   checkTokensRecursively(tokens, '');
+
+  // every family a theme can pick with data-spectre-action must hold the same
+  // pairs the brand default does, so re-run the action roles with brand swapped
+  const families = actionFamilies(tokens as unknown as SpectreTokens);
+  const modes = tokens.modes as unknown as Record<string, Record<string, unknown>>;
+  Object.entries(families).forEach(([family, scale]) => {
+    const swapped = {
+      ...tokens,
+      colors: { ...tokens.colors, brand: scale }
+    } as unknown as SpectreSourceTokens;
+    const before = failures.length;
+    checkTokensRecursively({ action: (tokens as unknown as Record<string, unknown>).action }, '', swapped);
+    Object.entries(modes).forEach(([mode, node]) => {
+      if (node.action) checkTokensRecursively({ action: node.action }, `modes.${mode}`, swapped);
+    });
+    failures.slice(before).forEach((failure, index) => {
+      failures[before + index] = `[data-spectre-action="${family}"] ${failure}`;
+    });
+  });
 
   if (failures.length > 0) {
     console.error('Contrast check failed:');

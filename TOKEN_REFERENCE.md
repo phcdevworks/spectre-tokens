@@ -5,8 +5,8 @@ Do not hand-edit — regenerate instead. This file is a derived artifact, not
 contract authority; `tokens/` and `contract.manifest.json` remain the source
 of truth (see `TOKEN_CONTRACT.md`).
 
-Every leaf token path across all 30 public namespaces
-(3365 total), with its resolved source value and a usage note.
+Every leaf token path across all 31 public namespaces
+(3399 total), with its resolved source value and a usage note.
 Values shown here are pre-CSS-resolution source values — `{path.to.token}`
 references are shown as-written, not resolved (see `src/css.ts` for
 resolved CSS output).
@@ -628,30 +628,30 @@ resolved CSS output).
 | `typography.scale.9xl.fontWeight` | `900` | typography token. |
 | `typography.scale.9xl.letterSpacing` | `0em` | typography token. |
 | `typography.heading.h1.fontFamily` | `{typography.families.sans}` | typography token. |
-| `typography.heading.h1.fontSize` | `{typography.scale.6xl.fontSize}` | typography token. |
-| `typography.heading.h1.lineHeight` | `{typography.scale.6xl.lineHeight}` | typography token. |
+| `typography.heading.h1.fontSize` | `{typography.scale.4xl.fontSize}` | typography token. |
+| `typography.heading.h1.lineHeight` | `{typography.scale.4xl.lineHeight}` | typography token. |
 | `typography.heading.h1.fontWeight` | `800` | typography token. |
-| `typography.heading.h1.letterSpacing` | `{typography.scale.6xl.letterSpacing}` | typography token. |
+| `typography.heading.h1.letterSpacing` | `{typography.scale.4xl.letterSpacing}` | typography token. |
 | `typography.heading.h2.fontFamily` | `{typography.families.sans}` | typography token. |
-| `typography.heading.h2.fontSize` | `{typography.scale.5xl.fontSize}` | typography token. |
-| `typography.heading.h2.lineHeight` | `{typography.scale.5xl.lineHeight}` | typography token. |
+| `typography.heading.h2.fontSize` | `{typography.scale.3xl.fontSize}` | typography token. |
+| `typography.heading.h2.lineHeight` | `{typography.scale.3xl.lineHeight}` | typography token. |
 | `typography.heading.h2.fontWeight` | `700` | typography token. |
-| `typography.heading.h2.letterSpacing` | `{typography.scale.5xl.letterSpacing}` | typography token. |
+| `typography.heading.h2.letterSpacing` | `{typography.scale.3xl.letterSpacing}` | typography token. |
 | `typography.heading.h3.fontFamily` | `{typography.families.sans}` | typography token. |
-| `typography.heading.h3.fontSize` | `{typography.scale.4xl.fontSize}` | typography token. |
-| `typography.heading.h3.lineHeight` | `{typography.scale.4xl.lineHeight}` | typography token. |
+| `typography.heading.h3.fontSize` | `{typography.scale.2xl.fontSize}` | typography token. |
+| `typography.heading.h3.lineHeight` | `{typography.scale.2xl.lineHeight}` | typography token. |
 | `typography.heading.h3.fontWeight` | `700` | typography token. |
-| `typography.heading.h3.letterSpacing` | `{typography.scale.4xl.letterSpacing}` | typography token. |
+| `typography.heading.h3.letterSpacing` | `{typography.scale.2xl.letterSpacing}` | typography token. |
 | `typography.heading.h4.fontFamily` | `{typography.families.sans}` | typography token. |
-| `typography.heading.h4.fontSize` | `{typography.scale.3xl.fontSize}` | typography token. |
-| `typography.heading.h4.lineHeight` | `{typography.scale.3xl.lineHeight}` | typography token. |
+| `typography.heading.h4.fontSize` | `{typography.scale.xl.fontSize}` | typography token. |
+| `typography.heading.h4.lineHeight` | `{typography.scale.xl.lineHeight}` | typography token. |
 | `typography.heading.h4.fontWeight` | `600` | typography token. |
-| `typography.heading.h4.letterSpacing` | `{typography.scale.3xl.letterSpacing}` | typography token. |
+| `typography.heading.h4.letterSpacing` | `{typography.scale.xl.letterSpacing}` | typography token. |
 | `typography.heading.h5.fontFamily` | `{typography.families.sans}` | typography token. |
-| `typography.heading.h5.fontSize` | `{typography.scale.2xl.fontSize}` | typography token. |
-| `typography.heading.h5.lineHeight` | `{typography.scale.2xl.lineHeight}` | typography token. |
+| `typography.heading.h5.fontSize` | `{typography.scale.xl.fontSize}` | typography token. |
+| `typography.heading.h5.lineHeight` | `{typography.scale.xl.lineHeight}` | typography token. |
 | `typography.heading.h5.fontWeight` | `600` | typography token. |
-| `typography.heading.h5.letterSpacing` | `{typography.scale.2xl.letterSpacing}` | typography token. |
+| `typography.heading.h5.letterSpacing` | `{typography.scale.xl.letterSpacing}` | typography token. |
 | `typography.heading.h6.fontFamily` | `{typography.families.sans}` | typography token. |
 | `typography.heading.h6.fontSize` | `{typography.scale.xl.fontSize}` | typography token. |
 | `typography.heading.h6.lineHeight` | `{typography.scale.xl.lineHeight}` | typography token. |
@@ -663,20 +663,20 @@ resolved CSS output).
 | `typography.body.fontWeight` | `400` | typography token. |
 | `typography.body.letterSpacing` | `{typography.scale.md.letterSpacing}` | typography token. |
 | `typography.display.1.fontFamily` | `{typography.families.sans}` | typography token. |
-| `typography.display.1.fontSize` | `{typography.scale.7xl.fontSize}` | typography token. |
-| `typography.display.1.lineHeight` | `{typography.scale.7xl.lineHeight}` | typography token. |
+| `typography.display.1.fontSize` | `{typography.scale.4xl.fontSize}` | typography token. |
+| `typography.display.1.lineHeight` | `{typography.scale.4xl.lineHeight}` | typography token. |
 | `typography.display.1.fontWeight` | `800` | typography token. |
-| `typography.display.1.letterSpacing` | `{typography.scale.7xl.letterSpacing}` | typography token. |
+| `typography.display.1.letterSpacing` | `{typography.scale.4xl.letterSpacing}` | typography token. |
 | `typography.display.2.fontFamily` | `{typography.families.sans}` | typography token. |
-| `typography.display.2.fontSize` | `{typography.scale.6xl.fontSize}` | typography token. |
-| `typography.display.2.lineHeight` | `{typography.scale.6xl.lineHeight}` | typography token. |
+| `typography.display.2.fontSize` | `{typography.scale.4xl.fontSize}` | typography token. |
+| `typography.display.2.lineHeight` | `{typography.scale.4xl.lineHeight}` | typography token. |
 | `typography.display.2.fontWeight` | `800` | typography token. |
-| `typography.display.2.letterSpacing` | `{typography.scale.6xl.letterSpacing}` | typography token. |
+| `typography.display.2.letterSpacing` | `{typography.scale.4xl.letterSpacing}` | typography token. |
 | `typography.display.3.fontFamily` | `{typography.families.sans}` | typography token. |
-| `typography.display.3.fontSize` | `{typography.scale.5xl.fontSize}` | typography token. |
-| `typography.display.3.lineHeight` | `{typography.scale.5xl.lineHeight}` | typography token. |
+| `typography.display.3.fontSize` | `{typography.scale.4xl.fontSize}` | typography token. |
+| `typography.display.3.lineHeight` | `{typography.scale.4xl.lineHeight}` | typography token. |
 | `typography.display.3.fontWeight` | `700` | typography token. |
-| `typography.display.3.letterSpacing` | `{typography.scale.5xl.letterSpacing}` | typography token. |
+| `typography.display.3.letterSpacing` | `{typography.scale.4xl.letterSpacing}` | typography token. |
 | `typography.display.4.fontFamily` | `{typography.families.sans}` | typography token. |
 | `typography.display.4.fontSize` | `{typography.scale.4xl.fontSize}` | typography token. |
 | `typography.display.4.lineHeight` | `{typography.scale.4xl.lineHeight}` | typography token. |
@@ -697,6 +697,22 @@ resolved CSS output).
 | `typography.lead.lineHeight` | `{typography.scale.xl.lineHeight}` | typography token. |
 | `typography.lead.fontWeight` | `400` | typography token. |
 | `typography.lead.letterSpacing` | `{typography.scale.xl.letterSpacing}` | typography token. |
+| `typography.responsive.md.heading.h1.fontSize` | `{typography.scale.6xl.fontSize}` | typography token. |
+| `typography.responsive.md.heading.h1.lineHeight` | `{typography.scale.6xl.lineHeight}` | typography token. |
+| `typography.responsive.md.heading.h2.fontSize` | `{typography.scale.5xl.fontSize}` | typography token. |
+| `typography.responsive.md.heading.h2.lineHeight` | `{typography.scale.5xl.lineHeight}` | typography token. |
+| `typography.responsive.md.heading.h3.fontSize` | `{typography.scale.4xl.fontSize}` | typography token. |
+| `typography.responsive.md.heading.h3.lineHeight` | `{typography.scale.4xl.lineHeight}` | typography token. |
+| `typography.responsive.md.heading.h4.fontSize` | `{typography.scale.3xl.fontSize}` | typography token. |
+| `typography.responsive.md.heading.h4.lineHeight` | `{typography.scale.3xl.lineHeight}` | typography token. |
+| `typography.responsive.md.heading.h5.fontSize` | `{typography.scale.2xl.fontSize}` | typography token. |
+| `typography.responsive.md.heading.h5.lineHeight` | `{typography.scale.2xl.lineHeight}` | typography token. |
+| `typography.responsive.md.display.1.fontSize` | `{typography.scale.7xl.fontSize}` | typography token. |
+| `typography.responsive.md.display.1.lineHeight` | `{typography.scale.7xl.lineHeight}` | typography token. |
+| `typography.responsive.md.display.2.fontSize` | `{typography.scale.6xl.fontSize}` | typography token. |
+| `typography.responsive.md.display.2.lineHeight` | `{typography.scale.6xl.lineHeight}` | typography token. |
+| `typography.responsive.md.display.3.fontSize` | `{typography.scale.5xl.fontSize}` | typography token. |
+| `typography.responsive.md.display.3.lineHeight` | `{typography.scale.5xl.lineHeight}` | typography token. |
 
 ## font
 
@@ -1116,6 +1132,19 @@ resolved CSS output).
 | `text.onInverse.muted` | `{colors.neutral.300}` | muted text on surface.inverse |
 | `text.onInverse.brand` | `{colors.brand.300}` | brand-coloured text on surface.inverse, independent of page mode |
 | `text.onInverse.accent` | `{colors.accent.300}` | accent-coloured text on surface.inverse (eyebrows, stat units, quote marks), independent of page mode |
+
+## action
+
+| Path | Value | Usage |
+| ---- | ----- | ----- |
+| `action.bg` | `{colors.brand.700}` | solid fill for the theme's own action colour (buttons, chips); a theme picks the palette family with data-spectre-action on the root element |
+| `action.bgHover` | `{colors.brand.800}` | action fill on hover, one step darker in the same family |
+| `action.bgActive` | `{colors.brand.900}` | action fill while pressed, two steps darker in the same family |
+| `action.text` | `{colors.white}` | text and icons on action.bg, action.bgHover, and action.bgActive |
+| `action.focusRing` | `{colors.brand.500} / 0.4` | focus ring around an action-filled control |
+| `action.onPage` | `{colors.brand.700}` | action-coloured text on the page background: stat units, eyebrows, quote marks |
+| `action.onSurface` | `{colors.brand.700}` | action-coloured text on surface containers |
+| `action.rail` | `{colors.brand.700}` | action-coloured accent rail or quote rule; a non-text pair held to 3:1 |
 
 ## component
 
@@ -2211,6 +2240,9 @@ resolved CSS output).
 | `modes.default.component.code.syntax.attribute` | `{colors.palette.teal.800}` | Pairs with `modes.default.component.prose.codeBlock.bg` for contrast. |
 | `modes.default.component.proofing.spelling` | `{colors.error.600}` | Pairs with `modes.default.surface.page` for contrast. |
 | `modes.default.component.proofing.grammar` | `{colors.info.600}` | Pairs with `modes.default.surface.page` for contrast. |
+| `modes.dark.action.onPage` | `{colors.brand.400}` | action-coloured text on the dark page |
+| `modes.dark.action.onSurface` | `{colors.brand.400}` | action-coloured text on dark surface containers |
+| `modes.dark.action.rail` | `{colors.brand.400}` | action-coloured accent rail on the dark page |
 | `modes.dark.surface.page` | `{colors.neutral.900}` | Pairs with `modes.dark.text.onPage.default` for contrast. |
 | `modes.dark.surface.card` | `{colors.neutral.800}` | Pairs with `modes.dark.text.onSurface.default` for contrast. |
 | `modes.dark.surface.input` | `{colors.neutral.700}` | Pairs with `modes.dark.text.onSurface.default` for contrast. |
@@ -2758,6 +2790,13 @@ resolved CSS output).
 | `modes.dark.link.visited` | `{colors.accent.300}` | link color after the destination has been visited |
 | `modes.dark.link.underline` | `{colors.brand.400} / 0.4` | underline colour for inline links; the link text keeps link.default |
 | `modes.dark.link.underlineHover` | `{colors.brand.300}` | underline colour for inline links on hover |
+| `modes.highContrast.action.bg` | `{colors.brand.800}` | action fill lifted one step so its text holds 7:1 |
+| `modes.highContrast.action.bgHover` | `{colors.brand.900}` | Pairs with `modes.highContrast.action.text` for contrast. |
+| `modes.highContrast.action.bgActive` | `{colors.brand.900}` | same as bgHover: 900 is the darkest step every action family shares |
+| `modes.highContrast.action.text` | `{colors.white}` | Pairs with `modes.highContrast.action.bg` for contrast. |
+| `modes.highContrast.action.onPage` | `{colors.brand.900}` | Pairs with `modes.highContrast.surface.page` for contrast. |
+| `modes.highContrast.action.onSurface` | `{colors.brand.900}` | Pairs with `modes.highContrast.surface.card` for contrast. |
+| `modes.highContrast.action.rail` | `{colors.brand.900}` | Pairs with `modes.highContrast.surface.page` for contrast. |
 | `modes.highContrast.surface.page` | `{colors.white}` | Pairs with `modes.highContrast.text.onPage.default` for contrast. |
 | `modes.highContrast.surface.card` | `{colors.white}` | Pairs with `modes.highContrast.text.onSurface.default` for contrast. |
 | `modes.highContrast.surface.input` | `{colors.white}` | Pairs with `modes.highContrast.text.onSurface.default` for contrast. |

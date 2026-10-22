@@ -53,6 +53,59 @@ const layoutResponsive = (layout: unknown): Record<string, unknown> => {
   return isPlainObject(responsive) ? responsive : {}
 }
 
+const ROLE_FIELD_SUFFIXES: Record<string, string> = {
+  fontFamily: 'family',
+  fontSize: 'size',
+  lineHeight: 'line-height',
+  fontWeight: 'weight',
+  letterSpacing: 'letter-spacing'
+}
+
+type ResponsiveRoleField = { breakpoint: string; roleParts: string[]; suffix: string; value: unknown }
+
+// `typography.responsive.<breakpoint>` overrides role fields at that width:
+// heading/display nest by level, body/lead hold their fields directly
+const typographyResponsive = (typography: unknown): ResponsiveRoleField[] => {
+  const responsive = isPlainObject(typography) ? typography.responsive : undefined
+  if (!isPlainObject(responsive)) return []
+  return Object.entries(responsive).flatMap(([breakpoint, groups]) =>
+    Object.entries(groups as Record<string, Record<string, unknown>>).flatMap(([group, node]) => {
+      const roles = Object.keys(node).some((key) => key in ROLE_FIELD_SUFFIXES)
+        ? [[[group], node] as const]
+        : Object.entries(node).map(([level, fields]) => [[group, level], fields] as const)
+      return roles.flatMap(([roleParts, fields]) =>
+        Object.entries(fields as Record<string, unknown>).map(([field, value]) => {
+          const suffix = ROLE_FIELD_SUFFIXES[field]
+          if (suffix === undefined) {
+            throw new Error(`typography.responsive.${breakpoint}.${roleParts.join('.')}.${field} is not a typography role field`)
+          }
+          return { breakpoint, roleParts: [...roleParts], suffix, value }
+        })
+      )
+    })
+  )
+}
+
+// the action role reads a re-pointable `--sp-action-<step>` ramp instead of a
+// fixed family, so a theme swaps the whole role, hover and active shades
+// included, with one root attribute
+const ACTION_SYSTEM_FAMILIES = ['brand', 'accent', 'info']
+// left out because an action pair misses its minimum: yellow-800 under white
+// text is 6.84:1 in high-contrast mode, and integration-icy-blue-700 is 4.38:1
+// on the page
+const ACTION_EXCLUDED_PALETTE_FAMILIES = new Set(['yellow', 'integration-icy-blue'])
+
+export const actionFamilies = (tokens: SpectreTokens): Record<string, Record<string, string>> => {
+  const colors = tokens.colors as unknown as Record<string, unknown>
+  const palette = isPlainObject(colors.palette) ? colors.palette : {}
+  return Object.fromEntries([
+    ...ACTION_SYSTEM_FAMILIES.map((name) => [name, colors[name]]),
+    ...Object.entries(palette).filter(([name]) => !ACTION_EXCLUDED_PALETTE_FAMILIES.has(name))
+  ]) as Record<string, Record<string, string>>
+}
+
+const actionSteps = (tokens: SpectreTokens): string[] => Object.keys(tokens.colors.brand)
+
 const resolveTokenReference = (tokens: SpectreTokens, reference: string): string => {
   const path = reference.slice(1, -1).split('.')
   let current: unknown = tokens
@@ -152,6 +205,10 @@ export const createCssVariableMap = (tokens: SpectreTokens, options: CssVariable
 
   Object.entries(baseTokens.colors).forEach(([group, scale]) => {
     assignColorGroup([group], scale)
+  })
+
+  actionSteps(tokens).forEach((step) => {
+    assign(toVariableName(prefix, 'action', step), (baseTokens.colors.brand as Record<string, string>)[step])
   })
 
   if (baseTokens.space) {
@@ -337,11 +394,9 @@ export const createCssVariableMap = (tokens: SpectreTokens, options: CssVariable
   })
 
   const assignRole = (rolePrefixParts: string[], entry: TypographyRoleEntry) => {
-    assign(toVariableName(prefix, ...rolePrefixParts, 'family'), entry.fontFamily)
-    assign(toVariableName(prefix, ...rolePrefixParts, 'size'), entry.fontSize)
-    assign(toVariableName(prefix, ...rolePrefixParts, 'line-height'), entry.lineHeight)
-    assign(toVariableName(prefix, ...rolePrefixParts, 'weight'), entry.fontWeight)
-    assign(toVariableName(prefix, ...rolePrefixParts, 'letter-spacing'), entry.letterSpacing)
+    Object.entries(ROLE_FIELD_SUFFIXES).forEach(([field, suffix]) => {
+      assign(toVariableName(prefix, ...rolePrefixParts, suffix), entry[field as keyof TypographyRoleEntry])
+    })
   }
 
   const heading = baseTokens.typography?.heading
@@ -367,6 +422,10 @@ export const createCssVariableMap = (tokens: SpectreTokens, options: CssVariable
   if (lead) {
     assignRole(['lead'], lead)
   }
+
+  typographyResponsive(baseTokens.typography).forEach(({ breakpoint, roleParts, suffix, value }) => {
+    assign(toVariableName(prefix, 'typography', 'responsive', breakpoint, ...roleParts, suffix), value)
+  })
 
   Object.entries(baseTokens.shadows).forEach(([key, value]) => {
     if (typeof value === 'string') {
@@ -563,6 +622,22 @@ export const generateCssVariables = (tokens: SpectreTokens, options: CssVariable
     addHighContrast(varName, pickSemantic(tokens, getPath(highContrastLink, [key]), value))
   })
 
+  // brand steps become ramp references, so data-spectre-action re-points them
+  const actionValue = (value: unknown): string | undefined => {
+    const match = typeof value === 'string' ? value.match(/^\{colors\.brand\.([^}]+)\}(?:\s*\/\s*([0-9.]+))?$/) : null
+    if (!match) return pickSemantic(tokens, value)
+    const ramp = `var(${toVariableName(prefix, 'action', match[1]!)})`
+    return match[2] === undefined ? ramp : `color-mix(in srgb, ${ramp} ${Math.round(Number(match[2]) * 1000) / 10}%, transparent)`
+  }
+  const darkAction = getPath(darkMode, ['action'])
+  const highContrastAction = getPath(highContrastMode, ['action'])
+  Object.entries((tokens as unknown as Record<string, Record<string, unknown>>).action ?? {}).forEach(([key, value]) => {
+    const varName = toVariableName(prefix, 'action', kebabPathSegment(key))
+    addBase(varName, actionValue(value))
+    addDark(varName, actionValue(getPath(darkAction, [key]) ?? value))
+    addHighContrast(varName, actionValue(getPath(highContrastAction, [key]) ?? value))
+  })
+
   // `buttons` stays cascade-only in :root and dark; high-contrast mode alone
   // overrides it, to lift every button text pair to 7:1
   const highContrastButtons = getPath(highContrastMode, ['buttons'])
@@ -629,6 +704,17 @@ export const generateCssVariables = (tokens: SpectreTokens, options: CssVariable
   const lightBlock = modeBlock([...themeSelectors('light'), ...themeSelectors('system')], modeLines(baseEntries))
   const systemDarkBlock = `@media (prefers-color-scheme: dark) {\n${modeBlock(themeSelectors('system'), modeLines(darkEntries), '  ')}\n}`
 
+  // root-only: the role variables resolve their ramp on :root, so the ramp
+  // must be swapped there too
+  const steps = actionSteps(tokens)
+  const actionBlocks = Object.entries(actionFamilies(tokens)).map(([name, scale]) => {
+    const lines = steps.map((step) => {
+      if (scale[step] === undefined) throw new Error(`Action family "${name}" has no ${step} step`)
+      return `  ${toVariableName(prefix, 'action', step)}: ${resolveValue(tokens, scale[step])};`
+    })
+    return `${selector}[data-spectre-action="${name}"] {\n${lines.join('\n')}\n}`
+  })
+
   // compact density swaps every default control size for its compact
   // counterpart on any element carrying the attribute, not only the root
   const control = (tokens as unknown as Record<string, unknown>).control
@@ -642,24 +728,53 @@ export const generateCssVariables = (tokens: SpectreTokens, options: CssVariable
   const densityBlocks = densityLines.length > 0 ? [`[data-spectre-density="compact"] {\n${densityLines.join('\n')}\n}`] : []
 
   const breakpoints = tokens.breakpoints as unknown as Record<string, string>
-  const responsiveBlocks = Object.entries(layoutResponsive(tokens.layout)).map(([breakpoint, scales]) => {
-    const minWidth = breakpoints[breakpoint]
-    if (minWidth === undefined) {
-      throw new Error(`layout.responsive.${breakpoint} does not name a breakpoints entry`)
+  const responsiveLines = new Map<string, string[]>()
+  const addResponsive = (namespace: string, breakpoint: string, name: string, source: string) => {
+    if (breakpoints[breakpoint] === undefined) {
+      throw new Error(`${namespace}.responsive.${breakpoint} does not name a breakpoints entry`)
     }
-    const lines = LAYOUT_SCALES.flatMap(({ path, varParts }) =>
-      Object.keys(layoutScale(scales, path)).map((key) => {
-        const name = toVariableName(prefix, 'layout', ...varParts, kebabCase(key))
-        const source = toVariableName(prefix, 'layout', 'responsive', breakpoint, ...varParts, kebabCase(key))
-        return `    ${name}: var(${source});`
+    responsiveLines.set(breakpoint, [...(responsiveLines.get(breakpoint) ?? []), `    ${name}: var(${source});`])
+  }
+  Object.entries(layoutResponsive(tokens.layout)).forEach(([breakpoint, scales]) => {
+    LAYOUT_SCALES.forEach(({ path, varParts }) => {
+      Object.keys(layoutScale(scales, path)).forEach((key) => {
+        addResponsive(
+          'layout',
+          breakpoint,
+          toVariableName(prefix, 'layout', ...varParts, kebabCase(key)),
+          toVariableName(prefix, 'layout', 'responsive', breakpoint, ...varParts, kebabCase(key))
+        )
       })
-    )
-    return `@media (min-width: ${resolveValue(tokens, minWidth)}) {\n  ${selector} {\n${lines.join('\n')}\n  }\n}`
+    })
   })
+  typographyResponsive(tokens.typography).forEach(({ breakpoint, roleParts, suffix }) => {
+    addResponsive(
+      'typography',
+      breakpoint,
+      toVariableName(prefix, ...roleParts, suffix),
+      toVariableName(prefix, 'typography', 'responsive', breakpoint, ...roleParts, suffix)
+    )
+  })
+  // narrowest breakpoint first, so a wider @media block wins the cascade
+  const responsiveBlocks = Object.keys(breakpoints)
+    .filter((breakpoint) => responsiveLines.has(breakpoint))
+    .map(
+      (breakpoint) =>
+        `@media (min-width: ${resolveValue(tokens, breakpoints[breakpoint])}) {\n  ${selector} {\n${responsiveLines
+          .get(breakpoint)!
+          .join('\n')}\n  }\n}`
+    )
 
   return (
-    [rootBlock, darkBlock, highContrastBlock, lightBlock, systemDarkBlock, ...densityBlocks, ...responsiveBlocks].join(
-      '\n'
-    ) + '\n'
+    [
+      rootBlock,
+      darkBlock,
+      highContrastBlock,
+      lightBlock,
+      systemDarkBlock,
+      ...actionBlocks,
+      ...densityBlocks,
+      ...responsiveBlocks
+    ].join('\n') + '\n'
   )
 }
