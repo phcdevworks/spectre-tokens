@@ -6,6 +6,10 @@ reflects package releases published to npm.
 
 ## [Unreleased]
 
+## [4.15.0] - 2026-10-23
+
+**Release Title:** Adaptive Typography and Themeable Actions
+
 Contract change type: semantic change
 
 ### Changed
@@ -1955,7 +1959,8 @@ Contract change type: breaking
 - Standardized documentation and contributing guidelines.
 
 [unreleased]:
-  https://github.com/phcdevworks/spectre-tokens/compare/v4.14.0...HEAD
+  https://github.com/phcdevworks/spectre-tokens/compare/v4.15.0...HEAD
+[4.15.0]: https://github.com/phcdevworks/spectre-tokens/compare/v4.14.0...v4.15.0
 [4.14.0]: https://github.com/phcdevworks/spectre-tokens/compare/v4.13.0...v4.14.0
 [4.13.0]: https://github.com/phcdevworks/spectre-tokens/compare/v4.12.0...v4.13.0
 [4.12.0]: https://github.com/phcdevworks/spectre-tokens/compare/v4.11.0...v4.12.0
