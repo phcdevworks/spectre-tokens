@@ -37,7 +37,7 @@ this file does not restate delivered work.
 | — | Downstream layout and footer requests from `spectre-base` — one 8px layout grid enforced by `check:structure` (`layout.stack.gap` now 8/16/24px), responsive `xl`–`4xl` section padding, section/stack gap, and container padding steps with `layout.responsive.lg.*` values and an `@media (min-width: 1024px)` CSS block, `layout.hero.paddingTop`/`paddingBottom` pairs referencing section padding, `space.128`/`160`/`192`, and a mode-aware `component.footer.light.*` palette | 4.12.0 |
 | — | Child-theme roles requested by `spectre-base` — mode-aware `text.onPage.accent`/`text.onSurface.accent`, a named `leading` scale (`none` through `loose`), a `buttons.accentOutline` variant with high-contrast override, mode-aware `component.stepper.tone.{brand,accent}.{active,done}` roles, a mode-aware `component.quote` group (text, attribution, accent-coloured mark, plain edge, accent rail), an `accent` tone in every component accent rail, and `text.onInverse.{brand,accent}` | 4.13.0 |
 | 17 | Complete HTML element coverage, owner-directed ("HTML 7") — `element-coverage.json` maps all 115 HTML Living Standard elements and 14 pseudo-elements to token roles, enforced by `check:elements`; new `fontWeight` and `textDecoration` namespaces, link underline colours, `<del>`/`<ins>` edit marks, `component.meter`, list markers, figure/table captions, table footer, description lists, `component.code.syntax` highlighting, `layout.prose.flow` spacing, select option roles, and `::spelling-error`/`::grammar-error` proofing roles | 4.13.0 |
-| — | Responsive text roles and a themeable action colour, requested by `spectre-base` — mobile-first `heading.h1`–`h5` and `display.1`–`3` with `typography.responsive.md.*` restoring the wide sizes inside `@media (min-width: 768px)`; a new `action` namespace (fill, hover, active, text, focus ring, on-page/on-surface text, rail) behind a `--sp-action-{50..900}` ramp that a theme swaps with `data-spectre-action="<family>"` on `<html>`, with every selectable family contrast-checked in default, dark, and high-contrast modes | Unreleased |
+| — | Responsive text roles and a themeable action colour, requested by `spectre-base` — mobile-first `heading.h1`–`h5` and `display.1`–`3` with `typography.responsive.md.*` restoring the wide sizes inside `@media (min-width: 768px)`; a new `action` namespace (fill, hover, active, text, focus ring, on-page/on-surface text, rail) behind a `--sp-action-{50..900}` ramp that a theme swaps with `data-spectre-action="<family>"` on `<html>`, with every selectable family contrast-checked in default, dark, and high-contrast modes | 4.15.0 |
 
 ---
 
@@ -49,30 +49,14 @@ every standard element and styleable pseudo-element in the canonical list is
 mapped, and `npm run check:elements` keeps that true. New gaps go in
 [TODO.md](TODO.md) as the list grows.
 
-The table stripe fix reported by `spectre-base` on 2026-10-11 is done and
-waiting in `CHANGELOG.md [Unreleased]`. `component.table.stripeBg` is now a
-translucent overlay, so stripes show on both the page and cards in light and
-dark mode. It ships in the next release.
-
-The font scale now matches Tailwind's sizes and is also waiting in
-`[Unreleased]`. A new 18px `lg` closes the 16→20px gap, `xl` through `6xl`
-each move down one step, and `7xl`–`9xl` are new. There is also a new numeric
-`fontSize` scale (`--sp-font-size-<px>`). Headings, display text, and the lead
-paragraph keep their sizes. Direct `--sp-font-*` uses in `spectre-ui` and
-`spectre-base` need a review after release; that is tracked in their
-`TODO.md`.
-
-Dark-mode link contrast is fixed and waiting in `[Unreleased]`. Links stayed
-`brand.600` on dark backgrounds (2.34:1 on a dark card). The new
-`modes.dark.link` lightens them to at least 4.75:1, and `check:contrast` now
-enforces it.
-
-Two `spectre-base` requests from 2026-10-23 are done and waiting in
-`[Unreleased]`. Headings and display text now shrink below 768px, so the
-child theme can drop its own ramp. The new `action` role lets a theme pick
-its action colour with `data-spectre-action` instead of repainting
-`.sp-btn`. `spectre-ui` still needs the button variant, stat-unit tone, and
-quote-rail tone that consume `--sp-action-*`.
+4.14.0 (2026-10-15) shipped the `spectre-base` table stripe fix, dark-mode
+link contrast (`modes.dark.link`, enforced by `check:contrast`), and the
+Tailwind-matched font scale with the numeric `fontSize` scale. 4.15.0
+(2026-10-23) shipped the two `spectre-base` requests from 2026-10-23:
+mobile-first headings and display text, and the theme-selectable `action`
+role. Every downstream repo consumes 4.15.0: `spectre-ui` 5.8.0,
+`spectre-components` 1.25.0, and `spectre-ui-astro` 4.14.0 are published, and
+`spectre-base` has it in `[Unreleased]`.
 
 There is no active delivery phase. Add the next phase here when new work is
 planned; do not use `Unreleased` for work already included in a versioned
