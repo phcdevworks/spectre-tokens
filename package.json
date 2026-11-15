@@ -35,7 +35,7 @@
     "node": "^22.12.0 || >=24.0.0"
   },
   "type": "module",
-  "packageManager": "npm@12.2.1",
+  "packageManager": "npm@12.2.2",
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -102,21 +102,21 @@
   },
   "devDependencies": {
     "@phcdevworks/spectre-manifest": "^2.0.0",
-    "@types/node": "^26.6.5",
-    "@typescript-eslint/eslint-plugin": "^8.72.0",
-    "@typescript-eslint/parser": "^8.72.0",
+    "@types/node": "^26.6.6",
+    "@typescript-eslint/eslint-plugin": "^8.72.2",
+    "@typescript-eslint/parser": "^8.72.2",
     "@typescript/native": "npm:typescript@^7.0.2",
-    "colord": "^2.10.0",
-    "eslint": "^10.13.0",
+    "colord": "^2.13.0",
+    "eslint": "^10.15.0",
     "jiti": "^2.7.0",
-    "prettier": "^3.9.10",
-    "style-dictionary": "^5.7.0",
+    "prettier": "^3.10.1",
+    "style-dictionary": "^5.8.0",
     "ts-node": "^10.9.2",
     "tsup": "^9.0.0",
     "tsx": "^4.23.15",
     "typescript": "npm:@typescript/typescript6@^6.0.2",
-    "typescript-eslint": "^8.72.0",
-    "vitest": "^5.0.5"
+    "typescript-eslint": "^8.72.2",
+    "vitest": "^5.1.0"
   },
   "overrides": {
     "esbuild": "0.28.1"
